@@ -7,7 +7,6 @@ export default function Logo({ school, size = 28, className = '' }) {
   const style = {
     width: size,
     height: size,
-    background: school.color || '#5a5144',
     fontSize: Math.max(8, Math.round(size * 0.28)),
   }
   return (
