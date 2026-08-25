@@ -1,0 +1,342 @@
+{
+  "alabama": {
+    "source": "espn",
+    "id": 333,
+    "ok": true
+  },
+  "arkansas": {
+    "source": "espn",
+    "id": 8,
+    "ok": true
+  },
+  "auburn": {
+    "source": "espn",
+    "id": 2,
+    "ok": true
+  },
+  "florida": {
+    "source": "espn",
+    "id": 57,
+    "ok": true
+  },
+  "georgia": {
+    "source": "espn",
+    "id": 61,
+    "ok": true
+  },
+  "kentucky": {
+    "source": "espn",
+    "id": 96,
+    "ok": true
+  },
+  "lsu": {
+    "source": "espn",
+    "id": 99,
+    "ok": true
+  },
+  "mississippi-state": {
+    "source": "espn",
+    "id": 344,
+    "ok": true
+  },
+  "missouri": {
+    "source": "espn",
+    "id": 142,
+    "ok": true
+  },
+  "oklahoma": {
+    "source": "espn",
+    "id": 201,
+    "ok": true
+  },
+  "ole-miss": {
+    "source": "espn",
+    "id": 145,
+    "ok": true
+  },
+  "south-carolina": {
+    "source": "espn",
+    "id": 2579,
+    "ok": true
+  },
+  "tennessee": {
+    "source": "espn",
+    "id": 2633,
+    "ok": true
+  },
+  "texas": {
+    "source": "espn",
+    "id": 251,
+    "ok": true
+  },
+  "texas-am": {
+    "source": "espn",
+    "id": 245,
+    "ok": true
+  },
+  "vanderbilt": {
+    "source": "espn",
+    "id": 238,
+    "ok": true
+  },
+  "illinois": {
+    "source": "espn",
+    "id": 356,
+    "ok": true
+  },
+  "indiana": {
+    "source": "espn",
+    "id": 84,
+    "ok": true
+  },
+  "iowa": {
+    "source": "espn",
+    "id": 2294,
+    "ok": true
+  },
+  "maryland": {
+    "source": "espn",
+    "id": 120,
+    "ok": true
+  },
+  "michigan": {
+    "source": "espn",
+    "id": 130,
+    "ok": true
+  },
+  "michigan-state": {
+    "source": "espn",
+    "id": 127,
+    "ok": true
+  },
+  "minnesota": {
+    "source": "espn",
+    "id": 135,
+    "ok": true
+  },
+  "nebraska": {
+    "source": "espn",
+    "id": 158,
+    "ok": true
+  },
+  "northwestern": {
+    "source": "espn",
+    "id": 77,
+    "ok": true
+  },
+  "ohio-state": {
+    "source": "espn",
+    "id": 194,
+    "ok": true
+  },
+  "oregon": {
+    "source": "espn",
+    "id": 2483,
+    "ok": true
+  },
+  "penn-state": {
+    "source": "espn",
+    "id": 213,
+    "ok": true
+  },
+  "purdue": {
+    "source": "espn",
+    "id": 2509,
+    "ok": true
+  },
+  "rutgers": {
+    "source": "espn",
+    "id": 164,
+    "ok": true
+  },
+  "ucla": {
+    "source": "espn",
+    "id": 26,
+    "ok": true
+  },
+  "usc": {
+    "source": "espn",
+    "id": 30,
+    "ok": true
+  },
+  "washington": {
+    "source": "espn",
+    "id": 264,
+    "ok": true
+  },
+  "wisconsin": {
+    "source": "espn",
+    "id": 275,
+    "ok": true
+  },
+  "boston-college": {
+    "source": "espn",
+    "id": 103,
+    "ok": true
+  },
+  "california": {
+    "source": "espn",
+    "id": 25,
+    "ok": true
+  },
+  "clemson": {
+    "source": "espn",
+    "id": 228,
+    "ok": true
+  },
+  "duke": {
+    "source": "espn",
+    "id": 150,
+    "ok": true
+  },
+  "florida-state": {
+    "source": "espn",
+    "id": 52,
+    "ok": true
+  },
+  "georgia-tech": {
+    "source": "espn",
+    "id": 59,
+    "ok": true
+  },
+  "louisville": {
+    "source": "espn",
+    "id": 97,
+    "ok": true
+  },
+  "miami": {
+    "source": "espn",
+    "id": 2390,
+    "ok": true
+  },
+  "nc-state": {
+    "source": "espn",
+    "id": 152,
+    "ok": true
+  },
+  "north-carolina": {
+    "source": "espn",
+    "id": 153,
+    "ok": true
+  },
+  "pittsburgh": {
+    "source": "espn",
+    "id": 221,
+    "ok": true
+  },
+  "smu": {
+    "source": "espn",
+    "id": 2567,
+    "ok": true
+  },
+  "stanford": {
+    "source": "espn",
+    "id": 24,
+    "ok": true
+  },
+  "syracuse": {
+    "source": "espn",
+    "id": 183,
+    "ok": true
+  },
+  "virginia": {
+    "source": "espn",
+    "id": 258,
+    "ok": true
+  },
+  "virginia-tech": {
+    "source": "espn",
+    "id": 259,
+    "ok": true
+  },
+  "wake-forest": {
+    "source": "espn",
+    "id": 154,
+    "ok": true
+  },
+  "arizona": {
+    "source": "espn",
+    "id": 12,
+    "ok": true
+  },
+  "arizona-state": {
+    "source": "espn",
+    "id": 9,
+    "ok": true
+  },
+  "baylor": {
+    "source": "espn",
+    "id": 239,
+    "ok": true
+  },
+  "byu": {
+    "source": "espn",
+    "id": 252,
+    "ok": true
+  },
+  "cincinnati": {
+    "source": "espn",
+    "id": 2132,
+    "ok": true
+  },
+  "colorado": {
+    "source": "espn",
+    "id": 38,
+    "ok": true
+  },
+  "houston": {
+    "source": "espn",
+    "id": 248,
+    "ok": true
+  },
+  "iowa-state": {
+    "source": "espn",
+    "id": 66,
+    "ok": true
+  },
+  "kansas": {
+    "source": "espn",
+    "id": 2305,
+    "ok": true
+  },
+  "kansas-state": {
+    "source": "espn",
+    "id": 2306,
+    "ok": true
+  },
+  "oklahoma-state": {
+    "source": "espn",
+    "id": 197,
+    "ok": true
+  },
+  "tcu": {
+    "source": "espn",
+    "id": 2628,
+    "ok": true
+  },
+  "texas-tech": {
+    "source": "espn",
+    "id": 2641,
+    "ok": true
+  },
+  "ucf": {
+    "source": "espn",
+    "id": 2116,
+    "ok": true
+  },
+  "utah": {
+    "source": "espn",
+    "id": 254,
+    "ok": true
+  },
+  "west-virginia": {
+    "source": "espn",
+    "id": 277,
+    "ok": true
+  },
+  "notre-dame": {
+    "source": "espn",
+    "id": 87,
+    "ok": true
+  }
+}

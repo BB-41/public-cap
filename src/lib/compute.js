@@ -1,0 +1,189 @@
+/**
+ * Public Cap compute layer
+ *
+ * Capacity is an ANNUAL FLOW, not a wealth stock:
+ *   media/conference + sponsorships/licensing + tickets/premium
+ *   + booked athletic contributions
+ *   + modeled extra alumni giving (booked contributions subtracted)
+ *
+ * Alumni net worth is NEVER shown as a silent point total.
+ * Official line = College Scorecard 10-year median earnings.
+ * Second line = modeled wealth RANGE (low/high).
+ *
+ * Cohort sketch (documented, labeled modeled):
+ *   living_alumni_proxy = undergrad_enrollment × 35 × 0.72 × 0.88
+ *   wealth_low  = proxy × official_earnings × 5.0   (SCF-like median W/I)
+ *   wealth_high = proxy × official_earnings × 12.0  (mean + top-1% bump)
+ *   giving_low  = 0.5% of wealth_low
+ *   giving_high = 2.0% of wealth_high
+ *   extra       = max(0, giving − booked_contributions)
+ */
+
+export const MODEL = {
+  careerYears: 35,
+  completionRate: 0.72,
+  survival: 0.88,
+  wtiLow: 5,
+  wtiHigh: 12,
+  giveLow: 0.005,
+  giveHigh: 0.02,
+  athleticsShare: 0.04,
+}
+
+export function val(field) {
+  if (!field || field.value == null) return 0
+  return Number(field.value) || 0
+}
+
+export function hasVal(field) {
+  return !!(field && field.value != null)
+}
+
+export function computeAlumni(school) {
+  const enroll = val(school.alumni.undergradEnrollment)
+  const earn = val(school.alumni.officialEarnings)
+  const proxy =
+    enroll * MODEL.careerYears * MODEL.completionRate * MODEL.survival
+  const wealthLow = proxy * earn * MODEL.wtiLow
+  const wealthHigh = proxy * earn * MODEL.wtiHigh
+  const giveLow = wealthLow * MODEL.giveLow
+  const giveHigh = wealthHigh * MODEL.giveHigh
+  const booked = hasVal(school.capacity.contributions)
+    ? val(school.capacity.contributions)
+    : 0
+  const athLow = giveLow * MODEL.athleticsShare
+  const athHigh = giveHigh * MODEL.athleticsShare
+  const extraLow = Math.max(0, athLow - booked)
+  const extraHigh = Math.max(0, athHigh - booked)
+  return {
+    proxy,
+    wealthLow,
+    wealthHigh,
+    giveLow,
+    giveHigh,
+    athLow,
+    athHigh,
+    bookedContributions: booked,
+    extraLow,
+    extraHigh,
+    extraMid: (extraLow + extraHigh) / 2,
+    subtractedBooked: booked > 0,
+  }
+}
+
+export function computeCapacity(school) {
+  const c = school.capacity
+  const media = val(c.mediaConference)
+  const spon = val(c.sponsorships)
+  const tick = val(c.tickets)
+  const contrib = val(c.contributions)
+  const alumni = computeAlumni(school)
+  const booked = media + spon + tick + contrib
+  const extra = alumni.extraMid
+  return {
+    media,
+    sponsorships: spon,
+    tickets: tick,
+    contributions: contrib,
+    booked,
+    extraAlumni: extra,
+    extraLow: alumni.extraLow,
+    extraHigh: alumni.extraHigh,
+    total: booked + extra,
+    totalLow: booked + alumni.extraLow,
+    totalHigh: booked + alumni.extraHigh,
+    alumni,
+    components: [
+      { key: 'media', label: 'Media / conference', value: media, field: c.mediaConference },
+      { key: 'spon', label: 'Sponsorships / licensing', value: spon, field: c.sponsorships },
+      { key: 'tix', label: 'Tickets / premium gate', value: tick, field: c.tickets },
+      { key: 'give', label: 'Athletic contributions booked', value: contrib, field: c.contributions },
+      {
+        key: 'extra',
+        label: alumni.subtractedBooked
+          ? 'Modeled extra alumni giving (net of booked)'
+          : 'Modeled alumni giving flow',
+        value: extra,
+        field: { confidence: 'modeled', notes: 'Midpoint of 0.5–2% wealth flow minus booked contributions.' },
+      },
+    ],
+  }
+}
+
+export function houseCap(meta, year = '2025-26') {
+  if (year === '2026-27') return val(meta.houseCap.y2026_27)
+  return val(meta.houseCap.y2025_26)
+}
+
+export function nilBooked(school) {
+  return hasVal(school.nil.booked) ? val(school.nil.booked) : null
+}
+
+export function nilModeled(school) {
+  return school?.nil?.modeled || null
+}
+
+export function ratios(school, meta) {
+  const cap = computeCapacity(school)
+  const nil = nilBooked(school)
+  const house = houseCap(meta)
+  const modeled = nilModeled(school)
+  return {
+    capacity: cap.total,
+    house,
+    nil,
+    modeled,
+    nilOverCapacity: nil == null ? null : nil / cap.total,
+    nilOverHouse: nil == null ? null : nil / house,
+    modeledMidOverCapacity: modeled ? modeled.mid / cap.total : null,
+    modeledMidOverHouse: modeled ? modeled.mid / house : null,
+  }
+}
+
+export function confidenceRollup(school) {
+  const fields = [
+    school.capacity.mediaConference,
+    school.capacity.sponsorships,
+    school.capacity.tickets,
+    school.capacity.contributions,
+    school.nil.booked,
+    school.coaches.football.pay,
+    school.coaches.football.buyout,
+  ]
+  const ranks = { reported: 0, estimated: 0, modeled: 0, pending: 0 }
+  for (const f of fields) {
+    const c = (f && f.confidence) || 'pending'
+    ranks[c] = (ranks[c] || 0) + 1
+  }
+  let primary = 'reported'
+  if (ranks.pending >= 3) primary = 'pending'
+  else if (ranks.estimated + ranks.modeled >= 3) primary = 'estimated'
+  return { ...ranks, primary }
+}
+
+export function collectSources(school, meta) {
+  const out = []
+  const seen = new Set()
+  function walk(node, label) {
+    if (!node || typeof node !== 'object') return
+    if (node.url && node.source && !seen.has(node.url + node.source)) {
+      seen.add(node.url + node.source)
+      out.push({
+        label,
+        source: node.source,
+        url: node.url,
+        asOf: node.asOf,
+        fiscalYear: node.fiscalYear,
+        confidence: node.confidence,
+        notes: node.notes,
+        window: node.window,
+      })
+    }
+    for (const [k, v] of Object.entries(node)) {
+      if (v && typeof v === 'object') walk(v, k)
+    }
+  }
+  walk(school, school.name)
+  walk(meta.houseCap, 'House cap')
+  return out
+}

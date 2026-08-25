@@ -1,0 +1,178 @@
+import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { money, moneyRange, pct, throughShort } from '../lib/format.js'
+import { val } from '../lib/compute.js'
+import Logo from '../components/Logo.jsx'
+import { defTitle } from '../lib/definitions.js'
+
+const COLS = [
+  { key: 'name', label: 'School', type: 'text' },
+  { key: 'conference', label: 'Conf.', type: 'text' },
+  { key: 'capacity', label: 'Capacity', type: 'num', def: 'capacity' },
+  { key: 'house', label: 'House cap', type: 'num', def: 'house' },
+  { key: 'nil', label: 'NIL booked', type: 'num', def: 'nil' },
+  { key: 'nilModeled', label: 'NIL modeled', type: 'num', def: 'nilModeled' },
+  { key: 'nilCap', label: 'NIL / cap.', type: 'num', def: 'nilCap' },
+  { key: 'nilHouse', label: 'NIL / House', type: 'num', def: 'nilHouse' },
+  { key: 'fbPay', label: 'FB pay', type: 'num', def: 'coachPay' },
+  { key: 'fbBuy', label: 'FB buyout', type: 'num', def: 'buyout' },
+]
+
+const CHIPS = [
+  { id: 'all', label: 'All' },
+  { id: 'SEC', label: 'SEC' },
+  { id: 'Big Ten', label: 'B1G' },
+  { id: 'ACC', label: 'ACC' },
+  { id: 'Big 12', label: 'Big 12' },
+  { id: 'ND', label: 'ND' },
+]
+
+export default function Home({ schools, house }) {
+  const [sort, setSort] = useState({ key: 'capacity', dir: 'desc' })
+  const [q, setQ] = useState('')
+  const [chip, setChip] = useState(() => new URLSearchParams(window.location.search).get('conf') || 'all')
+
+  const rows = useMemo(() => {
+    const needle = q.trim().toLowerCase()
+    const mapped = schools
+      .filter((s) => {
+        if (chip === 'ND') return s.id === 'notre-dame' || s.conference.startsWith('Independent')
+        if (chip !== 'all' && s.conference !== chip) return false
+        if (!needle) return true
+        return (
+          s.name.toLowerCase().includes(needle) ||
+          s.shortName.toLowerCase().includes(needle) ||
+          s.conference.toLowerCase().includes(needle) ||
+          (s.city || '').toLowerCase().includes(needle) ||
+          (s.abbr || '').toLowerCase().includes(needle)
+        )
+      })
+      .map((s) => ({
+        school: s,
+        name: s.name,
+        conference: s.conference,
+        capacity: s._cap.total,
+        house,
+        nil: s._ratios.nil,
+        nilModeled: s.nil.modeled?.mid ?? null,
+        nilModeledLow: s.nil.modeled?.low ?? null,
+        nilModeledHigh: s.nil.modeled?.high ?? null,
+        nilCap: s._ratios.nilOverCapacity,
+        nilHouse: s._ratios.nilOverHouse,
+        fbPay: val(s.coaches.football.pay),
+        fbBuy: val(s.coaches.football.buyout) || null,
+        fbThru: throughShort(s.coaches.football.term),
+        conf: s._conf,
+      }))
+    const { key, dir } = sort
+    mapped.sort((a, b) => {
+      const av = a[key]
+      const bv = b[key]
+      if (av == null && bv == null) return 0
+      if (av == null) return 1
+      if (bv == null) return -1
+      if (typeof av === 'string') return dir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av)
+      return dir === 'asc' ? av - bv : bv - av
+    })
+    return mapped
+  }, [schools, house, sort, q, chip])
+
+  function toggle(key) {
+    setSort((s) => (s.key === key ? { key, dir: s.dir === 'asc' ? 'desc' : 'asc' } : { key, dir: key === 'name' || key === 'conference' ? 'asc' : 'desc' }))
+  }
+
+  return (
+    <div className="page-wrap">
+      <section className="dek">
+        <h1 className="issue-hed">Who can actually write the check.</h1>
+        <p className="lede">
+          Two ceilings sit on every Power program now: the official House benefits cap
+          ($20.5M in 2025–26, ~$21.3M in 2026–27) and the school’s own annual economic
+          capacity. This table ranks all 68 Power 4 plus Notre Dame names on our desk —
+          real cited public numbers where we have them, clearly tagged estimates otherwise.
+        </p>
+        <div className="legend">
+          <span title={defTitle('reported')}><i className="dot reported" /> reported</span>
+          <span title={defTitle('estimated')}><i className="dot estimated" /> estimated</span>
+          <span title={defTitle('modeled')}><i className="dot modeled" /> modeled</span>
+          <span title={defTitle('pending')}><i className="dot pending" /> pending</span>
+        </div>
+        <div className="rank-tools">
+          <input
+            className="search"
+            type="search"
+            placeholder="Search school, city, or abbreviation…"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            aria-label="Search schools"
+          />
+          <div className="chips" role="tablist" aria-label="Conference filter">
+            {CHIPS.map((c) => (
+              <button
+                key={c.id}
+                type="button"
+                className={`chip ${chip === c.id ? 'on' : ''}`}
+                onClick={() => setChip(c.id)}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+          <div className="result-count">{rows.length} schools</div>
+        </div>
+      </section>
+
+      <div className="table-scroll">
+        <table className="rank">
+          <thead>
+            <tr>
+              {COLS.map((c) => (
+                <th key={c.key} className={c.type === 'num' ? 'num' : ''} onClick={() => toggle(c.key)} title={c.def ? defTitle(c.def) : undefined}>
+                  {c.label}
+                  {c.def ? <i className="info-mark" aria-hidden="true">i</i> : null}
+                  {sort.key === c.key ? (sort.dir === 'asc' ? ' ↑' : ' ↓') : ''}
+                </th>
+              ))}
+              <th>Mark</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.school.id}>
+                <td>
+                  <Link className="school-link" to={`/school/${r.school.id}`}>
+                    <Logo school={r.school} size={28} />
+                    <span>{r.school.name}</span>
+                  </Link>
+                  {r.school.private && <span className="pill">private</span>}
+                  {r.school.revenueGap && <span className="pill gap">rev. gap</span>}
+                </td>
+                <td className="conf">{r.conference === 'Independent / ACC' ? 'ND / ACC' : r.conference === 'Big Ten' ? 'B1G' : r.conference}</td>
+                <td className="num strong">{money(r.capacity)}</td>
+                <td className="num muted">{money(house)}</td>
+                <td className="num">{r.nil == null ? <span className="pending-cell">pending</span> : money(r.nil)}</td>
+                <td className="num modeled-cell" title={defTitle('nilModeled')}>{moneyRange(r.nilModeledLow, r.nilModeledHigh)}</td>
+                <td className="num">{pct(r.nilCap)}</td>
+                <td className="num">{pct(r.nilHouse)}</td>
+                <td className="num">
+                  {r.fbPay ? money(r.fbPay) : '—'}
+                  {r.fbThru && (
+                    <div className="term-compact" title={defTitle('coachTerm')}>
+                      {r.fbThru.length === 2 ? `thru ’${r.fbThru}` : r.fbThru}
+                    </div>
+                  )}
+                </td>
+                <td className="num">{r.fbBuy ? money(r.fbBuy) : '—'}</td>
+                <td><i className={`dot ${r.conf.primary}`} title={r.conf.primary} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="fine">
+        House cap shown is 2025–26 ($20.5M). Capacity includes a modeled extra-alumni
+        giving midpoint and will move when Category 15 / tickets land. Click a school.
+      </p>
+    </div>
+  )
+}
