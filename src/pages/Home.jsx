@@ -130,6 +130,7 @@ export default function Home({ schools, house, houseField, season, setSeason }) 
         <table className="rank">
           <thead>
             <tr>
+              <th className="rk" title="Rank in the current sort">#</th>
               {COLS.map((c) => (
                 <th key={c.key} className={c.type === 'num' ? 'num' : ''} onClick={() => toggle(c.key)} title={c.def ? defTitle(c.def) : undefined}>
                   {c.label}
@@ -141,8 +142,9 @@ export default function Home({ schools, house, houseField, season, setSeason }) 
             </tr>
           </thead>
           <tbody>
-            {rows.map((r) => (
+            {rows.map((r, i) => (
               <tr key={r.school.id}>
+                <td className="rk">{i + 1}</td>
                 <td>
                   <Link className="school-link" to={season === 2026 ? `/school/${r.school.id}` : `/school/${r.school.id}?season=${season}`}>
                     <Logo school={r.school} size={28} />

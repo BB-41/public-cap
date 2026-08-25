@@ -649,3 +649,14 @@ table.staff-table { max-width: 760px; margin: 8px 0 18px; }
   font-weight: 400;
   text-align: right;
 }
+
+table.rank th.rk,
+table.rank td.rk {
+  width: 2.2em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 13px;
+  padding-right: 10px;
+}
+table.rank th.rk { cursor: default; }
