@@ -89,6 +89,10 @@ export const DEFS = {
     label: 'Buyouts actually paid',
     text: 'Money the school (or a new employer, via offset) actually owes or has settled with a former coach after a firing — USA TODAY, The Athletic contract census, school 990, or local FOIA. Not the if-fired overhang on the current chair.',
   },
+  tape: {
+    label: 'Desk tape',
+    text: 'A dated log of filings that moved a Public Cap figure — booked NIL, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
+  },
   pending: {
     label: 'pending',
     text: 'We looked. We do not have a number. The cell stays empty.',

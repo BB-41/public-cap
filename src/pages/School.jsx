@@ -7,6 +7,8 @@ import { earningsBack } from '../lib/earningsBack.js'
 import Layers from '../components/Layers.jsx'
 import SeasonPicker from '../components/SeasonPicker.jsx'
 import { houseValueForSeason } from '../lib/seasons.js'
+import { EMPTY_TAPE, tapeForSchool } from '../lib/tape.js'
+import TapeItems from '../components/TapeItems.jsx'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -299,7 +301,7 @@ function Field({ field, fallback = '—' }) {
   )
 }
 
-export default function School({ schools, meta, season, setSeason }) {
+export default function School({ schools, meta, season, setSeason, tape }) {
   const { id } = useParams()
   const s = schools.find((x) => x.id === id)
   if (!s) return <div className="page-wrap"><p>School not on the desk.</p></div>
@@ -309,6 +311,7 @@ export default function School({ schools, meta, season, setSeason }) {
   const spec = s._season
   const nil = s._ratios.nil
   const sources = collectSources(s, meta)
+  const deskTape = tapeForSchool(tape, s.id)
   const maxBar = Math.max(cap.total, house, nil || 0, s.nil.modeled?.high || 0, 1)
 
   return (
@@ -648,6 +651,18 @@ export default function School({ schools, meta, season, setSeason }) {
       )}
 
       <Layers school={s} />
+
+      <section>
+        <h2 title={defTitle('tape')}>Desk tape</h2>
+        <p className="lede tight">
+          Filings that moved a Public Cap figure for this school. Not a news feed.
+        </p>
+        {deskTape.length ? (
+          <TapeItems items={deskTape} season={season} showSchool={false} />
+        ) : (
+          <p className="lede tight">{EMPTY_TAPE}</p>
+        )}
+      </section>
 
       <section>
         <h2>Sources</h2>

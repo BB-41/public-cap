@@ -1,0 +1,600 @@
+{
+  "meta": {
+    "product": "Public Cap desk tape",
+    "asOf": "2026-08-24",
+    "itemCount": 39,
+    "notes": [
+      "A dated log of filings that moved a Public Cap figure. Not a news feed.",
+      "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
+      "Incomplete dates stay year or year-month. No On3 / Opendorse / NIL Go / social."
+    ]
+  },
+  "items": [
+    {
+      "id": "ncaa-house-cap-2025-26",
+      "date": "2025-06",
+      "school": null,
+      "schoolName": null,
+      "kind": "house-cap",
+      "headline": "NCAA House Q&A sets the 2025–26 benefits cap at $20.5 million for every participating school.",
+      "figure": 20500000,
+      "confidence": "reported",
+      "source": {
+        "label": "NCAA House settlement Q&A",
+        "url": "https://on.ncaa.com/QA61325"
+      },
+      "field": "meta.houseCap.y2025_26"
+    },
+    {
+      "id": "ncaa-house-cap-2026-27",
+      "date": "2026",
+      "school": null,
+      "schoolName": null,
+      "kind": "house-cap",
+      "headline": "Year-two House cap posted as ~$21.3 million (~4% escalation); still estimated until the NCAA publishes it the same way it published $20.5M.",
+      "figure": 21300000,
+      "confidence": "estimated",
+      "source": {
+        "label": "College Sports Commission / The NIL Standard",
+        "url": "https://thenilstandard.com/guides/revenue-sharing-explained"
+      },
+      "field": "meta.houseCap.y2026_27"
+    },
+    {
+      "id": "louisville-booked-nil-2026-08-05",
+      "date": "2026-08-05",
+      "school": "louisville",
+      "schoolName": "Louisville",
+      "kind": "booked-nil",
+      "headline": "Courier-Journal FOIA books Louisville institutional NIL at $20.27 million for the House Year 1 window (Jul 1, 2025–Jul 1, 2026).",
+      "figure": 20270000,
+      "confidence": "reported",
+      "source": {
+        "label": "Courier-Journal FOIA",
+        "url": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/"
+      },
+      "field": "nil.booked"
+    },
+    {
+      "id": "kentucky-booked-nil-2026-08-05",
+      "date": "2026-08-05",
+      "school": "kentucky",
+      "schoolName": "Kentucky",
+      "kind": "booked-nil",
+      "headline": "Kentucky general counsel states $18 million across 686 revenue-share transactions, March 2025–July 1, 2026. Ledgers not released.",
+      "figure": 18000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Courier-Journal — UK counsel statement",
+        "url": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/"
+      },
+      "field": "nil.booked"
+    },
+    {
+      "id": "louisville-precap-nil-2026-01-27",
+      "date": "2026-01-27",
+      "school": "louisville",
+      "schoolName": "Louisville",
+      "kind": "booked-nil",
+      "headline": "Louisville FY2025 MFRS books $12.7 million Institutional NIL Revenue Share before the House clock. Does not count against the 2025–26 cap.",
+      "figure": 12700000,
+      "confidence": "reported",
+      "source": {
+        "label": "Courier-Journal — UofL NCAA financial report FY2025",
+        "url": "https://www.courier-journal.com/story/sports/college/louisville/2026/01/27/university-of-louisville-cardinals-nil-budget-uofl-basketball-college-football-payrolls-ncaa-revenue/88300679007/"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "arkansas-paid-buyout-pittman-2026-03-03",
+      "date": "2026-03-03",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "paid-buyout",
+      "headline": "Arkansas paying Sam Pittman’s settled $7.7 million buyout over two years (no offset).",
+      "figure": 7700000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "auburn-paid-buyout-freeze-2026-03-03",
+      "date": "2026-03-03",
+      "school": "auburn",
+      "schoolName": "Auburn",
+      "kind": "paid-buyout",
+      "headline": "Auburn paying Hugh Freeze’s $15.8 million buyout. No offset.",
+      "figure": 15800000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "florida-paid-buyout-napier-2026-03-03",
+      "date": "2026-03-03",
+      "school": "florida",
+      "schoolName": "Florida",
+      "kind": "paid-buyout",
+      "headline": "Florida paying Billy Napier’s $21.2 million buyout — about half in 30 days, then $2.5 million a year through 2028.",
+      "figure": 21200000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "kentucky-paid-buyout-stoops-2026-03-03",
+      "date": "2026-03-03",
+      "school": "kentucky",
+      "schoolName": "Kentucky",
+      "kind": "paid-buyout",
+      "headline": "Kentucky paying Mark Stoops’s $37.6 million guaranteed buyout, stretched to April 2031.",
+      "figure": 37600000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "lsu-paid-buyout-kelly-2026-03-03",
+      "date": "2026-03-03",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "paid-buyout",
+      "headline": "LSU paying Brian Kelly’s ~$53.2 million without-cause buyout over six years into 2031.",
+      "figure": 53200000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "texas-am-paid-buyout-fisher-2026-03-03",
+      "date": "2026-03-03",
+      "school": "texas-am",
+      "schoolName": "Texas A&M",
+      "kind": "paid-buyout",
+      "headline": "Texas A&M still paying Jimbo Fisher’s $77.6 million 2023 buyout through 2031. Contract had no offset.",
+      "figure": 77600000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "michigan-paid-buyout-moore-2026-03-03",
+      "date": "2026-03-03",
+      "school": "michigan",
+      "schoolName": "Michigan",
+      "kind": "paid-buyout",
+      "headline": "Michigan owes $0 on Sherrone Moore’s firing — for cause, no buyout.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "michigan-state-paid-buyout-smith-2026-03-03",
+      "date": "2026-03-03",
+      "school": "michigan-state",
+      "schoolName": "Michigan State",
+      "kind": "paid-buyout",
+      "headline": "Michigan State’s Jonathan Smith buyout stands at $33 million, unpaid as of the March 2026 census, duty to mitigate.",
+      "figure": 33000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "penn-state-paid-buyout-franklin-2026-03-03",
+      "date": "2026-03-03",
+      "school": "penn-state",
+      "schoolName": "Penn State",
+      "kind": "paid-buyout",
+      "headline": "Penn State settled James Franklin at about $9 million over three years after the Virginia Tech hire (headline max was $48.6 million).",
+      "figure": 9000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "ucla-paid-buyout-foster-2026-03-03",
+      "date": "2026-03-03",
+      "school": "ucla",
+      "schoolName": "UCLA",
+      "kind": "paid-buyout",
+      "headline": "UCLA paying DeShaun Foster’s $7.4 million buyout through 2028, subject to offset.",
+      "figure": 7400000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "california-paid-buyout-wilcox-2026-03-03",
+      "date": "2026-03-03",
+      "school": "california",
+      "schoolName": "California",
+      "kind": "paid-buyout",
+      "headline": "California paying Justin Wilcox’s $10.8 million buyout through 2027, subject to offset.",
+      "figure": 10800000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "north-carolina-paid-buyout-davis-2026-03-24",
+      "date": "2026-03-24",
+      "school": "north-carolina",
+      "schoolName": "North Carolina",
+      "kind": "paid-buyout",
+      "headline": "North Carolina owes Hubert Davis $5.312 million after the March 2026 firing, per the contract obtained by USA TODAY.",
+      "figure": 5312000,
+      "confidence": "reported",
+      "source": {
+        "label": "USA TODAY — UNC contract",
+        "url": "https://www.usatoday.com/story/sports/ncaab/2026/03/24/north-carolina-basketball-fires-hubert-davis-unc-tar-heels-search-for-new-coach/89256794007/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "virginia-tech-paid-buyout-pry-2026-03-03",
+      "date": "2026-03-03",
+      "school": "virginia-tech",
+      "schoolName": "Virginia Tech",
+      "kind": "paid-buyout",
+      "headline": "Virginia Tech settled Brent Pry at $3.1 million over two years after he returned as Franklin’s coordinator (headline $6 million).",
+      "figure": 3100000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "oklahoma-state-paid-buyout-gundy-2026-03-03",
+      "date": "2026-03-03",
+      "school": "oklahoma-state",
+      "schoolName": "Oklahoma State",
+      "kind": "paid-buyout",
+      "headline": "Oklahoma State paying Mike Gundy’s $15 million buyout over three years, subject to offset.",
+      "figure": 15000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic contract census",
+        "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "texas-tech-naming-galaxy-2026-07-17",
+      "date": "2026-07-17",
+      "school": "texas-tech",
+      "schoolName": "Texas Tech",
+      "kind": "naming",
+      "headline": "Texas Tech files a Galaxy Stadium naming deal: 15 years, around $75 million (~$5 million AAV). Replaces Jones AT&T Stadium.",
+      "figure": 75000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Sports Business Journal",
+        "url": "https://www.sportsbusinessjournal.com/Articles/2026/07/17/texas-tech-to-announce-new-football-stadium-naming-rights-deal/"
+      },
+      "field": "layers.apparel.naming"
+    },
+    {
+      "id": "indiana-naming-merchants-2026-07-17",
+      "date": "2026-07-17",
+      "school": "indiana",
+      "schoolName": "Indiana",
+      "kind": "naming",
+      "headline": "Indiana’s Merchants Bank Field naming: 20 years / $50 million (playing surface, not the bowl). AAV $2.5 million if spread flat.",
+      "figure": 50000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Sports Business Journal",
+        "url": "https://www.sportsbusinessjournal.com/Articles/2026/07/17/texas-tech-to-announce-new-football-stadium-naming-rights-deal/"
+      },
+      "field": "layers.apparel.naming"
+    },
+    {
+      "id": "arkansas-naming-communityamerica-2026-06-25",
+      "date": "2026-06-25",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "naming",
+      "headline": "Arkansas files a $70 million / 14-year CommunityAmerica stadium naming (~$5.4 million AAV). Name changes July 1, 2027.",
+      "figure": 70000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arkansas Democrat-Gazette / WholeHogSports",
+        "url": "https://www.arkansasonline.com/news/2026/jun/25/arkansas-football-stadium-naming-rights-deal-community-america-razorback-stadium-value/"
+      },
+      "field": "layers.apparel.naming"
+    },
+    {
+      "id": "arizona-naming-casino-del-sol-2025-11-17",
+      "date": "2025-11-17",
+      "school": "arizona",
+      "schoolName": "Arizona",
+      "kind": "naming",
+      "headline": "Arizona Athletics release: Casino Del Sol Stadium naming, $60 million-plus over 20 years.",
+      "figure": 60000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arizona Athletics",
+        "url": "https://arizonawildcats.com/news/2025/11/17/arizona-athletics-and-casino-del-sol-announce-transformative-60-million-plus-stadium-naming-rights-partnership"
+      },
+      "field": "layers.apparel.naming"
+    },
+    {
+      "id": "illinois-naming-gies-2025-09-09",
+      "date": "2025-09-09",
+      "school": "illinois",
+      "schoolName": "Illinois",
+      "kind": "naming",
+      "headline": "Illinois Athletics books a $100 million Larry Gies gift; stadium renamed Gies Memorial Stadium. A gift, not a commercial AAV.",
+      "figure": 100000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Illinois Athletics",
+        "url": "https://fightingillini.com/news/2025/9/9/larry-gies-makes-transformational-100-million-gift-to-illinois-athletics"
+      },
+      "field": "layers.apparel.naming"
+    },
+    {
+      "id": "south-carolina-apparel-nike-2026-07-01",
+      "date": "2026-07-01",
+      "school": "south-carolina",
+      "schoolName": "South Carolina",
+      "kind": "apparel",
+      "headline": "South Carolina’s 10-year Nike partnership begins. Guaranteed product + cash + supplement $77.5 million / 10 ($7.75 million AAV).",
+      "figure": 7750000,
+      "confidence": "reported",
+      "source": {
+        "label": "The State",
+        "url": "https://www.thestate.com/sports/college/university-of-south-carolina/usc-football/article311795343.html"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "texas-tech-apparel-adidas-2024-12-13",
+      "date": "2024-12-13",
+      "school": "texas-tech",
+      "schoolName": "Texas Tech",
+      "kind": "apparel",
+      "headline": "Texas Tech FOIA: 10-year Adidas deal signed Dec. 6, 2024 — $59.25 million ($50 million product + $9.25 million cash).",
+      "figure": 59250000,
+      "confidence": "reported",
+      "source": {
+        "label": "Memphis Commercial Appeal / FOIA",
+        "url": "https://www.commercialappeal.com/story/sports/college/red-raiders/2024/12/13/texas-tech-football-adidas-10-year-contract-details-signed-dec-6/74264544007/"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "illinois-apparel-nike-2023",
+      "date": "2023",
+      "school": "illinois",
+      "schoolName": "Illinois",
+      "kind": "apparel",
+      "headline": "News-Gazette FOIA: Illinois Nike allotment rises $100k a year to $4.9 million in 2025–26.",
+      "figure": 4900000,
+      "confidence": "reported",
+      "source": {
+        "label": "News-Gazette FOIA apparel contracts",
+        "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "ohio-state-apparel-nike-2023",
+      "date": "2023",
+      "school": "ohio-state",
+      "schoolName": "Ohio State",
+      "kind": "apparel",
+      "headline": "News-Gazette FOIA: Ohio State Nike allotment cited at $6.1 million.",
+      "figure": 6100000,
+      "confidence": "reported",
+      "source": {
+        "label": "News-Gazette FOIA apparel contracts",
+        "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "iowa-apparel-nike-2023",
+      "date": "2023",
+      "school": "iowa",
+      "schoolName": "Iowa",
+      "kind": "apparel",
+      "headline": "News-Gazette FOIA: Iowa Nike allotment cited at $3.4 million.",
+      "figure": 3400000,
+      "confidence": "reported",
+      "source": {
+        "label": "News-Gazette FOIA apparel contracts",
+        "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "north-carolina-apparel-nike-2023",
+      "date": "2023",
+      "school": "north-carolina",
+      "schoolName": "North Carolina",
+      "kind": "apparel",
+      "headline": "News-Gazette FOIA: UNC Nike annual cash compensation $3.25 million (2023–24). Product allotment not extracted.",
+      "figure": 3250000,
+      "confidence": "reported",
+      "source": {
+        "label": "News-Gazette FOIA apparel contracts",
+        "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "ohio-state-subsidy-fy2025",
+      "date": "2026-01-30",
+      "school": "ohio-state",
+      "schoolName": "Ohio State",
+      "kind": "subsidy",
+      "headline": "Ohio State FY25 NCAA Membership Report: athletics is self-funded — $0 student fees, $0 institutional support, $0 tax dollars.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Ohio State Athletics / OSU News",
+        "url": "https://news.osu.edu/ohio-state-athletics-sets-record-with-336m-in-fy25-revenue-after-national-championship-season/"
+      },
+      "field": "layers.subsidy"
+    },
+    {
+      "id": "rutgers-subsidy-fy2025",
+      "date": "2025",
+      "school": "rutgers",
+      "schoolName": "Rutgers",
+      "kind": "subsidy",
+      "headline": "Rutgers FY2025 MFRS allocated stack: $15.8 million student fees, $7 million university budget, $8 million state — $30.8 million cited.",
+      "figure": 30800000,
+      "confidence": "reported",
+      "source": {
+        "label": "Extra Points / NJ.com — Rutgers FY2025 NCAA/MFRS",
+        "url": "https://www.extrapointsmb.com/p/wait-why-is-rutgers-so-dang-broke"
+      },
+      "field": "layers.subsidy"
+    },
+    {
+      "id": "louisville-subsidy-fee-2025-07-18",
+      "date": "2025-07-18",
+      "school": "louisville",
+      "schoolName": "Louisville",
+      "kind": "subsidy",
+      "headline": "Louisville sets a $200-per-semester athletic fee for full-time on-campus students (was $25). Department total not published; we do not invent the rollup.",
+      "figure": 200,
+      "confidence": "reported",
+      "source": {
+        "label": "Courier-Journal / UofL bursar",
+        "url": "https://www.courier-journal.com/story/news/education/2025/07/18/uofl-implements-200-student-athletics-fee-on-top-of-tuition/85275732007/"
+      },
+      "field": "layers.subsidy.feeRate",
+      "figureNote": "/ semester"
+    },
+    {
+      "id": "kentucky-contract-pope-2025-10",
+      "date": "2025-10",
+      "school": "kentucky",
+      "schoolName": "Kentucky",
+      "kind": "contract",
+      "headline": "Kentucky posts Mark Pope’s FY2025–26 employment agreement PDF. Term on the desk through 2030 after the Elite Eight auto-year.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "University of Kentucky employment agreement PDF",
+        "url": "https://legal.uky.edu/sites/default/files/2025-10/pope-fy2526.pdf"
+      },
+      "field": "coaches.mbb.term"
+    },
+    {
+      "id": "tennessee-contract-heupel-2025-08",
+      "date": "2025-08",
+      "school": "tennessee",
+      "schoolName": "Tennessee",
+      "kind": "contract",
+      "headline": "Tennessee posts Josh Heupel Amendment 3: term extended to January 31, 2030 / June 30, 2030.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "University of Tennessee employment agreement amendment",
+        "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "tennessee-contract-barnes-2025-08",
+      "date": "2025-08",
+      "school": "tennessee",
+      "schoolName": "Tennessee",
+      "kind": "contract",
+      "headline": "Tennessee posts Rick Barnes’s employment agreement PDF. Initial term through April 15, 2028, then a three-year rolling structure.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "University of Tennessee employment agreement",
+        "url": "https://tennessee.edu/wp-content/uploads/2025/08/Employment-Agreement_Rick-Barnes_2025-28.pdf"
+      },
+      "field": "coaches.mbb.term"
+    },
+    {
+      "id": "oregon-contract-altman-2025-08",
+      "date": "2025-08",
+      "school": "oregon",
+      "schoolName": "Oregon",
+      "kind": "contract",
+      "headline": "Oregon public-records desk posts Dana Altman’s 2016–28 employment agreement PDF. Term on the desk through 2028.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "University of Oregon public contract PDF",
+        "url": "https://publicrecords.uoregon.edu/sites/default/files/2025-08/altman-dana-2016-28.pdf"
+      },
+      "field": "coaches.mbb.term"
+    },
+    {
+      "id": "oregon-contract-lanning-2025-05",
+      "date": "2025-05",
+      "school": "oregon",
+      "schoolName": "Oregon",
+      "kind": "contract",
+      "headline": "Oregon public-records desk posts Dan Lanning’s employment agreement PDF. Six-year extension through the 2030 season.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "University of Oregon public contract PDF",
+        "url": "https://publicrecords.uoregon.edu/sites/default/files/2025-05/lanning-dan-2021-31_0.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "kentucky-contract-stoops-2023-01",
+      "date": "2023-01",
+      "school": "kentucky",
+      "schoolName": "Kentucky",
+      "kind": "contract",
+      "headline": "Kentucky posts the Mark Stoops employment-agreement packet (through June 2031). Later firing buyout is a separate tape line.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "University of Kentucky employment agreement PDF",
+        "url": "https://legal.uky.edu/sites/default/files/2023-01/2022.11%20Stoops%2C%20Mark%20Orig%20thru%20Amend%206%20%28fixed%29%201.30.23.pdf"
+      },
+      "field": "coaches.football.term"
+    }
+  ]
+}

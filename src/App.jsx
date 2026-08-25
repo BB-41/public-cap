@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx'
 import School from './pages/School.jsx'
 import Compare from './pages/Compare.jsx'
 import Methods from './pages/Methods.jsx'
+import Tape from './pages/Tape.jsx'
 import { computeCapacity, confidenceRollup, ratios } from './lib/compute.js'
 import { computeModeledNil } from './lib/nilModel.js'
 import { allocateNamedPlayers, namedRosterOnly, scaleRosterToModeled } from './lib/nilRoster.js'
@@ -22,6 +23,7 @@ export default function App() {
   const [data, setData] = useState(null)
   const [rosters, setRosters] = useState(null)
   const [layers, setLayers] = useState(null)
+  const [tape, setTape] = useState(null)
   const [rosterYear, setRosterYear] = useState(null)
   const [err, setErr] = useState(null)
 
@@ -68,6 +70,13 @@ export default function App() {
       .then((r) => (r.ok ? r.json() : { schools: {} }))
       .then(setLayers)
       .catch(() => setLayers({ schools: {} }))
+  }, [])
+
+  useEffect(() => {
+    fetch('/data/tape.json')
+      .then((r) => (r.ok ? r.json() : { items: [] }))
+      .then(setTape)
+      .catch(() => setTape({ items: [] }))
   }, [])
 
   const enriched = useMemo(() => {
@@ -141,6 +150,7 @@ export default function App() {
         <nav className="nav">
           <NavLink to={{ pathname: '/', search: params.toString() ? `?${params}` : '' }} end>Rank list</NavLink>
           <NavLink to={{ pathname: '/compare', search: params.toString() ? `?${params}` : '' }}>Compare</NavLink>
+          <NavLink to={{ pathname: '/tape', search: params.toString() ? `?${params}` : '' }}>Tape</NavLink>
           <NavLink to={{ pathname: '/methods', search: params.toString() ? `?${params}` : '' }}>Methods</NavLink>
         </nav>
       </header>
@@ -166,6 +176,7 @@ export default function App() {
               meta={data.meta}
               season={season}
               setSeason={setSeason}
+              tape={tape?.items || []}
             />
           }
         />
@@ -182,6 +193,7 @@ export default function App() {
             />
           }
         />
+        <Route path="/tape" element={<Tape items={tape?.items || []} season={season} />} />
         <Route path="/methods" element={<Methods meta={data.meta} />} />
       </Routes>
       <footer className="site-foot">
