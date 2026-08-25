@@ -1,7 +1,7 @@
 {
   "meta": {
     "product": "Public Cap layers",
-    "asOf": "2026-08-24",
+    "asOf": "2026-08-25",
     "cycle": "2025-26 / 2026 football portal; 2025 football season; FY2025\u201326 money",
     "notes": [
       "Every number carries source, date, confidence (reported|estimated|modeled|pending).",
@@ -10,7 +10,7 @@
       "Football wins from Wikipedia 2025 FBS standings (final) and the NCAA standings PDF.",
       "Wins per dollar is computed: 2025 FB wins \u00f7 booked NIL if present else modeled mid, and \u00f7 annual capacity.",
       "Buyouts here are money actually owed/paid after a firing or settlement \u2014 not the if-fired overhang on the current coach.",
-      "Student fees / institutional support use KN/MFRS category definitions. Rutgers (fees + institutional + state), Louisville (published fee rate), and Ohio State ($0 self-funded) have cited subsidy figures on this desk."
+      "Student fees / institutional support use KN/MFRS category definitions. FY2025 figures are from Knight-Newhouse school-profile revenue charts (student fees = MFRS line 3; institutional/government support = KN combined lines 2+4+6+6A). EADA 2024-25 public file has department totals only \u2014 no fee/support split. Rutgers keeps the Extra Points 3-way split (fees / university / state). Louisville keeps the published $200/semester fee rate plus KN FY2025 dollars. Ohio State keeps the department $0 self-funded statement (KN residual $112,280 noted). Privates and Pittsburgh stay pending."
     ],
     "sourcesIndex": {
       "wikiSeason": "https://en.wikipedia.org/wiki/2025_NCAA_Division_I_FBS_football_season",
@@ -18,7 +18,10 @@
       "ncaaPortal": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
       "foxPortal": "https://www.foxsports.com/stories/college-football/college-football-transfer-portal-tracker-2025-2026",
       "athleticBuyouts": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
-      "knAbout": "https://knightnewhousedata.org/about-the-data"
+      "knAbout": "https://knightnewhousedata.org/about-the-data",
+      "knHome": "https://knightnewhousedata.org/",
+      "eadaData": "https://ope.ed.gov/athletics/#/datafile/list",
+      "eada2025": "https://ope.ed.gov/athletics/api/dataFiles/file?fileName=EADA_All_Data_Combined_2024-2025_SAS_SPSS_EXCEL.zip"
     }
   },
   "schools": {
@@ -178,28 +181,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-alabama",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 29988389,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-alabama",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-alabama",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -295,28 +302,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-arkansas",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-arkansas",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-arkansas",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
       "buyoutsPaid": [
         {
@@ -413,28 +425,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 7318752,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/auburn-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 5023187,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/auburn-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/sec/auburn-university",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": [
         {
@@ -532,28 +548,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 2571952,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-florida",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 8760154,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-florida",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-florida",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": [
         {
@@ -639,28 +659,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 3871937,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-georgia",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-georgia",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-georgia",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Institutional/government support is $0 on the KN FY2025 tape. Student fees are the allocated-revenue lane."
       },
       "buyoutsPaid": []
     },
@@ -744,28 +769,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-kentucky",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 203792,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-kentucky",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-kentucky",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": [
         {
@@ -905,28 +934,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/louisiana-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/louisiana-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/sec/louisiana-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
       "buyoutsPaid": [
         {
@@ -1012,28 +1046,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/mississippi-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/mississippi-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/sec/mississippi-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
       "buyoutsPaid": []
     },
@@ -1104,28 +1143,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-missouri-columbia",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 28212444,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-missouri-columbia",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-missouri-columbia",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -1197,28 +1240,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-oklahoma",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-oklahoma",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-oklahoma",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
       "buyoutsPaid": []
     },
@@ -1290,28 +1338,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-mississippi",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 5734050,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-mississippi",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-mississippi",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -1394,28 +1446,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-south-carolina",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 43704106,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-south-carolina",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-south-carolina",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -1486,28 +1542,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 1000000,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-tennessee",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 7137633,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-tennessee",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-tennessee",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -1645,28 +1705,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-texas-austin",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-texas-austin",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/sec/university-texas-austin",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
       "buyoutsPaid": []
     },
@@ -1738,28 +1803,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/sec/texas-m-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 4995734,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/sec/texas-m-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/sec/texas-m-university",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": [
         {
@@ -1847,26 +1916,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -1949,28 +2018,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 3639531,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-illinois-urbana-champaign",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 7992967,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-illinois-urbana-champaign",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-illinois-urbana-champaign",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -2131,28 +2204,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/indiana-university-bloomington",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 27946488,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/indiana-university-bloomington",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/indiana-university-bloomington",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -2223,28 +2300,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 650000,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-iowa",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 2198923,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-iowa",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-iowa",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -2316,28 +2397,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 12230926,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-maryland-college-park",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 6428488,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-maryland-college-park",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-maryland-college-park",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -2433,28 +2518,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-michigan",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 240332,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-michigan",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-michigan",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": [
         {
@@ -2552,28 +2641,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/michigan-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 7693718,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/michigan-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/michigan-state-university",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": [
         {
@@ -2659,28 +2752,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-minnesota-twin-cities",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 11657831,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-minnesota-twin-cities",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-minnesota-twin-cities",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -2764,28 +2861,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-nebraska-lincoln",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-nebraska-lincoln",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-nebraska-lincoln",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
       "buyoutsPaid": []
     },
@@ -2859,26 +2961,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -3061,7 +3163,7 @@
           "asOf": "2026-01-30",
           "fiscalYear": "FY2025"
         },
-        "notes": "Where the check did not come from: no student-fee or state/tuition subsidy on the FY25 tape, per the department."
+        "notes": "Department FY25 release: self-funded, no tuition or tax dollars. KN FY2025 school profile shows $0 student fees and a $112,280 residual institutional/government line (likely indirect support, not tuition/tax). Desk keeps the school $0 on all three cells."
       },
       "buyoutsPaid": []
     },
@@ -3210,28 +3312,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-oregon",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 589167,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-oregon",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-oregon",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -3345,28 +3451,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/pennsylvania-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/pennsylvania-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/pennsylvania-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
       "buyoutsPaid": [
         {
@@ -3451,28 +3562,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/purdue-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/purdue-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/purdue-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
       "buyoutsPaid": []
     },
@@ -3549,7 +3665,8 @@
           "source": "Extra Points citing Rutgers FY2025 NCAA/MFRS release \u2014 $15.8M student fees",
           "url": "https://www.extrapointsmb.com/p/wait-why-is-rutgers-so-dang-broke",
           "asOf": "FY2025",
-          "notes": "KN Category: student fees (MFRS line 3)."
+          "notes": "KN Category: student fees (MFRS line 3).",
+          "fiscalYear": "FY2025"
         },
         "institutionalSupport": {
           "value": 7000000,
@@ -3557,7 +3674,8 @@
           "source": "Extra Points / NJ.com \u2014 $7M from the university general budget",
           "url": "https://www.extrapointsmb.com/p/wait-why-is-rutgers-so-dang-broke",
           "asOf": "FY2025",
-          "notes": "KN Category: direct institutional support."
+          "notes": "KN Category: direct institutional support.",
+          "fiscalYear": "FY2025"
         },
         "governmentSupport": {
           "value": 8000000,
@@ -3565,9 +3683,10 @@
           "source": "Extra Points / NJ.com \u2014 $8M from the state budget",
           "url": "https://www.extrapointsmb.com/p/wait-why-is-rutgers-so-dang-broke",
           "asOf": "FY2025",
-          "notes": "KN Category: direct government support."
+          "notes": "KN Category: direct government support.",
+          "fiscalYear": "FY2025"
         },
-        "notes": "Extra Points: those three lines plus a $47.2M operating shortfall produced a $78M FY2025 athletics deficit. This is where the check really came from."
+        "notes": "Extra Points 3-way split kept (more granular than KN). KN FY2025 school profile cross-check: student fees $15,835,271; institutional/government combined $15,035,273 (\u2248 $7M university + $8M state)."
       },
       "buyoutsPaid": []
     },
@@ -3695,28 +3814,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 1000000,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-california-los-angeles",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 30060000,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-california-los-angeles",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-california-los-angeles",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": [
         {
@@ -3816,26 +3939,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -3907,28 +4030,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-washington",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 10781975,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-washington",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-washington",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -4000,28 +4127,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-wisconsin-madison",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 10421859,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-wisconsin-madison",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-ten/university-wisconsin-madison",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -4095,26 +4226,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -4186,28 +4317,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 444374,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-california-berkeley",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 42665030,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-california-berkeley",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-california-berkeley",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": [
         {
@@ -4292,28 +4427,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/acc/clemson-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 20180572,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/acc/clemson-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/acc/clemson-university",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -4387,26 +4526,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -4478,28 +4617,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 8630739,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/acc/florida-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 33874294,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/acc/florida-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/acc/florida-state-university",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -4582,28 +4725,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 6947958,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/acc/georgia-institute-technology",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 9551237,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/acc/georgia-institute-technology",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/acc/georgia-institute-technology",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -4675,26 +4822,30 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Courier-Journal / UofL bursar \u2014 $200 per semester athletic fee for full-time on-campus students starting 2025\u201326. Department total not published on this desk.",
-          "url": "https://www.courier-journal.com/story/news/education/2025/07/18/uofl-implements-200-student-athletics-fee-on-top-of-tuition/85275732007/",
-          "asOf": "2025-07-18",
-          "notes": "Fee rate is reported. Rollup dollars pending enrollment math we will not invent."
+          "value": 903695,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-louisville",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 department total on the KN tape (prior $25 fee era). The published $200/semester athletic fee starts 2025\u201326 / FY2026 and is not rolled into a fake total."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null
+          "value": 5965092,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-louisville",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government, direct institutional, and indirect institutional support into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-louisville",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
         "feeRate": {
           "value": 200,
@@ -4705,7 +4856,7 @@
           "asOf": "2025-07-18",
           "notes": "Replaced a $25 fee. Officials said it aligns with an ACC average of $204/semester (WDRB)."
         },
-        "notes": "New allocated-revenue lane. KN student-fees category once the FY2026 MFRS lands."
+        "notes": "KN FY2025 allocated-revenue dollars plus the published FY2026 fee rate. Rate is not multiplied by enrollment."
       },
       "buyoutsPaid": []
     },
@@ -4778,26 +4929,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -4869,28 +5020,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 7591574,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/acc/north-carolina-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 9471881,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/acc/north-carolina-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/acc/north-carolina-state-university",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -4961,28 +5116,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 8504951,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-north-carolina-chapel-hill",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 1918664,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-north-carolina-chapel-hill",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-north-carolina-chapel-hill",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": [
         {
@@ -5070,26 +5229,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
+          "source": "Pennsylvania public; Knight-Newhouse profile has no FY2024/FY2025 allocated-revenue chart (state records exemption). EADA 2024\u201325 public file has department totals only \u2014 no fee/support split.",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-pittsburgh",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Pending a public MFRS split. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-pittsburgh",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Pending a public MFRS split. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -5163,26 +5322,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -5256,26 +5415,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -5349,26 +5508,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -5440,28 +5599,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 17335632,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-virginia",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 19881360,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-virginia",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/acc/university-virginia",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -5545,28 +5708,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 15660745,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/acc/virginia-polytechnic-institute-and-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 8434834,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/acc/virginia-polytechnic-institute-and-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/acc/virginia-polytechnic-institute-and-state-university",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": [
         {
@@ -5654,26 +5821,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -5757,28 +5924,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 3172565,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-arizona",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 31382738,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-arizona",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-arizona",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -5862,28 +6033,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 11765132,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/arizona-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 47961924,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/arizona-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-12/arizona-state-university",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -5957,26 +6132,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -6050,26 +6225,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -6141,28 +6316,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-cincinnati",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 51740793,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-cincinnati",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-cincinnati",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -6234,28 +6413,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 1710502,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-colorado-boulder",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 41778735,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-colorado-boulder",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-colorado-boulder",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -6327,28 +6510,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 8135241,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-houston",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 33036328,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-houston",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-houston",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -6432,28 +6619,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 1819397,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/iowa-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/iowa-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/big-12/iowa-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Institutional/government support is $0 on the KN FY2025 tape. Student fees are the allocated-revenue lane."
       },
       "buyoutsPaid": []
     },
@@ -6525,28 +6717,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-kansas",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 1892752,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-kansas",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-kansas",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -6641,28 +6837,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/kansas-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/kansas-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/big-12/kansas-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
       "buyoutsPaid": []
     },
@@ -6755,28 +6956,33 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 87500,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/oklahoma-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/oklahoma-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
+          "url": "https://knightnewhousedata.org/fbs/big-12/oklahoma-state-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Institutional/government support is $0 on the KN FY2025 tape. Student fees are the allocated-revenue lane."
       },
       "buyoutsPaid": [
         {
@@ -6876,26 +7082,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     },
@@ -6990,28 +7196,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/texas-tech-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 14792073,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/texas-tech-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-12/texas-tech-university",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
       "buyoutsPaid": []
     },
@@ -7095,28 +7305,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 23675952,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-central-florida",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 13155214,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-central-florida",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-central-florida",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -7188,28 +7402,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 6458932,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-utah",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 6168381,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-utah",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-12/university-utah",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -7281,28 +7499,32 @@
       },
       "subsidy": {
         "studentFees": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "value": 3948358,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/west-virginia-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN Category: student fees (MFRS line 3)."
         },
         "institutionalSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "value": 4200000,
+          "confidence": "reported",
+          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+          "url": "https://knightnewhousedata.org/fbs/big-12/west-virginia-university",
+          "asOf": "FY2025",
+          "fiscalYear": "FY2025",
+          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": "https://knightnewhousedata.org/about-the-data",
-          "asOf": null
+          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
+          "url": "https://knightnewhousedata.org/fbs/big-12/west-virginia-university",
+          "asOf": null,
+          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
       "buyoutsPaid": []
     },
@@ -7420,26 +7642,26 @@
         "studentFees": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse / NCAA MFRS Category 3 (student fees). KN bulk download is CAPTCHA-gated; no school PDF line extracted on this desk.",
+          "source": "Private institution. Knight-Newhouse does not publish MFRS allocated-revenue categories. EADA 2024\u201325 public file (ope.ed.gov athletics) has department totals only \u2014 no student-fee / institutional-support split.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null,
-          "notes": "Empty means we do not have a number, not that the subsidy is zero."
+          "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
         },
         "institutionalSupport": {
           "value": null,
           "confidence": "pending",
-          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not extracted.",
+          "source": "Knight-Newhouse institutional/government support (MFRS allocated revenue). Not published on this profile for FY2024/FY2025.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
         "governmentSupport": {
           "value": null,
           "confidence": "pending",
-          "source": null,
+          "source": "No MFRS Line 2 government-support split on the desk.",
           "url": "https://knightnewhousedata.org/about-the-data",
           "asOf": null
         },
-        "notes": "Private schools usually have no public MFRS allocated-revenue tape. Many Power publics are self-supporting \u2014 we will not print $0 without a citation."
+        "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
       "buyoutsPaid": []
     }

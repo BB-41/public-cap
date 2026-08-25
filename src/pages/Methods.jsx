@@ -75,7 +75,7 @@ export default function Methods({ meta }) {
         <dt>Apparel + naming rights</dt>
         <dd>Current outfitter and stadium or facility naming. Annual value only when a Sportico, Athletic, FOIA, or local-paper number exists.</dd>
         <dt>Student fees + institutional subsidy</dt>
-        <dd>Knight-Newhouse / MFRS allocated revenue — student fees and institutional or government support. Where the check really came from. $0 only when a source says self-funded. Empty means pending.</dd>
+        <dd>Knight-Newhouse / MFRS allocated revenue — student fees and institutional or government support. Where the check really came from. FY2025 dollars from KN school-profile charts. $0 when KN/MFRS reports $0 or a school says self-funded. Empty means pending. EADA has no split.</dd>
         <dt>Wins per dollar</dt>
         <dd>2025 football wins divided by booked NIL if present, else modeled NIL mid (labeled modeled), and by annual capacity. Wikipedia / NCAA standings.</dd>
         <dt>Buyouts actually paid</dt>
@@ -391,11 +391,17 @@ export default function Methods({ meta }) {
       <p>
         Knight-Newhouse / NCAA MFRS allocated revenue: student fees (line 3) and
         institutional or government support. This is “where the check really came from.”
-        KN bulk download is CAPTCHA-gated, so we use school releases and newsroom MFRS
-        writeups we can fetch. $0 is printed only when a source says the department is
-        self-funded (Ohio State FY25: no tuition or tax dollars). A published per-student
-        fee rate (Louisville $200/semester) is not turned into a fake department total.
-        Empty means pending, not zero.
+        KN bulk download is CAPTCHA-gated; FY2025 dollars come from the public school-profile
+        revenue charts (student fees; institutional/government support as KN’s combined
+        lines 2+4+6+6A). The EADA 2024–25 public file at ope.ed.gov/athletics has department
+        totals only — no fee/support split — so EADA cells stay unused here. $0 is printed
+        when KN/MFRS reports $0 on that line, or when a school release says the department
+        is self-funded (Ohio State FY25: no tuition or tax dollars; KN residual $112,280
+        noted, not booked). A published per-student fee rate (Louisville $200/semester) is
+        not turned into a fake department total. Rutgers keeps a newsroom 3-way split
+        (fees / university / state) that cross-checks KN. Government stays pending unless
+        a source splits Line 2. Empty means pending, not zero. Privates and Pittsburgh
+        have no public MFRS split.
       </p>
 
       <h2>Wins per dollar</h2>
@@ -456,7 +462,7 @@ export default function Methods({ meta }) {
         <li>No invented source labels.</li>
         <li>No invented player names, and no invented <em>reported</em> deal dollar on a named player (modeled shares of the school pot are labeled modeled).</li>
         <li>No women’s sports or Olympic-sport roster math in v1 (the 7% unallocated slice is the placeholder).</li>
-        <li>Knight-Newhouse bulk download is CAPTCHA-gated; we used school NCAA PDFs and cited KN via CNBC where the category stack was published.</li>
+        <li>Knight-Newhouse bulk download is CAPTCHA-gated; FY2025 student-fee and institutional/government figures are taken from public KN school-profile charts, plus school/newsroom MFRS already on the desk (Rutgers Extra Points, Ohio State newsroom, Louisville fee rate).</li>
       </ul>
     </div>
   )
