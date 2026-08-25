@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import Logo from '../components/Logo.jsx'
-import { money, moneyExact } from '../lib/format.js'
+import { contractLinkLabel, money, moneyExact } from '../lib/format.js'
 import {
   DEFAULT_SCHOOL,
   DESK_TODAY,
@@ -145,9 +145,20 @@ export default function Buyout() {
                 </div>
               </div>
               {coach.contract?.url && (
-                <a className="contract-link ext" href={coach.contract.url} target="_blank" rel="noreferrer">
-                  {coach.contract.label || 'Contract / source'} ↗
-                </a>
+                <div>
+                  <a
+                    className="contract-link ext"
+                    href={coach.contract.url}
+                    title={coach.contract.label || undefined}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {contractLinkLabel(coach.contract.url, coach.contract.label)} ↗
+                  </a>
+                  {coach.contract.label && (
+                    <div className="field-meta">{coach.contract.label}</div>
+                  )}
+                </div>
               )}
             </div>
             <div className="hero-num">
@@ -305,13 +316,16 @@ export default function Buyout() {
           <section>
             <h2>Methods</h2>
             <p>
+              Public-school buyouts prefer the employment agreement, amendment, or board
+              packet; articles are the fallback only when no current file is on the desk.
               This is the contract schedule mapped onto remaining games, not a weekly
               renegotiation. For each upcoming kickoff we ask: if the school fires him
               without cause on the calendar day after that game, which cited step is in
               force? When the only public number is a USA TODAY or school if-fired
               overhang, we print that one number and mark the game-by-game tape pending.
-              We do not invent Saturday steps, and we do not invent a dollar offset for
-              new employment. Paid buyouts — money already owed after a firing — live
+              We do not invent Saturday steps, we do not mint remaining-pay dollars from
+              a bare percent clause, and we do not invent a dollar offset for new
+              employment. Paid buyouts — money already owed after a firing — live
               on the desk tape, not here. No On3, Opendorse, NIL Go, or social.
             </p>
           </section>

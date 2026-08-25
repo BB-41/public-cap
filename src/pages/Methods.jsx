@@ -69,7 +69,7 @@ export default function Methods({ meta }) {
         <dt>Coach pay vs buyout overhang</dt>
         <dd>Pay is an annual flow from the USA TODAY Sports salary desk. A buyout is overhang — a liability if the school fires without cause on the as-of date — not yearly spend. Private-school blanks stay blank.</dd>
         <dt>Contract term</dt>
-        <dd>Through-year or years remaining on the current head-coach deal, cited from the employment agreement or a newsroom/school release that quotes one. Not a guess. Pending if we do not have a public through-year.</dd>
+        <dd>Through-year or years remaining on the current head-coach deal, cited from the employment agreement or a newsroom/school release that quotes one. Public-school buyouts prefer the file; articles are fallback only when no current file is loaded. Not a guess. Pending if we do not have a public through-year.</dd>
         <dt>Transfer portal</dt>
         <dd>Notable football additions and departures for the 2025–26 / 2026 cycle. Names from public Wikipedia / NCAA.com / FOX / CBS pages. Dollars only if a cited news number exists. On3 is not scraped.</dd>
         <dt>Apparel + naming rights</dt>
@@ -358,6 +358,8 @@ export default function Methods({ meta }) {
         Contract term is a through-year or years remaining, cited from the employment
         agreement or a newsroom/school release that quotes one. USA TODAY salary tables
         do not publish years remaining, so a blank term is pending — not a guess.
+        Public-school buyouts prefer the employment agreement, amendment, or board
+        packet; articles are the fallback only when no current file is on the desk.
       </p>
 
       <h2>Athletics staff pay</h2>

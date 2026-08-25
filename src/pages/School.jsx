@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
-import { money, moneyExact, moneyRange, earn, pct, coachTermLabel } from '../lib/format.js'
+import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
 import { collectSources, hasVal } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
@@ -37,7 +37,9 @@ function TermBlock({ term }) {
         {term.url && (
           <>
             {' '}
-            <a className="ext" href={term.url} target="_blank" rel="noreferrer">source ↗</a>
+            <a className="ext" href={term.url} target="_blank" rel="noreferrer">
+              {contractLinkLabel(term.url, term.source)} ↗
+            </a>
           </>
         )}
       </div>
@@ -197,11 +199,11 @@ function StaffSection({ school }) {
   )
 }
 
-function ContractLink({ url }) {
+function ContractLink({ url, label }) {
   if (url) {
     return (
-      <a className="ext contract-link" href={url} target="_blank" rel="noreferrer">
-        Contract ↗
+      <a className="ext contract-link" href={url} title={label || undefined} target="_blank" rel="noreferrer">
+        {contractLinkLabel(url, label)} ↗
       </a>
     )
   }
@@ -621,7 +623,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         <section>
           <h2>Football coach</h2>
           <div className="coach-name">{s.coaches.football.name}</div>
-          <ContractLink url={s.coaches.football.contractUrl} />
+          <ContractLink url={s.coaches.football.contractUrl} label={s.coaches.football.term?.source} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
           <TermBlock term={s.coaches.football.term} />
           <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>
@@ -632,7 +634,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         <section>
           <h2>Men’s basketball coach</h2>
           <div className="coach-name">{s.coaches.mbb.name}</div>
-          <ContractLink url={s.coaches.mbb.contractUrl} />
+          <ContractLink url={s.coaches.mbb.contractUrl} label={s.coaches.mbb.term?.source} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
           <TermBlock term={s.coaches.mbb.term} />
           <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>

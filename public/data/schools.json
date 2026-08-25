@@ -68,8 +68,8 @@
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
       "Most NIL bands are pending \u2014 booked cells are Louisville (FOIA $32.9M Mar 2025\u2013Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26). No On3 / Opendorse / NIL Go. Do not book a USC plan-to-distribute quote.",
       "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
-      "Coach contract PDFs linked only when a school, state, or newsroom host posted the actual PDF (HTTP 200). Private-school blanks stay pending. No invented URLs.",
-      "Coach contract terms (through-year / years remaining) are cited only from employment agreements or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending. No On3.",
+      "Coach contract PDFs linked only when a school, state, board, or newsroom host posted the actual file (HTTP 200). Public-school buyouts prefer that file; articles are fallback only when no current file is loaded. Stale hire packets are not treated as the current deal. Private-school blanks stay pending. No invented URLs.",
+      "Coach contract terms (through-year / years remaining) are cited only from employment agreements, board packets, or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending. No On3.",
       "Staff pay (AD, other head coaches, football assistants) is cited-only: USA TODAY assistant (Dec 2024) and WBB tables, school-board / 990 / state-payroll stories. We do not invent a title or a dollar. Office roles stay empty without a source."
     ],
     "sourcesIndex": {
@@ -1208,32 +1208,32 @@
       },
       "coaches": {
         "football": {
-          "name": "Mark Stoops",
+          "name": "Will Stein",
           "pay": {
-            "value": 9000000,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "value": null,
+            "confidence": "pending",
+            "source": null,
+            "url": null,
+            "asOf": null,
+            "notes": "Current-chair USA TODAY cell is not on the desk. Prior-coach (Stoops) pay is not reused."
           },
           "buyout": {
-            "value": 37687500,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "value": null,
+            "confidence": "pending",
+            "source": null,
+            "url": null,
+            "asOf": null,
+            "notes": "No current-chair if-fired dollar on this desk. File is 70% of remaining Regular Comp \u2014 we do not invent the remainder. Stoops\u2019s paid buyout lives on the tape."
           },
-          "contractUrl": "https://legal.uky.edu/sites/default/files/2023-01/2022.11%20Stoops%2C%20Mark%20Orig%20thru%20Amend%206%20%28fixed%29%201.30.23.pdf",
+          "contractUrl": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf",
           "term": {
             "confidence": "reported",
-            "source": "University of Kentucky employment agreement / Nov. 2022 extension notice",
-            "url": "https://legal.uky.edu/sites/default/files/2023-01/2022.11%20Stoops%2C%20Mark%20Orig%20thru%20Amend%206%20%28fixed%29%201.30.23.pdf",
+            "source": "University of Kentucky Stein FY2025\u201326 employment agreement PDF",
+            "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf",
             "asOf": "2026-08",
             "through": "2031",
             "yearsRemaining": 5,
-            "notes": "Extension notice in the public contract packet: through June 2031."
+            "notes": "Through Jan. 31, 2031. School-side without-cause is 70% of remaining Regular Compensation. No published dollar calendar."
           }
         },
         "mbb": {
@@ -1398,28 +1398,32 @@
       },
       "coaches": {
         "football": {
-          "name": "Brian Kelly",
+          "name": "Lane Kiffin",
           "pay": {
-            "value": 10175000,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "value": null,
+            "confidence": "pending",
+            "source": null,
+            "url": null,
+            "asOf": null,
+            "notes": "Current-chair USA TODAY cell is not on the desk. Prior-coach (Kelly) pay is not reused."
           },
           "buyout": {
-            "value": 53293333,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
-          },
-          "contractUrl": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Archive/Brian%20Kelly%20-%2011.28.21.pdf",
-          "term": {
+            "value": null,
             "confidence": "pending",
+            "source": null,
+            "url": null,
+            "asOf": null,
+            "notes": "Signed EA is 80% of remaining Base + Supplemental \u2014 we do not invent the remainder. Kelly\u2019s paid buyout lives on the tape. The Athletic $62.4M quoted the old term sheet."
+          },
+          "contractUrl": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf",
+          "term": {
+            "confidence": "reported",
+            "source": "LSU signed employment agreement \u2014 Lane Kiffin (Nov. 30, 2025)",
+            "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf",
             "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "through": "2033",
+            "yearsRemaining": 7,
+            "notes": "Through Jan. 31, 2033. School-side without-cause is 80% of remaining Base + Supplemental. No published dollar calendar."
           }
         },
         "mbb": {
@@ -1795,17 +1799,18 @@
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
             "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025. PDF rule is 80% of remaining Base + Non-Salary + Publicity Rights. Liability/overhang, not annual spend."
           },
           "term": {
             "confidence": "reported",
-            "source": "KOMU / Mizzou Athletics contract posting",
-            "url": "https://www.komu.com/sports/mizzouxtra/mizzou-extends-contract-for-drinkwitz/article_aa28f39a-47b7-41e1-bb3a-90f27611b546.html",
+            "source": "Missouri Drinkwitz Second Restated and Amended EA (Dec. 8, 2025)",
+            "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf",
             "asOf": "2026-08",
-            "through": "2029",
-            "yearsRemaining": 3,
-            "notes": "Extension keeps Drinkwitz through the 2029 season."
-          }
+            "through": "2032",
+            "yearsRemaining": 6,
+            "notes": "Through Jan. 15, 2032. School-side without-cause is 80% of remaining Base + Non-Salary + Publicity Rights."
+          },
+          "contractUrl": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
         },
         "mbb": {
           "name": "Dennis Gates",
@@ -2589,12 +2594,12 @@
           "contractUrl": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
           "term": {
             "confidence": "reported",
-            "source": "University of Tennessee employment agreement amendment",
+            "source": "University of Tennessee Heupel Amendment 3 PDF",
             "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
             "asOf": "2026-08",
             "through": "2030",
             "yearsRemaining": 4,
-            "notes": "Amendment extends the term to Jan. 31, 2030 / June 30, 2030."
+            "notes": "Amendment 3: term through Jan. 31, 2030. School-side is 75% of remaining compensation before Dec. 15, 2027 and 50% after. Offset; no duty to mitigate."
           }
         },
         "mbb": {
@@ -3341,17 +3346,18 @@
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
             "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025. BOT minutes do not publish a % or dollar calendar. Liability/overhang, not annual spend."
           },
           "term": {
             "confidence": "reported",
-            "source": "University of Illinois Athletics",
-            "url": "https://fightingillini.com/news/2025/5/13/football-bielema-agrees-to-new-six-year-contract",
+            "source": "U. of Illinois BOT minutes (May 22, 2025)",
+            "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf",
             "asOf": "2026-08",
-            "through": "2030",
-            "yearsRemaining": 4,
-            "notes": "New six-year deal through the 2030 season (June 30, 2031)."
-          }
+            "through": "2031",
+            "yearsRemaining": 5,
+            "notes": "Term through June 30, 2031. Packet says liquidated damages exist with mitigation/offset; no percent and no dollar staircase."
+          },
+          "contractUrl": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf"
         },
         "mbb": {
           "name": "Brad Underwood",
@@ -4502,17 +4508,18 @@
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
             "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025. PDF rule is 70% of remaining base + supplemental + retention. Liability/overhang, not annual spend."
           },
           "term": {
             "confidence": "reported",
-            "source": "University of Minnesota Athletics",
-            "url": "https://gophersports.com/news/2025/7/9/football-fleck-signs-extension-now-under-contract-through-2030",
+            "source": "U. of Minnesota Regents finance docket (Feb. 2026)",
+            "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf",
             "asOf": "2026-08",
             "through": "2030",
             "yearsRemaining": 4,
-            "notes": "Extension through the 2030 season."
-          }
+            "notes": "New EA through Dec. 31, 2030. 70% of remaining base + supplemental + retention is quoted from the July 9, 2025 docket."
+          },
+          "contractUrl": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf"
         },
         "mbb": {
           "name": "Niko Medved",
@@ -5233,17 +5240,17 @@
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
             "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025. PDF rule is 100% of remaining guaranteed + deferred. Liability/overhang, not annual spend."
           },
-          "contractUrl": "https://publicrecords.uoregon.edu/sites/default/files/2025-05/lanning-dan-2021-31_0.pdf",
+          "contractUrl": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf",
           "term": {
             "confidence": "reported",
-            "source": "USA TODAY Sports Network (contract obtained)",
-            "url": "https://www.journalstandard.com/story/sports/ncaaf/bigten/2025/03/07/dan-lanning-contract-buyout-details-bonuses-oregon-football/81976220007/",
+            "source": "U. of Oregon BOT Mar. 7, 2025 packet Exhibit A Amendment #3",
+            "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf",
             "asOf": "2026-08",
-            "through": "2030",
-            "yearsRemaining": 4,
-            "notes": "Six-year extension through the 2030 season (to Jan. 1, 2031). Public contract PDF on file."
+            "through": "2031",
+            "yearsRemaining": 5,
+            "notes": "Through Jan. 31, 2031. Without-cause is 100% of remaining guaranteed salary + remaining deferred compensation, monthly, subject to \u00a76.2.e mitigation."
           }
         },
         "mbb": {
@@ -6985,22 +6992,23 @@
             "notes": "Total pay. Annual flow, not a wealth stock."
           },
           "buyout": {
-            "value": 60000000,
+            "value": 57000000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "Clemson 2022 BOT term sheet \u2014 $57M flat if terminated in 2026",
+            "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf",
+            "asOf": "2026-01-01",
+            "notes": "University without-cause schedule amount for 2026. No mitigation. Liability/overhang, not annual spend."
           },
           "term": {
             "confidence": "reported",
-            "source": "Associated Press",
-            "url": "https://apnews.com/article/college-football-sports-clemson-tigers-nick-saban-e7ae9cca16076df3de46d3ee738b3160",
+            "source": "Clemson 2022 BOT term sheet",
+            "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf",
             "asOf": "2026-08",
             "through": "2031",
             "yearsRemaining": 5,
-            "notes": "Reworked 10-season deal through 2031."
-          }
+            "notes": "Term sheet through Dec. 31, 2031. Binding until a restated EA is posted."
+          },
+          "contractUrl": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
         },
         "mbb": {
           "name": "Brad Brownell",
@@ -7321,22 +7329,23 @@
             "notes": "Total pay. Annual flow, not a wealth stock."
           },
           "buyout": {
-            "value": 58667708,
+            "value": 58192500,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) \u2014 85% of remaining CY7\u201312 TAC + $3.75M CY7 reinstatement",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf",
+            "asOf": "2026-01-01",
+            "notes": "PDF-math at the start of Contract Year 7 (full remaining years). Not the CBS $58.4M estimate. Liability/overhang, not annual spend."
           },
           "term": {
             "confidence": "reported",
-            "source": "CBS Sports (contract review)",
-            "url": "https://www.cbssports.com/college-football/news/mike-norvell-buyout-contract-florida-state-head-coach/",
+            "source": "FSU 7th Amendment to 2019 EA / 6th Amendment term",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf",
             "asOf": "2026-08",
             "through": "2031",
             "yearsRemaining": 5,
-            "notes": "Extension through the 2031 season."
-          }
+            "notes": "6th Amendment Total Term through Dec. 31, 2031. Current buyout rule is 7th Amendment V.E."
+          },
+          "contractUrl": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
         },
         "mbb": {
           "name": "Luke Loucks",
@@ -8229,22 +8238,23 @@
             "notes": "Total pay. Annual flow, not a wealth stock."
           },
           "buyout": {
-            "value": 20833333,
+            "value": 20000000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "UNC Belichick EA \u00a712 \u2014 remaining Base $1M + Supplemental $9M through Dec. 31, 2027",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf",
+            "asOf": "2026-01-01",
+            "notes": "Full remaining 2026 and 2027 years. 2028\u201329 are $0 on a university fire. No mitigation in \u00a712."
           },
           "term": {
             "confidence": "reported",
-            "source": "Fox News / UNC-released contract",
-            "url": "https://www.foxnews.com/sports/bill-belichicks-north-carolina-contract-details-show-staggering-salary-interesting-clauses",
+            "source": "UNC signed employment agreement",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf",
             "asOf": "2026-08",
             "through": "2029",
             "yearsRemaining": 3,
-            "notes": "UNC-released deal continues through the end of 2029."
-          }
+            "notes": "Signed EA through Dec. 31, 2029. University-fire pay stops after Dec. 31, 2027."
+          },
+          "contractUrl": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
         },
         "mbb": {
           "name": "Hubert Davis",
@@ -9005,13 +9015,18 @@
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
             "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025 \u2014 last cited school-side dollar before the Apr. 8, 2026 extension. 2022 EA is not treated as the current deal."
           },
           "term": {
-            "confidence": "pending",
+            "confidence": "reported",
+            "source": "Virginia Athletics extension announcement (Apr. 8, 2026)",
+            "url": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension",
             "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
-          }
+            "through": "2030",
+            "yearsRemaining": 4,
+            "notes": "Announced through the 2030 season. 2022 EA is historical; 2026 long-form PDF is not on the desk."
+          },
+          "contractUrl": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension"
         },
         "mbb": {
           "name": "Ryan Odom",
@@ -9180,28 +9195,33 @@
       },
       "coaches": {
         "football": {
-          "name": "Brent Pry",
+          "name": "James Franklin",
           "pay": {
-            "value": 4787500,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
-          },
-          "buyout": {
             "value": null,
             "confidence": "pending",
             "source": null,
             "url": null,
             "asOf": null,
-            "notes": "USA TODAY left the buyout cell blank (private-school or unreleased)."
+            "notes": "Current-chair USA TODAY cell is not on the desk. Prior-coach pay is not reused."
+          },
+          "buyout": {
+            "value": 41000000,
+            "confidence": "reported",
+            "source": "Virginia Tech Franklin LOI \u2014 remaining 2026\u20132030 Base + Supplemental",
+            "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf",
+            "asOf": "2026-01-01",
+            "notes": "Remaining-sum of the LOI windows ($6.0 / $5.0 / $4.0 / $12.75 / $13.25 million). Full remaining years, not mid-year prorated."
           },
           "term": {
-            "confidence": "pending",
+            "confidence": "reported",
+            "source": "Virginia Tech Franklin letter of intent (Nov. 15, 2025)",
+            "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf",
             "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
-          }
+            "through": "2030",
+            "yearsRemaining": 4,
+            "notes": "Binding LOI pending long-form EA. Term through Dec. 31, 2030."
+          },
+          "contractUrl": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
         },
         "mbb": {
           "name": "Mike Young",
@@ -10403,13 +10423,14 @@
           },
           "term": {
             "confidence": "reported",
-            "source": "University of Colorado Athletics / published contract",
-            "url": "https://cubuffs.com/news/2025/3/28/football-cu-boulder-extends-coach-primes-contract-through-2029",
+            "source": "CU Board of Regents \u2014 Sanders amended employment agreement PDF",
+            "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/",
             "asOf": "2026-08",
             "through": "2029",
             "yearsRemaining": 3,
-            "notes": "Amended agreement through Dec. 31, 2029."
-          }
+            "notes": "Amended agreement through Dec. 31, 2029. School-side without-cause is 75% of remaining Base + Supplemental."
+          },
+          "contractUrl": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/"
         },
         "mbb": {
           "name": "Tad Boyle",
@@ -10771,32 +10792,33 @@
       },
       "coaches": {
         "football": {
-          "name": "Matt Campbell",
+          "name": "Jimmy Rogers",
           "pay": {
-            "value": 5000000,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "value": null,
+            "confidence": "pending",
+            "source": null,
+            "url": null,
+            "asOf": null,
+            "notes": "Current-chair USA TODAY cell is not on the desk. Prior-coach (Campbell) pay is not reused."
           },
           "buyout": {
-            "value": 35416667,
+            "value": 18000000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "Iowa State Rogers EA \u2014 6 remaining years \u00d7 $3,000,000 Base through Jan. 31, 2032",
+            "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf",
+            "asOf": "2026-01-01",
+            "notes": "Remaining years \u00d7 base from the termination clause. Full years, not mid-year prorated. Bonuses not in that clause are not added."
           },
           "term": {
             "confidence": "reported",
-            "source": "Iowa State Athletics",
-            "url": "https://cyclones.com/news/2024/12/11/football-campbells-contract-extended-to-2032",
+            "source": "Iowa State Rogers employment agreement PDF",
+            "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf",
             "asOf": "2026-08",
             "through": "2032",
             "yearsRemaining": 6,
-            "notes": "Eight-year deal through Dec. 31, 2032."
-          }
+            "notes": "Through Jan. 31, 2032. Without-cause is 100% of remaining Base ($3,000,000/year). Offset if hired at another D-I school; no duty to seek work."
+          },
+          "contractUrl": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
         },
         "mbb": {
           "name": "T.J. Otzelberger",
