@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-25",
-    "itemCount": 42,
+    "itemCount": 44,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,36 @@
     ]
   },
   "items": [
+    {
+      "id": "kentucky-contract-stein-2026-02",
+      "date": "2026-02",
+      "school": "kentucky",
+      "schoolName": "Kentucky",
+      "kind": "contract",
+      "headline": "Kentucky posts Will Stein\u2019s FY2025\u201326 employment agreement PDF. School-side without-cause is 70% of remaining Regular Compensation, paid monthly through January 31, 2031. No published dollar calendar.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "University of Kentucky employment agreement PDF",
+        "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "colorado-contract-sanders-2025-03",
+      "date": "2025-03-28",
+      "school": "colorado",
+      "schoolName": "Colorado",
+      "kind": "contract",
+      "headline": "Colorado Board of Regents posts Deion Sanders\u2019s amended employment agreement PDF. School-side without-cause is 75% of remaining Base + Supplemental through December 31, 2029. No published dollar calendar.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "CU Board of Regents \u2014 amended employment agreement PDF",
+        "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/"
+      },
+      "field": "coaches.football.term"
+    },
     {
       "id": "california-booked-nil-2026-08-24",
       "date": "2026-08-24",
@@ -46,11 +76,11 @@
       "school": "louisville",
       "schoolName": "Louisville",
       "kind": "booked-nil",
-      "headline": "Courier-Journal FOIA invoices/ledgers book Louisville revenue-share spend at $32.9 million for March 2025–July 1, 2026. The extra above the $20.5M House cap is pre-cap KY NIL (about $12.7M before July 1, 2025). Prior desk cell was $20.27M for the House Year 1 window only.",
+      "headline": "Courier-Journal FOIA invoices/ledgers book Louisville revenue-share spend at $32.9 million for March 2025\u2013July 1, 2026. The extra above the $20.5M House cap is pre-cap KY NIL (about $12.7M before July 1, 2025). Prior desk cell was $20.27M for the House Year 1 window only.",
       "figure": 32900000,
       "confidence": "reported",
       "source": {
-        "label": "Courier-Journal FOIA — Payton Titus",
+        "label": "Courier-Journal FOIA \u2014 Payton Titus",
         "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/08/05/university-of-kentucky-nil-revenue-sharing-records-louisville-budget-foia-ncaa-house-settlement/90345933007/"
       },
       "field": "nil.booked"
@@ -61,7 +91,7 @@
       "school": null,
       "schoolName": null,
       "kind": "house-cap",
-      "headline": "NCAA House Q&A sets the 2025–26 benefits cap at $20.5 million for every participating school.",
+      "headline": "NCAA House Q&A sets the 2025\u201326 benefits cap at $20.5 million for every participating school.",
       "figure": 20500000,
       "confidence": "reported",
       "source": {
@@ -91,7 +121,7 @@
       "school": "louisville",
       "schoolName": "Louisville",
       "kind": "booked-nil",
-      "headline": "Courier-Journal FOIA books Louisville institutional NIL at $20.27 million for the House Year 1 window (Jul 1, 2025–Jul 1, 2026).",
+      "headline": "Courier-Journal FOIA books Louisville institutional NIL at $20.27 million for the House Year 1 window (Jul 1, 2025\u2013Jul 1, 2026).",
       "figure": 20270000,
       "confidence": "reported",
       "source": {
@@ -106,11 +136,11 @@
       "school": "kentucky",
       "schoolName": "Kentucky",
       "kind": "booked-nil",
-      "headline": "Kentucky general counsel states $18 million across 686 revenue-share transactions, March 2025–July 1, 2026. Ledgers not released.",
+      "headline": "Kentucky general counsel states $18 million across 686 revenue-share transactions, March 2025\u2013July 1, 2026. Ledgers not released.",
       "figure": 18000000,
       "confidence": "reported",
       "source": {
-        "label": "Courier-Journal — UK counsel statement",
+        "label": "Courier-Journal \u2014 UK counsel statement",
         "url": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/"
       },
       "field": "nil.booked"
@@ -121,11 +151,11 @@
       "school": "louisville",
       "schoolName": "Louisville",
       "kind": "booked-nil",
-      "headline": "Louisville FY2025 MFRS books $12.7 million Institutional NIL Revenue Share before the House clock. Does not count against the 2025–26 cap.",
+      "headline": "Louisville FY2025 MFRS books $12.7 million Institutional NIL Revenue Share before the House clock. Does not count against the 2025\u201326 cap.",
       "figure": 12700000,
       "confidence": "reported",
       "source": {
-        "label": "Courier-Journal — UofL NCAA financial report FY2025",
+        "label": "Courier-Journal \u2014 UofL NCAA financial report FY2025",
         "url": "https://www.courier-journal.com/story/sports/college/louisville/2026/01/27/university-of-louisville-cardinals-nil-budget-uofl-basketball-college-football-payrolls-ncaa-revenue/88300679007/"
       },
       "field": "nil.preCap"
@@ -136,7 +166,7 @@
       "school": "arkansas",
       "schoolName": "Arkansas",
       "kind": "paid-buyout",
-      "headline": "Arkansas paying Sam Pittman’s settled $7.7 million buyout over two years (no offset).",
+      "headline": "Arkansas paying Sam Pittman\u2019s settled $7.7 million buyout over two years (no offset).",
       "figure": 7700000,
       "confidence": "reported",
       "source": {
@@ -151,7 +181,7 @@
       "school": "auburn",
       "schoolName": "Auburn",
       "kind": "paid-buyout",
-      "headline": "Auburn paying Hugh Freeze’s $15.8 million buyout. No offset.",
+      "headline": "Auburn paying Hugh Freeze\u2019s $15.8 million buyout. No offset.",
       "figure": 15800000,
       "confidence": "reported",
       "source": {
@@ -166,7 +196,7 @@
       "school": "florida",
       "schoolName": "Florida",
       "kind": "paid-buyout",
-      "headline": "Florida paying Billy Napier’s $21.2 million buyout — about half in 30 days, then $2.5 million a year through 2028.",
+      "headline": "Florida paying Billy Napier\u2019s $21.2 million buyout \u2014 about half in 30 days, then $2.5 million a year through 2028.",
       "figure": 21200000,
       "confidence": "reported",
       "source": {
@@ -181,7 +211,7 @@
       "school": "kentucky",
       "schoolName": "Kentucky",
       "kind": "paid-buyout",
-      "headline": "Kentucky paying Mark Stoops’s $37.6 million guaranteed buyout, stretched to April 2031.",
+      "headline": "Kentucky paying Mark Stoops\u2019s $37.6 million guaranteed buyout, stretched to April 2031.",
       "figure": 37600000,
       "confidence": "reported",
       "source": {
@@ -196,7 +226,7 @@
       "school": "lsu",
       "schoolName": "LSU",
       "kind": "paid-buyout",
-      "headline": "LSU paying Brian Kelly’s ~$53.2 million without-cause buyout over six years into 2031.",
+      "headline": "LSU paying Brian Kelly\u2019s ~$53.2 million without-cause buyout over six years into 2031.",
       "figure": 53200000,
       "confidence": "reported",
       "source": {
@@ -211,7 +241,7 @@
       "school": "texas-am",
       "schoolName": "Texas A&M",
       "kind": "paid-buyout",
-      "headline": "Texas A&M still paying Jimbo Fisher’s $77.6 million 2023 buyout through 2031. Contract had no offset.",
+      "headline": "Texas A&M still paying Jimbo Fisher\u2019s $77.6 million 2023 buyout through 2031. Contract had no offset.",
       "figure": 77600000,
       "confidence": "reported",
       "source": {
@@ -226,7 +256,7 @@
       "school": "michigan",
       "schoolName": "Michigan",
       "kind": "paid-buyout",
-      "headline": "Michigan owes $0 on Sherrone Moore’s firing — for cause, no buyout.",
+      "headline": "Michigan owes $0 on Sherrone Moore\u2019s firing \u2014 for cause, no buyout.",
       "figure": 0,
       "confidence": "reported",
       "source": {
@@ -241,7 +271,7 @@
       "school": "michigan-state",
       "schoolName": "Michigan State",
       "kind": "paid-buyout",
-      "headline": "Michigan State’s Jonathan Smith buyout stands at $33 million, unpaid as of the March 2026 census, duty to mitigate.",
+      "headline": "Michigan State\u2019s Jonathan Smith buyout stands at $33 million, unpaid as of the March 2026 census, duty to mitigate.",
       "figure": 33000000,
       "confidence": "reported",
       "source": {
@@ -271,7 +301,7 @@
       "school": "ucla",
       "schoolName": "UCLA",
       "kind": "paid-buyout",
-      "headline": "UCLA paying DeShaun Foster’s $7.4 million buyout through 2028, subject to offset.",
+      "headline": "UCLA paying DeShaun Foster\u2019s $7.4 million buyout through 2028, subject to offset.",
       "figure": 7400000,
       "confidence": "reported",
       "source": {
@@ -286,7 +316,7 @@
       "school": "california",
       "schoolName": "California",
       "kind": "paid-buyout",
-      "headline": "California paying Justin Wilcox’s $10.8 million buyout through 2027, subject to offset.",
+      "headline": "California paying Justin Wilcox\u2019s $10.8 million buyout through 2027, subject to offset.",
       "figure": 10800000,
       "confidence": "reported",
       "source": {
@@ -305,7 +335,7 @@
       "figure": 5312000,
       "confidence": "reported",
       "source": {
-        "label": "USA TODAY — UNC contract",
+        "label": "USA TODAY \u2014 UNC contract",
         "url": "https://www.usatoday.com/story/sports/ncaab/2026/03/24/north-carolina-basketball-fires-hubert-davis-unc-tar-heels-search-for-new-coach/89256794007/"
       },
       "field": "layers.buyoutsPaid"
@@ -316,7 +346,7 @@
       "school": "virginia-tech",
       "schoolName": "Virginia Tech",
       "kind": "paid-buyout",
-      "headline": "Virginia Tech settled Brent Pry at $3.1 million over two years after he returned as Franklin’s coordinator (headline $6 million).",
+      "headline": "Virginia Tech settled Brent Pry at $3.1 million over two years after he returned as Franklin\u2019s coordinator (headline $6 million).",
       "figure": 3100000,
       "confidence": "reported",
       "source": {
@@ -331,7 +361,7 @@
       "school": "oklahoma-state",
       "schoolName": "Oklahoma State",
       "kind": "paid-buyout",
-      "headline": "Oklahoma State paying Mike Gundy’s $15 million buyout over three years, subject to offset.",
+      "headline": "Oklahoma State paying Mike Gundy\u2019s $15 million buyout over three years, subject to offset.",
       "figure": 15000000,
       "confidence": "reported",
       "source": {
@@ -361,7 +391,7 @@
       "school": "indiana",
       "schoolName": "Indiana",
       "kind": "naming",
-      "headline": "Indiana’s Merchants Bank Field naming: 20 years / $50 million (playing surface, not the bowl). AAV $2.5 million if spread flat.",
+      "headline": "Indiana\u2019s Merchants Bank Field naming: 20 years / $50 million (playing surface, not the bowl). AAV $2.5 million if spread flat.",
       "figure": 50000000,
       "confidence": "reported",
       "source": {
@@ -421,7 +451,7 @@
       "school": "south-carolina",
       "schoolName": "South Carolina",
       "kind": "apparel",
-      "headline": "South Carolina’s 10-year Nike partnership begins. Guaranteed product + cash + supplement $77.5 million / 10 ($7.75 million AAV).",
+      "headline": "South Carolina\u2019s 10-year Nike partnership begins. Guaranteed product + cash + supplement $77.5 million / 10 ($7.75 million AAV).",
       "figure": 7750000,
       "confidence": "reported",
       "source": {
@@ -436,7 +466,7 @@
       "school": "texas-tech",
       "schoolName": "Texas Tech",
       "kind": "apparel",
-      "headline": "Texas Tech FOIA: 10-year Adidas deal signed Dec. 6, 2024 — $59.25 million ($50 million product + $9.25 million cash).",
+      "headline": "Texas Tech FOIA: 10-year Adidas deal signed Dec. 6, 2024 \u2014 $59.25 million ($50 million product + $9.25 million cash).",
       "figure": 59250000,
       "confidence": "reported",
       "source": {
@@ -451,7 +481,7 @@
       "school": "illinois",
       "schoolName": "Illinois",
       "kind": "apparel",
-      "headline": "News-Gazette FOIA: Illinois Nike allotment rises $100k a year to $4.9 million in 2025–26.",
+      "headline": "News-Gazette FOIA: Illinois Nike allotment rises $100k a year to $4.9 million in 2025\u201326.",
       "figure": 4900000,
       "confidence": "reported",
       "source": {
@@ -496,7 +526,7 @@
       "school": "north-carolina",
       "schoolName": "North Carolina",
       "kind": "apparel",
-      "headline": "News-Gazette FOIA: UNC Nike annual cash compensation $3.25 million (2023–24). Product allotment not extracted.",
+      "headline": "News-Gazette FOIA: UNC Nike annual cash compensation $3.25 million (2023\u201324). Product allotment not extracted.",
       "figure": 3250000,
       "confidence": "reported",
       "source": {
@@ -511,7 +541,7 @@
       "school": "ohio-state",
       "schoolName": "Ohio State",
       "kind": "subsidy",
-      "headline": "Ohio State FY25 NCAA Membership Report: athletics is self-funded — $0 student fees, $0 institutional support, $0 tax dollars.",
+      "headline": "Ohio State FY25 NCAA Membership Report: athletics is self-funded \u2014 $0 student fees, $0 institutional support, $0 tax dollars.",
       "figure": 0,
       "confidence": "reported",
       "source": {
@@ -526,11 +556,11 @@
       "school": "rutgers",
       "schoolName": "Rutgers",
       "kind": "subsidy",
-      "headline": "Rutgers FY2025 MFRS allocated stack: $15.8 million student fees, $7 million university budget, $8 million state — $30.8 million cited.",
+      "headline": "Rutgers FY2025 MFRS allocated stack: $15.8 million student fees, $7 million university budget, $8 million state \u2014 $30.8 million cited.",
       "figure": 30800000,
       "confidence": "reported",
       "source": {
-        "label": "Extra Points / NJ.com — Rutgers FY2025 NCAA/MFRS",
+        "label": "Extra Points / NJ.com \u2014 Rutgers FY2025 NCAA/MFRS",
         "url": "https://www.extrapointsmb.com/p/wait-why-is-rutgers-so-dang-broke"
       },
       "field": "layers.subsidy"
@@ -557,7 +587,7 @@
       "school": "kentucky",
       "schoolName": "Kentucky",
       "kind": "contract",
-      "headline": "Kentucky posts Mark Pope’s FY2025–26 employment agreement PDF. Term on the desk through 2030 after the Elite Eight auto-year.",
+      "headline": "Kentucky posts Mark Pope\u2019s FY2025\u201326 employment agreement PDF. Term on the desk through 2030 after the Elite Eight auto-year.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -587,7 +617,7 @@
       "school": "tennessee",
       "schoolName": "Tennessee",
       "kind": "contract",
-      "headline": "Tennessee posts Rick Barnes’s employment agreement PDF. Initial term through April 15, 2028, then a three-year rolling structure.",
+      "headline": "Tennessee posts Rick Barnes\u2019s employment agreement PDF. Initial term through April 15, 2028, then a three-year rolling structure.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -602,7 +632,7 @@
       "school": "oregon",
       "schoolName": "Oregon",
       "kind": "contract",
-      "headline": "Oregon public-records desk posts Dana Altman’s 2016–28 employment agreement PDF. Term on the desk through 2028.",
+      "headline": "Oregon public-records desk posts Dana Altman\u2019s 2016\u201328 employment agreement PDF. Term on the desk through 2028.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -617,7 +647,7 @@
       "school": "oregon",
       "schoolName": "Oregon",
       "kind": "contract",
-      "headline": "Oregon public-records desk posts Dan Lanning’s employment agreement PDF. Six-year extension through the 2030 season.",
+      "headline": "Oregon public-records desk posts Dan Lanning\u2019s employment agreement PDF. Six-year extension through the 2030 season.",
       "figure": null,
       "confidence": "reported",
       "source": {
