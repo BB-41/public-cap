@@ -1,11 +1,14 @@
 import { money, moneyRange } from '../lib/format.js'
 import { CONFERENCE_NIL, HALF_SHARE_IDS, HOUSE_2025_26 } from '../lib/nilModel.js'
 import { FB_RATE_CARD, MBB_RATE_CARD, ROSTER_POOL_SHARE, rateCardForMethods } from '../lib/nilRoster.js'
+import { ConferenceStrip } from '../components/TvContracts.jsx'
+import { useTvBook } from '../lib/tv.js'
 
 const EXAMPLE_MID = CONFERENCE_NIL.SEC.total // published example at the SEC median
 
 export default function Methods({ meta }) {
   const example = rateCardForMethods(EXAMPLE_MID)
+  const tv = useTvBook()
   return (
     <div className="page-wrap methods">
       <h1 className="issue-hed">How the desk is built. · 68 schools</h1>
@@ -85,9 +88,23 @@ export default function Methods({ meta }) {
         <dd>A quiet check on the official average, not a second alumni net-worth engine. Scorecard stays the earnings number. Under it we cite BLS Occupational Employment and Wage Statistics for 2–4 occupations that match a simple career mix (flagship public, tech/engineering, or private elite) — national May 2025 medians/means, plus the state OEWS page. Those wages are reported BLS figures and estimated as a mix for that school type; they are not this school’s alumni. Where a state open-payroll site is obvious (Texas, Ohio, California, Florida) we link it so reporters know public-university alumni on the state payroll can be looked up. A handful of schools get one notable public-company alum with an EDGAR/DEF 14A or IR link (fat tail, not a cohort). Glassdoor and LinkedIn are not ingested.</dd>
         <dt>Desk tape</dt>
         <dd>A dated log of filings that moved a Public Cap figure — not a news feed. Booked NIL, contract PDFs, paid buyouts, cited apparel or naming, student-fee / subsidy lines, and House-cap Q&amp;As. We do not invent a headline. A school page that is quiet says so: “No public filing on the desk yet.”</dd>
+        <dt>TV / media rights</dt>
+        <dd>Most Power 4 TV contracts are conference deals, not 68 school contracts. The school page and the <a href="/tv">TV book</a> show rights holders, term, the cited conference pot, and how the share is split when a 2024–26 source exists. A school media check is printed only when reported, or as a labeled equal-share estimate (cited pot ÷ cited members). Notre Dame’s NBC football deal is the school-level exception. The College Football Playoff is one national package. ACC Grant of Rights / viewership splits are described as cited — not flattened to equal share. Empty means pending.</dd>
         <dt>Confidence tags</dt>
         <dd><strong>reported</strong> — a primary public document, or a newsroom story that quotes one. <strong>estimated</strong> — desk estimate, residual, or unofficial deal term; source still named. <strong>modeled</strong> — alumni cohort / wealth / giving, the conference NIL range, or the position rate card. <strong>pending</strong> — we looked, we do not have a number, cell stays empty.</dd>
       </dl>
+
+      <h2>TV / media rights</h2>
+      <p>
+        Power 4 “TV contracts” are almost all conference deals. This desk keeps one record per
+        conference, plus Notre Dame’s NBC football exception, plus a short College Football Playoff
+        note. We do not mint 68 school contracts. Equal-share math is labeled estimated and shows
+        the formula. ACC 2025 settlement language (40% equal / 60% viewership) is quoted as cited;
+        we do not flatten that league to equal share. Through-years are conference facts — the rank
+        list stays clean, with no media-through column.
+      </p>
+      <ConferenceStrip book={tv} />
+      <p className="fine">Full citations live on the <a href="/tv">TV / media rights</a> page and on each school card.</p>
 
       <h2>Two caps</h2>
       <p>

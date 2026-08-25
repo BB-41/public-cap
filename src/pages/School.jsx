@@ -11,6 +11,7 @@ import StackChart from '../components/StackChart.jsx'
 import { houseValueForSeason } from '../lib/seasons.js'
 import { EMPTY_TAPE, tapeForSchool } from '../lib/tape.js'
 import TapeItems from '../components/TapeItems.jsx'
+import TvContracts from '../components/TvContracts.jsx'
 import { DEFAULT_TITLE, SCHOOL_DRILLS, hashKey, schoolTitle } from '../lib/share.js'
 
 function TermBlock({ term }) {
@@ -636,6 +637,8 @@ export default function School({ schools, meta, season, setSeason, tape }) {
       )}
 
       <Layers school={s} />
+
+      <TvContracts school={s} season={season} />
 
       <section>
         <h2 title={defTitle('tape')}>Desk tape</h2>

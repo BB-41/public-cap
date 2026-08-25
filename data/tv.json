@@ -1,0 +1,425 @@
+{
+  "asOf": "2026-08-25",
+  "season": 2026,
+  "deskNote": "Most Power 4 TV contracts are conference deals, not 68 school contracts. Dollars and through-years appear only with a named source. Empty means pending \u2014 not zero.",
+  "conferences": {
+    "SEC": {
+      "id": "SEC",
+      "name": "SEC",
+      "members": 16,
+      "holders": [
+        "ESPN",
+        "ABC",
+        "SEC Network"
+      ],
+      "termStart": 2024,
+      "termEnd": 2033,
+      "termLabel": "2024-25 through 2033-34",
+      "annual": 710000000,
+      "annualHigh": null,
+      "total": 7100000000,
+      "split": "equal",
+      "splitLabel": "Equal share among full members; Texas and Oklahoma are on a cited phase-in, not a full share.",
+      "confidence": "reported",
+      "notes": "SBJ and Sports Media Watch cite a 10-year ESPN package at $710M a year / $7.1B starting 2024 (CBS left after 2023). That is the conference rights fee, not a school contract and not the full SEC distribution (CFP, bowls, NCAA sit on top). Business of College Sports still frames per-school off the 14 members at signing (~$50.7M). This desk uses current 16: $710M / 16. Texas and Oklahoma do not get that estimate.",
+      "sources": [
+        {
+          "label": "Sports Business Journal \u2014 Power 5 rights table (Big Ten deal story)",
+          "url": "https://www.sportsbusinessjournal.com/Daily/Issues/2022/08/18/Media/Big-Ten-Media-Deal/",
+          "asOf": "2022-08-18"
+        },
+        {
+          "label": "Sports Media Watch \u2014 sports media rights list",
+          "url": "https://www.sportsmediawatch.com/sports-media-rights-deals-list/",
+          "asOf": "2026-08"
+        },
+        {
+          "label": "Sports Video Group \u2014 ESPN/SEC 10-year top package (CBS to ABC in 2024)",
+          "url": "https://www.sportsvideo.org/2020/12/11/espn-sec-ink-10-year-rights-deal-top-football-package-shift-from-cbs-to-abc/",
+          "asOf": "2020-12-11"
+        },
+        {
+          "label": "Business of College Sports \u2014 current college TV contracts (14-school framing)",
+          "url": "https://businessofcollegesports.com/current-college-sports-television-contracts/",
+          "asOf": "2026-08"
+        }
+      ]
+    },
+    "Big Ten": {
+      "id": "Big Ten",
+      "name": "Big Ten",
+      "members": 18,
+      "holders": [
+        "FOX",
+        "CBS",
+        "NBC",
+        "Big Ten Network"
+      ],
+      "termStart": 2023,
+      "termEnd": 2029,
+      "termLabel": "2023-24 through 2029-30",
+      "annual": 1150000000,
+      "annualHigh": null,
+      "total": 8050000000,
+      "split": "equal",
+      "splitLabel": "Generally equal among full-share members. USC and UCLA booked as full shares. Oregon and Washington are on cited reduced / half shares through about 2030.",
+      "confidence": "reported",
+      "notes": "SBJ: FOX/CBS/NBC, seven years, $8.05B / $1.15B a year, through FY 2029-30. Peacock is the streaming home. The $1.15B is the rights fee, not the FY2025 $1.37B total distribution (that figure mixes media, CFP, and other conference revenue). SBJ originally framed per-school off 16 members with USC/UCLA. Oregon and Washington later joined on reduced shares; this desk naive equal-share is $1.15B / 18 and is labeled estimated. Those two schools do not get it.",
+      "sources": [
+        {
+          "label": "Sports Business Journal \u2014 Big Ten FOX/CBS/NBC deals",
+          "url": "https://www.sportsbusinessjournal.com/Daily/Issues/2022/08/18/Media/Big-Ten-Media-Deal/",
+          "asOf": "2022-08-18"
+        },
+        {
+          "label": "Sports Media Watch \u2014 sports media rights list",
+          "url": "https://www.sportsmediawatch.com/sports-media-rights-deals-list/",
+          "asOf": "2026-08"
+        },
+        {
+          "label": "Big Ten \u2014 record $1.37B FY2025 distribution (first full year of current rights + 18 members)",
+          "url": "https://bigten.org/article/59960/",
+          "asOf": "2026-05-01"
+        },
+        {
+          "label": "CBS Sports \u2014 FY2025 payouts; Oregon/Washington partial shares through 2030",
+          "url": "https://www.cbssports.com/college-football/news/big-ten-1-37-billion-in-revenue-to-its-18-members-for-2025-fiscal-year/",
+          "asOf": "2026-05"
+        }
+      ]
+    },
+    "ACC": {
+      "id": "ACC",
+      "name": "ACC",
+      "members": 18,
+      "footballMembers": 17,
+      "holders": [
+        "ESPN",
+        "ABC",
+        "ACC Network"
+      ],
+      "sublicense": "The CW (Raycom sublicense, through 2026-27)",
+      "termStart": 2016,
+      "termEnd": 2036,
+      "termLabel": "2016-17 through 2036 (ESPN option picked up January 2025)",
+      "annual": 240000000,
+      "annualHigh": 588800000,
+      "annualLabel": "Base ESPN AAV vs FY2025 TV receipts",
+      "total": 4800000000,
+      "split": "other",
+      "splitLabel": "Not equal. 2025 FSU/Clemson settlement: 40% of base media rights shared equally; 60% by five-year weighted football (75%) and mens basketball (25%) viewership. Cal and Stanford take partial TV shares. SMU forgoes TV money in early membership years. Grant of Rights / exit fees were rewritten; we do not flatten this to equal share.",
+      "confidence": "estimated",
+      "notes": "The $240M / $4.8B / through-2036 figures are the long-cited 2016 ESPN base deal (SBJ table; FOS 2024). ESPN exercised its option in January 2025 so the partnership runs through 2036 (without that option it ended after 2027). WRAL, from FY2025 tax documents, reports $588.8M in conference television receipts \u2014 base rights plus ACC Network and expansion markets, not the same number as the 2016 AAV. Both are shown. No public per-school media-only breakdown for legacy members; we do not mint one.",
+      "sources": [
+        {
+          "label": "ESPN \u2014 network picks up ACC option through 2036",
+          "url": "https://www.espn.com/college-sports/story/_/id/43623233/sources-espn-ok-option-televise-acc-sports-36",
+          "asOf": "2025-01-30"
+        },
+        {
+          "label": "Sports Business Journal \u2014 ESPN re-ups ACC through 2036",
+          "url": "https://www.sportsbusinessjournal.com/Articles/2025/01/30/acc-espn-media-rights-extension/",
+          "asOf": "2025-01-30"
+        },
+        {
+          "label": "Sportico \u2014 ACC / Clemson / FSU settlement; 40/60 viewership split",
+          "url": "https://www.sportico.com/law/analysis/2025/acc-settlement-implications-1234841772/",
+          "asOf": "2025-03"
+        },
+        {
+          "label": "WRAL \u2014 40% equal / 60% five-year viewership (FB 75 / MBB 25)",
+          "url": "https://www.wral.com/sports/colleges-acc-football-basketball-revenue-distribution-success-viewership-august-2025/",
+          "asOf": "2025-08"
+        },
+        {
+          "label": "WRAL \u2014 FY2025 tax docs: $588.8M TV receipts; Notre Dame $18.1M",
+          "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
+          "asOf": "2026-05"
+        },
+        {
+          "label": "Front Office Sports \u2014 $240M ESPN base AAV still cited in 2024",
+          "url": "https://frontofficesports.com/acc-being-strategic-about-bridging-revenue-gap-with-big-ten-sec/",
+          "asOf": "2024-07"
+        }
+      ]
+    },
+    "Big 12": {
+      "id": "Big 12",
+      "name": "Big 12",
+      "members": 16,
+      "dealMembers": 12,
+      "holders": [
+        "ESPN",
+        "ABC",
+        "FOX",
+        "FS1"
+      ],
+      "termStart": 2025,
+      "termEnd": 2030,
+      "termLabel": "2025-26 through 2030-31",
+      "annual": 380000000,
+      "annualHigh": null,
+      "total": 2280000000,
+      "split": "equal",
+      "splitLabel": "Equal media share among the 12 members at signing (ESPN: $380M / 12 ~ $31.7M). A pro-rata clause pays more to the conference if Power schools are added, so Arizona, Arizona State, Colorado, and Utah should not dilute that per-school media figure. The expanded conference pot is not independently cited on this desk.",
+      "confidence": "reported",
+      "notes": "ESPN and The Athletic: six-year extension, $2.28B / $380M a year, ESPN >60% of inventory, through 2030-31. Third-tier school rights end under this deal. Some recaps float ~$505M after the four Pac-12 additions; we could not lock that dollar to a newsroom primary, so the expanded pot stays pending. Per-school media uses the cited $380M / 12 formula, not $380M / 16.",
+      "sources": [
+        {
+          "label": "ESPN \u2014 six-year, $2.28B / $380M extension with ESPN and Fox",
+          "url": "https://www.espn.com/college-football/story/_/id/34910144/big-12-nears-six-year-228b-tv-extension-deal-espn-fox",
+          "asOf": "2022-10-30"
+        },
+        {
+          "label": "The Athletic \u2014 Big 12 rights with ESPN and Fox through 2030-31",
+          "url": "https://www.nytimes.com/athletic/3744588/2022/10/30/big-12-rights-espn-fox/",
+          "asOf": "2022-10-30"
+        },
+        {
+          "label": "Awful Announcing \u2014 pro-rata clause if the league expands",
+          "url": "https://awfulannouncing.com/ncaa/big-12s-new-media-rights-deals-reportedly-contain-pro-rata-clause-in-case-of-future-expansion.html",
+          "asOf": "2022-10-31"
+        },
+        {
+          "label": "CBS Sports \u2014 BYU/Cincinnati/Houston/UCF full media share when the new deals begin fall 2025",
+          "url": "https://www.cbssports.com/college-football/news/early-exits-for-texas-oklahoma-could-help-big-12-repay-members-that-agreed-to-diluted-revenue-upon-expansion/",
+          "asOf": "2023"
+        }
+      ]
+    }
+  },
+  "schools": {
+    "notre-dame": {
+      "deals": [
+        {
+          "name": "NBC football",
+          "holders": [
+            "NBC",
+            "Peacock"
+          ],
+          "termStart": 2024,
+          "termEnd": 2029,
+          "termLabel": "Through the 2029 season",
+          "annual": 50000000,
+          "annualHigh": 58800000,
+          "total": null,
+          "confidence": "estimated",
+          "notes": "The real school-level exception. Official terms were not disclosed. NBC and Notre Dame announced a multi-year extension through 2029 (home games on NBC/Peacock). Front Office Sports: about double the prior low-$20M tax-return run-rate, somewhere in the $50 million range. Sportico: believed in keeping with Big Ten FY2022 payouts of $58.8M. The Athletic (2024): reports around $50M a year. Shown as an estimated $50-59M range, not a filing.",
+          "sources": [
+            {
+              "label": "NBC Sports \u2014 official extension through 2029",
+              "url": "https://www.nbcsports.com/pressbox/notre-dame/press-releases/notre-dame-and-nbc-sports-continue-historic-football-partnership-with-games-to-be-presented-on-nbc-and-peacock-through-the-2029-season",
+              "asOf": "2023-11-18"
+            },
+            {
+              "label": "Front Office Sports \u2014 ~$50M range (double the prior deal)",
+              "url": "https://frontofficesports.com/notre-dame-and-nbc-extend-media-rights-agreement-to-2029/",
+              "asOf": "2023-11-18"
+            },
+            {
+              "label": "Sportico \u2014 rights fees in keeping with $58.8M Big Ten FY2022 payouts",
+              "url": "https://www.sportico.com/business/media/2023/notre-dame-fighting-irish-independence-nbc-sports-1234747231/",
+              "asOf": "2023-11-18"
+            },
+            {
+              "label": "The Athletic \u2014 ~$50M a year, plus ~$17M ACC (2024)",
+              "url": "https://www.nytimes.com/athletic/5675650/2024/08/02/notre-dame-independence-college-football-playoff/",
+              "asOf": "2024-08-02"
+            }
+          ]
+        }
+      ],
+      "exceptions": [
+        {
+          "name": "ACC Olympic-sport / non-football media",
+          "kind": "reported-exception",
+          "value": 18100000,
+          "confidence": "reported",
+          "notes": "Football independent; ACC member in other sports (hockey is a separate Big Ten relationship). WRAL, from FY2025 ACC tax documents: Notre Dame received $18.1M. The Athletic (2024) had cited ~$17M a year from the ACC. That is a conference distribution to ND, not a second school football contract, and not a full ACC football share.",
+          "sources": [
+            {
+              "label": "WRAL \u2014 FY2025 ACC 990, Notre Dame $18.1M",
+              "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
+              "asOf": "2026-05"
+            },
+            {
+              "label": "The Athletic \u2014 ~$17M annually from the ACC (2024)",
+              "url": "https://www.nytimes.com/athletic/5675650/2024/08/02/notre-dame-independence-college-football-playoff/",
+              "asOf": "2024-08-02"
+            }
+          ]
+        }
+      ]
+    },
+    "texas": {
+      "exceptions": [
+        {
+          "name": "SEC new-member phase-in",
+          "kind": "reported-exception",
+          "value": 12100000,
+          "confidence": "reported",
+          "notes": "Not a full SEC media share in FY2025. CBS/AP: Texas $12.1M SEC distribution in the phase-in year. The desk capacity stack keeps a more complete FY2024 media/conference line so one-year phase-in does not understate capacity. This TV card does not mint an equal-share SEC estimate for Texas.",
+          "sources": [
+            {
+              "label": "CBS Sports \u2014 SEC FY2025 distributions; Texas/Oklahoma phase-in",
+              "url": "https://www.cbssports.com/college-football/news/sec-revenue-distribution-sports-football-billion-dollars-2024-2025/",
+              "asOf": "2026-02"
+            }
+          ]
+        }
+      ]
+    },
+    "oklahoma": {
+      "exceptions": [
+        {
+          "name": "SEC new-member phase-in",
+          "kind": "reported-exception",
+          "value": 2600000,
+          "confidence": "reported",
+          "notes": "Cited phase-in, not a full SEC share. CBS/Dallas Morning News: Oklahoma $2.6M FY2025 conference distribution. Not blended with a prior Big 12 check. No equal-share SEC estimate on this card.",
+          "sources": [
+            {
+              "label": "CBS Sports \u2014 SEC FY2025 distributions; Oklahoma phase-in",
+              "url": "https://www.cbssports.com/college-football/news/sec-revenue-distribution-sports-football-billion-dollars-2024-2025/",
+              "asOf": "2026-02"
+            }
+          ]
+        }
+      ]
+    },
+    "oregon": {
+      "exceptions": [
+        {
+          "name": "Big Ten new-member step-up / half share",
+          "kind": "reported-exception",
+          "value": 48400000,
+          "confidence": "reported",
+          "notes": "Reduced Big Ten share. CBS/ESPN: Oregon $48.4M in the FY2025 990 (half-share + CFP). Partial shares cited through about 2030. That is a conference distribution, not a school TV contract. No $1.15B / 18 estimate on this card.",
+          "sources": [
+            {
+              "label": "CBS Sports \u2014 Oregon $48.4M FY2025; partial shares through 2030",
+              "url": "https://www.cbssports.com/college-football/news/big-ten-1-37-billion-in-revenue-to-its-18-members-for-2025-fiscal-year/",
+              "asOf": "2026-05"
+            }
+          ]
+        }
+      ]
+    },
+    "washington": {
+      "exceptions": [
+        {
+          "name": "Big Ten new-member step-up / half share",
+          "kind": "reported-exception",
+          "value": 46700000,
+          "confidence": "reported",
+          "notes": "Reduced Big Ten share. CBS/ESPN: Washington $46.7M in the FY2025 990. Partial shares cited through about 2030. Conference distribution, not a school TV contract. No equal-share estimate on this card.",
+          "sources": [
+            {
+              "label": "CBS Sports \u2014 Washington $46.7M FY2025; partial shares through 2030",
+              "url": "https://www.cbssports.com/college-football/news/big-ten-1-37-billion-in-revenue-to-its-18-members-for-2025-fiscal-year/",
+              "asOf": "2026-05"
+            }
+          ]
+        }
+      ]
+    },
+    "california": {
+      "exceptions": [
+        {
+          "name": "ACC partial TV share",
+          "kind": "reported-exception",
+          "value": 22900000,
+          "confidence": "reported",
+          "notes": "Cal agreed to a reduced ACC television share. WRAL / Courier-Journal FY2025 990: $22.9M total conference distribution, not a media-only figure. Not an equal ACC share.",
+          "sources": [
+            {
+              "label": "WRAL \u2014 Cal $22.9M FY2025; partial TV share",
+              "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
+              "asOf": "2026-05"
+            }
+          ]
+        }
+      ]
+    },
+    "stanford": {
+      "exceptions": [
+        {
+          "name": "ACC partial TV share",
+          "kind": "reported-exception",
+          "value": 19500000,
+          "confidence": "reported",
+          "notes": "Stanford agreed to a reduced ACC television share. WRAL FY2025 990: $19.5M total conference distribution. Not an equal ACC share.",
+          "sources": [
+            {
+              "label": "WRAL \u2014 Stanford $19.5M FY2025; partial TV share",
+              "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
+              "asOf": "2026-05"
+            }
+          ]
+        }
+      ]
+    },
+    "smu": {
+      "exceptions": [
+        {
+          "name": "ACC \u2014 no TV money in early membership",
+          "kind": "reported-exception",
+          "value": 17000000,
+          "confidence": "reported",
+          "notes": "SMU agreed to forgo ACC media-rights payouts in early membership years. WRAL: $17M FY2025, attributed to the CFP berth, not a TV share. No equal-share estimate.",
+          "sources": [
+            {
+              "label": "WRAL \u2014 SMU $17M FY2025; no TV money early",
+              "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
+              "asOf": "2026-05"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "national": {
+    "cfp": {
+      "name": "College Football Playoff",
+      "holders": [
+        "ESPN",
+        "ABC"
+      ],
+      "termStart": 2026,
+      "termEnd": 2031,
+      "termLabel": "New six-year grant starts 2026-27 through 2031-32; remaining two years of the prior deal cover 2024-25 and 2025-26",
+      "annual": 1300000000,
+      "total": 7800000000,
+      "confidence": "reported",
+      "notes": "One national package, not 68 school deals. AP: $7.8B / $1.3B a year for the six-year extension; championship moves to ABC in 2026. Official CFP/ESPN releases confirm exclusivity through 2031-32 and do not print the dollar \u2014 the dollar is the AP / Athletic figure. First-round games in 2024-25 and 2025-26 were added onto the old contract. We do not copy this pot onto every school card.",
+      "sources": [
+        {
+          "label": "College Football Playoff \u2014 ESPN exclusive through 2031-32",
+          "url": "https://collegefootballplayoff.com/news/2024/3/19/espn-extension-2032.aspx",
+          "asOf": "2024-03-19"
+        },
+        {
+          "label": "AP \u2014 $7.8B / $1.3B a year; title game to ABC in 2026",
+          "url": "https://apnews.com/article/espn-cfp-9d75671decaa5e47ca2d1eaef8a0b693",
+          "asOf": "2024-03-19"
+        },
+        {
+          "label": "The Athletic \u2014 six-year extension, $1.3B annually",
+          "url": "https://www.nytimes.com/athletic/5354221/2024/03/19/espn-college-football-playoff-tv-contract/",
+          "asOf": "2024-03-19"
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Conference rights fees are not the same number as conference 990 distributions (those add CFP, bowls, NCAA, success incentives).",
+    "Equal-share math is labeled estimated and shows pot / cited member count. It is not used when a 2024-26 source describes a phase-in, half share, units, or viewership split.",
+    "The Big 12 expanded pot after Arizona / Arizona State / Colorado / Utah (~$505M on some recaps) is not on this desk \u2014 no newsroom primary locked the dollar.",
+    "Exact Notre Dame-NBC rights fee is not public. Range only.",
+    "ACC per-school media-only checks for legacy members are not public under the 40/60 viewership model. Pending, not invented.",
+    "CW sublicense fee for ACC football/basketball is not public on this desk.",
+    "Per-network split of the Big Ten $1.15B (FOX vs CBS vs NBC vs BTN) is not public as a dollar breakdown.",
+    "SEC first-tier $6B / 20 years appears in only one older recap; we stay with the SBJ $7.1B / $710M package that other desks still cite.",
+    "Rank list has no media-through column: through-years are solid by conference, not as a single comparable year for all 68."
+  ]
+}

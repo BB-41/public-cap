@@ -606,3 +606,26 @@ table.staff-table { max-width: 760px; margin: 8px 0 18px; }
 }
 .compare-block { margin-bottom: 8px; }
 .compare-block .compare-row { margin-bottom: 0; }
+
+.tv-sec { margin-top: 8px; }
+.tv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px 16px;
+  margin: 10px 0 14px;
+}
+.tv-card {
+  background: var(--ink-2);
+  padding: 12px 14px;
+  border-top: 2px solid var(--gold);
+}
+.tv-deal { margin: 18px 0 8px; }
+.tv-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 10px 0 4px;
+}
+.tv-cfp { max-width: 740px; }
+.tv-page p, .tv-page li { color: var(--paper-dim); max-width: 740px; }
+.tv-strip { max-width: 960px; }

@@ -93,6 +93,10 @@ export const DEFS = {
     label: 'Desk tape',
     text: 'A dated log of filings that moved a Public Cap figure — booked NIL, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
   },
+  tv: {
+    label: 'TV / media rights',
+    text: 'Most Power 4 TV contracts are conference deals, not 68 school contracts. Holders, term, pot, and split are cited. A school media check appears only when reported or as a labeled equal-share estimate (pot ÷ members). Notre Dame’s NBC football deal is the school-level exception. CFP is one national package. Empty means pending.',
+  },
   pending: {
     label: 'pending',
     text: 'We looked. We do not have a number. The cell stays empty.',
