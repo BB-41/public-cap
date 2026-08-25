@@ -4,19 +4,27 @@
     "asOf": "2026-08-25",
     "today": "2026-08-25",
     "scope": "Power 4 plus Notre Dame football head coaches, 2026 season",
-    "notes": "Maps a cited contract step-down onto remaining 2026 games. The buyout in force after a kickoff is the step that covers the next calendar day \u2014 not a renegotiation after each Saturday. Paid buyouts (already-owed money after a firing) live on the tape/layers desk, not here.",
+    "notes": "Maps a cited contract step-down onto remaining 2026 games. Public-school buyouts prefer the employment agreement, amendment, or board packet; articles are the fallback only when no current file is on the desk. The buyout in force after a kickoff is the step that covers the next calendar day \u2014 not a renegotiation after each Saturday. We do not invent Saturday stairs or mint remaining-pay dollars from a bare percent clause. Paid buyouts (already-owed money after a firing) live on the tape/layers desk, not here.",
     "defaultSchool": "florida-state",
     "sources": [
-      "CBS Sports (Norvell contract review Nov. 16, 2025; 2026 hot-seat July 16, 2026)",
-      "Tallahassee Democrat / USA TODAY Sports (Norvell Nov. 21, 2025)",
-      "USA TODAY Sports football coach salary database (Oct. 8, 2025) for single overhangs",
+      "Public-school employment agreements, amendments, board packets, and binding term sheets / LOIs. Articles are fallback only when no current file is on the desk.",
+      "FSU Norvell 7th Amendment to 2019 EA (Dec. 13, 2024) and 6th Amendment (term through Dec. 31, 2031) via DocumentCloud / Tallahassee Democrat",
+      "Clemson Swinney Sept. 2022 BOT term sheet (binding until a restated EA)",
+      "UNC Belichick signed 31-page EA via DocumentCloud",
+      "Virginia Tech Franklin letter of intent (Nov. 15, 2025) via Augusta Free Press",
+      "Virginia Athletics Elliott extension announcement (Apr. 8, 2026). 2022 EA is historical; 2026 long-form not on the desk",
+      "University of Kentucky Stein FY2025\u201326 employment agreement PDF",
+      "LSU Kiffin signed EA (Nov. 30, 2025)",
+      "Missouri Drinkwitz Second Restated and Amended EA (Dec. 8, 2025)",
       "University of Tennessee Heupel Amendment 3 PDF (Aug. 2025)",
-      "LSU Kiffin term sheet (Nov. 29, 2025) via Louisiana First / The Athletic / Reveille",
+      "University of Illinois BOT minutes (May 22, 2025) \u2014 Bielema liquidated damages exist; no published % or dollar staircase",
+      "University of Minnesota Regents July 2025 docket (70% rule) and Feb. 2026 finance docket (new Fleck EA)",
+      "University of Oregon BOT Mar. 7, 2025 packet Exhibit A Amendment #3 (Lanning)",
+      "CU Board of Regents Sanders amended employment agreement PDF (Mar. 28, 2025)",
+      "Iowa State Rogers employment agreement PDF (WHO-TV / HTV host)",
+      "USA TODAY Sports football coach salary database (Oct. 8, 2025) for single overhangs when the file has no dollar calendar",
       "UF Sumrall payment details (Dec. 1, 2025, Gainesville Sun)",
-      "WKYT open-records Stein contract (Dec. 8, 2025)",
-      "Wikipedia 2026 FBS team pages for current HCs and schedules",
-      "CU Board of Regents Sanders amended employment agreement PDF (Mar 28, 2025)",
-      "University of Kentucky Stein employment agreement PDF (Feb 2026)"
+      "Wikipedia 2026 FBS team pages for current HCs and schedules"
     ]
   },
   "coaches": {
@@ -111,16 +119,26 @@
     "kentucky": {
       "sport": "fb",
       "name": "Will Stein",
-      "tape": "pending",
-      "termThrough": "2031-01",
-      "steps": [],
-      "rule": "If Kentucky terminates without cause: 70% of remaining salary, paid monthly over the remaining term (five-year, $28.5 million deal starting at $5.5 million). No public current-dollar overhang is on this desk.",
-      "notes": "Mark Stoops\u2019 $37.7M is a paid-buyout (already being paid, no mitigation), not this tool.",
+      "tape": "steps",
+      "termThrough": "2031-01-31",
+      "steps": [
+        {
+          "through": "2031-01-31",
+          "amount": null,
+          "rule": "If Kentucky terminates without cause: 70% of remaining Regular Compensation, paid monthly through Jan. 31, 2031. The file does not publish a dollar staircase. Dollar pending \u2014 we will not invent 70% \u00d7 remaining years.",
+          "confidence": "pending",
+          "source": {
+            "label": "University of Kentucky \u2014 Stein FY2025\u201326 employment agreement PDF (posted Feb 2026)",
+            "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
+          }
+        }
+      ],
+      "notes": "Mark Stoops\u2019s $37.7M is a paid-buyout (already being paid, no mitigation), not this tool. No USA TODAY current-chair overhang is on this desk.",
       "mitigation": {
-        "rule": "WKYT\u2019s open-records readout of Stein\u2019s deal states the 70% school-side guarantee; it does not publish a dollar offset table. We do not invent one.",
+        "rule": "70% remaining Regular Compensation is paid monthly and is subject to mitigate / offset. The file does not publish a dollar offset table. We do not invent one.",
         "source": {
-          "label": "WKYT (Dec. 8, 2025), open-records Stein contract / Stoops separation",
-          "url": "https://www.wkyt.com/2025/12/09/details-steins-contract-stoops-severance/"
+          "label": "University of Kentucky \u2014 Stein FY2025\u201326 employment agreement PDF (posted Feb 2026)",
+          "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
         }
       },
       "contract": {
@@ -131,30 +149,31 @@
     "lsu": {
       "sport": "fb",
       "name": "Lane Kiffin",
-      "tape": "overhang",
-      "termThrough": "2032-12-31",
-      "steps": [],
-      "overhang": {
-        "amount": 62400000,
-        "asOf": "2025-12-01",
-        "rule": "80% of remaining annual salary if LSU terminates without cause. The Athletic, quoting the Nov. 29, 2025 term sheet: the buyout \u201cafter the 2026 season starts\u201d is $62.4 million. Calendar-year remaining-salary math is not a weekly step tape.",
-        "confidence": "reported",
-        "source": {
-          "label": "The Athletic (Dec. 1, 2025), quoting the LSU term sheet",
-          "url": "https://www.nytimes.com/athletic/6852863/2025/12/01/lane-kiffin-lsu-contract-details/"
+      "tape": "steps",
+      "termThrough": "2033-01-31",
+      "steps": [
+        {
+          "through": "2033-01-31",
+          "amount": null,
+          "rule": "If LSU terminates without cause: 80% of remaining Base + Supplemental, paid monthly through Jan. 31, 2033. The signed EA does not publish a dollar staircase. Dollar pending \u2014 we will not invent 80% \u00d7 remaining years from the old term sheet or from USA TODAY.",
+          "confidence": "pending",
+          "source": {
+            "label": "LSU signed employment agreement \u2014 Lane Kiffin (Nov. 30, 2025)",
+            "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf"
+          }
         }
-      },
-      "notes": "Brian Kelly\u2019s ~$53M is a paid-buyout (already-owed money), not this tool. Game-by-game step tape pending \u2014 the term sheet steps on contract years (Dec. 31), not after each Saturday.",
+      ],
+      "notes": "Brian Kelly\u2019s ~$53M is a paid-buyout, not this tool. The Athletic\u2019s $62.4 million \u201cafter the 2026 season starts\u201d figure quoted the Nov. 29, 2025 term sheet \u2014 not remaining-pay math from this signed EA \u2014 and is not the desk dollar.",
       "mitigation": {
-        "rule": "No duty to mitigate and no offset if Kiffin takes another job. The $62.4 million figure is therefore a guaranteed overhang, not a number we reduce.",
+        "rule": "No duty to mitigate and no offset if Kiffin takes another job. The file still does not give us a remaining-pay dollar we can print without inventing the remainder.",
         "source": {
-          "label": "LSU Reveille, quoting the public-records term sheet",
-          "url": "https://lsureveille.com/271547/sports/the-terms-of-lsu-and-lane-kiffins-contract-have-just-been-released-here-are-all-the-details/"
+          "label": "LSU signed employment agreement \u2014 Lane Kiffin (Nov. 30, 2025)",
+          "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf"
         }
       },
       "contract": {
-        "label": "LSU / Lane Kiffin term sheet PDF (Nov. 29, 2025)",
-        "url": "https://www.louisianafirstnews.com/wp-content/uploads/sites/80/2025/12/2025.11.29-Term-Sheet-Lane-Kiffin.pdf"
+        "label": "LSU signed employment agreement \u2014 Lane Kiffin (Nov. 30, 2025)",
+        "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf"
       }
     },
     "mississippi-state": {
@@ -181,23 +200,29 @@
       "sport": "fb",
       "name": "Eliah Drinkwitz",
       "tape": "overhang",
-      "termThrough": "2029-12-31",
+      "termThrough": "2032-01-15",
       "steps": [],
       "overhang": {
         "amount": 28875685,
         "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
+        "rule": "If Missouri terminates without cause: 80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025 \u2014 the last cited figure. The restated EA does not publish a dollar calendar, so we will not invent 80% \u00d7 remaining years as a Saturday staircase.",
         "confidence": "reported",
         "source": {
           "label": "USA TODAY Sports coach salary database",
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
         }
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
-      "mitigation": null,
+      "notes": "Term through Jan. 15, 2032 on the Dec. 8, 2025 restated EA. USA TODAY dollar is the overhang; 80% is the PDF rule. Liability/overhang, not annual spend.",
+      "mitigation": {
+        "rule": "Duty to mitigate. We do not invent a dollar offset.",
+        "source": {
+          "label": "Missouri \u2014 Eli Drinkwitz Second Restated and Amended Employment Contract (Dec. 8, 2025)",
+          "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+        }
+      },
       "contract": {
-        "label": "KOMU / Mizzou Athletics contract posting",
-        "url": "https://www.komu.com/sports/mizzouxtra/mizzou-extends-contract-for-drinkwitz/article_aa28f39a-47b7-41e1-bb3a-90f27611b546.html"
+        "label": "Missouri \u2014 Eli Drinkwitz Second Restated and Amended Employment Contract (Dec. 8, 2025)",
+        "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
       }
     },
     "oklahoma": {
@@ -286,15 +311,15 @@
       ],
       "notes": "Calendar steps are Dec. 15 (and the Jan. 31, 2030 term end), not Saturdays. Coach-side liquidated damages if Heupel walks are a separate schedule ($6M / $4M / $3M / $2M) and are not this tool.",
       "mitigation": {
-        "rule": "School-side buyout is paid monthly through the end of the deal and includes offset language if Heupel takes another job before the contract date. We do not invent a dollar offset.",
+        "rule": "School-side buyout is paid monthly through the end of the deal and includes offset language if Heupel takes another job. No duty to mitigate. We do not invent a dollar offset.",
         "source": {
-          "label": "Knox News, quoting the Aug. 2025 amendment",
-          "url": "https://www.knoxnews.com/story/sports/college/university-of-tennessee/football/2025/08/26/josh-heupel-contract-extension-tennessee-football-pay/85836629007/"
+          "label": "University of Tennessee Amendment 3 to Heupel employment agreement (Aug. 2025)",
+          "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
         }
       },
       "contract": {
-        "label": "UT System contracts page \u2014 Heupel Amendment 3 PDF",
-        "url": "https://tennessee.edu/about/transparency/contracts/"
+        "label": "UT System \u2014 Heupel Amendment 3 PDF (Aug. 2025)",
+        "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
       }
     },
     "texas": {
@@ -358,23 +383,29 @@
       "sport": "fb",
       "name": "Bret Bielema",
       "tape": "overhang",
-      "termThrough": "2030-12-31",
+      "termThrough": "2031-06-30",
       "steps": [],
       "overhang": {
         "amount": 49491667,
         "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
+        "rule": "BOT packet says liquidated damages exist, with mitigation/offset. It does not publish a percent or a dollar staircase. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025. We will not invent a buyout dollar from the minutes.",
         "confidence": "reported",
         "source": {
           "label": "USA TODAY Sports coach salary database",
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
         }
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
-      "mitigation": null,
+      "notes": "Term through June 30, 2031. School buyout if fired without cause on the USA TODAY as-of date. Liability/overhang, not annual spend.",
+      "mitigation": {
+        "rule": "Packet says LDs are subject to mitigation/offset. No percent and no dollar table. We do not invent an offset.",
+        "source": {
+          "label": "U. of Illinois BOT minutes (May 22, 2025) \u2014 Bielema employment terms",
+          "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf"
+        }
+      },
       "contract": {
-        "label": "University of Illinois Athletics",
-        "url": "https://fightingillini.com/news/2025/5/13/football-bielema-agrees-to-new-six-year-contract"
+        "label": "U. of Illinois BOT minutes (May 22, 2025) \u2014 Bielema employment terms",
+        "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf"
       }
     },
     "indiana": {
@@ -471,18 +502,24 @@
       "overhang": {
         "amount": 26600000,
         "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
+        "rule": "If Minnesota terminates without cause: 70% of remaining base + supplemental + retention, quoted from the July 9, 2025 Regents docket. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025. The dockets do not publish a remaining-pay calendar, so we will not invent 70% \u00d7 remaining years as a Saturday staircase.",
         "confidence": "reported",
         "source": {
           "label": "USA TODAY Sports coach salary database",
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
         }
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
-      "mitigation": null,
+      "notes": "Term through Dec. 31, 2030. Feb. 2026 finance docket is the new EA packet; the 70% rule is quoted from the July 9, 2025 docket. USA TODAY dollar is the overhang; 70% is the PDF rule.",
+      "mitigation": {
+        "rule": "July 2025 docket quotes the 70% remaining-pay rule. We do not invent a dollar offset.",
+        "source": {
+          "label": "U. of Minnesota Regents docket (July 9, 2025)",
+          "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2025-07/docket-bor-july2025.pdf"
+        }
+      },
       "contract": {
-        "label": "University of Minnesota Athletics",
-        "url": "https://gophersports.com/news/2025/7/9/football-fleck-signs-extension-now-under-contract-through-2030"
+        "label": "U. of Minnesota Regents finance docket (Feb. 2026) \u2014 Fleck new EA",
+        "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf"
       }
     },
     "nebraska": {
@@ -546,23 +583,29 @@
       "sport": "fb",
       "name": "Dan Lanning",
       "tape": "overhang",
-      "termThrough": "2031-01-01",
+      "termThrough": "2031-01-31",
       "steps": [],
       "overhang": {
         "amount": 56733333,
         "asOf": "2025-10-08",
-        "rule": "If Oregon terminates without cause: 100% of remaining compensation (contract years run Feb. 1\u2013Jan. 31 through Jan. 1, 2031). Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025. Game-by-game step tape pending \u2014 the contract year turns Feb. 1, not after each Saturday.",
+        "rule": "If Oregon terminates without cause: 100% of remaining guaranteed salary + remaining deferred compensation, paid monthly, subject to \u00a76.2.e mitigation. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025. The amendment does not publish a remaining-pay calendar, so we will not invent 100% \u00d7 remaining years as a Saturday staircase.",
         "confidence": "reported",
         "source": {
-          "label": "USA TODAY Sports coach salary database (Oct. 8, 2025)",
+          "label": "USA TODAY Sports coach salary database",
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
         }
       },
-      "notes": "USA TODAY Sports network obtained the March 2025 extension: 100% of remaining money if fired without cause. Lanning\u2019s $20 million figure in that story is the coach-side walk-away, not the school-side overhang.",
-      "mitigation": null,
+      "notes": "Term through Jan. 31, 2031 (Amendment #3). USA TODAY dollar is the overhang; 100% remaining guaranteed + deferred is the PDF rule. Lanning\u2019s $20 million figure in press is the coach-side walk-away, not the school-side overhang.",
+      "mitigation": {
+        "rule": "Subject to \u00a76.2.e mitigation. We do not invent a dollar offset.",
+        "source": {
+          "label": "U. of Oregon BOT Mar. 7, 2025 packet \u2014 Exhibit A Amendment #3 (Lanning)",
+          "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
+        }
+      },
       "contract": {
-        "label": "USA TODAY Sports (March 7, 2025), quoting the Oregon extension",
-        "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2025/03/07/dan-lanning-contract-buyout-details-bonuses-oregon-football/81976220007/"
+        "label": "U. of Oregon BOT Mar. 7, 2025 packet \u2014 Exhibit A Amendment #3 (Lanning)",
+        "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
       }
     },
     "penn-state": {
@@ -706,24 +749,81 @@
     "clemson": {
       "sport": "fb",
       "name": "Dabo Swinney",
-      "tape": "overhang",
+      "tape": "steps",
       "termThrough": "2031-12-31",
-      "steps": [],
-      "overhang": {
-        "amount": 60000000,
-        "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
-        "confidence": "reported",
+      "steps": [
+        {
+          "through": "2026-12-31",
+          "amount": 57000000,
+          "rule": "University without-cause: $57,000,000 flat if terminated in 2026. Term-sheet schedule amount \u2014 not remaining-year math.",
+          "confidence": "reported",
+          "source": {
+            "label": "Clemson 2022 BOT term sheet (Sept. 2022) \u2014 binding until a restated EA",
+            "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+          }
+        },
+        {
+          "through": "2027-12-31",
+          "amount": 60000000,
+          "rule": "If terminated in 2027: remaining Base + Supplemental + Licensing for 2027\u20132031 (sheet totals $11.5M / $11.75M / $12.0M / $12.25M / $12.5M) = $60,000,000. Retention bonuses are not in the university-buyout line.",
+          "confidence": "reported",
+          "source": {
+            "label": "Clemson 2022 BOT term sheet (Sept. 2022) \u2014 binding until a restated EA",
+            "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+          }
+        },
+        {
+          "through": "2028-12-31",
+          "amount": 48500000,
+          "rule": "If terminated in 2028: remaining 2028\u20132031 Base + Supplemental + Licensing = $48,500,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Clemson 2022 BOT term sheet (Sept. 2022) \u2014 binding until a restated EA",
+            "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+          }
+        },
+        {
+          "through": "2029-12-31",
+          "amount": 36750000,
+          "rule": "If terminated in 2029: remaining 2029\u20132031 Base + Supplemental + Licensing = $36,750,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Clemson 2022 BOT term sheet (Sept. 2022) \u2014 binding until a restated EA",
+            "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+          }
+        },
+        {
+          "through": "2030-12-31",
+          "amount": 24750000,
+          "rule": "If terminated in 2030: remaining 2030\u20132031 Base + Supplemental + Licensing = $24,750,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Clemson 2022 BOT term sheet (Sept. 2022) \u2014 binding until a restated EA",
+            "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+          }
+        },
+        {
+          "through": "2031-12-31",
+          "amount": 12500000,
+          "rule": "If terminated in 2031: remaining 2031 Base + Supplemental + Licensing = $12,500,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Clemson 2022 BOT term sheet (Sept. 2022) \u2014 binding until a restated EA",
+            "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+          }
+        }
+      ],
+      "notes": "2022 BOT term sheet is binding until a restated employment agreement is posted. Full 2022 EA was not found. No mitigation. 2026 is a flat $57M; 2027\u20132031 are remaining-year sums from the sheet. Calendar years, not Saturdays.",
+      "mitigation": {
+        "rule": "No mitigation required. The term sheet says the university buyout is payable on a regular schedule over the remaining term or in full within 90 days.",
         "source": {
-          "label": "USA TODAY Sports coach salary database",
-          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+          "label": "Clemson 2022 BOT term sheet (Sept. 2022) \u2014 binding until a restated EA",
+          "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
         }
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
-      "mitigation": null,
       "contract": {
-        "label": "Associated Press",
-        "url": "https://apnews.com/article/college-football-sports-clemson-tigers-nick-saban-e7ae9cca16076df3de46d3ee738b3160"
+        "label": "Clemson 2022 BOT term sheet (Sept. 2022) \u2014 binding until a restated EA",
+        "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
       }
     },
     "duke": {
@@ -745,36 +845,76 @@
       "steps": [
         {
           "through": "2026-12-31",
-          "amount": 58400000,
-          "rule": "If fired without cause during the 2026 season \u2014 85% of remaining base salary and supplemental pay through Dec. 31, 2031. CBS Sports (July 16, 2026) put the after-2025 / in-season-2026 figure at roughly $58.4 million. The contract year ends Dec. 31; it does not step after each Saturday.",
-          "confidence": "estimated",
+          "amount": 58192500,
+          "rule": "If FSU terminates without cause in Contract Year 7 (2026): 85% of remaining Total Annual Compensation (base $215,000 + Additional Comp) for CY7\u201312, plus the CY7 reinstatement. TAC from the 6th Amendment: $10.3M / $10.45M / $10.6M / $10.75M / $10.9M / $11.05M = $64.05M. $64.05M \u00d7 85% + $3.75M = $58,192,500. Full remaining years at the start of 2026 \u2014 the file allows daily proration of partial years; this desk does not mint a mid-year dollar.",
+          "confidence": "reported",
           "source": {
-            "label": "CBS Sports 2026 hot-seat rankings (July 16, 2026)",
-            "url": "https://www.cbssports.com/college-football/news/college-football-hot-seat-rankings-2026-fired-first/"
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          }
+        },
+        {
+          "through": "2027-12-31",
+          "amount": 48687500,
+          "rule": "If terminated in Contract Year 8 (2027): 85% of remaining CY8\u201312 TAC ($53.75M \u00d7 85% = $45,687,500) plus the CY8 reinstatement of $3.0M = $48,687,500. That is the file, not the CBS $45.6M press estimate.",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          }
+        },
+        {
+          "through": "2028-12-31",
+          "amount": 39055000,
+          "rule": "If terminated in Contract Year 9 (2028): 85% of remaining CY9\u201312 TAC ($43.3M) plus the CY9 reinstatement of $2.25M = $39,055,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          }
+        },
+        {
+          "through": "2029-12-31",
+          "amount": 29295000,
+          "rule": "If terminated in Contract Year 10 (2029): 85% of remaining CY10\u201312 TAC ($32.7M) plus the CY10 reinstatement of $1.5M = $29,295,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          }
+        },
+        {
+          "through": "2030-12-31",
+          "amount": 19407500,
+          "rule": "If terminated in Contract Year 11 (2030): 85% of remaining CY11\u201312 TAC ($21.95M) plus the CY11 reinstatement of $0.75M = $19,407,500.",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
           }
         },
         {
           "through": "2031-12-31",
-          "amount": 45600000,
-          "rule": "After the 2026 season ends, CBS Sports estimated the buyout drops to $45.6 million. Still 85% of remaining compensation; remaining contract years run through Dec. 31, 2031.",
-          "confidence": "estimated",
+          "amount": 9392500,
+          "rule": "If terminated in Contract Year 12 (2031): 85% of remaining CY12 TAC ($11.05M) plus the CY12 reinstatement of $0 = $9,392,500.",
+          "confidence": "reported",
           "source": {
-            "label": "CBS Sports 2026 hot-seat rankings (July 16, 2026)",
-            "url": "https://www.cbssports.com/college-football/news/college-football-hot-seat-rankings-2026-fired-first/"
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
           }
         }
       ],
-      "notes": "Rule confirmed by CBS Sports (Nov. 16, 2025 contract review) and the Tallahassee Democrat / USA TODAY Sports (Nov. 21, 2025), both quoting the employment agreement: 85% of remaining base and supplemental pay, payable lump-sum or in monthly installments through 2031. The desk\u2019s last USA TODAY if-fired overhang was $58,667,708 as of Oct. 8, 2025 \u2014 the same order of magnitude as the $58.4 million 2026-season step. We do not mint a weekly staircase.",
+      "notes": "7th Amendment V.E. (Dec. 13, 2024) is the current buyout rule. 6th Amendment sets the Total Term through Dec. 31, 2031 and the CY7\u201312 Additional Comp table (plus $215,000 base = TAC). Calendar years, not Saturdays. We do not repeat CBS\u2019s $58.4M / $45.6M as the source of the dollars.",
       "mitigation": {
-        "rule": "Norvell must use best efforts to obtain full-time comparable employment at a market-rate salary. If he is hired, Florida State\u2019s remaining termination amount is reduced dollar-for-dollar by what he earns during the termination period. We do not invent a dollar offset.",
+        "rule": "Dollar-for-dollar. Norvell must use best efforts to obtain full-time comparable employment at a market-rate salary. If he is hired, Florida State\u2019s remaining Termination Amount is reduced dollar-for-dollar by what he earns during the Termination Period. We do not invent a dollar offset.",
         "source": {
-          "label": "Tallahassee Democrat / USA TODAY Sports (Nov. 21, 2025), quoting the contract",
-          "url": "https://www.tallahassee.com/story/sports/college/fsu/football/2025/11/21/mike-norvell-buyout-contract-fsu-football-fire-coach/87375717007/"
+          "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+          "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
         }
       },
       "contract": {
-        "label": "CBS Sports contract review (Nov. 16, 2025)",
-        "url": "https://www.cbssports.com/college-football/news/mike-norvell-buyout-contract-florida-state-head-coach/"
+        "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+        "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
       }
     },
     "georgia-tech": {
@@ -857,24 +997,51 @@
     "north-carolina": {
       "sport": "fb",
       "name": "Bill Belichick",
-      "tape": "overhang",
+      "tape": "steps",
       "termThrough": "2029-12-31",
-      "steps": [],
-      "overhang": {
-        "amount": 20833333,
-        "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
-        "confidence": "reported",
+      "steps": [
+        {
+          "through": "2026-12-31",
+          "amount": 20000000,
+          "rule": "University without-cause (\u00a712): remaining unpaid Base ($1,000,000/year) + Supplemental Income ($9,000,000/year) through Dec. 31, 2027 only. Full remaining 2026 and 2027 years = $20,000,000. Labeled full remaining years \u2014 the file allows daily earning of Supplemental Income; this desk does not mint a mid-year dollar. Earned-but-unpaid bonuses are not added.",
+          "confidence": "reported",
+          "source": {
+            "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          }
+        },
+        {
+          "through": "2027-12-31",
+          "amount": 10000000,
+          "rule": "If terminated in 2027 (still on or before Dec. 31, 2027): remaining 2027 Base + Supplemental = $10,000,000. Full remaining year, labeled.",
+          "confidence": "reported",
+          "source": {
+            "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          }
+        },
+        {
+          "through": "2029-12-31",
+          "amount": 0,
+          "rule": "If terminated after Dec. 31, 2027: $0. Section 12 pays Base + Supplemental only through Dec. 31, 2027. Contract years 2028\u201329 are $0 on a university fire.",
+          "confidence": "reported",
+          "source": {
+            "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          }
+        }
+      ],
+      "notes": "Term through Dec. 31, 2029. No mitigation or offset in \u00a712. Calendar steps, not Saturdays.",
+      "mitigation": {
+        "rule": "No mitigation and no offset in \u00a712. The university-fire amount is remaining Base + Supplemental through Dec. 31, 2027 only.",
         "source": {
-          "label": "USA TODAY Sports coach salary database",
-          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+          "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+          "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
         }
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
-      "mitigation": null,
       "contract": {
-        "label": "Fox News / UNC-released contract",
-        "url": "https://www.foxnews.com/sports/bill-belichicks-north-carolina-contract-details-show-staggering-salary-interesting-clauses"
+        "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+        "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
       }
     },
     "pittsburgh": {
@@ -925,32 +1092,94 @@
       "sport": "fb",
       "name": "Tony Elliott",
       "tape": "overhang",
-      "termThrough": null,
+      "termThrough": "2030-12-31",
       "steps": [],
       "overhang": {
         "amount": 11175000,
         "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date \u2014 last cited school-side dollar before the Apr. 8, 2026 extension. The 2026 long-form EA is not on this desk, so we do not mint a new staircase from the announcement. Game-by-game tape pending.",
         "confidence": "reported",
         "source": {
           "label": "USA TODAY Sports coach salary database",
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
         }
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "notes": "School announced an extension through the 2030 season on Apr. 8, 2026; no current extension PDF is on the desk. The 2022 EA (https://augustafreepress.com/wp-content/uploads/2024/11/FB_-_Elliott__T_-_20221031_120821-053128.pdf) is historical and is not treated as the current deal.",
       "mitigation": null,
-      "contract": null
+      "contract": {
+        "label": "Virginia Athletics \u2014 Elliott extension through the 2030 season (Apr. 8, 2026)",
+        "url": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension"
+      }
     },
     "virginia-tech": {
       "sport": "fb",
       "name": "James Franklin",
-      "tape": "pending",
-      "termThrough": null,
-      "steps": [],
-      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending \u2014 not a guessed staircase.",
-      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
-      "mitigation": null,
-      "contract": null
+      "tape": "steps",
+      "termThrough": "2030-12-31",
+      "steps": [
+        {
+          "through": "2026-12-31",
+          "amount": 41000000,
+          "rule": "University without-cause: remaining Base + Supplemental, paid monthly through Dec. 31, 2030. LOI windows: 2026 $6.0M, 2027 $5.0M, 2028 $4.0M, 2029 $12.75M, 2030 $13.25M. Remaining sum if terminated in 2026 = $41,000,000. Full remaining years \u2014 not mid-year prorated.",
+          "confidence": "reported",
+          "source": {
+            "label": "Virginia Tech Franklin letter of intent (Nov. 15, 2025) \u2014 binding pending long-form EA",
+            "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+          }
+        },
+        {
+          "through": "2027-12-31",
+          "amount": 35000000,
+          "rule": "If terminated in 2027: remaining 2027\u20132030 Base + Supplemental = $35,000,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Virginia Tech Franklin letter of intent (Nov. 15, 2025) \u2014 binding pending long-form EA",
+            "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+          }
+        },
+        {
+          "through": "2028-12-31",
+          "amount": 30000000,
+          "rule": "If terminated in 2028: remaining 2028\u20132030 Base + Supplemental = $30,000,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Virginia Tech Franklin letter of intent (Nov. 15, 2025) \u2014 binding pending long-form EA",
+            "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+          }
+        },
+        {
+          "through": "2029-12-31",
+          "amount": 26000000,
+          "rule": "If terminated in 2029: remaining 2029\u20132030 Base + Supplemental = $26,000,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Virginia Tech Franklin letter of intent (Nov. 15, 2025) \u2014 binding pending long-form EA",
+            "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+          }
+        },
+        {
+          "through": "2030-12-31",
+          "amount": 13250000,
+          "rule": "If terminated in 2030: remaining 2030 Base + Supplemental = $13,250,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Virginia Tech Franklin letter of intent (Nov. 15, 2025) \u2014 binding pending long-form EA",
+            "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+          }
+        }
+      ],
+      "notes": "Binding LOI pending a long-form employment agreement. Term Dec. 31, 2030. Calendar-year remaining sums from the LOI windows. We do not invent mid-year dollars.",
+      "mitigation": {
+        "rule": "After a without-cause fire he must use best reasonable efforts to seek other coaching-related employment. If he accepts a college or professional coaching job (including analyst/consultant), that pay offsets the university remaining-pay stream monthly, dollar-for-dollar. We do not invent a dollar offset.",
+        "source": {
+          "label": "Virginia Tech Franklin letter of intent (Nov. 15, 2025) \u2014 binding pending long-form EA",
+          "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+        }
+      },
+      "contract": {
+        "label": "Virginia Tech Franklin letter of intent (Nov. 15, 2025) \u2014 binding pending long-form EA",
+        "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+      }
     },
     "wake-forest": {
       "sport": "fb",
@@ -1057,16 +1286,16 @@
       "overhang": {
         "amount": 33625000,
         "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. CU Board PDF (Mar 28, 2025) \u00b613: if the University terminates without cause, 75% of remaining Base Salary and Supplemental Salary, paid monthly through Dec. 31, 2029. No published dollar calendar \u2014 we will not invent 75% \u00d7 remaining years as a Saturday staircase.",
+        "rule": "If Colorado terminates without cause: 75% of remaining Base Salary and Supplemental Salary, paid monthly through Dec. 31, 2029 (amended EA \u00b613). Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025. No published dollar calendar \u2014 we will not invent 75% \u00d7 remaining years as a Saturday staircase.",
         "confidence": "reported",
         "source": {
           "label": "USA TODAY Sports coach salary database",
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
         }
       },
-      "notes": "School-side is 75% of remaining Base + Supplemental through Dec. 31, 2029 (CU Board amended agreement, Mar 28, 2025). Liability/overhang, not annual spend. Coach-side liquidated damages if Sanders walks ($12M / $10M / $6M / $4M / $3M by Dec. 31 2025\u20132029) are a separate schedule and are not this tool.",
+      "notes": "School-side is 75% of remaining Base + Supplemental through Dec. 31, 2029. Liability/overhang, not annual spend. Coach-side liquidated damages if Sanders walks ($12M / $10M / $6M / $4M / $3M by Dec. 31 2025\u20132029) are a separate schedule and are not this tool.",
       "mitigation": {
-        "rule": "If Sanders takes comparable collegiate or professional coaching / executive employment, the University reduces the 75% payout by what he receives. We do not invent a dollar offset.",
+        "rule": "Offset if Sanders takes a comparable collegiate or professional coaching / executive job: the University reduces the 75% payout by what he receives. We do not invent a dollar offset.",
         "source": {
           "label": "CU Board of Regents \u2014 Amended and Restated Employment Agreement (Mar 28, 2025), \u00b613",
           "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/"
@@ -1100,13 +1329,82 @@
     "iowa-state": {
       "sport": "fb",
       "name": "Jimmy Rogers",
-      "tape": "pending",
-      "termThrough": null,
-      "steps": [],
-      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending \u2014 not a guessed staircase.",
-      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
-      "mitigation": null,
-      "contract": null
+      "tape": "steps",
+      "termThrough": "2032-01-31",
+      "steps": [
+        {
+          "through": "2027-01-31",
+          "amount": 18000000,
+          "rule": "University without-cause: 100% of remaining Base, paid monthly. Base in the EA is $3,000,000 per year through Jan. 31, 2032. Six remaining contract years \u00d7 $3,000,000 = $18,000,000. Reported from the EA as remaining years \u00d7 base with the term date \u2014 full years, not mid-year prorated. Bonuses that are not in the termination clause are not added.",
+          "confidence": "reported",
+          "source": {
+            "label": "Iowa State \u2014 Jimmy Rogers employment agreement PDF",
+            "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+          }
+        },
+        {
+          "through": "2028-01-31",
+          "amount": 15000000,
+          "rule": "If terminated in the contract year ending Jan. 31, 2028: five remaining years \u00d7 $3,000,000 Base = $15,000,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Iowa State \u2014 Jimmy Rogers employment agreement PDF",
+            "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+          }
+        },
+        {
+          "through": "2029-01-31",
+          "amount": 12000000,
+          "rule": "If terminated in the contract year ending Jan. 31, 2029: four remaining years \u00d7 $3,000,000 Base = $12,000,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Iowa State \u2014 Jimmy Rogers employment agreement PDF",
+            "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+          }
+        },
+        {
+          "through": "2030-01-31",
+          "amount": 9000000,
+          "rule": "If terminated in the contract year ending Jan. 31, 2030: three remaining years \u00d7 $3,000,000 Base = $9,000,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Iowa State \u2014 Jimmy Rogers employment agreement PDF",
+            "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+          }
+        },
+        {
+          "through": "2031-01-31",
+          "amount": 6000000,
+          "rule": "If terminated in the contract year ending Jan. 31, 2031: two remaining years \u00d7 $3,000,000 Base = $6,000,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Iowa State \u2014 Jimmy Rogers employment agreement PDF",
+            "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+          }
+        },
+        {
+          "through": "2032-01-31",
+          "amount": 3000000,
+          "rule": "If terminated in the contract year ending Jan. 31, 2032: one remaining year \u00d7 $3,000,000 Base = $3,000,000.",
+          "confidence": "reported",
+          "source": {
+            "label": "Iowa State \u2014 Jimmy Rogers employment agreement PDF",
+            "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+          }
+        }
+      ],
+      "notes": "Prior-coach USA TODAY cell is not reused. Termination clause is remaining Base only. Offset if hired at another D-I school; no duty to seek work.",
+      "mitigation": {
+        "rule": "Offset if Rogers is hired at another Division I school. No duty to seek work. We do not invent a dollar offset.",
+        "source": {
+          "label": "Iowa State \u2014 Jimmy Rogers employment agreement PDF",
+          "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+        }
+      },
+      "contract": {
+        "label": "Iowa State \u2014 Jimmy Rogers employment agreement PDF",
+        "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+      }
     },
     "kansas": {
       "sport": "fb",

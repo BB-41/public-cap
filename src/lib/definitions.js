@@ -35,7 +35,7 @@ export const DEFS = {
   },
   coachTerm: {
     label: 'Contract term',
-    text: 'Through-year or years remaining on the current head-coach deal, cited from the employment agreement or a newsroom/school release that quotes one. Not a guess. Pending if we do not have a public through-year.',
+    text: 'Through-year or years remaining on the current head-coach deal, cited from the employment agreement or a newsroom/school release that quotes one. Public-school buyouts prefer the file; articles are fallback only when no current file is loaded. Not a guess. Pending if we do not have a public through-year.',
   },
   staffPay: {
     label: 'Staff pay',

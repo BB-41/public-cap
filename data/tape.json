@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-25",
-    "itemCount": 44,
+    "itemCount": 54,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,156 @@
     ]
   },
   "items": [
+    {
+      "id": "minnesota-contract-fleck-2026-02",
+      "date": "2026-02",
+      "school": "minnesota",
+      "schoolName": "Minnesota",
+      "kind": "contract",
+      "headline": "Minnesota Regents finance docket posts P. J. Fleck\u2019s new employment agreement. Term through December 31, 2030. School-side without-cause is 70% of remaining base + supplemental + retention, quoted from the July 9, 2025 docket. No published dollar calendar.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "U. of Minnesota Regents finance docket (Feb. 2026)",
+        "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "lsu-contract-kiffin-2025-11-30",
+      "date": "2025-11-30",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "contract",
+      "headline": "LSU posts Lane Kiffin\u2019s signed employment agreement. Term through January 31, 2033. School-side without-cause is 80% of remaining Base + Supplemental, monthly, with no mitigate and no offset. No published dollar calendar.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "LSU signed employment agreement \u2014 Lane Kiffin",
+        "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "missouri-contract-drinkwitz-2025-12-08",
+      "date": "2025-12-08",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "contract",
+      "headline": "Missouri posts Eliah Drinkwitz\u2019s Second Restated and Amended Employment Contract. Term through January 15, 2032. School-side without-cause is 80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "Missouri Drinkwitz restated EA PDF",
+        "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "virginia-tech-contract-franklin-2025-11-15",
+      "date": "2025-11-15",
+      "school": "virginia-tech",
+      "schoolName": "Virginia Tech",
+      "kind": "contract",
+      "headline": "Virginia Tech\u2019s binding letter of intent for James Franklin runs through December 31, 2030. Without-cause is remaining Base + Supplemental (2026\u20132030 windows $6.0 / $5.0 / $4.0 / $12.75 / $13.25 million), subject to offset if he takes a college or pro coaching job.",
+      "figure": 41000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Virginia Tech Franklin LOI PDF",
+        "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "illinois-contract-bielema-2025-05-22",
+      "date": "2025-05-22",
+      "school": "illinois",
+      "schoolName": "Illinois",
+      "kind": "contract",
+      "headline": "Illinois BOT minutes record Bret Bielema\u2019s term through June 30, 2031 and say liquidated damages exist with mitigation/offset. The packet publishes no percent and no dollar staircase.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "U. of Illinois BOT minutes (May 22, 2025)",
+        "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "oregon-contract-lanning-2025-03-07",
+      "date": "2025-03-07",
+      "school": "oregon",
+      "schoolName": "Oregon",
+      "kind": "contract",
+      "headline": "Oregon BOT March 7, 2025 packet Exhibit A Amendment #3 extends Dan Lanning through January 31, 2031. Without-cause is 100% of remaining guaranteed salary plus remaining deferred compensation, monthly, subject to \u00a76.2.e mitigation.",
+      "figure": null,
+      "confidence": "reported",
+      "source": {
+        "label": "U. of Oregon BOT Mar. 7, 2025 packet",
+        "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "florida-state-contract-norvell-2024-12-13",
+      "date": "2024-12-13",
+      "school": "florida-state",
+      "schoolName": "Florida State",
+      "kind": "contract",
+      "headline": "Florida State 7th Amendment (Dec. 13, 2024) replaces the Norvell without-cause rule: 85% of remaining TAC plus a Contract Year reinstatement. Start-of-2026 file math is $58,192,500 \u2014 not the CBS $58.4M / $45.6M estimates.",
+      "figure": 58192500,
+      "confidence": "reported",
+      "source": {
+        "label": "FSU 7th Amendment to 2019 EA via DocumentCloud",
+        "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "north-carolina-contract-belichick-2024-12-12",
+      "date": "2024-12-12",
+      "school": "north-carolina",
+      "schoolName": "North Carolina",
+      "kind": "contract",
+      "headline": "UNC posts Bill Belichick\u2019s signed employment agreement. Term through December 31, 2029. University without-cause (\u00a712) pays remaining Base $1M + Supplemental $9M only through December 31, 2027; 2028\u201329 are $0 on a university fire. No mitigation in \u00a712.",
+      "figure": 20000000,
+      "confidence": "reported",
+      "source": {
+        "label": "UNC Belichick EA via DocumentCloud",
+        "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "iowa-state-contract-rogers-2026",
+      "date": "2026",
+      "school": "iowa-state",
+      "schoolName": "Iowa State",
+      "kind": "contract",
+      "headline": "Iowa State posts Jimmy Rogers\u2019s employment agreement. Term through January 31, 2032. Without-cause is 100% of remaining Base ($3,000,000/year). Six remaining contract years \u00d7 $3M = $18,000,000 at the start of the current year. Offset if hired at another D-I school; no duty to seek work.",
+      "figure": 18000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Iowa State Rogers EA PDF",
+        "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "clemson-contract-swinney-2022-09",
+      "date": "2022-09",
+      "school": "clemson",
+      "schoolName": "Clemson",
+      "kind": "contract",
+      "headline": "Clemson 2022 BOT term sheet (binding until a restated EA) sets Dabo Swinney through December 31, 2031. University without-cause is $57,000,000 flat if terminated in 2026, then remaining Base + Supplemental + Licensing for 2027\u20132031. No mitigation.",
+      "figure": 57000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Clemson 2022 BOT term sheet",
+        "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+      },
+      "field": "coaches.football.term"
+    },
     {
       "id": "kentucky-contract-stein-2026-02",
       "date": "2026-02",

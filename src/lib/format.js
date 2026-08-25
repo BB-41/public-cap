@@ -51,6 +51,20 @@ export function coachTermLabel(term) {
   return bits.length ? bits.join(' · ') : null
 }
 
+/** Visible CTA when a coach card has a public employment-agreement file. */
+export function contractLinkLabel(url, label = '') {
+  if (!url) return null
+  const lab = String(label || '')
+  if (/amendment/i.test(lab)) return 'Contract amendment'
+  if (/\.pdf($|[?#])/i.test(url) || /documentcloud\.org|diligentoneplatform\.com/i.test(url)) {
+    return 'Contract PDF'
+  }
+  if (/\b(term sheet|letter of intent|\bLOI\b|docket|minutes|BOT packet|employment agreement)\b/i.test(lab)) {
+    return 'Contract PDF'
+  }
+  return lab || 'Contract / source'
+}
+
 /** Compact efficiency: wins per $1 million. */
 export function winsPerM(perM) {
   if (perM == null || Number.isNaN(perM)) return '—'
