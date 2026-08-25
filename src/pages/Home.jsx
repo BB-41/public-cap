@@ -1,9 +1,11 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { money, moneyRange, pct, throughShort } from '../lib/format.js'
+import { money, moneyRange, pct, throughShort, winsPerM } from '../lib/format.js'
 import { val } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
+import SeasonPicker from '../components/SeasonPicker.jsx'
+import { chipsForSeason } from '../lib/seasons.js'
 
 const COLS = [
   { key: 'name', label: 'School', type: 'text' },
@@ -16,27 +18,24 @@ const COLS = [
   { key: 'nilHouse', label: 'NIL / House', type: 'num', def: 'nilHouse' },
   { key: 'fbPay', label: 'FB pay', type: 'num', def: 'coachPay' },
   { key: 'fbBuy', label: 'FB buyout', type: 'num', def: 'buyout' },
+  { key: 'winsPerNil', label: 'FB W/$M NIL', type: 'num', def: 'winsPerDollar' },
 ]
 
-const CHIPS = [
-  { id: 'all', label: 'All' },
-  { id: 'SEC', label: 'SEC' },
-  { id: 'Big Ten', label: 'B1G' },
-  { id: 'ACC', label: 'ACC' },
-  { id: 'Big 12', label: 'Big 12' },
-  { id: 'ND', label: 'ND' },
-]
+export default function Home({ schools, house, houseField, season, setSeason }) {
+  const CHIPS = chipsForSeason(season)
 
-export default function Home({ schools, house }) {
   const [sort, setSort] = useState({ key: 'capacity', dir: 'desc' })
   const [q, setQ] = useState('')
   const [chip, setChip] = useState(() => new URLSearchParams(window.location.search).get('conf') || 'all')
+  useEffect(() => {
+    if (!CHIPS.some((c) => c.id === chip)) setChip('all')
+  }, [season])
 
   const rows = useMemo(() => {
     const needle = q.trim().toLowerCase()
     const mapped = schools
       .filter((s) => {
-        if (chip === 'ND') return s.id === 'notre-dame' || s.conference.startsWith('Independent')
+        if (chip === 'ND') return s.id === 'notre-dame' || String(s.conference).startsWith('Independent')
         if (chip !== 'all' && s.conference !== chip) return false
         if (!needle) return true
         return (
@@ -62,6 +61,9 @@ export default function Home({ schools, house }) {
         fbPay: val(s.coaches.football.pay),
         fbBuy: val(s.coaches.football.buyout) || null,
         fbThru: throughShort(s.coaches.football.term),
+        winsPerNil: s._eff?.winsPerNilPerM ?? null,
+        winsPerNilModeled: s._eff?.pot?.confidence === 'modeled',
+        fbRecord: s._eff?.wins != null ? `${s._eff.wins}–${s._eff.losses}` : null,
         conf: s._conf,
       }))
     const { key, dir } = sort
@@ -75,7 +77,7 @@ export default function Home({ schools, house }) {
       return dir === 'asc' ? av - bv : bv - av
     })
     return mapped
-  }, [schools, house, sort, q, chip])
+  }, [schools, house, sort, q, chip, season])
 
   function toggle(key) {
     setSort((s) => (s.key === key ? { key, dir: s.dir === 'asc' ? 'desc' : 'asc' } : { key, dir: key === 'name' || key === 'conference' ? 'asc' : 'desc' }))
@@ -87,9 +89,10 @@ export default function Home({ schools, house }) {
         <h1 className="issue-hed">Who can actually write the check.</h1>
         <p className="lede">
           Two ceilings sit on every Power program now: the official House benefits cap
-          ($20.5M in 2025–26, ~$21.3M in 2026–27) and the school’s own annual economic
+          (only 2025–26 and 2026–27) and the school’s own annual economic
           capacity. This table ranks all 68 Power 4 plus Notre Dame names on our desk —
           real cited public numbers where we have them, clearly tagged estimates otherwise.
+          Seasons are football years 2021–2026, from the start of the NIL era.
         </p>
         <div className="legend">
           <span title={defTitle('reported')}><i className="dot reported" /> reported</span>
@@ -98,6 +101,7 @@ export default function Home({ schools, house }) {
           <span title={defTitle('pending')}><i className="dot pending" /> pending</span>
         </div>
         <div className="rank-tools">
+          <SeasonPicker season={season} onChange={setSeason} id="rank-season" />
           <input
             className="search"
             type="search"
@@ -140,16 +144,16 @@ export default function Home({ schools, house }) {
             {rows.map((r) => (
               <tr key={r.school.id}>
                 <td>
-                  <Link className="school-link" to={`/school/${r.school.id}`}>
+                  <Link className="school-link" to={season === 2026 ? `/school/${r.school.id}` : `/school/${r.school.id}?season=${season}`}>
                     <Logo school={r.school} size={28} />
                     <span>{r.school.name}</span>
                   </Link>
                   {r.school.private && <span className="pill">private</span>}
                   {r.school.revenueGap && <span className="pill gap">rev. gap</span>}
                 </td>
-                <td className="conf">{r.conference === 'Independent / ACC' ? 'ND / ACC' : r.conference === 'Big Ten' ? 'B1G' : r.conference}</td>
+                <td className="conf">{r.conference === 'Independent / ACC' ? 'ND / ACC' : r.conference === 'Big Ten' ? 'B1G' : r.conference === 'Independent' ? 'Ind.' : r.conference}</td>
                 <td className="num strong">{money(r.capacity)}</td>
-                <td className="num muted">{money(house)}</td>
+                <td className="num muted">{house == null ? <span className="pending-cell" title={houseField?.notes}>no House cap</span> : money(house)}</td>
                 <td className="num">{r.nil == null ? <span className="pending-cell">pending</span> : money(r.nil)}</td>
                 <td className="num modeled-cell" title={defTitle('nilModeled')}>{moneyRange(r.nilModeledLow, r.nilModeledHigh)}</td>
                 <td className="num">{pct(r.nilCap)}</td>
@@ -163,6 +167,10 @@ export default function Home({ schools, house }) {
                   )}
                 </td>
                 <td className="num">{r.fbBuy ? money(r.fbBuy) : '—'}</td>
+                <td className={`num ${r.winsPerNilModeled ? 'modeled-cell' : ''}`} title={r.winsPerNilModeled ? 'Uses modeled NIL mid' : 'Uses booked NIL'}>
+                  {r.winsPerNil == null ? <span className="pending-cell">pending</span> : winsPerM(r.winsPerNil)}
+                  {r.fbRecord && <div className="term-compact">{r.fbRecord}{r.winsPerNilModeled ? ' · modeled' : ''}</div>}
+                </td>
                 <td><i className={`dot ${r.conf.primary}`} title={r.conf.primary} /></td>
               </tr>
             ))}
@@ -170,8 +178,10 @@ export default function Home({ schools, house }) {
         </table>
       </div>
       <p className="fine">
-        House cap shown is 2025–26 ($20.5M). Capacity includes a modeled extra-alumni
-        giving midpoint and will move when Category 15 / tickets land. Click a school.
+        {house == null
+          ? 'No House cap (pre-settlement). Modeled NIL is hidden before 2025–26. Capacity for 2021–2024 is conference-media floor plus modeled alumni flow; tickets / sponsorships / contributions stay pending.'
+          : `House cap shown is ${season === 2026 ? '2026–27 (~$21.3M, estimated)' : '2025–26 ($20.5M, reported)'}. Capacity includes a modeled extra-alumni giving midpoint and will move when Category 15 / tickets land.`}
+        {' '}Click a school.
       </p>
     </div>
   )

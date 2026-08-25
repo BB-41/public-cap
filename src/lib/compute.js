@@ -111,7 +111,9 @@ export function computeCapacity(school) {
 }
 
 export function houseCap(meta, year = '2025-26') {
-  if (year === '2026-27') return val(meta.houseCap.y2026_27)
+  if (year === '2026-27' || year === 2026) return val(meta.houseCap.y2026_27)
+  if (year === '2025-26' || year === 2025) return val(meta.houseCap.y2025_26)
+  if (year === null || year === 'pre' || (typeof year === 'number' && year < 2025)) return null
   return val(meta.houseCap.y2025_26)
 }
 
@@ -123,20 +125,20 @@ export function nilModeled(school) {
   return school?.nil?.modeled || null
 }
 
-export function ratios(school, meta) {
+export function ratios(school, meta, houseYear) {
   const cap = computeCapacity(school)
   const nil = nilBooked(school)
-  const house = houseCap(meta)
+  const house = houseCap(meta, houseYear ?? school._season?.houseKey ?? '2025-26')
   const modeled = nilModeled(school)
   return {
     capacity: cap.total,
     house,
     nil,
     modeled,
-    nilOverCapacity: nil == null ? null : nil / cap.total,
-    nilOverHouse: nil == null ? null : nil / house,
-    modeledMidOverCapacity: modeled ? modeled.mid / cap.total : null,
-    modeledMidOverHouse: modeled ? modeled.mid / house : null,
+    nilOverCapacity: nil == null || !cap.total ? null : nil / cap.total,
+    nilOverHouse: nil == null || !house ? null : nil / house,
+    modeledMidOverCapacity: modeled && cap.total ? modeled.mid / cap.total : null,
+    modeledMidOverHouse: modeled && house ? modeled.mid / house : null,
   }
 }
 

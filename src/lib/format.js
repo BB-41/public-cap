@@ -50,3 +50,9 @@ export function coachTermLabel(term) {
   }
   return bits.length ? bits.join(' · ') : null
 }
+
+/** Compact efficiency: wins per $1 million. */
+export function winsPerM(perM) {
+  if (perM == null || Number.isNaN(perM)) return '—'
+  return `${perM.toFixed(2)}`
+}

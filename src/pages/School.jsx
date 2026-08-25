@@ -1,9 +1,12 @@
 import { Link, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel } from '../lib/format.js'
-import { collectSources, houseCap, hasVal, val } from '../lib/compute.js'
+import { collectSources, hasVal } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import { earningsBack } from '../lib/earningsBack.js'
+import Layers from '../components/Layers.jsx'
+import SeasonPicker from '../components/SeasonPicker.jsx'
+import { houseValueForSeason } from '../lib/seasons.js'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -296,20 +299,25 @@ function Field({ field, fallback = '—' }) {
   )
 }
 
-export default function School({ schools, meta }) {
+export default function School({ schools, meta, season, setSeason }) {
   const { id } = useParams()
   const s = schools.find((x) => x.id === id)
   if (!s) return <div className="page-wrap"><p>School not on the desk.</p></div>
   const cap = s._cap
-  const house = houseCap(meta)
-  const house27 = houseCap(meta, '2026-27')
+  const house = houseValueForSeason(meta, season)
+  const houseField = s._houseField
+  const spec = s._season
   const nil = s._ratios.nil
   const sources = collectSources(s, meta)
   const maxBar = Math.max(cap.total, house, nil || 0, s.nil.modeled?.high || 0, 1)
 
   return (
     <div className="page-wrap school">
-      <p className="crumb"><Link to="/">Rank list</Link> / {s.name}</p>
+      <p className="crumb"><Link to={season === 2026 ? '/' : `/?season=${season}`}>Rank list</Link> / {s.name}</p>
+      <div className="school-tools">
+        <SeasonPicker season={season} onChange={setSeason} id="school-season" />
+        <span className="season-note">{spec?.academic} · football {season}</span>
+      </div>
       <header className="school-hed">
         <Logo school={s} size={72} className="logo-lg" />
         <div>
@@ -348,11 +356,11 @@ export default function School({ schools, meta }) {
             <div className="stack-val">{money(cap.total)}</div>
           </div>
           <div className="stack-row">
-            <div className="stack-lab" title={defTitle('house')}>House cap 2025–26</div>
+            <div className="stack-lab" title={defTitle('house')}>{house == null ? 'House cap' : (season >= 2026 ? 'House cap 2026–27' : 'House cap 2025–26')}</div>
             <div className="stack-bar-wrap">
-              <div className="stack-bar house" style={{ width: `${(house / maxBar) * 100}%` }} />
+              <div className="stack-bar house" style={{ width: house ? `${(house / maxBar) * 100}%` : '0' }} />
             </div>
-            <div className="stack-val">{money(house)}</div>
+            <div className="stack-val">{house == null ? 'no House cap (pre-settlement)' : money(house)}</div>
           </div>
           <div className="stack-row">
             <div className="stack-lab" title={defTitle('nil')}>NIL booked</div>
@@ -361,13 +369,23 @@ export default function School({ schools, meta }) {
             </div>
             <div className="stack-val">{nil == null ? 'pending' : money(nil)}</div>
           </div>
+          {s.nil.modeled ? (
           <div className="stack-row">
             <div className="stack-lab" title={defTitle('nilModeled')}>NIL modeled <i className="dot modeled" /></div>
             <div className="stack-bar-wrap">
-              <div className="stack-bar nil-modeled" style={{ width: s.nil.modeled ? `${(s.nil.modeled.mid / maxBar) * 100}%` : '0' }} />
+              <div className="stack-bar nil-modeled" style={{ width: `${(s.nil.modeled.mid / maxBar) * 100}%` }} />
             </div>
-            <div className="stack-val modeled-cell">{s.nil.modeled ? moneyRange(s.nil.modeled.low, s.nil.modeled.high) : '—'}</div>
+            <div className="stack-val modeled-cell">{moneyRange(s.nil.modeled.low, s.nil.modeled.high)}</div>
           </div>
+          ) : (
+          <div className="stack-row">
+            <div className="stack-lab" title={defTitle('nilModeled')}>NIL modeled</div>
+            <div className="stack-bar-wrap">
+              <div className="stack-bar nil-modeled" style={{ width: '0' }} />
+            </div>
+            <div className="stack-val"><span className="pending-cell">hidden (pre-House)</span></div>
+          </div>
+          )}
         </div>
         <p className="fine">Primary FY: {s.capacity.fiscalYearPrimary}. {s.capacity.fiscalYearNote || s.capacity.gapNote || ''}</p>
       </section>
@@ -425,11 +443,14 @@ export default function School({ schools, meta }) {
         )}
         <div className="ratio-row">
           <div><span className="eyebrow">NIL ÷ capacity</span><strong>{pct(s._ratios.nilOverCapacity)}</strong></div>
-          <div><span className="eyebrow">NIL ÷ House 2025–26</span><strong>{pct(s._ratios.nilOverHouse)}</strong></div>
-          <div><span className="eyebrow">House 2026–27 (est.)</span><strong>{money(house27)}</strong></div>
+          <div><span className="eyebrow">{house == null ? 'NIL ÷ House' : (season >= 2026 ? 'NIL ÷ House 2026–27' : 'NIL ÷ House 2025–26')}</span><strong>{house == null ? '—' : pct(s._ratios.nilOverHouse)}</strong></div>
+          {houseField?.notes && (
+            <div><span className="eyebrow">House note</span><strong className="house-note">{house == null ? 'No House cap (pre-settlement)' : houseField.confidence}</strong></div>
+          )}
         </div>
       </section>
 
+      {s.nil.modeled ? (
       <section>
         <h2 title={defTitle('nilModeled')}>NIL modeled range <i className="dot modeled" /></h2>
         <div className="range-box">
@@ -449,7 +470,17 @@ export default function School({ schools, meta }) {
           {nil != null ? ` · Booked filing on this desk: ${money(nil)}. The model is shown so you can compare it to the filing — it does not replace booked.` : ' · No booked filing on this desk yet.'}
         </p>
       </section>
+      ) : (
+      <section>
+        <h2 title={defTitle('nilModeled')}>NIL modeled range</h2>
+        <p className="lede tight">
+          The current conference heuristic is only applied for 2025–26 and 2026–27.
+          Pre-House seasons stay pending rather than a fake precise collective-era model.
+        </p>
+      </section>
+      )}
 
+      {s._roster ? (
       <section>
         <h2>Roster bands (modeled)</h2>
         <p className="lede tight">
@@ -520,16 +551,15 @@ export default function School({ schools, meta }) {
           FB+MBB rollup {moneyRange(s._roster.rollup.low, s._roster.rollup.high)} (mid {money(s._roster.rollup.mid)}).
         </p>
       </section>
-
+      ) : null}
 
       {s._named?.players?.length ? (
         <section>
-          <h2 title={defTitle('rosterNamed')}>Roster <i className="dot modeled" /></h2>
+          <h2 title={defTitle('rosterNamed')}>Roster {s._named.namesOnly ? null : <i className="dot modeled" />}</h2>
           <p className="lede tight">
-            Public 2026 football names, each a modeled share of this school’s football slice of the
-            93% pot. Starters on a verified Wikipedia two-deep sit at the high end of the position
-            band; backups at the low end; everyone else is the midpoint. Sorted by modeled high.
-            Booked school NIL is unchanged.
+            {s._named.namesOnly
+              ? `Public ${season} football names from the ESPN team roster. No modeled NIL share in pre-House seasons.`
+              : `Public ${season} football names, each a modeled share of this school’s football slice of the 93% pot. Starters on a verified Wikipedia two-deep sit at the high end of the position band; backups at the low end; everyone else is the midpoint. Sorted by modeled high. Booked school NIL is unchanged.`}
           </p>
           <div className="table-scroll named-scroll">
             <table className="roster named">
@@ -550,22 +580,22 @@ export default function School({ schools, meta }) {
                     </td>
                     <td>{p.pos || '—'}</td>
                     <td>{p.className || p.class || '—'}</td>
-                    <td className="num modeled-cell">{moneyRange(p.low, p.high)}</td>
+                    <td className="num modeled-cell">{p.low == null ? '—' : moneyRange(p.low, p.high)}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
           <p className="fine">
-            {s._named.notes} Player-mid sum {money(s._named.sumMid)} of football slice {money(s._named.cap)}
-            {s._named.scale < 1 ? ` (scaled ×${s._named.scale.toFixed(2)} to stay inside the pot)` : ''}.
+            {s._named.notes}
+            {s._named.namesOnly ? '' : ` Player-mid sum ${money(s._named.sumMid)} of football slice ${money(s._named.cap)}${s._named.scale < 1 ? ` (scaled ×${s._named.scale.toFixed(2)} to stay inside the pot)` : ''}.`}
             {s._named.depthMatched
               ? ` ${s._named.depthMatched} names matched a ${s._named.wikiYear} Wikipedia two-deep.`
-              : ' No verified two-deep for this school — every listed range is a position-band midpoint.'}
+              : (s._named.namesOnly ? '' : ' No verified two-deep for this school — every listed range is a position-band midpoint.')}
           </p>
           <p className="fine">
             Roster source:{' '}
-            <a href={s._named.sourceUrl} target="_blank" rel="noreferrer">ESPN 2026 football roster ↗</a>
+            <a href={s._named.sourceUrl} target="_blank" rel="noreferrer">ESPN {season} football roster ↗</a>
             {s._named.wikiUrl && (
               <>
                 {' '}· Depth:{' '}
@@ -608,7 +638,16 @@ export default function School({ schools, meta }) {
         </section>
       </div>
 
-      <StaffSection school={s} />
+      {spec?.coaches === 'pending' ? (
+        <section>
+          <h2 title={defTitle('staffPay')}>Athletics staff pay</h2>
+          <p className="lede tight">Prior-year staff pay not extracted. USA TODAY / 990 figures on the desk are the current cycle.</p>
+        </section>
+      ) : (
+        <StaffSection school={s} />
+      )}
+
+      <Layers school={s} />
 
       <section>
         <h2>Sources</h2>

@@ -273,3 +273,40 @@ export function allocateNamedPlayers(rosterEntry, modeled, bands) {
       '. Not a contract. Not a reported deal unless a news URL is attached.',
   }
 }
+
+
+/** Public-roster names with no modeled dollar share (pre-House seasons). */
+export function namedRosterOnly(rosterEntry) {
+  const playersIn = rosterEntry?.players
+  if (!playersIn?.length) return null
+  const players = [...playersIn]
+    .map((p) => ({
+      name: p.name,
+      pos: p.pos,
+      family: p.family,
+      class: p.class || '',
+      className: p.className || '',
+      jersey: p.jersey || '',
+      depthRank: p.depthRank || null,
+      role: p.depthRank === 1 ? 'starter' : p.depthRank ? 'backup' : 'unknown',
+      mid: null,
+      low: null,
+      high: null,
+      confidence: 'reported',
+      note: 'Public ESPN roster name. No modeled NIL share — House-era heuristic is hidden before 2025–26.',
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name))
+  return {
+    players,
+    sumMid: 0,
+    cap: 0,
+    scale: 1,
+    namesOnly: true,
+    sourceUrl: rosterEntry.sourceUrl,
+    wikiUrl: rosterEntry.wikiUrl,
+    wikiYear: rosterEntry.wikiYear,
+    season: rosterEntry.season,
+    depthMatched: rosterEntry.depthMatched || 0,
+    notes: 'Names only. Modeled player shares are not applied in pre-House seasons.',
+  }
+}

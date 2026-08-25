@@ -1,0 +1,354 @@
+import { money, moneyExact, winsPerM } from '../lib/format.js'
+import { defTitle } from '../lib/definitions.js'
+
+function Meta({ field }) {
+  if (!field) return null
+  return (
+    <div className="field-meta">
+      {field.fiscalYear && <span>{field.fiscalYear} · </span>}
+      {field.asOf && <span>as of {field.asOf} · </span>}
+      {field.confidence && <span className="conf-label">{field.confidence}</span>}
+      {field.source && <span> · {field.source}</span>}
+      {field.url && (
+        <>
+          {' '}
+          <a className="ext" href={field.url} target="_blank" rel="noreferrer">source ↗</a>
+        </>
+      )}
+    </div>
+  )
+}
+
+function MoneyField({ field, fallback = 'Pending' }) {
+  if (!field || field.value == null) {
+    return (
+      <div className="field pending-box">
+        <div className="field-val">{fallback}</div>
+        <div className="field-meta">{field?.notes || 'No cited number on the desk.'}</div>
+      </div>
+    )
+  }
+  return (
+    <div className="field">
+      <div className="field-val">
+        {moneyExact(field.value)} <i className={`dot ${field.confidence}`} />
+      </div>
+      <Meta field={field} />
+      {field.notes && <div className="field-notes">{field.notes}</div>}
+    </div>
+  )
+}
+
+function PortalTable({ rows, dir }) {
+  if (!rows?.length) return null
+  return (
+    <table className="roster staff-table">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Pos</th>
+          <th>{dir === 'in' ? 'From' : 'To'}</th>
+          <th>Dollars</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((p) => (
+          <tr key={`${dir}-${p.name}-${p.pos}`}>
+            <td>
+              {p.name} <i className={`dot ${p.confidence || 'reported'}`} title={p.notes} />
+            </td>
+            <td>{p.pos || '—'}</td>
+            <td>{(dir === 'in' ? p.from : p.to) || '—'}</td>
+            <td>
+              {p.dollars != null ? (
+                moneyExact(p.dollars)
+              ) : (
+                <span className="pending-cell" title="No cited deal dollar">modeled / none</span>
+              )}
+              {p.url && (
+                <div className="field-meta">
+                  <a className="ext" href={p.url} target="_blank" rel="noreferrer">{p.source ? 'source ↗' : 'source ↗'}</a>
+                </div>
+              )}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+}
+
+function PortalSection({ layer }) {
+  const p = layer?.portal
+  if (!p) return null
+  const adds = p.additions || []
+  const deps = p.departures || []
+  return (
+    <section>
+      <h2 title={defTitle('portal')}>Transfer portal · 2026 cycle</h2>
+      <p className="lede tight">
+        Notable football additions and departures for the NCAA’s single window
+        (Jan 2–16, 2026). Names from public Wikipedia / NCAA.com / FOX / CBS / school pages.
+        Dollars only if a cited news number exists — otherwise name + position, no dollar.
+        We do not scrape On3.
+      </p>
+      <div className="ratio-row">
+        <div>
+          <span className="eyebrow">In (cited count)</span>
+          <strong>{p.inCount?.value != null ? p.inCount.value : '—'}</strong>
+          <Meta field={p.inCount} />
+        </div>
+        <div>
+          <span className="eyebrow">Out (cited count)</span>
+          <strong>{p.outCount?.value != null ? p.outCount.value : '—'}</strong>
+          <Meta field={p.outCount} />
+        </div>
+      </div>
+      <div className="roster-split">
+        <div>
+          <h3 className="roster-hed">Additions</h3>
+          {adds.length ? <PortalTable rows={adds} dir="in" /> : <p className="fine">No notable incoming names extracted on this desk.</p>}
+        </div>
+        <div>
+          <h3 className="roster-hed">Departures</h3>
+          {deps.length ? <PortalTable rows={deps} dir="out" /> : <p className="fine">No notable outgoing names extracted on this desk.</p>}
+        </div>
+      </div>
+      {p.notes && <p className="fine">{p.notes}</p>}
+    </section>
+  )
+}
+
+function ApparelSection({ layer }) {
+  const a = layer?.apparel
+  if (!a) return null
+  const naming = a.naming || []
+  return (
+    <section>
+      <h2 title={defTitle('apparel')}>Apparel + naming rights</h2>
+      <p className="lede tight">
+        Outfitter and stadium / facility names. Annual dollars only when a Sportico,
+        Athletic, FOIA, or local-paper story cites one.
+      </p>
+      <div className="short-stack">
+        <div>
+          <div className="eyebrow">Apparel</div>
+          {a.brand?.value ? (
+            <div className="field">
+              <div className="field-val">
+                {a.brand.value} <i className={`dot ${a.brand.confidence}`} />
+              </div>
+              <Meta field={a.brand} />
+            </div>
+          ) : (
+            <div className="field pending-box">
+              <div className="field-val">Outfitter pending</div>
+              <div className="field-meta">{a.brand?.notes || 'No cited current brand on the desk.'}</div>
+            </div>
+          )}
+        </div>
+        <div>
+          <div className="eyebrow">Apparel annual value</div>
+          <MoneyField field={a.annualValue} fallback="Pending" />
+        </div>
+      </div>
+      <h3 className="roster-hed">Naming deals</h3>
+      {naming.length ? (
+        <table className="roster staff-table">
+          <thead>
+            <tr>
+              <th>Facility</th>
+              <th>Sponsor</th>
+              <th className="num">Annual</th>
+              <th>Term</th>
+            </tr>
+          </thead>
+          <tbody>
+            {naming.map((n) => (
+              <tr key={`${n.facility}-${n.sponsor}`}>
+                <td>{n.facility}</td>
+                <td>{n.sponsor}</td>
+                <td className="num">
+                  {n.annualValue != null ? (
+                    <>
+                      {money(n.annualValue)} <i className={`dot ${n.confidence}`} />
+                    </>
+                  ) : (
+                    <span className="pending-cell">pending</span>
+                  )}
+                  {n.url && (
+                    <div className="field-meta">
+                      <a className="ext" href={n.url} target="_blank" rel="noreferrer">source ↗</a>
+                    </div>
+                  )}
+                </td>
+                <td>{n.term || '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p className="fine">No cited stadium or facility naming deal on the desk.</p>
+      )}
+      {a.notes && <p className="fine">{a.notes}</p>}
+    </section>
+  )
+}
+
+function SubsidySection({ layer }) {
+  const s = layer?.subsidy
+  if (!s) return null
+  return (
+    <section>
+      <h2 title={defTitle('subsidy')}>Student fees + institutional subsidy</h2>
+      <p className="lede tight">
+        Knight-Newhouse / MFRS allocated revenue — student fees, institutional
+        support, government support. This is where the check really came from.
+        $0 is printed only when a source says the department is self-funded.
+      </p>
+      <div className="short-stack">
+        <div>
+          <div className="eyebrow">Student fees</div>
+          <MoneyField field={s.studentFees} />
+        </div>
+        <div>
+          <div className="eyebrow">Institutional support</div>
+          <MoneyField field={s.institutionalSupport} />
+        </div>
+        <div>
+          <div className="eyebrow">Government support</div>
+          <MoneyField field={s.governmentSupport} />
+        </div>
+      </div>
+      {s.feeRate && (
+        <p className="fine">
+          Published fee rate {moneyExact(s.feeRate.value)} {s.feeRate.unit}
+          {s.feeRate.asOf ? ` · as of ${s.feeRate.asOf}` : ''}.{' '}
+          {s.feeRate.url && (
+            <a className="ext" href={s.feeRate.url} target="_blank" rel="noreferrer">
+              {s.feeRate.source || 'source'} ↗
+            </a>
+          )}
+        </p>
+      )}
+      {s.notes && <p className="field-notes">{s.notes}</p>}
+    </section>
+  )
+}
+
+function EfficiencySection({ school }) {
+  const e = school._eff
+  if (!e) return null
+  const rec = e.recordSource
+  return (
+    <section>
+      <h2 title={defTitle('winsPerDollar')}>Wins per dollar</h2>
+      <p className="lede tight">
+        2025 football wins over booked NIL if we have one, else the modeled
+        midpoint (labeled modeled), and over annual capacity. Not a coach grade.
+      </p>
+      <div className="ratio-row">
+        <div>
+          <span className="eyebrow">2025 football</span>
+          <strong>
+            {e.wins != null ? `${e.wins}–${e.losses}` : '—'}{' '}
+            {rec?.confidence && <i className={`dot ${rec.confidence}`} />}
+          </strong>
+          <Meta field={rec} />
+        </div>
+        <div>
+          <span className="eyebrow" title={defTitle('winsPerDollar')}>
+            Wins / {e.pot?.label || 'NIL'}
+          </span>
+          <strong className={e.pot?.confidence === 'modeled' ? 'modeled-cell' : ''}>
+            {winsPerM(e.winsPerNilPerM)} <span className="fine-inline">W/$M</span>
+          </strong>
+          <div className="field-meta">
+            {e.wins != null && e.pot?.value != null
+              ? `${e.wins} wins on ${money(e.pot.value)} ${e.pot.label}`
+              : 'Pending NIL denominator.'}
+            {e.pot?.confidence === 'modeled' ? ' · modeled' : ''}
+          </div>
+        </div>
+        <div>
+          <span className="eyebrow">Wins / capacity</span>
+          <strong>
+            {winsPerM(e.winsPerCapPerM)} <span className="fine-inline">W/$M</span>
+          </strong>
+          <div className="field-meta">
+            {e.wins != null && e.capacity != null
+              ? `${e.wins} wins on ${money(e.capacity)} annual capacity`
+              : '—'}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function BuyoutsPaidSection({ layer }) {
+  const rows = layer?.buyoutsPaid || []
+  return (
+    <section>
+      <h2 title={defTitle('buyoutPaid')}>Buyouts actually paid</h2>
+      <p className="lede tight">
+        Not the if-fired overhang on the current coach. Money the school actually
+        owes or has settled with a former FB/MBB chair when a USA TODAY, Athletic,
+        990, or FOIA figure exists.
+      </p>
+      {rows.length ? (
+        <table className="roster staff-table">
+          <thead>
+            <tr>
+              <th>Coach</th>
+              <th>Year</th>
+              <th className="num">Amount</th>
+              <th>Who paid</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((b) => (
+              <tr key={`${b.coach}-${b.year}-${b.sport}`}>
+                <td>
+                  {b.coach} <span className="fine-inline">{b.sport}</span>{' '}
+                  <i className={`dot ${b.confidence}`} />
+                </td>
+                <td>{b.year}</td>
+                <td className="num">{b.amount != null ? moneyExact(b.amount) : <span className="pending-cell">pending</span>}</td>
+                <td>{b.whoPaid || '—'}</td>
+                <td>
+                  {b.url ? (
+                    <a className="ext" href={b.url} target="_blank" rel="noreferrer">{b.source || 'source'} ↗</a>
+                  ) : (
+                    b.source || '—'
+                  )}
+                  {b.notes && <div className="field-notes">{b.notes}</div>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div className="field pending-box">
+          <div className="field-val">Pending</div>
+          <div className="field-meta">No cited former-coach payout on the desk for this school.</div>
+        </div>
+      )}
+    </section>
+  )
+}
+
+export default function Layers({ school }) {
+  const layer = school.layers
+  if (!layer) return null
+  return (
+    <>
+      <PortalSection layer={layer} />
+      <ApparelSection layer={layer} />
+      <SubsidySection layer={layer} />
+      <EfficiencySection school={school} />
+      <BuyoutsPaidSection layer={layer} />
+    </>
+  )
+}

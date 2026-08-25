@@ -3,7 +3,7 @@
 export const DEFS = {
   house: {
     label: 'House cap',
-    text: 'Official House settlement benefits pool. $20.5 million in 2025–26 — the same number for every participating school. Not our capacity stack.',
+    text: 'Official House settlement benefits pool. $20.5 million in 2025–26 (reported) and ~$21.3 million in 2026–27 (estimated). The same number for every participating school. No House cap before 2025–26 (pre-settlement). Not our capacity stack.',
   },
   capacity: {
     label: 'Annual capacity',
@@ -63,11 +63,31 @@ export const DEFS = {
   },
   modeled: {
     label: 'modeled',
-    text: 'A desk construct: alumni cohort / wealth / giving, the conference-heuristic NIL range, the position rate card, or a named-player share of that card. Labeled as such. Not a filing.',
+    text: 'A desk construct: alumni cohort / wealth / giving, the conference-heuristic NIL range, the position rate card, a named-player share of that card, or wins-per-dollar when the NIL denominator is modeled. Labeled as such. Not a filing.',
   },
   rosterNamed: {
     label: 'Named roster (modeled)',
     text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a reported deal.',
+  },
+  portal: {
+    label: 'Transfer portal',
+    text: 'Notable football portal additions and departures for the 2025–26 / 2026 cycle (NCAA single window Jan 2–16, 2026). Names from public ESPN/Wikipedia/school-release pages. Dollars only if a cited news number exists — otherwise name + position, no dollar. On3 is not scraped.',
+  },
+  apparel: {
+    label: 'Apparel + naming rights',
+    text: 'Current outfitter (Nike / Adidas / Under Armour / Jordan) and stadium or facility naming deals. Annual value only when a Sportico, Athletic, FOIA, or local-paper number exists. Pending otherwise.',
+  },
+  subsidy: {
+    label: 'Student fees + institutional subsidy',
+    text: 'Knight-Newhouse / NCAA MFRS allocated revenue: student fees and institutional or government support. This is where the check really came from. Reported when a school PDF or newsroom figure exists; $0 is printed only when a source says the department is self-funded. Empty means pending, not zero.',
+  },
+  winsPerDollar: {
+    label: 'Wins per dollar',
+    text: 'Last completed football season wins divided by booked NIL if we have one, else the modeled NIL midpoint (labeled modeled), and divided by annual capacity. Win totals from Wikipedia / NCAA 2025 standings. Not a ranking of coaches.',
+  },
+  buyoutPaid: {
+    label: 'Buyouts actually paid',
+    text: 'Money the school (or a new employer, via offset) actually owes or has settled with a former coach after a firing — USA TODAY, The Athletic contract census, school 990, or local FOIA. Not the if-fired overhang on the current chair.',
   },
   pending: {
     label: 'pending',

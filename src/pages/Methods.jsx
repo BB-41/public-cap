@@ -14,6 +14,39 @@ export default function Methods({ meta }) {
         We would rather leave a cell empty than mint a fake source.
       </p>
 
+      <h2>History and the NIL-era start</h2>
+      <p>
+        The desk now carries football seasons 2021 through 2026. Seasons are keyed as
+        <em>football seasons</em>, not athletic fiscal years. NCAA interim NIL policy
+        took effect July 1, 2021 — that is why the book starts at 2021–22. Athletic
+        fiscal years run July–June and lag the fall: football season Y overlaps
+        conference FY(Y+1) (the 990 year ending June Y+1).
+      </p>
+      <p>
+        The latest extracted school-level capacity stack is FY2025. It is shown on
+        football 2025 and 2026 as the latest public figures, still labeled FY2025 —
+        not invented 2026 dollars. Football 2021–2024 do not reuse those FY2025
+        ticket, sponsorship, or contribution lines; those cells stay pending
+        (“prior-year line not extracted”). Conference media for 2021–2024 uses a
+        cited Power-conference 990 floor when we have one (USA TODAY / AP / CBS),
+        tagged estimated, not a school 990.
+      </p>
+      <p>
+        House cap exists only for 2025–26 ($20.5M, reported) and 2026–27 (~$21.3M,
+        estimated). Earlier years read “no House cap (pre-settlement).” We do not
+        invent a pre-settlement cap. Modeled NIL (the nil-ncaa.com conference
+        heuristic) is applied only in those two House years; 2021–24 hide it rather
+        than mint a fake collective-era model. Booked NIL stays official: Louisville
+        and Kentucky on 2025–26, plus Louisville’s cited FY2025 pre-cap line on 2024.
+        Coach pay from the current USA TODAY tables sits on 2025 and 2026; prior
+        years are pending.
+      </p>
+      <p>
+        Named football rosters are ESPN public JSON for each season (the live site
+        API hydrates the current year; closed seasons are resolved from ESPN’s
+        public core athlete lists). Wikipedia two-deep matching is used in modeled-NIL
+        years. No On3 / Opendorse / NIL Go / social.
+      </p>
 
       <h2>Definitions</h2>
       <p className="lede tight">The same language that sits on the rank list and school pages. Hover a header there and you get this copy.</p>
@@ -34,6 +67,16 @@ export default function Methods({ meta }) {
         <dd>Pay is an annual flow from the USA TODAY Sports salary desk. A buyout is overhang — a liability if the school fires without cause on the as-of date — not yearly spend. Private-school blanks stay blank.</dd>
         <dt>Contract term</dt>
         <dd>Through-year or years remaining on the current head-coach deal, cited from the employment agreement or a newsroom/school release that quotes one. Not a guess. Pending if we do not have a public through-year.</dd>
+        <dt>Transfer portal</dt>
+        <dd>Notable football additions and departures for the 2025–26 / 2026 cycle. Names from public Wikipedia / NCAA.com / FOX / CBS pages. Dollars only if a cited news number exists. On3 is not scraped.</dd>
+        <dt>Apparel + naming rights</dt>
+        <dd>Current outfitter and stadium or facility naming. Annual value only when a Sportico, Athletic, FOIA, or local-paper number exists.</dd>
+        <dt>Student fees + institutional subsidy</dt>
+        <dd>Knight-Newhouse / MFRS allocated revenue — student fees and institutional or government support. Where the check really came from. $0 only when a source says self-funded. Empty means pending.</dd>
+        <dt>Wins per dollar</dt>
+        <dd>2025 football wins divided by booked NIL if present, else modeled NIL mid (labeled modeled), and by annual capacity. Wikipedia / NCAA standings.</dd>
+        <dt>Buyouts actually paid</dt>
+        <dd>Money actually owed or settled after a firing — not the if-fired overhang on the current coach. Athletic contract census, USA TODAY, 990, FOIA.</dd>
         <dt>Staff pay</dt>
         <dd>Cited public pay for the athletic director, other head coaches, and football assistants. USA TODAY assistant and WBB tables, school releases, 990s, or state payrolls. Empty means pending — we do not invent a title or a dollar.</dd>
         <dt>Official alumni earnings vs modeled wealth</dt>
@@ -215,7 +258,7 @@ export default function Methods({ meta }) {
 
       <h2>Named football roster (modeled)</h2>
       <p>
-        Every Power school page lists <em>verified</em> 2026 football names from the public
+        Every Power school page lists <em>verified</em> football names for the selected season from the public
         ESPN team roster JSON. We do not invent a name. CollegeFootballData’s roster endpoint
         returned 401 without an API key and was skipped. Wikipedia 2026 then 2025 team pages
         supply a two-deep when the American-football depth-chart template is present; those
@@ -301,6 +344,56 @@ export default function Methods({ meta }) {
         A few named office roles (deputy AD, CFO) appear only with a source. We do not
         invent a title or a dollar. Knight-Newhouse coaches-compensation is a department
         total when we cite it — not a stand-in for a missing name. No On3.
+      </p>
+
+
+      <h2>Transfer portal</h2>
+      <p>
+        School pages list notable football additions and departures for the 2025–26 / 2026
+        cycle. The NCAA ran a single FBS window, January 2–16, 2026 (CFP finalists got a
+        short extra window after the title game). Names come from public Wikipedia 2026
+        team pages, NCAA.com, FOX, CBS, Sports Illustrated, or school releases. In/out
+        counts appear only when one of those pages publishes a number. Dollars stay blank
+        unless a cited news figure exists — we do not invent a portal check. On3, Opendorse,
+        and NIL Go are not scraped.
+      </p>
+
+      <h2>Apparel and naming rights</h2>
+      <p>
+        A short stack on the school page: current outfitter (Nike, Adidas, Under Armour,
+        Jordan) and stadium or facility naming deals. Annual value is printed only when
+        Sportico, The Athletic, a FOIA story, or a local paper cites one. Pending otherwise.
+        A donor stadium name (Illinois / Gies) is labeled as a gift, not a commercial AAV.
+      </p>
+
+      <h2>Student fees and institutional subsidy</h2>
+      <p>
+        Knight-Newhouse / NCAA MFRS allocated revenue: student fees (line 3) and
+        institutional or government support. This is “where the check really came from.”
+        KN bulk download is CAPTCHA-gated, so we use school releases and newsroom MFRS
+        writeups we can fetch. $0 is printed only when a source says the department is
+        self-funded (Ohio State FY25: no tuition or tax dollars). A published per-student
+        fee rate (Louisville $200/semester) is not turned into a fake department total.
+        Empty means pending, not zero.
+      </p>
+
+      <h2>Wins per dollar</h2>
+      <p>
+        Last completed football season (2025) wins, from Wikipedia conference standings
+        and the NCAA standings PDF, divided by booked NIL if we have one, else the modeled
+        NIL midpoint (the cell says modeled), and divided by annual capacity. Shown as
+        wins per $1 million on the rank list (compact) and the school page. Not a coach
+        grade. Men’s basketball 2025–26 records were not extracted on this pass.
+      </p>
+
+      <h2>Buyouts actually paid</h2>
+      <p>
+        Separate from the if-fired overhang on the current chair. This table is money a
+        school actually owes or has settled with a former FB/MBB coach after a firing —
+        The Athletic’s March 2026 contract census, USA TODAY, or a local FOIA. Headline
+        max and current/settled figures are distinguished in the notes. Jimbo Fisher’s
+        2023 Texas A&amp;M deal is included because the money is still moving. Pending
+        if we do not have a cited payout.
       </p>
 
       <h2>Private-school gap</h2>
