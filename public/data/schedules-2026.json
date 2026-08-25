@@ -1,0 +1,6196 @@
+{
+  "season": 2026,
+  "asOf": "2026-08-25",
+  "source": "Wikipedia 2026 FBS team pages",
+  "sourceUrl": "https://en.wikipedia.org/wiki/2026_NCAA_Division_I_FBS_football_season",
+  "schools": {
+    "alabama": {
+      "wikiTitle": "2026 Alabama Crimson Tide football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Alabama_Crimson_Tide_football_team",
+      "coach": "Kalen DeBoer",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "East Carolina",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Kentucky",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Florida State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "South Carolina",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Mississippi State",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Georgia",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Tennessee",
+          "homeAway": "away",
+          "notes": "Third Saturday in October"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Texas A&M",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "LSU",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Vanderbilt",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Chattanooga",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Auburn",
+          "homeAway": "home",
+          "notes": "Iron Bowl"
+        }
+      ]
+    },
+    "arkansas": {
+      "wikiTitle": "2026 Arkansas Razorbacks football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Arkansas_Razorbacks_football_team",
+      "coach": "Ryan Silverfield",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "North Alabama",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Utah",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Georgia",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Tulsa",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Texas A&M",
+          "homeAway": "away",
+          "notes": "Southwest Classic"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Tennessee",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Vanderbilt",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Missouri",
+          "homeAway": "home",
+          "notes": "Battle Line Rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Auburn",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "South Carolina",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Texas",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "LSU",
+          "homeAway": "home",
+          "notes": "Battle for the Golden Boot"
+        }
+      ]
+    },
+    "auburn": {
+      "wikiTitle": "2026 Auburn Tigers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Auburn_Tigers_football_team",
+      "coach": "Alex Golesh",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Baylor",
+          "homeAway": "neutral",
+          "notes": "non-conference; Aflac Kickoff Game"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Southern Miss",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Florida",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Vanderbilt",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Tennessee",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Georgia",
+          "homeAway": "away",
+          "notes": "Deep South's Oldest Rivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "LSU",
+          "homeAway": "home",
+          "notes": "Tiger Bowl"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Ole Miss",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Arkansas",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Mississippi State",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Samford",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Alabama",
+          "homeAway": "away",
+          "notes": "Iron Bowl"
+        }
+      ]
+    },
+    "florida": {
+      "wikiTitle": "2026 Florida Gators football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Florida_Gators_football_team",
+      "coach": "Jon Sumrall",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Florida Atlantic",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Campbell",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Auburn",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Ole Miss",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Missouri",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "South Carolina",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Texas",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Georgia",
+          "homeAway": "neutral",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Oklahoma",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Kentucky",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Vanderbilt",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Florida State",
+          "homeAway": "away",
+          "notes": "non-conference; Sunshine Showdown"
+        }
+      ]
+    },
+    "georgia": {
+      "wikiTitle": "2026 Georgia Bulldogs football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Georgia_Bulldogs_football_team",
+      "coach": "Kirby Smart",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Tennessee State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Western Kentucky",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Arkansas",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Oklahoma",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Vanderbilt",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Alabama",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Auburn",
+          "homeAway": "home",
+          "notes": "Deep South's Oldest Rivalry"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Florida",
+          "homeAway": "neutral",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Ole Miss",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Missouri",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "South Carolina",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Georgia Tech",
+          "homeAway": "home",
+          "notes": "non-conference; Clean, Old-Fashioned Hate"
+        }
+      ]
+    },
+    "kentucky": {
+      "wikiTitle": "2026 Kentucky Wildcats football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Kentucky_Wildcats_football_team",
+      "coach": "Will Stein",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Youngstown State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Alabama",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Texas A&M",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "South Alabama",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "South Carolina",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "LSU",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Oklahoma",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Vanderbilt",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Tennessee",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Florida",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Missouri",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Louisville",
+          "homeAway": "home",
+          "notes": "non-conference; Governor's Cup"
+        }
+      ]
+    },
+    "lsu": {
+      "wikiTitle": "2026 LSU Tigers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_LSU_Tigers_football_team",
+      "coach": "Lane Kiffin",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Clemson",
+          "homeAway": "home",
+          "notes": "non-conference; College GameDay"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Louisiana Tech",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Ole Miss",
+          "homeAway": "away",
+          "notes": "Magnolia Bowl, College GameDay"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Texas A&M",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "McNeese",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Kentucky",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Mississippi State",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Auburn",
+          "homeAway": "away",
+          "notes": "Tiger Bowl"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Alabama",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Texas",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Tennessee",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Arkansas",
+          "homeAway": "away",
+          "notes": "Battle for the Golden Boot"
+        }
+      ]
+    },
+    "mississippi-state": {
+      "wikiTitle": "2026 Mississippi State Bulldogs football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Mississippi_State_Bulldogs_football_team",
+      "coach": "Jeff Lebby",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Louisiana–Monroe",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Minnesota",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "South Carolina",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Missouri",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Alabama",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "LSU",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Oklahoma",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Texas",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Vanderbilt",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Auburn",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Tennessee Tech",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Ole Miss",
+          "homeAway": "away",
+          "notes": "Egg Bowl"
+        }
+      ]
+    },
+    "missouri": {
+      "wikiTitle": "2026 Missouri Tigers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Missouri_Tigers_football_team",
+      "coach": "Eliah Drinkwitz",
+      "games": [
+        {
+          "date": "2026-09-03",
+          "dateLabel": "September 3",
+          "opponent": "Arkansas–Pine Bluff",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-11",
+          "dateLabel": "September 11",
+          "opponent": "Kansas",
+          "homeAway": "away",
+          "notes": "non-conference; Border War"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Troy",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Mississippi State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Florida",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Texas A&M",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Ole Miss",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Arkansas",
+          "homeAway": "away",
+          "notes": "Battle Line Rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Texas",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Georgia",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Kentucky",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Oklahoma",
+          "homeAway": "home",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "oklahoma": {
+      "wikiTitle": "2026 Oklahoma Sooners football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Oklahoma_Sooners_football_team",
+      "coach": "Brent Venables",
+      "games": [
+        {
+          "date": "2026-09-04",
+          "dateLabel": "September 4",
+          "opponent": "UTEP",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Michigan",
+          "homeAway": "away",
+          "notes": "non-conference; Big Noon Kickoff"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "New Mexico",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Georgia",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Texas",
+          "homeAway": "neutral",
+          "notes": "Red River Rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Kentucky",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Mississippi State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "South Carolina",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Florida",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Ole Miss",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Texas A&M",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Missouri",
+          "homeAway": "away",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "ole-miss": {
+      "wikiTitle": "2026 Ole Miss Rebels football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Ole_Miss_Rebels_football_team",
+      "coach": "Pete Golding",
+      "games": [
+        {
+          "date": "2026-09-06",
+          "dateLabel": "September 6",
+          "opponent": "No. 24 Louisville",
+          "homeAway": "neutral",
+          "notes": "non-conference; Music City Kickoff"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Charlotte",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "LSU",
+          "homeAway": "home",
+          "notes": "Magnolia Bowl, College GameDay"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Florida",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Vanderbilt",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Missouri",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Texas",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Auburn",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Georgia",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Oklahoma",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Wofford",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Mississippi State",
+          "homeAway": "home",
+          "notes": "Egg Bowl"
+        }
+      ]
+    },
+    "south-carolina": {
+      "wikiTitle": "2026 South Carolina Gamecocks football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_South_Carolina_Gamecocks_football_team",
+      "coach": "Shane Beamer",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Kent State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Towson",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Mississippi State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Alabama",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Kentucky",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Florida",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Tennessee",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Oklahoma",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Texas A&M",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Arkansas",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Georgia",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Clemson",
+          "homeAway": "away",
+          "notes": "non-conference; rivalry"
+        }
+      ]
+    },
+    "tennessee": {
+      "wikiTitle": "2026 Tennessee Volunteers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Tennessee_Volunteers_football_team",
+      "coach": "Josh Heupel",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Furman",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Georgia Tech",
+          "homeAway": "away",
+          "notes": "non-conference; rivalry"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Kennesaw State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Texas",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Auburn",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Arkansas",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Alabama",
+          "homeAway": "home",
+          "notes": "Third Saturday in October"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "South Carolina",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Kentucky",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Texas A&M",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "LSU",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Vanderbilt",
+          "homeAway": "away",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "texas": {
+      "wikiTitle": "2026 Texas Longhorns football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Texas_Longhorns_football_team",
+      "coach": "Steve Sarkisian",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Texas State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Ohio State",
+          "homeAway": "home",
+          "notes": "non-conference; College GameDay"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "UTSA",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Tennessee",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Oklahoma",
+          "homeAway": "neutral",
+          "notes": "Red River Rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Florida",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Ole Miss",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Mississippi State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Missouri",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "LSU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Arkansas",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Texas A&M",
+          "homeAway": "away",
+          "notes": "Lone Star Showdown"
+        }
+      ]
+    },
+    "texas-am": {
+      "wikiTitle": "2026 Texas A&M Aggies football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Texas_A&M_Aggies_football_team",
+      "coach": "Mike Elko",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Missouri State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Arizona State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Kentucky",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "LSU",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Arkansas",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Missouri",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "The Citadel",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Alabama",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "South Carolina",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Tennessee",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Oklahoma",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Texas",
+          "homeAway": "home",
+          "notes": "Lone Star Showdown"
+        }
+      ]
+    },
+    "vanderbilt": {
+      "wikiTitle": "2026 Vanderbilt Commodores football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Vanderbilt_Commodores_football_team",
+      "coach": "Clark Lea",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Austin Peay",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Delaware",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "NC State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Auburn",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Georgia",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Ole Miss",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Arkansas",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Kentucky",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Mississippi State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Alabama",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Florida",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Tennessee",
+          "homeAway": "home",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "illinois": {
+      "wikiTitle": "2026 Illinois Fighting Illini football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Illinois_Fighting_Illini_football_team",
+      "coach": "Bret Bielema",
+      "games": [
+        {
+          "date": "2026-09-03",
+          "dateLabel": "September 3",
+          "opponent": "UAB",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Duke",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Southern Illinois (FCS)",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Ohio State",
+          "homeAway": "away",
+          "notes": "Illibuck"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Purdue",
+          "homeAway": "home",
+          "notes": "homecoming; Purdue Cannon"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Michigan State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Oregon",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Maryland",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-06",
+          "dateLabel": "November 6",
+          "opponent": "Nebraska",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-13",
+          "dateLabel": "November 13",
+          "opponent": "UCLA",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Iowa",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Northwestern",
+          "homeAway": "away",
+          "notes": "Land of Lincoln Trophy"
+        }
+      ]
+    },
+    "indiana": {
+      "wikiTitle": "2026 Indiana Hoosiers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Indiana_Hoosiers_football_team",
+      "coach": "Curt Cignetti",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "North Texas",
+          "homeAway": "home",
+          "notes": "non-conference; Big Noon Kickoff"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Howard",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Western Kentucky",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-25",
+          "dateLabel": "September 25",
+          "opponent": "Northwestern",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Rutgers",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Nebraska",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Ohio State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Michigan",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Minnesota",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "USC",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Washington",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Purdue",
+          "homeAway": "home",
+          "notes": "Old Oaken Bucket"
+        }
+      ]
+    },
+    "iowa": {
+      "wikiTitle": "2026 Iowa Hawkeyes football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Iowa_Hawkeyes_football_team",
+      "coach": "Kirk Ferentz",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Northern Illinois",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Iowa State",
+          "homeAway": "home",
+          "notes": "non-conference; Cy-Hawk Trophy"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Northern Iowa",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Michigan",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Ohio State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-09",
+          "dateLabel": "October 9",
+          "opponent": "Washington",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Minnesota",
+          "homeAway": "away",
+          "notes": "Floyd of Rosedale"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Wisconsin",
+          "homeAway": "home",
+          "notes": "homecoming; Heartland Trophy"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Northwestern",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Purdue",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Illinois",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Nebraska",
+          "homeAway": "home",
+          "notes": "Heroes Game"
+        }
+      ]
+    },
+    "maryland": {
+      "wikiTitle": "2026 Maryland Terrapins football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Maryland_Terrapins_football_team",
+      "coach": "Mike Locksley",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Hampton",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "UConn",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Virginia Tech",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "UCLA",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Nebraska",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Ohio State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Rutgers",
+          "homeAway": "home",
+          "notes": "homecoming; rivalry"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Illinois",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Purdue",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Wisconsin",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "USC",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Penn State",
+          "homeAway": "home",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "michigan": {
+      "wikiTitle": "2026 Michigan Wolverines football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Michigan_Wolverines_football_team",
+      "coach": "Kyle Whittingham",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Western Michigan",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Oklahoma",
+          "homeAway": "home",
+          "notes": "non-conference; Big Noon Kickoff"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "UTEP",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Iowa",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Minnesota",
+          "homeAway": "away",
+          "notes": "Little Brown Jug"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Penn State",
+          "homeAway": "home",
+          "notes": "homecoming; rivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Indiana",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Rutgers",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Michigan State",
+          "homeAway": "home",
+          "notes": "Paul Bunyan Trophy"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Oregon",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "UCLA",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Ohio State",
+          "homeAway": "away",
+          "notes": "rivalry, Big Noon Kickoff"
+        }
+      ]
+    },
+    "michigan-state": {
+      "wikiTitle": "2026 Michigan State Spartans football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Michigan_State_Spartans_football_team",
+      "coach": "Pat Fitzgerald",
+      "games": [
+        {
+          "date": "2026-09-04",
+          "dateLabel": "September 4",
+          "opponent": "Toledo",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Eastern Michigan",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Notre Dame",
+          "homeAway": "away",
+          "notes": "non-conference; Megaphone Trophy"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Nebraska",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Wisconsin",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Illinois",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Northwestern",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "UCLA",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Michigan",
+          "homeAway": "away",
+          "notes": "Paul Bunyan Trophy"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Washington",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-20",
+          "dateLabel": "November 20",
+          "opponent": "Oregon",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Rutgers",
+          "homeAway": "away",
+          "notes": null
+        }
+      ]
+    },
+    "minnesota": {
+      "wikiTitle": "2026 Minnesota Golden Gophers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Minnesota_Golden_Gophers_football_team",
+      "coach": "P. J. Fleck",
+      "games": [
+        {
+          "date": "2026-09-03",
+          "dateLabel": "September 3",
+          "opponent": "Eastern Illinois",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Mississippi State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Akron",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Washington",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Michigan",
+          "homeAway": "home",
+          "notes": "Little Brown Jug"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Purdue",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Iowa",
+          "homeAway": "home",
+          "notes": "homecoming; Floyd of Rosedale"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Indiana",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "UCLA",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Penn State",
+          "homeAway": "away",
+          "notes": "Governor's Victory Bell"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Northwestern",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Wisconsin",
+          "homeAway": "away",
+          "notes": "Paul Bunyan's Axe"
+        }
+      ]
+    },
+    "nebraska": {
+      "wikiTitle": "2026 Nebraska Cornhuskers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Nebraska_Cornhuskers_football_team",
+      "coach": "Matt Rhule",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Ohio",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Bowling Green",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "North Dakota",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Michigan State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Maryland",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Indiana",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Oregon",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Washington",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-06",
+          "dateLabel": "November 6",
+          "opponent": "Illinois",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Rutgers",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Ohio State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Iowa",
+          "homeAway": "away",
+          "notes": "Heroes Game"
+        }
+      ]
+    },
+    "northwestern": {
+      "wikiTitle": "2026 Northwestern Wildcats football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Northwestern_Wildcats_football_team",
+      "coach": "David Braun",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "South Dakota State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Colorado",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-25",
+          "dateLabel": "September 25",
+          "opponent": "Indiana",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-02",
+          "dateLabel": "October 2",
+          "opponent": "Penn State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Ball State",
+          "homeAway": "home",
+          "notes": "non-conference; homecoming"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Michigan State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Rutgers",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Oregon",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Iowa",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Ohio State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Minnesota",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Illinois",
+          "homeAway": "home",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "ohio-state": {
+      "wikiTitle": "2026 Ohio State Buckeyes football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Ohio_State_Buckeyes_football_team",
+      "coach": "Ryan Day",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Ball State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Texas",
+          "homeAway": "away",
+          "notes": "non-conference; College GameDay"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Kent State",
+          "homeAway": "home",
+          "notes": "non-conference; Big Noon Kickoff"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Illinois",
+          "homeAway": "home",
+          "notes": "Illibuck"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Iowa",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Maryland",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Indiana",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "USC",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Oregon",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Northwestern",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Nebraska",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Michigan",
+          "homeAway": "home",
+          "notes": "The Game, Big Noon Kickoff"
+        }
+      ]
+    },
+    "oregon": {
+      "wikiTitle": "2026 Oregon Ducks football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Oregon_Ducks_football_team",
+      "coach": "Dan Lanning",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Boise State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Oklahoma State",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-18",
+          "dateLabel": "September 18",
+          "opponent": "Portland State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "USC",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "UCLA",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Nebraska",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Illinois",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Northwestern",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Ohio State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Michigan",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-20",
+          "dateLabel": "November 20",
+          "opponent": "Michigan State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Washington",
+          "homeAway": "home",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "penn-state": {
+      "wikiTitle": "2026 Penn State Nittany Lions football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Penn_State_Nittany_Lions_football_team",
+      "coach": "Matt Campbell",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Marshall",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Temple",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Buffalo",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Wisconsin",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-02",
+          "dateLabel": "October 2",
+          "opponent": "Northwestern",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "USC",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Michigan",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Purdue",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Washington",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Minnesota",
+          "homeAway": "home",
+          "notes": "Governor's Victory Bell"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Rutgers",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Maryland",
+          "homeAway": "away",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "purdue": {
+      "wikiTitle": "2026 Purdue Boilermakers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Purdue_Boilermakers_football_team",
+      "coach": "Barry Odom",
+      "games": [
+        {
+          "date": "2026-09-04",
+          "dateLabel": "September 4",
+          "opponent": "Indiana State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Wake Forest",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "UCLA",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Notre Dame",
+          "homeAway": "home",
+          "notes": "non-conference; rivalry"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Illinois",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Minnesota",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-16",
+          "dateLabel": "October 16",
+          "opponent": "Washington",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Penn State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Maryland",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Iowa",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Wisconsin",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Indiana",
+          "homeAway": "away",
+          "notes": "Old Oaken Bucket"
+        }
+      ]
+    },
+    "rutgers": {
+      "wikiTitle": "2026 Rutgers Scarlet Knights football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Rutgers_Scarlet_Knights_football_team",
+      "coach": "Greg Schiano",
+      "games": [
+        {
+          "date": "2026-09-03",
+          "dateLabel": "September 3",
+          "opponent": "UMass",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-11",
+          "dateLabel": "September 11",
+          "opponent": "Boston College",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "USC",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-25",
+          "dateLabel": "September 25",
+          "opponent": "Howard",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Indiana",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Maryland",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Northwestern",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Michigan",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Wisconsin",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Nebraska",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Penn State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Michigan State",
+          "homeAway": "home",
+          "notes": null
+        }
+      ]
+    },
+    "ucla": {
+      "wikiTitle": "2026 UCLA Bruins football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_UCLA_Bruins_football_team",
+      "coach": "Bob Chesney",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "California",
+          "homeAway": "away",
+          "notes": "non-conference; Bear Bowl"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "San Diego State",
+          "homeAway": "home",
+          "notes": "non-conference; LA Day"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Purdue",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Maryland",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Oregon",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Wisconsin",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Michigan State",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Nevada",
+          "homeAway": "home",
+          "notes": "non-conference; Halloween"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Minnesota",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-13",
+          "dateLabel": "November 13",
+          "opponent": "Illinois",
+          "homeAway": "home",
+          "notes": "Salute to Service"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Michigan",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "USC",
+          "homeAway": "home",
+          "notes": "Victory Bell, Blue Out"
+        }
+      ]
+    },
+    "usc": {
+      "wikiTitle": "2026 USC Trojans football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_USC_Trojans_football_team",
+      "coach": "Lincoln Riley",
+      "games": [
+        {
+          "date": "2026-08-29",
+          "dateLabel": "August 29",
+          "opponent": "San Jose State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": null,
+          "dateLabel": null,
+          "opponent": "Fresno State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Louisiana",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Rutgers",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Oregon",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Washington",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Penn State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Wisconsin",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Ohio State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Indiana",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Maryland",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "UCLA",
+          "homeAway": "away",
+          "notes": "Victory Bell"
+        }
+      ]
+    },
+    "washington": {
+      "wikiTitle": "2026 Washington Huskies football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Washington_Huskies_football_team",
+      "coach": "Jedd Fisch",
+      "games": [
+        {
+          "date": "2026-09-06",
+          "dateLabel": "September 6",
+          "opponent": "Washington State",
+          "homeAway": "home",
+          "notes": "non-conference; Apple Cup"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Utah State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Eastern Washington",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Minnesota",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "USC",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-09",
+          "dateLabel": "October 9",
+          "opponent": "Iowa",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-16",
+          "dateLabel": "October 16",
+          "opponent": "Purdue",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Nebraska",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Penn State",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Michigan State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Indiana",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Oregon",
+          "homeAway": "away",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "wisconsin": {
+      "wikiTitle": "2026 Wisconsin Badgers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Wisconsin_Badgers_football_team",
+      "coach": "Luke Fickell",
+      "games": [
+        {
+          "date": "2026-09-06",
+          "dateLabel": "September 6",
+          "opponent": "Notre Dame",
+          "homeAway": "neutral",
+          "notes": "non-conference; Shamrock Series"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Western Illinois",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Eastern Michigan",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Penn State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Michigan State",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "UCLA",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "USC",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Iowa",
+          "homeAway": "away",
+          "notes": "Heartland Trophy"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Rutgers",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Maryland",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Purdue",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Minnesota",
+          "homeAway": "home",
+          "notes": "Paul Bunyan's Axe"
+        }
+      ]
+    },
+    "boston-college": {
+      "wikiTitle": "2026 Boston College Eagles football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Boston_College_Eagles_football_team",
+      "coach": "Bill O'Brien",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Cincinnati",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-11",
+          "dateLabel": "September 11",
+          "opponent": "Rutgers",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Maine",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Virginia Tech",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "SMU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Pittsburgh",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Georgia Tech",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Duke",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Florida State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Notre Dame",
+          "homeAway": "away",
+          "notes": "non-conference; Holy War"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Syracuse",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Miami (FL)",
+          "homeAway": "away",
+          "notes": null
+        }
+      ]
+    },
+    "california": {
+      "wikiTitle": "2026 California Golden Bears football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_California_Golden_Bears_football_team",
+      "coach": "Tosh Lupoi",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "UCLA",
+          "homeAway": "home",
+          "notes": "non-conference; Bear Bowl"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Syracuse",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Wagner",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-25",
+          "dateLabel": "September 25",
+          "opponent": "Clemson",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "UNLV",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Virginia Tech",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Wake Forest",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "SMU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "NC State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Virginia",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Stanford",
+          "homeAway": "home",
+          "notes": "Big Game"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Pittsburgh",
+          "homeAway": "home",
+          "notes": null
+        }
+      ]
+    },
+    "clemson": {
+      "wikiTitle": "2026 Clemson Tigers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Clemson_Tigers_football_team",
+      "coach": "Dabo Swinney",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "LSU",
+          "homeAway": "away",
+          "notes": "non-conference; College GameDay"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Georgia Southern",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "North Carolina",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-25",
+          "dateLabel": "September 25",
+          "opponent": "California",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Miami",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Charleston Southern",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Virginia Tech",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Florida State",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Syracuse",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Georgia Tech",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-20",
+          "dateLabel": "November 20",
+          "opponent": "Duke",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "South Carolina",
+          "homeAway": "home",
+          "notes": "non-conference; Palmetto Bowl"
+        }
+      ]
+    },
+    "duke": {
+      "wikiTitle": "2026 Duke Blue Devils football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Duke_Blue_Devils_football_team",
+      "coach": "Manny Diaz",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Tulane",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Illinois",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Stanford",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "William & Mary",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Georgia Tech",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "North Carolina",
+          "homeAway": "home",
+          "notes": "Victory Bell"
+        },
+        {
+          "date": "2026-10-23",
+          "dateLabel": "October 23",
+          "opponent": "Virginia",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Boston College",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "NC State",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Miami",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-20",
+          "dateLabel": "November 20",
+          "opponent": "Clemson",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Wake Forest",
+          "homeAway": "away",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "florida-state": {
+      "wikiTitle": "2026 Florida State Seminoles football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Florida_State_Seminoles_football_team",
+      "coach": "Mike Norvell",
+      "games": [
+        {
+          "date": "2026-08-29",
+          "dateLabel": "August 29",
+          "opponent": "New Mexico State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-07",
+          "dateLabel": "September 7",
+          "opponent": "SMU",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Alabama",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Central Arkansas",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Virginia",
+          "homeAway": "home",
+          "notes": "Jefferson–Eppes Trophy"
+        },
+        {
+          "date": "2026-10-09",
+          "dateLabel": "October 9",
+          "opponent": "Louisville",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Miami (FL)",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Clemson",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Boston College",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-13",
+          "dateLabel": "November 13",
+          "opponent": "Pittsburgh",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "NC State",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Florida",
+          "homeAway": "home",
+          "notes": "non-conference; rivalry"
+        }
+      ]
+    },
+    "georgia-tech": {
+      "wikiTitle": "2026 Georgia Tech Yellow Jackets football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Georgia_Tech_Yellow_Jackets_football_team",
+      "coach": "Brent Key",
+      "games": [
+        {
+          "date": "2026-09-03",
+          "dateLabel": "September 3",
+          "opponent": "Colorado",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Tennessee",
+          "homeAway": "home",
+          "notes": "non-conference; rivalry"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Mercer",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Stanford",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Duke",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Virginia Tech",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Boston College",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Pittsburgh",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Louisville",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Clemson",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Wake Forest",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Georgia",
+          "homeAway": "away",
+          "notes": "non-conference; Clean, Old-Fashioned Hate"
+        }
+      ]
+    },
+    "louisville": {
+      "wikiTitle": "2026 Louisville Cardinals football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Louisville_Cardinals_football_team",
+      "coach": "Jeff Brohm",
+      "games": [
+        {
+          "date": "2026-09-06",
+          "dateLabel": "September 6",
+          "opponent": "No. 9 Ole Miss",
+          "homeAway": "neutral",
+          "notes": "non-conference; Music City Kickoff"
+        },
+        {
+          "date": "2026-09-11",
+          "dateLabel": "September 11",
+          "opponent": "Villanova",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "SMU",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Wake Forest",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "NC State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-09",
+          "dateLabel": "October 9",
+          "opponent": "Florida State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Syracuse",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Stanford",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Georgia Tech",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "North Carolina",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Pittsburgh",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Kentucky",
+          "homeAway": "away",
+          "notes": "non-conference; Governor's Cup"
+        }
+      ]
+    },
+    "miami": {
+      "wikiTitle": "2026 Miami Hurricanes football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Miami_Hurricanes_football_team",
+      "coach": "Mario Cristobal",
+      "games": [
+        {
+          "date": "2026-09-04",
+          "dateLabel": "September 4",
+          "opponent": "Stanford",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-10",
+          "dateLabel": "September 10",
+          "opponent": "Florida A&M",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-18",
+          "dateLabel": "September 18",
+          "opponent": "Wake Forest",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Central Michigan",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Clemson",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Florida State",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Pittsburgh",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "North Carolina",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Notre Dame",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Duke",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Virginia Tech",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Boston College",
+          "homeAway": "home",
+          "notes": null
+        }
+      ]
+    },
+    "nc-state": {
+      "wikiTitle": "2026 NC State Wolfpack football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_NC_State_Wolfpack_football_team",
+      "coach": "Dave Doeren",
+      "games": [
+        {
+          "date": "2026-08-29",
+          "dateLabel": "August 29",
+          "opponent": "Virginia",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-11",
+          "dateLabel": "September 11",
+          "opponent": "Richmond",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Vanderbilt",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Appalachian State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Louisville",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Wake Forest",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-23",
+          "dateLabel": "October 23",
+          "opponent": "Stanford",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "California",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Duke",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Syracuse",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Florida State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "North Carolina",
+          "homeAway": "away",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "north-carolina": {
+      "wikiTitle": "2026 North Carolina Tar Heels football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_North_Carolina_Tar_Heels_football_team",
+      "coach": "Bill Belichick",
+      "games": [
+        {
+          "date": "2026-08-29",
+          "dateLabel": "August 29",
+          "opponent": "TCU",
+          "homeAway": "neutral",
+          "notes": "non-conference; Aer Lingus College Football Classic"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "East Tennessee State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Clemson",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Notre Dame",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Pittsburgh",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Duke",
+          "homeAway": "away",
+          "notes": "Victory Bell"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Syracuse",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Miami (FL)",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "UConn",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Louisville",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Virginia",
+          "homeAway": "away",
+          "notes": "South's Oldest Rivalry"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "NC State",
+          "homeAway": "home",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "pittsburgh": {
+      "wikiTitle": "2026 Pittsburgh Panthers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Pittsburgh_Panthers_football_team",
+      "coach": "Pat Narduzzi",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Miami (OH)",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "UCF",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-17",
+          "dateLabel": "September 17",
+          "opponent": "Syracuse",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Bucknell",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-02",
+          "dateLabel": "October 2",
+          "opponent": "Virginia Tech",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "North Carolina",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Boston College",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Miami (FL)",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Georgia Tech",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-13",
+          "dateLabel": "November 13",
+          "opponent": "Florida State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Louisville",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "California",
+          "homeAway": "away",
+          "notes": null
+        }
+      ]
+    },
+    "smu": {
+      "wikiTitle": "2026 SMU Mustangs football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_SMU_Mustangs_football_team",
+      "coach": "Rhett Lashlee",
+      "games": [
+        {
+          "date": "2026-09-07",
+          "dateLabel": "September 7",
+          "opponent": "Florida State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "UC Davis",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Louisville",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Missouri State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Boston College",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Virginia",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "California",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Syracuse",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-06",
+          "dateLabel": "November 6",
+          "opponent": "Virginia Tech",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Wake Forest",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Notre Dame",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Stanford",
+          "homeAway": "away",
+          "notes": null
+        }
+      ]
+    },
+    "stanford": {
+      "wikiTitle": "2026 Stanford Cardinal football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Stanford_Cardinal_football_team",
+      "coach": "Tavita Pritchard",
+      "games": [
+        {
+          "date": "2026-08-29",
+          "dateLabel": "August 29",
+          "opponent": "Hawaii",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-04",
+          "dateLabel": "September 4",
+          "opponent": "Miami (FL)",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Duke",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Georgia Tech",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Wake Forest",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Notre Dame",
+          "homeAway": "away",
+          "notes": "non-conference; Legends Trophy"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Elon",
+          "homeAway": "home",
+          "notes": "non-conference; homecoming"
+        },
+        {
+          "date": "2026-10-23",
+          "dateLabel": "October 23",
+          "opponent": "NC State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Louisville",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Virginia Tech",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "California",
+          "homeAway": "away",
+          "notes": "Big Game"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "SMU",
+          "homeAway": "home",
+          "notes": null
+        }
+      ]
+    },
+    "syracuse": {
+      "wikiTitle": "2026 Syracuse Orange football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Syracuse_Orange_football_team",
+      "coach": "Fran Brown",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "New Hampshire",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "California",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-17",
+          "dateLabel": "September 17",
+          "opponent": "Pittsburgh",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "UConn",
+          "homeAway": "away",
+          "notes": "non-conference; rivalry"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Virginia",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Louisville",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "North Carolina",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "SMU",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Clemson",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "NC State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Boston College",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Notre Dame",
+          "homeAway": "home",
+          "notes": "non-conference"
+        }
+      ]
+    },
+    "virginia": {
+      "wikiTitle": "2026 Virginia Cavaliers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Virginia_Cavaliers_football_team",
+      "coach": "Tony Elliott",
+      "games": [
+        {
+          "date": "2026-08-29",
+          "dateLabel": "August 29",
+          "opponent": "NC State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-11",
+          "dateLabel": "September 11",
+          "opponent": "Norfolk State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "West Virginia",
+          "homeAway": "neutral",
+          "notes": "non-conference; Duke's Mayo Classic"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Delaware",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Florida State",
+          "homeAway": "away",
+          "notes": "Jefferson–Eppes Trophy"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Syracuse",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "SMU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-23",
+          "dateLabel": "October 23",
+          "opponent": "Duke",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Wake Forest",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "California",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "North Carolina",
+          "homeAway": "home",
+          "notes": "South's Oldest Rivalry"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Virginia Tech",
+          "homeAway": "away",
+          "notes": "Commonwealth Cup"
+        }
+      ]
+    },
+    "virginia-tech": {
+      "wikiTitle": "2026 Virginia Tech Hokies football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Virginia_Tech_Hokies_football_team",
+      "coach": "James Franklin",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "VMI",
+          "homeAway": "home",
+          "notes": "non-conference; rivalry"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Old Dominion",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Maryland",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Boston College",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-02",
+          "dateLabel": "October 2",
+          "opponent": "Pittsburgh",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "California",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Georgia Tech",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Clemson",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-06",
+          "dateLabel": "November 6",
+          "opponent": "SMU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Stanford",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Miami (FL)",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Virginia",
+          "homeAway": "home",
+          "notes": "Commonwealth Cup"
+        }
+      ]
+    },
+    "wake-forest": {
+      "wikiTitle": "2026 Wake Forest Demon Deacons football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Wake_Forest_Demon_Deacons_football_team",
+      "coach": "Jake Dickert",
+      "games": [
+        {
+          "date": "2026-09-03",
+          "dateLabel": "September 3",
+          "opponent": "Akron",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Purdue",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-18",
+          "dateLabel": "September 18",
+          "opponent": "Miami (FL)",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Louisville",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Stanford",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "NC State",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "California",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Virginia",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Merrimack",
+          "homeAway": "home",
+          "notes": "non-conference; homecoming"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "SMU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Georgia Tech",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Duke",
+          "homeAway": "home",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "arizona": {
+      "wikiTitle": "2026 Arizona Wildcats football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Arizona_Wildcats_football_team",
+      "coach": "Brent Brennan",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Northern Arizona",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "BYU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Northern Illinois",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Washington State",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Cincinnati",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "West Virginia",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Iowa State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Texas Tech",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-06",
+          "dateLabel": "November 6",
+          "opponent": "TCU",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Utah",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Kansas State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Arizona State",
+          "homeAway": "home",
+          "notes": "Duel in the Desert"
+        }
+      ]
+    },
+    "arizona-state": {
+      "wikiTitle": "2026 Arizona State Sun Devils football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Arizona_State_Sun_Devils_football_team",
+      "coach": "Kenny Dillingham",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Morgan State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Texas A&M",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Kansas",
+          "homeAway": "neutral",
+          "notes": "Union Jack Classic"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Baylor",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Hawaii",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Texas Tech",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Kansas State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "BYU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Colorado",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "UCF",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Oklahoma State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Arizona",
+          "homeAway": "away",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "byu": {
+      "wikiTitle": "2026 BYU Cougars football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_BYU_Cougars_football_team",
+      "coach": "Kalani Sitake",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Utah Tech",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Arizona",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Colorado State",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "TCU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-09",
+          "dateLabel": "October 9",
+          "opponent": "Iowa State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Notre Dame",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "UCF",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Arizona State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Utah",
+          "homeAway": "away",
+          "notes": "Holy War"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Baylor",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Kansas",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Cincinnati",
+          "homeAway": "home",
+          "notes": null
+        }
+      ]
+    },
+    "baylor": {
+      "wikiTitle": "2026 Baylor Bears football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Baylor_Bears_football_team",
+      "coach": "Dave Aranda",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Auburn",
+          "homeAway": "neutral",
+          "notes": "non-conference; Aflac Kickoff Game"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Prairie View A&M",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Louisiana Tech",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Colorado",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Arizona State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "TCU",
+          "homeAway": "home",
+          "notes": "The Revivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Kansas",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-30",
+          "dateLabel": "October 30",
+          "opponent": "UCF",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Iowa State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "BYU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Texas Tech",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Houston",
+          "homeAway": "away",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "cincinnati": {
+      "wikiTitle": "2026 Cincinnati Bearcats football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Cincinnati_Bearcats_football_team",
+      "coach": "Scott Satterfield",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Boston College",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Western Carolina",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Miami (OH)",
+          "homeAway": "neutral",
+          "notes": "non-conference; Victory Bell"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Kansas State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Arizona",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "West Virginia",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Texas Tech",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Utah",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Houston",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Iowa State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Colorado",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "BYU",
+          "homeAway": "away",
+          "notes": null
+        }
+      ]
+    },
+    "colorado": {
+      "wikiTitle": "2026 Colorado Buffaloes football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Colorado_Buffaloes_football_team",
+      "coach": "Deion Sanders",
+      "games": [
+        {
+          "date": "2026-09-03",
+          "dateLabel": "September 3",
+          "opponent": "Georgia Tech",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Weber State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Northwestern",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Baylor",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Texas Tech",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Utah",
+          "homeAway": "home",
+          "notes": "Rumble in the Rockies"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Oklahoma State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Kansas State",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Arizona State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-13",
+          "dateLabel": "November 13",
+          "opponent": "Houston",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Cincinnati",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "UCF",
+          "homeAway": "home",
+          "notes": null
+        }
+      ]
+    },
+    "houston": {
+      "wikiTitle": "2026 Houston Cougars football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Houston_Cougars_football_team",
+      "coach": "Willie Fritz",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Oregon State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Southern",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-18",
+          "dateLabel": "September 18",
+          "opponent": "Texas Tech",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Georgia Southern",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "UCF",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Kansas State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Oklahoma State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Utah",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Cincinnati",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-13",
+          "dateLabel": "November 13",
+          "opponent": "Colorado",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "West Virginia",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Baylor",
+          "homeAway": "home",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "iowa-state": {
+      "wikiTitle": "2026 Iowa State Cyclones football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Iowa_State_Cyclones_football_team",
+      "coach": "Jimmy Rogers",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Southeast Missouri State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Iowa",
+          "homeAway": "away",
+          "notes": "non-conference; Cy-Hawk Trophy"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Bowling Green",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Utah",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "West Virginia",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-09",
+          "dateLabel": "October 9",
+          "opponent": "BYU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Arizona",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Oklahoma State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Baylor",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Cincinnati",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-20",
+          "dateLabel": "November 20",
+          "opponent": "UCF",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Kansas State",
+          "homeAway": "home",
+          "notes": "Farmageddon"
+        }
+      ]
+    },
+    "kansas": {
+      "wikiTitle": "2026 Kansas Jayhawks football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Kansas_Jayhawks_football_team",
+      "coach": "Lance Leipold",
+      "games": [
+        {
+          "date": "2026-09-04",
+          "dateLabel": "September 4",
+          "opponent": "LIU",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-11",
+          "dateLabel": "September 11",
+          "opponent": "Missouri",
+          "homeAway": "home",
+          "notes": "non-conference; Border War"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Arizona State",
+          "homeAway": "neutral",
+          "notes": "Union Jack Classic"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Middle Tennessee",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Utah",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Kansas State",
+          "homeAway": "away",
+          "notes": "Sunflower Showdown"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Baylor",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "TCU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "UCF",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "West Virginia",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "BYU",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Oklahoma State",
+          "homeAway": "away",
+          "notes": null
+        }
+      ]
+    },
+    "kansas-state": {
+      "wikiTitle": "2026 Kansas State Wildcats football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Kansas_State_Wildcats_football_team",
+      "coach": "Collin Klein",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Nicholls",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Washington State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Tulane",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Cincinnati",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Houston",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Kansas",
+          "homeAway": "home",
+          "notes": "Sunflower Showdown"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Arizona State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Colorado",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Oklahoma State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "TCU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Arizona",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Iowa State",
+          "homeAway": "away",
+          "notes": "Farmageddon"
+        }
+      ]
+    },
+    "oklahoma-state": {
+      "wikiTitle": "2026 Oklahoma State Cowboys football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Oklahoma_State_Cowboys_football_team",
+      "coach": "Eric Morris",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Tulsa",
+          "homeAway": "away",
+          "notes": "non-conference; rivalry"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Oregon",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Murray State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "West Virginia",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "UCF",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Houston",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Colorado",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Iowa State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Kansas State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Texas Tech",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Arizona State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Kansas",
+          "homeAway": "home",
+          "notes": null
+        }
+      ]
+    },
+    "tcu": {
+      "wikiTitle": "2026 TCU Horned Frogs football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_TCU_Horned_Frogs_football_team",
+      "coach": "Sonny Dykes",
+      "games": [
+        {
+          "date": "2026-08-29",
+          "dateLabel": "August 29",
+          "opponent": "North Carolina",
+          "homeAway": "neutral",
+          "notes": "non-conference; Aer Lingus College Football Classic"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Grambling State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Arkansas State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "UCF",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "BYU",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Baylor",
+          "homeAway": "away",
+          "notes": "The Revivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "West Virginia",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Kansas",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-06",
+          "dateLabel": "November 6",
+          "opponent": "Arizona",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Kansas State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Utah",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-26",
+          "dateLabel": "November 26",
+          "opponent": "Texas Tech",
+          "homeAway": "away",
+          "notes": "Battle for the Saddle Trophy"
+        }
+      ]
+    },
+    "texas-tech": {
+      "wikiTitle": "2026 Texas Tech Red Raiders football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Texas_Tech_Red_Raiders_football_team",
+      "coach": "Joey McGuire",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Abilene Christian",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Oregon State",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-18",
+          "dateLabel": "September 18",
+          "opponent": "Houston",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Sam Houston",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Colorado",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Arizona State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Cincinnati",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Arizona",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "West Virginia",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Oklahoma State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Baylor",
+          "homeAway": "away",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-26",
+          "dateLabel": "November 26",
+          "opponent": "TCU",
+          "homeAway": "home",
+          "notes": "rivalry"
+        }
+      ]
+    },
+    "ucf": {
+      "wikiTitle": "2026 UCF Knights football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_UCF_Knights_football_team",
+      "coach": "Scott Frost",
+      "games": [
+        {
+          "date": "2026-09-03",
+          "dateLabel": "September 3",
+          "opponent": "Bethune–Cookman",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Pittsburgh",
+          "homeAway": "away",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Georgia State",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "TCU",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Houston",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Oklahoma State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "BYU",
+          "homeAway": "home",
+          "notes": "homecoming"
+        },
+        {
+          "date": "2026-10-30",
+          "dateLabel": "October 30",
+          "opponent": "Baylor",
+          "homeAway": "home",
+          "notes": "Space Game"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Kansas",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Arizona State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-20",
+          "dateLabel": "November 20",
+          "opponent": "Iowa State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Colorado",
+          "homeAway": "away",
+          "notes": null
+        }
+      ]
+    },
+    "utah": {
+      "wikiTitle": "2026 Utah Utes football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Utah_Utes_football_team",
+      "coach": "Morgan Scalley",
+      "games": [
+        {
+          "date": "2026-09-03",
+          "dateLabel": "September 3",
+          "opponent": "Idaho",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Arkansas",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Utah State",
+          "homeAway": "home",
+          "notes": "non-conference; Battle of the Brothers"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Iowa State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Kansas",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Colorado",
+          "homeAway": "away",
+          "notes": "Rumble in the Rockies"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "Houston",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Cincinnati",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "BYU",
+          "homeAway": "home",
+          "notes": "Holy War"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Arizona",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "TCU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "West Virginia",
+          "homeAway": "home",
+          "notes": null
+        }
+      ]
+    },
+    "west-virginia": {
+      "wikiTitle": "2026 West Virginia Mountaineers football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_West_Virginia_Mountaineers_football_team",
+      "coach": "Rich Rodriguez",
+      "games": [
+        {
+          "date": "2026-09-05",
+          "dateLabel": "September 5",
+          "opponent": "Coastal Carolina",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "UT Martin",
+          "homeAway": "home",
+          "notes": "non-conference"
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Virginia",
+          "homeAway": "neutral",
+          "notes": "non-conference; Duke's Mayo Classic"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Oklahoma State",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "Iowa State",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Arizona",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "Cincinnati",
+          "homeAway": "home",
+          "notes": "homecoming; rivalry"
+        },
+        {
+          "date": "2026-10-24",
+          "dateLabel": "October 24",
+          "opponent": "TCU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Texas Tech",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Kansas",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "Houston",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-27",
+          "dateLabel": "November 27",
+          "opponent": "Utah",
+          "homeAway": "away",
+          "notes": null
+        }
+      ]
+    },
+    "notre-dame": {
+      "wikiTitle": "2026 Notre Dame Fighting Irish football team",
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Notre_Dame_Fighting_Irish_football_team",
+      "coach": "Marcus Freeman",
+      "games": [
+        {
+          "date": "2026-09-06",
+          "dateLabel": "September 6",
+          "opponent": "Wisconsin",
+          "homeAway": "neutral",
+          "notes": "Shamrock Series"
+        },
+        {
+          "date": "2026-09-12",
+          "dateLabel": "September 12",
+          "opponent": "Rice",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-09-19",
+          "dateLabel": "September 19",
+          "opponent": "Michigan State",
+          "homeAway": "home",
+          "notes": "Megaphone Trophy"
+        },
+        {
+          "date": "2026-09-26",
+          "dateLabel": "September 26",
+          "opponent": "Purdue",
+          "homeAway": "away",
+          "notes": "Shillelagh Trophy"
+        },
+        {
+          "date": "2026-10-03",
+          "dateLabel": "October 3",
+          "opponent": "North Carolina",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-10",
+          "dateLabel": "October 10",
+          "opponent": "Stanford",
+          "homeAway": "home",
+          "notes": "Legends Trophy"
+        },
+        {
+          "date": "2026-10-17",
+          "dateLabel": "October 17",
+          "opponent": "BYU",
+          "homeAway": "away",
+          "notes": null
+        },
+        {
+          "date": "2026-10-31",
+          "dateLabel": "October 31",
+          "opponent": "Navy",
+          "homeAway": "neutral",
+          "notes": "Rip Miller Trophy"
+        },
+        {
+          "date": "2026-11-07",
+          "dateLabel": "November 7",
+          "opponent": "Miami (FL)",
+          "homeAway": "home",
+          "notes": "rivalry"
+        },
+        {
+          "date": "2026-11-14",
+          "dateLabel": "November 14",
+          "opponent": "Boston College",
+          "homeAway": "home",
+          "notes": "Holy War"
+        },
+        {
+          "date": "2026-11-21",
+          "dateLabel": "November 21",
+          "opponent": "SMU",
+          "homeAway": "home",
+          "notes": null
+        },
+        {
+          "date": "2026-11-28",
+          "dateLabel": "November 28",
+          "opponent": "Syracuse",
+          "homeAway": "away",
+          "notes": null
+        }
+      ]
+    }
+  }
+}

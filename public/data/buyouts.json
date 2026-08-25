@@ -1,0 +1,1239 @@
+{
+  "meta": {
+    "product": "Public Cap buyout tool",
+    "asOf": "2026-08-25",
+    "today": "2026-08-25",
+    "scope": "Power 4 plus Notre Dame football head coaches, 2026 season",
+    "notes": "Maps a cited contract step-down onto remaining 2026 games. The buyout in force after a kickoff is the step that covers the next calendar day — not a renegotiation after each Saturday. Paid buyouts (already-owed money after a firing) live on the tape/layers desk, not here.",
+    "defaultSchool": "florida-state",
+    "sources": [
+      "CBS Sports (Norvell contract review Nov. 16, 2025; 2026 hot-seat July 16, 2026)",
+      "Tallahassee Democrat / USA TODAY Sports (Norvell Nov. 21, 2025)",
+      "USA TODAY Sports football coach salary database (Oct. 8, 2025) for single overhangs",
+      "University of Tennessee Heupel Amendment 3 PDF (Aug. 2025)",
+      "LSU Kiffin term sheet (Nov. 29, 2025) via Louisiana First / The Athletic / Reveille",
+      "UF Sumrall payment details (Dec. 1, 2025, Gainesville Sun)",
+      "WKYT open-records Stein contract (Dec. 8, 2025)",
+      "Wikipedia 2026 FBS team pages for current HCs and schedules"
+    ]
+  },
+  "coaches": {
+    "alabama": {
+      "sport": "fb",
+      "name": "Kalen DeBoer",
+      "tape": "overhang",
+      "termThrough": "2033-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 60843750,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "Alabama Athletics",
+        "url": "https://rolltide.com/news/2026/4/22/football-head-coach-kalen-deboers-contract-extended-through-2033-season"
+      }
+    },
+    "arkansas": {
+      "sport": "fb",
+      "name": "Ryan Silverfield",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "auburn": {
+      "sport": "fb",
+      "name": "Alex Golesh",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "florida": {
+      "sport": "fb",
+      "name": "Jon Sumrall",
+      "tape": "pending",
+      "termThrough": "2031-12-31",
+      "steps": [],
+      "rule": "If Florida terminates without cause: 70% of remaining annualized compensation, paid in equal monthly installments through Dec. 31, 2031. $7.45 million per contract year. No public current-dollar overhang is on this desk; we will not multiply 70% × remaining years ourselves.",
+      "notes": "Billy Napier’s $21.2M is a paid-buyout, not this tool. Coach-side liquidated damages if Sumrall walks ($10M in 2026, then $8/$3/$2/$1/$0) are a separate schedule.",
+      "mitigation": {
+        "rule": "School-side 70% buyout is reduced if Sumrall accepts an NFL or Division I coaching or front-office job. He is not required to take one. We do not invent a dollar offset.",
+        "source": {
+          "label": "Gainesville Sun (Dec. 1, 2025), quoting UF payment details",
+          "url": "https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/"
+        }
+      },
+      "contract": {
+        "label": "Gainesville Sun / UF released payment details (Dec. 1, 2025)",
+        "url": "https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/"
+      }
+    },
+    "georgia": {
+      "sport": "fb",
+      "name": "Kirby Smart",
+      "tape": "overhang",
+      "termThrough": "2033-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 105107583,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "University of Georgia Athletics",
+        "url": "https://georgiadogs.com/news/2024/5/2/general-uga-athletics-board-approves-contract-extensions-for-josh-brooks-and-kirby-smart"
+      }
+    },
+    "kentucky": {
+      "sport": "fb",
+      "name": "Will Stein",
+      "tape": "pending",
+      "termThrough": "2031-01",
+      "steps": [],
+      "rule": "If Kentucky terminates without cause: 70% of remaining salary, paid monthly over the remaining term (five-year, $28.5 million deal starting at $5.5 million). No public current-dollar overhang is on this desk.",
+      "notes": "Mark Stoops’ $37.7M is a paid-buyout (already being paid, no mitigation), not this tool.",
+      "mitigation": {
+        "rule": "WKYT’s open-records readout of Stein’s deal states the 70% school-side guarantee; it does not publish a dollar offset table. We do not invent one.",
+        "source": {
+          "label": "WKYT (Dec. 8, 2025), open-records Stein contract / Stoops separation",
+          "url": "https://www.wkyt.com/2025/12/09/details-steins-contract-stoops-severance/"
+        }
+      },
+      "contract": {
+        "label": "WKYT open-records report (Dec. 8, 2025)",
+        "url": "https://www.wkyt.com/2025/12/09/details-steins-contract-stoops-severance/"
+      }
+    },
+    "lsu": {
+      "sport": "fb",
+      "name": "Lane Kiffin",
+      "tape": "overhang",
+      "termThrough": "2032-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 62400000,
+        "asOf": "2025-12-01",
+        "rule": "80% of remaining annual salary if LSU terminates without cause. The Athletic, quoting the Nov. 29, 2025 term sheet: the buyout “after the 2026 season starts” is $62.4 million. Calendar-year remaining-salary math is not a weekly step tape.",
+        "confidence": "reported",
+        "source": {
+          "label": "The Athletic (Dec. 1, 2025), quoting the LSU term sheet",
+          "url": "https://www.nytimes.com/athletic/6852863/2025/12/01/lane-kiffin-lsu-contract-details/"
+        }
+      },
+      "notes": "Brian Kelly’s ~$53M is a paid-buyout (already-owed money), not this tool. Game-by-game step tape pending — the term sheet steps on contract years (Dec. 31), not after each Saturday.",
+      "mitigation": {
+        "rule": "No duty to mitigate and no offset if Kiffin takes another job. The $62.4 million figure is therefore a guaranteed overhang, not a number we reduce.",
+        "source": {
+          "label": "LSU Reveille, quoting the public-records term sheet",
+          "url": "https://lsureveille.com/271547/sports/the-terms-of-lsu-and-lane-kiffins-contract-have-just-been-released-here-are-all-the-details/"
+        }
+      },
+      "contract": {
+        "label": "LSU / Lane Kiffin term sheet PDF (Nov. 29, 2025)",
+        "url": "https://www.louisianafirstnews.com/wp-content/uploads/sites/80/2025/12/2025.11.29-Term-Sheet-Lane-Kiffin.pdf"
+      }
+    },
+    "mississippi-state": {
+      "sport": "fb",
+      "name": "Jeff Lebby",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 11006250,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "missouri": {
+      "sport": "fb",
+      "name": "Eliah Drinkwitz",
+      "tape": "overhang",
+      "termThrough": "2029-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 28875685,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "KOMU / Mizzou Athletics contract posting",
+        "url": "https://www.komu.com/sports/mizzouxtra/mizzou-extends-contract-for-drinkwitz/article_aa28f39a-47b7-41e1-bb3a-90f27611b546.html"
+      }
+    },
+    "oklahoma": {
+      "sport": "fb",
+      "name": "Brent Venables",
+      "tape": "overhang",
+      "termThrough": "2031-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 36158333,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "University of Oklahoma Athletics",
+        "url": "https://soonersports.com/news/2026/8/20/football-venables-agrees-to-2-year-contract-extension"
+      }
+    },
+    "ole-miss": {
+      "sport": "fb",
+      "name": "Pete Golding",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "south-carolina": {
+      "sport": "fb",
+      "name": "Shane Beamer",
+      "tape": "overhang",
+      "termThrough": "2030-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 27903958,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "University of South Carolina Athletics",
+        "url": "https://gamecocksonline.com/news/2025/01/24/south-carolina-beamer-ink-contract-extension/"
+      }
+    },
+    "tennessee": {
+      "sport": "fb",
+      "name": "Josh Heupel",
+      "tape": "steps",
+      "termThrough": "2030-01-31",
+      "steps": [
+        {
+          "through": "2027-12-15",
+          "amount": 37500000,
+          "rule": "If UT terminates without cause on or after Dec. 15, 2025 and before Dec. 15, 2027: 75% of remaining compensation, paid monthly through Jan. 31, 2030. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025 — the last cited figure on that 75% step.",
+          "confidence": "reported",
+          "source": {
+            "label": "USA TODAY Sports coach salary database (Oct. 8, 2025) + UT Amendment 3 PDF",
+            "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+          }
+        },
+        {
+          "through": "2030-01-31",
+          "amount": null,
+          "rule": "If UT terminates without cause on or after Dec. 15, 2027 through Jan. 31, 2030: 50% of remaining compensation. Dollar pending — we will not invent 50% of a later remainder.",
+          "confidence": "pending",
+          "source": {
+            "label": "University of Tennessee Amendment 3 to Heupel employment agreement (Aug. 2025)",
+            "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+          }
+        }
+      ],
+      "notes": "Calendar steps are Dec. 15 (and the Jan. 31, 2030 term end), not Saturdays. Coach-side liquidated damages if Heupel walks are a separate schedule ($6M / $4M / $3M / $2M) and are not this tool.",
+      "mitigation": {
+        "rule": "School-side buyout is paid monthly through the end of the deal and includes offset language if Heupel takes another job before the contract date. We do not invent a dollar offset.",
+        "source": {
+          "label": "Knox News, quoting the Aug. 2025 amendment",
+          "url": "https://www.knoxnews.com/story/sports/college/university-of-tennessee/football/2025/08/26/josh-heupel-contract-extension-tennessee-football-pay/85836629007/"
+        }
+      },
+      "contract": {
+        "label": "UT System contracts page — Heupel Amendment 3 PDF",
+        "url": "https://tennessee.edu/about/transparency/contracts/"
+      }
+    },
+    "texas": {
+      "sport": "fb",
+      "name": "Steve Sarkisian",
+      "tape": "overhang",
+      "termThrough": "2031-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 60307500,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "San Antonio Express-News (contract review)",
+        "url": "https://www.mysanantonio.com/sports/article/steve-sarkisian-texas-longhorns-salary-20826265.php"
+      }
+    },
+    "texas-am": {
+      "sport": "fb",
+      "name": "Mike Elko",
+      "tape": "overhang",
+      "termThrough": "2031-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 21875000,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "GigEm247 / open-records contract",
+        "url": "https://247sports.com/college/texas-am/longformarticle/texas-am-releases-contract-details-of-new-six-year-69-million-deal-for-aggie-coach-mike-elko-274610222/"
+      }
+    },
+    "vanderbilt": {
+      "sport": "fb",
+      "name": "Clark Lea",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left Vanderbilt buyout blank (private).",
+      "mitigation": null,
+      "contract": null
+    },
+    "illinois": {
+      "sport": "fb",
+      "name": "Bret Bielema",
+      "tape": "overhang",
+      "termThrough": "2030-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 49491667,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "University of Illinois Athletics",
+        "url": "https://fightingillini.com/news/2025/5/13/football-bielema-agrees-to-new-six-year-contract"
+      }
+    },
+    "indiana": {
+      "sport": "fb",
+      "name": "Curt Cignetti",
+      "tape": "overhang",
+      "termThrough": "2032-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 56700000,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "247Sports (Indiana extension terms)",
+        "url": "https://247sports.com/college/indiana/article/indiana-football-where-curt-cignettis-new-contract-extension-ranks-among-college-football-head-coaches-239930365/"
+      }
+    },
+    "iowa": {
+      "sport": "fb",
+      "name": "Kirk Ferentz",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 25729167,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "maryland": {
+      "sport": "fb",
+      "name": "Mike Locksley",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 13395417,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "michigan": {
+      "sport": "fb",
+      "name": "Kyle Whittingham",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "michigan-state": {
+      "sport": "fb",
+      "name": "Pat Fitzgerald",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "minnesota": {
+      "sport": "fb",
+      "name": "P. J. Fleck",
+      "tape": "overhang",
+      "termThrough": "2030-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 26600000,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "University of Minnesota Athletics",
+        "url": "https://gophersports.com/news/2025/7/9/football-fleck-signs-extension-now-under-contract-through-2030"
+      }
+    },
+    "nebraska": {
+      "sport": "fb",
+      "name": "Matt Rhule",
+      "tape": "overhang",
+      "termThrough": "2032-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 49612500,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "University of Nebraska Athletics",
+        "url": "https://huskers.com/news/2025/10/30/nebraska-announces-contract-extension-with-coach-matt-rhule"
+      }
+    },
+    "northwestern": {
+      "sport": "fb",
+      "name": "David Braun",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left the buyout cell blank (private-school or unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "ohio-state": {
+      "sport": "fb",
+      "name": "Ryan Day",
+      "tape": "overhang",
+      "termThrough": "2031-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 70916667,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "Columbus Dispatch / Ohio State trustees",
+        "url": "https://www.dispatch.com/story/news/education/2025/02/19/ryan-day-ohio-state-football-coach-salary-contract-extension/79201555007/"
+      }
+    },
+    "oregon": {
+      "sport": "fb",
+      "name": "Dan Lanning",
+      "tape": "overhang",
+      "termThrough": "2031-01-01",
+      "steps": [],
+      "overhang": {
+        "amount": 56733333,
+        "asOf": "2025-10-08",
+        "rule": "If Oregon terminates without cause: 100% of remaining compensation (contract years run Feb. 1–Jan. 31 through Jan. 1, 2031). Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025. Game-by-game step tape pending — the contract year turns Feb. 1, not after each Saturday.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database (Oct. 8, 2025)",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "USA TODAY Sports network obtained the March 2025 extension: 100% of remaining money if fired without cause. Lanning’s $20 million figure in that story is the coach-side walk-away, not the school-side overhang.",
+      "mitigation": null,
+      "contract": {
+        "label": "USA TODAY Sports (March 7, 2025), quoting the Oregon extension",
+        "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2025/03/07/dan-lanning-contract-buyout-details-bonuses-oregon-football/81976220007/"
+      }
+    },
+    "penn-state": {
+      "sport": "fb",
+      "name": "Matt Campbell",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "purdue": {
+      "sport": "fb",
+      "name": "Barry Odom",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 25125000,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "rutgers": {
+      "sport": "fb",
+      "name": "Greg Schiano",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 23735156,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "ucla": {
+      "sport": "fb",
+      "name": "Bob Chesney",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "usc": {
+      "sport": "fb",
+      "name": "Lincoln Riley",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left USC buyout blank (private-school / unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "washington": {
+      "sport": "fb",
+      "name": "Jedd Fisch",
+      "tape": "overhang",
+      "termThrough": "2030-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 33686666,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "Associated Press",
+        "url": "https://apnews.com/article/washington-coach-fisch-97a6954dff8c5df52bf3557bd3332d41"
+      }
+    },
+    "wisconsin": {
+      "sport": "fb",
+      "name": "Luke Fickell",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 27493333,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "boston-college": {
+      "sport": "fb",
+      "name": "Bill O'Brien",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left the buyout cell blank (private-school or unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "california": {
+      "sport": "fb",
+      "name": "Tosh Lupoi",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "clemson": {
+      "sport": "fb",
+      "name": "Dabo Swinney",
+      "tape": "overhang",
+      "termThrough": "2031-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 60000000,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "Associated Press",
+        "url": "https://apnews.com/article/college-football-sports-clemson-tigers-nick-saban-e7ae9cca16076df3de46d3ee738b3160"
+      }
+    },
+    "duke": {
+      "sport": "fb",
+      "name": "Manny Diaz",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left the buyout cell blank (private-school or unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "florida-state": {
+      "sport": "fb",
+      "name": "Mike Norvell",
+      "tape": "steps",
+      "termThrough": "2031-12-31",
+      "steps": [
+        {
+          "through": "2026-12-31",
+          "amount": 58400000,
+          "rule": "If fired without cause during the 2026 season — 85% of remaining base salary and supplemental pay through Dec. 31, 2031. CBS Sports (July 16, 2026) put the after-2025 / in-season-2026 figure at roughly $58.4 million. The contract year ends Dec. 31; it does not step after each Saturday.",
+          "confidence": "estimated",
+          "source": {
+            "label": "CBS Sports 2026 hot-seat rankings (July 16, 2026)",
+            "url": "https://www.cbssports.com/college-football/news/college-football-hot-seat-rankings-2026-fired-first/"
+          }
+        },
+        {
+          "through": "2031-12-31",
+          "amount": 45600000,
+          "rule": "After the 2026 season ends, CBS Sports estimated the buyout drops to $45.6 million. Still 85% of remaining compensation; remaining contract years run through Dec. 31, 2031.",
+          "confidence": "estimated",
+          "source": {
+            "label": "CBS Sports 2026 hot-seat rankings (July 16, 2026)",
+            "url": "https://www.cbssports.com/college-football/news/college-football-hot-seat-rankings-2026-fired-first/"
+          }
+        }
+      ],
+      "notes": "Rule confirmed by CBS Sports (Nov. 16, 2025 contract review) and the Tallahassee Democrat / USA TODAY Sports (Nov. 21, 2025), both quoting the employment agreement: 85% of remaining base and supplemental pay, payable lump-sum or in monthly installments through 2031. The desk’s last USA TODAY if-fired overhang was $58,667,708 as of Oct. 8, 2025 — the same order of magnitude as the $58.4 million 2026-season step. We do not mint a weekly staircase.",
+      "mitigation": {
+        "rule": "Norvell must use best efforts to obtain full-time comparable employment at a market-rate salary. If he is hired, Florida State’s remaining termination amount is reduced dollar-for-dollar by what he earns during the termination period. We do not invent a dollar offset.",
+        "source": {
+          "label": "Tallahassee Democrat / USA TODAY Sports (Nov. 21, 2025), quoting the contract",
+          "url": "https://www.tallahassee.com/story/sports/college/fsu/football/2025/11/21/mike-norvell-buyout-contract-fsu-football-fire-coach/87375717007/"
+        }
+      },
+      "contract": {
+        "label": "CBS Sports contract review (Nov. 16, 2025)",
+        "url": "https://www.cbssports.com/college-football/news/mike-norvell-buyout-contract-florida-state-head-coach/"
+      }
+    },
+    "georgia-tech": {
+      "sport": "fb",
+      "name": "Brent Key",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 11123333,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "louisville": {
+      "sport": "fb",
+      "name": "Jeff Brohm",
+      "tape": "overhang",
+      "termThrough": "2033-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 33633333,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "Associated Press",
+        "url": "https://www.seattlepi.com/sports/louisville-and-football-coach-jeff-brohm-agree-to-a22222385"
+      }
+    },
+    "miami": {
+      "sport": "fb",
+      "name": "Mario Cristobal",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left Miami buyout blank (private).",
+      "mitigation": null,
+      "contract": null
+    },
+    "nc-state": {
+      "sport": "fb",
+      "name": "Dave Doeren",
+      "tape": "overhang",
+      "termThrough": "2029-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 13129456,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "The News & Observer / Yahoo Sports",
+        "url": "https://sports.yahoo.com/article/nc-state-dave-doeren-dodges-203138265.html"
+      }
+    },
+    "north-carolina": {
+      "sport": "fb",
+      "name": "Bill Belichick",
+      "tape": "overhang",
+      "termThrough": "2029-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 20833333,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "Fox News / UNC-released contract",
+        "url": "https://www.foxnews.com/sports/bill-belichicks-north-carolina-contract-details-show-staggering-salary-interesting-clauses"
+      }
+    },
+    "pittsburgh": {
+      "sport": "fb",
+      "name": "Pat Narduzzi",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left the buyout cell blank (private-school or unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "smu": {
+      "sport": "fb",
+      "name": "Rhett Lashlee",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left the buyout cell blank (private-school or unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "stanford": {
+      "sport": "fb",
+      "name": "Tavita Pritchard",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "syracuse": {
+      "sport": "fb",
+      "name": "Fran Brown",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left the buyout cell blank (private-school or unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "virginia": {
+      "sport": "fb",
+      "name": "Tony Elliott",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 11175000,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "virginia-tech": {
+      "sport": "fb",
+      "name": "James Franklin",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "wake-forest": {
+      "sport": "fb",
+      "name": "Jake Dickert",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left the buyout cell blank (private-school or unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "arizona": {
+      "sport": "fb",
+      "name": "Brent Brennan",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 10650000,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "arizona-state": {
+      "sport": "fb",
+      "name": "Kenny Dillingham",
+      "tape": "overhang",
+      "termThrough": "2030-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 24683333,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "Arizona Sports / Arizona Board of Regents",
+        "url": "https://arizonasports.com/ncaa/arizona-state/arizona-state-football/kenny-dillingham-contract"
+      }
+    },
+    "byu": {
+      "sport": "fb",
+      "name": "Kalani Sitake",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left the buyout cell blank (private-school or unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "baylor": {
+      "sport": "fb",
+      "name": "Dave Aranda",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left the buyout cell blank (private-school or unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "cincinnati": {
+      "sport": "fb",
+      "name": "Scott Satterfield",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 12008333,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "colorado": {
+      "sport": "fb",
+      "name": "Deion Sanders",
+      "tape": "overhang",
+      "termThrough": "2029-12-31",
+      "steps": [],
+      "overhang": {
+        "amount": 33625000,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": {
+        "label": "University of Colorado Athletics / published contract",
+        "url": "https://cubuffs.com/news/2025/3/28/football-cu-boulder-extends-coach-primes-contract-through-2029"
+      }
+    },
+    "houston": {
+      "sport": "fb",
+      "name": "Willie Fritz",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 10375000,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "iowa-state": {
+      "sport": "fb",
+      "name": "Jimmy Rogers",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "kansas": {
+      "sport": "fb",
+      "name": "Lance Leipold",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 22930000,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "kansas-state": {
+      "sport": "fb",
+      "name": "Collin Klein",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "oklahoma-state": {
+      "sport": "fb",
+      "name": "Eric Morris",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "tcu": {
+      "sport": "fb",
+      "name": "Sonny Dykes",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left the buyout cell blank (private-school or unreleased).",
+      "mitigation": null,
+      "contract": null
+    },
+    "texas-tech": {
+      "sport": "fb",
+      "name": "Joey McGuire",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 9940761,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "ucf": {
+      "sport": "fb",
+      "name": "Scott Frost",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 13793750,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "utah": {
+      "sport": "fb",
+      "name": "Morgan Scalley",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "mitigation": null,
+      "contract": null
+    },
+    "west-virginia": {
+      "sport": "fb",
+      "name": "Rich Rodriguez",
+      "tape": "overhang",
+      "termThrough": null,
+      "steps": [],
+      "overhang": {
+        "amount": 7645833,
+        "asOf": "2025-10-08",
+        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
+        "confidence": "reported",
+        "source": {
+          "label": "USA TODAY Sports coach salary database",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+        }
+      },
+      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "mitigation": null,
+      "contract": null
+    },
+    "notre-dame": {
+      "sport": "fb",
+      "name": "Marcus Freeman",
+      "tape": "pending",
+      "termThrough": null,
+      "steps": [],
+      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending — not a guessed staircase.",
+      "notes": "USA TODAY left Notre Dame buyout blank.",
+      "mitigation": null,
+      "contract": null
+    }
+  }
+}

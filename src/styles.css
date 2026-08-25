@@ -629,3 +629,23 @@ table.staff-table { max-width: 760px; margin: 8px 0 18px; }
 .tv-cfp { max-width: 740px; }
 .tv-page p, .tv-page li { color: var(--paper-dim); max-width: 740px; }
 .tv-strip { max-width: 960px; }
+
+
+.buyout-page .table-scroll { max-height: none; }
+.buyout-hed { align-items: flex-start; }
+.buyout-names { display: flex; align-items: center; gap: 16px; margin: 8px 0 10px; }
+.buyout-school {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.buyout-steps { max-width: 760px; }
+.buyout-steps li { color: var(--paper-dim); }
+.buyout-table td.num.strong { font-weight: 500; }
+.buyout-table td.num.strong > div:first-child {
+  font-size: 12px;
+  color: var(--paper-dim);
+  font-weight: 400;
+  text-align: right;
+}

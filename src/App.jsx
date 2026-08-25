@@ -6,6 +6,7 @@ import Compare from './pages/Compare.jsx'
 import Methods from './pages/Methods.jsx'
 import Tape from './pages/Tape.jsx'
 import Tv from './pages/Tv.jsx'
+import Buyout from './pages/Buyout.jsx'
 import { computeCapacity, confidenceRollup, ratios } from './lib/compute.js'
 import { computeModeledNil } from './lib/nilModel.js'
 import { allocateNamedPlayers, namedRosterOnly, scaleRosterToModeled } from './lib/nilRoster.js'
@@ -156,6 +157,7 @@ export default function App() {
           <NavLink to={{ pathname: '/compare', search: params.toString() ? `?${params}` : '' }}>Compare</NavLink>
           <NavLink to={{ pathname: '/tape', search: params.toString() ? `?${params}` : '' }}>Tape</NavLink>
           <NavLink to={{ pathname: '/tv', search: params.toString() ? `?${params}` : '' }}>TV</NavLink>
+          <NavLink to={{ pathname: '/buyout', search: params.toString() ? `?${params}` : '' }}>Buyout</NavLink>
           <NavLink to={{ pathname: '/methods', search: params.toString() ? `?${params}` : '' }}>Methods</NavLink>
         </nav>
       </header>
@@ -200,6 +202,7 @@ export default function App() {
         />
         <Route path="/tape" element={<Tape items={tape?.items || []} season={season} />} />
         <Route path="/tv" element={<Tv />} />
+        <Route path="/buyout" element={<Buyout />} />
         <Route path="/methods" element={<Methods meta={data.meta} />} />
       </Routes>
       <footer className="site-foot">
