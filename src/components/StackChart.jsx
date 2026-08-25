@@ -23,7 +23,7 @@ function onActivate(fn) {
 function Row({ hash, label, title, barClass, rowClass, width, valueText, open, onToggle, children }) {
   const expanded = open === hash
   return (
-    <div className={`stack-item${expanded ? ' open' : ''}`} id={`slice-${hash}`}>
+    <div className={`stack-item${expanded ? ' open' : ''}${rowClass ? ` ${rowClass}` : ''}`} id={`slice-${hash}`}>
       <div
         className={`stack-row${rowClass ? ` ${rowClass}` : ''}${expanded ? ' open' : ''}`}
         role="button"
@@ -54,10 +54,12 @@ export default function StackChart({
   season,
   open,
   onToggle,
+  includeAlumni,
 }) {
+  const shown = includeAlumni ? cap.total : cap.booked
   const maxBar = Math.max(cap.total, house || 0, nil || 0, school.nil.modeled?.high || 0, 1)
   const houseLabel = house == null ? 'House cap' : season >= 2026 ? 'House cap 2026–27' : 'House cap 2025–26'
-  const url = canonicalUrl(schoolPath(school.id, season, open || ''))
+  const url = canonicalUrl(schoolPath(school.id, season, open || '', includeAlumni))
   const title = schoolTitle(school.name, season)
   const caption = schoolCaption(school.name)
   const fy = school.capacity?.fiscalYearPrimary
@@ -94,6 +96,7 @@ export default function StackChart({
       nil,
       houseLabel,
       openLabel,
+      includeAlumni,
     })
   }
 
@@ -101,13 +104,15 @@ export default function StackChart({
     <section className="stack-sec">
       <h2>Capacity stack</h2>
       <p className="lede tight">
-        Annual, not lifetime. Extra alumni giving is modeled and net of booked contributions when both exist.
+        Annual, not lifetime. Extra alumni giving is always shown; it enters the total only when Include modeled alumni is on.
+        Extra is modeled and net of booked contributions when both exist.
         Click a row for the exact dollar and the source.
       </p>
       <ShareBar url={url} title={title} caption={caption} onPng={png} />
       <div className="stack">
         {cap.components.map((c) => {
           const hash = `stack-${c.key}`
+          const excluded = c.key === 'extra' && !includeAlumni
           return (
             <Row
               key={c.key}
@@ -116,9 +121,11 @@ export default function StackChart({
                 <>
                   {c.label}
                   <i className={`dot ${c.field?.confidence || 'modeled'}`} />
+                  {excluded ? <span className="excluded-mark">excluded</span> : null}
                 </>
               }
               barClass={c.key}
+              rowClass={excluded ? 'excluded' : ''}
               width={widthOf(c.value)}
               valueText={c.value ? money(c.value) : '—'}
               open={open}
@@ -136,28 +143,31 @@ export default function StackChart({
         })}
         <Row
           hash="capacity"
-          label={<span title={defTitle('capacity')}>Annual capacity</span>}
+          label={<span title={defTitle('capacity')}>{includeAlumni ? 'Annual capacity' : 'Annual capacity (booked only)'}</span>}
           barClass="total"
           rowClass="total"
-          width={`${(cap.total / maxBar) * 100}%`}
-          valueText={money(cap.total)}
+          width={`${(shown / maxBar) * 100}%`}
+          valueText={money(shown)}
           open={open}
           onToggle={onToggle}
         >
           <DrillNote
             field={{
-              value: cap.total,
+              value: shown,
               confidence: school._conf?.primary || 'estimated',
               fiscalYear: fy,
-              notes: school.capacity?.fiscalYearNote || school.capacity?.gapNote,
+              notes: includeAlumni
+                ? (school.capacity?.fiscalYearNote || school.capacity?.gapNote)
+                : 'Booked-only filing stack. Modeled extra alumni is shown above and excluded from this total.',
             }}
-            exact={moneyExact(cap.total)}
+            exact={moneyExact(shown)}
           />
           <ul className="drill-slices">
             {cap.components.map((c) => (
-              <li key={c.key}>
+              <li key={c.key} className={c.key === 'extra' && !includeAlumni ? 'excluded' : undefined}>
                 {c.label}: {c.value ? moneyExact(c.value) : 'pending'}{' '}
                 <span className="conf-label">{c.field?.confidence || 'modeled'}</span>
+                {c.key === 'extra' && !includeAlumni ? ' · excluded from total' : ''}
               </li>
             ))}
           </ul>

@@ -5,6 +5,7 @@ import { val } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import SeasonPicker from '../components/SeasonPicker.jsx'
+import AlumniToggle from '../components/AlumniToggle.jsx'
 import ShareBar from '../components/ShareBar.jsx'
 import DrillNote, { DrillClose } from '../components/DrillNote.jsx'
 import {
@@ -37,13 +38,14 @@ function metricDisplay(m, school, house) {
   return money(v)
 }
 
-function CapSlices({ school }) {
+function CapSlices({ school, includeAlumni }) {
   return (
     <ul className="drill-slices">
       {school._cap.components.map((c) => (
-        <li key={c.key}>
+        <li key={c.key} className={c.key === 'extra' && !includeAlumni ? 'excluded' : undefined}>
           {c.label}: {c.value ? moneyExact(c.value) : 'pending'}{' '}
           <span className="conf-label">{c.field?.confidence || 'modeled'}</span>
+          {c.key === 'extra' && !includeAlumni ? ' · excluded from total' : ''}
           {c.field?.fiscalYear ? ` · ${c.field.fiscalYear}` : ''}
           {c.field?.url ? (
             <>
@@ -144,10 +146,11 @@ function fieldFor(school, key, houseField) {
   return null
 }
 
-function SchoolDrill({ school, metric, house, houseField, season, view }) {
+function SchoolDrill({ school, metric, house, houseField, season, view, includeAlumni }) {
   const hash = COMPARE_TO_SCHOOL_HASH[view] || ''
-  const href = schoolPath(school.id, season, hash)
+  const href = schoolPath(school.id, season, hash, includeAlumni)
   const field = fieldFor(school, metric.key, houseField)
+  const shown = includeAlumni ? school._cap.total : school._cap.booked
   return (
     <div className="compare-drill-school">
       <Link className="drill-school" to={href}>
@@ -155,8 +158,16 @@ function SchoolDrill({ school, metric, house, houseField, season, view }) {
       </Link>
       {metric.key === 'capacity' ? (
         <>
-          <DrillNote field={{ value: school._cap.total, confidence: school._conf?.primary, fiscalYear: school.capacity?.fiscalYearPrimary }} exact={moneyExact(school._cap.total)} />
-          <CapSlices school={school} />
+          <DrillNote
+            field={{
+              value: shown,
+              confidence: school._conf?.primary,
+              fiscalYear: school.capacity?.fiscalYearPrimary,
+              notes: includeAlumni ? undefined : 'Booked-only filing stack. Modeled extra alumni is shown in the extra row and excluded from this total.',
+            }}
+            exact={moneyExact(shown)}
+          />
+          <CapSlices school={school} includeAlumni={includeAlumni} />
         </>
       ) : metric.key === 'nil' ? (
         <>
@@ -202,7 +213,7 @@ function SchoolDrill({ school, metric, house, houseField, season, view }) {
   )
 }
 
-export default function Compare({ schools, meta, house, houseField, season, setSeason }) {
+export default function Compare({ schools, meta, house, houseField, season, setSeason, includeAlumni, setIncludeAlumni }) {
   const [params] = useSearchParams()
   const location = useLocation()
   const navigate = useNavigate()
@@ -221,7 +232,7 @@ export default function Compare({ schools, meta, house, houseField, season, setS
     navigate(
       {
         pathname: '/compare',
-        search: compareSearch({ a: nextA, b: nextB, season, view: nextView }),
+        search: compareSearch({ a: nextA, b: nextB, season, view: nextView, includeAlumni }),
         hash: nextView && COMPARE_VIEWS.has(nextView) ? `#${nextView}` : '',
       },
       { replace: true }
@@ -263,7 +274,7 @@ export default function Compare({ schools, meta, house, houseField, season, setS
   }, [view])
 
   const metrics = [
-    { key: 'capacity', label: 'Annual capacity', def: 'capacity', get: (s) => s._cap.total },
+    { key: 'capacity', label: includeAlumni ? 'Annual capacity' : 'Annual capacity (booked only)', def: 'capacity', get: (s) => includeAlumni ? s._cap.total : s._cap.booked },
     { key: 'house', label: house == null ? 'House cap' : (season >= 2026 ? 'House cap 2026-27' : 'House cap 2025-26'), def: 'house', get: () => house },
     { key: 'nil', label: 'NIL booked', def: 'nil', get: (s) => s._ratios.nil },
     { key: 'nilModeled', label: 'NIL modeled (mid)', def: 'nilModeled', get: (s) => s.nil.modeled?.mid ?? null, show: (s) => s.nil.modeled ? moneyRange(s.nil.modeled.low, s.nil.modeled.high) : '—' },
@@ -281,7 +292,7 @@ export default function Compare({ schools, meta, house, houseField, season, setS
     1
   )
 
-  const shareUrl = A && B ? canonicalUrl(comparePath({ a: A.id, b: B.id, season, view })) : ''
+  const shareUrl = A && B ? canonicalUrl(comparePath({ a: A.id, b: B.id, season, view, includeAlumni })) : ''
   const title = A && B ? compareTitle(A.name, B.name, season) : 'Compare — Public Cap'
   const caption = A && B ? compareCaption(A.name, B.name) : 'Compare — Public Cap'
 
@@ -315,6 +326,7 @@ export default function Compare({ schools, meta, house, houseField, season, setS
       <p className="lede">Capacity vs House vs booked NIL vs modeled NIL vs coach spend. Same FY tags as the school pages. Football seasons 2021-2026. Click a row for both schools’ figures and the source.</p>
       <div className="pickers">
         <SeasonPicker season={season} onChange={setSeason} id="compare-season" />
+        <AlumniToggle on={includeAlumni} onChange={setIncludeAlumni} id="compare-alumni" />
         <label>
           School A
           <div className="picker-row">
@@ -337,9 +349,9 @@ export default function Compare({ schools, meta, house, houseField, season, setS
       {A && B && (
         <>
           <div className="compare-hed">
-            <Link className="compare-name" to={schoolPath(A.id, season)}><Logo school={A} size={40} />{A.name}</Link>
+            <Link className="compare-name" to={schoolPath(A.id, season, '', includeAlumni)}><Logo school={A} size={40} />{A.name}</Link>
             <span className="vs">vs</span>
-            <Link className="compare-name" to={schoolPath(B.id, season)}><Logo school={B} size={40} />{B.name}</Link>
+            <Link className="compare-name" to={schoolPath(B.id, season, '', includeAlumni)}><Logo school={B} size={40} />{B.name}</Link>
           </div>
           <ShareBar url={shareUrl} title={title} caption={caption} onPng={png} />
           <div className="compare-grid">
@@ -348,7 +360,7 @@ export default function Compare({ schools, meta, house, houseField, season, setS
               const vb = m.get(B)
               const open = view === m.key
               return (
-                <div key={m.key} className={`compare-block${open ? ' open' : ''}`} id={`compare-${m.key}`}>
+                <div key={m.key} className={`compare-block${open ? ' open' : ''}${m.key === 'extra' && !includeAlumni ? ' excluded' : ''}`} id={`compare-${m.key}`}>
                   <div
                     className={`compare-row${open ? ' open' : ''}`}
                     role="button"
@@ -369,8 +381,8 @@ export default function Compare({ schools, meta, house, houseField, season, setS
                   </div>
                   {open ? (
                     <div className="compare-drill">
-                      <SchoolDrill school={A} metric={m} house={house} houseField={houseField} season={season} view={m.key} />
-                      <SchoolDrill school={B} metric={m} house={house} houseField={houseField} season={season} view={m.key} />
+                      <SchoolDrill school={A} metric={m} house={house} houseField={houseField} season={season} view={m.key} includeAlumni={includeAlumni} />
+                      <SchoolDrill school={B} metric={m} house={house} houseField={houseField} season={season} view={m.key} includeAlumni={includeAlumni} />
                       <DrillClose onClose={() => toggle(m.key)} />
                     </div>
                   ) : null}

@@ -7,7 +7,7 @@ export const DEFS = {
   },
   capacity: {
     label: 'Annual capacity',
-    text: 'Our public-cap stack: media + sponsorships + tickets + booked contributions + modeled extra alumni giving. Annual, not lifetime.',
+    text: 'Default is booked-only: media + sponsorships + tickets + booked contributions — the filing stack. Flip on Include modeled alumni to add the Scorecard-based extra-alumni midpoint, net of booked gifts. Annual, not lifetime.',
   },
   nil: {
     label: 'Booked NIL',
@@ -83,7 +83,7 @@ export const DEFS = {
   },
   winsPerDollar: {
     label: 'Wins per dollar',
-    text: 'Last completed football season wins divided by booked NIL if we have one, else the modeled NIL midpoint (labeled modeled), and divided by annual capacity. Win totals from Wikipedia / NCAA 2025 standings. Not a ranking of coaches.',
+    text: 'Last completed football season wins divided by booked NIL if we have one, else the modeled NIL midpoint (labeled modeled), and divided by annual capacity (booked-only unless the alumni toggle is on). Win totals from Wikipedia / NCAA 2025 standings. Not a ranking of coaches.',
   },
   buyoutPaid: {
     label: 'Buyouts actually paid',

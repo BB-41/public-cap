@@ -660,3 +660,66 @@ table.rank td.rk {
   padding-right: 10px;
 }
 table.rank th.rk { cursor: default; }
+
+
+.alumni-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+}
+.alumni-toggle-lab {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.alumni-switch {
+  display: inline-flex;
+  border: 1px solid var(--rule);
+  background: var(--ink-2);
+}
+.alumni-switch button {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  background: transparent;
+  color: var(--paper-dim);
+  border: 0;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+.alumni-switch button + button {
+  border-left: 1px solid var(--rule);
+}
+.alumni-switch button.on {
+  background: var(--paper);
+  color: var(--ink);
+}
+.alumni-switch button:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: -1px;
+}
+
+.stack-item.excluded,
+.stack-row.excluded,
+.compare-block.excluded,
+.drill-slices li.excluded {
+  opacity: 0.48;
+}
+.stack-row.excluded .stack-lab,
+.compare-block.excluded .compare-lab {
+  color: var(--muted);
+}
+.excluded-mark {
+  display: inline-block;
+  margin-left: 8px;
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+.display.sm.excluded-num { opacity: 0.48; color: var(--muted); }

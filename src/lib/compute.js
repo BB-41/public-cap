@@ -125,19 +125,36 @@ export function nilModeled(school) {
   return school?.nil?.modeled || null
 }
 
-export function ratios(school, meta, houseYear) {
+export function parseAlumniParam(raw) {
+  return raw === '1'
+}
+
+/** Display capacity: booked filing stack, or booked + extra-alumni midpoint. */
+export function displayCap(cap, includeAlumni) {
+  if (!cap) return 0
+  return includeAlumni ? cap.total : cap.booked
+}
+
+export function displayCapRange(cap, includeAlumni) {
+  if (!cap) return { low: 0, high: 0 }
+  if (includeAlumni) return { low: cap.totalLow, high: cap.totalHigh }
+  return { low: cap.booked, high: cap.booked }
+}
+
+export function ratios(school, meta, houseYear, includeAlumni = false) {
   const cap = computeCapacity(school)
+  const capacity = displayCap(cap, includeAlumni)
   const nil = nilBooked(school)
   const house = houseCap(meta, houseYear ?? school._season?.houseKey ?? '2025-26')
   const modeled = nilModeled(school)
   return {
-    capacity: cap.total,
+    capacity,
     house,
     nil,
     modeled,
-    nilOverCapacity: nil == null || !cap.total ? null : nil / cap.total,
+    nilOverCapacity: nil == null || !capacity ? null : nil / capacity,
     nilOverHouse: nil == null || !house ? null : nil / house,
-    modeledMidOverCapacity: modeled && cap.total ? modeled.mid / cap.total : null,
+    modeledMidOverCapacity: modeled && capacity ? modeled.mid / capacity : null,
     modeledMidOverHouse: modeled && house ? modeled.mid / house : null,
   }
 }

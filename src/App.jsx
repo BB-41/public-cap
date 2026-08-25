@@ -7,7 +7,7 @@ import Methods from './pages/Methods.jsx'
 import Tape from './pages/Tape.jsx'
 import Tv from './pages/Tv.jsx'
 import Buyout from './pages/Buyout.jsx'
-import { computeCapacity, confidenceRollup, ratios } from './lib/compute.js'
+import { computeCapacity, confidenceRollup, parseAlumniParam, ratios } from './lib/compute.js'
 import { computeModeledNil } from './lib/nilModel.js'
 import { allocateNamedPlayers, namedRosterOnly, scaleRosterToModeled } from './lib/nilRoster.js'
 import {
@@ -24,6 +24,7 @@ export default function App() {
   const location = useLocation()
   const navigate = useNavigate()
   const season = parseSeasonParam(params.get('season'))
+  const includeAlumni = parseAlumniParam(params.get('alumni'))
   const [data, setData] = useState(null)
   const [rosters, setRosters] = useState(null)
   const [layers, setLayers] = useState(null)
@@ -35,6 +36,14 @@ export default function App() {
     const next = new URLSearchParams(params)
     if (year === CURRENT_SEASON) next.delete('season')
     else next.set('season', String(year))
+    const search = next.toString()
+    navigate({ pathname: location.pathname, search: search ? `?${search}` : '', hash: location.hash }, { replace: true })
+  }
+
+  function setIncludeAlumni(on) {
+    const next = new URLSearchParams(params)
+    if (on) next.set('alumni', '1')
+    else next.delete('alumni')
     const search = next.toString()
     navigate({ pathname: location.pathname, search: search ? `?${search}` : '', hash: location.hash }, { replace: true })
   }
@@ -97,7 +106,7 @@ export default function App() {
         ? computeModeledNil(s, s._cap.total, capTotals, houseVal)
         : null
       const nil = { ...s.nil, modeled }
-      const r = ratios({ ...s, nil }, data.meta, s._season.houseKey)
+      const r = ratios({ ...s, nil }, data.meta, s._season.houseKey, includeAlumni)
       const roster = modeled ? scaleRosterToModeled(modeled) : null
       const named = modeled
         ? allocateNamedPlayers(book?.schools?.[s.id], modeled, roster)
@@ -112,7 +121,7 @@ export default function App() {
         buyoutsPaid: season >= 2025 ? rawLayer.buyoutsPaid : [],
       }
       const withNil = { ...s, nil, _cap: s._cap, _ratios: r }
-      const eff = computeEfficiency(withNil, layer)
+      const eff = computeEfficiency(withNil, layer, includeAlumni)
       return {
         ...s,
         nil,
@@ -126,7 +135,7 @@ export default function App() {
         _eff: eff,
       }
     })
-  }, [data, rosters, rosterYear, season, layers])
+  }, [data, rosters, rosterYear, season, layers, includeAlumni])
 
   if (err) return <div className="page-wrap"><p className="lede">Failed to load desk data. {err}</p></div>
   if (!data || !enriched) return <div className="page-wrap"><p className="lede">Setting type…</p></div>
@@ -172,6 +181,8 @@ export default function App() {
               houseField={houseField}
               season={season}
               setSeason={setSeason}
+              includeAlumni={includeAlumni}
+              setIncludeAlumni={setIncludeAlumni}
             />
           }
         />
@@ -183,6 +194,8 @@ export default function App() {
               meta={data.meta}
               season={season}
               setSeason={setSeason}
+              includeAlumni={includeAlumni}
+              setIncludeAlumni={setIncludeAlumni}
               tape={tape?.items || []}
             />
           }
@@ -197,6 +210,8 @@ export default function App() {
               houseField={houseField}
               season={season}
               setSeason={setSeason}
+              includeAlumni={includeAlumni}
+              setIncludeAlumni={setIncludeAlumni}
             />
           }
         />

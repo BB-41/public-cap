@@ -245,7 +245,8 @@ function EfficiencySection({ school }) {
       <h2 title={defTitle('winsPerDollar')}>Wins per dollar</h2>
       <p className="lede tight">
         2025 football wins over booked NIL if we have one, else the modeled
-        midpoint (labeled modeled), and over annual capacity. Not a coach grade.
+        midpoint (labeled modeled), and over annual capacity (booked-only unless
+        the alumni toggle is on). Not a coach grade.
       </p>
       <div className="ratio-row">
         <div>

@@ -6,6 +6,8 @@ import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import SeasonPicker from '../components/SeasonPicker.jsx'
 import { chipsForSeason } from '../lib/seasons.js'
+import AlumniToggle from '../components/AlumniToggle.jsx'
+import { schoolPath } from '../lib/share.js'
 
 const COLS = [
   { key: 'name', label: 'School', type: 'text' },
@@ -21,7 +23,7 @@ const COLS = [
   { key: 'winsPerNil', label: 'FB W/$M NIL', type: 'num', def: 'winsPerDollar' },
 ]
 
-export default function Home({ schools, house, houseField, season, setSeason }) {
+export default function Home({ schools, house, houseField, season, setSeason, includeAlumni, setIncludeAlumni }) {
   const CHIPS = chipsForSeason(season)
 
   const [sort, setSort] = useState({ key: 'capacity', dir: 'desc' })
@@ -50,7 +52,7 @@ export default function Home({ schools, house, houseField, season, setSeason }) 
         school: s,
         name: s.name,
         conference: s.conference,
-        capacity: s._cap.total,
+        capacity: includeAlumni ? s._cap.total : s._cap.booked,
         house,
         nil: s._ratios.nil,
         nilModeled: s.nil.modeled?.mid ?? null,
@@ -77,7 +79,7 @@ export default function Home({ schools, house, houseField, season, setSeason }) 
       return dir === 'asc' ? av - bv : bv - av
     })
     return mapped
-  }, [schools, house, sort, q, chip, season])
+  }, [schools, house, sort, q, chip, season, includeAlumni])
 
   function toggle(key) {
     setSort((s) => (s.key === key ? { key, dir: s.dir === 'asc' ? 'desc' : 'asc' } : { key, dir: key === 'name' || key === 'conference' ? 'asc' : 'desc' }))
@@ -102,6 +104,7 @@ export default function Home({ schools, house, houseField, season, setSeason }) 
         </div>
         <div className="rank-tools">
           <SeasonPicker season={season} onChange={setSeason} id="rank-season" />
+          <AlumniToggle on={includeAlumni} onChange={setIncludeAlumni} id="rank-alumni" />
           <input
             className="search"
             type="search"
@@ -146,7 +149,7 @@ export default function Home({ schools, house, houseField, season, setSeason }) 
               <tr key={r.school.id}>
                 <td className="rk">{i + 1}</td>
                 <td>
-                  <Link className="school-link" to={season === 2026 ? `/school/${r.school.id}` : `/school/${r.school.id}?season=${season}`}>
+                  <Link className="school-link" to={schoolPath(r.school.id, season, '', includeAlumni)}>
                     <Logo school={r.school} size={28} />
                     <span>{r.school.name}</span>
                   </Link>
@@ -181,8 +184,8 @@ export default function Home({ schools, house, houseField, season, setSeason }) 
       </div>
       <p className="fine">
         {house == null
-          ? 'No House cap (pre-settlement). Modeled NIL is hidden before 2025–26. Capacity for 2021–2024 is conference-media floor plus modeled alumni flow; tickets / sponsorships / contributions stay pending.'
-          : `House cap shown is ${season === 2026 ? '2026–27 (~$21.3M, estimated)' : '2025–26 ($20.5M, reported)'}. Capacity includes a modeled extra-alumni giving midpoint and will move when Category 15 / tickets land.`}
+          ? 'No House cap (pre-settlement). Modeled NIL is hidden before 2025–26. Capacity for 2021–2024 is the conference-media floor (plus modeled extra alumni only when that toggle is on); tickets / sponsorships / contributions stay pending.'
+          : `House cap shown is ${season === 2026 ? '2026–27 (~$21.3M, estimated)' : '2025–26 ($20.5M, reported)'}. Capacity default is booked-only — the filing stack. Flip on + alumni model to add the Scorecard-based extra-alumni midpoint, net of booked gifts. Will move when Category 15 / tickets land.`}
         {' '}Click a school.
       </p>
     </div>

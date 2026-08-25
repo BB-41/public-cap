@@ -88,24 +88,46 @@ export function hashKey(raw) {
   return String(raw || '').replace(/^#/, '')
 }
 
-export function schoolPath(id, season, hash) {
-  const q = season && season !== CURRENT_SEASON ? `?season=${season}` : ''
-  const h = hash ? `#${hashKey(hash)}` : ''
-  return `/school/${id}${q}${h}`
+export function alumniSearch(includeAlumni) {
+  return includeAlumni ? 'alumni=1' : ''
 }
 
-export function compareSearch({ a, b, season, view }) {
+export function deskSearch({ season, includeAlumni, extra } = {}) {
+  const p = new URLSearchParams()
+  if (season && season !== CURRENT_SEASON) p.set('season', String(season))
+  if (includeAlumni) p.set('alumni', '1')
+  if (extra) {
+    for (const [k, v] of Object.entries(extra)) {
+      if (v != null && v !== '') p.set(k, String(v))
+    }
+  }
+  const qs = p.toString()
+  return qs ? `?${qs}` : ''
+}
+
+export function homePath({ season, includeAlumni } = {}) {
+  return `/${deskSearch({ season, includeAlumni })}`
+}
+
+export function schoolPath(id, season, hash, includeAlumni) {
+  const qs = deskSearch({ season, includeAlumni })
+  const h = hash ? `#${hashKey(hash)}` : ''
+  return `/school/${id}${qs}${h}`
+}
+
+export function compareSearch({ a, b, season, view, includeAlumni }) {
   const p = new URLSearchParams()
   if (a) p.set('a', a)
   if (b) p.set('b', b)
   if (season && season !== CURRENT_SEASON) p.set('season', String(season))
+  if (includeAlumni) p.set('alumni', '1')
   if (view && COMPARE_VIEWS.has(view)) p.set('view', view)
   const qs = p.toString()
   return qs ? `?${qs}` : ''
 }
 
-export function comparePath({ a, b, season, view }) {
-  const qs = compareSearch({ a, b, season, view })
+export function comparePath({ a, b, season, view, includeAlumni }) {
+  const qs = compareSearch({ a, b, season, view, includeAlumni })
   const h = view && COMPARE_VIEWS.has(view) ? `#${view}` : ''
   return `/compare${qs}${h}`
 }
@@ -204,15 +226,16 @@ function paintFrame(ctx, w, h, { kicker, title, sub, footer }) {
   ctx.fillText(footer, 36, h - 22)
 }
 
-export function downloadStackPng({ school, season, cap, house, nil, houseLabel, openLabel }) {
+export function downloadStackPng({ school, season, cap, house, nil, houseLabel, openLabel, includeAlumni }) {
+  const shown = includeAlumni ? cap.total : cap.booked
   const rows = [
     ...cap.components.map((c) => ({
-      label: c.label,
+      label: c.key === 'extra' && !includeAlumni ? `${c.label} (excluded)` : c.label,
       value: c.value,
       key: c.key,
       display: c.value ? money(c.value) : '—',
     })),
-    { label: 'Annual capacity', value: cap.total, key: 'total', display: money(cap.total) },
+    { label: includeAlumni ? 'Annual capacity' : 'Annual capacity (booked only)', value: shown, key: 'total', display: money(shown) },
     {
       label: houseLabel,
       value: house || 0,

@@ -12,7 +12,8 @@ import { houseValueForSeason } from '../lib/seasons.js'
 import { EMPTY_TAPE, tapeForSchool } from '../lib/tape.js'
 import TapeItems from '../components/TapeItems.jsx'
 import TvContracts from '../components/TvContracts.jsx'
-import { DEFAULT_TITLE, SCHOOL_DRILLS, hashKey, schoolTitle } from '../lib/share.js'
+import { DEFAULT_TITLE, SCHOOL_DRILLS, hashKey, homePath, schoolTitle } from '../lib/share.js'
+import AlumniToggle from '../components/AlumniToggle.jsx'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -313,7 +314,7 @@ function Field({ field, fallback = '—' }) {
   )
 }
 
-export default function School({ schools, meta, season, setSeason, tape }) {
+export default function School({ schools, meta, season, setSeason, includeAlumni, setIncludeAlumni, tape }) {
   const { id } = useParams()
   const location = useLocation()
   const navigate = useNavigate()
@@ -357,9 +358,10 @@ export default function School({ schools, meta, season, setSeason, tape }) {
 
   return (
     <div className="page-wrap school">
-      <p className="crumb"><Link to={season === 2026 ? '/' : `/?season=${season}`}>Rank list</Link> / {s.name}</p>
+      <p className="crumb"><Link to={homePath({ season, includeAlumni })}>Rank list</Link> / {s.name}</p>
       <div className="school-tools">
         <SeasonPicker season={season} onChange={setSeason} id="school-season" />
+        <AlumniToggle on={includeAlumni} onChange={setIncludeAlumni} id="school-alumni" />
         <span className="season-note">{spec?.academic} · football {season}</span>
       </div>
       <header className="school-hed">
@@ -370,9 +372,13 @@ export default function School({ schools, meta, season, setSeason, tape }) {
           {s.revenueGap && <p className="gap-banner">Revenue gap: private-school tickets, sponsorships, and contributions are not on the public MFRS tape.</p>}
         </div>
         <div className="hero-num">
-          <div className="eyebrow">Annual capacity</div>
-          <div className="display">{money(cap.total)}</div>
-          <div className="eyebrow">range {money(cap.totalLow)}–{money(cap.totalHigh)}</div>
+          <div className="eyebrow">{includeAlumni ? 'Annual capacity' : 'Annual capacity · booked only'}</div>
+          <div className="display">{money(includeAlumni ? cap.total : cap.booked)}</div>
+          {includeAlumni ? (
+            <div className="eyebrow">range {money(cap.totalLow)}–{money(cap.totalHigh)}</div>
+          ) : (
+            <div className="eyebrow">extra alumni excluded</div>
+          )}
         </div>
       </header>
 
@@ -385,6 +391,7 @@ export default function School({ schools, meta, season, setSeason, tape }) {
         season={season}
         open={open}
         onToggle={setOpen}
+        includeAlumni={includeAlumni}
       />
 
       <div className="two-col">
@@ -415,13 +422,13 @@ export default function School({ schools, meta, season, setSeason, tape }) {
               <div className="display sm">{money(cap.alumni.athLow)} – {money(cap.alumni.athHigh)}</div>
             </div>
             <div>
-              <div className="eyebrow">Added to capacity (net)</div>
-              <div className="display sm">{money(cap.extraLow)} – {money(cap.extraHigh)}</div>
+              <div className="eyebrow">{includeAlumni ? 'Added to capacity (net)' : 'Extra alumni (excluded from total)'}</div>
+              <div className={`display sm${includeAlumni ? '' : ' excluded-num'}`}>{money(cap.extraLow)} – {money(cap.extraHigh)}</div>
             </div>
           </div>
           <p className="fine">
             Cohort sketch: {Math.round(cap.alumni.proxy).toLocaleString()} living-alumni proxy
-             (enroll × 35 × 0.72 × 0.88). A modeled 4% athletics-directed slice of the 0.5-2% wealth flow is what enters capacity.
+             (enroll × 35 × 0.72 × 0.88). A modeled 4% athletics-directed slice of the 0.5-2% wealth flow is what enters capacity when + alumni model is on.
             {cap.alumni.subtractedBooked
               ? ` Booked athletic contributions of ${money(cap.alumni.bookedContributions)} were subtracted from the giving flow.`
               : ' No booked contributions to subtract.'}

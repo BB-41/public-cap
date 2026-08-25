@@ -19,11 +19,11 @@ export function nilPot(school) {
   return { value: null, label: 'pending', confidence: 'pending' }
 }
 
-export function computeEfficiency(school, layer) {
+export function computeEfficiency(school, layer, includeAlumni = false) {
   const fb = layer?.record?.football
   const wins = fb && fb.wins != null ? Number(fb.wins) : null
   const pot = nilPot(school)
-  const cap = school?._cap?.total
+  const cap = includeAlumni ? school?._cap?.total : school?._cap?.booked
   const perNil = wins != null && pot.value ? wins / pot.value : null
   const perCap = wins != null && cap ? wins / cap : null
   return {

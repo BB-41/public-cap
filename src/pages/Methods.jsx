@@ -57,7 +57,7 @@ export default function Methods({ meta }) {
         <dt>House cap</dt>
         <dd>Official settlement benefits pool. $20.5 million in 2025–26 — the same number for every participating school. The 2026–27 ~$21.3 million figure is labeled estimated until the NCAA publishes year two the same way it published $20.5M.</dd>
         <dt>Annual capacity / public cap</dt>
-        <dd>Our stack: media + sponsorships + tickets + booked contributions + modeled extra alumni giving (booked contributions subtracted so we do not double-count). Annual, not lifetime. We never add lifetime wealth into the ranking.</dd>
+        <dd>Default is booked-only — the filing stack: media + sponsorships + tickets + booked contributions. A toggle, Include modeled alumni, adds the Scorecard-based extra-alumni midpoint (modeled athletics giving minus booked contributions, so we do not double-count). Extra low can be $0 when booked gifts already exceed the conservative alumni model. Annual, not lifetime. We never add lifetime wealth into the ranking.</dd>
         <dt>Booked NIL</dt>
         <dd>FOIA ledgers, MFRS “Institutional NIL Revenue Share,” or collective Form 990s we can cite. Empty means pending — we do not have a number, not that spend is zero. Booked remains the official number when it exists (today: Louisville and Kentucky). No On3 / Opendorse / NIL Go.</dd>
         <dt>Modeled NIL</dt>
@@ -77,7 +77,7 @@ export default function Methods({ meta }) {
         <dt>Student fees + institutional subsidy</dt>
         <dd>Knight-Newhouse / MFRS allocated revenue — student fees and institutional or government support. Where the check really came from. FY2025 dollars from KN school-profile charts. $0 when KN/MFRS reports $0 or a school says self-funded. Empty means pending. EADA has no split.</dd>
         <dt>Wins per dollar</dt>
-        <dd>2025 football wins divided by booked NIL if present, else modeled NIL mid (labeled modeled), and by annual capacity. Wikipedia / NCAA standings.</dd>
+        <dd>2025 football wins divided by booked NIL if present, else modeled NIL mid (labeled modeled), and by annual capacity (booked-only unless the alumni toggle is on). Wikipedia / NCAA standings.</dd>
         <dt>Buyouts actually paid</dt>
         <dd>Money actually owed or settled after a firing — not the if-fired overhang on the current coach. Athletic contract census, USA TODAY, 990, FOIA.</dd>
         <dt>Staff pay</dt>
@@ -121,9 +121,11 @@ export default function Methods({ meta }) {
         at a Power program:
       </p>
       <blockquote>
-        Capacity (annual) = media/conference distributions + sponsorships/licensing
-        + tickets/premium + athletic contributions booked + modeled extra alumni giving
-        (booked contributions subtracted so we do not double-count). The 0.5-2% wealth flow is all-cause philanthropy; capacity uses a modeled 4% athletics-directed slice of that flow.
+        Capacity (annual), booked-only = media/conference distributions + sponsorships/licensing
+        + tickets/premium + athletic contributions booked. That is the default headline.
+        The toggle adds modeled extra alumni giving (booked contributions already subtracted
+        so we do not double-count). Extra is the midpoint of max(0, modeled athletics giving − booked gifts).
+        The 0.5-2% wealth flow is all-cause philanthropy; the extra uses a modeled 4% athletics-directed slice of that flow.
       </blockquote>
       <p>
         Capacity is annual. Alumni wealth is lifetime. We show both on the school page and
@@ -336,6 +338,9 @@ export default function Methods({ meta }) {
         NIL Go, or social.
       </p>
       <p>
+        The extra-alumni row on the school stack is always shown. It is excluded from the
+        headline total unless Include modeled alumni is on. The extra is already net of
+        booked athletic gifts; we do not add the stock into the ranking.
         We do not invent silent net-worth totals. The second line is a <em>modeled range</em>:
       </p>
       <ul>
