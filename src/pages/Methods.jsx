@@ -135,10 +135,12 @@ export default function Methods({ meta }) {
         NIL on this desk is a booked band only: FOIA ledgers, MFRS “Institutional NIL
         Revenue Share,” or collective Form 990s. If we do not have one of those, the cell
         is pending. We do not scrape On3, Opendorse, or NIL Go, and we do not hit
-        api.on3.com. A public news article may be cited once when it is itself a FOIA or
-        counsel-statement story (Courier-Journal, August 2026: Louisville $20.27M from
-        July 2025–July 2026; Kentucky $18M from March 2025–July 2026 as reported by
-        counsel — different windows, labeled as such).
+        api.on3.com. A public news article may be cited once when it is itself a FOIA,
+        ledger, or counsel-statement story (Courier-Journal, August 2026: Louisville
+        $32.9M FOIA Mar 2025–Jul 1 2026, including ~$12.7M pre-cap KY NIL; prior desk
+        cell was $20.27M for the House Year 1 window. Kentucky $18M from March 2025–July
+        2026 as reported by counsel. CalMatters, August 2026: UCLA and California each
+        about $20.5M in 2025-26; names/sport splits not released).
       </p>
       <p>
         Ratios: NIL ÷ House cap, and NIL ÷ our capacity. A school can sit near 100% of

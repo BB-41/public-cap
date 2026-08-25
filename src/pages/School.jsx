@@ -296,11 +296,19 @@ function Field({ field, fallback = '—' }) {
       </div>
       <div className="field-meta">
         {field.fiscalYear && <span>{field.fiscalYear} · </span>}
+        {field.window && <span>{field.window} · </span>}
         {field.asOf && <span>as of {field.asOf} · </span>}
         <span className="conf-label">{field.confidence}</span>
         {field.source && <span> · {field.source}</span>}
       </div>
       {field.notes && <div className="field-notes">{field.notes}</div>}
+      {field.had?.value != null && (
+        <div className="field-notes">
+          What we had: {moneyExact(field.had.value)}
+          {field.had.window ? ` · ${field.had.window}` : ''}
+          {field.had.notes ? ` — ${field.had.notes}` : ''}
+        </div>
+      )}
     </div>
   )
 }

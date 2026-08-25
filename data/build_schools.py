@@ -17,6 +17,8 @@ SRC = {
     "ncsl": "https://www.ncsl.org/resources/details/what-the-ncaa-settlement-means-for-colleges-and-state-legislatures",
     "nilstd": "https://thenilstandard.com/guides/revenue-sharing-explained",
     "cj_nil": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/",
+    "cj_nil_foia": "https://www.courier-journal.com/story/sports/college/kentucky/2026/08/05/university-of-kentucky-nil-revenue-sharing-records-louisville-budget-foia-ncaa-house-settlement/90345933007/",
+    "calmatters_nil": "https://calmatters.org/education/higher-education/2026/08/student-athlete-payments-california/",
     "usat_fb": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
     "usat_fb_m": "https://www.usatoday.com/story/sports/ncaaf/2025/10/05/2025-ncaa-football-coach-salaries-methodology/86526058007/",
     "usat_mbb": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
@@ -45,7 +47,7 @@ SRC = {
     "big12_990": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
 }
 
-def n(value, confidence, source, url, as_of, fy=None, notes=None, window=None):
+def n(value, confidence, source, url, as_of, fy=None, notes=None, window=None, had=None):
     d = {
         "value": value,
         "confidence": confidence,
@@ -59,6 +61,8 @@ def n(value, confidence, source, url, as_of, fy=None, notes=None, window=None):
         d["notes"] = notes
     if window:
         d["window"] = window
+    if had:
+        d["had"] = had
     return d
 
 def empty(notes, url=None):
@@ -640,16 +644,17 @@ add({
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?157289-University-of-Louisville",
     },
     "nil": {
-        "booked": n(20_270_000, "reported",
-            "Courier-Journal FOIA — Louisville institutional NIL / revenue-share spend Jul 1, 2025–Jul 1, 2026",
-            SRC["cj_nil"], "2026-08-05",
-            window="2025-07-01 to 2026-07-01",
-            notes="House Year 1 window. Separate $12.7M was spent in FY2025 before the cap clock started and is not in this band."),
+        "booked": n(32_900_000, "reported",
+            "Courier-Journal FOIA — UofL invoices/ledgers: $32.9M revenue-share spend Mar 2025–Jul 1, 2026",
+            SRC["cj_nil_foia"], "2026-08-05",
+            window="2025-03 to 2026-07-01",
+            notes="FOIA invoices and ledger entries (Payton Titus). Companion table lists $32.93M. Window starts March 2025 because KY law allowed pre-House payments that do not count against the cap, so $32.9M > $20.5M is coherent. Includes the $12.7M pre-cap FY2025 line shown below (do not add).",
+            had={"value": 20_270_000, "window": "2025-07-01 to 2026-07-01", "notes": "Prior booked cell: House Year 1 window only.", "source": "Courier-Journal FOIA — Louisville institutional NIL / revenue-share spend Jul 1, 2025–Jul 1, 2026", "url": SRC["cj_nil"]}),
         "preCap": n(12_700_000, "reported",
             "Courier-Journal — UofL NCAA financial report FY2025 Institutional NIL Revenue Share (pre-July 1, 2025)",
             "https://www.courier-journal.com/story/sports/college/louisville/2026/01/27/university-of-louisville-cardinals-nil-budget-uofl-basketball-college-football-payrolls-ncaa-revenue/88300679007/",
             "2026-01-27", "FY2025",
-            notes="Does not count against the 2025-26 House cap."),
+            notes="Does not count against the 2025-26 House cap. Included in the $32.9M FOIA total above — not additional."),
     },
     "coaches": {
         "football": coach("Jeff Brohm", 5_981_057, 33_633_333, SRC["usat_fb"], "2025-10-08"),
@@ -696,7 +701,7 @@ add({
             "Courier-Journal — UK general counsel statement: 686 revenue-share transactions totaling $18M, Mar 2025–Jul 1, 2026. UK refused to release ledgers.",
             SRC["cj_nil"], "2026-08-05",
             window="2025-03 to 2026-07-01",
-            notes="Different window than Louisville's Jul 2025–Jul 2026 House-year band. Counsel figure, not a spreadsheet. Labeled reported (statement) — not FOIA-verified line items."),
+            notes="Same Mar 2025–Jul 1 2026 window as Louisville's FOIA total. Counsel figure, not a spreadsheet. Labeled reported (statement) — not FOIA-verified line items. Restated Aug 5, 2026; $18M / 686 transactions unchanged."),
     },
     "coaches": {
         "football": coach("Mark Stoops", 9_000_000, 37_687_500, SRC["usat_fb"], "2025-10-08",
@@ -875,7 +880,7 @@ meta = {
         "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; used school NCAA PDFs, CNBC-cited KN totals, and conference 990s instead.",
         "USA TODAY salary pages loaded (no scrape of On3 / Opendorse / NIL Go).",
         "Private schools (ND, USC, Vanderbilt, Miami) have structural revenue gaps.",
-        "Most NIL bands are pending — only Louisville (FOIA) and Kentucky (counsel statement) are booked.",
+        "Most NIL bands are pending — booked cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26). No On3 / Opendorse / NIL Go. Do not book a USC plan-to-distribute quote.",
     ],
     "sourcesIndex": SRC,
 }

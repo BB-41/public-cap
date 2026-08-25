@@ -143,7 +143,7 @@ export default function App() {
             <img src="/logo-pc.png" alt="" />
           </Link>
           <div>
-            <div className="kicker">A college athletics capacity desk · v1.2 · Aug 24, 2026</div>
+            <div className="kicker">A college athletics capacity desk · v1.2 · Aug 25, 2026</div>
             <Link to="/" className="wordmark">Public Cap</Link>
           </div>
         </div>

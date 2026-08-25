@@ -1,8 +1,8 @@
 {
   "meta": {
     "product": "Public Cap desk tape",
-    "asOf": "2026-08-24",
-    "itemCount": 39,
+    "asOf": "2026-08-25",
+    "itemCount": 42,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,51 @@
     ]
   },
   "items": [
+    {
+      "id": "california-booked-nil-2026-08-24",
+      "date": "2026-08-24",
+      "school": "california",
+      "schoolName": "California",
+      "kind": "booked-nil",
+      "headline": "CalMatters: UC Berkeley said it spent about $20.5 million paying 147 athletes in 2025-26, the House Year 1 maximum. Names and sport splits were not released.",
+      "figure": 20500000,
+      "confidence": "reported",
+      "source": {
+        "label": "CalMatters",
+        "url": "https://calmatters.org/education/higher-education/2026/08/student-athlete-payments-california/"
+      },
+      "field": "nil.booked"
+    },
+    {
+      "id": "ucla-booked-nil-2026-08-24",
+      "date": "2026-08-24",
+      "school": "ucla",
+      "schoolName": "UCLA",
+      "kind": "booked-nil",
+      "headline": "CalMatters: UCLA said it spent about $20.5 million paying 229 athletes in 2025-26, the House Year 1 maximum. Names and sport splits were not released.",
+      "figure": 20500000,
+      "confidence": "reported",
+      "source": {
+        "label": "CalMatters",
+        "url": "https://calmatters.org/education/higher-education/2026/08/student-athlete-payments-california/"
+      },
+      "field": "nil.booked"
+    },
+    {
+      "id": "louisville-booked-nil-foia-total-2026-08-05",
+      "date": "2026-08-05",
+      "school": "louisville",
+      "schoolName": "Louisville",
+      "kind": "booked-nil",
+      "headline": "Courier-Journal FOIA invoices/ledgers book Louisville revenue-share spend at $32.9 million for March 2025–July 1, 2026. The extra above the $20.5M House cap is pre-cap KY NIL (about $12.7M before July 1, 2025). Prior desk cell was $20.27M for the House Year 1 window only.",
+      "figure": 32900000,
+      "confidence": "reported",
+      "source": {
+        "label": "Courier-Journal FOIA — Payton Titus",
+        "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/08/05/university-of-kentucky-nil-revenue-sharing-records-louisville-budget-foia-ncaa-house-settlement/90345933007/"
+      },
+      "field": "nil.booked"
+    },
     {
       "id": "ncaa-house-cap-2025-26",
       "date": "2025-06",
