@@ -188,6 +188,24 @@ const SRC = {
     asOf: '2023-05-19',
     fy: 'FY2022',
   },
+  cbs_p5_23: {
+    url: 'https://www.cbssports.com/college-football/news/big-ten-remains-power-five-revenue-leader-with-880-million-haul-for-2023-fiscal-year-per-report/',
+    label: 'CBS Sports citing USA TODAY — Power Five FY2023 tax returns (Notre Dame ACC $22.1M)',
+    asOf: '2024-05-23',
+    fy: 'FY2023',
+  },
+  usat_aac_24: {
+    url: 'https://www.commercialappeal.com/story/sports/college/memphis-tigers/2025/05/17/memphis-athletics-aac-american-athletic-conference-2024-revenue-payouts/83682673007/',
+    label: 'USA TODAY / Commercial Appeal — AAC FY2024 tax-return distributions',
+    asOf: '2025-05-17',
+    fy: 'FY2024',
+  },
+  yahoo_aac_22: {
+    url: 'https://sports.yahoo.com/ucf-receives-8-8-million-175200727.html',
+    label: 'Yahoo / Orlando Sentinel — AAC FY2022 Form 990 distributions',
+    asOf: '2023-05-05',
+    fy: 'FY2022',
+  },
 }
 
 function floor(value, src, notes) {
@@ -211,7 +229,7 @@ export const CONFERENCE_FLOORS = {
     SEC: floor(70_300_000, SRC.usat_p4_25, 'FY2025 SEC minimum to 14 full-share members. Texas/Oklahoma were phase-in.'),
     ACC: floor(42_800_000, SRC.wral_acc_25, 'FY2025 ACC minimum to 14 full-share football members.'),
     'Big 12': floor(37_900_000, SRC.usat_p4_25, 'FY2025 Big 12 full-share floor.'),
-    'Independent / ACC': floor(null, SRC.usat_p4_25),
+    'Independent / ACC': floor(18_100_000, SRC.wral_acc_25, 'FY2025 Notre Dame ACC distribution $18.1M (partial share as football independent). NBC football rights not added (terms not extracted for this year).'),
     Independent: null,
     'Pac-12': null,
     AAC: null,
@@ -221,8 +239,8 @@ export const CONFERENCE_FLOORS = {
     SEC: floor(52_500_000, SRC.argus_b1g_24, 'FY2024 SEC average ~$52.5M to the 14 schools other than Oklahoma and Texas.'),
     ACC: floor(43_100_000, SRC.usat_p5_24, 'FY2024 ACC per-school range $43.1–46.4M (Notre Dame $20.7M). Floor uses the low end.'),
     'Big 12': floor(37_800_000, SRC.usat_p5_24, 'FY2024 Big 12 established-member range $37.8–42.1M; newcomers ~$20M. Floor uses the established low end.'),
-    'Pac-12': null,
-    AAC: null,
+    'Pac-12': floor(30_150_000, SRC.usat_p5_24, 'FY2024 Pac-12 tax-return payouts: $30.15M to each of the 10 departing schools (Oregon/UCLA/USC/Washington/Cal/Stanford/Arizona/ASU/Colorado/Utah); $46.6M to Oregon State and Washington State. Equal-share check: (10 × $30.15M) + (2 × $46.6M) = $394.7M; $394.7M / 12 = $32.9M (USA TODAY 12-school average). Floor uses the $30.15M departing-school figure those 10 book members received.'),
+    AAC: floor(10_400_000, SRC.usat_aac_24, 'FY2024 AAC SMU distribution $10.4M. Only 2023 book member still in the AAC; conference does not pay an equal share (Memphis $11.0M high / Wichita State $3.3M low).'),
     Independent: null,
     'Independent / ACC': floor(20_700_000, SRC.usat_p5_24, 'FY2024 Notre Dame ACC distribution $20.7M. NBC football rights not added (terms not extracted for this year).'),
   },
@@ -234,7 +252,7 @@ export const CONFERENCE_FLOORS = {
     'Pac-12': floor(33_600_000, SRC.ap_p5_23, 'FY2023 Pac-12 ~$33.6M per school.'),
     AAC: null,
     Independent: null,
-    'Independent / ACC': null,
+    'Independent / ACC': floor(22_100_000, SRC.cbs_p5_23, 'FY2023 Notre Dame ACC distribution $22.1M (partial share as football independent). NBC football rights not added.'),
   },
   2021: {
     'Big Ten': floor(58_800_000, SRC.usat_p5_22, 'FY2022 Big Ten ~$58.8M to 11 of 14 members (Nebraska/Maryland/Rutgers several million less).'),
@@ -242,13 +260,11 @@ export const CONFERENCE_FLOORS = {
     ACC: floor(37_900_000, SRC.usat_p5_22, 'FY2022 ACC range $37.9–41.3M. Floor uses the low end.'),
     'Big 12': floor(42_000_000, SRC.usat_p5_22, 'FY2022 Big 12 range $42–44.9M. Floor uses the low end.'),
     'Pac-12': floor(37_000_000, SRC.usat_p5_22, 'FY2022 Pac-12 ~$37M per member (conference release; USA TODAY noted a possible amended return).'),
-    AAC: null,
+    AAC: floor(8_280_000, SRC.yahoo_aac_22, 'FY2022 AAC 990 payouts to 2021 book members: Cincinnati $11.32M, UCF $8.88M, Houston $8.28M, SMU $8.28M. Floor uses the $8.28M low end. Conference does not pay an equal share ($93.83M distributed across 12 members).'),
     Independent: null,
     'Independent / ACC': floor(17_400_000, SRC.usat_p5_22, 'FY2022 Notre Dame ACC distribution $17.4M. NBC football rights not added.'),
   },
 }
-
-// Fix ACC Independent 2024 — I used floor(null) by mistake. Handle in lookup.
 
 function pendingMedia(notes) {
   return {
