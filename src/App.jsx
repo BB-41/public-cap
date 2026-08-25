@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link, NavLink, Route, Routes, useSearchParams } from 'react-router-dom'
+import { Link, NavLink, Route, Routes, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import School from './pages/School.jsx'
 import Compare from './pages/Compare.jsx'
@@ -18,7 +18,9 @@ import {
 import { computeEfficiency } from './lib/layers.js'
 
 export default function App() {
-  const [params, setParams] = useSearchParams()
+  const [params] = useSearchParams()
+  const location = useLocation()
+  const navigate = useNavigate()
   const season = parseSeasonParam(params.get('season'))
   const [data, setData] = useState(null)
   const [rosters, setRosters] = useState(null)
@@ -31,7 +33,8 @@ export default function App() {
     const next = new URLSearchParams(params)
     if (year === CURRENT_SEASON) next.delete('season')
     else next.set('season', String(year))
-    setParams(next, { replace: true })
+    const search = next.toString()
+    navigate({ pathname: location.pathname, search: search ? `?${search}` : '', hash: location.hash }, { replace: true })
   }
 
   useEffect(() => {

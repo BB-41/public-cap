@@ -1,4 +1,5 @@
-import { Link, useParams } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel } from '../lib/format.js'
 import { collectSources, hasVal } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
@@ -6,9 +7,11 @@ import { defTitle } from '../lib/definitions.js'
 import { earningsBack } from '../lib/earningsBack.js'
 import Layers from '../components/Layers.jsx'
 import SeasonPicker from '../components/SeasonPicker.jsx'
+import StackChart from '../components/StackChart.jsx'
 import { houseValueForSeason } from '../lib/seasons.js'
 import { EMPTY_TAPE, tapeForSchool } from '../lib/tape.js'
 import TapeItems from '../components/TapeItems.jsx'
+import { DEFAULT_TITLE, SCHOOL_DRILLS, hashKey, schoolTitle } from '../lib/share.js'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -303,7 +306,37 @@ function Field({ field, fallback = '—' }) {
 
 export default function School({ schools, meta, season, setSeason, tape }) {
   const { id } = useParams()
+  const location = useLocation()
+  const navigate = useNavigate()
+  const didScroll = useRef(false)
   const s = schools.find((x) => x.id === id)
+  const openRaw = hashKey(location.hash)
+  const open = SCHOOL_DRILLS.has(openRaw) ? openRaw : ''
+
+  useEffect(() => {
+    const prev = document.title
+    document.title = s ? schoolTitle(s.name, season) : DEFAULT_TITLE
+    return () => { document.title = prev || DEFAULT_TITLE }
+  }, [s, season])
+
+  useEffect(() => {
+    didScroll.current = false
+  }, [id])
+
+  useEffect(() => {
+    if (!s || !open || didScroll.current) return
+    const el = document.getElementById(`slice-${open}`)
+    if (el) {
+      didScroll.current = true
+      el.scrollIntoView({ block: 'nearest' })
+    }
+  }, [s, open])
+
+  function setOpen(hash) {
+    const next = hash && hash !== open ? hash : ''
+    navigate({ pathname: location.pathname, search: location.search, hash: next ? `#${next}` : '' }, { replace: true })
+  }
+
   if (!s) return <div className="page-wrap"><p>School not on the desk.</p></div>
   const cap = s._cap
   const house = houseValueForSeason(meta, season)
@@ -312,7 +345,6 @@ export default function School({ schools, meta, season, setSeason, tape }) {
   const nil = s._ratios.nil
   const sources = collectSources(s, meta)
   const deskTape = tapeForSchool(tape, s.id)
-  const maxBar = Math.max(cap.total, house, nil || 0, s.nil.modeled?.high || 0, 1)
 
   return (
     <div className="page-wrap school">
@@ -335,63 +367,16 @@ export default function School({ schools, meta, season, setSeason, tape }) {
         </div>
       </header>
 
-      <section className="stack-sec">
-        <h2>Capacity stack</h2>
-        <p className="lede tight">Annual, not lifetime. Extra alumni giving is modeled and net of booked contributions when both exist.</p>
-        <div className="stack">
-          {cap.components.map((c) => (
-            <div key={c.key} className="stack-row">
-              <div className="stack-lab">
-                {c.label}
-                <i className={`dot ${c.field?.confidence || 'modeled'}`} />
-              </div>
-              <div className="stack-bar-wrap">
-                <div className={`stack-bar ${c.key}`} style={{ width: `${Math.max(2, (c.value / maxBar) * 100)}%` }} />
-              </div>
-              <div className="stack-val">{c.value ? money(c.value) : '—'}</div>
-            </div>
-          ))}
-          <div className="stack-row total">
-            <div className="stack-lab" title={defTitle('capacity')}>Annual capacity</div>
-            <div className="stack-bar-wrap">
-              <div className="stack-bar total" style={{ width: `${(cap.total / maxBar) * 100}%` }} />
-            </div>
-            <div className="stack-val">{money(cap.total)}</div>
-          </div>
-          <div className="stack-row">
-            <div className="stack-lab" title={defTitle('house')}>{house == null ? 'House cap' : (season >= 2026 ? 'House cap 2026–27' : 'House cap 2025–26')}</div>
-            <div className="stack-bar-wrap">
-              <div className="stack-bar house" style={{ width: house ? `${(house / maxBar) * 100}%` : '0' }} />
-            </div>
-            <div className="stack-val">{house == null ? 'no House cap (pre-settlement)' : money(house)}</div>
-          </div>
-          <div className="stack-row">
-            <div className="stack-lab" title={defTitle('nil')}>NIL booked</div>
-            <div className="stack-bar-wrap">
-              <div className="stack-bar nil" style={{ width: nil ? `${(nil / maxBar) * 100}%` : '0' }} />
-            </div>
-            <div className="stack-val">{nil == null ? 'pending' : money(nil)}</div>
-          </div>
-          {s.nil.modeled ? (
-          <div className="stack-row">
-            <div className="stack-lab" title={defTitle('nilModeled')}>NIL modeled <i className="dot modeled" /></div>
-            <div className="stack-bar-wrap">
-              <div className="stack-bar nil-modeled" style={{ width: `${(s.nil.modeled.mid / maxBar) * 100}%` }} />
-            </div>
-            <div className="stack-val modeled-cell">{moneyRange(s.nil.modeled.low, s.nil.modeled.high)}</div>
-          </div>
-          ) : (
-          <div className="stack-row">
-            <div className="stack-lab" title={defTitle('nilModeled')}>NIL modeled</div>
-            <div className="stack-bar-wrap">
-              <div className="stack-bar nil-modeled" style={{ width: '0' }} />
-            </div>
-            <div className="stack-val"><span className="pending-cell">hidden (pre-House)</span></div>
-          </div>
-          )}
-        </div>
-        <p className="fine">Primary FY: {s.capacity.fiscalYearPrimary}. {s.capacity.fiscalYearNote || s.capacity.gapNote || ''}</p>
-      </section>
+      <StackChart
+        school={s}
+        cap={cap}
+        house={house}
+        houseField={houseField}
+        nil={nil}
+        season={season}
+        open={open}
+        onToggle={setOpen}
+      />
 
       <div className="two-col">
         <section>
