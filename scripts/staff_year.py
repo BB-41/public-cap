@@ -6,14 +6,12 @@ official directory.
 """
 from __future__ import annotations
 
-from copy import deepcopy
 from pathlib import Path
 
 TAPE_DIR = Path(__file__).with_name("staff-usat")
 USAT_ASOF_2024 = "2024-12-18"
 
-# FSU 2024 Fuller / Atkins already on the desk and correct.
-KEEP_EXISTING_2024 = {"florida-state"}
+# Do not invent coordinator titles. USA TODAY team pages do not publish position.
 
 
 def load_usat_tape(year: int) -> dict:
@@ -31,16 +29,30 @@ def load_usat_tape(year: int) -> dict:
     return tape
 
 
-def usat_pay(value: int, tape: dict) -> dict:
+def usat_pay(value: int | None, tape: dict, row: dict) -> dict:
+    url = row.get("url") or tape["url"]
+    as_of = row.get("asOf") or tape["asOf"]
+    if value is None:
+        return {
+            "value": None,
+            "confidence": "pending",
+            "source": tape["source"],
+            "url": url,
+            "asOf": as_of,
+            "notes": (
+                f"USA TODAY {tape['contractYear']} team page lists this assistant; "
+                f"Total Pay was withheld or not obtained. Not a current 2026 salary."
+            ),
+        }
     return {
         "value": int(value),
         "confidence": "reported",
         "source": tape["source"],
-        "url": tape["url"],
-        "asOf": tape["asOf"],
+        "url": url,
+        "asOf": as_of,
         "notes": (
-            f"USA TODAY {tape['contractYear']} contract-year total pay "
-            f"(as of {tape['asOf']}). Not a current 2026 salary."
+            f"USA TODAY {tape['contractYear']} contract-year Total Pay "
+            f"(as of {as_of}). Not a current 2026 salary."
         ),
     }
 
@@ -60,41 +72,42 @@ def usat_pool(value: int, tape: dict) -> dict:
 
 
 def build_year_staff(sid: str, row: dict, tape: dict, existing: dict | None) -> dict:
-    if existing and sid in KEEP_EXISTING_2024 and int(tape["contractYear"]) == 2024:
-        out = deepcopy(existing)
-        out["notes"] = (
-            "USA TODAY 2024 contract year (as of Dec 18, 2024). Named assistants "
-            "(Fuller / Atkins) are that table, not the 2026 official directory."
-        )
-        return out
-
+    del existing  # year tape always replaces that year key
     assistants = []
     for a in row.get("assistants") or []:
         assistants.append(
             {
                 "name": a["name"],
                 "sport": "football",
-                "role": a.get("role") or "Football assistant",
-                "pay": usat_pay(a["pay"], tape),
+                # USA TODAY assistant team pages do not publish a title.
+                "role": None,
+                "pay": usat_pay(a.get("pay"), tape, a),
             }
         )
+    year = tape["contractYear"]
+    team_url = row.get("url") or tape["url"]
     staff = {
         "athleticDirector": {
             "confidence": "pending",
-            "asOf": str(tape["contractYear"]),
-            "notes": f"{tape['contractYear']} AD pay not extracted.",
+            "asOf": str(year),
+            "notes": f"{year} AD pay not extracted.",
         },
         "office": [],
         "otherHeadCoaches": [],
         "assistants": assistants,
         "notes": (
-            f"{tape['source']}, {tape['contractYear']} contract year "
-            f"(as of {tape['asOf']}). Named assistants are that year's table, "
-            f"not the 2026 official directory."
+            f"{tape['source']}, {year} contract year (as of {tape['asOf']}). "
+            f"Named assistants are that year's USA TODAY team page "
+            f"({team_url}), not the 2026 official directory. Titles not published."
         ),
     }
     if row.get("pool") is not None:
         staff["footballAssistantPool"] = usat_pool(row["pool"], tape)
+        staff["footballAssistantPool"]["url"] = team_url
+        staff["footballAssistantPool"]["notes"] = (
+            f"Sum of numeric USA TODAY {year} Total Pay on the team page. "
+            f"Not a 2026 staff pool."
+        )
     return staff
 
 

@@ -5,10 +5,9 @@ season Y is never copied onto Y+1 or onto the current official directory.
 
 Expected files (same shape):
 
-- `2024.json` — USA TODAY Sports football assistant salary database,
-  as of 2024-12-18 (2024 contract year).
-- `2021.json` / `2022.json` / `2023.json` — drop in when those USA TODAY
-  tables are extracted. Ingest with:
+- `2021.json` / `2022.json` / `2023.json` / `2024.json` — USA TODAY Sports
+  football assistant team pages (`__NEXT_DATA__`), as of Dec 18, 2024.
+  Refresh with `python3 scripts/fetch-usat-assistants.py`, then ingest:
 
       python3 scripts/ingest-staff-by-year.py --year 2021
 

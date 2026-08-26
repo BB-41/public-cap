@@ -25,7 +25,7 @@ Named ESPN rosters get a modeled share whenever a school midpoint exists
 
 Data: `public/data/schools.json`, `public/data/rosters-YYYY.json`.
 
-Football assistant pay is year-keyed (`staffByYear`). USA TODAY Dec 18, 2024
-named assistants and staff-total pools live on 2024 only. 2026 is the official
+Football assistant pay is year-keyed (`staffByYear`). USA TODAY team pages
+(as of Dec 18, 2024) fill 2021–2024 names and Total Pay. 2026 is the official
 directory (names; pay pending). 2025 is empty unless a distinct tape exists.
-2021–2023 ingest the same way when those tables land (`scripts/staff-usat/`).
+Refresh tapes with `python3 scripts/fetch-usat-assistants.py`.

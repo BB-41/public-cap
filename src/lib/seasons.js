@@ -380,7 +380,7 @@ export function emptyStaffForSeason(year) {
       office: [],
       otherHeadCoaches: [],
       assistants: [],
-      notes: `${year} USA TODAY assistant table not ingested yet. Same staffByYear.${year} slot as 2024 — do not copy 2024 or 2026 onto this year.`,
+      notes: `${year} USA TODAY assistant table not on this school. Same staffByYear.${year} slot as 2024 — do not copy 2024 or 2026 onto this year.`,
     }
   }
   return {

@@ -25,7 +25,9 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--year", type=int, required=True, help="Football season / contract year")
     args = ap.parse_args()
-    if args.year == 2026:
+    if args.year in (2021, 2022, 2023, 2024):
+        pass
+    elif args.year == 2026:
         raise SystemExit("2026 official-directory names go through ingest-staff-2026.py")
     if args.year == 2025:
         raise SystemExit(

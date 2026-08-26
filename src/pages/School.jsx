@@ -60,8 +60,8 @@ function StaffPayCell({ field }) {
 }
 
 function staffLede(year) {
-  if (year === 2024) {
-    return 'Football assistant dollars are the USA TODAY 2024 contract year (as of Dec 18, 2024), not a current 2026 salary. Named assistants are that 2024 table.'
+  if (year >= 2021 && year <= 2024) {
+    return `Football assistant dollars are the USA TODAY ${year} contract year (as of Dec 18, 2024), not a current 2026 salary. Named assistants are that year’s team-page table. Titles are not invented.`
   }
   if (year === 2025) {
     return 'No year-accurate 2025 football staff tape on the desk. We do not show the 2026 official directory or 2024 USA TODAY dollars as 2025.'
@@ -73,8 +73,8 @@ function staffLede(year) {
 }
 
 function staffEmptyAssistants(year) {
-  if (year === 2024) {
-    return 'No cited 2024 football-assistant pay on the desk (USA TODAY assistant table blanks private / exempt schools).'
+  if (year >= 2021 && year <= 2024) {
+    return `USA TODAY ${year} assistant table listed no names, or every Total Pay cell was withheld (private / exempt schools stay pending).`
   }
   if (year === 2025) {
     return 'No year-accurate 2025 football staff directory on the desk.'
@@ -216,7 +216,7 @@ function StaffSection({ school, season }) {
       )}
       {pool?.value != null && (
         <p className="fine">
-          {year === 2024 ? '2024 USA TODAY football assistant staff total' : 'Football assistant staff total'}{' '}
+          {year >= 2021 && year <= 2024 ? `${year} USA TODAY football assistant staff total` : 'Football assistant staff total'}{' '}
           {moneyExact(pool.value)}
           {' '}({pool.confidence}, as of {pool.asOf}
           {pool.asOf === '2024-12-18' ? ' · 2024 contract year' : ''}).{' '}

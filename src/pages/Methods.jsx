@@ -102,7 +102,7 @@ export default function Methods({ meta }) {
         <dt>Buyouts actually paid</dt>
         <dd>Money actually owed or settled after a firing — not the if-fired overhang on the current coach. Athletic contract census, USA TODAY, 990, FOIA.</dd>
         <dt>Staff pay</dt>
-        <dd>Cited public pay for the athletic director, other head coaches, and football assistants, keyed to the selected football season. Named football assistant dollars are the USA TODAY 2024 contract year (as of Dec 18, 2024) and sit on 2024 only, with that year’s published names — not the 2026 official directory. 2026 shows official-directory names and roles; pay stays pending unless a cited 2026 dollar exists. 2025 is empty without a year-accurate tape (we do not clone 2026 names or 2024 dollars onto 2025). 2021–2023 use the same staffByYear slot when those USA TODAY tables are ingested. WBB / AD cells are cited-only. Empty means pending — we do not invent a title or a dollar.</dd>
+        <dd>Cited public pay for the athletic director, other head coaches, and football assistants, keyed to the selected football season. Named football assistant dollars for 2021–2024 are the USA TODAY contract year (team pages, as of Dec 18, 2024) and sit on that year only, with that year’s published names — not the 2026 official directory. Titles are not invented. 2026 shows official-directory names and roles; pay stays pending unless a cited 2026 dollar exists. 2025 is empty without a year-accurate tape (we do not clone 2026 names or 2024 dollars onto 2025). WBB / AD cells are cited-only. Empty means pending — we do not invent a title or a dollar.</dd>
         <dt>Official alumni earnings vs modeled wealth</dt>
         <dd>Official line = College Scorecard median, 10 years after entry. It is not net worth. The second line is a modeled range (living-alumni proxy × earnings × 5–12× wealth-to-income). We do not invent a silent net-worth total.</dd>
         <dt>What backs this (earnings corroboration)</dt>
@@ -495,11 +495,12 @@ export default function Methods({ meta }) {
         director pay when a USA TODAY / school-board / 990 story cites a current chair;
         other head coaches (WBB, softball, etc.) when a USA TODAY table or newsroom
         figure is attached; football coordinators and assistants year-keyed on
-        staffByYear. The USA TODAY assistant database (Dec 18, 2024) is the 2024
-        contract year — named assistants and the staff-total pool appear when the year
-        picker is 2024, not as 2026 contract pay. 2026 on-field names come from the
-        official athletics directory; those dollars stay pending without a cited 2026
-        figure. 2025 is not a clone of 2026. A few named office roles (deputy AD, CFO)
+        staffByYear. The USA TODAY assistant team pages (as of Dec 18, 2024) are the
+        2021–2024 contract years — named assistants and the numeric Total Pay sum
+        appear when the year picker is that year, not as 2026 contract pay. Titles
+        are not invented. 2026 on-field names come from the official athletics
+        directory; those dollars stay pending without a cited 2026 figure. 2025 is not
+        a clone of 2026. A few named office roles (deputy AD, CFO)
         appear only with a source. We do not invent a title or a dollar.
         Knight-Newhouse coaches-compensation is a department total when we cite it —
         not a stand-in for a missing name. No On3.
