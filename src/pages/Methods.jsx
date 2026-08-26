@@ -444,7 +444,9 @@ export default function Methods({ meta }) {
         named roster, not reported player contracts.</em>
         The pot is that year’s booked school / collective NIL when a FOIA / MFRS / 990 /
         counsel cell exists (today: Louisville 2024 pre-cap and 2025, Kentucky 2025,
-        UCLA and Cal 2025). Else the pot is the already-on-desk school modeled band —
+        UCLA and Cal 2025, Texas 2024 pre-cap and 2025, Penn State and Oklahoma State
+        2024 pre-cap, and the cited FY2025 Item 44 $0 cells at Georgia, Tennessee,
+        Alabama, Oregon, Utah, and UNC). Else the pot is the already-on-desk school modeled band —
         the conference heuristic, not a new national model. We spread that pot with
         the existing named-player unit card and sum by position. No On3-style “QB
         market” percentages. Years without a named roster file (today: 2022 and 2025)

@@ -82,7 +82,7 @@ for (const [id, h] of [
     if (p.bookedSchool == null && p.potSource === 'booked-school') {
       throw new Error(`${id} ${p.year} booked pot with no school booked`)
     }
-    if (p.potSource === 'booked-school' && p.mid != null && p.mid >= p.bookedSchool) {
+    if (p.potSource === 'booked-school' && p.bookedSchool > 0 && p.mid != null && p.mid >= p.bookedSchool) {
       throw new Error(`${id} ${p.year} position allocation must be a share of the school pot`)
     }
   }
@@ -118,6 +118,45 @@ if (ky.familySeries.qb.find((p) => p.year === 2025).label !== 'modeled') {
 }
 const lsuBooked = lsu.familySeries.qb.filter((p) => p.potSource === 'booked-school' || p.booked != null)
 if (lsuBooked.length) throw new Error(`lsu invented booked: ${lsuBooked.map((p) => p.year)}`)
+
+const zeroPot = schoolNilPot(modeled, 0)
+if (zeroPot.potSource !== 'booked-school' || zeroPot.mid !== 0) {
+  throw new Error('$0 booked cell must win over the modeled band')
+}
+
+const psu = assertSchool('penn-state')
+const psu24 = psu.familySeries.qb.find((p) => p.year === 2024)
+if (psu24.potSource !== 'booked-school' || psu24.bookedSchool !== 18_368_391) {
+  throw new Error(`penn-state 2024 pot ${psu24.potSource}/${psu24.bookedSchool}`)
+}
+if (psu24.label !== 'modeled') throw new Error('penn-state 2024 split must stay modeled')
+if (psu.familySeries.qb.find((p) => p.year === 2025).potSource === 'booked-school') {
+  throw new Error('penn-state 2025 must not treat FY2025 Item 44 as House Year 1')
+}
+
+const tx = assertSchool('texas')
+if (tx.familySeries.qb.find((p) => p.year === 2024).bookedSchool !== 3_200_000) {
+  throw new Error(`texas 2024 pot ${tx.familySeries.qb.find((p) => p.year === 2024).bookedSchool}`)
+}
+if (tx.familySeries.qb.find((p) => p.year === 2025).bookedSchool !== 13_500_000) {
+  throw new Error(`texas 2025 pot ${tx.familySeries.qb.find((p) => p.year === 2025).bookedSchool}`)
+}
+
+const oks = assertSchool('oklahoma-state')
+if (oks.familySeries.qb.find((p) => p.year === 2024).bookedSchool !== 16_000_000) {
+  throw new Error('oklahoma-state 2024 must use the $16M estimated preCap cell')
+}
+
+for (const id of ['georgia', 'tennessee', 'alabama', 'oregon', 'utah', 'north-carolina']) {
+  const row = assertSchool(id).familySeries.qb.find((p) => p.year === 2024)
+  if (row.potSource !== 'booked-school' || row.bookedSchool !== 0) {
+    throw new Error(`${id} 2024 must keep the cited Item 44 $0 cell as the pot`)
+  }
+  if (row.mid != null && row.mid !== 0) {
+    throw new Error(`${id} 2024 invented position dollars on a $0 pot`)
+  }
+  if (row.booked != null) throw new Error(`${id} 2024 invented a booked player cell`)
+}
 
 for (const fam of FAMILY_ORDER) {
   if (!lou.familySeries[fam] || lou.familySeries[fam].length !== 6) {
