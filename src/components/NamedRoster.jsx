@@ -43,8 +43,8 @@ export default function NamedRoster({ school, season, open, onToggle, includeAlu
         {named.namesOnly
           ? `Public ${season} football names from the ESPN team roster. No modeled NIL share — this season has names but no school modeled midpoint.`
           : school.nil.modeled?.era === 'collective'
-            ? `Public ${season} football names, each a modeled share of this school’s collective-era football slice (third-party × Opendorse year factor). Player cells are modeled, year-scaled, not a filing. Starters on a verified Wikipedia two-deep sit at the high end of the position band; backups at the low end; everyone else is the midpoint. Grouped by position — click a position for that group’s year history (modeled vs booked). Booked school NIL stays official — no named booked dollars unless a public file names the athlete.`
-            : `Public ${season} football names, each a modeled share of this school’s football slice of the 93% pot. Starters on a verified Wikipedia two-deep sit at the high end of the position band; backups at the low end; everyone else is the midpoint. Grouped by position — click a position for that group’s year history (modeled vs booked). Booked school NIL is unchanged.`}
+            ? `Public ${season} football names, each a modeled share of this school’s pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when one exists; otherwise the collective-era modeled band. Click a position for that group’s year history.`
+            : `Public ${season} football names, each a modeled share of this school’s pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when one exists; otherwise the on-desk modeled band. Click a position for that group’s year history.`}
       </p>
       <div className="table-scroll named-scroll">
         <table className="roster named">

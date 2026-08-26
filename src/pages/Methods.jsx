@@ -440,17 +440,18 @@ export default function Methods({ meta }) {
         new site section and not a marketplace valuation.
       </p>
       <p>
-        <em>Position history is the named roster players at that position for each
-        year, allocated from that year’s school modeled NIL — and from booked NIL
-        only when a FOIA / MFRS / 990 / counsel cell exists.</em>
-        Years without a named roster file on the desk (today: 2022 and 2025) use the
-        same position rate card already published above, labeled as a rate-card year.
-        A missing booked cell stays empty: we do not invent booked dollars, and we
-        do not draw a booked point. When a school booked cell does exist, the booked
-        series is that cell × this position’s modeled share of the school pot — an
-        allocated share of the filing, not a position ledger and not a named-athlete
-        contract. Louisville and Kentucky (and any later school filing) keep their
-        booked cells official; the model never overwrites them.
+        <em>Position dollars are an allocation of the school pot across that year’s
+        named roster, not reported player contracts.</em>
+        The pot is that year’s booked school / collective NIL when a FOIA / MFRS / 990 /
+        counsel cell exists (today: Louisville 2024 pre-cap and 2025, Kentucky 2025,
+        UCLA and Cal 2025). Else the pot is the already-on-desk school modeled band —
+        the conference heuristic, not a new national model. We spread that pot with
+        the existing named-player unit card and sum by position. No On3-style “QB
+        market” percentages. Years without a named roster file (today: 2022 and 2025)
+        use the same position rate card, labeled as a rate-card year. Every position
+        point or band is labeled <strong>modeled</strong> unless it is a real booked
+        player or school cell. A missing booked cell is not invented. Louisville and
+        Kentucky keep their booked cells official; the model never overwrites them.
       </p>
       <p>
         Clicking a named player opens that player’s own year series when the name

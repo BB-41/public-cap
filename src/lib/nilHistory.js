@@ -1,14 +1,18 @@
 /**
  * Position / player NIL history across the year-picker span.
  *
- * Modeled series: named roster players at that position (or player) for each
- * year, allocated from that year’s school modeled NIL. Years with no named
- * roster file fall back to the position rate card (same desk heuristic).
+ * Position dollars are an allocation of the school pot across that year’s
+ * named roster, not reported player contracts. Pot, in order:
+ *   1. that year’s booked school / collective NIL when a FOIA / MFRS / 990 /
+ *      counsel cell exists
+ *   2. else that year’s already-on-desk modeled school NIL band
  *
- * Booked series: only when that year has a school booked cell (FOIA / MFRS /
- * 990 / counsel). The point is that cell × this row’s modeled share of the
- * school pot — not a named-athlete filing, not a marketplace value.
- * No booked cell → no booked point. We do not invent booked dollars.
+ * Spread with the existing nilRoster unit card, then sum by position.
+ * Years with no named roster file fall back to the same rate card.
+ *
+ * Every position point/band is labeled modeled unless it is a real booked
+ * player cell or the school booked cell itself. We do not invent On3-style
+ * “QB market” percentages or booked player dollars.
  *
  * No On3 / Opendorse / NIL Go / social.
  */
@@ -81,10 +85,29 @@ export function parsePlayerSlug(key) {
 }
 
 export const HISTORY_NOTES =
-  'Position history is the named roster players at that position for each year, allocated from that year’s school modeled NIL — and from booked NIL only when a FOIA / MFRS / 990 / counsel cell exists. Years without a named roster file use the same position rate card. A missing booked cell stays empty. Not marketplace valuations. Not an On3 / Opendorse / NIL Go player scrape.'
+  'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school / collective cell when a FOIA / MFRS / 990 / counsel filing exists; otherwise the on-desk school modeled band. Years without a named roster file use the same position rate card. Not marketplace valuations. Not an On3 / Opendorse / NIL Go player scrape.'
 
 export const HISTORY_METHOD =
-  'Modeled = named football players at this position (or the position rate card when that year has no roster file), each a share of that year’s school modeled midpoint. Booked = school booked cell × this row’s modeled share of the school pot. No booked cell, no booked point. Not a named-athlete filing.'
+  'Named football players at this position (or the position rate card when that year has no roster file) share that year’s school pot via the existing roster unit card, then we sum the position. Pot = booked school cell if one exists, else the conference-heuristic modeled band. The position split is labeled modeled. A booked label is only a real booked player or school cell — not an invented QB-market percentage.'
+
+/**
+ * Prefer a real booked school/collective cell as the allocation pot.
+ * Else the on-desk modeled school band. Do not invent a new national model.
+ */
+export function schoolNilPot(modeled, booked) {
+  if (booked != null && Number.isFinite(Number(booked))) {
+    const mid = Number(booked)
+    const base = modeled || {
+      confidence: 'modeled',
+      era: null,
+      conferenceKey: null,
+      conferenceTotal: mid,
+    }
+    return { ...base, low: mid, mid, high: mid, potSource: 'booked-school' }
+  }
+  if (modeled?.mid) return { ...modeled, potSource: 'modeled-school' }
+  return null
+}
 
 function familyUnits(family) {
   const seat = FAMILY_SEATS[family] || FAMILY_SEATS.ath
@@ -146,7 +169,7 @@ export function groupNamedByFamily(named) {
 }
 
 function familyPoint(family, yearRow) {
-  const { year, modeled, booked, bookedField, named, bands } = yearRow
+  const { year, modeled, booked, bookedField, named, bands, pot } = yearRow
   const hasRoster = !!(named?.players?.length)
   let low = null
   let mid = null
@@ -168,23 +191,24 @@ function familyPoint(family, yearRow) {
       high = 0
       via = group.length ? 'named' : 'named-empty'
     }
-  } else if (bands && modeled?.mid) {
-    const band = rateCardFamilyBand(bands, modeled, family)
+  } else if (bands && pot?.mid) {
+    const band = rateCardFamilyBand(bands, pot, family)
     low = band.low
     mid = band.mid
     high = band.high
     via = 'rate-card'
   }
 
-  const bookedAlloc = allocateBooked(booked, mid, modeled?.mid)
   return {
     year,
     low,
     mid,
     high,
-    booked: bookedAlloc,
+    label: 'modeled',
+    booked: null,
     bookedSchool: booked,
     bookedField: booked != null ? bookedField : null,
+    potSource: pot?.potSource || null,
     names,
     via,
     modeled,
@@ -192,16 +216,18 @@ function familyPoint(family, yearRow) {
 }
 
 function playerPoint(player, year, yearRow) {
-  const { modeled, booked, bookedField } = yearRow
+  const { modeled, booked, bookedField, pot } = yearRow
   if (!player) {
     return {
       year,
       low: null,
       mid: null,
       high: null,
+      label: 'modeled',
       booked: null,
       bookedSchool: booked,
       bookedField: booked != null ? bookedField : null,
+      potSource: pot?.potSource || null,
       name: null,
       via: 'empty',
       modeled,
@@ -213,9 +239,11 @@ function playerPoint(player, year, yearRow) {
     low: player.low,
     mid: player.mid,
     high: player.high,
+    label: 'modeled',
     booked: null,
     bookedSchool: booked,
     bookedField: null,
+    potSource: pot?.potSource || null,
     name: player.name,
     via: player.mid != null ? 'named' : 'names-only',
     modeled,
@@ -243,15 +271,17 @@ export function attachNamed(yearPack, schoolId, rosterBook) {
   const row = yearPack.byId[schoolId]
   if (!row) return null
   const entry = rosterBook?.schools?.[schoolId]
-  const bands = row.modeled?.mid ? scaleRosterToModeled(row.modeled) : null
-  const named = row.modeled?.mid
-    ? allocateNamedPlayers(entry, row.modeled, bands)
+  const pot = schoolNilPot(row.modeled, row.booked)
+  const bands = pot?.mid ? scaleRosterToModeled(pot) : null
+  const named = pot?.mid
+    ? allocateNamedPlayers(entry, pot, bands)
     : namedRosterOnly(entry)
   return {
     year: yearPack.year,
     modeled: row.modeled,
     booked: row.booked,
     bookedField: row.bookedField,
+    pot,
     named,
     bands,
   }

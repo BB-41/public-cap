@@ -67,11 +67,11 @@ export const DEFS = {
   },
   rosterNamed: {
     label: 'Named roster (modeled)',
-    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. 2025–26 / 2026–27 use the House-era school midpoint; 2021–24 use the collective-era year-scaled third-party midpoint. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Positions are grouped and clickable: the year graph is those named players (or the rate card when a year has no roster file), allocated from that year’s school modeled NIL, plus booked only when a school FOIA / MFRS / 990 / counsel cell exists. Not a filing. Not an On3 / Opendorse player value. Not a reported deal.',
+    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is a booked school / collective cell when a FOIA / MFRS / 990 / counsel filing exists; otherwise the on-desk conference-heuristic modeled band. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a filing. Not an On3 / Opendorse player value.',
   },
   rosterHistory: {
     label: 'Position NIL history',
-    text: 'Named roster players at that position for each football season, allocated from that year’s school modeled NIL — and from booked NIL only when a FOIA / MFRS / 990 / counsel cell exists. Years without a named roster file use the same position rate card. A missing booked cell stays empty. Not marketplace valuations.',
+    text: 'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. Prefer the booked school / collective cell when one exists; else the on-desk modeled school band. The position split is labeled modeled unless it is a real booked player or school cell. Not marketplace valuations.',
   },
   portal: {
     label: 'Transfer portal',

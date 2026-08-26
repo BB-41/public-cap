@@ -420,6 +420,7 @@ table.roster.named td.pos-cell { padding: 0; border-bottom: 1px solid var(--rule
 .nil-year-band { fill: rgba(110, 140, 160, 0.28); }
 .nil-year-mid { stroke: var(--slate); stroke-width: 2; }
 .nil-year-booked { fill: var(--gold); }
+.nil-year-pot { fill: none; stroke: var(--gold); stroke-width: 2; }
 .nil-year-legend {
   display: flex;
   flex-wrap: wrap;

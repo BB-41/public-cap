@@ -365,7 +365,7 @@ export function downloadNilHistoryPng({ school, season, title, subtitle, points,
     kicker: 'PUBLIC CAP',
     title: title || school.name,
     sub: [subtitle, seasonTag(season, fy)].filter(Boolean).join(' · '),
-    footer: `Public Cap  ·  ${SITE}  ·  modeled vs booked`,
+    footer: `Public Cap  ·  ${SITE}  ·  modeled roster-share`,
   })
   const left = 56
   const right = w - 36
@@ -424,14 +424,19 @@ export function downloadNilHistoryPng({ school, season, title, subtitle, points,
       ctx.beginPath()
       ctx.arc(x, yAt(p.booked), 4, 0, Math.PI * 2)
       ctx.fill()
+    } else if (p.potSource === 'booked-school' && p.mid != null) {
+      ctx.strokeStyle = GOLD
+      ctx.beginPath()
+      ctx.arc(x, yAt(p.mid), 5, 0, Math.PI * 2)
+      ctx.stroke()
     }
   })
   ctx.textAlign = 'left'
   ctx.fillStyle = SLATE
   ctx.font = `11px ${FONT}`
-  ctx.fillText('Modeled band', left, baseY + 40)
+  ctx.fillText('Modeled allocation', left, baseY + 40)
   ctx.fillStyle = GOLD
-  ctx.fillText('Booked (when a school cell exists)', left + 120, baseY + 40)
+  ctx.fillText('Booked school pot (position split still modeled)', left + 140, baseY + 40)
   if (openLabel) {
     ctx.fillStyle = GOLD
     ctx.font = `12px ${FONT}`

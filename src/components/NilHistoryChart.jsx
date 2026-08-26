@@ -50,7 +50,7 @@ function YearBandChart({ points }) {
   }
 
   return (
-    <svg className="nil-year-svg" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="NIL by year, modeled band and booked points">
+    <svg className="nil-year-svg" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="NIL by year, modeled roster-share allocation">
       {ticks.map((t) => (
         <g key={t}>
           <line className="nil-year-grid" x1={pad.l} x2={W - pad.r} y1={yAt(t)} y2={yAt(t)} />
@@ -67,6 +67,9 @@ function YearBandChart({ points }) {
             {p.year}
           </text>
           {p.booked != null ? <circle className="nil-year-booked" cx={xAt(i)} cy={yAt(p.booked)} r="4.5" /> : null}
+          {p.booked == null && p.potSource === 'booked-school' && p.mid != null ? (
+            <circle className="nil-year-pot" cx={xAt(i)} cy={yAt(p.mid)} r="3.5" />
+          ) : null}
         </g>
       ))}
     </svg>
@@ -88,17 +91,17 @@ export default function NilHistoryChart({
   const caption =
     kind === 'player'
       ? `${school.name} ${label} — modeled NIL by year — Public Cap`
-      : `${school.name} ${label} — modeled vs booked NIL — Public Cap`
-  const hasBooked = points.some((p) => p.booked != null)
+      : `${school.name} ${label} — position NIL, modeled allocation — Public Cap`
+  const hasBookedPlayer = points.some((p) => p.booked != null)
+  const bookedPotYears = points.filter((p) => p.potSource === 'booked-school')
   const latest = [...points].reverse().find((p) => p.mid != null) || points[points.length - 1]
-  const bookedYears = points.filter((p) => p.booked != null)
 
   function png() {
     downloadNilHistoryPng({
       school,
       season,
       title: `${school.name} · ${label}`,
-      subtitle: kind === 'player' ? 'Player modeled NIL' : 'Position NIL · modeled vs booked',
+      subtitle: kind === 'player' ? 'Player modeled NIL' : 'Position NIL · modeled roster-share',
       points,
       openLabel: `${label} · ${seasonTag(season, school.capacity?.fiscalYearPrimary)}`,
     })
@@ -114,11 +117,11 @@ export default function NilHistoryChart({
       <ShareBar url={url} title={title} caption={caption} onPng={png} />
       <div className="nil-year-legend" aria-hidden="true">
         <span>
-          <i className="nil-swatch modeled" /> Modeled band
+          <i className="nil-swatch modeled" /> Modeled allocation
         </span>
         <span>
-          <i className="nil-swatch booked" /> Booked
-          {hasBooked ? '' : ' — none on this span'}
+          <i className="nil-swatch booked" /> Booked school pot
+          {bookedPotYears.length || hasBookedPlayer ? '' : ' — none on this span'}
         </span>
       </div>
       <YearBandChart points={points} />
@@ -141,15 +144,23 @@ export default function NilHistoryChart({
               <span>no modeled band</span>
             ) : (
               <span className="modeled-cell">
-                modeled {moneyRange(p.low, p.high)}
-                {p.mid != null ? ` · mid ${moneyExact(p.mid)}` : ''}
+                modeled {p.low === p.high ? moneyExact(p.mid) : `${moneyRange(p.low, p.high)} · mid ${moneyExact(p.mid)}`}
               </span>
             )}
             {' · '}
             {p.booked != null ? (
               <span>
-                booked {moneyExact(p.booked)}
-                {p.bookedSchool != null ? ` (share of school ${moneyExact(p.bookedSchool)})` : ''}
+                booked player {moneyExact(p.booked)}
+                {p.bookedField?.confidence ? (
+                  <>
+                    {' '}
+                    <span className="conf-label">{p.bookedField.confidence}</span>
+                  </>
+                ) : null}
+              </span>
+            ) : p.potSource === 'booked-school' && p.bookedSchool != null ? (
+              <span>
+                pot is booked school {moneyExact(p.bookedSchool)}
                 {p.bookedField?.confidence ? (
                   <>
                     {' '}
@@ -158,7 +169,7 @@ export default function NilHistoryChart({
                 ) : null}
               </span>
             ) : (
-              <span className="muted">no booked cell</span>
+              <span className="muted">pot is school modeled band</span>
             )}
             <span className="fine-inline"> · {viaLabel(p.via)}</span>
             {kind === 'position' && p.names?.length ? (
@@ -172,15 +183,16 @@ export default function NilHistoryChart({
       </ul>
       {kind === 'player' ? (
         <p className="fine">
-          Player cells are modeled shares only. This desk has no named booked dollar on an athlete
-          unless a public file names them — none in v1, so the booked series stays empty.
+          Player cells are modeled shares of that year’s school pot. This desk has no named booked
+          dollar on an athlete unless a public file names them — none in v1.
         </p>
-      ) : bookedYears.length ? (
+      ) : bookedPotYears.length ? (
         <p className="fine">
-          Booked points are an allocated share of the school filing, not a position ledger.
+          Years whose pot is a booked school cell still plot a modeled position split — roster-share,
+          not a reported player contract.
         </p>
       ) : (
-        <p className="fine">No school booked NIL cell on this span — modeled band only.</p>
+        <p className="fine">No school booked NIL cell on this span — pot is the on-desk modeled band.</p>
       )}
       <DrillClose onClose={onClose} />
     </div>
