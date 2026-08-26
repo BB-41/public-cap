@@ -59,20 +59,48 @@ function StaffPayCell({ field }) {
   )
 }
 
-function StaffSection({ school }) {
+function staffLede(year, staff) {
+  if (year >= 2021 && year <= 2024) {
+    const asOf =
+      staff?.footballAssistantPool?.asOf ||
+      staff?.assistants?.find((a) => a.pay?.asOf)?.pay?.asOf
+    const asOfBit = asOf ? ` (as of ${asOf})` : ''
+    return `Football assistant dollars are the USA TODAY ${year} contract year${asOfBit}, not a current 2026 salary. Named assistants are that year’s team-page table. Titles are not invented.`
+  }
+  if (year === 2025) {
+    return 'No year-accurate 2025 football staff tape on the desk. We do not show the 2026 official directory or 2024 USA TODAY dollars as 2025.'
+  }
+  if (year === 2026) {
+    return 'Official 2026 athletics directory (names and roles). Assistant pay is pending unless a cited 2026 dollar exists. USA TODAY 2021–2024 assistant pay lives on those years only.'
+  }
+  return `No year-accurate football staff tape on the desk for ${year}.`
+}
+
+function staffEmptyAssistants(year) {
+  if (year >= 2021 && year <= 2024) {
+    return `USA TODAY ${year} assistant table listed no names, or every Total Pay cell was withheld (private / exempt schools stay pending).`
+  }
+  if (year === 2025) {
+    return 'No year-accurate 2025 football staff directory on the desk.'
+  }
+  if (year === 2026) {
+    return 'Official 2026 directory has no named football assistants on this card, or pay is still pending. USA TODAY 2024 dollars are not shown as 2026 contract pay.'
+  }
+  return `No ${year} USA TODAY assistant table on the desk yet.`
+}
+
+function StaffSection({ school, season }) {
   const staff = school.staff || {}
   const ad = staff.athleticDirector
   const office = staff.office || []
   const others = staff.otherHeadCoaches || []
   const assts = staff.assistants || []
   const pool = staff.footballAssistantPool
+  const year = school._seasonYear || season
   return (
     <section>
       <h2 title={defTitle('staffPay')}>Athletics staff pay</h2>
-      <p className="lede tight">
-        Cited public pay only — USA TODAY, school releases, 990s, or state payrolls.
-        We do not invent a title or a dollar. Empty means pending.
-      </p>
+      <p className="lede tight">{staffLede(year, staff)}</p>
       <div className="eyebrow">Athletic director</div>
       {ad?.pay?.value != null ? (
         <div className="field">
@@ -188,12 +216,14 @@ function StaffSection({ school }) {
           </tbody>
         </table>
       ) : (
-        <p className="fine">No cited football-assistant pay on the desk (USA TODAY assistant table blanks private / exempt schools).</p>
+        <p className="fine">{staffEmptyAssistants(year)}</p>
       )}
       {pool?.value != null && (
         <p className="fine">
-          Football assistant staff total {moneyExact(pool.value)}
-          {' '}({pool.confidence}, as of {pool.asOf}).{' '}
+          {year >= 2021 && year <= 2024 ? `${year} USA TODAY football assistant staff total` : 'Football assistant staff total'}{' '}
+          {moneyExact(pool.value)}
+          {' '}({pool.confidence}, as of {pool.asOf}
+          {year >= 2021 && year <= 2024 ? ` · ${year} contract year` : ''}).{' '}
           <a className="ext" href={pool.url} target="_blank" rel="noreferrer">{pool.source} ↗</a>
           {pool.notes ? ` ${pool.notes}` : ''}
         </p>
@@ -658,7 +688,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         </section>
       </div>
 
-      <StaffSection school={s} />
+      <StaffSection school={s} season={season} />
 
       <Layers school={s} />
 

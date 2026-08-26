@@ -342,23 +342,77 @@ export function coachesForSeason(school, year) {
   }
 }
 
-/** 2025–26 use the current directory unless a year key exists. 2024 uses a year key (e.g. FSU USA TODAY assistants) and does not inherit 2025–26 staff. */
-export function staffForSeason(school, year) {
-  const row = yearKey(school.staffByYear, year)
-  if (row) return clone(row)
-  if (year >= 2025) return clone(school.staff) || null
+function assistantNameKey(staff) {
+  return (staff?.assistants || []).map((a) => a.name).join('|')
+}
+
+/** True when two year keys list the same assistant names (a silent directory clone). */
+export function staffRowsAreClone(a, b) {
+  if (!a || !b) return false
+  const na = assistantNameKey(a)
+  const nb = assistantNameKey(b)
+  return na.length > 0 && na === nb
+}
+
+export function emptyStaffForSeason(year) {
+  if (year === 2025) {
+    return {
+      athleticDirector: {
+        confidence: 'pending',
+        asOf: null,
+        notes:
+          'No year-accurate 2025 staff tape on the desk. We do not show the 2026 official directory or 2024 USA TODAY assistant dollars as 2025.',
+      },
+      office: [],
+      otherHeadCoaches: [],
+      assistants: [],
+      notes:
+        'No year-accurate 2025 football staff directory on the desk. Honest empty — not a 2026 clone and not 2024 USA TODAY pay.',
+    }
+  }
+  if (year <= 2023) {
+    return {
+      athleticDirector: {
+        confidence: 'pending',
+        asOf: null,
+        notes: `No year-accurate ${year} staff tape on the desk.`,
+      },
+      office: [],
+      otherHeadCoaches: [],
+      assistants: [],
+      notes: `${year} USA TODAY assistant table not on this school. Same staffByYear.${year} slot as 2024 — do not copy 2024 or 2026 onto this year.`,
+    }
+  }
   return {
     athleticDirector: {
       confidence: 'pending',
-      asOf: '2026-08',
+      asOf: null,
       notes: 'Prior-year staff pay not extracted.',
     },
     office: [],
     otherHeadCoaches: [],
     assistants: [],
     notes:
-      'Prior-year assistants not on this desk. The 2024 USA TODAY assistant table is used only where we attached it to that year (Florida State Fuller / Atkins). We do not show 2025–26 staff on 2021–24.',
+      'Prior-year assistants not on this desk. USA TODAY assistant dollars (as of Dec 18, 2024) live on staffByYear.2024 only. We do not show 2026 staff on earlier years.',
   }
+}
+
+/**
+ * Year-keyed staff only. A year key wins.
+ * 2026 may fall back to the current official directory (`school.staff`).
+ * 2025 never inherits 2026 — a missing or cloned 2025 key is an honest empty.
+ * 2024 is the USA TODAY contract-year tape when present.
+ */
+export function staffForSeason(school, year) {
+  const row = yearKey(school.staffByYear, year)
+  if (year === 2025 && row) {
+    const current = yearKey(school.staffByYear, CURRENT_SEASON) || school.staff
+    if (staffRowsAreClone(row, current)) return emptyStaffForSeason(2025)
+    return clone(row)
+  }
+  if (row) return clone(row)
+  if (year === CURRENT_SEASON) return clone(school.staff) || emptyStaffForSeason(year)
+  return emptyStaffForSeason(year)
 }
 
 export function applySeason(school, year) {

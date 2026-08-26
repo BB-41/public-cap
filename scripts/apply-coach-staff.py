@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Add coach contract terms + public staff pay to schools.json (both copies)."""
+"""Add coach contract terms + public staff pay to schools.json (both copies).
+
+Football assistant dollars in ASSISTANTS / FB_ASST_POOL are the USA TODAY
+2024 contract year (asOf 2024-12-18). Do not write them onto current `staff`
+or staffByYear.2025/2026. Year-keyed ingest is scripts/ingest-staff-by-year.py
+plus scripts/staff-usat/YYYY.json.
+"""
 import json
 from copy import deepcopy
 from pathlib import Path
@@ -294,25 +300,9 @@ def build_staff(sid):
             "name": name, "sport": sport,
             "pay": pay(val, src, url, asof, notes, conf),
         })
-    for school, name, val in ASSISTANTS:
-        if school != sid:
-            continue
-        role = TITLES.get((sid, name), "Football assistant")
-        staff["assistants"].append({
-            "name": name,
-            "sport": "football",
-            "role": role,
-            "pay": pay(val, "USA TODAY Sports football assistant salary database", USA_FB_ASST, "2024-12-18",
-                       "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."),
-        })
-    if sid in FB_ASST_POOL:
-        staff["footballAssistantPool"] = pay(
-            FB_ASST_POOL[sid],
-            "USA TODAY Sports football assistant salary database (staff total column)",
-            USA_FB_ASST,
-            "2024-12-18",
-            "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year.",
-        )
+    # Football assistant dollars belong on staffByYear.2024 via
+    # scripts/ingest-staff-by-year.py / staff-usat/2024.json. Do not attach
+    # the 2024 USA TODAY table to current staff (that is the 2026 directory).
     return staff
 
 def main():

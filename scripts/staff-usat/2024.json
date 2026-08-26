@@ -1,0 +1,4491 @@
+{
+  "contractYear": 2024,
+  "asOf": "2024-12-18",
+  "source": "USA TODAY Sports football assistant salary database",
+  "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
+  "notes": "USA TODAY 2024 contract year. Named assistants from each school team page (__NEXT_DATA__). Pay is Total Pay when numeric; withheld cells stay pending. Titles are not invented. Pool is the sum of that year's numeric Total Pay.",
+  "schools": {
+    "alabama": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478",
+      "assistants": [
+        {
+          "name": "Robert Gillespie",
+          "pay": 850000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478"
+        },
+        {
+          "name": "Christian Robinson",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478"
+        },
+        {
+          "name": "Colin Hitschler",
+          "pay": 675000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478"
+        },
+        {
+          "name": "Kane Wommack",
+          "pay": 1550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478"
+        },
+        {
+          "name": "Bryan Ellis",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478"
+        },
+        {
+          "name": "JaMarcus Shephard",
+          "pay": 1100000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478"
+        },
+        {
+          "name": "Freddie Roach",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478"
+        },
+        {
+          "name": "Maurice Linguist",
+          "pay": 875000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478"
+        },
+        {
+          "name": "Nick Sheridan",
+          "pay": 1350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478"
+        },
+        {
+          "name": "Chris Kapilovic",
+          "pay": 875000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3478"
+        }
+      ],
+      "pool": 9475000
+    },
+    "arizona": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462",
+      "assistants": [
+        {
+          "name": "Brett Arce",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462"
+        },
+        {
+          "name": "Chip Viney",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462"
+        },
+        {
+          "name": "Bobby Wade",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462"
+        },
+        {
+          "name": "Josh Oglesby",
+          "pay": 440000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462"
+        },
+        {
+          "name": "Matt Adkins",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462"
+        },
+        {
+          "name": "Alonzo Carter",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462"
+        },
+        {
+          "name": "Danny Gonzales",
+          "pay": 425000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462"
+        },
+        {
+          "name": "Duane Akina",
+          "pay": 785000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462"
+        },
+        {
+          "name": "Dino Babers",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462"
+        },
+        {
+          "name": "Joe Seumalo",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3462"
+        }
+      ],
+      "pool": 4200000
+    },
+    "arizona-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3463",
+      "assistants": [
+        {
+          "name": "Hines Ward",
+          "pay": 220000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3463"
+        },
+        {
+          "name": "Jason Mohns",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3463"
+        },
+        {
+          "name": "Bryan Carrington",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3463"
+        },
+        {
+          "name": "Shaun Aguano",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3463"
+        },
+        {
+          "name": "Saga Tuitele",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3463"
+        },
+        {
+          "name": "Diron Reynolds",
+          "pay": 425000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3463"
+        },
+        {
+          "name": "Brian Ward",
+          "pay": 800000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3463"
+        },
+        {
+          "name": "Charlie Ragle",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3463"
+        },
+        {
+          "name": "Marcus Arroyo",
+          "pay": 830000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3463"
+        }
+      ],
+      "pool": 4675000
+    },
+    "arkansas": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479",
+      "assistants": [
+        {
+          "name": "Ronnie Fouch",
+          "pay": 200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479"
+        },
+        {
+          "name": "Deron Wilson",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479"
+        },
+        {
+          "name": "Eric Mateos",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479"
+        },
+        {
+          "name": "Marcus Woodson",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479"
+        },
+        {
+          "name": "Scott Fountain",
+          "pay": 515000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479"
+        },
+        {
+          "name": "Morgan Turner",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479"
+        },
+        {
+          "name": "Kolby Smith",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479"
+        },
+        {
+          "name": "Travis Williams",
+          "pay": 1175000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479"
+        },
+        {
+          "name": "Bobby Petrino",
+          "pay": 1500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479"
+        },
+        {
+          "name": "Deke Adams",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3479"
+        }
+      ],
+      "pool": 6190000
+    },
+    "auburn": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480",
+      "assistants": [
+        {
+          "name": "Vontrell King-Williams",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480"
+        },
+        {
+          "name": "Marcus Davis",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480"
+        },
+        {
+          "name": "Jake Thornton",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480"
+        },
+        {
+          "name": "Josh Aldridge",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480"
+        },
+        {
+          "name": "Ben Aigamaua",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480"
+        },
+        {
+          "name": "Kent Austin",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480"
+        },
+        {
+          "name": "Wesley McGriff",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480"
+        },
+        {
+          "name": "Derrick Nix",
+          "pay": 800000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480"
+        },
+        {
+          "name": "DJ Durkin",
+          "pay": 1200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480"
+        },
+        {
+          "name": "Charles Kelly",
+          "pay": 875000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3480"
+        }
+      ],
+      "pool": 6475000
+    },
+    "baylor": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484",
+      "assistants": [
+        {
+          "name": "Jamar Chaney",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484"
+        },
+        {
+          "name": "Khenon Hall",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484"
+        },
+        {
+          "name": "Caleb Collins",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484"
+        },
+        {
+          "name": "Dallas Baker",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484"
+        },
+        {
+          "name": "Mason Miller",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484"
+        },
+        {
+          "name": "Matt Powledge",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484"
+        },
+        {
+          "name": "Inoke Breckterfield",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484"
+        },
+        {
+          "name": "Jake Spavital",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484"
+        },
+        {
+          "name": "Kevin Curtis",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484"
+        },
+        {
+          "name": "Jarrett Anderson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3484"
+        }
+      ],
+      "pool": null
+    },
+    "boston-college": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416",
+      "assistants": [
+        {
+          "name": "Darrell Wyatt",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416"
+        },
+        {
+          "name": "Jonathan Dibiaso",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416"
+        },
+        {
+          "name": "Tim Lewis",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416"
+        },
+        {
+          "name": "Will Lawing",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416"
+        },
+        {
+          "name": "Savon Huggins",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416"
+        },
+        {
+          "name": "Matt Applebaum",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416"
+        },
+        {
+          "name": "Matt Thurin",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416"
+        },
+        {
+          "name": "Ray Brown",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416"
+        },
+        {
+          "name": "Dan O'Brien",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416"
+        },
+        {
+          "name": "Jeff Comissiong",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3416"
+        }
+      ],
+      "pool": null
+    },
+    "byu": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493",
+      "assistants": [
+        {
+          "name": "Kevin Gilbride",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493"
+        },
+        {
+          "name": "TJ Woods",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493"
+        },
+        {
+          "name": "Harvey Unga",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493"
+        },
+        {
+          "name": "Sione Po'uha",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493"
+        },
+        {
+          "name": "Fesi Sitake",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493"
+        },
+        {
+          "name": "Jernaro Gilford",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493"
+        },
+        {
+          "name": "Justin Ena",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493"
+        },
+        {
+          "name": "Kelly Poppinga",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493"
+        },
+        {
+          "name": "Jay Hill",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493"
+        },
+        {
+          "name": "Aaron Roderick",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3493"
+        }
+      ],
+      "pool": null
+    },
+    "california": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464",
+      "assistants": [
+        {
+          "name": "Mike Saffell",
+          "pay": 175000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464"
+        },
+        {
+          "name": "Tre Watson",
+          "pay": 225000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464"
+        },
+        {
+          "name": "Aristotle Thompson",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464"
+        },
+        {
+          "name": "Terrence Brown",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464"
+        },
+        {
+          "name": "Vic So'oto",
+          "pay": 475000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464"
+        },
+        {
+          "name": "Mike Bloesch",
+          "pay": 850000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464"
+        },
+        {
+          "name": "Burl Toler",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464"
+        },
+        {
+          "name": "Sterlin Gilbert",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464"
+        },
+        {
+          "name": "Andrew Browning",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464"
+        },
+        {
+          "name": "Peter Sirmon",
+          "pay": 950000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3464"
+        }
+      ],
+      "pool": 4375000
+    },
+    "cincinnati": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503",
+      "assistants": [
+        {
+          "name": "Pete Thomas",
+          "pay": 340000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503"
+        },
+        {
+          "name": "Cortney Braswell",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503"
+        },
+        {
+          "name": "Brad Glenn",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503"
+        },
+        {
+          "name": "Sean Dawkins",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503"
+        },
+        {
+          "name": "Walter Stewart",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503"
+        },
+        {
+          "name": "Nic Cardwell",
+          "pay": 425000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503"
+        },
+        {
+          "name": "Josh Stepp",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503"
+        },
+        {
+          "name": "Nate Fuqua",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503"
+        },
+        {
+          "name": "Tyson Veidt",
+          "pay": 750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503"
+        },
+        {
+          "name": "Kerry Coombs",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3503"
+        }
+      ],
+      "pool": 4390000
+    },
+    "clemson": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407",
+      "assistants": [
+        {
+          "name": "Mike Reed",
+          "pay": 900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407"
+        },
+        {
+          "name": "Kyle Richardson",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407"
+        },
+        {
+          "name": "Wes Goodwin",
+          "pay": 1400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407"
+        },
+        {
+          "name": "Nick Eason",
+          "pay": 1100000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407"
+        },
+        {
+          "name": "C.J. Spiller",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407"
+        },
+        {
+          "name": "Tyler Grisham",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407"
+        },
+        {
+          "name": "Mickey Conn",
+          "pay": 900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407"
+        },
+        {
+          "name": "Garrett Riley",
+          "pay": 1750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407"
+        },
+        {
+          "name": "Chris Rumph",
+          "pay": 950000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407"
+        },
+        {
+          "name": "Matt Luke",
+          "pay": 975000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3407"
+        }
+      ],
+      "pool": 9675000
+    },
+    "colorado": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424",
+      "assistants": [
+        {
+          "name": "Damione Lewis",
+          "pay": 315500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424"
+        },
+        {
+          "name": "Phil Loadholdt",
+          "pay": 326000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424"
+        },
+        {
+          "name": "Vincent Dancy",
+          "pay": 351000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424"
+        },
+        {
+          "name": "Robert Livingston",
+          "pay": 800750,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424"
+        },
+        {
+          "name": "Pat Shurmur",
+          "pay": 801000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424"
+        },
+        {
+          "name": "Kevin Mathis",
+          "pay": 426000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424"
+        },
+        {
+          "name": "Andre' Hart",
+          "pay": 426000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424"
+        },
+        {
+          "name": "Brett Bartolone",
+          "pay": 401000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424"
+        },
+        {
+          "name": "Gary Harrell",
+          "pay": 426000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424"
+        },
+        {
+          "name": "Jason Phillips",
+          "pay": 315500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3424"
+        }
+      ],
+      "pool": 4588750
+    },
+    "duke": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408",
+      "assistants": [
+        {
+          "name": "Rick Lyster",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408"
+        },
+        {
+          "name": "V'Angelo Bentley",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408"
+        },
+        {
+          "name": "Gabe Infante",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408"
+        },
+        {
+          "name": "Jeff Norrid",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408"
+        },
+        {
+          "name": "Jonathan Brewer",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408"
+        },
+        {
+          "name": "Harland Bower",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408"
+        },
+        {
+          "name": "Jonathan Patke",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408"
+        },
+        {
+          "name": "Zohn Burden",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408"
+        },
+        {
+          "name": "Justin Watts",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408"
+        },
+        {
+          "name": "Willie Simmons",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3408"
+        }
+      ],
+      "pool": null
+    },
+    "florida": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472",
+      "assistants": [
+        {
+          "name": "Russ Callaway",
+          "pay": 551500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472"
+        },
+        {
+          "name": "Will Harris",
+          "pay": 626500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472"
+        },
+        {
+          "name": "Gerald Chatman",
+          "pay": 576500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472"
+        },
+        {
+          "name": "Jonathan Decoster",
+          "pay": 351500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472"
+        },
+        {
+          "name": "Austin Armstrong",
+          "pay": 1201500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472"
+        },
+        {
+          "name": "Ron Roberts",
+          "pay": 751500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472"
+        },
+        {
+          "name": "Mike Peterson",
+          "pay": 551500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472"
+        },
+        {
+          "name": "Rob Sale",
+          "pay": 1001500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472"
+        },
+        {
+          "name": "Jabbar Juluke",
+          "pay": 451500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472"
+        },
+        {
+          "name": "Billy Gonzales",
+          "pay": 501500,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3472"
+        }
+      ],
+      "pool": 6565000
+    },
+    "florida-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409",
+      "assistants": [
+        {
+          "name": "Ron Dugans",
+          "pay": 615000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409"
+        },
+        {
+          "name": "Patrick Surtain Sr.",
+          "pay": 715000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409"
+        },
+        {
+          "name": "Odell Haggins",
+          "pay": 715000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409"
+        },
+        {
+          "name": "Tony Tokarz",
+          "pay": 515000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409"
+        },
+        {
+          "name": "Alex Atkins",
+          "pay": 1265000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409"
+        },
+        {
+          "name": "Adam Fuller",
+          "pay": 2015000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409"
+        },
+        {
+          "name": "David Johnson",
+          "pay": 565000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409"
+        },
+        {
+          "name": "Chris Thomsen",
+          "pay": 640000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409"
+        },
+        {
+          "name": "John Papuchis",
+          "pay": 765000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409"
+        },
+        {
+          "name": "Randy Shannon",
+          "pay": 665000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3409"
+        }
+      ],
+      "pool": 8475000
+    },
+    "georgia": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473",
+      "assistants": [
+        {
+          "name": "Mike Bobo",
+          "pay": 1403000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473"
+        },
+        {
+          "name": "Stacy Searels",
+          "pay": 778000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473"
+        },
+        {
+          "name": "Josh Crawford",
+          "pay": 453000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473"
+        },
+        {
+          "name": "Chidera Uzo-Diribe",
+          "pay": 628000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473"
+        },
+        {
+          "name": "James Coley",
+          "pay": 653000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473"
+        },
+        {
+          "name": "Glenn Schumann",
+          "pay": 2003000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473"
+        },
+        {
+          "name": "Tray Scott",
+          "pay": 1205000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473"
+        },
+        {
+          "name": "Donte Williams",
+          "pay": 828000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473"
+        },
+        {
+          "name": "Todd Hartley",
+          "pay": 878000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473"
+        },
+        {
+          "name": "Travaris Robinson",
+          "pay": 1503000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3473"
+        }
+      ],
+      "pool": 10332000
+    },
+    "georgia-tech": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410",
+      "assistants": [
+        {
+          "name": "Kyle Pope",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410"
+        },
+        {
+          "name": "Jess Simpson",
+          "pay": 675000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410"
+        },
+        {
+          "name": "Cory Peoples",
+          "pay": 270000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410"
+        },
+        {
+          "name": "Chris Weinke",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410"
+        },
+        {
+          "name": "Trent McKnight",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410"
+        },
+        {
+          "name": "Tyler Santucci",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410"
+        },
+        {
+          "name": "Norval McKenzie",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410"
+        },
+        {
+          "name": "Buster Faulkner",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410"
+        },
+        {
+          "name": "Geep Wade",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410"
+        },
+        {
+          "name": "Ricky Brumfield",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3410"
+        }
+      ],
+      "pool": 5120000
+    },
+    "houston": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485",
+      "assistants": [
+        {
+          "name": "James Ross III",
+          "pay": 200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485"
+        },
+        {
+          "name": "Jordy Joseph",
+          "pay": 200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485"
+        },
+        {
+          "name": "Derrick Sherman",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485"
+        },
+        {
+          "name": "Kevin Barbay",
+          "pay": 750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485"
+        },
+        {
+          "name": "Zac Etheridge",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485"
+        },
+        {
+          "name": "Shiel Wood",
+          "pay": 750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485"
+        },
+        {
+          "name": "Shawn Bell",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485"
+        },
+        {
+          "name": "Eman Naghavi",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485"
+        },
+        {
+          "name": "Josh Christian-Young",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485"
+        },
+        {
+          "name": "Oscar Giles",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3485"
+        }
+      ],
+      "pool": 3950000
+    },
+    "illinois": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432",
+      "assistants": [
+        {
+          "name": "Corey Parker",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432"
+        },
+        {
+          "name": "Clint Sintim",
+          "pay": 425000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432"
+        },
+        {
+          "name": "Robby Discher",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432"
+        },
+        {
+          "name": "Aaron Henry",
+          "pay": 725000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432"
+        },
+        {
+          "name": "Justin Stepp",
+          "pay": 525000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432"
+        },
+        {
+          "name": "Barry Lunney Jr.",
+          "pay": 1025000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432"
+        },
+        {
+          "name": "Thad Ward",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432"
+        },
+        {
+          "name": "Terrance Jamison",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432"
+        },
+        {
+          "name": "Bart Miller",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432"
+        },
+        {
+          "name": "Archie McDaniel",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3432"
+        }
+      ],
+      "pool": 5325000
+    },
+    "indiana": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433",
+      "assistants": [
+        {
+          "name": "Ola Adams",
+          "pay": 523000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433"
+        },
+        {
+          "name": "Pat Kuntz",
+          "pay": 425000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433"
+        },
+        {
+          "name": "Tino Sunseri",
+          "pay": 540000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433"
+        },
+        {
+          "name": "Grant Cain",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433"
+        },
+        {
+          "name": "John Miller",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433"
+        },
+        {
+          "name": "Bryant Haines",
+          "pay": 1175000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433"
+        },
+        {
+          "name": "Mike Shanahan",
+          "pay": 800000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433"
+        },
+        {
+          "name": "Buddha Williams",
+          "pay": 522000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433"
+        },
+        {
+          "name": "Rod Ojong",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433"
+        },
+        {
+          "name": "Bob Bostad",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3433"
+        }
+      ],
+      "pool": 5935000
+    },
+    "iowa": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434",
+      "assistants": [
+        {
+          "name": "Abdul Hodge",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434"
+        },
+        {
+          "name": "Ladell Betts",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434"
+        },
+        {
+          "name": "Jon Budmayr",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434"
+        },
+        {
+          "name": "Kelvin Bell",
+          "pay": 670000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434"
+        },
+        {
+          "name": "George Barnett",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434"
+        },
+        {
+          "name": "Seth Wallace",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434"
+        },
+        {
+          "name": "Tim Lester",
+          "pay": 1100000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434"
+        },
+        {
+          "name": "LeVar Woods",
+          "pay": 775000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434"
+        },
+        {
+          "name": "Jay Niemann",
+          "pay": 530000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434"
+        },
+        {
+          "name": "Phil Parker",
+          "pay": 1900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3434"
+        }
+      ],
+      "pool": 7900000
+    },
+    "iowa-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425",
+      "assistants": [
+        {
+          "name": "Tyler Roehl",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425"
+        },
+        {
+          "name": "Colby Kratch",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425"
+        },
+        {
+          "name": "Noah Pauley",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425"
+        },
+        {
+          "name": "Ryan Clanton",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425"
+        },
+        {
+          "name": "Deon Broomfield",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425"
+        },
+        {
+          "name": "Taylor Mouser",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425"
+        },
+        {
+          "name": "Jake Waters",
+          "pay": 200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425"
+        },
+        {
+          "name": "Hank Poteat",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425"
+        },
+        {
+          "name": "Jon Heacock",
+          "pay": 1200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425"
+        },
+        {
+          "name": "Eli Rasheed",
+          "pay": 410000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3425"
+        }
+      ],
+      "pool": 4460000
+    },
+    "kansas": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426",
+      "assistants": [
+        {
+          "name": "Jonathan Wallace",
+          "pay": 310000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426"
+        },
+        {
+          "name": "Jim Zebrowski",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426"
+        },
+        {
+          "name": "Taiwo Onatolu",
+          "pay": 360000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426"
+        },
+        {
+          "name": "Daryl Agpalsa",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426"
+        },
+        {
+          "name": "Brian Borland",
+          "pay": 720000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426"
+        },
+        {
+          "name": "Chris Simpson",
+          "pay": 485000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426"
+        },
+        {
+          "name": "D.K. McDonald",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426"
+        },
+        {
+          "name": "Terrence Samuel",
+          "pay": 380000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426"
+        },
+        {
+          "name": "Jim Panagos",
+          "pay": 385000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426"
+        },
+        {
+          "name": "Jeff Grimes",
+          "pay": 800000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3426"
+        }
+      ],
+      "pool": 4840000
+    },
+    "kansas-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427",
+      "assistants": [
+        {
+          "name": "Buddy Wyatt",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427"
+        },
+        {
+          "name": "Brian Lepak",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427"
+        },
+        {
+          "name": "Conor Riley",
+          "pay": 750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427"
+        },
+        {
+          "name": "Joe Klanderman",
+          "pay": 825000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427"
+        },
+        {
+          "name": "Matthew Middleton",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427"
+        },
+        {
+          "name": "Brian Anderson",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427"
+        },
+        {
+          "name": "Matt Wells",
+          "pay": 537000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427"
+        },
+        {
+          "name": "Van Malone",
+          "pay": 410000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427"
+        },
+        {
+          "name": "Steve Stanard",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427"
+        },
+        {
+          "name": "Mike Tuiasosopo",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3427"
+        }
+      ],
+      "pool": 4697000
+    },
+    "kentucky": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474",
+      "assistants": [
+        {
+          "name": "Daikiel Shorts Jr.",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474"
+        },
+        {
+          "name": "Frank Buffano",
+          "pay": 415000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474"
+        },
+        {
+          "name": "Brad White",
+          "pay": 1750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474"
+        },
+        {
+          "name": "Anwar Stewart",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474"
+        },
+        {
+          "name": "Chris Collins (FB)",
+          "pay": 475000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474"
+        },
+        {
+          "name": "Mike Stoops",
+          "pay": 675000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474"
+        },
+        {
+          "name": "Eric Wolford",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474"
+        },
+        {
+          "name": "Vince Marrow",
+          "pay": 1300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474"
+        },
+        {
+          "name": "Bush Hamdan",
+          "pay": 1250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474"
+        },
+        {
+          "name": "Jay Boulware",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3474"
+        }
+      ],
+      "pool": 7565000
+    },
+    "louisville": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505",
+      "assistants": [
+        {
+          "name": "Ron English",
+          "pay": 800000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505"
+        },
+        {
+          "name": "Ryan Wallace",
+          "pay": 265000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505"
+        },
+        {
+          "name": "Brian Brohm",
+          "pay": 750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505"
+        },
+        {
+          "name": "Mark Ivey",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505"
+        },
+        {
+          "name": "Chris Barclay",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505"
+        },
+        {
+          "name": "Richard Owens",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505"
+        },
+        {
+          "name": "Steve Ellis",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505"
+        },
+        {
+          "name": "Garrick McGee",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505"
+        },
+        {
+          "name": "Karl Maslowski",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505"
+        },
+        {
+          "name": "Mark Hagen",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3505"
+        }
+      ],
+      "pool": 4765000
+    },
+    "lsu": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481",
+      "assistants": [
+        {
+          "name": "Jake Olsen",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481"
+        },
+        {
+          "name": "Slade Nagle",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481"
+        },
+        {
+          "name": "Cortez Hankton",
+          "pay": 950000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481"
+        },
+        {
+          "name": "Brad Davis",
+          "pay": 900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481"
+        },
+        {
+          "name": "Joe Sloan",
+          "pay": 950000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481"
+        },
+        {
+          "name": "Frank Wilson",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481"
+        },
+        {
+          "name": "Blake Baker",
+          "pay": 2500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481"
+        },
+        {
+          "name": "Kevin Peoples",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481"
+        },
+        {
+          "name": "Bo Davis",
+          "pay": 1250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481"
+        },
+        {
+          "name": "Corey Raymond",
+          "pay": 200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3481"
+        }
+      ],
+      "pool": 9300000
+    },
+    "maryland": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411",
+      "assistants": [
+        {
+          "name": "James Thomas Jr.",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411"
+        },
+        {
+          "name": "Latrell Scott",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411"
+        },
+        {
+          "name": "Brian Braswell",
+          "pay": 525000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411"
+        },
+        {
+          "name": "Aazaar Abdul-Rahim",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411"
+        },
+        {
+          "name": "Brian Williams",
+          "pay": 1300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411"
+        },
+        {
+          "name": "Damian Wroblewski",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411"
+        },
+        {
+          "name": "Josh Gattis",
+          "pay": 950000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411"
+        },
+        {
+          "name": "Lance Thompson",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411"
+        },
+        {
+          "name": "Zac Spavital",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411"
+        },
+        {
+          "name": "Kevin Sumlin",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3411"
+        }
+      ],
+      "pool": 5475000
+    },
+    "miami": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417",
+      "assistants": [
+        {
+          "name": "Jason Taylor",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417"
+        },
+        {
+          "name": "Matt Merritt",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417"
+        },
+        {
+          "name": "Cody Woodiel",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417"
+        },
+        {
+          "name": "Chevis Jackson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417"
+        },
+        {
+          "name": "Derek Nicholson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417"
+        },
+        {
+          "name": "Kevin Beard",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417"
+        },
+        {
+          "name": "Shannon Dawson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417"
+        },
+        {
+          "name": "Joe Salave'a",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417"
+        },
+        {
+          "name": "Alex Mirabal",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417"
+        },
+        {
+          "name": "Lance Guidry",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3417"
+        }
+      ],
+      "pool": null
+    },
+    "michigan": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435",
+      "assistants": [
+        {
+          "name": "Brian Jean-Mary",
+          "pay": 1155000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435"
+        },
+        {
+          "name": "J.B. Brown",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435"
+        },
+        {
+          "name": "Wink Martindale",
+          "pay": 2300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435"
+        },
+        {
+          "name": "Grant Newsome",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435"
+        },
+        {
+          "name": "Ron Bellamy",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435"
+        },
+        {
+          "name": "Kirk Campbell",
+          "pay": 950000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435"
+        },
+        {
+          "name": "LaMar Morgan",
+          "pay": 858000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435"
+        },
+        {
+          "name": "Steve Casula",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435"
+        },
+        {
+          "name": "Tony Alford",
+          "pay": 885000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435"
+        },
+        {
+          "name": "Lou Esposito",
+          "pay": 1286000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3435"
+        }
+      ],
+      "pool": 9384000
+    },
+    "michigan-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436",
+      "assistants": [
+        {
+          "name": "Demetrice Martin",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436"
+        },
+        {
+          "name": "Courtney Hawkins",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436"
+        },
+        {
+          "name": "Brian Wozniak",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436"
+        },
+        {
+          "name": "Blue Adams",
+          "pay": 525000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436"
+        },
+        {
+          "name": "Legi Suiaunoa",
+          "pay": 525000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436"
+        },
+        {
+          "name": "Joe Rossi",
+          "pay": 1500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436"
+        },
+        {
+          "name": "Brian Lindgren",
+          "pay": 1100000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436"
+        },
+        {
+          "name": "Chad Wilt",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436"
+        },
+        {
+          "name": "Jim Michalczik",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436"
+        },
+        {
+          "name": "Keith Bhonapha",
+          "pay": 525000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3436"
+        }
+      ],
+      "pool": 6975000
+    },
+    "minnesota": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437",
+      "assistants": [
+        {
+          "name": "Nick Monroe",
+          "pay": 417000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437"
+        },
+        {
+          "name": "Winston DeLattiboudere III",
+          "pay": 412000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437"
+        },
+        {
+          "name": "Danny Collins",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437"
+        },
+        {
+          "name": "Greg Harbaugh Jr.",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437"
+        },
+        {
+          "name": "Nic McKissic-Luke",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437"
+        },
+        {
+          "name": "Bob Ligashesky",
+          "pay": 345000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437"
+        },
+        {
+          "name": "Matt Simon (Minn.)",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437"
+        },
+        {
+          "name": "Eric Koehler",
+          "pay": 200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437"
+        },
+        {
+          "name": "Corey Hetherman",
+          "pay": 850000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437"
+        },
+        {
+          "name": "Brian Callahan",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3437"
+        }
+      ],
+      "pool": 4599000
+    },
+    "mississippi-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483",
+      "assistants": [
+        {
+          "name": "Matt Holecek",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483"
+        },
+        {
+          "name": "Cliff Odom",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483"
+        },
+        {
+          "name": "Chad Bumphis",
+          "pay": 425000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483"
+        },
+        {
+          "name": "Cody Kennedy",
+          "pay": 750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483"
+        },
+        {
+          "name": "Jon Cooper",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483"
+        },
+        {
+          "name": "Matt Barnes",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483"
+        },
+        {
+          "name": "Corey Bell",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483"
+        },
+        {
+          "name": "Anthony Tucker",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483"
+        },
+        {
+          "name": "Coleman Hutzler",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483"
+        },
+        {
+          "name": "David Turner",
+          "pay": 460000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3483"
+        }
+      ],
+      "pool": 5260000
+    },
+    "missouri": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428",
+      "assistants": [
+        {
+          "name": "Brandon Jones",
+          "pay": 750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428"
+        },
+        {
+          "name": "Al Davis",
+          "pay": 430000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428"
+        },
+        {
+          "name": "Erik Link",
+          "pay": 530000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428"
+        },
+        {
+          "name": "D.J. Smith",
+          "pay": 580000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428"
+        },
+        {
+          "name": "Kirby Moore",
+          "pay": 1500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428"
+        },
+        {
+          "name": "Jacob Peeler",
+          "pay": 570000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428"
+        },
+        {
+          "name": "Al Pogue",
+          "pay": 480000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428"
+        },
+        {
+          "name": "Brian Early",
+          "pay": 505000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428"
+        },
+        {
+          "name": "Curtis Luper",
+          "pay": 605000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428"
+        },
+        {
+          "name": "Corey Batoon",
+          "pay": 1030000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3428"
+        }
+      ],
+      "pool": 6980000
+    },
+    "nc-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413",
+      "assistants": [
+        {
+          "name": "Brian Mitchell",
+          "pay": 437205,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413"
+        },
+        {
+          "name": "Tony Gibson",
+          "pay": 1500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413"
+        },
+        {
+          "name": "Joe DeForest",
+          "pay": 435000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413"
+        },
+        {
+          "name": "Freddie Aughtry-Lindsay",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413"
+        },
+        {
+          "name": "Todd Goebbel",
+          "pay": 560000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413"
+        },
+        {
+          "name": "Garett Tujague",
+          "pay": 530000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413"
+        },
+        {
+          "name": "Kurt Roper",
+          "pay": 455000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413"
+        },
+        {
+          "name": "Robert Anae",
+          "pay": 900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413"
+        },
+        {
+          "name": "Charley Wiles",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413"
+        },
+        {
+          "name": "Joker Phillips",
+          "pay": 490000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3413"
+        }
+      ],
+      "pool": 6207205
+    },
+    "nebraska": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429",
+      "assistants": [
+        {
+          "name": "Rob Dvoracek",
+          "pay": 285000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429"
+        },
+        {
+          "name": "Terrance Knighton",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429"
+        },
+        {
+          "name": "Garret McGuire",
+          "pay": 285000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429"
+        },
+        {
+          "name": "E.J Barthell",
+          "pay": 285000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429"
+        },
+        {
+          "name": "Donovan Raiola",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429"
+        },
+        {
+          "name": "Evan Cooper",
+          "pay": 670000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429"
+        },
+        {
+          "name": "Glenn Thomas",
+          "pay": 800000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429"
+        },
+        {
+          "name": "Marcus Satterfield",
+          "pay": 1400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429"
+        },
+        {
+          "name": "Ed Foley",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429"
+        },
+        {
+          "name": "Tony White",
+          "pay": 1600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3429"
+        }
+      ],
+      "pool": 6775000
+    },
+    "north-carolina": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412",
+      "assistants": [
+        {
+          "name": "Tim Monachino",
+          "pay": 618000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412"
+        },
+        {
+          "name": "Freddie Kitchens",
+          "pay": 622001,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412"
+        },
+        {
+          "name": "Jason Jones",
+          "pay": 482040,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412"
+        },
+        {
+          "name": "Charlton Warren",
+          "pay": 859236,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412"
+        },
+        {
+          "name": "Lonnie Galloway",
+          "pay": 640200,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412"
+        },
+        {
+          "name": "Geoff Collins",
+          "pay": 1133000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412"
+        },
+        {
+          "name": "Tommy Thigpen",
+          "pay": 640271,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412"
+        },
+        {
+          "name": "Randy Clements",
+          "pay": 674000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412"
+        },
+        {
+          "name": "Larry Porter",
+          "pay": 615110,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412"
+        },
+        {
+          "name": "Chip Lindsey",
+          "pay": 1090000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3412"
+        }
+      ],
+      "pool": 7373858
+    },
+    "northwestern": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438",
+      "assistants": [
+        {
+          "name": "Zach Lujan",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438"
+        },
+        {
+          "name": "Christian Smith",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438"
+        },
+        {
+          "name": "Armon Binns",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438"
+        },
+        {
+          "name": "Bill O'Boyle",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438"
+        },
+        {
+          "name": "Paul Creighton",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438"
+        },
+        {
+          "name": "D.J. Vokolek",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438"
+        },
+        {
+          "name": "LaMarcus Hicks",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438"
+        },
+        {
+          "name": "Chris Foster",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438"
+        },
+        {
+          "name": "Tim McGarigle",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438"
+        },
+        {
+          "name": "Harlon Barnett",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3438"
+        }
+      ],
+      "pool": null
+    },
+    "notre-dame": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509",
+      "assistants": [
+        {
+          "name": "Max Bullough",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509"
+        },
+        {
+          "name": "Marty Biagi",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509"
+        },
+        {
+          "name": "Mike Brown",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509"
+        },
+        {
+          "name": "Mike Mickens",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509"
+        },
+        {
+          "name": "Gino Guidugli",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509"
+        },
+        {
+          "name": "Al Washington",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509"
+        },
+        {
+          "name": "Deland McCullough",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509"
+        },
+        {
+          "name": "Mike Denbrock",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509"
+        },
+        {
+          "name": "Joe Rudolph",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509"
+        },
+        {
+          "name": "Al Golden",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3509"
+        }
+      ],
+      "pool": null
+    },
+    "ohio-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439",
+      "assistants": [
+        {
+          "name": "James Laurinaitis",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439"
+        },
+        {
+          "name": "Keenan Bailey",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439"
+        },
+        {
+          "name": "Tim Walton",
+          "pay": 1400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439"
+        },
+        {
+          "name": "Carlos Locklyn",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439"
+        },
+        {
+          "name": "Brian Hartline",
+          "pay": 1600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439"
+        },
+        {
+          "name": "Matt Guerrieri",
+          "pay": 425000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439"
+        },
+        {
+          "name": "Justin Frye",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439"
+        },
+        {
+          "name": "Larry Johnson",
+          "pay": 1400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439"
+        },
+        {
+          "name": "Jim Knowles",
+          "pay": 2200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439"
+        },
+        {
+          "name": "Chip Kelly",
+          "pay": 2000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3439"
+        }
+      ],
+      "pool": 11425000
+    },
+    "oklahoma": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430",
+      "assistants": [
+        {
+          "name": "Miguel Chavis",
+          "pay": 690000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430"
+        },
+        {
+          "name": "Jay Valai",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430"
+        },
+        {
+          "name": "Zac Alley",
+          "pay": 850000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430"
+        },
+        {
+          "name": "DeMarco Murray",
+          "pay": 575000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430"
+        },
+        {
+          "name": "Todd Bates",
+          "pay": 850000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430"
+        },
+        {
+          "name": "Emmett Jones",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430"
+        },
+        {
+          "name": "Joe Jon Finley",
+          "pay": 900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430"
+        },
+        {
+          "name": "Brandon Hall",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430"
+        },
+        {
+          "name": "Seth Littrell",
+          "pay": 1100000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430"
+        },
+        {
+          "name": "Bill Bedenbaugh",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3430"
+        }
+      ],
+      "pool": 7115000
+    },
+    "oklahoma-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431",
+      "assistants": [
+        {
+          "name": "Tim Duffie",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431"
+        },
+        {
+          "name": "Bryan Nardo",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431"
+        },
+        {
+          "name": "Dan Hammerschmidt",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431"
+        },
+        {
+          "name": "Jason McEndoo",
+          "pay": 475000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431"
+        },
+        {
+          "name": "Tim Rattay",
+          "pay": 475000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431"
+        },
+        {
+          "name": "John Wozniak",
+          "pay": 475000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431"
+        },
+        {
+          "name": "Paul Randolph",
+          "pay": 475000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431"
+        },
+        {
+          "name": "Kasey Dunn",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431"
+        },
+        {
+          "name": "Charlie Dickey",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431"
+        },
+        {
+          "name": "Joe Bob Clements",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3431"
+        }
+      ],
+      "pool": 6000000
+    },
+    "ole-miss": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482",
+      "assistants": [
+        {
+          "name": "Charlie Weis Jr.",
+          "pay": 1650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482"
+        },
+        {
+          "name": "Randall Joyner",
+          "pay": 725000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482"
+        },
+        {
+          "name": "Wes Neighbors",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482"
+        },
+        {
+          "name": "Jacob Schoonover",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482"
+        },
+        {
+          "name": "Kevin Smith",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482"
+        },
+        {
+          "name": "Joe Cox",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482"
+        },
+        {
+          "name": "Bryan Brown",
+          "pay": 750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482"
+        },
+        {
+          "name": "Pete Golding",
+          "pay": 2150000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482"
+        },
+        {
+          "name": "John Garrison",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482"
+        },
+        {
+          "name": "George McDonald",
+          "pay": 625000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3482"
+        }
+      ],
+      "pool": 8225000
+    },
+    "oregon": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465",
+      "assistants": [
+        {
+          "name": "Brian Michalowski",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465"
+        },
+        {
+          "name": "A'lique Terry",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465"
+        },
+        {
+          "name": "Will Stein",
+          "pay": 1400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465"
+        },
+        {
+          "name": "Ra'Shaad Samples",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465"
+        },
+        {
+          "name": "Chris Hampton",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465"
+        },
+        {
+          "name": "Drew Mehringer",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465"
+        },
+        {
+          "name": "Junior Adams",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465"
+        },
+        {
+          "name": "Joe Lorig",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465"
+        },
+        {
+          "name": "Tony Tuioti",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465"
+        },
+        {
+          "name": "Tosh Lupoi",
+          "pay": 1900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3465"
+        }
+      ],
+      "pool": 8225000
+    },
+    "penn-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440",
+      "assistants": [
+        {
+          "name": "Deion Barnes",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440"
+        },
+        {
+          "name": "Ty Howle",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440"
+        },
+        {
+          "name": "Phil Trautwein",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440"
+        },
+        {
+          "name": "Andy Kotelnicki",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440"
+        },
+        {
+          "name": "Terry Smith",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440"
+        },
+        {
+          "name": "Marques Hagans",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440"
+        },
+        {
+          "name": "Tom Allen",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440"
+        },
+        {
+          "name": "Justin Lustig",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440"
+        },
+        {
+          "name": "Ja'Juan Seider",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440"
+        },
+        {
+          "name": "Anthony Poindexter",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3440"
+        }
+      ],
+      "pool": null
+    },
+    "pittsburgh": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418",
+      "assistants": [
+        {
+          "name": "JJ Laster",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418"
+        },
+        {
+          "name": "Lamar Lindsey",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418"
+        },
+        {
+          "name": "Kade Bell",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418"
+        },
+        {
+          "name": "Jacob Bronowski",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418"
+        },
+        {
+          "name": "Ryan Manalac",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418"
+        },
+        {
+          "name": "Jeremy Darveau",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418"
+        },
+        {
+          "name": "Cory Sanders",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418"
+        },
+        {
+          "name": "Archie Collins",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418"
+        },
+        {
+          "name": "Tim Daoust",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418"
+        },
+        {
+          "name": "Randy Bates",
+          "pay": 937944,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3418"
+        }
+      ],
+      "pool": 937944
+    },
+    "purdue": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441",
+      "assistants": [
+        {
+          "name": "Grant O'Brien",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441"
+        },
+        {
+          "name": "Joe Dineen",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441"
+        },
+        {
+          "name": "Chris Petrilli",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441"
+        },
+        {
+          "name": "Sam Carter",
+          "pay": 430000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441"
+        },
+        {
+          "name": "Lamar Conard",
+          "pay": 260000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441"
+        },
+        {
+          "name": "Cory Patterson",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441"
+        },
+        {
+          "name": "Marcus Johnson",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441"
+        },
+        {
+          "name": "Graham Harrell",
+          "pay": 950000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441"
+        },
+        {
+          "name": "Brick Haley",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441"
+        },
+        {
+          "name": "Kevin Kane",
+          "pay": 850000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3441"
+        }
+      ],
+      "pool": 4965000
+    },
+    "rutgers": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419",
+      "assistants": [
+        {
+          "name": "Scott Vallone",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419"
+        },
+        {
+          "name": "Pat Flaherty",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419"
+        },
+        {
+          "name": "Damiere Shaw",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419"
+        },
+        {
+          "name": "Drew Lascari",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419"
+        },
+        {
+          "name": "Mark Orphey",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419"
+        },
+        {
+          "name": "Joe Harasymiak",
+          "pay": 1500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419"
+        },
+        {
+          "name": "Julian Campenni",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419"
+        },
+        {
+          "name": "Colin Ferrell",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419"
+        },
+        {
+          "name": "Dave Brock",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419"
+        },
+        {
+          "name": "Kirk Ciarrocca",
+          "pay": 1475000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3419"
+        }
+      ],
+      "pool": 5750000
+    },
+    "smu": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487",
+      "assistants": [
+        {
+          "name": "Sam Dunnam",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487"
+        },
+        {
+          "name": "D'Eriq King",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487"
+        },
+        {
+          "name": "Rickey Hunley Jr.",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487"
+        },
+        {
+          "name": "Kyle Cooper",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487"
+        },
+        {
+          "name": "Scott Symons",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487"
+        },
+        {
+          "name": "Maurice Crum",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487"
+        },
+        {
+          "name": "Garin Justice",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487"
+        },
+        {
+          "name": "Calvin Thibodeaux",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487"
+        },
+        {
+          "name": "Casey Woods",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487"
+        },
+        {
+          "name": "Rob Likens",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3487"
+        }
+      ],
+      "pool": null
+    },
+    "south-carolina": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475",
+      "assistants": [
+        {
+          "name": "Joe DeCamillis",
+          "pay": 800000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475"
+        },
+        {
+          "name": "Lonnie Teasley",
+          "pay": 410000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475"
+        },
+        {
+          "name": "Sterling Lucas",
+          "pay": 575000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475"
+        },
+        {
+          "name": "Dowell Loggains",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475"
+        },
+        {
+          "name": "Travian Robertson",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475"
+        },
+        {
+          "name": "Marquel Blackwell",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475"
+        },
+        {
+          "name": "Mike Furrey",
+          "pay": 425000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475"
+        },
+        {
+          "name": "Shawn Elliott",
+          "pay": 750000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475"
+        },
+        {
+          "name": "Clayton White",
+          "pay": 1200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475"
+        },
+        {
+          "name": "Torrian Gray",
+          "pay": 675000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3475"
+        }
+      ],
+      "pool": 6635000
+    },
+    "stanford": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468",
+      "assistants": [
+        {
+          "name": "Tyler Osborne",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468"
+        },
+        {
+          "name": "Viane Talamaivo",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468"
+        },
+        {
+          "name": "Al Netter",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468"
+        },
+        {
+          "name": "Mark D'Onofrio",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468"
+        },
+        {
+          "name": "Nate Byham",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468"
+        },
+        {
+          "name": "Malcom Agnew",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468"
+        },
+        {
+          "name": "Bobby April",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468"
+        },
+        {
+          "name": "Ross Kolodziej",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468"
+        },
+        {
+          "name": "Bob Gregory",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468"
+        },
+        {
+          "name": "Paul Williams",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3468"
+        }
+      ],
+      "pool": null
+    },
+    "syracuse": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420",
+      "assistants": [
+        {
+          "name": "Ross Douglas",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420"
+        },
+        {
+          "name": "Joe Schaefer",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420"
+        },
+        {
+          "name": "Nick Williams",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420"
+        },
+        {
+          "name": "Michael Johnson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420"
+        },
+        {
+          "name": "Robert Wright",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420"
+        },
+        {
+          "name": "Nunzio Campanile",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420"
+        },
+        {
+          "name": "James Vollono",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420"
+        },
+        {
+          "name": "Jeff Nixon",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420"
+        },
+        {
+          "name": "Dale Williams",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420"
+        },
+        {
+          "name": "Elijah Robinson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3420"
+        }
+      ],
+      "pool": null
+    },
+    "tcu": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490",
+      "assistants": [
+        {
+          "name": "JaMarkus McFarland",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490"
+        },
+        {
+          "name": "Doug Meacham",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490"
+        },
+        {
+          "name": "Malcolm Kelly",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490"
+        },
+        {
+          "name": "Jimmy Smith",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490"
+        },
+        {
+          "name": "Paul Gonzales",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490"
+        },
+        {
+          "name": "Andy Avalos",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490"
+        },
+        {
+          "name": "A.J. Ricker",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490"
+        },
+        {
+          "name": "Kendal Briles",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490"
+        },
+        {
+          "name": "Carlton Buckels",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490"
+        },
+        {
+          "name": "Ken Wilson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3490"
+        }
+      ],
+      "pool": null
+    },
+    "tennessee": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476",
+      "assistants": [
+        {
+          "name": "Alec Abeln",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476"
+        },
+        {
+          "name": "Rodney Garner",
+          "pay": 900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476"
+        },
+        {
+          "name": "Kelsey Pope",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476"
+        },
+        {
+          "name": "Joey Halzle",
+          "pay": 850000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476"
+        },
+        {
+          "name": "De'Rail Sims",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476"
+        },
+        {
+          "name": "Glen Elarbee",
+          "pay": 900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476"
+        },
+        {
+          "name": "Mike Ekeler",
+          "pay": 575000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476"
+        },
+        {
+          "name": "William Inge",
+          "pay": 720000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476"
+        },
+        {
+          "name": "Tim Banks",
+          "pay": 1500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476"
+        },
+        {
+          "name": "Willie Martinez",
+          "pay": 540000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3476"
+        }
+      ],
+      "pool": 7135000
+    },
+    "texas": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488",
+      "assistants": [
+        {
+          "name": "Johnny Nansen",
+          "pay": 900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488"
+        },
+        {
+          "name": "Chris Jackson",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488"
+        },
+        {
+          "name": "Kenny Baker",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488"
+        },
+        {
+          "name": "Tashard Choice",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488"
+        },
+        {
+          "name": "Blake Gideon",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488"
+        },
+        {
+          "name": "A.J. Milwee",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488"
+        },
+        {
+          "name": "Pete Kwiatkowski",
+          "pay": 1800000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488"
+        },
+        {
+          "name": "Terry Joseph",
+          "pay": 825000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488"
+        },
+        {
+          "name": "Jeff Banks",
+          "pay": 1150000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488"
+        },
+        {
+          "name": "Kyle Flood",
+          "pay": 1375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3488"
+        }
+      ],
+      "pool": 9100000
+    },
+    "texas-am": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489",
+      "assistants": [
+        {
+          "name": "Sean Spencer",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489"
+        },
+        {
+          "name": "Tony Jerod-Eddie",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489"
+        },
+        {
+          "name": "Ishmael Aristide",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489"
+        },
+        {
+          "name": "Collin Klein",
+          "pay": 1600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489"
+        },
+        {
+          "name": "Patrick Dougherty",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489"
+        },
+        {
+          "name": "Jordan Peterson",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489"
+        },
+        {
+          "name": "Holmon Wiggins",
+          "pay": 950000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489"
+        },
+        {
+          "name": "Jay Bateman",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489"
+        },
+        {
+          "name": "Adam Cushing",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489"
+        },
+        {
+          "name": "Trooper Taylor",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3489"
+        }
+      ],
+      "pool": 7200000
+    },
+    "texas-tech": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491",
+      "assistants": [
+        {
+          "name": "Clay McGuire",
+          "pay": 476190,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491"
+        },
+        {
+          "name": "Josh Cochran",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491"
+        },
+        {
+          "name": "Zach Kittley",
+          "pay": 850000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491"
+        },
+        {
+          "name": "Josh Bookbinder",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491"
+        },
+        {
+          "name": "Justin Johnson",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491"
+        },
+        {
+          "name": "C.J. Ah You",
+          "pay": 320000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491"
+        },
+        {
+          "name": "Kenny Perry",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491"
+        },
+        {
+          "name": "Zarnell Fitch",
+          "pay": 380000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491"
+        },
+        {
+          "name": "Marcel Yates",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491"
+        },
+        {
+          "name": "Tim DeRuyter",
+          "pay": 1050000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3491"
+        }
+      ],
+      "pool": 5301190
+    },
+    "ucf": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615",
+      "assistants": [
+        {
+          "name": "Trovon Reed",
+          "pay": 200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615"
+        },
+        {
+          "name": "Kam Martin",
+          "pay": 200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615"
+        },
+        {
+          "name": "Addison Williams",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615"
+        },
+        {
+          "name": "Kenny Martin",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615"
+        },
+        {
+          "name": "Brian Blackmon",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615"
+        },
+        {
+          "name": "Ted Roof",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615"
+        },
+        {
+          "name": "Tim Harris",
+          "pay": 525000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615"
+        },
+        {
+          "name": "Kenny Ingram",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615"
+        },
+        {
+          "name": "Herb Hand",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615"
+        },
+        {
+          "name": "Darin Hinshaw",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3615"
+        }
+      ],
+      "pool": 4000000
+    },
+    "ucla": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469",
+      "assistants": [
+        {
+          "name": "Tony (UCLA) Washington",
+          "pay": 320000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469"
+        },
+        {
+          "name": "Juan Castillo",
+          "pay": 605000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469"
+        },
+        {
+          "name": "Erik Frazier",
+          "pay": 310000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469"
+        },
+        {
+          "name": "Ted White",
+          "pay": 320000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469"
+        },
+        {
+          "name": "Kodi Whitfield",
+          "pay": 375000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469"
+        },
+        {
+          "name": "Marcus Thomas",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469"
+        },
+        {
+          "name": "Jerry Neuheisel",
+          "pay": 355000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469"
+        },
+        {
+          "name": "Ikaika Malloe",
+          "pay": 1000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469"
+        },
+        {
+          "name": "Eric Bieniemy",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469"
+        },
+        {
+          "name": "Brian Norwood",
+          "pay": 535000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3469"
+        }
+      ],
+      "pool": 4670000
+    },
+    "usc": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467",
+      "assistants": [
+        {
+          "name": "Dennis Simmons",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467"
+        },
+        {
+          "name": "Matthew Entz",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467"
+        },
+        {
+          "name": "D'Anton Lynn",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467"
+        },
+        {
+          "name": "Anthony Jones",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467"
+        },
+        {
+          "name": "Zach Hanson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467"
+        },
+        {
+          "name": "Doug Belk",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467"
+        },
+        {
+          "name": "Eric Henderson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467"
+        },
+        {
+          "name": "Luke Huard",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467"
+        },
+        {
+          "name": "Shaun Nua",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467"
+        },
+        {
+          "name": "Josh Henson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3467"
+        }
+      ],
+      "pool": null
+    },
+    "utah": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499",
+      "assistants": [
+        {
+          "name": "Quinton Ganther",
+          "pay": 325000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499"
+        },
+        {
+          "name": "Colton Swan",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499"
+        },
+        {
+          "name": "Luther Elliss",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499"
+        },
+        {
+          "name": "Fred Whittingham",
+          "pay": 525000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499"
+        },
+        {
+          "name": "Lewis Powell",
+          "pay": 600000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499"
+        },
+        {
+          "name": "Sharrieff Shah",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499"
+        },
+        {
+          "name": "Alvis Whitted",
+          "pay": 425000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499"
+        },
+        {
+          "name": "Morgan Scalley",
+          "pay": 2000000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499"
+        },
+        {
+          "name": "Jim Harding",
+          "pay": 850000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499"
+        },
+        {
+          "name": "Andy Ludwig",
+          "pay": 2050000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3499"
+        }
+      ],
+      "pool": 8275000
+    },
+    "vanderbilt": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477",
+      "assistants": [
+        {
+          "name": "Jamaal Richardson",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477"
+        },
+        {
+          "name": "Jeff LePak",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477"
+        },
+        {
+          "name": "Ghaali Muhammad-Lankford",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477"
+        },
+        {
+          "name": "Timothy Beck",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477"
+        },
+        {
+          "name": "Nick Lezynski",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477"
+        },
+        {
+          "name": "Jovan Haye",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477"
+        },
+        {
+          "name": "Larry Black",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477"
+        },
+        {
+          "name": "Melvin Rice",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477"
+        },
+        {
+          "name": "Alex Bailey",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477"
+        },
+        {
+          "name": "Chris Klenakis",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3477"
+        }
+      ],
+      "pool": null
+    },
+    "virginia": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414",
+      "assistants": [
+        {
+          "name": "Adam Mims",
+          "pay": 265000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414"
+        },
+        {
+          "name": "Chris Slade",
+          "pay": 310000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414"
+        },
+        {
+          "name": "Taylor Lamb",
+          "pay": 260000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414"
+        },
+        {
+          "name": "Terry Heffernan",
+          "pay": 430000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414"
+        },
+        {
+          "name": "Kevin Downing",
+          "pay": 345000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414"
+        },
+        {
+          "name": "Curome Cox",
+          "pay": 360000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414"
+        },
+        {
+          "name": "Mike Adams",
+          "pay": 345000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414"
+        },
+        {
+          "name": "Keith Gaither",
+          "pay": 360000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414"
+        },
+        {
+          "name": "John Rudzinski",
+          "pay": 900000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414"
+        },
+        {
+          "name": "Des Kitchings",
+          "pay": 925000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3414"
+        }
+      ],
+      "pool": 4500000
+    },
+    "virginia-tech": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422",
+      "assistants": [
+        {
+          "name": "Shawn Quinn",
+          "pay": 340000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422"
+        },
+        {
+          "name": "Pierson Prioleau",
+          "pay": 340000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422"
+        },
+        {
+          "name": "Elijah Brooks",
+          "pay": 365000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422"
+        },
+        {
+          "name": "Fontel Mines",
+          "pay": 550000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422"
+        },
+        {
+          "name": "Tyler Bowen",
+          "pay": 875000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422"
+        },
+        {
+          "name": "Chris Marve",
+          "pay": 875000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422"
+        },
+        {
+          "name": "J.C. Price",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422"
+        },
+        {
+          "name": "Stu Holt",
+          "pay": 525000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422"
+        },
+        {
+          "name": "Ron Crook",
+          "pay": 490000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422"
+        },
+        {
+          "name": "Derek Jones",
+          "pay": 575000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3422"
+        }
+      ],
+      "pool": 5435000
+    },
+    "wake-forest": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415",
+      "assistants": [
+        {
+          "name": "John Hunter",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415"
+        },
+        {
+          "name": "Warren Ruggiero",
+          "pay": 1110585,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415"
+        },
+        {
+          "name": "Glenn Spencer",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415"
+        },
+        {
+          "name": "Ari Confesor",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415"
+        },
+        {
+          "name": "James Adams",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415"
+        },
+        {
+          "name": "Wayne Lineburg",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415"
+        },
+        {
+          "name": "Nicholas Tabacca",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415"
+        },
+        {
+          "name": "Brad Lambert",
+          "pay": 839166,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415"
+        },
+        {
+          "name": "Chip West",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415"
+        },
+        {
+          "name": "Dave Cohen",
+          "pay": null,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3415"
+        }
+      ],
+      "pool": 1949751
+    },
+    "washington": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470",
+      "assistants": [
+        {
+          "name": "Jimmie Dougherty",
+          "pay": 850000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470"
+        },
+        {
+          "name": "Vinnie Sunseri",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470"
+        },
+        {
+          "name": "Steve Belichick",
+          "pay": 1200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470"
+        },
+        {
+          "name": "Robert Bala",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470"
+        },
+        {
+          "name": "Scottie Graham",
+          "pay": 475000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470"
+        },
+        {
+          "name": "Kevin Cummings",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470"
+        },
+        {
+          "name": "Jason Kaufusi",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470"
+        },
+        {
+          "name": "John E. Richardson",
+          "pay": 525000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470"
+        },
+        {
+          "name": "Jordan Paopao",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470"
+        },
+        {
+          "name": "Brennan Carroll",
+          "pay": 1300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3470"
+        }
+      ],
+      "pool": 7200000
+    },
+    "west-virginia": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423",
+      "assistants": [
+        {
+          "name": "Tyler Allen",
+          "pay": 200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423"
+        },
+        {
+          "name": "Blaine Stewart",
+          "pay": 225000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423"
+        },
+        {
+          "name": "Bilal Marshall",
+          "pay": 250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423"
+        },
+        {
+          "name": "Andrew Jackson",
+          "pay": 400000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423"
+        },
+        {
+          "name": "Victor Cabral",
+          "pay": 200000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423"
+        },
+        {
+          "name": "Jordan Lesley",
+          "pay": 775000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423"
+        },
+        {
+          "name": "ShaDon Brown",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423"
+        },
+        {
+          "name": "Jeff Koonz",
+          "pay": 450000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423"
+        },
+        {
+          "name": "Chad Scott",
+          "pay": 700000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423"
+        },
+        {
+          "name": "Matt Moore",
+          "pay": 525000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3423"
+        }
+      ],
+      "pool": 4225000
+    },
+    "wisconsin": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442",
+      "assistants": [
+        {
+          "name": "Devon Spalding",
+          "pay": 300000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442"
+        },
+        {
+          "name": "Nate Letton",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442"
+        },
+        {
+          "name": "E.J. Whitlow",
+          "pay": 275000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442"
+        },
+        {
+          "name": "Phil Longo",
+          "pay": 1250000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442"
+        },
+        {
+          "name": "Kenny Guiton",
+          "pay": 425000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442"
+        },
+        {
+          "name": "AJ Blazek",
+          "pay": 650000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442"
+        },
+        {
+          "name": "Matthew Mitchell",
+          "pay": 350000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442"
+        },
+        {
+          "name": "Alex Grinch",
+          "pay": 500000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442"
+        },
+        {
+          "name": "Mike Tressel",
+          "pay": 800000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442"
+        },
+        {
+          "name": "Paul Haynes",
+          "pay": 475000,
+          "asOf": "2024-12-18",
+          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant/team/3442"
+        }
+      ],
+      "pool": 5375000
+    }
+  }
+}

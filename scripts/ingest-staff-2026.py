@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Replace 2026 on-field football assistants from official-directory JSON.
 
-Pay stays null unless the desk already has a cited dollar for that person.
-AD is not a football assistant. FSU 2024 Fuller/Atkins stay on 2024 only.
+Writes official-directory names onto current `staff` and staffByYear.2026 only.
+Never writes 2025. Never reuses a USA TODAY 2024 (asOf 2024-12-18) dollar or
+staff-total pool — those live on staffByYear.2024. Pay stays pending unless a
+cited 2026 dollar already sits on that 2026 person.
 """
 from __future__ import annotations
 
@@ -23,8 +25,10 @@ PENDING = {
     "source": None,
     "url": None,
     "asOf": None,
-    "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant.",
+    "notes": "Official 2026 on-field directory. No cited 2026 dollar on the desk for this assistant.",
 }
+
+USAT_ASOF_2024 = "2024-12-18"
 
 
 def norm(name: str) -> str:
@@ -32,12 +36,26 @@ def norm(name: str) -> str:
     return " ".join(s.split())
 
 
-def pay_index(assistants: list) -> dict:
+def is_usat_2024_pay(pay: dict | None) -> bool:
+    if not isinstance(pay, dict) or pay.get("value") is None:
+        return False
+    if pay.get("asOf") == USAT_ASOF_2024:
+        return True
+    src = (pay.get("source") or "").lower()
+    notes = (pay.get("notes") or "").lower()
+    return "football assistant salary database" in src or "2024 contract-year" in notes
+
+
+def pay_index_current_year_only(assistants: list) -> dict:
+    """Keep only a cited non-2024 dollar already on this 2026 person."""
     out = {}
     for a in assistants or []:
-        val = (a.get("pay") or {}).get("value")
-        if val is not None:
-            out[norm(a.get("name"))] = a["pay"]
+        pay = a.get("pay") or {}
+        if pay.get("value") is None:
+            continue
+        if is_usat_2024_pay(pay):
+            continue
+        out[norm(a.get("name"))] = a["pay"]
     return out
 
 
@@ -52,10 +70,13 @@ def pending_pay(url: str | None) -> dict:
 
 def apply_school(school: dict, payload: dict) -> None:
     url = payload.get("url")
-    existing = pay_index(school.get("staff", {}).get("assistants"))
-    for row in (school.get("staffByYear") or {}).values():
-        existing.update(pay_index((row or {}).get("assistants")))
-    # 2024 FSU Fuller/Atkins dollars stay on 2024; we only reuse a dollar if this person is still on the 2026 list.
+    # Only reuse a dollar already cited on the 2026 directory itself.
+    # Do not walk staffByYear.2024 (or any other year) — that is how 2024
+    # USA TODAY cells were silently reattached to 2026 names.
+    existing = pay_index_current_year_only((school.get("staff") or {}).get("assistants"))
+    existing.update(
+        pay_index_current_year_only(((school.get("staffByYear") or {}).get("2026") or {}).get("assistants"))
+    )
     assistants = []
     for row in payload.get("assistants") or []:
         name, role = row["name"], row["role"]
@@ -64,9 +85,17 @@ def apply_school(school: dict, payload: dict) -> None:
 
     staff = school.setdefault("staff", {})
     staff["assistants"] = assistants
+    if staff.get("footballAssistantPool") and (
+        (staff["footballAssistantPool"].get("asOf") == USAT_ASOF_2024)
+        or "assistant salary database" in (staff["footballAssistantPool"].get("source") or "").lower()
+    ):
+        del staff["footballAssistantPool"]
     if url:
-        extra = f"2026 on-field staff from the official directory ({url}). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
-        staff["notes"] = extra
+        staff["notes"] = (
+            f"Official 2026 on-field directory ({url}). "
+            "Assistant pay is pending unless a cited 2026 dollar exists. "
+            "USA TODAY Dec 18, 2024 assistant dollars and staff-total pools sit on 2024 only."
+        )
 
     ad_name = payload.get("ad")
     if ad_name:
@@ -81,19 +110,22 @@ def apply_school(school: dict, payload: dict) -> None:
             ad_out["notes"] = ad_out.get("notes") or "Name from the official directory. No cited AD dollar on the desk."
         staff["athleticDirector"] = ad_out
 
-    # 2025/2026 get this directory. 2024 year keys (FSU Fuller/Atkins) stay put.
+    # 2026 only. A 2024 year key (FSU Fuller/Atkins, USA TODAY names) stays put.
+    # Never write 2025 — a missing 2025 key is an honest empty, not a 2026 clone.
     by = school.setdefault("staffByYear", {})
-    for y in ("2025", "2026"):
-        year_staff = deepcopy(by.get(y) or staff)
-        year_staff["assistants"] = deepcopy(assistants)
-        if url:
-            year_staff["notes"] = (
-                f"Official 2026 on-field directory ({url}). "
-                "2024 USA TODAY assistants (FSU Fuller / Atkins) stay on 2024 only."
-            )
-        if ad_name:
-            year_staff["athleticDirector"] = deepcopy(staff["athleticDirector"])
-        by[y] = year_staff
+    year_staff = deepcopy(by.get("2026") or staff)
+    year_staff["assistants"] = deepcopy(assistants)
+    if year_staff.get("footballAssistantPool") and (
+        (year_staff["footballAssistantPool"].get("asOf") == USAT_ASOF_2024)
+        or "assistant salary database" in (year_staff["footballAssistantPool"].get("source") or "").lower()
+    ):
+        del year_staff["footballAssistantPool"]
+    if url:
+        year_staff["notes"] = staff["notes"]
+    if ad_name:
+        year_staff["athleticDirector"] = deepcopy(staff["athleticDirector"])
+    by["2026"] = year_staff
+    school["staff"] = deepcopy(year_staff)
 
 
 def main() -> None:

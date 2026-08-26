@@ -24,3 +24,8 @@ Named ESPN rosters get a modeled share whenever a school midpoint exists
 (including 2021–24). A missing year file stays empty; booked NIL stays official.
 
 Data: `public/data/schools.json`, `public/data/rosters-YYYY.json`.
+
+Football assistant pay is year-keyed (`staffByYear`). USA TODAY team pages
+(as of Dec 18, 2024) fill 2021–2024 names and Total Pay. 2026 is the official
+directory (names; pay pending). 2025 is empty unless a distinct tape exists.
+Refresh tapes with `python3 scripts/fetch-usat-assistants.py`.

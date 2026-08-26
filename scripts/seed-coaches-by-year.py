@@ -335,7 +335,7 @@ def main():
                 },
             },
         ],
-        "notes": "2025–26 coordinators from the official Seminoles.com football staff directory. 2024 USA TODAY assistants (Fuller / Atkins) stay on 2024 only.",
+        "notes": "Official 2026 Seminoles.com football staff directory. 2024 USA TODAY assistants (Fuller / Atkins) stay on 2024 only. Do not clone this list onto 2025.",
     }
 
     for s in data["schools"]:
@@ -355,7 +355,6 @@ def main():
             s["staff"] = fsu_staff_now
             s["staffByYear"] = {
                 "2024": fsu_staff_2024,
-                "2025": deepcopy(fsu_staff_now),
                 "2026": deepcopy(fsu_staff_now),
             }
         elif sid in priors:
