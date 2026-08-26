@@ -5,6 +5,7 @@
 
 import { CURRENT_SEASON } from './seasons.js'
 import { money, moneyExact, moneyRange, winsPerM } from './format.js'
+import { isPlayerHash, isPosHash } from './nilHistory.js'
 
 export const DEFAULT_TITLE = 'Public Cap — College Athletics Capacity Desk'
 export const SITE = 'thepubliccap.com'
@@ -20,6 +21,10 @@ export const SCHOOL_DRILLS = new Set([
   'nil',
   'nil-modeled',
 ])
+
+export function isSchoolDrill(key) {
+  return SCHOOL_DRILLS.has(key) || isPosHash(key) || isPlayerHash(key)
+}
 
 export const COMPARE_VIEWS = new Set([
   'capacity',
@@ -346,4 +351,91 @@ export function formatExact(n) {
 
 export function formatWins(n) {
   return winsPerM(n)
+}
+
+export function downloadNilHistoryPng({ school, season, title, subtitle, points, openLabel }) {
+  const w = 920
+  const top = 128
+  const chartH = 168
+  const extra = openLabel ? 28 : 0
+  const h = top + chartH + 72 + extra
+  const { canvas, ctx } = makeCanvas(w, h)
+  const fy = school.capacity?.fiscalYearPrimary
+  paintFrame(ctx, w, h, {
+    kicker: 'PUBLIC CAP',
+    title: title || school.name,
+    sub: [subtitle, seasonTag(season, fy)].filter(Boolean).join(' · '),
+    footer: `Public Cap  ·  ${SITE}  ·  modeled vs booked`,
+  })
+  const left = 56
+  const right = w - 36
+  const trackW = right - left
+  const baseY = top + chartH
+  const max = Math.max(1, ...points.map((p) => Math.max(p.high || 0, p.booked || 0, p.mid || 0)))
+  const n = points.length
+  const gap = n > 1 ? trackW / (n - 1) : 0
+  const xAt = (i) => left + i * gap
+  const yAt = (v) => baseY - ((v || 0) / max) * (chartH - 8)
+
+  ctx.strokeStyle = RULE
+  ctx.beginPath()
+  ctx.moveTo(left, baseY)
+  ctx.lineTo(right, baseY)
+  ctx.stroke()
+
+  const modeled = points
+    .map((p, i) => ({ p, i }))
+    .filter(({ p }) => p.mid != null)
+  if (modeled.length) {
+    ctx.beginPath()
+    modeled.forEach(({ p, i }, k) => {
+      const x = xAt(i)
+      if (k === 0) ctx.moveTo(x, yAt(p.high))
+      else ctx.lineTo(x, yAt(p.high))
+    })
+    for (let k = modeled.length - 1; k >= 0; k--) {
+      const { p, i } = modeled[k]
+      ctx.lineTo(xAt(i), yAt(p.low))
+    }
+    ctx.closePath()
+    ctx.fillStyle = 'rgba(110, 140, 160, 0.35)'
+    ctx.fill()
+
+    ctx.strokeStyle = SLATE
+    ctx.lineWidth = 2
+    ctx.beginPath()
+    modeled.forEach(({ p, i }, k) => {
+      const x = xAt(i)
+      if (k === 0) ctx.moveTo(x, yAt(p.mid))
+      else ctx.lineTo(x, yAt(p.mid))
+    })
+    ctx.stroke()
+    ctx.lineWidth = 1
+  }
+
+  points.forEach((p, i) => {
+    const x = xAt(i)
+    ctx.fillStyle = PAPER_DIM
+    ctx.font = `11px ${FONT}`
+    ctx.textAlign = 'center'
+    ctx.fillText(String(p.year), x, baseY + 18)
+    if (p.booked != null) {
+      ctx.fillStyle = GOLD
+      ctx.beginPath()
+      ctx.arc(x, yAt(p.booked), 4, 0, Math.PI * 2)
+      ctx.fill()
+    }
+  })
+  ctx.textAlign = 'left'
+  ctx.fillStyle = SLATE
+  ctx.font = `11px ${FONT}`
+  ctx.fillText('Modeled band', left, baseY + 40)
+  ctx.fillStyle = GOLD
+  ctx.fillText('Booked (when a school cell exists)', left + 120, baseY + 40)
+  if (openLabel) {
+    ctx.fillStyle = GOLD
+    ctx.font = `12px ${FONT}`
+    ctx.fillText(fitText(ctx, openLabel, w - 72), 36, h - 44)
+  }
+  downloadCanvas(canvas, pngName([school.shortName || school.id, slug(title || 'nil-history')], season))
 }

@@ -197,6 +197,7 @@ export default function App() {
               includeAlumni={includeAlumni}
               setIncludeAlumni={setIncludeAlumni}
               tape={tape?.items || []}
+              rawSchools={data.schools}
             />
           }
         />

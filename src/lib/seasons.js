@@ -415,16 +415,19 @@ export function staffForSeason(school, year) {
   return emptyStaffForSeason(year)
 }
 
-export function applySeason(school, year) {
+/** Season overlay for NIL / capacity math — no coach or staff clone. */
+export function applySeasonForNil(school, year) {
   const spec = SEASON_BY_YEAR[year] || SEASON_BY_YEAR[CURRENT_SEASON]
   const bookConference = school.conference
   const conference = conferenceInSeason(school, year)
   const out = {
-    ...school,
+    id: school.id,
     conference,
     _bookConference: bookConference,
     _season: spec,
     _seasonYear: spec.year,
+    private: school.private,
+    alumni: school.alumni,
   }
 
   if (spec.capacityMode === 'conference-floor') {
@@ -482,11 +485,17 @@ export function applySeason(school, year) {
   }
   if (year !== 2025) delete nil.preCap
   out.nil = nil
-
-  out.coaches = coachesForSeason(school, year)
-  out.staff = staffForSeason(school, year)
-
   return out
+}
+
+export function applySeason(school, year) {
+  const out = applySeasonForNil(school, year)
+  return {
+    ...school,
+    ...out,
+    coaches: coachesForSeason(school, year),
+    staff: staffForSeason(school, year),
+  }
 }
 
 export function seasonLabel(year) {

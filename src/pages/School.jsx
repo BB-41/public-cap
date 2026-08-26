@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
 import { collectSources, hasVal } from '../lib/compute.js'
@@ -12,7 +12,9 @@ import { houseValueForSeason } from '../lib/seasons.js'
 import { EMPTY_TAPE, tapeForSchool } from '../lib/tape.js'
 import TapeItems from '../components/TapeItems.jsx'
 import TvContracts from '../components/TvContracts.jsx'
-import { DEFAULT_TITLE, SCHOOL_DRILLS, hashKey, homePath, schoolTitle } from '../lib/share.js'
+import { DEFAULT_TITLE, hashKey, homePath, isSchoolDrill, schoolTitle } from '../lib/share.js'
+import NamedRoster from '../components/NamedRoster.jsx'
+import { buildSchoolNilHistory, fetchRosterBooks } from '../lib/nilHistory.js'
 import AlumniToggle from '../components/AlumniToggle.jsx'
 import { ContractFiles } from '../components/ContractFiles.jsx'
 import { BuyoutRuleLine, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
@@ -349,14 +351,30 @@ function Field({ field, fallback = '—' }) {
   )
 }
 
-export default function School({ schools, meta, season, setSeason, includeAlumni, setIncludeAlumni, tape }) {
+export default function School({ schools, meta, season, setSeason, includeAlumni, setIncludeAlumni, tape, rawSchools }) {
   const { id } = useParams()
   const location = useLocation()
   const navigate = useNavigate()
   const didScroll = useRef(false)
+  const [rosterBooks, setRosterBooks] = useState(null)
   const s = schools.find((x) => x.id === id)
   const openRaw = hashKey(location.hash)
-  const open = SCHOOL_DRILLS.has(openRaw) ? openRaw : ''
+  const open = isSchoolDrill(openRaw) ? openRaw : ''
+
+  useEffect(() => {
+    let cancelled = false
+    fetchRosterBooks().then((books) => {
+      if (!cancelled) setRosterBooks(books)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const history = useMemo(() => {
+    if (!rawSchools || !rosterBooks || !id) return null
+    return buildSchoolNilHistory(rawSchools, meta, id, rosterBooks)
+  }, [rawSchools, meta, id, rosterBooks])
 
   useEffect(() => {
     const prev = document.title
@@ -593,67 +611,14 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
       </section>
       ) : null}
 
-      {s._named?.players?.length ? (
-        <section>
-          <h2 title={defTitle('rosterNamed')}>Roster {s._named.namesOnly ? null : <i className="dot modeled" />}</h2>
-          <p className="lede tight">
-            {s._named.namesOnly
-              ? `Public ${season} football names from the ESPN team roster. No modeled NIL share — this season has names but no school modeled midpoint.`
-              : s.nil.modeled?.era === 'collective'
-                ? `Public ${season} football names, each a modeled share of this school’s collective-era football slice (third-party × Opendorse year factor). Player cells are modeled, year-scaled, not a filing. Starters on a verified Wikipedia two-deep sit at the high end of the position band; backups at the low end; everyone else is the midpoint. Sorted by modeled high. Booked school NIL stays official — no named booked dollars unless a public file names the athlete.`
-                : `Public ${season} football names, each a modeled share of this school’s football slice of the 93% pot. Starters on a verified Wikipedia two-deep sit at the high end of the position band; backups at the low end; everyone else is the midpoint. Sorted by modeled high. Booked school NIL is unchanged.`}
-          </p>
-          <div className="table-scroll named-scroll">
-            <table className="roster named">
-              <thead>
-                <tr>
-                  <th>Player</th>
-                  <th>Pos</th>
-                  <th>Class</th>
-                  <th className="num">Modeled</th>
-                </tr>
-              </thead>
-              <tbody>
-                {s._named.players.map((p) => (
-                  <tr key={`${p.name}-${p.jersey}-${p.pos}`}>
-                    <td>
-                      {p.name}{' '}
-                      <i className={`dot ${p.confidence}`} title={p.note} />
-                    </td>
-                    <td>{p.pos || '—'}</td>
-                    <td>{p.className || p.class || '—'}</td>
-                    <td className="num modeled-cell">{p.low == null ? '—' : moneyRange(p.low, p.high)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="fine">
-            {s._named.notes}
-            {s._named.namesOnly ? '' : ` Player-mid sum ${money(s._named.sumMid)} of football slice ${money(s._named.cap)}${s._named.scale < 1 ? ` (scaled ×${s._named.scale.toFixed(2)} to stay inside the pot)` : ''}.`}
-            {s._named.depthMatched
-              ? ` ${s._named.depthMatched} names matched a ${s._named.wikiYear} Wikipedia two-deep.`
-              : (s._named.namesOnly ? '' : ' No verified two-deep for this school — every listed range is a position-band midpoint.')}
-          </p>
-          <p className="fine">
-            Roster source:{' '}
-            <a href={s._named.sourceUrl} target="_blank" rel="noreferrer">ESPN {season} football roster ↗</a>
-            {s._named.wikiUrl && (
-              <>
-                {' '}· Depth:{' '}
-                <a href={s._named.wikiUrl} target="_blank" rel="noreferrer">
-                  Wikipedia {s._named.wikiYear} team page ↗
-                </a>
-              </>
-            )}
-          </p>
-        </section>
-      ) : (
-        <section>
-          <h2>Roster</h2>
-          <p className="lede tight">No verified public football roster names on the desk for this school.</p>
-        </section>
-      )}
+      <NamedRoster
+        school={s}
+        season={season}
+        open={open}
+        onToggle={setOpen}
+        includeAlumni={includeAlumni}
+        history={history}
+      />
 
       <div className="two-col">
         <section>

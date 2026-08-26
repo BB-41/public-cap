@@ -432,6 +432,39 @@ export default function Methods({ meta }) {
         Wikipedia team page. No On3, Opendorse, NIL Go, Instagram, X, or TikTok.
       </p>
 
+      <h2>Position NIL history (modeled vs booked)</h2>
+      <p>
+        On a school page the named football roster is grouped by position. Click a
+        position (QB, RB, WR, and the rest) to open an in-page year graph across the
+        year-picker span (football 2021 through the current season). This is not a
+        new site section and not a marketplace valuation.
+      </p>
+      <p>
+        <em>Position history is the named roster players at that position for each
+        year, allocated from that year’s school modeled NIL — and from booked NIL
+        only when a FOIA / MFRS / 990 / counsel cell exists.</em>
+        Years without a named roster file on the desk (today: 2022 and 2025) use the
+        same position rate card already published above, labeled as a rate-card year.
+        A missing booked cell stays empty: we do not invent booked dollars, and we
+        do not draw a booked point. When a school booked cell does exist, the booked
+        series is that cell × this position’s modeled share of the school pot — an
+        allocated share of the filing, not a position ledger and not a named-athlete
+        contract. Louisville and Kentucky (and any later school filing) keep their
+        booked cells official; the model never overwrites them.
+      </p>
+      <p>
+        Clicking a named player opens that player’s own year series when the name
+        appears on more than one season roster. Player cells stay modeled. This desk
+        still has no named booked dollar on an athlete unless a public file names
+        them — none in v1 — so a player graph does not mint a booked series.
+        Share URLs can deep-link an open position chart (<code>#pos-qb</code>) or
+        player chart the same way the capacity-stack drills already share.
+      </p>
+      <p>
+        No On3, Opendorse, NIL Go, or social scrape. The graph is a second cut of
+        the school pot already on the desk, not extra money.
+      </p>
+
       <h2>Alumni: official line, then a modeled range</h2>
       <p>
         Official line = College Scorecard median earnings 10 years after entry (compiled
