@@ -51,10 +51,11 @@ export default function Methods({ meta }) {
         2021–24 use a labeled collective-era third-party-only backcast scaled by a
         published national market-size series. Booked NIL stays official and untouched:
         Louisville and Kentucky on 2025–26, plus Louisville’s cited FY2025 pre-cap
-        line on 2024. Empty booked cells stay pending. The year picker shows the chair of record
-        for that football season, not only the current hire. Coach pay on a year
-        prefers that year’s file; USA TODAY is fallback only when that file has no
-        dollar. We do not copy a new hire’s pay backward onto a prior chair.
+        line on 2024. Empty booked cells stay pending.         The year picker shows the chair of record
+        for that football season, not only the current hire — the 2021–2026 Wikipedia
+        season-page infobox tape is on the desk for all 68 schools. Coach pay on a year
+        prefers that year’s file; USA TODAY 2025 is attached only when that year cell
+        is on the tape. We do not copy a new hire’s pay backward onto a prior chair.
       </p>
       <p>
         Named football rosters are ESPN public JSON for each season (the live site
@@ -101,7 +102,7 @@ export default function Methods({ meta }) {
         <dt>Buyouts actually paid</dt>
         <dd>Money actually owed or settled after a firing — not the if-fired overhang on the current coach. Athletic contract census, USA TODAY, 990, FOIA.</dd>
         <dt>Staff pay</dt>
-        <dd>Cited public pay for the athletic director, other head coaches, and football assistants. USA TODAY assistant and WBB tables, school releases, 990s, or state payrolls. Empty means pending — we do not invent a title or a dollar.</dd>
+        <dd>Cited public pay for the athletic director, other head coaches, and football assistants. 2026 on-field football staff for ACC, SEC, Notre Dame, and Big 12 is the official athletics directory (names and roles; pay stays pending unless a cited dollar already existed). USA TODAY assistant and WBB tables, school releases, 990s, or state payrolls supply dollars. Empty means pending — we do not invent a title or a dollar. FSU 2024 Fuller / Atkins stay on 2024 only.</dd>
         <dt>Official alumni earnings vs modeled wealth</dt>
         <dd>Official line = College Scorecard median, 10 years after entry. It is not net worth. The second line is a modeled range (living-alumni proxy × earnings × 5–12× wealth-to-income). We do not invent a silent net-worth total.</dd>
         <dt>What backs this (earnings corroboration)</dt>
