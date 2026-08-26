@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import Logo from '../components/Logo.jsx'
-import { contractLinkLabel, money, moneyExact } from '../lib/format.js'
+import { ContractFiles } from '../components/ContractFiles.jsx'
+import { BuyoutRuleLine, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
+import { coachTermLabel, contractLinkLabel, money, moneyExact } from '../lib/format.js'
 import {
   DEFAULT_SCHOOL,
   DESK_TODAY,
@@ -158,6 +160,25 @@ export default function Buyout() {
                   {coach.contract.label && (
                     <div className="field-meta">{coach.contract.label}</div>
                   )}
+                  <ContractFiles files={coach.contract.files} />
+                </div>
+              )}
+              {!coach.contract?.url && <ContractFiles files={coach.contract?.files} />}
+              {school?.coaches?.football && (
+                <div className="buyout-comp">
+                  <div className="eyebrow">Annual pay</div>
+                  <CoachPayField pay={school.coaches.football.pay} />
+                  {coachTermLabel(school.coaches.football.term) && (
+                    <div className="field-notes">
+                      Term {coachTermLabel(school.coaches.football.term)}
+                      {school.coaches.football.term?.notes ? ` — ${school.coaches.football.term.notes}` : ''}
+                    </div>
+                  )}
+                  <BuyoutRuleLine
+                    buyout={school.coaches.football.buyout}
+                    fallback={coach.rule}
+                  />
+                  <IncentiveList items={school.coaches.football.pay?.incentives} />
                 </div>
               )}
             </div>
@@ -318,6 +339,8 @@ export default function Buyout() {
             <p>
               Public-school buyouts prefer the employment agreement, amendment, or board
               packet; articles are the fallback only when no current file is on the desk.
+              When we have more than the latest PDF — an original EA plus amendments —
+              the Contract files list shows every file on the desk. We do not invent a file.
               This is the contract schedule mapped onto remaining games, not a weekly
               renegotiation. For each upcoming kickoff we ask: if the school fires him
               without cause on the calendar day after that game, which cited step is in

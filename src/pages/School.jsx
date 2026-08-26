@@ -14,6 +14,8 @@ import TapeItems from '../components/TapeItems.jsx'
 import TvContracts from '../components/TvContracts.jsx'
 import { DEFAULT_TITLE, SCHOOL_DRILLS, hashKey, homePath, schoolTitle } from '../lib/share.js'
 import AlumniToggle from '../components/AlumniToggle.jsx'
+import { ContractFiles } from '../components/ContractFiles.jsx'
+import { BuyoutRuleLine, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -158,6 +160,7 @@ function StaffSection({ school }) {
         <p className="fine">No cited WBB / Olympic-sport head-coach pay on the desk for this school.</p>
       )}
       <h3 className="roster-hed">Football assistants</h3>
+      {staff.notes && <p className="fine">{staff.notes}</p>}
       {assts.length ? (
         <table className="roster staff-table">
           <thead>
@@ -461,7 +464,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         <h2 title={defTitle('nilModeled')}>NIL modeled range <i className="dot modeled" /></h2>
         <div className="range-box">
           <div>
-            <div className="eyebrow">Conference heuristic (not a filing)</div>
+            <div className="eyebrow">{s.nil.modeled.era === 'collective' ? 'Collective-era third-party (not a filing)' : 'Conference heuristic (not a filing)'}</div>
             <div className="display sm modeled-cell">{moneyRange(s.nil.modeled.low, s.nil.modeled.high)}</div>
           </div>
           <div>
@@ -480,8 +483,9 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
       <section>
         <h2 title={defTitle('nilModeled')}>NIL modeled range</h2>
         <p className="lede tight">
-          The current conference heuristic is only applied for 2025–26 and 2026–27.
-          Pre-House seasons stay pending rather than a fake precise collective-era model.
+          No modeled NIL range on the desk for this season. 2021–24 should show a
+          collective-era third-party-only model; 2025–26 and 2026–27 use the House-era
+          conference heuristic.
         </p>
       </section>
       )}
@@ -564,8 +568,10 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           <h2 title={defTitle('rosterNamed')}>Roster {s._named.namesOnly ? null : <i className="dot modeled" />}</h2>
           <p className="lede tight">
             {s._named.namesOnly
-              ? `Public ${season} football names from the ESPN team roster. No modeled NIL share in pre-House seasons.`
-              : `Public ${season} football names, each a modeled share of this school’s football slice of the 93% pot. Starters on a verified Wikipedia two-deep sit at the high end of the position band; backups at the low end; everyone else is the midpoint. Sorted by modeled high. Booked school NIL is unchanged.`}
+              ? `Public ${season} football names from the ESPN team roster. No modeled NIL share — this season has names but no school modeled midpoint.`
+              : s.nil.modeled?.era === 'collective'
+                ? `Public ${season} football names, each a modeled share of this school’s collective-era football slice (third-party × Opendorse year factor). Player cells are modeled, year-scaled, not a filing. Starters on a verified Wikipedia two-deep sit at the high end of the position band; backups at the low end; everyone else is the midpoint. Sorted by modeled high. Booked school NIL stays official — no named booked dollars unless a public file names the athlete.`
+                : `Public ${season} football names, each a modeled share of this school’s football slice of the 93% pot. Starters on a verified Wikipedia two-deep sit at the high end of the position band; backups at the low end; everyone else is the midpoint. Sorted by modeled high. Booked school NIL is unchanged.`}
           </p>
           <div className="table-scroll named-scroll">
             <table className="roster named">
@@ -624,12 +630,20 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           <h2>Football coach</h2>
           <div className="coach-name">{s.coaches.football.name}</div>
           <ContractLink url={s.coaches.football.contractUrl} label={s.coaches.football.term?.source} />
+          <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>
+          <CoachPayField pay={s.coaches.football.pay} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
           <TermBlock term={s.coaches.football.term} />
-          <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>
-          <Field field={s.coaches.football.pay} />
+          {s.coaches.football.buyout?.rule && (
+            <>
+              <div className="eyebrow" title={defTitle('buyout')}>Buyout rule</div>
+              <BuyoutRuleLine buyout={s.coaches.football.buyout} />
+            </>
+          )}
           <div className="eyebrow" title={defTitle('buyout')}>Buyout overhang (not yearly spend)</div>
           <Field field={s.coaches.football.buyout} />
+          <IncentiveList items={s.coaches.football.pay?.incentives} />
+          <ContractFiles files={s.coaches.football.contract?.files} />
         </section>
         <section>
           <h2>Men’s basketball coach</h2>
@@ -644,14 +658,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         </section>
       </div>
 
-      {spec?.coaches === 'pending' ? (
-        <section>
-          <h2 title={defTitle('staffPay')}>Athletics staff pay</h2>
-          <p className="lede tight">Prior-year staff pay not extracted. USA TODAY / 990 figures on the desk are the current cycle.</p>
-        </section>
-      ) : (
-        <StaffSection school={s} />
-      )}
+      <StaffSection school={s} />
 
       <Layers school={s} />
 

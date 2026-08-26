@@ -184,7 +184,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
       </div>
       <p className="fine">
         {house == null
-          ? 'No House cap (pre-settlement). Modeled NIL is hidden before 2025–26. Capacity for 2021–2024 is the conference-media floor (plus modeled extra alumni only when that toggle is on); tickets / sponsorships / contributions stay pending.'
+          ? 'No House cap (pre-settlement). Modeled NIL for 2021–2024 is a collective-era third-party-only backcast (labeled modeled) — no House rev-share. Capacity is the conference-media floor (plus modeled extra alumni only when that toggle is on); tickets / sponsorships / contributions stay pending.'
           : `House cap shown is ${season === 2026 ? '2026–27 (~$21.3M, estimated)' : '2025–26 ($20.5M, reported)'}. Capacity default is booked-only — the filing stack. Flip on + alumni model to add the Scorecard-based extra-alumni midpoint, net of booked gifts. Will move when Category 15 / tickets land.`}
         {' '}Click a school.
       </p>

@@ -15,7 +15,7 @@ export const DEFS = {
   },
   nilModeled: {
     label: 'NIL modeled',
-    text: 'Conference-heuristic range, not a filing: low is 70% of the nil-ncaa.com 2026–27 conference total-roster median, or 50% of the $20.5M House cap for phase-in / half-share members. High is min(1.25× median, House + conference third-party), then scaled by capacity quartile. Estimates. Not On3 / Opendorse / NIL Go. Does not replace booked NIL.',
+    text: 'Conference-heuristic range, not a filing. 2025–26 / 2026–27: House-era (rev-share + third-party) from the nil-ncaa.com table; low is 70% of the conference total or 50% of the $20.5M House cap for phase-in / half-share members. 2021–24: collective-era third-party only, scaled by the published national NIL market versus 2024–25. Estimates. Not an On3 / Opendorse / NIL Go player scrape. Does not replace booked NIL.',
   },
   nilCap: {
     label: 'NIL / capacity',
@@ -27,7 +27,7 @@ export const DEFS = {
   },
   coachPay: {
     label: 'Coach pay',
-    text: 'Annual pay from the USA TODAY Sports salary desk. This year’s check, not lifetime wealth.',
+    text: 'Annual pay for the chair of record in the selected football season. A current-chair file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. A new hire’s number is not copied onto a prior chair. This year’s check, not lifetime wealth. Incentives stay out of the annual cell.',
   },
   buyout: {
     label: 'Buyout overhang',
@@ -67,7 +67,7 @@ export const DEFS = {
   },
   rosterNamed: {
     label: 'Named roster (modeled)',
-    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a reported deal.',
+    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. 2025–26 / 2026–27 use the House-era school midpoint; 2021–24 use the collective-era year-scaled third-party midpoint. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a filing. Not an On3 / Opendorse player value. Not a reported deal.',
   },
   portal: {
     label: 'Transfer portal',
@@ -79,7 +79,7 @@ export const DEFS = {
   },
   subsidy: {
     label: 'Student fees + institutional subsidy',
-    text: 'Knight-Newhouse / NCAA MFRS allocated revenue: student fees and institutional or government support. This is where the check really came from. Reported when a school PDF or newsroom figure exists; $0 is printed only when a source says the department is self-funded. Empty means pending, not zero.',
+    text: 'Student fees are not tuition. They are a dedicated or allocated athletic fee (or a slice of a student activity fee) that athletics booked that year — an annual department total, NCAA MFRS line 3, already the receipt, not a rate to multiply. Institutional support is the university writing a check or booking indirect support. Government is the tax/state slice when a source splits it. Implied per-student is that booked total spread across the enrollment proxy, not a published fee schedule. $0 means the filing says self-funded or $0 on that line. Empty means pending.',
   },
   winsPerDollar: {
     label: 'Wins per dollar',

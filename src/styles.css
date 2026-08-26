@@ -271,8 +271,8 @@ table.rank thead th {
   border-radius: 8px;
   overflow: hidden;
   flex: 0 0 auto;
-  background: #1a1712;
-  box-shadow: inset 0 0 0 1px rgba(239,228,204,0.12);
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
 }
 .logo-wrap img {
   width: 100%;
@@ -282,7 +282,7 @@ table.rank thead th {
   display: block;
 }
 .logo-fb {
-  color: #efe4cc;
+  color: #100e0b;
   font-family: Arial, Helvetica, system-ui, sans-serif;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -311,6 +311,19 @@ table.rank thead th {
 }
 table.rank th .info-mark { margin-left: 4px; }
 .contract-link { display: inline-block; margin: 0 0 10px; }
+.contract-files { margin: 0 0 14px; }
+.contract-file-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+}
+.contract-file-list li {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0 0 4px;
+}
+.contract-file-list a { color: var(--gold); }
 .no-contract {
   display: inline-block;
   margin: 0 0 10px;
@@ -649,6 +662,22 @@ table.staff-table { max-width: 760px; margin: 8px 0 18px; }
   font-weight: 400;
   text-align: right;
 }
+.buyout-comp {
+  margin-top: 14px;
+  max-width: 520px;
+}
+.buyout-comp .field { margin-bottom: 10px; }
+.pay-year { font-size: 16px; color: var(--paper-dim); font-weight: 500; }
+.pay-breakdown {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--paper-dim);
+}
+.pay-breakdown li { margin-bottom: 4px; }
+.pay-schedule { margin-top: 10px; }
+.pay-table { font-size: 13px; }
+.buyout-rule { font-size: 14px; color: var(--paper); }
 
 table.rank th.rk,
 table.rank td.rk {

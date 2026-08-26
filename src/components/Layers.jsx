@@ -1,5 +1,6 @@
 import { money, moneyExact, winsPerM } from '../lib/format.js'
 import { defTitle } from '../lib/definitions.js'
+import { enrollmentHeadcount, impliedFeePerStudent, publishedFeeTimesEnrollment } from '../lib/layers.js'
 
 function Meta({ field }) {
   if (!field) return null
@@ -195,16 +196,25 @@ function ApparelSection({ layer }) {
   )
 }
 
-function SubsidySection({ layer }) {
-  const s = layer?.subsidy
+function SubsidySection({ school }) {
+  const s = school?.layers?.subsidy
   if (!s) return null
+  const enrollField = school.alumni?.undergradEnrollment
+  const n = enrollmentHeadcount(school)
+  const implied = impliedFeePerStudent(s.studentFees, n)
+  const published = publishedFeeTimesEnrollment(s.feeRate, n)
   return (
     <section>
       <h2 title={defTitle('subsidy')}>Student fees + institutional subsidy</h2>
       <p className="lede tight">
-        Knight-Newhouse / MFRS allocated revenue — student fees, institutional
-        support, government support. This is where the check really came from.
-        $0 is printed only when a source says the department is self-funded.
+        Student fees on this desk are the dollars athletics booked from student
+        fees in that fiscal year — usually a dedicated athletic fee, or a slice
+        of a student activity fee, assessed on top of tuition. Not tuition. Not
+        the whole bursar bill. Institutional support is the university writing
+        a check or booking indirect support. Government support is the tax or
+        state slice when a source splits it; Knight-Newhouse usually rolls that
+        into institutional/government. $0 means the filing says self-funded or
+        $0 on that line. Empty means pending.
       </p>
       <div className="short-stack">
         <div>
@@ -220,6 +230,16 @@ function SubsidySection({ layer }) {
           <MoneyField field={s.governmentSupport} />
         </div>
       </div>
+      {s.studentFees?.value != null && n != null && (
+        <p className="fine">
+          {s.studentFees.value === 0
+            ? 'The department booked $0 from student fees (self-funded on this line), so implied per-student is $0. We do not invent a fee.'
+            : `About ${moneyExact(Math.round(implied))} per undergrad per year — KN student-fee total ÷ enrollment proxy (${n.toLocaleString()}). This is not a published fee schedule; it is the department total spread across the student body.`}
+          {' '}
+          <span className="conf-label">estimated</span>
+          {enrollField?.confidence ? ` · enrollment ${enrollField.confidence}` : ''}
+        </p>
+      )}
       {s.feeRate && (
         <p className="fine">
           Published fee rate {moneyExact(s.feeRate.value)} {s.feeRate.unit}
@@ -229,6 +249,18 @@ function SubsidySection({ layer }) {
               {s.feeRate.source || 'source'} ↗
             </a>
           )}
+        </p>
+      )}
+      {published && (
+        <p className="fine">
+          {moneyExact(published.rate)} × {published.terms} {published.terms === 2 ? 'semesters' : 'year'} × {published.enrollment.toLocaleString()} undergrads ≈ {moneyExact(published.impliedAnnual)}{' '}
+          <span className="conf-label">estimated</span>.
+          This is the published athletic fee, not tuition. It is not the booked
+          KN student-fee total
+          {s.studentFees?.fiscalYear ? ` (${s.studentFees.fiscalYear} still used the prior fee)` : ''}
+          {s.studentFees?.notes?.includes('2025–26') || s.studentFees?.notes?.includes('2025-26')
+            ? ' — the $200 rate starts 2025–26 / FY2026.'
+            : '.'}
         </p>
       )}
       {s.notes && <p className="field-notes">{s.notes}</p>}
@@ -347,7 +379,7 @@ export default function Layers({ school }) {
     <>
       <PortalSection layer={layer} />
       <ApparelSection layer={layer} />
-      <SubsidySection layer={layer} />
+      <SubsidySection school={school} />
       <EfficiencySection school={school} />
       <BuyoutsPaidSection layer={layer} />
     </>
