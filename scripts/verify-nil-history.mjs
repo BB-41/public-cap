@@ -154,8 +154,12 @@ if (!/That is an allocation, not a contract/.test(qbFoot.spread)) {
 if (!qbFoot.lines.some((l) => /FOIA/.test(l) && /2025/.test(l) && /courier-journal/.test(l))) {
   throw new Error(`QB footnote missing 2025 FOIA filing + URL: ${JSON.stringify(qbFoot.lines)}`)
 }
-if (!qbFoot.lines.some((l) => /2024/.test(l) && /MFRS|FOIA/.test(l))) {
-  throw new Error(`QB footnote missing 2024 booked filing: ${JSON.stringify(qbFoot.lines)}`)
+if (!qbFoot.lines.some((l) => /2024/.test(l) && /MFRS/.test(l) && /courier-journal/.test(l))) {
+  throw new Error(`QB footnote missing 2024 MFRS filing + URL: ${JSON.stringify(qbFoot.lines)}`)
+}
+const kyFoot = allocationFootnote({ points: ky.familySeries.qb, shareLabel: 'QB' })
+if (!kyFoot.lines.some((l) => /2025/.test(l) && /counsel/.test(l) && /courier-journal/.test(l))) {
+  throw new Error(`Kentucky footnote should name the 2025 counsel filing + URL: ${JSON.stringify(kyFoot.lines)}`)
 }
 if (!qbFoot.lines.some((l) => /labeled model/.test(l) && /conference heuristic/.test(l))) {
   throw new Error('QB footnote missing modeled-pot sentence')

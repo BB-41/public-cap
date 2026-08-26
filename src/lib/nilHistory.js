@@ -372,11 +372,16 @@ export function allocationSpreadLine(shareLabel) {
 }
 
 export function filingKind(field) {
-  const blob = `${field?.source || ''} ${field?.notes || ''} ${field?.window || ''}`
-  if (/FOIA|Public Records Act/i.test(blob)) return 'FOIA'
-  if (/MFRS|Institutional NIL|NCAA financial/i.test(blob)) return 'MFRS'
-  if (/\b990\b/i.test(blob)) return '990'
-  if (/counsel/i.test(blob)) return 'counsel'
+  const source = field?.source || ''
+  const notes = `${field?.notes || ''} ${field?.window || ''}`
+  if (/FOIA|Public Records Act/i.test(source)) return 'FOIA'
+  if (/counsel/i.test(source)) return 'counsel'
+  if (/MFRS|Institutional NIL|NCAA financial/i.test(source)) return 'MFRS'
+  if (/\b990\b/i.test(source)) return '990'
+  if (/counsel/i.test(notes)) return 'counsel'
+  if (/MFRS|Institutional NIL|NCAA financial/i.test(notes)) return 'MFRS'
+  if (/\b990\b/i.test(notes)) return '990'
+  if (/FOIA|Public Records Act/i.test(notes)) return 'FOIA'
   return 'public filing'
 }
 
