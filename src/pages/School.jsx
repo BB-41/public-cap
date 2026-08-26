@@ -631,8 +631,12 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           <CoachPayField pay={s.coaches.football.pay} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
           <TermBlock term={s.coaches.football.term} />
-          <div className="eyebrow" title={defTitle('buyout')}>Buyout rule</div>
-          <BuyoutRuleLine buyout={s.coaches.football.buyout} />
+          {s.coaches.football.buyout?.rule && (
+            <>
+              <div className="eyebrow" title={defTitle('buyout')}>Buyout rule</div>
+              <BuyoutRuleLine buyout={s.coaches.football.buyout} />
+            </>
+          )}
           <div className="eyebrow" title={defTitle('buyout')}>Buyout overhang (not yearly spend)</div>
           <Field field={s.coaches.football.buyout} />
           <IncentiveList items={s.coaches.football.pay?.incentives} />
