@@ -1,8 +1,8 @@
 {
   "meta": {
     "product": "Public Cap desk tape",
-    "asOf": "2026-08-25",
-    "itemCount": 54,
+    "asOf": "2026-08-26",
+    "itemCount": 55,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -820,6 +820,19 @@
         "url": "https://legal.uky.edu/sites/default/files/2023-01/2022.11%20Stoops%2C%20Mark%20Orig%20thru%20Amend%206%20%28fixed%29%201.30.23.pdf"
       },
       "field": "coaches.football.term"
+    },
+    {
+      "id": "auburn-contract-golesh-2026-08-24",
+      "date": "2026-08-24",
+      "school": "auburn",
+      "schoolName": "Auburn",
+      "kind": "contract",
+      "headline": "Montgomery Advertiser publishes Alex Golesh employment-agreement terms via records request: $6.75M (2026), 75% school-side remaining-pay rule, term through 2031.",
+      "figure": 6750000,
+      "confidence": "reported",
+      "source": "Montgomery Advertiser (Aug. 24, 2026), quoting Auburn employment agreement obtained via records request",
+      "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/",
+      "notes": "No PDF URL loaded on the desk. Article quotes the signed Aug. 11, 2026 EA (university + AACB LLC). School-side overhang dollar left pending \u2014 75% rule only."
     }
   ]
 }
