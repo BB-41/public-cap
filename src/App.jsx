@@ -8,7 +8,7 @@ import Tape from './pages/Tape.jsx'
 import Tv from './pages/Tv.jsx'
 import Buyout from './pages/Buyout.jsx'
 import { computeCapacity, confidenceRollup, parseAlumniParam, ratios } from './lib/compute.js'
-import { computeModeledNil } from './lib/nilModel.js'
+import { modeledNilForSeason } from './lib/nilModel.js'
 import { allocateNamedPlayers, namedRosterOnly, scaleRosterToModeled } from './lib/nilRoster.js'
 import {
   CURRENT_SEASON,
@@ -102,8 +102,8 @@ export default function App() {
     const capTotals = withCap.map((s) => s._cap.total)
     const book = rosterYear === season ? rosters : { schools: {} }
     return withCap.map((s) => {
-      const modeled = s._season.modeledNil && houseVal
-        ? computeModeledNil(s, s._cap.total, capTotals, houseVal)
+      const modeled = s._season.modeledNil
+        ? modeledNilForSeason(s, s._cap.total, capTotals, season, houseVal)
         : null
       const nil = { ...s.nil, modeled }
       const r = ratios({ ...s, nil }, data.meta, s._season.houseKey, includeAlumni)
@@ -222,8 +222,9 @@ export default function App() {
       </Routes>
       <footer className="site-foot">
         Capacity is annual, not lifetime. Current-coach buyouts are overhang; paid buyouts are a separate tape.
-        Booked NIL stays official. Modeled NIL is a conference heuristic from nil-ncaa.com
-        and is shown only for 2025–26 and 2026–27. We do not scrape On3, Opendorse, NIL Go, or social apps.
+        Booked NIL stays official. Modeled NIL is a conference heuristic: House-era
+        (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era
+        third-party-only backcast for 2021–24. We do not scrape On3, Opendorse, NIL Go, or social apps.
         Every figure carries a source, a date, and a confidence mark.
       </footer>
     </div>

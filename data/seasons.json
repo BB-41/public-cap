@@ -23,7 +23,7 @@
     "Latest school-level capacity extract is FY2025, shown on football 2025 and 2026 with that FY tag.",
     "Football 2021-2024 do not reuse FY2025 ticket/sponsorship/contribution dollars.",
     "House cap only 2025-26 (20.5M reported) and 2026-27 (~21.3M estimated).",
-    "Modeled NIL only 2025-26 and 2026-27.",
+    "Modeled NIL: House-era (rev-share + third-party) for 2025-26 and 2026-27; collective-era third-party-only backcast for 2021-24, labeled modeled.",
     "Rosters: data/rosters-YYYY.json from ESPN public JSON."
   ]
 }

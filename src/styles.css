@@ -271,8 +271,8 @@ table.rank thead th {
   border-radius: 8px;
   overflow: hidden;
   flex: 0 0 auto;
-  background: #1a1712;
-  box-shadow: inset 0 0 0 1px rgba(239,228,204,0.12);
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
 }
 .logo-wrap img {
   width: 100%;
@@ -282,7 +282,7 @@ table.rank thead th {
   display: block;
 }
 .logo-fb {
-  color: #efe4cc;
+  color: #100e0b;
   font-family: Arial, Helvetica, system-ui, sans-serif;
   font-weight: 500;
   letter-spacing: 0.04em;

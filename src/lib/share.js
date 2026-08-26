@@ -250,7 +250,7 @@ export function downloadStackPng({ school, season, cap, house, nil, houseLabel, 
           key: 'nil-modeled',
           display: moneyRange(school.nil.modeled.low, school.nil.modeled.high),
         }
-      : { label: 'NIL modeled', value: 0, key: 'nil-modeled', display: 'hidden (pre-House)' },
+      : { label: 'NIL modeled', value: 0, key: 'nil-modeled', display: 'pending' },
   ]
   const maxBar = Math.max(cap.total, house || 0, nil || 0, school.nil.modeled?.high || 0, 1)
   const w = 920

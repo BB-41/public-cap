@@ -275,7 +275,7 @@ export function allocateNamedPlayers(rosterEntry, modeled, bands) {
 }
 
 
-/** Public-roster names with no modeled dollar share (pre-House seasons). */
+/** Public-roster names with no modeled dollar share (no school modeled midpoint). */
 export function namedRosterOnly(rosterEntry) {
   const playersIn = rosterEntry?.players
   if (!playersIn?.length) return null
@@ -293,7 +293,7 @@ export function namedRosterOnly(rosterEntry) {
       low: null,
       high: null,
       confidence: 'reported',
-      note: 'Public ESPN roster name. No modeled NIL share — House-era heuristic is hidden before 2025–26.',
+      note: 'Public ESPN roster name. No modeled NIL share — this season has no school modeled midpoint.',
     }))
     .sort((a, b) => a.name.localeCompare(b.name))
   return {
@@ -307,6 +307,6 @@ export function namedRosterOnly(rosterEntry) {
     wikiYear: rosterEntry.wikiYear,
     season: rosterEntry.season,
     depthMatched: rosterEntry.depthMatched || 0,
-    notes: 'Names only. Modeled player shares are not applied in pre-House seasons.',
+    notes: 'Names only. Modeled player shares are not applied without a school modeled midpoint.',
   }
 }

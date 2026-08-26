@@ -241,7 +241,7 @@ export default function StackChart({
             label={<span title={defTitle('nilModeled')}>NIL modeled</span>}
             barClass="nil-modeled"
             width="0"
-            valueText={<span className="pending-cell">hidden (pre-House)</span>}
+            valueText={<span className="pending-cell">pending</span>}
             open={open}
             onToggle={onToggle}
           >
@@ -249,9 +249,9 @@ export default function StackChart({
               field={{
                 confidence: 'pending',
                 notes:
-                  'The current conference heuristic is only applied for 2025–26 and 2026–27. Pre-House seasons stay pending rather than a fake precise collective-era model.',
+                  'No modeled NIL range on the desk for this season. 2021–24 is a collective-era third-party-only model; 2025–26 and 2026–27 use the House-era conference heuristic.',
               }}
-              empty="Hidden (pre-House) — no modeled NIL range on the desk for this season."
+              empty="No modeled NIL range on the desk for this season."
             />
             <DrillClose onClose={() => onToggle(null)} />
           </Row>

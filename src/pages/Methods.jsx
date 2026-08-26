@@ -1,5 +1,13 @@
 import { money, moneyRange } from '../lib/format.js'
-import { CONFERENCE_NIL, HALF_SHARE_IDS, HOUSE_2025_26 } from '../lib/nilModel.js'
+import {
+  CONFERENCE_NIL,
+  HALF_SHARE_IDS,
+  HOUSE_2025_26,
+  NIL_MARKET_BASELINE,
+  NIL_MARKET_BY_SEASON,
+  NIL_MARKET_SOURCE,
+  nilYearFactor,
+} from '../lib/nilModel.js'
 import { FB_RATE_CARD, MBB_RATE_CARD, ROSTER_POOL_SHARE, rateCardForMethods } from '../lib/nilRoster.js'
 import { ConferenceStrip } from '../components/TvContracts.jsx'
 import { useTvBook } from '../lib/tv.js'
@@ -37,12 +45,14 @@ export default function Methods({ meta }) {
       <p>
         House cap exists only for 2025–26 ($20.5M, reported) and 2026–27 (~$21.3M,
         estimated). Earlier years read “no House cap (pre-settlement).” We do not
-        invent a pre-settlement cap. Modeled NIL (the nil-ncaa.com conference
-        heuristic) is applied only in those two House years; 2021–24 hide it rather
-        than mint a fake collective-era model. Booked NIL stays official: Louisville
-        and Kentucky on 2025–26, plus Louisville’s cited FY2025 pre-cap line on 2024.
-        Coach pay from the current USA TODAY tables sits on 2025 and 2026; prior
-        years are pending.
+        invent a pre-settlement cap. NIL ÷ House stays empty when there is no House
+        number. Modeled NIL is shown in every football season on the desk: 2025–26
+        and 2026–27 keep the House-era conference heuristic (rev-share + third-party);
+        2021–24 use a labeled collective-era third-party-only backcast scaled by a
+        published national market-size series. Booked NIL stays official and untouched:
+        Louisville and Kentucky on 2025–26, plus Louisville’s cited FY2025 pre-cap
+        line on 2024. Empty booked cells stay pending. Coach pay from the current
+        USA TODAY tables sits on 2025 and 2026; prior years are pending.
       </p>
       <p>
         Named football rosters are ESPN public JSON for each season (the live site
@@ -63,8 +73,10 @@ export default function Methods({ meta }) {
         <dt>Modeled NIL</dt>
         <dd>
           A conference-heuristic <em>range</em> for every school, including those with a filing, so you can compare the model to the books.
-          Built from the <a href="https://nil-ncaa.com/" target="_blank" rel="noreferrer">nil-ncaa.com</a> 2026–27 P4 roster-cost table
-          (school revenue share vs third-party NIL). Those numbers are estimates, not filings. The model never overwrites booked NIL.
+          2025–26 / 2026–27 use the <a href="https://nil-ncaa.com/" target="_blank" rel="noreferrer">nil-ncaa.com</a> 2026–27 P4 roster-cost table
+          (school revenue share vs third-party NIL). 2021–24 use only the third-party half of that table, scaled by a published national
+          NIL market total versus 2024–25 — tagged <strong>modeled</strong>, collective-era, no House rev-share. Those numbers are estimates,
+          not filings. The model never overwrites booked NIL.
         </dd>
         <dt>Coach pay vs buyout overhang</dt>
         <dd>Pay is an annual flow from the USA TODAY Sports salary desk. A buyout is overhang — a liability if the school fires without cause on the as-of date — not yearly spend. Private-school blanks stay blank.</dd>
@@ -153,7 +165,9 @@ export default function Methods({ meta }) {
       <p>
         Every Power program gets a modeled range so the rank list is not 66 blanks and two
         filings. The construct is documented here and tagged <strong>modeled</strong>. It is
-        not a scrape, not a player sum, and not a Texas $80M rumor.
+        not a scrape, not a player sum, and not a Texas $80M rumor. House-era and
+        collective-era years use different formulas; booked NIL and the House cap are
+        unchanged by either one.
       </p>
       <p>
         Institutional floor/center: most P4 models assume schools spend a large fraction of
@@ -198,7 +212,80 @@ export default function Methods({ meta }) {
       <p>
         Capacity quartile is the school’s annual public-cap stack versus the 68-school
         book: only the top quartile sits at the high end of the conference band. nil-ncaa.com
-        numbers are estimates, not filings. Cite them as such.
+        numbers are estimates, not filings. Cite them as such. This House-era formula is
+        what 2025 and 2026 still use — those two years were not rewritten when the
+        collective-era backcast was added.
+      </p>
+
+      <h2>Modeled NIL before House (2021–24, labeled modeled)</h2>
+      <p>
+        Football 2021–2024 now show a modeled range for all 68 schools. It is a
+        <em>collective-era third-party-only</em> backcast, tagged <strong>modeled</strong>.
+        We do not add the $15.6M / $20.5M House revenue-share into those years. Booked
+        NIL stays FOIA / MFRS / 990 only — empty stays pending. The House cap stays
+        blank (pre-settlement). NIL ÷ House stays empty when there is no House number.
+      </p>
+      <p>
+        The mature (2024–25) third-party median is the same nil-ncaa.com conference
+        row the House-era model uses — <code>conferenceNilBand(school.conference).thirdParty</code>,
+        including Notre Dame’s ACC × 1.08 premium. That median is then scaled by a
+        published national NIL market-size series versus the 2024–25 baseline of $1.67B
+        (Opendorse “NIL at 3,” recapped by Athletic Business). The year scalar is a
+        market total, not a player file. We still do not scrape On3, Opendorse, NIL Go,
+        social, or player valuations.
+      </p>
+      <table className="roster methods-table">
+        <thead>
+          <tr>
+            <th>Football season</th>
+            <th>Academic</th>
+            <th className="num">National NIL market</th>
+            <th className="num">Year factor</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            { year: 2021, academic: '2021–22' },
+            { year: 2022, academic: '2022–23' },
+            { year: 2023, academic: '2023–24' },
+            { year: 2024, academic: '2024–25 (baseline)' },
+          ].map((row) => (
+            <tr key={row.year}>
+              <td>{row.year}</td>
+              <td>{row.academic}</td>
+              <td className="num">
+                {NIL_MARKET_BY_SEASON[row.year] >= 1e9
+                  ? `$${(NIL_MARKET_BY_SEASON[row.year] / 1e9).toFixed(2)}B`
+                  : `$${(NIL_MARKET_BY_SEASON[row.year] / 1e6).toFixed(0)}M`}
+              </td>
+              <td className="num">{nilYearFactor(row.year).toFixed(3)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="fine">
+        yearFactor = market[season] / {money(NIL_MARKET_BASELINE)}. Sources:{' '}
+        <a href={NIL_MARKET_SOURCE.pdf} target="_blank" rel="noreferrer">Opendorse “NIL at 3” PDF ↗</a>
+        {' · '}
+        <a href={NIL_MARKET_SOURCE.recap} target="_blank" rel="noreferrer">Athletic Business recap ↗</a>
+      </p>
+      <blockquote>
+        median_y = conference third-party × yearFactor.
+        low = 0.70 × median_y (no $10.25M House half-share floor — that is a 2025+
+        institutional concept; the half-share / newcomer list does not punch a House
+        hole in a collective-era year).
+        high₀ = 1.25 × median_y.
+        high = median_y + (high₀ − median_y) × (capacity quartile / 4), using that
+        season’s conference-media-floor capacity totals.
+        mid = (low + high) / 2.
+      </blockquote>
+      <p>
+        Conference bucket: the desk already remaps 2021–23 membership (Texas and
+        Oklahoma in the Big 12; the Pac-12 ten; AAC newcomers; BYU independent). When
+        that remap exists, the model uses it. Otherwise it uses the school’s current
+        book conference. Pac-12, AAC, and plain Independent have no published
+        third-party median; <code>conferenceNilBand</code> inherits the ACC row (and
+        treats Independent like Notre Dame’s ACC × 1.08 lane). Estimates, not filings.
       </p>
 
       <h2>Position rate card (modeled)</h2>
@@ -464,7 +551,7 @@ export default function Methods({ meta }) {
 
       <h2>What we did not do</h2>
       <ul>
-        <li>No On3 / Opendorse / NIL Go scrape, and no Instagram / X / TikTok scrapers.</li>
+        <li>No On3 / Opendorse / NIL Go scrape, and no Instagram / X / TikTok scrapers. The 2021–24 year scalar is a published national market total from the Opendorse “NIL at 3” report / Athletic Business recap — not a player file.</li>
         <li>No Glassdoor or LinkedIn ingest — those sites are not a source for the earnings corroboration block.</li>
         <li>No invented source labels.</li>
         <li>No invented player names, and no invented <em>reported</em> deal dollar on a named player (modeled shares of the school pot are labeled modeled).</li>

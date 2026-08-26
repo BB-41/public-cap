@@ -15,7 +15,7 @@ export const DEFS = {
   },
   nilModeled: {
     label: 'NIL modeled',
-    text: 'Conference-heuristic range, not a filing: low is 70% of the nil-ncaa.com 2026–27 conference total-roster median, or 50% of the $20.5M House cap for phase-in / half-share members. High is min(1.25× median, House + conference third-party), then scaled by capacity quartile. Estimates. Not On3 / Opendorse / NIL Go. Does not replace booked NIL.',
+    text: 'Conference-heuristic range, not a filing. 2025–26 / 2026–27: House-era (rev-share + third-party) from the nil-ncaa.com table; low is 70% of the conference total or 50% of the $20.5M House cap for phase-in / half-share members. 2021–24: collective-era third-party only, scaled by the published national NIL market versus 2024–25. Estimates. Not an On3 / Opendorse / NIL Go player scrape. Does not replace booked NIL.',
   },
   nilCap: {
     label: 'NIL / capacity',

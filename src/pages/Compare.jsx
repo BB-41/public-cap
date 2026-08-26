@@ -181,7 +181,7 @@ function SchoolDrill({ school, metric, house, houseField, season, view, includeA
               range={moneyRange(school.nil.modeled.low, school.nil.modeled.high)}
             />
           ) : (
-            <p className="drill-notes">No modeled NIL range on the desk for this season.</p>
+            <p className="drill-notes">No modeled NIL range on the desk for this season. 2021–24 should show a collective-era third-party-only model.</p>
           )}
         </>
       ) : metric.key === 'nilModeled' ? (
@@ -192,7 +192,7 @@ function SchoolDrill({ school, metric, house, houseField, season, view, includeA
             range={moneyRange(school.nil.modeled.low, school.nil.modeled.high)}
           />
         ) : (
-          <p className="drill-notes">Hidden (pre-House) — no modeled NIL range on the desk.</p>
+          <p className="drill-notes">No modeled NIL range on the desk. 2021–24 is a collective-era third-party-only model, not a hidden cell.</p>
         )
       ) : metric.key === 'winsPerNil' || metric.key === 'winsPerCap' ? (
         <WinsDrill school={school} />

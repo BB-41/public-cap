@@ -41,7 +41,7 @@ export const SEASONS = [
     academic: '2024-25',
     houseKey: null,
     capacityMode: 'conference-floor',
-    modeledNil: false,
+    modeledNil: true,
     coaches: 'pending',
   },
   {
@@ -51,7 +51,7 @@ export const SEASONS = [
     academic: '2023-24',
     houseKey: null,
     capacityMode: 'conference-floor',
-    modeledNil: false,
+    modeledNil: true,
     coaches: 'pending',
   },
   {
@@ -61,7 +61,7 @@ export const SEASONS = [
     academic: '2022-23',
     houseKey: null,
     capacityMode: 'conference-floor',
-    modeledNil: false,
+    modeledNil: true,
     coaches: 'pending',
   },
   {
@@ -71,7 +71,7 @@ export const SEASONS = [
     academic: '2021-22',
     houseKey: null,
     capacityMode: 'conference-floor',
-    modeledNil: false,
+    modeledNil: true,
     coaches: 'pending',
   },
 ]
@@ -320,10 +320,12 @@ function emptyCoach() {
 
 export function applySeason(school, year) {
   const spec = SEASON_BY_YEAR[year] || SEASON_BY_YEAR[CURRENT_SEASON]
+  const bookConference = school.conference
   const conference = conferenceInSeason(school, year)
   const out = {
     ...school,
     conference,
+    _bookConference: bookConference,
     _season: spec,
     _seasonYear: spec.year,
   }

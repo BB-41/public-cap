@@ -18,5 +18,7 @@ Logos: public/logos/*.png (local files, not hotlinked).
 
 Football seasons 2021–2026 (NIL era; NCAA interim policy July 1, 2021).
 Keyed as football years, not athletic fiscal years. FY runs July–June.
+Modeled NIL: House-era (rev-share + third-party) for 2025–26 and 2026–27;
+collective-era third-party-only backcast for 2021–24, labeled modeled.
 
 Data: `public/data/schools.json`, `public/data/rosters-YYYY.json`.
