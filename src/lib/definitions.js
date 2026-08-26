@@ -67,7 +67,11 @@ export const DEFS = {
   },
   rosterNamed: {
     label: 'Named roster (modeled)',
-    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. 2025–26 / 2026–27 use the House-era school midpoint; 2021–24 use the collective-era year-scaled third-party midpoint. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a filing. Not an On3 / Opendorse player value. Not a reported deal.',
+    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is a booked school / collective cell when a FOIA / MFRS / 990 / counsel filing exists; otherwise the on-desk conference-heuristic modeled band. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a filing. Not an On3 / Opendorse player value.',
+  },
+  rosterHistory: {
+    label: 'Position NIL history',
+    text: 'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. Prefer the booked school / collective cell when one exists; else the on-desk modeled school band. A visible footnote under the graph names the filing or says the pot is a labeled model, then: we spread that pot across the named roster and summed this position. Not marketplace valuations.',
   },
   portal: {
     label: 'Transfer portal',

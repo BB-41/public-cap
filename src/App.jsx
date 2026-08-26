@@ -7,9 +7,10 @@ import Methods from './pages/Methods.jsx'
 import Tape from './pages/Tape.jsx'
 import Tv from './pages/Tv.jsx'
 import Buyout from './pages/Buyout.jsx'
-import { computeCapacity, confidenceRollup, parseAlumniParam, ratios } from './lib/compute.js'
+import { computeCapacity, confidenceRollup, hasVal, parseAlumniParam, ratios, val } from './lib/compute.js'
 import { modeledNilForSeason } from './lib/nilModel.js'
 import { allocateNamedPlayers, namedRosterOnly, scaleRosterToModeled } from './lib/nilRoster.js'
+import { schoolNilPot } from './lib/nilHistory.js'
 import {
   CURRENT_SEASON,
   applySeason,
@@ -107,9 +108,11 @@ export default function App() {
         : null
       const nil = { ...s.nil, modeled }
       const r = ratios({ ...s, nil }, data.meta, s._season.houseKey, includeAlumni)
-      const roster = modeled?.mid ? scaleRosterToModeled(modeled) : null
-      const named = modeled?.mid
-        ? allocateNamedPlayers(book?.schools?.[s.id], modeled, roster)
+      const bookedVal = hasVal(s.nil?.booked) ? val(s.nil.booked) : null
+      const pot = schoolNilPot(modeled, bookedVal)
+      const roster = pot?.mid ? scaleRosterToModeled(pot) : null
+      const named = pot?.mid
+        ? allocateNamedPlayers(book?.schools?.[s.id], pot, roster)
         : namedRosterOnly(book?.schools?.[s.id])
       const rawLayer = layers?.schools?.[s.id] || {}
       const layer = {
@@ -197,6 +200,7 @@ export default function App() {
               includeAlumni={includeAlumni}
               setIncludeAlumni={setIncludeAlumni}
               tape={tape?.items || []}
+              rawSchools={data.schools}
             />
           }
         />

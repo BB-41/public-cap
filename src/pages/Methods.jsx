@@ -432,6 +432,54 @@ export default function Methods({ meta }) {
         Wikipedia team page. No On3, Opendorse, NIL Go, Instagram, X, or TikTok.
       </p>
 
+      <h2>Position NIL history (modeled vs booked)</h2>
+      <p>
+        On a school page the named football roster is grouped by position. Click a
+        position (QB, RB, WR, and the rest) to open an in-page year graph across the
+        year-picker span (football 2021 through the current season). This is not a
+        new site section and not a marketplace valuation.
+      </p>
+      <p>
+        <em>Position dollars are an allocation of the school pot across that year’s
+        named roster, not reported player contracts.</em>
+        The pot is that year’s booked school / collective NIL when a FOIA / MFRS / 990 /
+        counsel cell exists (today: Louisville 2024 pre-cap and 2025, Kentucky 2025,
+        UCLA and Cal 2025, Texas 2024 pre-cap and 2025, Penn State and Oklahoma State
+        2024 pre-cap, and the cited FY2025 Item 44 $0 cells at Georgia, Tennessee,
+        Alabama, Oregon, Utah, and UNC). Else the pot is the already-on-desk school modeled band —
+        the conference heuristic, not a new national model. We spread that pot with
+        the existing named-player unit card and sum by position. No On3-style “QB
+        market” percentages. Years without a named roster file (today: 2022 and 2025)
+        use the same position rate card, labeled as a rate-card year. Every position
+        point or band is labeled <strong>modeled</strong> unless it is a real booked
+        player or school cell. A missing booked cell is not invented. Louisville and
+        Kentucky keep their booked cells official; the model never overwrites them.
+      </p>
+      <p>
+        A visible footnote sits under the position graph and next to the clicked
+        position or player dollar. It is not a hover tip. If that year’s pot is a
+        booked school or collective cell, the footnote names the filing
+        (FOIA / MFRS / 990 / counsel), the year, and the URL. If the pot is the
+        on-desk school model, the footnote says it is a labeled model (conference
+        heuristic scaled to the published national market), not a reported player
+        deal. Then: <em>We spread that school pot across the named roster for this
+        year and summed the QB (or whatever position) share. That is an allocation,
+        not a contract.</em> If a rare booked player cell exists, the footnote cites
+        that player source instead of the allocation sentence.
+      </p>
+      <p>
+        Clicking a named player opens that player’s own year series when the name
+        appears on more than one season roster. Player cells stay modeled. This desk
+        still has no named booked dollar on an athlete unless a public file names
+        them — none in v1 — so a player graph does not mint a booked series.
+        Share URLs can deep-link an open position chart (<code>#pos-qb</code>) or
+        player chart the same way the capacity-stack drills already share.
+      </p>
+      <p>
+        No On3, Opendorse, NIL Go, or social scrape. The graph is a second cut of
+        the school pot already on the desk, not extra money.
+      </p>
+
       <h2>Alumni: official line, then a modeled range</h2>
       <p>
         Official line = College Scorecard median earnings 10 years after entry (compiled

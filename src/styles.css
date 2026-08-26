@@ -366,6 +366,99 @@ table.roster tr.total td { color: var(--paper); font-weight: 600; border-top: 1p
 
 .named-scroll { max-height: 640px; margin-top: 10px; border-top: 1px solid var(--rule); }
 table.roster.named td { padding: 5px 8px; }
+table.roster.named td.pos-cell { padding: 0; border-bottom: 1px solid var(--rule); }
+.pos-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  cursor: pointer;
+  min-height: 44px;
+}
+.pos-row:hover,
+.pos-row:focus-visible,
+.pos-row.open {
+  background: var(--ink-2);
+  outline: none;
+}
+.pos-row:focus-visible { box-shadow: inset 0 0 0 1px var(--gold); }
+.pos-lab {
+  font-weight: 650;
+  letter-spacing: 0.04em;
+}
+.pos-hint {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.pos-val { font-family: Arial, Helvetica, system-ui, sans-serif; font-size: 12px; }
+.pos-drill { margin: 0 8px 12px; }
+.player-name {
+  color: var(--gold);
+  cursor: pointer;
+}
+.player-name:hover,
+.player-name:focus-visible { text-decoration: underline; outline: none; }
+.named-player-drill { margin-top: 12px; }
+.nil-hist { max-width: 720px; }
+.nil-hist-title {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 650;
+  margin: 2px 0 8px;
+}
+.nil-year-svg { width: 100%; height: auto; display: block; margin: 8px 0 4px; }
+.nil-year-grid { stroke: #2a261e; stroke-width: 1; }
+.nil-year-ylab,
+.nil-year-xlab {
+  fill: var(--muted);
+  font-size: 11px;
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+}
+.nil-year-band { fill: rgba(110, 140, 160, 0.28); }
+.nil-year-mid { stroke: var(--slate); stroke-width: 2; }
+.nil-year-booked { fill: var(--gold); }
+.nil-year-pot { fill: none; stroke: var(--gold); stroke-width: 2; }
+.nil-year-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  font-size: 12px;
+  color: var(--paper-dim);
+  margin: 4px 0 2px;
+}
+.nil-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.nil-swatch.modeled { background: var(--slate); }
+.nil-swatch.booked { background: var(--gold); }
+.nil-year-list .muted { color: var(--muted); }
+.nil-fn {
+  margin: 8px 0 10px;
+  padding: 8px 10px;
+  border-left: 2px solid var(--slate);
+  background: var(--ink-2);
+  color: var(--paper-dim);
+  font-size: 13px;
+  max-width: 46em;
+}
+.nil-fn p { margin: 0 0 6px; }
+.nil-fn p:last-child { margin-bottom: 0; }
+.nil-fn-spread { color: var(--paper); }
+.nil-fn-src { font-size: 13px; }
+.nil-fn-dollar { margin: 0 8px 10px; }
+.nil-fn-roster { margin: 8px 0 4px; }
+.player-fn-row td { padding: 0 0 8px; }
+@media (max-width: 640px) {
+  .pos-hint { display: none; }
+  .pos-row { grid-template-columns: 1fr auto; }
+}
 
 .backs-this {
   margin: 14px 0 0;
