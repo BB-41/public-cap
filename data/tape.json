@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-26",
-    "itemCount": 55,
+    "itemCount": 65,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,157 @@
     ]
   },
   "items": [
+    {
+      "id": "texas-booked-nil-ytd-2026-04-05",
+      "date": "2026-04-05",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "booked-nil",
+      "headline": "Texas Public Radio: UT-Austin disclosed $13.5 million in revenue-share payments from July 2025 through the end of March 2026. On-track ~$18M is a projection \u2014 left unbooked.",
+      "figure": 13500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Texas Public Radio / Houston Public Media",
+        "url": "https://www.tpr.org/economy-and-labor/2026-04-05/how-much-money-do-college-athletes-in-texas-make-public-universities-wont-say"
+      },
+      "field": "nil.booked"
+    },
+    {
+      "id": "penn-state-precap-nil-2026-02",
+      "date": "2026-02",
+      "school": "penn-state",
+      "schoolName": "Penn State",
+      "kind": "booked-nil",
+      "headline": "PennLive: Penn State FY2025 MFRS books $18,368,391 Institutional NIL Revenue Share (1 Jul 2024\u201330 Jun 2025), with published sport lines. Not House Year 1.",
+      "figure": 18368391,
+      "confidence": "reported",
+      "source": {
+        "label": "PennLive \u2014 Penn State FY2025 NIL breakdown",
+        "url": "https://www.pennlive.com/pennstatefootball/2026/02/penn-state-spent-184-million-in-nil-during-fiscal-year-2025-heres-the-breakdown.html"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "unc-precap-nil-2026-02-03",
+      "date": "2026-02-03",
+      "school": "north-carolina",
+      "schoolName": "North Carolina",
+      "kind": "booked-nil",
+      "headline": "UNC FY2025 NCAA Membership Financial Report books Item 44 Institutional NIL Revenue Share at $0. House Year 1 allocations stay unbooked.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "UNC FY2025 NCAA Membership Financial Report",
+        "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "oklahoma-state-precap-nil-2026-01-26",
+      "date": "2026-01-26",
+      "school": "oklahoma-state",
+      "schoolName": "Oklahoma State",
+      "kind": "booked-nil",
+      "headline": "The Oklahoman: OSU FY2025 NCAA report includes NIL compensation of \"just over $16 million\" for a portion of the year. Booked as $16 million \u2014 not $16,000,001.",
+      "figure": 16000000,
+      "figureNote": "just over",
+      "confidence": "estimated",
+      "source": {
+        "label": "The Oklahoman \u2014 OSU FY2025 finances",
+        "url": "https://www.oklahoman.com/story/sports/college/cowboys/2026/01/26/oklahoma-state-athletics-2025-fiscal-year-finances-revenue-osu-cowboys/88307484007/"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "texas-precap-nil-2026-01-23",
+      "date": "2026-01-23",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "booked-nil",
+      "headline": "Austin American-Statesman: Texas FY2025 NCAA report books $3.2 million in revenue sharing. School FY ended Aug 31, 2025 \u2014 only two months of House. The $18M cap plan is not booked.",
+      "figure": 3200000,
+      "confidence": "reported",
+      "source": {
+        "label": "Austin American-Statesman \u2014 Texas FY2025 NCAA report",
+        "url": "https://www.statesman.com/sports/college/longhorns/football/article/texas-longhorns-nil-revenue-sharing-21304634.php"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "utah-precap-nil-2026-01-21",
+      "date": "2026-01-21",
+      "school": "utah",
+      "schoolName": "Utah",
+      "kind": "booked-nil",
+      "headline": "Utah FY2025 NCAA Revenue and Expense Report books Item 44 Institutional NIL Revenue Share at $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Utah FY2025 NCAA Revenue and Expense Report",
+        "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "georgia-precap-nil-2026-01-15",
+      "date": "2026-01-15",
+      "school": "georgia",
+      "schoolName": "Georgia",
+      "kind": "booked-nil",
+      "headline": "UGA FY2025 NCAA financial report books Item 44 Institutional NIL Revenue Share at $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "UGA FY2025 NCAA financial report",
+        "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "tennessee-precap-nil-2026-01-15",
+      "date": "2026-01-15",
+      "school": "tennessee",
+      "schoolName": "Tennessee",
+      "kind": "booked-nil",
+      "headline": "Tennessee FY2025 NCAA AUP books Item 44 Institutional NIL Revenue Share at $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Tennessee FY2025 NCAA AUP",
+        "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "oregon-precap-nil-2026-01-13",
+      "date": "2026-01-13",
+      "school": "oregon",
+      "schoolName": "Oregon",
+      "kind": "booked-nil",
+      "headline": "Oregon FY2025 NCAA FRS books Item 44 Institutional NIL Revenue Share at $0. AUP: university told auditors there were no institutional NIL revenue-share expenses.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Oregon FY2025 NCAA FRS",
+        "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "alabama-precap-nil-2026-01",
+      "date": "2026-01",
+      "school": "alabama",
+      "schoolName": "Alabama",
+      "kind": "booked-nil",
+      "headline": "Alabama FY2025 NCAA financial report (published copy) books Item 44 Institutional NIL Revenue Share at $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Alabama FY2025 NCAA financial report (Scribd copy already on this desk)",
+        "url": "https://www.scribd.com/document/996414831/Alabama-s-2024-25-athletics-financial-report"
+      },
+      "field": "nil.preCap"
+    },
     {
       "id": "minnesota-contract-fleck-2026-02",
       "date": "2026-02",

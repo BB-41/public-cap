@@ -66,7 +66,7 @@
       "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions.",
       "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men\u2019s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school cells stay pending.",
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
-      "Most NIL bands are pending \u2014 booked cells are Louisville (FOIA $32.9M Mar 2025\u2013Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26). No On3 / Opendorse / NIL Go. Do not book a USC plan-to-distribute quote.",
+      "Most NIL bands are pending \u2014 booked House-window cells are Louisville (FOIA $32.9M Mar 2025\u2013Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (TPR: $13.5M House Year 1 YTD Jul 2025\u2013Mar 2026). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC Item 44 $0. Kentucky FY2025 $0 not booked \u2014 no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. No On3 / Opendorse / NIL Go. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
       "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
       "Coach contract PDFs linked only when a school, state, board, or newsroom host posted the actual file (HTTP 200). Public-school buyouts prefer that file; articles are fallback only when no current file is loaded. Stale hire packets are not treated as the current deal. Private-school blanks stay pending. No invented URLs.",
       "Coach contract terms (through-year / years remaining) are cited only from employment agreements, board packets, or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending. No On3.",
@@ -202,7 +202,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No booked FOIA / MFRS institutional NIL figure located for v1."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Alabama FY2025 NCAA financial report (published copy) \u2014 Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://www.scribd.com/document/996414831/Alabama-s-2024-25-athletics-financial-report",
+          "asOf": "2026-01",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total \u2014 that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -4558,7 +4567,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "FY2025 UGA MFRS Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). No Year-1 (2025-26) FOIA / counsel spent total located. Plan-to-spend-the-cap quotes are not booked."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "UGA FY2025 NCAA financial report \u2014 Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total \u2014 that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -13451,7 +13469,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No booked FOIA / MFRS institutional NIL figure located for v1."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Tennessee FY2025 NCAA AUP \u2014 Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total \u2014 that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -14605,12 +14632,22 @@
       },
       "nil": {
         "booked": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located for v1. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+          "value": 13500000,
+          "confidence": "reported",
+          "source": "Texas Public Radio / Houston Public Media \u2014 UT-Austin disclosed $13.5M revenue-share payments Jul 2025\u2013end Mar 2026",
+          "url": "https://www.tpr.org/economy-and-labor/2026-04-05/how-much-money-do-college-athletes-in-texas-make-public-universities-wont-say",
+          "asOf": "2026-04-05",
+          "window": "2025-07-01 to 2026-03",
+          "notes": "School disclosure of House Year 1 year-to-date spend. On-track ~$18M is a projection \u2014 not booked. Do not add the FY2025 $3.2M MFRS line below (Jul\u2013Aug 2025 overlaps this window). Do not book the $18M cap plan."
+        },
+        "preCap": {
+          "value": 3200000,
+          "confidence": "reported",
+          "source": "Austin American-Statesman \u2014 Texas FY2025 NCAA financial report: $3.2M revenue-sharing (year ended Aug 31, 2025)",
+          "url": "https://www.statesman.com/sports/college/longhorns/football/article/texas-longhorns-nil-revenue-sharing-21304634.php",
+          "asOf": "2026-01-23",
+          "fiscalYear": "FY2025",
+          "notes": "School FY ends Aug 31, so this MFRS line is only two months of House (Jul 1\u2013Aug 31, 2025). Not the $18M cap plan (Del Conte / Novak). Included in the House Year 1 YTD $13.5M above \u2014 not additional."
         }
       },
       "coaches": {
@@ -28610,7 +28647,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "FY2025 Oregon AUP: university told auditors there were no institutional NIL revenue-share expenses. No Year-1 (2025-26) FOIA / counsel spent total located. Plan-to-spend-the-cap quotes are not booked."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Oregon FY2025 NCAA FRS / AUP \u2014 Item 44 Institutional NIL Revenue Share $0 (university told auditors there were no institutional NIL revenue-share expenses)",
+          "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf",
+          "asOf": "2026-01-13",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total \u2014 that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -29861,7 +29907,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 18368391,
+          "confidence": "reported",
+          "source": "PennLive / Penn State on SI \u2014 FY2025 MFRS Item 44 Institutional NIL Revenue Share $18,368,391 (year ended Jun 30 2025)",
+          "url": "https://www.pennlive.com/pennstatefootball/2026/02/penn-state-spent-184-million-in-nil-during-fiscal-year-2025-heres-the-breakdown.html",
+          "asOf": "2026-02",
+          "fiscalYear": "FY2025",
+          "notes": "Published sport lines (MFRS Item 44): football $13,338,959; men's basketball $3,004,666; wrestling $1,449,766; baseball $300,000; women's basketball $110,000; men's hockey $95,000; men's lacrosse $50,000; women's volleyball $10,000; men's tennis $10,000. Some of this may be Happy Valley United money folded onto Item 44 \u2014 labeled reported MFRS; no invented collective / institutional split beyond those published sport lines. Not House Year 1 (rev-share starts Jul 1, 2025 / FY2026). Companion table: Penn State on SI (May 2, 2026)."
         }
       },
       "coaches": {
@@ -46582,7 +46637,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "WRAL May 2026: UNC disclosed program allocations ($13M football / $7M men's basketball / $250k women's basketball / $250k baseball). Allocation / budget, not a year-end FOIA spent ledger. Individual contracts withheld. Not booked."
+          "notes": "WRAL May 2026: UNC disclosed program allocations ($13M football / $7M men's basketball / $250k women's basketball / $250k baseball). Allocation / budget, not a year-end FOIA spent ledger. Individual contracts withheld. Not booked. FY2025 Item 44 $0 is on nil.preCap."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "UNC FY2025 NCAA Membership Financial Report \u2014 Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf",
+          "asOf": "2026-02-03",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total \u2014 that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -64920,7 +64984,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 16000000,
+          "confidence": "estimated",
+          "source": "The Oklahoman \u2014 OSU FY2025 NCAA financial report: NIL compensation of \"just over $16 million\" for a portion of FY2025",
+          "url": "https://www.oklahoman.com/story/sports/college/cowboys/2026/01/26/oklahoma-state-athletics-2025-fiscal-year-finances-revenue-osu-cowboys/88307484007/",
+          "asOf": "2026-01-26",
+          "fiscalYear": "FY2025",
+          "notes": "Story phrasing is \"just over $16 million.\" Booked as the $16 million the story names \u2014 not $16,000,001. NCAA report obtained by The Oklahoman; not a published ledger line. FY2025 (Jul 2024\u2013Jun 2025) is pre-House. OSU intent to meet the $20.5M cap going forward is a plan, not booked."
         }
       },
       "coaches": {
@@ -68806,7 +68879,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Utah FY2025 NCAA Revenue and Expense Report \u2014 Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf",
+          "asOf": "2026-01-21",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total \u2014 that cell stays pending unless separately booked."
         }
       },
       "coaches": {
