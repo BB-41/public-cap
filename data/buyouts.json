@@ -1,8 +1,8 @@
 {
   "meta": {
     "product": "Public Cap buyout tool",
-    "asOf": "2026-08-25",
-    "today": "2026-08-25",
+    "asOf": "2026-08-26",
+    "today": "2026-08-26",
     "scope": "Power 4 plus Notre Dame football head coaches, 2026 season",
     "notes": "Maps a cited contract step-down onto remaining 2026 games. Public-school buyouts prefer the employment agreement, amendment, or board packet; articles are the fallback only when no current file is on the desk. The buyout in force after a kickoff is the step that covers the next calendar day \u2014 not a renegotiation after each Saturday. We do not invent Saturday stairs or mint remaining-pay dollars from a bare percent clause. Paid buyouts (already-owed money after a firing) live on the tape/layers desk, not here.",
     "defaultSchool": "florida-state",
@@ -24,7 +24,8 @@
       "Iowa State Rogers employment agreement PDF (WHO-TV / HTV host)",
       "USA TODAY Sports football coach salary database (Oct. 8, 2025) for single overhangs when the file has no dollar calendar",
       "UF Sumrall payment details (Dec. 1, 2025, Gainesville Sun)",
-      "Wikipedia 2026 FBS team pages for current HCs and schedules"
+      "Wikipedia 2026 FBS team pages for current HCs and schedules",
+      "Montgomery Advertiser (Aug. 24, 2026) \u2014 Golesh employment agreement via records request (pay/buyout rule; no PDF URL on desk)"
     ]
   },
   "coaches": {
@@ -66,12 +67,74 @@
       "sport": "fb",
       "name": "Alex Golesh",
       "tape": "pending",
-      "termThrough": null,
+      "termThrough": "2031-12-31",
       "steps": [],
-      "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending \u2014 not a guessed staircase.",
-      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "rule": "If Auburn terminates without cause: 75% of remaining compensation, paid in equal monthly installments through the remainder of the term (through Dec. 31, 2031). No public current-dollar overhang / staircase is on this desk; we will not multiply 75% \u00d7 remaining years ourselves.",
+      "notes": "Prior-coach (Freeze) USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair. Current chair pay is from the Montgomery Advertiser story quoting the Aug. 11, 2026 employment agreement.",
       "mitigation": null,
-      "contract": null
+      "contract": {
+        "label": "Montgomery Advertiser \u2014 Golesh employment agreement via records request (Aug. 24, 2026)",
+        "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/"
+      },
+      "pay": {
+        "value": 6750000,
+        "year": 2026,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "Montgomery Advertiser (Aug. 24, 2026), quoting Auburn employment agreement obtained via records request",
+        "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/",
+        "asOf": "2026-08-24",
+        "notes": "Annual Total Compensation + LLC Compensation ($3.375M each) for AACB LLC, wholly owned by Golesh. Signed Aug. 11, 2026. No current-chair PDF URL on this desk \u2014 article quotes the employment agreement. Prior-coach (Freeze) USA TODAY cell is not reused.",
+        "breakdown": [
+          {
+            "label": "Total Compensation (university)",
+            "value": 3375000
+          },
+          {
+            "label": "LLC Compensation (AACB LLC)",
+            "value": 3375000
+          }
+        ],
+        "schedule": [
+          {
+            "period": "Nov 30, 2025 \u2013 Dec 31, 2026",
+            "value": 6750000
+          },
+          {
+            "period": "2027",
+            "value": 7000000
+          },
+          {
+            "period": "2028",
+            "value": 7250000
+          },
+          {
+            "period": "2029",
+            "value": 7500000
+          },
+          {
+            "period": "2030",
+            "value": 7750000
+          },
+          {
+            "period": "2031",
+            "value": 8000000
+          }
+        ],
+        "incentives": [
+          {
+            "label": "Regular-season win bonuses (cumulative steps)",
+            "notes": "Article: $1.5M / $2M / $1M / $1M at 9\u201312 wins. Not included in annual pay."
+          },
+          {
+            "label": "CFP / SEC / coach-of-year incentives",
+            "notes": "Article lists CFP ladder, SEC appearance/title, Top-25, SEC/National COTY. Not included in annual pay."
+          }
+        ],
+        "baseOnly": null
+      },
+      "buyoutRule": "75% of remaining compensation, paid monthly through term end (article quoting EA).",
+      "coachSide": "Coach-side LD if Golesh walks: $8M through Dec. 1, 2026; $6M through Dec. 1, 2027; $5M through Dec. 1, 2028; $3M through Dec. 1, 2030."
     },
     "florida": {
       "sport": "fb",
