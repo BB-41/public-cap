@@ -102,11 +102,13 @@ def build_year_staff(sid: str, row: dict, tape: dict, existing: dict | None) -> 
         ),
     }
     if row.get("pool") is not None:
+        row_asof = next((a.get("asOf") for a in (row.get("assistants") or []) if a.get("asOf")), tape["asOf"])
         staff["footballAssistantPool"] = usat_pool(row["pool"], tape)
         staff["footballAssistantPool"]["url"] = team_url
+        staff["footballAssistantPool"]["asOf"] = row_asof
         staff["footballAssistantPool"]["notes"] = (
-            f"Sum of numeric USA TODAY {year} Total Pay on the team page. "
-            f"Not a 2026 staff pool."
+            f"Sum of numeric USA TODAY {year} Total Pay on the team page "
+            f"(as of {row_asof}). Not a 2026 staff pool."
         )
     return staff
 

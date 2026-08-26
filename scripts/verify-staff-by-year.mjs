@@ -157,6 +157,10 @@ for (const year of [2021, 2022, 2023]) {
     if (row.pool != null) {
       ok(y.footballAssistantPool?.value === row.pool, `${s.id} ${year} pool is the USA TODAY numeric sum`)
       ok(y.footballAssistantPool?.value === sum, `${s.id} ${year} pool equals named-dollar sum`)
+      const rowAsOf = (row.assistants || []).find((a) => a.asOf)?.asOf
+      if (rowAsOf) {
+        ok(y.footballAssistantPool?.asOf === rowAsOf, `${s.id} ${year} pool asOf is the row timestamp`)
+      }
     } else {
       ok(!y.footballAssistantPool?.value, `${s.id} ${year} withheld school has no invented pool`)
     }

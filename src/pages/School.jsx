@@ -59,17 +59,21 @@ function StaffPayCell({ field }) {
   )
 }
 
-function staffLede(year) {
+function staffLede(year, staff) {
   if (year >= 2021 && year <= 2024) {
-    return `Football assistant dollars are the USA TODAY ${year} contract year (as of Dec 18, 2024), not a current 2026 salary. Named assistants are that year’s team-page table. Titles are not invented.`
+    const asOf =
+      staff?.footballAssistantPool?.asOf ||
+      staff?.assistants?.find((a) => a.pay?.asOf)?.pay?.asOf
+    const asOfBit = asOf ? ` (as of ${asOf})` : ''
+    return `Football assistant dollars are the USA TODAY ${year} contract year${asOfBit}, not a current 2026 salary. Named assistants are that year’s team-page table. Titles are not invented.`
   }
   if (year === 2025) {
     return 'No year-accurate 2025 football staff tape on the desk. We do not show the 2026 official directory or 2024 USA TODAY dollars as 2025.'
   }
   if (year === 2026) {
-    return 'Official 2026 athletics directory (names and roles). Assistant pay is pending unless a cited 2026 dollar exists. USA TODAY Dec 18, 2024 assistant pay lives on 2024.'
+    return 'Official 2026 athletics directory (names and roles). Assistant pay is pending unless a cited 2026 dollar exists. USA TODAY 2021–2024 assistant pay lives on those years only.'
   }
-  return `No year-accurate football staff tape on the desk for ${year}. 2021–2023 USA TODAY assistant tables are not ingested yet.`
+  return `No year-accurate football staff tape on the desk for ${year}.`
 }
 
 function staffEmptyAssistants(year) {
@@ -96,7 +100,7 @@ function StaffSection({ school, season }) {
   return (
     <section>
       <h2 title={defTitle('staffPay')}>Athletics staff pay</h2>
-      <p className="lede tight">{staffLede(year)}</p>
+      <p className="lede tight">{staffLede(year, staff)}</p>
       <div className="eyebrow">Athletic director</div>
       {ad?.pay?.value != null ? (
         <div className="field">
@@ -219,7 +223,7 @@ function StaffSection({ school, season }) {
           {year >= 2021 && year <= 2024 ? `${year} USA TODAY football assistant staff total` : 'Football assistant staff total'}{' '}
           {moneyExact(pool.value)}
           {' '}({pool.confidence}, as of {pool.asOf}
-          {pool.asOf === '2024-12-18' ? ' · 2024 contract year' : ''}).{' '}
+          {year >= 2021 && year <= 2024 ? ` · ${year} contract year` : ''}).{' '}
           <a className="ext" href={pool.url} target="_blank" rel="noreferrer">{pool.source} ↗</a>
           {pool.notes ? ` ${pool.notes}` : ''}
         </p>

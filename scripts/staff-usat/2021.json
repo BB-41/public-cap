@@ -1,6 +1,6 @@
 {
   "contractYear": 2021,
-  "asOf": "2024-12-18",
+  "asOf": "2021-12-09",
   "source": "USA TODAY Sports football assistant salary database",
   "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
   "notes": "USA TODAY 2021 contract year. Named assistants from each school team page (__NEXT_DATA__). Pay is Total Pay when numeric; withheld cells stay pending. Titles are not invented. Pool is the sum of that year's numeric Total Pay.",

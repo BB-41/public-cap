@@ -175,7 +175,7 @@ def main() -> None:
     by_year = {
         y: {
             "contractYear": y,
-            "asOf": "2024-12-18",
+            "asOf": {2021: "2021-12-09", 2022: "2022-12-08", 2023: "2023-11-16", 2024: "2024-12-18"}[y],
             "source": "USA TODAY Sports football assistant salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
             "notes": (
