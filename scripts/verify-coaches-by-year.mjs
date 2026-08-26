@@ -3,12 +3,41 @@ import { applySeason } from '../src/lib/seasons.js'
 
 const data = JSON.parse(readFileSync(new URL('../data/schools.json', import.meta.url), 'utf8'))
 const tape = JSON.parse(readFileSync(new URL('./hc-history.json', import.meta.url), 'utf8'))
+const coachUsat = {
+  2021: JSON.parse(readFileSync(new URL('./coach-usat/2021.json', import.meta.url), 'utf8')),
+  2022: JSON.parse(readFileSync(new URL('./coach-usat/2022.json', import.meta.url), 'utf8')),
+  2023: JSON.parse(readFileSync(new URL('./coach-usat/2023.json', import.meta.url), 'utf8')),
+  2024: JSON.parse(readFileSync(new URL('./coach-usat/2024.json', import.meta.url), 'utf8')),
+  2025: JSON.parse(readFileSync(new URL('./coach-usat/2025.json', import.meta.url), 'utf8')),
+}
 const staffTape = {
   ...JSON.parse(readFileSync(new URL('./staff-2026-acc-sec.json', import.meta.url), 'utf8')),
   ...JSON.parse(readFileSync(new URL('./staff-2026-b12.json', import.meta.url), 'utf8')),
   ...JSON.parse(readFileSync(new URL('./staff-2026-b1g.json', import.meta.url), 'utf8')),
 }
 const byId = Object.fromEntries(data.schools.map((s) => [s.id, s]))
+
+const NAME_ALIASES = { elidrinkwitz: 'eliahdrinkwitz' }
+function foldName(name) {
+  const s = String(name || '')
+    .toLowerCase()
+    .replace(/[^a-z]/g, '')
+  return NAME_ALIASES[s] || s
+}
+function samePerson(a, b) {
+  return Boolean(a) && Boolean(b) && foldName(a) === foldName(b)
+}
+function usatCoach(sid, year) {
+  const rows = coachUsat[year]?.schools?.[sid]?.coaches || []
+  const chair = byId[sid]?.coachesByYear?.[year]?.football?.name
+  return rows.find((c) => samePerson(chair, c.name)) || null
+}
+function isUsaToday(pay) {
+  return String(pay?.source || '').toUpperCase().includes('USA TODAY')
+}
+function isProtectedDollar(pay) {
+  return pay?.value != null && !isUsaToday(pay)
+}
 
 function chair(id, year) {
   return applySeason(byId[id], year).coaches.football
@@ -45,11 +74,11 @@ for (const [sid, years] of Object.entries(tape)) {
         (fb.pay?.source || '').includes('USA TODAY'),
         `${sid} ${year} pay source is USA TODAY`
       )
-    } else {
-      const src = fb.pay?.source || ''
+    } else if (fb.pay?.value != null && isUsaToday(fb.pay)) {
+      const pinned = usatCoach(sid, year)
       ok(
-        fb.pay?.value == null || !src.includes('USA TODAY'),
-        `${sid} ${year} has no copied USA TODAY cell`
+        pinned?.pay === fb.pay.value && String(fb.pay.source || '').includes(String(year)),
+        `${sid} ${year} USA TODAY cell is year-pinned, not copied`
       )
     }
     ok(
@@ -63,16 +92,25 @@ const lsu21 = chair('lsu', 2021)
 const lsu24 = chair('lsu', 2024)
 const lsu25 = chair('lsu', 2025)
 const lsu26 = chair('lsu', 2026)
-ok(lsu21.name === 'Ed Orgeron' && lsu21.pay.value == null, 'LSU 2021 Orgeron, no invented pay')
-ok(lsu24.name === 'Brian Kelly' && lsu24.pay.value == null, 'LSU 2024 Kelly — name only, no copied 2025 cell')
+ok(lsu21.name === 'Ed Orgeron' && lsu21.pay.value === 9_012_917, 'LSU 2021 Orgeron USA TODAY 2021 $9,012,917')
+ok((lsu21.pay?.source || '').includes('USA TODAY 2021'), 'LSU 2021 source is year-pinned')
+ok(lsu24.name === 'Brian Kelly' && lsu24.pay.value === 9_975_000, 'LSU 2024 Kelly USA TODAY 2024 $9,975,000')
+ok((lsu24.pay?.source || '').includes('USA TODAY 2024'), 'LSU 2024 source is year-pinned')
+ok(lsu24.pay.value !== 10_175_000, 'LSU 2024 is not the 2025 Kelly cell')
 ok(lsu25.name === 'Brian Kelly' && lsu25.pay.value === 10_175_000, 'LSU 2025 Kelly USA TODAY $10.175M')
 ok(lsu26.name === 'Lane Kiffin' && lsu26.pay.value === 13_000_000, 'LSU 2026 Kiffin PDF $13M')
 ok(lsu24.pay.value !== 13_000_000, 'Kiffin $13M is not on 2024')
+ok((lsu26.pay?.source || '').includes('term sheet'), 'LSU 2026 stays on the term sheet')
 
 const fsu24 = chair('florida-state', 2024)
 const fsu25 = chair('florida-state', 2025)
 const fsu26 = chair('florida-state', 2026)
+ok(chair('florida-state', 2021).pay.value === 3_000_000, 'FSU 2021 Norvell CY2 TAC PDF')
+ok(chair('florida-state', 2022).pay.value === 3_250_000, 'FSU 2022 Norvell CY3 TAC PDF')
+ok(chair('florida-state', 2023).pay.value === 5_550_000, 'FSU 2023 Norvell CY4 TAC PDF')
+ok(!(chair('florida-state', 2021).pay?.source || '').includes('USA TODAY'), 'FSU 2021 PDF wins over USA TODAY')
 ok(fsu24.name === 'Mike Norvell' && fsu24.pay.value === 10_000_000, 'FSU 2024 Norvell CY5 TAC')
+ok(!(fsu24.pay?.source || '').includes('USA TODAY'), 'FSU 2024 PDF wins over USA TODAY')
 ok(fsu25.name === 'Mike Norvell' && fsu25.pay.value === 5_650_000, 'FSU 2025 Norvell USA TODAY $5.65M')
 ok(fsu26.name === 'Mike Norvell' && fsu26.pay.value === 10_300_000, 'FSU 2026 Norvell CY7 TAC')
 ok(staffNames('florida-state', 2024).includes('Adam Fuller'), 'FSU 2024 Fuller')
@@ -98,7 +136,8 @@ ok(chair('florida', 2026).pay.value === 7_450_000, 'Florida 2026 Sumrall file $7
 ok(chair('kentucky', 2026).pay.value === 5_500_000, 'Kentucky 2026 Stein file $5.5M')
 ok(chair('virginia-tech', 2026).pay.value === 6_000_000, 'VT 2026 Franklin LOI $6M')
 ok(chair('iowa-state', 2026).pay.value === 3_000_000, 'ISU 2026 Rogers base-only $3M')
-ok(chair('minnesota', 2025).pay.value == null, 'Minnesota 2025 Fleck — no tape pay cell')
+ok(chair('minnesota', 2025).pay.value === 7_000_000, 'Minnesota 2025 Fleck USA TODAY 2025 $7M')
+ok((chair('minnesota', 2025).pay?.source || '').includes('USA TODAY 2025'), 'Minnesota 2025 is year-pinned')
 ok(chair('missouri', 2021).name === 'Eliah Drinkwitz', 'Missouri Eliah')
 ok(chair('washington', 2021).name === 'Jimmy Lake', 'UW 2021 Lake')
 ok(chair('georgia-tech', 2022).name === 'Geoff Collins', 'GT 2022 Collins (started the year)')
@@ -133,6 +172,72 @@ ok(baker26?.pay?.value == null, 'LSU 2026 Baker has no 2024 USA TODAY dollar')
 const baker24 = (applySeason(byId.lsu, 2024).staff?.assistants || []).find((a) => a.name === 'Blake Baker')
 ok(baker24?.pay?.value === 2_500_000, 'LSU 2024 Baker USA TODAY $2.5M')
 ok(baker24?.pay?.asOf === '2024-12-18', 'LSU 2024 Baker asOf is Dec 18, 2024')
+
+for (const year of [2021, 2022, 2023, 2024, 2025]) {
+  ok(coachUsat[year]?.contractYear === year, `${year} HC tape exists`)
+  ok(Object.keys(coachUsat[year]?.schools || {}).length === 68, `${year} HC tape has 68 schools`)
+}
+
+let publicPinned = { 2021: 0, 2022: 0, 2023: 0, 2024: 0 }
+let publicPendingOk = { 2021: 0, 2022: 0, 2023: 0, 2024: 0 }
+let cloned2024onto2026 = 0
+for (const s of data.schools) {
+  for (const year of [2021, 2022, 2023, 2024]) {
+    const fb = chair(s.id, year)
+    const row = usatCoach(s.id, year)
+    const src = fb.pay?.source || ''
+    if (isProtectedDollar(fb.pay)) {
+      ok(fb.pay.value != null && !src.includes('USA TODAY'), `${s.id} ${year} keeps file dollar`)
+      continue
+    }
+    if (row?.pay != null) {
+      ok(fb.pay?.value === row.pay, `${s.id} ${year} pay is USA TODAY ${year} ${row.pay}`)
+      ok(src.includes(`USA TODAY ${year} Total Pay`), `${s.id} ${year} source is year-pinned`)
+      ok((fb.pay?.url || '').includes('/coach/team/'), `${s.id} ${year} cites the team page`)
+      ok(fb.pay?.year === year, `${s.id} ${year} pay.year is ${year}`)
+      ok((fb.pay?.asOf || '').startsWith(String(year)), `${s.id} ${year} asOf is that snapshot year`)
+      if (!s.private) publicPinned[year] += 1
+    } else {
+      ok(fb.pay?.value == null, `${s.id} ${year} withheld / name-miss stays pending`)
+      if (!s.private) publicPendingOk[year] += 1
+    }
+  }
+  const y24 = usatCoach(s.id, 2024)
+  const y26 = chair(s.id, 2026)
+  if (
+    y24?.pay != null &&
+    y26.pay?.value === y24.pay &&
+    isUsaToday(y26.pay) &&
+    String(y26.pay.source || '').includes('2024')
+  ) {
+    cloned2024onto2026 += 1
+    ok(false, `${s.id} 2026 still carries the 2024 USA TODAY dollar`)
+  }
+}
+ok(publicPinned[2021] >= 52, `2021 public year-pinned ${publicPinned[2021]}`)
+ok(publicPinned[2022] >= 53, `2022 public year-pinned ${publicPinned[2022]}`)
+ok(publicPinned[2023] >= 53, `2023 public year-pinned ${publicPinned[2023]}`)
+ok(publicPinned[2024] >= 53, `2024 public year-pinned ${publicPinned[2024]}`)
+ok(cloned2024onto2026 === 0, 'no 2024 USA TODAY dollars on 2026 chairs')
+ok(chair('penn-state', 2021).pay.value == null, 'Penn State 2021 Franklin Total Pay withheld')
+ok(chair('notre-dame', 2022).pay.value == null, 'ND 2022 Freeman withheld')
+ok(chair('miami', 2023).pay.value == null, 'Miami 2023 Cristobal withheld')
+ok(chair('duke', 2024).pay.value == null, 'Duke 2024 Diaz withheld')
+ok(chair('byu', 2024).pay.value == null, 'BYU 2024 Sitake withheld')
+
+ok(byId['penn-state'].nil?.preCap?.value === 18_368_391, 'Penn State booked preCap untouched')
+ok(byId['oklahoma-state'].nil?.preCap?.value === 16_000_000, 'OSU estimated preCap untouched')
+ok(byId.texas.nil?.booked?.value === 13_500_000, 'Texas booked NIL untouched')
+ok(byId.texas.nil?.preCap?.value === 3_200_000, 'Texas preCap untouched')
+ok(byId.louisville.nil?.booked?.value != null, 'Louisville booked NIL untouched')
+ok(byId.kentucky.nil?.booked?.value != null, 'Kentucky booked NIL untouched')
+ok(byId.ucla.nil?.booked?.value != null, 'UCLA booked NIL untouched')
+ok(byId.california.nil?.booked?.value != null, 'Cal booked NIL untouched')
+for (const sid of ['georgia', 'tennessee', 'alabama', 'oregon', 'utah', 'north-carolina']) {
+  ok(byId[sid].nil?.preCap?.value === 0, `${sid} Item 44 $0 untouched`)
+}
+ok(chair('auburn', 2026).pay.value === 6_750_000, 'Auburn 2026 Golesh file $6.75M')
+ok(!(chair('auburn', 2026).pay?.source || '').includes('USA TODAY'), 'Auburn 2026 is not USA TODAY')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} coachesByYear checks passed`)

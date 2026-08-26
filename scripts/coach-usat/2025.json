@@ -1,0 +1,757 @@
+{
+  "contractYear": 2025,
+  "asOf": "2025-10-08",
+  "source": "USA TODAY Sports football head-coach salary database",
+  "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
+  "notes": "USA TODAY 2025 contract year. Head-coach Total Pay from each school team page (__NEXT_DATA__). Withheld / -1 cells stay null. Do not copy this year onto another year.",
+  "schools": {
+    "alabama": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3478",
+      "coaches": [
+        {
+          "name": "Kalen DeBoer",
+          "pay": 10250000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012496949Z"
+        }
+      ]
+    },
+    "arizona": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3462",
+      "coaches": [
+        {
+          "name": "Brent Brennan",
+          "pay": 3400000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012104398Z"
+        }
+      ]
+    },
+    "arizona-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3463",
+      "coaches": [
+        {
+          "name": "Kenny Dillingham",
+          "pay": 7442000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.01215002Z"
+        }
+      ]
+    },
+    "arkansas": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3479",
+      "coaches": [
+        {
+          "name": "Sam Pittman",
+          "pay": 6814600,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012596014Z"
+        }
+      ]
+    },
+    "auburn": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3480",
+      "coaches": [
+        {
+          "name": "Hugh Freeze",
+          "pay": 6734500,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012576611Z"
+        }
+      ]
+    },
+    "baylor": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3484",
+      "coaches": [
+        {
+          "name": "Dave Aranda",
+          "pay": 4702570,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012279536Z"
+        }
+      ]
+    },
+    "boston-college": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3416",
+      "coaches": [
+        {
+          "name": "Bill O'Brien",
+          "pay": null,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011946338Z"
+        }
+      ]
+    },
+    "byu": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3493",
+      "coaches": [
+        {
+          "name": "Kalani Sitake",
+          "pay": null,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012367592Z"
+        }
+      ]
+    },
+    "california": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3464",
+      "coaches": [
+        {
+          "name": "Justin Wilcox",
+          "pay": 4800000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.014610385Z"
+        }
+      ]
+    },
+    "cincinnati": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3503",
+      "coaches": [
+        {
+          "name": "Scott Satterfield",
+          "pay": 3700000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.0122176Z"
+        }
+      ]
+    },
+    "clemson": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3407",
+      "coaches": [
+        {
+          "name": "Dabo Swinney",
+          "pay": 11447025,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011820266Z"
+        }
+      ]
+    },
+    "colorado": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3424",
+      "coaches": [
+        {
+          "name": "Deion Sanders",
+          "pay": 8975000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012174678Z"
+        }
+      ]
+    },
+    "duke": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3408",
+      "coaches": [
+        {
+          "name": "Manny Diaz",
+          "pay": null,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011925458Z"
+        }
+      ]
+    },
+    "florida": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3472",
+      "coaches": [
+        {
+          "name": "Billy Napier",
+          "pay": 7470000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012828414Z"
+        }
+      ]
+    },
+    "florida-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3409",
+      "coaches": [
+        {
+          "name": "Mike Norvell",
+          "pay": 5650000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.0117306Z"
+        }
+      ]
+    },
+    "georgia": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3473",
+      "coaches": [
+        {
+          "name": "Kirby Smart",
+          "pay": 13282580,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012727318Z"
+        }
+      ]
+    },
+    "georgia-tech": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3410",
+      "coaches": [
+        {
+          "name": "Brent Key",
+          "pay": 4500000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011885438Z"
+        }
+      ]
+    },
+    "houston": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3485",
+      "coaches": [
+        {
+          "name": "Willie Fritz",
+          "pay": 4500000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012067149Z"
+        }
+      ]
+    },
+    "illinois": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3432",
+      "coaches": [
+        {
+          "name": "Bret Bielema",
+          "pay": 8200000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011581227Z"
+        }
+      ]
+    },
+    "indiana": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3433",
+      "coaches": [
+        {
+          "name": "Curt Cignetti",
+          "pay": 8300000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011393074Z"
+        }
+      ]
+    },
+    "iowa": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3434",
+      "coaches": [
+        {
+          "name": "Kirk Ferentz",
+          "pay": 7175000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011648738Z"
+        }
+      ]
+    },
+    "iowa-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3425",
+      "coaches": [
+        {
+          "name": "Matt Campbell",
+          "pay": 5000000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012259528Z"
+        }
+      ]
+    },
+    "kansas": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3426",
+      "coaches": [
+        {
+          "name": "Lance Leipold",
+          "pay": 6650000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012128405Z"
+        }
+      ]
+    },
+    "kansas-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3427",
+      "coaches": [
+        {
+          "name": "Chris Klieman",
+          "pay": 5250000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012388743Z"
+        }
+      ]
+    },
+    "kentucky": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3474",
+      "coaches": [
+        {
+          "name": "Mark Stoops",
+          "pay": 9000000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.01266454Z"
+        }
+      ]
+    },
+    "louisville": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3505",
+      "coaches": [
+        {
+          "name": "Jeff Brohm",
+          "pay": 5981057,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011753196Z"
+        }
+      ]
+    },
+    "lsu": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3481",
+      "coaches": [
+        {
+          "name": "Brian Kelly",
+          "pay": 10175000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.01285821Z"
+        }
+      ]
+    },
+    "maryland": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3411",
+      "coaches": [
+        {
+          "name": "Mike Locksley",
+          "pay": 6100000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011516573Z"
+        }
+      ]
+    },
+    "miami": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3417",
+      "coaches": [
+        {
+          "name": "Mario Cristobal",
+          "pay": 8302883,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011905999Z"
+        }
+      ]
+    },
+    "michigan": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3435",
+      "coaches": [
+        {
+          "name": "Sherrone Moore",
+          "pay": 6110000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011692232Z"
+        }
+      ]
+    },
+    "michigan-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3436",
+      "coaches": [
+        {
+          "name": "Jonathan Smith",
+          "pay": 7350000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011345009Z"
+        }
+      ]
+    },
+    "minnesota": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3437",
+      "coaches": [
+        {
+          "name": "P.J. Fleck",
+          "pay": 7000000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011560617Z"
+        }
+      ]
+    },
+    "mississippi-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3483",
+      "coaches": [
+        {
+          "name": "Jeff Lebby",
+          "pay": 4350000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012881854Z"
+        }
+      ]
+    },
+    "missouri": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3428",
+      "coaches": [
+        {
+          "name": "Eliah Drinkwitz",
+          "pay": 9000000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012630738Z"
+        }
+      ]
+    },
+    "nc-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3413",
+      "coaches": [
+        {
+          "name": "Dave Doeren",
+          "pay": 6215377,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011776639Z"
+        }
+      ]
+    },
+    "nebraska": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3429",
+      "coaches": [
+        {
+          "name": "Matt Rhule",
+          "pay": 8500000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011626946Z"
+        }
+      ]
+    },
+    "north-carolina": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3412",
+      "coaches": [
+        {
+          "name": "Bill Belichick",
+          "pay": 10100000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011967332Z"
+        }
+      ]
+    },
+    "northwestern": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3438",
+      "coaches": [
+        {
+          "name": "David Braun",
+          "pay": null,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011671139Z"
+        }
+      ]
+    },
+    "notre-dame": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3509",
+      "coaches": [
+        {
+          "name": "Marcus Freeman",
+          "pay": 7421201,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.013095868Z"
+        }
+      ]
+    },
+    "ohio-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3439",
+      "coaches": [
+        {
+          "name": "Ryan Day",
+          "pay": 12575000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011469271Z"
+        }
+      ]
+    },
+    "oklahoma": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3430",
+      "coaches": [
+        {
+          "name": "Brent Venables",
+          "pay": 7552750,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012923656Z"
+        }
+      ]
+    },
+    "oklahoma-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3431",
+      "coaches": [
+        {
+          "name": "Mike Gundy",
+          "pay": 6875000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012238319Z"
+        }
+      ]
+    },
+    "ole-miss": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3482",
+      "coaches": [
+        {
+          "name": "Lane Kiffin",
+          "pay": 9000000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012691956Z"
+        }
+      ]
+    },
+    "oregon": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3465",
+      "coaches": [
+        {
+          "name": "Dan Lanning",
+          "pay": 10400000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011317745Z"
+        }
+      ]
+    },
+    "penn-state": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3440",
+      "coaches": [
+        {
+          "name": "James Franklin",
+          "pay": 8500000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011493406Z"
+        }
+      ]
+    },
+    "pittsburgh": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3418",
+      "coaches": [
+        {
+          "name": "Pat Narduzzi",
+          "pay": 7259909,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011798598Z"
+        }
+      ]
+    },
+    "purdue": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3441",
+      "coaches": [
+        {
+          "name": "Barry Odom",
+          "pay": 6050000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011711677Z"
+        }
+      ]
+    },
+    "rutgers": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3419",
+      "coaches": [
+        {
+          "name": "Greg Schiano",
+          "pay": 6500000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011539466Z"
+        }
+      ]
+    },
+    "smu": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3487",
+      "coaches": [
+        {
+          "name": "Rhett Lashlee",
+          "pay": 2470818,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012948719Z"
+        }
+      ]
+    },
+    "south-carolina": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3475",
+      "coaches": [
+        {
+          "name": "Shane Beamer",
+          "pay": 8150000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012763099Z"
+        }
+      ]
+    },
+    "stanford": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3468",
+      "coaches": [
+        {
+          "name": "Frank Reich",
+          "pay": null,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.01201492Z"
+        }
+      ]
+    },
+    "syracuse": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3420",
+      "coaches": [
+        {
+          "name": "Fran Brown",
+          "pay": null,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012984099Z"
+        }
+      ]
+    },
+    "tcu": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3490",
+      "coaches": [
+        {
+          "name": "Sonny Dykes",
+          "pay": 7036013,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012300503Z"
+        }
+      ]
+    },
+    "tennessee": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3476",
+      "coaches": [
+        {
+          "name": "Josh Heupel",
+          "pay": 9000000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012544913Z"
+        }
+      ]
+    },
+    "texas": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3488",
+      "coaches": [
+        {
+          "name": "Steve Sarkisian",
+          "pay": 10800000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012904016Z"
+        }
+      ]
+    },
+    "texas-am": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3489",
+      "coaches": [
+        {
+          "name": "Mike Elko",
+          "pay": 7000000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012477351Z"
+        }
+      ]
+    },
+    "texas-tech": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3491",
+      "coaches": [
+        {
+          "name": "Joey McGuire",
+          "pay": 4554960,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012329828Z"
+        }
+      ]
+    },
+    "ucf": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3615",
+      "coaches": [
+        {
+          "name": "Scott Frost",
+          "pay": 3858333,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012409719Z"
+        }
+      ]
+    },
+    "ucla": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3469",
+      "coaches": [
+        {
+          "name": "DeShaun Foster",
+          "pay": 3100000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.01142781Z"
+        }
+      ]
+    },
+    "usc": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3467",
+      "coaches": [
+        {
+          "name": "Lincoln Riley",
+          "pay": 11537560,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011449137Z"
+        }
+      ]
+    },
+    "utah": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3499",
+      "coaches": [
+        {
+          "name": "Kyle Whittingham",
+          "pay": 6925000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012195567Z"
+        }
+      ]
+    },
+    "vanderbilt": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3477",
+      "coaches": [
+        {
+          "name": "Clark Lea",
+          "pay": 3711137,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012796841Z"
+        }
+      ]
+    },
+    "virginia": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3414",
+      "coaches": [
+        {
+          "name": "Tony Elliott",
+          "pay": 4406000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011842458Z"
+        }
+      ]
+    },
+    "virginia-tech": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3422",
+      "coaches": [
+        {
+          "name": "Brent Pry",
+          "pay": 4787500,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011864684Z"
+        }
+      ]
+    },
+    "wake-forest": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3415",
+      "coaches": [
+        {
+          "name": "Jake Dickert",
+          "pay": null,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011988956Z"
+        }
+      ]
+    },
+    "washington": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3470",
+      "coaches": [
+        {
+          "name": "Jedd Fisch",
+          "pay": 7575024,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011372653Z"
+        }
+      ]
+    },
+    "west-virginia": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3423",
+      "coaches": [
+        {
+          "name": "Rich Rodriguez",
+          "pay": 3600000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.012448892Z"
+        }
+      ]
+    },
+    "wisconsin": {
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach/team/3442",
+      "coaches": [
+        {
+          "name": "Luke Fickell",
+          "pay": 7825000,
+          "asOf": "2025-10-08",
+          "aggregatedTime": "2025-10-08T21:18:16.011604066Z"
+        }
+      ]
+    }
+  }
+}

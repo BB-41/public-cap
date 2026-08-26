@@ -29,3 +29,10 @@ Football assistant pay is year-keyed (`staffByYear`). USA TODAY team pages
 (as of Dec 18, 2024) fill 2021–2024 names and Total Pay. 2026 is the official
 directory (names; pay pending). 2025 is empty unless a distinct tape exists.
 Refresh tapes with `python3 scripts/fetch-usat-assistants.py`.
+
+Football head-coach pay is year-keyed (`coachesByYear.YYYY.football.pay`).
+USA TODAY team pages (`/coach/team/{id}` `__NEXT_DATA__`) fill 2021–2025
+Total Pay when the published name matches that year’s chair. File/PDF
+dollars win. A 2024 cell is never copied onto 2025 or 2026.
+Refresh with `python3 scripts/fetch-usat-coaches.py` then
+`python3 scripts/ingest-usat-coach-pay.py`.
