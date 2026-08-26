@@ -87,7 +87,13 @@ export default function Methods({ meta }) {
         <dt>Apparel + naming rights</dt>
         <dd>Current outfitter and stadium or facility naming. Annual value only when a Sportico, Athletic, FOIA, or local-paper number exists.</dd>
         <dt>Student fees + institutional subsidy</dt>
-        <dd>Knight-Newhouse / MFRS allocated revenue — student fees and institutional or government support. Where the check really came from. FY2025 dollars from KN school-profile charts. $0 when KN/MFRS reports $0 or a school says self-funded. Empty means pending. EADA has no split.</dd>
+        <dd>
+          Student fees are not tuition. They are a dedicated or allocated athletic fee (or a slice of a student
+          activity fee) that athletics booked that year — NCAA MFRS line 3, an annual department total already
+          on the KN tape. Institutional support is the university check; government is the tax/state slice when
+          a source splits it. Implied per-student is that total ÷ the enrollment proxy, a spread, not a published
+          schedule. $0 means self-funded or $0 on the line. Empty means pending. EADA has no split.
+        </dd>
         <dt>Wins per dollar</dt>
         <dd>2025 football wins divided by booked NIL if present, else modeled NIL mid (labeled modeled), and by annual capacity (booked-only unless the alumni toggle is on). Wikipedia / NCAA standings.</dd>
         <dt>Buyouts actually paid</dt>
@@ -485,19 +491,38 @@ export default function Methods({ meta }) {
 
       <h2>Student fees and institutional subsidy</h2>
       <p>
-        Knight-Newhouse / NCAA MFRS allocated revenue: student fees (line 3) and
-        institutional or government support. This is “where the check really came from.”
+        Student fees on this desk are the dollars athletics booked from student fees in
+        that fiscal year — usually a dedicated athletic fee, or a slice of a student
+        activity fee, assessed on top of tuition. Not tuition. Not the whole bursar bill.
+        The Knight-Newhouse figure is already the athletic department’s annual receipt
+        (NCAA MFRS line 3). We do not treat it as a tuition rate and multiply it by
+        enrollment to invent a new total. Institutional support is the university writing
+        a check or booking indirect support. Government support is the tax or state slice
+        when a source splits it; KN usually rolls it into institutional/government.
+      </p>
+      <p>
+        Two identities sit under the booked total, both labeled estimated. Implied
+        per-student = booked student-fee total ÷ the enrollment proxy already on the
+        school card (an IPEDS-ish undergrad headcount). That is a spread of the
+        department total, not a published fee schedule, and it does not replace the
+        booked cell. Published rate × enrollment is shown only when a feeRate is already
+        on the desk (today: Louisville $200/semester). Semesters count as two terms a
+        year; an annual rate counts as one. We do not invent a summer term. That product
+        is arithmetic, not a filing, and it does not overwrite the KN total — Louisville’s
+        $200 rate starts 2025–26 / FY2026; the FY2025 KN cell is still the old $25-fee year.
+        If the booked line is $0, implied per-student is $0 (self-funded on that line).
+      </p>
+      <p>
         KN bulk download is CAPTCHA-gated; FY2025 dollars come from the public school-profile
         revenue charts (student fees; institutional/government support as KN’s combined
         lines 2+4+6+6A). The EADA 2024–25 public file at ope.ed.gov/athletics has department
         totals only — no fee/support split — so EADA cells stay unused here. $0 is printed
         when KN/MFRS reports $0 on that line, or when a school release says the department
         is self-funded (Ohio State FY25: no tuition or tax dollars; KN residual $112,280
-        noted, not booked). A published per-student fee rate (Louisville $200/semester) is
-        not turned into a fake department total. Rutgers keeps a newsroom 3-way split
-        (fees / university / state) that cross-checks KN. Government stays pending unless
-        a source splits Line 2. Empty means pending, not zero. Privates and Pittsburgh
-        have no public MFRS split.
+        noted, not booked). Rutgers keeps a newsroom 3-way split (fees / university / state)
+        that cross-checks KN. Government stays pending unless a source splits Line 2.
+        Empty means pending, not zero. Privates and Pittsburgh have no public MFRS split.
+        We did not scrape bursar pages for 68 new fee rates.
       </p>
 
       <h2>Wins per dollar</h2>

@@ -63,6 +63,44 @@ export function layerHasSubsidy(layer) {
   return s.studentFees?.value != null || s.institutionalSupport?.value != null || s.governmentSupport?.value != null
 }
 
+/** Estimated IPEDS-ish undergrad headcount already on the school card. */
+export function enrollmentHeadcount(school) {
+  const n = school?.alumni?.undergradEnrollment?.value
+  return n != null && Number(n) > 0 ? Number(n) : null
+}
+
+/**
+ * KN student-fee total spread across the enrollment proxy.
+ * Not a published fee schedule. Does not replace the booked total.
+ */
+export function impliedFeePerStudent(studentFees, enrollment) {
+  if (studentFees?.value == null || !enrollment) return null
+  return studentFees.value / enrollment
+}
+
+export function feeRateTermsPerYear(feeRate) {
+  const unit = String(feeRate?.unit || '')
+  if (/semester/i.test(unit)) return 2
+  if (/\byear\b|annual/i.test(unit)) return 1
+  return null
+}
+
+/**
+ * Published athletic-fee rate × terms × enrollment.
+ * Only when a feeRate is already on the desk. Does not overwrite studentFees.value.
+ */
+export function publishedFeeTimesEnrollment(feeRate, enrollment) {
+  const terms = feeRateTermsPerYear(feeRate)
+  if (feeRate?.value == null || !enrollment || !terms) return null
+  return {
+    rate: Number(feeRate.value),
+    terms,
+    enrollment,
+    impliedAnnual: Number(feeRate.value) * terms * enrollment,
+    unit: feeRate.unit,
+  }
+}
+
 export function layerHasBuyoutPaid(layer) {
   return (layer?.buyoutsPaid || []).some((b) => b.amount != null || b.confidence === 'pending')
 }

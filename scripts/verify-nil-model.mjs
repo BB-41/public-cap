@@ -13,6 +13,7 @@ import {
   HOUSE_2025_26,
 } from '../src/lib/nilModel.js'
 import { applySeason, houseValueForSeason } from '../src/lib/seasons.js'
+import { feeRateTermsPerYear, impliedFeePerStudent, publishedFeeTimesEnrollment } from '../src/lib/layers.js'
 
 const data = JSON.parse(readFileSync('public/data/schools.json', 'utf8'))
 const house2025 = houseValueForSeason(data.meta, 2025)
@@ -99,3 +100,14 @@ if (nd21.modeled.conferenceThirdParty !== ndTp) throw new Error('ND 2021 not usi
 console.log('ND 2021 third-party', ndTp, 'yearFactor', nd21.modeled.yearFactor.toFixed(3), 'mid', nd21.modeled.mid)
 
 console.log('ok')
+
+if (feeRateTermsPerYear({ unit: 'USD per semester' }) !== 2) throw new Error('semester terms')
+if (feeRateTermsPerYear({ unit: 'USD per year' }) !== 1) throw new Error('annual terms')
+const louFees = { value: 903695 }
+const impliedLou = impliedFeePerStudent(louFees, 16000)
+if (Math.round(impliedLou) !== 56) throw new Error(`louisville implied ${impliedLou}`)
+const product = publishedFeeTimesEnrollment({ value: 200, unit: 'USD per semester' }, 16000)
+if (product.impliedAnnual !== 6_400_000) throw new Error(`louisville product ${product.impliedAnnual}`)
+if (impliedFeePerStudent({ value: 0 }, 50000) !== 0) throw new Error('zero fees should imply $0')
+if (impliedFeePerStudent({ value: null }, 16000) != null) throw new Error('pending fees stay empty')
+console.log('student-fee math ok')
