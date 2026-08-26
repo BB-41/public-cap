@@ -1,0 +1,808 @@
+{
+  "contractYear": 2024,
+  "asOf": "2024-12-18",
+  "source": "USA TODAY Sports football assistant salary database",
+  "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
+  "notes": "2024 contract-year total pay (as of Dec 18, 2024). Named assistants and the staff-total pool belong on staffByYear.2024 only. Not a current 2026 salary.",
+  "schools": {
+    "alabama": {
+      "assistants": [
+        {
+          "name": "Kane Wommack",
+          "role": "Football assistant",
+          "pay": 1550000
+        },
+        {
+          "name": "Nick Sheridan",
+          "role": "Football assistant",
+          "pay": 1350000
+        }
+      ],
+      "pool": 9475000
+    },
+    "arizona": {
+      "assistants": [
+        {
+          "name": "Duane Akina",
+          "role": "Football assistant",
+          "pay": 785000
+        }
+      ],
+      "pool": 4200000
+    },
+    "arizona-state": {
+      "assistants": [
+        {
+          "name": "Marcus Arroyo",
+          "role": "Football assistant",
+          "pay": 830000
+        },
+        {
+          "name": "Brian Ward",
+          "role": "Football assistant",
+          "pay": 800000
+        }
+      ],
+      "pool": 4675000
+    },
+    "arkansas": {
+      "assistants": [
+        {
+          "name": "Bobby Petrino",
+          "role": "Football assistant",
+          "pay": 1500000
+        },
+        {
+          "name": "Travis Williams",
+          "role": "Football assistant",
+          "pay": 1175000
+        }
+      ],
+      "pool": 6190000
+    },
+    "auburn": {
+      "assistants": [
+        {
+          "name": "DJ Durkin",
+          "role": "Football assistant",
+          "pay": 1200000
+        },
+        {
+          "name": "Charles Kelly",
+          "role": "Football assistant",
+          "pay": 875000
+        }
+      ],
+      "pool": 6475000
+    },
+    "california": {
+      "assistants": [
+        {
+          "name": "Peter Sirmon",
+          "role": "Football assistant",
+          "pay": 950000
+        },
+        {
+          "name": "Mike Bloesch",
+          "role": "Football assistant",
+          "pay": 850000
+        }
+      ],
+      "pool": 4375000
+    },
+    "cincinnati": {
+      "assistants": [
+        {
+          "name": "Tyson Veidt",
+          "role": "Football assistant",
+          "pay": 750000
+        },
+        {
+          "name": "Brad Glenn",
+          "role": "Football assistant",
+          "pay": 700000
+        }
+      ],
+      "pool": 4390000
+    },
+    "clemson": {
+      "assistants": [
+        {
+          "name": "Garrett Riley",
+          "role": "Football assistant",
+          "pay": 1750000
+        },
+        {
+          "name": "Wes Goodwin",
+          "role": "Football assistant",
+          "pay": 1400000
+        }
+      ],
+      "pool": 9675000
+    },
+    "colorado": {
+      "assistants": [
+        {
+          "name": "Pat Shurmur",
+          "role": "Football assistant",
+          "pay": 801000
+        },
+        {
+          "name": "Robert Livingston",
+          "role": "Football assistant",
+          "pay": 800750
+        }
+      ],
+      "pool": 4588750
+    },
+    "florida": {
+      "assistants": [
+        {
+          "name": "Austin Armstrong",
+          "role": "Football assistant",
+          "pay": 1201500
+        },
+        {
+          "name": "Rob Sale",
+          "role": "Football assistant",
+          "pay": 1001500
+        }
+      ],
+      "pool": 6565000
+    },
+    "florida-state": {
+      "assistants": [
+        {
+          "name": "Adam Fuller",
+          "role": "Defensive coordinator",
+          "pay": 2015000
+        },
+        {
+          "name": "Alex Atkins",
+          "role": "Football assistant",
+          "pay": 1265000
+        }
+      ],
+      "pool": 8475000
+    },
+    "georgia": {
+      "assistants": [
+        {
+          "name": "Glenn Schumann",
+          "role": "Defensive coordinator",
+          "pay": 2003000
+        },
+        {
+          "name": "Travaris Robinson",
+          "role": "Football assistant",
+          "pay": 1503000
+        }
+      ],
+      "pool": 10332000
+    },
+    "georgia-tech": {
+      "assistants": [
+        {
+          "name": "Buster Faulkner",
+          "role": "Football assistant",
+          "pay": 1000000
+        },
+        {
+          "name": "Chris Weinke",
+          "role": "Football assistant",
+          "pay": 700000
+        }
+      ],
+      "pool": 5120000
+    },
+    "houston": {
+      "assistants": [
+        {
+          "name": "Shiel Wood",
+          "role": "Football assistant",
+          "pay": 750000
+        },
+        {
+          "name": "Kevin Barbay",
+          "role": "Football assistant",
+          "pay": 750000
+        }
+      ],
+      "pool": 3950000
+    },
+    "illinois": {
+      "assistants": [
+        {
+          "name": "Barry Lunney Jr.",
+          "role": "Football assistant",
+          "pay": 1025000
+        },
+        {
+          "name": "Aaron Henry",
+          "role": "Football assistant",
+          "pay": 725000
+        }
+      ],
+      "pool": 5325000
+    },
+    "indiana": {
+      "assistants": [
+        {
+          "name": "Bryant Haines",
+          "role": "Football assistant",
+          "pay": 1175000
+        },
+        {
+          "name": "Mike Shanahan",
+          "role": "Football assistant",
+          "pay": 800000
+        }
+      ],
+      "pool": 5935000
+    },
+    "iowa": {
+      "assistants": [
+        {
+          "name": "Phil Parker",
+          "role": "Defensive coordinator",
+          "pay": 1900000
+        },
+        {
+          "name": "Tim Lester",
+          "role": "Football assistant",
+          "pay": 1100000
+        }
+      ],
+      "pool": 7900000
+    },
+    "iowa-state": {
+      "assistants": [
+        {
+          "name": "Jon Heacock",
+          "role": "Football assistant",
+          "pay": 1200000
+        },
+        {
+          "name": "Taylor Mouser",
+          "role": "Football assistant",
+          "pay": 550000
+        }
+      ],
+      "pool": 4460000
+    },
+    "kansas": {
+      "assistants": [
+        {
+          "name": "Jeff Grimes",
+          "role": "Football assistant",
+          "pay": 800000
+        },
+        {
+          "name": "Brian Borland",
+          "role": "Football assistant",
+          "pay": 720000
+        }
+      ],
+      "pool": 4840000
+    },
+    "kansas-state": {
+      "assistants": [
+        {
+          "name": "Joe Klanderman",
+          "role": "Football assistant",
+          "pay": 825000
+        },
+        {
+          "name": "Conor Riley",
+          "role": "Football assistant",
+          "pay": 750000
+        }
+      ],
+      "pool": 4697000
+    },
+    "kentucky": {
+      "assistants": [
+        {
+          "name": "Brad White",
+          "role": "Football assistant",
+          "pay": 1750000
+        },
+        {
+          "name": "Vince Marrow",
+          "role": "Football assistant",
+          "pay": 1300000
+        }
+      ],
+      "pool": 7565000
+    },
+    "louisville": {
+      "assistants": [
+        {
+          "name": "Ron English",
+          "role": "Football assistant",
+          "pay": 800000
+        },
+        {
+          "name": "Brian Brohm",
+          "role": "Football assistant",
+          "pay": 750000
+        }
+      ],
+      "pool": 4765000
+    },
+    "lsu": {
+      "assistants": [
+        {
+          "name": "Blake Baker",
+          "role": "Defensive coordinator",
+          "pay": 2500000
+        },
+        {
+          "name": "Bo Davis",
+          "role": "Football assistant",
+          "pay": 1250000
+        }
+      ],
+      "pool": 9300000
+    },
+    "maryland": {
+      "assistants": [
+        {
+          "name": "Brian Williams",
+          "role": "Football assistant",
+          "pay": 1300000
+        },
+        {
+          "name": "Josh Gattis",
+          "role": "Football assistant",
+          "pay": 950000
+        }
+      ],
+      "pool": 5475000
+    },
+    "michigan": {
+      "assistants": [
+        {
+          "name": "Wink Martindale",
+          "role": "Defensive coordinator",
+          "pay": 2300000
+        },
+        {
+          "name": "Lou Esposito",
+          "role": "Football assistant",
+          "pay": 1286000
+        }
+      ],
+      "pool": 9384000
+    },
+    "michigan-state": {
+      "assistants": [
+        {
+          "name": "Joe Rossi",
+          "role": "Football assistant",
+          "pay": 1500000
+        },
+        {
+          "name": "Brian Lindgren",
+          "role": "Football assistant",
+          "pay": 1100000
+        }
+      ],
+      "pool": 6975000
+    },
+    "minnesota": {
+      "assistants": [
+        {
+          "name": "Corey Hetherman",
+          "role": "Football assistant",
+          "pay": 850000
+        },
+        {
+          "name": "Brian Callahan",
+          "role": "Football assistant",
+          "pay": 600000
+        }
+      ],
+      "pool": 4599000
+    },
+    "mississippi-state": {
+      "assistants": [
+        {
+          "name": "Coleman Hutzler",
+          "role": "Football assistant",
+          "pay": 1000000
+        },
+        {
+          "name": "Cody Kennedy",
+          "role": "Football assistant",
+          "pay": 750000
+        }
+      ],
+      "pool": 5260000
+    },
+    "missouri": {
+      "assistants": [
+        {
+          "name": "Kirby Moore",
+          "role": "Football assistant",
+          "pay": 1500000
+        },
+        {
+          "name": "Corey Batoon",
+          "role": "Football assistant",
+          "pay": 1030000
+        }
+      ],
+      "pool": 6980000
+    },
+    "nc-state": {
+      "assistants": [
+        {
+          "name": "Tony Gibson",
+          "role": "Football assistant",
+          "pay": 1500000
+        },
+        {
+          "name": "Robert Anae",
+          "role": "Football assistant",
+          "pay": 900000
+        }
+      ],
+      "pool": 6207205
+    },
+    "nebraska": {
+      "assistants": [
+        {
+          "name": "Tony White",
+          "role": "Football assistant",
+          "pay": 1600000
+        },
+        {
+          "name": "Marcus Satterfield",
+          "role": "Football assistant",
+          "pay": 1400000
+        }
+      ],
+      "pool": 6775000
+    },
+    "north-carolina": {
+      "assistants": [
+        {
+          "name": "Geoff Collins",
+          "role": "Football assistant",
+          "pay": 1133000
+        },
+        {
+          "name": "Chip Lindsey",
+          "role": "Football assistant",
+          "pay": 1090000
+        }
+      ],
+      "pool": 7373858
+    },
+    "ohio-state": {
+      "assistants": [
+        {
+          "name": "Jim Knowles",
+          "role": "Defensive coordinator",
+          "pay": 2200000
+        },
+        {
+          "name": "Chip Kelly",
+          "role": "Offensive coordinator",
+          "pay": 2000000
+        }
+      ],
+      "pool": 11425000
+    },
+    "oklahoma": {
+      "assistants": [
+        {
+          "name": "Seth Littrell",
+          "role": "Football assistant",
+          "pay": 1100000
+        },
+        {
+          "name": "Bill Bedenbaugh",
+          "role": "Football assistant",
+          "pay": 1000000
+        }
+      ],
+      "pool": 7114999
+    },
+    "oklahoma-state": {
+      "assistants": [
+        {
+          "name": "Kasey Dunn",
+          "role": "Football assistant",
+          "pay": 1000000
+        },
+        {
+          "name": "Bryan Nardo",
+          "role": "Football assistant",
+          "pay": 700000
+        }
+      ],
+      "pool": 6000000
+    },
+    "ole-miss": {
+      "assistants": [
+        {
+          "name": "Pete Golding",
+          "role": "Defensive coordinator",
+          "pay": 2150000
+        },
+        {
+          "name": "Charlie Weis Jr.",
+          "role": "Football assistant",
+          "pay": 1650000
+        }
+      ],
+      "pool": 8225000
+    },
+    "oregon": {
+      "assistants": [
+        {
+          "name": "Tosh Lupoi",
+          "role": "Defensive coordinator",
+          "pay": 1900000
+        },
+        {
+          "name": "Will Stein",
+          "role": "Football assistant",
+          "pay": 1400000
+        }
+      ],
+      "pool": 8225000
+    },
+    "pittsburgh": {
+      "assistants": [
+        {
+          "name": "Randy Bates",
+          "role": "Football assistant",
+          "pay": 937944
+        }
+      ]
+    },
+    "purdue": {
+      "assistants": [
+        {
+          "name": "Graham Harrell",
+          "role": "Football assistant",
+          "pay": 950000
+        },
+        {
+          "name": "Kevin Kane",
+          "role": "Football assistant",
+          "pay": 850000
+        }
+      ],
+      "pool": 4965000
+    },
+    "rutgers": {
+      "assistants": [
+        {
+          "name": "Joe Harasymiak",
+          "role": "Football assistant",
+          "pay": 1500000
+        },
+        {
+          "name": "Kirk Ciarrocca",
+          "role": "Football assistant",
+          "pay": 1475000
+        }
+      ],
+      "pool": 5750000
+    },
+    "south-carolina": {
+      "assistants": [
+        {
+          "name": "Clayton White",
+          "role": "Football assistant",
+          "pay": 1200000
+        },
+        {
+          "name": "Dowell Loggains",
+          "role": "Football assistant",
+          "pay": 1000000
+        }
+      ],
+      "pool": 6635000
+    },
+    "tennessee": {
+      "assistants": [
+        {
+          "name": "Tim Banks",
+          "role": "Football assistant",
+          "pay": 1500000
+        },
+        {
+          "name": "Glen Elarbee",
+          "role": "Football assistant",
+          "pay": 900000
+        }
+      ],
+      "pool": 7135000
+    },
+    "texas": {
+      "assistants": [
+        {
+          "name": "Pete Kwiatkowski",
+          "role": "Football assistant",
+          "pay": 1800000
+        },
+        {
+          "name": "Kyle Flood",
+          "role": "Football assistant",
+          "pay": 1375000
+        }
+      ],
+      "pool": 9100000
+    },
+    "texas-am": {
+      "assistants": [
+        {
+          "name": "Collin Klein",
+          "role": "Football assistant",
+          "pay": 1600000
+        },
+        {
+          "name": "Jay Bateman",
+          "role": "Football assistant",
+          "pay": 1000000
+        }
+      ],
+      "pool": 7200000
+    },
+    "texas-tech": {
+      "assistants": [
+        {
+          "name": "Tim DeRuyter",
+          "role": "Football assistant",
+          "pay": 1050000
+        },
+        {
+          "name": "Zach Kittley",
+          "role": "Football assistant",
+          "pay": 850000
+        }
+      ],
+      "pool": 5301190
+    },
+    "ucf": {
+      "assistants": [
+        {
+          "name": "Addison Williams",
+          "role": "Football assistant",
+          "pay": 700000
+        },
+        {
+          "name": "Darin Hinshaw",
+          "role": "Football assistant",
+          "pay": 600000
+        }
+      ],
+      "pool": 4000000
+    },
+    "ucla": {
+      "assistants": [
+        {
+          "name": "Ikaika Malloe",
+          "role": "Football assistant",
+          "pay": 1000000
+        },
+        {
+          "name": "Juan Castillo",
+          "role": "Football assistant",
+          "pay": 605000
+        }
+      ],
+      "pool": 4670000
+    },
+    "utah": {
+      "assistants": [
+        {
+          "name": "Andy Ludwig",
+          "role": "Offensive coordinator",
+          "pay": 2050000
+        },
+        {
+          "name": "Morgan Scalley",
+          "role": "Defensive coordinator",
+          "pay": 2000000
+        }
+      ],
+      "pool": 8275000
+    },
+    "virginia": {
+      "assistants": [
+        {
+          "name": "Des Kitchings",
+          "role": "Football assistant",
+          "pay": 925000
+        },
+        {
+          "name": "John Rudzinski",
+          "role": "Football assistant",
+          "pay": 900000
+        }
+      ],
+      "pool": 4500000
+    },
+    "virginia-tech": {
+      "assistants": [
+        {
+          "name": "Chris Marve",
+          "role": "Football assistant",
+          "pay": 875000
+        },
+        {
+          "name": "Tyler Bowen",
+          "role": "Football assistant",
+          "pay": 875000
+        }
+      ],
+      "pool": 5435000
+    },
+    "wake-forest": {
+      "assistants": [
+        {
+          "name": "Warren Ruggiero",
+          "role": "Football assistant",
+          "pay": 1110585
+        },
+        {
+          "name": "Brad Lambert",
+          "role": "Football assistant",
+          "pay": 839166
+        }
+      ],
+      "pool": 1949743
+    },
+    "washington": {
+      "assistants": [
+        {
+          "name": "Brennan Carroll",
+          "role": "Football assistant",
+          "pay": 1300000
+        },
+        {
+          "name": "Steve Belichick",
+          "role": "Football assistant",
+          "pay": 1200000
+        }
+      ],
+      "pool": 7200000
+    },
+    "west-virginia": {
+      "assistants": [
+        {
+          "name": "Jordan Lesley",
+          "role": "Football assistant",
+          "pay": 775000
+        },
+        {
+          "name": "Chad Scott",
+          "role": "Football assistant",
+          "pay": 700000
+        }
+      ],
+      "pool": 4225000
+    },
+    "wisconsin": {
+      "assistants": [
+        {
+          "name": "Phil Longo",
+          "role": "Football assistant",
+          "pay": 1250000
+        },
+        {
+          "name": "Mike Tressel",
+          "role": "Football assistant",
+          "pay": 800000
+        }
+      ],
+      "pool": 5375000
+    }
+  }
+}

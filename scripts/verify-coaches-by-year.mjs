@@ -106,6 +106,10 @@ ok(chair('west-virginia', 2024).name === 'Neal Brown', 'WVU 2024 Neal Brown')
 ok(chair('west-virginia', 2025).name === 'Rich Rodriguez', 'WVU 2025 Rodriguez')
 ok(staffNames('lsu', 2026).includes('Charlie Weis Jr.'), 'LSU 2026 Weis Jr.')
 ok(staffNames('lsu', 2026).includes('Blake Baker'), 'LSU 2026 Baker')
+ok(staffNames('lsu', 2024).includes('Blake Baker'), 'LSU 2024 Baker is the USA TODAY name')
+ok(staffNames('lsu', 2024).includes('Bo Davis'), 'LSU 2024 Bo Davis')
+ok(!staffNames('lsu', 2024).includes('Charlie Weis Jr.'), 'LSU 2024 is not the 2026 Kiffin directory')
+ok(staffNames('lsu', 2025).length === 0, 'LSU 2025 has no cloned 2026 directory')
 
 ok(Object.keys(staffTape).length === 68, 'staff tape covers 68 schools')
 for (const [sid, payload] of Object.entries(staffTape)) {
@@ -121,9 +125,13 @@ for (const [sid, payload] of Object.entries(staffTape)) {
 }
 ok(!staffNames('florida-state', 2025).includes('Adam Fuller'), 'FSU 2025 no Fuller')
 ok(!staffNames('florida-state', 2025).includes('Alex Atkins'), 'FSU 2025 no Atkins')
+ok(!staffNames('florida-state', 2025).includes('Tony White'), 'FSU 2025 is not the 2026 directory')
 ok(staffNames('missouri', 2026).includes('Alex Atkins'), 'Missouri 2026 Atkins TE')
-const baker = (applySeason(byId.lsu, 2026).staff?.assistants || []).find((a) => a.name === 'Blake Baker')
-ok(baker?.pay?.value === 2_500_000, 'LSU 2026 Baker keeps cited $2.5M')
+const baker26 = (applySeason(byId.lsu, 2026).staff?.assistants || []).find((a) => a.name === 'Blake Baker')
+ok(baker26?.pay?.value == null, 'LSU 2026 Baker has no 2024 USA TODAY dollar')
+const baker24 = (applySeason(byId.lsu, 2024).staff?.assistants || []).find((a) => a.name === 'Blake Baker')
+ok(baker24?.pay?.value === 2_500_000, 'LSU 2024 Baker USA TODAY $2.5M')
+ok(baker24?.pay?.asOf === '2024-12-18', 'LSU 2024 Baker asOf is Dec 18, 2024')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} coachesByYear checks passed`)
