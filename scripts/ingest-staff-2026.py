@@ -11,7 +11,9 @@ from copy import deepcopy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-STAFF = json.loads(Path(__file__).with_name("staff-2026.json").read_text())
+# Official ACC + Notre Dame + SEC directories only. Big Ten / Big 12 wait
+# for their payload — we do not invent those assistants here.
+STAFF = json.loads(Path(__file__).with_name("staff-2026-acc-sec.json").read_text())
 
 PENDING = {
     "value": None,
@@ -49,7 +51,9 @@ def pending_pay(url: str | None) -> dict:
 def apply_school(school: dict, payload: dict) -> None:
     url = payload.get("url")
     existing = pay_index(school.get("staff", {}).get("assistants"))
-    # also index FSU year keys so we don't invent, but 2024 dollars stay on 2024
+    for row in (school.get("staffByYear") or {}).values():
+        existing.update(pay_index((row or {}).get("assistants")))
+    # 2024 FSU Fuller/Atkins dollars stay on 2024; we only reuse a dollar if this person is still on the 2026 list.
     assistants = []
     for row in payload.get("assistants") or []:
         name, role = row["name"], row["role"]
@@ -75,20 +79,19 @@ def apply_school(school: dict, payload: dict) -> None:
             ad_out["notes"] = ad_out.get("notes") or "Name from the official directory. No cited AD dollar on the desk."
         staff["athleticDirector"] = ad_out
 
-    # FSU year split: 2025/2026 get the new directory; 2024 Fuller/Atkins stay.
-    by = school.get("staffByYear")
-    if by:
-        for y in ("2025", "2026"):
-            if y in by:
-                year_staff = deepcopy(by[y])
-                year_staff["assistants"] = deepcopy(assistants)
-                if url:
-                    year_staff["notes"] = (
-                        "Official current directory. 2024 USA TODAY assistants (Fuller / Atkins) stay on 2024 only."
-                    )
-                if ad_name:
-                    year_staff["athleticDirector"] = deepcopy(staff["athleticDirector"])
-                by[y] = year_staff
+    # 2025/2026 get this directory. 2024 year keys (FSU Fuller/Atkins) stay put.
+    by = school.setdefault("staffByYear", {})
+    for y in ("2025", "2026"):
+        year_staff = deepcopy(by.get(y) or staff)
+        year_staff["assistants"] = deepcopy(assistants)
+        if url:
+            year_staff["notes"] = (
+                f"Official 2026 on-field directory ({url}). "
+                "2024 USA TODAY assistants (FSU Fuller / Atkins) stay on 2024 only."
+            )
+        if ad_name:
+            year_staff["athleticDirector"] = deepcopy(staff["athleticDirector"])
+        by[y] = year_staff
 
 
 def main() -> None:

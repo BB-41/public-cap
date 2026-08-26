@@ -1,0 +1,1916 @@
+{
+  "florida-state": {
+    "hc": "Mike Norvell",
+    "ad": "Michael Alford",
+    "url": "https://seminoles.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Tony White",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Tim Harris Jr.",
+        "role": "Offensive Coordinator/Wide Receivers Coach"
+      },
+      {
+        "name": "Chris Thomsen",
+        "role": "Deputy Head Coach/Tight Ends Coach"
+      },
+      {
+        "name": "Blue Adams",
+        "role": "Cornerbacks Coach"
+      },
+      {
+        "name": "Evan Cooper",
+        "role": "Safeties Coach"
+      },
+      {
+        "name": "Herb Hand",
+        "role": "Offensive Line Coach"
+      },
+      {
+        "name": "Terrance Knighton",
+        "role": "Defensive Line Coach"
+      },
+      {
+        "name": "Kam Martin",
+        "role": "Running Backs Coach"
+      },
+      {
+        "name": "Adam Scheier",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Ernie Sims",
+        "role": "Linebackers Coach"
+      },
+      {
+        "name": "Austin Tucker",
+        "role": "Quarterbacks Coach"
+      },
+      {
+        "name": "Nick Williams",
+        "role": "Edges Coach/Pass Rush Specialist"
+      },
+      {
+        "name": "Odell Haggins",
+        "role": "Associate Head Coach"
+      }
+    ]
+  },
+  "california": {
+    "hc": "Tosh Lupoi",
+    "url": "https://calbears.com/sports/football/roster",
+    "assistants": [
+      {
+        "name": "Nick Rolovich",
+        "role": "Associate Head Coach/Quarterbacks"
+      },
+      {
+        "name": "Michael Hutchings",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Jordan Somerville",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Zach Tinker",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Ike Hilliard",
+        "role": "Wide Receivers/Co-Offensive Coordinator"
+      },
+      {
+        "name": "Steve Haunga",
+        "role": "Tight Ends/Run Game Coordinator"
+      },
+      {
+        "name": "Keith Bhonapha",
+        "role": "Running Backs/Recruiting Coordinator"
+      },
+      {
+        "name": "Pat McCann",
+        "role": "Offensive Pass Game Coordinator"
+      },
+      {
+        "name": "Famika Anae",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Da'Von Brown",
+        "role": "Defensive Backs/Co-Defensive Coordinator"
+      },
+      {
+        "name": "Keith Heyward",
+        "role": "Defensive Pass Game Coordinator"
+      },
+      {
+        "name": "Darrion Daniels",
+        "role": "Defensive Line/Pass Rush Specialist"
+      },
+      {
+        "name": "Bryan Barraza",
+        "role": "Edge"
+      },
+      {
+        "name": "Bob Gregory",
+        "role": "Inside Linebackers"
+      },
+      {
+        "name": "Connor Boyd",
+        "role": "Safeties"
+      }
+    ]
+  },
+  "clemson": {
+    "hc": "Dabo Swinney",
+    "url": "https://clemsontigers.com/sports/football/roster/season/2026",
+    "assistants": [
+      {
+        "name": "Nick Eason",
+        "role": "Associate Head Coach/Co-Defensive Coordinator/Defensive Tackles"
+      },
+      {
+        "name": "Matt Luke",
+        "role": "Assistant Head Coach/Co-Offensive Coordinator/Offensive Line"
+      },
+      {
+        "name": "Mike Reed",
+        "role": "Assistant Head Coach/Cornerbacks"
+      },
+      {
+        "name": "Tom Allen",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Rich Bisaccia",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Chad Morris",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Thomas Allen",
+        "role": "Defensive Pass Game Coordinator"
+      },
+      {
+        "name": "Tyler Grisham",
+        "role": "Offensive Pass Game Coordinator/Wide Receivers"
+      },
+      {
+        "name": "Kyle Richardson",
+        "role": "Co-Offensive Coordinator/Tight Ends"
+      },
+      {
+        "name": "Chris Rumph",
+        "role": "Defensive Run Game Coordinator/Defensive Ends"
+      },
+      {
+        "name": "C.J. Spiller",
+        "role": "Offensive Run Game Coordinator/Running Backs"
+      },
+      {
+        "name": "Ben Boulware",
+        "role": "Linebackers Coach"
+      },
+      {
+        "name": "Tajh Boyd",
+        "role": "Quarterbacks Coach"
+      },
+      {
+        "name": "Nolan Turner",
+        "role": "Safeties Coach"
+      },
+      {
+        "name": "Corico Wright",
+        "role": "Nickelbacks Coach"
+      }
+    ]
+  },
+  "duke": {
+    "hc": "Manny Diaz",
+    "url": "https://goduke.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Jonathan Brewer",
+        "role": "Offensive Coordinator/Quarterbacks"
+      },
+      {
+        "name": "Jonathan Patke",
+        "role": "Defensive Coordinator/Linebackers"
+      },
+      {
+        "name": "Gabe Infante",
+        "role": "Special Teams Coordinator/Defensive Line"
+      },
+      {
+        "name": "V'Angelo Bentley",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Zohn Burden",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Alex Devine",
+        "role": "Defensive Tackles"
+      },
+      {
+        "name": "Rodney Freeman II",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Trent Harris",
+        "role": "Defensive Ends"
+      },
+      {
+        "name": "Rick Lyster",
+        "role": "Safeties"
+      },
+      {
+        "name": "Jeff Norrid",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Justin Watts",
+        "role": "Tight Ends"
+      }
+    ]
+  },
+  "georgia-tech": {
+    "hc": "Brent Key",
+    "url": "https://ramblinwreck.com/sports/m-footbl/roster",
+    "assistants": [
+      {
+        "name": "George Godsey",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Chris Weinke",
+        "role": "Co-OC/Quarterbacks"
+      },
+      {
+        "name": "Jimmy Smith",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Allen Mogridge",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Jafar Williams",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Nathan Brock",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Jason Semore",
+        "role": "Defensive Coordinator/Linebackers"
+      },
+      {
+        "name": "Jess Simpson",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Kyle Pope",
+        "role": "Defensive Ends/Outside Linebackers"
+      },
+      {
+        "name": "Vinnie Sunseri",
+        "role": "Defensive Backs"
+      },
+      {
+        "name": "Kobie Jones",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Tim Salem",
+        "role": "Special Teams Coordinator"
+      }
+    ]
+  },
+  "louisville": {
+    "hc": "Jeff Brohm",
+    "url": "https://gocards.com/sports/football/roster",
+    "assistants": [
+      {
+        "name": "Brian Brohm",
+        "role": "Offensive Coordinator/Quarterbacks"
+      },
+      {
+        "name": "Steve Ellis",
+        "role": "Co-Defensive Coordinator/Cornerbacks"
+      },
+      {
+        "name": "Mark Ivey",
+        "role": "Co-Defensive Coordinator/Defensive Line"
+      },
+      {
+        "name": "Chris Barclay",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Deion Branch",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Karl Maslowski",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Jontavius Morris",
+        "role": "Defensive Tackles"
+      },
+      {
+        "name": "Adam Mueller",
+        "role": "Linebackers"
+      },
+      {
+        "name": "Paul Petrino",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Brandon Sharp",
+        "role": "Safeties"
+      },
+      {
+        "name": "Dale Williams",
+        "role": "Offensive Line"
+      }
+    ]
+  },
+  "miami": {
+    "hc": "Mario Cristobal",
+    "url": "https://miamihurricanes.com/staff-directory/football/",
+    "assistants": [
+      {
+        "name": "Shannon Dawson",
+        "role": "Offensive Coordinator/Quarterbacks"
+      },
+      {
+        "name": "Corey Hetherman",
+        "role": "Defensive Coordinator/Linebackers"
+      },
+      {
+        "name": "Alex Mirabal",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Kevin Beard",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Will Harris",
+        "role": "Safeties"
+      },
+      {
+        "name": "Damione Lewis",
+        "role": "Defensive Tackles"
+      },
+      {
+        "name": "Jason Taylor",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Favian Upshaw",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Mike Viti",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Danny Kalter",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Terry Jefferson",
+        "role": "Cornerbacks"
+      }
+    ]
+  },
+  "nc-state": {
+    "hc": "Dave Doeren",
+    "url": "https://gopack.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Kurt Roper",
+        "role": "Offensive Coordinator/Quarterbacks"
+      },
+      {
+        "name": "DJ Eliot",
+        "role": "Defensive Coordinator/OLB"
+      },
+      {
+        "name": "Joker Phillips",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Garett Tujague",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Todd Goebbel",
+        "role": "Running Backs/STC"
+      },
+      {
+        "name": "Gavin Locklear",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Brian Mitchell",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Charlton Warren",
+        "role": "Co-DC/Safeties"
+      },
+      {
+        "name": "Elisha Shaw",
+        "role": "Defensive Tackles"
+      },
+      {
+        "name": "Isaiah Moore",
+        "role": "Inside Linebackers"
+      }
+    ]
+  },
+  "north-carolina": {
+    "hc": "Bill Belichick",
+    "url": "https://goheels.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Bobby Petrino",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Steve Belichick",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Billy Miller",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Will Friend",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Matt Lombardi",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Garrick McGee",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Natrone Means",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Caleb Pickrell",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Bob Diaco",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Brian Belichick",
+        "role": "Safeties"
+      },
+      {
+        "name": "Armond Hawkins",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Jamie Collins",
+        "role": "Inside Linebackers"
+      },
+      {
+        "name": "Ty Nichols",
+        "role": "Outside Linebackers"
+      }
+    ]
+  },
+  "pittsburgh": {
+    "hc": "Pat Narduzzi",
+    "url": "https://pittsburghpanthers.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Harlon Barnett",
+        "role": "Safeties/AHC"
+      },
+      {
+        "name": "Cory Sanders",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Kade Bell",
+        "role": "Offensive Coordinator/Quarterbacks"
+      },
+      {
+        "name": "Mike Priefer",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Joe Bowen",
+        "role": "Linebackers"
+      },
+      {
+        "name": "Archie Collins",
+        "role": "Secondary"
+      },
+      {
+        "name": "Tim Daoust",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Jeremy Darveau",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Brent Davis",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Lindsey Lamar",
+        "role": "Running Backs"
+      },
+      {
+        "name": "JJ Laster",
+        "role": "Wide Receivers"
+      }
+    ]
+  },
+  "smu": {
+    "hc": "Rhett Lashlee",
+    "url": "https://smumustangs.com/sports/football/roster",
+    "assistants": [
+      {
+        "name": "Rob Likens",
+        "role": "Co-OC/Wide Receivers"
+      },
+      {
+        "name": "Garin Justice",
+        "role": "Co-OC/Offensive Line"
+      },
+      {
+        "name": "D'Eriq King",
+        "role": "Co-OC/Quarterbacks"
+      },
+      {
+        "name": "Kyle Cooper",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Riley Dodge",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Maurice Crum Jr.",
+        "role": "Co-DC"
+      },
+      {
+        "name": "Rickey Hunley Jr.",
+        "role": "Co-DC/Secondary"
+      },
+      {
+        "name": "Sam Dunnam",
+        "role": "Edges"
+      },
+      {
+        "name": "Calvin Thibodeaux",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Kyle Ward",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Casey Horny",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Ryan Jenkins",
+        "role": "Inside Wide Receivers"
+      },
+      {
+        "name": "Warren Messer",
+        "role": "Linebackers"
+      }
+    ]
+  },
+  "stanford": {
+    "hc": "Tavita Pritchard",
+    "url": "https://gostanford.com/staff-directory/department/football",
+    "assistants": [
+      {
+        "name": "Terry Heffernan",
+        "role": "Director of Offense"
+      },
+      {
+        "name": "Kris Richard",
+        "role": "Director of Defense/DB"
+      },
+      {
+        "name": "Nate Kaczor",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Malcolm Agnew",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Brian Bratton",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Nate Byham",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Keli'i Kekuewa",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Brian Lindgren",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Jamey Mosley",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Andy Thompson",
+        "role": "Inside Linebackers"
+      },
+      {
+        "name": "Cory Robinson",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Kodi Whitfield",
+        "role": "Safeties"
+      }
+    ]
+  },
+  "syracuse": {
+    "hc": "Fran Brown",
+    "url": "https://cuse.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Vince Kehres",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Jeff Nixon",
+        "role": "Offensive Coordinator/Running Backs"
+      },
+      {
+        "name": "Alex Bayer",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Michael Johnson",
+        "role": "Co-OC/Tight Ends"
+      },
+      {
+        "name": "John Scott Jr.",
+        "role": "Co-DC/Defensive Line"
+      },
+      {
+        "name": "Sean Ryan",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Juan Castillo",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Perry Eliano",
+        "role": "Defensive Backs"
+      },
+      {
+        "name": "Josh Gattis",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Jeremy Hawkins",
+        "role": "Edge"
+      },
+      {
+        "name": "Dennis Thomas",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Marcus Walker",
+        "role": "Nickels"
+      }
+    ]
+  },
+  "virginia": {
+    "hc": "Tony Elliott",
+    "url": "https://virginiasports.com/sports/football/roster/season/2026-27",
+    "assistants": [
+      {
+        "name": "Des Kitchings",
+        "role": "Offensive Coordinator/Tight Ends"
+      },
+      {
+        "name": "John Rudzinski",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Keith Gaither",
+        "role": "Special Teams Coordinator/RB"
+      },
+      {
+        "name": "Kevin Downing",
+        "role": "Defensive Tackles"
+      },
+      {
+        "name": "Mike Adams",
+        "role": "Linebackers"
+      },
+      {
+        "name": "ShaDon Brown",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Curome Cox",
+        "role": "Safeties"
+      },
+      {
+        "name": "Taylor Lamb",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Adam Mims",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Joey Orck",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Chris Slade",
+        "role": "Defensive Ends"
+      }
+    ]
+  },
+  "virginia-tech": {
+    "hc": "James Franklin",
+    "ad": "Whit Babcock",
+    "url": "https://hokiesports.com/sports/football/roster",
+    "assistants": [
+      {
+        "name": "Norval McKenzie",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Brent Pry",
+        "role": "Defensive Coordinator/Linebackers"
+      },
+      {
+        "name": "Ty Howle",
+        "role": "Offensive Coordinator/Tight Ends"
+      },
+      {
+        "name": "Doug Shearer",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Vic Hall",
+        "role": "Nickels"
+      },
+      {
+        "name": "Anthony Midget",
+        "role": "Safeties"
+      },
+      {
+        "name": "Fontel Mines",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Matt Moore",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Danny O'Brien",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Nick Perry",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Sean Spencer",
+        "role": "Defensive Line"
+      }
+    ]
+  },
+  "wake-forest": {
+    "hc": "Jake Dickert",
+    "url": "https://godeacs.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Justin Kramer",
+        "role": "Assistant Head Coach"
+      },
+      {
+        "name": "Rob Ezell",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Dan Enos",
+        "role": "Co-OC/Quarterbacks"
+      },
+      {
+        "name": "Jared Kaster",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Effrem Reed",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Dyrell Roberts",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Wesley Beschorner",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Scottie Hazelton",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Freddie Banks",
+        "role": "Co-DC/Safeties"
+      },
+      {
+        "name": "Peter Kaligis",
+        "role": "Defensive Tackles"
+      },
+      {
+        "name": "T.J. Hollowell",
+        "role": "Defensive Ends"
+      },
+      {
+        "name": "Chevis Jackson",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Adam Pilapil",
+        "role": "Linebackers"
+      },
+      {
+        "name": "Bobby Maffei",
+        "role": "Stars"
+      },
+      {
+        "name": "Nick Whitworth",
+        "role": "Special Teams Coordinator"
+      }
+    ]
+  },
+  "boston-college": {
+    "hc": "Bill O'Brien",
+    "url": "https://bceagles.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Ted Roof",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Matt Thurin",
+        "role": "Special Teams Coordinator/Safeties"
+      },
+      {
+        "name": "Ben Albert",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Kurt Anderson",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Joe Dailey",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Jonathan DiBiaso",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Mike Hart",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Jules Montinar",
+        "role": "Defensive Backs"
+      },
+      {
+        "name": "Dan O'Brien",
+        "role": "Linebackers"
+      }
+    ]
+  },
+  "notre-dame": {
+    "hc": "Marcus Freeman",
+    "url": "https://fightingirish.com/sports/football/roster/season/2026-27",
+    "assistants": [
+      {
+        "name": "Chris Ash",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Mike Denbrock",
+        "role": "Offensive Coordinator/Tight Ends"
+      },
+      {
+        "name": "Marty Biagi",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Mike Brown",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Gino Guidugli",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Aaron Henry",
+        "role": "Co-DC/Defensive Backs"
+      },
+      {
+        "name": "Brian Jean-Mary",
+        "role": "Linebackers"
+      },
+      {
+        "name": "Charlie Partridge",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Joe Rudolph",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Ja'Juan Seider",
+        "role": "Running Backs"
+      }
+    ]
+  },
+  "alabama": {
+    "hc": "Kalen DeBoer",
+    "ad": "Greg Byrne",
+    "url": "https://rolltide.com/sports/football/coaches/2026",
+    "assistants": [
+      {
+        "name": "Ryan Grubb",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Kane Wommack",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Bryan Ellis",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Robert Gillespie",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Jason Jones",
+        "role": "Defensive Backs"
+      },
+      {
+        "name": "Adrian Klemm",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Maurice Linguist",
+        "role": "Co-DC/DB"
+      },
+      {
+        "name": "Chuck Morrell",
+        "role": "Linebackers"
+      },
+      {
+        "name": "Derrick Nix",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Jay Nunez",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Richard Owens",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Freddie Roach",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Christian Robinson",
+        "role": "Outside Linebackers"
+      }
+    ]
+  },
+  "arkansas": {
+    "hc": "Ryan Silverfield",
+    "ad": "Hunter Yurachek",
+    "url": "https://arkansasrazorbacks.com/sport/m-footbl/roster/",
+    "assistants": [
+      {
+        "name": "Tim Cramsey",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Ron Roberts",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Chad Lunsford",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Deron Wilson",
+        "role": "Co-DC/Secondary"
+      },
+      {
+        "name": "Eddie Hicks",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "David Johnson",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Marcus Johnson",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Jeff Myers",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Larry Smith",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Mitch Stewart",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Morgan Turner",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Landius Wilkerson",
+        "role": "Defensive Line"
+      }
+    ]
+  },
+  "auburn": {
+    "hc": "Alex Golesh",
+    "ad": "John Cohen",
+    "url": "https://auburntigers.com/sports/football/roster",
+    "assistants": [
+      {
+        "name": "Kodi Burns",
+        "role": "Co-OC/Wide Receivers"
+      },
+      {
+        "name": "Joel Gordon",
+        "role": "Offensive Coordinator/Quarterbacks"
+      },
+      {
+        "name": "DJ Durkin",
+        "role": "Defensive Coordinator/Linebackers"
+      },
+      {
+        "name": "Tim Banks",
+        "role": "Co-DC/Safeties"
+      },
+      {
+        "name": "Jacob Bronowski",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Tyler Hudanick",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Coleman Hutzler",
+        "role": "Edges"
+      },
+      {
+        "name": "Vontrell King-Williams",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Larry Porter",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Larry Scott",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "DeMarcus Van Dyke",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Brad Wilson",
+        "role": "Outside Linebackers"
+      }
+    ]
+  },
+  "florida": {
+    "hc": "Jon Sumrall",
+    "ad": "Scott Stricklin",
+    "url": "https://floridagators.com/sports/football/coaches/2026",
+    "assistants": [
+      {
+        "name": "Buster Faulkner",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Brad White",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Gerald Chatman",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Chris Collins",
+        "role": "Safeties"
+      },
+      {
+        "name": "Joe Craddock",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Marcus Davis",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Chris Foster",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Johnathan Galante",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Greg Gasparato",
+        "role": "Linebackers"
+      },
+      {
+        "name": "Bam Hardmon",
+        "role": "Outside Linebackers"
+      },
+      {
+        "name": "Brandon Harris",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Evan McKissack",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Trent McKnight",
+        "role": "Inside Wide Receivers"
+      },
+      {
+        "name": "Phil Trautwein",
+        "role": "Offensive Line"
+      }
+    ]
+  },
+  "georgia": {
+    "hc": "Kirby Smart",
+    "ad": "Josh Brooks",
+    "url": "https://georgiadogs.com/sports/football/coaches/2026",
+    "assistants": [
+      {
+        "name": "Kirk Benedict",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Mike Bobo",
+        "role": "Offensive Coordinator/Quarterbacks"
+      },
+      {
+        "name": "James Coley",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Josh Crawford",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Todd Hartley",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Larry Knight",
+        "role": "Outside Linebackers"
+      },
+      {
+        "name": "Phil Rauscher",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Travaris Robinson",
+        "role": "Co-DC/Safeties"
+      },
+      {
+        "name": "Glenn Schumann",
+        "role": "Defensive Coordinator/ILB"
+      },
+      {
+        "name": "Tray Scott",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Andrew Thacker",
+        "role": "Nickels"
+      },
+      {
+        "name": "Donte Williams",
+        "role": "Defensive Backs"
+      },
+      {
+        "name": "Brandon Streeter",
+        "role": "Quarterbacks"
+      }
+    ]
+  },
+  "kentucky": {
+    "hc": "Will Stein",
+    "ad": "Mitch Barnhart",
+    "url": "https://ukathletics.com/sports/football/roster/",
+    "assistants": [
+      {
+        "name": "Jay Bateman",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Joe Sloan",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Allen Brown",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Justin Burke",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Josh Christian-Young",
+        "role": "Safeties"
+      },
+      {
+        "name": "Cutter Leftwich",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Joe Price III",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Kolby Smith",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Anwar Stewart",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Tony Washington Jr.",
+        "role": "Edges"
+      },
+      {
+        "name": "Nate Dodson",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Parker Fleming",
+        "role": "Special Teams Coordinator"
+      }
+    ]
+  },
+  "lsu": {
+    "hc": "Lane Kiffin",
+    "ad": "Verge Ausberry",
+    "url": "https://lsusports.net/sports/fb/roster",
+    "assistants": [
+      {
+        "name": "Blake Baker",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Joe Cox",
+        "role": "Co-OC/Tight Ends"
+      },
+      {
+        "name": "James Cregg",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Joe Houston",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Sawyer Jordan",
+        "role": "Inside Wide Receivers"
+      },
+      {
+        "name": "Chris Kiffin",
+        "role": "Co-DC/Linebackers"
+      },
+      {
+        "name": "Sterling Lucas",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "George McDonald",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Jake Olsen",
+        "role": "Safeties"
+      },
+      {
+        "name": "Kevin Peoples",
+        "role": "Interior Defensive Line"
+      },
+      {
+        "name": "Corey Raymond",
+        "role": "Secondary"
+      },
+      {
+        "name": "Kevin Smith",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Lou Spanos",
+        "role": "Pass Rush"
+      },
+      {
+        "name": "Dane Stevens",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Charlie Weis Jr.",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Eric Wolford",
+        "role": "Offensive Line"
+      }
+    ]
+  },
+  "mississippi-state": {
+    "hc": "Jeff Lebby",
+    "ad": "Zac Selmon",
+    "url": "https://hailstate.com/sports/football/coaches/2026",
+    "assistants": [
+      {
+        "name": "Philip Montgomery",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Anthony Tucker",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Zach Arnett",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Matt Brock",
+        "role": "Co-DC/Linebackers"
+      },
+      {
+        "name": "Corey Bell",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Jon Cooper",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Vincent Dancy",
+        "role": "Defensive Ends/OLB"
+      },
+      {
+        "name": "Kevin Johns",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Phil Loadholt",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Cliff Odom",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Evan Harvey",
+        "role": "Safeties"
+      },
+      {
+        "name": "Kevie Thompson",
+        "role": "Nickels"
+      },
+      {
+        "name": "Ty Warren",
+        "role": "Defensive Line"
+      }
+    ]
+  },
+  "missouri": {
+    "hc": "Eliah Drinkwitz",
+    "ad": "Laird Veatch",
+    "url": "https://mutigers.com/sports/football/roster/2026",
+    "assistants": [
+      {
+        "name": "Corey Batoon",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Chip Lindsey",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "John Papuchis",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Al Pogue",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Derek Nicholson",
+        "role": "Co-DC/Linebackers"
+      },
+      {
+        "name": "Alex Atkins",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "David Blackwell",
+        "role": "Defensive Tackles"
+      },
+      {
+        "name": "Brian Early",
+        "role": "Edges"
+      },
+      {
+        "name": "Chop Harbin",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Brandon Jones",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Curtis Luper",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Jacob Peeler",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Garrett Riley",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Jacob Yoro",
+        "role": "Safeties"
+      }
+    ]
+  },
+  "oklahoma": {
+    "hc": "Brent Venables",
+    "ad": "Roger Denny",
+    "url": "https://soonersports.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Ben Arbuckle",
+        "role": "Offensive Coordinator/Quarterbacks"
+      },
+      {
+        "name": "Todd Bates",
+        "role": "Co-DC/Defensive Tackles"
+      },
+      {
+        "name": "Bill Bedenbaugh",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Miguel Chavis",
+        "role": "Defensive Ends"
+      },
+      {
+        "name": "Doug Deakin",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Nate Dreiling",
+        "role": "Inside Linebackers"
+      },
+      {
+        "name": "Wes Goodwin",
+        "role": "Outside Linebackers"
+      },
+      {
+        "name": "Brandon Hall",
+        "role": "Safeties"
+      },
+      {
+        "name": "Emmett Jones",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "John Kuceyeski",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Deland McCullough",
+        "role": "Running Backs"
+      },
+      {
+        "name": "LaMar Morgan",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Kevin Wilson",
+        "role": "Offense"
+      },
+      {
+        "name": "Jason Witten",
+        "role": "Tight Ends"
+      }
+    ]
+  },
+  "ole-miss": {
+    "hc": "Pete Golding",
+    "ad": "Keith Carter",
+    "url": "https://olemisssports.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "John David Baker",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Bryan Brown",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "John Garrison",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Randall Joyner",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Joe Judge",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Matt Kitchens",
+        "role": "Outside Linebackers"
+      },
+      {
+        "name": "Wes Neighbors III",
+        "role": "Safeties"
+      },
+      {
+        "name": "Jake Schoonover",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Jay Shoop",
+        "role": "Inside Linebackers"
+      },
+      {
+        "name": "L'Damian Washington",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Frank Wilson",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Cody Woodiel",
+        "role": "Co-OC/Tight Ends"
+      },
+      {
+        "name": "Marcus Woodson",
+        "role": "Co-DC"
+      }
+    ]
+  },
+  "south-carolina": {
+    "hc": "Shane Beamer",
+    "ad": "Jeremiah Donati",
+    "url": "https://gamecocksonline.com/staff-directory/football-803-777-4271/",
+    "assistants": [
+      {
+        "name": "Deion Barnes",
+        "role": "Defensive Ends/OLB"
+      },
+      {
+        "name": "Kendal Briles",
+        "role": "Offensive Coordinator/Quarterbacks"
+      },
+      {
+        "name": "Randy Clements",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Stan Drayton",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Shawn Elliott",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Mike Furrey",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Torrian Gray",
+        "role": "Co-DC/DB"
+      },
+      {
+        "name": "Trey Money",
+        "role": "Linebackers"
+      },
+      {
+        "name": "Travian Robertson",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Matthew Smiley",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Clayton White",
+        "role": "Defensive Coordinator/LBs"
+      }
+    ]
+  },
+  "tennessee": {
+    "hc": "Josh Heupel",
+    "ad": "Danny White",
+    "url": "https://utsports.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Alec Abeln",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Evan Crabtree",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Glen Elarbee",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Rodney Garner",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Joey Halzle",
+        "role": "Offensive Coordinator/Quarterbacks"
+      },
+      {
+        "name": "William Inge",
+        "role": "Linebackers"
+      },
+      {
+        "name": "Andrew Jackson",
+        "role": "LEOs"
+      },
+      {
+        "name": "Derek Jones",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Jim Knowles",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Anthony Poindexter",
+        "role": "Co-DC/Secondary"
+      },
+      {
+        "name": "Kelsey Pope",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "De'Rail Sims",
+        "role": "Running Backs"
+      }
+    ]
+  },
+  "texas": {
+    "hc": "Steve Sarkisian",
+    "ad": "Chris Del Conte",
+    "url": "https://texaslonghorns.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Kenny Baker",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Jeff Banks",
+        "role": "Special Teams Coordinator/TE"
+      },
+      {
+        "name": "Kyle Flood",
+        "role": "Offensive Coordinator/OL"
+      },
+      {
+        "name": "Blake Gideon",
+        "role": "Secondary"
+      },
+      {
+        "name": "Chris Jackson",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Jabbar Juluke",
+        "role": "Running Backs"
+      },
+      {
+        "name": "AJ Milwee",
+        "role": "Co-OC/Quarterbacks"
+      },
+      {
+        "name": "Will Muschamp",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Johnny Nansen",
+        "role": "Co-DC/ILB"
+      },
+      {
+        "name": "LaAllan Clark",
+        "role": "Edge"
+      }
+    ]
+  },
+  "texas-am": {
+    "hc": "Mike Elko",
+    "ad": "Trev Alberts",
+    "url": "https://12thman.com/sports/football/coaches",
+    "assistants": [
+      {
+        "name": "Holmon Wiggins",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Lyle Hemphill",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Patrick Dougherty",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Trooper Taylor",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Travis Williams",
+        "role": "Linebackers"
+      },
+      {
+        "name": "Elijah Robinson",
+        "role": "Co-DC/Defensive Line"
+      },
+      {
+        "name": "Ishmael Aristide",
+        "role": "Safeties"
+      },
+      {
+        "name": "Adam Cushing",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Bryant Gross-Armiento",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Tony Jerod-Eddie",
+        "role": "Defensive Tackles"
+      },
+      {
+        "name": "Joey Lynch",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "John Perry",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Derek Shay",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Stan Watson",
+        "role": "Edges"
+      }
+    ]
+  },
+  "vanderbilt": {
+    "hc": "Clark Lea",
+    "ad": "Candice Storey Lee",
+    "url": "https://vucommodores.com/sports/football/roster",
+    "assistants": [
+      {
+        "name": "Tim Beck",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Steve Gregory",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Nick Lezynski",
+        "role": "Co-DC/Linebackers"
+      },
+      {
+        "name": "Jeff LePak",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Ghaali Muhammad-Lankford",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Adam Morris",
+        "role": "Defensive Ends"
+      },
+      {
+        "name": "Alex Bailey",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Seth Payne",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Jovan Haye",
+        "role": "Defensive Tackles"
+      },
+      {
+        "name": "Melvin Rice",
+        "role": "Safeties"
+      },
+      {
+        "name": "Jamaal Richardson",
+        "role": "Cornerbacks"
+      },
+      {
+        "name": "Chris Klenakis",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Jeff Nady",
+        "role": "Offensive Tackles"
+      },
+      {
+        "name": "Brendan Flaherty",
+        "role": "Tight Ends"
+      },
+      {
+        "name": "Trenton Kirklin",
+        "role": "Quarterbacks"
+      }
+    ]
+  }
+}

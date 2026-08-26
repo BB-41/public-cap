@@ -3,6 +3,7 @@ import { applySeason } from '../src/lib/seasons.js'
 
 const data = JSON.parse(readFileSync(new URL('../data/schools.json', import.meta.url), 'utf8'))
 const tape = JSON.parse(readFileSync(new URL('./hc-history.json', import.meta.url), 'utf8'))
+const staffTape = JSON.parse(readFileSync(new URL('./staff-2026-acc-sec.json', import.meta.url), 'utf8'))
 const byId = Object.fromEntries(data.schools.map((s) => [s.id, s]))
 
 function chair(id, year) {
@@ -101,6 +102,24 @@ ok(chair('west-virginia', 2024).name === 'Neal Brown', 'WVU 2024 Neal Brown')
 ok(chair('west-virginia', 2025).name === 'Rich Rodriguez', 'WVU 2025 Rodriguez')
 ok(staffNames('lsu', 2026).includes('Charlie Weis Jr.'), 'LSU 2026 Weis Jr.')
 ok(staffNames('lsu', 2026).includes('Blake Baker'), 'LSU 2026 Baker')
+
+ok(Object.keys(staffTape).length === 34, 'ACC+ND+SEC staff tape has 34 schools')
+for (const [sid, payload] of Object.entries(staffTape)) {
+  const names = staffNames(sid, 2026)
+  const want = (payload.assistants || []).map((a) => a.name)
+  ok(names.join('|') === want.join('|'), `${sid} 2026 staff names match official directory`)
+  const ad = applySeason(byId[sid], 2026).staff?.athleticDirector?.name
+  if (payload.ad) {
+    ok(ad === payload.ad, `${sid} 2026 AD is ${payload.ad}`)
+    ok(!names.includes(payload.ad), `${sid} AD is not a football assistant`)
+  }
+  ok(chair(sid, 2026).name === payload.hc, `${sid} 2026 HC matches directory chair`)
+}
+ok(!staffNames('florida-state', 2025).includes('Adam Fuller'), 'FSU 2025 no Fuller')
+ok(!staffNames('florida-state', 2025).includes('Alex Atkins'), 'FSU 2025 no Atkins')
+ok(staffNames('missouri', 2026).includes('Alex Atkins'), 'Missouri 2026 Atkins TE')
+const baker = (applySeason(byId.lsu, 2026).staff?.assistants || []).find((a) => a.name === 'Blake Baker')
+ok(baker?.pay?.value === 2_500_000, 'LSU 2026 Baker keeps cited $2.5M')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} coachesByYear checks passed`)
