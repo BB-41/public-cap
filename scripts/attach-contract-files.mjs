@@ -49,7 +49,13 @@ const FILES = {
   ],
   minnesota: [
     { kind: 'board-packet', date: '2025-07-09', label: 'July 2025 Regents docket (70% quote)', url: 'https://regents.umn.edu/sites/regents.umn.edu/files/2025-07/docket-bor-july2025.pdf' },
-    { kind: 'board-packet', label: 'Feb. 2026 finance docket (new EA packet)', url: 'https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf' },
+    { kind: 'board-packet', date: '2026-02', label: 'Feb. 2026 finance docket (new EA packet)', url: 'https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf' },
+  ],
+  'michigan-state': [
+    { kind: 'term-sheet', date: '2025-12-01', label: 'Head Football Coach Terms Sheet (Dec. 1, 2025)', url: 'https://www.wlns.com/wp-content/uploads/sites/50/2025/12/Fitzgerald-terms-sheet.pdf' },
+  ],
+  'penn-state': [
+    { kind: 'term-sheet', date: '2025-12-08', label: 'Head Coach Term Sheet (Dec. 8, 2025)', url: 'https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf' },
   ],
   oregon: [
     { kind: 'board-packet', date: '2025-03-07', label: 'BOT Mar. 7, 2025 packet (Amendment #3)', url: 'https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf' },
