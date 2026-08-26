@@ -11311,7 +11311,7 @@
           {
             "name": "Barry Lunney Jr.",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Offensive Coordinator/Quarterbacks Coach",
             "pay": {
               "value": 1025000,
               "confidence": "reported",
@@ -11322,16 +11322,185 @@
             }
           },
           {
-            "name": "Aaron Henry",
+            "name": "Bobby Hauck",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Defensive Coordinator",
             "pay": {
-              "value": 725000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Chris Hurd",
+            "sport": "football",
+            "role": "Special Teams Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Ronnie Bradford",
+            "sport": "football",
+            "role": "Secondary Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Roger Cooper",
+            "sport": "football",
+            "role": "Inside Linebackers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Jared Elliott",
+            "sport": "football",
+            "role": "Tight Ends Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Mike Linehan",
+            "sport": "football",
+            "role": "Defensive Ends Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Archie McDaniel",
+            "sport": "football",
+            "role": "Outside Linebackers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Bart Miller",
+            "sport": "football",
+            "role": "Offensive Line Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Mike Neu",
+            "sport": "football",
+            "role": "Pass Game Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Corey Parker",
+            "sport": "football",
+            "role": "Defensive Backs Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Artur Sitkowski",
+            "sport": "football",
+            "role": "Quarterbacks Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Justin Stepp",
+            "sport": "football",
+            "role": "Wide Receivers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Jordan Thomas",
+            "sport": "football",
+            "role": "Defensive Line Coach/Run Game Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Tyrone Wheatley",
+            "sport": "football",
+            "role": "Running Backs Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://fightingillini.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -11342,7 +11511,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://fightingillini.com/sports/football/coaches/2026). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -11937,7 +12107,10 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Scott Dolson",
+          "source": "Official 2026 athletics staff directory",
+          "url": "https://iuhoosiers.com/sports/football/coaches"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -11958,7 +12131,7 @@
           {
             "name": "Bryant Haines",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Defensive Coordinator/Linebackers",
             "pay": {
               "value": 1175000,
               "confidence": "reported",
@@ -11971,7 +12144,7 @@
           {
             "name": "Mike Shanahan",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Offensive Coordinator/Wide Receivers",
             "pay": {
               "value": 800000,
               "confidence": "reported",
@@ -11979,6 +12152,149 @@
               "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
               "asOf": "2024-12-18",
               "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+            }
+          },
+          {
+            "name": "Grant Cain",
+            "sport": "football",
+            "role": "Special Teams Coordinator/Tight Ends",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Ola Adams",
+            "sport": "football",
+            "role": "Safeties",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Bob Bostad",
+            "sport": "football",
+            "role": "Offensive Line/Run Game Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Pat Kuntz",
+            "sport": "football",
+            "role": "Defensive Tackles",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "John Miller",
+            "sport": "football",
+            "role": "Running Backs",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Rod Ojong",
+            "sport": "football",
+            "role": "Defensive Pass Game Coordinator/Defensive Backs/Cornerbacks",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Tino Sunseri",
+            "sport": "football",
+            "role": "Quarterbacks/Co-Offensive Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Buddha Williams",
+            "sport": "football",
+            "role": "Defensive Ends",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Ben Harakel",
+            "sport": "football",
+            "role": "Senior Assistant Defensive Backs Coach - Rovers",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Alex Higgins",
+            "sport": "football",
+            "role": "Senior Assistant Offensive Line Coach/Tight Ends Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Ryan McInerney",
+            "sport": "football",
+            "role": "Senior Assistant Special Teams Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://iuhoosiers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -11989,7 +12305,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://iuhoosiers.com/sports/football/coaches). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -12444,7 +12761,8 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Beth Goetz"
         },
         "office": [],
         "otherHeadCoaches": [],
@@ -12930,7 +13248,10 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "James E. Smith",
+          "source": "Official 2026 athletics staff directory",
+          "url": "https://umterps.com/sports/football/coaches/2026"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -12949,29 +13270,146 @@
         ],
         "assistants": [
           {
-            "name": "Brian Williams",
+            "name": "Ted Monachino",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Defensive Coordinator/Outside Linebackers Coach",
             "pay": {
-              "value": 1300000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           },
           {
-            "name": "Josh Gattis",
+            "name": "Clint Trickett",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Offensive Coordinator/Quarterbacks Coach",
             "pay": {
-              "value": 950000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Aazaar Abdul-Rahim",
+            "sport": "football",
+            "role": "Co-Defensive Coordinator/Associate Head Coach for Defense/Cornerbacks Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Matt Barnes",
+            "sport": "football",
+            "role": "Special Teams Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Andre Powell",
+            "sport": "football",
+            "role": "Running Backs Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Latrell Scott",
+            "sport": "football",
+            "role": "Wide Receivers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "James Thomas Jr.",
+            "sport": "football",
+            "role": "Safeties Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Zac Spavital",
+            "sport": "football",
+            "role": "Inside Linebackers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Damian Wroblewski",
+            "sport": "football",
+            "role": "Offensive Line Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Randy Starks",
+            "sport": "football",
+            "role": "Defensive Line Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Kyle Schmitt",
+            "sport": "football",
+            "role": "Tight Ends Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://umterps.com/sports/football/coaches/2026",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -12982,7 +13420,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://umterps.com/sports/football/coaches/2026). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -13468,29 +13907,172 @@
         ],
         "assistants": [
           {
-            "name": "Wink Martindale",
+            "name": "Jason Beck",
             "sport": "football",
-            "role": "Defensive coordinator",
+            "role": "Sanford Robertson Offensive Coordinator, Robert McCollum Family Quarterbacks Coach",
             "pay": {
-              "value": 2300000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           },
           {
-            "name": "Lou Esposito",
+            "name": "Kerry Coombs",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Special Teams Coordinator",
             "pay": {
-              "value": 1286000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Jay Hill",
+            "sport": "football",
+            "role": "Matt and Nicole Lester Family Defensive Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Tony Alford",
+            "sport": "football",
+            "role": "Off. Run Game Coordinator/Running Backs",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Larry Black",
+            "sport": "football",
+            "role": "Defensive Tackles",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Koy Detmer",
+            "sport": "football",
+            "role": "Quarterbacks",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Jernaro Gilford",
+            "sport": "football",
+            "role": "Cornerbacks",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Brad Hawkins",
+            "sport": "football",
+            "role": "Assistant Safeties",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Lewis Powell",
+            "sport": "football",
+            "role": "Run Game Coordinator/Defensive Ends",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Micah Simon",
+            "sport": "football",
+            "role": "Wide Receivers",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Alex Whittingham",
+            "sport": "football",
+            "role": "Linebackers",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Tyler Stockton",
+            "sport": "football",
+            "role": "Safeties",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Freddie Whittingham",
+            "sport": "football",
+            "role": "Tight Ends",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://mgoblue.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -13501,7 +14083,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://mgoblue.com/sports/football/coaches). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -13956,7 +14539,10 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Jon Palumbo",
+          "source": "Official 2026 athletics staff directory",
+          "url": "https://msuspartans.com/sports/football/coaches"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -13975,9 +14561,22 @@
         ],
         "assistants": [
           {
+            "name": "LeVar Woods",
+            "sport": "football",
+            "role": "Assistant Head Coach/Special Teams Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
             "name": "Joe Rossi",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Secchia Family Defensive Coordinator",
             "pay": {
               "value": 1500000,
               "confidence": "reported",
@@ -13988,16 +14587,159 @@
             }
           },
           {
-            "name": "Brian Lindgren",
+            "name": "Nick Sheridan",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Offensive Coordinator",
             "pay": {
-              "value": 1100000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Max Bullough",
+            "sport": "football",
+            "role": "Co-Defensive Coordinator/Linebackers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "James Adams",
+            "sport": "football",
+            "role": "Safeties Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Andrew Bindelglass",
+            "sport": "football",
+            "role": "Rush Ends Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Winston DeLattiboudere III",
+            "sport": "football",
+            "role": "Defensive Line Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Courtney Hawkins",
+            "sport": "football",
+            "role": "Wide Receivers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "John McNulty",
+            "sport": "football",
+            "role": "Quarterbacks Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Hank Poteat",
+            "sport": "football",
+            "role": "Cornerbacks Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Devon Spalding",
+            "sport": "football",
+            "role": "Running Backs Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Nick Tabacca",
+            "sport": "football",
+            "role": "Offensive Line Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Brian Wozniak",
+            "sport": "football",
+            "role": "Tight Ends Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Matt Allen",
+            "sport": "football",
+            "role": "Volunteer Assistant Coach (Offense)",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://msuspartans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -14008,7 +14750,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://msuspartans.com/sports/football/coaches). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -14467,7 +15210,10 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Mark Coyle",
+          "source": "Official 2026 athletics staff directory",
+          "url": "https://gophersports.com/sports/football/coaches"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -14486,11 +15232,63 @@
         ],
         "assistants": [
           {
-            "name": "Corey Hetherman",
+            "name": "P.J. Fleck",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Offensive Coordinator / Quarterbacks",
             "pay": {
-              "value": 850000,
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Greg Harbaugh Jr.",
+            "sport": "football",
+            "role": "Defensive Coordinator / Safeties",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Danny Collins",
+            "sport": "football",
+            "role": "Cornerbacks / Co-Defensive Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Nick Monroe",
+            "sport": "football",
+            "role": "Run Game Coordinator / Offensive Line",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Brian Callahan",
+            "sport": "football",
+            "role": "Tight Ends Coach",
+            "pay": {
+              "value": 600000,
               "confidence": "reported",
               "source": "USA TODAY Sports football assistant salary database",
               "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
@@ -14499,16 +15297,94 @@
             }
           },
           {
-            "name": "Brian Callahan",
+            "name": "Eric Koehler",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Linebackers Coach",
             "pay": {
-              "value": 600000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Mariano Sori-Marin",
+            "sport": "football",
+            "role": "Defensive Line Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "C.J. Robbins",
+            "sport": "football",
+            "role": "Wide Receivers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Isaac Fruechte",
+            "sport": "football",
+            "role": "Running Backs Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Mohamed Ibrahim",
+            "sport": "football",
+            "role": "Rush Ends Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Steve Stanard",
+            "sport": "football",
+            "role": "Special Teams Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Mike Shula",
+            "sport": "football",
+            "role": "Offensive Line Assistant",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gophersports.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -14519,7 +15395,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://gophersports.com/sports/football/coaches). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -14974,7 +15851,8 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Troy Dannen"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -15479,7 +16357,8 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Mark Jackson"
         },
         "office": [],
         "otherHeadCoaches": [],
@@ -15960,29 +16839,159 @@
         ],
         "assistants": [
           {
-            "name": "Jim Knowles",
+            "name": "Matt Patricia",
             "sport": "football",
-            "role": "Defensive coordinator",
+            "role": "Defensive Coordinator",
             "pay": {
-              "value": 2200000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           },
           {
-            "name": "Chip Kelly",
+            "name": "Larry Johnson",
             "sport": "football",
-            "role": "Offensive coordinator",
+            "role": "Associate Head Coach / Defensive Line Coach",
             "pay": {
-              "value": 2000000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Tim Walton",
+            "sport": "football",
+            "role": "Co-Defensive Coordinator / Asst. Head Coach / Secondary Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Matt Guerrieri",
+            "sport": "football",
+            "role": "Safeties Coach / Pass Game Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "James Laurinaitis",
+            "sport": "football",
+            "role": "Linebackers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Arthur Smith",
+            "sport": "football",
+            "role": "Offensive Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Keenan Bailey",
+            "sport": "football",
+            "role": "Co-Offensive Coordinator / Tight Ends Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Tyler Bowen",
+            "sport": "football",
+            "role": "Offensive Line Coach / Run Game Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Billy Fessler",
+            "sport": "football",
+            "role": "Pass Game Coordinator / Quarterbacks Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Cortez Hankton",
+            "sport": "football",
+            "role": "Wide Receivers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Carlos Locklyn",
+            "sport": "football",
+            "role": "Running Backs Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Robby Discher",
+            "sport": "football",
+            "role": "Special Teams Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://ohiostatebuckeyes.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -15993,7 +17002,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://ohiostatebuckeyes.com/sports/football/coaches). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -16526,7 +17536,10 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Rob Mullens",
+          "source": "Official 2026 athletics staff directory",
+          "url": "https://goducks.com/sports/football/coaches"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -16545,29 +17558,159 @@
         ],
         "assistants": [
           {
-            "name": "Tosh Lupoi",
+            "name": "Chris Hampton",
             "sport": "football",
-            "role": "Defensive coordinator",
+            "role": "Defensive Coordinator/Safeties",
             "pay": {
-              "value": 1900000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           },
           {
-            "name": "Will Stein",
+            "name": "Drew Mehringer",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Offensive Coordinator",
             "pay": {
-              "value": 1400000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Joe Lorig",
+            "sport": "football",
+            "role": "Special Teams Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Kamran Araghi",
+            "sport": "football",
+            "role": "Edge",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Ross Douglas",
+            "sport": "football",
+            "role": "Wide Receivers/Pass Game Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Koa Ka'ai",
+            "sport": "football",
+            "role": "Quarterbacks",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Brian Michalowski",
+            "sport": "football",
+            "role": "Inside Linebackers",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "A'lique Terry",
+            "sport": "football",
+            "role": "Offensive Line",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Tony Tuioti",
+            "sport": "football",
+            "role": "Defensive Line",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Rashad Wadood",
+            "sport": "football",
+            "role": "Cornerbacks",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Jack Smith",
+            "sport": "football",
+            "role": "Tight Ends",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Ra'Shaad Samples",
+            "sport": "football",
+            "role": "Assistant Head Coach/Running Backs",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://goducks.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -16578,7 +17721,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://goducks.com/sports/football/coaches). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -17157,7 +18301,8 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Patrick Kraft"
         },
         "office": [],
         "otherHeadCoaches": [],
@@ -17610,7 +18755,8 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Tommy McClelland"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -18109,7 +19255,10 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Keli Zinn",
+          "source": "Official 2026 athletics staff directory",
+          "url": "https://scarletknights.com/sports/football/coaches"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -18128,11 +19277,11 @@
         ],
         "assistants": [
           {
-            "name": "Joe Harasymiak",
+            "name": "Kirk Ciarrocca",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Offensive Coordinator/Quarterbacks",
             "pay": {
-              "value": 1500000,
+              "value": 1475000,
               "confidence": "reported",
               "source": "USA TODAY Sports football assistant salary database",
               "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
@@ -18141,16 +19290,146 @@
             }
           },
           {
-            "name": "Kirk Ciarrocca",
+            "name": "Travis Johansen",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Defensive Coordinator",
             "pay": {
-              "value": 1475000,
-              "confidence": "reported",
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://scarletknights.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Dennis Dottin-Carter",
+            "sport": "football",
+            "role": "Defensive Line",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://scarletknights.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Eric Finney",
+            "sport": "football",
+            "role": "Cornerbacks",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://scarletknights.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Adam Cox",
+            "sport": "football",
+            "role": "Safeties",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://scarletknights.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Elijah Hodge",
+            "sport": "football",
+            "role": "Linebackers",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://scarletknights.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Luke Carrezola",
+            "sport": "football",
+            "role": "Defensive Tackles",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://scarletknights.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Damiere Shaw",
+            "sport": "football",
+            "role": "Associate Offensive Coordinator/Running Backs",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://scarletknights.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Dave Brock",
+            "sport": "football",
+            "role": "Wide Receivers",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://scarletknights.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Scott Vallone",
+            "sport": "football",
+            "role": "Tight Ends",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://scarletknights.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Jim Turner",
+            "sport": "football",
+            "role": "Offensive Line",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://scarletknights.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Bob Fraser",
+            "sport": "football",
+            "role": "Senior Defensive Assistant",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
               "source": "USA TODAY Sports football assistant salary database",
               "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
               "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -18161,7 +19440,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://scarletknights.com/sports/football/coaches). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -18612,7 +19892,8 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Martin Jarmond"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -19117,11 +20398,146 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Jennifer Cohen",
+          "source": "Official 2026 athletics staff directory",
+          "url": "https://usctrojans.com/sports/football/coaches"
         },
         "office": [],
         "otherHeadCoaches": [],
-        "assistants": []
+        "assistants": [
+          {
+            "name": "Mike Ekeler",
+            "sport": "football",
+            "role": "Special Teams Coordinator / Linebackers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://usctrojans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Paul Gonzales",
+            "sport": "football",
+            "role": "Safeties Coach / Defensive Pass Game Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://usctrojans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Zach Hanson",
+            "sport": "football",
+            "role": "Offensive Line Coach / Run Game Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://usctrojans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Luke Huard",
+            "sport": "football",
+            "role": "Offensive Coordinator / Quarterbacks Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://usctrojans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Skyler Jones",
+            "sport": "football",
+            "role": "Defensive Tackles Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://usctrojans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Shaun Nua",
+            "sport": "football",
+            "role": "Defensive End Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://usctrojans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Gary Patterson",
+            "sport": "football",
+            "role": "Defensive Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://usctrojans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Trovon Reed",
+            "sport": "football",
+            "role": "Cornerbacks Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://usctrojans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Chad Savage",
+            "sport": "football",
+            "role": "Tight Ends / Inside Receivers Coach / Pass Game Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://usctrojans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Dennis Simmons",
+            "sport": "football",
+            "role": "Assistant Head Coach / Co-Offensive Coordinator / Wide Receivers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://usctrojans.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          }
+        ],
+        "notes": "2026 on-field staff from the official directory (https://usctrojans.com/sports/football/coaches). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -19568,7 +20984,10 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Patrick Chun",
+          "source": "Official 2026 athletics staff directory",
+          "url": "https://gohuskies.com/sports/football/coaches"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -19587,29 +21006,146 @@
         ],
         "assistants": [
           {
-            "name": "Brennan Carroll",
+            "name": "Kevin Cummings",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Pass Game Coordinator/Wide Receivers Coach",
             "pay": {
-              "value": 1300000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           },
           {
-            "name": "Steve Belichick",
+            "name": "Michael Switzer",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Offensive Line Coach",
             "pay": {
-              "value": 1200000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Jordan Paopao",
+            "sport": "football",
+            "role": "Tight Ends Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "JP Losman",
+            "sport": "football",
+            "role": "Quarterbacks Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Ryan Walters",
+            "sport": "football",
+            "role": "Defensive Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Jason Kaufusi",
+            "sport": "football",
+            "role": "Run Game Coordinator/Defensive Line Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Brian Odom",
+            "sport": "football",
+            "role": "Inside Linebackers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "John Richardson",
+            "sport": "football",
+            "role": "Secondary Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Taylor Mays",
+            "sport": "football",
+            "role": "Safeties Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Aaron Van Horn",
+            "sport": "football",
+            "role": "Outside Linebackers Coach",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Chris Petrilli",
+            "sport": "football",
+            "role": "Special Teams Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://gohuskies.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -19620,7 +21156,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://gohuskies.com/sports/football/coaches). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
@@ -20077,7 +21614,10 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "name": "Shawn Eichorst",
+          "source": "Official 2026 athletics staff directory",
+          "url": "https://uwbadgers.com/sports/football/coaches"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -20096,11 +21636,24 @@
         ],
         "assistants": [
           {
-            "name": "Phil Longo",
+            "name": "Jeff Grimes",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Offensive Coordinator",
             "pay": {
-              "value": 1250000,
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Mike Tressel",
+            "sport": "football",
+            "role": "Defensive Coordinator",
+            "pay": {
+              "value": 800000,
               "confidence": "reported",
               "source": "USA TODAY Sports football assistant salary database",
               "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
@@ -20109,16 +21662,146 @@
             }
           },
           {
-            "name": "Mike Tressel",
+            "name": "Tuf Borland",
             "sport": "football",
-            "role": "Football assistant",
+            "role": "Inside Linebackers",
             "pay": {
-              "value": 800000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports football assistant salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
-              "asOf": "2024-12-18",
-              "notes": "2024 contract-year total pay. Assistants turn over; this is the last published USA TODAY assistant table."
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Jayden Everett",
+            "sport": "football",
+            "role": "Running Backs",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Ari Confesor",
+            "sport": "football",
+            "role": "Wide Receivers",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Jack Cooper",
+            "sport": "football",
+            "role": "Safeties",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Kenny Guiton",
+            "sport": "football",
+            "role": "Quarterbacks",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Paul Haynes",
+            "sport": "football",
+            "role": "Secondary",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Eric Mateos",
+            "sport": "football",
+            "role": "Offensive Line",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Matt Mitchell",
+            "sport": "football",
+            "role": "Associate Head Coach / Outside Linebackers",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Robert Steeples",
+            "sport": "football",
+            "role": "Cornerbacks",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "E.J. Whitlow",
+            "sport": "football",
+            "role": "Defensive Line",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
+            }
+          },
+          {
+            "name": "Bob Ligashesky",
+            "sport": "football",
+            "role": "Special Teams Coordinator",
+            "pay": {
+              "value": null,
+              "confidence": "pending",
+              "source": "Official 2026 football coaches directory",
+              "url": "https://uwbadgers.com/sports/football/coaches",
+              "asOf": "2026",
+              "notes": "Official 2026 on-field directory. No cited dollar on the desk for this assistant."
             }
           }
         ],
@@ -20129,7 +21812,8 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
           "asOf": "2024-12-18",
           "notes": "Published staff-total pay for the school's primary on-field football assistants, 2024 contract year."
-        }
+        },
+        "notes": "2026 on-field staff from the official directory (https://uwbadgers.com/sports/football/coaches). Pay stays pending unless a cited dollar already existed for that person. Not a 2024 USA TODAY assistant table."
       },
       "coachesByYear": {
         "2021": {
