@@ -149,13 +149,54 @@ def year_row(book: dict | None, year: int) -> dict | None:
     return book.get(year) or book.get(str(year))
 
 
-def keep_existing(fb: dict | None, tape_name: str) -> dict | None:
+def is_usa_today(field: dict | None) -> bool:
+    src = ((field or {}).get("source") or "").upper()
+    return "USA TODAY" in src
+
+
+def is_file_dollar(fb: dict | None) -> bool:
+    """True when the desk already has a non-USA TODAY cited dollar for this chair."""
+    if not fb:
+        return False
+    pay = fb.get("pay") or {}
+    if pay.get("value") is None:
+        return False
+    return not is_usa_today(pay)
+
+
+def keep_file_chair(fb: dict | None, tape_name: str) -> dict | None:
+    """Keep file-cited pay / contract blobs. Do not keep a copied USA TODAY cell."""
     if not fb or not same_person(fb.get("name"), tape_name):
         return None
-    if fb.get("pay", {}).get("value") is None and fb.get("buyout", {}).get("value") is None:
-        if not fb.get("contract") and not fb.get("contractUrl"):
-            return None
-    return deepcopy(fb)
+    if not is_file_dollar(fb) and not fb.get("contract") and not fb.get("contractUrl"):
+        return None
+    kept = deepcopy(fb)
+    if is_usa_today(kept.get("pay")):
+        kept["pay"] = pending_pay("No extracted pay on the desk for this chair-year.")
+    if is_usa_today(kept.get("buyout")):
+        kept["buyout"] = pending_pay("USA TODAY buyout cell not reused on a year without a tape pay cell.")
+    if kept.get("pay", {}).get("value") is None and not kept.get("contract") and not kept.get("contractUrl"):
+        return None
+    return kept
+
+
+def apply_chair_notes(fb: dict, name: str, notes: str | None, source_note: str, wiki: str) -> dict:
+    fb["name"] = name
+    term = fb.get("term") or {}
+    term.setdefault("confidence", "pending")
+    term.setdefault("asOf", "2026-08")
+    term["source"] = "Wikipedia season-page infobox"
+    term["url"] = wiki
+    extra = term.get("notes") or ""
+    if source_note not in extra:
+        term["notes"] = f"{source_note} {extra}".strip()
+    elif notes and notes not in extra:
+        term["notes"] = f"{notes} {extra}".strip()
+    fb["term"] = term
+    pay = fb.get("pay")
+    if pay and notes and notes not in (pay.get("notes") or ""):
+        pay["notes"] = f"{notes} {pay.get('notes') or ''}".strip()
+    return fb
 
 
 def build_chair(school: dict, year: int, tape_row: dict, existing_year: dict | None) -> dict:
@@ -169,36 +210,58 @@ def build_chair(school: dict, year: int, tape_row: dict, existing_year: dict | N
     if notes:
         source_note = f"{notes} {source_note}"
 
-    kept = keep_existing((existing_year or {}).get("football"), name)
+    existing_fb = (existing_year or {}).get("football")
+    current_fb = (school.get("coaches") or {}).get("football")
+
+    # Tape pay cell wins for that year (USA TODAY 2025). File dollars stay on years
+    # the tape leaves blank — especially 2026 current-chair PDFs. We do not copy a
+    # 2025 USA TODAY cell onto 2021–24 or onto a 2026 name-only row.
+    if tape_row.get("pay") is not None:
+        pay = usat_pay(tape_row["pay"])
+        if notes:
+            pay["notes"] = f"{notes} {pay['notes']}"
+        out = {
+            "name": name,
+            "pay": pay,
+            "buyout": {
+                "value": None,
+                "confidence": "pending",
+                "source": USAT["source"],
+                "url": USAT["url"],
+                "asOf": None,
+                "notes": "USA TODAY buyout cell not on this tape. School-side overhang stays pending unless a file dollar exists.",
+            },
+            "term": {
+                "confidence": "pending",
+                "asOf": "2026-08",
+                "source": "Wikipedia season-page infobox",
+                "url": wiki,
+                "notes": source_note,
+            },
+        }
+        donor = existing_fb if same_person((existing_fb or {}).get("name"), name) else None
+        if donor:
+            if donor.get("contract"):
+                out["contract"] = deepcopy(donor["contract"])
+            if donor.get("contractUrl"):
+                out["contractUrl"] = donor["contractUrl"]
+            buy = donor.get("buyout") or {}
+            if buy.get("value") is not None and not is_usa_today(buy):
+                out["buyout"] = deepcopy(buy)
+            elif buy.get("rule"):
+                out["buyout"] = {**out["buyout"], "rule": buy["rule"], "source": buy.get("source") or out["buyout"]["source"]}
+        return out
+
+    kept = keep_file_chair(existing_fb, name)
+    if not kept and year == 2026:
+        kept = keep_file_chair(current_fb, name)
     if kept:
-        kept["name"] = name
-        extra = (kept.get("pay") or {}).get("notes") or ""
-        if source_note not in extra:
-            if kept.get("pay"):
-                kept["pay"]["notes"] = f"{source_note} {extra}".strip()
-        if notes and kept.get("term") and notes not in (kept["term"].get("notes") or ""):
-            kept["term"]["notes"] = f"{notes} {kept['term'].get('notes') or ''}".strip()
-        return kept
+        return apply_chair_notes(kept, name, notes, source_note, wiki)
 
-    # 2026 current-directory object wins when it is the same chair (PDF / file pay).
-    if year == 2026:
-        current = keep_existing(school.get("coaches", {}).get("football"), name)
-        if current:
-            current["name"] = name
-            return current
-
-    pay = usat_pay(tape_row["pay"]) if tape_row.get("pay") is not None else pending_pay(source_note)
     return {
         "name": name,
-        "pay": pay,
-        "buyout": pending_pay(source_note) if pay.get("value") is None else {
-            "value": None,
-            "confidence": "pending",
-            "source": USAT["source"],
-            "url": USAT["url"],
-            "asOf": None,
-            "notes": "USA TODAY buyout cell not on this tape. School-side overhang stays pending unless a file dollar exists.",
-        },
+        "pay": pending_pay(source_note),
+        "buyout": pending_pay(source_note),
         "term": {
             "confidence": "pending",
             "asOf": "2026-08",
