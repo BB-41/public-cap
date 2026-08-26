@@ -163,7 +163,14 @@ export default function Methods({ meta }) {
         $32.9M FOIA Mar 2025–Jul 1 2026, including ~$12.7M pre-cap KY NIL; prior desk
         cell was $20.27M for the House Year 1 window. Kentucky $18M from March 2025–July
         2026 as reported by counsel. CalMatters, August 2026: UCLA and California each
-        about $20.5M in 2025-26; names/sport splits not released).
+        about $20.5M in 2025-26; names/sport splits not released. Texas Public Radio,
+        April 2026: Texas $13.5M House Year 1 YTD Jul 2025–Mar 2026; on-track ~$18M
+        left unbooked. FY2025 MFRS / pre-cap cells: Penn State Item 44 $18,368,391
+        with published sport lines; Oklahoma State “just over $16 million,” booked as
+        $16M estimated — not $16,000,001; Texas school-FY $3.2M, only two months of
+        House. Georgia, Tennessee, Alabama, Oregon, Utah, and UNC FY2025 Item 44 $0
+        from the cited filings. Kentucky FY2025 $0 is not booked — no public MFRS PDF
+        on the desk; the $18M counsel cell stays).
       </p>
       <p>
         Ratios: NIL ÷ House cap, and NIL ÷ our capacity. A school can sit near 100% of

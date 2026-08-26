@@ -91,9 +91,42 @@ for (const year of [2025, 2026]) {
 const y25 = pack(2025)
 const booked = y25.filter((r) => r.booked != null).map((r) => `${r.school.id}=${r.booked}`)
 console.log('2025 booked still present:', booked.join(', ') || '(none)')
+const expect25 = {
+  louisville: 32_900_000,
+  kentucky: 18_000_000,
+  ucla: 20_500_000,
+  california: 20_500_000,
+  texas: 13_500_000,
+}
+for (const [id, n] of Object.entries(expect25)) {
+  const row = y25.find((r) => r.school.id === id)
+  if (row?.booked !== n) throw new Error(`2025 ${id} booked ${row?.booked} != ${n}`)
+}
+if (y25.find((r) => r.school.id === 'penn-state')?.booked != null) {
+  throw new Error('2025 penn-state must stay pending — FY2025 Item 44 is preCap, not House Year 1')
+}
 const y24 = pack(2024)
 const booked24 = y24.filter((r) => r.booked != null).map((r) => `${r.school.id}=${r.booked}`)
 console.log('2024 booked still present:', booked24.join(', ') || '(none)')
+const expect24 = {
+  louisville: 12_700_000,
+  'penn-state': 18_368_391,
+  'oklahoma-state': 16_000_000,
+  texas: 3_200_000,
+  georgia: 0,
+  oregon: 0,
+  tennessee: 0,
+  alabama: 0,
+  utah: 0,
+  'north-carolina': 0,
+}
+for (const [id, n] of Object.entries(expect24)) {
+  const row = y24.find((r) => r.school.id === id)
+  if (row?.booked !== n) throw new Error(`2024 ${id} booked ${row?.booked} != ${n}`)
+}
+if (y24.find((r) => r.school.id === 'kentucky')?.booked != null) {
+  throw new Error('2024 kentucky must stay pending — do not overwrite the House-window $18M cell with an invented FY2025 $0')
+}
 
 const nd21 = pack(2021).find((r) => r.school.id === 'notre-dame')
 const accTp = conferenceNilBand('ACC').thirdParty

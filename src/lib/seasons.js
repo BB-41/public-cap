@@ -409,19 +409,19 @@ export function applySeason(school, year) {
 
   const nil = { ...(school.nil || {}) }
   if (year === 2025) {
-    // House Year 1 window — Louisville / Kentucky booked figures stay.
-  } else if (year === 2024 && school.id === 'louisville' && school.nil?.preCap) {
+    // House Year 1 window — booked figures stay. FY2025 preCap stays as a companion cell.
+  } else if (year === 2024 && school.nil?.preCap && school.nil.preCap.value != null) {
     nil.booked = {
       ...school.nil.preCap,
       notes:
         (school.nil.preCap.notes || '') +
-        ' Shown on football 2024 as the cited FY2025 pre-House institutional NIL line. Does not count against a House cap (none yet).',
+        ' Shown on football 2024 as the cited FY2025 institutional NIL line.',
     }
     delete nil.preCap
   } else {
     nil.booked = pendingNil(
       year >= 2026
-        ? '2026–27 booked NIL not extracted. Louisville / Kentucky cited figures are House Year 1 (2025–26).'
+        ? '2026–27 booked NIL not extracted. House Year 1 (2025–26) and FY2025 MFRS cells stay on those seasons.'
         : 'No booked FOIA / MFRS / collective 990 figure on the desk for this season.'
     )
     delete nil.preCap
