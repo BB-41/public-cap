@@ -80,7 +80,7 @@
       "termThrough": "2031-12-31",
       "steps": [],
       "rule": "If Florida terminates without cause: 70% of remaining annualized compensation, paid in equal monthly installments through Dec. 31, 2031. $7.45 million per contract year. No public current-dollar overhang is on this desk; we will not multiply 70% \u00d7 remaining years ourselves.",
-      "notes": "Billy Napier\u2019s $21.2M is a paid-buyout, not this tool. Coach-side liquidated damages if Sumrall walks ($10M in 2026, then $8/$3/$2/$1/$0) are a separate schedule.",
+      "notes": "Billy Napier\u2019s $21.2M is a paid-buyout, not this tool. Current chair is Jon Sumrall: $7.45 million per contract year and 70% remaining through Dec. 31, 2031 (Gainesville Sun / UF payment details).",
       "mitigation": {
         "rule": "School-side 70% buyout is reduced if Sumrall accepts an NFL or Division I coaching or front-office job. He is not required to take one. We do not invent a dollar offset.",
         "source": {
@@ -91,7 +91,22 @@
       "contract": {
         "label": "Gainesville Sun / UF released payment details (Dec. 1, 2025)",
         "url": "https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/"
-      }
+      },
+      "pay": {
+        "value": 7450000,
+        "year": 2026,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "Gainesville Sun (Dec. 1, 2025), quoting UF payment details",
+        "url": "https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/",
+        "notes": "$7.45 million per contract year as published in the payment-details story. No current-chair PDF on this desk. Napier\u2019s USA TODAY cell is not reused.",
+        "breakdown": null,
+        "schedule": null,
+        "incentives": null,
+        "baseOnly": null
+      },
+      "buyoutRule": "70% remaining annualized compensation through Dec. 31, 2031 (article).",
+      "coachSide": "Coach-side LD if Sumrall walks: $10M in 2026, then $8 / $3 / $2 / $1 / $0."
     },
     "georgia": {
       "sport": "fb",
@@ -147,11 +162,65 @@
         "files": [
           {
             "kind": "employment-agreement",
-            "label": "Current employment agreement (FY2025–26)",
+            "label": "Current employment agreement (FY2025\u201326)",
             "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 5500000,
+        "year": 2026,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "University of Kentucky Stein FY2025\u201326 employment agreement PDF",
+        "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf",
+        "notes": "Regular Compensation = Base $400,000 + media/endorsements $5,100,000 annualized through Jan. 31, 2027. Incentives not included.",
+        "breakdown": [
+          {
+            "label": "Base",
+            "value": 400000
+          },
+          {
+            "label": "Media / endorsements (through Jan. 31, 2027)",
+            "value": 5100000
+          }
+        ],
+        "schedule": [
+          {
+            "period": "Dec 2, 2025 \u2013 Jan 31, 2027",
+            "value": 5500000,
+            "notes": "Base $400k + media $5.1M annualized"
+          },
+          {
+            "period": "Feb 1, 2027 \u2013 Jan 31, 2028",
+            "value": 5600000,
+            "notes": "Base $400k + media $5.2M"
+          },
+          {
+            "period": "Feb 1, 2028 \u2013 Jan 31, 2029",
+            "value": 5700000,
+            "notes": "Base $400k + media $5.3M"
+          },
+          {
+            "period": "Feb 1, 2029 \u2013 Jan 31, 2030",
+            "value": 5800000,
+            "notes": "Base $400k + media $5.4M"
+          },
+          {
+            "period": "Feb 1, 2030 \u2013 Jan 31, 2031",
+            "value": 5900000,
+            "notes": "Base $400k + media $5.5M"
+          }
+        ],
+        "incentives": [
+          {
+            "label": "Regular-season win bonuses",
+            "notes": "File lists $100k\u2013$200k steps; not included in Regular Compensation."
+          }
+        ],
+        "baseOnly": null
+      },
+      "buyoutRule": "70% of remaining Regular Compensation, paid monthly through Jan. 31, 2031. Subject to mitigate/offset."
     },
     "lsu": {
       "sport": "fb",
@@ -170,7 +239,7 @@
           }
         }
       ],
-      "notes": "Brian Kelly\u2019s ~$53M is a paid-buyout, not this tool. The Athletic\u2019s $62.4 million \u201cafter the 2026 season starts\u201d figure quoted the Nov. 29, 2025 term sheet \u2014 not remaining-pay math from this signed EA \u2014 and is not the desk dollar.",
+      "notes": "Brian Kelly\u2019s ~$53M is a paid-buyout, not this tool. Annual pay is the term-sheet $13,000,000 (Base $400,000 + Supplemental $12,600,000). School-side is 80% remaining Base + Supplemental with no mitigate/offset \u2014 we do not invent the remainder.",
       "mitigation": {
         "rule": "No duty to mitigate and no offset if Kiffin takes another job. The file still does not give us a remaining-pay dollar we can print without inventing the remainder.",
         "source": {
@@ -195,7 +264,41 @@
             "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 13000000,
+        "year": 2026,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "LSU term sheet \u2014 Lane Kiffin (Nov. 29, 2025)",
+        "url": "https://www.louisianafirstnews.com/wp-content/uploads/sites/80/2025/12/2025.11.29-Term-Sheet-Lane-Kiffin.pdf",
+        "notes": "Base $400,000 + Supplemental $12,600,000. Paid monthly. Post-season incentives are not included in this cell.",
+        "breakdown": [
+          {
+            "label": "Base",
+            "value": 400000
+          },
+          {
+            "label": "Supplemental",
+            "value": 12600000
+          }
+        ],
+        "schedule": null,
+        "incentives": [
+          {
+            "label": "Post-season incentives",
+            "value": 4000000,
+            "notes": "Maximum $4,000,000 in a contract year. Not included in annual pay."
+          },
+          {
+            "label": "CFP national-title escalator",
+            "notes": "Once during the term, TAC increases to exceed the highest FBS HC APY."
+          }
+        ],
+        "baseOnly": null
+      },
+      "buyoutRule": "80% remaining Base + Supplemental, no mitigate/offset.",
+      "coachSide": "Coach-side LD: $7M / $6M / $5M / $3M / $2M / $1.5M by calendar year through 2031; 50% if Verge Ausberry is not AD."
     },
     "mississippi-state": {
       "sport": "fb",
@@ -252,7 +355,21 @@
             "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 9000000,
+        "year": 2025,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "USA TODAY Sports coach salary database",
+        "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
+        "notes": "Restated EA is linked; the athletics host returned an HTML shell, so no salary line could be extracted from the packet. USA TODAY $9,000,000 is the current-chair fallback. PDF rule is 80% of remaining Base + Non-Salary + Publicity Rights.",
+        "breakdown": null,
+        "schedule": null,
+        "incentives": null,
+        "baseOnly": null
+      },
+      "buyoutRule": "80% remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate."
     },
     "oklahoma": {
       "sport": "fb",
@@ -284,9 +401,23 @@
       "termThrough": null,
       "steps": [],
       "rule": "No public step schedule and no current-chair if-fired dollar on this desk. Honest pending \u2014 not a guessed staircase.",
-      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair.",
+      "notes": "Prior-coach USA TODAY cell is not reused; that money is a paid-buyout or a vacated chair. Pete Golding pay and buyout stay pending until a current-chair file publishes a dollar.",
       "mitigation": null,
-      "contract": null
+      "contract": null,
+      "pay": {
+        "value": null,
+        "year": null,
+        "yearLabel": null,
+        "confidence": "pending",
+        "source": null,
+        "url": null,
+        "notes": "No current-chair file with a published dollar. Prior-coach (Kiffin) USA TODAY pay is not reused.",
+        "breakdown": null,
+        "schedule": null,
+        "incentives": null,
+        "baseOnly": null
+      },
+      "buyoutRule": "No public current-chair buyout rule on this desk."
     },
     "south-carolina": {
       "sport": "fb",
@@ -370,11 +501,25 @@
           {
             "kind": "amendment",
             "n": 3,
-            "label": "Amendment 3 (Aug. 2025) — current governing",
+            "label": "Amendment 3 (Aug. 2025) \u2014 current governing",
             "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 9000000,
+        "year": 2025,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "USA TODAY Sports coach salary database",
+        "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
+        "notes": "Amendment 3 restates term and remaining-pay %; it does not publish a Base / Supplemental table. USA TODAY $9,000,000 is the current-chair fallback until a pay schedule is on the desk. Incentives not added.",
+        "breakdown": null,
+        "schedule": null,
+        "incentives": null,
+        "baseOnly": null
+      },
+      "buyoutRule": "75% remaining Base + Supplemental before Dec. 15, 2027; 50% after. Offset; no duty to mitigate."
     },
     "texas": {
       "sport": "fb",
@@ -468,7 +613,66 @@
             "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 7700000,
+        "year": 2026,
+        "yearLabel": "FY2026",
+        "confidence": "reported",
+        "source": "U. of Illinois BOT minutes (May 22, 2025) \u2014 Bielema compensation table",
+        "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf",
+        "notes": "Packet: $7.7M FY26\u201328, then $7.8M / $7.9M / $8.0M FY31. Retention bonuses are listed separately and are not in this cell.",
+        "breakdown": [
+          {
+            "label": "Base salary",
+            "value": 1000000
+          },
+          {
+            "label": "Additional compensation",
+            "value": 6700000
+          }
+        ],
+        "schedule": [
+          {
+            "period": "FY26 (Jul 2025\u2013Jun 2026)",
+            "value": 7700000
+          },
+          {
+            "period": "FY27",
+            "value": 7700000
+          },
+          {
+            "period": "FY28",
+            "value": 7700000
+          },
+          {
+            "period": "FY29",
+            "value": 7800000
+          },
+          {
+            "period": "FY30",
+            "value": 7900000
+          },
+          {
+            "period": "FY31",
+            "value": 8000000
+          }
+        ],
+        "incentives": [
+          {
+            "label": "Retention vesting Jul 1, 2026",
+            "value": 700000,
+            "notes": "Then $900k / $1.0M / $1.1M / $1.2M through Jul 1, 2030. Not in annual pay."
+          },
+          {
+            "label": "Longevity incentive (one-time)",
+            "value": 1000000,
+            "notes": "If the agreement is not further amended in any material way. Not in annual pay."
+          }
+        ],
+        "baseOnly": null
+      },
+      "buyoutRule": "Packet says liquidated damages exist with mitigation/offset; no percent and no dollar staircase."
     },
     "indiana": {
       "sport": "fb",
@@ -595,7 +799,36 @@
             "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 7900000,
+        "year": 2026,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "U. of Minnesota Regents finance docket (Feb. 2026) \u2014 Fleck new EA",
+        "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf",
+        "notes": "Docket: with the $700,000 management bonus, current annual salary increases to $7,900,000. That bonus is inside this cell; other incentives are not.",
+        "breakdown": [
+          {
+            "label": "Annual salary including management bonus",
+            "value": 7900000
+          }
+        ],
+        "schedule": null,
+        "incentives": [
+          {
+            "label": "Big Ten regular-season win bonuses",
+            "notes": "Non-cumulative $150k / $300k / $750k. Not in annual pay."
+          },
+          {
+            "label": "CFP national championship",
+            "value": 1500000,
+            "notes": "Top of the restated CFP ladder. Not in annual pay."
+          }
+        ],
+        "baseOnly": null
+      },
+      "buyoutRule": "70% of remaining base + supplemental + retention (July 2025 docket)."
     },
     "nebraska": {
       "sport": "fb",
@@ -689,7 +922,58 @@
             "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 9600000,
+        "year": 2026,
+        "yearLabel": "CY5 (2026)",
+        "confidence": "reported",
+        "source": "U. of Oregon BOT Mar. 7, 2025 packet Exhibit A Amendment #3",
+        "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf",
+        "notes": "CY5 (Feb. 1, 2026 \u2013 Jan. 31, 2027) guaranteed salary $9,600,000. Packet also contributes $1,000,000 deferred per contract year \u2014 listed below, not added into this cell. Incentives not included.",
+        "breakdown": [
+          {
+            "label": "Guaranteed salary (CY5)",
+            "value": 9600000
+          },
+          {
+            "label": "Deferred compensation (per year)",
+            "value": 1000000,
+            "notes": "Not added into the annual pay cell"
+          }
+        ],
+        "schedule": [
+          {
+            "period": "CY5 (Feb 2026\u2013Jan 2027)",
+            "value": 9600000
+          },
+          {
+            "period": "CY6",
+            "value": 9800000
+          },
+          {
+            "period": "CY7",
+            "value": 10000000
+          },
+          {
+            "period": "CY8",
+            "value": 10200000
+          },
+          {
+            "period": "CY9 (through Jan 31, 2031)",
+            "value": 10400000
+          }
+        ],
+        "incentives": [
+          {
+            "label": "CFP participation max",
+            "value": 500000,
+            "notes": "Non-cumulative. Not in guaranteed salary."
+          }
+        ],
+        "baseOnly": null
+      },
+      "buyoutRule": "100% remaining guaranteed salary + remaining deferred, monthly, subject to \u00a76.2.e mitigation."
     },
     "penn-state": {
       "sport": "fb",
@@ -920,7 +1204,66 @@
             "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 11500000,
+        "year": 2026,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "Clemson 2022 BOT term sheet",
+        "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf",
+        "notes": "2026: Base $305,000 + Supplemental $7,695,000 + Licensing $3,500,000. Retention bonuses are not in this cell.",
+        "breakdown": [
+          {
+            "label": "Base",
+            "value": 305000
+          },
+          {
+            "label": "Supplemental",
+            "value": 7695000
+          },
+          {
+            "label": "Licensing",
+            "value": 3500000
+          }
+        ],
+        "schedule": [
+          {
+            "period": "2026",
+            "value": 11500000,
+            "notes": "Base + supplemental + licensing"
+          },
+          {
+            "period": "2027",
+            "value": 11500000
+          },
+          {
+            "period": "2028",
+            "value": 11750000
+          },
+          {
+            "period": "2029",
+            "value": 12000000
+          },
+          {
+            "period": "2030",
+            "value": 12250000
+          },
+          {
+            "period": "2031",
+            "value": 12500000
+          }
+        ],
+        "incentives": [
+          {
+            "label": "Performance incentives max",
+            "value": 1500000,
+            "notes": "Cumulative cap on the term sheet. Not included in annual pay."
+          }
+        ],
+        "baseOnly": null
+      },
+      "buyoutRule": "University without-cause: $57M flat if terminated in 2026; remaining Base + Supplemental + Licensing thereafter. No mitigate."
     },
     "duke": {
       "sport": "fb",
@@ -1021,18 +1364,78 @@
             "kind": "amendment",
             "n": 6,
             "date": "2024-02-16",
-            "label": "6th Amendment (Feb. 16, 2024) — extension through Dec. 31, 2031",
+            "label": "6th Amendment (Feb. 16, 2024) \u2014 extension through Dec. 31, 2031",
             "url": "https://s3.documentcloud.org/documents/24442204/floridastate_norvell_contract_6thamendment-to-2019-ea.pdf"
           },
           {
             "kind": "amendment",
             "n": 7,
             "date": "2024-12-13",
-            "label": "7th Amendment (Dec. 13, 2024) — current 85% buyout",
+            "label": "7th Amendment (Dec. 13, 2024) \u2014 current 85% buyout",
             "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 10300000,
+        "year": 2026,
+        "yearLabel": "2026 TAC",
+        "confidence": "reported",
+        "source": "FSU 6th Amendment additional-comp table + $215,000 base (7th Amendment is the current buyout rule)",
+        "url": "https://s3.documentcloud.org/documents/24442204/floridastate_norvell_contract_6thamendment-to-2019-ea.pdf",
+        "notes": "2026 TAC = base $215,000 + additional $10,085,000 (Contract Year 7). 7th Amendment cut CY6 additional only; CY7\u201312 additional table is unchanged. Incentives not included.",
+        "breakdown": [
+          {
+            "label": "Base",
+            "value": 215000
+          },
+          {
+            "label": "Additional (CY7)",
+            "value": 10085000
+          }
+        ],
+        "schedule": [
+          {
+            "period": "CY7 (2026)",
+            "additional": 10085000,
+            "value": 10300000
+          },
+          {
+            "period": "CY8 (2027)",
+            "additional": 10235000,
+            "value": 10450000
+          },
+          {
+            "period": "CY9 (2028)",
+            "additional": 10385000,
+            "value": 10600000
+          },
+          {
+            "period": "CY10 (2029)",
+            "additional": 10535000,
+            "value": 10750000
+          },
+          {
+            "period": "CY11 (2030)",
+            "additional": 10685000,
+            "value": 10900000
+          },
+          {
+            "period": "CY12 (2031)",
+            "additional": 10835000,
+            "value": 11050000
+          }
+        ],
+        "incentives": [
+          {
+            "label": "Nine-win bonus (from 2026)",
+            "value": 750000,
+            "notes": "7th Amendment. Not included in TAC."
+          }
+        ],
+        "baseOnly": null
+      },
+      "buyoutRule": "85% of remaining CY TAC + CY reinstatement (7th Amendment V.E.)."
     },
     "georgia-tech": {
       "sport": "fb",
@@ -1166,7 +1569,30 @@
             "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 10000000,
+        "year": 2026,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "UNC signed employment agreement \u2014 Bill Belichick",
+        "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf",
+        "notes": "Base $1,000,000 + Supplemental $9,000,000 per year. Bonuses not included.",
+        "breakdown": [
+          {
+            "label": "Base",
+            "value": 1000000
+          },
+          {
+            "label": "Supplemental",
+            "value": 9000000
+          }
+        ],
+        "schedule": null,
+        "incentives": null,
+        "baseOnly": null
+      },
+      "buyoutRule": "Remaining Base + Supplemental through Dec. 31, 2027; 2028\u201329 are $0 on a university fire. No mitigation in \u00a712."
     },
     "pittsburgh": {
       "sport": "fb",
@@ -1237,7 +1663,7 @@
           {
             "kind": "employment-agreement",
             "date": "2022-10-31",
-            "label": "2022 original employment agreement (historical — not the 2026 extension)",
+            "label": "2022 original employment agreement (historical \u2014 not the 2026 extension)",
             "url": "https://augustafreepress.com/wp-content/uploads/2024/11/FB_-_Elliott__T_-_20221031_120821-053128.pdf"
           }
         ]
@@ -1319,7 +1745,62 @@
             "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 6000000,
+        "year": 2026,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "Virginia Tech Franklin letter of intent (Nov. 15, 2025)",
+        "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf",
+        "notes": "LOI. 2026: Base $500,000 + Supplemental $5,500,000. Back-ended after 2028. Incentives not included.",
+        "breakdown": [
+          {
+            "label": "Base (2026)",
+            "value": 500000
+          },
+          {
+            "label": "Supplemental (2026)",
+            "value": 5500000
+          }
+        ],
+        "schedule": [
+          {
+            "period": "2026",
+            "value": 6000000,
+            "notes": "Base $500,000 + Supplemental $5,500,000"
+          },
+          {
+            "period": "2027",
+            "value": 5000000,
+            "notes": "Base $500,000 + Supplemental $4,500,000"
+          },
+          {
+            "period": "2028",
+            "value": 4000000,
+            "notes": "Base $500,000 + Supplemental $3,500,000"
+          },
+          {
+            "period": "2029",
+            "value": 12750000,
+            "notes": "Base $500,000 + Supplemental $12,250,000"
+          },
+          {
+            "period": "2030",
+            "value": 13250000,
+            "notes": "Base $500,000 + Supplemental $12,750,000"
+          }
+        ],
+        "incentives": [
+          {
+            "label": "CFP champion (head coach)",
+            "value": 800000,
+            "notes": "Non-cumulative CFP ladder; regular-season win bonuses also listed. Not in annual pay."
+          }
+        ],
+        "baseOnly": null
+      },
+      "buyoutRule": "Remaining 2026\u20132030 Base + Supplemental (LOI remaining-sum)."
     },
     "wake-forest": {
       "sport": "fb",
@@ -1357,7 +1838,7 @@
           {
             "kind": "board-packet",
             "date": "2024-01-25",
-            "label": "2024 hire board packet (historical — not the 2026 / 2030 extension)",
+            "label": "2024 hire board packet (historical \u2014 not the 2026 / 2030 extension)",
             "url": "https://media.kjzz.org/s3fs-public/2024-1-25-Special-Board-Meeting-Board-Book-Second-Amendment.pdf"
           }
         ]
@@ -1463,7 +1944,43 @@
             "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 10000000,
+        "year": 2026,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "CU Board of Regents \u2014 Sanders amended employment agreement (Mar. 28, 2025)",
+        "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/",
+        "notes": "2026 is Contract Year 2 (calendar). Base $500,000 + Supplemental $9,500,000 (radio $3.25M + promo $3.25M + student-athlete $3.0M). CY3/CY5 raise radio and promo $500k each. Incentives not included.",
+        "breakdown": [
+          {
+            "label": "Base",
+            "value": 500000
+          },
+          {
+            "label": "Radio / TV / appearances",
+            "value": 3250000
+          },
+          {
+            "label": "Promotion / fundraising",
+            "value": 3250000
+          },
+          {
+            "label": "Student-athlete development (3 \u00d7 $1M)",
+            "value": 3000000
+          }
+        ],
+        "schedule": null,
+        "incentives": [
+          {
+            "label": "Competitive-success incentives",
+            "notes": "File lists 9-win / extra-win / Big 12 / bowl steps. Not in annual pay."
+          }
+        ],
+        "baseOnly": null
+      },
+      "buyoutRule": "75% of remaining Base + Supplemental."
     },
     "houston": {
       "sport": "fb",
@@ -1570,7 +2087,26 @@
             "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
           }
         ]
-      }
+      },
+      "pay": {
+        "value": 3000000,
+        "year": 2026,
+        "yearLabel": null,
+        "confidence": "reported",
+        "source": "Iowa State Rogers employment agreement PDF",
+        "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf",
+        "notes": "Base $3,000,000 per year in the EA. Base only as published \u2014 the file does not state supplemental / NIL / other pay.",
+        "breakdown": [
+          {
+            "label": "Base",
+            "value": 3000000
+          }
+        ],
+        "schedule": null,
+        "incentives": null,
+        "baseOnly": true
+      },
+      "buyoutRule": "100% of remaining Base ($3,000,000/year) through Jan. 31, 2032. Offset if hired at another D-I school; no duty to seek work."
     },
     "kansas": {
       "sport": "fb",

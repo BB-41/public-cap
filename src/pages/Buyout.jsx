@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import Logo from '../components/Logo.jsx'
 import { ContractFiles } from '../components/ContractFiles.jsx'
-import { contractLinkLabel, money, moneyExact } from '../lib/format.js'
+import { BuyoutRuleLine, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
+import { coachTermLabel, contractLinkLabel, money, moneyExact } from '../lib/format.js'
 import {
   DEFAULT_SCHOOL,
   DESK_TODAY,
@@ -163,6 +164,23 @@ export default function Buyout() {
                 </div>
               )}
               {!coach.contract?.url && <ContractFiles files={coach.contract?.files} />}
+              {school?.coaches?.football && (
+                <div className="buyout-comp">
+                  <div className="eyebrow">Annual pay</div>
+                  <CoachPayField pay={school.coaches.football.pay} />
+                  {coachTermLabel(school.coaches.football.term) && (
+                    <div className="field-notes">
+                      Term {coachTermLabel(school.coaches.football.term)}
+                      {school.coaches.football.term?.notes ? ` — ${school.coaches.football.term.notes}` : ''}
+                    </div>
+                  )}
+                  <BuyoutRuleLine
+                    buyout={school.coaches.football.buyout}
+                    fallback={coach.rule}
+                  />
+                  <IncentiveList items={school.coaches.football.pay?.incentives} />
+                </div>
+              )}
             </div>
             <div className="hero-num">
               <div className="eyebrow">In force today · {formatLongDate(DESK_TODAY)}</div>

@@ -15,6 +15,7 @@ import TvContracts from '../components/TvContracts.jsx'
 import { DEFAULT_TITLE, SCHOOL_DRILLS, hashKey, homePath, schoolTitle } from '../lib/share.js'
 import AlumniToggle from '../components/AlumniToggle.jsx'
 import { ContractFiles } from '../components/ContractFiles.jsx'
+import { BuyoutRuleLine, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -626,13 +627,16 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           <h2>Football coach</h2>
           <div className="coach-name">{s.coaches.football.name}</div>
           <ContractLink url={s.coaches.football.contractUrl} label={s.coaches.football.term?.source} />
-          <ContractFiles files={s.coaches.football.contract?.files} />
+          <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>
+          <CoachPayField pay={s.coaches.football.pay} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
           <TermBlock term={s.coaches.football.term} />
-          <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>
-          <Field field={s.coaches.football.pay} />
+          <div className="eyebrow" title={defTitle('buyout')}>Buyout rule</div>
+          <BuyoutRuleLine buyout={s.coaches.football.buyout} />
           <div className="eyebrow" title={defTitle('buyout')}>Buyout overhang (not yearly spend)</div>
           <Field field={s.coaches.football.buyout} />
+          <IncentiveList items={s.coaches.football.pay?.incentives} />
+          <ContractFiles files={s.coaches.football.contract?.files} />
         </section>
         <section>
           <h2>Men’s basketball coach</h2>

@@ -662,6 +662,22 @@ table.staff-table { max-width: 760px; margin: 8px 0 18px; }
   font-weight: 400;
   text-align: right;
 }
+.buyout-comp {
+  margin-top: 14px;
+  max-width: 520px;
+}
+.buyout-comp .field { margin-bottom: 10px; }
+.pay-year { font-size: 16px; color: var(--paper-dim); font-weight: 500; }
+.pay-breakdown {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--paper-dim);
+}
+.pay-breakdown li { margin-bottom: 4px; }
+.pay-schedule { margin-top: 10px; }
+.pay-table { font-size: 13px; }
+.buyout-rule { font-size: 14px; color: var(--paper); }
 
 table.rank th.rk,
 table.rank td.rk {
