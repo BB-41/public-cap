@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-26",
-    "itemCount": 65,
+    "itemCount": 75,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,156 @@
     ]
   },
   "items": [
+    {
+      "id": "arkansas-contract-silverfield-2025-12-01",
+      "date": "2025-12-01",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "contract",
+      "headline": "Southwest Times Record publishes Ryan Silverfield\u2019s FOIA term sheet: $6.5 million in 2026, 70% school-side remaining-pay rule, term through Dec. 31, 2030.",
+      "figure": 6500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Southwest Times Record \u2014 Silverfield term sheet via open records",
+        "url": "https://www.swtimes.com/story/sports/college/sec/2025/12/01/arkansas-football-coach-ryan-silverfield-salary-bonuses-buyouts/87557612007/"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "ole-miss-contract-golding-2026-07-01",
+      "date": "2026-07-01",
+      "school": "ole-miss",
+      "schoolName": "Ole Miss",
+      "kind": "contract",
+      "headline": "Clarion Ledger publishes Pete Golding\u2019s OMAF term-sheet terms: $6.8 million in Year 1, 75% school-side remaining-pay rule, five years through 2030.",
+      "figure": 6800000,
+      "confidence": "reported",
+      "source": {
+        "label": "Clarion Ledger \u2014 Golding OMAF term sheet",
+        "url": "https://www.clarionledger.com/story/sports/college/ole-miss/2026/07/01/pete-golding-contract-salary-ole-miss-football-coach/90754060007/"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "michigan-contract-whittingham-2026-01-23",
+      "date": "2026-01-23",
+      "school": "michigan",
+      "schoolName": "Michigan",
+      "kind": "contract",
+      "headline": "Detroit Free Press publishes Kyle Whittingham\u2019s FOIA memorandum of understanding: $8.0 million base in 2026, 75% school-side remaining-pay rule, term through Jan. 31, 2031.",
+      "figure": 8000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Detroit Free Press \u2014 Whittingham MOU via FOIA",
+        "url": "https://www.freep.com/story/sports/college/university-michigan/wolverines/2026/01/23/kyle-whittingham-contract-michigan-football/88318877007/"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "michigan-state-contract-fitzgerald-2025-12-01",
+      "date": "2025-12-01",
+      "school": "michigan-state",
+      "schoolName": "Michigan State",
+      "kind": "contract",
+      "headline": "WLNS hosts Pat Fitzgerald\u2019s MSU terms sheet. $5.0 million annualized in 2026 (Base $4.0M + Supplemental $1.0M). School-side without-cause is 72.5% of remaining Annual Compensation through Jan. 31, 2031. No published dollar calendar.",
+      "figure": 5000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Michigan State Fitzgerald terms sheet via WLNS",
+        "url": "https://www.wlns.com/wp-content/uploads/sites/50/2025/12/Fitzgerald-terms-sheet.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "minnesota-contract-fleck-pay-2026-02",
+      "date": "2026-02",
+      "school": "minnesota",
+      "schoolName": "Minnesota",
+      "kind": "contract",
+      "headline": "Minnesota Regents finance docket books P. J. Fleck\u2019s 2026 annual salary at $7.9 million after a $700,000 management bonus. School-side without-cause remains 70% of remaining base + supplemental + retention. No published dollar calendar.",
+      "figure": 7900000,
+      "confidence": "reported",
+      "source": {
+        "label": "U. of Minnesota Regents finance docket (Feb. 2026)",
+        "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "penn-state-contract-campbell-2025-12-08",
+      "date": "2025-12-08",
+      "school": "penn-state",
+      "schoolName": "Penn State",
+      "kind": "contract",
+      "headline": "Penn State posts Matt Campbell\u2019s Head Coach Term Sheet. 2026 Guaranteed Compensation is $8,000,000. School-side without-cause is 100% of remaining Guaranteed Compensation (2026\u20132033 table = $70.5 million at the start of 2026), subject to mitigation.",
+      "figure": 70500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Penn State Campbell term sheet",
+        "url": "https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "ucla-contract-chesney-2026-01-29",
+      "date": "2026-01-29",
+      "school": "ucla",
+      "schoolName": "UCLA",
+      "kind": "contract",
+      "headline": "California Post / Yahoo Sports publish Bob Chesney employment-agreement terms: $5.4 million Year 1 base + talent fee, 75% school-side remaining-pay rule, five years through 2030.",
+      "figure": 5400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Yahoo Sports / California Post \u2014 Chesney EA",
+        "url": "https://sports.yahoo.com/articles/contract-details-revealed-ucla-got-035156125.html"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "kansas-state-contract-klein-2025-12-10",
+      "date": "2025-12-10",
+      "school": "kansas-state",
+      "schoolName": "Kansas State",
+      "kind": "contract",
+      "headline": "Topeka Capital-Journal publishes Collin Klein employment-agreement terms released by K-State: $4.1 million base in 2026, 75% school-side remaining-pay rule, term through 2030.",
+      "figure": 4100000,
+      "confidence": "reported",
+      "source": {
+        "label": "Topeka Capital-Journal \u2014 Klein EA",
+        "url": "https://www.cjonline.com/story/sports/college/cat-zone/2025/12/10/collin-klein-contract-kansas-state-football-salary-buyout-bonuses-chris-klieman/87702201007/"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "oklahoma-state-contract-morris-2025-12-12",
+      "date": "2025-12-12",
+      "school": "oklahoma-state",
+      "schoolName": "Oklahoma State",
+      "kind": "contract",
+      "headline": "The Oklahoman publishes Eric Morris employment-agreement terms: $3.8 million base in 2026, 75% school-side remaining-pay rule before February 2029, term through Jan. 31, 2031.",
+      "figure": 3800000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Oklahoman \u2014 Morris EA",
+        "url": "https://www.usatoday.com/story/sports/college/cowboys/2025/12/12/eric-morris-contract-salary-buyout-details-oklahoma-state-football-coach/87726037007/"
+      },
+      "field": "coaches.football.term"
+    },
+    {
+      "id": "utah-contract-scalley-2026-03-20",
+      "date": "2026-03-20",
+      "school": "utah",
+      "schoolName": "Utah",
+      "kind": "contract",
+      "headline": "Deseret News publishes Morgan Scalley\u2019s FOIA employment agreement: $5.1 million Year 1 total base compensation, 75% school-side remaining-pay rule, term through the 2030 season.",
+      "figure": 5100000,
+      "confidence": "reported",
+      "source": {
+        "label": "Deseret News \u2014 Scalley EA via public records",
+        "url": "https://www.deseret.com/sports/2026/03/20/morgan-scalley-utah-football-coach-contract-details/"
+      },
+      "field": "coaches.football.term"
+    },
     {
       "id": "texas-booked-nil-ytd-2026-04-05",
       "date": "2026-04-05",
