@@ -3,7 +3,11 @@ import { applySeason } from '../src/lib/seasons.js'
 
 const data = JSON.parse(readFileSync(new URL('../data/schools.json', import.meta.url), 'utf8'))
 const tape = JSON.parse(readFileSync(new URL('./hc-history.json', import.meta.url), 'utf8'))
-const staffTape = JSON.parse(readFileSync(new URL('./staff-2026-acc-sec.json', import.meta.url), 'utf8'))
+const staffTape = {
+  ...JSON.parse(readFileSync(new URL('./staff-2026-acc-sec.json', import.meta.url), 'utf8')),
+  ...JSON.parse(readFileSync(new URL('./staff-2026-b12.json', import.meta.url), 'utf8')),
+  ...JSON.parse(readFileSync(new URL('./staff-2026-b1g.json', import.meta.url), 'utf8')),
+}
 const byId = Object.fromEntries(data.schools.map((s) => [s.id, s]))
 
 function chair(id, year) {
@@ -103,7 +107,7 @@ ok(chair('west-virginia', 2025).name === 'Rich Rodriguez', 'WVU 2025 Rodriguez')
 ok(staffNames('lsu', 2026).includes('Charlie Weis Jr.'), 'LSU 2026 Weis Jr.')
 ok(staffNames('lsu', 2026).includes('Blake Baker'), 'LSU 2026 Baker')
 
-ok(Object.keys(staffTape).length === 34, 'ACC+ND+SEC staff tape has 34 schools')
+ok(Object.keys(staffTape).length === 68, 'staff tape covers 68 schools')
 for (const [sid, payload] of Object.entries(staffTape)) {
   const names = staffNames(sid, 2026)
   const want = (payload.assistants || []).map((a) => a.name)

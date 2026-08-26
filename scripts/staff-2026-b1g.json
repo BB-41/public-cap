@@ -110,18 +110,53 @@
       {
         "name": "Buddha Williams",
         "role": "Defensive Ends"
+      }
+    ]
+  },
+  "iowa": {
+    "hc": "Kirk Ferentz",
+    "ad": "Beth Goetz",
+    "url": "https://hawkeyesports.com/sports/football/roster?tab=coaches",
+    "assistants": [
+      {
+        "name": "Seth Wallace",
+        "role": "Asst. Head Coach/Asst. Defensive Coordinator/Linebackers"
       },
       {
-        "name": "Ben Harakel",
-        "role": "Senior Assistant Defensive Backs Coach - Rovers"
+        "name": "Tim Lester",
+        "role": "Offensive Coordinator"
       },
       {
-        "name": "Alex Higgins",
-        "role": "Senior Assistant Offensive Line Coach/Tight Ends Coach"
+        "name": "Phil Parker",
+        "role": "Defensive Coordinator/Secondary"
       },
       {
-        "name": "Ryan McInerney",
-        "role": "Senior Assistant Special Teams Coach"
+        "name": "Chris Polizzi",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "George Barnett",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Kelvin Bell",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Abdul Hodge",
+        "role": "Tight Ends/Fullbacks"
+      },
+      {
+        "name": "Jon Budmayr",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Jay Norvell",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Billy VandeMerkt",
+        "role": "Quarterbacks Coach"
       }
     ]
   },
@@ -182,6 +217,10 @@
     "url": "https://mgoblue.com/sports/football/coaches",
     "assistants": [
       {
+        "name": "Jim Harding",
+        "role": "Assistant Head Coach/Donald C. Graham Offensive Line Coach"
+      },
+      {
         "name": "Jason Beck",
         "role": "Sanford Robertson Offensive Coordinator, Robert McCollum Family Quarterbacks Coach"
       },
@@ -210,8 +249,20 @@
         "role": "Cornerbacks"
       },
       {
+        "name": "Marques Hagans",
+        "role": "Assistant Wide Receivers"
+      },
+      {
         "name": "Brad Hawkins",
         "role": "Assistant Safeties"
+      },
+      {
+        "name": "Eddie Heckard",
+        "role": "Assistant Cornerbacks"
+      },
+      {
+        "name": "Tyler McLaurin",
+        "role": "Assistant Linebackers"
       },
       {
         "name": "Lewis Powell",
@@ -261,10 +312,6 @@
         "role": "Safeties Coach"
       },
       {
-        "name": "Andrew Bindelglass",
-        "role": "Rush Ends Coach"
-      },
-      {
         "name": "Winston DeLattiboudere III",
         "role": "Defensive Line Coach"
       },
@@ -291,10 +338,6 @@
       {
         "name": "Brian Wozniak",
         "role": "Tight Ends Coach"
-      },
-      {
-        "name": "Matt Allen",
-        "role": "Volunteer Assistant Coach (Offense)"
       }
     ]
   },
@@ -303,10 +346,6 @@
     "ad": "Mark Coyle",
     "url": "https://gophersports.com/sports/football/coaches",
     "assistants": [
-      {
-        "name": "P.J. Fleck",
-        "role": "Offensive Coordinator / Quarterbacks"
-      },
       {
         "name": "Greg Harbaugh Jr.",
         "role": "Defensive Coordinator / Safeties"
@@ -340,16 +379,166 @@
         "role": "Running Backs Coach"
       },
       {
-        "name": "Mohamed Ibrahim",
-        "role": "Rush Ends Coach"
-      },
-      {
         "name": "Steve Stanard",
         "role": "Special Teams Coordinator"
       },
       {
-        "name": "Mike Shula",
-        "role": "Offensive Line Assistant"
+        "name": "Bryan Nardo",
+        "role": "Senior Offensive Assistant / Game Management"
+      },
+      {
+        "name": "Mohamed Ibrahim",
+        "role": "Running Backs Coach"
+      },
+      {
+        "name": "Daniel Da Prato",
+        "role": "Special Teams Coordinator"
+      }
+    ]
+  },
+  "nebraska": {
+    "hc": "Matt Rhule",
+    "ad": "Troy Dannen",
+    "url": "https://huskers.com/staff-directory/department/football",
+    "assistants": [
+      {
+        "name": "Rob Aurich",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Dana Holgorsen",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "E.J. Barthel",
+        "role": "Assistant Coach - Running Backs"
+      },
+      {
+        "name": "Corey Brown",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Rob Dvoracek",
+        "role": "Assistant Coach - Linebackers"
+      },
+      {
+        "name": "Nick Humphrey",
+        "role": "Co-Special Teams Coordinator"
+      },
+      {
+        "name": "Brett Maher",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Roy Manning",
+        "role": "Assistant Coach - Defensive Edges"
+      },
+      {
+        "name": "Jamar Mozee",
+        "role": "Assistant Head Coach"
+      },
+      {
+        "name": "Marcus Satterfield",
+        "role": "Assistant Coach - Tight Ends"
+      },
+      {
+        "name": "Daikiel Shorts Jr.",
+        "role": "Assistant Coach - Wide Receivers"
+      },
+      {
+        "name": "Phil Simpson",
+        "role": "Assistant Coach - Outside Linebackers"
+      },
+      {
+        "name": "Phil Snow",
+        "role": "Associate Head Coach"
+      },
+      {
+        "name": "Lonnie Teasley",
+        "role": "Run Game Coordinator"
+      },
+      {
+        "name": "Glenn Thomas",
+        "role": "Co-Offensive Coordinator - Quarterbacks"
+      },
+      {
+        "name": "Geep Wade",
+        "role": "Assistant Coach - Offensive Line"
+      },
+      {
+        "name": "Addison Williams",
+        "role": "Assistant Coach - Secondary"
+      },
+      {
+        "name": "Tyler Yelk",
+        "role": "Assistant Coach - Safeties"
+      },
+      {
+        "name": "Ron Brown",
+        "role": "Fullbacks/Returners"
+      },
+      {
+        "name": "Andrew Verboys",
+        "role": "Assistant Wide Receivers"
+      }
+    ]
+  },
+  "northwestern": {
+    "hc": "David Braun",
+    "ad": "Mark Jackson",
+    "url": "https://nusports.com/sports/football/roster/season/2026",
+    "assistants": [
+      {
+        "name": "Chip Kelly",
+        "role": "Offensive Coordinator"
+      },
+      {
+        "name": "Tim McGarigle",
+        "role": "Defensive Coordinator (Linebackers)"
+      },
+      {
+        "name": "Paul Creighton",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Aristotle Thompson",
+        "role": "Assistant Head Coach / Running Backs Coach"
+      },
+      {
+        "name": "LaMarcus Hicks",
+        "role": "Defensive Backs Coach"
+      },
+      {
+        "name": "Bob Bicknell",
+        "role": "Tight Ends Coach"
+      },
+      {
+        "name": "Tim Drevno",
+        "role": "Offensive Line Coach"
+      },
+      {
+        "name": "Ross Kolodziej",
+        "role": "Defensive Line Coach"
+      },
+      {
+        "name": "Armon Binns",
+        "role": "Wide Receivers Coach"
+      },
+      {
+        "name": "Jerry Neuheisel",
+        "role": "Quarterbacks Coach"
+      },
+      {
+        "name": "Drew Gray",
+        "role": "Safeties Coach"
+      },
+      {
+        "name": "Fred Wyatt",
+        "role": "Defensive Line Specialist"
+      },
+      {
+        "name": "Jeff Copp",
+        "role": "Senior Defensive Assistant/Nickels Coach"
       }
     ]
   },
@@ -422,6 +611,10 @@
         "role": "Offensive Coordinator"
       },
       {
+        "name": "Ra'Shaad Samples",
+        "role": "Assistant Head Coach/Running Backs"
+      },
+      {
         "name": "Joe Lorig",
         "role": "Special Teams Coordinator"
       },
@@ -458,8 +651,118 @@
         "role": "Tight Ends"
       },
       {
-        "name": "Ra'Shaad Samples",
-        "role": "Assistant Head Coach/Running Backs"
+        "name": "Donte Ellington",
+        "role": "Assistant Wide Receivers"
+      },
+      {
+        "name": "Jay Johnson",
+        "role": "Assistant Quarterbacks"
+      }
+    ]
+  },
+  "penn-state": {
+    "hc": "Matt Campbell",
+    "ad": "Patrick Kraft",
+    "url": "https://gopsusports.com/staff-directory/department/football",
+    "assistants": [
+      {
+        "name": "Terry M. Smith",
+        "role": "Associate Head Coach/Cornerbacks"
+      },
+      {
+        "name": "D'Anton Lynn",
+        "role": "Defensive Coordinator"
+      },
+      {
+        "name": "Taylor Mouser",
+        "role": "Offensive Coordinator/Tight Ends"
+      },
+      {
+        "name": "Justin Lustig",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Deon Broomfield",
+        "role": "Safeties/Pass Game Coordinator"
+      },
+      {
+        "name": "Ryan Clanton",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Savon Huggins",
+        "role": "Running Backs"
+      },
+      {
+        "name": "Ikaika Malloe",
+        "role": "Defensive Line/Run Game Coordinator"
+      },
+      {
+        "name": "Kashif Moore",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Christian Smith",
+        "role": "Edge Rushers"
+      },
+      {
+        "name": "Jake Waters",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "Tyson Veidt",
+        "role": "Linebackers"
+      },
+      {
+        "name": "Dan Connor",
+        "role": "Linebackers"
+      }
+    ]
+  },
+  "purdue": {
+    "hc": "Barry Odom",
+    "ad": "Tommy McClelland",
+    "url": "https://purduesports.com/staff-directory/department/football",
+    "assistants": [
+      {
+        "name": "Cornell Ford",
+        "role": "Assistant Head Coach / Running Backs"
+      },
+      {
+        "name": "Josh Henson",
+        "role": "Offensive Coordinator / Tight Ends"
+      },
+      {
+        "name": "Kevin Kane",
+        "role": "Defensive Coordinator / Linebackers"
+      },
+      {
+        "name": "Charles Clark",
+        "role": "Defensive Passing Game Coordinator / Defensive Backs"
+      },
+      {
+        "name": "Zach Crabtree",
+        "role": "Offensive Line"
+      },
+      {
+        "name": "Kelvin Green",
+        "role": "Defensive Line"
+      },
+      {
+        "name": "Bilal Marshall",
+        "role": "Wide Receivers"
+      },
+      {
+        "name": "Darin Hinshaw",
+        "role": "Quarterbacks"
+      },
+      {
+        "name": "James Shibest",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Jake Trump",
+        "role": "Defensive Ends"
       }
     ]
   },
@@ -513,8 +816,79 @@
         "role": "Offensive Line"
       },
       {
+        "name": "Eddie Allen",
+        "role": "Special Teams Coordinator"
+      },
+      {
+        "name": "Milton Cordero",
+        "role": "Assistant Wide Receivers"
+      },
+      {
+        "name": "John Schiano",
+        "role": "Assistant Safeties"
+      },
+      {
+        "name": "Matt Schiano",
+        "role": "Assistant Quarterbacks"
+      },
+      {
         "name": "Bob Fraser",
         "role": "Senior Defensive Assistant"
+      }
+    ]
+  },
+  "ucla": {
+    "hc": "Bob Chesney",
+    "ad": "Martin Jarmond",
+    "url": "https://uclabruins.com/sports/football/coaches/2026",
+    "assistants": [
+      {
+        "name": "Colin Hitschler",
+        "role": "Assistant Coach, Defensive Coordinator"
+      },
+      {
+        "name": "Dean Kennedy",
+        "role": "Assistant Coach, Offensive Coordinator"
+      },
+      {
+        "name": "Drew Canan",
+        "role": "Assistant Coach, Special Teams Coordinator/Tight Ends"
+      },
+      {
+        "name": "Chris Smith",
+        "role": "Assistant Coach, Offensive Line/Run Game Coordinator"
+      },
+      {
+        "name": "Colin Lockett",
+        "role": "Assistant Coach, Wide Receivers"
+      },
+      {
+        "name": "A.J. Steward",
+        "role": "Assistant Coach, Running Backs"
+      },
+      {
+        "name": "Vic So'oto",
+        "role": "Assistant Coach, Linebackers"
+      },
+      {
+        "name": "Legi Suiaunoa",
+        "role": "Assistant Coach, Defensive Line"
+      },
+      {
+        "name": "Anthony DiMichele",
+        "role": "Assistant Coach, Safeties"
+      },
+      {
+        "name": "Eddie Whitley Jr.",
+        "role": "Assistant Coach, Defensive Backs"
+      },
+      {
+        "name": "Sam Daniels",
+        "role": "Assistant Coach, Defensive Ends"
+      },
+      {
+        "name": "Gabe Lynn",
+        "role": "Assistant Coach, Nickels"
       }
     ]
   },
@@ -540,6 +914,10 @@
         "role": "Offensive Coordinator / Quarterbacks Coach"
       },
       {
+        "name": "Anthony Jones Jr.",
+        "role": "Assistant Head Coach for Offense / Running Backs Coach"
+      },
+      {
         "name": "Skyler Jones",
         "role": "Defensive Tackles Coach"
       },
@@ -562,6 +940,22 @@
       {
         "name": "Dennis Simmons",
         "role": "Assistant Head Coach / Co-Offensive Coordinator / Wide Receivers Coach"
+      },
+      {
+        "name": "Ryan Dougherty",
+        "role": "Co-Special Teams Coordinator / Specialists Coach"
+      },
+      {
+        "name": "AJ Howard",
+        "role": "Outside Linebackers Coach"
+      },
+      {
+        "name": "Chris Meyers",
+        "role": "Run Game Specialist / Assistant Offensive Line and Tight Ends Coach"
+      },
+      {
+        "name": "Rob Ryan",
+        "role": "Assistant Head Coach for Defense"
       }
     ]
   },
@@ -570,6 +964,10 @@
     "ad": "Patrick Chun",
     "url": "https://gohuskies.com/sports/football/coaches",
     "assistants": [
+      {
+        "name": "Scottie Graham",
+        "role": "Assistant Head Coach/Running Backs Coach"
+      },
       {
         "name": "Kevin Cummings",
         "role": "Pass Game Coordinator/Wide Receivers Coach"
@@ -652,6 +1050,10 @@
       {
         "name": "Paul Haynes",
         "role": "Secondary"
+      },
+      {
+        "name": "Nate Letton",
+        "role": "Assistant Head Coach / Tight Ends"
       },
       {
         "name": "Eric Mateos",

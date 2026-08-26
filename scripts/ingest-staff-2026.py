@@ -11,9 +11,11 @@ from copy import deepcopy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-# Official ACC + Notre Dame + SEC directories only. Big Ten / Big 12 wait
-# for their payload — we do not invent those assistants here.
-STAFF = json.loads(Path(__file__).with_name("staff-2026-acc-sec.json").read_text())
+# Official 2026 directories: ACC+ND+SEC payload, Big 12 payload, Big Ten parsed
+# from the athletics pages. Pay stays pending unless already cited.
+STAFF = {}
+for fname in ("staff-2026-acc-sec.json", "staff-2026-b12.json", "staff-2026-b1g.json"):
+    STAFF.update(json.loads(Path(__file__).with_name(fname).read_text()))
 
 PENDING = {
     "value": None,
