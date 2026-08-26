@@ -168,7 +168,8 @@ export default function Methods({ meta }) {
         left unbooked. FY2025 MFRS / pre-cap cells: Penn State Item 44 $18,368,391
         with published sport lines; Oklahoma State “just over $16 million,” booked as
         $16M estimated — not $16,000,001; Texas school-FY $3.2M, only two months of
-        House. Georgia, Tennessee, Alabama, Oregon, Utah, and UNC FY2025 Item 44 $0
+        House. Georgia, Tennessee, Alabama, Oregon, Utah, UNC, Ohio State, Illinois,
+        Minnesota, Washington, Wisconsin, Iowa State, and Virginia FY2025 Item 44 $0
         from the cited filings. Kentucky FY2025 $0 is not booked — no public MFRS PDF
         on the desk; the $18M counsel cell stays).
       </p>
@@ -446,7 +447,8 @@ export default function Methods({ meta }) {
         counsel cell exists (today: Louisville 2024 pre-cap and 2025, Kentucky 2025,
         UCLA and Cal 2025, Texas 2024 pre-cap and 2025, Penn State and Oklahoma State
         2024 pre-cap, and the cited FY2025 Item 44 $0 cells at Georgia, Tennessee,
-        Alabama, Oregon, Utah, and UNC). Else the pot is the already-on-desk school modeled band —
+        Alabama, Oregon, Utah, UNC, Ohio State, Illinois, Minnesota, Washington,
+        Wisconsin, Iowa State, and Virginia). Else the pot is the already-on-desk school modeled band —
         the conference heuristic, not a new national model. We spread that pot with
         the existing named-player unit card and sum by position. No On3-style “QB
         market” percentages. Years without a named roster file (today: 2022 and 2025)

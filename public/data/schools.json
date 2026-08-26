@@ -66,7 +66,7 @@
       "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions.",
       "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school cells stay pending.",
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
-      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (TPR: $13.5M House Year 1 YTD Jul 2025–Mar 2026). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. No On3 / Opendorse / NIL Go. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
+      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (TPR: $13.5M House Year 1 YTD Jul 2025–Mar 2026). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. No On3 / Opendorse / NIL Go. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
       "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
       "Coach contract PDFs linked only when a school, state, board, or newsroom host posted the actual file (HTTP 200). Public-school buyouts prefer that file; articles are fallback only when no current file is loaded. Stale hire packets are not treated as the current deal. Private-school blanks stay pending. No invented URLs.",
       "Coach contract terms (through-year / years remaining) are cited only from employment agreements, board packets, or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending. No On3.",
@@ -123,7 +123,14 @@
       "usat_wbb": "https://sportsdata.usatoday.com/ncaa/salaries/womens-basketball/coach",
       "usat_ad_white": "https://www.usatoday.com/story/sports/college/2025/07/01/danny-white-highest-paid-athletic-director-tennessee-vols/84435230007/",
       "cj_nil_foia": "https://www.courier-journal.com/story/sports/college/kentucky/2026/08/05/university-of-kentucky-nil-revenue-sharing-records-louisville-budget-foia-ncaa-house-settlement/90345933007/",
-      "calmatters_nil": "https://calmatters.org/education/higher-education/2026/08/student-athlete-payments-california/"
+      "calmatters_nil": "https://calmatters.org/education/higher-education/2026/08/student-athlete-payments-california/",
+      "osu_mfrs": "https://news.osu.edu/download/c91b5f24-f009-4455-81eb-4b89b108f1bc/fy25ncaamembershipreportfinal.pdf",
+      "ill_mfrs": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf",
+      "minn_mfrs": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf",
+      "uw_mfrs": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
+      "wisc_mfrs": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
+      "isu_mfrs": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
+      "uva_mfrs": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf"
     }
   },
   "schools": [
@@ -24054,7 +24061,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Illinois FY2025 NCAA Membership Financial Report — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf",
+          "asOf": "2026-01-29",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -33063,7 +33079,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Minnesota FY2025 NCAA Membership Financial Report — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf",
+          "asOf": "2026-01-20",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -37586,7 +37611,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No booked FOIA / MFRS institutional NIL figure located for v1."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Ohio State FY2025 NCAA Membership Financial Report — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://news.osu.edu/download/c91b5f24-f009-4455-81eb-4b89b108f1bc/fy25ncaamembershipreportfinal.pdf",
+          "asOf": "2026-01-30",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -48057,7 +48091,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No booked FOIA / MFRS institutional NIL figure located for v1."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Washington FY2025 NCAA Membership Financial Report — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
+          "asOf": "2026-01-17",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -49485,7 +49528,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Wisconsin FY2025 NCAA Membership Financial Report — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
+          "asOf": "2026-01-16",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -70880,7 +70932,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Virginia FY2025 NCAA Membership Financial Report (published copy) — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
         }
       },
       "coaches": {
@@ -85197,7 +85258,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Iowa State FY2025 NCAA Membership Financial Report — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
+          "asOf": "2026-01-16",
+          "fiscalYear": "FY2025",
+          "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
         }
       },
       "coaches": {
