@@ -143,7 +143,14 @@
       },
       "contract": {
         "label": "University of Kentucky \u2014 Stein FY2025\u201326 employment agreement PDF (posted Feb 2026)",
-        "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
+        "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf",
+        "files": [
+          {
+            "kind": "employment-agreement",
+            "label": "Current employment agreement (FY2025–26)",
+            "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
+          }
+        ]
       }
     },
     "lsu": {
@@ -173,7 +180,21 @@
       },
       "contract": {
         "label": "LSU signed employment agreement \u2014 Lane Kiffin (Nov. 30, 2025)",
-        "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf"
+        "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf",
+        "files": [
+          {
+            "kind": "term-sheet",
+            "date": "2025-11-29",
+            "label": "Term sheet (Nov. 29, 2025)",
+            "url": "https://www.louisianafirstnews.com/wp-content/uploads/sites/80/2025/12/2025.11.29-Term-Sheet-Lane-Kiffin.pdf"
+          },
+          {
+            "kind": "employment-agreement",
+            "date": "2025-11-30",
+            "label": "Signed employment agreement (Nov. 30, 2025)",
+            "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf"
+          }
+        ]
       }
     },
     "mississippi-state": {
@@ -222,7 +243,15 @@
       },
       "contract": {
         "label": "Missouri \u2014 Eli Drinkwitz Second Restated and Amended Employment Contract (Dec. 8, 2025)",
-        "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+        "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf",
+        "files": [
+          {
+            "kind": "restated",
+            "date": "2025-12-08",
+            "label": "Second Restated and Amended employment agreement (Dec. 8, 2025)",
+            "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+          }
+        ]
       }
     },
     "oklahoma": {
@@ -319,7 +348,32 @@
       },
       "contract": {
         "label": "UT System \u2014 Heupel Amendment 3 PDF (Aug. 2025)",
-        "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+        "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
+        "files": [
+          {
+            "kind": "employment-agreement",
+            "label": "Original employment agreement (tennessee.edu)",
+            "url": "https://tennessee.edu/wp-content/uploads/2025/04/Heupel-Josh-2021-27_orig.pdf"
+          },
+          {
+            "kind": "amendment",
+            "n": 1,
+            "label": "Amendment 1",
+            "url": "https://tennessee.edu/wp-content/uploads/2025/04/Heupel-Josh-Amendment1-2022-28-FC.pdf"
+          },
+          {
+            "kind": "amendment",
+            "n": 2,
+            "label": "Amendment 2",
+            "url": "https://tennessee.edu/wp-content/uploads/2025/04/Heupel-Josh-1-2023-Amendment2.pdf"
+          },
+          {
+            "kind": "amendment",
+            "n": 3,
+            "label": "Amendment 3 (Aug. 2025) — current governing",
+            "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+          }
+        ]
       }
     },
     "texas": {
@@ -405,7 +459,15 @@
       },
       "contract": {
         "label": "U. of Illinois BOT minutes (May 22, 2025) \u2014 Bielema employment terms",
-        "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf"
+        "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf",
+        "files": [
+          {
+            "kind": "board-packet",
+            "date": "2025-05-22",
+            "label": "BOT minutes / amendment item (May 22, 2025)",
+            "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf"
+          }
+        ]
       }
     },
     "indiana": {
@@ -519,7 +581,20 @@
       },
       "contract": {
         "label": "U. of Minnesota Regents finance docket (Feb. 2026) \u2014 Fleck new EA",
-        "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf"
+        "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf",
+        "files": [
+          {
+            "kind": "board-packet",
+            "date": "2025-07-09",
+            "label": "July 2025 Regents docket (70% quote)",
+            "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2025-07/docket-bor-july2025.pdf"
+          },
+          {
+            "kind": "board-packet",
+            "label": "Feb. 2026 finance docket (new EA packet)",
+            "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf"
+          }
+        ]
       }
     },
     "nebraska": {
@@ -605,7 +680,15 @@
       },
       "contract": {
         "label": "U. of Oregon BOT Mar. 7, 2025 packet \u2014 Exhibit A Amendment #3 (Lanning)",
-        "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
+        "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf",
+        "files": [
+          {
+            "kind": "board-packet",
+            "date": "2025-03-07",
+            "label": "BOT Mar. 7, 2025 packet (Amendment #3)",
+            "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
+          }
+        ]
       }
     },
     "penn-state": {
@@ -823,7 +906,20 @@
       },
       "contract": {
         "label": "Clemson 2022 BOT term sheet (Sept. 2022) \u2014 binding until a restated EA",
-        "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+        "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf",
+        "files": [
+          {
+            "kind": "restated",
+            "label": "2019 restated employment agreement (USA TODAY packet, through 2028)",
+            "url": "https://s3.documentcloud.org/documents/22080509/clemson_dabo-swinney.pdf"
+          },
+          {
+            "kind": "term-sheet",
+            "date": "2022-09-08",
+            "label": "Sept. 2022 BOT term sheet (current governing)",
+            "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+          }
+        ]
       }
     },
     "duke": {
@@ -914,7 +1010,28 @@
       },
       "contract": {
         "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
-        "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+        "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf",
+        "files": [
+          {
+            "kind": "employment-agreement",
+            "label": "2019 Employment Agreement (scan)",
+            "url": "https://s3.documentcloud.org/documents/22082107/florida-state_mike-norvell.pdf"
+          },
+          {
+            "kind": "amendment",
+            "n": 6,
+            "date": "2024-02-16",
+            "label": "6th Amendment (Feb. 16, 2024) — extension through Dec. 31, 2031",
+            "url": "https://s3.documentcloud.org/documents/24442204/floridastate_norvell_contract_6thamendment-to-2019-ea.pdf"
+          },
+          {
+            "kind": "amendment",
+            "n": 7,
+            "date": "2024-12-13",
+            "label": "7th Amendment (Dec. 13, 2024) — current 85% buyout",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          }
+        ]
       }
     },
     "georgia-tech": {
@@ -1041,7 +1158,14 @@
       },
       "contract": {
         "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
-        "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+        "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf",
+        "files": [
+          {
+            "kind": "employment-agreement",
+            "label": "Signed employment agreement (31 pages)",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          }
+        ]
       }
     },
     "pittsburgh": {
@@ -1108,7 +1232,15 @@
       "mitigation": null,
       "contract": {
         "label": "Virginia Athletics \u2014 Elliott extension through the 2030 season (Apr. 8, 2026)",
-        "url": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension"
+        "url": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension",
+        "files": [
+          {
+            "kind": "employment-agreement",
+            "date": "2022-10-31",
+            "label": "2022 original employment agreement (historical — not the 2026 extension)",
+            "url": "https://augustafreepress.com/wp-content/uploads/2024/11/FB_-_Elliott__T_-_20221031_120821-053128.pdf"
+          }
+        ]
       }
     },
     "virginia-tech": {
@@ -1178,7 +1310,15 @@
       },
       "contract": {
         "label": "Virginia Tech Franklin letter of intent (Nov. 15, 2025) \u2014 binding pending long-form EA",
-        "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+        "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf",
+        "files": [
+          {
+            "kind": "letter-of-intent",
+            "date": "2025-11-15",
+            "label": "Letter of intent (Nov. 15, 2025)",
+            "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+          }
+        ]
       }
     },
     "wake-forest": {
@@ -1210,7 +1350,18 @@
       },
       "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
       "mitigation": null,
-      "contract": null
+      "contract": {
+        "label": null,
+        "url": null,
+        "files": [
+          {
+            "kind": "board-packet",
+            "date": "2024-01-25",
+            "label": "2024 hire board packet (historical — not the 2026 / 2030 extension)",
+            "url": "https://media.kjzz.org/s3fs-public/2024-1-25-Special-Board-Meeting-Board-Book-Second-Amendment.pdf"
+          }
+        ]
+      }
     },
     "arizona-state": {
       "sport": "fb",
@@ -1303,7 +1454,15 @@
       },
       "contract": {
         "label": "CU Board of Regents \u2014 Sanders amended employment agreement PDF (Mar 28, 2025)",
-        "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/"
+        "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/",
+        "files": [
+          {
+            "kind": "restated",
+            "date": "2025-03-28",
+            "label": "Amended and Restated employment agreement (Mar. 28, 2025)",
+            "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/"
+          }
+        ]
       }
     },
     "houston": {
@@ -1403,7 +1562,14 @@
       },
       "contract": {
         "label": "Iowa State \u2014 Jimmy Rogers employment agreement PDF",
-        "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+        "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf",
+        "files": [
+          {
+            "kind": "employment-agreement",
+            "label": "Current employment agreement",
+            "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+          }
+        ]
       }
     },
     "kansas": {

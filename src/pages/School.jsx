@@ -14,6 +14,7 @@ import TapeItems from '../components/TapeItems.jsx'
 import TvContracts from '../components/TvContracts.jsx'
 import { DEFAULT_TITLE, SCHOOL_DRILLS, hashKey, homePath, schoolTitle } from '../lib/share.js'
 import AlumniToggle from '../components/AlumniToggle.jsx'
+import { ContractFiles } from '../components/ContractFiles.jsx'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -625,6 +626,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           <h2>Football coach</h2>
           <div className="coach-name">{s.coaches.football.name}</div>
           <ContractLink url={s.coaches.football.contractUrl} label={s.coaches.football.term?.source} />
+          <ContractFiles files={s.coaches.football.contract?.files} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
           <TermBlock term={s.coaches.football.term} />
           <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>

@@ -311,6 +311,19 @@ table.rank thead th {
 }
 table.rank th .info-mark { margin-left: 4px; }
 .contract-link { display: inline-block; margin: 0 0 10px; }
+.contract-files { margin: 0 0 14px; }
+.contract-file-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+}
+.contract-file-list li {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0 0 4px;
+}
+.contract-file-list a { color: var(--gold); }
 .no-contract {
   display: inline-block;
   margin: 0 0 10px;

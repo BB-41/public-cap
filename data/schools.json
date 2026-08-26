@@ -1226,6 +1226,17 @@
             "notes": "No current-chair if-fired dollar on this desk. File is 70% of remaining Regular Comp \u2014 we do not invent the remainder. Stoops\u2019s paid buyout lives on the tape."
           },
           "contractUrl": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf",
+          "contract": {
+            "label": "University of Kentucky Stein FY2025–26 employment agreement PDF",
+            "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf",
+            "files": [
+              {
+                "kind": "employment-agreement",
+                "label": "Current employment agreement (FY2025–26)",
+                "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
+              }
+            ]
+          },
           "term": {
             "confidence": "reported",
             "source": "University of Kentucky Stein FY2025\u201326 employment agreement PDF",
@@ -1416,6 +1427,24 @@
             "notes": "Signed EA is 80% of remaining Base + Supplemental \u2014 we do not invent the remainder. Kelly\u2019s paid buyout lives on the tape. The Athletic $62.4M quoted the old term sheet."
           },
           "contractUrl": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf",
+          "contract": {
+            "label": "LSU signed employment agreement — Lane Kiffin (Nov. 30, 2025)",
+            "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf",
+            "files": [
+              {
+                "kind": "term-sheet",
+                "date": "2025-11-29",
+                "label": "Term sheet (Nov. 29, 2025)",
+                "url": "https://www.louisianafirstnews.com/wp-content/uploads/sites/80/2025/12/2025.11.29-Term-Sheet-Lane-Kiffin.pdf"
+              },
+              {
+                "kind": "employment-agreement",
+                "date": "2025-11-30",
+                "label": "Signed employment agreement (Nov. 30, 2025)",
+                "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf"
+              }
+            ]
+          },
           "term": {
             "confidence": "reported",
             "source": "LSU signed employment agreement \u2014 Lane Kiffin (Nov. 30, 2025)",
@@ -1810,7 +1839,19 @@
             "yearsRemaining": 6,
             "notes": "Through Jan. 15, 2032. School-side without-cause is 80% of remaining Base + Non-Salary + Publicity Rights."
           },
-          "contractUrl": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+          "contractUrl": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf",
+          "contract": {
+            "label": "Missouri Drinkwitz Second Restated and Amended EA (Dec. 8, 2025)",
+            "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf",
+            "files": [
+              {
+                "kind": "restated",
+                "date": "2025-12-08",
+                "label": "Second Restated and Amended employment agreement (Dec. 8, 2025)",
+                "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+              }
+            ]
+          }
         },
         "mbb": {
           "name": "Dennis Gates",
@@ -2592,6 +2633,35 @@
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "contractUrl": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
+          "contract": {
+            "label": "University of Tennessee Heupel Amendment 3 PDF",
+            "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
+            "files": [
+              {
+                "kind": "employment-agreement",
+                "label": "Original employment agreement (tennessee.edu)",
+                "url": "https://tennessee.edu/wp-content/uploads/2025/04/Heupel-Josh-2021-27_orig.pdf"
+              },
+              {
+                "kind": "amendment",
+                "n": 1,
+                "label": "Amendment 1",
+                "url": "https://tennessee.edu/wp-content/uploads/2025/04/Heupel-Josh-Amendment1-2022-28-FC.pdf"
+              },
+              {
+                "kind": "amendment",
+                "n": 2,
+                "label": "Amendment 2",
+                "url": "https://tennessee.edu/wp-content/uploads/2025/04/Heupel-Josh-1-2023-Amendment2.pdf"
+              },
+              {
+                "kind": "amendment",
+                "n": 3,
+                "label": "Amendment 3 (Aug. 2025) — current governing",
+                "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+              }
+            ]
+          },
           "term": {
             "confidence": "reported",
             "source": "University of Tennessee Heupel Amendment 3 PDF",
@@ -3357,7 +3427,19 @@
             "yearsRemaining": 5,
             "notes": "Term through June 30, 2031. Packet says liquidated damages exist with mitigation/offset; no percent and no dollar staircase."
           },
-          "contractUrl": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf"
+          "contractUrl": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf",
+          "contract": {
+            "label": "U. of Illinois BOT minutes (May 22, 2025)",
+            "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf",
+            "files": [
+              {
+                "kind": "board-packet",
+                "date": "2025-05-22",
+                "label": "BOT minutes / amendment item (May 22, 2025)",
+                "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-17-2025/A1-July-25-Minutes-May-22-2025-BOT.pdf"
+              }
+            ]
+          }
         },
         "mbb": {
           "name": "Brad Underwood",
@@ -4519,7 +4601,24 @@
             "yearsRemaining": 4,
             "notes": "New EA through Dec. 31, 2030. 70% of remaining base + supplemental + retention is quoted from the July 9, 2025 docket."
           },
-          "contractUrl": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf"
+          "contractUrl": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf",
+          "contract": {
+            "label": "U. of Minnesota Regents finance docket (Feb. 2026)",
+            "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf",
+            "files": [
+              {
+                "kind": "board-packet",
+                "date": "2025-07-09",
+                "label": "July 2025 Regents docket (70% quote)",
+                "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2025-07/docket-bor-july2025.pdf"
+              },
+              {
+                "kind": "board-packet",
+                "label": "Feb. 2026 finance docket (new EA packet)",
+                "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-02/docket-fin-feb2026-v2.pdf"
+              }
+            ]
+          }
         },
         "mbb": {
           "name": "Niko Medved",
@@ -5243,6 +5342,18 @@
             "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025. PDF rule is 100% of remaining guaranteed + deferred. Liability/overhang, not annual spend."
           },
           "contractUrl": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf",
+          "contract": {
+            "label": "U. of Oregon BOT Mar. 7, 2025 packet Exhibit A Amendment #3",
+            "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf",
+            "files": [
+              {
+                "kind": "board-packet",
+                "date": "2025-03-07",
+                "label": "BOT Mar. 7, 2025 packet (Amendment #3)",
+                "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
+              }
+            ]
+          },
           "term": {
             "confidence": "reported",
             "source": "U. of Oregon BOT Mar. 7, 2025 packet Exhibit A Amendment #3",
@@ -7008,7 +7119,24 @@
             "yearsRemaining": 5,
             "notes": "Term sheet through Dec. 31, 2031. Binding until a restated EA is posted."
           },
-          "contractUrl": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+          "contractUrl": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf",
+          "contract": {
+            "label": "Clemson 2022 BOT term sheet",
+            "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf",
+            "files": [
+              {
+                "kind": "restated",
+                "label": "2019 restated employment agreement (USA TODAY packet, through 2028)",
+                "url": "https://s3.documentcloud.org/documents/22080509/clemson_dabo-swinney.pdf"
+              },
+              {
+                "kind": "term-sheet",
+                "date": "2022-09-08",
+                "label": "Sept. 2022 BOT term sheet (current governing)",
+                "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+              }
+            ]
+          }
         },
         "mbb": {
           "name": "Brad Brownell",
@@ -7345,7 +7473,32 @@
             "yearsRemaining": 5,
             "notes": "6th Amendment Total Term through Dec. 31, 2031. Current buyout rule is 7th Amendment V.E."
           },
-          "contractUrl": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          "contractUrl": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf",
+          "contract": {
+            "label": "FSU 7th Amendment to 2019 EA / 6th Amendment term",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf",
+            "files": [
+              {
+                "kind": "employment-agreement",
+                "label": "2019 Employment Agreement (scan)",
+                "url": "https://s3.documentcloud.org/documents/22082107/florida-state_mike-norvell.pdf"
+              },
+              {
+                "kind": "amendment",
+                "n": 6,
+                "date": "2024-02-16",
+                "label": "6th Amendment (Feb. 16, 2024) — extension through Dec. 31, 2031",
+                "url": "https://s3.documentcloud.org/documents/24442204/floridastate_norvell_contract_6thamendment-to-2019-ea.pdf"
+              },
+              {
+                "kind": "amendment",
+                "n": 7,
+                "date": "2024-12-13",
+                "label": "7th Amendment (Dec. 13, 2024) — current 85% buyout",
+                "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              }
+            ]
+          }
         },
         "mbb": {
           "name": "Luke Loucks",
@@ -8254,7 +8407,18 @@
             "yearsRemaining": 3,
             "notes": "Signed EA through Dec. 31, 2029. University-fire pay stops after Dec. 31, 2027."
           },
-          "contractUrl": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          "contractUrl": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf",
+          "contract": {
+            "label": "UNC signed employment agreement",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf",
+            "files": [
+              {
+                "kind": "employment-agreement",
+                "label": "Signed employment agreement (31 pages)",
+                "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              }
+            ]
+          }
         },
         "mbb": {
           "name": "Hubert Davis",
@@ -9026,7 +9190,19 @@
             "yearsRemaining": 4,
             "notes": "Announced through the 2030 season. 2022 EA is historical; 2026 long-form PDF is not on the desk."
           },
-          "contractUrl": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension"
+          "contractUrl": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension",
+          "contract": {
+            "label": "Virginia Athletics extension announcement (Apr. 8, 2026)",
+            "url": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension",
+            "files": [
+              {
+                "kind": "employment-agreement",
+                "date": "2022-10-31",
+                "label": "2022 original employment agreement (historical — not the 2026 extension)",
+                "url": "https://augustafreepress.com/wp-content/uploads/2024/11/FB_-_Elliott__T_-_20221031_120821-053128.pdf"
+              }
+            ]
+          }
         },
         "mbb": {
           "name": "Ryan Odom",
@@ -9221,7 +9397,19 @@
             "yearsRemaining": 4,
             "notes": "Binding LOI pending long-form EA. Term through Dec. 31, 2030."
           },
-          "contractUrl": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+          "contractUrl": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf",
+          "contract": {
+            "label": "Virginia Tech Franklin letter of intent (Nov. 15, 2025)",
+            "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf",
+            "files": [
+              {
+                "kind": "letter-of-intent",
+                "date": "2025-11-15",
+                "label": "Letter of intent (Nov. 15, 2025)",
+                "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+              }
+            ]
+          }
         },
         "mbb": {
           "name": "Mike Young",
@@ -9585,6 +9773,18 @@
             "confidence": "pending",
             "asOf": "2026-08",
             "notes": "No public through-year on the desk yet. Not a guess."
+          },
+          "contract": {
+            "label": null,
+            "url": null,
+            "files": [
+              {
+                "kind": "board-packet",
+                "date": "2024-01-25",
+                "label": "2024 hire board packet (historical — not the 2026 / 2030 extension)",
+                "url": "https://media.kjzz.org/s3fs-public/2024-1-25-Special-Board-Meeting-Board-Book-Second-Amendment.pdf"
+              }
+            ]
           }
         },
         "mbb": {
@@ -10430,7 +10630,19 @@
             "yearsRemaining": 3,
             "notes": "Amended agreement through Dec. 31, 2029. School-side without-cause is 75% of remaining Base + Supplemental."
           },
-          "contractUrl": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/"
+          "contractUrl": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/",
+          "contract": {
+            "label": "CU Board of Regents — Sanders amended employment agreement PDF",
+            "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/",
+            "files": [
+              {
+                "kind": "restated",
+                "date": "2025-03-28",
+                "label": "Amended and Restated employment agreement (Mar. 28, 2025)",
+                "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/"
+              }
+            ]
+          }
         },
         "mbb": {
           "name": "Tad Boyle",
@@ -10818,7 +11030,18 @@
             "yearsRemaining": 6,
             "notes": "Through Jan. 31, 2032. Without-cause is 100% of remaining Base ($3,000,000/year). Offset if hired at another D-I school; no duty to seek work."
           },
-          "contractUrl": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+          "contractUrl": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf",
+          "contract": {
+            "label": "Iowa State Rogers employment agreement PDF",
+            "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf",
+            "files": [
+              {
+                "kind": "employment-agreement",
+                "label": "Current employment agreement",
+                "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+              }
+            ]
+          }
         },
         "mbb": {
           "name": "T.J. Otzelberger",

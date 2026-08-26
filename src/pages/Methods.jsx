@@ -447,6 +447,8 @@ export default function Methods({ meta }) {
         do not publish years remaining, so a blank term is pending — not a guess.
         Public-school buyouts prefer the employment agreement, amendment, or board
         packet; articles are the fallback only when no current file is on the desk.
+        The buyout tool and school-page football card list every contract file on
+        the desk (original EA plus amendments), oldest first — not only the latest.
       </p>
 
       <h2>Athletics staff pay</h2>

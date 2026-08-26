@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import Logo from '../components/Logo.jsx'
+import { ContractFiles } from '../components/ContractFiles.jsx'
 import { contractLinkLabel, money, moneyExact } from '../lib/format.js'
 import {
   DEFAULT_SCHOOL,
@@ -158,8 +159,10 @@ export default function Buyout() {
                   {coach.contract.label && (
                     <div className="field-meta">{coach.contract.label}</div>
                   )}
+                  <ContractFiles files={coach.contract.files} />
                 </div>
               )}
+              {!coach.contract?.url && <ContractFiles files={coach.contract?.files} />}
             </div>
             <div className="hero-num">
               <div className="eyebrow">In force today · {formatLongDate(DESK_TODAY)}</div>
@@ -318,6 +321,8 @@ export default function Buyout() {
             <p>
               Public-school buyouts prefer the employment agreement, amendment, or board
               packet; articles are the fallback only when no current file is on the desk.
+              When we have more than the latest PDF — an original EA plus amendments —
+              the Contract files list shows every file on the desk. We do not invent a file.
               This is the contract schedule mapped onto remaining games, not a weekly
               renegotiation. For each upcoming kickoff we ask: if the school fires him
               without cause on the calendar day after that game, which cited step is in
