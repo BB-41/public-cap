@@ -454,6 +454,18 @@ export default function Methods({ meta }) {
         Kentucky keep their booked cells official; the model never overwrites them.
       </p>
       <p>
+        A visible footnote sits under the position graph and next to the clicked
+        position or player dollar. It is not a hover tip. If that year’s pot is a
+        booked school or collective cell, the footnote names the filing
+        (FOIA / MFRS / 990 / counsel), the year, and the URL. If the pot is the
+        on-desk school model, the footnote says it is a labeled model (conference
+        heuristic scaled to the published national market), not a reported player
+        deal. Then: <em>We spread that school pot across the named roster for this
+        year and summed the QB (or whatever position) share. That is an allocation,
+        not a contract.</em> If a rare booked player cell exists, the footnote cites
+        that player source instead of the allocation sentence.
+      </p>
+      <p>
         Clicking a named player opens that player’s own year series when the name
         appears on more than one season roster. Player cells stay modeled. This desk
         still has no named booked dollar on an athlete unless a public file names

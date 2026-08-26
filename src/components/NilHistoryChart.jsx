@@ -5,6 +5,7 @@ import {
   HISTORY_METHOD,
   HISTORY_NOTES,
 } from '../lib/nilHistory.js'
+import AllocationFootnote from './AllocationFootnote.jsx'
 import {
   canonicalUrl,
   downloadNilHistoryPng,
@@ -84,6 +85,7 @@ export default function NilHistoryChart({
   label,
   kind = 'position',
   points,
+  shareLabel,
   onClose,
 }) {
   const url = canonicalUrl(schoolPath(school.id, season, hash || '', includeAlumni))
@@ -125,6 +127,11 @@ export default function NilHistoryChart({
         </span>
       </div>
       <YearBandChart points={points} />
+      <AllocationFootnote
+        points={points}
+        shareLabel={shareLabel || (kind === 'player' ? label : label?.split('·')[0]?.trim())}
+        kind={kind}
+      />
       <DrillNote
         field={{
           value: latest?.mid,

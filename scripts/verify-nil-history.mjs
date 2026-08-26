@@ -5,6 +5,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import {
   allocateBooked,
+  allocationFootnote,
   buildAllNilHistory,
   emptyRosterBook,
   FAMILY_ORDER,
@@ -140,4 +141,59 @@ console.log(
   ky.familySeries.qb.filter((p) => p.potSource === 'booked-school').map((p) => `${p.year}:${p.bookedSchool}`).join(' ')
 )
 console.log('lsu QB booked pot (none)', lsuBooked.length)
+const qbFoot = allocationFootnote({ points: louQb, shareLabel: 'QB' })
+if (qbFoot.mode !== 'allocation' || !qbFoot.spread) {
+  throw new Error('QB chart footnote should be an allocation note')
+}
+if (!/We spread that school pot across the named roster for this year and summed the QB share/.test(qbFoot.spread)) {
+  throw new Error(`QB spread line: ${qbFoot.spread}`)
+}
+if (!/That is an allocation, not a contract/.test(qbFoot.spread)) {
+  throw new Error('QB footnote missing allocation disclaimer')
+}
+if (!qbFoot.lines.some((l) => /FOIA/.test(l) && /2025/.test(l) && /courier-journal/.test(l))) {
+  throw new Error(`QB footnote missing 2025 FOIA filing + URL: ${JSON.stringify(qbFoot.lines)}`)
+}
+if (!qbFoot.lines.some((l) => /2024/.test(l) && /MFRS|FOIA/.test(l))) {
+  throw new Error(`QB footnote missing 2024 booked filing: ${JSON.stringify(qbFoot.lines)}`)
+}
+if (!qbFoot.lines.some((l) => /labeled model/.test(l) && /conference heuristic/.test(l))) {
+  throw new Error('QB footnote missing modeled-pot sentence')
+}
+if (!qbFoot.links.some((l) => l.year === 2025 && /courier-journal/.test(l.url))) {
+  throw new Error('QB footnote missing 2025 URL link')
+}
+if (qbFoot.lines.some((l) => /On3|Opendorse/.test(l))) {
+  throw new Error('footnote leaked a vendor scrape')
+}
+
+const lou26Foot = allocationFootnote({ point: lou26, shareLabel: 'QB' })
+if (!lou26Foot.lines.some((l) => /labeled model/.test(l))) {
+  throw new Error('2026 dollar footnote must say the pot is a labeled model')
+}
+if (!/summed the QB share/.test(lou26Foot.spread)) {
+  throw new Error('2026 dollar footnote must name the QB share')
+}
+
+const bookedPlayerFoot = allocationFootnote({
+  points: [
+    {
+      year: 2024,
+      booked: 100,
+      bookedField: { source: 'FOIA counsel letter', url: 'https://example.test/player', notes: 'FOIA' },
+    },
+  ],
+  shareLabel: 'QB',
+})
+if (bookedPlayerFoot.mode !== 'player-booked') {
+  throw new Error(`booked player footnote mode ${bookedPlayerFoot.mode}`)
+}
+if (bookedPlayerFoot.spread) {
+  throw new Error('booked player footnote must not use allocation text')
+}
+if (!bookedPlayerFoot.lines.some((l) => /player cell/.test(l) && /FOIA/.test(l) && /example.test/.test(l))) {
+  throw new Error(`booked player footnote: ${JSON.stringify(bookedPlayerFoot.lines)}`)
+}
+
+console.log('ok: visible footnote copy (filing + model + allocation)')
 console.log('ok')

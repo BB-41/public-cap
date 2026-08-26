@@ -71,7 +71,7 @@ export const DEFS = {
   },
   rosterHistory: {
     label: 'Position NIL history',
-    text: 'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. Prefer the booked school / collective cell when one exists; else the on-desk modeled school band. The position split is labeled modeled unless it is a real booked player or school cell. Not marketplace valuations.',
+    text: 'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. Prefer the booked school / collective cell when one exists; else the on-desk modeled school band. A visible footnote under the graph names the filing or says the pot is a labeled model, then: we spread that pot across the named roster and summed this position. Not marketplace valuations.',
   },
   portal: {
     label: 'Transfer portal',

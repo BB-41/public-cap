@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { money, moneyRange } from '../lib/format.js'
 import { defTitle } from '../lib/definitions.js'
 import {
@@ -8,6 +9,7 @@ import {
   playerHash,
 } from '../lib/nilHistory.js'
 import NilHistoryChart from './NilHistoryChart.jsx'
+import AllocationFootnote from './AllocationFootnote.jsx'
 
 function onActivate(fn) {
   return (e) => {
@@ -24,6 +26,12 @@ export default function NamedRoster({ school, season, open, onToggle, includeAlu
   const openFamily = parsePosFamily(open)
   const openPlayer = parsePlayerSlug(open)
   const playerRow = openPlayer && history?.playerSeries?.[openPlayer]
+  const seasonPoint =
+    history?.familySeries?.qb?.find((p) => p.year === season) ||
+    Object.values(history?.familySeries || {})
+      .flat()
+      .find((p) => p.year === season) ||
+    null
 
   if (!named?.players?.length) {
     return (
@@ -46,6 +54,14 @@ export default function NamedRoster({ school, season, open, onToggle, includeAlu
             ? `Public ${season} football names, each a modeled share of this school’s pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when one exists; otherwise the collective-era modeled band. Click a position for that group’s year history.`
             : `Public ${season} football names, each a modeled share of this school’s pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when one exists; otherwise the on-desk modeled band. Click a position for that group’s year history.`}
       </p>
+      {named.namesOnly ? null : (
+        <AllocationFootnote
+          className="nil-fn-roster"
+          point={seasonPoint}
+          shareLabel="position"
+          kind="position"
+        />
+      )}
       <div className="table-scroll named-scroll">
         <table className="roster named">
           <thead>
@@ -68,6 +84,7 @@ export default function NamedRoster({ school, season, open, onToggle, includeAlu
                   season={season}
                   includeAlumni={includeAlumni}
                   history={history}
+                  seasonYear={season}
                   open={open}
                   onToggle={onToggle}
                   openPlayer={openPlayer}
@@ -87,6 +104,7 @@ export default function NamedRoster({ school, season, open, onToggle, includeAlu
             label={playerRow.name}
             kind="player"
             points={playerRow.points}
+            shareLabel={playerRow.name}
             onClose={() => onToggle(null)}
           />
         </div>
@@ -121,8 +139,11 @@ export default function NamedRoster({ school, season, open, onToggle, includeAlu
   )
 }
 
-function GroupBlock({ group, expanded, school, season, includeAlumni, history, onToggle, openPlayer }) {
+function GroupBlock({ group, expanded, school, season, includeAlumni, history, seasonYear, onToggle, openPlayer }) {
   const series = history?.familySeries?.[group.family] || []
+  const seasonPoint = series.find((p) => p.year === seasonYear) || null
+  const openPlayerRow = openPlayer ? history?.playerSeries?.[openPlayer] : null
+  const playerSeasonPoint = openPlayerRow?.points?.find((p) => p.year === seasonYear) || seasonPoint
   return (
     <>
       <tr>
@@ -146,6 +167,14 @@ function GroupBlock({ group, expanded, school, season, includeAlumni, history, o
               {group.mid == null ? '—' : moneyRange(group.low, group.high)}
             </span>
           </div>
+          {expanded && group.mid != null ? (
+            <AllocationFootnote
+              className="nil-fn-dollar"
+              point={seasonPoint}
+              shareLabel={group.label}
+              kind="position"
+            />
+          ) : null}
           {expanded ? (
             <div className="drill pos-drill">
               {series.length ? (
@@ -155,6 +184,7 @@ function GroupBlock({ group, expanded, school, season, includeAlumni, history, o
                   includeAlumni={includeAlumni}
                   hash={group.hash}
                   label={`${familyLabel(group.family)} · ${school.name}`}
+                  shareLabel={group.label}
                   kind="position"
                   points={series}
                   onClose={() => onToggle(null)}
@@ -170,24 +200,38 @@ function GroupBlock({ group, expanded, school, season, includeAlumni, history, o
         const ph = playerHash(p.name)
         const playerOpen = openPlayer === ph.slice(7)
         return (
-          <tr key={`${p.name}-${p.jersey}-${p.pos}`} className={playerOpen ? 'player-open' : undefined}>
-            <td>
-              <span
-                className="player-name"
-                role="button"
-                tabIndex={0}
-                aria-expanded={playerOpen}
-                onClick={() => onToggle(ph)}
-                onKeyDown={onActivate(() => onToggle(ph))}
-              >
-                {p.name}
-              </span>{' '}
-              <i className={`dot ${p.confidence}`} title={p.note} />
-            </td>
-            <td>{p.pos || '—'}</td>
-            <td>{p.className || p.class || '—'}</td>
-            <td className="num modeled-cell">{p.low == null ? '—' : moneyRange(p.low, p.high)}</td>
-          </tr>
+          <Fragment key={`${p.name}-${p.jersey}-${p.pos}`}>
+            <tr className={playerOpen ? 'player-open' : undefined}>
+              <td>
+                <span
+                  className="player-name"
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={playerOpen}
+                  onClick={() => onToggle(ph)}
+                  onKeyDown={onActivate(() => onToggle(ph))}
+                >
+                  {p.name}
+                </span>{' '}
+                <i className={`dot ${p.confidence}`} title={p.note} />
+              </td>
+              <td>{p.pos || '—'}</td>
+              <td>{p.className || p.class || '—'}</td>
+              <td className="num modeled-cell">{p.low == null ? '—' : moneyRange(p.low, p.high)}</td>
+            </tr>
+            {playerOpen && p.low != null ? (
+              <tr className="player-fn-row">
+                <td colSpan={4}>
+                  <AllocationFootnote
+                    className="nil-fn-dollar"
+                    point={playerSeasonPoint}
+                    shareLabel={p.name}
+                    kind="player"
+                  />
+                </td>
+              </tr>
+            ) : null}
+          </Fragment>
         )
       })}
     </>

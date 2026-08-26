@@ -363,6 +363,80 @@ export function historyCaption(kind, label) {
   return `${label} — position NIL history — Public Cap`
 }
 
+export const MODELED_POT_FOOTNOTE =
+  'This pot is a labeled model (conference heuristic scaled to the published national market), not a reported player deal.'
+
+export function allocationSpreadLine(shareLabel) {
+  const share = shareLabel || 'position'
+  return `We spread that school pot across the named roster for this year and summed the ${share} share. That is an allocation, not a contract.`
+}
+
+export function filingKind(field) {
+  const blob = `${field?.source || ''} ${field?.notes || ''} ${field?.window || ''}`
+  if (/FOIA|Public Records Act/i.test(blob)) return 'FOIA'
+  if (/MFRS|Institutional NIL|NCAA financial/i.test(blob)) return 'MFRS'
+  if (/\b990\b/i.test(blob)) return '990'
+  if (/counsel/i.test(blob)) return 'counsel'
+  return 'public filing'
+}
+
+export function bookedFilingLine(field, year) {
+  const kind = filingKind(field)
+  const bits = [`The ${year} pot is a booked ${kind} filing`]
+  if (field?.source) bits.push(field.source)
+  if (field?.fiscalYear) bits.push(field.fiscalYear)
+  else if (field?.window) bits.push(field.window)
+  else if (field?.asOf) bits.push(`as of ${field.asOf}`)
+  const head = `${bits[0]}${bits.length > 1 ? ` — ${bits.slice(1).join(' · ')}` : ''}.`
+  return field?.url ? `${head} ${field.url}` : head
+}
+
+export function playerBookedLine(field, year) {
+  const kind = filingKind(field)
+  const src = field?.source || 'a public filing'
+  const head = `This dollar is a booked player cell from a ${kind} source — ${src}${year ? ` (${year})` : ''}.`
+  return field?.url ? `${head} ${field.url}` : head
+}
+
+/**
+ * Visible footnote copy for one allocated dollar or the whole year graph.
+ * Not hover-only. Booked player cells cite the player source instead of the allocation line.
+ */
+export function allocationFootnote({ points, point, shareLabel, kind = 'position' } = {}) {
+  const rows = points || (point ? [point] : [])
+  const share = shareLabel || (kind === 'player' ? 'player' : 'position')
+  const playerBooked = rows.find((p) => p.booked != null && p.bookedField)
+  if (playerBooked) {
+    return {
+      mode: 'player-booked',
+      lines: [playerBookedLine(playerBooked.bookedField, playerBooked.year)],
+      links: playerBooked.bookedField?.url
+        ? [{ year: playerBooked.year, url: playerBooked.bookedField.url, source: playerBooked.bookedField.source }]
+        : [],
+      spread: null,
+    }
+  }
+  const booked = rows.filter((p) => p.potSource === 'booked-school' && p.bookedField)
+  const modeled = rows.some((p) => p.potSource === 'modeled-school' || (!p.potSource && p.mid != null))
+  const lines = []
+  const links = []
+  const seen = new Set()
+  for (const p of booked) {
+    lines.push(bookedFilingLine(p.bookedField, p.year))
+    if (p.bookedField?.url && !seen.has(p.bookedField.url)) {
+      seen.add(p.bookedField.url)
+      links.push({ year: p.year, url: p.bookedField.url, source: p.bookedField.source, kind: filingKind(p.bookedField) })
+    }
+  }
+  if (modeled || !booked.length) lines.push(MODELED_POT_FOOTNOTE)
+  return {
+    mode: 'allocation',
+    lines,
+    links,
+    spread: allocationSpreadLine(share),
+  }
+}
+
 export const ROSTER_YEARS = SEASONS.map((s) => s.year)
 
 export function emptyRosterBook() {

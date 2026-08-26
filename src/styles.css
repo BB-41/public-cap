@@ -439,6 +439,22 @@ table.roster.named td.pos-cell { padding: 0; border-bottom: 1px solid var(--rule
 .nil-swatch.modeled { background: var(--slate); }
 .nil-swatch.booked { background: var(--gold); }
 .nil-year-list .muted { color: var(--muted); }
+.nil-fn {
+  margin: 8px 0 10px;
+  padding: 8px 10px;
+  border-left: 2px solid var(--slate);
+  background: var(--ink-2);
+  color: var(--paper-dim);
+  font-size: 13px;
+  max-width: 46em;
+}
+.nil-fn p { margin: 0 0 6px; }
+.nil-fn p:last-child { margin-bottom: 0; }
+.nil-fn-spread { color: var(--paper); }
+.nil-fn-src { font-size: 13px; }
+.nil-fn-dollar { margin: 0 8px 10px; }
+.nil-fn-roster { margin: 8px 0 4px; }
+.player-fn-row td { padding: 0 0 8px; }
 @media (max-width: 640px) {
   .pos-hint { display: none; }
   .pos-row { grid-template-columns: 1fr auto; }
