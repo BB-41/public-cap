@@ -107,8 +107,8 @@ export default function App() {
         : null
       const nil = { ...s.nil, modeled }
       const r = ratios({ ...s, nil }, data.meta, s._season.houseKey, includeAlumni)
-      const roster = modeled ? scaleRosterToModeled(modeled) : null
-      const named = modeled
+      const roster = modeled?.mid ? scaleRosterToModeled(modeled) : null
+      const named = modeled?.mid
         ? allocateNamedPlayers(book?.schools?.[s.id], modeled, roster)
         : namedRosterOnly(book?.schools?.[s.id])
       const rawLayer = layers?.schools?.[s.id] || {}

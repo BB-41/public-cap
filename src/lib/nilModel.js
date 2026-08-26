@@ -28,6 +28,9 @@
  *   mid = (low + high) / 2
  *   Year scalar is a published market total (Opendorse “NIL at 3” / Athletic Business
  *   recap), not a player file.
+ *   Pac-12 (2021–23) has no published third-party row in CONFERENCE_NIL and no
+ *   invented House rev-share. conferenceNilBand uses the average of Big 12 and
+ *   ACC third-party medians as a documented proxy.
  */
 
 export const HOUSE_2025_26 = 20_500_000
@@ -89,6 +92,11 @@ export function nilYearFactor(season) {
   return market / NIL_MARKET_BASELINE
 }
 
+/** Average of published Big 12 + ACC third-party medians. Not a Pac-12 House row. */
+export function pac12ThirdPartyProxy() {
+  return Math.round((CONFERENCE_NIL['Big 12'].thirdParty + CONFERENCE_NIL.ACC.thirdParty) / 2)
+}
+
 export function conferenceNilBand(conference) {
   if (conference === 'Independent / ACC' || conference === 'Independent') {
     const acc = CONFERENCE_NIL.ACC
@@ -99,6 +107,20 @@ export function conferenceNilBand(conference) {
       revShare: acc.revShare,
       thirdParty: Math.round(acc.thirdParty * ND_PREMIUM),
       premium: ND_PREMIUM,
+    }
+  }
+  // Pac-12 is absent from CONFERENCE_NIL. Do not invent a House rev-share /
+  // total-roster row; collective-era years only need a third-party median.
+  if (conference === 'Pac-12') {
+    const thirdParty = pac12ThirdPartyProxy()
+    return {
+      key: 'Pac-12',
+      label: 'Pac-12 (Big 12 + ACC third-party average proxy)',
+      total: null,
+      revShare: null,
+      thirdParty,
+      premium: 1,
+      proxy: 'big12-acc-third-party-avg',
     }
   }
   const row = CONFERENCE_NIL[conference] || CONFERENCE_NIL.ACC
@@ -164,10 +186,17 @@ export function computeModeledNil(school, capacityTotal, allCapacityTotals, hous
 function collectiveEraConfNote(school, season, conf) {
   const book = school._bookConference || school.conference
   const seasonal = school.conference
+  if (conf.proxy === 'big12-acc-third-party-avg') {
+    return (
+      `Conference bucket is this school’s ${season} affiliation (Pac-12) via conferenceInSeason. ` +
+      `CONFERENCE_NIL has no Pac-12 third-party median and this desk does not invent a Pac-12 House rev-share. ` +
+      `Proxy is the average of published Big 12 and ACC third-party medians ($${(conf.thirdParty / 1e6).toFixed(2)}M), then the same year factor as every other school.`
+    )
+  }
   const published = !!(CONFERENCE_NIL[seasonal] || seasonal === 'Independent / ACC')
   if (seasonal !== book) {
     return published
-      ? `Conference bucket is this school’s ${season} affiliation (${conf.label}) from the desk’s existing 2021–23 remaps.`
+      ? `Conference bucket is this school’s ${season} affiliation (${conf.label}) from the desk’s existing 2021–23 remaps (conferenceInSeason).`
       : `${seasonal} (${season} remap) has no published third-party median; conferenceNilBand inherits the ${conf.label} row.`
   }
   return `Uses this school’s current book conference bucket (${conf.label}).`

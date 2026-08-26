@@ -288,12 +288,17 @@ export default function Methods({ meta }) {
         mid = (low + high) / 2.
       </blockquote>
       <p>
-        Conference bucket: the desk already remaps 2021–23 membership (Texas and
-        Oklahoma in the Big 12; the Pac-12 ten; AAC newcomers; BYU independent). When
-        that remap exists, the model uses it. Otherwise it uses the school’s current
-        book conference. Pac-12, AAC, and plain Independent have no published
-        third-party median; <code>conferenceNilBand</code> inherits the ACC row (and
-        treats Independent like Notre Dame’s ACC × 1.08 lane). Estimates, not filings.
+        Conference bucket: <code>conferenceInSeason(school, year)</code> remaps
+        2021–23 membership (Texas and Oklahoma in the Big 12; the Pac-12 ten; AAC
+        newcomers; BYU independent). When that remap exists, the model uses it.
+        Otherwise it uses the school’s current book conference. Pac-12 has no
+        published third-party median in <code>CONFERENCE_NIL</code>, and this desk
+        does not invent a Pac-12 House rev-share. For 2021–23 Pac-12 the third-party
+        median is a documented proxy: the average of the published Big 12
+        ($6.01M) and ACC ($5.64M) third-party medians ($5.825M), then the same
+        Opendorse year factor as every other school. AAC still has no published
+        third-party row and inherits the ACC median; plain Independent is treated
+        like Notre Dame’s ACC × 1.08 lane. Estimates, not filings.
       </p>
 
       <h2>Position rate card (modeled)</h2>
@@ -369,24 +374,32 @@ export default function Methods({ meta }) {
       <p className="fine">
         Example FB+MBB mid {money(example.rollup.mid)} plus other/unallocated {money(example.rollup.otherMid)}
         = {money(example.rollup.mid + example.rollup.otherMid)} against the {money(EXAMPLE_MID)} SEC median.
-        School pages scale the same weights to that school’s modeled mid. Named football
-        players on the school page are a second cut of the same card — not extra money.
+        School pages scale the same weights to that school’s modeled mid — including
+        2021–24 once a collective-era midpoint exists. Named football players on the
+        school page are a second cut of the same card — not extra money.
       </p>
 
 
       <h2>Named football roster (modeled)</h2>
       <p>
         Every Power school page lists <em>verified</em> football names for the selected season from the public
-        ESPN team roster JSON. We do not invent a name. CollegeFootballData’s roster endpoint
+        ESPN team roster JSON. We do not invent a name. A missing year file (today: 2022
+        and 2025) or a school with no names stays an empty roster. CollegeFootballData’s roster endpoint
         returned 401 without an API key and was skipped. Wikipedia 2026 then 2025 team pages
         supply a two-deep when the American-football depth-chart template is present; those
         names are matched to the ESPN roster (so a 2025 starter who left is dropped).
+        2021–24 files are ESPN public core athlete lists for that closed season.
       </p>
       <p>
-        Each named player gets a modeled low/high that is a <em>share</em> of that school’s
-        football slice of the 93% pot (the existing rate card). We do not invent a reported
-        deal dollar. Confidence is <strong>modeled</strong> unless a news URL is attached —
-        none are on the desk yet. Booked school NIL stays official.
+        Once a school modeled midpoint exists — House-era in 2025–26 / 2026–27, or the
+        collective-era third-party × Opendorse year-factor range in 2021–24 — each named
+        player gets a modeled low/high that is a <em>share</em> of that school’s football
+        slice of the 93% pot (the existing rate card). We do not call the names-only
+        path once that midpoint exists. We do not invent a reported deal dollar.
+        Confidence is <strong>modeled</strong>. In collective-era years the player note
+        says the share is year-scaled, not a filing, and is not an On3 / Opendorse
+        player value. Booked NIL (school and player) stays official-only. No named
+        booked dollars unless a public file names the athlete.
       </p>
       <blockquote>
         Starter on a verified two-deep → high end of the position band (starter-spot weight).
@@ -399,10 +412,12 @@ export default function Methods({ meta }) {
       <p>
         <em>Comparative</em> means the same position-band weight across the conference: a
         starting QB is weight 100 at every SEC desk, a backup QB is 15. Dollars then scale
-        with that school’s modeled midpoint versus the conference median from the nil-ncaa.com
-        table (SEC $30.16M, Big Ten $24.41M, Big 12 $21.61M, ACC $21.24M; Notre Dame is ACC × 1.08).
-        A richer public-cap stack therefore shows a wider named-player band at the same roster spot —
-        not because we scraped a marketplace.
+        with that school’s modeled midpoint versus the conference median. House-era years
+        use the nil-ncaa.com total-roster table (SEC $30.16M, Big Ten $24.41M, Big 12 $21.61M,
+        ACC $21.24M; Notre Dame is ACC × 1.08). Collective-era years use that conference’s
+        third-party median × the Opendorse year factor — Pac-12 via the Big 12 + ACC
+        third-party average proxy above. A richer public-cap stack therefore shows a wider
+        named-player band at the same roster spot — not because we scraped a marketplace.
       </p>
       <p>
         Sources are linked in the roster footer: the ESPN roster page and, when used, the

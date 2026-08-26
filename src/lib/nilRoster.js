@@ -169,6 +169,32 @@ export function familyMidpointUnits(seat) {
   return (seat.starterUnits + seat.depthUnits) / 2
 }
 
+function namedPlayerNote(roleNote, modeled) {
+  if (modeled?.era === 'collective') {
+    return `${roleNote} Collective-era model, year-scaled — not a filing. Not an On3 / Opendorse player value.`
+  }
+  return roleNote
+}
+
+function namedRosterNotes(modeled, confLabel, confMid) {
+  if (modeled?.era === 'collective') {
+    const factor = modeled.yearFactor != null ? ` (year factor ${Number(modeled.yearFactor).toFixed(3)})` : ''
+    return (
+      'Named-player ranges are modeled shares of this school’s football slice of the 93% pot. ' +
+      `Collective-era model: the same position-band units as every other ${confLabel} school, ` +
+      `scaled by this school’s year-scaled third-party midpoint` +
+      (confMid ? ` ($${(confMid / 1e6).toFixed(2)}M)` : '') +
+      `${factor}. Not a filing. Not a reported deal. No On3 / Opendorse player values.`
+    )
+  }
+  return (
+    'Named-player ranges are modeled shares of this school’s football slice of the 93% pot. ' +
+    `Comparative: the same position-band units as every other ${confLabel} school, scaled by this school’s modeled midpoint versus the conference median` +
+    (confMid ? ` ($${(confMid / 1e6).toFixed(2)}M)` : '') +
+    '. Not a contract. Not a reported deal unless a news URL is attached.'
+  )
+}
+
 /**
  * Allocate a modeled low/high to each verified roster name.
  * Shares the football slice of the 93% school-modeled pot.
@@ -209,20 +235,32 @@ export function allocateNamedPlayers(rosterEntry, modeled, bands) {
       units = seat.starterUnits
       u.s += 1
       role = 'starter'
-      note = 'Verified two-deep starter — high end of the position band.'
+      note = namedPlayerNote(
+        'Verified two-deep starter — high end of the position band.',
+        modeled
+      )
     } else if (rank && rank <= 3 && u.d < seat.depthCount) {
       units = seat.depthUnits
       u.d += 1
       role = 'backup'
-      note = 'Verified two-deep backup — low end of the position band.'
+      note = namedPlayerNote(
+        'Verified two-deep backup — low end of the position band.',
+        modeled
+      )
     } else if (!rank) {
       units = familyMidpointUnits(seat)
       role = 'unknown'
-      note = 'Name and position only; no verified depth-chart rank — midpoint of the position band.'
+      note = namedPlayerNote(
+        'Name and position only; no verified depth-chart rank — midpoint of the position band.',
+        modeled
+      )
     } else {
       units = 2
       role = 'depth'
-      note = 'Beyond the two-deep seats on the rate card — developmental share.'
+      note = namedPlayerNote(
+        'Beyond the two-deep seats on the rate card — developmental share.',
+        modeled
+      )
     }
 
     rows.push({ p, family, units, role, note })
@@ -266,11 +304,7 @@ export function allocateNamedPlayers(rosterEntry, modeled, bands) {
     depthMatched: rosterEntry.depthMatched || 0,
     conferenceKey: confLabel,
     conferenceTotal: confMid,
-    notes:
-      'Named-player ranges are modeled shares of this school’s football slice of the 93% pot. ' +
-      `Comparative: the same position-band units as every other ${confLabel} school, scaled by this school’s modeled midpoint versus the conference median` +
-      (confMid ? ` ($${(confMid / 1e6).toFixed(2)}M)` : '') +
-      '. Not a contract. Not a reported deal unless a news URL is attached.',
+    notes: namedRosterNotes(modeled, confLabel, confMid),
   }
 }
 

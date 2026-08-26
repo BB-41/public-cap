@@ -2,17 +2,20 @@
  * Verify collective-era fill + House-era number stability.
  * Run: node scripts/verify-nil-model.mjs
  */
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { computeCapacity } from '../src/lib/compute.js'
 import {
   computeModeledNil,
   modeledNilForSeason,
   nilYearFactor,
   conferenceNilBand,
+  pac12ThirdPartyProxy,
+  CONFERENCE_NIL,
   HALF_SHARE_IDS,
   HOUSE_2025_26,
 } from '../src/lib/nilModel.js'
-import { applySeason, houseValueForSeason } from '../src/lib/seasons.js'
+import { applySeason, conferenceInSeason, houseValueForSeason } from '../src/lib/seasons.js'
+import { allocateNamedPlayers, scaleRosterToModeled } from '../src/lib/nilRoster.js'
 import { feeRateTermsPerYear, impliedFeePerStudent, publishedFeeTimesEnrollment } from '../src/lib/layers.js'
 
 const data = JSON.parse(readFileSync('public/data/schools.json', 'utf8'))
@@ -111,3 +114,67 @@ if (product.impliedAnnual !== 6_400_000) throw new Error(`louisville product ${p
 if (impliedFeePerStudent({ value: 0 }, 50000) !== 0) throw new Error('zero fees should imply $0')
 if (impliedFeePerStudent({ value: null }, 16000) != null) throw new Error('pending fees stay empty')
 console.log('student-fee math ok')
+
+const pac12Tp = pac12ThirdPartyProxy()
+const expectPac12 = Math.round((CONFERENCE_NIL['Big 12'].thirdParty + CONFERENCE_NIL.ACC.thirdParty) / 2)
+if (pac12Tp !== expectPac12) throw new Error(`Pac-12 proxy ${pac12Tp} != ${expectPac12}`)
+const pac12Band = conferenceNilBand('Pac-12')
+if (pac12Band.thirdParty !== expectPac12) throw new Error('Pac-12 band not using documented proxy')
+if (pac12Band.revShare != null || pac12Band.total != null) {
+  throw new Error('Pac-12 House rev-share / total-roster invented')
+}
+const oregon = data.schools.find((s) => s.id === 'oregon')
+if (conferenceInSeason(oregon, 2021) !== 'Pac-12') throw new Error('oregon 2021 should be Pac-12')
+if (conferenceInSeason(oregon, 2024) === 'Pac-12') throw new Error('oregon 2024 should not stay Pac-12')
+const oregon21 = pack(2021).find((r) => r.school.id === 'oregon')
+if (oregon21.school.conference !== 'Pac-12') throw new Error('applySeason oregon 2021 conference')
+if (oregon21.modeled.conferenceThirdParty !== expectPac12) {
+  throw new Error(`oregon 2021 third-party ${oregon21.modeled.conferenceThirdParty} != Pac-12 proxy ${expectPac12}`)
+}
+if (oregon21.modeled.era !== 'collective') throw new Error('oregon 2021 not collective-era')
+console.log('Pac-12 proxy', expectPac12, 'oregon 2021 mid', oregon21.modeled.mid)
+
+function loadRoster(year) {
+  const path = `public/data/rosters-${year}.json`
+  if (!existsSync(path)) return null
+  return JSON.parse(readFileSync(path, 'utf8'))
+}
+
+for (const year of [2021, 2022, 2023, 2024, 2025, 2026]) {
+  const book = loadRoster(year)
+  if (!book) {
+    console.log(`${year}: no roster file — empty roster (no invented names)`)
+    continue
+  }
+  const rows = pack(year)
+  const lsu = rows.find((r) => r.school.id === 'lsu')
+  const entry = book.schools?.lsu
+  if (!lsu.modeled?.mid) throw new Error(`${year} lsu missing modeled mid`)
+  if (!entry?.players?.length) {
+    const named = allocateNamedPlayers(entry, lsu.modeled, scaleRosterToModeled(lsu.modeled))
+    if (named) throw new Error(`${year} invented LSU players from an empty roster`)
+    console.log(`${year}: LSU roster empty — left empty`)
+    continue
+  }
+  const bands = scaleRosterToModeled(lsu.modeled)
+  const named = allocateNamedPlayers(entry, lsu.modeled, bands)
+  if (!named?.players?.length) throw new Error(`${year} LSU names not allocated despite roster + modeled mid`)
+  if (named.namesOnly) throw new Error(`${year} used names-only path despite modeled mid`)
+  const bad = named.players.filter((p) => p.confidence !== 'modeled' || p.low == null || p.high == null)
+  if (bad.length) throw new Error(`${year} ${bad.length} LSU player cells not modeled`)
+  if (year <= 2024) {
+    if (!/collective-era/i.test(named.players[0].note)) {
+      throw new Error(`${year} LSU player note missing collective-era language`)
+    }
+    if (!/not a filing/i.test(named.players[0].note)) {
+      throw new Error(`${year} LSU player note missing not-a-filing language`)
+    }
+  } else if (/collective-era/i.test(named.players[0].note)) {
+    throw new Error(`${year} House-era player note should not say collective-era`)
+  }
+  console.log(
+    `${year}: LSU ${named.players.length} named · modeled ${named.players[0].low}–${named.players[0].high} · ${named.players[0].name}`
+  )
+}
+
+console.log('named-roster allocation ok')

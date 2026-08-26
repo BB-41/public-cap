@@ -67,7 +67,7 @@ export const DEFS = {
   },
   rosterNamed: {
     label: 'Named roster (modeled)',
-    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a reported deal.',
+    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. 2025–26 / 2026–27 use the House-era school midpoint; 2021–24 use the collective-era year-scaled third-party midpoint. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a filing. Not an On3 / Opendorse player value. Not a reported deal.',
   },
   portal: {
     label: 'Transfer portal',
