@@ -160,6 +160,7 @@ function StaffSection({ school }) {
         <p className="fine">No cited WBB / Olympic-sport head-coach pay on the desk for this school.</p>
       )}
       <h3 className="roster-hed">Football assistants</h3>
+      {staff.notes && <p className="fine">{staff.notes}</p>}
       {assts.length ? (
         <table className="roster staff-table">
           <thead>
@@ -655,14 +656,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         </section>
       </div>
 
-      {spec?.coaches === 'pending' ? (
-        <section>
-          <h2 title={defTitle('staffPay')}>Athletics staff pay</h2>
-          <p className="lede tight">Prior-year staff pay not extracted. USA TODAY / 990 figures on the desk are the current cycle.</p>
-        </section>
-      ) : (
-        <StaffSection school={s} />
-      )}
+      <StaffSection school={s} />
 
       <Layers school={s} />
 

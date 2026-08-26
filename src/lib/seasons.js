@@ -22,7 +22,7 @@ export const SEASONS = [
     houseKey: '2026-27',
     capacityMode: 'latest-extract',
     modeledNil: true,
-    coaches: 'current',
+    coaches: 'by-year',
   },
   {
     year: 2025,
@@ -32,7 +32,7 @@ export const SEASONS = [
     houseKey: '2025-26',
     capacityMode: 'latest-extract',
     modeledNil: true,
-    coaches: 'current',
+    coaches: 'by-year',
   },
   {
     year: 2024,
@@ -42,7 +42,7 @@ export const SEASONS = [
     houseKey: null,
     capacityMode: 'conference-floor',
     modeledNil: true,
-    coaches: 'pending',
+    coaches: 'by-year',
   },
   {
     year: 2023,
@@ -52,7 +52,7 @@ export const SEASONS = [
     houseKey: null,
     capacityMode: 'conference-floor',
     modeledNil: true,
-    coaches: 'pending',
+    coaches: 'by-year',
   },
   {
     year: 2022,
@@ -62,7 +62,7 @@ export const SEASONS = [
     houseKey: null,
     capacityMode: 'conference-floor',
     modeledNil: true,
-    coaches: 'pending',
+    coaches: 'by-year',
   },
   {
     year: 2021,
@@ -72,7 +72,7 @@ export const SEASONS = [
     houseKey: null,
     capacityMode: 'conference-floor',
     modeledNil: true,
-    coaches: 'pending',
+    coaches: 'by-year',
   },
 ]
 
@@ -313,8 +313,51 @@ function emptyCoach() {
     buyout: { ...PENDING_PAY },
     term: {
       confidence: 'pending',
-      notes: 'Prior-year contract term not extracted.',
+      notes: 'No chair of record on the desk for this football season.',
     },
+  }
+}
+
+function clone(obj) {
+  return obj == null ? obj : JSON.parse(JSON.stringify(obj))
+}
+
+function yearKey(book, year) {
+  if (!book) return null
+  return book[year] || book[String(year)] || null
+}
+
+/** Chair of record for a football season. A year key wins; we do not fall back to the current hire. */
+export function coachesForSeason(school, year) {
+  const row = yearKey(school.coachesByYear, year)
+  if (row) {
+    return {
+      football: clone(row.football) || emptyCoach(),
+      mbb: clone(row.mbb) || emptyCoach(),
+    }
+  }
+  return {
+    football: emptyCoach(),
+    mbb: emptyCoach(),
+  }
+}
+
+/** 2025–26 use the current directory unless a year key exists. 2024 uses a year key (e.g. FSU USA TODAY assistants) and does not inherit 2025–26 staff. */
+export function staffForSeason(school, year) {
+  const row = yearKey(school.staffByYear, year)
+  if (row) return clone(row)
+  if (year >= 2025) return clone(school.staff) || null
+  return {
+    athleticDirector: {
+      confidence: 'pending',
+      asOf: '2026-08',
+      notes: 'Prior-year staff pay not extracted.',
+    },
+    office: [],
+    otherHeadCoaches: [],
+    assistants: [],
+    notes:
+      'Prior-year assistants not on this desk. The 2024 USA TODAY assistant table is used only where we attached it to that year (Florida State Fuller / Atkins). We do not show 2025–26 staff on 2021–24.',
   }
 }
 
@@ -386,13 +429,8 @@ export function applySeason(school, year) {
   if (year !== 2025) delete nil.preCap
   out.nil = nil
 
-  if (spec.coaches === 'pending') {
-    out.coaches = {
-      football: emptyCoach(),
-      mbb: emptyCoach(),
-    }
-    out.staff = null
-  }
+  out.coaches = coachesForSeason(school, year)
+  out.staff = staffForSeason(school, year)
 
   return out
 }

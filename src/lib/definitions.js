@@ -27,7 +27,7 @@ export const DEFS = {
   },
   coachPay: {
     label: 'Coach pay',
-    text: 'Annual pay from a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY is the fallback only when we do not have a current-chair file with a dollar. Never an outgoing coach’s number. This year’s check, not lifetime wealth. Incentives stay out of the annual cell.',
+    text: 'Annual pay for the chair of record in the selected football season. A current-chair file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. A new hire’s number is not copied onto a prior chair. This year’s check, not lifetime wealth. Incentives stay out of the annual cell.',
   },
   buyout: {
     label: 'Buyout overhang',

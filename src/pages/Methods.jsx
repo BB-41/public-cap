@@ -51,9 +51,10 @@ export default function Methods({ meta }) {
         2021–24 use a labeled collective-era third-party-only backcast scaled by a
         published national market-size series. Booked NIL stays official and untouched:
         Louisville and Kentucky on 2025–26, plus Louisville’s cited FY2025 pre-cap
-        line on 2024. Empty booked cells stay pending. Coach pay on 2025 and 2026
-        prefers the current-chair file; USA TODAY is fallback only when that file has
-        no dollar. Prior years are pending.
+        line on 2024. Empty booked cells stay pending. The year picker shows the chair of record
+        for that football season, not only the current hire. Coach pay on a year
+        prefers that year’s file; USA TODAY is fallback only when that file has no
+        dollar. We do not copy a new hire’s pay backward onto a prior chair.
       </p>
       <p>
         Named football rosters are ESPN public JSON for each season (the live site
@@ -80,7 +81,7 @@ export default function Methods({ meta }) {
           not filings. The model never overwrites booked NIL.
         </dd>
         <dt>Coach pay vs buyout overhang</dt>
-        <dd>Pay is an annual flow from the current-chair file when it publishes a dollar; USA TODAY is fallback only when we do not have that file. Never an outgoing coach’s number. A buyout is overhang — a liability if the school fires without cause on the as-of date — not yearly spend. Private-school blanks stay blank.</dd>
+        <dd>Pay is an annual flow for the chair of record in the selected football season. A current-year file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. The year picker does not copy a new hire backward onto 2024. A buyout is overhang — a liability if the school fires without cause on the as-of date — not yearly spend. Private-school blanks stay blank.</dd>
         <dt>Contract term</dt>
         <dd>Through-year or years remaining on the current head-coach deal, cited from the employment agreement or a newsroom/school release that quotes one. Public-school buyouts prefer the file; articles are fallback only when no current file is loaded. Not a guess. Pending if we do not have a public through-year.</dd>
         <dt>Transfer portal</dt>
@@ -447,8 +448,9 @@ export default function Methods({ meta }) {
         sheet, letter of intent, or board packet when that file publishes compensation.
         Confidence is reported and the source is the file. USA TODAY Sports football
         (updated Oct 8, 2025; buyout as of Dec 1, 2025) is the fallback only when we do
-        not have a current-chair file with a dollar. We never leave an outgoing coach’s
-        pay on a school that has a new chair. Men’s basketball still uses USA TODAY
+        not have a current-chair file with a dollar.         We never leave an outgoing coach’s
+        pay on a school that has a new chair — the year picker keeps that outgoing
+        chair on the seasons they actually coached. Men’s basketball still uses USA TODAY
         (updated Apr 8, 2026; buyout as of Apr 1, 2026). Pay is an annual flow —
         incentives listed in the file stay out of that cell. A buyout is overhang — a
         liability if the school fires without cause on that date — not yearly spend.
