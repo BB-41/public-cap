@@ -22,6 +22,7 @@ Modeled NIL: House-era (rev-share + third-party) for 2025–26 and 2026–27;
 collective-era third-party-only backcast for 2021–24, labeled modeled.
 Named ESPN rosters get a modeled share whenever a school midpoint exists
 (including 2021–24). A missing year file stays empty; booked NIL stays official.
+Collective Form 990s live on `nil.collective990` and never overwrite booked House / Item 44.
 
 Data: `public/data/schools.json`, `public/data/rosters-YYYY.json`.
 

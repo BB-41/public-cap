@@ -51,8 +51,8 @@ export default function NamedRoster({ school, season, open, onToggle, includeAlu
         {named.namesOnly
           ? `Public ${season} football names from the ESPN team roster. No modeled NIL share — this season has names but no school modeled midpoint.`
           : school.nil.modeled?.era === 'collective'
-            ? `Public ${season} football names, each a modeled share of this school’s pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when one exists; otherwise the collective-era modeled band. Click a position for that group’s year history.`
-            : `Public ${season} football names, each a modeled share of this school’s pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when one exists; otherwise the on-desk modeled band. Click a position for that group’s year history.`}
+            ? `Public ${season} football names, each a modeled share of this school’s pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when one exists; otherwise the collective-era modeled band. Collective 990 is a cited side lane, not the pot. Click a position for that group’s year history.`
+            : `Public ${season} football names, each a modeled share of this school’s pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when one exists; otherwise the on-desk modeled band. Collective 990 is a cited side lane, not the pot. Click a position for that group’s year history.`}
       </p>
       {named.namesOnly ? null : (
         <AllocationFootnote

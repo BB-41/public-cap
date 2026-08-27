@@ -72,7 +72,14 @@ export default function Methods({ meta }) {
         <dt>Annual capacity / public cap</dt>
         <dd>Default is booked-only — the filing stack: media + sponsorships + tickets + booked contributions. A toggle, Include modeled alumni, adds the Scorecard-based extra-alumni midpoint (modeled athletics giving minus booked contributions, so we do not double-count). Extra low can be $0 when booked gifts already exceed the conservative alumni model. Annual, not lifetime. We never add lifetime wealth into the ranking.</dd>
         <dt>Booked NIL</dt>
-        <dd>FOIA ledgers, MFRS “Institutional NIL Revenue Share,” or collective Form 990s we can cite. Empty means pending — we do not have a number, not that spend is zero. Booked remains the official number when it exists (today: Louisville and Kentucky). No On3 / Opendorse / NIL Go.</dd>
+        <dd>FOIA ledgers, MFRS “Institutional NIL Revenue Share,” or counsel spent totals we can cite. Collective Form 990s live on a separate lane and never overwrite booked House / Item 44. Empty means pending — we do not have a number, not that spend is zero. Booked remains the official institutional number when it exists (today: Louisville and Kentucky). No On3 / Opendorse / NIL Go.</dd>
+        <dt>Collective 990</dt>
+        <dd>
+          A third-party Form 990 line that names grants to individuals, athlete service compensation, or student-athlete appearances.
+          Cited from ProPublica Nonprofit Explorer / IRS e-file XML. Lagged one to two years. Labeled collective 990 — not a House spent total, not Item 44, not a player contract.
+          Never added to booked NIL, pre-cap, capacity, or the booked-only rank. Position allocation stays on booked-then-modeled only; there is no “+ collective 990” pot toggle.
+          A lump “program service expenses” line that does not name athletes is not booked as athlete pay. LLC collectives with no public return stay empty.
+        </dd>
         <dt>Modeled NIL</dt>
         <dd>
           A conference-heuristic <em>range</em> for every school, including those with a filing, so you can compare the model to the books.
@@ -108,7 +115,7 @@ export default function Methods({ meta }) {
         <dt>What backs this (earnings corroboration)</dt>
         <dd>A quiet check on the official average, not a second alumni net-worth engine. Scorecard stays the earnings number. Under it we cite BLS Occupational Employment and Wage Statistics for 2–4 occupations that match a simple career mix (flagship public, tech/engineering, or private elite) — national May 2025 medians/means, plus the state OEWS page. Those wages are reported BLS figures and estimated as a mix for that school type; they are not this school’s alumni. Where a state open-payroll site is obvious (Texas, Ohio, California, Florida) we link it so reporters know public-university alumni on the state payroll can be looked up. A handful of schools get one notable public-company alum with an EDGAR/DEF 14A or IR link (fat tail, not a cohort). Glassdoor and LinkedIn are not ingested.</dd>
         <dt>Desk tape</dt>
-        <dd>A dated log of filings that moved a Public Cap figure — not a news feed. Booked NIL, contract PDFs, paid buyouts, cited apparel or naming, student-fee / subsidy lines, and House-cap Q&amp;As. We do not invent a headline. A school page that is quiet says so: “No public filing on the desk yet.”</dd>
+        <dd>A dated log of filings that moved a Public Cap figure — not a news feed. Booked NIL, collective 990s, contract PDFs, paid buyouts, cited apparel or naming, student-fee / subsidy lines, and House-cap Q&amp;As. We do not invent a headline. A school page that is quiet says so: “No public filing on the desk yet.”</dd>
         <dt>TV / media rights</dt>
         <dd>Most Power 4 TV contracts are conference deals, not 68 school contracts. The school page and the <a href="/tv">TV book</a> show rights holders, term, the cited conference pot, and how the share is split when a 2024–26 source exists. A school media check is printed only when reported, or as a labeled equal-share estimate (cited pot ÷ cited members). Notre Dame’s NBC football deal is the school-level exception. The College Football Playoff is one national package. ACC Grant of Rights / viewership splits are described as cited — not flattened to equal share. Empty means pending.</dd>
         <dt>Confidence tags</dt>
@@ -156,8 +163,9 @@ export default function Methods({ meta }) {
       <h2>What “booked NIL” means</h2>
       <p>
         NIL on this desk is a booked band only: FOIA ledgers, MFRS “Institutional NIL
-        Revenue Share,” or collective Form 990s. If we do not have one of those, the cell
-        is pending. We do not scrape On3, Opendorse, or NIL Go, and we do not hit
+        Revenue Share,” or counsel spent totals. Collective Form 990s are a separate
+        cited lane (<code>nil.collective990</code>) and never overwrite booked House /
+        Item 44. If we do not have a booked institutional filing, that cell is pending. We do not scrape On3, Opendorse, or NIL Go, and we do not hit
         api.on3.com. A public news article may be cited once when it is itself a FOIA,
         ledger, or counsel-statement story (Courier-Journal, August 2026: Louisville
         $32.9M FOIA Mar 2025–Jul 1 2026, including ~$12.7M pre-cap KY NIL; prior desk
@@ -176,6 +184,42 @@ export default function Methods({ meta }) {
       <p>
         Ratios: NIL ÷ House cap, and NIL ÷ our capacity. A school can sit near 100% of
         House and still be a small slice of capacity. Booked is never replaced by the model.
+      </p>
+
+      <h2>Collective 990 (separate lane)</h2>
+      <p>
+        Some Power 4 + Notre Dame collectives file a public Form 990. When that return
+        names the athlete-pay line — grants to individuals, athlete service compensation,
+        student-athlete appearances / contractors, or “payments for name, image, and
+        likeness” — we book that line on <code>nil.collective990</code> with the EIN,
+        organization name, tax year, and a ProPublica Nonprofit Explorer URL. Confidence
+        is <strong>reported</strong>. The dollar is labeled collective 990, not booked
+        House and not Item 44.
+      </p>
+      <p>
+        If the 990 only has a lump program-service total that is not clearly athlete NIL,
+        we do not mint an athlete-pay number. LLC collectives with no public return stay
+        empty. Empty schools stay empty. We do not invent EINs.
+      </p>
+      <p>
+        These cells never enter booked NIL, pre-cap, capacity, or the default booked-only
+        rank. Position allocation does not spend this pot — there is no “+ collective 990”
+        toggle; the default remains booked-then-modeled. The school NIL block prints a
+        visible footnote: third-party filing, lagged, not a House spent total, not a
+        player contract.
+      </p>
+      <p>
+        Seeded from IRS e-file XML via ProPublica / TEOS (verified on the form, not from
+        a news memo): Texas One Fund Inc (EIN 87-3873183) student-athlete contractors /
+        appearances $423,157 (2022), $11,717,673 (2023), $14,540,650 (2024); Friends of
+        the University of Notre Dame Inc / FUND (EIN 87-4530736) NIL / athlete service
+        compensation $1,176,862 (2022), $5,129,490 (2023), $10,823,302 (2024). Also
+        booked when the 990 named the line: Classic City Collective (Georgia, 501(c)(6))
+        $2,214,518 NIL payments (2023); 502Circle (Louisville) $545,833 athlete fees
+        (2023); Walk of Champions (Alabama) $10,000 appearance fees (2023); Montlake
+        Futures Fund (Washington) $2,803,276 appearance fees (year ended June 30, 2023).
+        Ohio State / Tennessee / LSU / Florida / Michigan / Oregon and other well-known
+        collectives stay empty unless a public 990 names an athlete-pay line.
       </p>
 
       <h2>Modeled NIL (conference heuristic)</h2>
@@ -443,8 +487,8 @@ export default function Methods({ meta }) {
       <p>
         <em>Position dollars are an allocation of the school pot across that year’s
         named roster, not reported player contracts.</em>
-        The pot is that year’s booked school / collective NIL when a FOIA / MFRS / 990 /
-        counsel cell exists (today: Louisville 2024 pre-cap and 2025, Kentucky 2025,
+        The pot is that year’s booked school NIL when a FOIA / MFRS / counsel
+        cell exists (today: Louisville 2024 pre-cap and 2025, Kentucky 2025,
         UCLA and Cal 2025, Texas 2024 pre-cap and 2025, Penn State and Oklahoma State
         2024 pre-cap, and the cited FY2025 Item 44 $0 cells at Georgia, Tennessee,
         Alabama, Oregon, Utah, UNC, Ohio State, Illinois, Minnesota, Washington,
@@ -460,8 +504,9 @@ export default function Methods({ meta }) {
       <p>
         A visible footnote sits under the position graph and next to the clicked
         position or player dollar. It is not a hover tip. If that year’s pot is a
-        booked school or collective cell, the footnote names the filing
-        (FOIA / MFRS / 990 / counsel), the year, and the URL. If the pot is the
+        booked school cell, the footnote names the filing
+        (FOIA / MFRS / counsel), the year, and the URL. Collective 990 is not
+        the pot. If the pot is the
         on-desk school model, the footnote says it is a labeled model (conference
         heuristic scaled to the published national market), not a reported player
         deal. Then: <em>We spread that school pot across the named roster for this

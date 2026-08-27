@@ -121,6 +121,13 @@ export function nilBooked(school) {
   return hasVal(school.nil.booked) ? val(school.nil.booked) : null
 }
 
+/** Third-party collective 990 cells. Never a booked House / Item 44 input. */
+export function collective990Cells(school) {
+  const rows = school?.nil?.collective990
+  if (!Array.isArray(rows)) return []
+  return rows.filter((row) => row && (row.value != null || row.confidence === 'pending'))
+}
+
 export function nilModeled(school) {
   return school?.nil?.modeled || null
 }

@@ -11,7 +11,11 @@ export const DEFS = {
   },
   nil: {
     label: 'Booked NIL',
-    text: 'FOIA, MFRS institutional NIL, or collective 990 spend we can cite. Empty means pending — we do not have a number, not that spend is zero. Booked is the official number when it exists.',
+    text: 'FOIA, MFRS institutional NIL, or counsel spent totals we can cite. Collective Form 990s sit on a separate lane and never overwrite booked House / Item 44. Empty means pending — we do not have a number, not that spend is zero. Booked is the official institutional number when it exists.',
+  },
+  nilCollective990: {
+    label: 'Collective 990',
+    text: 'A third-party 501(c)(3) (or other public Form 990) line that names grants to individuals, athlete service compensation, or student-athlete appearances. Lagged. Not a House spent total, not Item 44, not a player contract. Never added to booked NIL, pre-cap, capacity, or the booked-only rank. Position allocation stays on booked-then-modeled only.',
   },
   nilModeled: {
     label: 'NIL modeled',
@@ -67,11 +71,11 @@ export const DEFS = {
   },
   rosterNamed: {
     label: 'Named roster (modeled)',
-    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is a booked school / collective cell when a FOIA / MFRS / 990 / counsel filing exists; otherwise the on-desk conference-heuristic modeled band. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a filing. Not an On3 / Opendorse player value.',
+    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is a booked school cell when a FOIA / MFRS / counsel filing exists; otherwise the on-desk conference-heuristic modeled band. Collective 990 dollars are a cited side lane and are not the allocation pot. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a filing. Not an On3 / Opendorse player value.',
   },
   rosterHistory: {
     label: 'Position NIL history',
-    text: 'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. Prefer the booked school / collective cell when one exists; else the on-desk modeled school band. A visible footnote under the graph names the filing or says the pot is a labeled model, then: we spread that pot across the named roster and summed this position. Not marketplace valuations.',
+    text: 'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. Prefer the booked school cell (FOIA / MFRS / counsel) when one exists; else the on-desk modeled school band. Collective 990 is displayed separately and is not the pot. A visible footnote under the graph names the filing or says the pot is a labeled model, then: we spread that pot across the named roster and summed this position. Not marketplace valuations.',
   },
   portal: {
     label: 'Transfer portal',
@@ -95,7 +99,7 @@ export const DEFS = {
   },
   tape: {
     label: 'Desk tape',
-    text: 'A dated log of filings that moved a Public Cap figure — booked NIL, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
+    text: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990s, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
   },
   tv: {
     label: 'TV / media rights',

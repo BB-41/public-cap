@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
-import { collectSources, hasVal } from '../lib/compute.js'
+import { collectSources, collective990Cells, hasVal } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import { earningsBack } from '../lib/earningsBack.js'
@@ -318,6 +318,47 @@ function BacksThis({ school }) {
   )
 }
 
+function Collective990Lane({ cells }) {
+  if (!cells.length) return null
+  const newestFirst = [...cells].sort((a, b) => (b.taxYear || 0) - (a.taxYear || 0))
+  return (
+    <div className="collective-990">
+      <div className="eyebrow" title={defTitle('nilCollective990')}>Collective 990 (third-party filing)</div>
+      {newestFirst.map((cell) => (
+        <div className="field" key={`${cell.ein || cell.organization}-${cell.taxYear}-${cell.value}`}>
+          <div className="field-val">
+            {cell.value == null ? 'Pending' : moneyExact(cell.value)} <i className={`dot ${cell.confidence || 'reported'}`} />
+          </div>
+          <div className="field-meta">
+            {cell.taxYear && <span>tax year {cell.taxYear} · </span>}
+            {cell.taxPeriodEnd && <span>period ended {cell.taxPeriodEnd} · </span>}
+            {cell.organization && <span>{cell.organization}</span>}
+            {cell.ein && <span> · EIN {cell.ein}</span>}
+            {cell.asOf && <span> · as of {cell.asOf}</span>}
+            {cell.confidence && <span> · <span className="conf-label">{cell.confidence}</span></span>}
+          </div>
+          {cell.line && <div className="field-notes">{cell.line}</div>}
+          {cell.source && <div className="field-notes">{cell.source}</div>}
+          {cell.url && (
+            <div className="field-meta">
+              <a className="ext" href={cell.url} target="_blank" rel="noreferrer">ProPublica / 990 ↗</a>
+            </div>
+          )}
+          {cell.notes && <div className="field-notes">{cell.notes}</div>}
+        </div>
+      ))}
+      <p className="collective-990-foot">
+        {cells.some((c) => /501\(c\)\(6\)/i.test(`${c.notes || ''} ${c.source || ''}`))
+          ? 'This is a third-party Form 990 (a 501(c)(6) business-league return, not a 501(c)(3)).'
+          : 'This is a third-party 501(c)(3) Form 990.'}
+        {' '}The return is lagged. It is not a House spent total, not Item 44, and not a player contract.
+        These dollars are not added to booked NIL, pre-cap, capacity, or the booked-only rank.
+        Position allocation stays on booked-then-modeled only.
+      </p>
+    </div>
+  )
+}
+
 function Field({ field, fallback = '—' }) {
   if (!field || field.value == null) {
     return (
@@ -491,13 +532,14 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
 
       <section>
         <h2 title={defTitle('nil')}>NIL booked band</h2>
-        <Field field={s.nil.booked} fallback="Empty / pending. FOIA, MFRS institutional NIL, or collective 990 only. Official number when it exists." />
+        <Field field={s.nil.booked} fallback="Empty / pending. FOIA, MFRS institutional NIL, or counsel spent totals only. Official House / Item 44 number when it exists. Collective 990 is a separate lane below." />
         {hasVal(s.nil.preCap) && (
           <div className="subfield">
             <div className="eyebrow">Pre-cap institutional NIL (does not count against House)</div>
             <Field field={s.nil.preCap} />
           </div>
         )}
+        <Collective990Lane cells={collective990Cells(s)} />
         <div className="ratio-row">
           <div><span className="eyebrow">NIL ÷ capacity</span><strong>{pct(s._ratios.nilOverCapacity)}</strong></div>
           <div><span className="eyebrow">{house == null ? 'NIL ÷ House' : (season >= 2026 ? 'NIL ÷ House 2026–27' : 'NIL ÷ House 2025–26')}</span><strong>{house == null ? '—' : pct(s._ratios.nilOverHouse)}</strong></div>

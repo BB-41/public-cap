@@ -2,6 +2,7 @@
 
 export const KIND_LABELS = {
   'booked-nil': 'Booked NIL',
+  'collective-990': 'Collective 990',
   contract: 'Contract',
   'paid-buyout': 'Paid buyout',
   apparel: 'Apparel',

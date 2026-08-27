@@ -3,9 +3,9 @@
  *
  * Position dollars are an allocation of the school pot across that year’s
  * named roster, not reported player contracts. Pot, in order:
- *   1. that year’s booked school / collective NIL when a FOIA / MFRS / 990 /
- *      counsel cell exists
+ *   1. that year’s booked school NIL when a FOIA / MFRS / counsel cell exists
  *   2. else that year’s already-on-desk modeled school NIL band
+ * Collective 990 (nil.collective990) is a cited side lane and is never the pot.
  *
  * Spread with the existing nilRoster unit card, then sum by position.
  * Years with no named roster file fall back to the same rate card.
@@ -85,14 +85,15 @@ export function parsePlayerSlug(key) {
 }
 
 export const HISTORY_NOTES =
-  'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school / collective cell when a FOIA / MFRS / 990 / counsel filing exists; otherwise the on-desk school modeled band. Years without a named roster file use the same position rate card. Not marketplace valuations. Not an On3 / Opendorse / NIL Go player scrape.'
+  'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when a FOIA / MFRS / counsel filing exists; otherwise the on-desk school modeled band. Collective 990 is a cited side lane and is not the pot. Years without a named roster file use the same position rate card. Not marketplace valuations. Not an On3 / Opendorse / NIL Go player scrape.'
 
 export const HISTORY_METHOD =
   'Named football players at this position (or the position rate card when that year has no roster file) share that year’s school pot via the existing roster unit card, then we sum the position. Pot = booked school cell if one exists, else the conference-heuristic modeled band. The position split is labeled modeled. A booked label is only a real booked player or school cell — not an invented QB-market percentage.'
 
 /**
- * Prefer a real booked school/collective cell as the allocation pot.
+ * Prefer a real booked school cell as the allocation pot.
  * Else the on-desk modeled school band. Do not invent a new national model.
+ * Do not silently spend nil.collective990.
  */
 export function schoolNilPot(modeled, booked) {
   if (booked != null && Number.isFinite(Number(booked))) {

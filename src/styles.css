@@ -176,6 +176,9 @@ h2 { font-family: Arial, Helvetica, system-ui, sans-serif; font-weight: 650; fon
 .field-meta { font-size: 13px; color: var(--muted); }
 .field-notes { font-size: 13px; color: var(--paper-dim); margin-top: 4px; }
 .pending-box { border-left: 2px solid #5a5144; padding-left: 12px; }
+.subfield { margin-top: 12px; }
+.collective-990 { margin-top: 20px; padding-top: 14px; border-top: 1px dashed var(--rule); }
+.collective-990-foot { font-size: 13px; color: var(--paper-dim); margin: 8px 0 0; max-width: 62rem; }
 .conf-label { text-transform: uppercase; letter-spacing: 0.08em; font-family: Arial, Helvetica, system-ui, sans-serif; font-size: 10px; }
 .range-box { display: flex; flex-direction: column; gap: 16px; background: var(--ink-2); padding: 16px; border-top: 2px solid var(--gold); }
 .ratio-row { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 16px; }
