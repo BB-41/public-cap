@@ -120,6 +120,7 @@ const expect24 = {
   utah: 0,
   'north-carolina': 0,
   'ole-miss': 0,
+  arkansas: 0,
 }
 for (const [id, n] of Object.entries(expect24)) {
   const row = y24.find((r) => r.school.id === id)

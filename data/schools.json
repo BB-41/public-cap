@@ -1804,6 +1804,15 @@
           "url": null,
           "asOf": null,
           "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Arkansas FY2025 NCAA Membership Financial Report — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf",
+          "asOf": "2026-01",
+          "fiscalYear": "FY2025",
+          "notes": "Hosted MFRS PDF at arkansasrazorbacks.com prints Item 44 as $0 for Reporting Year (FY) 2025 (pre-House, year ended Jun 30 2025). Booked $0 because the report shows $0 — not an invented blank. Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total."
         }
       },
       "coaches": {
@@ -13367,8 +13376,8 @@
             "term": {
               "confidence": "reported",
               "asOf": "2026-08",
-              "source": "Missouri Drinkwitz Second Restated and Amended EA §2.1",
-              "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf",
+              "source": "Wikipedia season-page infobox",
+              "url": "https://en.wikipedia.org/wiki/2026_Missouri_Tigers_football_team",
               "through": "2032",
               "yearsRemaining": 6,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Term ends the later of Jan. 15, 2032 or the day after the 2031-32 last game. Automatic +1 Contract Year on eight regular-season wins beginning the Contract Year that starts Jan. 16, 2026."
@@ -21126,8 +21135,8 @@
             "term": {
               "confidence": "reported",
               "asOf": "2026-08",
-              "source": "U.T. System Board of Regents Feb. 2025 agenda book — Sarkisian amendment",
-              "url": "https://www.utsystem.edu/sites/default/files/offices/board-of-regents/board-meetings/agenda-book-full/2-2025AB.pdf",
+              "source": "Wikipedia season-page infobox",
+              "url": "https://en.wikipedia.org/wiki/2026_Texas_Longhorns_football_team",
               "through": "2031",
               "yearsRemaining": 6,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Period: January 1, 2025 through December 31, 2031."
@@ -29651,12 +29660,31 @@
       },
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "James E. Smith",
-          "source": "Official 2026 athletics staff directory",
-          "url": "https://umterps.com/sports/football/coaches/2026"
+          "source": "University of Maryland Office of the President — official appointment",
+          "url": "https://president.umd.edu/news/welcoming-james-e-smith-to-lead-maryland-athletics",
+          "pay": {
+            "value": 1500000,
+            "confidence": "reported",
+            "source": "Sportico, quoting Smith employment agreement obtained by the newsroom",
+            "url": "https://www.sportico.com/leagues/college-sports/2025/maryland-ad-jim-smith-contract-revenue-1234862152/",
+            "asOf": "2025-07-16",
+            "notes": "Obtained EA: $1.5 million annually in base compensation ($1.2M base + $300k supplemental in contemporaneous open-records writeups). Five-year term through June 30, 2030. Revenue-growth and $45k performance incentives not added. Same person as the 2026 chair.",
+            "year": 2025,
+            "breakdown": [
+              {
+                "label": "Base",
+                "value": 1200000
+              },
+              {
+                "label": "Supplemental / media / NIL",
+                "value": 300000
+              }
+            ]
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -30142,12 +30170,31 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "James E. Smith",
-            "source": "Official 2026 athletics staff directory",
-            "url": "https://umterps.com/sports/football/coaches/2026"
+            "source": "University of Maryland Office of the President — official appointment",
+            "url": "https://president.umd.edu/news/welcoming-james-e-smith-to-lead-maryland-athletics",
+            "pay": {
+              "value": 1500000,
+              "confidence": "reported",
+              "source": "Sportico, quoting Smith employment agreement obtained by the newsroom",
+              "url": "https://www.sportico.com/leagues/college-sports/2025/maryland-ad-jim-smith-contract-revenue-1234862152/",
+              "asOf": "2025-07-16",
+              "notes": "Obtained EA: $1.5 million annually in base compensation ($1.2M base + $300k supplemental in contemporaneous open-records writeups). Five-year term through June 30, 2030. Revenue-growth and $45k performance incentives not added. Same person as the 2026 chair.",
+              "year": 2025,
+              "breakdown": [
+                {
+                  "label": "Base",
+                  "value": 1200000
+                },
+                {
+                  "label": "Supplemental / media / NIL",
+                  "value": 300000
+                }
+              ]
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -36503,8 +36550,8 @@
             "term": {
               "confidence": "reported",
               "asOf": "2026-08",
-              "source": "KETV quoting Rhule contract extension",
-              "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045",
+              "source": "Wikipedia season-page infobox",
+              "url": "https://en.wikipedia.org/wiki/2026_Nebraska_Cornhuskers_football_team",
               "through": "2033",
               "yearsRemaining": 7,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Eight-year deal through Jan. 31, 2033. CFP appearance adds $1 million to each remaining contract year."
@@ -44366,8 +44413,8 @@
             "term": {
               "confidence": "reported",
               "asOf": "2026-08",
-              "source": "Indianapolis Star quoting Purdue Athletics contract-elements summary",
-              "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
+              "source": "Wikipedia season-page infobox",
+              "url": "https://en.wikipedia.org/wiki/2026_Purdue_Boilermakers_football_team",
               "through": "2030",
               "yearsRemaining": 5,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Six-year deal through Dec. 31, 2030."
@@ -54211,9 +54258,12 @@
       },
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+          "name": "Jay Larson and Jenny Simon-O'Neill",
+          "source": "Cal Athletics official — co-directors of athletics (July 2, 2025)",
+          "url": "https://calbears.com/news/2025/7/2/athletics-news-larson-simon-o-neill-start-tenure-as-co-athletic-directors.aspx"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -54751,9 +54801,12 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+            "name": "Jay Larson and Jenny Simon-O'Neill",
+            "source": "Cal Athletics official — co-directors of athletics (July 2, 2025)",
+            "url": "https://calbears.com/news/2025/7/2/athletics-news-larson-simon-o-neill-start-tenure-as-co-athletic-directors.aspx"
           },
           "office": [],
           "otherHeadCoaches": [
@@ -55841,9 +55894,31 @@
       "color": "#F56600",
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+          "name": "Graham Neff",
+          "source": "Clemson Board of Trustees Compensation Committee / FOX Carolina",
+          "url": "https://www.foxcarolina.com/2025/10/17/trustees-approve-new-contract-clemson-athletics-director/",
+          "pay": {
+            "value": 1350000,
+            "confidence": "reported",
+            "source": "FOX Carolina (Oct. 17, 2025), quoting Clemson Board of Trustees Compensation Committee terms",
+            "url": "https://www.foxcarolina.com/2025/10/17/trustees-approve-new-contract-clemson-athletics-director/",
+            "asOf": "2025-10-17",
+            "notes": "Board table: July 1, 2026 total $1,350,000 ($1,100,000 base + supplemental + $250,000 deferred). Bonuses (max $250k) not added.",
+            "year": 2026,
+            "breakdown": [
+              {
+                "label": "Base + supplemental (July 1, 2026)",
+                "value": 1100000
+              },
+              {
+                "label": "Deferred / licensing (July 1, 2026)",
+                "value": 250000
+              }
+            ]
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -56514,9 +56589,31 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+            "name": "Graham Neff",
+            "source": "Clemson Board of Trustees Compensation Committee / FOX Carolina",
+            "url": "https://www.foxcarolina.com/2025/10/17/trustees-approve-new-contract-clemson-athletics-director/",
+            "pay": {
+              "value": 1350000,
+              "confidence": "reported",
+              "source": "FOX Carolina (Oct. 17, 2025), quoting Clemson Board of Trustees Compensation Committee terms",
+              "url": "https://www.foxcarolina.com/2025/10/17/trustees-approve-new-contract-clemson-athletics-director/",
+              "asOf": "2025-10-17",
+              "notes": "Board table: July 1, 2026 total $1,350,000 ($1,100,000 base + supplemental + $250,000 deferred). Bonuses (max $250k) not added.",
+              "year": 2026,
+              "breakdown": [
+                {
+                  "label": "Base + supplemental (July 1, 2026)",
+                  "value": 1100000
+                },
+                {
+                  "label": "Deferred / licensing (July 1, 2026)",
+                  "value": 250000
+                }
+              ]
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -60599,25 +60696,35 @@
         "football": {
           "name": "Brent Key",
           "pay": {
-            "value": 4500000,
+            "value": 6500000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "Atlanta Journal-Constitution (Dec. 5, 2025), quoting Key contract details obtained by the AJC",
+            "url": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/",
+            "asOf": "2025-12-05",
+            "notes": "AJC obtained the extension: new annual base compensation $6.5 million. Not the USA TODAY 2025-10-08 $4.5M cell. Win / CFP / ACC bonuses and automatic-extension escalators are not added.",
+            "year": 2026
           },
           "buyout": {
-            "value": 11123333,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "value": null,
+            "confidence": "pending",
+            "source": "Atlanta Journal-Constitution (Dec. 5, 2025), quoting Key contract",
+            "url": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/",
+            "asOf": null,
+            "notes": "School-side without-cause is 75% of unpaid compensation through the remaining term, including earned automatic extensions. We do not invent the remainder."
           },
           "term": {
-            "confidence": "pending",
-            "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "confidence": "reported",
+            "source": "Atlanta Journal-Constitution (Dec. 5, 2025), quoting Key contract",
+            "url": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/",
+            "asOf": "2025-12-05",
+            "through": "2030",
+            "yearsRemaining": 4,
+            "notes": "Extension signed December 2025. AJC buyout schedule through December 2030. 2026 pay is the published $6.5 million base."
+          },
+          "contractUrl": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/",
+          "contract": {
+            "label": "Atlanta Journal-Constitution — Key extension details via open records",
+            "url": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/"
           }
         },
         "mbb": {
@@ -60647,9 +60754,12 @@
       },
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+          "name": "Ryan Alpert",
+          "source": "Georgia Tech News Center — official appointment (July 8, 2025)",
+          "url": "https://news.gatech.edu/news/2025/07/08/georgia-tech-names-ryan-alpert-director-athletics"
         },
         "office": [],
         "otherHeadCoaches": [],
@@ -61083,27 +61193,35 @@
           "football": {
             "name": "Brent Key",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 6500000,
+              "confidence": "reported",
+              "source": "Atlanta Journal-Constitution (Dec. 5, 2025), quoting Key contract details obtained by the AJC",
+              "url": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/",
+              "asOf": "2025-12-05",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). AJC obtained the extension: new annual base compensation $6.5 million. Not the USA TODAY 2025-10-08 $4.5M cell. Win / CFP / ACC bonuses and automatic-extension escalators are not added.",
+              "year": 2026
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
+              "source": "Atlanta Journal-Constitution (Dec. 5, 2025), quoting Key contract",
+              "url": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/",
               "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "notes": "School-side without-cause is 75% of unpaid compensation through the remaining term, including earned automatic extensions. We do not invent the remainder."
             },
             "term": {
-              "confidence": "pending",
+              "confidence": "reported",
               "asOf": "2026-08",
               "source": "Wikipedia season-page infobox",
               "url": "https://en.wikipedia.org/wiki/2026_Georgia_Tech_Yellow_Jackets_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "through": "2030",
+              "yearsRemaining": 4,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). AJC: coach-side liquidated damages schedule runs through December 2030."
+            },
+            "contractUrl": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/",
+            "contract": {
+              "label": "Atlanta Journal-Constitution — Key extension details via open records",
+              "url": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/"
             }
           },
           "mbb": {
@@ -61135,9 +61253,12 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+            "name": "Ryan Alpert",
+            "source": "Georgia Tech News Center — official appointment (July 8, 2025)",
+            "url": "https://news.gatech.edu/news/2025/07/08/georgia-tech-names-ryan-alpert-director-athletics"
           },
           "office": [],
           "otherHeadCoaches": [],
@@ -62125,9 +62246,31 @@
       "color": "#AD0000",
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+          "name": "Josh Heird",
+          "source": "University of Louisville Board of Trustees / Courier-Journal (USA TODAY Network)",
+          "url": "https://www.usatoday.com/story/sports/college/louisville/2024/12/13/louisville-athletics-josh-heird-contract-acc-comparison/76411626007/",
+          "pay": {
+            "value": 925000,
+            "confidence": "reported",
+            "source": "Courier-Journal / USA TODAY (Dec. 13, 2024) — Board of Trustees extension",
+            "url": "https://www.usatoday.com/story/sports/college/louisville/2024/12/13/louisville-athletics-josh-heird-contract-acc-comparison/76411626007/",
+            "asOf": "2024-12-13",
+            "notes": "Board extension through 2030, new five-year term beginning Jan. 1: base remains $850,000 plus $75,000 supplemental. Same person as the 2026 chair. Incentives not added. Year-pinned to the 2025 term start.",
+            "year": 2025,
+            "breakdown": [
+              {
+                "label": "Base",
+                "value": 850000
+              },
+              {
+                "label": "Supplemental",
+                "value": 75000
+              }
+            ]
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -62633,9 +62776,31 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+            "name": "Josh Heird",
+            "source": "University of Louisville Board of Trustees / Courier-Journal (USA TODAY Network)",
+            "url": "https://www.usatoday.com/story/sports/college/louisville/2024/12/13/louisville-athletics-josh-heird-contract-acc-comparison/76411626007/",
+            "pay": {
+              "value": 925000,
+              "confidence": "reported",
+              "source": "Courier-Journal / USA TODAY (Dec. 13, 2024) — Board of Trustees extension",
+              "url": "https://www.usatoday.com/story/sports/college/louisville/2024/12/13/louisville-athletics-josh-heird-contract-acc-comparison/76411626007/",
+              "asOf": "2024-12-13",
+              "notes": "Board extension through 2030, new five-year term beginning Jan. 1: base remains $850,000 plus $75,000 supplemental. Same person as the 2026 chair. Incentives not added. Year-pinned to the 2025 term start.",
+              "year": 2025,
+              "breakdown": [
+                {
+                  "label": "Base",
+                  "value": 850000
+                },
+                {
+                  "label": "Supplemental",
+                  "value": 75000
+                }
+              ]
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -64890,9 +65055,31 @@
       },
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+          "name": "Boo Corrigan",
+          "source": "NC State Board of Trustees / NC State News",
+          "url": "https://news.ncsu.edu/2024/02/board-of-trustees-approves-new-contract-for-corrigan/",
+          "pay": {
+            "value": 1563125,
+            "confidence": "reported",
+            "source": "News & Observer (Feb. 16, 2024), quoting Corrigan agreement via public records",
+            "url": "https://www.newsobserver.com/sports/college/acc/unc/article285539222.html",
+            "asOf": "2024-02-16",
+            "notes": "FOIA: base $713,125 + $700,000 supplemental at signing. Base +$50,000 each July 1 the contract remains in force (through June 2029). 2026-27 step is $863,125 + $700,000 = $1,563,125. Performance bonuses (up to $300k) not added. Official NCSU release confirms the chair through June 2029.",
+            "year": 2026,
+            "breakdown": [
+              {
+                "label": "Base (July 1, 2026 step)",
+                "value": 863125
+              },
+              {
+                "label": "Supplemental (fundraising / media / NIL / apparel)",
+                "value": 700000
+              }
+            ]
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -65365,9 +65552,31 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+            "name": "Boo Corrigan",
+            "source": "NC State Board of Trustees / NC State News",
+            "url": "https://news.ncsu.edu/2024/02/board-of-trustees-approves-new-contract-for-corrigan/",
+            "pay": {
+              "value": 1563125,
+              "confidence": "reported",
+              "source": "News & Observer (Feb. 16, 2024), quoting Corrigan agreement via public records",
+              "url": "https://www.newsobserver.com/sports/college/acc/unc/article285539222.html",
+              "asOf": "2024-02-16",
+              "notes": "FOIA: base $713,125 + $700,000 supplemental at signing. Base +$50,000 each July 1 the contract remains in force (through June 2029). 2026-27 step is $863,125 + $700,000 = $1,563,125. Performance bonuses (up to $300k) not added. Official NCSU release confirms the chair through June 2029.",
+              "year": 2026,
+              "breakdown": [
+                {
+                  "label": "Base (July 1, 2026 step)",
+                  "value": 863125
+                },
+                {
+                  "label": "Supplemental (fundraising / media / NIL / apparel)",
+                  "value": 700000
+                }
+              ]
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -66340,9 +66549,12 @@
       },
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+          "name": "Steve Newmark",
+          "source": "UNC Athletics official staff directory — Director of Athletics (effective July 1, 2026)",
+          "url": "https://goheels.com/staff-directory/steve-newmark/3858"
         },
         "office": [],
         "otherHeadCoaches": [
@@ -66916,9 +67128,12 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+            "name": "Steve Newmark",
+            "source": "UNC Athletics official staff directory — Director of Athletics (effective July 1, 2026)",
+            "url": "https://goheels.com/staff-directory/steve-newmark/3858"
           },
           "office": [],
           "otherHeadCoaches": [
@@ -67847,9 +68062,12 @@
       },
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+          "name": "Allen Greene",
+          "source": "Pitt Athletics official 2026 game notes (April 9, 2026)",
+          "url": "https://pittsburghpanthers.com/documents/download/2026/4/9/Pitt_2026_Game_Notes_-_Cal.pdf"
         },
         "office": [],
         "otherHeadCoaches": [],
@@ -68322,9 +68540,12 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+            "name": "Allen Greene",
+            "source": "Pitt Athletics official 2026 game notes (April 9, 2026)",
+            "url": "https://pittsburghpanthers.com/documents/download/2026/4/9/Pitt_2026_Game_Notes_-_Cal.pdf"
           },
           "office": [],
           "otherHeadCoaches": [],
@@ -73368,9 +73589,21 @@
       },
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+          "name": "Carla Williams",
+          "source": "Virginia Athletics official (Aug. 25, 2026 message) / UVA Board of Visitors org chart",
+          "url": "https://virginiasports.com/news/2026/08/25/a-message-from-director-of-athletics-carla-williams",
+          "pay": {
+            "value": 1405470,
+            "confidence": "reported",
+            "source": "Augusta Free Press (Jan. 16, 2025), quoting Williams Dec. 18, 2024 extension obtained via UVA FOIA",
+            "url": "https://augustafreepress.com/news/the-whole-story-uva-ad-carla-williams-quietly-signed-a-five-year-extension-last-month/",
+            "asOf": "2025-01-16",
+            "notes": "FOIA extension signed Dec. 18, 2024 through May 31, 2030: $1,405,470 annually. $300,000 performance bonus and bowl / Directors' Cup percentages not added. Same person as the 2026 chair.",
+            "year": 2025
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -73884,9 +74117,21 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank."
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+            "name": "Carla Williams",
+            "source": "Virginia Athletics official (Aug. 25, 2026 message) / UVA Board of Visitors org chart",
+            "url": "https://virginiasports.com/news/2026/08/25/a-message-from-director-of-athletics-carla-williams",
+            "pay": {
+              "value": 1405470,
+              "confidence": "reported",
+              "source": "Augusta Free Press (Jan. 16, 2025), quoting Williams Dec. 18, 2024 extension obtained via UVA FOIA",
+              "url": "https://augustafreepress.com/news/the-whole-story-uva-ad-carla-williams-quietly-signed-a-five-year-extension-last-month/",
+              "asOf": "2025-01-16",
+              "notes": "FOIA extension signed Dec. 18, 2024 through May 31, 2030: $1,405,470 annually. $300,000 performance bonus and bowl / Directors' Cup percentages not added. Same person as the 2026 chair.",
+              "year": 2025
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -74912,12 +75157,31 @@
       },
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
-          "name": "Whit Babcock",
-          "source": "Official 2026 athletics staff directory",
-          "url": "https://hokiesports.com/sports/football/roster"
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+          "name": "Brian White",
+          "source": "Virginia Tech Athletics — official appointment (June 22, 2026)",
+          "url": "https://hokiesports.com/news/2026/06/22/brian-white-named-virginia-techs-vice-president-and-director-of-athletics",
+          "pay": {
+            "value": 1600000,
+            "confidence": "reported",
+            "source": "TechSideline (June 24, 2026), quoting contract terms issued to the press at White’s introduction",
+            "url": "https://virginiatech.sportswar.com/article/2026/06/24/brian-whites-contract-details/",
+            "asOf": "2026-06-24",
+            "notes": "Issued terms: 2026-27 total $1.6 million ($500,000 base + $1,100,000 supplemental) through June 30, 2031. Whit Babcock retired June 2026 — his pay is not reused. Performance bonuses not added.",
+            "year": 2026,
+            "breakdown": [
+              {
+                "label": "Base (2026-27)",
+                "value": 500000
+              },
+              {
+                "label": "Supplemental (2026-27)",
+                "value": 1100000
+              }
+            ]
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -75501,12 +75765,31 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
-            "name": "Whit Babcock",
-            "source": "Official 2026 athletics staff directory",
-            "url": "https://hokiesports.com/sports/football/roster"
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+            "name": "Brian White",
+            "source": "Virginia Tech Athletics — official appointment (June 22, 2026)",
+            "url": "https://hokiesports.com/news/2026/06/22/brian-white-named-virginia-techs-vice-president-and-director-of-athletics",
+            "pay": {
+              "value": 1600000,
+              "confidence": "reported",
+              "source": "TechSideline (June 24, 2026), quoting contract terms issued to the press at White’s introduction",
+              "url": "https://virginiatech.sportswar.com/article/2026/06/24/brian-whites-contract-details/",
+              "asOf": "2026-06-24",
+              "notes": "Issued terms: 2026-27 total $1.6 million ($500,000 base + $1,100,000 supplemental) through June 30, 2031. Whit Babcock retired June 2026 — his pay is not reused. Performance bonuses not added.",
+              "year": 2026,
+              "breakdown": [
+                {
+                  "label": "Base (2026-27)",
+                  "value": 500000
+                },
+                {
+                  "label": "Supplemental (2026-27)",
+                  "value": 1100000
+                }
+              ]
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -77928,7 +78211,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Desiree Reed-Francois",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://arizonawildcats.com/sports/football/coaches"
+          "url": "https://arizonawildcats.com/sports/football/coaches",
+          "pay": {
+            "value": 1350000,
+            "confidence": "reported",
+            "source": "Arizona Daily Star / tucson.com, quoting Arizona Board of Regents approval of Reed-Francois contract",
+            "url": "https://tucson.com/sports/college/basketball/wildcats/men/pascoe/article_befde8a8-d1d1-11ee-872f-671abbbc6198.html",
+            "asOf": "2024-02-22",
+            "notes": "Board: $1.25 million through March 2025, then +$50,000 annually through 2028-29 (five-year package $6.75 million). 2026-27 step is $1,350,000. UA Foundation $250k slice is inside that salary, not added again. Incentives not added.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -78424,8 +78716,8 @@
             "term": {
               "confidence": "reported",
               "asOf": "2026-08",
-              "source": "Arizona Daily Star / AP — ABOR Brennan extension",
-              "url": "https://tucson.com/sports/college/football/wildcats/article_3a754545-872d-488b-bbf5-912ae21499db.html",
+              "source": "Wikipedia season-page infobox",
+              "url": "https://en.wikipedia.org/wiki/2026_Arizona_Wildcats_football_team",
               "through": "2030",
               "yearsRemaining": 5,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Two-year extension through the 2030 season, approved by the Arizona Board of Regents."
@@ -78474,7 +78766,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Desiree Reed-Francois",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://arizonawildcats.com/sports/football/coaches"
+            "url": "https://arizonawildcats.com/sports/football/coaches",
+            "pay": {
+              "value": 1350000,
+              "confidence": "reported",
+              "source": "Arizona Daily Star / tucson.com, quoting Arizona Board of Regents approval of Reed-Francois contract",
+              "url": "https://tucson.com/sports/college/basketball/wildcats/men/pascoe/article_befde8a8-d1d1-11ee-872f-671abbbc6198.html",
+              "asOf": "2024-02-22",
+              "notes": "Board: $1.25 million through March 2025, then +$50,000 annually through 2028-29 (five-year package $6.75 million). 2026-27 step is $1,350,000. UA Foundation $250k slice is inside that salary, not added again. Incentives not added.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -87038,8 +87339,8 @@
             "term": {
               "confidence": "reported",
               "asOf": "2026-08",
-              "source": "Houston Chronicle quoting UH Fritz term sheet",
-              "url": "https://www.houstonchronicle.com/texas-sports-nation/college/article/uh-football-willie-fritz-contract-incentives-18533360.php",
+              "source": "Wikipedia season-page infobox",
+              "url": "https://en.wikipedia.org/wiki/2026_Houston_Cougars_football_team",
               "through": "2028",
               "yearsRemaining": 3,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Five-year deal through the 2028 season. Automatic +1 year if UH finishes top-three in the Big 12 — not booked unless earned."
@@ -90134,8 +90435,8 @@
             "term": {
               "confidence": "reported",
               "asOf": "2026-08",
-              "source": "Kansas Athletics First Amendment to Leipold EA",
-              "url": "https://lawrencekstimes.com/wp-content/uploads/2024/02/2024-Leipold-contract.pdf",
+              "source": "Wikipedia season-page infobox",
+              "url": "https://en.wikipedia.org/wiki/2026_Kansas_Jayhawks_football_team",
               "through": "2030",
               "yearsRemaining": 4,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Term ends April 30, 2030 (Year Six). April 1, 2026 good-faith top-half Big 12 review is in the file and is not a booked raise."
@@ -95465,7 +95766,7 @@
             "value": 6500000,
             "year": 2026,
             "confidence": "reported",
-            "source": "Dallas Morning News (Dec. 16, 2025) quoting McGuire PIA records; USA TODAY Network quoting agreed terms",
+            "source": "Dallas Morning News (Dec. 16, 2025) quoting McGuire PIA records",
             "url": "https://www.dallasnews.com/sports/texas-tech-red-raiders/2025/12/16/texas-tech-joey-mcguire-extension-details-red-raiders/",
             "asOf": "2025-12-16",
             "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). PIA records: $6.5 million starting in 2026 ($300,000 base + rights fees $6.2 million on Feb. 1, 2026). Through 2032. Incentives and the May 1, 2027 $250,000 retention are not added. Not USA TODAY 2025 $4.55M.",
@@ -95978,7 +96279,7 @@
               "value": 6500000,
               "year": 2026,
               "confidence": "reported",
-              "source": "Dallas Morning News (Dec. 16, 2025) quoting McGuire PIA records; USA TODAY Network quoting agreed terms",
+              "source": "Dallas Morning News (Dec. 16, 2025) quoting McGuire PIA records",
               "url": "https://www.dallasnews.com/sports/texas-tech-red-raiders/2025/12/16/texas-tech-joey-mcguire-extension-details-red-raiders/",
               "asOf": "2025-12-16",
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). PIA records: $6.5 million starting in 2026 ($300,000 base + rights fees $6.2 million on Feb. 1, 2026). Through 2032. Incentives and the May 1, 2027 $250,000 retention are not added. Not USA TODAY 2025 $4.55M.",
@@ -96006,8 +96307,8 @@
             "term": {
               "confidence": "reported",
               "asOf": "2026-08",
-              "source": "Dallas Morning News quoting McGuire PIA records",
-              "url": "https://www.dallasnews.com/sports/texas-tech-red-raiders/2025/12/16/texas-tech-joey-mcguire-extension-details-red-raiders/",
+              "source": "Wikipedia season-page infobox",
+              "url": "https://en.wikipedia.org/wiki/2026_Texas_Tech_Red_Raiders_football_team",
               "through": "2032",
               "yearsRemaining": 7,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Seven-year extension through the 2032 season."
@@ -97478,8 +97779,8 @@
             "term": {
               "confidence": "reported",
               "asOf": "2026-08",
-              "source": "WESH quoting UCF Athletics Association executive summary",
-              "url": "https://www.wesh.com/article/contract-details-ucf-football-coach-scott-frost/64678376",
+              "source": "Wikipedia season-page infobox",
+              "url": "https://en.wikipedia.org/wiki/2026_UCF_Knights_football_team",
               "through": "2030",
               "yearsRemaining": 4,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Five-year deal through Jan. 31, 2030 (2029 season). Bowl appearance can add a sixth year at $5.25 million — not booked as current term."

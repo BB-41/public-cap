@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-27",
-    "itemCount": 231,
+    "itemCount": 233,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,36 @@
     ]
   },
   "items": [
+    {
+      "id": "georgia-tech-contract-key-2025-12-05",
+      "date": "2025-12-05",
+      "school": "georgia-tech",
+      "schoolName": "Georgia Tech",
+      "kind": "contract",
+      "headline": "AJC obtained Brent Key\u2019s extension: $6.5 million annual base. Not the USA TODAY 2025-10-08 cell.",
+      "figure": 6500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Atlanta Journal-Constitution \u2014 Key contract details",
+        "url": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "arkansas-precap-item44-fy2025",
+      "date": "2026-01",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "filing",
+      "headline": "Arkansas FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share is $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Arkansas FY2025 NCAA MFRS PDF",
+        "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf"
+      },
+      "field": "nil.preCap"
+    },
     {
       "id": "missouri-pay-drinkwitz-2026-ea",
       "date": "2025-12-01",

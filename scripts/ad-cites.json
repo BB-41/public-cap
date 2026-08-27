@@ -276,6 +276,83 @@
       "url": "https://www.deseret.com/2023/6/15/23762164/utah-utes-ad-mark-harlans-contract-extension-through-2028-includes-significant-raise-hefty-buyout/",
       "notes": "Published +$50k schedule: 2026-27 base is $1.0M.",
       "confidence": "reported"
+    },
+    {
+      "id": "clemson",
+      "name": "Graham Neff",
+      "pay": 1350000,
+      "year": 2026,
+      "asOf": "2025-10-17",
+      "source": "FOX Carolina — Clemson Board of Trustees Compensation Committee",
+      "url": "https://www.foxcarolina.com/2025/10/17/trustees-approve-new-contract-clemson-athletics-director/",
+      "notes": "July 1, 2026 total $1.35M ($1.1M + $250k deferred).",
+      "confidence": "reported"
+    },
+    {
+      "id": "nc-state",
+      "name": "Boo Corrigan",
+      "pay": 1563125,
+      "year": 2026,
+      "asOf": "2024-02-16",
+      "source": "News & Observer, quoting Corrigan FOIA agreement",
+      "url": "https://www.newsobserver.com/sports/college/acc/unc/article285539222.html",
+      "notes": "2026-27 step from published +$50k July 1 schedule on the Feb. 2024 FOIA base + $700k supplemental.",
+      "confidence": "reported"
+    },
+    {
+      "id": "louisville",
+      "name": "Josh Heird",
+      "pay": 925000,
+      "year": 2025,
+      "asOf": "2024-12-13",
+      "source": "Courier-Journal / USA TODAY — Board of Trustees extension",
+      "url": "https://www.usatoday.com/story/sports/college/louisville/2024/12/13/louisville-athletics-josh-heird-contract-acc-comparison/76411626007/",
+      "notes": "$850k base + $75k supplemental on the Jan. 1, 2025 term through 2030.",
+      "confidence": "reported"
+    },
+    {
+      "id": "arizona",
+      "name": "Desiree Reed-Francois",
+      "pay": 1350000,
+      "year": 2026,
+      "asOf": "2024-02-22",
+      "source": "Arizona Daily Star — Board of Regents schedule",
+      "url": "https://tucson.com/sports/college/basketball/wildcats/men/pascoe/article_befde8a8-d1d1-11ee-872f-671abbbc6198.html",
+      "notes": "$1.25M through March 2025 + $50k annual; 2026-27 is $1.35M.",
+      "confidence": "reported"
+    },
+    {
+      "id": "virginia-tech",
+      "name": "Brian White",
+      "pay": 1600000,
+      "year": 2026,
+      "asOf": "2026-06-24",
+      "source": "TechSideline, quoting issued White contract terms; official VT appointment",
+      "url": "https://virginiatech.sportswar.com/article/2026/06/24/brian-whites-contract-details/",
+      "notes": "2026-27 $1.6M. Babcock retired — not reused.",
+      "confidence": "reported"
+    },
+    {
+      "id": "maryland",
+      "name": "James E. Smith",
+      "pay": 1500000,
+      "year": 2025,
+      "asOf": "2025-07-16",
+      "source": "Sportico, quoting Smith employment agreement",
+      "url": "https://www.sportico.com/leagues/college-sports/2025/maryland-ad-jim-smith-contract-revenue-1234862152/",
+      "notes": "$1.5M annual ($1.2M + $300k supplemental). Incentives not added.",
+      "confidence": "reported"
+    },
+    {
+      "id": "virginia",
+      "name": "Carla Williams",
+      "pay": 1405470,
+      "year": 2025,
+      "asOf": "2025-01-16",
+      "source": "Augusta Free Press — UVA FOIA Williams extension",
+      "url": "https://augustafreepress.com/news/the-whole-story-uva-ad-carla-williams-quietly-signed-a-five-year-extension-last-month/",
+      "notes": "FOIA: $1,405,470 annually through May 31, 2030. Performance bonus not added.",
+      "confidence": "reported"
     }
   ]
 }
