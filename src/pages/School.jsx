@@ -17,7 +17,7 @@ import NamedRoster from '../components/NamedRoster.jsx'
 import { buildSchoolNilHistory, fetchRosterBooks } from '../lib/nilHistory.js'
 import AlumniToggle from '../components/AlumniToggle.jsx'
 import { ContractFiles } from '../components/ContractFiles.jsx'
-import { BuyoutRuleLine, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
+import { BuyoutRuleLine, BuyoutStepTape, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -540,6 +540,21 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             <Field field={s.nil.preCap} />
           </div>
         )}
+        {s.nil.houseRemaining && s.nil.houseRemaining.value != null && (
+          <div className="subfield house-remaining">
+            <div className="eyebrow" title={defTitle('houseRemaining')}>
+              {s.nil.houseRemaining.overhang
+                ? 'House Year 1 overhang'
+                : s.nil.houseRemaining.partialYear
+                  ? 'House Year 1 remaining (YTD)'
+                  : 'House Year 1 remaining'}
+            </div>
+            <Field field={s.nil.houseRemaining} />
+            {s.nil.houseRemaining.footnote && (
+              <p className="fine">{s.nil.houseRemaining.footnote}</p>
+            )}
+          </div>
+        )}
         <Collective990Lane cells={collective990Cells(s)} />
         <div className="ratio-row">
           <div><span className="eyebrow">NIL ÷ capacity</span><strong>{pct(s._ratios.nilOverCapacity)}</strong></div>
@@ -678,6 +693,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
               <BuyoutRuleLine buyout={s.coaches.football.buyout} />
             </>
           )}
+          <BuyoutStepTape steps={s.coaches.football.buyout?.steps} />
           <div className="eyebrow" title={defTitle('buyout')}>Buyout overhang (not yearly spend)</div>
           <Field field={s.coaches.football.buyout} />
           <IncentiveList items={s.coaches.football.pay?.incentives} />

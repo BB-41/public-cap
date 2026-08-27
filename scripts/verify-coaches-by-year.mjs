@@ -252,6 +252,58 @@ for (const sid of ['georgia', 'tennessee', 'alabama', 'oregon', 'utah', 'north-c
 }
 ok(chair('auburn', 2026).pay.value === 6_750_000, 'Auburn 2026 Golesh file $6.75M')
 ok(!(chair('auburn', 2026).pay?.source || '').includes('USA TODAY'), 'Auburn 2026 is not USA TODAY')
+ok(chair('ohio-state', 2026).pay.value === 12_500_000, 'Ryan Day 2026 is the May 2026 FOIA cite, not a USA TODAY leftover')
+ok(!(chair('ohio-state', 2026).pay?.source || '').includes('USA TODAY'), 'Ohio State 2026 source is not USA TODAY')
+ok(byId['ohio-state'].coaches.football.pay.value === 12_575_000, 'Ryan Day current USA TODAY cell stays on current')
+ok(chair('lsu', 2026).pay.value === 13_000_000, 'Kiffin $13M untouched')
+ok(chair('penn-state', 2026).pay.value === 8_000_000, 'Campbell $8.0M untouched')
+
+function sameChair(a, b) {
+  return samePerson(a, b)
+}
+let stamped2026 = 0
+for (const s of data.schools) {
+  const cur = s.coaches?.football || {}
+  const y26 = s.coachesByYear?.['2026']?.football || {}
+  if (!sameChair(cur.name, y26.name)) continue
+  const src = cur.pay?.source || ''
+  const usat = src.toUpperCase().includes('USA TODAY')
+  if (cur.pay?.value != null && !usat) {
+    ok(y26.pay?.value === cur.pay.value, `${s.id} same-chair 2026 pay is stamped from the current-deal cite`)
+    stamped2026 += 1
+  } else if (usat) {
+    ok(y26.pay?.value == null || !String(y26.pay?.source || '').toUpperCase().includes('USA TODAY'), `${s.id} 2026 did not take a USA TODAY snapshot`)
+  }
+  if (s.private && usat) {
+    ok(y26.pay?.value == null, `${s.id} private 2026 stays pending without an independent cite`)
+  }
+}
+ok(stamped2026 >= 22, `same-chair 2026 stamps ${stamped2026}`)
+
+const stepIds = ['florida-state', 'penn-state', 'clemson', 'virginia-tech', 'north-carolina', 'iowa-state']
+for (const sid of stepIds) {
+  const steps = byId[sid].coaches.football.buyout?.steps || []
+  ok(steps.length > 0, `${sid} has a PDF step tape`)
+  ok(steps.every((st) => st.asOf && st.contractYear && st.notes), `${sid} steps carry asOf / contractYear / notes`)
+  ok(steps.some((st) => st.remaining != null), `${sid} steps have remaining dollars`)
+}
+ok((byId.kentucky.coaches.football.buyout?.steps || []).length === 0, 'Kentucky keeps the 70% rule — no invented staircase')
+ok((byId['michigan-state'].coaches.football.buyout?.steps || []).length === 0, 'MSU keeps the 72.5% rule — no invented staircase')
+ok(byId['florida-state'].coaches.football.buyout.steps[0].remaining === 58_192_500, 'Norvell start-of-2026 remaining is $58,192,500')
+ok(byId['penn-state'].coaches.football.buyout.steps[0].remaining === 70_500_000, 'Campbell start-of-2026 remaining is $70.5M')
+
+ok(byId.louisville.nil.houseRemaining?.spent === 20_200_000, 'Louisville House spent is the Y1 portion, not $32.9M')
+ok(byId.louisville.nil.houseRemaining?.value === 300_000, 'Louisville remaining $300k')
+ok(byId.kentucky.nil.houseRemaining?.value === 2_500_000, 'Kentucky remaining $2.5M')
+ok(byId.ucla.nil.houseRemaining?.value === 0, 'UCLA remaining $0 is a real cell')
+ok(byId.california.nil.houseRemaining?.value === 0, 'Cal remaining $0 is a real cell')
+ok(byId.texas.nil.houseRemaining?.value === 7_000_000, 'Texas remaining $7M YTD')
+ok(byId.texas.nil.houseRemaining?.partialYear === true, 'Texas remaining is labeled YTD')
+ok(byId['penn-state'].nil.houseRemaining == null, 'Penn State preCap is not a House remaining cell')
+ok(byId.alabama.nil.houseRemaining == null, 'no invented remaining on a pending House cell')
+ok(applySeason(byId.louisville, 2024).nil.houseRemaining == null, '2024 season does not show Year 1 remaining')
+ok(applySeason(byId.louisville, 2025).nil.houseRemaining?.value === 300_000, '2025 season keeps Louisville remaining')
+ok(applySeason(byId.louisville, 2026).nil.houseRemaining?.value === 300_000, '2026 season still shows the Year 1 residual')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} coachesByYear checks passed`)

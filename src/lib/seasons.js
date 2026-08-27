@@ -484,6 +484,9 @@ export function applySeasonForNil(school, year) {
     delete nil.preCap
   }
   if (year !== 2025) delete nil.preCap
+  // House remaining is a Year 1 (2025–26) residual. Keep it on 2025–26
+  // overlays, labeled as Year 1 — not a 2026 leftover and not a 2024 pre-cap cell.
+  if (year < 2025) delete nil.houseRemaining
   out.nil = nil
   return out
 }

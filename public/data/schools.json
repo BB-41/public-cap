@@ -7901,6 +7901,20 @@
           "asOf": "2026-08-05",
           "notes": "Same Mar 2025–Jul 1 2026 window as Louisville's FOIA total. Counsel figure, not a spreadsheet. Labeled reported (statement) — not FOIA-verified line items. Restated Aug 5, 2026; $18M / 686 transactions unchanged.",
           "window": "2025-03 to 2026-07-01"
+        },
+        "houseRemaining": {
+          "value": 2500000,
+          "confidence": "estimated",
+          "source": "House Year 1 remaining = published $20.5M NCAA House cap minus this school’s booked House spent cell",
+          "url": "https://on.ncaa.com/QA61325",
+          "asOf": "2026-08-05",
+          "window": "2025-03 to 2026-07-01",
+          "spent": 18000000,
+          "cap": 20500000,
+          "partialYear": false,
+          "overhang": false,
+          "notes": "Published House Year 1 cap minus booked House spent. Residual, not a filing.",
+          "footnote": "House Year 1 remaining = $20.5M cap − $18M counsel spent. Collective 990s are not in this math."
         }
       },
       "coaches": {
@@ -20278,7 +20292,21 @@
             "line": "Part IX line 11g — Student athlete appearances",
             "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Calendar-year return in the IRS 2025 TEOS XML release (object 202503359349301145)."
           }
-        ]
+        ],
+        "houseRemaining": {
+          "value": 7000000,
+          "confidence": "estimated",
+          "source": "House Year 1 remaining = published $20.5M NCAA House cap minus this school’s booked House spent cell",
+          "url": "https://on.ncaa.com/QA61325",
+          "asOf": "2026-04-05",
+          "window": "2025-07-01 to 2026-03",
+          "spent": 13500000,
+          "cap": 20500000,
+          "partialYear": true,
+          "overhang": false,
+          "notes": "Published House Year 1 cap minus booked House spent. Residual, not a filing. Year-to-date window — not a full-year leftover.",
+          "footnote": "House Year 1 remaining as of YTD (Jul 2025–Mar 2026) = $20.5M cap − $13.5M booked. Partial-year, not a full-year leftover. The $3.2M pre-cap / MFRS line is inside the $13.5M — not added. Collective 990s are not in this math."
+        }
       },
       "coaches": {
         "football": {
@@ -41822,7 +41850,65 @@
             "asOf": "2026-01-01",
             "notes": "PDF-math at the start of 2026 (full remaining years of the Guaranteed Compensation table). Retention bonus is not in this line. Franklin’s paid buyout lives on the tape. Liability/overhang, not annual spend.",
             "rule": "100% of remaining Guaranteed Compensation (base + supplemental), subject to Coach’s mitigation.",
-            "coachSide": "Coach-side LD: $10M (2026), $8M (2027), $6M (2028), $4M (2029), $2M (2030), then $1M (2031–2033)."
+            "coachSide": "Coach-side LD: $10M (2026), $8M (2027), $6M (2028), $4M (2029), $2M (2030), then $1M (2031–2033).",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 70500000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "notes": "Derived from the term-sheet Guaranteed Compensation table ($8.0 / $8.25 / $8.5 / $9.0 / $9.0 / $9.25 / $9.25 / $9.25 million) × 100% remaining. Start-of-2026 remaining sum = $70,500,000. Retention bonus is not in Guaranteed Compensation. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 62500000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "notes": "100% of remaining 2027–2033 Guaranteed Compensation = $62,500,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 54250000,
+                "contractYear": "2028",
+                "through": "2028-12-31",
+                "notes": "100% of remaining 2028–2033 Guaranteed Compensation = $54,250,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 45750000,
+                "contractYear": "2029",
+                "through": "2029-12-31",
+                "notes": "100% of remaining 2029–2033 Guaranteed Compensation = $45,750,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 36750000,
+                "contractYear": "2030",
+                "through": "2030-12-31",
+                "notes": "100% of remaining 2030–2033 Guaranteed Compensation = $36,750,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+              },
+              {
+                "asOf": "2031-01-01",
+                "remaining": 27750000,
+                "contractYear": "2031",
+                "through": "2031-12-31",
+                "notes": "100% of remaining 2031–2033 Guaranteed Compensation = $27,750,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+              },
+              {
+                "asOf": "2032-01-01",
+                "remaining": 18500000,
+                "contractYear": "2032",
+                "through": "2032-12-31",
+                "notes": "100% of remaining 2032–2033 Guaranteed Compensation = $18,500,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+              },
+              {
+                "asOf": "2033-01-01",
+                "remaining": 9250000,
+                "contractYear": "2033",
+                "through": "2033-12-31",
+                "notes": "100% of remaining 2033 Guaranteed Compensation = $9,250,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -42402,7 +42488,65 @@
               "asOf": "2026-01-01",
               "notes": "PDF-math at the start of 2026 (full remaining years of the Guaranteed Compensation table). Retention bonus is not in this line. Franklin’s paid buyout lives on the tape. Liability/overhang, not annual spend.",
               "rule": "100% of remaining Guaranteed Compensation (base + supplemental), subject to Coach’s mitigation.",
-              "coachSide": "Coach-side LD: $10M (2026), $8M (2027), $6M (2028), $4M (2029), $2M (2030), then $1M (2031–2033)."
+              "coachSide": "Coach-side LD: $10M (2026), $8M (2027), $6M (2028), $4M (2029), $2M (2030), then $1M (2031–2033).",
+              "steps": [
+                {
+                  "asOf": "2026-01-01",
+                  "remaining": 70500000,
+                  "contractYear": "2026",
+                  "through": "2026-12-31",
+                  "notes": "Derived from the term-sheet Guaranteed Compensation table ($8.0 / $8.25 / $8.5 / $9.0 / $9.0 / $9.25 / $9.25 / $9.25 million) × 100% remaining. Start-of-2026 remaining sum = $70,500,000. Retention bonus is not in Guaranteed Compensation. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+                },
+                {
+                  "asOf": "2027-01-01",
+                  "remaining": 62500000,
+                  "contractYear": "2027",
+                  "through": "2027-12-31",
+                  "notes": "100% of remaining 2027–2033 Guaranteed Compensation = $62,500,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+                },
+                {
+                  "asOf": "2028-01-01",
+                  "remaining": 54250000,
+                  "contractYear": "2028",
+                  "through": "2028-12-31",
+                  "notes": "100% of remaining 2028–2033 Guaranteed Compensation = $54,250,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+                },
+                {
+                  "asOf": "2029-01-01",
+                  "remaining": 45750000,
+                  "contractYear": "2029",
+                  "through": "2029-12-31",
+                  "notes": "100% of remaining 2029–2033 Guaranteed Compensation = $45,750,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+                },
+                {
+                  "asOf": "2030-01-01",
+                  "remaining": 36750000,
+                  "contractYear": "2030",
+                  "through": "2030-12-31",
+                  "notes": "100% of remaining 2030–2033 Guaranteed Compensation = $36,750,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+                },
+                {
+                  "asOf": "2031-01-01",
+                  "remaining": 27750000,
+                  "contractYear": "2031",
+                  "through": "2031-12-31",
+                  "notes": "100% of remaining 2031–2033 Guaranteed Compensation = $27,750,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+                },
+                {
+                  "asOf": "2032-01-01",
+                  "remaining": 18500000,
+                  "contractYear": "2032",
+                  "through": "2032-12-31",
+                  "notes": "100% of remaining 2032–2033 Guaranteed Compensation = $18,500,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+                },
+                {
+                  "asOf": "2033-01-01",
+                  "remaining": 9250000,
+                  "contractYear": "2033",
+                  "through": "2033-12-31",
+                  "notes": "100% of remaining 2033 Guaranteed Compensation = $9,250,000. PDF: https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf"
+                }
+              ]
             },
             "term": {
               "confidence": "reported",
@@ -46280,6 +46424,20 @@
           "asOf": "2026-08-24",
           "notes": "School statement after a California Public Records Act request, not a published ledger. About $20.5 million. Names/sport splits withheld. Modeled conference range stays on the desk as what we had.",
           "window": "2025-26"
+        },
+        "houseRemaining": {
+          "value": 0,
+          "confidence": "estimated",
+          "source": "House Year 1 remaining = published $20.5M NCAA House cap minus this school’s booked House spent cell",
+          "url": "https://on.ncaa.com/QA61325",
+          "asOf": "2026-08-24",
+          "window": "2025-26",
+          "spent": 20500000,
+          "cap": 20500000,
+          "partialYear": false,
+          "overhang": false,
+          "notes": "Published House Year 1 cap minus booked House spent. Residual, not a filing.",
+          "footnote": "House Year 1 remaining = $20.5M cap − about $20.5M school-stated spent. A $0 leftover is a real cell. Collective 990s are not in this math."
         }
       },
       "coaches": {
@@ -53529,6 +53687,20 @@
           "asOf": "2026-08-24",
           "notes": "School statement after a California Public Records Act request, not a published ledger. About $20.5 million. Names/sport splits withheld. Modeled conference range stays on the desk as what we had.",
           "window": "2025-26"
+        },
+        "houseRemaining": {
+          "value": 0,
+          "confidence": "estimated",
+          "source": "House Year 1 remaining = published $20.5M NCAA House cap minus this school’s booked House spent cell",
+          "url": "https://on.ncaa.com/QA61325",
+          "asOf": "2026-08-24",
+          "window": "2025-26",
+          "spent": 20500000,
+          "cap": 20500000,
+          "partialYear": false,
+          "overhang": false,
+          "notes": "Published House Year 1 cap minus booked House spent. Residual, not a filing.",
+          "footnote": "House Year 1 remaining = $20.5M cap − about $20.5M school-stated spent. A $0 leftover is a real cell. Collective 990s are not in this math."
         }
       },
       "coaches": {
@@ -55111,7 +55283,51 @@
             "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf",
             "asOf": "2026-01-01",
             "notes": "University without-cause schedule amount for 2026. No mitigation. Liability/overhang, not annual spend.",
-            "rule": "University without-cause: $57M flat if terminated in 2026; remaining Base + Supplemental + Licensing thereafter. No mitigate."
+            "rule": "University without-cause: $57M flat if terminated in 2026; remaining Base + Supplemental + Licensing thereafter. No mitigate.",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 57000000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "notes": "Term-sheet schedule amount: $57,000,000 flat if terminated in 2026 — not remaining-year math. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 60000000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "notes": "Remaining Base + Supplemental + Licensing for 2027–2031 ($11.5 / $11.75 / $12.0 / $12.25 / $12.5 million) = $60,000,000. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 48500000,
+                "contractYear": "2028",
+                "through": "2028-12-31",
+                "notes": "Remaining 2028–2031 Base + Supplemental + Licensing = $48,500,000. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 36750000,
+                "contractYear": "2029",
+                "through": "2029-12-31",
+                "notes": "Remaining 2029–2031 Base + Supplemental + Licensing = $36,750,000. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 24750000,
+                "contractYear": "2030",
+                "through": "2030-12-31",
+                "notes": "Remaining 2030–2031 Base + Supplemental + Licensing = $24,750,000. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+              },
+              {
+                "asOf": "2031-01-01",
+                "remaining": 12500000,
+                "contractYear": "2031",
+                "through": "2031-12-31",
+                "notes": "Remaining 2031 Base + Supplemental + Licensing = $12,500,000. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -55741,7 +55957,51 @@
               "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf",
               "asOf": "2026-01-01",
               "notes": "University without-cause schedule amount for 2026. No mitigation. Liability/overhang, not annual spend.",
-              "rule": "University without-cause: $57M flat if terminated in 2026; remaining Base + Supplemental + Licensing thereafter. No mitigate."
+              "rule": "University without-cause: $57M flat if terminated in 2026; remaining Base + Supplemental + Licensing thereafter. No mitigate.",
+              "steps": [
+                {
+                  "asOf": "2026-01-01",
+                  "remaining": 57000000,
+                  "contractYear": "2026",
+                  "through": "2026-12-31",
+                  "notes": "Term-sheet schedule amount: $57,000,000 flat if terminated in 2026 — not remaining-year math. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+                },
+                {
+                  "asOf": "2027-01-01",
+                  "remaining": 60000000,
+                  "contractYear": "2027",
+                  "through": "2027-12-31",
+                  "notes": "Remaining Base + Supplemental + Licensing for 2027–2031 ($11.5 / $11.75 / $12.0 / $12.25 / $12.5 million) = $60,000,000. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+                },
+                {
+                  "asOf": "2028-01-01",
+                  "remaining": 48500000,
+                  "contractYear": "2028",
+                  "through": "2028-12-31",
+                  "notes": "Remaining 2028–2031 Base + Supplemental + Licensing = $48,500,000. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+                },
+                {
+                  "asOf": "2029-01-01",
+                  "remaining": 36750000,
+                  "contractYear": "2029",
+                  "through": "2029-12-31",
+                  "notes": "Remaining 2029–2031 Base + Supplemental + Licensing = $36,750,000. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+                },
+                {
+                  "asOf": "2030-01-01",
+                  "remaining": 24750000,
+                  "contractYear": "2030",
+                  "through": "2030-12-31",
+                  "notes": "Remaining 2030–2031 Base + Supplemental + Licensing = $24,750,000. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+                },
+                {
+                  "asOf": "2031-01-01",
+                  "remaining": 12500000,
+                  "contractYear": "2031",
+                  "through": "2031-12-31",
+                  "notes": "Remaining 2031 Base + Supplemental + Licensing = $12,500,000. PDF: https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf"
+                }
+              ]
             },
             "term": {
               "confidence": "reported",
@@ -58121,7 +58381,51 @@
             "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf",
             "asOf": "2026-01-01",
             "notes": "PDF-math at the start of Contract Year 7 (full remaining years). Not the CBS $58.4M estimate. Liability/overhang, not annual spend.",
-            "rule": "85% of remaining CY TAC + CY reinstatement (7th Amendment V.E.)."
+            "rule": "85% of remaining CY TAC + CY reinstatement (7th Amendment V.E.).",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 58192500,
+                "contractYear": "CY7 (2026)",
+                "through": "2026-12-31",
+                "notes": "Derived from the 6th Amendment CY7–12 TAC table ($10.3 / $10.45 / $10.6 / $10.75 / $10.9 / $11.05 million = $64.05 million) × 85% + CY7 reinstatement $3.75 million (7th Amendment V.E.). $64.05 million × 85% + $3.75 million = $58,192,500. Full remaining years at the start of 2026 — the file allows daily proration of partial years; this desk does not mint a mid-year dollar. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 48687500,
+                "contractYear": "CY8 (2027)",
+                "through": "2027-12-31",
+                "notes": "Derived from remaining CY8–12 TAC ($53.75 million) × 85% + CY8 reinstatement $3.0 million = $48,687,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 39055000,
+                "contractYear": "CY9 (2028)",
+                "through": "2028-12-31",
+                "notes": "Derived from remaining CY9–12 TAC ($43.3 million) × 85% + CY9 reinstatement $2.25 million = $39,055,000. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 29295000,
+                "contractYear": "CY10 (2029)",
+                "through": "2029-12-31",
+                "notes": "Derived from remaining CY10–12 TAC ($32.7 million) × 85% + CY10 reinstatement $1.5 million = $29,295,000. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 19407500,
+                "contractYear": "CY11 (2030)",
+                "through": "2030-12-31",
+                "notes": "Derived from remaining CY11–12 TAC ($21.95 million) × 85% + CY11 reinstatement $0.75 million = $19,407,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2031-01-01",
+                "remaining": 9392500,
+                "contractYear": "CY12 (2031)",
+                "through": "2031-12-31",
+                "notes": "Derived from remaining CY12 TAC ($11.05 million) × 85% + CY12 reinstatement $0 = $9,392,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -59620,7 +59924,51 @@
               "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf",
               "asOf": "2026-01-01",
               "notes": "PDF-math at the start of Contract Year 7 (full remaining years). Not the CBS $58.4M estimate. Liability/overhang, not annual spend.",
-              "rule": "85% of remaining CY TAC + CY reinstatement (7th Amendment V.E.)."
+              "rule": "85% of remaining CY TAC + CY reinstatement (7th Amendment V.E.).",
+              "steps": [
+                {
+                  "asOf": "2026-01-01",
+                  "remaining": 58192500,
+                  "contractYear": "CY7 (2026)",
+                  "through": "2026-12-31",
+                  "notes": "Derived from the 6th Amendment CY7–12 TAC table ($10.3 / $10.45 / $10.6 / $10.75 / $10.9 / $11.05 million = $64.05 million) × 85% + CY7 reinstatement $3.75 million (7th Amendment V.E.). $64.05 million × 85% + $3.75 million = $58,192,500. Full remaining years at the start of 2026 — the file allows daily proration of partial years; this desk does not mint a mid-year dollar. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2027-01-01",
+                  "remaining": 48687500,
+                  "contractYear": "CY8 (2027)",
+                  "through": "2027-12-31",
+                  "notes": "Derived from remaining CY8–12 TAC ($53.75 million) × 85% + CY8 reinstatement $3.0 million = $48,687,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2028-01-01",
+                  "remaining": 39055000,
+                  "contractYear": "CY9 (2028)",
+                  "through": "2028-12-31",
+                  "notes": "Derived from remaining CY9–12 TAC ($43.3 million) × 85% + CY9 reinstatement $2.25 million = $39,055,000. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2029-01-01",
+                  "remaining": 29295000,
+                  "contractYear": "CY10 (2029)",
+                  "through": "2029-12-31",
+                  "notes": "Derived from remaining CY10–12 TAC ($32.7 million) × 85% + CY10 reinstatement $1.5 million = $29,295,000. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2030-01-01",
+                  "remaining": 19407500,
+                  "contractYear": "CY11 (2030)",
+                  "through": "2030-12-31",
+                  "notes": "Derived from remaining CY11–12 TAC ($21.95 million) × 85% + CY11 reinstatement $0.75 million = $19,407,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2031-01-01",
+                  "remaining": 9392500,
+                  "contractYear": "CY12 (2031)",
+                  "through": "2031-12-31",
+                  "notes": "Derived from remaining CY12 TAC ($11.05 million) × 85% + CY12 reinstatement $0 = $9,392,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                }
+              ]
             },
             "term": {
               "confidence": "reported",
@@ -61230,7 +61578,21 @@
             "line": "Part IX line 11g — Athlete fees",
             "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Does not replace Louisville’s $32.9M FOIA booked House cell."
           }
-        ]
+        ],
+        "houseRemaining": {
+          "value": 300000,
+          "confidence": "estimated",
+          "source": "House Year 1 remaining = published $20.5M NCAA House cap minus this school’s booked House spent cell",
+          "url": "https://on.ncaa.com/QA61325",
+          "asOf": "2026-08-05",
+          "window": "2025-03 to 2026-07-01",
+          "spent": 20200000,
+          "cap": 20500000,
+          "partialYear": false,
+          "overhang": false,
+          "notes": "Published House Year 1 cap minus booked House spent. Residual, not a filing.",
+          "footnote": "House Year 1 remaining = $20.5M cap − $20.2M House spent ($32.9M FOIA window minus the $12.7M pre-cap line). Not the full $32.9M, not a 990."
+        }
       },
       "coaches": {
         "football": {
@@ -65412,7 +65774,30 @@
             "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf",
             "asOf": "2026-01-01",
             "notes": "Full remaining 2026 and 2027 years. 2028–29 are $0 on a university fire. No mitigation in §12.",
-            "rule": "Remaining Base + Supplemental through Dec. 31, 2027; 2028–29 are $0 on a university fire. No mitigation in §12."
+            "rule": "Remaining Base + Supplemental through Dec. 31, 2027; 2028–29 are $0 on a university fire. No mitigation in §12.",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 20000000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "notes": "Derived from §12 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Full remaining 2026 and 2027 years = $20,000,000. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 10000000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "notes": "Remaining 2027 Base + Supplemental = $10,000,000. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 0,
+                "contractYear": "2028–29",
+                "through": "2029-12-31",
+                "notes": "If terminated after Dec. 31, 2027: $0. Section 12 pays Base + Supplemental only through Dec. 31, 2027. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -65963,7 +66348,30 @@
               "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf",
               "asOf": "2026-01-01",
               "notes": "Full remaining 2026 and 2027 years. 2028–29 are $0 on a university fire. No mitigation in §12.",
-              "rule": "Remaining Base + Supplemental through Dec. 31, 2027; 2028–29 are $0 on a university fire. No mitigation in §12."
+              "rule": "Remaining Base + Supplemental through Dec. 31, 2027; 2028–29 are $0 on a university fire. No mitigation in §12.",
+              "steps": [
+                {
+                  "asOf": "2026-01-01",
+                  "remaining": 20000000,
+                  "contractYear": "2026",
+                  "through": "2026-12-31",
+                  "notes": "Derived from §12 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Full remaining 2026 and 2027 years = $20,000,000. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                },
+                {
+                  "asOf": "2027-01-01",
+                  "remaining": 10000000,
+                  "contractYear": "2027",
+                  "through": "2027-12-31",
+                  "notes": "Remaining 2027 Base + Supplemental = $10,000,000. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                },
+                {
+                  "asOf": "2028-01-01",
+                  "remaining": 0,
+                  "contractYear": "2028–29",
+                  "through": "2029-12-31",
+                  "notes": "If terminated after Dec. 31, 2027: $0. Section 12 pays Base + Supplemental only through Dec. 31, 2027. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                }
+              ]
             },
             "term": {
               "confidence": "reported",
@@ -73918,7 +74326,44 @@
             "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf",
             "asOf": "2026-01-01",
             "notes": "Remaining-sum of the LOI windows ($6.0 / $5.0 / $4.0 / $12.75 / $13.25 million). Full remaining years, not mid-year prorated.",
-            "rule": "Remaining 2026–2030 Base + Supplemental (LOI remaining-sum)."
+            "rule": "Remaining 2026–2030 Base + Supplemental (LOI remaining-sum).",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 41000000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "notes": "Derived from the LOI Base + Supplemental windows ($6.0 / $5.0 / $4.0 / $12.75 / $13.25 million) remaining-sum if terminated in 2026 = $41,000,000. Full remaining years. PDF: https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 35000000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "notes": "Remaining 2027–2030 Base + Supplemental = $35,000,000. PDF: https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 30000000,
+                "contractYear": "2028",
+                "through": "2028-12-31",
+                "notes": "Remaining 2028–2030 Base + Supplemental = $30,000,000. PDF: https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 26000000,
+                "contractYear": "2029",
+                "through": "2029-12-31",
+                "notes": "Remaining 2029–2030 Base + Supplemental = $26,000,000. PDF: https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 13250000,
+                "contractYear": "2030",
+                "through": "2030-12-31",
+                "notes": "Remaining 2030 Base + Supplemental = $13,250,000. PDF: https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -74468,7 +74913,44 @@
               "url": "https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf",
               "asOf": "2026-01-01",
               "notes": "Remaining-sum of the LOI windows ($6.0 / $5.0 / $4.0 / $12.75 / $13.25 million). Full remaining years, not mid-year prorated.",
-              "rule": "Remaining 2026–2030 Base + Supplemental (LOI remaining-sum)."
+              "rule": "Remaining 2026–2030 Base + Supplemental (LOI remaining-sum).",
+              "steps": [
+                {
+                  "asOf": "2026-01-01",
+                  "remaining": 41000000,
+                  "contractYear": "2026",
+                  "through": "2026-12-31",
+                  "notes": "Derived from the LOI Base + Supplemental windows ($6.0 / $5.0 / $4.0 / $12.75 / $13.25 million) remaining-sum if terminated in 2026 = $41,000,000. Full remaining years. PDF: https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+                },
+                {
+                  "asOf": "2027-01-01",
+                  "remaining": 35000000,
+                  "contractYear": "2027",
+                  "through": "2027-12-31",
+                  "notes": "Remaining 2027–2030 Base + Supplemental = $35,000,000. PDF: https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+                },
+                {
+                  "asOf": "2028-01-01",
+                  "remaining": 30000000,
+                  "contractYear": "2028",
+                  "through": "2028-12-31",
+                  "notes": "Remaining 2028–2030 Base + Supplemental = $30,000,000. PDF: https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+                },
+                {
+                  "asOf": "2029-01-01",
+                  "remaining": 26000000,
+                  "contractYear": "2029",
+                  "through": "2029-12-31",
+                  "notes": "Remaining 2029–2030 Base + Supplemental = $26,000,000. PDF: https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+                },
+                {
+                  "asOf": "2030-01-01",
+                  "remaining": 13250000,
+                  "contractYear": "2030",
+                  "through": "2030-12-31",
+                  "notes": "Remaining 2030 Base + Supplemental = $13,250,000. PDF: https://augustafreepress.com/wp-content/uploads/2025/11/james-franklin-virginia-tech-contract.pdf"
+                }
+              ]
             },
             "term": {
               "confidence": "reported",
@@ -86936,7 +87418,51 @@
             "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf",
             "asOf": "2026-01-01",
             "notes": "Remaining years × base from the termination clause. Full years, not mid-year prorated. Bonuses not in that clause are not added.",
-            "rule": "100% of remaining Base ($3,000,000/year) through Jan. 31, 2032. Offset if hired at another D-I school; no duty to seek work."
+            "rule": "100% of remaining Base ($3,000,000/year) through Jan. 31, 2032. Offset if hired at another D-I school; no duty to seek work.",
+            "steps": [
+              {
+                "asOf": "2026-02-01",
+                "remaining": 18000000,
+                "contractYear": "2026",
+                "through": "2027-01-31",
+                "notes": "Derived from the EA termination clause: 100% of remaining Base ($3,000,000/year) through Jan. 31, 2032. Six remaining contract years × $3,000,000 = $18,000,000. Full years, not mid-year prorated. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+              },
+              {
+                "asOf": "2027-02-01",
+                "remaining": 15000000,
+                "contractYear": "2027",
+                "through": "2028-01-31",
+                "notes": "Five remaining years × $3,000,000 Base = $15,000,000. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+              },
+              {
+                "asOf": "2028-02-01",
+                "remaining": 12000000,
+                "contractYear": "2028",
+                "through": "2029-01-31",
+                "notes": "Four remaining years × $3,000,000 Base = $12,000,000. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+              },
+              {
+                "asOf": "2029-02-01",
+                "remaining": 9000000,
+                "contractYear": "2029",
+                "through": "2030-01-31",
+                "notes": "Three remaining years × $3,000,000 Base = $9,000,000. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+              },
+              {
+                "asOf": "2030-02-01",
+                "remaining": 6000000,
+                "contractYear": "2030",
+                "through": "2031-01-31",
+                "notes": "Two remaining years × $3,000,000 Base = $6,000,000. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+              },
+              {
+                "asOf": "2031-02-01",
+                "remaining": 3000000,
+                "contractYear": "2031",
+                "through": "2032-01-31",
+                "notes": "One remaining year × $3,000,000 Base = $3,000,000. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -87469,7 +87995,51 @@
               "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf",
               "asOf": "2026-01-01",
               "notes": "Remaining years × base from the termination clause. Full years, not mid-year prorated. Bonuses not in that clause are not added.",
-              "rule": "100% of remaining Base ($3,000,000/year) through Jan. 31, 2032. Offset if hired at another D-I school; no duty to seek work."
+              "rule": "100% of remaining Base ($3,000,000/year) through Jan. 31, 2032. Offset if hired at another D-I school; no duty to seek work.",
+              "steps": [
+                {
+                  "asOf": "2026-02-01",
+                  "remaining": 18000000,
+                  "contractYear": "2026",
+                  "through": "2027-01-31",
+                  "notes": "Derived from the EA termination clause: 100% of remaining Base ($3,000,000/year) through Jan. 31, 2032. Six remaining contract years × $3,000,000 = $18,000,000. Full years, not mid-year prorated. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+                },
+                {
+                  "asOf": "2027-02-01",
+                  "remaining": 15000000,
+                  "contractYear": "2027",
+                  "through": "2028-01-31",
+                  "notes": "Five remaining years × $3,000,000 Base = $15,000,000. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+                },
+                {
+                  "asOf": "2028-02-01",
+                  "remaining": 12000000,
+                  "contractYear": "2028",
+                  "through": "2029-01-31",
+                  "notes": "Four remaining years × $3,000,000 Base = $12,000,000. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+                },
+                {
+                  "asOf": "2029-02-01",
+                  "remaining": 9000000,
+                  "contractYear": "2029",
+                  "through": "2030-01-31",
+                  "notes": "Three remaining years × $3,000,000 Base = $9,000,000. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+                },
+                {
+                  "asOf": "2030-02-01",
+                  "remaining": 6000000,
+                  "contractYear": "2030",
+                  "through": "2031-01-31",
+                  "notes": "Two remaining years × $3,000,000 Base = $6,000,000. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+                },
+                {
+                  "asOf": "2031-02-01",
+                  "remaining": 3000000,
+                  "contractYear": "2031",
+                  "through": "2032-01-31",
+                  "notes": "One remaining year × $3,000,000 Base = $3,000,000. PDF: https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf"
+                }
+              ]
             },
             "term": {
               "confidence": "reported",

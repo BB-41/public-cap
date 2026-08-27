@@ -848,3 +848,7 @@ table.rank th.rk { cursor: default; }
 }
 
 .display.sm.excluded-num { opacity: 0.48; color: var(--muted); }
+
+.house-remaining { margin-top: 12px; }
+.buyout-step-tape { margin: 12px 0 16px; }
+.buyout-step-tape .buyout-steps { margin-top: 6px; }

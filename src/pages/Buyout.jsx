@@ -15,6 +15,7 @@ import {
   formatThrough,
   gameLabel,
   mapGames,
+  mergeSchoolSteps,
   sharePath,
 } from '../lib/buyout.js'
 
@@ -73,7 +74,11 @@ export default function Buyout() {
     () => (schools?.schools || []).find((s) => s.id === schoolId) || null,
     [schools, schoolId],
   )
-  const coach = book?.coaches?.[schoolId] || null
+  const bookCoach = book?.coaches?.[schoolId] || null
+  const coach = useMemo(
+    () => mergeSchoolSteps(bookCoach, school?.coaches?.football?.buyout),
+    [bookCoach, school],
+  )
   const slate = sched?.schools?.[schoolId] || null
   const tape = classifyTape(coach)
   const todayStep = currentStep(coach, DESK_TODAY)
@@ -290,10 +295,14 @@ export default function Buyout() {
             {coach.steps?.length ? (
               <ol className="sources buyout-steps">
                 {coach.steps.map((s, i) => (
-                  <li key={`${s.through || 'open'}-${i}`}>
-                    <strong>{s.through ? formatThrough(s.through) : 'Current overhang'}: </strong>
-                    <StepAmount amount={s.amount} confidence={s.confidence} />
-                    <div className="field-notes">{s.rule}</div>
+                  <li key={`${s.through || s.asOf || 'open'}-${i}`}>
+                    <strong>
+                      {s.through ? formatThrough(s.through) : s.asOf ? `as of ${s.asOf}` : 'Current overhang'}
+                      {s.contractYear ? ` · ${s.contractYear}` : ''}:
+                    </strong>
+                    {' '}
+                    <StepAmount amount={s.amount ?? s.remaining} confidence={s.confidence} />
+                    <div className="field-notes">{s.rule || s.notes}</div>
                     <div className="field-meta">
                       <span className="conf-label">{s.confidence}</span>
                       {s.source && <> · <SourceLink source={s.source} /></>}
