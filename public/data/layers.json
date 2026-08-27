@@ -10,7 +10,7 @@
       "Football wins from Wikipedia 2025 FBS standings (final) and the NCAA standings PDF.",
       "Wins per dollar is computed: 2025 FB wins \u00f7 booked NIL if present else modeled mid, and \u00f7 annual capacity.",
       "Buyouts here are money actually owed/paid after a firing or settlement \u2014 not the if-fired overhang on the current coach.",
-      "Student fees / institutional support use KN/MFRS category definitions. FY2025 figures are from Knight-Newhouse school-profile revenue charts (student fees = MFRS line 3; institutional/government support = KN combined lines 2+4+6+6A). EADA 2024-25 public file has department totals only \u2014 no fee/support split. Rutgers keeps the Extra Points 3-way split (fees / university / state). Louisville keeps the published $200/semester fee rate plus KN FY2025 dollars. Ohio State keeps the department $0 self-funded statement (KN residual $112,280 noted). Privates and Pittsburgh stay pending."
+      "Student fees / institutional support sit on the school (capacity.studentFees, capacity.institutionalSupport, capacity.governmentSupport when split) and on layers.subsidy. Hosted FY2025 NCAA MFRS PDFs win when we have the file (line 3 fees; line 4 direct institutional; line 2 government). EADA 2024-25 public file (ope.ed.gov) was opened \u2014 department/sport totals only, no fee/support split, so no EADA dollars were booked. Remaining publics use Knight-Newhouse school-profile FY2025 figures that cite the same MFRS lines (fees = line 3; institutional/government = KN combined 2+4+6+6A). Ohio State keeps the $0/$0 self-funded filing (PDF line 4 $112,280 is offset by transfers). Rutgers keeps the Extra Points 3-way split. Louisville keeps the published $200/semester athletic fee plus the FY2025 department total. $0 is printed only when the filing shows $0. Privates and Pittsburgh stay pending. Not added to the capacity stack. Athletic fee \u2260 tuition."
     ],
     "sourcesIndex": {
       "wikiSeason": "https://en.wikipedia.org/wiki/2025_NCAA_Division_I_FBS_football_season",
@@ -661,31 +661,31 @@
         "studentFees": {
           "value": 3871937,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/sec/university-georgia",
-          "asOf": "FY2025",
+          "source": "UGA FY2025 NCAA financial report \u2014 Item 3 Student Fees $3,871,937",
+          "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "KN Category: student fees (MFRS line 3)."
+          "notes": "NCAA MFRS line 3 \u2014 athletics slice of student fees, not tuition."
         },
         "institutionalSupport": {
           "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/sec/university-georgia",
-          "asOf": "FY2025",
+          "source": "UGA FY2025 NCAA financial report \u2014 Item 4 Direct Institutional Support $0",
+          "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
+          "notes": "Cited $0 on MFRS line 4 \u2014 not an invented blank."
         },
         "governmentSupport": {
           "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
-          "url": "https://knightnewhousedata.org/fbs/sec/university-georgia",
-          "asOf": "FY2025",
+          "source": "UGA FY2025 NCAA financial report \u2014 Item 2 Direct State or Other Government Support $0",
+          "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
+          "notes": "Cited $0 on MFRS line 2 \u2014 not an invented blank."
         },
-        "notes": "Institutional/government support is $0 on the KN FY2025 tape. Student fees are the allocated-revenue lane."
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Student fees are the athletics slice, not tuition."
       },
       "buyoutsPaid": []
     },
@@ -1351,30 +1351,31 @@
         "studentFees": {
           "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/sec/university-mississippi",
-          "asOf": "FY2025",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $0",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
+          "notes": "Cited $0 on MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
           "value": 5734050,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/sec/university-mississippi",
-          "asOf": "FY2025",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $5,734,050",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
+          "notes": "NCAA MFRS line 4 \u2014 direct institutional support."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
-          "url": "https://knightnewhousedata.org/fbs/sec/university-mississippi",
-          "asOf": null,
-          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report \u2014 Item 2 Direct State or Other Government Support $0",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on MFRS line 2 \u2014 not an invented blank."
         },
-        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Student fees are the athletics slice, not tuition."
       },
       "buyoutsPaid": []
     },
@@ -1555,30 +1556,31 @@
         "studentFees": {
           "value": 1000000,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/sec/university-tennessee",
-          "asOf": "FY2025",
+          "source": "Tennessee FY2025 NCAA AUP / Membership Financial Report \u2014 Item 3 Student Fees $1,000,000",
+          "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "KN Category: student fees (MFRS line 3)."
+          "notes": "NCAA MFRS line 3 \u2014 athletics slice of student fees, not tuition."
         },
         "institutionalSupport": {
           "value": 7137633,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/sec/university-tennessee",
-          "asOf": "FY2025",
+          "source": "Tennessee FY2025 NCAA AUP / Membership Financial Report \u2014 Item 4 Direct Institutional Support $7,137,633",
+          "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
+          "notes": "NCAA MFRS line 4 \u2014 direct institutional support."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
-          "url": "https://knightnewhousedata.org/fbs/sec/university-tennessee",
-          "asOf": null,
-          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Tennessee FY2025 NCAA AUP / Membership Financial Report \u2014 Item 2 Direct State or Other Government Support $0",
+          "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on MFRS line 2 \u2014 not an invented blank."
         },
-        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
+        "notes": "Line 5 transfers to institution \u2212$8,137,633. Not netted out of the booked line-4 cell."
       },
       "buyoutsPaid": []
     },
@@ -2031,30 +2033,31 @@
         "studentFees": {
           "value": 3639531,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-illinois-urbana-champaign",
-          "asOf": "FY2025",
+          "source": "Illinois FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $3,639,531",
+          "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf",
+          "asOf": "2026-01-29",
           "fiscalYear": "FY2025",
-          "notes": "KN Category: student fees (MFRS line 3)."
+          "notes": "NCAA MFRS line 3 \u2014 athletics slice of student fees, not tuition."
         },
         "institutionalSupport": {
-          "value": 7992967,
+          "value": 22395,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-illinois-urbana-champaign",
-          "asOf": "FY2025",
+          "source": "Illinois FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $22,395",
+          "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf",
+          "asOf": "2026-01-29",
           "fiscalYear": "FY2025",
-          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
+          "notes": "NCAA MFRS line 4 \u2014 direct institutional support."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-illinois-urbana-champaign",
-          "asOf": null,
-          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
+          "value": 7970572,
+          "confidence": "reported",
+          "source": "Illinois FY2025 NCAA Membership Financial Report \u2014 Item 2 Direct State or Other Government Support $7,970,572",
+          "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf",
+          "asOf": "2026-01-29",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS line 2 \u2014 direct state or other government support."
         },
-        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
+        "notes": "Line 5 transfers \u2212$142,446. KN combined government + direct institutional as $7,992,967; desk keeps the split."
       },
       "buyoutsPaid": []
     },
@@ -2765,30 +2768,31 @@
         "studentFees": {
           "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-minnesota-twin-cities",
-          "asOf": "FY2025",
+          "source": "Minnesota FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $0",
+          "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf",
+          "asOf": "2026-01-20",
           "fiscalYear": "FY2025",
-          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
+          "notes": "Cited $0 on MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": 11657831,
+          "value": 5054285,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-minnesota-twin-cities",
-          "asOf": "FY2025",
+          "source": "Minnesota FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $5,054,285",
+          "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf",
+          "asOf": "2026-01-20",
           "fiscalYear": "FY2025",
-          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
+          "notes": "NCAA MFRS line 4 \u2014 direct institutional support."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-minnesota-twin-cities",
-          "asOf": null,
-          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Minnesota FY2025 NCAA Membership Financial Report \u2014 Item 2 Direct State or Other Government Support $0",
+          "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf",
+          "asOf": "2026-01-20",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on MFRS line 2 \u2014 not an invented blank."
         },
-        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
+        "notes": "Line 6 indirect institutional support $6,458,586 is not booked as direct institutional."
       },
       "buyoutsPaid": []
     },
@@ -3156,7 +3160,7 @@
           "url": "https://news.osu.edu/ohio-state-athletics-sets-record-with-336m-in-fy25-revenue-after-national-championship-season/",
           "asOf": "2026-01-30",
           "fiscalYear": "FY2025",
-          "notes": "Cited as $0 allocated student-fee / tuition support. Not an invented blank."
+          "notes": "Cited as $0 allocated student-fee / tuition support. Hosted FY25 MFRS PDF line 3 is $0. Not an invented blank."
         },
         "institutionalSupport": {
           "value": 0,
@@ -3164,7 +3168,8 @@
           "source": "Ohio State Athletics / OSU News \u2014 self-funded, no tuition or tax dollars",
           "url": "https://news.osu.edu/ohio-state-athletics-sets-record-with-336m-in-fy25-revenue-after-national-championship-season/",
           "asOf": "2026-01-30",
-          "fiscalYear": "FY2025"
+          "fiscalYear": "FY2025",
+          "notes": "School filing: $0 institutional / tax support. Hosted FY25 MFRS PDF line 4 is $112,280 offset by line 5 transfers \u2212$112,280 (https://news.osu.edu/download/c91b5f24-f009-4455-81eb-4b89b108f1bc/fy25ncaamembershipreportfinal.pdf). Desk keeps the $0/$0 filing."
         },
         "governmentSupport": {
           "value": 0,
@@ -3172,9 +3177,10 @@
           "source": "Ohio State Athletics / OSU News \u2014 no tax dollars",
           "url": "https://news.osu.edu/ohio-state-athletics-sets-record-with-336m-in-fy25-revenue-after-national-championship-season/",
           "asOf": "2026-01-30",
-          "fiscalYear": "FY2025"
+          "fiscalYear": "FY2025",
+          "notes": "Hosted FY25 MFRS PDF line 2 is $0."
         },
-        "notes": "Department FY25 release: self-funded, no tuition or tax dollars. KN FY2025 school profile shows $0 student fees and a $112,280 residual institutional/government line (likely indirect support, not tuition/tax). Desk keeps the school $0 on all three cells."
+        "notes": "Department FY25 release: self-funded, no tuition or tax dollars. Hosted MFRS PDF confirms line 3 student fees $0 and line 2 government $0; line 4 $112,280 is offset by transfers. $0/$0 is the filing, not an invented blank."
       },
       "buyoutsPaid": []
     },
@@ -3325,30 +3331,31 @@
         "studentFees": {
           "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-oregon",
-          "asOf": "FY2025",
+          "source": "Oregon FY2025 NCAA FRS \u2014 Item 3 Student Fees $0",
+          "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf",
+          "asOf": "2026-01-13",
           "fiscalYear": "FY2025",
-          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
+          "notes": "Cited $0 on MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": 589167,
+          "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-oregon",
-          "asOf": "FY2025",
+          "source": "Oregon FY2025 NCAA FRS \u2014 Item 4 Direct Institutional Support $0",
+          "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf",
+          "asOf": "2026-01-13",
           "fiscalYear": "FY2025",
-          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
+          "notes": "Cited $0 on MFRS line 4 \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-oregon",
-          "asOf": null,
-          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
+          "value": 589167,
+          "confidence": "reported",
+          "source": "Oregon FY2025 NCAA FRS \u2014 Item 2 Direct State or Other Government Support $589,167",
+          "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf",
+          "asOf": "2026-01-13",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS line 2 \u2014 direct state or other government support."
         },
-        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
+        "notes": "Line 4 direct institutional is $0. Line 2 government is $589,167 (sports lottery / state). KN combined this on institutional/government; desk keeps the split."
       },
       "buyoutsPaid": []
     },
@@ -4043,30 +4050,31 @@
         "studentFees": {
           "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-washington",
-          "asOf": "FY2025",
+          "source": "Washington FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $0",
+          "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
+          "asOf": "2026-01-17",
           "fiscalYear": "FY2025",
-          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
+          "notes": "Cited $0 on MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
           "value": 10781975,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-washington",
-          "asOf": "FY2025",
+          "source": "Washington FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $10,781,975",
+          "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
+          "asOf": "2026-01-17",
           "fiscalYear": "FY2025",
-          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
+          "notes": "NCAA MFRS line 4 \u2014 direct institutional support."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-washington",
-          "asOf": null,
-          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Washington FY2025 NCAA Membership Financial Report \u2014 Item 2 Direct State or Other Government Support $0",
+          "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
+          "asOf": "2026-01-17",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on MFRS line 2 \u2014 not an invented blank."
         },
-        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Student fees are the athletics slice, not tuition."
       },
       "buyoutsPaid": []
     },
@@ -4139,30 +4147,31 @@
         "studentFees": {
           "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-wisconsin-madison",
-          "asOf": "FY2025",
+          "source": "Wisconsin FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $0",
+          "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
+          "asOf": "2026-01-16",
           "fiscalYear": "FY2025",
-          "notes": "Cited $0 on KN FY2025 MFRS line 3 \u2014 not an invented blank."
+          "notes": "Cited $0 on MFRS line 3 \u2014 not an invented blank."
         },
         "institutionalSupport": {
-          "value": 10421859,
+          "value": 7245480,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-wisconsin-madison",
-          "asOf": "FY2025",
+          "source": "Wisconsin FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $7,245,480",
+          "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
+          "asOf": "2026-01-16",
           "fiscalYear": "FY2025",
-          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
+          "notes": "NCAA MFRS line 4 \u2014 direct institutional support."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
-          "url": "https://knightnewhousedata.org/fbs/big-ten/university-wisconsin-madison",
-          "asOf": null,
-          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
+          "value": 3176379,
+          "confidence": "reported",
+          "source": "Wisconsin FY2025 NCAA Membership Financial Report \u2014 Item 2 Direct State or Other Government Support $3,176,379",
+          "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
+          "asOf": "2026-01-16",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS line 2 \u2014 direct state or other government support."
         },
-        "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
+        "notes": "Line 5 transfers \u2212$7,245,480. KN combined government + direct institutional as $10,421,859; desk keeps the split."
       },
       "buyoutsPaid": []
     },
@@ -4866,7 +4875,7 @@
           "asOf": "2025-07-18",
           "notes": "Replaced a $25 fee. Officials said it aligns with an ACC average of $204/semester (WDRB)."
         },
-        "notes": "KN FY2025 allocated-revenue dollars plus the published FY2026 fee rate. The $200 rate starts 2025–26 / FY2026. Rate × enrollment is shown as estimated arithmetic and does not replace the FY2025 KN total."
+        "notes": "KN FY2025 allocated-revenue dollars plus the published FY2026 fee rate. The $200 rate starts 2025\u201326 / FY2026. Rate \u00d7 enrollment is shown as estimated arithmetic and does not replace the FY2025 KN total."
       },
       "buyoutsPaid": []
     },
@@ -5128,30 +5137,31 @@
         "studentFees": {
           "value": 8504951,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/acc/university-north-carolina-chapel-hill",
-          "asOf": "FY2025",
+          "source": "UNC FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $8,504,951",
+          "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf",
+          "asOf": "2026-02-03",
           "fiscalYear": "FY2025",
-          "notes": "KN Category: student fees (MFRS line 3)."
+          "notes": "NCAA MFRS line 3 \u2014 athletics slice of student fees, not tuition."
         },
         "institutionalSupport": {
-          "value": 1918664,
+          "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/acc/university-north-carolina-chapel-hill",
-          "asOf": "FY2025",
+          "source": "UNC FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $0",
+          "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf",
+          "asOf": "2026-02-03",
           "fiscalYear": "FY2025",
-          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
+          "notes": "Cited $0 on MFRS line 4 \u2014 not an invented blank."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
-          "url": "https://knightnewhousedata.org/fbs/acc/university-north-carolina-chapel-hill",
-          "asOf": null,
-          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
+          "value": 0,
+          "confidence": "reported",
+          "source": "UNC FY2025 NCAA Membership Financial Report \u2014 Item 2 Direct State or Other Government Support $0",
+          "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf",
+          "asOf": "2026-02-03",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on MFRS line 2 \u2014 not an invented blank."
         },
-        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
+        "notes": "Line 4 direct institutional is $0. Line 6 indirect $1,918,664 is not booked as direct."
       },
       "buyoutsPaid": [
         {
@@ -5611,30 +5621,31 @@
         "studentFees": {
           "value": 17335632,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/acc/university-virginia",
-          "asOf": "FY2025",
+          "source": "Virginia FY2025 NCAA Membership Financial Report (published copy) \u2014 Item 3 Student Fees $17,335,632",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
           "fiscalYear": "FY2025",
-          "notes": "KN Category: student fees (MFRS line 3)."
+          "notes": "NCAA MFRS line 3 \u2014 athletics slice of student fees, not tuition."
         },
         "institutionalSupport": {
-          "value": 19881360,
+          "value": 17916907,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/acc/university-virginia",
-          "asOf": "FY2025",
+          "source": "Virginia FY2025 NCAA Membership Financial Report (published copy) \u2014 Item 4 Direct Institutional Support $17,916,907",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
           "fiscalYear": "FY2025",
-          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
+          "notes": "NCAA MFRS line 4 \u2014 direct institutional support."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
-          "url": "https://knightnewhousedata.org/fbs/acc/university-virginia",
-          "asOf": null,
-          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Virginia FY2025 NCAA Membership Financial Report (published copy) \u2014 Item 2 Direct State or Other Government Support $0",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on MFRS line 2 \u2014 not an invented blank."
         },
-        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
+        "notes": "Line 6 indirect institutional support $1,401,812 is not booked as direct institutional."
       },
       "buyoutsPaid": []
     },
@@ -6655,31 +6666,31 @@
         "studentFees": {
           "value": 1819397,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/big-12/iowa-state-university",
-          "asOf": "FY2025",
+          "source": "Iowa State FY2025 NCAA Financial Report \u2014 Item 3 Student Fees $1,819,397",
+          "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
+          "asOf": "2026-01-16",
           "fiscalYear": "FY2025",
-          "notes": "KN Category: student fees (MFRS line 3)."
+          "notes": "NCAA MFRS line 3 \u2014 athletics slice of student fees, not tuition."
         },
         "institutionalSupport": {
           "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/big-12/iowa-state-university",
-          "asOf": "FY2025",
+          "source": "Iowa State FY2025 NCAA Financial Report \u2014 Item 4 Direct Institutional Support $0",
+          "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
+          "asOf": "2026-01-16",
           "fiscalYear": "FY2025",
-          "notes": "Cited $0 on KN FY2025 institutional/government support \u2014 not an invented blank."
+          "notes": "Cited $0 on MFRS line 4 \u2014 not an invented blank."
         },
         "governmentSupport": {
           "value": 0,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 institutional/government support is $0, so the government slice is $0",
-          "url": "https://knightnewhousedata.org/fbs/big-12/iowa-state-university",
-          "asOf": "FY2025",
+          "source": "Iowa State FY2025 NCAA Financial Report \u2014 Item 2 Direct State or Other Government Support $0",
+          "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
+          "asOf": "2026-01-16",
           "fiscalYear": "FY2025",
-          "notes": "KN combined allocated-support line is $0, so Line 2 government support is $0."
+          "notes": "Cited $0 on MFRS line 2 \u2014 not an invented blank."
         },
-        "notes": "Institutional/government support is $0 on the KN FY2025 tape. Student fees are the allocated-revenue lane."
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Student fees are the athletics slice, not tuition."
       },
       "buyoutsPaid": []
     },
@@ -7438,30 +7449,31 @@
         "studentFees": {
           "value": 6458932,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
-          "url": "https://knightnewhousedata.org/fbs/big-12/university-utah",
-          "asOf": "FY2025",
+          "source": "Utah FY2025 NCAA Revenue and Expense Report \u2014 Item 3 Student Fees $6,458,932",
+          "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf",
+          "asOf": "2026-01-21",
           "fiscalYear": "FY2025",
-          "notes": "KN Category: student fees (MFRS line 3)."
+          "notes": "NCAA MFRS line 3 \u2014 athletics slice of student fees, not tuition."
         },
         "institutionalSupport": {
-          "value": 6168381,
+          "value": 3709854,
           "confidence": "reported",
-          "source": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
-          "url": "https://knightnewhousedata.org/fbs/big-12/university-utah",
-          "asOf": "FY2025",
+          "source": "Utah FY2025 NCAA Revenue and Expense Report \u2014 Item 4 Direct Institutional Support $3,709,854",
+          "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf",
+          "asOf": "2026-01-21",
           "fiscalYear": "FY2025",
-          "notes": "KN rolls direct government (line 2), direct institutional (line 4), and indirect institutional support (lines 6/6A) into one line. Government not split on this desk."
+          "notes": "NCAA MFRS line 4 \u2014 direct institutional support."
         },
         "governmentSupport": {
-          "value": null,
-          "confidence": "pending",
-          "source": "Knight-Newhouse combines government with institutional support; no MFRS Line 2 split on this desk.",
-          "url": "https://knightnewhousedata.org/fbs/big-12/university-utah",
-          "asOf": null,
-          "notes": "Pending a Line 2 split. Combined institutional/government is booked on the institutional-support cell."
+          "value": 0,
+          "confidence": "reported",
+          "source": "Utah FY2025 NCAA Revenue and Expense Report \u2014 Item 2 Direct State or Other Government Support $0",
+          "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf",
+          "asOf": "2026-01-21",
+          "fiscalYear": "FY2025",
+          "notes": "Cited $0 on MFRS line 2 \u2014 not an invented blank."
         },
-        "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
+        "notes": "Line 6 indirect institutional support $2,458,527 is not booked as direct institutional."
       },
       "buyoutsPaid": []
     },

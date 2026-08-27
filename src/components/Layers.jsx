@@ -234,7 +234,7 @@ function SubsidySection({ school }) {
         <p className="fine">
           {s.studentFees.value === 0
             ? 'The department booked $0 from student fees (self-funded on this line), so implied per-student is $0. We do not invent a fee.'
-            : `About ${moneyExact(Math.round(implied))} per undergrad per year — KN student-fee total ÷ enrollment proxy (${n.toLocaleString()}). This is not a published fee schedule; it is the department total spread across the student body.`}
+            : `About ${moneyExact(Math.round(implied))} per undergrad per year — booked student-fee total ÷ enrollment proxy (${n.toLocaleString()}). This is not a published fee schedule; it is the athletics slice of a student fee, not tuition, spread across the student body.`}
           {' '}
           <span className="conf-label">estimated</span>
           {enrollField?.confidence ? ` · enrollment ${enrollField.confidence}` : ''}
@@ -255,8 +255,9 @@ function SubsidySection({ school }) {
         <p className="fine">
           {moneyExact(published.rate)} × {published.terms} {published.terms === 2 ? 'semesters' : 'year'} × {published.enrollment.toLocaleString()} undergrads ≈ {moneyExact(published.impliedAnnual)}{' '}
           <span className="conf-label">estimated</span>.
-          This is the published athletic fee, not tuition. It is not the booked
-          KN student-fee total
+          This is the published athletic fee, not tuition. It is calculated
+          (rate × terms × cited enrollment) and does not replace the booked
+          student-fee total
           {s.studentFees?.fiscalYear ? ` (${s.studentFees.fiscalYear} still used the prior fee)` : ''}
           {s.studentFees?.notes?.includes('2025–26') || s.studentFees?.notes?.includes('2025-26')
             ? ' — the $200 rate starts 2025–26 / FY2026.'

@@ -18,7 +18,7 @@ import {
   houseValueForSeason,
   parseSeasonParam,
 } from './lib/seasons.js'
-import { computeEfficiency } from './lib/layers.js'
+import { computeEfficiency, mergeSubsidy } from './lib/layers.js'
 
 export default function App() {
   const [params] = useSearchParams()
@@ -120,7 +120,7 @@ export default function App() {
         record: season >= 2025 ? rawLayer.record : { football: null },
         portal: season >= 2026 ? rawLayer.portal : { additions: [], departures: [] },
         apparel: season >= 2025 ? rawLayer.apparel : null,
-        subsidy: season >= 2025 ? rawLayer.subsidy : null,
+        subsidy: season >= 2025 ? mergeSubsidy(rawLayer.subsidy, s.capacity) : null,
         buyoutsPaid: season >= 2025 ? rawLayer.buyoutsPaid : [],
       }
       const withNil = { ...s, nil, _cap: s._cap, _ratios: r }

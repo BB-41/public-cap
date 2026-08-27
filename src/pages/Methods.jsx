@@ -100,9 +100,11 @@ export default function Methods({ meta }) {
         <dd>
           Student fees are not tuition. They are a dedicated or allocated athletic fee (or a slice of a student
           activity fee) that athletics booked that year — NCAA MFRS line 3, an annual department total already
-          on the KN tape. Institutional support is the university check; government is the tax/state slice when
-          a source splits it. Implied per-student is that total ÷ the enrollment proxy, a spread, not a published
-          schedule. $0 means self-funded or $0 on the line. Empty means pending. EADA has no split.
+          the receipt. Institutional support is the university check (line 4); government is the tax/state slice
+          (line 2) when a source splits it. Implied per-student is that total ÷ the enrollment proxy, a spread,
+          not a published schedule. Published rate × enrollment is shown only when a feeRate is already on the
+          desk — labeled calculated. $0 means self-funded or $0 on the line. Empty means pending. The EADA
+          2024–25 public file has department totals only, no fee/support split.
         </dd>
         <dt>Wins per dollar</dt>
         <dd>2025 football wins divided by booked NIL if present, else modeled NIL mid (labeled modeled), and by annual capacity (booked-only unless the alumni toggle is on). Wikipedia / NCAA standings.</dd>
@@ -627,11 +629,14 @@ export default function Methods({ meta }) {
         Student fees on this desk are the dollars athletics booked from student fees in
         that fiscal year — usually a dedicated athletic fee, or a slice of a student
         activity fee, assessed on top of tuition. Not tuition. Not the whole bursar bill.
-        The Knight-Newhouse figure is already the athletic department’s annual receipt
-        (NCAA MFRS line 3). We do not treat it as a tuition rate and multiply it by
-        enrollment to invent a new total. Institutional support is the university writing
-        a check or booking indirect support. Government support is the tax or state slice
-        when a source splits it; KN usually rolls it into institutional/government.
+        Hosted FY2025 NCAA Membership Financial Reports are the first source
+        (line 3 student fees; line 4 direct institutional; line 2 government).
+        That booked total is already the athletic department’s annual receipt.
+        We do not treat it as a tuition rate and multiply it by enrollment to
+        invent a new total. Institutional support is the university writing a
+        check. Government support is the tax or state slice when a source splits
+        it. Knight-Newhouse is used only when it cites those same lines; KN often
+        rolls government + direct + indirect into one institutional/government cell.
       </p>
       <p>
         Two identities sit under the booked total, both labeled estimated. Implied
@@ -641,21 +646,27 @@ export default function Methods({ meta }) {
         booked cell. Published rate × enrollment is shown only when a feeRate is already
         on the desk (today: Louisville $200/semester). Semesters count as two terms a
         year; an annual rate counts as one. We do not invent a summer term. That product
-        is arithmetic, not a filing, and it does not overwrite the KN total — Louisville’s
-        $200 rate starts 2025–26 / FY2026; the FY2025 KN cell is still the old $25-fee year.
-        If the booked line is $0, implied per-student is $0 (self-funded on that line).
+        is calculated arithmetic — rate and enrollment both cited — and it does not
+        overwrite the booked department total. Louisville’s $200 rate starts 2025–26 /
+        FY2026; the FY2025 cell is still the old $25-fee year. If the booked line is $0,
+        implied per-student is $0 (self-funded on that line).
       </p>
       <p>
-        KN bulk download is CAPTCHA-gated; FY2025 dollars come from the public school-profile
-        revenue charts (student fees; institutional/government support as KN’s combined
-        lines 2+4+6+6A). The EADA 2024–25 public file at ope.ed.gov/athletics has department
-        totals only — no fee/support split — so EADA cells stay unused here. $0 is printed
-        when KN/MFRS reports $0 on that line, or when a school release says the department
-        is self-funded (Ohio State FY25: no tuition or tax dollars; KN residual $112,280
-        noted, not booked). Rutgers keeps a newsroom 3-way split (fees / university / state)
-        that cross-checks KN. Government stays pending unless a source splits Line 2.
-        Empty means pending, not zero. Privates and Pittsburgh have no public MFRS split.
-        We did not scrape bursar pages for 68 new fee rates.
+        Source order: hosted FY2025 NCAA MFRS PDFs already used for Item 44, then the
+        EADA public file at ope.ed.gov/athletics, then Knight-Newhouse when it cites
+        the same lines. The EADA 2024–25 workbook was opened (4,275 columns) — grand
+        total revenue/expense and sport totals only, no student-fee or
+        institutional-support split — so no EADA dollars were booked for those cells.
+        Remaining publics use KN school-profile FY2025 figures (student fees = MFRS
+        line 3; institutional/government = KN combined lines 2+4+6+6A). $0 is printed
+        when MFRS/KN reports $0 on that line, or when a school release says the
+        department is self-funded (Ohio State FY25: no tuition or tax dollars; hosted
+        MFRS line 4 $112,280 is offset by transfers and is not booked over the $0/$0
+        filing). Rutgers keeps a newsroom 3-way split (fees / university / state).
+        Government stays pending unless a source splits Line 2. Empty means pending,
+        not zero. Privates and Pittsburgh have no public MFRS split. Cells live on
+        the school object and are not added to the capacity stack. We did not scrape
+        bursar pages, On3, Opendorse, or NIL Go.
       </p>
 
       <h2>Wins per dollar</h2>
@@ -716,7 +727,7 @@ export default function Methods({ meta }) {
         <li>No invented source labels.</li>
         <li>No invented player names, and no invented <em>reported</em> deal dollar on a named player (modeled shares of the school pot are labeled modeled).</li>
         <li>No women’s sports or Olympic-sport roster math in v1 (the 7% unallocated slice is the placeholder).</li>
-        <li>Knight-Newhouse bulk download is CAPTCHA-gated; FY2025 student-fee and institutional/government figures are taken from public KN school-profile charts, plus school/newsroom MFRS already on the desk (Rutgers Extra Points, Ohio State newsroom, Louisville fee rate).</li>
+        <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
       </ul>
     </div>
   )

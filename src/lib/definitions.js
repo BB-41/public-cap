@@ -87,7 +87,7 @@ export const DEFS = {
   },
   subsidy: {
     label: 'Student fees + institutional subsidy',
-    text: 'Student fees are not tuition. They are a dedicated or allocated athletic fee (or a slice of a student activity fee) that athletics booked that year — an annual department total, NCAA MFRS line 3, already the receipt, not a rate to multiply. Institutional support is the university writing a check or booking indirect support. Government is the tax/state slice when a source splits it. Implied per-student is that booked total spread across the enrollment proxy, not a published fee schedule. $0 means the filing says self-funded or $0 on that line. Empty means pending.',
+    text: 'Student fees are not tuition. They are a dedicated or allocated athletic fee (or a slice of a student activity fee) that athletics booked that year — an annual department total, NCAA MFRS line 3, already the receipt, not a rate to multiply. Institutional support is the university writing a check (MFRS line 4) or, when only Knight-Newhouse is on the desk, KN’s combined allocated-support line. Government is the tax/state slice (MFRS line 2) when a source splits it. Implied per-student is that booked total spread across the enrollment proxy, not a published fee schedule. Published rate × enrollment is shown only when a feeRate is already on the desk — labeled calculated, both inputs cited. $0 means the filing says self-funded or $0 on that line. Empty means pending.',
   },
   winsPerDollar: {
     label: 'Wins per dollar',

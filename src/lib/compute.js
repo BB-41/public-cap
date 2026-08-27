@@ -6,6 +6,9 @@
  *   + booked athletic contributions
  *   + modeled extra alumni giving (booked contributions subtracted)
  *
+ * Student fees and institutional/government support live on capacity as
+ * cited side cells. They are not added to the booked stack.
+ *
  * Alumni net worth is NEVER shown as a silent point total.
  * Official line = College Scorecard 10-year median earnings.
  * Second line = modeled wealth RANGE (low/high).
