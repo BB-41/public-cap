@@ -484,6 +484,8 @@ export function applySeasonForNil(school, year) {
     delete nil.preCap
   }
   if (year !== 2025) delete nil.preCap
+  // House remaining is a Year 1 (2025–26) residual. Do not show it as a 2026 leftover.
+  if (year !== 2025) delete nil.houseRemaining
   out.nil = nil
   return out
 }

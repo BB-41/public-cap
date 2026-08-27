@@ -43,10 +43,47 @@ export function formatThrough(iso) {
   return `through ${formatLongDate(iso)}`
 }
 
+/** Accept {through, amount} or school-desk {asOf, remaining, contractYear}. */
+export function normalizeStep(step) {
+  if (!step) return null
+  const amount = step.amount ?? step.remaining ?? null
+  let through = step.through || null
+  if (!through && step.asOf) {
+    const y = Number(String(step.asOf).slice(0, 4))
+    if (y) through = `${y}-12-31`
+  }
+  if (!through && step.contractYear) {
+    const m = String(step.contractYear).match(/(20\d{2})/)
+    if (m) through = `${m[1]}-12-31`
+  }
+  return { ...step, amount, through, remaining: step.remaining ?? amount }
+}
+
+export function normalizeSteps(steps) {
+  return (steps || []).map(normalizeStep).filter(Boolean)
+}
+
+/**
+ * Prefer school-desk buyout.steps when a PDF table produced a remaining tape.
+ * The calculator then maps remaining → amount and asOf/contractYear → through.
+ */
+export function mergeSchoolSteps(bookCoach, schoolBuyout) {
+  if (!bookCoach) return null
+  const schoolSteps = schoolBuyout?.steps
+  const raw = schoolSteps?.length ? schoolSteps : bookCoach.steps
+  const steps = normalizeSteps(raw)
+  const hasDollar = steps.some((s) => s.amount != null)
+  return {
+    ...bookCoach,
+    steps,
+    tape: hasDollar ? 'steps' : bookCoach.tape,
+  }
+}
+
 /** Step in force on a calendar date (inclusive through). */
 export function stepInForce(steps, isoDate) {
   if (!steps?.length || !isoDate) return null
-  const dated = steps
+  const dated = normalizeSteps(steps)
     .filter((s) => s.through)
     .slice()
     .sort((a, b) => cmpIso(a.through, b.through))
@@ -81,7 +118,10 @@ export function overhangAsStep(coach) {
 
 export function currentStep(coach, today = DESK_TODAY) {
   if (!coach) return null
-  if (coach.tape === 'steps') return stepInForce(coach.steps, today)
+  const steps = normalizeSteps(coach.steps)
+  if (coach.tape === 'steps' || steps.some((s) => s.amount != null)) {
+    return stepInForce(steps, today)
+  }
   if (coach.tape === 'overhang') return overhangAsStep(coach)
   return null
 }
@@ -92,7 +132,7 @@ export function mapGames(games, coach, today = DESK_TODAY) {
     const after = afterKickoffDate(g)
     let step = null
     let pendingTape = false
-    if (coach?.tape === 'steps' && after) {
+    if ((coach?.tape === 'steps' || normalizeSteps(coach?.steps).some((s) => s.amount != null)) && after) {
       step = stepInForce(coach.steps, after)
     } else if (coach?.tape === 'overhang') {
       step = overhangAsStep(coach)

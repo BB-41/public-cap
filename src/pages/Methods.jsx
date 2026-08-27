@@ -187,6 +187,16 @@ export default function Methods({ meta }) {
         Ratios: NIL ÷ House cap, and NIL ÷ our capacity. A school can sit near 100% of
         House and still be a small slice of capacity. Booked is never replaced by the model.
       </p>
+      <p>
+        House remaining room is a residual on those five House Year 1 booked cells only:
+        published $20.5 million cap minus booked House spent. Louisville uses the House
+        portion of the $32.9M FOIA window ($32.9M minus the $12.7M pre-cap line), not
+        the full window. Texas is year-to-date ($13.5M through March 2026), labeled YTD
+        — not a full-year leftover. UCLA and California book about $20.5M, so remaining
+        is $0, a real cell. If spent is above the cap we print the overhang; we do not
+        hide it. The other 63 schools stay empty — we do not invent a $20.5M leftover
+        from a missing spent cell. Collective 990s never enter booked or remaining.
+      </p>
 
       <h2>Collective 990 (separate lane)</h2>
       <p>
@@ -584,6 +594,21 @@ export default function Methods({ meta }) {
         packet; articles are the fallback only when no current file is on the desk.
         The buyout tool and school-page football card list every contract file on
         the desk (original EA plus amendments), oldest first — not only the latest.
+        Where a linked PDF (or already-parsed TAC / guaranteed table) lists
+        year-by-year remaining pay, the school buyout cell also carries a step tape
+        — remaining = sum of remaining contract-year TAC or guaranteed × the
+        school-side percent rule, labeled derived from that table + rule, with the
+        PDF URL. A bare percent with no year table stays a rule. We do not invent
+        a staircase. The buyout calculator consumes those steps when they exist.
+      </p>
+      <p>
+        Football 2026 year cells (<code>coachesByYear.2026.football.pay</code>) take a
+        copy of the current-chair pay object only when the names match and the
+        current cell is a cited 2026 / current-deal dollar (PDF, article quoting the
+        EA, or a 2026-asOf source). A 2024 or 2025 USA TODAY snapshot is not copied
+        onto 2026. Ryan Day stays empty while the current cell is the Oct. 8, 2025
+        USA TODAY number. Privates stay pending unless independently cited. Chair
+        names are not rewritten.
       </p>
 
       <h2>Athletics staff pay</h2>

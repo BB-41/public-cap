@@ -29,6 +29,10 @@ export const DEFS = {
     label: 'NIL / House',
     text: 'Booked NIL divided by the $20.5M House cap. Pending if we have no booked NIL figure.',
   },
+  houseRemaining: {
+    label: 'House remaining room',
+    text: 'Published House Year 1 cap ($20.5 million) minus that school’s booked House spent cell. Only computed when a House Year 1 spent total is on the desk — not pre-cap, not a 990, not a cap plan. A leftover of $0 is a real cell. Overhang (spent above the cap) is shown, not hidden. Texas is year-to-date. Collective 990s are not in this math.',
+  },
   coachPay: {
     label: 'Coach pay',
     text: 'Annual pay for the chair of record in the selected football season. A current-chair file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. A new hire’s number is not copied onto a prior chair. This year’s check, not lifetime wealth. Incentives stay out of the annual cell.',

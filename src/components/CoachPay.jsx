@@ -1,4 +1,5 @@
 import { moneyExact } from '../lib/format.js'
+import { formatThrough } from '../lib/buyout.js'
 
 /** Annual pay from a current-chair file (or USA TODAY fallback), plus any schedule/incentives. */
 export function CoachPayField({ pay, fallback = '—' }) {
@@ -109,6 +110,30 @@ export function BuyoutRuleLine({ buyout, fallback }) {
     <div className="field">
       <div className="field-notes buyout-rule">{rule}</div>
       {buyout?.coachSide && <div className="field-notes">{buyout.coachSide}</div>}
+    </div>
+  )
+}
+
+export function BuyoutStepTape({ steps }) {
+  if (!steps?.length) return null
+  return (
+    <div className="buyout-step-tape">
+      <div className="eyebrow">Buyout step tape (PDF table)</div>
+      <ol className="sources buyout-steps">
+        {steps.map((s, i) => (
+          <li key={`${s.through || s.asOf || i}-${s.contractYear || ''}`}>
+            <strong>
+              {s.contractYear ? `${s.contractYear} · ` : ''}
+              {s.through ? formatThrough(s.through) : s.asOf ? `as of ${s.asOf}` : 'step'}
+              {': '}
+            </strong>
+            {s.remaining != null || s.amount != null
+              ? moneyExact(s.remaining ?? s.amount)
+              : 'pending'}
+            {s.notes && <div className="field-notes">{s.notes}</div>}
+          </li>
+        ))}
+      </ol>
     </div>
   )
 }

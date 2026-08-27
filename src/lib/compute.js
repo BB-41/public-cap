@@ -124,6 +124,11 @@ export function nilBooked(school) {
   return hasVal(school.nil.booked) ? val(school.nil.booked) : null
 }
 
+/** House Year 1 leftover (cap − booked House spent). Only exists on five booked schools. */
+export function houseRemaining(school) {
+  return hasVal(school?.nil?.houseRemaining) ? val(school.nil.houseRemaining) : null
+}
+
 /** Third-party collective 990 cells. Never a booked House / Item 44 input. */
 export function collective990Cells(school) {
   const rows = school?.nil?.collective990
