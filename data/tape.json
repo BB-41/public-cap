@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-26",
-    "itemCount": 75,
+    "itemCount": 82,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -174,6 +174,111 @@
         "url": "https://www.tpr.org/economy-and-labor/2026-04-05/how-much-money-do-college-athletes-in-texas-make-public-universities-wont-say"
       },
       "field": "nil.booked"
+    },
+    {
+      "id": "virginia-precap-nil-2026-03",
+      "date": "2026-03",
+      "school": "virginia",
+      "schoolName": "Virginia",
+      "kind": "booked-nil",
+      "headline": "Virginia FY2025 NCAA Membership Financial Report (published copy) books Item 44 Institutional NIL Revenue Share at $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Virginia FY2025 NCAA Membership Financial Report (published copy)",
+        "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "ohio-state-precap-nil-2026-01-30",
+      "date": "2026-01-30",
+      "school": "ohio-state",
+      "schoolName": "Ohio State",
+      "kind": "booked-nil",
+      "headline": "Ohio State FY2025 NCAA Membership Financial Report books Item 44 Institutional NIL Revenue Share at $0. House Year 1 spend stays unbooked.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Ohio State FY2025 NCAA Membership Financial Report",
+        "url": "https://news.osu.edu/download/c91b5f24-f009-4455-81eb-4b89b108f1bc/fy25ncaamembershipreportfinal.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "illinois-precap-nil-2026-01-29",
+      "date": "2026-01-29",
+      "school": "illinois",
+      "schoolName": "Illinois",
+      "kind": "booked-nil",
+      "headline": "Illinois FY2025 NCAA Membership Financial Report books Item 44 Institutional NIL Revenue Share at $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Illinois FY2025 NCAA Membership Financial Report",
+        "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "minnesota-precap-nil-2026-01-20",
+      "date": "2026-01-20",
+      "school": "minnesota",
+      "schoolName": "Minnesota",
+      "kind": "booked-nil",
+      "headline": "Minnesota FY2025 NCAA Membership Financial Report books Item 44 Institutional NIL Revenue Share at $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Minnesota FY2025 NCAA Membership Financial Report",
+        "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "washington-precap-nil-2026-01-17",
+      "date": "2026-01-17",
+      "school": "washington",
+      "schoolName": "Washington",
+      "kind": "booked-nil",
+      "headline": "Washington FY2025 NCAA Membership Financial Report books Item 44 Institutional NIL Revenue Share at $0. FY26 $20.5M / $21M revenue-share budget stays unbooked.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Washington FY2025 NCAA Membership Financial Report",
+        "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "wisconsin-precap-nil-2026-01-16",
+      "date": "2026-01-16",
+      "school": "wisconsin",
+      "schoolName": "Wisconsin",
+      "kind": "booked-nil",
+      "headline": "Wisconsin FY2025 NCAA Membership Financial Report books Item 44 Institutional NIL Revenue Share at $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Wisconsin FY2025 NCAA Membership Financial Report",
+        "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "iowa-state-precap-nil-2026-01-16",
+      "date": "2026-01-16",
+      "school": "iowa-state",
+      "schoolName": "Iowa State",
+      "kind": "booked-nil",
+      "headline": "Iowa State FY2025 NCAA Membership Financial Report books Item 44 Institutional NIL Revenue Share at $0. The $20.5M House-cap plan stays unbooked.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Iowa State FY2025 NCAA Membership Financial Report",
+        "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf"
+      },
+      "field": "nil.preCap"
     },
     {
       "id": "penn-state-precap-nil-2026-02",
