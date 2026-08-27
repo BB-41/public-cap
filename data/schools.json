@@ -283,12 +283,27 @@
         "football": {
           "name": "Kalen DeBoer",
           "pay": {
-            "value": 10250000,
+            "value": 12500000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "CBS Sports (April 22, 2026) — Alabama trustee compensation meeting: DeBoer seven-year extension, $12.5 million annual salary",
+            "url": "https://www.cbssports.com/college-football/news/kalen-deboer-alabama-contract-extension-salary/",
+            "asOf": "2026-04-22",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). AD Greg Byrne announced the extension at a trustee compensation meeting: seven years through 2033, $12.5 million annual salary ($2 million raise). Incentives not included. USA TODAY 2025 cell is not reused.",
+            "breakdown": [
+              {
+                "label": "Annual salary",
+                "value": 12500000
+              }
+            ],
+            "schedule": null,
+            "incentives": [
+              {
+                "label": "Performance bonuses",
+                "notes": "CBS does not publish a 2026 incentive table. Not included in annual pay."
+              }
+            ],
+            "baseOnly": null
           },
           "buyout": {
             "value": 60843750,
@@ -1867,14 +1882,51 @@
             "baseOnly": null
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
+            "value": 23450000,
+            "confidence": "estimated",
             "source": "Southwest Times Record (Dec. 1, 2025), quoting Silverfield term sheet via open records",
             "url": "https://www.swtimes.com/story/sports/college/sec/2025/12/01/arkansas-football-coach-ryan-silverfield-salary-bonuses-buyouts/87557612007/",
-            "asOf": null,
-            "notes": "70% of remaining annual compensation, including scheduled increases — we do not invent the remainder. Pittman’s paid buyout lives on the tape.",
+            "asOf": "2026-01-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
             "rule": "70% of remaining annual compensation, including scheduled increases, through Dec. 31, 2030 (article quoting term sheet).",
-            "coachSide": "Coach-side LD if Silverfield walks: $10M on or before Dec. 31, 2026; $7.5M / $5M / $2.5M / $1.25M on the later Dec. 31 windows through 2030."
+            "coachSide": "Coach-side LD if Silverfield walks: $10M on or before Dec. 31, 2026; $7.5M / $5M / $2.5M / $1.25M on the later Dec. 31 windows through 2030.",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 23450000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($6.5 million / $6.6 million / $6.7 million / $6.8 million / $6.9 million = $33,500,000) × 0.7 school-side remaining. Start-of-year remaining = $23,450,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the FOIA term sheet. Source: https://www.swtimes.com/story/sports/college/sec/2025/12/01/arkansas-football-coach-ryan-silverfield-salary-bonuses-buyouts/87557612007/"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 18900000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($6.6 million / $6.7 million / $6.8 million / $6.9 million = $27,000,000) × 0.7 school-side remaining. Start-of-year remaining = $18,900,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the FOIA term sheet. Source: https://www.swtimes.com/story/sports/college/sec/2025/12/01/arkansas-football-coach-ryan-silverfield-salary-bonuses-buyouts/87557612007/"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 14280000,
+                "contractYear": "2028",
+                "through": "2028-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($6.7 million / $6.8 million / $6.9 million = $20,400,000) × 0.7 school-side remaining. Start-of-year remaining = $14,280,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the FOIA term sheet. Source: https://www.swtimes.com/story/sports/college/sec/2025/12/01/arkansas-football-coach-ryan-silverfield-salary-bonuses-buyouts/87557612007/"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 9590000,
+                "contractYear": "2029",
+                "through": "2029-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($6.8 million / $6.9 million = $13,700,000) × 0.7 school-side remaining. Start-of-year remaining = $9,590,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the FOIA term sheet. Source: https://www.swtimes.com/story/sports/college/sec/2025/12/01/arkansas-football-coach-ryan-silverfield-salary-bonuses-buyouts/87557612007/"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 4830000,
+                "contractYear": "2030",
+                "through": "2030-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($6.9 million = $6,900,000) × 0.7 school-side remaining. Start-of-year remaining = $4,830,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the FOIA term sheet. Source: https://www.swtimes.com/story/sports/college/sec/2025/12/01/arkansas-football-coach-ryan-silverfield-salary-bonuses-buyouts/87557612007/"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -3405,12 +3457,57 @@
             "notes": "Total Compensation $3.375M + LLC Compensation $3.375M (AACB LLC). Annual flow, not a wealth stock. Article quotes the Aug. 11, 2026 employment agreement; no PDF URL loaded on this desk."
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
+            "value": 33187500,
+            "confidence": "estimated",
             "source": "Montgomery Advertiser (Aug. 24, 2026), quoting Auburn employment agreement obtained via records request",
             "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/",
-            "asOf": "2026-08-24",
-            "notes": "School without-cause: 75% of remaining compensation, paid monthly through the term end. No published dollar staircase in the article — we will not invent 75% × remaining years. Coach-side LD if Golesh walks: $8M / $6M / $5M / $3M by Dec. 1 windows through 2030."
+            "asOf": "2026-01-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 33187500,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($6.75 million / $7.0 million / $7.25 million / $7.5 million / $7.75 million / $8.0 million = $44,250,000) × 0.75 school-side remaining. Start-of-year remaining = $33,187,500. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Aug. 11, 2026 EA. Source: https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 28125000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.0 million / $7.25 million / $7.5 million / $7.75 million / $8.0 million = $37,500,000) × 0.75 school-side remaining. Start-of-year remaining = $28,125,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Aug. 11, 2026 EA. Source: https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 22875000,
+                "contractYear": "2028",
+                "through": "2028-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.25 million / $7.5 million / $7.75 million / $8.0 million = $30,500,000) × 0.75 school-side remaining. Start-of-year remaining = $22,875,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Aug. 11, 2026 EA. Source: https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 17437500,
+                "contractYear": "2029",
+                "through": "2029-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.5 million / $7.75 million / $8.0 million = $23,250,000) × 0.75 school-side remaining. Start-of-year remaining = $17,437,500. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Aug. 11, 2026 EA. Source: https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 11812500,
+                "contractYear": "2030",
+                "through": "2030-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.75 million / $8.0 million = $15,750,000) × 0.75 school-side remaining. Start-of-year remaining = $11,812,500. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Aug. 11, 2026 EA. Source: https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/"
+              },
+              {
+                "asOf": "2031-01-01",
+                "remaining": 6000000,
+                "contractYear": "2031",
+                "through": "2031-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($8.0 million = $8,000,000) × 0.75 school-side remaining. Start-of-year remaining = $6,000,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Aug. 11, 2026 EA. Source: https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/"
+              }
+            ],
+            "rule": "If Auburn terminates without cause: 75% of remaining compensation, paid in equal monthly installments through the remainder of the term (through Dec. 31, 2031). Start-of-year remaining is derived from the already-on-desk year table × 75% and labeled derived."
           },
           "term": {
             "confidence": "reported",
@@ -4880,14 +4977,58 @@
             "notes": "$7.45 million per contract year as published in the payment-details story. No current-chair PDF on this desk. Napier’s USA TODAY cell is not reused."
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
+            "value": 31290000,
+            "confidence": "estimated",
             "source": "Gainesville Sun (Dec. 1, 2025), quoting UF payment details",
             "url": "https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/",
-            "asOf": null,
-            "notes": "70% of remaining annualized compensation through Dec. 31, 2031 — we do not invent the remainder. Napier’s paid buyout lives on the tape.",
+            "asOf": "2026-01-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
             "rule": "70% remaining annualized compensation through Dec. 31, 2031 (article).",
-            "coachSide": "Coach-side LD if Sumrall walks: $10M in 2026, then $8 / $3 / $2 / $1 / $0."
+            "coachSide": "Coach-side LD if Sumrall walks: $10M in 2026, then $8 / $3 / $2 / $1 / $0.",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 31290000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.45 million / $7.45 million / $7.45 million / $7.45 million / $7.45 million / $7.45 million = $44,700,000) × 0.7 school-side remaining. Start-of-year remaining = $31,290,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article: $7.45 million flat per contract year through Dec. 31, 2031. Source: https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 26075000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.45 million / $7.45 million / $7.45 million / $7.45 million / $7.45 million = $37,250,000) × 0.7 school-side remaining. Start-of-year remaining = $26,075,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article: $7.45 million flat per contract year through Dec. 31, 2031. Source: https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 20860000,
+                "contractYear": "2028",
+                "through": "2028-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.45 million / $7.45 million / $7.45 million / $7.45 million = $29,800,000) × 0.7 school-side remaining. Start-of-year remaining = $20,860,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article: $7.45 million flat per contract year through Dec. 31, 2031. Source: https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 15645000,
+                "contractYear": "2029",
+                "through": "2029-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.45 million / $7.45 million / $7.45 million = $22,350,000) × 0.7 school-side remaining. Start-of-year remaining = $15,645,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article: $7.45 million flat per contract year through Dec. 31, 2031. Source: https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 10430000,
+                "contractYear": "2030",
+                "through": "2030-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.45 million / $7.45 million = $14,900,000) × 0.7 school-side remaining. Start-of-year remaining = $10,430,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article: $7.45 million flat per contract year through Dec. 31, 2031. Source: https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/"
+              },
+              {
+                "asOf": "2031-01-01",
+                "remaining": 5215000,
+                "contractYear": "2031",
+                "through": "2031-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.45 million = $7,450,000) × 0.7 school-side remaining. Start-of-year remaining = $5,215,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article: $7.45 million flat per contract year through Dec. 31, 2031. Source: https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -8042,13 +8183,50 @@
             ]
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
-            "source": null,
-            "url": null,
-            "asOf": null,
-            "notes": "No current-chair if-fired dollar on this desk. File is 70% of remaining Regular Comp — we do not invent the remainder. Stoops’s paid buyout lives on the tape.",
-            "rule": "70% of remaining Regular Compensation, paid monthly through Jan. 31, 2031. Subject to mitigate/offset."
+            "value": 19950000,
+            "confidence": "estimated",
+            "source": "University of Kentucky — Stein FY2025–26 employment agreement PDF (posted Feb 2026)",
+            "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf",
+            "asOf": "2025-12-02",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "rule": "70% of remaining Regular Compensation, paid monthly through Jan. 31, 2031. Subject to mitigate/offset.",
+            "steps": [
+              {
+                "asOf": "2025-12-02",
+                "remaining": 19950000,
+                "contractYear": "Dec 2, 2025 – Jan 31, 2027",
+                "through": "2027-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.5 million / $5.6 million / $5.7 million / $5.8 million / $5.9 million = $28,500,000) × 0.7 school-side remaining. Start-of-year remaining = $19,950,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. File §9(b): seventy percent (70%) of Regular Compensation (Base + media) for the unexpired Term. PDF: https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
+              },
+              {
+                "asOf": "2027-02-01",
+                "remaining": 16100000,
+                "contractYear": "2027",
+                "through": "2028-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.6 million / $5.7 million / $5.8 million / $5.9 million = $23,000,000) × 0.7 school-side remaining. Start-of-year remaining = $16,100,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. File §9(b): seventy percent (70%) of Regular Compensation (Base + media) for the unexpired Term. PDF: https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
+              },
+              {
+                "asOf": "2028-02-01",
+                "remaining": 12180000,
+                "contractYear": "2028",
+                "through": "2029-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.7 million / $5.8 million / $5.9 million = $17,400,000) × 0.7 school-side remaining. Start-of-year remaining = $12,180,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. File §9(b): seventy percent (70%) of Regular Compensation (Base + media) for the unexpired Term. PDF: https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
+              },
+              {
+                "asOf": "2029-02-01",
+                "remaining": 8190000,
+                "contractYear": "2029",
+                "through": "2030-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.8 million / $5.9 million = $11,700,000) × 0.7 school-side remaining. Start-of-year remaining = $8,190,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. File §9(b): seventy percent (70%) of Regular Compensation (Base + media) for the unexpired Term. PDF: https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
+              },
+              {
+                "asOf": "2030-02-01",
+                "remaining": 4130000,
+                "contractYear": "2030",
+                "through": "2031-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.9 million = $5,900,000) × 0.7 school-side remaining. Start-of-year remaining = $4,130,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. File §9(b): seventy percent (70%) of Regular Compensation (Base + media) for the unexpired Term. PDF: https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf"
+              }
+            ]
           },
           "contractUrl": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf",
           "contract": {
@@ -9626,7 +9804,16 @@
             "asOf": null,
             "notes": "Signed EA is 80% of remaining Base + Supplemental — we do not invent the remainder. Kelly’s paid buyout lives on the tape.",
             "rule": "80% remaining Base + Supplemental, no mitigate/offset.",
-            "coachSide": "Coach-side LD: $7M / $6M / $5M / $3M / $2M / $1.5M by calendar year through 2031; 50% if Verge Ausberry is not AD."
+            "coachSide": "Coach-side LD: $7M / $6M / $5M / $3M / $2M / $1.5M by calendar year through 2031; 50% if Verge Ausberry is not AD.",
+            "steps": [
+              {
+                "asOf": null,
+                "remaining": null,
+                "contractYear": "through Jan. 31, 2033",
+                "through": "2033-01-31",
+                "notes": "If LSU terminates without cause: 80% of remaining Base + Supplemental, paid monthly through Jan. 31, 2033. The signed EA does not publish a dollar staircase. Dollar pending — we will not invent 80% × remaining years from the old term sheet or from USA TODAY."
+              }
+            ]
           },
           "contractUrl": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf",
           "contract": {
@@ -15981,13 +16168,50 @@
             "baseOnly": null
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
+            "value": 26250000,
+            "confidence": "estimated",
             "source": "Clarion Ledger / Daily Journal, quoting Golding term sheet with the Ole Miss Athletic Foundation",
             "url": "https://www.clarionledger.com/story/sports/college/ole-miss/2026/07/01/pete-golding-contract-salary-ole-miss-football-coach/90754060007/",
-            "asOf": null,
-            "notes": "75% of remaining OMAF annual compensation through the unexpired term — we do not invent the remainder. Kiffin’s paid buyout lives on the tape.",
-            "rule": "75% of remaining OMAF annual compensation through the otherwise unexpired term (article quoting term sheet)."
+            "asOf": "2026-01-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "rule": "75% of remaining OMAF annual compensation through the otherwise unexpired term (article quoting term sheet).",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 26250000,
+                "contractYear": "Y1 (2026)",
+                "through": "2026-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($6.8 million / $6.9 million / $7.0 million / $7.1 million / $7.2 million = $35,000,000) × 0.75 school-side remaining. Start-of-year remaining = $26,250,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the OMAF term sheet (Y1–5). Source: https://www.clarionledger.com/story/sports/college/ole-miss/2026/07/01/pete-golding-contract-salary-ole-miss-football-coach/90754060007/"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 21150000,
+                "contractYear": "Y2 (2027)",
+                "through": "2027-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($6.9 million / $7.0 million / $7.1 million / $7.2 million = $28,200,000) × 0.75 school-side remaining. Start-of-year remaining = $21,150,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the OMAF term sheet (Y1–5). Source: https://www.clarionledger.com/story/sports/college/ole-miss/2026/07/01/pete-golding-contract-salary-ole-miss-football-coach/90754060007/"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 15975000,
+                "contractYear": "Y3 (2028)",
+                "through": "2028-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.0 million / $7.1 million / $7.2 million = $21,300,000) × 0.75 school-side remaining. Start-of-year remaining = $15,975,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the OMAF term sheet (Y1–5). Source: https://www.clarionledger.com/story/sports/college/ole-miss/2026/07/01/pete-golding-contract-salary-ole-miss-football-coach/90754060007/"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 10725000,
+                "contractYear": "Y4 (2029)",
+                "through": "2029-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.1 million / $7.2 million = $14,300,000) × 0.75 school-side remaining. Start-of-year remaining = $10,725,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the OMAF term sheet (Y1–5). Source: https://www.clarionledger.com/story/sports/college/ole-miss/2026/07/01/pete-golding-contract-salary-ole-miss-football-coach/90754060007/"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 5400000,
+                "contractYear": "Y5 (2030)",
+                "through": "2030-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.2 million = $7,200,000) × 0.75 school-side remaining. Start-of-year remaining = $5,400,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the OMAF term sheet (Y1–5). Source: https://www.clarionledger.com/story/sports/college/ole-miss/2026/07/01/pete-golding-contract-salary-ole-miss-football-coach/90754060007/"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -18980,7 +19204,24 @@
             "source": "University of Tennessee Heupel Amendment 3 PDF",
             "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
             "asOf": null,
-            "notes": "School-side without-cause is 75% of remaining Base + Supplemental if fired on or after Dec. 15, 2025 and before Dec. 15, 2027 (50% after). We do not invent the remainder."
+            "notes": "School-side without-cause is 75% of remaining Base + Supplemental if fired on or after Dec. 15, 2025 and before Dec. 15, 2027 (50% after). We do not invent the remainder.",
+            "steps": [
+              {
+                "asOf": "2025-10-08",
+                "remaining": 37500000,
+                "contractYear": "through Dec. 15, 2027",
+                "through": "2027-12-15",
+                "notes": "If UT terminates without cause on or after Dec. 15, 2025 and before Dec. 15, 2027: 75% of remaining compensation, paid monthly through Jan. 31, 2030. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025 — the last cited figure on that 75% step. Copied from buyouts.json. PDF: https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+              },
+              {
+                "asOf": "2027-12-15",
+                "remaining": null,
+                "contractYear": "Dec. 15, 2027 – Jan. 31, 2030",
+                "through": "2030-01-31",
+                "notes": "If UT terminates without cause on or after Dec. 15, 2027 through Jan. 31, 2030: 50% of remaining compensation. Dollar pending — we will not invent 50% of a later remainder. Copied from buyouts.json. PDF: https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+              }
+            ],
+            "rule": "75% remaining Base + Supplemental before Dec. 15, 2027; 50% after. Offset; no duty to mitigate."
           },
           "contractUrl": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
           "contract": {
@@ -26748,12 +26989,69 @@
         "football": {
           "name": "Curt Cignetti",
           "pay": {
-            "value": 8300000,
+            "value": 12025000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "247Sports / Peegs.com (March 2, 2026), quoting the Feb. 4, 2026 Cignetti MOU via open records",
+            "url": "https://247sports.com/college/indiana/article/details-of-indiana-football-coach-curt-cignettis-newest-contract-that-makes-him-a-top-3-paid-coach-in-the-country-276117920/",
+            "asOf": "2026-03-02",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Year 1 (Jan. 1–Nov. 30, 2026) = base $500,000 + outside/marketing/promotional $11,525,000. AP / IU: eight-year MOU averages $13.2 million ($105.6 million). The $1,000,000 Nov. 30 retention bonus is not in this cell. Incentives not included.",
+            "breakdown": [
+              {
+                "label": "Annual base salary",
+                "value": 500000
+              },
+              {
+                "label": "Outside / marketing / promotional (Year 1)",
+                "value": 11525000
+              }
+            ],
+            "schedule": [
+              {
+                "period": "Year 1 (Jan 1–Nov 30, 2026)",
+                "value": 12025000
+              },
+              {
+                "period": "Year 2 (Dec 2, 2026–Nov 30, 2027)",
+                "value": 12075000
+              },
+              {
+                "period": "Year 3 (Dec 2, 2027–Nov 30, 2028)",
+                "value": 12125000
+              },
+              {
+                "period": "Year 4 (Dec 1, 2028–Nov 30, 2029)",
+                "value": 12175000
+              },
+              {
+                "period": "Year 5 (Dec 1, 2029–Nov 30, 2030)",
+                "value": 12225000
+              },
+              {
+                "period": "Year 6 (Dec 1, 2030–Nov 30, 2031)",
+                "value": 12275000
+              },
+              {
+                "period": "Year 7 (Dec 1, 2031–Nov 30, 2032)",
+                "value": 12325000
+              },
+              {
+                "period": "Year 8 (Dec 1, 2032–Nov 30, 2033)",
+                "value": 12375000
+              }
+            ],
+            "incentives": [
+              {
+                "label": "Retention bonus",
+                "value": 1000000,
+                "notes": "Nov. 30 each year starting 2026. Not in the annual cell. AP average $13.2M includes this."
+              },
+              {
+                "label": "CFP / Big Ten / coach-of-year ladder",
+                "notes": "FOIA MOU lists highest-in-category CFP and Big Ten bonuses. Not included in annual pay."
+              }
+            ],
+            "baseOnly": null
           },
           "buyout": {
             "value": 56700000,
@@ -31143,14 +31441,51 @@
             "baseOnly": null
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
+            "value": 30750000,
+            "confidence": "estimated",
             "source": "Detroit Free Press (Jan. 23, 2026), quoting Whittingham memorandum of understanding via FOIA",
             "url": "https://www.freep.com/story/sports/college/university-michigan/wolverines/2026/01/23/kyle-whittingham-contract-michigan-football/88318877007/",
-            "asOf": null,
-            "notes": "75% of remaining base salary if fired without cause before Jan. 31, 2031 — we do not invent the remainder. Moore’s for-cause firing is a $0 paid-buyout on the tape.",
+            "asOf": "2026-01-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
             "rule": "75% of remaining base salary through Jan. 31, 2031 (article quoting MOU).",
-            "coachSide": "Coach-side LD if Whittingham walks: $5 million before Feb. 1, 2027, then down $1 million each Feb. 1."
+            "coachSide": "Coach-side LD if Whittingham walks: $5 million before Feb. 1, 2027, then down $1 million each Feb. 1.",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 30750000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($8.0 million / $8.1 million / $8.2 million / $8.3 million / $8.4 million = $41,000,000) × 0.75 school-side remaining. Start-of-year remaining = $30,750,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Dec. 26, 2025 FOIA MOU. Source: https://www.freep.com/story/sports/college/university-michigan/wolverines/2026/01/23/kyle-whittingham-contract-michigan-football/88318877007/"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 24750000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($8.1 million / $8.2 million / $8.3 million / $8.4 million = $33,000,000) × 0.75 school-side remaining. Start-of-year remaining = $24,750,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Dec. 26, 2025 FOIA MOU. Source: https://www.freep.com/story/sports/college/university-michigan/wolverines/2026/01/23/kyle-whittingham-contract-michigan-football/88318877007/"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 18675000,
+                "contractYear": "2028",
+                "through": "2028-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($8.2 million / $8.3 million / $8.4 million = $24,900,000) × 0.75 school-side remaining. Start-of-year remaining = $18,675,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Dec. 26, 2025 FOIA MOU. Source: https://www.freep.com/story/sports/college/university-michigan/wolverines/2026/01/23/kyle-whittingham-contract-michigan-football/88318877007/"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 12525000,
+                "contractYear": "2029",
+                "through": "2029-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($8.3 million / $8.4 million = $16,700,000) × 0.75 school-side remaining. Start-of-year remaining = $12,525,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Dec. 26, 2025 FOIA MOU. Source: https://www.freep.com/story/sports/college/university-michigan/wolverines/2026/01/23/kyle-whittingham-contract-michigan-football/88318877007/"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 6300000,
+                "contractYear": "2030",
+                "through": "2031-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($8.4 million = $8,400,000) × 0.75 school-side remaining. Start-of-year remaining = $6,300,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the Dec. 26, 2025 FOIA MOU. Source: https://www.freep.com/story/sports/college/university-michigan/wolverines/2026/01/23/kyle-whittingham-contract-michigan-football/88318877007/"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -32829,14 +33164,51 @@
             "baseOnly": null
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
+            "value": 21750000,
+            "confidence": "estimated",
             "source": "Michigan State Head Football Coach Terms Sheet (Dec. 1, 2025) via WLNS",
             "url": "https://www.wlns.com/wp-content/uploads/sites/50/2025/12/Fitzgerald-terms-sheet.pdf",
-            "asOf": null,
-            "notes": "72.5% of remaining Annual Compensation, paid monthly through the unexpired term — we do not invent the remainder. Smith’s paid-buyout lives on the tape.",
+            "asOf": "2025-12-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
             "rule": "72.5% of remaining Annual Compensation, paid monthly through Jan. 31, 2031. Subject to mitigate/offset.",
-            "coachSide": "Coach-side LD starts at $6.5 million in 2026 and decreases annually to $1 million in 2030 (State News / MLive quoting the terms sheet; PDF coach-side table was not fully extractable)."
+            "coachSide": "Coach-side LD starts at $6.5 million in 2026 and decreases annually to $1 million in 2030 (State News / MLive quoting the terms sheet; PDF coach-side table was not fully extractable).",
+            "steps": [
+              {
+                "asOf": "2025-12-01",
+                "remaining": 21750000,
+                "contractYear": "YR1 (2026)",
+                "through": "2027-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.0 million / $5.5 million / $6.0 million / $6.5 million / $7.0 million = $30,000,000) × 0.725 school-side remaining. Start-of-year remaining = $21,750,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Already-parsed YR1–5 Annual Compensation table × 72.5% (terms sheet). PDF: https://www.wlns.com/wp-content/uploads/sites/50/2025/12/Fitzgerald-terms-sheet.pdf"
+              },
+              {
+                "asOf": "2027-02-01",
+                "remaining": 18125000,
+                "contractYear": "YR2",
+                "through": "2028-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.5 million / $6.0 million / $6.5 million / $7.0 million = $25,000,000) × 0.725 school-side remaining. Start-of-year remaining = $18,125,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Already-parsed YR1–5 Annual Compensation table × 72.5% (terms sheet). PDF: https://www.wlns.com/wp-content/uploads/sites/50/2025/12/Fitzgerald-terms-sheet.pdf"
+              },
+              {
+                "asOf": "2028-02-01",
+                "remaining": 14137500,
+                "contractYear": "YR3",
+                "through": "2029-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($6.0 million / $6.5 million / $7.0 million = $19,500,000) × 0.725 school-side remaining. Start-of-year remaining = $14,137,500. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Already-parsed YR1–5 Annual Compensation table × 72.5% (terms sheet). PDF: https://www.wlns.com/wp-content/uploads/sites/50/2025/12/Fitzgerald-terms-sheet.pdf"
+              },
+              {
+                "asOf": "2029-02-01",
+                "remaining": 9787500,
+                "contractYear": "YR4",
+                "through": "2030-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($6.5 million / $7.0 million = $13,500,000) × 0.725 school-side remaining. Start-of-year remaining = $9,787,500. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Already-parsed YR1–5 Annual Compensation table × 72.5% (terms sheet). PDF: https://www.wlns.com/wp-content/uploads/sites/50/2025/12/Fitzgerald-terms-sheet.pdf"
+              },
+              {
+                "asOf": "2030-02-01",
+                "remaining": 5075000,
+                "contractYear": "YR5",
+                "through": "2031-01-31",
+                "notes": "Derived from the already-on-desk compensation table ($7.0 million = $7,000,000) × 0.725 school-side remaining. Start-of-year remaining = $5,075,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Already-parsed YR1–5 Annual Compensation table × 72.5% (terms sheet). PDF: https://www.wlns.com/wp-content/uploads/sites/50/2025/12/Fitzgerald-terms-sheet.pdf"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -39012,12 +39384,48 @@
         "football": {
           "name": "Ryan Day",
           "pay": {
-            "value": 12575000,
+            "value": 12500000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "247Sports / Bucknuts (May 26, 2026), quoting Day’s FOIA employment agreement: $12.5 million basic annual compensation",
+            "url": "https://247sports.com/college/ohio-state/article/ohio-state-football-ryan-day-receives-a-bonus-after-buckeyes-academic-achievement-for-third-straight-year-286549538/",
+            "asOf": "2026-05-26",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 article quotes the public-records contract. OSU News (Feb. 2025) named the same $12.5 million total annual compensation with a $2 million base. Columbus Dispatch term sheet: base $2.0M + media $7.25M + sponsorship $1.0M + apparel $1.25M + $1.0M Jan. 31 retention. School-named $12.5M includes that retention. Academic / CFP bonuses ($450k of 2025-26 incentives cited) are not in this cell.",
+            "breakdown": [
+              {
+                "label": "Base",
+                "value": 2000000
+              },
+              {
+                "label": "Media services",
+                "value": 7250000
+              },
+              {
+                "label": "Sponsorship services",
+                "value": 1000000
+              },
+              {
+                "label": "Apparel / shoe / equipment",
+                "value": 1250000
+              },
+              {
+                "label": "Retention award (Jan. 31)",
+                "value": 1000000
+              }
+            ],
+            "schedule": null,
+            "incentives": [
+              {
+                "label": "Academic GPA bonus",
+                "value": 100000,
+                "notes": "2025-26: ~3.4 GPA triggered $100k. Not in annual pay."
+              },
+              {
+                "label": "CFP / Big Ten / coach-of-year ladder",
+                "notes": "Article lists CFP and coach-of-year bonuses. Not included in annual pay."
+              }
+            ],
+            "baseOnly": null
           },
           "buyout": {
             "value": 70916667,
@@ -40587,13 +40995,50 @@
             ]
           },
           "buyout": {
-            "value": 56733333,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025. PDF rule is 100% of remaining guaranteed + deferred. Liability/overhang, not annual spend.",
-            "rule": "100% remaining guaranteed salary + remaining deferred, monthly, subject to §6.2.e mitigation."
+            "value": 55000000,
+            "confidence": "estimated",
+            "source": "U. of Oregon BOT Mar. 7, 2025 packet — Exhibit A Amendment #3 (Lanning)",
+            "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf",
+            "asOf": "2026-02-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "rule": "100% remaining guaranteed salary + remaining deferred, monthly, subject to §6.2.e mitigation.",
+            "steps": [
+              {
+                "asOf": "2026-02-01",
+                "remaining": 55000000,
+                "contractYear": "CY5 (2026)",
+                "through": "2027-01-31",
+                "notes": "Derived from Amendment #3 §4.1 guaranteed salary ($9.6 million / $9.8 million / $10.0 million / $10.2 million / $10.4 million = $50,000,000) + §4.2 / BOT summary deferred $1,000,000 per remaining contract year ($5,000,000) = $55,000,000 × 100% (§6.2.b). Labeled derived. Replaces the USA TODAY Oct. 8, 2025 overhang ($56,733,333), which was a CY4 as-of. PDF: https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
+              },
+              {
+                "asOf": "2027-02-01",
+                "remaining": 44400000,
+                "contractYear": "CY6",
+                "through": "2028-01-31",
+                "notes": "Derived from Amendment #3 §4.1 guaranteed salary ($9.8 million / $10.0 million / $10.2 million / $10.4 million = $40,400,000) + §4.2 / BOT summary deferred $1,000,000 per remaining contract year ($4,000,000) = $44,400,000 × 100% (§6.2.b). Labeled derived. Replaces the USA TODAY Oct. 8, 2025 overhang ($56,733,333), which was a CY4 as-of. PDF: https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
+              },
+              {
+                "asOf": "2028-02-01",
+                "remaining": 33600000,
+                "contractYear": "CY7",
+                "through": "2029-01-31",
+                "notes": "Derived from Amendment #3 §4.1 guaranteed salary ($10.0 million / $10.2 million / $10.4 million = $30,600,000) + §4.2 / BOT summary deferred $1,000,000 per remaining contract year ($3,000,000) = $33,600,000 × 100% (§6.2.b). Labeled derived. Replaces the USA TODAY Oct. 8, 2025 overhang ($56,733,333), which was a CY4 as-of. PDF: https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
+              },
+              {
+                "asOf": "2029-02-01",
+                "remaining": 22600000,
+                "contractYear": "CY8",
+                "through": "2030-01-31",
+                "notes": "Derived from Amendment #3 §4.1 guaranteed salary ($10.2 million / $10.4 million = $20,600,000) + §4.2 / BOT summary deferred $1,000,000 per remaining contract year ($2,000,000) = $22,600,000 × 100% (§6.2.b). Labeled derived. Replaces the USA TODAY Oct. 8, 2025 overhang ($56,733,333), which was a CY4 as-of. PDF: https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
+              },
+              {
+                "asOf": "2030-02-01",
+                "remaining": 11400000,
+                "contractYear": "CY9",
+                "through": "2031-01-31",
+                "notes": "Derived from Amendment #3 §4.1 guaranteed salary ($10.4 million = $10,400,000) + §4.2 / BOT summary deferred $1,000,000 per remaining contract year ($1,000,000) = $11,400,000 × 100% (§6.2.b). Labeled derived. Replaces the USA TODAY Oct. 8, 2025 overhang ($56,733,333), which was a CY4 as-of. PDF: https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf"
+              }
+            ]
           },
           "contractUrl": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf",
           "contract": {
@@ -46995,14 +47440,51 @@
             "baseOnly": null
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
+            "value": 21000000,
+            "confidence": "estimated",
             "source": "Yahoo Sports / California Post (Jan. 29, 2026), quoting Chesney employment agreement",
             "url": "https://sports.yahoo.com/articles/contract-details-revealed-ucla-got-035156125.html",
-            "asOf": null,
-            "notes": "75% of remaining base salary and talent fee — we do not invent the remainder. Foster’s paid buyout lives on the tape.",
+            "asOf": "2026-01-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
             "rule": "75% of remaining base salary and talent fee, subject to mitigation (article quoting EA).",
-            "coachSide": "Coach-side LD if Chesney walks: $8M on or before Dec. 21, 2026; then $5M / $3.5M / $2M / $1M on later Dec. 31 windows through 2030."
+            "coachSide": "Coach-side LD if Chesney walks: $8M on or before Dec. 21, 2026; then $5M / $3.5M / $2M / $1M on later Dec. 31 windows through 2030.",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 21000000,
+                "contractYear": "Y1 (2026)",
+                "through": "2026-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.4 million / $5.5 million / $5.6 million / $5.7 million / $5.8 million = $28,000,000) × 0.75 school-side remaining. Start-of-year remaining = $21,000,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the EA (Y1–5 base + talent fee). Source: https://sports.yahoo.com/articles/contract-details-revealed-ucla-got-035156125.html"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 16950000,
+                "contractYear": "Y2 (2027)",
+                "through": "2027-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.5 million / $5.6 million / $5.7 million / $5.8 million = $22,600,000) × 0.75 school-side remaining. Start-of-year remaining = $16,950,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the EA (Y1–5 base + talent fee). Source: https://sports.yahoo.com/articles/contract-details-revealed-ucla-got-035156125.html"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 12825000,
+                "contractYear": "Y3 (2028)",
+                "through": "2028-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.6 million / $5.7 million / $5.8 million = $17,100,000) × 0.75 school-side remaining. Start-of-year remaining = $12,825,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the EA (Y1–5 base + talent fee). Source: https://sports.yahoo.com/articles/contract-details-revealed-ucla-got-035156125.html"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 8625000,
+                "contractYear": "Y4 (2029)",
+                "through": "2029-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.7 million / $5.8 million = $11,500,000) × 0.75 school-side remaining. Start-of-year remaining = $8,625,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the EA (Y1–5 base + talent fee). Source: https://sports.yahoo.com/articles/contract-details-revealed-ucla-got-035156125.html"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 4350000,
+                "contractYear": "Y5 (2030)",
+                "through": "2030-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.8 million = $5,800,000) × 0.75 school-side remaining. Start-of-year remaining = $4,350,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the EA (Y1–5 base + talent fee). Source: https://sports.yahoo.com/articles/contract-details-revealed-ucla-got-035156125.html"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -91593,14 +92075,51 @@
             "baseOnly": true
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
+            "value": 16125000,
+            "confidence": "estimated",
             "source": "Topeka Capital-Journal (Dec. 10, 2025), quoting Klein employment agreement released by K-State",
             "url": "https://www.cjonline.com/story/sports/college/cat-zone/2025/12/10/collin-klein-contract-kansas-state-football-salary-buyout-bonuses-chris-klieman/87702201007/",
-            "asOf": null,
-            "notes": "75% of remaining unpaid base salary — we do not invent the remainder or reuse the article’s after-season dollar table. Klieman’s paid-buyout lives on the tape.",
+            "asOf": "2026-01-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
             "rule": "75% of remaining unpaid base salary through the then-current term (article quoting EA).",
-            "coachSide": "Coach-side LD if Klein walks: $5M before Dec. 31, 2026; then $4M / $3M / $2M / $1M on later windows through Dec. 1, 2030; $0 after Dec. 2, 2030."
+            "coachSide": "Coach-side LD if Klein walks: $5M before Dec. 31, 2026; then $4M / $3M / $2M / $1M on later windows through Dec. 1, 2030; $0 after Dec. 2, 2030.",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 16125000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($4.1 million / $4.2 million / $4.3 million / $4.4 million / $4.5 million = $21,500,000) × 0.75 school-side remaining. Start-of-year remaining = $16,125,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the athletics-released EA (2026–30 base). Source: https://www.cjonline.com/story/sports/college/cat-zone/2025/12/10/collin-klein-contract-kansas-state-football-salary-buyout-bonuses-chris-klieman/87702201007/"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 13050000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($4.2 million / $4.3 million / $4.4 million / $4.5 million = $17,400,000) × 0.75 school-side remaining. Start-of-year remaining = $13,050,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the athletics-released EA (2026–30 base). Source: https://www.cjonline.com/story/sports/college/cat-zone/2025/12/10/collin-klein-contract-kansas-state-football-salary-buyout-bonuses-chris-klieman/87702201007/"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 9900000,
+                "contractYear": "2028",
+                "through": "2028-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($4.3 million / $4.4 million / $4.5 million = $13,200,000) × 0.75 school-side remaining. Start-of-year remaining = $9,900,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the athletics-released EA (2026–30 base). Source: https://www.cjonline.com/story/sports/college/cat-zone/2025/12/10/collin-klein-contract-kansas-state-football-salary-buyout-bonuses-chris-klieman/87702201007/"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 6675000,
+                "contractYear": "2029",
+                "through": "2029-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($4.4 million / $4.5 million = $8,900,000) × 0.75 school-side remaining. Start-of-year remaining = $6,675,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the athletics-released EA (2026–30 base). Source: https://www.cjonline.com/story/sports/college/cat-zone/2025/12/10/collin-klein-contract-kansas-state-football-salary-buyout-bonuses-chris-klieman/87702201007/"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 3375000,
+                "contractYear": "2030",
+                "through": "2030-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($4.5 million = $4,500,000) × 0.75 school-side remaining. Start-of-year remaining = $3,375,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the athletics-released EA (2026–30 base). Source: https://www.cjonline.com/story/sports/college/cat-zone/2025/12/10/collin-klein-contract-kansas-state-football-salary-buyout-bonuses-chris-klieman/87702201007/"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -93160,14 +93679,37 @@
             "baseOnly": true
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
+            "value": 15000000,
+            "confidence": "estimated",
             "source": "The Oklahoman (Dec. 12, 2025), quoting Morris employment agreement",
             "url": "https://www.usatoday.com/story/sports/college/cowboys/2025/12/12/eric-morris-contract-salary-buyout-details-oklahoma-state-football-coach/87726037007/",
-            "asOf": null,
-            "notes": "75% of remaining base if terminated before February 2029; a lower remaining-percent thereafter. We do not invent the remainder or pick 60% vs 65% without the file. Gundy’s paid buyout lives on the tape.",
+            "asOf": "2026-01-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
             "rule": "75% of remaining base if terminated before February 2029; a lower remaining-percent thereafter (article quoting EA).",
-            "coachSide": "Coach-side LD if Morris walks: $7M through Jan. 31, 2027; then $4M / $3M / $1M / $0 on later Feb. 1 windows."
+            "coachSide": "Coach-side LD if Morris walks: $7M through Jan. 31, 2027; then $4M / $3M / $1M / $0 on later Feb. 1 windows.",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 15000000,
+                "contractYear": "2026",
+                "through": "2027-01-31",
+                "notes": "Derived from the already-on-desk base table ($3.8 million / $3.9 million / $4.0 million / $4.1 million / $4.2 million = $20,000,000) × 75% (article: 75% of remaining base if terminated before February 2029). Start-of-year remaining = $15,000,000. Labeled derived. Later-year percent (60 vs 65 after Feb. 2029) is not on a file — no step after this window. Source: https://www.usatoday.com/story/sports/college/cowboys/2025/12/12/eric-morris-contract-salary-buyout-details-oklahoma-state-football-coach/87726037007/"
+              },
+              {
+                "asOf": "2027-02-01",
+                "remaining": 12150000,
+                "contractYear": "2027",
+                "through": "2028-01-31",
+                "notes": "Derived from the already-on-desk base table ($3.9 million / $4.0 million / $4.1 million / $4.2 million = $16,200,000) × 75% (article: 75% of remaining base if terminated before February 2029). Start-of-year remaining = $12,150,000. Labeled derived. Later-year percent (60 vs 65 after Feb. 2029) is not on a file — no step after this window. Source: https://www.usatoday.com/story/sports/college/cowboys/2025/12/12/eric-morris-contract-salary-buyout-details-oklahoma-state-football-coach/87726037007/"
+              },
+              {
+                "asOf": "2028-02-01",
+                "remaining": 9225000,
+                "contractYear": "2028",
+                "through": "2029-01-31",
+                "notes": "Derived from the already-on-desk base table ($4.0 million / $4.1 million / $4.2 million = $12,300,000) × 75% (article: 75% of remaining base if terminated before February 2029). Start-of-year remaining = $9,225,000. Labeled derived. Later-year percent (60 vs 65 after Feb. 2029) is not on a file — no step after this window. Source: https://www.usatoday.com/story/sports/college/cowboys/2025/12/12/eric-morris-contract-salary-buyout-details-oklahoma-state-football-coach/87726037007/"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -98967,13 +99509,50 @@
             "baseOnly": null
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
+            "value": 20250000,
+            "confidence": "estimated",
             "source": "Deseret News (March 20, 2026), quoting Scalley employment agreement via public records",
             "url": "https://www.deseret.com/sports/2026/03/20/morgan-scalley-utah-football-coach-contract-details/",
-            "asOf": null,
-            "notes": "75% of remaining Base + Outfitter + MMR for each year (or partial year, prorated) — we do not invent the remainder.",
-            "rule": "75% of remaining Base Salary, Outfitter Payment, and MMR Payment through the remainder of the term (article quoting EA)."
+            "asOf": "2026-01-01",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "rule": "75% of remaining Base Salary, Outfitter Payment, and MMR Payment through the remainder of the term (article quoting EA).",
+            "steps": [
+              {
+                "asOf": "2026-01-01",
+                "remaining": 20250000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.1 million / $5.25 million / $5.4 million / $5.55 million / $5.7 million = $27,000,000) × 0.75 school-side remaining. Start-of-year remaining = $20,250,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the FOIA EA (2026–30 Base + Outfitter + MMR). Source: https://www.deseret.com/sports/2026/03/20/morgan-scalley-utah-football-coach-contract-details/"
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 16425000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.25 million / $5.4 million / $5.55 million / $5.7 million = $21,900,000) × 0.75 school-side remaining. Start-of-year remaining = $16,425,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the FOIA EA (2026–30 Base + Outfitter + MMR). Source: https://www.deseret.com/sports/2026/03/20/morgan-scalley-utah-football-coach-contract-details/"
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 12487500,
+                "contractYear": "2028",
+                "through": "2028-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.4 million / $5.55 million / $5.7 million = $16,650,000) × 0.75 school-side remaining. Start-of-year remaining = $12,487,500. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the FOIA EA (2026–30 Base + Outfitter + MMR). Source: https://www.deseret.com/sports/2026/03/20/morgan-scalley-utah-football-coach-contract-details/"
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 8437500,
+                "contractYear": "2029",
+                "through": "2029-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.55 million / $5.7 million = $11,250,000) × 0.75 school-side remaining. Start-of-year remaining = $8,437,500. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the FOIA EA (2026–30 Base + Outfitter + MMR). Source: https://www.deseret.com/sports/2026/03/20/morgan-scalley-utah-football-coach-contract-details/"
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 4275000,
+                "contractYear": "2030",
+                "through": "2030-12-31",
+                "notes": "Derived from the already-on-desk compensation table ($5.7 million = $5,700,000) × 0.75 school-side remaining. Start-of-year remaining = $4,275,000. Labeled derived — not a published remaining-dollar line. Full remaining years; this desk does not mint a mid-year proration. Article quoting the FOIA EA (2026–30 Base + Outfitter + MMR). Source: https://www.deseret.com/sports/2026/03/20/morgan-scalley-utah-football-coach-contract-details/"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
