@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-27",
-    "itemCount": 219,
+    "itemCount": 231,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,186 @@
     ]
   },
   "items": [
+    {
+      "id": "missouri-pay-drinkwitz-2026-ea",
+      "date": "2025-12-01",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "contract",
+      "headline": "Drinkwitz restated EA year table: $10,250,000 for the Contract Year Jan. 16, 2026\u2013Jan. 15, 2027 (Base $500k + Non-Salary $4.05M + Publicity Rights $5.7M).",
+      "figure": 10250000,
+      "confidence": "reported",
+      "source": {
+        "label": "Missouri Drinkwitz Second Restated and Amended EA PDF",
+        "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "texas-pay-sarkisian-2026-bor",
+      "date": "2025-02-20",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "contract",
+      "headline": "UT System Feb. 2025 board packet: Sarkisian Contract Year 6 (Jan. 1\u2013Dec. 31, 2026) guaranteed compensation $11,050,000.",
+      "figure": 11050000,
+      "confidence": "reported",
+      "source": {
+        "label": "U.T. System Board of Regents Feb. 2025 agenda book",
+        "url": "https://www.utsystem.edu/sites/default/files/offices/board-of-regents/board-meetings/agenda-book-full/2-2025AB.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "texas-am-pay-elko-2026-ea",
+      "date": "2026-02-17",
+      "school": "texas-am",
+      "schoolName": "Texas A&M",
+      "kind": "contract",
+      "headline": "KBTX quotes Elko open-records EA: Year 1 (Nov. 14, 2025\u2013Dec. 31, 2026) base $10,750,000.",
+      "figure": 10750000,
+      "confidence": "reported",
+      "source": {
+        "label": "KBTX \u2014 Elko open-records EA year table",
+        "url": "https://www.kbtx.com/2026/02/17/new-contract-texas-ams-mike-elko-modernized-current-college-athletics-landscap/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "nebraska-pay-rhule-2026-ea",
+      "date": "2025-10-30",
+      "school": "nebraska",
+      "schoolName": "Nebraska",
+      "kind": "contract",
+      "headline": "KETV quotes Rhule\u2019s contract: $8.5 million from Jan. 1, 2026 to Dec. 31, 2026. Through Jan. 31, 2033.",
+      "figure": 8500000,
+      "confidence": "reported",
+      "source": {
+        "label": "KETV \u2014 Rhule contract extension",
+        "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "purdue-pay-odom-2026-mou",
+      "date": "2024-12-10",
+      "school": "purdue",
+      "schoolName": "Purdue",
+      "kind": "contract",
+      "headline": "IndyStar quotes Purdue\u2019s contract-elements summary: Odom base $6 million in each of the first two seasons (2026 is year two).",
+      "figure": 6000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Indianapolis Star \u2014 Odom contract-elements summary",
+        "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "louisville-pay-brohm-2026-amendment",
+      "date": "2026-08-10",
+      "school": "louisville",
+      "schoolName": "Louisville",
+      "kind": "contract",
+      "headline": "Courier Journal quotes Brohm\u2019s signed amendment: 2026 $6.3 million ($6.55 million with retention). Through 2033.",
+      "figure": 6550000,
+      "confidence": "reported",
+      "source": {
+        "label": "Courier Journal \u2014 Brohm signed amendment",
+        "url": "https://www.courier-journal.com/story/sports/college/louisville/2026/08/13/louisville-football-coach-jeff-brohm-officially-signs-contract-extension-through-2033-uofl-cardinals/91278667007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "kansas-pay-leipold-2026-ea",
+      "date": "2023-12-01",
+      "school": "kansas",
+      "schoolName": "Kansas",
+      "kind": "contract",
+      "headline": "Leipold First Amendment PDF: May 1, 2026\u2013April 30, 2027 Professional Services $4,178,056 + Royalty $1,621,944 + $500k base = $6,300,000.",
+      "figure": 6300000,
+      "confidence": "reported",
+      "source": {
+        "label": "Kansas Athletics First Amendment to Leipold EA PDF",
+        "url": "https://lawrencekstimes.com/wp-content/uploads/2024/02/2024-Leipold-contract.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "texas-tech-pay-mcguire-2026-pia",
+      "date": "2025-12-16",
+      "school": "texas-tech",
+      "schoolName": "Texas Tech",
+      "kind": "contract",
+      "headline": "Dallas Morning News PIA records: McGuire $6.5 million starting in 2026 ($300k base + $6.2M rights fees).",
+      "figure": 6500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Dallas Morning News \u2014 McGuire PIA records",
+        "url": "https://www.dallasnews.com/sports/texas-tech-red-raiders/2025/12/16/texas-tech-joey-mcguire-extension-details-red-raiders/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "ucf-pay-frost-2026-summary",
+      "date": "2025-05-05",
+      "school": "ucf",
+      "schoolName": "UCF",
+      "kind": "contract",
+      "headline": "WESH quotes UCF Athletics Association executive summary: Frost guaranteed $4.15 million in 2026-27.",
+      "figure": 4150000,
+      "confidence": "reported",
+      "source": {
+        "label": "WESH \u2014 UCF Frost executive summary",
+        "url": "https://www.wesh.com/article/contract-details-ucf-football-coach-scott-frost/64678376"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "arizona-pay-brennan-2026-abor",
+      "date": "2026-02",
+      "school": "arizona",
+      "schoolName": "Arizona",
+      "kind": "contract",
+      "headline": "ABOR-approved Brennan extension: $4.7 million annually through 2030 ($3.8M base + $500k duties + $400k ASE).",
+      "figure": 4700000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arizona Daily Star \u2014 Brennan ABOR extension",
+        "url": "https://tucson.com/sports/college/football/wildcats/article_3a754545-872d-488b-bbf5-912ae21499db.html"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "arizona-state-pay-dillingham-2026-abor",
+      "date": "2026-02-19",
+      "school": "arizona-state",
+      "schoolName": "Arizona State",
+      "kind": "contract",
+      "headline": "AZ Central quotes ABOR files: Dillingham base $6.4 million beginning Jan. 1, 2026. Through Dec. 31, 2030.",
+      "figure": 6400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arizona Republic \u2014 ABOR Dillingham amendment",
+        "url": "https://www.azcentral.com/story/sports/college/asu/2026/02/16/asu-contract-extensions-raises-kenny-dillingham-willie-bloomquist/88693485007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "houston-pay-fritz-2026-termsheet",
+      "date": "2023-12",
+      "school": "houston",
+      "schoolName": "Houston",
+      "kind": "contract",
+      "headline": "Houston Chronicle quotes UH term sheet: Fritz $4.5 million per year through 2028. $19 million school-side if fired before Dec. 31, 2026.",
+      "figure": 4500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Houston Chronicle \u2014 Fritz term sheet",
+        "url": "https://www.houstonchronicle.com/texas-sports-nation/college/article/uh-football-willie-fritz-contract-incentives-18533360.php"
+      },
+      "field": "coaches.football.pay"
+    },
     {
       "id": "ole-miss-precap-item44-fy2025",
       "date": "2026-01-15",
