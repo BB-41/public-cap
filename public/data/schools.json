@@ -132,7 +132,17 @@
       "uw_mfrs": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
       "wisc_mfrs": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
       "isu_mfrs": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
-      "uva_mfrs": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf"
+      "uva_mfrs": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+      "om_mfrs": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+      "wiki_acc": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference",
+      "acc_990": "https://projects.propublica.org/nonprofits/organizations/560599082/202631349349301238/full",
+      "al_nike": "https://www.al.com/alabamafootball/2025/08/alabama-quietly-extended-nike-deal-details-remain-a-mystery.html",
+      "fl_jordan": "https://floridagators.com/news/2017/12/6/general-jordan-brand-welcomes-university-of-florida-to-the-family",
+      "lsu_nike": "https://lsusports.net/news/2025/12/11/lsu-athletics-announces-long-term-partnership-extension-with-nike-leads-nikes-launch-of-blue-ribbon-elite-nil-program",
+      "uo_nike": "https://nbc16.com/sports/ducks/uo-signs-new-athletic-apparel-deal-with-nike",
+      "uw_adidas": "https://www.espn.com/college-sports/story/_/id/23104808/university-washington-10-year-agreement-wear-adidas-apparel-starting-summer-2019",
+      "tx_nike": "https://www.texastribune.org/2015/10/30/ut-signs-record-apparel-deal-nike-250-million-over/",
+      "gt_hyundai": "https://apnews.com/article/georgia-tech-hyundai-bobby-dodd-stadium-naming-rights-7efc03a1c8f00edabf4b5c5e0b60b42d"
     }
   },
   "schools": [
@@ -15582,40 +15592,37 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 70300000,
-          "confidence": "estimated",
-          "source": "USA TODAY — SEC FY2025 minimum distribution to full-share members",
-          "url": "https://www.usatoday.com/story/sports/college/2026/05/22/power-4-conference-money-comparison-big-ten-sec-acc-big-12-pac-12-brett-yormark/90204563007/",
-          "asOf": "2026-05-22",
+          "value": 67592796,
+          "confidence": "reported",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report — Media Rights $49,607,055 + Conference $2,689,817 + Conference postseason $15,295,924",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "SEC floor was $70.3M. We use the school's MFRS media+conference stack so we do not double-count the floor."
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "value": 12457220,
+          "confidence": "reported",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025"
         },
         "tickets": {
-          "value": 24000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "value": 26582195,
+          "confidence": "reported",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025"
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "value": 47155567,
+          "confidence": "reported",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025"
         },
         "studentFees": {
           "value": 0,
@@ -15644,7 +15651,15 @@
           "fiscalYear": "FY2025",
           "notes": "Cited $0 on MFRS line 2 — not an invented blank."
         },
-        "subsidyNotes": "Hosted FY2025 NCAA Membership Financial Report. Student fees are the athletics slice, not tuition."
+        "subsidyNotes": "Hosted FY2025 NCAA Membership Financial Report. Student fees are the athletics slice, not tuition.",
+        "totalOperating": {
+          "value": 178621017,
+          "confidence": "reported",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report — total operating revenues",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025"
+        }
       },
       "alumni": {
         "undergradEnrollment": {
@@ -52323,13 +52338,13 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 42800000,
-          "confidence": "estimated",
-          "source": "USA TODAY / WRAL — ACC FY2025 minimum to 14 full-share football members",
-          "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
-          "asOf": "2026-05",
+          "value": 47087682,
+          "confidence": "reported",
+          "source": "Wikipedia ACC page — FY2025 Form 990 Schedule A distributions via ProPublica (ACC filing May 14, 2026)",
+          "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference",
+          "asOf": "2026-05-14",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "Named ACC 990 grant $47,087,682. Floor was $42.8M. ProPublica hosts the FY2025 Form 990 (https://projects.propublica.org/nonprofits/organizations/560599082/202631349349301238/full). We do not replace already-reported Courier-Journal / WRAL school lines."
         },
         "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
         "sponsorships": {
@@ -58220,13 +58235,13 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 42800000,
-          "confidence": "estimated",
-          "source": "USA TODAY / WRAL — ACC FY2025 minimum to 14 full-share football members",
-          "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
-          "asOf": "2026-05",
+          "value": 43601179,
+          "confidence": "reported",
+          "source": "Wikipedia ACC page — FY2025 Form 990 Schedule A distributions via ProPublica (ACC filing May 14, 2026)",
+          "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference",
+          "asOf": "2026-05-14",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "Named ACC 990 grant $43,601,179. Floor was $42.8M. ProPublica hosts the FY2025 Form 990 (https://projects.propublica.org/nonprofits/organizations/560599082/202631349349301238/full). We do not replace already-reported Courier-Journal / WRAL school lines."
         },
         "sponsorships": {
           "value": 14000000,
@@ -60049,13 +60064,13 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 42800000,
-          "confidence": "estimated",
-          "source": "USA TODAY / WRAL — ACC FY2025 minimum to 14 full-share football members",
-          "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
-          "asOf": "2026-05",
+          "value": 46052588,
+          "confidence": "reported",
+          "source": "Wikipedia ACC page — FY2025 Form 990 Schedule A distributions via ProPublica (ACC filing May 14, 2026)",
+          "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference",
+          "asOf": "2026-05-14",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "Named ACC 990 grant $46,052,588. Floor was $42.8M. ProPublica hosts the FY2025 Form 990 (https://projects.propublica.org/nonprofits/organizations/560599082/202631349349301238/full). We do not replace already-reported Courier-Journal / WRAL school lines."
         },
         "sponsorships": {
           "value": 14000000,
@@ -67234,13 +67249,13 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 42800000,
-          "confidence": "estimated",
-          "source": "USA TODAY / WRAL — ACC FY2025 minimum to 14 full-share football members",
-          "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
-          "asOf": "2026-05",
+          "value": 46304685,
+          "confidence": "reported",
+          "source": "Wikipedia ACC page — FY2025 Form 990 Schedule A distributions via ProPublica (ACC filing May 14, 2026)",
+          "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference",
+          "asOf": "2026-05-14",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "Named ACC 990 grant $46,304,685. Floor was $42.8M. ProPublica hosts the FY2025 Form 990 (https://projects.propublica.org/nonprofits/organizations/560599082/202631349349301238/full). We do not replace already-reported Courier-Journal / WRAL school lines."
         },
         "sponsorships": {
           "value": 14000000,
@@ -72700,40 +72715,37 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 42800000,
-          "confidence": "estimated",
-          "source": "USA TODAY / WRAL — ACC FY2025 minimum to 14 full-share football members",
-          "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
-          "asOf": "2026-05",
+          "value": 43196192,
+          "confidence": "reported",
+          "source": "Virginia FY2025 NCAA Membership Financial Report — Media Rights $33,681,945 + Conference $2,721,016 + Conference postseason $6,793,231",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "ACC floor was $42.8M. We use the school's MFRS media+conference stack so we do not double-count the 990 check."
         },
         "sponsorships": {
-          "value": 14000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "value": 8166062,
+          "confidence": "reported",
+          "source": "Virginia FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
+          "fiscalYear": "FY2025"
         },
         "tickets": {
-          "value": 20000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "value": 15902119,
+          "confidence": "reported",
+          "source": "Virginia FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
+          "fiscalYear": "FY2025"
         },
         "contributions": {
-          "value": 22000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "value": 34462654,
+          "confidence": "reported",
+          "source": "Virginia FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
+          "fiscalYear": "FY2025"
         },
         "studentFees": {
           "value": 17335632,
@@ -72762,7 +72774,15 @@
           "fiscalYear": "FY2025",
           "notes": "Cited $0 on MFRS line 2 — not an invented blank."
         },
-        "subsidyNotes": "Line 6 indirect institutional support $1,401,812 is not booked as direct institutional."
+        "subsidyNotes": "Line 6 indirect institutional support $1,401,812 is not booked as direct institutional.",
+        "totalOperating": {
+          "value": 155120584,
+          "confidence": "reported",
+          "source": "Virginia FY2025 NCAA Membership Financial Report — total operating revenues",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
+          "fiscalYear": "FY2025"
+        }
       },
       "alumni": {
         "undergradEnrollment": {
@@ -74171,13 +74191,13 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 42800000,
-          "confidence": "estimated",
-          "source": "USA TODAY / WRAL — ACC FY2025 minimum to 14 full-share football members",
-          "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
-          "asOf": "2026-05",
+          "value": 46546737,
+          "confidence": "reported",
+          "source": "Wikipedia ACC page — FY2025 Form 990 Schedule A distributions via ProPublica (ACC filing May 14, 2026)",
+          "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference",
+          "asOf": "2026-05-14",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "Named ACC 990 grant $46,546,737. Floor was $42.8M. ProPublica hosts the FY2025 Form 990 (https://projects.propublica.org/nonprofits/organizations/560599082/202631349349301238/full). We do not replace already-reported Courier-Journal / WRAL school lines."
         },
         "sponsorships": {
           "value": 14000000,
@@ -75791,13 +75811,13 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 42800000,
-          "confidence": "estimated",
-          "source": "USA TODAY / WRAL — ACC FY2025 minimum to 14 full-share football members",
-          "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
-          "asOf": "2026-05",
+          "value": 42814168,
+          "confidence": "reported",
+          "source": "Wikipedia ACC page — FY2025 Form 990 Schedule A distributions via ProPublica (ACC filing May 14, 2026)",
+          "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference",
+          "asOf": "2026-05-14",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "Named ACC 990 grant $42,814,168. Floor was $42.8M. ProPublica hosts the FY2025 Form 990 (https://projects.propublica.org/nonprofits/organizations/560599082/202631349349301238/full). We do not replace already-reported Courier-Journal / WRAL school lines."
         },
         "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
         "sponsorships": {

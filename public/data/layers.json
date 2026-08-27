@@ -161,12 +161,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Nike",
+          "confidence": "reported",
+          "source": "AL.com (Aug. 27, 2025) \u2014 AD Greg Byrne: Alabama extended Nike \u201ca few years ago\u201d; current terms not public",
+          "url": "https://www.al.com/alabamafootball/2025/08/alabama-quietly-extended-nike-deal-details-remain-a-mystery.html",
+          "asOf": "2025-08-27",
+          "notes": "Brand only. Byrne said the extension is not available for public inspection. The 2013 deal\u2019s $5.25M AAV expired June 30, 2025 and is not copied onto the current cell."
         },
         "annualValue": {
           "value": null,
@@ -528,12 +528,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Jordan Brand (Nike)",
+          "confidence": "reported",
+          "source": "Florida Athletics (Dec. 6, 2017) \u2014 Jordan Brand outfits football and men\u2019s/women\u2019s basketball from 2018\u201319",
+          "url": "https://floridagators.com/news/2017/12/6/general-jordan-brand-welcomes-university-of-florida-to-the-family",
+          "asOf": "2017-12-06",
+          "notes": "School release names the current on-field brand. No guaranteed cash+product AAV on this desk. Fanatics licensed-merchandise guarantee is not the outfitter AAV."
         },
         "annualValue": {
           "value": null,
@@ -639,12 +639,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Nike",
+          "confidence": "reported",
+          "source": "Wikipedia Georgia Bulldogs football infobox \u2014 Outfitter: Nike. Athens Banner-Herald (Jan. 30, 2026) discusses 2026 jersey-patch talks on the current Bulldog uniform",
+          "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/01/30/georgia-football-corporate-logos-josh-brooks/88421369007/",
+          "asOf": "2026-01-30",
+          "notes": "Brand only. The 2015 Banner-Herald FOIA ($40.8M through June 30, 2024) expired and is not copied onto this cell."
         },
         "annualValue": {
           "value": null,
@@ -925,12 +925,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Nike",
+          "confidence": "reported",
+          "source": "LSU Athletics (Dec. 11, 2025) \u2014 long-term Nike extension through 2036; Nike newsroom same day",
+          "url": "https://lsusports.net/news/2025/12/11/lsu-athletics-announces-long-term-partnership-extension-with-nike-leads-nikes-launch-of-blue-ribbon-elite-nil-program",
+          "asOf": "2025-12-11",
+          "notes": "Official release names the brand and through-year, not a cash+product AAV. We do not book a third-party $4.75M+$1M figure that the school release does not print."
         },
         "annualValue": {
           "value": null,
@@ -1706,12 +1706,12 @@
           "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 16666667,
+          "confidence": "estimated",
+          "source": "Texas Tribune / AP \u2014 UT System Board of Regents approved a 15-year, $250 million Nike licensing and apparel contract (Oct. 30, 2015)",
+          "url": "https://www.texastribune.org/2015/10/30/ut-signs-record-apparel-deal-nike-250-million-over/",
+          "asOf": "2015-10-30",
+          "notes": "Tribune: $250 million over 15 years, \u201caverages more than $16 million per year.\u201d AAV $16,666,667 if spread flat, labeled estimated. Story also names a $20 million up-front cash payment plus $6.5 million annual cash; product and the Kevin Durant line sit in the $250 million lump. 15-year term from 2015 is still the cited current deal on this desk."
         },
         "naming": [],
         "notes": null
@@ -3309,20 +3309,19 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Nike",
+          "confidence": "reported",
+          "source": "NBC 16 / KVAL \u2014 Oregon Board of Trustees approved the 11-year Nike multi-sport apparel agreement (Dec. 8, 2017) through May 31, 2028",
+          "url": "https://nbc16.com/sports/ducks/uo-signs-new-athletic-apparel-deal-with-nike",
+          "asOf": "2017-12-08"
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 8000000,
+          "confidence": "estimated",
+          "source": "AP / Oregonian \u2014 $88 million cash+gear over 11 years. Board approved Dec. 8, 2017 (UO trustees adopted-motions list; NBC 16/KVAL).",
+          "url": "https://apnews.com/general-news-462ca17443ae44428ec8dc67f5508bcb",
+          "asOf": "2017-12-08",
+          "notes": "AP: $88 million over 11 years. AAV $8.0 million if spread flat, labeled estimated. Same stories name $2.0\u20132.5 million annual cash (rising to $2.5 million through 2028) and $5\u20136 million annual product (to $6 million in 2022\u201323), plus a $3 million signing bonus not in this AAV. Through May 31, 2028."
         },
         "naming": [],
         "notes": null
@@ -4028,20 +4027,19 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "ESPN (2018) \u2014 10-year Adidas agreement beginning summer 2019 after 20 years with Nike",
+          "url": "https://www.espn.com/college-sports/story/_/id/23104808/university-washington-10-year-agreement-wear-adidas-apparel-starting-summer-2019",
+          "asOf": "2018"
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 11955000,
+          "confidence": "reported",
+          "source": "ESPN \u2014 Adidas pays Washington $5.275 million cash + $5.58 million product + $1.1 million marketing annually (\u201calmost $12 million\u201d)",
+          "url": "https://www.espn.com/college-sports/story/_/id/23104808/university-washington-10-year-agreement-wear-adidas-apparel-starting-summer-2019",
+          "asOf": "2018",
+          "notes": "Named annual pieces, not a guessed lump. $5,275,000 + $5,580,000 + $1,100,000 = $11,955,000. Championship bonuses up to $500,000 are not in this AAV. 10-year term from summer 2019."
         },
         "naming": [],
         "notes": null
@@ -4739,7 +4737,19 @@
           "asOf": "2026-07",
           "notes": "AJC: nearly six times the prior Adidas AAV. Dollar is a newsroom figure, not the contract PDF."
         },
-        "naming": [],
+        "naming": [
+          {
+            "facility": "Bobby Dodd Stadium at Hyundai Field",
+            "sponsor": "Hyundai Motor America",
+            "annualValue": 2750000,
+            "term": "20 years / ~$55M (field name; 10-year initial + two 5-year renewals)",
+            "confidence": "estimated",
+            "source": "AP / Atlanta Journal-Constitution \u2014 Board of Regents: Hyundai pays about $55 million over 20 years for the field name",
+            "url": "https://apnews.com/article/georgia-tech-hyundai-bobby-dodd-stadium-naming-rights-7efc03a1c8f00edabf4b5c5e0b60b42d",
+            "asOf": "2023-08-08",
+            "notes": "Field name, not the stadium bowl (still Bobby Dodd Stadium). AAV $2.75 million if $55 million / 20, labeled estimated. AJC: another $15 million-plus in separate Hyundai sponsorships is not in this AAV."
+          }
+        ],
         "notes": null
       },
       "subsidy": {

@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-27",
-    "itemCount": 98,
+    "itemCount": 212,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,186 @@
     ]
   },
   "items": [
+    {
+      "id": "oregon-apparel-nike-2017-12-08",
+      "date": "2017-12-08",
+      "school": "oregon",
+      "schoolName": "Oregon",
+      "kind": "apparel",
+      "headline": "Oregon Board of Trustees approved an 11-year Nike deal. AP: $88 million cash+gear (~$8.0 million AAV if spread flat).",
+      "figure": 8000000,
+      "confidence": "estimated",
+      "source": {
+        "label": "AP \u2014 Oregon $88 million Nike apparel agreement",
+        "url": "https://apnews.com/general-news-462ca17443ae44428ec8dc67f5508bcb"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "washington-apparel-adidas-2018",
+      "date": "2018",
+      "school": "washington",
+      "schoolName": "Washington",
+      "kind": "apparel",
+      "headline": "ESPN: Washington\u2019s 10-year Adidas deal is $5.275 million cash + $5.58 million product + $1.1 million marketing ($11.955 million AAV).",
+      "figure": 11955000,
+      "confidence": "reported",
+      "source": {
+        "label": "ESPN \u2014 Washington 10-year Adidas agreement",
+        "url": "https://www.espn.com/college-sports/story/_/id/23104808/university-washington-10-year-agreement-wear-adidas-apparel-starting-summer-2019"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "texas-apparel-nike-2015-10-30",
+      "date": "2015-10-30",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "apparel",
+      "headline": "Texas Tribune: UT System regents approved a 15-year, $250 million Nike deal (~$16.7 million AAV if spread flat).",
+      "figure": 16666667,
+      "confidence": "estimated",
+      "source": {
+        "label": "Texas Tribune \u2014 UT Nike $250 million / 15 years",
+        "url": "https://www.texastribune.org/2015/10/30/ut-signs-record-apparel-deal-nike-250-million-over/"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "georgia-tech-naming-hyundai-2023-08-08",
+      "date": "2023-08-08",
+      "school": "georgia-tech",
+      "schoolName": "Georgia Tech",
+      "kind": "naming",
+      "headline": "AP / AJC: Board of Regents approve Bobby Dodd Stadium at Hyundai Field \u2014 about $55 million over 20 years (~$2.75 million AAV). Field name, not the bowl.",
+      "figure": 2750000,
+      "confidence": "estimated",
+      "source": {
+        "label": "AP \u2014 Georgia Tech Hyundai field naming",
+        "url": "https://apnews.com/article/georgia-tech-hyundai-bobby-dodd-stadium-naming-rights-7efc03a1c8f00edabf4b5c5e0b60b42d"
+      },
+      "field": "layers.apparel.naming"
+    },
+    {
+      "id": "ole-miss-mfrs-media-2026-01-15",
+      "date": "2026-01-15",
+      "school": "ole-miss",
+      "schoolName": "Ole Miss",
+      "kind": "990",
+      "headline": "Ole Miss FY2025 MFRS media+conference stack: Media Rights $49,607,055 + Conference $2,689,817 + postseason $15,295,924 = $67,592,796 (was the $70.3M SEC floor).",
+      "figure": 67592796,
+      "confidence": "reported",
+      "source": {
+        "label": "Ole Miss FY2025 NCAA Membership Financial Report",
+        "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf"
+      },
+      "field": "capacity.mediaConference"
+    },
+    {
+      "id": "virginia-mfrs-media-2026-03",
+      "date": "2026-03",
+      "school": "virginia",
+      "schoolName": "Virginia",
+      "kind": "990",
+      "headline": "Virginia FY2025 MFRS media+conference stack: Media Rights $33,681,945 + Conference $2,721,016 + postseason $6,793,231 = $43,196,192 (was the $42.8M ACC floor).",
+      "figure": 43196192,
+      "confidence": "reported",
+      "source": {
+        "label": "Virginia FY2025 NCAA Membership Financial Report",
+        "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf"
+      },
+      "field": "capacity.mediaConference"
+    },
+    {
+      "id": "boston-college-acc-990-media-2026-05-14",
+      "date": "2026-05-14",
+      "school": "boston-college",
+      "schoolName": "Boston College",
+      "kind": "990",
+      "headline": "ACC FY2025 Form 990 Schedule A (ProPublica / Wikipedia table): Boston College $47,087,682 (was the $42.8M conference floor).",
+      "figure": 47087682,
+      "confidence": "reported",
+      "source": {
+        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
+      },
+      "field": "capacity.mediaConference"
+    },
+    {
+      "id": "florida-state-acc-990-media-2026-05-14",
+      "date": "2026-05-14",
+      "school": "florida-state",
+      "schoolName": "Florida State",
+      "kind": "990",
+      "headline": "ACC FY2025 Form 990 Schedule A (ProPublica / Wikipedia table): Florida State $43,601,179 (was the $42.8M conference floor).",
+      "figure": 43601179,
+      "confidence": "reported",
+      "source": {
+        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
+      },
+      "field": "capacity.mediaConference"
+    },
+    {
+      "id": "georgia-tech-acc-990-media-2026-05-14",
+      "date": "2026-05-14",
+      "school": "georgia-tech",
+      "schoolName": "Georgia Tech",
+      "kind": "990",
+      "headline": "ACC FY2025 Form 990 Schedule A (ProPublica / Wikipedia table): Georgia Tech $46,052,588 (was the $42.8M conference floor).",
+      "figure": 46052588,
+      "confidence": "reported",
+      "source": {
+        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
+      },
+      "field": "capacity.mediaConference"
+    },
+    {
+      "id": "pittsburgh-acc-990-media-2026-05-14",
+      "date": "2026-05-14",
+      "school": "pittsburgh",
+      "schoolName": "Pittsburgh",
+      "kind": "990",
+      "headline": "ACC FY2025 Form 990 Schedule A (ProPublica / Wikipedia table): Pittsburgh $46,304,685 (was the $42.8M conference floor).",
+      "figure": 46304685,
+      "confidence": "reported",
+      "source": {
+        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
+      },
+      "field": "capacity.mediaConference"
+    },
+    {
+      "id": "virginia-tech-acc-990-media-2026-05-14",
+      "date": "2026-05-14",
+      "school": "virginia-tech",
+      "schoolName": "Virginia Tech",
+      "kind": "990",
+      "headline": "ACC FY2025 Form 990 Schedule A (ProPublica / Wikipedia table): Virginia Tech $46,546,737 (was the $42.8M conference floor).",
+      "figure": 46546737,
+      "confidence": "reported",
+      "source": {
+        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
+      },
+      "field": "capacity.mediaConference"
+    },
+    {
+      "id": "wake-forest-acc-990-media-2026-05-14",
+      "date": "2026-05-14",
+      "school": "wake-forest",
+      "schoolName": "Wake Forest",
+      "kind": "990",
+      "headline": "ACC FY2025 Form 990 Schedule A (ProPublica / Wikipedia table): Wake Forest $42,814,168 (was the $42.8M conference floor).",
+      "figure": 42814168,
+      "confidence": "reported",
+      "source": {
+        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
+      },
+      "field": "capacity.mediaConference"
+    },
     {
       "id": "wisconsin-apparel-under-armour-2025-11-25",
       "date": "2025-11-25",
@@ -20,7 +200,7 @@
       "figure": 7000000,
       "confidence": "reported",
       "source": {
-        "label": "UW System Board of Regents — Nov. 25, 2025 special meeting packet",
+        "label": "UW System Board of Regents \u2014 Nov. 25, 2025 special meeting packet",
         "url": "https://www.wisconsin.edu/regents/download/meeting_materials/2025_meeting_materials/Meeting-Book---Special-Meeting-of-the-Board-of-Regents-(November-25,-2025).pdf"
       },
       "field": "layers.apparel.annualValue"
@@ -31,11 +211,11 @@
       "school": "kentucky",
       "schoolName": "Kentucky",
       "kind": "apparel",
-      "headline": "UW Board of Regents packet names Kentucky’s ten-year Nike renewal: $7 million annual product allowance (to $7.5 million in year five), no cash.",
+      "headline": "UW Board of Regents packet names Kentucky\u2019s ten-year Nike renewal: $7 million annual product allowance (to $7.5 million in year five), no cash.",
       "figure": 7000000,
       "confidence": "reported",
       "source": {
-        "label": "UW System Board of Regents — Nov. 25, 2025 special meeting packet",
+        "label": "UW System Board of Regents \u2014 Nov. 25, 2025 special meeting packet",
         "url": "https://www.wisconsin.edu/regents/download/meeting_materials/2025_meeting_materials/Meeting-Book---Special-Meeting-of-the-Board-of-Regents-(November-25,-2025).pdf"
       },
       "field": "layers.apparel.annualValue"
@@ -50,7 +230,7 @@
       "figure": 1850000,
       "confidence": "reported",
       "source": {
-        "label": "Arkansas Democrat-Gazette — college stadium naming census",
+        "label": "Arkansas Democrat-Gazette \u2014 college stadium naming census",
         "url": "https://www.arkansasonline.com/news/2026/jun/25/arkansas-football-stadium-naming-rights-deal-community-america-razorback-stadium-value/"
       },
       "field": "layers.apparel.naming"
@@ -61,11 +241,11 @@
       "school": "indiana",
       "schoolName": "Indiana",
       "kind": "contract",
-      "headline": "247Sports publishes Curt Cignetti’s Feb. 4, 2026 FOIA MOU: $12.025 million in 2026 (base $500k + promotional $11.525M). AP/IU average is $13.2 million including a $1 million retention bonus left out of the year cell.",
+      "headline": "247Sports publishes Curt Cignetti\u2019s Feb. 4, 2026 FOIA MOU: $12.025 million in 2026 (base $500k + promotional $11.525M). AP/IU average is $13.2 million including a $1 million retention bonus left out of the year cell.",
       "figure": 12025000,
       "confidence": "reported",
       "source": {
-        "label": "247Sports / Peegs.com — Cignetti Feb. 4, 2026 MOU via open records",
+        "label": "247Sports / Peegs.com \u2014 Cignetti Feb. 4, 2026 MOU via open records",
         "url": "https://247sports.com/college/indiana/article/details-of-indiana-football-coach-curt-cignettis-newest-contract-that-makes-him-a-top-3-paid-coach-in-the-country-276117920/"
       },
       "field": "coaches.football.pay"
@@ -76,11 +256,11 @@
       "school": "alabama",
       "schoolName": "Alabama",
       "kind": "contract",
-      "headline": "CBS Sports: Alabama trustees approve Kalen DeBoer’s seven-year extension at $12.5 million annual salary through 2033. School-side without-cause is 90% remaining, no mitigate — dollar overhang left pending.",
+      "headline": "CBS Sports: Alabama trustees approve Kalen DeBoer\u2019s seven-year extension at $12.5 million annual salary through 2033. School-side without-cause is 90% remaining, no mitigate \u2014 dollar overhang left pending.",
       "figure": 12500000,
       "confidence": "reported",
       "source": {
-        "label": "CBS Sports — DeBoer trustee compensation announcement",
+        "label": "CBS Sports \u2014 DeBoer trustee compensation announcement",
         "url": "https://www.cbssports.com/college-football/news/kalen-deboer-alabama-contract-extension-salary/"
       },
       "field": "coaches.football.pay"
@@ -91,11 +271,11 @@
       "school": "ohio-state",
       "schoolName": "Ohio State",
       "kind": "contract",
-      "headline": "247Sports quotes Ryan Day’s FOIA employment agreement: $12.5 million basic annual compensation through 2031. Academic / CFP bonuses stay out of the year cell.",
+      "headline": "247Sports quotes Ryan Day\u2019s FOIA employment agreement: $12.5 million basic annual compensation through 2031. Academic / CFP bonuses stay out of the year cell.",
       "figure": 12500000,
       "confidence": "reported",
       "source": {
-        "label": "247Sports / Bucknuts — Day EA via public records",
+        "label": "247Sports / Bucknuts \u2014 Day EA via public records",
         "url": "https://247sports.com/college/ohio-state/article/ohio-state-football-ryan-day-receives-a-bonus-after-buckeyes-academic-achievement-for-third-straight-year-286549538/"
       },
       "field": "coaches.football.pay"
