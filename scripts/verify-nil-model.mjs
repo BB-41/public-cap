@@ -137,6 +137,8 @@ const expect990 = {
   louisville: [545833],
   alabama: [10000],
   washington: [2803276],
+  'south-carolina': [2735455],
+  missouri: [13000],
 }
 for (const [id, values] of Object.entries(expect990)) {
   const rows = rawById[id]?.nil?.collective990 || []

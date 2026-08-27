@@ -229,9 +229,11 @@ export default function Methods({ meta }) {
         booked when the 990 named the line: Classic City Collective (Georgia, 501(c)(6))
         $2,214,518 NIL payments (2023); 502Circle (Louisville) $545,833 athlete fees
         (2023); Walk of Champions (Alabama) $10,000 appearance fees (2023); Montlake
-        Futures Fund (Washington) $2,803,276 appearance fees (year ended June 30, 2023).
-        Ohio State / Tennessee / LSU / Florida / Michigan / Oregon and other well-known
-        collectives stay empty unless a public 990 names an athlete-pay line.
+        Futures Fund (Washington) $2,803,276 appearance fees (year ended June 30, 2023);
+        Garnet Trust Foundation (South Carolina) $2,735,455 NIL PAYMENTS (2023); Every
+        True Tiger Foundation (Missouri) $13,000 name, image, and likeness (short year
+        2022). Ohio State / Tennessee / LSU / Florida / Michigan / Oregon and other
+        well-known collectives stay empty unless a public 990 names an athlete-pay line.
       </p>
 
       <h2>Modeled NIL (conference heuristic)</h2>

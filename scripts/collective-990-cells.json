@@ -126,6 +126,36 @@
       "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Short year from formation Feb. 2, 2023. Yea Alabama / Higher Ground LLC dollars are not on a public 990 and are not booked."
     }
   ],
+  "south-carolina": [
+    {
+      "value": 2735455,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Garnet Trust Foundation (EIN 92-0463073), calendar 2023, via ProPublica Nonprofit Explorer. Part IX other expense: NIL PAYMENTS $2,735,455.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/920463073/202433209349305903/IRS990",
+      "asOf": "2024-11-15",
+      "taxYear": 2023,
+      "taxPeriodEnd": "2023-12-31",
+      "organization": "Garnet Trust Foundation",
+      "ein": "92-0463073",
+      "line": "Part IX other expenses — NIL PAYMENTS",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Calendar-year return filed Nov. 15, 2024. Mission names University of South Carolina student-athletes. 2024 Part IX “PROGRAM EXPENSES” $3,545,939 is not labeled athlete pay and is not booked."
+    }
+  ],
+  "missouri": [
+    {
+      "value": 13000,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Every True Tiger Foundation (EIN 88-3960812), short year ended Dec. 31, 2022 (formed Sept. 7, 2022), via ProPublica Nonprofit Explorer. Part IX other expense: NAME, IMAGE, AND LIKENESS $13,000 (form field truncates to LIKENE).",
+      "url": "https://projects.propublica.org/nonprofits/organizations/883960812/202333199349323168/IRS990",
+      "asOf": "2023-11-15",
+      "taxYear": 2022,
+      "taxPeriodEnd": "2022-12-31",
+      "organization": "Every True Tiger Foundation",
+      "ein": "88-3960812",
+      "line": "Part IX other expenses — NAME, IMAGE, AND LIKENESS",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Short year from formation Sept. 7, 2022. Mission names Mizzou / Tiger student-athletes. Later years not on ProPublica as of the hunt."
+    }
+  ],
   "washington": [
     {
       "value": 2803276,

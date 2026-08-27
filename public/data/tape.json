@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-27",
-    "itemCount": 217,
+    "itemCount": 219,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -84,6 +84,36 @@
         "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/"
       },
       "field": "coaches.football.pay"
+    },
+    {
+      "id": "south-carolina-collective-990-2023",
+      "date": "2024-11-15",
+      "school": "south-carolina",
+      "schoolName": "South Carolina",
+      "kind": "collective-990",
+      "headline": "Garnet Trust Foundation Form 990 (EIN 92-0463073), calendar 2023: Part IX other expense NIL PAYMENTS $2,735,455. Collective 990 \u2014 not House, not Item 44.",
+      "figure": 2735455,
+      "confidence": "reported",
+      "source": {
+        "label": "ProPublica Nonprofit Explorer \u2014 Garnet Trust Foundation 2023 Form 990",
+        "url": "https://projects.propublica.org/nonprofits/organizations/920463073/202433209349305903/IRS990"
+      },
+      "field": "nil.collective990"
+    },
+    {
+      "id": "missouri-collective-990-2022",
+      "date": "2023-11-15",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "collective-990",
+      "headline": "Every True Tiger Foundation Form 990 (EIN 88-3960812), short year ended Dec. 31, 2022: Part IX other expense NAME, IMAGE, AND LIKENESS $13,000. Collective 990 \u2014 not House.",
+      "figure": 13000,
+      "confidence": "reported",
+      "source": {
+        "label": "ProPublica Nonprofit Explorer \u2014 Every True Tiger Foundation 2022 Form 990",
+        "url": "https://projects.propublica.org/nonprofits/organizations/883960812/202333199349323168/IRS990"
+      },
+      "field": "nil.collective990"
     },
     {
       "id": "oregon-apparel-nike-2017-12-08",
