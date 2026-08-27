@@ -172,7 +172,7 @@ function SchoolDrill({ school, metric, house, houseField, season, view, includeA
       ) : metric.key === 'nil' ? (
         <>
           <p className="drill-kicker">Booked</p>
-          <DrillNote field={school.nil?.booked} exact={school._ratios.nil == null ? null : moneyExact(school._ratios.nil)} empty={school.nil?.booked?.notes || 'No booked FOIA / MFRS / 990 figure.'} />
+          <DrillNote field={school.nil?.booked} exact={school._ratios.nil == null ? null : moneyExact(school._ratios.nil)} empty={school.nil?.booked?.notes || 'No booked FOIA / MFRS / counsel figure. Collective 990 is a separate lane.'} />
           <p className="drill-kicker">Modeled range</p>
           {school.nil?.modeled ? (
             <DrillNote

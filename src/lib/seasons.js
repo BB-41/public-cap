@@ -302,7 +302,7 @@ function pendingNil(notes) {
     asOf: null,
     notes:
       notes ||
-      'No booked FOIA / MFRS / collective 990 figure on the desk for this season.',
+      'No booked FOIA / MFRS / counsel figure on the desk for this season.',
   }
 }
 
@@ -479,7 +479,7 @@ export function applySeasonForNil(school, year) {
     nil.booked = pendingNil(
       year >= 2026
         ? '2026–27 booked NIL not extracted. House Year 1 (2025–26) and FY2025 MFRS cells stay on those seasons.'
-        : 'No booked FOIA / MFRS / collective 990 figure on the desk for this season.'
+        : 'No booked FOIA / MFRS / counsel figure on the desk for this season.'
     )
     delete nil.preCap
   }

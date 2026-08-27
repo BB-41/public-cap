@@ -22,7 +22,7 @@ export default function Tape({ items, season }) {
     <div className="page-wrap tape-page">
       <h1 className="issue-hed" title={defTitle('tape')}>Desk tape</h1>
       <p className="lede">
-        A dated log of filings that moved a Public Cap figure — booked NIL, contract PDFs,
+        A dated log of filings that moved a Public Cap figure — booked NIL, collective 990s, contract PDFs,
         paid buyouts, apparel and naming, student-fee subsidies, House-cap Q&amp;As.
         This is not a news feed. No portal rumor, no On3, no social.
       </p>

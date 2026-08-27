@@ -203,7 +203,7 @@ export default function StackChart({
           <DrillNote
             field={school.nil?.booked}
             exact={nil == null ? null : moneyExact(nil)}
-            empty={school.nil?.booked?.notes || 'Empty / pending. FOIA, MFRS, or collective 990 only.'}
+            empty={school.nil?.booked?.notes || 'Empty / pending. FOIA, MFRS, or counsel only. Collective 990 is a separate lane.'}
           />
           <DrillClose onClose={() => onToggle(null)} />
         </Row>

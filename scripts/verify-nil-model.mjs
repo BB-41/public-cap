@@ -128,6 +128,39 @@ if (y24.find((r) => r.school.id === 'kentucky')?.booked != null) {
   throw new Error('2024 kentucky must stay pending — do not overwrite the House-window $18M cell with an invented FY2025 $0')
 }
 
+const rawById = Object.fromEntries(data.schools.map((s) => [s.id, s]))
+const expect990 = {
+  texas: [423157, 11717673, 14540650],
+  'notre-dame': [1176862, 5129490, 10823302],
+  georgia: [2214518],
+  louisville: [545833],
+  alabama: [10000],
+  washington: [2803276],
+}
+for (const [id, values] of Object.entries(expect990)) {
+  const rows = rawById[id]?.nil?.collective990 || []
+  const got = rows.map((c) => c.value)
+  if (JSON.stringify(got) !== JSON.stringify(values)) {
+    throw new Error(`${id} collective990 ${JSON.stringify(got)} != ${JSON.stringify(values)}`)
+  }
+  if (rows.some((c) => c.confidence !== 'reported' || !c.url || !c.ein || !c.organization)) {
+    throw new Error(`${id} collective990 missing reported/url/ein/organization`)
+  }
+}
+if (rawById.louisville.nil.booked.value !== 32_900_000) throw new Error('louisville booked overwritten')
+if (rawById.texas.nil.booked.value !== 13_500_000) throw new Error('texas booked overwritten')
+if (rawById.texas.nil.preCap.value !== 3_200_000) throw new Error('texas preCap overwritten')
+if (y25.find((r) => r.school.id === 'texas')?.booked !== 13_500_000) {
+  throw new Error('2025 texas booked must stay $13.5M — collective 990 is not House')
+}
+if (y25.find((r) => r.school.id === 'notre-dame')?.booked != null) {
+  throw new Error('2025 ND booked must stay pending — FUND 990 is collective990 only')
+}
+const texas25 = y25.find((r) => r.school.id === 'texas')
+const nd990sum = (rawById['notre-dame'].nil.collective990 || []).reduce((s, c) => s + (c.value || 0), 0)
+if (texas25.booked === nd990sum) throw new Error('collective 990 leaked into booked compare')
+console.log('collective990 lane present; booked House / Item 44 cells unchanged')
+
 const nd21 = pack(2021).find((r) => r.school.id === 'notre-dame')
 const accTp = conferenceNilBand('ACC').thirdParty
 const ndTp = conferenceNilBand('Independent / ACC').thirdParty

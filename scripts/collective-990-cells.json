@@ -1,0 +1,144 @@
+{
+  "texas": [
+    {
+      "value": 423157,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Texas One Fund Inc (EIN 87-3873183), calendar 2022, via ProPublica Nonprofit Explorer. Schedule O / Part IX line 11g: Student athlete contractors $423,157.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/873873183/202333199349308883/IRS990",
+      "asOf": "2023-11-15",
+      "taxYear": 2022,
+      "taxPeriodEnd": "2022-12-31",
+      "organization": "Texas One Fund Inc",
+      "ein": "87-3873183",
+      "line": "Part IX line 11g — Student athlete contractors",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Calendar-year return filed Nov. 15, 2023."
+    },
+    {
+      "value": 11717673,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Texas One Fund Inc (EIN 87-3873183), calendar 2023, via ProPublica Nonprofit Explorer. Schedule O / Part IX line 11g: Student athlete appearances $11,717,673.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/873873183/202413239349302061/IRS990",
+      "asOf": "2024-11-19",
+      "taxYear": 2023,
+      "taxPeriodEnd": "2023-12-31",
+      "organization": "Texas One Fund Inc",
+      "ein": "87-3873183",
+      "line": "Part IX line 11g — Student athlete appearances",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Calendar-year return filed Nov. 19, 2024. Other Part IX 11g rows (Clark Field, contract/professional fees) are not athlete pay and are not booked here."
+    },
+    {
+      "value": 14540650,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Texas One Fund Inc (EIN 87-3873183), calendar 2024, via ProPublica Nonprofit Explorer. Schedule O / Part IX line 11g: Student athlete appearances $14,540,650.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/873873183/202503359349301145/IRS990",
+      "asOf": "2026-03-06",
+      "taxYear": 2024,
+      "taxPeriodEnd": "2024-12-31",
+      "organization": "Texas One Fund Inc",
+      "ein": "87-3873183",
+      "line": "Part IX line 11g — Student athlete appearances",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Calendar-year return in the IRS 2025 TEOS XML release (object 202503359349301145)."
+    }
+  ],
+  "notre-dame": [
+    {
+      "value": 1176862,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Friends of the University of Notre Dame Inc (EIN 87-4530736), calendar 2022, via ProPublica Nonprofit Explorer. Part IX other expense: Comp for NIL services perf. $1,176,862.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/874530736/202333109349303218/IRS990",
+      "asOf": "2023-11-06",
+      "taxYear": 2022,
+      "taxPeriodEnd": "2022-12-31",
+      "organization": "Friends of the University of Notre Dame Inc",
+      "ein": "87-4530736",
+      "line": "Part IX other expenses — Comp for NIL services perf.",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3) FUND collective. Calendar-year return filed Nov. 6, 2023. Grants to charities on Schedule I are not athlete pay."
+    },
+    {
+      "value": 5129490,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Friends of the University of Notre Dame Inc (EIN 87-4530736), calendar 2023, via ProPublica Nonprofit Explorer. Part IX other expense: ATHLETE SERVICE COMP. $5,129,490.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/874530736/202403169349301955/IRS990",
+      "asOf": "2024-11-11",
+      "taxYear": 2023,
+      "taxPeriodEnd": "2023-12-31",
+      "organization": "Friends of the University of Notre Dame Inc",
+      "ein": "87-4530736",
+      "line": "Part IX other expenses — ATHLETE SERVICE COMP.",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3) FUND collective. Calendar-year return filed Nov. 11, 2024. Schedule I grants to charities are not booked here."
+    },
+    {
+      "value": 10823302,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Friends of the University of Notre Dame Inc (EIN 87-4530736), calendar 2024, via ProPublica Nonprofit Explorer. Part IX other expense: ATHLETE SERVICE COMP. $10,823,302.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/874530736/202512339349301116/IRS990",
+      "asOf": "2025-08-21",
+      "taxYear": 2024,
+      "taxPeriodEnd": "2024-12-31",
+      "organization": "Friends of the University of Notre Dame Inc",
+      "ein": "87-4530736",
+      "line": "Part IX other expenses — ATHLETE SERVICE COMP.",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3) FUND collective. Calendar-year return filed Aug. 21, 2025."
+    }
+  ],
+  "georgia": [
+    {
+      "value": 2214518,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Classic City Collective Inc (EIN 93-3070490), calendar 2023, via ProPublica Nonprofit Explorer. Schedule O / Part IX line 11g: Payments for name, image, and likeness $2,214,518.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/933070490/202433199349312273/IRS990",
+      "asOf": "2024-11",
+      "taxYear": 2023,
+      "taxPeriodEnd": "2023-12-31",
+      "organization": "Classic City Collective Inc",
+      "ein": "93-3070490",
+      "line": "Part IX line 11g — Payments for name, image, and likeness",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(6) business-league return, not a 501(c)(3). Still a public Form 990. Not UGA Item 44 ($0 on FY2025 MFRS)."
+    }
+  ],
+  "louisville": [
+    {
+      "value": 545833,
+      "confidence": "reported",
+      "source": "IRS Form 990 — 502Circle NIL Collective Foundation (EIN 92-0905366), calendar 2023, via ProPublica Nonprofit Explorer. Schedule O / Part IX line 11g: Athlete fees $545,833.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/920905366/202422819349300022/IRS990",
+      "asOf": "2024-10",
+      "taxYear": 2023,
+      "taxPeriodEnd": "2023-12-31",
+      "organization": "502Circle NIL Collective Foundation",
+      "ein": "92-0905366",
+      "line": "Part IX line 11g — Athlete fees",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Does not replace Louisville’s $32.9M FOIA booked House cell."
+    }
+  ],
+  "alabama": [
+    {
+      "value": 10000,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Walk of Champions (EIN 92-2221008), calendar 2023, via ProPublica Nonprofit Explorer. Part IX other expense: Appearance fees $10,000; Part III names two student-athlete contracts.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/922221008/202401369349314385/IRS990",
+      "asOf": "2024-05-15",
+      "taxYear": 2023,
+      "taxPeriodEnd": "2023-12-31",
+      "organization": "Walk of Champions",
+      "ein": "92-2221008",
+      "line": "Part IX other expenses — Appearance fees",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Short year from formation Feb. 2, 2023. Yea Alabama / Higher Ground LLC dollars are not on a public 990 and are not booked."
+    }
+  ],
+  "washington": [
+    {
+      "value": 2803276,
+      "confidence": "reported",
+      "source": "IRS Form 990 — Montlake Futures Fund (EIN 87-3396900), year ended June 30, 2023 (TaxYr 2022), via ProPublica Nonprofit Explorer. Schedule O / Part IX line 11g: Appearance fees $2,803,276.",
+      "url": "https://projects.propublica.org/nonprofits/organizations/873396900/202401369349316405/IRS990",
+      "asOf": "2024-05",
+      "taxYear": 2022,
+      "taxPeriodEnd": "2023-06-30",
+      "organization": "Montlake Futures Fund",
+      "ein": "87-3396900",
+      "line": "Part IX line 11g — Appearance fees",
+      "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Fiscal year ends June 30 (TaxYr 2022 on the return). University of Washington student-athletes named in the mission. Not Washington’s FY2025 Item 44 $0 cell."
+    }
+  ]
+}

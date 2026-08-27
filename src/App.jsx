@@ -226,7 +226,8 @@ export default function App() {
       </Routes>
       <footer className="site-foot">
         Capacity is annual, not lifetime. Current-coach buyouts are overhang; paid buyouts are a separate tape.
-        Booked NIL stays official. Modeled NIL is a conference heuristic: House-era
+        Booked NIL stays official. Collective 990 is a separate cited lane, not House.
+        Modeled NIL is a conference heuristic: House-era
         (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era
         third-party-only backcast for 2021–24. We do not scrape On3, Opendorse, NIL Go, or social apps.
         Every figure carries a source, a date, and a confidence mark.
