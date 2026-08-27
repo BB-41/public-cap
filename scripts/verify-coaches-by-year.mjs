@@ -247,14 +247,16 @@ ok(byId.louisville.nil?.booked?.value != null, 'Louisville booked NIL untouched'
 ok(byId.kentucky.nil?.booked?.value != null, 'Kentucky booked NIL untouched')
 ok(byId.ucla.nil?.booked?.value != null, 'UCLA booked NIL untouched')
 ok(byId.california.nil?.booked?.value != null, 'Cal booked NIL untouched')
-for (const sid of ['georgia', 'tennessee', 'alabama', 'oregon', 'utah', 'north-carolina']) {
+for (const sid of ['georgia', 'tennessee', 'alabama', 'oregon', 'utah', 'north-carolina', 'ole-miss']) {
   ok(byId[sid].nil?.preCap?.value === 0, `${sid} Item 44 $0 untouched`)
 }
 ok(chair('auburn', 2026).pay.value === 6_750_000, 'Auburn 2026 Golesh file $6.75M')
 ok(!(chair('auburn', 2026).pay?.source || '').includes('USA TODAY'), 'Auburn 2026 is not USA TODAY')
 ok(chair('ohio-state', 2026).pay.value === 12_500_000, 'Ryan Day 2026 is the May 2026 FOIA cite, not a USA TODAY leftover')
 ok(!(chair('ohio-state', 2026).pay?.source || '').includes('USA TODAY'), 'Ohio State 2026 source is not USA TODAY')
-ok(byId['ohio-state'].coaches.football.pay.value === 12_575_000, 'Ryan Day current USA TODAY cell stays on current')
+ok(byId['ohio-state'].coaches.football.pay.value === 12_500_000, 'Ryan Day current is stamped from the 2026 FOIA cite')
+ok(byId.alabama.coaches.football.pay.value === 12_500_000, 'DeBoer current is stamped from the 2026 trustee cite')
+ok(byId.indiana.coaches.football.pay.value === 12_025_000, 'Cignetti current is stamped from the 2026 MOU cite')
 ok(chair('lsu', 2026).pay.value === 13_000_000, 'Kiffin $13M untouched')
 ok(chair('penn-state', 2026).pay.value === 8_000_000, 'Campbell $8.0M untouched')
 
@@ -287,8 +289,10 @@ for (const sid of stepIds) {
   ok(steps.every((st) => st.asOf && st.contractYear && st.notes), `${sid} steps carry asOf / contractYear / notes`)
   ok(steps.some((st) => st.remaining != null), `${sid} steps have remaining dollars`)
 }
-ok((byId.kentucky.coaches.football.buyout?.steps || []).length === 0, 'Kentucky keeps the 70% rule — no invented staircase')
-ok((byId['michigan-state'].coaches.football.buyout?.steps || []).length === 0, 'MSU keeps the 72.5% rule — no invented staircase')
+ok((byId.kentucky.coaches.football.buyout?.steps || []).length > 0, 'Kentucky 70% × Regular Comp table is now a derived step tape')
+ok(byId.kentucky.coaches.football.buyout.steps[0].remaining === 19_950_000, 'Stein start-of-term remaining is $19.95M')
+ok((byId['michigan-state'].coaches.football.buyout?.steps || []).length > 0, 'MSU 72.5% × YR1–5 is now a derived step tape')
+ok(byId['michigan-state'].coaches.football.buyout.steps[0].remaining === 21_750_000, 'Fitzgerald YR1 remaining is $21.75M')
 ok(byId['florida-state'].coaches.football.buyout.steps[0].remaining === 58_192_500, 'Norvell start-of-2026 remaining is $58,192,500')
 ok(byId['penn-state'].coaches.football.buyout.steps[0].remaining === 70_500_000, 'Campbell start-of-2026 remaining is $70.5M')
 

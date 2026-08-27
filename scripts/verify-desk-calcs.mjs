@@ -37,7 +37,12 @@ const byId = Object.fromEntries(data.schools.map((s) => [s.id, s]))
 // --- 1) 2026 stamps ---
 ok(byId['ohio-state'].coachesByYear['2026'].football.pay.value === 12_500_000, 'Ryan Day 2026 is the May 2026 FOIA $12.5M cite')
 ok(!isUsaToday(byId['ohio-state'].coachesByYear['2026'].football.pay), 'Day year cell is not USA TODAY')
-ok(isUsaToday(byId['ohio-state'].coaches.football.pay), 'Ryan Day current is still the 2025 USA TODAY snapshot')
+ok(byId['ohio-state'].coaches.football.pay.value === 12_500_000, 'Ryan Day current is stamped from the 2026 FOIA $12.5M cite')
+ok(!isUsaToday(byId['ohio-state'].coaches.football.pay), 'Ryan Day current is no longer the 2025 USA TODAY snapshot')
+ok(byId.alabama.coaches.football.pay.value === 12_500_000, 'DeBoer current is stamped from the 2026 trustee $12.5M cite')
+ok(!isUsaToday(byId.alabama.coaches.football.pay), 'DeBoer current is not USA TODAY')
+ok(byId.indiana.coaches.football.pay.value === 12_025_000, 'Cignetti current is stamped from the 2026 MOU $12,025,000 cite')
+ok(!isUsaToday(byId.indiana.coaches.football.pay), 'Cignetti current is not USA TODAY')
 ok(byId.indiana.coachesByYear['2026'].football.pay.value === 12_025_000, 'Cignetti $12,025,000 kept')
 ok(byId.alabama.coachesByYear['2026'].football.pay.value === 12_500_000, 'DeBoer $12.5M kept')
 ok(byId.lsu.coachesByYear['2026'].football.pay.value === 13_000_000, 'Kiffin $13M')
@@ -64,12 +69,23 @@ for (const s of data.schools) {
 ok(stamped >= 22, `stamped current-deal cites ${stamped}`)
 
 // --- 2) step tapes ---
-const STEP_IDS = ['florida-state', 'penn-state', 'clemson', 'virginia-tech', 'north-carolina', 'iowa-state']
+const PDF_STEP_IDS = ['florida-state', 'penn-state', 'clemson', 'virginia-tech', 'north-carolina', 'iowa-state']
+const DERIVED_STEP_IDS = [
+  'kentucky', 'arkansas', 'auburn', 'michigan', 'michigan-state', 'ucla',
+  'ole-miss', 'kansas-state', 'utah', 'oregon', 'florida', 'oklahoma-state',
+]
+const COPIED_STEP_IDS = ['tennessee', 'lsu']
 for (const s of data.schools) {
   const steps = s.coaches.football.buyout?.steps || []
-  if (STEP_IDS.includes(s.id)) {
+  if (PDF_STEP_IDS.includes(s.id)) {
     ok(steps.length > 0, `${s.id} step tape present`)
     ok(steps.every((st) => st.asOf && st.contractYear && st.notes && /PDF:/.test(st.notes)), `${s.id} steps labeled from the PDF`)
+  } else if (DERIVED_STEP_IDS.includes(s.id)) {
+    ok(steps.length > 0, `${s.id} derived step tape present`)
+    ok(steps.every((st) => st.asOf && st.contractYear && st.notes && st.remaining != null), `${s.id} derived steps carry asOf / contractYear / remaining / notes`)
+    ok(steps.every((st) => /Derived from|Labeled derived/i.test(st.notes)), `${s.id} steps labeled derived`)
+  } else if (COPIED_STEP_IDS.includes(s.id)) {
+    ok(steps.length > 0, `${s.id} copied existing buyouts.json steps`)
   } else {
     ok(steps.length === 0, `${s.id} has no invented staircase`)
   }
@@ -77,6 +93,13 @@ for (const s of data.schools) {
 ok(byId['florida-state'].coaches.football.buyout.steps[0].remaining === 58_192_500, 'Norvell CY7 remaining')
 ok(byId['penn-state'].coaches.football.buyout.steps[0].remaining === 70_500_000, 'Campbell 2026 remaining')
 ok((byId.kentucky.coaches.football.buyout.rule || '').includes('70%'), 'Kentucky keeps the percent rule')
+ok(byId.kentucky.coaches.football.buyout.steps[0].remaining === 19_950_000, 'Stein derived remaining $19.95M')
+ok(byId.oregon.coaches.football.buyout.steps[0].remaining === 55_000_000, 'Lanning CY5 remaining guaranteed + deferred $55M')
+ok(byId.oregon.coaches.football.buyout.value === 55_000_000, 'Oregon USAT overhang replaced by file-derived $55M')
+ok(byId['oklahoma-state'].coaches.football.buyout.steps.length === 3, 'Morris stops before the unknown post-Feb 2029 percent')
+ok(byId['oklahoma-state'].coaches.football.buyout.steps[0].remaining === 15_000_000, 'Morris 75% remaining includes later years')
+ok(byId['ole-miss'].nil.preCap.value === 0, 'Ole Miss Item 44 $0')
+ok(byId['ole-miss'].nil.booked.value == null, 'Ole Miss House booked stays pending')
 
 const fsuMerged = mergeSchoolSteps(buyouts.coaches['florida-state'], byId['florida-state'].coaches.football.buyout)
 ok(fsuMerged.tape === 'steps', 'calculator tape is steps when school steps exist')
@@ -207,6 +230,14 @@ ok(byId.houston.coachesByYear['2026'].football.pay.value === 4_500_000, 'Fritz 2
 ok(byId['south-carolina'].coachesByYear['2026'].football.pay.value == null, 'Beamer 2026 not flipped')
 ok(byId.oklahoma.coachesByYear['2026'].football.pay.value == null, 'Venables 2026 not booked from AAV')
 ok(layers.schools.lsu.buyoutsPaid.some((b) => b.coach === 'Ed Orgeron' && b.amount === 16_900_000 && b.through === '2025-12'), 'Orgeron lump through Dec 2025')
+const kellyYears = layers.schools.lsu.buyoutsPaid.filter((b) => b.coach === 'Brian Kelly')
+ok(kellyYears.length === 6 && kellyYears.every((b) => b.amount === 8_866_667), 'Kelly paid-buyout year rows 2026–31')
+ok(layers.schools.arkansas.buyoutsPaid.filter((b) => b.coach === 'Sam Pittman').length === 2, 'Pittman year rows')
+ok(layers.schools.florida.buyoutsPaid.filter((b) => b.coach === 'Billy Napier').length === 4, 'Napier year rows')
+ok(layers.schools.kentucky.buyoutsPaid.filter((b) => b.coach === 'Mark Stoops').length === 5, 'Stoops year rows')
+ok(layers.schools['penn-state'].buyoutsPaid.filter((b) => b.coach === 'James Franklin').length === 3, 'Franklin year rows')
+ok(layers.schools['virginia-tech'].buyoutsPaid.filter((b) => b.coach === 'Brent Pry').length === 2, 'Pry year rows')
+ok(layers.schools['oklahoma-state'].buyoutsPaid.filter((b) => b.coach === 'Mike Gundy').length === 3, 'Gundy year rows')
 ok(byId.pittsburgh.capacity?.studentFees?.value == null, 'Pitt student fees stay empty')
 
 const failed = checks.filter((c) => !c.ok)

@@ -157,7 +157,7 @@ if (oks.familySeries.qb.find((p) => p.year === 2024).bookedSchool !== 16_000_000
   throw new Error('oklahoma-state 2024 must use the $16M estimated preCap cell')
 }
 
-for (const id of ['georgia', 'tennessee', 'alabama', 'oregon', 'utah', 'north-carolina']) {
+for (const id of ['georgia', 'tennessee', 'alabama', 'oregon', 'utah', 'north-carolina', 'ole-miss']) {
   const row = assertSchool(id).familySeries.qb.find((p) => p.year === 2024)
   if (row.potSource !== 'booked-school' || row.bookedSchool !== 0) {
     throw new Error(`${id} 2024 must keep the cited Item 44 $0 cell as the pot`)

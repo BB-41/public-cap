@@ -332,17 +332,30 @@
       },
       "buyoutsPaid": [
         {
-          "coach": "Sam Pittman",
-          "sport": "FB",
-          "year": 2025,
-          "amount": 7700000,
           "whoPaid": "Arkansas",
           "status": "owed / being paid",
-          "confidence": "reported",
           "source": "The Athletic \u2014 settled at $7.7M over two years with no offset (headline ~$9.3M)",
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
-          "notes": null
+          "coach": "Sam Pittman",
+          "sport": "FB",
+          "year": 2025,
+          "amount": 3850000,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic $7.7 million \u00f7 2 named years. Labeled derived. Lump $7.7 million remains the cited settlement. Year cash so the table shows annual spend."
+        },
+        {
+          "whoPaid": "Arkansas",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 settled at $7.7M over two years with no offset (headline ~$9.3M)",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Sam Pittman",
+          "sport": "FB",
+          "year": 2026,
+          "amount": 3850000,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic $7.7 million \u00f7 2 named years. Labeled derived. Lump $7.7 million remains the cited settlement."
         }
       ]
     },
@@ -577,17 +590,56 @@
       },
       "buyoutsPaid": [
         {
-          "coach": "Billy Napier",
-          "sport": "FB",
-          "year": 2025,
-          "amount": 21200000,
           "whoPaid": "Florida",
           "status": "owed / being paid",
-          "confidence": "reported",
           "source": "The Athletic \u2014 $21.2M, no offset; ~50% due in 30 days then $2.5M/year through 2028",
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
-          "notes": null
+          "coach": "Billy Napier",
+          "sport": "FB",
+          "year": 2025,
+          "amount": 10600000,
+          "confidence": "estimated",
+          "notes": "Estimated first-year cash: ~50% of Athletic $21.2 million due in 30 days. Labeled derived. Then the cited $2.5 million a year through 2028. Year rows ($10.6M + $2.5M \u00d7 3 = $18.1M) do not re-total the $21.2M lump \u2014 residual unallocated."
+        },
+        {
+          "whoPaid": "Florida",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 $21.2M, no offset; ~50% due in 30 days then $2.5M/year through 2028",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Billy Napier",
+          "sport": "FB",
+          "year": 2026,
+          "amount": 2500000,
+          "confidence": "reported",
+          "notes": "Cited $2.5 million a year through 2028. Athletic lump is $21.2 million."
+        },
+        {
+          "whoPaid": "Florida",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 $21.2M, no offset; ~50% due in 30 days then $2.5M/year through 2028",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Billy Napier",
+          "sport": "FB",
+          "year": 2027,
+          "amount": 2500000,
+          "confidence": "reported",
+          "notes": "Cited $2.5 million a year through 2028. Athletic lump is $21.2 million."
+        },
+        {
+          "whoPaid": "Florida",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 $21.2M, no offset; ~50% due in 30 days then $2.5M/year through 2028",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Billy Napier",
+          "sport": "FB",
+          "year": 2028,
+          "amount": 2500000,
+          "confidence": "reported",
+          "notes": "Cited $2.5 million a year through 2028. Athletic lump is $21.2 million."
         }
       ]
     },
@@ -809,17 +861,69 @@
       },
       "buyoutsPaid": [
         {
-          "coach": "Mark Stoops",
-          "sport": "FB",
-          "year": 2025,
-          "amount": 37600000,
           "whoPaid": "Kentucky",
           "status": "owed / being paid",
-          "confidence": "reported",
           "source": "The Athletic \u2014 $37.6M guaranteed, no offset; payments stretched to April 2031 (~$6.75M/year)",
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
-          "notes": null
+          "coach": "Mark Stoops",
+          "sport": "FB",
+          "year": 2026,
+          "amount": 6750000,
+          "confidence": "estimated",
+          "notes": "Cited ~$6.75 million a year through April 2031 (Athletic $37.6 million guaranteed). Labeled derived year cash. 2025 stub and 2031 through-April remainder are not separately minted."
+        },
+        {
+          "whoPaid": "Kentucky",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 $37.6M guaranteed, no offset; payments stretched to April 2031 (~$6.75M/year)",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Mark Stoops",
+          "sport": "FB",
+          "year": 2027,
+          "amount": 6750000,
+          "confidence": "estimated",
+          "notes": "Cited ~$6.75 million a year through April 2031 (Athletic $37.6 million guaranteed). Labeled derived year cash. 2025 stub and 2031 through-April remainder are not separately minted."
+        },
+        {
+          "whoPaid": "Kentucky",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 $37.6M guaranteed, no offset; payments stretched to April 2031 (~$6.75M/year)",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Mark Stoops",
+          "sport": "FB",
+          "year": 2028,
+          "amount": 6750000,
+          "confidence": "estimated",
+          "notes": "Cited ~$6.75 million a year through April 2031 (Athletic $37.6 million guaranteed). Labeled derived year cash. 2025 stub and 2031 through-April remainder are not separately minted."
+        },
+        {
+          "whoPaid": "Kentucky",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 $37.6M guaranteed, no offset; payments stretched to April 2031 (~$6.75M/year)",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Mark Stoops",
+          "sport": "FB",
+          "year": 2029,
+          "amount": 6750000,
+          "confidence": "estimated",
+          "notes": "Cited ~$6.75 million a year through April 2031 (Athletic $37.6 million guaranteed). Labeled derived year cash. 2025 stub and 2031 through-April remainder are not separately minted."
+        },
+        {
+          "whoPaid": "Kentucky",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 $37.6M guaranteed, no offset; payments stretched to April 2031 (~$6.75M/year)",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Mark Stoops",
+          "sport": "FB",
+          "year": 2030,
+          "amount": 6750000,
+          "confidence": "estimated",
+          "notes": "Cited ~$6.75 million a year through April 2031 (Athletic $37.6 million guaranteed). Labeled derived year cash. 2025 stub and 2031 through-April remainder are not separately minted."
         }
       ]
     },
@@ -975,17 +1079,82 @@
       },
       "buyoutsPaid": [
         {
-          "coach": "Brian Kelly",
-          "sport": "FB",
-          "year": 2025,
-          "amount": 53200000,
           "whoPaid": "LSU",
           "status": "owed / being paid",
-          "confidence": "reported",
           "source": "The Athletic buyout census (Mar 3, 2026) and USA TODAY \u2014 fired without cause; school paying the full ~$53.2\u201354M over six years into 2031",
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
-          "notes": "Athletic current buyout $53.2M (offset still applies if he takes a qualifying job). USA TODAY Nov 26, 2025: school reversed a for-cause threat and said it would pay."
+          "coach": "Brian Kelly",
+          "sport": "FB",
+          "year": 2026,
+          "amount": 8866667,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic ~$53.2 million \u00f7 6 named years into 2031. Labeled derived. 6 \u00d7 $8,866,667 = $53,200,002 vs the cited $53.2 million lump. Athletic current $53.2M (offset still applies if he takes a qualifying job)."
+        },
+        {
+          "whoPaid": "LSU",
+          "status": "owed / being paid",
+          "source": "The Athletic buyout census (Mar 3, 2026) and USA TODAY \u2014 fired without cause; school paying the full ~$53.2\u201354M over six years into 2031",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Brian Kelly",
+          "sport": "FB",
+          "year": 2027,
+          "amount": 8866667,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic ~$53.2 million \u00f7 6 named years into 2031. Labeled derived. 6 \u00d7 $8,866,667 = $53,200,002 vs the cited $53.2 million lump. Athletic current $53.2M (offset still applies if he takes a qualifying job)."
+        },
+        {
+          "whoPaid": "LSU",
+          "status": "owed / being paid",
+          "source": "The Athletic buyout census (Mar 3, 2026) and USA TODAY \u2014 fired without cause; school paying the full ~$53.2\u201354M over six years into 2031",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Brian Kelly",
+          "sport": "FB",
+          "year": 2028,
+          "amount": 8866667,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic ~$53.2 million \u00f7 6 named years into 2031. Labeled derived. 6 \u00d7 $8,866,667 = $53,200,002 vs the cited $53.2 million lump. Athletic current $53.2M (offset still applies if he takes a qualifying job)."
+        },
+        {
+          "whoPaid": "LSU",
+          "status": "owed / being paid",
+          "source": "The Athletic buyout census (Mar 3, 2026) and USA TODAY \u2014 fired without cause; school paying the full ~$53.2\u201354M over six years into 2031",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Brian Kelly",
+          "sport": "FB",
+          "year": 2029,
+          "amount": 8866667,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic ~$53.2 million \u00f7 6 named years into 2031. Labeled derived. 6 \u00d7 $8,866,667 = $53,200,002 vs the cited $53.2 million lump. Athletic current $53.2M (offset still applies if he takes a qualifying job)."
+        },
+        {
+          "whoPaid": "LSU",
+          "status": "owed / being paid",
+          "source": "The Athletic buyout census (Mar 3, 2026) and USA TODAY \u2014 fired without cause; school paying the full ~$53.2\u201354M over six years into 2031",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Brian Kelly",
+          "sport": "FB",
+          "year": 2030,
+          "amount": 8866667,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic ~$53.2 million \u00f7 6 named years into 2031. Labeled derived. 6 \u00d7 $8,866,667 = $53,200,002 vs the cited $53.2 million lump. Athletic current $53.2M (offset still applies if he takes a qualifying job)."
+        },
+        {
+          "whoPaid": "LSU",
+          "status": "owed / being paid",
+          "source": "The Athletic buyout census (Mar 3, 2026) and USA TODAY \u2014 fired without cause; school paying the full ~$53.2\u201354M over six years into 2031",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Brian Kelly",
+          "sport": "FB",
+          "year": 2031,
+          "amount": 8866667,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic ~$53.2 million \u00f7 6 named years into 2031. Labeled derived. 6 \u00d7 $8,866,667 = $53,200,002 vs the cited $53.2 million lump. Athletic current $53.2M (offset still applies if he takes a qualifying job)."
         },
         {
           "coach": "Ed Orgeron",
@@ -1869,7 +2038,7 @@
           "source": "The Athletic \u2014 $77.6M 2023 firing still being paid through 2031; contract had no offset",
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
-          "notes": "Not a 2025 firing. Included because money is still actually moving."
+          "notes": "Not a 2025 firing. Included because money is still actually moving. Through 2031 (Athletic). Cite is a through-date, not a named year schedule \u2014 lump kept; no invented AAV year rows."
         }
       ]
     },
@@ -3512,17 +3681,43 @@
       },
       "buyoutsPaid": [
         {
-          "coach": "James Franklin",
-          "sport": "FB",
-          "year": 2025,
-          "amount": 9000000,
           "whoPaid": "Penn State",
           "status": "owed / being paid",
-          "confidence": "reported",
           "source": "The Athletic \u2014 settled at about $9M over three years after the Virginia Tech hire (headline max was $48.6M)",
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
-          "notes": "Wikipedia/CBS: originally ~$49M; reduced when he took Virginia Tech."
+          "coach": "James Franklin",
+          "sport": "FB",
+          "year": 2025,
+          "amount": 3000000,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic ~$9 million \u00f7 3 named years. Labeled derived. Lump about $9 million remains the cited settlement. Wikipedia/CBS: originally ~$49M; reduced when he took Virginia Tech."
+        },
+        {
+          "whoPaid": "Penn State",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 settled at about $9M over three years after the Virginia Tech hire (headline max was $48.6M)",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "James Franklin",
+          "sport": "FB",
+          "year": 2026,
+          "amount": 3000000,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic ~$9 million \u00f7 3 named years. Labeled derived. Lump about $9 million remains the cited settlement. Wikipedia/CBS: originally ~$49M; reduced when he took Virginia Tech."
+        },
+        {
+          "whoPaid": "Penn State",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 settled at about $9M over three years after the Virginia Tech hire (headline max was $48.6M)",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "James Franklin",
+          "sport": "FB",
+          "year": 2027,
+          "amount": 3000000,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic ~$9 million \u00f7 3 named years. Labeled derived. Lump about $9 million remains the cited settlement. Wikipedia/CBS: originally ~$49M; reduced when he took Virginia Tech."
         }
       ]
     },
@@ -3884,7 +4079,7 @@
           "source": "The Athletic \u2014 $7.4M current through 2028, subject to offset (Wikipedia table listed $5M)",
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
-          "notes": null
+          "notes": "Through 2028 (Athletic). Cite is a through-date, not a named year schedule \u2014 lump kept; no invented AAV year rows."
         }
       ]
     },
@@ -4387,7 +4582,7 @@
           "source": "The Athletic \u2014 $10.8M current (Wikipedia table $10.9M) through 2027, subject to offset",
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
-          "notes": null
+          "notes": "Through 2027 (Athletic). Cite is a through-date, not a named year schedule \u2014 lump kept; no invented AAV year rows."
         }
       ]
     },
@@ -5782,17 +5977,30 @@
       },
       "buyoutsPaid": [
         {
-          "coach": "Brent Pry",
-          "sport": "FB",
-          "year": 2025,
-          "amount": 3100000,
           "whoPaid": "Virginia Tech",
           "status": "owed / being paid",
-          "confidence": "reported",
           "source": "The Athletic \u2014 settled Dec 8, 2025 at $3.1M over two years after he returned as Franklin\u2019s DC (headline $6M)",
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
-          "notes": null
+          "coach": "Brent Pry",
+          "sport": "FB",
+          "year": 2025,
+          "amount": 1550000,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic $3.1 million \u00f7 2 named years. Labeled derived. Lump $3.1 million remains the cited settlement."
+        },
+        {
+          "whoPaid": "Virginia Tech",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 settled Dec 8, 2025 at $3.1M over two years after he returned as Franklin\u2019s DC (headline $6M)",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Brent Pry",
+          "sport": "FB",
+          "year": 2026,
+          "amount": 1550000,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic $3.1 million \u00f7 2 named years. Labeled derived. Lump $3.1 million remains the cited settlement."
         }
       ]
     },
@@ -7055,17 +7263,43 @@
       },
       "buyoutsPaid": [
         {
-          "coach": "Mike Gundy",
-          "sport": "FB",
-          "year": 2025,
-          "amount": 15000000,
           "whoPaid": "Oklahoma State",
           "status": "owed / being paid",
-          "confidence": "reported",
           "source": "The Athletic \u2014 $15M over three years, subject to offset",
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
-          "notes": null
+          "coach": "Mike Gundy",
+          "sport": "FB",
+          "year": 2025,
+          "amount": 5000000,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic $15 million \u00f7 3 named years. Labeled derived. Lump $15 million remains the cited total."
+        },
+        {
+          "whoPaid": "Oklahoma State",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 $15M over three years, subject to offset",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Mike Gundy",
+          "sport": "FB",
+          "year": 2026,
+          "amount": 5000000,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic $15 million \u00f7 3 named years. Labeled derived. Lump $15 million remains the cited total."
+        },
+        {
+          "whoPaid": "Oklahoma State",
+          "status": "owed / being paid",
+          "source": "The Athletic \u2014 $15M over three years, subject to offset",
+          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
+          "asOf": "2026-03-03",
+          "coach": "Mike Gundy",
+          "sport": "FB",
+          "year": 2027,
+          "amount": 5000000,
+          "confidence": "estimated",
+          "notes": "Estimated AAV: Athletic $15 million \u00f7 3 named years. Labeled derived. Lump $15 million remains the cited total."
         }
       ]
     },

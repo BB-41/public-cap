@@ -179,7 +179,7 @@ export default function Methods({ meta }) {
         with published sport lines; Oklahoma State “just over $16 million,” booked as
         $16M estimated — not $16,000,001; Texas school-FY $3.2M, only two months of
         House. Georgia, Tennessee, Alabama, Oregon, Utah, UNC, Ohio State, Illinois,
-        Minnesota, Washington, Wisconsin, Iowa State, and Virginia FY2025 Item 44 $0
+        Minnesota, Washington, Wisconsin, Iowa State, Virginia, and Ole Miss FY2025 Item 44 $0
         from the cited filings. Kentucky FY2025 $0 is not booked — no public MFRS PDF
         on the desk; the $18M counsel cell stays).
       </p>
@@ -506,7 +506,7 @@ export default function Methods({ meta }) {
         UCLA and Cal 2025, Texas 2024 pre-cap and 2025, Penn State and Oklahoma State
         2024 pre-cap, and the cited FY2025 Item 44 $0 cells at Georgia, Tennessee,
         Alabama, Oregon, Utah, UNC, Ohio State, Illinois, Minnesota, Washington,
-        Wisconsin, Iowa State, and Virginia). Else the pot is the already-on-desk school modeled band —
+        Wisconsin, Iowa State, Virginia, and Ole Miss). Else the pot is the already-on-desk school modeled band —
         the conference heuristic, not a new national model. We spread that pot with
         the existing named-player unit card and sum by position. No On3-style “QB
         market” percentages. Years without a named roster file (today: 2022 and 2025)
@@ -608,9 +608,10 @@ export default function Methods({ meta }) {
         copy of the current-chair pay object only when the names match and the
         current cell is a cited 2026 / current-deal dollar (PDF, article quoting the
         EA, or a 2026-asOf source). A 2024 or 2025 USA TODAY snapshot is not copied
-        onto 2026. Ryan Day stays empty while the current cell is the Oct. 8, 2025
-        USA TODAY number. Privates stay pending unless independently cited. Chair
-        names are not rewritten.
+        onto 2026. When the year-key already holds an independent 2026 cite and the
+        current cell is a stale USA TODAY snapshot, current is stamped from that
+        year-key (DeBoer $12.5M, Cignetti $12,025,000, Day $12.5M). Privates stay
+        pending unless independently cited. Chair names are not rewritten.
       </p>
 
       <h2>Athletics staff pay</h2>
@@ -712,7 +713,8 @@ export default function Methods({ meta }) {
         The Athletic’s March 2026 contract census, USA TODAY, or a local FOIA. Headline
         max and current/settled figures are distinguished in the notes. Jimbo Fisher’s
         2023 Texas A&amp;M deal is included because the money is still moving. Pending
-        if we do not have a cited payout.
+        if we do not have a cited payout. Paid buyouts show year cash when the
+        filing names a schedule; otherwise the firing-year lump.
       </p>
 
       <h2>Private-school gap</h2>
