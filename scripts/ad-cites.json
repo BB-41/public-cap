@@ -1,0 +1,149 @@
+{
+  "asOf": "2026-08-27",
+  "notes": "Year-pinned current-AD dollars only. USA TODAY Sports has no live athletics-director salary table on sportsdata.usatoday.com (see ad-usat/probe.json). Rows here are USA TODAY Network stories that name a dollar, or state payroll / university FOIA / board minutes that name current AD pay. Never invent. Never scrape On3 / Opendorse / NIL Go. A 2024 number is not applied to a 2026 AD who is a different person. Joe Castiglione $2.2M (USA TODAY 2024-08-29) is omitted because Oklahoma's current chair is Roger Denny.",
+  "cites": [
+    {
+      "id": "tennessee",
+      "name": "Danny White",
+      "pay": 2750000,
+      "year": 2025,
+      "asOf": "2025-07-01",
+      "source": "USA TODAY / Knox News",
+      "url": "https://www.usatoday.com/story/sports/college/2025/07/01/danny-white-highest-paid-athletic-director-tennessee-vols/84435230007/",
+      "notes": "USA TODAY Network 2024-25 base $2.75M. Story also cites $3.35M total after bonuses; stored figure is the published base. Same person as the 2026 chair.",
+      "confidence": "reported"
+    },
+    {
+      "id": "texas",
+      "name": "Chris Del Conte",
+      "pay": 2900000,
+      "year": 2026,
+      "asOf": "2025-08-18",
+      "source": "USA TODAY Network (Texas extension)",
+      "url": "https://www.usatoday.com/story/sports/ncaaf/2025/08/18/chris-del-conte-contract-extension-raise-texas-longhorns/85716568007/",
+      "notes": "USA TODAY Network: $2.9M guaranteed compensation for the 2026 fiscal year on the extension through 2036. Not the 2024-25 $2.525M snapshot.",
+      "confidence": "reported"
+    },
+    {
+      "id": "texas-am",
+      "name": "Trev Alberts",
+      "pay": 2700000,
+      "year": 2026,
+      "asOf": "2026-03-11",
+      "source": "USA TODAY Network / GigEm247 open records",
+      "url": "https://aggieswire.usatoday.com/story/sports/college/aggies/2026/03/11/texas-aggies-sports-athletic-director-trev-alberts-contract-extension-details/89105154007/",
+      "notes": "Open-records contract: Year 1 base $2.7M (Feb. 1, 2026–Jan. 31, 2027). Not the 2024 hire AAV and not a Nebraska-era number.",
+      "confidence": "reported"
+    },
+    {
+      "id": "penn-state",
+      "name": "Patrick Kraft",
+      "pay": 2260000,
+      "year": 2024,
+      "asOf": "2024-08-29",
+      "source": "USA TODAY (public-school AD comparison)",
+      "url": "https://www.usatoday.com/story/sports/college/2024/08/29/tennessee-danny-white-salary-athletic-director/74995735007/",
+      "notes": "USA TODAY 2024 snapshot: Penn State’s Pat Kraft $2.26M (base or AAV). Same person as the 2026 chair. Year-pinned to 2024; not a 2026 contract file.",
+      "confidence": "reported"
+    },
+    {
+      "id": "texas-tech",
+      "name": "Kirby Hocutt",
+      "pay": 2240000,
+      "year": 2024,
+      "asOf": "2024-08-29",
+      "source": "USA TODAY (public-school AD comparison)",
+      "url": "https://www.usatoday.com/story/sports/college/2024/08/29/tennessee-danny-white-salary-athletic-director/74995735007/",
+      "notes": "USA TODAY 2024 snapshot: Texas Tech’s Kirby Hocutt $2.24M (base or AAV). Same person as the 2026 chair. Replaces the older 2022-extension AAV on the desk.",
+      "confidence": "reported"
+    },
+    {
+      "id": "ohio-state",
+      "name": "Ross Bjork",
+      "pay": 2000000,
+      "year": 2024,
+      "asOf": "2024-08-29",
+      "source": "USA TODAY (public-school AD comparison)",
+      "url": "https://www.usatoday.com/story/sports/college/2024/08/29/tennessee-danny-white-salary-athletic-director/74995735007/",
+      "notes": "USA TODAY 2024 snapshot: Ohio State’s Ross Bjork $2M. Same person. A newer 2025 desk cite of the same dollar is not overwritten.",
+      "confidence": "reported"
+    },
+    {
+      "id": "indiana",
+      "name": "Scott Dolson",
+      "pay": 1150000,
+      "year": 2026,
+      "asOf": "2026-08-17",
+      "source": "USA TODAY Network / Herald-Times (contract amendment)",
+      "url": "https://www.heraldtimesonline.com/story/sports/college/iu/2026/08/17/indiana-athletic-director-scott-dolson-agrees-to-amended-contract-with-extension-raise/91326911007/",
+      "notes": "Documents obtained by The Herald-Times (USA TODAY Network): base $1.15M on the Nov. 25, 2025 amendment through 2031.",
+      "confidence": "reported"
+    },
+    {
+      "id": "iowa",
+      "name": "Beth Goetz",
+      "pay": 1400000,
+      "year": 2026,
+      "asOf": "2026-08-20",
+      "source": "USA TODAY Network / University of Iowa announcement",
+      "url": "https://www.desmoinesregister.com/story/sports/college/iowa/2026/08/20/iowa-athletics-director-beth-goetz-contract-extension-hawkeyes/91380178007/",
+      "notes": "University announcement via the Des Moines Register: guaranteed base $1.4M effective Sept. 1, 2026. Deferred compensation ($250k) is not added into this cell.",
+      "confidence": "reported"
+    },
+    {
+      "id": "georgia",
+      "name": "Josh Brooks",
+      "pay": 1600000,
+      "year": 2026,
+      "asOf": "2026-08-10",
+      "source": "USA TODAY Network / Athens Banner-Herald (UGA Athletic Association FOIA)",
+      "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/",
+      "notes": "Athens Banner-Herald open-records salary tape (July 2026): athletic director Josh Brooks $1.6M total pay after the December raise.",
+      "confidence": "reported"
+    },
+    {
+      "id": "illinois",
+      "name": "Josh Whitman",
+      "pay": 2150000,
+      "year": 2026,
+      "asOf": "2026-07-16",
+      "source": "University of Illinois Board of Trustees (July 16, 2026)",
+      "url": "https://www.trustees.uillinois.edu/trustees/agenda/July-16-2026/03-July-16-Amend-UIUC-Director-DIA.docx",
+      "notes": "Board-approved base $2,150,000 for 7/01/2026–6/30/2027. Retention ($500k) and performance incentives are not added into this cell. Replaces the older $1.5M 2025 desk cite.",
+      "confidence": "reported"
+    },
+    {
+      "id": "oregon",
+      "name": "Rob Mullens",
+      "pay": 1200000,
+      "year": 2026,
+      "asOf": "2025-06-23",
+      "source": "University of Oregon Board of Trustees (June 23, 2025 packet)",
+      "url": "https://trustees.uoregon.edu/sites/default/files/2025-06/june-23-bot-mtg-packet.pdf",
+      "notes": "Board packet amended agreement: Year 2 base $1,200,000 (July 1, 2026–June 30, 2027). Year 1 (2025-26) was $1,150,000. Retention payments are not added into this cell.",
+      "confidence": "reported"
+    },
+    {
+      "id": "missouri",
+      "name": "Laird Veatch",
+      "pay": 1750000,
+      "year": 2026,
+      "asOf": "2026-05-01",
+      "source": "University of Missouri Board of Curators / ABC17",
+      "url": "https://abc17news.com/sports/2026/05/01/mizzou-athletics-director-signs-new-contract-extension/",
+      "notes": "Board of Curators approved the extension in April 2026. Total annual compensation $1.75M (base + non-salary + deferred) through 2032.",
+      "confidence": "reported"
+    },
+    {
+      "id": "nebraska",
+      "name": "Troy Dannen",
+      "pay": 1600000,
+      "year": 2024,
+      "asOf": "2024-03-20",
+      "source": "KETV / University of Nebraska offer letter",
+      "url": "https://www.ketv.com/article/nebraska-athletic-director-troy-dannen-offer-letter-contract/60257040",
+      "notes": "Offer letter: $1.6M first-year salary (hired March 2024). Letter also states a $100k annual raise through March 2030; this cell stores the published first-year dollar, year-pinned to 2024, and does not recompute a 2026 step.",
+      "confidence": "reported"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "asOf": "2026-08-27",
+  "source": "USA TODAY Sports NCAA salaries",
+  "nationalIndex": "https://sportsdata.usatoday.com/ncaa/salaries/",
+  "notes": "Probed sportsdata.usatoday.com/ncaa/salaries for an athletics-director table. Live site enums are coach / assistant / strength / general-manager. general-manager is football-adjacent but is GMs, not ADs. No On3.",
+  "paths": [
+    {
+      "path": "football/athletic-director",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/athletic-director",
+      "status": 404,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/football/athletic-director"
+    },
+    {
+      "path": "football/athletics-director",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/athletics-director",
+      "status": 404,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/football/athletics-director"
+    },
+    {
+      "path": "football/ad",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/ad",
+      "status": 404,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/football/ad"
+    },
+    {
+      "path": "athletic-director/coach",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/athletic-director/coach",
+      "status": 404,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/athletic-director/coach"
+    },
+    {
+      "path": "athletics-director/coach",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/athletics-director/coach",
+      "status": 404,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/athletics-director/coach"
+    },
+    {
+      "path": "football/director",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/director",
+      "status": 404,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/football/director"
+    },
+    {
+      "path": "football/general-manager",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/general-manager",
+      "status": 200,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/football/general-manager",
+      "pageTitle": "College Football GM/Front Office Salaries",
+      "pageDate": "2025-10-23",
+      "coachTypes": {
+        "general_manager": 68
+      },
+      "nSalaries": 68,
+      "isAthleticDirectorTable": false
+    },
+    {
+      "path": "football/coach",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
+      "status": 200,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
+      "pageTitle": "College Football Head Coach Salaries",
+      "pageDate": "2025-10-08",
+      "coachTypes": {
+        "head": 136
+      },
+      "nSalaries": 136,
+      "isAthleticDirectorTable": false
+    },
+    {
+      "path": "football/assistant",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
+      "status": 200,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/football/assistant",
+      "pageTitle": "College Football Assistant Coach Salaries",
+      "pageDate": "2024-12-18",
+      "coachTypes": {
+        "assistant": 1352
+      },
+      "nSalaries": 1352,
+      "isAthleticDirectorTable": false
+    },
+    {
+      "path": "football/strength",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/strength",
+      "status": 200,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/football/strength",
+      "pageTitle": "College Football Strength Coach Salaries",
+      "pageDate": "2024-12-11",
+      "coachTypes": {
+        "strength": 133
+      },
+      "nSalaries": 133,
+      "isAthleticDirectorTable": false
+    },
+    {
+      "path": "mens-basketball/coach",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
+      "status": 200,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
+      "pageTitle": "Men's Basketball Head Coach Salaries",
+      "pageDate": "2026-04-08",
+      "coachTypes": {
+        "head": 81
+      },
+      "nSalaries": 81,
+      "isAthleticDirectorTable": false
+    },
+    {
+      "path": "womens-basketball/coach",
+      "url": "https://sportsdata.usatoday.com/ncaa/salaries/womens-basketball/coach",
+      "status": 200,
+      "final": "https://sportsdata.usatoday.com/ncaa/salaries/womens-basketball/coach",
+      "pageTitle": "Women's Basketball Head Coach Salaries",
+      "pageDate": "2024-03-13",
+      "coachTypes": {
+        "head": 86
+      },
+      "nSalaries": 86,
+      "isAthleticDirectorTable": false
+    }
+  ],
+  "adTable": null
+}

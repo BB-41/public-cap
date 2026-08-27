@@ -37,3 +37,12 @@ Total Pay when the published name matches that year’s chair. File/PDF
 dollars win. A 2024 cell is never copied onto 2025 or 2026.
 Refresh with `python3 scripts/fetch-usat-coaches.py` then
 `python3 scripts/ingest-usat-coach-pay.py`.
+
+Athletic-director pay is cited-only on `staff.athleticDirector.pay`.
+USA TODAY Sports has no live AD table on `sportsdata.usatoday.com/ncaa/salaries`
+(probe with `python3 scripts/fetch-usat-ads.py`). Dollars come from USA TODAY
+Network stories that name a number, or from state payroll / university FOIA /
+board minutes. Each cell is year-pinned to that snapshot. A 2024 number is
+never copied onto a 2026 AD who is a different person. A newer cite already
+on the desk is not overwritten by an older snapshot. Privates stay pending.
+Apply with `python3 scripts/ingest-ad-pay.py`.

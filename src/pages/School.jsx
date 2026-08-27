@@ -125,6 +125,7 @@ function StaffSection({ school, season }) {
         </div>
       ) : (
         <div className="field pending-box">
+          {ad?.name && <div className="coach-name">{ad.name}</div>}
           <div className="field-val">Pending</div>
           <div className="field-meta">{ad?.notes || 'No current public AD pay on the desk.'}</div>
         </div>
