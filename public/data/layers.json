@@ -1,7 +1,7 @@
 {
   "meta": {
     "product": "Public Cap layers",
-    "asOf": "2026-08-25",
+    "asOf": "2026-08-27",
     "cycle": "2025-26 / 2026 football portal; 2025 football season; FY2025\u201326 money",
     "notes": [
       "Every number carries source, date, confidence (reported|estimated|modeled|pending).",
@@ -749,22 +749,33 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Nike",
+          "confidence": "reported",
+          "source": "UW System Board of Regents special meeting packet (Nov. 25, 2025) \u2014 names Kentucky\u2019s ten-year Nike renewal",
+          "url": "https://www.wisconsin.edu/regents/download/meeting_materials/2025_meeting_materials/Meeting-Book---Special-Meeting-of-the-Board-of-Regents-(November-25,-2025).pdf",
+          "asOf": "2025-11-25"
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 7000000,
+          "confidence": "reported",
+          "source": "UW System Board of Regents packet (Nov. 25, 2025) \u2014 Kentucky Nike annual product allowance $7 million (rises to $7.5 million in five years); no cash",
+          "url": "https://www.wisconsin.edu/regents/download/meeting_materials/2025_meeting_materials/Meeting-Book---Special-Meeting-of-the-Board-of-Regents-(November-25,-2025).pdf",
+          "asOf": "2025-11-25",
+          "notes": "Hosted board packet names Kentucky\u2019s July ten-year Nike renewal: $7 million annual product allowance, rising to $7.5 million in year five; 15% royalty (5% on shoes) with a $400,000 average annual minimum. AAV is the named $7.0 million year-1 product \u2014 not a guess from a multi-year lump. Journal Sentinel repeats the $72.5 million product / no-cash total; we do not re-divide that lump."
         },
-        "naming": [],
+        "naming": [
+          {
+            "facility": "Kroger Field",
+            "sponsor": "Kroger",
+            "annualValue": 1850000,
+            "term": "12 years / $22 million (announced 2017)",
+            "confidence": "reported",
+            "source": "Arkansas Democrat-Gazette (June 25, 2026) \u2014 Kentucky/Kroger 12-year deal worth $1.85 million annually",
+            "url": "https://www.arkansasonline.com/news/2026/jun/25/arkansas-football-stadium-naming-rights-deal-community-america-razorback-stadium-value/",
+            "asOf": "2026-06-25",
+            "notes": "Named annual in the 2026 naming-rights census. Courier-Journal (Aug. 13, 2018) books the same deal as $22 million over 12 years."
+          }
+        ],
         "notes": null
       },
       "subsidy": {
@@ -1685,12 +1696,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Nike",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,
@@ -1783,12 +1794,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,
@@ -2172,12 +2183,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,
@@ -2377,12 +2388,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Under Armour",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,
@@ -2498,12 +2509,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Nike",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,
@@ -2621,12 +2632,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Nike",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,
@@ -2841,12 +2852,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,
@@ -2939,12 +2950,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Under Armour",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,
@@ -3640,12 +3651,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,
@@ -4107,23 +4118,22 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Under Armour",
+          "confidence": "reported",
+          "source": "UW System Board of Regents special meeting packet (Nov. 25, 2025) \u2014 Under Armour renewal",
+          "url": "https://www.wisconsin.edu/regents/download/meeting_materials/2025_meeting_materials/Meeting-Book---Special-Meeting-of-the-Board-of-Regents-(November-25,-2025).pdf",
+          "asOf": "2025-11-25"
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 7000000,
+          "confidence": "reported",
+          "source": "UW System Board of Regents special meeting packet (Nov. 25, 2025) \u2014 $3.8M annual cash + $3.2M wholesale product allotment",
+          "url": "https://www.wisconsin.edu/regents/download/meeting_materials/2025_meeting_materials/Meeting-Book---Special-Meeting-of-the-Board-of-Regents-(November-25,-2025).pdf",
+          "asOf": "2025-11-25",
+          "notes": "Guaranteed cash $3.8 million (paid quarterly) + product allotment $3.2 million wholesale. Initial term 7 years (2026\u20132033) with a 3-year option through 2036; total minimum gross $104.5 million. Not in this AAV: $500k royalty minimum, $75k marketing fund, $175k NIL-contract minimum, $3M one-time signing bonus (early payout of remaining current-deal rights fees), or performance bonuses. Journal Sentinel quotes the same board figures."
         },
         "naming": [],
-        "notes": null
+        "notes": "Renewal begins after the current deal expires June 30, 2026."
       },
       "subsidy": {
         "studentFees": {
@@ -6028,7 +6038,19 @@
           "asOf": null,
           "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
         },
-        "naming": [],
+        "naming": [
+          {
+            "facility": "Mountain America Stadium, Home of the ASU Sun Devils",
+            "sponsor": "Mountain America Credit Union",
+            "annualValue": null,
+            "term": "15 years (announced Aug. 2, 2023)",
+            "confidence": "reported",
+            "source": "ASU News \u2014 15-year Mountain America Stadium naming partnership. Financial terms not disclosed.",
+            "url": "https://news.asu.edu/20230802-university-news-asu-mountain-america-credit-union-naming-rights-deal-football-stadium",
+            "asOf": "2023-08-02",
+            "notes": "School release names the 15-year term, not a dollar. On3 $60 million figure is not scraped and is not booked."
+          }
+        ],
         "notes": null
       },
       "subsidy": {
@@ -6393,12 +6415,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Nike",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,
@@ -6505,7 +6527,19 @@
           "asOf": null,
           "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
         },
-        "naming": [],
+        "naming": [
+          {
+            "facility": "TDECU Stadium",
+            "sponsor": "Texas Dow Employees Credit Union",
+            "annualValue": null,
+            "term": "10-year extension through at least 2034 (option through 2039)",
+            "confidence": "reported",
+            "source": "Houston Chronicle \u2014 TDECU extension: \"more than $20 million\" over 10 years; $14 million earmarked for the Football Operations Center",
+            "url": "https://www.houstonchronicle.com/texas-sports-nation/college/article/UH-extend-naming-rights-deal-TDECU-2034-17427463.php",
+            "asOf": "2023",
+            "notes": "Story names \"more than $20 million\" for the 10-year extension. AAV pending \u2014 we do not divide a 'more than' lump. Original 2014 deal was $15 million / 10 years."
+          }
+        ],
         "notes": null
       },
       "subsidy": {
@@ -6697,12 +6731,12 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
+          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
+          "asOf": "2023",
+          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
           "value": null,

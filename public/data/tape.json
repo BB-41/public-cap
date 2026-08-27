@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-27",
-    "itemCount": 92,
+    "itemCount": 98,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,96 @@
     ]
   },
   "items": [
+    {
+      "id": "wisconsin-apparel-under-armour-2025-11-25",
+      "date": "2025-11-25",
+      "school": "wisconsin",
+      "schoolName": "Wisconsin",
+      "kind": "apparel",
+      "headline": "UW Board of Regents packet: Under Armour renewal is $3.8 million cash + $3.2 million wholesale product ($7.0 million AAV). Total minimum $104.5 million over 7 years + 3-year option.",
+      "figure": 7000000,
+      "confidence": "reported",
+      "source": {
+        "label": "UW System Board of Regents — Nov. 25, 2025 special meeting packet",
+        "url": "https://www.wisconsin.edu/regents/download/meeting_materials/2025_meeting_materials/Meeting-Book---Special-Meeting-of-the-Board-of-Regents-(November-25,-2025).pdf"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "kentucky-apparel-nike-2025-11-25",
+      "date": "2025-11-25",
+      "school": "kentucky",
+      "schoolName": "Kentucky",
+      "kind": "apparel",
+      "headline": "UW Board of Regents packet names Kentucky’s ten-year Nike renewal: $7 million annual product allowance (to $7.5 million in year five), no cash.",
+      "figure": 7000000,
+      "confidence": "reported",
+      "source": {
+        "label": "UW System Board of Regents — Nov. 25, 2025 special meeting packet",
+        "url": "https://www.wisconsin.edu/regents/download/meeting_materials/2025_meeting_materials/Meeting-Book---Special-Meeting-of-the-Board-of-Regents-(November-25,-2025).pdf"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "kentucky-naming-kroger-2026-06-25",
+      "date": "2026-06-25",
+      "school": "kentucky",
+      "schoolName": "Kentucky",
+      "kind": "naming",
+      "headline": "Arkansas Democrat-Gazette naming-rights census: Kroger Field is a 12-year deal worth $1.85 million annually ($22 million total).",
+      "figure": 1850000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arkansas Democrat-Gazette — college stadium naming census",
+        "url": "https://www.arkansasonline.com/news/2026/jun/25/arkansas-football-stadium-naming-rights-deal-community-america-razorback-stadium-value/"
+      },
+      "field": "layers.apparel.naming"
+    },
+    {
+      "id": "indiana-contract-cignetti-2026-03-02",
+      "date": "2026-03-02",
+      "school": "indiana",
+      "schoolName": "Indiana",
+      "kind": "contract",
+      "headline": "247Sports publishes Curt Cignetti’s Feb. 4, 2026 FOIA MOU: $12.025 million in 2026 (base $500k + promotional $11.525M). AP/IU average is $13.2 million including a $1 million retention bonus left out of the year cell.",
+      "figure": 12025000,
+      "confidence": "reported",
+      "source": {
+        "label": "247Sports / Peegs.com — Cignetti Feb. 4, 2026 MOU via open records",
+        "url": "https://247sports.com/college/indiana/article/details-of-indiana-football-coach-curt-cignettis-newest-contract-that-makes-him-a-top-3-paid-coach-in-the-country-276117920/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "alabama-contract-deboer-2026-04-22",
+      "date": "2026-04-22",
+      "school": "alabama",
+      "schoolName": "Alabama",
+      "kind": "contract",
+      "headline": "CBS Sports: Alabama trustees approve Kalen DeBoer’s seven-year extension at $12.5 million annual salary through 2033. School-side without-cause is 90% remaining, no mitigate — dollar overhang left pending.",
+      "figure": 12500000,
+      "confidence": "reported",
+      "source": {
+        "label": "CBS Sports — DeBoer trustee compensation announcement",
+        "url": "https://www.cbssports.com/college-football/news/kalen-deboer-alabama-contract-extension-salary/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "ohio-state-contract-day-2026-05-26",
+      "date": "2026-05-26",
+      "school": "ohio-state",
+      "schoolName": "Ohio State",
+      "kind": "contract",
+      "headline": "247Sports quotes Ryan Day’s FOIA employment agreement: $12.5 million basic annual compensation through 2031. Academic / CFP bonuses stay out of the year cell.",
+      "figure": 12500000,
+      "confidence": "reported",
+      "source": {
+        "label": "247Sports / Bucknuts — Day EA via public records",
+        "url": "https://247sports.com/college/ohio-state/article/ohio-state-football-ryan-day-receives-a-bonus-after-buckeyes-academic-achievement-for-third-straight-year-286549538/"
+      },
+      "field": "coaches.football.pay"
+    },
     {
       "id": "texas-collective-990-2024",
       "date": "2026-03-06",
