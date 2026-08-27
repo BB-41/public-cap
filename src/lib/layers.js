@@ -63,6 +63,26 @@ export function layerHasSubsidy(layer) {
   return s.studentFees?.value != null || s.institutionalSupport?.value != null || s.governmentSupport?.value != null
 }
 
+/**
+ * School-object capacity cells win when present. layers.subsidy keeps
+ * feeRate and any layer-only notes. Does not invent a $0.
+ */
+export function mergeSubsidy(layerSubsidy, capacity) {
+  const capFees = capacity?.studentFees
+  const capInst = capacity?.institutionalSupport
+  const capGov = capacity?.governmentSupport
+  const hasCap =
+    capFees?.value != null || capInst?.value != null || capGov?.value != null
+  if (!hasCap) return layerSubsidy || null
+  return {
+    ...(layerSubsidy || {}),
+    studentFees: capFees ?? layerSubsidy?.studentFees,
+    institutionalSupport: capInst ?? layerSubsidy?.institutionalSupport,
+    governmentSupport: capGov ?? layerSubsidy?.governmentSupport,
+    notes: capacity?.subsidyNotes || layerSubsidy?.notes,
+  }
+}
+
 /** Estimated IPEDS-ish undergrad headcount already on the school card. */
 export function enrollmentHeadcount(school) {
   const n = school?.alumni?.undergradEnrollment?.value
@@ -70,7 +90,7 @@ export function enrollmentHeadcount(school) {
 }
 
 /**
- * KN student-fee total spread across the enrollment proxy.
+ * Booked student-fee total spread across the enrollment proxy.
  * Not a published fee schedule. Does not replace the booked total.
  */
 export function impliedFeePerStudent(studentFees, enrollment) {
