@@ -62,17 +62,20 @@ def main() -> None:
     if by_id["texas"]["nil"]["preCap"]["value"] != 3_200_000:
         raise SystemExit("texas preCap drifted")
 
+    inserted: list[str] = []
     # apply from the end so offsets stay valid
     for sid in sorted(cells, key=lambda s: find_nil_span(text, s)[0], reverse=True):
         lo, hi = find_nil_span(text, sid)
         obj = text[lo : hi + 1]
         if '"collective990"' in obj:
-            raise SystemExit(f"{sid} already has collective990")
+            print("skip already-present", sid)
+            continue
         arr = json.dumps(cells[sid], indent=2, ensure_ascii=False)
         arr = "        " + arr.replace("\n", "\n        ")
         value_json = f'        "collective990": {arr.lstrip()}'
         new_obj = insert_key(obj, "collective990", value_json)
         text = text[:lo] + new_obj + text[hi + 1 :]
+        inserted.append(sid)
 
     src.write_text(text)
     Path("public/data/schools.json").write_text(text)
@@ -86,7 +89,7 @@ def main() -> None:
         got = by_id[sid]["nil"]["collective990"]
         if [c["value"] for c in got] != [c["value"] for c in rows]:
             raise SystemExit(f"post-write cells drifted {sid}")
-    print("inserted collective990 for", ", ".join(sorted(cells)))
+    print("inserted collective990 for", ", ".join(sorted(inserted)) or "(none)")
 
 
 if __name__ == "__main__":

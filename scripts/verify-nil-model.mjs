@@ -119,6 +119,12 @@ const expect24 = {
   alabama: 0,
   utah: 0,
   'north-carolina': 0,
+  'ole-miss': 0,
+  arkansas: 0,
+  'florida-state': 0,
+  kansas: 0,
+  missouri: 0,
+  'mississippi-state': 0,
 }
 for (const [id, n] of Object.entries(expect24)) {
   const row = y24.find((r) => r.school.id === id)
@@ -136,6 +142,8 @@ const expect990 = {
   louisville: [545833],
   alabama: [10000],
   washington: [2803276],
+  'south-carolina': [2735455],
+  missouri: [13000],
 }
 for (const [id, values] of Object.entries(expect990)) {
   const rows = rawById[id]?.nil?.collective990 || []

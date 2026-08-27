@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-27",
-    "itemCount": 212,
+    "itemCount": 237,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,381 @@
     ]
   },
   "items": [
+    {
+      "id": "florida-state-precap-item44-fy2025",
+      "date": "2026-01-31",
+      "school": "florida-state",
+      "schoolName": "Florida State",
+      "kind": "filing",
+      "headline": "Florida State FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share is $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "FSU FY2025 NCAA MFRS PDF (DocumentCloud / Tallahassee Democrat)",
+        "url": "https://s3.documentcloud.org/documents/26597309/fsu-ncaa-financial-report-fy25.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "kansas-precap-item44-fy2025",
+      "date": "2026-01-15",
+      "school": "kansas",
+      "schoolName": "Kansas",
+      "kind": "filing",
+      "headline": "Kansas FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share is $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Kansas FY2025 NCAA MFRS PDF",
+        "url": "https://kuathletics.com/documents/download/2026/1/15/FY_24-25_NCAA_Final_Report.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "missouri-precap-item44-fy2025",
+      "date": "2026-01-21",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "filing",
+      "headline": "Missouri Business Alert quotes Mizzou FY2025 Item 44 Institutional NIL Revenue Share as $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Missouri Business Alert \u2014 Mizzou FY2025 NCAA report",
+        "url": "https://www.missouribusinessalert.com/industries/banking_finance/mizzou-athletics-reports-9-million-operating-deficit-for-fiscal-year-2025/article_7bd733a1-642b-5806-9c60-152df863d34c.html"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "mississippi-state-precap-item44-fy2025",
+      "date": "2026-02-14",
+      "school": "mississippi-state",
+      "schoolName": "Mississippi State",
+      "kind": "filing",
+      "headline": "The Dispatch quotes MSU FY2025 NCAA membership report: no Institutional NIL Revenue Share expenses.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "The Dispatch \u2014 MSU FY2025 NCAA report via public records",
+        "url": "https://cdispatch.com/news/how-big-is-msu-athletics-165-million-big-a-record-number/"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "georgia-tech-contract-key-2025-12-05",
+      "date": "2025-12-05",
+      "school": "georgia-tech",
+      "schoolName": "Georgia Tech",
+      "kind": "contract",
+      "headline": "AJC obtained Brent Key\u2019s extension: $6.5 million annual base. Not the USA TODAY 2025-10-08 cell.",
+      "figure": 6500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Atlanta Journal-Constitution \u2014 Key contract details",
+        "url": "https://www.ajc.com/sports/2025/12/more-details-of-brent-keys-contract/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "arkansas-precap-item44-fy2025",
+      "date": "2026-01",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "filing",
+      "headline": "Arkansas FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share is $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Arkansas FY2025 NCAA MFRS PDF",
+        "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "missouri-pay-drinkwitz-2026-ea",
+      "date": "2025-12-01",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "contract",
+      "headline": "Drinkwitz restated EA year table: $10,250,000 for the Contract Year Jan. 16, 2026\u2013Jan. 15, 2027 (Base $500k + Non-Salary $4.05M + Publicity Rights $5.7M).",
+      "figure": 10250000,
+      "confidence": "reported",
+      "source": {
+        "label": "Missouri Drinkwitz Second Restated and Amended EA PDF",
+        "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "texas-pay-sarkisian-2026-bor",
+      "date": "2025-02-20",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "contract",
+      "headline": "UT System Feb. 2025 board packet: Sarkisian Contract Year 6 (Jan. 1\u2013Dec. 31, 2026) guaranteed compensation $11,050,000.",
+      "figure": 11050000,
+      "confidence": "reported",
+      "source": {
+        "label": "U.T. System Board of Regents Feb. 2025 agenda book",
+        "url": "https://www.utsystem.edu/sites/default/files/offices/board-of-regents/board-meetings/agenda-book-full/2-2025AB.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "texas-am-pay-elko-2026-ea",
+      "date": "2026-02-17",
+      "school": "texas-am",
+      "schoolName": "Texas A&M",
+      "kind": "contract",
+      "headline": "KBTX quotes Elko open-records EA: Year 1 (Nov. 14, 2025\u2013Dec. 31, 2026) base $10,750,000.",
+      "figure": 10750000,
+      "confidence": "reported",
+      "source": {
+        "label": "KBTX \u2014 Elko open-records EA year table",
+        "url": "https://www.kbtx.com/2026/02/17/new-contract-texas-ams-mike-elko-modernized-current-college-athletics-landscap/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "nebraska-pay-rhule-2026-ea",
+      "date": "2025-10-30",
+      "school": "nebraska",
+      "schoolName": "Nebraska",
+      "kind": "contract",
+      "headline": "KETV quotes Rhule\u2019s contract: $8.5 million from Jan. 1, 2026 to Dec. 31, 2026. Through Jan. 31, 2033.",
+      "figure": 8500000,
+      "confidence": "reported",
+      "source": {
+        "label": "KETV \u2014 Rhule contract extension",
+        "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "purdue-pay-odom-2026-mou",
+      "date": "2024-12-10",
+      "school": "purdue",
+      "schoolName": "Purdue",
+      "kind": "contract",
+      "headline": "IndyStar quotes Purdue\u2019s contract-elements summary: Odom base $6 million in each of the first two seasons (2026 is year two).",
+      "figure": 6000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Indianapolis Star \u2014 Odom contract-elements summary",
+        "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "louisville-pay-brohm-2026-amendment",
+      "date": "2026-08-10",
+      "school": "louisville",
+      "schoolName": "Louisville",
+      "kind": "contract",
+      "headline": "Courier Journal quotes Brohm\u2019s signed amendment: 2026 $6.3 million ($6.55 million with retention). Through 2033.",
+      "figure": 6550000,
+      "confidence": "reported",
+      "source": {
+        "label": "Courier Journal \u2014 Brohm signed amendment",
+        "url": "https://www.courier-journal.com/story/sports/college/louisville/2026/08/13/louisville-football-coach-jeff-brohm-officially-signs-contract-extension-through-2033-uofl-cardinals/91278667007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "kansas-pay-leipold-2026-ea",
+      "date": "2023-12-01",
+      "school": "kansas",
+      "schoolName": "Kansas",
+      "kind": "contract",
+      "headline": "Leipold First Amendment PDF: May 1, 2026\u2013April 30, 2027 Professional Services $4,178,056 + Royalty $1,621,944 + $500k base = $6,300,000.",
+      "figure": 6300000,
+      "confidence": "reported",
+      "source": {
+        "label": "Kansas Athletics First Amendment to Leipold EA PDF",
+        "url": "https://lawrencekstimes.com/wp-content/uploads/2024/02/2024-Leipold-contract.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "texas-tech-pay-mcguire-2026-pia",
+      "date": "2025-12-16",
+      "school": "texas-tech",
+      "schoolName": "Texas Tech",
+      "kind": "contract",
+      "headline": "Dallas Morning News PIA records: McGuire $6.5 million starting in 2026 ($300k base + $6.2M rights fees).",
+      "figure": 6500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Dallas Morning News \u2014 McGuire PIA records",
+        "url": "https://www.dallasnews.com/sports/texas-tech-red-raiders/2025/12/16/texas-tech-joey-mcguire-extension-details-red-raiders/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "ucf-pay-frost-2026-summary",
+      "date": "2025-05-05",
+      "school": "ucf",
+      "schoolName": "UCF",
+      "kind": "contract",
+      "headline": "WESH quotes UCF Athletics Association executive summary: Frost guaranteed $4.15 million in 2026-27.",
+      "figure": 4150000,
+      "confidence": "reported",
+      "source": {
+        "label": "WESH \u2014 UCF Frost executive summary",
+        "url": "https://www.wesh.com/article/contract-details-ucf-football-coach-scott-frost/64678376"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "arizona-pay-brennan-2026-abor",
+      "date": "2026-02",
+      "school": "arizona",
+      "schoolName": "Arizona",
+      "kind": "contract",
+      "headline": "ABOR-approved Brennan extension: $4.7 million annually through 2030 ($3.8M base + $500k duties + $400k ASE).",
+      "figure": 4700000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arizona Daily Star \u2014 Brennan ABOR extension",
+        "url": "https://tucson.com/sports/college/football/wildcats/article_3a754545-872d-488b-bbf5-912ae21499db.html"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "arizona-state-pay-dillingham-2026-abor",
+      "date": "2026-02-19",
+      "school": "arizona-state",
+      "schoolName": "Arizona State",
+      "kind": "contract",
+      "headline": "AZ Central quotes ABOR files: Dillingham base $6.4 million beginning Jan. 1, 2026. Through Dec. 31, 2030.",
+      "figure": 6400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arizona Republic \u2014 ABOR Dillingham amendment",
+        "url": "https://www.azcentral.com/story/sports/college/asu/2026/02/16/asu-contract-extensions-raises-kenny-dillingham-willie-bloomquist/88693485007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "houston-pay-fritz-2026-termsheet",
+      "date": "2023-12",
+      "school": "houston",
+      "schoolName": "Houston",
+      "kind": "contract",
+      "headline": "Houston Chronicle quotes UH term sheet: Fritz $4.5 million per year through 2028. $19 million school-side if fired before Dec. 31, 2026.",
+      "figure": 4500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Houston Chronicle \u2014 Fritz term sheet",
+        "url": "https://www.houstonchronicle.com/texas-sports-nation/college/article/uh-football-willie-fritz-contract-incentives-18533360.php"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "ole-miss-precap-item44-fy2025",
+      "date": "2026-01-15",
+      "school": "ole-miss",
+      "schoolName": "Ole Miss",
+      "kind": "filing",
+      "headline": "Ole Miss FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share is $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Ole Miss FY2025 NCAA MFRS PDF",
+        "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "lsu-paid-buyout-orgeron-2025-12",
+      "date": "2025-12",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "paid-buyout",
+      "headline": "USA TODAY Network: LSU finished Ed Orgeron\u2019s $16.9 million 2021 buyout in December 2025. Lump + through-date; no invented annual split.",
+      "figure": 16900000,
+      "confidence": "reported",
+      "source": {
+        "label": "USA TODAY Network / Daily Advertiser \u2014 Orgeron buyout leftover",
+        "url": "https://www.usatoday.com/story/sports/college/lsu/2026/05/21/ed-orgeron-lsu-football-contract-lane-kiffin-staff-joe-burrow/90199664007/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "georgia-contract-smart-2026-08-10",
+      "date": "2026-08-10",
+      "school": "georgia",
+      "schoolName": "Georgia",
+      "kind": "contract",
+      "headline": "Athens Banner-Herald July 2026 open-records salary tape: Kirby Smart $13.003 million. Not the USA TODAY 2025-10-08 cell.",
+      "figure": 13003000,
+      "confidence": "reported",
+      "source": {
+        "label": "Athens Banner-Herald \u2014 UGA July 2026 salary tape",
+        "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "tennessee-contract-heupel-2025-08-26",
+      "date": "2025-08-26",
+      "school": "tennessee",
+      "schoolName": "Tennessee",
+      "kind": "contract",
+      "headline": "Heupel Amendment 3 extends the deal through Jan. 31, 2030; EA + Amendment 2 keep annual pay at $9.0 million ($275k base + $8.725M supplemental).",
+      "figure": 9000000,
+      "confidence": "reported",
+      "source": {
+        "label": "University of Tennessee Heupel Amendment 3 + Knox News",
+        "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "mississippi-state-contract-lebby-2026",
+      "date": "2025-12-15",
+      "school": "mississippi-state",
+      "schoolName": "Mississippi State",
+      "kind": "contract",
+      "headline": "Clarion Ledger quotes Lebby\u2019s contracts: $4.35 million in 2025, +$15,000 annually through 2028, so $4,365,000 in 2026.",
+      "figure": 4365000,
+      "confidence": "reported",
+      "source": {
+        "label": "Clarion Ledger \u2014 Lebby contracts",
+        "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "south-carolina-collective-990-2023",
+      "date": "2024-11-15",
+      "school": "south-carolina",
+      "schoolName": "South Carolina",
+      "kind": "collective-990",
+      "headline": "Garnet Trust Foundation Form 990 (EIN 92-0463073), calendar 2023: Part IX other expense NIL PAYMENTS $2,735,455. Collective 990 \u2014 not House, not Item 44.",
+      "figure": 2735455,
+      "confidence": "reported",
+      "source": {
+        "label": "ProPublica Nonprofit Explorer \u2014 Garnet Trust Foundation 2023 Form 990",
+        "url": "https://projects.propublica.org/nonprofits/organizations/920463073/202433209349305903/IRS990"
+      },
+      "field": "nil.collective990"
+    },
+    {
+      "id": "missouri-collective-990-2022",
+      "date": "2023-11-15",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "collective-990",
+      "headline": "Every True Tiger Foundation Form 990 (EIN 88-3960812), short year ended Dec. 31, 2022: Part IX other expense NAME, IMAGE, AND LIKENESS $13,000. Collective 990 \u2014 not House.",
+      "figure": 13000,
+      "confidence": "reported",
+      "source": {
+        "label": "ProPublica Nonprofit Explorer \u2014 Every True Tiger Foundation 2022 Form 990",
+        "url": "https://projects.propublica.org/nonprofits/organizations/883960812/202333199349323168/IRS990"
+      },
+      "field": "nil.collective990"
+    },
     {
       "id": "oregon-apparel-nike-2017-12-08",
       "date": "2017-12-08",

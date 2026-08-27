@@ -122,10 +122,12 @@
         "name": "Connor Boyd",
         "role": "Safeties"
       }
-    ]
+    ],
+    "ad": "Jay Larson and Jenny Simon-O'Neill"
   },
   "clemson": {
     "hc": "Dabo Swinney",
+    "ad": "Graham Neff",
     "url": "https://clemsontigers.com/sports/football/roster/season/2026",
     "assistants": [
       {
@@ -242,6 +244,7 @@
   },
   "georgia-tech": {
     "hc": "Brent Key",
+    "ad": "Ryan Alpert",
     "url": "https://ramblinwreck.com/sports/m-footbl/roster",
     "assistants": [
       {
@@ -296,6 +299,7 @@
   },
   "louisville": {
     "hc": "Jeff Brohm",
+    "ad": "Josh Heird",
     "url": "https://gocards.com/sports/football/roster",
     "assistants": [
       {
@@ -396,6 +400,7 @@
   },
   "nc-state": {
     "hc": "Dave Doeren",
+    "ad": "Boo Corrigan",
     "url": "https://gopack.com/sports/football/coaches",
     "assistants": [
       {
@@ -496,10 +501,12 @@
         "name": "Ty Nichols",
         "role": "Outside Linebackers"
       }
-    ]
+    ],
+    "ad": "Steve Newmark"
   },
   "pittsburgh": {
     "hc": "Pat Narduzzi",
+    "ad": "Allen Greene",
     "url": "https://pittsburghpanthers.com/sports/football/coaches",
     "assistants": [
       {
@@ -762,11 +769,12 @@
         "name": "Chris Slade",
         "role": "Defensive Ends"
       }
-    ]
+    ],
+    "ad": "Carla Williams"
   },
   "virginia-tech": {
     "hc": "James Franklin",
-    "ad": "Whit Babcock",
+    "ad": "Brian White",
     "url": "https://hokiesports.com/sports/football/roster",
     "assistants": [
       {
@@ -1262,7 +1270,7 @@
   },
   "kentucky": {
     "hc": "Will Stein",
-    "ad": "Mitch Barnhart",
+    "ad": "J Batt",
     "url": "https://ukathletics.com/sports/football/roster/",
     "assistants": [
       {
