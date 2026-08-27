@@ -776,27 +776,51 @@
           "football": {
             "name": "Kalen DeBoer",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 12500000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "CBS Sports (April 22, 2026) — Alabama trustee compensation meeting: DeBoer seven-year extension, $12.5 million annual salary",
+              "url": "https://www.cbssports.com/college-football/news/kalen-deboer-alabama-contract-extension-salary/",
+              "asOf": "2026-04-22",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). AD Greg Byrne announced the extension at a trustee compensation meeting: seven years through 2033, $12.5 million annual salary ($2 million raise). Incentives not included. USA TODAY 2025 cell is not reused.",
+              "breakdown": [
+                {
+                  "label": "Annual salary",
+                  "value": 12500000
+                }
+              ],
+              "schedule": null,
+              "incentives": [
+                {
+                  "label": "Performance bonuses",
+                  "notes": "CBS does not publish a 2026 incentive table. Not included in annual pay."
+                }
+              ],
+              "baseOnly": null
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
+              "source": "CBS Sports (April 22, 2026) — trustee compensation meeting",
+              "url": "https://www.cbssports.com/college-football/news/kalen-deboer-alabama-contract-extension-salary/",
               "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "notes": "90% of remaining contract if fired without cause, no duty to mitigate — we do not invent the remainder.",
+              "rule": "90% of remaining contract, no duty to mitigate (article quoting trustee announcement).",
+              "coachSide": "Coach-side LD: $10 million in January 2027, $8 million in January 2028, $6 million in January 2029."
             },
             "term": {
-              "confidence": "pending",
+              "confidence": "reported",
               "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
+              "source": "Wikipedia season-page infobox; Alabama Athletics / CBS trustee announcement",
               "url": "https://en.wikipedia.org/wiki/2026_Alabama_Crimson_Tide_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "through": "2033",
+              "yearsRemaining": 7,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Seven-year extension through 2033. School-side without-cause is 90% of remaining contract with no duty to mitigate."
+            },
+            "contractUrl": "https://www.cbssports.com/college-football/news/kalen-deboer-alabama-contract-extension-salary/",
+            "contract": {
+              "label": "CBS Sports — DeBoer trustee compensation announcement (April 22, 2026)",
+              "url": "https://www.cbssports.com/college-football/news/kalen-deboer-alabama-contract-extension-salary/"
             }
           },
           "mbb": {
@@ -26289,27 +26313,92 @@
           "football": {
             "name": "Curt Cignetti",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 12025000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "247Sports / Peegs.com (March 2, 2026), quoting the Feb. 4, 2026 Cignetti MOU via open records",
+              "url": "https://247sports.com/college/indiana/article/details-of-indiana-football-coach-curt-cignettis-newest-contract-that-makes-him-a-top-3-paid-coach-in-the-country-276117920/",
+              "asOf": "2026-03-02",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Year 1 (Jan. 1–Nov. 30, 2026) = base $500,000 + outside/marketing/promotional $11,525,000. AP / IU: eight-year MOU averages $13.2 million ($105.6 million). The $1,000,000 Nov. 30 retention bonus is not in this cell. Incentives not included.",
+              "breakdown": [
+                {
+                  "label": "Annual base salary",
+                  "value": 500000
+                },
+                {
+                  "label": "Outside / marketing / promotional (Year 1)",
+                  "value": 11525000
+                }
+              ],
+              "schedule": [
+                {
+                  "period": "Year 1 (Jan 1–Nov 30, 2026)",
+                  "value": 12025000
+                },
+                {
+                  "period": "Year 2 (Dec 2, 2026–Nov 30, 2027)",
+                  "value": 12075000
+                },
+                {
+                  "period": "Year 3 (Dec 2, 2027–Nov 30, 2028)",
+                  "value": 12125000
+                },
+                {
+                  "period": "Year 4 (Dec 1, 2028–Nov 30, 2029)",
+                  "value": 12175000
+                },
+                {
+                  "period": "Year 5 (Dec 1, 2029–Nov 30, 2030)",
+                  "value": 12225000
+                },
+                {
+                  "period": "Year 6 (Dec 1, 2030–Nov 30, 2031)",
+                  "value": 12275000
+                },
+                {
+                  "period": "Year 7 (Dec 1, 2031–Nov 30, 2032)",
+                  "value": 12325000
+                },
+                {
+                  "period": "Year 8 (Dec 1, 2032–Nov 30, 2033)",
+                  "value": 12375000
+                }
+              ],
+              "incentives": [
+                {
+                  "label": "Retention bonus",
+                  "value": 1000000,
+                  "notes": "Nov. 30 each year starting 2026. Not in the annual cell. AP average $13.2M includes this."
+                },
+                {
+                  "label": "CFP / Big Ten / coach-of-year ladder",
+                  "notes": "FOIA MOU lists highest-in-category CFP and Big Ten bonuses. Not included in annual pay."
+                }
+              ],
+              "baseOnly": null
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
+              "source": "247Sports / Peegs.com (March 2, 2026), quoting the Feb. 4, 2026 Cignetti MOU via open records",
+              "url": "https://247sports.com/college/indiana/article/details-of-indiana-football-coach-curt-cignettis-newest-contract-that-makes-him-a-top-3-paid-coach-in-the-country-276117920/",
               "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "notes": "Fully guaranteed if IU fires without cause — we do not invent a remaining-dollar overhang from the year table.",
+              "rule": "Fully guaranteed if Indiana terminates without cause (article quoting Feb. 4, 2026 MOU)."
             },
             "term": {
-              "confidence": "pending",
+              "confidence": "reported",
               "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
+              "source": "Wikipedia season-page infobox; Feb. 4, 2026 MOU via 247Sports",
               "url": "https://en.wikipedia.org/wiki/2026_Indiana_Hoosiers_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "through": "2033",
+              "yearsRemaining": 7,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Eight-year MOU through the 2033 season. School-side without-cause is fully guaranteed remaining compensation."
+            },
+            "contractUrl": "https://247sports.com/college/indiana/article/details-of-indiana-football-coach-curt-cignettis-newest-contract-that-makes-him-a-top-3-paid-coach-in-the-country-276117920/",
+            "contract": {
+              "label": "247Sports / Peegs.com — Cignetti Feb. 4, 2026 MOU via open records",
+              "url": "https://247sports.com/college/indiana/article/details-of-indiana-football-coach-curt-cignettis-newest-contract-that-makes-him-a-top-3-paid-coach-in-the-country-276117920/"
             }
           },
           "mbb": {
@@ -38208,27 +38297,70 @@
           "football": {
             "name": "Ryan Day",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 12500000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "247Sports / Bucknuts (May 26, 2026), quoting Day’s FOIA employment agreement: $12.5 million basic annual compensation",
+              "url": "https://247sports.com/college/ohio-state/article/ohio-state-football-ryan-day-receives-a-bonus-after-buckeyes-academic-achievement-for-third-straight-year-286549538/",
+              "asOf": "2026-05-26",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 article quotes the public-records contract. OSU News (Feb. 2025) named the same $12.5 million total annual compensation with a $2 million base. Columbus Dispatch term sheet: base $2.0M + media $7.25M + sponsorship $1.0M + apparel $1.25M + $1.0M Jan. 31 retention. School-named $12.5M includes that retention. Academic / CFP bonuses ($450k of 2025-26 incentives cited) are not in this cell.",
+              "breakdown": [
+                {
+                  "label": "Base",
+                  "value": 2000000
+                },
+                {
+                  "label": "Media services",
+                  "value": 7250000
+                },
+                {
+                  "label": "Sponsorship services",
+                  "value": 1000000
+                },
+                {
+                  "label": "Apparel / shoe / equipment",
+                  "value": 1250000
+                },
+                {
+                  "label": "Retention award (Jan. 31)",
+                  "value": 1000000
+                }
+              ],
+              "schedule": null,
+              "incentives": [
+                {
+                  "label": "Academic GPA bonus",
+                  "value": 100000,
+                  "notes": "2025-26: ~3.4 GPA triggered $100k. Not in annual pay."
+                },
+                {
+                  "label": "CFP / Big Ten / coach-of-year ladder",
+                  "notes": "Article lists CFP and coach-of-year bonuses. Not included in annual pay."
+                }
+              ],
+              "baseOnly": null
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
+              "source": "247Sports / Bucknuts (May 26, 2026), quoting Day FOIA employment agreement",
+              "url": "https://247sports.com/college/ohio-state/article/ohio-state-football-ryan-day-receives-a-bonus-after-buckeyes-academic-achievement-for-third-straight-year-286549538/",
               "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "notes": "2026 article quotes the EA for pay and incentives; it does not publish a current-dollar without-cause overhang. We do not invent one."
             },
             "term": {
-              "confidence": "pending",
+              "confidence": "reported",
               "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
+              "source": "Wikipedia season-page infobox; Day FOIA EA via 247Sports",
               "url": "https://en.wikipedia.org/wiki/2026_Ohio_State_Buckeyes_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "through": "2031",
+              "yearsRemaining": 5,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Seven-year deal through the 2031 season / Jan. 31, 2032 on the cited EA."
+            },
+            "contractUrl": "https://247sports.com/college/ohio-state/article/ohio-state-football-ryan-day-receives-a-bonus-after-buckeyes-academic-achievement-for-third-straight-year-286549538/",
+            "contract": {
+              "label": "247Sports / Bucknuts — Day employment agreement via public records (May 26, 2026)",
+              "url": "https://247sports.com/college/ohio-state/article/ohio-state-football-ryan-day-receives-a-bonus-after-buckeyes-academic-achievement-for-third-straight-year-286549538/"
             }
           },
           "mbb": {
