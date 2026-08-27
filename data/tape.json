@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-27",
-    "itemCount": 217,
+    "itemCount": 229,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,186 @@
     ]
   },
   "items": [
+    {
+      "id": "missouri-pay-drinkwitz-2026-ea",
+      "date": "2025-12-01",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "contract",
+      "headline": "Drinkwitz restated EA year table: $10,250,000 for the Contract Year Jan. 16, 2026–Jan. 15, 2027 (Base $500k + Non-Salary $4.05M + Publicity Rights $5.7M).",
+      "figure": 10250000,
+      "confidence": "reported",
+      "source": {
+        "label": "Missouri Drinkwitz Second Restated and Amended EA PDF",
+        "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "texas-pay-sarkisian-2026-bor",
+      "date": "2025-02-20",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "contract",
+      "headline": "UT System Feb. 2025 board packet: Sarkisian Contract Year 6 (Jan. 1–Dec. 31, 2026) guaranteed compensation $11,050,000.",
+      "figure": 11050000,
+      "confidence": "reported",
+      "source": {
+        "label": "U.T. System Board of Regents Feb. 2025 agenda book",
+        "url": "https://www.utsystem.edu/sites/default/files/offices/board-of-regents/board-meetings/agenda-book-full/2-2025AB.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "texas-am-pay-elko-2026-ea",
+      "date": "2026-02-17",
+      "school": "texas-am",
+      "schoolName": "Texas A&M",
+      "kind": "contract",
+      "headline": "KBTX quotes Elko open-records EA: Year 1 (Nov. 14, 2025–Dec. 31, 2026) base $10,750,000.",
+      "figure": 10750000,
+      "confidence": "reported",
+      "source": {
+        "label": "KBTX — Elko open-records EA year table",
+        "url": "https://www.kbtx.com/2026/02/17/new-contract-texas-ams-mike-elko-modernized-current-college-athletics-landscap/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "nebraska-pay-rhule-2026-ea",
+      "date": "2025-10-30",
+      "school": "nebraska",
+      "schoolName": "Nebraska",
+      "kind": "contract",
+      "headline": "KETV quotes Rhule’s contract: $8.5 million from Jan. 1, 2026 to Dec. 31, 2026. Through Jan. 31, 2033.",
+      "figure": 8500000,
+      "confidence": "reported",
+      "source": {
+        "label": "KETV — Rhule contract extension",
+        "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "purdue-pay-odom-2026-mou",
+      "date": "2024-12-10",
+      "school": "purdue",
+      "schoolName": "Purdue",
+      "kind": "contract",
+      "headline": "IndyStar quotes Purdue’s contract-elements summary: Odom base $6 million in each of the first two seasons (2026 is year two).",
+      "figure": 6000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Indianapolis Star — Odom contract-elements summary",
+        "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "louisville-pay-brohm-2026-amendment",
+      "date": "2026-08-10",
+      "school": "louisville",
+      "schoolName": "Louisville",
+      "kind": "contract",
+      "headline": "Courier Journal quotes Brohm’s signed amendment: 2026 $6.3 million ($6.55 million with retention). Through 2033.",
+      "figure": 6550000,
+      "confidence": "reported",
+      "source": {
+        "label": "Courier Journal — Brohm signed amendment",
+        "url": "https://www.courier-journal.com/story/sports/college/louisville/2026/08/13/louisville-football-coach-jeff-brohm-officially-signs-contract-extension-through-2033-uofl-cardinals/91278667007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "kansas-pay-leipold-2026-ea",
+      "date": "2023-12-01",
+      "school": "kansas",
+      "schoolName": "Kansas",
+      "kind": "contract",
+      "headline": "Leipold First Amendment PDF: May 1, 2026–April 30, 2027 Professional Services $4,178,056 + Royalty $1,621,944 + $500k base = $6,300,000.",
+      "figure": 6300000,
+      "confidence": "reported",
+      "source": {
+        "label": "Kansas Athletics First Amendment to Leipold EA PDF",
+        "url": "https://lawrencekstimes.com/wp-content/uploads/2024/02/2024-Leipold-contract.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "texas-tech-pay-mcguire-2026-pia",
+      "date": "2025-12-16",
+      "school": "texas-tech",
+      "schoolName": "Texas Tech",
+      "kind": "contract",
+      "headline": "Dallas Morning News PIA records: McGuire $6.5 million starting in 2026 ($300k base + $6.2M rights fees).",
+      "figure": 6500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Dallas Morning News — McGuire PIA records",
+        "url": "https://www.dallasnews.com/sports/texas-tech-red-raiders/2025/12/16/texas-tech-joey-mcguire-extension-details-red-raiders/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "ucf-pay-frost-2026-summary",
+      "date": "2025-05-05",
+      "school": "ucf",
+      "schoolName": "UCF",
+      "kind": "contract",
+      "headline": "WESH quotes UCF Athletics Association executive summary: Frost guaranteed $4.15 million in 2026-27.",
+      "figure": 4150000,
+      "confidence": "reported",
+      "source": {
+        "label": "WESH — UCF Frost executive summary",
+        "url": "https://www.wesh.com/article/contract-details-ucf-football-coach-scott-frost/64678376"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "arizona-pay-brennan-2026-abor",
+      "date": "2026-02",
+      "school": "arizona",
+      "schoolName": "Arizona",
+      "kind": "contract",
+      "headline": "ABOR-approved Brennan extension: $4.7 million annually through 2030 ($3.8M base + $500k duties + $400k ASE).",
+      "figure": 4700000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arizona Daily Star — Brennan ABOR extension",
+        "url": "https://tucson.com/sports/college/football/wildcats/article_3a754545-872d-488b-bbf5-912ae21499db.html"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "arizona-state-pay-dillingham-2026-abor",
+      "date": "2026-02-19",
+      "school": "arizona-state",
+      "schoolName": "Arizona State",
+      "kind": "contract",
+      "headline": "AZ Central quotes ABOR files: Dillingham base $6.4 million beginning Jan. 1, 2026. Through Dec. 31, 2030.",
+      "figure": 6400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arizona Republic — ABOR Dillingham amendment",
+        "url": "https://www.azcentral.com/story/sports/college/asu/2026/02/16/asu-contract-extensions-raises-kenny-dillingham-willie-bloomquist/88693485007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "houston-pay-fritz-2026-termsheet",
+      "date": "2023-12",
+      "school": "houston",
+      "schoolName": "Houston",
+      "kind": "contract",
+      "headline": "Houston Chronicle quotes UH term sheet: Fritz $4.5 million per year through 2028. $19 million school-side if fired before Dec. 31, 2026.",
+      "figure": 4500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Houston Chronicle — Fritz term sheet",
+        "url": "https://www.houstonchronicle.com/texas-sports-nation/college/article/uh-football-willie-fritz-contract-incentives-18533360.php"
+      },
+      "field": "coaches.football.pay"
+    },
     {
       "id": "ole-miss-precap-item44-fy2025",
       "date": "2026-01-15",
@@ -31,11 +211,11 @@
       "school": "lsu",
       "schoolName": "LSU",
       "kind": "paid-buyout",
-      "headline": "USA TODAY Network: LSU finished Ed Orgeron\u2019s $16.9 million 2021 buyout in December 2025. Lump + through-date; no invented annual split.",
+      "headline": "USA TODAY Network: LSU finished Ed Orgeron’s $16.9 million 2021 buyout in December 2025. Lump + through-date; no invented annual split.",
       "figure": 16900000,
       "confidence": "reported",
       "source": {
-        "label": "USA TODAY Network / Daily Advertiser \u2014 Orgeron buyout leftover",
+        "label": "USA TODAY Network / Daily Advertiser — Orgeron buyout leftover",
         "url": "https://www.usatoday.com/story/sports/college/lsu/2026/05/21/ed-orgeron-lsu-football-contract-lane-kiffin-staff-joe-burrow/90199664007/"
       },
       "field": "layers.buyoutsPaid"
@@ -50,7 +230,7 @@
       "figure": 13003000,
       "confidence": "reported",
       "source": {
-        "label": "Athens Banner-Herald \u2014 UGA July 2026 salary tape",
+        "label": "Athens Banner-Herald — UGA July 2026 salary tape",
         "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/"
       },
       "field": "coaches.football.pay"
@@ -76,11 +256,11 @@
       "school": "mississippi-state",
       "schoolName": "Mississippi State",
       "kind": "contract",
-      "headline": "Clarion Ledger quotes Lebby\u2019s contracts: $4.35 million in 2025, +$15,000 annually through 2028, so $4,365,000 in 2026.",
+      "headline": "Clarion Ledger quotes Lebby’s contracts: $4.35 million in 2025, +$15,000 annually through 2028, so $4,365,000 in 2026.",
       "figure": 4365000,
       "confidence": "reported",
       "source": {
-        "label": "Clarion Ledger \u2014 Lebby contracts",
+        "label": "Clarion Ledger — Lebby contracts",
         "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/"
       },
       "field": "coaches.football.pay"
@@ -95,7 +275,7 @@
       "figure": 8000000,
       "confidence": "estimated",
       "source": {
-        "label": "AP \u2014 Oregon $88 million Nike apparel agreement",
+        "label": "AP — Oregon $88 million Nike apparel agreement",
         "url": "https://apnews.com/general-news-462ca17443ae44428ec8dc67f5508bcb"
       },
       "field": "layers.apparel.annualValue"
@@ -106,11 +286,11 @@
       "school": "washington",
       "schoolName": "Washington",
       "kind": "apparel",
-      "headline": "ESPN: Washington\u2019s 10-year Adidas deal is $5.275 million cash + $5.58 million product + $1.1 million marketing ($11.955 million AAV).",
+      "headline": "ESPN: Washington’s 10-year Adidas deal is $5.275 million cash + $5.58 million product + $1.1 million marketing ($11.955 million AAV).",
       "figure": 11955000,
       "confidence": "reported",
       "source": {
-        "label": "ESPN \u2014 Washington 10-year Adidas agreement",
+        "label": "ESPN — Washington 10-year Adidas agreement",
         "url": "https://www.espn.com/college-sports/story/_/id/23104808/university-washington-10-year-agreement-wear-adidas-apparel-starting-summer-2019"
       },
       "field": "layers.apparel.annualValue"
@@ -125,7 +305,7 @@
       "figure": 16666667,
       "confidence": "estimated",
       "source": {
-        "label": "Texas Tribune \u2014 UT Nike $250 million / 15 years",
+        "label": "Texas Tribune — UT Nike $250 million / 15 years",
         "url": "https://www.texastribune.org/2015/10/30/ut-signs-record-apparel-deal-nike-250-million-over/"
       },
       "field": "layers.apparel.annualValue"
@@ -136,11 +316,11 @@
       "school": "georgia-tech",
       "schoolName": "Georgia Tech",
       "kind": "naming",
-      "headline": "AP / AJC: Board of Regents approve Bobby Dodd Stadium at Hyundai Field \u2014 about $55 million over 20 years (~$2.75 million AAV). Field name, not the bowl.",
+      "headline": "AP / AJC: Board of Regents approve Bobby Dodd Stadium at Hyundai Field — about $55 million over 20 years (~$2.75 million AAV). Field name, not the bowl.",
       "figure": 2750000,
       "confidence": "estimated",
       "source": {
-        "label": "AP \u2014 Georgia Tech Hyundai field naming",
+        "label": "AP — Georgia Tech Hyundai field naming",
         "url": "https://apnews.com/article/georgia-tech-hyundai-bobby-dodd-stadium-naming-rights-7efc03a1c8f00edabf4b5c5e0b60b42d"
       },
       "field": "layers.apparel.naming"
@@ -185,7 +365,7 @@
       "figure": 47087682,
       "confidence": "reported",
       "source": {
-        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "label": "Wikipedia ACC — FY2025 Form 990 Schedule A via ProPublica",
         "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
       },
       "field": "capacity.mediaConference"
@@ -200,7 +380,7 @@
       "figure": 43601179,
       "confidence": "reported",
       "source": {
-        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "label": "Wikipedia ACC — FY2025 Form 990 Schedule A via ProPublica",
         "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
       },
       "field": "capacity.mediaConference"
@@ -215,7 +395,7 @@
       "figure": 46052588,
       "confidence": "reported",
       "source": {
-        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "label": "Wikipedia ACC — FY2025 Form 990 Schedule A via ProPublica",
         "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
       },
       "field": "capacity.mediaConference"
@@ -230,7 +410,7 @@
       "figure": 46304685,
       "confidence": "reported",
       "source": {
-        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "label": "Wikipedia ACC — FY2025 Form 990 Schedule A via ProPublica",
         "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
       },
       "field": "capacity.mediaConference"
@@ -245,7 +425,7 @@
       "figure": 46546737,
       "confidence": "reported",
       "source": {
-        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "label": "Wikipedia ACC — FY2025 Form 990 Schedule A via ProPublica",
         "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
       },
       "field": "capacity.mediaConference"
@@ -260,7 +440,7 @@
       "figure": 42814168,
       "confidence": "reported",
       "source": {
-        "label": "Wikipedia ACC \u2014 FY2025 Form 990 Schedule A via ProPublica",
+        "label": "Wikipedia ACC — FY2025 Form 990 Schedule A via ProPublica",
         "url": "https://en.wikipedia.org/wiki/Atlantic_Coast_Conference"
       },
       "field": "capacity.mediaConference"
@@ -275,7 +455,7 @@
       "figure": 7000000,
       "confidence": "reported",
       "source": {
-        "label": "UW System Board of Regents \u2014 Nov. 25, 2025 special meeting packet",
+        "label": "UW System Board of Regents — Nov. 25, 2025 special meeting packet",
         "url": "https://www.wisconsin.edu/regents/download/meeting_materials/2025_meeting_materials/Meeting-Book---Special-Meeting-of-the-Board-of-Regents-(November-25,-2025).pdf"
       },
       "field": "layers.apparel.annualValue"
@@ -286,11 +466,11 @@
       "school": "kentucky",
       "schoolName": "Kentucky",
       "kind": "apparel",
-      "headline": "UW Board of Regents packet names Kentucky\u2019s ten-year Nike renewal: $7 million annual product allowance (to $7.5 million in year five), no cash.",
+      "headline": "UW Board of Regents packet names Kentucky’s ten-year Nike renewal: $7 million annual product allowance (to $7.5 million in year five), no cash.",
       "figure": 7000000,
       "confidence": "reported",
       "source": {
-        "label": "UW System Board of Regents \u2014 Nov. 25, 2025 special meeting packet",
+        "label": "UW System Board of Regents — Nov. 25, 2025 special meeting packet",
         "url": "https://www.wisconsin.edu/regents/download/meeting_materials/2025_meeting_materials/Meeting-Book---Special-Meeting-of-the-Board-of-Regents-(November-25,-2025).pdf"
       },
       "field": "layers.apparel.annualValue"
@@ -305,7 +485,7 @@
       "figure": 1850000,
       "confidence": "reported",
       "source": {
-        "label": "Arkansas Democrat-Gazette \u2014 college stadium naming census",
+        "label": "Arkansas Democrat-Gazette — college stadium naming census",
         "url": "https://www.arkansasonline.com/news/2026/jun/25/arkansas-football-stadium-naming-rights-deal-community-america-razorback-stadium-value/"
       },
       "field": "layers.apparel.naming"
@@ -316,11 +496,11 @@
       "school": "indiana",
       "schoolName": "Indiana",
       "kind": "contract",
-      "headline": "247Sports publishes Curt Cignetti\u2019s Feb. 4, 2026 FOIA MOU: $12.025 million in 2026 (base $500k + promotional $11.525M). AP/IU average is $13.2 million including a $1 million retention bonus left out of the year cell.",
+      "headline": "247Sports publishes Curt Cignetti’s Feb. 4, 2026 FOIA MOU: $12.025 million in 2026 (base $500k + promotional $11.525M). AP/IU average is $13.2 million including a $1 million retention bonus left out of the year cell.",
       "figure": 12025000,
       "confidence": "reported",
       "source": {
-        "label": "247Sports / Peegs.com \u2014 Cignetti Feb. 4, 2026 MOU via open records",
+        "label": "247Sports / Peegs.com — Cignetti Feb. 4, 2026 MOU via open records",
         "url": "https://247sports.com/college/indiana/article/details-of-indiana-football-coach-curt-cignettis-newest-contract-that-makes-him-a-top-3-paid-coach-in-the-country-276117920/"
       },
       "field": "coaches.football.pay"
@@ -331,11 +511,11 @@
       "school": "alabama",
       "schoolName": "Alabama",
       "kind": "contract",
-      "headline": "CBS Sports: Alabama trustees approve Kalen DeBoer\u2019s seven-year extension at $12.5 million annual salary through 2033. School-side without-cause is 90% remaining, no mitigate \u2014 dollar overhang left pending.",
+      "headline": "CBS Sports: Alabama trustees approve Kalen DeBoer’s seven-year extension at $12.5 million annual salary through 2033. School-side without-cause is 90% remaining, no mitigate — dollar overhang left pending.",
       "figure": 12500000,
       "confidence": "reported",
       "source": {
-        "label": "CBS Sports \u2014 DeBoer trustee compensation announcement",
+        "label": "CBS Sports — DeBoer trustee compensation announcement",
         "url": "https://www.cbssports.com/college-football/news/kalen-deboer-alabama-contract-extension-salary/"
       },
       "field": "coaches.football.pay"
@@ -346,11 +526,11 @@
       "school": "ohio-state",
       "schoolName": "Ohio State",
       "kind": "contract",
-      "headline": "247Sports quotes Ryan Day\u2019s FOIA employment agreement: $12.5 million basic annual compensation through 2031. Academic / CFP bonuses stay out of the year cell.",
+      "headline": "247Sports quotes Ryan Day’s FOIA employment agreement: $12.5 million basic annual compensation through 2031. Academic / CFP bonuses stay out of the year cell.",
       "figure": 12500000,
       "confidence": "reported",
       "source": {
-        "label": "247Sports / Bucknuts \u2014 Day EA via public records",
+        "label": "247Sports / Bucknuts — Day EA via public records",
         "url": "https://247sports.com/college/ohio-state/article/ohio-state-football-ryan-day-receives-a-bonus-after-buckeyes-academic-achievement-for-third-straight-year-286549538/"
       },
       "field": "coaches.football.pay"
@@ -361,11 +541,11 @@
       "school": "texas",
       "schoolName": "Texas",
       "kind": "collective-990",
-      "headline": "Texas One Fund Inc Form 990 (EIN 87-3873183), calendar 2024: Schedule O / Part IX line 11g books Student athlete appearances at $14,540,650. Collective 990 \u2014 not House, not Item 44.",
+      "headline": "Texas One Fund Inc Form 990 (EIN 87-3873183), calendar 2024: Schedule O / Part IX line 11g books Student athlete appearances at $14,540,650. Collective 990 — not House, not Item 44.",
       "figure": 14540650,
       "confidence": "reported",
       "source": {
-        "label": "ProPublica Nonprofit Explorer \u2014 Texas One Fund Inc 2024 Form 990",
+        "label": "ProPublica Nonprofit Explorer — Texas One Fund Inc 2024 Form 990",
         "url": "https://projects.propublica.org/nonprofits/organizations/873873183/202503359349301145/IRS990"
       },
       "field": "nil.collective990"
@@ -376,11 +556,11 @@
       "school": "notre-dame",
       "schoolName": "Notre Dame",
       "kind": "collective-990",
-      "headline": "Friends of the University of Notre Dame Inc (FUND) Form 990 (EIN 87-4530736), calendar 2024: Part IX other expense ATHLETE SERVICE COMP. $10,823,302. Collective 990 \u2014 not House.",
+      "headline": "Friends of the University of Notre Dame Inc (FUND) Form 990 (EIN 87-4530736), calendar 2024: Part IX other expense ATHLETE SERVICE COMP. $10,823,302. Collective 990 — not House.",
       "figure": 10823302,
       "confidence": "reported",
       "source": {
-        "label": "ProPublica Nonprofit Explorer \u2014 FUND 2024 Form 990",
+        "label": "ProPublica Nonprofit Explorer — FUND 2024 Form 990",
         "url": "https://projects.propublica.org/nonprofits/organizations/874530736/202512339349301116/IRS990"
       },
       "field": "nil.collective990"
@@ -391,11 +571,11 @@
       "school": "texas",
       "schoolName": "Texas",
       "kind": "collective-990",
-      "headline": "Texas One Fund Inc Form 990 (EIN 87-3873183), calendar 2023: Schedule O / Part IX line 11g books Student athlete appearances at $11,717,673. Collective 990 \u2014 not House, not Item 44.",
+      "headline": "Texas One Fund Inc Form 990 (EIN 87-3873183), calendar 2023: Schedule O / Part IX line 11g books Student athlete appearances at $11,717,673. Collective 990 — not House, not Item 44.",
       "figure": 11717673,
       "confidence": "reported",
       "source": {
-        "label": "ProPublica Nonprofit Explorer \u2014 Texas One Fund Inc 2023 Form 990",
+        "label": "ProPublica Nonprofit Explorer — Texas One Fund Inc 2023 Form 990",
         "url": "https://projects.propublica.org/nonprofits/organizations/873873183/202413239349302061/IRS990"
       },
       "field": "nil.collective990"
@@ -406,11 +586,11 @@
       "school": "notre-dame",
       "schoolName": "Notre Dame",
       "kind": "collective-990",
-      "headline": "Friends of the University of Notre Dame Inc (FUND) Form 990 (EIN 87-4530736), calendar 2023: Part IX other expense ATHLETE SERVICE COMP. $5,129,490. Collective 990 \u2014 not House.",
+      "headline": "Friends of the University of Notre Dame Inc (FUND) Form 990 (EIN 87-4530736), calendar 2023: Part IX other expense ATHLETE SERVICE COMP. $5,129,490. Collective 990 — not House.",
       "figure": 5129490,
       "confidence": "reported",
       "source": {
-        "label": "ProPublica Nonprofit Explorer \u2014 FUND 2023 Form 990",
+        "label": "ProPublica Nonprofit Explorer — FUND 2023 Form 990",
         "url": "https://projects.propublica.org/nonprofits/organizations/874530736/202403169349301955/IRS990"
       },
       "field": "nil.collective990"
@@ -421,11 +601,11 @@
       "school": "georgia",
       "schoolName": "Georgia",
       "kind": "collective-990",
-      "headline": "Classic City Collective Inc Form 990 (EIN 93-3070490), calendar 2023: Schedule O / Part IX line 11g books Payments for name, image, and likeness at $2,214,518. 501(c)(6). Collective 990 \u2014 not UGA Item 44.",
+      "headline": "Classic City Collective Inc Form 990 (EIN 93-3070490), calendar 2023: Schedule O / Part IX line 11g books Payments for name, image, and likeness at $2,214,518. 501(c)(6). Collective 990 — not UGA Item 44.",
       "figure": 2214518,
       "confidence": "reported",
       "source": {
-        "label": "ProPublica Nonprofit Explorer \u2014 Classic City Collective Inc 2023 Form 990",
+        "label": "ProPublica Nonprofit Explorer — Classic City Collective Inc 2023 Form 990",
         "url": "https://projects.propublica.org/nonprofits/organizations/933070490/202433199349312273/IRS990"
       },
       "field": "nil.collective990"
@@ -436,11 +616,11 @@
       "school": "louisville",
       "schoolName": "Louisville",
       "kind": "collective-990",
-      "headline": "502Circle NIL Collective Foundation Form 990 (EIN 92-0905366), calendar 2023: Schedule O / Part IX line 11g books Athlete fees at $545,833. Collective 990 \u2014 does not replace the $32.9M FOIA booked cell.",
+      "headline": "502Circle NIL Collective Foundation Form 990 (EIN 92-0905366), calendar 2023: Schedule O / Part IX line 11g books Athlete fees at $545,833. Collective 990 — does not replace the $32.9M FOIA booked cell.",
       "figure": 545833,
       "confidence": "reported",
       "source": {
-        "label": "ProPublica Nonprofit Explorer \u2014 502Circle 2023 Form 990",
+        "label": "ProPublica Nonprofit Explorer — 502Circle 2023 Form 990",
         "url": "https://projects.propublica.org/nonprofits/organizations/920905366/202422819349300022/IRS990"
       },
       "field": "nil.collective990"
@@ -451,11 +631,11 @@
       "school": "washington",
       "schoolName": "Washington",
       "kind": "collective-990",
-      "headline": "Montlake Futures Fund Form 990 (EIN 87-3396900), year ended June 30, 2023: Schedule O / Part IX line 11g books Appearance fees at $2,803,276. Collective 990 \u2014 not Washington Item 44.",
+      "headline": "Montlake Futures Fund Form 990 (EIN 87-3396900), year ended June 30, 2023: Schedule O / Part IX line 11g books Appearance fees at $2,803,276. Collective 990 — not Washington Item 44.",
       "figure": 2803276,
       "confidence": "reported",
       "source": {
-        "label": "ProPublica Nonprofit Explorer \u2014 Montlake Futures Fund FY2023 Form 990",
+        "label": "ProPublica Nonprofit Explorer — Montlake Futures Fund FY2023 Form 990",
         "url": "https://projects.propublica.org/nonprofits/organizations/873396900/202401369349316405/IRS990"
       },
       "field": "nil.collective990"
@@ -466,11 +646,11 @@
       "school": "alabama",
       "schoolName": "Alabama",
       "kind": "collective-990",
-      "headline": "Walk of Champions Form 990 (EIN 92-2221008), calendar 2023: Part IX appearance fees $10,000 for two named student-athlete contracts. Collective 990 \u2014 Yea Alabama LLC is not booked.",
+      "headline": "Walk of Champions Form 990 (EIN 92-2221008), calendar 2023: Part IX appearance fees $10,000 for two named student-athlete contracts. Collective 990 — Yea Alabama LLC is not booked.",
       "figure": 10000,
       "confidence": "reported",
       "source": {
-        "label": "ProPublica Nonprofit Explorer \u2014 Walk of Champions 2023 Form 990",
+        "label": "ProPublica Nonprofit Explorer — Walk of Champions 2023 Form 990",
         "url": "https://projects.propublica.org/nonprofits/organizations/922221008/202401369349314385/IRS990"
       },
       "field": "nil.collective990"
@@ -481,11 +661,11 @@
       "school": "texas",
       "schoolName": "Texas",
       "kind": "collective-990",
-      "headline": "Texas One Fund Inc Form 990 (EIN 87-3873183), calendar 2022: Schedule O / Part IX line 11g books Student athlete contractors at $423,157. Collective 990 \u2014 not House.",
+      "headline": "Texas One Fund Inc Form 990 (EIN 87-3873183), calendar 2022: Schedule O / Part IX line 11g books Student athlete contractors at $423,157. Collective 990 — not House.",
       "figure": 423157,
       "confidence": "reported",
       "source": {
-        "label": "ProPublica Nonprofit Explorer \u2014 Texas One Fund Inc 2022 Form 990",
+        "label": "ProPublica Nonprofit Explorer — Texas One Fund Inc 2022 Form 990",
         "url": "https://projects.propublica.org/nonprofits/organizations/873873183/202333199349308883/IRS990"
       },
       "field": "nil.collective990"
@@ -496,11 +676,11 @@
       "school": "notre-dame",
       "schoolName": "Notre Dame",
       "kind": "collective-990",
-      "headline": "Friends of the University of Notre Dame Inc (FUND) Form 990 (EIN 87-4530736), calendar 2022: Part IX other expense Comp for NIL services perf. $1,176,862. Collective 990 \u2014 not House.",
+      "headline": "Friends of the University of Notre Dame Inc (FUND) Form 990 (EIN 87-4530736), calendar 2022: Part IX other expense Comp for NIL services perf. $1,176,862. Collective 990 — not House.",
       "figure": 1176862,
       "confidence": "reported",
       "source": {
-        "label": "ProPublica Nonprofit Explorer \u2014 FUND 2022 Form 990",
+        "label": "ProPublica Nonprofit Explorer — FUND 2022 Form 990",
         "url": "https://projects.propublica.org/nonprofits/organizations/874530736/202333109349303218/IRS990"
       },
       "field": "nil.collective990"
@@ -511,11 +691,11 @@
       "school": "arkansas",
       "schoolName": "Arkansas",
       "kind": "contract",
-      "headline": "Southwest Times Record publishes Ryan Silverfield\u2019s FOIA term sheet: $6.5 million in 2026, 70% school-side remaining-pay rule, term through Dec. 31, 2030.",
+      "headline": "Southwest Times Record publishes Ryan Silverfield’s FOIA term sheet: $6.5 million in 2026, 70% school-side remaining-pay rule, term through Dec. 31, 2030.",
       "figure": 6500000,
       "confidence": "reported",
       "source": {
-        "label": "Southwest Times Record \u2014 Silverfield term sheet via open records",
+        "label": "Southwest Times Record — Silverfield term sheet via open records",
         "url": "https://www.swtimes.com/story/sports/college/sec/2025/12/01/arkansas-football-coach-ryan-silverfield-salary-bonuses-buyouts/87557612007/"
       },
       "field": "coaches.football.term"
@@ -526,11 +706,11 @@
       "school": "ole-miss",
       "schoolName": "Ole Miss",
       "kind": "contract",
-      "headline": "Clarion Ledger publishes Pete Golding\u2019s OMAF term-sheet terms: $6.8 million in Year 1, 75% school-side remaining-pay rule, five years through 2030.",
+      "headline": "Clarion Ledger publishes Pete Golding’s OMAF term-sheet terms: $6.8 million in Year 1, 75% school-side remaining-pay rule, five years through 2030.",
       "figure": 6800000,
       "confidence": "reported",
       "source": {
-        "label": "Clarion Ledger \u2014 Golding OMAF term sheet",
+        "label": "Clarion Ledger — Golding OMAF term sheet",
         "url": "https://www.clarionledger.com/story/sports/college/ole-miss/2026/07/01/pete-golding-contract-salary-ole-miss-football-coach/90754060007/"
       },
       "field": "coaches.football.term"
@@ -541,11 +721,11 @@
       "school": "michigan",
       "schoolName": "Michigan",
       "kind": "contract",
-      "headline": "Detroit Free Press publishes Kyle Whittingham\u2019s FOIA memorandum of understanding: $8.0 million base in 2026, 75% school-side remaining-pay rule, term through Jan. 31, 2031.",
+      "headline": "Detroit Free Press publishes Kyle Whittingham’s FOIA memorandum of understanding: $8.0 million base in 2026, 75% school-side remaining-pay rule, term through Jan. 31, 2031.",
       "figure": 8000000,
       "confidence": "reported",
       "source": {
-        "label": "Detroit Free Press \u2014 Whittingham MOU via FOIA",
+        "label": "Detroit Free Press — Whittingham MOU via FOIA",
         "url": "https://www.freep.com/story/sports/college/university-michigan/wolverines/2026/01/23/kyle-whittingham-contract-michigan-football/88318877007/"
       },
       "field": "coaches.football.term"
@@ -556,7 +736,7 @@
       "school": "michigan-state",
       "schoolName": "Michigan State",
       "kind": "contract",
-      "headline": "WLNS hosts Pat Fitzgerald\u2019s MSU terms sheet. $5.0 million annualized in 2026 (Base $4.0M + Supplemental $1.0M). School-side without-cause is 72.5% of remaining Annual Compensation through Jan. 31, 2031. No published dollar calendar.",
+      "headline": "WLNS hosts Pat Fitzgerald’s MSU terms sheet. $5.0 million annualized in 2026 (Base $4.0M + Supplemental $1.0M). School-side without-cause is 72.5% of remaining Annual Compensation through Jan. 31, 2031. No published dollar calendar.",
       "figure": 5000000,
       "confidence": "reported",
       "source": {
@@ -571,7 +751,7 @@
       "school": "minnesota",
       "schoolName": "Minnesota",
       "kind": "contract",
-      "headline": "Minnesota Regents finance docket books P. J. Fleck\u2019s 2026 annual salary at $7.9 million after a $700,000 management bonus. School-side without-cause remains 70% of remaining base + supplemental + retention. No published dollar calendar.",
+      "headline": "Minnesota Regents finance docket books P. J. Fleck’s 2026 annual salary at $7.9 million after a $700,000 management bonus. School-side without-cause remains 70% of remaining base + supplemental + retention. No published dollar calendar.",
       "figure": 7900000,
       "confidence": "reported",
       "source": {
@@ -586,7 +766,7 @@
       "school": "penn-state",
       "schoolName": "Penn State",
       "kind": "contract",
-      "headline": "Penn State posts Matt Campbell\u2019s Head Coach Term Sheet. 2026 Guaranteed Compensation is $8,000,000. School-side without-cause is 100% of remaining Guaranteed Compensation (2026\u20132033 table = $70.5 million at the start of 2026), subject to mitigation.",
+      "headline": "Penn State posts Matt Campbell’s Head Coach Term Sheet. 2026 Guaranteed Compensation is $8,000,000. School-side without-cause is 100% of remaining Guaranteed Compensation (2026–2033 table = $70.5 million at the start of 2026), subject to mitigation.",
       "figure": 70500000,
       "confidence": "reported",
       "source": {
@@ -605,7 +785,7 @@
       "figure": 5400000,
       "confidence": "reported",
       "source": {
-        "label": "Yahoo Sports / California Post \u2014 Chesney EA",
+        "label": "Yahoo Sports / California Post — Chesney EA",
         "url": "https://sports.yahoo.com/articles/contract-details-revealed-ucla-got-035156125.html"
       },
       "field": "coaches.football.term"
@@ -620,7 +800,7 @@
       "figure": 4100000,
       "confidence": "reported",
       "source": {
-        "label": "Topeka Capital-Journal \u2014 Klein EA",
+        "label": "Topeka Capital-Journal — Klein EA",
         "url": "https://www.cjonline.com/story/sports/college/cat-zone/2025/12/10/collin-klein-contract-kansas-state-football-salary-buyout-bonuses-chris-klieman/87702201007/"
       },
       "field": "coaches.football.term"
@@ -635,7 +815,7 @@
       "figure": 3800000,
       "confidence": "reported",
       "source": {
-        "label": "The Oklahoman \u2014 Morris EA",
+        "label": "The Oklahoman — Morris EA",
         "url": "https://www.usatoday.com/story/sports/college/cowboys/2025/12/12/eric-morris-contract-salary-buyout-details-oklahoma-state-football-coach/87726037007/"
       },
       "field": "coaches.football.term"
@@ -646,11 +826,11 @@
       "school": "utah",
       "schoolName": "Utah",
       "kind": "contract",
-      "headline": "Deseret News publishes Morgan Scalley\u2019s FOIA employment agreement: $5.1 million Year 1 total base compensation, 75% school-side remaining-pay rule, term through the 2030 season.",
+      "headline": "Deseret News publishes Morgan Scalley’s FOIA employment agreement: $5.1 million Year 1 total base compensation, 75% school-side remaining-pay rule, term through the 2030 season.",
       "figure": 5100000,
       "confidence": "reported",
       "source": {
-        "label": "Deseret News \u2014 Scalley EA via public records",
+        "label": "Deseret News — Scalley EA via public records",
         "url": "https://www.deseret.com/sports/2026/03/20/morgan-scalley-utah-football-coach-contract-details/"
       },
       "field": "coaches.football.term"
@@ -661,7 +841,7 @@
       "school": "texas",
       "schoolName": "Texas",
       "kind": "booked-nil",
-      "headline": "Texas Public Radio: UT-Austin disclosed $13.5 million in revenue-share payments from July 2025 through the end of March 2026. On-track ~$18M is a projection \u2014 left unbooked.",
+      "headline": "Texas Public Radio: UT-Austin disclosed $13.5 million in revenue-share payments from July 2025 through the end of March 2026. On-track ~$18M is a projection — left unbooked.",
       "figure": 13500000,
       "confidence": "reported",
       "source": {
@@ -781,11 +961,11 @@
       "school": "penn-state",
       "schoolName": "Penn State",
       "kind": "booked-nil",
-      "headline": "PennLive: Penn State FY2025 MFRS books $18,368,391 Institutional NIL Revenue Share (1 Jul 2024\u201330 Jun 2025), with published sport lines. Not House Year 1.",
+      "headline": "PennLive: Penn State FY2025 MFRS books $18,368,391 Institutional NIL Revenue Share (1 Jul 2024–30 Jun 2025), with published sport lines. Not House Year 1.",
       "figure": 18368391,
       "confidence": "reported",
       "source": {
-        "label": "PennLive \u2014 Penn State FY2025 NIL breakdown",
+        "label": "PennLive — Penn State FY2025 NIL breakdown",
         "url": "https://www.pennlive.com/pennstatefootball/2026/02/penn-state-spent-184-million-in-nil-during-fiscal-year-2025-heres-the-breakdown.html"
       },
       "field": "nil.preCap"
@@ -811,12 +991,12 @@
       "school": "oklahoma-state",
       "schoolName": "Oklahoma State",
       "kind": "booked-nil",
-      "headline": "The Oklahoman: OSU FY2025 NCAA report includes NIL compensation of \"just over $16 million\" for a portion of the year. Booked as $16 million \u2014 not $16,000,001.",
+      "headline": "The Oklahoman: OSU FY2025 NCAA report includes NIL compensation of \"just over $16 million\" for a portion of the year. Booked as $16 million — not $16,000,001.",
       "figure": 16000000,
       "figureNote": "just over",
       "confidence": "estimated",
       "source": {
-        "label": "The Oklahoman \u2014 OSU FY2025 finances",
+        "label": "The Oklahoman — OSU FY2025 finances",
         "url": "https://www.oklahoman.com/story/sports/college/cowboys/2026/01/26/oklahoma-state-athletics-2025-fiscal-year-finances-revenue-osu-cowboys/88307484007/"
       },
       "field": "nil.preCap"
@@ -827,11 +1007,11 @@
       "school": "texas",
       "schoolName": "Texas",
       "kind": "booked-nil",
-      "headline": "Austin American-Statesman: Texas FY2025 NCAA report books $3.2 million in revenue sharing. School FY ended Aug 31, 2025 \u2014 only two months of House. The $18M cap plan is not booked.",
+      "headline": "Austin American-Statesman: Texas FY2025 NCAA report books $3.2 million in revenue sharing. School FY ended Aug 31, 2025 — only two months of House. The $18M cap plan is not booked.",
       "figure": 3200000,
       "confidence": "reported",
       "source": {
-        "label": "Austin American-Statesman \u2014 Texas FY2025 NCAA report",
+        "label": "Austin American-Statesman — Texas FY2025 NCAA report",
         "url": "https://www.statesman.com/sports/college/longhorns/football/article/texas-longhorns-nil-revenue-sharing-21304634.php"
       },
       "field": "nil.preCap"
@@ -917,7 +1097,7 @@
       "school": "minnesota",
       "schoolName": "Minnesota",
       "kind": "contract",
-      "headline": "Minnesota Regents finance docket posts P. J. Fleck\u2019s new employment agreement. Term through December 31, 2030. School-side without-cause is 70% of remaining base + supplemental + retention, quoted from the July 9, 2025 docket. No published dollar calendar.",
+      "headline": "Minnesota Regents finance docket posts P. J. Fleck’s new employment agreement. Term through December 31, 2030. School-side without-cause is 70% of remaining base + supplemental + retention, quoted from the July 9, 2025 docket. No published dollar calendar.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -932,11 +1112,11 @@
       "school": "lsu",
       "schoolName": "LSU",
       "kind": "contract",
-      "headline": "LSU posts Lane Kiffin\u2019s signed employment agreement. Term through January 31, 2033. School-side without-cause is 80% of remaining Base + Supplemental, monthly, with no mitigate and no offset. No published dollar calendar.",
+      "headline": "LSU posts Lane Kiffin’s signed employment agreement. Term through January 31, 2033. School-side without-cause is 80% of remaining Base + Supplemental, monthly, with no mitigate and no offset. No published dollar calendar.",
       "figure": null,
       "confidence": "reported",
       "source": {
-        "label": "LSU signed employment agreement \u2014 Lane Kiffin",
+        "label": "LSU signed employment agreement — Lane Kiffin",
         "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf"
       },
       "field": "coaches.football.term"
@@ -947,7 +1127,7 @@
       "school": "missouri",
       "schoolName": "Missouri",
       "kind": "contract",
-      "headline": "Missouri posts Eliah Drinkwitz\u2019s Second Restated and Amended Employment Contract. Term through January 15, 2032. School-side without-cause is 80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate.",
+      "headline": "Missouri posts Eliah Drinkwitz’s Second Restated and Amended Employment Contract. Term through January 15, 2032. School-side without-cause is 80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -962,7 +1142,7 @@
       "school": "virginia-tech",
       "schoolName": "Virginia Tech",
       "kind": "contract",
-      "headline": "Virginia Tech\u2019s binding letter of intent for James Franklin runs through December 31, 2030. Without-cause is remaining Base + Supplemental (2026\u20132030 windows $6.0 / $5.0 / $4.0 / $12.75 / $13.25 million), subject to offset if he takes a college or pro coaching job.",
+      "headline": "Virginia Tech’s binding letter of intent for James Franklin runs through December 31, 2030. Without-cause is remaining Base + Supplemental (2026–2030 windows $6.0 / $5.0 / $4.0 / $12.75 / $13.25 million), subject to offset if he takes a college or pro coaching job.",
       "figure": 41000000,
       "confidence": "reported",
       "source": {
@@ -977,7 +1157,7 @@
       "school": "illinois",
       "schoolName": "Illinois",
       "kind": "contract",
-      "headline": "Illinois BOT minutes record Bret Bielema\u2019s term through June 30, 2031 and say liquidated damages exist with mitigation/offset. The packet publishes no percent and no dollar staircase.",
+      "headline": "Illinois BOT minutes record Bret Bielema’s term through June 30, 2031 and say liquidated damages exist with mitigation/offset. The packet publishes no percent and no dollar staircase.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -992,7 +1172,7 @@
       "school": "oregon",
       "schoolName": "Oregon",
       "kind": "contract",
-      "headline": "Oregon BOT March 7, 2025 packet Exhibit A Amendment #3 extends Dan Lanning through January 31, 2031. Without-cause is 100% of remaining guaranteed salary plus remaining deferred compensation, monthly, subject to \u00a76.2.e mitigation.",
+      "headline": "Oregon BOT March 7, 2025 packet Exhibit A Amendment #3 extends Dan Lanning through January 31, 2031. Without-cause is 100% of remaining guaranteed salary plus remaining deferred compensation, monthly, subject to §6.2.e mitigation.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -1007,7 +1187,7 @@
       "school": "florida-state",
       "schoolName": "Florida State",
       "kind": "contract",
-      "headline": "Florida State 7th Amendment (Dec. 13, 2024) replaces the Norvell without-cause rule: 85% of remaining TAC plus a Contract Year reinstatement. Start-of-2026 file math is $58,192,500 \u2014 not the CBS $58.4M / $45.6M estimates.",
+      "headline": "Florida State 7th Amendment (Dec. 13, 2024) replaces the Norvell without-cause rule: 85% of remaining TAC plus a Contract Year reinstatement. Start-of-2026 file math is $58,192,500 — not the CBS $58.4M / $45.6M estimates.",
       "figure": 58192500,
       "confidence": "reported",
       "source": {
@@ -1022,7 +1202,7 @@
       "school": "north-carolina",
       "schoolName": "North Carolina",
       "kind": "contract",
-      "headline": "UNC posts Bill Belichick\u2019s signed employment agreement. Term through December 31, 2029. University without-cause (\u00a712) pays remaining Base $1M + Supplemental $9M only through December 31, 2027; 2028\u201329 are $0 on a university fire. No mitigation in \u00a712.",
+      "headline": "UNC posts Bill Belichick’s signed employment agreement. Term through December 31, 2029. University without-cause (§12) pays remaining Base $1M + Supplemental $9M only through December 31, 2027; 2028–29 are $0 on a university fire. No mitigation in §12.",
       "figure": 20000000,
       "confidence": "reported",
       "source": {
@@ -1037,7 +1217,7 @@
       "school": "iowa-state",
       "schoolName": "Iowa State",
       "kind": "contract",
-      "headline": "Iowa State posts Jimmy Rogers\u2019s employment agreement. Term through January 31, 2032. Without-cause is 100% of remaining Base ($3,000,000/year). Six remaining contract years \u00d7 $3M = $18,000,000 at the start of the current year. Offset if hired at another D-I school; no duty to seek work.",
+      "headline": "Iowa State posts Jimmy Rogers’s employment agreement. Term through January 31, 2032. Without-cause is 100% of remaining Base ($3,000,000/year). Six remaining contract years × $3M = $18,000,000 at the start of the current year. Offset if hired at another D-I school; no duty to seek work.",
       "figure": 18000000,
       "confidence": "reported",
       "source": {
@@ -1052,7 +1232,7 @@
       "school": "clemson",
       "schoolName": "Clemson",
       "kind": "contract",
-      "headline": "Clemson 2022 BOT term sheet (binding until a restated EA) sets Dabo Swinney through December 31, 2031. University without-cause is $57,000,000 flat if terminated in 2026, then remaining Base + Supplemental + Licensing for 2027\u20132031. No mitigation.",
+      "headline": "Clemson 2022 BOT term sheet (binding until a restated EA) sets Dabo Swinney through December 31, 2031. University without-cause is $57,000,000 flat if terminated in 2026, then remaining Base + Supplemental + Licensing for 2027–2031. No mitigation.",
       "figure": 57000000,
       "confidence": "reported",
       "source": {
@@ -1067,7 +1247,7 @@
       "school": "kentucky",
       "schoolName": "Kentucky",
       "kind": "contract",
-      "headline": "Kentucky posts Will Stein\u2019s FY2025\u201326 employment agreement PDF. School-side without-cause is 70% of remaining Regular Compensation, paid monthly through January 31, 2031. No published dollar calendar.",
+      "headline": "Kentucky posts Will Stein’s FY2025–26 employment agreement PDF. School-side without-cause is 70% of remaining Regular Compensation, paid monthly through January 31, 2031. No published dollar calendar.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -1082,11 +1262,11 @@
       "school": "colorado",
       "schoolName": "Colorado",
       "kind": "contract",
-      "headline": "Colorado Board of Regents posts Deion Sanders\u2019s amended employment agreement PDF. School-side without-cause is 75% of remaining Base + Supplemental through December 31, 2029. No published dollar calendar.",
+      "headline": "Colorado Board of Regents posts Deion Sanders’s amended employment agreement PDF. School-side without-cause is 75% of remaining Base + Supplemental through December 31, 2029. No published dollar calendar.",
       "figure": null,
       "confidence": "reported",
       "source": {
-        "label": "CU Board of Regents \u2014 amended employment agreement PDF",
+        "label": "CU Board of Regents — amended employment agreement PDF",
         "url": "https://cu.community.diligentoneplatform.com/document/f62f1797-c88f-4707-bf61-73fa39f1059a/"
       },
       "field": "coaches.football.term"
@@ -1127,11 +1307,11 @@
       "school": "louisville",
       "schoolName": "Louisville",
       "kind": "booked-nil",
-      "headline": "Courier-Journal FOIA invoices/ledgers book Louisville revenue-share spend at $32.9 million for March 2025\u2013July 1, 2026. The extra above the $20.5M House cap is pre-cap KY NIL (about $12.7M before July 1, 2025). Prior desk cell was $20.27M for the House Year 1 window only.",
+      "headline": "Courier-Journal FOIA invoices/ledgers book Louisville revenue-share spend at $32.9 million for March 2025–July 1, 2026. The extra above the $20.5M House cap is pre-cap KY NIL (about $12.7M before July 1, 2025). Prior desk cell was $20.27M for the House Year 1 window only.",
       "figure": 32900000,
       "confidence": "reported",
       "source": {
-        "label": "Courier-Journal FOIA \u2014 Payton Titus",
+        "label": "Courier-Journal FOIA — Payton Titus",
         "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/08/05/university-of-kentucky-nil-revenue-sharing-records-louisville-budget-foia-ncaa-house-settlement/90345933007/"
       },
       "field": "nil.booked"
@@ -1142,7 +1322,7 @@
       "school": null,
       "schoolName": null,
       "kind": "house-cap",
-      "headline": "NCAA House Q&A sets the 2025\u201326 benefits cap at $20.5 million for every participating school.",
+      "headline": "NCAA House Q&A sets the 2025–26 benefits cap at $20.5 million for every participating school.",
       "figure": 20500000,
       "confidence": "reported",
       "source": {
@@ -1172,7 +1352,7 @@
       "school": "louisville",
       "schoolName": "Louisville",
       "kind": "booked-nil",
-      "headline": "Courier-Journal FOIA books Louisville institutional NIL at $20.27 million for the House Year 1 window (Jul 1, 2025\u2013Jul 1, 2026).",
+      "headline": "Courier-Journal FOIA books Louisville institutional NIL at $20.27 million for the House Year 1 window (Jul 1, 2025–Jul 1, 2026).",
       "figure": 20270000,
       "confidence": "reported",
       "source": {
@@ -1187,11 +1367,11 @@
       "school": "kentucky",
       "schoolName": "Kentucky",
       "kind": "booked-nil",
-      "headline": "Kentucky general counsel states $18 million across 686 revenue-share transactions, March 2025\u2013July 1, 2026. Ledgers not released.",
+      "headline": "Kentucky general counsel states $18 million across 686 revenue-share transactions, March 2025–July 1, 2026. Ledgers not released.",
       "figure": 18000000,
       "confidence": "reported",
       "source": {
-        "label": "Courier-Journal \u2014 UK counsel statement",
+        "label": "Courier-Journal — UK counsel statement",
         "url": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/"
       },
       "field": "nil.booked"
@@ -1202,11 +1382,11 @@
       "school": "louisville",
       "schoolName": "Louisville",
       "kind": "booked-nil",
-      "headline": "Louisville FY2025 MFRS books $12.7 million Institutional NIL Revenue Share before the House clock. Does not count against the 2025\u201326 cap.",
+      "headline": "Louisville FY2025 MFRS books $12.7 million Institutional NIL Revenue Share before the House clock. Does not count against the 2025–26 cap.",
       "figure": 12700000,
       "confidence": "reported",
       "source": {
-        "label": "Courier-Journal \u2014 UofL NCAA financial report FY2025",
+        "label": "Courier-Journal — UofL NCAA financial report FY2025",
         "url": "https://www.courier-journal.com/story/sports/college/louisville/2026/01/27/university-of-louisville-cardinals-nil-budget-uofl-basketball-college-football-payrolls-ncaa-revenue/88300679007/"
       },
       "field": "nil.preCap"
@@ -1217,7 +1397,7 @@
       "school": "arkansas",
       "schoolName": "Arkansas",
       "kind": "paid-buyout",
-      "headline": "Arkansas paying Sam Pittman\u2019s settled $7.7 million buyout over two years (no offset).",
+      "headline": "Arkansas paying Sam Pittman’s settled $7.7 million buyout over two years (no offset).",
       "figure": 7700000,
       "confidence": "reported",
       "source": {
@@ -1232,7 +1412,7 @@
       "school": "auburn",
       "schoolName": "Auburn",
       "kind": "paid-buyout",
-      "headline": "Auburn paying Hugh Freeze\u2019s $15.8 million buyout. No offset.",
+      "headline": "Auburn paying Hugh Freeze’s $15.8 million buyout. No offset.",
       "figure": 15800000,
       "confidence": "reported",
       "source": {
@@ -1247,7 +1427,7 @@
       "school": "florida",
       "schoolName": "Florida",
       "kind": "paid-buyout",
-      "headline": "Florida paying Billy Napier\u2019s $21.2 million buyout \u2014 about half in 30 days, then $2.5 million a year through 2028.",
+      "headline": "Florida paying Billy Napier’s $21.2 million buyout — about half in 30 days, then $2.5 million a year through 2028.",
       "figure": 21200000,
       "confidence": "reported",
       "source": {
@@ -1262,7 +1442,7 @@
       "school": "kentucky",
       "schoolName": "Kentucky",
       "kind": "paid-buyout",
-      "headline": "Kentucky paying Mark Stoops\u2019s $37.6 million guaranteed buyout, stretched to April 2031.",
+      "headline": "Kentucky paying Mark Stoops’s $37.6 million guaranteed buyout, stretched to April 2031.",
       "figure": 37600000,
       "confidence": "reported",
       "source": {
@@ -1277,7 +1457,7 @@
       "school": "lsu",
       "schoolName": "LSU",
       "kind": "paid-buyout",
-      "headline": "LSU paying Brian Kelly\u2019s ~$53.2 million without-cause buyout over six years into 2031.",
+      "headline": "LSU paying Brian Kelly’s ~$53.2 million without-cause buyout over six years into 2031.",
       "figure": 53200000,
       "confidence": "reported",
       "source": {
@@ -1292,7 +1472,7 @@
       "school": "texas-am",
       "schoolName": "Texas A&M",
       "kind": "paid-buyout",
-      "headline": "Texas A&M still paying Jimbo Fisher\u2019s $77.6 million 2023 buyout through 2031. Contract had no offset.",
+      "headline": "Texas A&M still paying Jimbo Fisher’s $77.6 million 2023 buyout through 2031. Contract had no offset.",
       "figure": 77600000,
       "confidence": "reported",
       "source": {
@@ -1307,7 +1487,7 @@
       "school": "michigan",
       "schoolName": "Michigan",
       "kind": "paid-buyout",
-      "headline": "Michigan owes $0 on Sherrone Moore\u2019s firing \u2014 for cause, no buyout.",
+      "headline": "Michigan owes $0 on Sherrone Moore’s firing — for cause, no buyout.",
       "figure": 0,
       "confidence": "reported",
       "source": {
@@ -1322,7 +1502,7 @@
       "school": "michigan-state",
       "schoolName": "Michigan State",
       "kind": "paid-buyout",
-      "headline": "Michigan State\u2019s Jonathan Smith buyout stands at $33 million, unpaid as of the March 2026 census, duty to mitigate.",
+      "headline": "Michigan State’s Jonathan Smith buyout stands at $33 million, unpaid as of the March 2026 census, duty to mitigate.",
       "figure": 33000000,
       "confidence": "reported",
       "source": {
@@ -1352,7 +1532,7 @@
       "school": "ucla",
       "schoolName": "UCLA",
       "kind": "paid-buyout",
-      "headline": "UCLA paying DeShaun Foster\u2019s $7.4 million buyout through 2028, subject to offset.",
+      "headline": "UCLA paying DeShaun Foster’s $7.4 million buyout through 2028, subject to offset.",
       "figure": 7400000,
       "confidence": "reported",
       "source": {
@@ -1367,7 +1547,7 @@
       "school": "california",
       "schoolName": "California",
       "kind": "paid-buyout",
-      "headline": "California paying Justin Wilcox\u2019s $10.8 million buyout through 2027, subject to offset.",
+      "headline": "California paying Justin Wilcox’s $10.8 million buyout through 2027, subject to offset.",
       "figure": 10800000,
       "confidence": "reported",
       "source": {
@@ -1386,7 +1566,7 @@
       "figure": 5312000,
       "confidence": "reported",
       "source": {
-        "label": "USA TODAY \u2014 UNC contract",
+        "label": "USA TODAY — UNC contract",
         "url": "https://www.usatoday.com/story/sports/ncaab/2026/03/24/north-carolina-basketball-fires-hubert-davis-unc-tar-heels-search-for-new-coach/89256794007/"
       },
       "field": "layers.buyoutsPaid"
@@ -1397,7 +1577,7 @@
       "school": "virginia-tech",
       "schoolName": "Virginia Tech",
       "kind": "paid-buyout",
-      "headline": "Virginia Tech settled Brent Pry at $3.1 million over two years after he returned as Franklin\u2019s coordinator (headline $6 million).",
+      "headline": "Virginia Tech settled Brent Pry at $3.1 million over two years after he returned as Franklin’s coordinator (headline $6 million).",
       "figure": 3100000,
       "confidence": "reported",
       "source": {
@@ -1412,7 +1592,7 @@
       "school": "oklahoma-state",
       "schoolName": "Oklahoma State",
       "kind": "paid-buyout",
-      "headline": "Oklahoma State paying Mike Gundy\u2019s $15 million buyout over three years, subject to offset.",
+      "headline": "Oklahoma State paying Mike Gundy’s $15 million buyout over three years, subject to offset.",
       "figure": 15000000,
       "confidence": "reported",
       "source": {
@@ -1442,7 +1622,7 @@
       "school": "indiana",
       "schoolName": "Indiana",
       "kind": "naming",
-      "headline": "Indiana\u2019s Merchants Bank Field naming: 20 years / $50 million (playing surface, not the bowl). AAV $2.5 million if spread flat.",
+      "headline": "Indiana’s Merchants Bank Field naming: 20 years / $50 million (playing surface, not the bowl). AAV $2.5 million if spread flat.",
       "figure": 50000000,
       "confidence": "reported",
       "source": {
@@ -1502,7 +1682,7 @@
       "school": "south-carolina",
       "schoolName": "South Carolina",
       "kind": "apparel",
-      "headline": "South Carolina\u2019s 10-year Nike partnership begins. Guaranteed product + cash + supplement $77.5 million / 10 ($7.75 million AAV).",
+      "headline": "South Carolina’s 10-year Nike partnership begins. Guaranteed product + cash + supplement $77.5 million / 10 ($7.75 million AAV).",
       "figure": 7750000,
       "confidence": "reported",
       "source": {
@@ -1517,7 +1697,7 @@
       "school": "texas-tech",
       "schoolName": "Texas Tech",
       "kind": "apparel",
-      "headline": "Texas Tech FOIA: 10-year Adidas deal signed Dec. 6, 2024 \u2014 $59.25 million ($50 million product + $9.25 million cash).",
+      "headline": "Texas Tech FOIA: 10-year Adidas deal signed Dec. 6, 2024 — $59.25 million ($50 million product + $9.25 million cash).",
       "figure": 59250000,
       "confidence": "reported",
       "source": {
@@ -1532,7 +1712,7 @@
       "school": "illinois",
       "schoolName": "Illinois",
       "kind": "apparel",
-      "headline": "News-Gazette FOIA: Illinois Nike allotment rises $100k a year to $4.9 million in 2025\u201326.",
+      "headline": "News-Gazette FOIA: Illinois Nike allotment rises $100k a year to $4.9 million in 2025–26.",
       "figure": 4900000,
       "confidence": "reported",
       "source": {
@@ -1577,7 +1757,7 @@
       "school": "north-carolina",
       "schoolName": "North Carolina",
       "kind": "apparel",
-      "headline": "News-Gazette FOIA: UNC Nike annual cash compensation $3.25 million (2023\u201324). Product allotment not extracted.",
+      "headline": "News-Gazette FOIA: UNC Nike annual cash compensation $3.25 million (2023–24). Product allotment not extracted.",
       "figure": 3250000,
       "confidence": "reported",
       "source": {
@@ -1592,7 +1772,7 @@
       "school": "ohio-state",
       "schoolName": "Ohio State",
       "kind": "subsidy",
-      "headline": "Ohio State FY25 NCAA Membership Report: athletics is self-funded \u2014 $0 student fees, $0 institutional support, $0 tax dollars.",
+      "headline": "Ohio State FY25 NCAA Membership Report: athletics is self-funded — $0 student fees, $0 institutional support, $0 tax dollars.",
       "figure": 0,
       "confidence": "reported",
       "source": {
@@ -1607,11 +1787,11 @@
       "school": "rutgers",
       "schoolName": "Rutgers",
       "kind": "subsidy",
-      "headline": "Rutgers FY2025 MFRS allocated stack: $15.8 million student fees, $7 million university budget, $8 million state \u2014 $30.8 million cited.",
+      "headline": "Rutgers FY2025 MFRS allocated stack: $15.8 million student fees, $7 million university budget, $8 million state — $30.8 million cited.",
       "figure": 30800000,
       "confidence": "reported",
       "source": {
-        "label": "Extra Points / NJ.com \u2014 Rutgers FY2025 NCAA/MFRS",
+        "label": "Extra Points / NJ.com — Rutgers FY2025 NCAA/MFRS",
         "url": "https://www.extrapointsmb.com/p/wait-why-is-rutgers-so-dang-broke"
       },
       "field": "layers.subsidy"
@@ -1638,7 +1818,7 @@
       "school": "kentucky",
       "schoolName": "Kentucky",
       "kind": "contract",
-      "headline": "Kentucky posts Mark Pope\u2019s FY2025\u201326 employment agreement PDF. Term on the desk through 2030 after the Elite Eight auto-year.",
+      "headline": "Kentucky posts Mark Pope’s FY2025–26 employment agreement PDF. Term on the desk through 2030 after the Elite Eight auto-year.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -1668,7 +1848,7 @@
       "school": "tennessee",
       "schoolName": "Tennessee",
       "kind": "contract",
-      "headline": "Tennessee posts Rick Barnes\u2019s employment agreement PDF. Initial term through April 15, 2028, then a three-year rolling structure.",
+      "headline": "Tennessee posts Rick Barnes’s employment agreement PDF. Initial term through April 15, 2028, then a three-year rolling structure.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -1683,7 +1863,7 @@
       "school": "oregon",
       "schoolName": "Oregon",
       "kind": "contract",
-      "headline": "Oregon public-records desk posts Dana Altman\u2019s 2016\u201328 employment agreement PDF. Term on the desk through 2028.",
+      "headline": "Oregon public-records desk posts Dana Altman’s 2016–28 employment agreement PDF. Term on the desk through 2028.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -1698,7 +1878,7 @@
       "school": "oregon",
       "schoolName": "Oregon",
       "kind": "contract",
-      "headline": "Oregon public-records desk posts Dan Lanning\u2019s employment agreement PDF. Six-year extension through the 2030 season.",
+      "headline": "Oregon public-records desk posts Dan Lanning’s employment agreement PDF. Six-year extension through the 2030 season.",
       "figure": null,
       "confidence": "reported",
       "source": {
@@ -1733,7 +1913,7 @@
       "confidence": "reported",
       "source": "Montgomery Advertiser (Aug. 24, 2026), quoting Auburn employment agreement obtained via records request",
       "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/",
-      "notes": "No PDF URL loaded on the desk. Article quotes the signed Aug. 11, 2026 EA (university + AACB LLC). School-side overhang dollar left pending \u2014 75% rule only."
+      "notes": "No PDF URL loaded on the desk. Article quotes the signed Aug. 11, 2026 EA (university + AACB LLC). School-side overhang dollar left pending — 75% rule only."
     },
     {
       "id": "georgia-student-fee-fy2025",
@@ -1745,7 +1925,7 @@
       "figure": 3871937,
       "confidence": "reported",
       "source": {
-        "label": "UGA FY2025 NCAA financial report \u2014 Item 3 Student Fees $3,871,937",
+        "label": "UGA FY2025 NCAA financial report — Item 3 Student Fees $3,871,937",
         "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf"
       },
       "field": "capacity.studentFees"
@@ -1760,7 +1940,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "UGA FY2025 NCAA financial report \u2014 Item 4 Direct Institutional Support $0",
+        "label": "UGA FY2025 NCAA financial report — Item 4 Direct Institutional Support $0",
         "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -1775,7 +1955,7 @@
       "figure": 1000000,
       "confidence": "reported",
       "source": {
-        "label": "Tennessee FY2025 NCAA AUP / Membership Financial Report \u2014 Item 3 Student Fees $1,000,000",
+        "label": "Tennessee FY2025 NCAA AUP / Membership Financial Report — Item 3 Student Fees $1,000,000",
         "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf"
       },
       "field": "capacity.studentFees"
@@ -1790,7 +1970,7 @@
       "figure": 7137633,
       "confidence": "reported",
       "source": {
-        "label": "Tennessee FY2025 NCAA AUP / Membership Financial Report \u2014 Item 4 Direct Institutional Support $7,137,633",
+        "label": "Tennessee FY2025 NCAA AUP / Membership Financial Report — Item 4 Direct Institutional Support $7,137,633",
         "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -1805,7 +1985,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Oregon FY2025 NCAA FRS \u2014 Item 3 Student Fees $0",
+        "label": "Oregon FY2025 NCAA FRS — Item 3 Student Fees $0",
         "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf"
       },
       "field": "capacity.studentFees"
@@ -1820,7 +2000,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Oregon FY2025 NCAA FRS \u2014 Item 4 Direct Institutional Support $0",
+        "label": "Oregon FY2025 NCAA FRS — Item 4 Direct Institutional Support $0",
         "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -1835,7 +2015,7 @@
       "figure": 6458932,
       "confidence": "reported",
       "source": {
-        "label": "Utah FY2025 NCAA Revenue and Expense Report \u2014 Item 3 Student Fees $6,458,932",
+        "label": "Utah FY2025 NCAA Revenue and Expense Report — Item 3 Student Fees $6,458,932",
         "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf"
       },
       "field": "capacity.studentFees"
@@ -1850,7 +2030,7 @@
       "figure": 3709854,
       "confidence": "reported",
       "source": {
-        "label": "Utah FY2025 NCAA Revenue and Expense Report \u2014 Item 4 Direct Institutional Support $3,709,854",
+        "label": "Utah FY2025 NCAA Revenue and Expense Report — Item 4 Direct Institutional Support $3,709,854",
         "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -1865,7 +2045,7 @@
       "figure": 8504951,
       "confidence": "reported",
       "source": {
-        "label": "UNC FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $8,504,951",
+        "label": "UNC FY2025 NCAA Membership Financial Report — Item 3 Student Fees $8,504,951",
         "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf"
       },
       "field": "capacity.studentFees"
@@ -1880,7 +2060,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "UNC FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $0",
+        "label": "UNC FY2025 NCAA Membership Financial Report — Item 4 Direct Institutional Support $0",
         "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -1895,7 +2075,7 @@
       "figure": 3639531,
       "confidence": "reported",
       "source": {
-        "label": "Illinois FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $3,639,531",
+        "label": "Illinois FY2025 NCAA Membership Financial Report — Item 3 Student Fees $3,639,531",
         "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf"
       },
       "field": "capacity.studentFees"
@@ -1910,7 +2090,7 @@
       "figure": 22395,
       "confidence": "reported",
       "source": {
-        "label": "Illinois FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $22,395",
+        "label": "Illinois FY2025 NCAA Membership Financial Report — Item 4 Direct Institutional Support $22,395",
         "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -1925,7 +2105,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Minnesota FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $0",
+        "label": "Minnesota FY2025 NCAA Membership Financial Report — Item 3 Student Fees $0",
         "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf"
       },
       "field": "capacity.studentFees"
@@ -1940,7 +2120,7 @@
       "figure": 5054285,
       "confidence": "reported",
       "source": {
-        "label": "Minnesota FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $5,054,285",
+        "label": "Minnesota FY2025 NCAA Membership Financial Report — Item 4 Direct Institutional Support $5,054,285",
         "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -1955,7 +2135,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Washington FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $0",
+        "label": "Washington FY2025 NCAA Membership Financial Report — Item 3 Student Fees $0",
         "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf"
       },
       "field": "capacity.studentFees"
@@ -1970,7 +2150,7 @@
       "figure": 10781975,
       "confidence": "reported",
       "source": {
-        "label": "Washington FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $10,781,975",
+        "label": "Washington FY2025 NCAA Membership Financial Report — Item 4 Direct Institutional Support $10,781,975",
         "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -1985,7 +2165,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Wisconsin FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $0",
+        "label": "Wisconsin FY2025 NCAA Membership Financial Report — Item 3 Student Fees $0",
         "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf"
       },
       "field": "capacity.studentFees"
@@ -2000,7 +2180,7 @@
       "figure": 7245480,
       "confidence": "reported",
       "source": {
-        "label": "Wisconsin FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $7,245,480",
+        "label": "Wisconsin FY2025 NCAA Membership Financial Report — Item 4 Direct Institutional Support $7,245,480",
         "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -2015,7 +2195,7 @@
       "figure": 1819397,
       "confidence": "reported",
       "source": {
-        "label": "Iowa State FY2025 NCAA Financial Report \u2014 Item 3 Student Fees $1,819,397",
+        "label": "Iowa State FY2025 NCAA Financial Report — Item 3 Student Fees $1,819,397",
         "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf"
       },
       "field": "capacity.studentFees"
@@ -2030,7 +2210,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Iowa State FY2025 NCAA Financial Report \u2014 Item 4 Direct Institutional Support $0",
+        "label": "Iowa State FY2025 NCAA Financial Report — Item 4 Direct Institutional Support $0",
         "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -2045,7 +2225,7 @@
       "figure": 17335632,
       "confidence": "reported",
       "source": {
-        "label": "Virginia FY2025 NCAA Membership Financial Report (published copy) \u2014 Item 3 Student Fees $17,335,632",
+        "label": "Virginia FY2025 NCAA Membership Financial Report (published copy) — Item 3 Student Fees $17,335,632",
         "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf"
       },
       "field": "capacity.studentFees"
@@ -2060,7 +2240,7 @@
       "figure": 17916907,
       "confidence": "reported",
       "source": {
-        "label": "Virginia FY2025 NCAA Membership Financial Report (published copy) \u2014 Item 4 Direct Institutional Support $17,916,907",
+        "label": "Virginia FY2025 NCAA Membership Financial Report (published copy) — Item 4 Direct Institutional Support $17,916,907",
         "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -2075,7 +2255,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Ole Miss FY2025 NCAA Membership Financial Report \u2014 Item 3 Student Fees $0",
+        "label": "Ole Miss FY2025 NCAA Membership Financial Report — Item 3 Student Fees $0",
         "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf"
       },
       "field": "capacity.studentFees"
@@ -2090,7 +2270,7 @@
       "figure": 5734050,
       "confidence": "reported",
       "source": {
-        "label": "Ole Miss FY2025 NCAA Membership Financial Report \u2014 Item 4 Direct Institutional Support $5,734,050",
+        "label": "Ole Miss FY2025 NCAA Membership Financial Report — Item 4 Direct Institutional Support $5,734,050",
         "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf"
       },
       "field": "capacity.institutionalSupport"
@@ -2105,7 +2285,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-alabama"
       },
       "field": "capacity.studentFees"
@@ -2120,7 +2300,7 @@
       "figure": 29988389,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-alabama"
       },
       "field": "capacity.institutionalSupport"
@@ -2135,7 +2315,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-arkansas"
       },
       "field": "capacity.studentFees"
@@ -2150,7 +2330,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-arkansas"
       },
       "field": "capacity.institutionalSupport"
@@ -2165,7 +2345,7 @@
       "figure": 7318752,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/auburn-university"
       },
       "field": "capacity.studentFees"
@@ -2180,7 +2360,7 @@
       "figure": 5023187,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/auburn-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2195,7 +2375,7 @@
       "figure": 2571952,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-florida"
       },
       "field": "capacity.studentFees"
@@ -2210,7 +2390,7 @@
       "figure": 8760154,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-florida"
       },
       "field": "capacity.institutionalSupport"
@@ -2225,7 +2405,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-kentucky"
       },
       "field": "capacity.studentFees"
@@ -2240,7 +2420,7 @@
       "figure": 203792,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-kentucky"
       },
       "field": "capacity.institutionalSupport"
@@ -2255,7 +2435,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/louisiana-state-university"
       },
       "field": "capacity.studentFees"
@@ -2270,7 +2450,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/louisiana-state-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2285,7 +2465,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/mississippi-state-university"
       },
       "field": "capacity.studentFees"
@@ -2300,7 +2480,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/mississippi-state-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2315,7 +2495,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-missouri-columbia"
       },
       "field": "capacity.studentFees"
@@ -2330,7 +2510,7 @@
       "figure": 28212444,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-missouri-columbia"
       },
       "field": "capacity.institutionalSupport"
@@ -2345,7 +2525,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-oklahoma"
       },
       "field": "capacity.studentFees"
@@ -2360,7 +2540,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-oklahoma"
       },
       "field": "capacity.institutionalSupport"
@@ -2375,7 +2555,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-south-carolina"
       },
       "field": "capacity.studentFees"
@@ -2390,7 +2570,7 @@
       "figure": 43704106,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-south-carolina"
       },
       "field": "capacity.institutionalSupport"
@@ -2405,7 +2585,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-texas-austin"
       },
       "field": "capacity.studentFees"
@@ -2420,7 +2600,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/university-texas-austin"
       },
       "field": "capacity.institutionalSupport"
@@ -2435,7 +2615,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/sec/texas-m-university"
       },
       "field": "capacity.studentFees"
@@ -2450,7 +2630,7 @@
       "figure": 4995734,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/sec/texas-m-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2465,7 +2645,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/indiana-university-bloomington"
       },
       "field": "capacity.studentFees"
@@ -2480,7 +2660,7 @@
       "figure": 27946488,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/indiana-university-bloomington"
       },
       "field": "capacity.institutionalSupport"
@@ -2495,7 +2675,7 @@
       "figure": 650000,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/university-iowa"
       },
       "field": "capacity.studentFees"
@@ -2510,7 +2690,7 @@
       "figure": 2198923,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/university-iowa"
       },
       "field": "capacity.institutionalSupport"
@@ -2525,7 +2705,7 @@
       "figure": 12230926,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/university-maryland-college-park"
       },
       "field": "capacity.studentFees"
@@ -2540,7 +2720,7 @@
       "figure": 6428488,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/university-maryland-college-park"
       },
       "field": "capacity.institutionalSupport"
@@ -2555,7 +2735,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/university-michigan"
       },
       "field": "capacity.studentFees"
@@ -2570,7 +2750,7 @@
       "figure": 240332,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/university-michigan"
       },
       "field": "capacity.institutionalSupport"
@@ -2585,7 +2765,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/michigan-state-university"
       },
       "field": "capacity.studentFees"
@@ -2600,7 +2780,7 @@
       "figure": 7693718,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/michigan-state-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2615,7 +2795,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/university-nebraska-lincoln"
       },
       "field": "capacity.studentFees"
@@ -2630,7 +2810,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/university-nebraska-lincoln"
       },
       "field": "capacity.institutionalSupport"
@@ -2645,7 +2825,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/pennsylvania-state-university"
       },
       "field": "capacity.studentFees"
@@ -2660,7 +2840,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/pennsylvania-state-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2675,7 +2855,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/purdue-university"
       },
       "field": "capacity.studentFees"
@@ -2690,7 +2870,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/purdue-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2705,7 +2885,7 @@
       "figure": 1000000,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/university-california-los-angeles"
       },
       "field": "capacity.studentFees"
@@ -2720,7 +2900,7 @@
       "figure": 30060000,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-ten/university-california-los-angeles"
       },
       "field": "capacity.institutionalSupport"
@@ -2735,7 +2915,7 @@
       "figure": 444374,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/acc/university-california-berkeley"
       },
       "field": "capacity.studentFees"
@@ -2750,7 +2930,7 @@
       "figure": 42665030,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/acc/university-california-berkeley"
       },
       "field": "capacity.institutionalSupport"
@@ -2765,7 +2945,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/acc/clemson-university"
       },
       "field": "capacity.studentFees"
@@ -2780,7 +2960,7 @@
       "figure": 20180572,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/acc/clemson-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2795,7 +2975,7 @@
       "figure": 8630739,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/acc/florida-state-university"
       },
       "field": "capacity.studentFees"
@@ -2810,7 +2990,7 @@
       "figure": 33874294,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/acc/florida-state-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2825,7 +3005,7 @@
       "figure": 6947958,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/acc/georgia-institute-technology"
       },
       "field": "capacity.studentFees"
@@ -2840,7 +3020,7 @@
       "figure": 9551237,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/acc/georgia-institute-technology"
       },
       "field": "capacity.institutionalSupport"
@@ -2855,7 +3035,7 @@
       "figure": 903695,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/acc/university-louisville"
       },
       "field": "capacity.studentFees"
@@ -2870,7 +3050,7 @@
       "figure": 5965092,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/acc/university-louisville"
       },
       "field": "capacity.institutionalSupport"
@@ -2885,7 +3065,7 @@
       "figure": 7591574,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/acc/north-carolina-state-university"
       },
       "field": "capacity.studentFees"
@@ -2900,7 +3080,7 @@
       "figure": 9471881,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/acc/north-carolina-state-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2915,7 +3095,7 @@
       "figure": 15660745,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/acc/virginia-polytechnic-institute-and-state-university"
       },
       "field": "capacity.studentFees"
@@ -2930,7 +3110,7 @@
       "figure": 8434834,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/acc/virginia-polytechnic-institute-and-state-university"
       },
       "field": "capacity.institutionalSupport"
@@ -2945,7 +3125,7 @@
       "figure": 3172565,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-arizona"
       },
       "field": "capacity.studentFees"
@@ -2960,7 +3140,7 @@
       "figure": 31382738,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-arizona"
       },
       "field": "capacity.institutionalSupport"
@@ -2975,7 +3155,7 @@
       "figure": 11765132,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/arizona-state-university"
       },
       "field": "capacity.studentFees"
@@ -2990,7 +3170,7 @@
       "figure": 47961924,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/arizona-state-university"
       },
       "field": "capacity.institutionalSupport"
@@ -3005,7 +3185,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-cincinnati"
       },
       "field": "capacity.studentFees"
@@ -3020,7 +3200,7 @@
       "figure": 51740793,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-cincinnati"
       },
       "field": "capacity.institutionalSupport"
@@ -3035,7 +3215,7 @@
       "figure": 1710502,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-colorado-boulder"
       },
       "field": "capacity.studentFees"
@@ -3050,7 +3230,7 @@
       "figure": 41778735,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-colorado-boulder"
       },
       "field": "capacity.institutionalSupport"
@@ -3065,7 +3245,7 @@
       "figure": 8135241,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-houston"
       },
       "field": "capacity.studentFees"
@@ -3080,7 +3260,7 @@
       "figure": 33036328,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-houston"
       },
       "field": "capacity.institutionalSupport"
@@ -3095,7 +3275,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-kansas"
       },
       "field": "capacity.studentFees"
@@ -3110,7 +3290,7 @@
       "figure": 1892752,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-kansas"
       },
       "field": "capacity.institutionalSupport"
@@ -3125,7 +3305,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/kansas-state-university"
       },
       "field": "capacity.studentFees"
@@ -3140,7 +3320,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/kansas-state-university"
       },
       "field": "capacity.institutionalSupport"
@@ -3155,7 +3335,7 @@
       "figure": 87500,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/oklahoma-state-university"
       },
       "field": "capacity.studentFees"
@@ -3170,7 +3350,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/oklahoma-state-university"
       },
       "field": "capacity.institutionalSupport"
@@ -3185,7 +3365,7 @@
       "figure": 0,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/texas-tech-university"
       },
       "field": "capacity.studentFees"
@@ -3200,7 +3380,7 @@
       "figure": 14792073,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/texas-tech-university"
       },
       "field": "capacity.institutionalSupport"
@@ -3215,7 +3395,7 @@
       "figure": 23675952,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-central-florida"
       },
       "field": "capacity.studentFees"
@@ -3230,7 +3410,7 @@
       "figure": 13155214,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/university-central-florida"
       },
       "field": "capacity.institutionalSupport"
@@ -3245,7 +3425,7 @@
       "figure": 3948358,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS student fees (line 3)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS student fees (line 3)",
         "url": "https://knightnewhousedata.org/fbs/big-12/west-virginia-university"
       },
       "field": "capacity.studentFees"
@@ -3260,7 +3440,7 @@
       "figure": 4200000,
       "confidence": "reported",
       "source": {
-        "label": "Knight-Newhouse College Athletics Database \u2014 FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
+        "label": "Knight-Newhouse College Athletics Database — FY2025 NCAA MFRS institutional/government support (lines 2+4+6+6A combined)",
         "url": "https://knightnewhousedata.org/fbs/big-12/west-virginia-university"
       },
       "field": "capacity.institutionalSupport"
