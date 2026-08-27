@@ -43,7 +43,7 @@ export const DEFS = {
   },
   staffPay: {
     label: 'Staff pay',
-    text: 'Cited public pay for the athletic director, other head coaches, and football assistants, keyed to the selected football season. Football assistant dollars for 2021–2024 are the USA TODAY contract year from each team page (row asOf, not a current 2026 salary). Titles are not invented. 2026 shows the official directory with pay pending unless a cited 2026 dollar exists. 2025 stays empty without a year-accurate tape. Empty means pending — we do not invent a title or a dollar.',
+    text: 'Cited public pay for the athletic director, other head coaches, and football assistants, keyed to the selected football season. Football assistant dollars for 2021–2024 are the USA TODAY contract year from each team page (row asOf, not a current 2026 salary). Titles are not invented. 2026 shows the official directory; assistant pay stays pending unless a cited 2026 dollar exists. Athletic-director pay is year-pinned from USA TODAY Network stories or state payroll / FOIA / board minutes — not invented, and not copied from a prior AD onto a new chair. 2025 stays empty without a year-accurate tape. Empty means pending — we do not invent a title or a dollar.',
   },
   earnings: {
     label: 'Official alumni earnings',
