@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-27",
-    "itemCount": 233,
+    "itemCount": 237,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,66 @@
     ]
   },
   "items": [
+    {
+      "id": "florida-state-precap-item44-fy2025",
+      "date": "2026-01-31",
+      "school": "florida-state",
+      "schoolName": "Florida State",
+      "kind": "filing",
+      "headline": "Florida State FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share is $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "FSU FY2025 NCAA MFRS PDF (DocumentCloud / Tallahassee Democrat)",
+        "url": "https://s3.documentcloud.org/documents/26597309/fsu-ncaa-financial-report-fy25.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "kansas-precap-item44-fy2025",
+      "date": "2026-01-15",
+      "school": "kansas",
+      "schoolName": "Kansas",
+      "kind": "filing",
+      "headline": "Kansas FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share is $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Kansas FY2025 NCAA MFRS PDF",
+        "url": "https://kuathletics.com/documents/download/2026/1/15/FY_24-25_NCAA_Final_Report.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "missouri-precap-item44-fy2025",
+      "date": "2026-01-21",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "filing",
+      "headline": "Missouri Business Alert quotes Mizzou FY2025 Item 44 Institutional NIL Revenue Share as $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Missouri Business Alert \u2014 Mizzou FY2025 NCAA report",
+        "url": "https://www.missouribusinessalert.com/industries/banking_finance/mizzou-athletics-reports-9-million-operating-deficit-for-fiscal-year-2025/article_7bd733a1-642b-5806-9c60-152df863d34c.html"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "mississippi-state-precap-item44-fy2025",
+      "date": "2026-02-14",
+      "school": "mississippi-state",
+      "schoolName": "Mississippi State",
+      "kind": "filing",
+      "headline": "The Dispatch quotes MSU FY2025 NCAA membership report: no Institutional NIL Revenue Share expenses.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "The Dispatch \u2014 MSU FY2025 NCAA report via public records",
+        "url": "https://cdispatch.com/news/how-big-is-msu-athletics-165-million-big-a-record-number/"
+      },
+      "field": "nil.preCap"
+    },
     {
       "id": "georgia-tech-contract-key-2025-12-05",
       "date": "2025-12-05",

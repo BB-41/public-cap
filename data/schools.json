@@ -11253,6 +11253,15 @@
           "url": null,
           "asOf": null,
           "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "The Dispatch (Feb. 14, 2026), quoting MSU FY2025 NCAA membership report obtained via public records",
+          "url": "https://cdispatch.com/news/how-big-is-msu-athletics-165-million-big-a-record-number/",
+          "asOf": "2026-02-14",
+          "fiscalYear": "FY2025",
+          "notes": "Newsroom quoting the obtained FY2025 report: no Institutional NIL Revenue Share expenses because revenue sharing started July 1. Booked $0 because the report shows $0. Does not replace a House Year 1 spent total."
         }
       },
       "coaches": {
@@ -12752,7 +12761,16 @@
             "line": "Part IX other expenses — NAME, IMAGE, AND LIKENESS",
             "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Short year from formation Sept. 7, 2022. Mission names Mizzou / Tiger student-athletes. Later years not on ProPublica as of the hunt."
           }
-        ]
+        ],
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Missouri Business Alert (Jan. 21, 2026), quoting Mizzou FY2025 NCAA report Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://www.missouribusinessalert.com/industries/banking_finance/mizzou-athletics-reports-9-million-operating-deficit-for-fiscal-year-2025/article_7bd733a1-642b-5806-9c60-152df863d34c.html",
+          "asOf": "2026-01-21",
+          "fiscalYear": "FY2025",
+          "notes": "Newsroom quoting the FY2025 report: Institutional NIL Revenue Share $0 for every sport. Booked $0 because the report shows $0. Does not replace a House Year 1 spent total."
+        }
       },
       "coaches": {
         "football": {
@@ -43962,10 +43980,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Tommy McClelland",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://purduesports.com/staff-directory/department/football"
+          "url": "https://purduesports.com/staff-directory/department/football",
+          "pay": {
+            "value": 1000000,
+            "confidence": "reported",
+            "source": "Indianapolis Star / Journal & Courier (Aug. 7, 2026), quoting McClelland MOU obtained by IndyStar; Board committee approved the term sheet",
+            "url": "https://www.jconline.com/story/sports/college/purdue/2026/08/07/purdue-athletic-director-tommy-mcclelland-contract-salary-buyout-incentives-term-sheet/91187650007/",
+            "asOf": "2026-08-07",
+            "notes": "MOU: $1 million base in 2026-27, +$50,000 each year after. $250,000 deferred and up to $300,000 incentives not added. Same person as the 2026 chair.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -44456,10 +44483,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Tommy McClelland",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://purduesports.com/staff-directory/department/football"
+            "url": "https://purduesports.com/staff-directory/department/football",
+            "pay": {
+              "value": 1000000,
+              "confidence": "reported",
+              "source": "Indianapolis Star / Journal & Courier (Aug. 7, 2026), quoting McClelland MOU obtained by IndyStar; Board committee approved the term sheet",
+              "url": "https://www.jconline.com/story/sports/college/purdue/2026/08/07/purdue-athletic-director-tommy-mcclelland-contract-salary-buyout-incentives-term-sheet/91187650007/",
+              "asOf": "2026-08-07",
+              "notes": "MOU: $1 million base in 2026-27, +$50,000 each year after. $250,000 deferred and up to $300,000 incentives not added. Same person as the 2026 chair.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -45374,10 +45410,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Keli Zinn",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://scarletknights.com/sports/football/coaches"
+          "url": "https://scarletknights.com/sports/football/coaches",
+          "pay": {
+            "value": 1350000,
+            "confidence": "reported",
+            "source": "Rutgers Board of Governors minutes, special meeting July 30, 2025",
+            "url": "https://governingboards.rutgers.edu/sites/default/files/2026-03/Special%20BoG%2025-0730%20-%20FINAL.pdf",
+            "asOf": "2025-07-30",
+            "notes": "Board: 5-year contract, base $1,350,000 in Contract Year 1. $50,000 annual increases only after a positive evaluation — 2026 step not invented. Retention / performance bonuses not added.",
+            "year": 2025
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -45930,10 +45975,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Keli Zinn",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://scarletknights.com/sports/football/coaches"
+            "url": "https://scarletknights.com/sports/football/coaches",
+            "pay": {
+              "value": 1350000,
+              "confidence": "reported",
+              "source": "Rutgers Board of Governors minutes, special meeting July 30, 2025",
+              "url": "https://governingboards.rutgers.edu/sites/default/files/2026-03/Special%20BoG%2025-0730%20-%20FINAL.pdf",
+              "asOf": "2025-07-30",
+              "notes": "Board: 5-year contract, base $1,350,000 in Contract Year 1. $50,000 annual increases only after a positive evaluation — 2026 step not invented. Retention / performance bonuses not added.",
+              "year": 2025
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -58861,6 +58915,15 @@
           "url": null,
           "asOf": null,
           "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Florida State FY2025 NCAA Membership Financial Report — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://s3.documentcloud.org/documents/26597309/fsu-ncaa-financial-report-fy25.pdf",
+          "asOf": "2026-01-31",
+          "fiscalYear": "FY2025",
+          "notes": "Hosted DocumentCloud MFRS PDF (Tallahassee Democrat) prints Item 44 as $0 for FY2025. Booked $0 because the report shows $0. Does not replace a House Year 1 spent total."
         }
       },
       "coaches": {
@@ -59043,10 +59106,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Michael Alford",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://seminoles.com/sports/football/coaches"
+          "url": "https://seminoles.com/sports/football/coaches",
+          "pay": {
+            "value": 1750000,
+            "confidence": "reported",
+            "source": "Tallahassee Democrat (Aug. 22, 2024), quoting Alford July 1, 2024 extension",
+            "url": "https://www.tallahassee.com/story/sports/college/fsu/2024/08/22/florida-state-ad-michael-alford-contract-extension/74898716007/",
+            "asOf": "2024-08-22",
+            "notes": "Published schedule: $1.45 million in 2024-25, +$150,000 each year to $1.9 million in 2027-28. 2026-27 step is $1,750,000. Facility / performance bonuses not added.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -59391,10 +59463,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Michael Alford",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://seminoles.com/sports/football/coaches"
+            "url": "https://seminoles.com/sports/football/coaches",
+            "pay": {
+              "value": 1750000,
+              "confidence": "reported",
+              "source": "Tallahassee Democrat (Aug. 22, 2024), quoting Alford July 1, 2024 extension",
+              "url": "https://www.tallahassee.com/story/sports/college/fsu/2024/08/22/florida-state-ad-michael-alford-contract-extension/74898716007/",
+              "asOf": "2024-08-22",
+              "notes": "Published schedule: $1.45 million in 2024-25, +$150,000 each year to $1.9 million in 2027-28. 2026-27 step is $1,750,000. Facility / performance bonuses not added.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -60756,10 +60837,19 @@
         "athleticDirector": {
           "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Ryan Alpert",
           "source": "Georgia Tech News Center — official appointment (July 8, 2025)",
-          "url": "https://news.gatech.edu/news/2025/07/08/georgia-tech-names-ryan-alpert-director-athletics"
+          "url": "https://news.gatech.edu/news/2025/07/08/georgia-tech-names-ryan-alpert-director-athletics",
+          "pay": {
+            "value": 800000,
+            "confidence": "reported",
+            "source": "Atlanta Journal-Constitution (Nov. 17, 2025), quoting Alpert MOU obtained via open records",
+            "url": "https://www.ajc.com/sports/2025/11/georgia-tech-signed-new-athletic-director-to-5-year-contract/",
+            "asOf": "2025-11-17",
+            "notes": "MOU: first-year salary $700,000 (2025-26) + $100,000 each year through June 30, 2030. 2026-27 step is $800,000. $200,000 unspecified supplemental and performance incentives not added.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [],
@@ -61255,10 +61345,19 @@
           "athleticDirector": {
             "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Ryan Alpert",
             "source": "Georgia Tech News Center — official appointment (July 8, 2025)",
-            "url": "https://news.gatech.edu/news/2025/07/08/georgia-tech-names-ryan-alpert-director-athletics"
+            "url": "https://news.gatech.edu/news/2025/07/08/georgia-tech-names-ryan-alpert-director-athletics",
+            "pay": {
+              "value": 800000,
+              "confidence": "reported",
+              "source": "Atlanta Journal-Constitution (Nov. 17, 2025), quoting Alpert MOU obtained via open records",
+              "url": "https://www.ajc.com/sports/2025/11/georgia-tech-signed-new-athletic-director-to-5-year-contract/",
+              "asOf": "2025-11-17",
+              "notes": "MOU: first-year salary $700,000 (2025-26) + $100,000 each year through June 30, 2030. 2026-27 step is $800,000. $200,000 unspecified supplemental and performance incentives not added.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [],
@@ -85375,10 +85474,33 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Fernando Lovo",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://cubuffs.com/sports/football/coaches/"
+          "url": "https://cubuffs.com/sports/football/coaches/",
+          "pay": {
+            "value": 1200000,
+            "confidence": "reported",
+            "source": "University of Colorado Board of Regents — Lovo employment agreement (Jan. 1, 2026–Dec. 31, 2030)",
+            "url": "https://cu.diligent.community/document/4398d6a0-4379-4c4e-a326-b5a92b8ab2e1/",
+            "asOf": "2026-01-01",
+            "notes": "Contract Year is the calendar year. 2026 guaranteed $1.2 million ($600,000 base + $300,000 media + $300,000 community). Incentives not added.",
+            "year": 2026,
+            "breakdown": [
+              {
+                "label": "Base (2026)",
+                "value": 600000
+              },
+              {
+                "label": "Media supplemental",
+                "value": 300000
+              },
+              {
+                "label": "Community-relations supplemental",
+                "value": 300000
+              }
+            ]
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -85920,10 +86042,33 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Fernando Lovo",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://cubuffs.com/sports/football/coaches/"
+            "url": "https://cubuffs.com/sports/football/coaches/",
+            "pay": {
+              "value": 1200000,
+              "confidence": "reported",
+              "source": "University of Colorado Board of Regents — Lovo employment agreement (Jan. 1, 2026–Dec. 31, 2030)",
+              "url": "https://cu.diligent.community/document/4398d6a0-4379-4c4e-a326-b5a92b8ab2e1/",
+              "asOf": "2026-01-01",
+              "notes": "Contract Year is the calendar year. 2026 guaranteed $1.2 million ($600,000 base + $300,000 media + $300,000 community). Incentives not added.",
+              "year": 2026,
+              "breakdown": [
+                {
+                  "label": "Base (2026)",
+                  "value": 600000
+                },
+                {
+                  "label": "Media supplemental",
+                  "value": 300000
+                },
+                {
+                  "label": "Community-relations supplemental",
+                  "value": 300000
+                }
+              ]
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -89857,6 +90002,15 @@
           "url": null,
           "asOf": null,
           "notes": "No booked FOIA / MFRS institutional NIL figure located for v1."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Kansas FY2025 NCAA Membership Financial Report — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://kuathletics.com/documents/download/2026/1/15/FY_24-25_NCAA_Final_Report.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "Hosted MFRS PDF prints Item 44 as $0 for Reporting Year (FY) 2025. Booked $0 because the report shows $0. Does not replace a House Year 1 spent total."
         }
       },
       "coaches": {
@@ -89946,10 +90100,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Travis Goff",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://kuathletics.com/sports/football/coaches"
+          "url": "https://kuathletics.com/sports/football/coaches",
+          "pay": {
+            "value": 1380000,
+            "confidence": "reported",
+            "source": "University of Kansas amended employment agreement (effective Jan. 1, 2024)",
+            "url": "https://news.ku.edu/sites/news/files/2024-05/Travis%20Goff%20Amended%20and%20Restated%20Employment%20Agreement%2C%202024_Redactedv2.pdf",
+            "asOf": "2024-01-01",
+            "notes": "Published base-salary schedule: 6/1/26–5/31/27 $1,380,000. Retention bonuses not added. Same person as the 2026 chair.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -90483,10 +90646,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Travis Goff",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://kuathletics.com/sports/football/coaches"
+            "url": "https://kuathletics.com/sports/football/coaches",
+            "pay": {
+              "value": 1380000,
+              "confidence": "reported",
+              "source": "University of Kansas amended employment agreement (effective Jan. 1, 2024)",
+              "url": "https://news.ku.edu/sites/news/files/2024-05/Travis%20Goff%20Amended%20and%20Restated%20Employment%20Agreement%2C%202024_Redactedv2.pdf",
+              "asOf": "2024-01-01",
+              "notes": "Published base-salary schedule: 6/1/26–5/31/27 $1,380,000. Retention bonuses not added. Same person as the 2026 chair.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -93041,10 +93213,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Chad Weiberg",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://okstate.com/sports/football/coaches"
+          "url": "https://okstate.com/sports/football/coaches",
+          "pay": {
+            "value": 750000,
+            "confidence": "reported",
+            "source": "Associated Press (Oct. 24, 2025), quoting OSU/A&M Board of Regents approval of Weiberg extension",
+            "url": "https://apnews.com/article/oklahoma-state-chad-weiberg-new-contract-1cf20bf7f4f7630e2e34dc80b30fda25",
+            "asOf": "2025-10-24",
+            "notes": "Board-approved extension keeps previous salary of $750,000 a year through 2029. Flat annual dollar — no invented step. Incentives not added.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -93564,10 +93745,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Chad Weiberg",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://okstate.com/sports/football/coaches"
+            "url": "https://okstate.com/sports/football/coaches",
+            "pay": {
+              "value": 750000,
+              "confidence": "reported",
+              "source": "Associated Press (Oct. 24, 2025), quoting OSU/A&M Board of Regents approval of Weiberg extension",
+              "url": "https://apnews.com/article/oklahoma-state-chad-weiberg-new-contract-1cf20bf7f4f7630e2e34dc80b30fda25",
+              "asOf": "2025-10-24",
+              "notes": "Board-approved extension keeps previous salary of $750,000 a year through 2029. Flat annual dollar — no invented step. Incentives not added.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [

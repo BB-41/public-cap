@@ -353,6 +353,83 @@
       "url": "https://augustafreepress.com/news/the-whole-story-uva-ad-carla-williams-quietly-signed-a-five-year-extension-last-month/",
       "notes": "FOIA: $1,405,470 annually through May 31, 2030. Performance bonus not added.",
       "confidence": "reported"
+    },
+    {
+      "id": "purdue",
+      "name": "Tommy McClelland",
+      "pay": 1000000,
+      "year": 2026,
+      "asOf": "2026-08-07",
+      "source": "Indianapolis Star / Journal & Courier — McClelland MOU",
+      "url": "https://www.jconline.com/story/sports/college/purdue/2026/08/07/purdue-athletic-director-tommy-mcclelland-contract-salary-buyout-incentives-term-sheet/91187650007/",
+      "notes": "2026-27 base $1.0M. Deferred not added.",
+      "confidence": "reported"
+    },
+    {
+      "id": "rutgers",
+      "name": "Keli Zinn",
+      "pay": 1350000,
+      "year": 2025,
+      "asOf": "2025-07-30",
+      "source": "Rutgers Board of Governors minutes",
+      "url": "https://governingboards.rutgers.edu/sites/default/files/2026-03/Special%20BoG%2025-0730%20-%20FINAL.pdf",
+      "notes": "Contract Year 1 $1.35M. Evaluation-gated steps not invented.",
+      "confidence": "reported"
+    },
+    {
+      "id": "florida-state",
+      "name": "Michael Alford",
+      "pay": 1750000,
+      "year": 2026,
+      "asOf": "2024-08-22",
+      "source": "Tallahassee Democrat — Alford extension schedule",
+      "url": "https://www.tallahassee.com/story/sports/college/fsu/2024/08/22/florida-state-ad-michael-alford-contract-extension/74898716007/",
+      "notes": "2026-27 step $1.75M from published +$150k schedule.",
+      "confidence": "reported"
+    },
+    {
+      "id": "colorado",
+      "name": "Fernando Lovo",
+      "pay": 1200000,
+      "year": 2026,
+      "asOf": "2026-01-01",
+      "source": "CU Board of Regents Lovo EA",
+      "url": "https://cu.diligent.community/document/4398d6a0-4379-4c4e-a326-b5a92b8ab2e1/",
+      "notes": "2026 guaranteed $1.2M.",
+      "confidence": "reported"
+    },
+    {
+      "id": "kansas",
+      "name": "Travis Goff",
+      "pay": 1380000,
+      "year": 2026,
+      "asOf": "2024-01-01",
+      "source": "KU amended EA base-salary schedule",
+      "url": "https://news.ku.edu/sites/news/files/2024-05/Travis%20Goff%20Amended%20and%20Restated%20Employment%20Agreement%2C%202024_Redactedv2.pdf",
+      "notes": "6/1/26–5/31/27 $1.38M.",
+      "confidence": "reported"
+    },
+    {
+      "id": "oklahoma-state",
+      "name": "Chad Weiberg",
+      "pay": 750000,
+      "year": 2026,
+      "asOf": "2025-10-24",
+      "source": "AP — OSU/A&M Board of Regents",
+      "url": "https://apnews.com/article/oklahoma-state-chad-weiberg-new-contract-1cf20bf7f4f7630e2e34dc80b30fda25",
+      "notes": "Flat $750k through 2029.",
+      "confidence": "reported"
+    },
+    {
+      "id": "georgia-tech",
+      "name": "Ryan Alpert",
+      "pay": 800000,
+      "year": 2026,
+      "asOf": "2025-11-17",
+      "source": "AJC — Alpert open-records MOU",
+      "url": "https://www.ajc.com/sports/2025/11/georgia-tech-signed-new-athletic-director-to-5-year-contract/",
+      "notes": "2026-27 step $800k. Supplemental not added.",
+      "confidence": "reported"
     }
   ]
 }
