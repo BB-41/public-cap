@@ -123,7 +123,8 @@ for (const s of data.schools) {
 }
 ok(remainingCount === 5, `House remaining on exactly five schools (${remainingCount})`)
 ok(houseRemaining(applySeason(byId.louisville, 2025)) === 300_000, '2025 overlay keeps remaining')
-ok(houseRemaining(applySeason(byId.louisville, 2026)) == null, '2026 overlay drops Year 1 remaining')
+ok(houseRemaining(applySeason(byId.louisville, 2026)) === 300_000, '2026 overlay still shows the Year 1 residual')
+ok(houseRemaining(applySeason(byId.louisville, 2024)) == null, '2024 overlay drops Year 1 remaining')
 ok(val(byId['penn-state'].nil.preCap) === 18_368_391, 'Penn State preCap not used as remaining')
 ok(byId['oklahoma-state'].nil.houseRemaining == null, 'OSU 990/preCap is not remaining')
 

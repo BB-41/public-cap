@@ -546,8 +546,8 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
               {s.nil.houseRemaining.overhang
                 ? 'House Year 1 overhang'
                 : s.nil.houseRemaining.partialYear
-                  ? 'House remaining room (YTD)'
-                  : 'House remaining room'}
+                  ? 'House Year 1 remaining (YTD)'
+                  : 'House Year 1 remaining'}
             </div>
             <Field field={s.nil.houseRemaining} />
             {s.nil.houseRemaining.footnote && (

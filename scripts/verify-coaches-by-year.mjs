@@ -301,8 +301,9 @@ ok(byId.texas.nil.houseRemaining?.value === 7_000_000, 'Texas remaining $7M YTD'
 ok(byId.texas.nil.houseRemaining?.partialYear === true, 'Texas remaining is labeled YTD')
 ok(byId['penn-state'].nil.houseRemaining == null, 'Penn State preCap is not a House remaining cell')
 ok(byId.alabama.nil.houseRemaining == null, 'no invented remaining on a pending House cell')
-ok(applySeason(byId.louisville, 2026).nil.houseRemaining == null, '2026 season does not show Year 1 remaining')
+ok(applySeason(byId.louisville, 2024).nil.houseRemaining == null, '2024 season does not show Year 1 remaining')
 ok(applySeason(byId.louisville, 2025).nil.houseRemaining?.value === 300_000, '2025 season keeps Louisville remaining')
+ok(applySeason(byId.louisville, 2026).nil.houseRemaining?.value === 300_000, '2026 season still shows the Year 1 residual')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} coachesByYear checks passed`)
