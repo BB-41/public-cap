@@ -986,6 +986,20 @@
           "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
           "asOf": "2026-03-03",
           "notes": "Athletic current buyout $53.2M (offset still applies if he takes a qualifying job). USA TODAY Nov 26, 2025: school reversed a for-cause threat and said it would pay."
+        },
+        {
+          "coach": "Ed Orgeron",
+          "sport": "FB",
+          "year": 2021,
+          "amount": 16900000,
+          "through": "2025-12",
+          "whoPaid": "LSU",
+          "status": "paid through Dec 2025",
+          "confidence": "reported",
+          "source": "USA TODAY Network / Daily Advertiser (May 21, 2026), quoting records \u2014 $16.9M buyout, payments concluded December 2025",
+          "url": "https://www.usatoday.com/story/sports/college/lsu/2026/05/21/ed-orgeron-lsu-football-contract-lane-kiffin-staff-joe-burrow/90199664007/",
+          "asOf": "2026-05-21",
+          "notes": "Lump + through-date only. USA TODAY Network: after firing Orgeron in 2021, LSU was on the hook for a $16.9 million buyout; those payments concluded December 2025. Advocate / NOLA cite a $17 million buyout in equal monthly installments with the last payment due December 2025. This cell stores the USA TODAY Network $16.9M lump through Dec. 2025. We do not invent an annual split."
         }
       ]
     },

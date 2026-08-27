@@ -144,9 +144,22 @@ for (const s of data.schools) {
   const pay = s.staff?.athleticDirector?.pay
   if (pay && pay.value != null) adPaid += 1
 }
-ok(adPaid === 16, `16 paid AD cells kept (${adPaid})`)
+ok(adPaid === 28, `28 paid AD cells kept (${adPaid})`)
 ok(byId['ohio-state'].staff.athleticDirector.pay.value === 2_000_000, 'Ross Bjork AD pay kept')
 ok(byId.texas.staff.athleticDirector.pay.value === 2_900_000, 'Del Conte AD pay kept')
+ok(byId.kentucky.staff.athleticDirector.name === 'J Batt', 'Kentucky current AD is J Batt')
+ok(byId.kentucky.staff.athleticDirector.pay.value === 2_600_000, 'J Batt Year 1 $2.6M')
+ok(byId.lsu.staff.athleticDirector.pay.value === 1_500_000, 'Ausberry first-year $1.5M')
+ok(byId.oklahoma.staff.athleticDirector.pay.value === 1_250_000, 'Denny board $1.25M')
+ok(byId.oklahoma.staff.athleticDirector.name === 'Roger Denny', 'Oklahoma chair stays Denny')
+ok(byId['ole-miss'].nil.preCap.value === 0, 'Ole Miss Item 44 $0')
+ok(byId.georgia.coachesByYear['2026'].football.pay.value === 13_003_000, 'Smart 2026 FOIA $13.003M')
+ok(!isUsaToday(byId.georgia.coachesByYear['2026'].football.pay), 'Smart 2026 is not USA TODAY 2025-10-08')
+ok(byId.tennessee.coachesByYear['2026'].football.pay.value === 9_000_000, 'Heupel 2026 file $9M')
+ok(byId['mississippi-state'].coachesByYear['2026'].football.pay.value === 4_365_000, 'Lebby 2026 $4.365M')
+ok(byId['south-carolina'].coachesByYear['2026'].football.pay.value == null, 'Beamer 2026 not flipped')
+ok(layers.schools.lsu.buyoutsPaid.some((b) => b.coach === 'Ed Orgeron' && b.amount === 16_900_000 && b.through === '2025-12'), 'Orgeron lump through Dec 2025')
+ok(byId.pittsburgh.capacity?.studentFees?.value == null, 'Pitt student fees stay empty')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} desk-calc checks passed`)

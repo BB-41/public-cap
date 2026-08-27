@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-27",
-    "itemCount": 212,
+    "itemCount": 217,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,81 @@
     ]
   },
   "items": [
+    {
+      "id": "ole-miss-precap-item44-fy2025",
+      "date": "2026-01-15",
+      "school": "ole-miss",
+      "schoolName": "Ole Miss",
+      "kind": "filing",
+      "headline": "Ole Miss FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share is $0.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Ole Miss FY2025 NCAA MFRS PDF",
+        "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf"
+      },
+      "field": "nil.preCap"
+    },
+    {
+      "id": "lsu-paid-buyout-orgeron-2025-12",
+      "date": "2025-12",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "paid-buyout",
+      "headline": "USA TODAY Network: LSU finished Ed Orgeron\u2019s $16.9 million 2021 buyout in December 2025. Lump + through-date; no invented annual split.",
+      "figure": 16900000,
+      "confidence": "reported",
+      "source": {
+        "label": "USA TODAY Network / Daily Advertiser \u2014 Orgeron buyout leftover",
+        "url": "https://www.usatoday.com/story/sports/college/lsu/2026/05/21/ed-orgeron-lsu-football-contract-lane-kiffin-staff-joe-burrow/90199664007/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "georgia-contract-smart-2026-08-10",
+      "date": "2026-08-10",
+      "school": "georgia",
+      "schoolName": "Georgia",
+      "kind": "contract",
+      "headline": "Athens Banner-Herald July 2026 open-records salary tape: Kirby Smart $13.003 million. Not the USA TODAY 2025-10-08 cell.",
+      "figure": 13003000,
+      "confidence": "reported",
+      "source": {
+        "label": "Athens Banner-Herald \u2014 UGA July 2026 salary tape",
+        "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "tennessee-contract-heupel-2025-08-26",
+      "date": "2025-08-26",
+      "school": "tennessee",
+      "schoolName": "Tennessee",
+      "kind": "contract",
+      "headline": "Heupel Amendment 3 extends the deal through Jan. 31, 2030; EA + Amendment 2 keep annual pay at $9.0 million ($275k base + $8.725M supplemental).",
+      "figure": 9000000,
+      "confidence": "reported",
+      "source": {
+        "label": "University of Tennessee Heupel Amendment 3 + Knox News",
+        "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+      },
+      "field": "coaches.football.pay"
+    },
+    {
+      "id": "mississippi-state-contract-lebby-2026",
+      "date": "2025-12-15",
+      "school": "mississippi-state",
+      "schoolName": "Mississippi State",
+      "kind": "contract",
+      "headline": "Clarion Ledger quotes Lebby\u2019s contracts: $4.35 million in 2025, +$15,000 annually through 2028, so $4,365,000 in 2026.",
+      "figure": 4365000,
+      "confidence": "reported",
+      "source": {
+        "label": "Clarion Ledger \u2014 Lebby contracts",
+        "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/"
+      },
+      "field": "coaches.football.pay"
+    },
     {
       "id": "oregon-apparel-nike-2017-12-08",
       "date": "2017-12-08",

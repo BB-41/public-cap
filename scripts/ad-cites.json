@@ -144,6 +144,138 @@
       "url": "https://www.ketv.com/article/nebraska-athletic-director-troy-dannen-offer-letter-contract/60257040",
       "notes": "Offer letter: $1.6M first-year salary (hired March 2024). Letter also states a $100k annual raise through March 2030; this cell stores the published first-year dollar, year-pinned to 2024, and does not recompute a 2026 step.",
       "confidence": "reported"
+    },
+    {
+      "id": "kentucky",
+      "name": "J Batt",
+      "pay": 2600000,
+      "year": 2026,
+      "asOf": "2026-06-17",
+      "source": "Courier-Journal (June 17, 2026), quoting UK Office of Legal Counsel term sheet",
+      "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/06/17/j-batt-contract-kentucky-athletics-director-uk-wildcats-term-sheet-champions-blue-ceo/90596720007/",
+      "notes": "Year 1 $2.6M. Barnhart retired June 30, 2026 — not reused.",
+      "confidence": "reported"
+    },
+    {
+      "id": "lsu",
+      "name": "Verge Ausberry",
+      "pay": 1500000,
+      "year": 2026,
+      "asOf": "2026-04-22",
+      "source": "USA TODAY Network / Daily Advertiser (April 22, 2026), quoting Ausberry EA",
+      "url": "https://www.thenewsstar.com/story/sports/college/lsu/2026/04/22/verge-ausberry-contract-lsu-ad-lsu-football-lane-kiffin/89738501007/",
+      "notes": "First-year $1.5M through 2027.",
+      "confidence": "reported"
+    },
+    {
+      "id": "oklahoma",
+      "name": "Roger Denny",
+      "pay": 1250000,
+      "year": 2026,
+      "asOf": "2026-01-30",
+      "source": "The Oklahoman — OU Board of Regents",
+      "url": "https://www.oklahoman.com/story/sports/college/sooners/2026/01/30/ou-board-of-regents-approves-contracts-jason-witten-roger-denny-sooners/88434348007/",
+      "notes": "Board-approved $1.25M through June 30, 2030. Castiglione cite omitted.",
+      "confidence": "reported"
+    },
+    {
+      "id": "mississippi-state",
+      "name": "Zac Selmon",
+      "pay": 1250000,
+      "year": 2025,
+      "asOf": "2025-05-14",
+      "source": "Clarion Ledger, quoting Selmon extension documents",
+      "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/05/14/zac-selmon-contract-mississippi-state-athletic-director/83607124007/",
+      "notes": "$1.25M for 2025. Do not invent the +$25k renewal step.",
+      "confidence": "reported"
+    },
+    {
+      "id": "ucla",
+      "name": "Martin Jarmond",
+      "pay": 1800000,
+      "year": 2026,
+      "asOf": "2024-12-10",
+      "source": "Los Angeles Times — Jarmond extension schedule",
+      "url": "https://www.latimes.com/sports/ucla/story/2024-12-10/ucla-jarmond-contract",
+      "notes": "Year 3 of the July 1, 2024 extension is $1.8M (2026-27).",
+      "confidence": "reported"
+    },
+    {
+      "id": "washington",
+      "name": "Patrick Chun",
+      "pay": 1500000,
+      "year": 2026,
+      "asOf": "2024-03-28",
+      "source": "Seattle Times, quoting Chun MOU",
+      "url": "https://www.seattletimes.com/sports/washington-huskies-football/new-uw-ad-pat-chun-we-will-not-take-a-back-seat-to-anyone/",
+      "notes": "MOU $1.3M in 2024-25 + $100k annual; 2026-27 is $1.5M.",
+      "confidence": "reported"
+    },
+    {
+      "id": "wisconsin",
+      "name": "Shawn Eichorst",
+      "pay": 1600000,
+      "year": 2026,
+      "asOf": "2026-07-13",
+      "source": "Milwaukee Journal Sentinel, quoting Eichorst contract via open records",
+      "url": "https://www.jsonline.com/story/sports/college/uw/2026/07/13/wisconsin-badgers-ad-shawn-eichorst-contract-salary-information/90905999007/",
+      "notes": "2026-27 base $1.6M.",
+      "confidence": "reported"
+    },
+    {
+      "id": "south-carolina",
+      "name": "Jeremiah Donati",
+      "pay": 2000000,
+      "year": 2026,
+      "asOf": "2024-12-05",
+      "source": "AP News, quoting SC Board of Trustees",
+      "url": "https://apnews.com/article/south-carolina-athletic-director-donati-a976698910d4657cc0a6bf00e4ff797e",
+      "notes": "$1.9M first year (2025) + $100k each subsequent year = $2.0M in 2026.",
+      "confidence": "reported"
+    },
+    {
+      "id": "arkansas",
+      "name": "Hunter Yurachek",
+      "pay": 1500000,
+      "year": 2023,
+      "asOf": "2022-10-31",
+      "source": "Arkansas Democrat-Gazette FOIA amended contract",
+      "url": "https://www.arkansasonline.com/news/2022/oct/31/arkansas-ad-yurachek-reportedly-turned-down-auburn-job/",
+      "notes": "$1.5M beginning January 2023. Same person. Deferred not added.",
+      "confidence": "reported"
+    },
+    {
+      "id": "auburn",
+      "name": "John Cohen",
+      "pay": 1500000,
+      "year": 2023,
+      "asOf": "2023-06-01",
+      "source": "Montgomery Advertiser, quoting Cohen EA",
+      "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2023/06/01/john-cohen-auburn-athletics-director-contract-buyout-compensation/70257983007/",
+      "notes": "Starting $1.5M. 2024 addendum extended term; did not republish a new dollar.",
+      "confidence": "reported"
+    },
+    {
+      "id": "kansas-state",
+      "name": "Gene Taylor",
+      "pay": 925000,
+      "year": 2026,
+      "asOf": "2026-05-26",
+      "source": "Topeka Capital-Journal (USA TODAY Network)",
+      "url": "https://www.cjonline.com/story/sports/college/cat-zone/2026/05/26/gene-taylor-kansas-state-ad-atheltic-director-retirement-plans-coaches/90065135007/",
+      "notes": "$925k base. Retention bonuses not added.",
+      "confidence": "reported"
+    },
+    {
+      "id": "utah",
+      "name": "Mark Harlan",
+      "pay": 1000000,
+      "year": 2026,
+      "asOf": "2023-06-15",
+      "source": "Deseret News, quoting Harlan extension",
+      "url": "https://www.deseret.com/2023/6/15/23762164/utah-utes-ad-mark-harlans-contract-extension-through-2028-includes-significant-raise-hefty-buyout/",
+      "notes": "Published +$50k schedule: 2026-27 base is $1.0M.",
+      "confidence": "reported"
     }
   ]
 }

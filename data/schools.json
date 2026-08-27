@@ -1918,7 +1918,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Hunter Yurachek",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://arkansasrazorbacks.com/sport/m-footbl/roster/"
+          "url": "https://arkansasrazorbacks.com/sport/m-footbl/roster/",
+          "pay": {
+            "value": 1500000,
+            "confidence": "reported",
+            "source": "Arkansas Democrat-Gazette (Oct. 31, 2022), quoting FOIA amended contract",
+            "url": "https://www.arkansasonline.com/news/2022/oct/31/arkansas-ad-yurachek-reportedly-turned-down-auburn-job/",
+            "asOf": "2022-10-31",
+            "notes": "FOIA: salary increased to $1.5 million beginning January 2023 through Dec. 31, 2027. Same person as the 2026 chair. $250k deferred and performance bonuses are not added. Year-pinned to 2023 when the $1.5M step began.",
+            "year": 2023
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -2479,7 +2488,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Hunter Yurachek",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://arkansasrazorbacks.com/sport/m-footbl/roster/"
+            "url": "https://arkansasrazorbacks.com/sport/m-footbl/roster/",
+            "pay": {
+              "value": 1500000,
+              "confidence": "reported",
+              "source": "Arkansas Democrat-Gazette (Oct. 31, 2022), quoting FOIA amended contract",
+              "url": "https://www.arkansasonline.com/news/2022/oct/31/arkansas-ad-yurachek-reportedly-turned-down-auburn-job/",
+              "asOf": "2022-10-31",
+              "notes": "FOIA: salary increased to $1.5 million beginning January 2023 through Dec. 31, 2027. Same person as the 2026 chair. $250k deferred and performance bonuses are not added. Year-pinned to 2023 when the $1.5M step began.",
+              "year": 2023
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -3428,7 +3446,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "John Cohen",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://auburntigers.com/sports/football/roster"
+          "url": "https://auburntigers.com/sports/football/roster",
+          "pay": {
+            "value": 1500000,
+            "confidence": "reported",
+            "source": "Montgomery Advertiser (June 1, 2023), quoting Cohen employment agreement via records",
+            "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2023/06/01/john-cohen-auburn-athletics-director-contract-buyout-compensation/70257983007/",
+            "asOf": "2023-06-01",
+            "notes": "Starting compensation $1.5 million in the first year (includes $100k Oct. 31 retention). Same person as the 2026 chair. The May 2024 addendum extended the term through October 2029 and did not republish a new dollar — this cell stays year-pinned to the 2023 FOIA snapshot. We do not invent the $25k Nov. 1 steps.",
+            "year": 2023
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -3935,7 +3962,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "John Cohen",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://auburntigers.com/sports/football/roster"
+            "url": "https://auburntigers.com/sports/football/roster",
+            "pay": {
+              "value": 1500000,
+              "confidence": "reported",
+              "source": "Montgomery Advertiser (June 1, 2023), quoting Cohen employment agreement via records",
+              "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2023/06/01/john-cohen-auburn-athletics-director-contract-buyout-compensation/70257983007/",
+              "asOf": "2023-06-01",
+              "notes": "Starting compensation $1.5 million in the first year (includes $100k Oct. 31 retention). Same person as the 2026 chair. The May 2024 addendum extended the term through October 2029 and did not republish a new dollar — this cell stays year-pinned to the 2023 FOIA snapshot. We do not invent the $25k Nov. 1 steps.",
+              "year": 2023
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -6426,29 +6462,35 @@
         "football": {
           "name": "Kirby Smart",
           "pay": {
-            "value": 13282580,
+            "value": 13003000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "Athens Banner-Herald (Aug. 10, 2026), quoting UGA Athletic Association open-records salary tape (July 2026)",
+            "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/",
+            "asOf": "2026-08-10",
+            "notes": "July 2026 FOIA salary tape: Kirby Smart $13.003 million total pay. Not the USA TODAY 2025-10-08 $13,282,580 cell. UGA Athletic Association board (May 2, 2024) set $13 million annually through Dec. 31, 2033.",
+            "year": 2026
           },
           "buyout": {
-            "value": 105107583,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "value": null,
+            "confidence": "pending",
+            "source": "Athens Banner-Herald (Aug. 10, 2026) open-records salary tape; UGA board May 2, 2024 extension",
+            "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/",
+            "asOf": null,
+            "notes": "Salary tape does not publish a current-dollar overhang. May 2024 board release says the deal is fully guaranteed through Dec. 31, 2028 — we do not invent the remainder."
           },
           "term": {
             "confidence": "reported",
-            "source": "University of Georgia Athletics",
+            "source": "UGA Athletics (May 2, 2024) — Athletic Association board extension",
             "url": "https://georgiadogs.com/news/2024/5/2/general-uga-athletics-board-approves-contract-extensions-for-josh-brooks-and-kirby-smart",
-            "asOf": "2026-08",
+            "asOf": "2024-05-02",
             "through": "2033",
             "yearsRemaining": 7,
-            "notes": "Athletics board: term extends to Dec. 31, 2033."
+            "notes": "Board-approved extension through Dec. 31, 2033. 2026 year pay is the July 2026 FOIA salary tape."
+          },
+          "contractUrl": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/",
+          "contract": {
+            "label": "Athens Banner-Herald — UGA July 2026 open-records salary tape",
+            "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/"
           }
         },
         "mbb": {
@@ -6955,27 +6997,35 @@
           "football": {
             "name": "Kirby Smart",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 13003000,
+              "confidence": "reported",
+              "source": "Athens Banner-Herald (Aug. 10, 2026), quoting UGA Athletic Association open-records salary tape (July 2026)",
+              "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/",
+              "asOf": "2026-08-10",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). July 2026 FOIA salary tape: Kirby Smart $13.003 million total pay. Not the USA TODAY 2025-10-08 $13,282,580 cell. UGA Athletic Association board (May 2, 2024) set $13 million annually through Dec. 31, 2033.",
+              "year": 2026
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
+              "source": "Athens Banner-Herald (Aug. 10, 2026) open-records salary tape; UGA board May 2, 2024 extension",
+              "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/",
               "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "notes": "Salary tape does not publish a current-dollar overhang. May 2024 board release says the deal is fully guaranteed through Dec. 31, 2028 — we do not invent the remainder."
             },
             "term": {
-              "confidence": "pending",
+              "confidence": "reported",
               "asOf": "2026-08",
               "source": "Wikipedia season-page infobox",
               "url": "https://en.wikipedia.org/wiki/2026_Georgia_Bulldogs_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "through": "2033",
+              "yearsRemaining": 7,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). UGA Athletic Association board (May 2, 2024) extended Smart through Dec. 31, 2033."
+            },
+            "contractUrl": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/",
+            "contract": {
+              "label": "Athens Banner-Herald — UGA July 2026 open-records salary tape",
+              "url": "https://www.onlineathens.com/story/sports/college/bulldogs-extra/2026/08/10/georgia-athletic-salaries-georgia-football-kirby-smart-josh-brooks/91115029007/"
             }
           },
           "mbb": {
@@ -8048,12 +8098,31 @@
       "color": "#0033A0",
       "staff": {
         "athleticDirector": {
-          "confidence": "pending",
+          "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
-          "name": "Mitch Barnhart",
-          "source": "Official 2026 athletics staff directory",
-          "url": "https://ukathletics.com/sports/football/roster/"
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+          "name": "J Batt",
+          "source": "University of Kentucky / Courier-Journal (USA TODAY Network)",
+          "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/06/17/j-batt-contract-kentucky-athletics-director-uk-wildcats-term-sheet-champions-blue-ceo/90596720007/",
+          "pay": {
+            "value": 2600000,
+            "confidence": "reported",
+            "source": "Courier-Journal (June 17, 2026), quoting UK Office of Legal Counsel term sheet",
+            "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/06/17/j-batt-contract-kentucky-athletics-director-uk-wildcats-term-sheet-champions-blue-ceo/90596720007/",
+            "asOf": "2026-06-17",
+            "notes": "Year 1 total $2.6M ($400k base + $2.2M supplemental) on the June 2026 term sheet through June 30, 2032. Barnhart retired June 30, 2026 — his AD pay is not reused on Batt. Incentives not added.",
+            "year": 2026,
+            "breakdown": [
+              {
+                "label": "Base (Year 1)",
+                "value": 400000
+              },
+              {
+                "label": "Supplemental (Year 1)",
+                "value": 2200000
+              }
+            ]
+          }
         },
         "office": [],
         "otherHeadCoaches": [],
@@ -8608,12 +8677,31 @@
       "staffByYear": {
         "2026": {
           "athleticDirector": {
-            "confidence": "pending",
+            "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
-            "name": "Mitch Barnhart",
-            "source": "Official 2026 athletics staff directory",
-            "url": "https://ukathletics.com/sports/football/roster/"
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
+            "name": "J Batt",
+            "source": "University of Kentucky / Courier-Journal (USA TODAY Network)",
+            "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/06/17/j-batt-contract-kentucky-athletics-director-uk-wildcats-term-sheet-champions-blue-ceo/90596720007/",
+            "pay": {
+              "value": 2600000,
+              "confidence": "reported",
+              "source": "Courier-Journal (June 17, 2026), quoting UK Office of Legal Counsel term sheet",
+              "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/06/17/j-batt-contract-kentucky-athletics-director-uk-wildcats-term-sheet-champions-blue-ceo/90596720007/",
+              "asOf": "2026-06-17",
+              "notes": "Year 1 total $2.6M ($400k base + $2.2M supplemental) on the June 2026 term sheet through June 30, 2032. Barnhart retired June 30, 2026 — his AD pay is not reused on Batt. Incentives not added.",
+              "year": 2026,
+              "breakdown": [
+                {
+                  "label": "Base (Year 1)",
+                  "value": 400000
+                },
+                {
+                  "label": "Supplemental (Year 1)",
+                  "value": 2200000
+                }
+              ]
+            }
           },
           "office": [],
           "otherHeadCoaches": [],
@@ -9593,7 +9681,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Verge Ausberry",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://lsusports.net/sports/fb/roster"
+          "url": "https://lsusports.net/sports/fb/roster",
+          "pay": {
+            "value": 1500000,
+            "confidence": "reported",
+            "source": "USA TODAY Network / Daily Advertiser (April 22, 2026), quoting Ausberry employment agreement",
+            "url": "https://www.thenewsstar.com/story/sports/college/lsu/2026/04/22/verge-ausberry-contract-lsu-ad-lsu-football-lane-kiffin/89738501007/",
+            "asOf": "2026-04-22",
+            "notes": "First-year guaranteed compensation $1.5 million through 2027 on the FOIA contract; Board of Supervisors approved April 23, 2026. Later-year $1.6M / $1.7M steps are not this cell. Incentives not added.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -10200,7 +10297,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Verge Ausberry",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://lsusports.net/sports/fb/roster"
+            "url": "https://lsusports.net/sports/fb/roster",
+            "pay": {
+              "value": 1500000,
+              "confidence": "reported",
+              "source": "USA TODAY Network / Daily Advertiser (April 22, 2026), quoting Ausberry employment agreement",
+              "url": "https://www.thenewsstar.com/story/sports/college/lsu/2026/04/22/verge-ausberry-contract-lsu-ad-lsu-football-lane-kiffin/89738501007/",
+              "asOf": "2026-04-22",
+              "notes": "First-year guaranteed compensation $1.5 million through 2027 on the FOIA contract; Board of Supervisors approved April 23, 2026. Later-year $1.6M / $1.7M steps are not this cell. Incentives not added.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -11144,25 +11250,35 @@
         "football": {
           "name": "Jeff Lebby",
           "pay": {
-            "value": 4350000,
+            "value": 4365000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "Clarion Ledger (Dec. 15, 2025), quoting Lebby university + Bulldog Club contracts",
+            "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/",
+            "asOf": "2025-12-15",
+            "notes": "Article quoting the contracts: $4.35 million for the 2025 season, increasing $15,000 annually through 2028. 2026 step is $4,365,000. Not the USA TODAY 2025-10-08 cell. Bowl / incentive bonuses not added.",
+            "year": 2026
           },
           "buyout": {
-            "value": 11006250,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "value": null,
+            "confidence": "pending",
+            "source": "Clarion Ledger (Nov. 28 / Dec. 15, 2025), quoting Lebby contracts",
+            "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/",
+            "asOf": null,
+            "notes": "School-side without-cause is 75% of remaining salary — we do not invent the remainder."
           },
           "term": {
-            "confidence": "pending",
-            "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "confidence": "reported",
+            "source": "Clarion Ledger (Dec. 15, 2025), quoting Lebby contracts",
+            "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/",
+            "asOf": "2025-12-15",
+            "through": "2028",
+            "yearsRemaining": 2,
+            "notes": "University + Bulldog Club contracts through the 2028 season. 2026 pay is the published $4.35M + $15k step."
+          },
+          "contractUrl": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/",
+          "contract": {
+            "label": "Clarion Ledger — Lebby contracts via open records",
+            "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/"
           }
         },
         "mbb": {
@@ -11197,7 +11313,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Zac Selmon",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://hailstate.com/sports/football/coaches/2026"
+          "url": "https://hailstate.com/sports/football/coaches/2026",
+          "pay": {
+            "value": 1250000,
+            "confidence": "reported",
+            "source": "Clarion Ledger (May 14, 2025), quoting Selmon extension documents",
+            "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/05/14/zac-selmon-contract-mississippi-state-athletic-director/83607124007/",
+            "asOf": "2025-05-14",
+            "notes": "Feb. 1, 2025 extension: $1.25 million this year (2025). Contract says +$25,000 each year it is continually renewed — that 2026 step is not booked unless a renewal cite appears. $100k milestone bonus left out.",
+            "year": 2025
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -11657,27 +11782,35 @@
           "football": {
             "name": "Jeff Lebby",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 4365000,
+              "confidence": "reported",
+              "source": "Clarion Ledger (Dec. 15, 2025), quoting Lebby university + Bulldog Club contracts",
+              "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/",
+              "asOf": "2025-12-15",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Article quoting the contracts: $4.35 million for the 2025 season, increasing $15,000 annually through 2028. 2026 step is $4,365,000. Not the USA TODAY 2025-10-08 cell. Bowl / incentive bonuses not added.",
+              "year": 2026
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
+              "source": "Clarion Ledger (Nov. 28 / Dec. 15, 2025), quoting Lebby contracts",
+              "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/",
               "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "notes": "School-side without-cause is 75% of remaining salary — we do not invent the remainder."
             },
             "term": {
-              "confidence": "pending",
+              "confidence": "reported",
               "asOf": "2026-08",
               "source": "Wikipedia season-page infobox",
               "url": "https://en.wikipedia.org/wiki/2026_Mississippi_State_Bulldogs_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "through": "2028",
+              "yearsRemaining": 2,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Clarion Ledger: under contract through the 2028 season."
+            },
+            "contractUrl": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/",
+            "contract": {
+              "label": "Clarion Ledger — Lebby contracts via open records",
+              "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/12/15/jeff-lebby-salary-mississippi-state-contract-bowl-bonus/87693965007/"
             }
           },
           "mbb": {
@@ -11714,7 +11847,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Zac Selmon",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://hailstate.com/sports/football/coaches/2026"
+            "url": "https://hailstate.com/sports/football/coaches/2026",
+            "pay": {
+              "value": 1250000,
+              "confidence": "reported",
+              "source": "Clarion Ledger (May 14, 2025), quoting Selmon extension documents",
+              "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2025/05/14/zac-selmon-contract-mississippi-state-athletic-director/83607124007/",
+              "asOf": "2025-05-14",
+              "notes": "Feb. 1, 2025 extension: $1.25 million this year (2025). Contract says +$25,000 each year it is continually renewed — that 2026 step is not booked unless a renewal cite appears. $100k milestone bonus left out.",
+              "year": 2025
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -14217,7 +14359,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Roger Denny",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://soonersports.com/sports/football/coaches"
+          "url": "https://soonersports.com/sports/football/coaches",
+          "pay": {
+            "value": 1250000,
+            "confidence": "reported",
+            "source": "The Oklahoman (Jan. 30, 2026) — OU Board of Regents approved Denny contract",
+            "url": "https://www.oklahoman.com/story/sports/college/sooners/2026/01/30/ou-board-of-regents-approves-contracts-jason-witten-roger-denny-sooners/88434348007/",
+            "asOf": "2026-01-30",
+            "notes": "Board-approved annual salary $1.25 million through June 30, 2030. Joe Castiglione’s USA TODAY $2.2M snapshot is not applied to Denny.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -14759,7 +14910,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Roger Denny",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://soonersports.com/sports/football/coaches"
+            "url": "https://soonersports.com/sports/football/coaches",
+            "pay": {
+              "value": 1250000,
+              "confidence": "reported",
+              "source": "The Oklahoman (Jan. 30, 2026) — OU Board of Regents approved Denny contract",
+              "url": "https://www.oklahoman.com/story/sports/college/sooners/2026/01/30/ou-board-of-regents-approves-contracts-jason-witten-roger-denny-sooners/88434348007/",
+              "asOf": "2026-01-30",
+              "notes": "Board-approved annual salary $1.25 million through June 30, 2030. Joe Castiglione’s USA TODAY $2.2M snapshot is not applied to Denny.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -15688,6 +15848,15 @@
           "url": null,
           "asOf": null,
           "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report — Item 44 Institutional NIL Revenue Share $0",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "Hosted MFRS PDF pages 16 / 74 / 93 print Item 44 as $0 (pre-House, year ended Jun 30 2025). Booked $0 because the report shows $0 — not an invented blank. Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total."
         }
       },
       "coaches": {
@@ -17301,7 +17470,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Jeremiah Donati",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://gamecocksonline.com/staff-directory/football-803-777-4271/"
+          "url": "https://gamecocksonline.com/staff-directory/football-803-777-4271/",
+          "pay": {
+            "value": 2000000,
+            "confidence": "reported",
+            "source": "AP News, quoting South Carolina Board of Trustees approval of Donati contract",
+            "url": "https://apnews.com/article/south-carolina-athletic-director-donati-a976698910d4657cc0a6bf00e4ff797e",
+            "asOf": "2024-12-05",
+            "notes": "Board: $1.9 million first year beginning Jan. 2, 2025, plus a $100,000 increase each subsequent year. 2026 calendar year is $2.0 million. Incentives (up to $400k) not added.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -17792,7 +17970,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Jeremiah Donati",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://gamecocksonline.com/staff-directory/football-803-777-4271/"
+            "url": "https://gamecocksonline.com/staff-directory/football-803-777-4271/",
+            "pay": {
+              "value": 2000000,
+              "confidence": "reported",
+              "source": "AP News, quoting South Carolina Board of Trustees approval of Donati contract",
+              "url": "https://apnews.com/article/south-carolina-athletic-director-donati-a976698910d4657cc0a6bf00e4ff797e",
+              "asOf": "2024-12-05",
+              "notes": "Board: $1.9 million first year beginning Jan. 2, 2025, plus a $100,000 increase each subsequent year. 2026 calendar year is $2.0 million. Incentives (up to $400k) not added.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -18682,20 +18869,29 @@
           "pay": {
             "value": 9000000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Amendment 3 restates term and remaining-pay %; it does not publish a Base / Supplemental table. USA TODAY $9,000,000 is the current-chair fallback until a pay schedule is on the desk. Incentives not added.",
-            "year": 2025
+            "source": "University of Tennessee Heupel EA + Amendment 2 (supplemental) + Amendment 3; Knox News (Aug. 26, 2025)",
+            "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
+            "asOf": "2025-08-26",
+            "notes": "Original EA base $275,000 + Amendment 2 supplemental $8,725,000 = $9,000,000. Amendment 3 (Aug. 26, 2025) extends the term through Jan. 31, 2030 and does not republish a new pay table; Knox News quoting the amendment says pay remains $9 million. Incentives not added.",
+            "year": 2026,
+            "breakdown": [
+              {
+                "label": "Base pay (original EA)",
+                "value": 275000
+              },
+              {
+                "label": "Supplemental pay (Amendment 2)",
+                "value": 8725000
+              }
+            ]
           },
           "buyout": {
-            "value": 37500000,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
-            "rule": "75% remaining Base + Supplemental before Dec. 15, 2027; 50% after. Offset; no duty to mitigate."
+            "value": null,
+            "confidence": "pending",
+            "source": "University of Tennessee Heupel Amendment 3 PDF",
+            "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
+            "asOf": null,
+            "notes": "School-side without-cause is 75% of remaining Base + Supplemental if fired on or after Dec. 15, 2025 and before Dec. 15, 2027 (50% after). We do not invent the remainder."
           },
           "contractUrl": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
           "contract": {
@@ -18716,7 +18912,7 @@
               {
                 "kind": "amendment",
                 "n": 2,
-                "label": "Amendment 2",
+                "label": "Amendment 2 — $8,725,000 supplemental",
                 "url": "https://tennessee.edu/wp-content/uploads/2025/04/Heupel-Josh-1-2023-Amendment2.pdf"
               },
               {
@@ -18729,12 +18925,12 @@
           },
           "term": {
             "confidence": "reported",
-            "source": "University of Tennessee Heupel Amendment 3 PDF",
+            "source": "University of Tennessee Heupel Amendment 3 PDF; Knox News (Aug. 26, 2025)",
             "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
-            "asOf": "2026-08",
+            "asOf": "2025-08-26",
             "through": "2030",
             "yearsRemaining": 4,
-            "notes": "Amendment 3: term through Jan. 31, 2030. School-side is 75% of remaining compensation before Dec. 15, 2027 and 50% after. Offset; no duty to mitigate."
+            "notes": "Amendment 3 (signed Aug. 26, 2025) substitutes Jan. 31, 2030 as the term end. Pay remains the Amendment 2 $9.0 million table."
           }
         },
         "mbb": {
@@ -19266,20 +19462,31 @@
           "football": {
             "name": "Josh Heupel",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "No extracted pay on the desk for this chair-year."
+              "value": 9000000,
+              "confidence": "reported",
+              "source": "University of Tennessee Heupel EA + Amendment 2 (supplemental) + Amendment 3; Knox News (Aug. 26, 2025)",
+              "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
+              "asOf": "2025-08-26",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Original EA base $275,000 + Amendment 2 supplemental $8,725,000 = $9,000,000. Amendment 3 (Aug. 26, 2025) extends the term through Jan. 31, 2030 and does not republish a new pay table; Knox News quoting the amendment says pay remains $9 million. Incentives not added.",
+              "year": 2026,
+              "breakdown": [
+                {
+                  "label": "Base pay (original EA)",
+                  "value": 275000
+                },
+                {
+                  "label": "Supplemental pay (Amendment 2)",
+                  "value": 8725000
+                }
+              ]
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
+              "source": "University of Tennessee Heupel Amendment 3 PDF",
+              "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
               "asOf": null,
-              "notes": "USA TODAY buyout cell not reused on a year without a tape pay cell."
+              "notes": "School-side without-cause is 75% of remaining Base + Supplemental if fired on or after Dec. 15, 2025 and before Dec. 15, 2027 (50% after). We do not invent the remainder."
             },
             "contractUrl": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
             "contract": {
@@ -19300,7 +19507,7 @@
                 {
                   "kind": "amendment",
                   "n": 2,
-                  "label": "Amendment 2",
+                  "label": "Amendment 2 — $8,725,000 supplemental",
                   "url": "https://tennessee.edu/wp-content/uploads/2025/04/Heupel-Josh-1-2023-Amendment2.pdf"
                 },
                 {
@@ -19313,12 +19520,12 @@
             },
             "term": {
               "confidence": "reported",
+              "asOf": "2026-08",
               "source": "Wikipedia season-page infobox",
               "url": "https://en.wikipedia.org/wiki/2026_Tennessee_Volunteers_football_team",
-              "asOf": "2026-08",
               "through": "2030",
               "yearsRemaining": 4,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Amendment 3: term through Jan. 31, 2030. School-side is 75% of remaining compensation before Dec. 15, 2027 and 50% after. Offset; no duty to mitigate."
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Amendment 3 extends the employment agreement through Jan. 31, 2030."
             }
           },
           "mbb": {
@@ -46565,7 +46772,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Martin Jarmond",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://uclabruins.com/sports/football/coaches/2026"
+          "url": "https://uclabruins.com/sports/football/coaches/2026",
+          "pay": {
+            "value": 1800000,
+            "confidence": "reported",
+            "source": "Los Angeles Times (Dec. 10, 2024), quoting Jarmond extension signed May 2024",
+            "url": "https://www.latimes.com/sports/ucla/story/2024-12-10/ucla-jarmond-contract",
+            "asOf": "2024-12-10",
+            "notes": "Published schedule on the July 1, 2024 extension through June 30, 2029: Year 1 $1.55M, Year 2 $1.6M, Year 3 $1.8M. 2026-27 is Year 3. Retention / signing bonus not added.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -47120,7 +47336,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Martin Jarmond",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://uclabruins.com/sports/football/coaches/2026"
+            "url": "https://uclabruins.com/sports/football/coaches/2026",
+            "pay": {
+              "value": 1800000,
+              "confidence": "reported",
+              "source": "Los Angeles Times (Dec. 10, 2024), quoting Jarmond extension signed May 2024",
+              "url": "https://www.latimes.com/sports/ucla/story/2024-12-10/ucla-jarmond-contract",
+              "asOf": "2024-12-10",
+              "notes": "Published schedule on the July 1, 2024 extension through June 30, 2029: Year 1 $1.55M, Year 2 $1.6M, Year 3 $1.8M. 2026-27 is Year 3. Retention / signing bonus not added.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -49530,7 +49755,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Patrick Chun",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://gohuskies.com/sports/football/coaches"
+          "url": "https://gohuskies.com/sports/football/coaches",
+          "pay": {
+            "value": 1500000,
+            "confidence": "reported",
+            "source": "Seattle Times, quoting Chun memorandum of understanding (March 2024 hire)",
+            "url": "https://www.seattletimes.com/sports/washington-huskies-football/new-uw-ad-pat-chun-we-will-not-take-a-back-seat-to-anyone/",
+            "asOf": "2024-03-28",
+            "notes": "MOU: base $1.3 million July 1, 2024–June 30, 2025, then +$100,000 each year, capping at $1.7 million the final two years. 2026-27 step is $1.5 million. Bonuses not added.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -50034,7 +50268,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Patrick Chun",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://gohuskies.com/sports/football/coaches"
+            "url": "https://gohuskies.com/sports/football/coaches",
+            "pay": {
+              "value": 1500000,
+              "confidence": "reported",
+              "source": "Seattle Times, quoting Chun memorandum of understanding (March 2024 hire)",
+              "url": "https://www.seattletimes.com/sports/washington-huskies-football/new-uw-ad-pat-chun-we-will-not-take-a-back-seat-to-anyone/",
+              "asOf": "2024-03-28",
+              "notes": "MOU: base $1.3 million July 1, 2024–June 30, 2025, then +$100,000 each year, capping at $1.7 million the final two years. 2026-27 step is $1.5 million. Bonuses not added.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -50987,7 +51230,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Shawn Eichorst",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://uwbadgers.com/sports/football/coaches"
+          "url": "https://uwbadgers.com/sports/football/coaches",
+          "pay": {
+            "value": 1600000,
+            "confidence": "reported",
+            "source": "Milwaukee Journal Sentinel (July 13, 2026), quoting Eichorst contract via open records",
+            "url": "https://www.jsonline.com/story/sports/college/uw/2026/07/13/wisconsin-badgers-ad-shawn-eichorst-contract-salary-information/90905999007/",
+            "asOf": "2026-07-13",
+            "notes": "Five-year deal: initial base $1.6 million for 2026-27 through June 30, 2031. $50,000 annual raises and incentives (capped $300k) are not added into this cell.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -51517,7 +51769,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Shawn Eichorst",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://uwbadgers.com/sports/football/coaches"
+            "url": "https://uwbadgers.com/sports/football/coaches",
+            "pay": {
+              "value": 1600000,
+              "confidence": "reported",
+              "source": "Milwaukee Journal Sentinel (July 13, 2026), quoting Eichorst contract via open records",
+              "url": "https://www.jsonline.com/story/sports/college/uw/2026/07/13/wisconsin-badgers-ad-shawn-eichorst-contract-salary-information/90905999007/",
+              "asOf": "2026-07-13",
+              "notes": "Five-year deal: initial base $1.6 million for 2026-27 through June 30, 2031. $50,000 annual raises and incentives (capped $300k) are not added into this cell.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -90569,7 +90830,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Gene Taylor",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://www.kstatesports.com/sports/football/coaches"
+          "url": "https://www.kstatesports.com/sports/football/coaches",
+          "pay": {
+            "value": 925000,
+            "confidence": "reported",
+            "source": "Topeka Capital-Journal (May 26, 2026), quoting Taylor’s current contract",
+            "url": "https://www.cjonline.com/story/sports/college/cat-zone/2026/05/26/gene-taylor-kansas-state-ad-atheltic-director-retirement-plans-coaches/90065135007/",
+            "asOf": "2026-05-26",
+            "notes": "USA TODAY Network: $925,000 base through June 2030. Retention bonuses ($250k this year / $500k later) are not added into this cell.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -91118,7 +91388,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Gene Taylor",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://www.kstatesports.com/sports/football/coaches"
+            "url": "https://www.kstatesports.com/sports/football/coaches",
+            "pay": {
+              "value": 925000,
+              "confidence": "reported",
+              "source": "Topeka Capital-Journal (May 26, 2026), quoting Taylor’s current contract",
+              "url": "https://www.cjonline.com/story/sports/college/cat-zone/2026/05/26/gene-taylor-kansas-state-ad-atheltic-director-retirement-plans-coaches/90065135007/",
+              "asOf": "2026-05-26",
+              "notes": "USA TODAY Network: $925,000 base through June 2030. Retention bonuses ($250k this year / $500k later) are not added into this cell.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -97830,7 +98109,16 @@
           "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
           "name": "Mark Harlan",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://utahutes.com/sports/football/coaches"
+          "url": "https://utahutes.com/sports/football/coaches",
+          "pay": {
+            "value": 1000000,
+            "confidence": "reported",
+            "source": "Deseret News (June 15, 2023), quoting Harlan extension via public records",
+            "url": "https://www.deseret.com/2023/6/15/23762164/utah-utes-ad-mark-harlans-contract-extension-through-2028-includes-significant-raise-hefty-buyout/",
+            "asOf": "2023-06-15",
+            "notes": "FOIA schedule: base $850,000 on July 1, 2023, then +$50,000 each year through June 30, 2027. 2026-27 step is $1,000,000. July 1, 2027 jumps to $1.1M and is not this cell. Retention / performance bonuses not added.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -98373,7 +98661,16 @@
             "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
             "name": "Mark Harlan",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://utahutes.com/sports/football/coaches"
+            "url": "https://utahutes.com/sports/football/coaches",
+            "pay": {
+              "value": 1000000,
+              "confidence": "reported",
+              "source": "Deseret News (June 15, 2023), quoting Harlan extension via public records",
+              "url": "https://www.deseret.com/2023/6/15/23762164/utah-utes-ad-mark-harlans-contract-extension-through-2028-includes-significant-raise-hefty-buyout/",
+              "asOf": "2023-06-15",
+              "notes": "FOIA schedule: base $850,000 on July 1, 2023, then +$50,000 each year through June 30, 2027. 2026-27 step is $1,000,000. July 1, 2027 jumps to $1.1M and is not this cell. Retention / performance bonuses not added.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
