@@ -156,6 +156,8 @@ const layers = JSON.parse(readFileSync(new URL('../public/data/layers.json', imp
 ok(layers.schools.wisconsin.apparel?.annualValue?.value === 7_000_000, 'Wisconsin UA $7M kept')
 ok(layers.schools.kentucky.apparel?.annualValue?.value === 7_000_000, 'Kentucky Nike $7M kept')
 ok(layers.schools.kentucky.apparel?.naming?.[0]?.annualValue === 1_850_000, 'Kroger Field $1.85M kept')
+ok(layers.schools['texas-am'].apparel?.annualValue?.value === 9_000_000, 'Texas A&M Adidas cash+product $9M')
+ok(layers.schools.lsu.apparel?.annualValue?.value == null, 'LSU Nike AAV stays pending')
 let feeCells = 0
 for (const s of data.schools) {
   if (s.capacity?.studentFees?.value != null) feeCells += 1

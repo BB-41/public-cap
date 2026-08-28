@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-28",
-    "itemCount": 250,
+    "itemCount": 252,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,36 @@
     ]
   },
   "items": [
+    {
+      "id": "cincinnati-pay-satterfield-2026-mou",
+      "date": "2022-12-06",
+      "school": "cincinnati",
+      "schoolName": "Cincinnati",
+      "kind": "contract",
+      "headline": "Athletic FOIA MOU: Scott Satterfield $3.5 million in 2023 + $100,000 each subsequent season. 2026 step is $3,800,000. Not the USA TODAY 2025-10-08 cell.",
+      "figure": 3800000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic \u2014 Satterfield MOU via public records",
+        "url": "https://www.nytimes.com/athletic/3975896/2022/12/06/scott-satterfield-cincinnati-contract-salary-buyout/"
+      },
+      "field": "coachesByYear.2026.football.pay"
+    },
+    {
+      "id": "texas-am-apparel-adidas-2024-eagle",
+      "date": "2024-05-03",
+      "school": "texas-am",
+      "schoolName": "Texas A&M",
+      "kind": "apparel",
+      "headline": "The Eagle FOIA: Adidas $3 million annual cash + $6 million product on the July 2022\u2013June 2027 deal. AAV is the named $9.0 million \u2014 royalties and $1M marketing not added.",
+      "figure": 9000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Eagle / My Aggie Nation \u2014 Adidas FOIA",
+        "url": "https://myaggienation.com/am_news/tamu-adidas-sign-five-year-deal/article_da4108b1-c669-58d2-ae4e-d2d1b14166b0.html"
+      },
+      "field": "layers.apparel.annualValue"
+    },
     {
       "id": "nc-state-pay-doeren-2026-foia",
       "date": "2026-06-29",

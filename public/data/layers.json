@@ -2027,15 +2027,15 @@
           "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 9000000,
+          "confidence": "reported",
+          "source": "The Eagle / My Aggie Nation (May 3, 2024), quoting the Adidas contract obtained by open records: $3 million annual base compensation + $6 million in products",
+          "url": "https://myaggienation.com/am_news/tamu-adidas-sign-five-year-deal/article_da4108b1-c669-58d2-ae4e-d2d1b14166b0.html",
+          "asOf": "2024-05-03",
+          "notes": "Current Adidas deal (July 1, 2022\u2013June 30, 2027), finalized Aug. 18, 2023. AAV is the named annual cash + product ($3M + $6M) \u2014 not a guess from the \u201cmore than $47 million\u201d five-year headline. Not in this AAV: guaranteed minimum royalties ($380k / $400k / $400k / $400k / $380k), the additional $1 million a year for mutually agreed marketing initiatives, or performance bonuses. Aggies Wire (Aug. 2, 2026) still names the same term through June 30, 2027."
         },
         "naming": [],
-        "notes": null
+        "notes": "Adidas FOIA cash+product AAV booked. Royalties and the $1M marketing fund are not added."
       },
       "subsidy": {
         "studentFees": {

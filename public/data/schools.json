@@ -85135,27 +85135,35 @@
           "football": {
             "name": "Scott Satterfield",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 3800000,
+              "confidence": "reported",
+              "source": "The Athletic (Dec. 6, 2022), quoting Satterfield Dec. 4 MOU obtained by public records; Boardroom year table; 700WLW Jan. 4, 2026 restates the 2026 step",
+              "url": "https://www.nytimes.com/athletic/3975896/2022/12/06/scott-satterfield-cincinnati-contract-salary-buyout/",
+              "asOf": "2022-12-06",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). FOIA MOU: $3.5 million in 2023 (first full season) + $100,000 each subsequent season, culminating at $4.0 million in 2028. 2026 step is $3,800,000. USA TODAY 2024 $3.6M / 2025 $3.7M match the published steps. Incentives not added. Current-deal line stays the USA TODAY 2025 snapshot. No later file that changes the year table is on the desk.",
+              "year": 2026
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
+              "source": "The Athletic — Satterfield MOU via public records",
+              "url": "https://www.nytimes.com/athletic/3975896/2022/12/06/scott-satterfield-cincinnati-contract-salary-buyout/",
               "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "notes": "School-side without-cause from Jan. 1, 2026 is 70% of remaining pay — we do not invent the remainder or buyout.steps."
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
+              "confidence": "reported",
+              "asOf": "2022-12-06",
+              "source": "Wikipedia season-page infobox; Athletic FOIA MOU",
               "url": "https://en.wikipedia.org/wiki/2026_Cincinnati_Bearcats_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "through": "2028",
+              "yearsRemaining": 3,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Six-year MOU through the 2028 season."
+            },
+            "contractUrl": "https://www.nytimes.com/athletic/3975896/2022/12/06/scott-satterfield-cincinnati-contract-salary-buyout/",
+            "contract": {
+              "label": "The Athletic — Satterfield MOU via public records",
+              "url": "https://www.nytimes.com/athletic/3975896/2022/12/06/scott-satterfield-cincinnati-contract-salary-buyout/"
             }
           },
           "mbb": {

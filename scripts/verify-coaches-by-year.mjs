@@ -270,6 +270,9 @@ ok(!(chair('nc-state', 2026).pay?.source || '').includes('USA TODAY'), 'Doeren 2
 ok(byId['nc-state'].coaches.football.pay.value === 6_215_377, 'Doeren current stays USA TODAY 2025')
 ok(chair('west-virginia', 2026).pay.value === 3_600_000, 'Rodriguez 2026 MOU $3.6M')
 ok(!(chair('west-virginia', 2026).pay?.source || '').includes('USA TODAY'), 'Rodriguez 2026 is not USA TODAY')
+ok(chair('cincinnati', 2026).pay.value === 3_800_000, 'Satterfield 2026 FOIA MOU $3.8M')
+ok(!(chair('cincinnati', 2026).pay?.source || '').includes('USA TODAY'), 'Satterfield 2026 is not USA TODAY')
+ok(byId.cincinnati.coaches.football.pay.value === 3_700_000, 'Satterfield current stays USA TODAY 2025')
 
 function sameChair(a, b) {
   return samePerson(a, b)
