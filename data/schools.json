@@ -66190,27 +66190,35 @@
           "football": {
             "name": "Dave Doeren",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 5750000,
+              "confidence": "reported",
+              "source": "PackInsider (June 29, 2026), quoting Doeren FOIA documents",
+              "url": "https://packinsider.com/2026/06/29/nc-state-football-coaching-salaries-2026/",
+              "asOf": "2026-06-29",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). FOIA: $5.75 million in 2026 after the published $125,000 annual raise, through the 2029 season. Not the USA TODAY 2025-10-08 $6,215,377 cell. Incentives not added. Current-deal line stays the USA TODAY 2025 snapshot.",
+              "year": 2026
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
+              "source": "PackInsider (June 29, 2026) FOIA salary tape",
+              "url": "https://packinsider.com/2026/06/29/nc-state-football-coaching-salaries-2026/",
               "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "notes": "FOIA salary tape does not print a current-dollar school-side overhang. We do not invent buyout.steps."
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
+              "confidence": "reported",
+              "asOf": "2026-06-29",
+              "source": "Wikipedia season-page infobox; PackInsider FOIA",
               "url": "https://en.wikipedia.org/wiki/2026_NC_State_Wolfpack_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "through": "2029",
+              "yearsRemaining": 4,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). FOIA: under contract through the 2029 season."
+            },
+            "contractUrl": "https://packinsider.com/2026/06/29/nc-state-football-coaching-salaries-2026/",
+            "contract": {
+              "label": "PackInsider — Doeren 2026 FOIA salary tape",
+              "url": "https://packinsider.com/2026/06/29/nc-state-football-coaching-salaries-2026/"
             }
           },
           "mbb": {
@@ -80497,10 +80505,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Graham Rossini",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://thesundevils.com/sports/football/roster"
+          "url": "https://thesundevils.com/sports/football/roster",
+          "pay": {
+            "value": 950000,
+            "confidence": "reported",
+            "source": "Arizona Sports (April 10, 2025), quoting Arizona Board of Regents approval of the Rossini extension",
+            "url": "https://arizonasports.com/ncaa/arizona-state/arizona-state-football/rossini-ext",
+            "asOf": "2025-04-10",
+            "notes": "ABOR: base increases from $650,000 to $950,000 effective July 1, 2025, through June 30, 2030. Annual raise ranging from $50,000 to $100,000 is not invented. Retention / performance bonuses and the $100,000 merit bonus are not added. Same person as the 2026 chair.",
+            "year": 2025
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -81003,10 +81020,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Graham Rossini",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://thesundevils.com/sports/football/roster"
+            "url": "https://thesundevils.com/sports/football/roster",
+            "pay": {
+              "value": 950000,
+              "confidence": "reported",
+              "source": "Arizona Sports (April 10, 2025), quoting Arizona Board of Regents approval of the Rossini extension",
+              "url": "https://arizonasports.com/ncaa/arizona-state/arizona-state-football/rossini-ext",
+              "asOf": "2025-04-10",
+              "notes": "ABOR: base increases from $650,000 to $950,000 effective July 1, 2025, through June 30, 2030. Annual raise ranging from $50,000 to $100,000 is not invented. Retention / performance bonuses and the $100,000 merit bonus are not added. Same person as the 2026 chair.",
+              "year": 2025
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -84637,10 +84663,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "John Cunningham",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://gobearcats.com/sports/football/roster"
+          "url": "https://gobearcats.com/sports/football/roster",
+          "pay": {
+            "value": 725000,
+            "confidence": "reported",
+            "source": "The Athletic (Aug. 18, 2023), quoting Cunningham Board-approved extension obtained by public records; SI reprint",
+            "url": "https://www.nytimes.com/athletic/4785862/2023/08/18/cincinnati-ad-john-cunningham-contract/",
+            "asOf": "2023-08-18",
+            "notes": "FOIA schedule: $650,000 beginning July 1, 2023 + $25,000 annually to $750,000 in 2027-28. 2026-27 step is $725,000. Retention bonus and performance bonus are not added. Same person as the 2026 chair.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -85154,10 +85189,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "John Cunningham",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://gobearcats.com/sports/football/roster"
+            "url": "https://gobearcats.com/sports/football/roster",
+            "pay": {
+              "value": 725000,
+              "confidence": "reported",
+              "source": "The Athletic (Aug. 18, 2023), quoting Cunningham Board-approved extension obtained by public records; SI reprint",
+              "url": "https://www.nytimes.com/athletic/4785862/2023/08/18/cincinnati-ad-john-cunningham-contract/",
+              "asOf": "2023-08-18",
+              "notes": "FOIA schedule: $650,000 beginning July 1, 2023 + $25,000 annually to $750,000 in 2027-28. 2026-27 step is $725,000. Retention bonus and performance bonus are not added. Same person as the 2026 chair.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -87696,10 +87740,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Eddie Nunez",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://uhcougars.com/sports/football/coaches"
+          "url": "https://uhcougars.com/sports/football/coaches",
+          "pay": {
+            "value": 1000000,
+            "confidence": "reported",
+            "source": "Houston Chronicle hire terms, quoted by the Albuquerque Journal: $900,000 first year + $50,000 annually to $1.1 million ending August 2029",
+            "url": "https://www.abqjournal.com/sports/lobo-coaches-confident-in-new-athletic-director-search-details-of-eddie-nuezs-houston-contract-emerge/438695",
+            "asOf": "2024-08-26",
+            "notes": "Published schedule from the five-year UH deal (hired August 2024): $900k / $950k / $1.0M / $1.05M / $1.1M. 2026 step (Aug. 2026–Aug. 2027) is $1,000,000. $250,000 performance incentive and the $150,000 UNM buyout payment are not added. Same person as the 2026 chair.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -88210,10 +88263,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Eddie Nunez",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://uhcougars.com/sports/football/coaches"
+            "url": "https://uhcougars.com/sports/football/coaches",
+            "pay": {
+              "value": 1000000,
+              "confidence": "reported",
+              "source": "Houston Chronicle hire terms, quoted by the Albuquerque Journal: $900,000 first year + $50,000 annually to $1.1 million ending August 2029",
+              "url": "https://www.abqjournal.com/sports/lobo-coaches-confident-in-new-athletic-director-search-details-of-eddie-nuezs-houston-contract-emerge/438695",
+              "asOf": "2024-08-26",
+              "notes": "Published schedule from the five-year UH deal (hired August 2024): $900k / $950k / $1.0M / $1.05M / $1.1M. 2026 step (Aug. 2026–Aug. 2027) is $1,000,000. $250,000 performance incentive and the $150,000 UNM buyout payment are not added. Same person as the 2026 chair.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -98231,10 +98293,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Terry Mohajir",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://ucfknights.com/sports/football/roster"
+          "url": "https://ucfknights.com/sports/football/roster",
+          "pay": {
+            "value": 1000000,
+            "confidence": "reported",
+            "source": "Sons of UCF (June 20, 2025), quoting a November 2022 extension summary furnished by UCF Sports Information",
+            "url": "https://www.sonsofucf.com/ucf-ad-terry-mohajir-talks-adjustments-for-knights/",
+            "asOf": "2025-06-20",
+            "notes": "SID summary: $1,000,000 in 2025 and $1,000,000 in 2026 on the July 2022–June 30, 2027 term. Performance bonuses capped at $300,000 are not added. A later extension offer through June 30, 2029 has no published dollar and is not booked.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -98751,10 +98822,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Terry Mohajir",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://ucfknights.com/sports/football/roster"
+            "url": "https://ucfknights.com/sports/football/roster",
+            "pay": {
+              "value": 1000000,
+              "confidence": "reported",
+              "source": "Sons of UCF (June 20, 2025), quoting a November 2022 extension summary furnished by UCF Sports Information",
+              "url": "https://www.sonsofucf.com/ucf-ad-terry-mohajir-talks-adjustments-for-knights/",
+              "asOf": "2025-06-20",
+              "notes": "SID summary: $1,000,000 in 2025 and $1,000,000 in 2026 on the July 2022–June 30, 2027 term. Performance bonuses capped at $300,000 are not added. A later extension offer through June 30, 2029 has no published dollar and is not booked.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -101286,10 +101366,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Wren Baker",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://wvusports.com/sports/football/coaches"
+          "url": "https://wvusports.com/sports/football/coaches",
+          "pay": {
+            "value": 1400000,
+            "confidence": "reported",
+            "source": "WV MetroNews (July 24, 2025), quoting Baker June 5, 2025 second amendment to the employment agreement",
+            "url": "https://wvmetronews.com/2025/07/24/wvu-director-of-athletics-wren-baker-agree-on-contract-extension/",
+            "asOf": "2025-07-24",
+            "notes": "Amendment signed June 5, 2025: $1.3 million in calendar 2025 + $100,000 each year to $2.0 million in 2032. 2026 step is $1,400,000. $200,000 July 1 retention (through 2029) and coach-incentive share (max $250k) are not added. Same person as the 2026 chair.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -101736,27 +101825,35 @@
           "football": {
             "name": "Rich Rodriguez",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 3600000,
+              "confidence": "reported",
+              "source": "AP News (Dec. 2024), quoting Rodriguez Dec. 11 MOU obtained by FOIA; $3.5M first season + $100,000 each subsequent season",
+              "url": "https://apnews.com/article/west-virginia-rich-rodriguez-contract-45ec4c08a34b053b8d9c45f66fc473c4",
+              "asOf": "2024-12-16",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). FOIA MOU: $3.5 million in 2025 (first season) + $100,000 each subsequent season. 2026 step is $3,600,000. Tops at $3.9 million in 2029. Not a USA TODAY 2025 stamp. Incentives not added. Current-deal line stays the USA TODAY 2025 snapshot.",
+              "year": 2026
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
+              "source": "AP News — Rodriguez MOU via FOIA",
+              "url": "https://apnews.com/article/west-virginia-rich-rodriguez-contract-45ec4c08a34b053b8d9c45f66fc473c4",
               "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "notes": "School-side without-cause is 50% of remaining total compensation — we do not invent the remainder or buyout.steps."
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
+              "confidence": "reported",
+              "asOf": "2024-12-16",
+              "source": "Wikipedia season-page infobox; AP FOIA MOU",
               "url": "https://en.wikipedia.org/wiki/2026_West_Virginia_Mountaineers_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "through": "2029",
+              "yearsRemaining": 4,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Five-year MOU through the 2029 season. 247 later obtained the July 18, 2025 official contract and said it forwarded the MOU year table."
+            },
+            "contractUrl": "https://apnews.com/article/west-virginia-rich-rodriguez-contract-45ec4c08a34b053b8d9c45f66fc473c4",
+            "contract": {
+              "label": "AP News — Rodriguez MOU via FOIA",
+              "url": "https://apnews.com/article/west-virginia-rich-rodriguez-contract-45ec4c08a34b053b8d9c45f66fc473c4"
             }
           },
           "mbb": {
@@ -101790,10 +101887,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Wren Baker",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://wvusports.com/sports/football/coaches"
+            "url": "https://wvusports.com/sports/football/coaches",
+            "pay": {
+              "value": 1400000,
+              "confidence": "reported",
+              "source": "WV MetroNews (July 24, 2025), quoting Baker June 5, 2025 second amendment to the employment agreement",
+              "url": "https://wvmetronews.com/2025/07/24/wvu-director-of-athletics-wren-baker-agree-on-contract-extension/",
+              "asOf": "2025-07-24",
+              "notes": "Amendment signed June 5, 2025: $1.3 million in calendar 2025 + $100,000 each year to $2.0 million in 2032. 2026 step is $1,400,000. $200,000 July 1 retention (through 2029) and coach-incentive share (max $250k) are not added. Same person as the 2026 chair.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [

@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-28",
-    "itemCount": 243,
+    "itemCount": 250,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,111 @@
     ]
   },
   "items": [
+    {
+      "id": "nc-state-pay-doeren-2026-foia",
+      "date": "2026-06-29",
+      "school": "nc-state",
+      "schoolName": "NC State",
+      "kind": "contract",
+      "headline": "PackInsider FOIA: Dave Doeren $5.75 million in 2026 after the $125,000 annual raise, through 2029. Not the USA TODAY 2025-10-08 cell.",
+      "figure": 5750000,
+      "confidence": "reported",
+      "source": {
+        "label": "PackInsider \u2014 Doeren 2026 FOIA salary tape",
+        "url": "https://packinsider.com/2026/06/29/nc-state-football-coaching-salaries-2026/"
+      },
+      "field": "coachesByYear.2026.football.pay"
+    },
+    {
+      "id": "west-virginia-pay-rodriguez-2026-mou",
+      "date": "2024-12-16",
+      "school": "west-virginia",
+      "schoolName": "West Virginia",
+      "kind": "contract",
+      "headline": "AP FOIA MOU: Rich Rodriguez $3.5 million in 2025 + $100,000 each subsequent season. 2026 step is $3,600,000.",
+      "figure": 3600000,
+      "confidence": "reported",
+      "source": {
+        "label": "AP News \u2014 Rodriguez MOU via FOIA",
+        "url": "https://apnews.com/article/west-virginia-rich-rodriguez-contract-45ec4c08a34b053b8d9c45f66fc473c4"
+      },
+      "field": "coachesByYear.2026.football.pay"
+    },
+    {
+      "id": "arizona-state-ad-rossini-2025-abor",
+      "date": "2025-04-10",
+      "school": "arizona-state",
+      "schoolName": "Arizona State",
+      "kind": "contract",
+      "headline": "Arizona Board of Regents approved Graham Rossini\u2019s extension: $950,000 base effective July 1, 2025. $50k\u2013$100k annual raise not invented.",
+      "figure": 950000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arizona Sports \u2014 ABOR Rossini extension",
+        "url": "https://arizonasports.com/ncaa/arizona-state/arizona-state-football/rossini-ext"
+      },
+      "field": "staff.athleticDirector.pay"
+    },
+    {
+      "id": "west-virginia-ad-baker-2026-amendment",
+      "date": "2025-07-24",
+      "school": "west-virginia",
+      "schoolName": "West Virginia",
+      "kind": "contract",
+      "headline": "WV MetroNews quotes Baker\u2019s June 5, 2025 amendment: $1.3 million in 2025 + $100,000 a year. 2026 step is $1,400,000.",
+      "figure": 1400000,
+      "confidence": "reported",
+      "source": {
+        "label": "WV MetroNews \u2014 Baker second amendment",
+        "url": "https://wvmetronews.com/2025/07/24/wvu-director-of-athletics-wren-baker-agree-on-contract-extension/"
+      },
+      "field": "staff.athleticDirector.pay"
+    },
+    {
+      "id": "ucf-ad-mohajir-2026-sid",
+      "date": "2025-06-20",
+      "school": "ucf",
+      "schoolName": "UCF",
+      "kind": "contract",
+      "headline": "UCF Sports Information summary via Sons of UCF: Terry Mohajir $1,000,000 in 2026 on the November 2022 extension.",
+      "figure": 1000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Sons of UCF \u2014 Mohajir SID extension summary",
+        "url": "https://www.sonsofucf.com/ucf-ad-terry-mohajir-talks-adjustments-for-knights/"
+      },
+      "field": "staff.athleticDirector.pay"
+    },
+    {
+      "id": "cincinnati-ad-cunningham-2026-foia",
+      "date": "2023-08-18",
+      "school": "cincinnati",
+      "schoolName": "Cincinnati",
+      "kind": "contract",
+      "headline": "The Athletic FOIA: John Cunningham $650,000 from July 1, 2023 + $25,000 annually. 2026-27 step is $725,000.",
+      "figure": 725000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Athletic \u2014 Cunningham extension via public records",
+        "url": "https://www.nytimes.com/athletic/4785862/2023/08/18/cincinnati-ad-john-cunningham-contract/"
+      },
+      "field": "staff.athleticDirector.pay"
+    },
+    {
+      "id": "houston-ad-nunez-2026-chronicle",
+      "date": "2024-08-26",
+      "school": "houston",
+      "schoolName": "Houston",
+      "kind": "contract",
+      "headline": "Houston Chronicle hire table, quoted by the Albuquerque Journal: Eddie Nu\u00f1ez $900,000 year 1 + $50,000 annually. 2026 step is $1,000,000.",
+      "figure": 1000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Albuquerque Journal quoting Houston Chronicle \u2014 Nu\u00f1ez UH deal",
+        "url": "https://www.abqjournal.com/sports/lobo-coaches-confident-in-new-athletic-director-search-details-of-eddie-nuezs-houston-contract-emerge/438695"
+      },
+      "field": "staff.athleticDirector.pay"
+    },
     {
       "id": "minnesota-ad-coyle-2026-third-amendment",
       "date": "2026-06-11",

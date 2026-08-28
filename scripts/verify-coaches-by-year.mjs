@@ -265,6 +265,11 @@ ok(byId.alabama.coaches.football.pay.value === 12_500_000, 'DeBoer current is st
 ok(byId.indiana.coaches.football.pay.value === 12_025_000, 'Cignetti current is stamped from the 2026 MOU cite')
 ok(chair('lsu', 2026).pay.value === 13_000_000, 'Kiffin $13M untouched')
 ok(chair('penn-state', 2026).pay.value === 8_000_000, 'Campbell $8.0M untouched')
+ok(chair('nc-state', 2026).pay.value === 5_750_000, 'Doeren 2026 FOIA $5.75M')
+ok(!(chair('nc-state', 2026).pay?.source || '').includes('USA TODAY'), 'Doeren 2026 is not USA TODAY')
+ok(byId['nc-state'].coaches.football.pay.value === 6_215_377, 'Doeren current stays USA TODAY 2025')
+ok(chair('west-virginia', 2026).pay.value === 3_600_000, 'Rodriguez 2026 MOU $3.6M')
+ok(!(chair('west-virginia', 2026).pay?.source || '').includes('USA TODAY'), 'Rodriguez 2026 is not USA TODAY')
 
 function sameChair(a, b) {
   return samePerson(a, b)
