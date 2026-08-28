@@ -1,3 +1,5 @@
+# Static Vite app. Cloudflare Pages Git integration runs `npm run build`
+# (same as `npx vite build`) and publishes this directory.
 name = "public-cap"
-pages_build_output_dir = "dist"
+pages_build_output_dir = "./dist"
 compatibility_date = "2026-08-24"
