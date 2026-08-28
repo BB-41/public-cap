@@ -12,7 +12,7 @@
       "Clemson Swinney Sept. 2022 BOT term sheet (binding until a restated EA)",
       "UNC Belichick signed 31-page EA via DocumentCloud",
       "Virginia Tech Franklin letter of intent (Nov. 15, 2025) via Augusta Free Press",
-      "Virginia Athletics Elliott extension announcement (Apr. 8, 2026). 2022 EA is historical; 2026 long-form not on the desk",
+      "Virginia Athletics Elliott Offer Sheet / MOU (Mar. 16, 2026) via Augusta Free Press. 2022 EA is historical.",
       "University of Kentucky Stein FY2025\u201326 employment agreement PDF",
       "LSU Kiffin signed EA (Nov. 30, 2025)",
       "Missouri Drinkwitz Second Restated and Amended EA (Dec. 8, 2025)",
@@ -755,20 +755,96 @@
     "missouri": {
       "sport": "fb",
       "name": "Eliah Drinkwitz",
-      "tape": "overhang",
+      "tape": "steps",
       "termThrough": "2032-01-15",
-      "steps": [],
-      "overhang": {
-        "amount": 28875685,
-        "asOf": "2025-10-08",
-        "rule": "If Missouri terminates without cause: 80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025 \u2014 the last cited figure. The restated EA does not publish a dollar calendar, so we will not invent 80% \u00d7 remaining years as a Saturday staircase.",
-        "confidence": "reported",
-        "source": {
-          "label": "USA TODAY Sports coach salary database",
-          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+      "steps": [
+        {
+          "through": "2027-01-15",
+          "amount": 51600000,
+          "rule": "80% of remaining Base + Non-Salary + Publicity Rights, paid per \u00a76.4.2.4 (lesser of $7.5M or 50% in 30 days, then equal monthly). Duty to mitigate.",
+          "confidence": "estimated",
+          "source": {
+            "label": "Missouri \u2014 Eli Drinkwitz Second Restated and Amended Employment Contract (Dec. 8, 2025)",
+            "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+          },
+          "asOf": "2026-01-16",
+          "remaining": 51600000,
+          "contractYear": "2026",
+          "notes": "Derived from the PDF compensation table \u00d7 0.80 school-side remaining (EA \u00a76.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,050,000 + Publicity Rights Fee $5,700,000 = $10,250,000. Remaining full Contract Years ($10,250,000 / $10,450,000 / $10,650,000 / $10,850,000 / $11,050,000 / $11,250,000 = $64,500,000) \u00d7 0.80 = $51,600,000. Labeled derived \u2014 not a published remaining-dollar line. Full remaining Contract Years (Jan. 16\u2013Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025\u2013Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+        },
+        {
+          "through": "2028-01-15",
+          "amount": 43400000,
+          "rule": "80% of remaining Base + Non-Salary + Publicity Rights, paid per \u00a76.4.2.4 (lesser of $7.5M or 50% in 30 days, then equal monthly). Duty to mitigate.",
+          "confidence": "estimated",
+          "source": {
+            "label": "Missouri \u2014 Eli Drinkwitz Second Restated and Amended Employment Contract (Dec. 8, 2025)",
+            "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+          },
+          "asOf": "2027-01-16",
+          "remaining": 43400000,
+          "contractYear": "2027",
+          "notes": "Derived from the PDF compensation table \u00d7 0.80 school-side remaining (EA \u00a76.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,250,000 + Publicity Rights Fee $5,700,000 = $10,450,000. Remaining full Contract Years ($10,450,000 / $10,650,000 / $10,850,000 / $11,050,000 / $11,250,000 = $54,250,000) \u00d7 0.80 = $43,400,000. Labeled derived \u2014 not a published remaining-dollar line. Full remaining Contract Years (Jan. 16\u2013Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025\u2013Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+        },
+        {
+          "through": "2029-01-15",
+          "amount": 35040000,
+          "rule": "80% of remaining Base + Non-Salary + Publicity Rights, paid per \u00a76.4.2.4 (lesser of $7.5M or 50% in 30 days, then equal monthly). Duty to mitigate.",
+          "confidence": "estimated",
+          "source": {
+            "label": "Missouri \u2014 Eli Drinkwitz Second Restated and Amended Employment Contract (Dec. 8, 2025)",
+            "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+          },
+          "asOf": "2028-01-16",
+          "remaining": 35040000,
+          "contractYear": "2028",
+          "notes": "Derived from the PDF compensation table \u00d7 0.80 school-side remaining (EA \u00a76.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,450,000 + Publicity Rights Fee $5,700,000 = $10,650,000. Remaining full Contract Years ($10,650,000 / $10,850,000 / $11,050,000 / $11,250,000 = $43,800,000) \u00d7 0.80 = $35,040,000. Labeled derived \u2014 not a published remaining-dollar line. Full remaining Contract Years (Jan. 16\u2013Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025\u2013Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+        },
+        {
+          "through": "2030-01-15",
+          "amount": 26520000,
+          "rule": "80% of remaining Base + Non-Salary + Publicity Rights, paid per \u00a76.4.2.4 (lesser of $7.5M or 50% in 30 days, then equal monthly). Duty to mitigate.",
+          "confidence": "estimated",
+          "source": {
+            "label": "Missouri \u2014 Eli Drinkwitz Second Restated and Amended Employment Contract (Dec. 8, 2025)",
+            "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+          },
+          "asOf": "2029-01-16",
+          "remaining": 26520000,
+          "contractYear": "2029",
+          "notes": "Derived from the PDF compensation table \u00d7 0.80 school-side remaining (EA \u00a76.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,650,000 + Publicity Rights Fee $5,700,000 = $10,850,000. Remaining full Contract Years ($10,850,000 / $11,050,000 / $11,250,000 = $33,150,000) \u00d7 0.80 = $26,520,000. Labeled derived \u2014 not a published remaining-dollar line. Full remaining Contract Years (Jan. 16\u2013Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025\u2013Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+        },
+        {
+          "through": "2031-01-15",
+          "amount": 17840000,
+          "rule": "80% of remaining Base + Non-Salary + Publicity Rights, paid per \u00a76.4.2.4 (lesser of $7.5M or 50% in 30 days, then equal monthly). Duty to mitigate.",
+          "confidence": "estimated",
+          "source": {
+            "label": "Missouri \u2014 Eli Drinkwitz Second Restated and Amended Employment Contract (Dec. 8, 2025)",
+            "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+          },
+          "asOf": "2030-01-16",
+          "remaining": 17840000,
+          "contractYear": "2030",
+          "notes": "Derived from the PDF compensation table \u00d7 0.80 school-side remaining (EA \u00a76.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,850,000 + Publicity Rights Fee $5,700,000 = $11,050,000. Remaining full Contract Years ($11,050,000 / $11,250,000 = $22,300,000) \u00d7 0.80 = $17,840,000. Labeled derived \u2014 not a published remaining-dollar line. Full remaining Contract Years (Jan. 16\u2013Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025\u2013Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+        },
+        {
+          "through": "2032-01-15",
+          "amount": 9000000,
+          "rule": "80% of remaining Base + Non-Salary + Publicity Rights, paid per \u00a76.4.2.4 (lesser of $7.5M or 50% in 30 days, then equal monthly). Duty to mitigate.",
+          "confidence": "estimated",
+          "source": {
+            "label": "Missouri \u2014 Eli Drinkwitz Second Restated and Amended Employment Contract (Dec. 8, 2025)",
+            "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+          },
+          "asOf": "2031-01-16",
+          "remaining": 9000000,
+          "contractYear": "2031",
+          "notes": "Derived from the PDF compensation table \u00d7 0.80 school-side remaining (EA \u00a76.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $5,050,000 + Publicity Rights Fee $5,700,000 = $11,250,000. Remaining full Contract Years ($11,250,000 = $11,250,000) \u00d7 0.80 = $9,000,000. Labeled derived \u2014 not a published remaining-dollar line. Full remaining Contract Years (Jan. 16\u2013Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025\u2013Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
         }
-      },
-      "notes": "Term through Jan. 15, 2032 on the Dec. 8, 2025 restated EA. USA TODAY dollar is the overhang; 80% is the PDF rule. Liability/overhang, not annual spend.",
+      ],
+      "overhang": null,
+      "notes": "Term through Jan. 15, 2032 on the Dec. 8, 2025 restated EA. Start-of-2026 remaining is derived from the PDF year table \u00d7 80% and labeled derived. Not the USA TODAY Oct. 8, 2025 overhang. Liability/overhang, not annual spend.",
       "mitigation": {
         "rule": "Duty to mitigate. We do not invent a dollar offset.",
         "source": {
@@ -789,15 +865,53 @@
         ]
       },
       "pay": {
-        "value": 9000000,
-        "year": 2025,
+        "value": 10250000,
+        "year": 2026,
         "yearLabel": null,
         "confidence": "reported",
-        "source": "USA TODAY Sports coach salary database",
-        "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-        "notes": "Restated EA is linked; the athletics host returned an HTML shell, so no salary line could be extracted from the packet. USA TODAY $9,000,000 is the current-chair fallback. PDF rule is 80% of remaining Base + Non-Salary + Publicity Rights.",
-        "breakdown": null,
-        "schedule": null,
+        "source": "Missouri Drinkwitz Second Restated and Amended EA (Dec. 1, 2025 effective) \u2014 pages 2\u20133 and 6",
+        "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf",
+        "notes": "Contract Year Jan. 16, 2026\u2013Jan. 15, 2027: Base $500,000 + Non-Salary $4,050,000 + Publicity Rights Fee $5,700,000 = $10,250,000. PDF rule is 80% of remaining Base + Non-Salary + Publicity Rights.",
+        "breakdown": [
+          {
+            "label": "Base Salary (\u00a73.1.1)",
+            "value": 500000
+          },
+          {
+            "label": "Non-Salary Compensation (Jan. 16, 2026\u2013Jan. 15, 2027)",
+            "value": 4050000
+          },
+          {
+            "label": "Publicity Rights Fee (\u00a73.2.1)",
+            "value": 5700000
+          }
+        ],
+        "schedule": [
+          {
+            "period": "CY 2026 (2026-01-16\u20132027-01-15)",
+            "value": 10250000
+          },
+          {
+            "period": "CY 2027 (2027-01-16\u20132028-01-15)",
+            "value": 10450000
+          },
+          {
+            "period": "CY 2028 (2028-01-16\u20132029-01-15)",
+            "value": 10650000
+          },
+          {
+            "period": "CY 2029 (2029-01-16\u20132030-01-15)",
+            "value": 10850000
+          },
+          {
+            "period": "CY 2030 (2030-01-16\u20132031-01-15)",
+            "value": 11050000
+          },
+          {
+            "period": "CY 2031 (2031-01-16\u20132032-01-15)",
+            "value": 11250000
+          }
+        ],
         "incentives": null,
         "baseOnly": null
       },
@@ -2885,7 +2999,7 @@
       "sport": "fb",
       "name": "Tony Elliott",
       "tape": "overhang",
-      "termThrough": "2030-12-31",
+      "termThrough": "2031-05-31",
       "steps": [],
       "overhang": {
         "amount": 11175000,
@@ -2897,16 +3011,22 @@
           "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
         }
       },
-      "notes": "School announced an extension through the 2030 season on Apr. 8, 2026; no current extension PDF is on the desk. The 2022 EA (https://augustafreepress.com/wp-content/uploads/2024/11/FB_-_Elliott__T_-_20221031_120821-053128.pdf) is historical and is not treated as the current deal.",
+      "notes": "Signed MOU through May 31, 2031. 2026 Total Compensation $5,400,000. USA TODAY $11,175,000 is the last cited school-side overhang; the MOU does not publish a university-fire dollar calendar, so we do not mint a new staircase. Game-by-game tape pending.",
       "mitigation": null,
       "contract": {
-        "label": "Virginia Athletics \u2014 Elliott extension through the 2030 season (Apr. 8, 2026)",
-        "url": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension",
+        "label": "Virginia Athletics Offer Sheet / MOU (Mar. 16, 2026) \u2014 Augusta Free Press host",
+        "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf",
         "files": [
+          {
+            "kind": "memorandum",
+            "date": "2026-03-16",
+            "label": "2026 Offer Sheet / MOU (signed Mar. 16\u201317, 2026)",
+            "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf"
+          },
           {
             "kind": "employment-agreement",
             "date": "2022-10-31",
-            "label": "2022 original employment agreement (historical \u2014 not the 2026 extension)",
+            "label": "2022 original employment agreement (historical \u2014 superseded by the 2026 MOU)",
             "url": "https://augustafreepress.com/wp-content/uploads/2024/11/FB_-_Elliott__T_-_20221031_120821-053128.pdf"
           }
         ]

@@ -430,6 +430,17 @@
       "url": "https://www.ajc.com/sports/2025/11/georgia-tech-signed-new-athletic-director-to-5-year-contract/",
       "notes": "2026-27 step $800k. Supplemental not added.",
       "confidence": "reported"
+    },
+    {
+      "id": "north-carolina",
+      "name": "Steve Newmark",
+      "pay": 1200000,
+      "year": 2026,
+      "asOf": "2025-08-18",
+      "source": "UNC Newmark Employment Agreement / N&O / Sportico",
+      "url": "https://goheels.com/documents/2025/8/18/Newmark__Steve.pdf",
+      "notes": "EA §3(a): $1,000,000 base from Transition Date July 1, 2026. §6: $50,000 × 4 dates in calendar 2026–2029 = $200,000/year deferred. Booked $1.2M. Not Cunningham.",
+      "confidence": "reported"
     }
   ]
 }

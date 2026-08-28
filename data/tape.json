@@ -1,8 +1,8 @@
 {
   "meta": {
     "product": "Public Cap desk tape",
-    "asOf": "2026-08-27",
-    "itemCount": 237,
+    "asOf": "2026-08-28",
+    "itemCount": 242,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,81 @@
     ]
   },
   "items": [
+    {
+      "id": "virginia-pay-elliott-2026-mou",
+      "date": "2026-03-16",
+      "school": "virginia",
+      "schoolName": "Virginia",
+      "kind": "contract",
+      "headline": "Augusta Free Press hosts Tony Elliott\u2019s 2026 Offer Sheet / MOU: Total Compensation $5,400,000. Not the USA TODAY 2025 cell.",
+      "figure": 5400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Virginia Athletics Offer Sheet / MOU (Mar. 16, 2026) \u2014 Augusta Free Press",
+        "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf"
+      },
+      "field": "coachesByYear.2026.football.pay"
+    },
+    {
+      "id": "north-carolina-ad-newmark-2026-ea",
+      "date": "2025-08-18",
+      "school": "north-carolina",
+      "schoolName": "North Carolina",
+      "kind": "contract",
+      "headline": "UNC releases Steve Newmark\u2019s EA: $1,000,000 base from the July 1, 2026 Transition Date plus $200,000/year deferred.",
+      "figure": 1200000,
+      "confidence": "reported",
+      "source": {
+        "label": "UNC Newmark Employment Agreement PDF (Aug. 18, 2025)",
+        "url": "https://goheels.com/documents/2025/8/18/Newmark__Steve.pdf"
+      },
+      "field": "staff.athleticDirector.pay"
+    },
+    {
+      "id": "south-carolina-pay-beamer-2026-terms",
+      "date": "2025-01-24",
+      "school": "south-carolina",
+      "schoolName": "South Carolina",
+      "kind": "contract",
+      "headline": "Board / term-sheet year table books Shane Beamer 2026 at $8,250,000. Not the USA TODAY 2025 $8.15M cell.",
+      "figure": 8250000,
+      "confidence": "reported",
+      "source": {
+        "label": "The State \u2014 Beamer board year table (ESPN obtained the term sheet)",
+        "url": "https://www.thestate.com/sports/college/university-of-south-carolina/usc-football/article298644148.html"
+      },
+      "field": "coachesByYear.2026.football.pay"
+    },
+    {
+      "id": "auburn-paid-buyout-freeze-monthly-2025-11-02",
+      "date": "2025-11-02",
+      "school": "auburn",
+      "schoolName": "Auburn",
+      "kind": "paid-buyout",
+      "headline": "Advertiser / USA TODAY Network: Freeze $15.8M paid in equal monthly installments (~$408,974/month \u2248 $4.9M/year) through Jan. 31, 2029.",
+      "figure": 15800000,
+      "confidence": "reported",
+      "source": {
+        "label": "Montgomery Advertiser / USA TODAY Network \u2014 Freeze buyout terms",
+        "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2025/11/02/hugh-freeze-buyout-auburn-football/86645687007/"
+      },
+      "field": "layers.buyoutsPaid"
+    },
+    {
+      "id": "missouri-buyout-drinkwitz-steps-2025-12-01",
+      "date": "2025-12-01",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "contract",
+      "headline": "Drinkwitz restated EA year table \u00d7 80% derives start-of-2026 remaining $51,600,000. Labeled derived. Not the USA TODAY overhang.",
+      "figure": 51600000,
+      "confidence": "estimated",
+      "source": {
+        "label": "Missouri Drinkwitz Second Restated and Amended EA PDF",
+        "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+      },
+      "field": "coaches.football.buyout.steps"
+    },
     {
       "id": "florida-state-precap-item44-fy2025",
       "date": "2026-01-31",

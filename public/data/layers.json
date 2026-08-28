@@ -471,13 +471,53 @@
           "sport": "FB",
           "year": 2025,
           "amount": 15800000,
+          "through": "2029-01-31",
           "whoPaid": "Auburn",
           "status": "owed / being paid",
           "confidence": "reported",
-          "source": "The Athletic \u2014 $15.8M current; Wikipedia coaching-change table listed $15.8M. No offset.",
-          "url": "https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/",
-          "asOf": "2026-03-03",
-          "notes": null
+          "source": "Montgomery Advertiser / USA TODAY Network (Nov. 2, 2025), quoting Freeze contract \u2014 $15.8M, equal monthly through Jan. 31, 2029. No offset.",
+          "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2025/11/02/hugh-freeze-buyout-auburn-football/86645687007/",
+          "asOf": "2025-11-02",
+          "notes": "Cited total / lump. Equal monthly installments through Jan. 31, 2029. Year cash so the table shows annual spend is on the 2026\u20132028 rows. 2025 stub (Nov\u2013Dec) and 2029 January remainder are not separately minted."
+        },
+        {
+          "coach": "Hugh Freeze",
+          "sport": "FB",
+          "year": 2026,
+          "amount": 4907688,
+          "whoPaid": "Auburn",
+          "status": "owed / being paid",
+          "confidence": "estimated",
+          "source": "Montgomery Advertiser / USA TODAY Network (Nov. 2, 2025), quoting Freeze equal-monthly clause \u2014 ~$408,974/month through Jan. 31, 2029",
+          "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2025/11/02/hugh-freeze-buyout-auburn-football/86645687007/",
+          "asOf": "2025-11-02",
+          "notes": "Estimated year cash: Advertiser ~$408,974/month \u00d7 12 = $4,907,688. Labeled estimated / derived. Cited lump remains $15.8 million through Jan. 31, 2029. No full 2029 year invented past the cited through-date."
+        },
+        {
+          "coach": "Hugh Freeze",
+          "sport": "FB",
+          "year": 2027,
+          "amount": 4907688,
+          "whoPaid": "Auburn",
+          "status": "owed / being paid",
+          "confidence": "estimated",
+          "source": "Montgomery Advertiser / USA TODAY Network (Nov. 2, 2025), quoting Freeze equal-monthly clause \u2014 ~$408,974/month through Jan. 31, 2029",
+          "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2025/11/02/hugh-freeze-buyout-auburn-football/86645687007/",
+          "asOf": "2025-11-02",
+          "notes": "Estimated year cash: Advertiser ~$408,974/month \u00d7 12 = $4,907,688. Labeled estimated / derived. Cited lump remains $15.8 million through Jan. 31, 2029. No full 2029 year invented past the cited through-date."
+        },
+        {
+          "coach": "Hugh Freeze",
+          "sport": "FB",
+          "year": 2028,
+          "amount": 4907688,
+          "whoPaid": "Auburn",
+          "status": "owed / being paid",
+          "confidence": "estimated",
+          "source": "Montgomery Advertiser / USA TODAY Network (Nov. 2, 2025), quoting Freeze equal-monthly clause \u2014 ~$408,974/month through Jan. 31, 2029",
+          "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2025/11/02/hugh-freeze-buyout-auburn-football/86645687007/",
+          "asOf": "2025-11-02",
+          "notes": "Estimated year cash: Advertiser ~$408,974/month \u00d7 12 = $4,907,688. Labeled estimated / derived. Cited lump remains $15.8 million through Jan. 31, 2029. No full 2029 year invented past the cited through-date."
         }
       ]
     },

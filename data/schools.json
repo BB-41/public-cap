@@ -12986,14 +12986,58 @@
             ]
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
-            "source": "Missouri Drinkwitz Second Restated and Amended EA §6.4.2.3",
+            "value": 51600000,
+            "confidence": "estimated",
+            "source": "Missouri Drinkwitz Second Restated and Amended EA §6.4.2.3 + pp. 2–3 / 6 compensation table",
             "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf",
-            "asOf": null,
-            "notes": "School-side without-cause is 80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate. We do not invent the remainder.",
+            "asOf": "2026-01-16",
+            "notes": "Derived start-of-Contract-Year remaining (compensation table × 80%). Labeled derived. Liability/overhang, not annual spend. Not the USA TODAY Oct. 8, 2025 overhang. Duty to mitigate (EA §6.4.2.5 / 6.4.4) — we do not invent a dollar offset.",
             "rule": "80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate (EA §6.4.2.3–6.4.4).",
-            "coachSide": "Coach-side LD: $5,000,000 through Dec. 1, 2026; $4,000,000 Dec. 2, 2026–Dec. 1, 2027; never more than $4,000,000 on or after Dec. 2, 2026 (p. 14 table)."
+            "coachSide": "Coach-side LD: $5,000,000 through Dec. 1, 2026; $4,000,000 Dec. 2, 2026–Dec. 1, 2027; never more than $4,000,000 on or after Dec. 2, 2026 (p. 14 table).",
+            "steps": [
+              {
+                "asOf": "2026-01-16",
+                "remaining": 51600000,
+                "contractYear": "2026",
+                "through": "2027-01-15",
+                "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,050,000 + Publicity Rights Fee $5,700,000 = $10,250,000. Remaining full Contract Years ($10,250,000 / $10,450,000 / $10,650,000 / $10,850,000 / $11,050,000 / $11,250,000 = $64,500,000) × 0.80 = $51,600,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+              },
+              {
+                "asOf": "2027-01-16",
+                "remaining": 43400000,
+                "contractYear": "2027",
+                "through": "2028-01-15",
+                "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,250,000 + Publicity Rights Fee $5,700,000 = $10,450,000. Remaining full Contract Years ($10,450,000 / $10,650,000 / $10,850,000 / $11,050,000 / $11,250,000 = $54,250,000) × 0.80 = $43,400,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+              },
+              {
+                "asOf": "2028-01-16",
+                "remaining": 35040000,
+                "contractYear": "2028",
+                "through": "2029-01-15",
+                "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,450,000 + Publicity Rights Fee $5,700,000 = $10,650,000. Remaining full Contract Years ($10,650,000 / $10,850,000 / $11,050,000 / $11,250,000 = $43,800,000) × 0.80 = $35,040,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+              },
+              {
+                "asOf": "2029-01-16",
+                "remaining": 26520000,
+                "contractYear": "2029",
+                "through": "2030-01-15",
+                "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,650,000 + Publicity Rights Fee $5,700,000 = $10,850,000. Remaining full Contract Years ($10,850,000 / $11,050,000 / $11,250,000 = $33,150,000) × 0.80 = $26,520,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+              },
+              {
+                "asOf": "2030-01-16",
+                "remaining": 17840000,
+                "contractYear": "2030",
+                "through": "2031-01-15",
+                "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,850,000 + Publicity Rights Fee $5,700,000 = $11,050,000. Remaining full Contract Years ($11,050,000 / $11,250,000 = $22,300,000) × 0.80 = $17,840,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+              },
+              {
+                "asOf": "2031-01-16",
+                "remaining": 9000000,
+                "contractYear": "2031",
+                "through": "2032-01-15",
+                "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $5,050,000 + Publicity Rights Fee $5,700,000 = $11,250,000. Remaining full Contract Years ($11,250,000 = $11,250,000) × 0.80 = $9,000,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -13569,14 +13613,58 @@
               ]
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": "Missouri Drinkwitz Second Restated and Amended EA §6.4.2.3",
+              "value": 51600000,
+              "confidence": "estimated",
+              "source": "Missouri Drinkwitz Second Restated and Amended EA §6.4.2.3 + pp. 2–3 / 6 compensation table",
               "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf",
-              "asOf": null,
-              "notes": "School-side without-cause is 80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate. We do not invent the remainder.",
+              "asOf": "2026-01-16",
+              "notes": "Derived start-of-Contract-Year remaining (compensation table × 80%). Labeled derived. Liability/overhang, not annual spend. Not the USA TODAY Oct. 8, 2025 overhang. Duty to mitigate (EA §6.4.2.5 / 6.4.4) — we do not invent a dollar offset.",
               "rule": "80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate (EA §6.4.2.3–6.4.4).",
-              "coachSide": "Coach-side LD: $5,000,000 through Dec. 1, 2026; $4,000,000 Dec. 2, 2026–Dec. 1, 2027; never more than $4,000,000 on or after Dec. 2, 2026 (p. 14 table)."
+              "coachSide": "Coach-side LD: $5,000,000 through Dec. 1, 2026; $4,000,000 Dec. 2, 2026–Dec. 1, 2027; never more than $4,000,000 on or after Dec. 2, 2026 (p. 14 table).",
+              "steps": [
+                {
+                  "asOf": "2026-01-16",
+                  "remaining": 51600000,
+                  "contractYear": "2026",
+                  "through": "2027-01-15",
+                  "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,050,000 + Publicity Rights Fee $5,700,000 = $10,250,000. Remaining full Contract Years ($10,250,000 / $10,450,000 / $10,650,000 / $10,850,000 / $11,050,000 / $11,250,000 = $64,500,000) × 0.80 = $51,600,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+                },
+                {
+                  "asOf": "2027-01-16",
+                  "remaining": 43400000,
+                  "contractYear": "2027",
+                  "through": "2028-01-15",
+                  "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,250,000 + Publicity Rights Fee $5,700,000 = $10,450,000. Remaining full Contract Years ($10,450,000 / $10,650,000 / $10,850,000 / $11,050,000 / $11,250,000 = $54,250,000) × 0.80 = $43,400,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+                },
+                {
+                  "asOf": "2028-01-16",
+                  "remaining": 35040000,
+                  "contractYear": "2028",
+                  "through": "2029-01-15",
+                  "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,450,000 + Publicity Rights Fee $5,700,000 = $10,650,000. Remaining full Contract Years ($10,650,000 / $10,850,000 / $11,050,000 / $11,250,000 = $43,800,000) × 0.80 = $35,040,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+                },
+                {
+                  "asOf": "2029-01-16",
+                  "remaining": 26520000,
+                  "contractYear": "2029",
+                  "through": "2030-01-15",
+                  "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,650,000 + Publicity Rights Fee $5,700,000 = $10,850,000. Remaining full Contract Years ($10,850,000 / $11,050,000 / $11,250,000 = $33,150,000) × 0.80 = $26,520,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+                },
+                {
+                  "asOf": "2030-01-16",
+                  "remaining": 17840000,
+                  "contractYear": "2030",
+                  "through": "2031-01-15",
+                  "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $4,850,000 + Publicity Rights Fee $5,700,000 = $11,050,000. Remaining full Contract Years ($11,050,000 / $11,250,000 = $22,300,000) × 0.80 = $17,840,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+                },
+                {
+                  "asOf": "2031-01-16",
+                  "remaining": 9000000,
+                  "contractYear": "2031",
+                  "through": "2032-01-15",
+                  "notes": "Derived from the PDF compensation table × 0.80 school-side remaining (EA §6.4.2.3). Contract Year TAC = Base $500,000 + Non-Salary $5,050,000 + Publicity Rights Fee $5,700,000 = $11,250,000. Remaining full Contract Years ($11,250,000 = $11,250,000) × 0.80 = $9,000,000. Labeled derived — not a published remaining-dollar line. Full remaining Contract Years (Jan. 16–Jan. 15); this desk does not mint a mid-year proration and does not invent Section 2.2 auto-extension years. Dec. 1, 2025–Jan. 15, 2026 Non-Salary stub is not in 2026-forward remaining. PDF: https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf"
+                }
+              ]
             },
             "term": {
               "confidence": "reported",
@@ -18226,12 +18314,13 @@
           "football": {
             "name": "Shane Beamer",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 8250000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "The State (Jan. 24, 2025) year table from the board-approved extension; ESPN obtained the term sheet ($8.15M in 2025 + $100,000 annually)",
+              "url": "https://www.thestate.com/sports/college/university-of-south-carolina/usc-football/article298644148.html",
+              "asOf": "2025-01-24",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 scheduled dollar from the 2025 term sheet / board file: $8,250,000 (Jan. 1–Dec. 31, 2026). ESPN: $8.15 million in 2025 with $100,000 raises annually. 247 prints $8,250,000. Not the USA TODAY 2025 $8.15M cell and not The State’s $8.2M round. Incentives not included. Current-deal coaches.football.pay stays the USA TODAY 2025 snapshot."
             },
             "buyout": {
               "value": null,
@@ -18242,11 +18331,13 @@
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
+              "confidence": "reported",
+              "source": "Wikipedia season-page infobox; University of South Carolina Board of Trustees extension (Jan. 24, 2025)",
               "url": "https://en.wikipedia.org/wiki/2026_South_Carolina_Gamecocks_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "asOf": "2026-08",
+              "through": "2030",
+              "yearsRemaining": 4,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Board-approved extension through Dec. 31, 2030."
             }
           },
           "mbb": {
@@ -67132,10 +67223,29 @@
         "athleticDirector": {
           "confidence": "reported",
           "asOf": "2026-08",
-          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+          "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Steve Newmark",
           "source": "UNC Athletics official staff directory — Director of Athletics (effective July 1, 2026)",
-          "url": "https://goheels.com/staff-directory/steve-newmark/3858"
+          "url": "https://goheels.com/staff-directory/steve-newmark/3858",
+          "pay": {
+            "value": 1200000,
+            "year": 2026,
+            "confidence": "reported",
+            "source": "UNC Newmark Employment Agreement (released Aug. 18, 2025) §3(a) and §6; N&O / Sportico",
+            "url": "https://goheels.com/documents/2025/8/18/Newmark__Steve.pdf",
+            "asOf": "2025-08-18",
+            "notes": "Year-pinned 2026 AD chair. Transition Date July 1, 2026: annual base $1,000,000 (§3(a)). Deferred $50,000 on each of Mar. 31 / June 30 / Sept. 30 / Dec. 31 in calendar 2026–2029 = $200,000/year (§6). Booked $1,200,000 = $1.0M base + $200k deferred for the AD contract year beginning July 1, 2026. Incentives, $50k expense allowance, and vehicle not added. Not Bubba Cunningham’s $903,000.",
+            "breakdown": [
+              {
+                "label": "Base (from Transition Date July 1, 2026)",
+                "value": 1000000
+              },
+              {
+                "label": "Deferred compensation (4 × $50,000)",
+                "value": 200000
+              }
+            ]
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -67711,10 +67821,29 @@
           "athleticDirector": {
             "confidence": "reported",
             "asOf": "2026-08",
-            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay pending a cited dollar.",
+            "notes": "Current athletics-director chair as of the 2026-08-27 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Steve Newmark",
             "source": "UNC Athletics official staff directory — Director of Athletics (effective July 1, 2026)",
-            "url": "https://goheels.com/staff-directory/steve-newmark/3858"
+            "url": "https://goheels.com/staff-directory/steve-newmark/3858",
+            "pay": {
+              "value": 1200000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "UNC Newmark Employment Agreement (released Aug. 18, 2025) §3(a) and §6; N&O / Sportico",
+              "url": "https://goheels.com/documents/2025/8/18/Newmark__Steve.pdf",
+              "asOf": "2025-08-18",
+              "notes": "Year-pinned 2026 AD chair. Transition Date July 1, 2026: annual base $1,000,000 (§3(a)). Deferred $50,000 on each of Mar. 31 / June 30 / Sept. 30 / Dec. 31 in calendar 2026–2029 = $200,000/year (§6). Booked $1,200,000 = $1.0M base + $200k deferred for the AD contract year beginning July 1, 2026. Incentives, $50k expense allowance, and vehicle not added. Not Bubba Cunningham’s $903,000.",
+              "breakdown": [
+                {
+                  "label": "Base (from Transition Date July 1, 2026)",
+                  "value": 1000000
+                },
+                {
+                  "label": "Deferred compensation (4 × $50,000)",
+                  "value": 200000
+                }
+              ]
+            }
           },
           "office": [],
           "otherHeadCoaches": [
@@ -74105,12 +74234,31 @@
         "football": {
           "name": "Tony Elliott",
           "pay": {
-            "value": 4406000,
+            "value": 5400000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "Virginia Athletics Offer Sheet / MOU (signed Mar. 16–17, 2026) hosted by Augusta Free Press",
+            "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf",
+            "asOf": "2026-03-16",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Total Compensation $5,400,000: Base $500,000 + Supplemental $2,900,000 + Licensing $1,500,000 + Supplemental Benefit/Life Insurance $500,000. Increases $100,000 annually through May 31, 2031. Bonuses not included. Same chair — file dollar replaces the USA TODAY cell on the current-deal line. Not USA TODAY 2025.",
+            "breakdown": [
+              {
+                "label": "Base Salary",
+                "value": 500000
+              },
+              {
+                "label": "Supplemental Compensation",
+                "value": 2900000
+              },
+              {
+                "label": "Licensing Pay",
+                "value": 1500000
+              },
+              {
+                "label": "Supplemental Benefit / Life Insurance",
+                "value": 500000
+              }
+            ]
           },
           "buyout": {
             "value": 11175000,
@@ -74122,22 +74270,28 @@
           },
           "term": {
             "confidence": "reported",
-            "source": "Virginia Athletics extension announcement (Apr. 8, 2026)",
-            "url": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension",
-            "asOf": "2026-08",
-            "through": "2030",
-            "yearsRemaining": 4,
-            "notes": "Announced through the 2030 season. 2022 EA is historical; 2026 long-form PDF is not on the desk."
+            "source": "Virginia Athletics Offer Sheet / MOU (signed Mar. 16–17, 2026) hosted by Augusta Free Press",
+            "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf",
+            "asOf": "2026-03-16",
+            "through": "2031",
+            "yearsRemaining": 5,
+            "notes": "MOU expiration May 31, 2031 (two-year extension from the prior May 31, 2029 auto-extension). Additional +1 year auto-extension for 10 wins or ACC Championship qualification. Announcement (Apr. 8, 2026) said through the 2030 season; the signed MOU is the file."
           },
-          "contractUrl": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension",
+          "contractUrl": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf",
           "contract": {
-            "label": "Virginia Athletics extension announcement (Apr. 8, 2026)",
-            "url": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension",
+            "label": "Virginia Athletics Offer Sheet / MOU (Mar. 16, 2026) — Augusta Free Press host",
+            "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf",
             "files": [
+              {
+                "kind": "memorandum",
+                "date": "2026-03-16",
+                "label": "2026 Offer Sheet / MOU (signed Mar. 16–17, 2026)",
+                "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf"
+              },
               {
                 "kind": "employment-agreement",
                 "date": "2022-10-31",
-                "label": "2022 original employment agreement (historical — not the 2026 extension)",
+                "label": "2022 original employment agreement (historical — superseded by the 2026 MOU)",
                 "url": "https://augustafreepress.com/wp-content/uploads/2024/11/FB_-_Elliott__T_-_20221031_120821-053128.pdf"
               }
             ]
@@ -74631,12 +74785,31 @@
           "football": {
             "name": "Tony Elliott",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "No extracted pay on the desk for this chair-year."
+              "value": 5400000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "Virginia Athletics Offer Sheet / MOU (signed Mar. 16–17, 2026) hosted by Augusta Free Press",
+              "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf",
+              "asOf": "2026-03-16",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Total Compensation $5,400,000: Base $500,000 + Supplemental $2,900,000 + Licensing $1,500,000 + Supplemental Benefit/Life Insurance $500,000. Increases $100,000 annually through May 31, 2031. Bonuses not included. Same chair — file dollar replaces the USA TODAY cell on the current-deal line. Not USA TODAY 2025.",
+              "breakdown": [
+                {
+                  "label": "Base Salary",
+                  "value": 500000
+                },
+                {
+                  "label": "Supplemental Compensation",
+                  "value": 2900000
+                },
+                {
+                  "label": "Licensing Pay",
+                  "value": 1500000
+                },
+                {
+                  "label": "Supplemental Benefit / Life Insurance",
+                  "value": 500000
+                }
+              ]
             },
             "buyout": {
               "value": null,
@@ -74644,26 +74817,32 @@
               "source": null,
               "url": null,
               "asOf": null,
-              "notes": "USA TODAY buyout cell not reused on a year without a tape pay cell."
+              "notes": "MOU prints coach-side leave buyouts only. School-side without-cause calendar is not on the file — USA TODAY overhang stays on the current-deal line, not copied here."
             },
             "term": {
               "confidence": "reported",
-              "source": "Wikipedia season-page infobox",
-              "url": "https://en.wikipedia.org/wiki/2026_Virginia_Cavaliers_football_team",
-              "asOf": "2026-08",
-              "through": "2030",
-              "yearsRemaining": 4,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Announced through the 2030 season. 2022 EA is historical; 2026 long-form PDF is not on the desk."
+              "source": "Virginia Athletics Offer Sheet / MOU (signed Mar. 16–17, 2026) hosted by Augusta Free Press",
+              "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf",
+              "asOf": "2026-03-16",
+              "through": "2031",
+              "yearsRemaining": 5,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). MOU expiration May 31, 2031. Additional +1 year auto-extension for 10 wins or ACC Championship qualification. Announcement (Apr. 8, 2026) said through the 2030 season; the signed MOU is the file."
             },
-            "contractUrl": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension",
+            "contractUrl": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf",
             "contract": {
-              "label": "Virginia Athletics extension announcement (Apr. 8, 2026)",
-              "url": "https://virginiasports.com/news/2026/04/8/tony-elliott-agrees-to-contract-extension",
+              "label": "Virginia Athletics Offer Sheet / MOU (Mar. 16, 2026) — Augusta Free Press host",
+              "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf",
               "files": [
+                {
+                  "kind": "memorandum",
+                  "date": "2026-03-16",
+                  "label": "2026 Offer Sheet / MOU (signed Mar. 16–17, 2026)",
+                  "url": "https://augustafreepress.com/wp-content/uploads/2026/04/2026_MOU_Tony_Elliott.pdf"
+                },
                 {
                   "kind": "employment-agreement",
                   "date": "2022-10-31",
-                  "label": "2022 original employment agreement (historical — not the 2026 extension)",
+                  "label": "2022 original employment agreement (historical — superseded by the 2026 MOU)",
                   "url": "https://augustafreepress.com/wp-content/uploads/2024/11/FB_-_Elliott__T_-_20221031_120821-053128.pdf"
                 }
               ]
