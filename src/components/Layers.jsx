@@ -1,6 +1,7 @@
 import { money, moneyExact, winsPerM } from '../lib/format.js'
 import { defTitle } from '../lib/definitions.js'
-import { enrollmentHeadcount, impliedFeePerStudent, publishedFeeTimesEnrollment } from '../lib/layers.js'
+import DrillNote, { DrillClose } from './DrillNote.jsx'
+import { debtHeadline, enrollmentHeadcount, impliedFeePerStudent, publishedFeeTimesEnrollment } from '../lib/layers.js'
 
 function Meta({ field }) {
   if (!field) return null
@@ -269,6 +270,133 @@ function SubsidySection({ school }) {
   )
 }
 
+function DebtSection({ school, open, onToggle }) {
+  const d = school?.layers?.debt
+  if (!d) return null
+  const expanded = open === 'debt'
+  const head = debtHeadline(d)
+  const projects = d.projects || []
+  const cited = head.field?.value != null || projects.length > 0
+  function toggle() {
+    onToggle?.('debt')
+  }
+  return (
+    <section id="slice-debt" className={expanded ? 'debt-sec open' : 'debt-sec'}>
+      <h2 title={defTitle('debt')}>Athletics debt</h2>
+      <p className="lede tight">
+        Athletics facility debt from the NCAA filing or a cited bond/board story —
+        not the university’s entire balance sheet, and not part of annual capacity.
+        Outstanding is a stock. Annual debt service is this year’s check.
+        Click the headline for the breakdown.
+      </p>
+      <div className="short-stack">
+        <div>
+          <div className="eyebrow">{head.kind === 'debtService' ? 'Annual debt service' : 'Outstanding athletics-related debt'}</div>
+          {head.field?.value != null ? (
+            <div
+              className={`field debt-head${expanded ? ' open' : ''}`}
+              role="button"
+              tabIndex={0}
+              aria-expanded={expanded}
+              onClick={toggle}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  toggle()
+                }
+              }}
+            >
+              <div className="field-val">
+                {moneyExact(head.field.value)} <i className={`dot ${head.field.confidence}`} />
+              </div>
+              <Meta field={head.field} />
+              {head.field.notes && <div className="field-notes">{head.field.notes}</div>}
+            </div>
+          ) : (
+            <div
+              className={`field pending-box debt-head${expanded ? ' open' : ''}`}
+              role="button"
+              tabIndex={0}
+              aria-expanded={expanded}
+              onClick={toggle}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  toggle()
+                }
+              }}
+            >
+              <div className="field-val">Pending</div>
+              <div className="field-meta">{d.outstanding?.notes || d.debtService?.notes || 'No cited athletics-related debt figure on the desk.'}</div>
+            </div>
+          )}
+        </div>
+      </div>
+      {expanded && (
+        <div className="drill">
+          <p className="drill-kicker">Breakdown</p>
+          <div className="eyebrow">Outstanding (stock)</div>
+          <DrillNote
+            field={d.outstanding}
+            empty={d.outstanding?.notes || 'Pending — no cited Category 52 / athletics-related debt stock on the desk.'}
+          />
+          <div className="eyebrow">Annual debt service (flow)</div>
+          <DrillNote
+            field={d.debtService}
+            empty={d.debtService?.notes || 'Pending — no cited Category 34 / annual facilities debt service on the desk.'}
+          />
+          <div className="eyebrow">Named stadium / building projects</div>
+          {projects.length ? (
+            <table className="roster staff-table">
+              <thead>
+                <tr>
+                  <th>Project</th>
+                  <th>Kind</th>
+                  <th className="num">Announced cost</th>
+                  <th className="num">Remaining</th>
+                  <th>Through</th>
+                  <th>Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                {projects.map((p) => (
+                  <tr key={`${p.name}-${p.through || p.source || ''}`}>
+                    <td>
+                      {p.name} {p.confidence && <i className={`dot ${p.confidence}`} />}
+                    </td>
+                    <td>{p.kind || '—'}</td>
+                    <td className="num">{p.cost != null ? moneyExact(p.cost) : <span className="pending-cell">pending</span>}</td>
+                    <td className="num">{p.remaining != null ? moneyExact(p.remaining) : <span className="pending-cell">pending</span>}</td>
+                    <td>{p.through || '—'}</td>
+                    <td>
+                      {p.url ? (
+                        <a className="ext" href={p.url} target="_blank" rel="noreferrer">{p.source || 'source'} ↗</a>
+                      ) : (
+                        p.source || '—'
+                      )}
+                      {p.notes && <div className="field-notes">{p.notes}</div>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <p className="fine">No named stadium or building project on the desk. We do not invent a project or an amortization schedule.</p>
+          )}
+          {!cited && (
+            <div className="field pending-box">
+              <div className="field-val">Pending</div>
+              <div className="field-meta">Empty means we looked and do not have a cited athletics-debt figure. $0 would appear only if a filing says $0.</div>
+            </div>
+          )}
+          {d.notes && <p className="field-notes">{d.notes}</p>}
+          <DrillClose onClose={() => onToggle?.(null)} />
+        </div>
+      )}
+    </section>
+  )
+}
+
 function EfficiencySection({ school }) {
   const e = school._eff
   if (!e) return null
@@ -373,7 +501,7 @@ function BuyoutsPaidSection({ layer }) {
   )
 }
 
-export default function Layers({ school }) {
+export default function Layers({ school, open, onToggle }) {
   const layer = school.layers
   if (!layer) return null
   return (
@@ -381,6 +509,7 @@ export default function Layers({ school }) {
       <PortalSection layer={layer} />
       <ApparelSection layer={layer} />
       <SubsidySection school={school} />
+      <DebtSection school={school} open={open} onToggle={onToggle} />
       <EfficiencySection school={school} />
       <BuyoutsPaidSection layer={layer} />
     </>

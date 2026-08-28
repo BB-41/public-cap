@@ -20,6 +20,7 @@ export const SCHOOL_DRILLS = new Set([
   'house',
   'nil',
   'nil-modeled',
+  'debt',
 ])
 
 export function isSchoolDrill(key) {

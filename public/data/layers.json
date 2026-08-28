@@ -1,7 +1,7 @@
 {
   "meta": {
     "product": "Public Cap layers",
-    "asOf": "2026-08-27",
+    "asOf": "2026-08-28",
     "cycle": "2025-26 / 2026 football portal; 2025 football season; FY2025\u201326 money",
     "notes": [
       "Every number carries source, date, confidence (reported|estimated|modeled|pending).",
@@ -10,7 +10,8 @@
       "Football wins from Wikipedia 2025 FBS standings (final) and the NCAA standings PDF.",
       "Wins per dollar is computed: 2025 FB wins \u00f7 booked NIL if present else modeled mid, and \u00f7 annual capacity.",
       "Buyouts here are money actually owed/paid after a firing or settlement \u2014 not the if-fired overhang on the current coach.",
-      "Student fees / institutional support sit on the school (capacity.studentFees, capacity.institutionalSupport, capacity.governmentSupport when split) and on layers.subsidy. Hosted FY2025 NCAA MFRS PDFs win when we have the file (line 3 fees; line 4 direct institutional; line 2 government). EADA 2024-25 public file (ope.ed.gov) was opened \u2014 department/sport totals only, no fee/support split, so no EADA dollars were booked. Remaining publics use Knight-Newhouse school-profile FY2025 figures that cite the same MFRS lines (fees = line 3; institutional/government = KN combined 2+4+6+6A). Ohio State keeps the $0/$0 self-funded filing (PDF line 4 $112,280 is offset by transfers). Rutgers keeps the Extra Points 3-way split. Louisville keeps the published $200/semester athletic fee plus the FY2025 department total. $0 is printed only when the filing shows $0. Privates and Pittsburgh stay pending. Not added to the capacity stack. Athletic fee \u2260 tuition."
+      "Student fees / institutional support sit on the school (capacity.studentFees, capacity.institutionalSupport, capacity.governmentSupport when split) and on layers.subsidy. Hosted FY2025 NCAA MFRS PDFs win when we have the file (line 3 fees; line 4 direct institutional; line 2 government). EADA 2024-25 public file (ope.ed.gov) was opened \u2014 department/sport totals only, no fee/support split, so no EADA dollars were booked. Remaining publics use Knight-Newhouse school-profile FY2025 figures that cite the same MFRS lines (fees = line 3; institutional/government = KN combined 2+4+6+6A). Ohio State keeps the $0/$0 self-funded filing (PDF line 4 $112,280 is offset by transfers). Rutgers keeps the Extra Points 3-way split. Louisville keeps the published $200/semester athletic fee plus the FY2025 department total. $0 is printed only when the filing shows $0. Privates and Pittsburgh stay pending. Not added to the capacity stack. Athletic fee \u2260 tuition.",
+      "Athletics debt sits on layers.debt (outstanding stock, Category 34 annual service, named projects). Hosted FY2025 NCAA MFRS / AUP PDFs win. Category 53 university-wide institutional debt is refused. Not added to the capacity stack. $0 only when a filing says $0. Empty means pending."
     ],
     "sourcesIndex": {
       "wikiSeason": "https://en.wikipedia.org/wiki/2025_NCAA_Division_I_FBS_football_season",
@@ -208,7 +209,27 @@
         },
         "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "arkansas": {
       "record": {
@@ -357,7 +378,29 @@
           "confidence": "estimated",
           "notes": "Estimated AAV: Athletic $7.7 million \u00f7 2 named years. Labeled derived. Lump $7.7 million remains the cited settlement."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": 131210939,
+          "confidence": "reported",
+          "source": "Arkansas FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $131,210,939",
+          "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf",
+          "asOf": "2026-01",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $131,210,939 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 18833345,
+          "confidence": "reported",
+          "source": "Arkansas FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $18,833,345",
+          "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf",
+          "asOf": "2026-01",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $18,833,345. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "auburn": {
       "record": {
@@ -519,7 +562,27 @@
           "asOf": "2025-11-02",
           "notes": "Estimated year cash: Advertiser ~$408,974/month \u00d7 12 = $4,907,688. Labeled estimated / derived. Cited lump remains $15.8 million through Jan. 31, 2029. No full 2029 year invented past the cited through-date."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "florida": {
       "record": {
@@ -681,7 +744,28 @@
           "confidence": "reported",
           "notes": "Cited $2.5 million a year through 2028. Athletic lump is $21.2 million."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": 134895000,
+          "confidence": "reported",
+          "source": "University Athletic Association (Florida) FY2025 audited financial statements \u2014 long-term debt $134,895,000",
+          "url": "https://floridagators.com/documents/download/2025/9/22/UAA_Financial_Statements_2024_2025.pdf",
+          "asOf": "2025-06-30",
+          "fiscalYear": "FY2025",
+          "notes": "UAA long-term bonds outstanding $134,895,000 as of June 30, 2025 (Note 6A). Athletics-association debt, not Category 53 university-wide. Category 34 annual debt service is not printed as a single MFRS line on this statement; FY2026 scheduled service is not booked as FY2025."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "UAA statements list FY2026 scheduled principal + interest; that is not booked as FY2025 Category 34."
+        },
+        "projects": [],
+        "notes": "Athletics-association bonds from the UAA audit. Not university-wide UF debt. Not added to capacity."
+      }
     },
     "georgia": {
       "record": {
@@ -779,7 +863,29 @@
         },
         "notes": "Hosted FY2025 NCAA Membership Financial Report. Student fees are the athletics slice, not tuition."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 148629203,
+          "confidence": "reported",
+          "source": "UGA FY2025 NCAA financial report \u2014 Category 52 Total Athletics Related Debt $148,629,203",
+          "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $148,629,203 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 13398448,
+          "confidence": "reported",
+          "source": "UGA FY2025 NCAA financial report \u2014 Category 34 Athletic Facilities Debt Service $13,398,448",
+          "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $13,398,448. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "kentucky": {
       "record": {
@@ -965,7 +1071,27 @@
           "confidence": "estimated",
           "notes": "Cited ~$6.75 million a year through April 2031 (Athletic $37.6 million guaranteed). Labeled derived year cash. 2025 stub and 2031 through-April remainder are not separately minted."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "lsu": {
       "record": {
@@ -1210,7 +1336,27 @@
           "asOf": "2026-05-21",
           "notes": "Lump + through-date only. USA TODAY Network: after firing Orgeron in 2021, LSU was on the hook for a $16.9 million buyout; those payments concluded December 2025. Advocate / NOLA cite a $17 million buyout in equal monthly installments with the last payment due December 2025. This cell stores the USA TODAY Network $16.9M lump through Dec. 2025. We do not invent an annual split."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "mississippi-state": {
       "record": {
@@ -1308,7 +1454,27 @@
         },
         "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "missouri": {
       "record": {
@@ -1404,7 +1570,27 @@
         },
         "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "oklahoma": {
       "record": {
@@ -1502,7 +1688,27 @@
         },
         "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "ole-miss": {
       "record": {
@@ -1600,7 +1806,29 @@
         },
         "notes": "Hosted FY2025 NCAA Membership Financial Report. Student fees are the athletics slice, not tuition."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 85470702,
+          "confidence": "reported",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $85,470,702",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $85,470,702 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 12798652,
+          "confidence": "reported",
+          "source": "Ole Miss FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $12,798,652",
+          "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $12,798,652. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "south-carolina": {
       "record": {
@@ -1708,7 +1936,29 @@
         },
         "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 153235000,
+          "confidence": "reported",
+          "source": "South Carolina FY2025 NCAA AUP (Columbia campus) \u2014 Category 52 Total Athletics Related Debt $153,235,000",
+          "url": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf",
+          "asOf": "2025-06-30",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $153,235,000 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 14755276,
+          "confidence": "reported",
+          "source": "South Carolina FY2025 NCAA AUP (Columbia campus) \u2014 Category 34 Athletic Facilities Debt Service $14,755,276",
+          "url": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf",
+          "asOf": "2025-06-30",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $14,755,276. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "AUP Other Reporting Items: Total Athletics-Related Debt (principal) $153,235,000. Category 34 athletic facilities debt service, leases and rental fees $14,755,276. Category 53 institutional $524,408,366 is university-wide and is not booked."
+      }
     },
     "tennessee": {
       "record": {
@@ -1805,7 +2055,29 @@
         },
         "notes": "Line 5 transfers to institution \u2212$8,137,633. Not netted out of the booked line-4 cell."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 327732018,
+          "confidence": "reported",
+          "source": "Tennessee FY2025 NCAA AUP / Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $327,732,018",
+          "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $327,732,018 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 12732343,
+          "confidence": "reported",
+          "source": "Tennessee FY2025 NCAA AUP / Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $12,732,343",
+          "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $12,732,343. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "texas": {
       "record": {
@@ -1969,7 +2241,27 @@
         },
         "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "texas-am": {
       "record": {
@@ -2080,7 +2372,27 @@
           "asOf": "2026-03-03",
           "notes": "Not a 2025 firing. Included because money is still actually moving. Through 2031 (Athletic). Cite is a through-date, not a named year schedule \u2014 lump kept; no invented AAV year rows."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "vanderbilt": {
       "record": {
@@ -2173,7 +2485,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "illinois": {
       "record": {
@@ -2282,7 +2614,29 @@
         },
         "notes": "Line 5 transfers \u2212$142,446. KN combined government + direct institutional as $7,992,967; desk keeps the split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 304463059,
+          "confidence": "reported",
+          "source": "Illinois FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $304,463,059",
+          "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf",
+          "asOf": "2026-01-29",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $304,463,059 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 17770740,
+          "confidence": "reported",
+          "source": "Illinois FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $17,770,740",
+          "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf",
+          "asOf": "2026-01-29",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $17,770,740. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "indiana": {
       "record": {
@@ -2468,7 +2822,27 @@
         },
         "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "iowa": {
       "record": {
@@ -2564,7 +2938,39 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [
+          {
+            "name": "Athletics COVID campus loan",
+            "kind": "loan",
+            "cost": 50000000,
+            "remaining": 45000000,
+            "through": "30-year term from July 1, 2025",
+            "source": "The Gazette \u2014 UI Athletics $50M loan amended to 30 years",
+            "url": "https://www.thegazette.com/news/university-of-iowa-athletics-will-pay-back-50m-loan-in-30-years-not-15/article_25c9740e-fcd2-4511-b6f2-cf922e06641f.html",
+            "notes": "Internal university loan, not a stadium bond. Original 2021 $50M / 15-year note; amended July 1, 2025 to 30 years at 2.5%. Gazette: $5M shaved off principal. Not FY2025 Category 52 \u2014 that cell stays pending without a hosted MFRS PDF.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "No hosted FY2025 MFRS PDF on the desk. The Gazette loan is a cited athletics-debt instrument, not Category 52. Empty outstanding means pending, not zero."
+      }
     },
     "maryland": {
       "record": {
@@ -2661,7 +3067,27 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "michigan": {
       "record": {
@@ -2796,7 +3222,27 @@
           "asOf": "2026-03-03",
           "notes": "$0 is a cited for-cause outcome, not a pending blank."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "michigan-state": {
       "record": {
@@ -2919,7 +3365,27 @@
           "asOf": "2026-03-03",
           "notes": null
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "minnesota": {
       "record": {
@@ -3017,7 +3483,29 @@
         },
         "notes": "Line 6 indirect institutional support $6,458,586 is not booked as direct institutional."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 150552241,
+          "confidence": "reported",
+          "source": "Minnesota FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $150,552,241",
+          "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf",
+          "asOf": "2026-01-20",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $150,552,241 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 7939461,
+          "confidence": "reported",
+          "source": "Minnesota FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $7,939,461",
+          "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf",
+          "asOf": "2026-01-20",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $7,939,461. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "nebraska": {
       "record": {
@@ -3127,7 +3615,39 @@
         },
         "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [
+          {
+            "name": "Memorial Stadium Big Red Rebuild",
+            "kind": "stadium",
+            "cost": 600000000,
+            "remaining": null,
+            "through": "2028",
+            "source": "AP \u2014 Nebraska Board of Regents April 24, 2026",
+            "url": "https://apnews.com/article/nebraska-memorial-stadium-f6c32cfd79d29a4b8884cf5516ebf073",
+            "notes": "Regents approved $600 million overhaul, funded by $250 million philanthropy and $350 million private bond financing, targeted for the 2028 season. The $350 million is announced financing, not a Category 52 leftover. FY2025 outstanding stays pending without a hosted MFRS PDF.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "No hosted FY2025 MFRS PDF on the desk. Big Red Rebuild is a cited board project. The $350 million bond plan is announced financing, not a Category 52 leftover."
+      }
     },
     "northwestern": {
       "record": {
@@ -3220,7 +3740,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "ohio-state": {
       "record": {
@@ -3405,7 +3945,29 @@
         },
         "notes": "Department FY25 release: self-funded, no tuition or tax dollars. Hosted MFRS PDF confirms line 3 student fees $0 and line 2 government $0; line 4 $112,280 is offset by transfers. $0/$0 is the filing, not an invented blank."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 273599995,
+          "confidence": "reported",
+          "source": "Ohio State FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $273,599,995",
+          "url": "https://news.osu.edu/download/c91b5f24-f009-4455-81eb-4b89b108f1bc/fy25ncaamembershipreportfinal.pdf",
+          "asOf": "2026-01-30",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $273,599,995 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 29710677,
+          "confidence": "reported",
+          "source": "Ohio State FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $29,710,677",
+          "url": "https://news.osu.edu/download/c91b5f24-f009-4455-81eb-4b89b108f1bc/fy25ncaamembershipreportfinal.pdf",
+          "asOf": "2026-01-30",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $29,710,677. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "oregon": {
       "record": {
@@ -3579,7 +4141,29 @@
         },
         "notes": "Line 4 direct institutional is $0. Line 2 government is $589,167 (sports lottery / state). KN combined this on institutional/government; desk keeps the split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 157942463,
+          "confidence": "reported",
+          "source": "Oregon FY2025 NCAA FRS \u2014 Category 52 Total Athletics Related Debt $157,942,463",
+          "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf",
+          "asOf": "2026-01-13",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $157,942,463 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 18303978,
+          "confidence": "reported",
+          "source": "Oregon FY2025 NCAA FRS \u2014 Category 34 Athletic Facilities Debt Service $18,303,978",
+          "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf",
+          "asOf": "2026-01-13",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $18,303,978. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "penn-state": {
       "record": {
@@ -3759,7 +4343,41 @@
           "confidence": "estimated",
           "notes": "Estimated AAV: Athletic ~$9 million \u00f7 3 named years. Labeled derived. Lump about $9 million remains the cited settlement. Wikipedia/CBS: originally ~$49M; reduced when he took Virginia Tech."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": 534650181,
+          "confidence": "reported",
+          "source": "StateCollege.com \u2014 Penn State FY2025 NCAA financial report \u2014 athletics-related debt $534,650,181",
+          "url": "https://www.statecollege.com/articles/penn-state-sports/analyzing-penn-state-athletics-financial-report/",
+          "asOf": "2025-12",
+          "fiscalYear": "FY2025",
+          "notes": "Newsroom quoting the FY2025 NCAA report Category 52 stock. Not university-wide debt."
+        },
+        "debtService": {
+          "value": 24204901,
+          "confidence": "reported",
+          "source": "StateCollege.com \u2014 Penn State FY2025 NCAA financial report \u2014 facilities debt, renting or leases $24,204,901",
+          "url": "https://www.statecollege.com/articles/penn-state-sports/analyzing-penn-state-athletics-financial-report/",
+          "asOf": "2025-12",
+          "fiscalYear": "FY2025",
+          "notes": "Newsroom quoting the FY2025 NCAA report facilities-debt / rent / lease line (Category 34)."
+        },
+        "projects": [
+          {
+            "name": "Beaver Stadium renovation",
+            "kind": "stadium",
+            "cost": 700000000,
+            "remaining": null,
+            "through": "2027",
+            "source": "StateCollege.com quoting Penn State deputy AD Vinnie James / NCAA report coverage",
+            "url": "https://www.statecollege.com/articles/penn-state-sports/analyzing-penn-state-athletics-financial-report/",
+            "notes": "Announced renovation cost up to $700 million; completion targeted fall 2027. Remaining principal is not named as a separate project leftover \u2014 do not invent an amortization.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "Newsroom quoting the FY2025 NCAA report: athletics-related debt $534,650,181; facilities debt, renting or leases $24,204,901 (Category 34). Not university-wide debt."
+      }
     },
     "purdue": {
       "record": {
@@ -3856,7 +4474,27 @@
         },
         "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "rutgers": {
       "record": {
@@ -3954,7 +4592,27 @@
         },
         "notes": "Extra Points 3-way split kept (more granular than KN). KN FY2025 school profile cross-check: student fees $15,835,271; institutional/government combined $15,035,273 (\u2248 $7M university + $8M state)."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "ucla": {
       "record": {
@@ -4121,7 +4779,27 @@
           "asOf": "2026-03-03",
           "notes": "Through 2028 (Athletic). Cite is a through-date, not a named year schedule \u2014 lump kept; no invented AAV year rows."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "usc": {
       "record": {
@@ -4226,7 +4904,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "washington": {
       "record": {
@@ -4323,7 +5021,29 @@
         },
         "notes": "Hosted FY2025 NCAA Membership Financial Report. Student fees are the athletics slice, not tuition."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 279089162,
+          "confidence": "reported",
+          "source": "Washington FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $279,089,162",
+          "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
+          "asOf": "2026-01-17",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $279,089,162 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 9922009,
+          "confidence": "reported",
+          "source": "Washington FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $9,922,009",
+          "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
+          "asOf": "2026-01-17",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $9,922,009. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "wisconsin": {
       "record": {
@@ -4420,7 +5140,29 @@
         },
         "notes": "Line 5 transfers \u2212$7,245,480. KN combined government + direct institutional as $10,421,859; desk keeps the split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 130627132,
+          "confidence": "reported",
+          "source": "Wisconsin FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $130,627,132",
+          "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
+          "asOf": "2026-01-16",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $130,627,132 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 10470659,
+          "confidence": "reported",
+          "source": "Wisconsin FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $10,470,659",
+          "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
+          "asOf": "2026-01-16",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $10,470,659. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "boston-college": {
       "record": {
@@ -4513,7 +5255,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "california": {
       "record": {
@@ -4624,7 +5386,27 @@
           "asOf": "2026-03-03",
           "notes": "Through 2027 (Athletic). Cite is a through-date, not a named year schedule \u2014 lump kept; no invented AAV year rows."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "clemson": {
       "record": {
@@ -4720,7 +5502,27 @@
         },
         "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "duke": {
       "record": {
@@ -4813,7 +5615,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "florida-state": {
       "record": {
@@ -4910,7 +5732,29 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 436518989,
+          "confidence": "reported",
+          "source": "Florida State FY2025 NCAA Membership Financial Report (DocumentCloud / Tallahassee Democrat) \u2014 Category 52 Total Athletics Related Debt $436,518,989",
+          "url": "https://s3.documentcloud.org/documents/26597309/fsu-ncaa-financial-report-fy25.pdf",
+          "asOf": "2026-01-31",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $436,518,989 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 25664066,
+          "confidence": "reported",
+          "source": "Florida State FY2025 NCAA Membership Financial Report (DocumentCloud / Tallahassee Democrat) \u2014 Category 34 Athletic Facilities Debt Service $25,664,066",
+          "url": "https://s3.documentcloud.org/documents/26597309/fsu-ncaa-financial-report-fy25.pdf",
+          "asOf": "2026-01-31",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $25,664,066. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "georgia-tech": {
       "record": {
@@ -5030,7 +5874,27 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "louisville": {
       "record": {
@@ -5136,7 +6000,27 @@
         },
         "notes": "KN FY2025 allocated-revenue dollars plus the published FY2026 fee rate. The $200 rate starts 2025\u201326 / FY2026. Rate \u00d7 enrollment is shown as estimated arithmetic and does not replace the FY2025 KN total."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "miami": {
       "record": {
@@ -5228,7 +6112,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "nc-state": {
       "record": {
@@ -5325,7 +6229,27 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "north-carolina": {
       "record": {
@@ -5436,7 +6360,29 @@
           "asOf": "2026-03-24",
           "notes": null
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": 48677171,
+          "confidence": "reported",
+          "source": "UNC FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $48,677,171",
+          "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf",
+          "asOf": "2026-02-03",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $48,677,171 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 5213340,
+          "confidence": "reported",
+          "source": "UNC FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $5,213,340",
+          "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf",
+          "asOf": "2026-02-03",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $5,213,340. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "pittsburgh": {
       "record": {
@@ -5529,7 +6475,27 @@
         },
         "notes": "Pending a public MFRS split. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Pennsylvania public-records exemption. No public FY2025 MFRS debt split on the desk. Empty means pending, not zero."
+      }
     },
     "smu": {
       "record": {
@@ -5622,7 +6588,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "stanford": {
       "record": {
@@ -5715,7 +6701,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "syracuse": {
       "record": {
@@ -5808,7 +6814,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "virginia": {
       "record": {
@@ -5906,7 +6932,29 @@
         },
         "notes": "Line 6 indirect institutional support $1,401,812 is not booked as direct institutional."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 24939741,
+          "confidence": "reported",
+          "source": "Virginia FY2025 NCAA Membership Financial Report (published copy) \u2014 Category 52 Total Athletics Related Debt $24,939,741",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $24,939,741 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 1331006,
+          "confidence": "reported",
+          "source": "Virginia FY2025 NCAA Membership Financial Report (published copy) \u2014 Category 34 Athletic Facilities Debt Service $1,331,006",
+          "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf",
+          "asOf": "2026-03",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $1,331,006. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "virginia-tech": {
       "record": {
@@ -6042,7 +7090,27 @@
           "confidence": "estimated",
           "notes": "Estimated AAV: Athletic $3.1 million \u00f7 2 named years. Labeled derived. Lump $3.1 million remains the cited settlement."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "wake-forest": {
       "record": {
@@ -6135,7 +7203,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "arizona": {
       "record": {
@@ -6244,7 +7332,27 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "arizona-state": {
       "record": {
@@ -6365,7 +7473,27 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "byu": {
       "record": {
@@ -6458,7 +7586,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "baylor": {
       "record": {
@@ -6551,7 +7699,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "cincinnati": {
       "record": {
@@ -6648,7 +7816,27 @@
         },
         "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "colorado": {
       "record": {
@@ -6745,7 +7933,29 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 138829000,
+          "confidence": "reported",
+          "source": "Colorado Boulder FY2025 NCAA AUP (Colorado OSA) \u2014 Category 52 Total Athletics Related Debt $138,829,000",
+          "url": "https://content.leg.colorado.gov/sites/default/files/documents/audits/2505F-B_university_of_colorado_boulder_ncaa_aup_fy25.pdf",
+          "asOf": "2025-06-30",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $138,829,000 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 14649402,
+          "confidence": "reported",
+          "source": "Colorado Boulder FY2025 NCAA AUP (Colorado OSA) \u2014 Category 34 Athletic Facilities Debt Service $14,649,402",
+          "url": "https://content.leg.colorado.gov/sites/default/files/documents/audits/2505F-B_university_of_colorado_boulder_ncaa_aup_fy25.pdf",
+          "asOf": "2025-06-30",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $14,649,402. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "AUP: outstanding athletics-related debt $138,829,000 as of June 30, 2025. Category 34 athletic facilities debt service, leases and rental fees $14,649,402. University debt $1,850,291,000 is refused \u2014 not an athletics split."
+      }
     },
     "houston": {
       "record": {
@@ -6854,7 +8064,27 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "iowa-state": {
       "record": {
@@ -6964,7 +8194,29 @@
         },
         "notes": "Hosted FY2025 NCAA Membership Financial Report. Student fees are the athletics slice, not tuition."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 132414190,
+          "confidence": "reported",
+          "source": "Iowa State FY2025 NCAA Financial Report \u2014 Category 52 Total Athletics Related Debt $132,414,190",
+          "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
+          "asOf": "2026-01-16",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $132,414,190 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 12090096,
+          "confidence": "reported",
+          "source": "Iowa State FY2025 NCAA Financial Report \u2014 Category 34 Athletic Facilities Debt Service $12,090,096",
+          "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
+          "asOf": "2026-01-16",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $12,090,096. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "kansas": {
       "record": {
@@ -7061,7 +8313,29 @@
         },
         "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 198099309,
+          "confidence": "reported",
+          "source": "Kansas FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $198,099,309",
+          "url": "https://kuathletics.com/documents/download/2026/1/15/FY_24-25_NCAA_Final_Report.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $198,099,309 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 5852923,
+          "confidence": "reported",
+          "source": "Kansas FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $5,852,923",
+          "url": "https://kuathletics.com/documents/download/2026/1/15/FY_24-25_NCAA_Final_Report.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $5,852,923. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "kansas-state": {
       "record": {
@@ -7182,7 +8456,27 @@
         },
         "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "oklahoma-state": {
       "record": {
@@ -7341,7 +8635,27 @@
           "confidence": "estimated",
           "notes": "Estimated AAV: Athletic $15 million \u00f7 3 named years. Labeled derived. Lump $15 million remains the cited total."
         }
-      ]
+      ],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "tcu": {
       "record": {
@@ -7446,7 +8760,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     },
     "texas-tech": {
       "record": {
@@ -7566,7 +8900,27 @@
         },
         "notes": "Student-fee line is $0 on the KN FY2025 tape. Institutional/government is KN\u2019s combined allocated-support category."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "ucf": {
       "record": {
@@ -7675,7 +9029,27 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "utah": {
       "record": {
@@ -7773,7 +9147,29 @@
         },
         "notes": "Line 6 indirect institutional support $2,458,527 is not booked as direct institutional."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": 90742848,
+          "confidence": "reported",
+          "source": "Utah FY2025 NCAA Revenue and Expense Report \u2014 Category 52 Total Athletics Related Debt $90,742,848",
+          "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf",
+          "asOf": "2026-01-21",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 52 / Other Reporting Items \u2014 total athletics-related debt $90,742,848 at FY2025 year-end. A stock, not yearly spend. Not university-wide Category 53."
+        },
+        "debtService": {
+          "value": 11181497,
+          "confidence": "reported",
+          "source": "Utah FY2025 NCAA Revenue and Expense Report \u2014 Category 34 Athletic Facilities Debt Service $11,181,497",
+          "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf",
+          "asOf": "2026-01-21",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 34 \u2014 athletic facilities debt service, leases and rental fees $11,181,497. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
+        },
+        "projects": [],
+        "notes": "Hosted FY2025 NCAA Membership Financial Report. Outstanding is a stock; debt service is the annual flow. Neither enters the capacity stack."
+      }
     },
     "west-virginia": {
       "record": {
@@ -7870,7 +9266,27 @@
         },
         "notes": "KN FY2025 allocated revenue. Institutional/government is a combined KN category; government stays pending without a Line 2 split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+      }
     },
     "notre-dame": {
       "record": {
@@ -8007,7 +9423,27 @@
         },
         "notes": "Empty means we do not have a number, not that the subsidy is zero. EADA has no split."
       },
-      "buyoutsPaid": []
+      "buyoutsPaid": [],
+      "debt": {
+        "outstanding": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 52 / athletics-related debt stock."
+        },
+        "debtService": {
+          "value": null,
+          "confidence": "pending",
+          "source": null,
+          "url": null,
+          "asOf": null,
+          "notes": "Pending a cited Category 34 / annual facilities debt service."
+        },
+        "projects": [],
+        "notes": "Private school. No public NCAA MFRS debt split on the desk unless the school or a newsroom published one. Empty means pending, not zero."
+      }
     }
   }
 }

@@ -121,6 +121,7 @@ export default function App() {
         portal: season >= 2026 ? rawLayer.portal : { additions: [], departures: [] },
         apparel: season >= 2025 ? rawLayer.apparel : null,
         subsidy: season >= 2025 ? mergeSubsidy(rawLayer.subsidy, s.capacity) : null,
+        debt: season >= 2025 ? rawLayer.debt : null,
         buyoutsPaid: season >= 2025 ? rawLayer.buyoutsPaid : [],
       }
       const withNil = { ...s, nil, _cap: s._cap, _ratios: r }

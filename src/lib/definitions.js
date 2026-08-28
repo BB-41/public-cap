@@ -101,9 +101,13 @@ export const DEFS = {
     label: 'Buyouts actually paid',
     text: 'Money the school (or a new employer, via offset) actually owes or has settled with a former coach after a firing — USA TODAY, The Athletic contract census, school 990, or local FOIA. Not the if-fired overhang on the current chair.',
   },
+  debt: {
+    label: 'Athletics debt',
+    text: 'Athletics facility debt from the NCAA Membership Financial Report or a cited bond/board story — not the university’s entire balance sheet, and not part of annual capacity. Outstanding (MFRS Category 52 / Other Reporting Items) is a stock, like a buyout overhang. Annual debt service (Category 34 — principal, interest, leases, and rental fees on athletic facilities) is this year’s check. Named stadium or building projects are a cited tape only: project name, announced cost, remaining if the filing names it, through-date if named. We do not invent an amortization schedule. University-wide institutional debt stays out unless the filing itself splits an athletics-related amount. $0 is a real cell only when the filing says $0. Empty means pending.',
+  },
   tape: {
     label: 'Desk tape',
-    text: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990s, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
+    text: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990s, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, athletics-debt filings, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
   },
   tv: {
     label: 'TV / media rights',

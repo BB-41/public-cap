@@ -110,6 +110,16 @@ export default function Methods({ meta }) {
         <dd>2025 football wins divided by booked NIL if present, else modeled NIL mid (labeled modeled), and by annual capacity (booked-only unless the alumni toggle is on). Wikipedia / NCAA standings.</dd>
         <dt>Buyouts actually paid</dt>
         <dd>Money actually owed or settled after a firing — not the if-fired overhang on the current coach. Athletic contract census, USA TODAY, 990, FOIA.</dd>
+        <dt>Athletics debt</dt>
+        <dd>
+          Athletics facility debt from the NCAA Membership Financial Report or a cited bond/board story —
+          not the university’s entire balance sheet, and not part of annual capacity.
+          Outstanding (MFRS Category 52) is a stock, like a buyout overhang.
+          Annual debt service (Category 34 — principal, interest, leases, and rental fees on athletic facilities) is this year’s check.
+          Named stadium or building projects are a cited tape only. We do not invent an amortization schedule
+          or even-split a project cost across years. University-wide institutional debt stays out unless the
+          filing itself splits an athletics-related amount. $0 is a real cell only when the filing says $0. Empty means pending.
+        </dd>
         <dt>Staff pay</dt>
         <dd>Cited public pay for the athletic director, other head coaches, and football assistants, keyed to the selected football season. Named football assistant dollars for 2021–2024 are the USA TODAY contract year from each team page (row asOf: Dec 9, 2021 / Dec 8, 2022 / Nov 16, 2023 / Dec 18, 2024) and sit on that year only, with that year’s published names — not the 2026 official directory. Titles are not invented. 2026 shows official-directory names and roles; assistant pay stays pending unless a cited 2026 dollar exists. 2025 is empty without a year-accurate tape (we do not clone 2026 names or 2024 dollars onto 2025). Athletic-director pay is cited-only and year-pinned: USA TODAY Sports has no live AD table on sportsdata.usatoday.com, so dollars come from USA TODAY Network stories that name a number, or from state payroll / university FOIA / board minutes. A 2024 AD snapshot is never copied onto a 2026 AD who is a different person. A newer cite already on the desk is not overwritten by an older snapshot. Privates and withheld chairs stay pending. WBB cells are cited-only. Empty means pending — we do not invent a title or a dollar.</dd>
         <dt>Official alumni earnings vs modeled wealth</dt>
@@ -117,7 +127,7 @@ export default function Methods({ meta }) {
         <dt>What backs this (earnings corroboration)</dt>
         <dd>A quiet check on the official average, not a second alumni net-worth engine. Scorecard stays the earnings number. Under it we cite BLS Occupational Employment and Wage Statistics for 2–4 occupations that match a simple career mix (flagship public, tech/engineering, or private elite) — national May 2025 medians/means, plus the state OEWS page. Those wages are reported BLS figures and estimated as a mix for that school type; they are not this school’s alumni. Where a state open-payroll site is obvious (Texas, Ohio, California, Florida) we link it so reporters know public-university alumni on the state payroll can be looked up. A handful of schools get one notable public-company alum with an EDGAR/DEF 14A or IR link (fat tail, not a cohort). Glassdoor and LinkedIn are not ingested.</dd>
         <dt>Desk tape</dt>
-        <dd>A dated log of filings that moved a Public Cap figure — not a news feed. Booked NIL, collective 990s, contract PDFs, paid buyouts, cited apparel or naming, student-fee / subsidy lines, and House-cap Q&amp;As. We do not invent a headline. A school page that is quiet says so: “No public filing on the desk yet.”</dd>
+        <dd>A dated log of filings that moved a Public Cap figure — not a news feed. Booked NIL, collective 990s, contract PDFs, paid buyouts, cited apparel or naming, student-fee / subsidy lines, athletics-debt filings, and House-cap Q&amp;As. We do not invent a headline. A school page that is quiet says so: “No public filing on the desk yet.”</dd>
         <dt>TV / media rights</dt>
         <dd>Most Power 4 TV contracts are conference deals, not 68 school contracts. The school page and the <a href="/tv">TV book</a> show rights holders, term, the cited conference pot, and how the share is split when a 2024–26 source exists. A school media check is printed only when reported, or as a labeled equal-share estimate (cited pot ÷ cited members). Notre Dame’s NBC football deal is the school-level exception. The College Football Playoff is one national package. ACC Grant of Rights / viewership splits are described as cited — not flattened to equal share. Empty means pending.</dd>
         <dt>Confidence tags</dt>
@@ -706,6 +716,44 @@ export default function Methods({ meta }) {
         grade. Men’s basketball 2025–26 records were not extracted on this pass.
       </p>
 
+      <h2>Athletics debt</h2>
+      <p>
+        A school-page layer, next to apparel, student fees, and buyouts. The headline is
+        outstanding athletics-related debt when we have it; annual debt service if that is
+        the only cited cell. Click opens a breakdown: outstanding stock, annual debt service,
+        then named stadium / indoor / facility projects. Shareable as <code>#debt</code>.
+      </p>
+      <p>
+        Outstanding is NCAA MFRS Category 52 / Other Reporting Items — “Total Athletics
+        Related Debt” — a stock at fiscal year-end, like a buyout overhang, not yearly spend.
+        Annual debt service is Category 34, “Athletic Facilities Debt Service, Leases and
+        Rental Fees”: principal and interest, including internal loans, plus leases and
+        rental fees on athletic facilities in that reporting year, regardless of who cut
+        the check. Knight-Newhouse cites those same two lines when we use it. A later MFRS
+        page sometimes prints “Athletically-Related Facilities Annual Debt Service,” which
+        can differ from Category 34 because it drops leases/rentals; this desk books
+        Category 34. We do not add debt to annual capacity. Capacity stays media +
+        sponsorships + tickets + booked contributions.
+      </p>
+      <p>
+        Named projects are a cited tape only: project name, announced cost, remaining if
+        the filing names it, through-date if named. We do not invent an amortization
+        schedule or even-split a project cost across years. University-wide institutional
+        debt (Category 53) is refused unless the filing itself splits an athletics-related
+        amount. Privates stay empty unless the school or a newsroom published the figure.
+        $0 is a real cell only when the filing says $0. Empty means pending.
+      </p>
+      <p>
+        Source order: hosted FY2025 NCAA MFRS / AUP PDFs already on this desk, then a
+        newsroom story that quotes those same lines (StateCollege.com on Penn State’s
+        NCAA report; Gazette on Iowa’s campus athletics loan), then a board of trustees /
+        regents resolution that names an athletics facility (Nebraska Memorial Stadium
+        Big Red Rebuild). Knight-Newhouse school profiles cite the same MFRS debt lines
+        but are JS-rendered here; we did not invent KN dollars we could not read. EMMA
+        official statements are allowed when they name athletics facilities — none were
+        booked on this pass without a matching athletics split. No On3 / Opendorse / NIL Go.
+      </p>
+
       <h2>Buyouts actually paid</h2>
       <p>
         Separate from the if-fired overhang on the current chair. This table is money a
@@ -757,6 +805,7 @@ export default function Methods({ meta }) {
         <li>No invented player names, and no invented <em>reported</em> deal dollar on a named player (modeled shares of the school pot are labeled modeled).</li>
         <li>No women’s sports or Olympic-sport roster math in v1 (the 7% unallocated slice is the placeholder).</li>
         <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
+        <li>Athletics debt is a separate layer, not a capacity add-on. Category 53 university-wide institutional debt is refused unless the filing splits an athletics-related amount. We do not invent an amortization schedule from a project cost. Empty stays empty.</li>
       </ul>
     </div>
   )
