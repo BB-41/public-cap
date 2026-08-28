@@ -34937,10 +34937,19 @@
         "athleticDirector": {
           "confidence": "pending",
           "asOf": "2026-08",
-          "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+          "notes": "Current athletics-director chair as of the 2026-08-28 desk. Pay is year-pinned on staff.athleticDirector.pay.",
           "name": "Mark Coyle",
           "source": "Official 2026 athletics staff directory",
-          "url": "https://gophersports.com/sports/football/coaches"
+          "url": "https://gophersports.com/sports/football/coaches",
+          "pay": {
+            "value": 2000000,
+            "confidence": "reported",
+            "source": "U. of Minnesota Regents finance docket (June 11, 2026) — Coyle third amendment",
+            "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-06/docket-fin-june2026-v3.pdf",
+            "asOf": "2026-06-11",
+            "notes": "Contract Year Seven (July 1, 2026–June 30, 2027) annual base $2,000,000 on the June 11, 2026 third-amendment summary. Term through June 30, 2032. Longevity bonus ($250,000 vesting June 30, 2027) and supplemental retirement ($180,000) are not added. Not the Star Tribune $2.76M six-year average. Same person as the 2026 chair.",
+            "year": 2026
+          }
         },
         "office": [],
         "otherHeadCoaches": [
@@ -35483,10 +35492,19 @@
           "athleticDirector": {
             "confidence": "pending",
             "asOf": "2026-08",
-            "notes": "No current public AD pay on the desk. Private-school and unreleased chairs stay blank.",
+            "notes": "Current athletics-director chair as of the 2026-08-28 desk. Pay is year-pinned on staff.athleticDirector.pay.",
             "name": "Mark Coyle",
             "source": "Official 2026 athletics staff directory",
-            "url": "https://gophersports.com/sports/football/coaches"
+            "url": "https://gophersports.com/sports/football/coaches",
+            "pay": {
+              "value": 2000000,
+              "confidence": "reported",
+              "source": "U. of Minnesota Regents finance docket (June 11, 2026) — Coyle third amendment",
+              "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-06/docket-fin-june2026-v3.pdf",
+              "asOf": "2026-06-11",
+              "notes": "Contract Year Seven (July 1, 2026–June 30, 2027) annual base $2,000,000 on the June 11, 2026 third-amendment summary. Term through June 30, 2032. Longevity bonus ($250,000 vesting June 30, 2027) and supplemental retirement ($180,000) are not added. Not the Star Tribune $2.76M six-year average. Same person as the 2026 chair.",
+              "year": 2026
+            }
           },
           "office": [],
           "otherHeadCoaches": [

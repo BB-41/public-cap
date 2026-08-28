@@ -441,6 +441,17 @@
       "url": "https://goheels.com/documents/2025/8/18/Newmark__Steve.pdf",
       "notes": "EA §3(a): $1,000,000 base from Transition Date July 1, 2026. §6: $50,000 × 4 dates in calendar 2026–2029 = $200,000/year deferred. Booked $1.2M. Not Cunningham.",
       "confidence": "reported"
+    },
+    {
+      "id": "minnesota",
+      "name": "Mark Coyle",
+      "pay": 2000000,
+      "year": 2026,
+      "asOf": "2026-06-11",
+      "source": "U. of Minnesota Regents finance docket — Coyle third amendment",
+      "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-06/docket-fin-june2026-v3.pdf",
+      "notes": "CY7 (2026-27) base $2.0M. Longevity / supplemental retirement not added. Not the $2.76M AAV.",
+      "confidence": "reported"
     }
   ]
 }
