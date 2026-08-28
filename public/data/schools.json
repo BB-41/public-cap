@@ -142,7 +142,10 @@
       "uo_nike": "https://nbc16.com/sports/ducks/uo-signs-new-athletic-apparel-deal-with-nike",
       "uw_adidas": "https://www.espn.com/college-sports/story/_/id/23104808/university-washington-10-year-agreement-wear-adidas-apparel-starting-summer-2019",
       "tx_nike": "https://www.texastribune.org/2015/10/30/ut-signs-record-apparel-deal-nike-250-million-over/",
-      "gt_hyundai": "https://apnews.com/article/georgia-tech-hyundai-bobby-dodd-stadium-naming-rights-7efc03a1c8f00edabf4b5c5e0b60b42d"
+      "gt_hyundai": "https://apnews.com/article/georgia-tech-hyundai-bobby-dodd-stadium-naming-rights-7efc03a1c8f00edabf4b5c5e0b60b42d",
+      "lsu_aup": "https://app2.lla.state.la.us/publicreports.nsf/0/f5626f9d09f9522486258d8f006c2429/$file/00009a43.pdf?.7773098=&openelement=",
+      "ar_mfrs": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf",
+      "sc_aup": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf"
     }
   },
   "schools": [
@@ -1728,13 +1731,13 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 70300000,
-          "confidence": "estimated",
-          "source": "USA TODAY — SEC FY2025 minimum distribution to full-share members",
-          "url": "https://www.usatoday.com/story/sports/college/2026/05/22/power-4-conference-money-comparison-big-ten-sec-acc-big-12-pac-12-brett-yormark/90204563007/",
-          "asOf": "2026-05-22",
+          "value": 60527434,
+          "confidence": "reported",
+          "source": "Arkansas FY2025 NCAA Membership Financial Report — Media Rights $42,407,177 + Conference $4,603,644 + Conference postseason $13,516,613",
+          "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf",
+          "asOf": "2026-01",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "SEC floor was $70.3M. We use the school's MFRS media+conference stack so we do not double-count the floor. Same hosted PDF as Category 52/34."
         },
         "sponsorships": {
           "value": 18000000,
@@ -9670,13 +9673,13 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 70300000,
-          "confidence": "estimated",
-          "source": "USA TODAY — SEC FY2025 minimum distribution to full-share members",
-          "url": "https://www.usatoday.com/story/sports/college/2026/05/22/power-4-conference-money-comparison-big-ten-sec-acc-big-12-pac-12-brett-yormark/90204563007/",
-          "asOf": "2026-05-22",
+          "value": 69548957,
+          "confidence": "reported",
+          "source": "LSU FY2025 NCAA AUP (Louisiana Legislative Auditor) — Media rights $53,107,417 + Conference (non-media/non-postseason) $3,267,327 + Conference postseason $13,174,213",
+          "url": "https://app2.lla.state.la.us/publicreports.nsf/0/f5626f9d09f9522486258d8f006c2429/$file/00009a43.pdf?.7773098=&openelement=",
+          "asOf": "2025-06-30",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "SEC floor was $70.3M. We use the school's AUP media+conference stack so we do not double-count the floor. Same hosted AUP as Category 34."
         },
         "sponsorships": {
           "value": 18000000,
@@ -17703,13 +17706,13 @@
       "capacity": {
         "fiscalYearPrimary": "FY2025",
         "mediaConference": {
-          "value": 70300000,
-          "confidence": "estimated",
-          "source": "USA TODAY — SEC FY2025 minimum distribution to full-share members",
-          "url": "https://www.usatoday.com/story/sports/college/2026/05/22/power-4-conference-money-comparison-big-ten-sec-acc-big-12-pac-12-brett-yormark/90204563007/",
-          "asOf": "2026-05-22",
+          "value": 62094554,
+          "confidence": "reported",
+          "source": "South Carolina FY2025 NCAA AUP (Columbia campus) — Media Rights $44,003,065 + Conference $2,728,777 + Conference postseason $15,362,712",
+          "url": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf",
+          "asOf": "2025-06-30",
           "fiscalYear": "FY2025",
-          "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
+          "notes": "SEC floor was $70.3M. We use the school's AUP media+conference stack so we do not double-count the floor. Same hosted AUP as Category 52/34."
         },
         "sponsorships": {
           "value": 18000000,

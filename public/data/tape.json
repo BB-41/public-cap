@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-28",
-    "itemCount": 294,
+    "itemCount": 309,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -4419,6 +4419,231 @@
         "url": "https://apnews.com/article/nebraska-memorial-stadium-f6c32cfd79d29a4b8884cf5516ebf073"
       },
       "field": "layers.debt.projects"
+    },
+    {
+      "id": "lsu-debt-service-fy2025",
+      "date": "2025-06-30",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "debt",
+      "headline": "LSU FY2025 Category 34 athletic facilities debt service is $13,257,498.",
+      "figure": 13257498,
+      "confidence": "reported",
+      "source": {
+        "label": "LSU FY2025 NCAA AUP (Louisiana Legislative Auditor) \u2014 Category 34 Athletic Facilities Debt Service $13,257,498",
+        "url": "https://app2.lla.state.la.us/publicreports.nsf/0/f5626f9d09f9522486258d8f006c2429/$file/00009a43.pdf?.7773098=&openelement="
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "oklahoma-debt-project-0",
+      "date": "2025-11-21",
+      "school": "oklahoma",
+      "schoolName": "Oklahoma",
+      "kind": "debt",
+      "headline": "Oklahoma named athletics-debt project: The Palace Project \u2014 Gaylord Family Oklahoma Memorial Stadium west side ($450,000,000)",
+      "figure": 450000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Oklahoma Athletics \u2014 Board of Regents Palace Project announcement",
+        "url": "https://soonersports.com/news/2025/11/21/football-ou-announces-the-palace-project"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "auburn-debt-project-0",
+      "date": "2026-08-28",
+      "school": "auburn",
+      "schoolName": "Auburn",
+      "kind": "debt",
+      "headline": "Auburn named athletics-debt project: Jordan-Hare Stadium north-end multipurpose facility and plaza ($323,000,000)",
+      "figure": 323000000,
+      "confidence": "reported",
+      "source": {
+        "label": "AP \u2014 Auburn Board of Trustees Jordan-Hare $323 million renovation",
+        "url": "https://apnews.com/article/auburn-jordanhare-stadium-renovation-fa40038cce47a9be0f2cebababfddae1"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "auburn-debt-project-1",
+      "date": "2026-08-28",
+      "school": "auburn",
+      "schoolName": "Auburn",
+      "kind": "debt",
+      "headline": "Auburn named athletics-debt project: Jordan-Hare Stadium north-end video board ($25,700,000)",
+      "figure": 25700000,
+      "confidence": "reported",
+      "source": {
+        "label": "AP \u2014 Auburn $25.7 million Jordan-Hare video board (completed before 2025 season)",
+        "url": "https://apnews.com/article/auburn-jordanhare-stadium-renovation-fa40038cce47a9be0f2cebababfddae1"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "missouri-debt-project-0",
+      "date": "2026-04-17",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "debt",
+      "headline": "Missouri named athletics-debt project: Memorial Stadium Centennial Project (Faurot Field north end zone) ($250,000,000)",
+      "figure": 250000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Missouri Athletics \u2014 Memorial Stadium Centennial Project",
+        "url": "https://mutigers.com/news/2026/04/17/from-renderings-to-reality-mizzous-memorial-stadium-centennial-project-comes-to-life-two-years-after-first-images-emerged"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "west-virginia-debt-project-0",
+      "date": "2026-05-22",
+      "school": "west-virginia",
+      "schoolName": "West Virginia",
+      "kind": "debt",
+      "headline": "West Virginia named athletics-debt project: Milan Puskar Stadium West Tower Press Box ($150,000,000)",
+      "figure": 150000000,
+      "confidence": "reported",
+      "source": {
+        "label": "West Virginia Athletics \u2014 AD Wren Baker on the West Tower project",
+        "url": "https://wvusports.com/news/2026/5/22/football-wvus-baker-says-west-tower-press-box-project-moving-along"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "texas-tech-debt-project-0",
+      "date": "2026-08-28",
+      "school": "texas-tech",
+      "schoolName": "Texas Tech",
+      "kind": "debt",
+      "headline": "Texas Tech named athletics-debt project: Jones AT&T Stadium south end zone / Dustin R. Womble Football Center ($242,000,000)",
+      "figure": 242000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Lubbock Avalanche-Journal \u2014 Texas Tech $242 million football facilities project",
+        "url": "https://www.lubbockonline.com/story/sports/college/red-raiders/2024/08/09/texas-tech-football-jones-att-stadium-womble-football-center-latest/74725504007/"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "purdue-debt-project-0",
+      "date": "2022-04-08",
+      "school": "purdue",
+      "schoolName": "Purdue",
+      "kind": "debt",
+      "headline": "Purdue named athletics-debt project: Ross-Ade Stadium Phase 1 renovation ($45,400,000)",
+      "figure": 45400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Purdue News \u2014 Board of Trustees Ross-Ade / Mackey package",
+        "url": "https://www.purdue.edu/newsroom/2022/Q2/purdue-trustees-approve-namings-and-resolutions-of-appreciation-ross-ade-stadium-and-mackey-arena-renovations-contract-extension-for-brohm"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "kentucky-debt-project-0",
+      "date": "2025-06-13",
+      "school": "kentucky",
+      "schoolName": "Kentucky",
+      "kind": "debt",
+      "headline": "Kentucky named athletics-debt project: Champions Blue / UK Athletics facilities capital loan ($110,000,000)",
+      "figure": 110000000,
+      "confidence": "reported",
+      "source": {
+        "label": "University of Kentucky Office of the President \u2014 Champions Blue projects",
+        "url": "https://pres.uky.edu/champions-blue-projects"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "texas-am-debt-project-0",
+      "date": "2026-08-28",
+      "school": "texas-am",
+      "schoolName": "Texas A&M",
+      "kind": "debt",
+      "headline": "Texas A&M named athletics-debt project: Bright-Slocum Center renovation ($52,000,000)",
+      "figure": 52000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Eagle / myAggieNation \u2014 A&M Board of Regents Bright-Slocum $52 million",
+        "url": "https://myaggienation.com/aggie_sports/football/a-m-board-of-regents-approve-renovations-to-bright-slocum-center/article_f5c90578-623c-5649-b792-f2529da62789.html"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "ucf-debt-project-0",
+      "date": "2024-03-29",
+      "school": "ucf",
+      "schoolName": "UCF",
+      "kind": "debt",
+      "headline": "UCF named athletics-debt project: Roth Tower expansion \u2014 FBC Mortgage Stadium ($88,000,000)",
+      "figure": 88000000,
+      "confidence": "estimated",
+      "source": {
+        "label": "FOX 35 Orlando \u2014 UCF Board of Trustees Roth Tower expansion",
+        "url": "https://www.fox35orlando.com/news/ucf-football-stadium-roth-tower-expansion-project"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "florida-debt-project-0",
+      "date": "2026-06-11",
+      "school": "florida",
+      "schoolName": "Florida",
+      "kind": "debt",
+      "headline": "Florida named athletics-debt project: Ben Hill Griffin Stadium renovation ($1,450,000,000)",
+      "figure": 1450000000,
+      "confidence": "reported",
+      "source": {
+        "label": "Gainesville Sun \u2014 UF Board of Trustees Ben Hill Griffin $1.45 billion renovation",
+        "url": "https://www.gainesville.com/story/news/education/campus/2026/06/11/university-of-florida-approves-massive-stadium-revamp/90511846007/"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "arkansas-mfrs-media-fy2025",
+      "date": "2026-01",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "990",
+      "headline": "Arkansas FY2025 media+conference stack is $60,527,434 (was the $70,300,000 SEC floor).",
+      "figure": 60527434,
+      "confidence": "reported",
+      "source": {
+        "label": "Arkansas FY2025 NCAA Membership Financial Report \u2014 Media Rights $42,407,177 + Conference $4,603,644 + Conference postseason $13,516,613",
+        "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf"
+      },
+      "field": "capacity.mediaConference"
+    },
+    {
+      "id": "south-carolina-mfrs-media-fy2025",
+      "date": "2025-06-30",
+      "school": "south-carolina",
+      "schoolName": "South Carolina",
+      "kind": "990",
+      "headline": "South Carolina FY2025 media+conference stack is $62,094,554 (was the $70,300,000 SEC floor).",
+      "figure": 62094554,
+      "confidence": "reported",
+      "source": {
+        "label": "South Carolina FY2025 NCAA AUP (Columbia campus) \u2014 Media Rights $44,003,065 + Conference $2,728,777 + Conference postseason $15,362,712",
+        "url": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf"
+      },
+      "field": "capacity.mediaConference"
+    },
+    {
+      "id": "lsu-mfrs-media-fy2025",
+      "date": "2025-06-30",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "990",
+      "headline": "LSU FY2025 media+conference stack is $69,548,957 (was the $70,300,000 SEC floor).",
+      "figure": 69548957,
+      "confidence": "reported",
+      "source": {
+        "label": "LSU FY2025 NCAA AUP (Louisiana Legislative Auditor) \u2014 Media rights $53,107,417 + Conference (non-media/non-postseason) $3,267,327 + Conference postseason $13,174,213",
+        "url": "https://app2.lla.state.la.us/publicreports.nsf/0/f5626f9d09f9522486258d8f006c2429/$file/00009a43.pdf?.7773098=&openelement="
+      },
+      "field": "capacity.mediaConference"
     }
   ]
 }

@@ -580,8 +580,31 @@
           "asOf": null,
           "notes": "Pending a cited Category 34 / annual facilities debt service."
         },
-        "projects": [],
-        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+        "projects": [
+          {
+            "name": "Jordan-Hare Stadium north-end multipurpose facility and plaza",
+            "kind": "stadium",
+            "cost": 323000000,
+            "remaining": null,
+            "through": "2029",
+            "source": "AP \u2014 Auburn Board of Trustees Jordan-Hare $323 million renovation",
+            "url": "https://apnews.com/article/auburn-jordanhare-stadium-renovation-fa40038cce47a9be0f2cebababfddae1",
+            "notes": "Board of Trustees granted final approval. Facility $305 million plus plaza $18 million = $323 million. Portion targeted fall 2028; remainder spring 2029. Remaining principal is not named. FY2025 Category 52/34 stay pending without a hosted MFRS PDF.",
+            "confidence": "reported"
+          },
+          {
+            "name": "Jordan-Hare Stadium north-end video board",
+            "kind": "stadium",
+            "cost": 25700000,
+            "remaining": null,
+            "through": "2025",
+            "source": "AP \u2014 Auburn $25.7 million Jordan-Hare video board (completed before 2025 season)",
+            "url": "https://apnews.com/article/auburn-jordanhare-stadium-renovation-fa40038cce47a9be0f2cebababfddae1",
+            "notes": "Named completed capital project on the same AP cite. Not Category 52 leftover.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP Category 52/34 line on the desk yet. Named project(s) are cited board / official / newsroom costs, not a Category 52 leftover. Empty outstanding means pending, not zero."
       }
     },
     "florida": {
@@ -763,7 +786,19 @@
           "asOf": null,
           "notes": "UAA statements list FY2026 scheduled principal + interest; that is not booked as FY2025 Category 34."
         },
-        "projects": [],
+        "projects": [
+          {
+            "name": "Ben Hill Griffin Stadium renovation",
+            "kind": "stadium",
+            "cost": 1450000000,
+            "remaining": null,
+            "through": "2030",
+            "source": "Gainesville Sun \u2014 UF Board of Trustees Ben Hill Griffin $1.45 billion renovation",
+            "url": "https://www.gainesville.com/story/news/education/campus/2026/06/11/university-of-florida-approves-massive-stadium-revamp/90511846007/",
+            "notes": "Board of Trustees approved financing June 11, 2026. Construction after the 2026 season; completion before the 2030 season. Funded by donors, reserves, project-generated revenues and long-term debt pending Board of Governors. Remaining principal is not named. Does not overwrite UAA FY2025 outstanding.",
+            "confidence": "reported"
+          }
+        ],
         "notes": "Athletics-association bonds from the UAA audit. Not university-wide UF debt. Not added to capacity."
       }
     },
@@ -1089,8 +1124,20 @@
           "asOf": null,
           "notes": "Pending a cited Category 34 / annual facilities debt service."
         },
-        "projects": [],
-        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+        "projects": [
+          {
+            "name": "Champions Blue / UK Athletics facilities capital loan",
+            "kind": "loan",
+            "cost": 110000000,
+            "remaining": null,
+            "through": "repayment begins FY2027-28",
+            "source": "University of Kentucky Office of the President \u2014 Champions Blue projects",
+            "url": "https://pres.uky.edu/champions-blue-projects",
+            "notes": "Board of Trustees approved an internal loan of up to $110 million for athletics capital projects. Named initial pieces on the same page: Kroger Field maintenance $15M; corner suites and elevators $13M; soccer/softball $5M; west-end club design and Wi-Fi $8M. Those named draws are not even-split out of the $110M ceiling. A separate up-to-$31M operating loan is not a facility project and is not booked. Remaining principal is not named. FY2025 Category 52/34 stay pending. Does not touch the $18M House counsel NIL cell.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP Category 52/34 line on the desk yet. Named project(s) are cited board / official / newsroom costs, not a Category 52 leftover. Empty outstanding means pending, not zero."
       }
     },
     "lsu": {
@@ -1347,15 +1394,16 @@
           "notes": "Pending a cited Category 52 / athletics-related debt stock."
         },
         "debtService": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Pending a cited Category 34 / annual facilities debt service."
+          "value": 13257498,
+          "confidence": "reported",
+          "source": "LSU FY2025 NCAA AUP (Louisiana Legislative Auditor) \u2014 Category 34 Athletic Facilities Debt Service $13,257,498",
+          "url": "https://app2.lla.state.la.us/publicreports.nsf/0/f5626f9d09f9522486258d8f006c2429/$file/00009a43.pdf?.7773098=&openelement=",
+          "asOf": "2025-06-30",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA AUP statement \u2014 athletic facilities debt service, leases and rental fees $13,257,498. This year\u2019s check (principal + interest + leases/rent), regardless of who paid. Not added to annual capacity."
         },
         "projects": [],
-        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+        "notes": "Hosted FY2025 NCAA AUP on the Louisiana Legislative Auditor site. Statement line Athletic facilities debt service, leases, and rental fees $13,257,498 is Category 34. The notes print LSU Athletics bonds outstanding $44,130,000 and TAF bonds $107,059,438 separately \u2014 no combined Category 52 line is booked. Category 53 university-wide debt is refused. Not added to capacity."
       }
     },
     "mississippi-state": {
@@ -1588,8 +1636,20 @@
           "asOf": null,
           "notes": "Pending a cited Category 34 / annual facilities debt service."
         },
-        "projects": [],
-        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+        "projects": [
+          {
+            "name": "Memorial Stadium Centennial Project (Faurot Field north end zone)",
+            "kind": "stadium",
+            "cost": 250000000,
+            "remaining": null,
+            "through": "2026",
+            "source": "Missouri Athletics \u2014 Memorial Stadium Centennial Project",
+            "url": "https://mutigers.com/news/2026/04/17/from-renderings-to-reality-mizzous-memorial-stadium-centennial-project-comes-to-life-two-years-after-first-images-emerged",
+            "notes": "Official: $250 million project enclosing the north end zone, targeted for the 2026 season. Board of Curators approved design April 18, 2024. Remaining principal is not named. FY2025 Category 52/34 stay pending without a hosted MFRS.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP Category 52/34 line on the desk yet. Named project(s) are cited board / official / newsroom costs, not a Category 52 leftover. Empty outstanding means pending, not zero."
       }
     },
     "oklahoma": {
@@ -1706,8 +1766,20 @@
           "asOf": null,
           "notes": "Pending a cited Category 34 / annual facilities debt service."
         },
-        "projects": [],
-        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+        "projects": [
+          {
+            "name": "The Palace Project \u2014 Gaylord Family Oklahoma Memorial Stadium west side",
+            "kind": "stadium",
+            "cost": 450000000,
+            "remaining": null,
+            "through": "2029",
+            "source": "Oklahoma Athletics \u2014 Board of Regents Palace Project announcement",
+            "url": "https://soonersports.com/news/2025/11/21/football-ou-announces-the-palace-project",
+            "notes": "Regents advanced west-side design; estimated cost of the west-side renovation, inclusive of a sizable maintenance investment, is $450 million. Construction after the 2027 season; completion targeted for the 2029 season. No state-appropriated funds or student tuition/fees. Remaining principal is not named \u2014 do not invent an amortization. FY2025 Category 52 stays pending.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP Category 52/34 line on the desk yet. Named project(s) are cited board / official / newsroom costs, not a Category 52 leftover. Empty outstanding means pending, not zero."
       }
     },
     "ole-miss": {
@@ -2390,8 +2462,20 @@
           "asOf": null,
           "notes": "Pending a cited Category 34 / annual facilities debt service."
         },
-        "projects": [],
-        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+        "projects": [
+          {
+            "name": "Bright-Slocum Center renovation",
+            "kind": "indoor",
+            "cost": 52000000,
+            "remaining": null,
+            "through": "2029",
+            "source": "The Eagle / myAggieNation \u2014 A&M Board of Regents Bright-Slocum $52 million",
+            "url": "https://myaggienation.com/aggie_sports/football/a-m-board-of-regents-approve-renovations-to-bright-slocum-center/article_f5c90578-623c-5649-b792-f2529da62789.html",
+            "notes": "Regents unanimously approved a three-phased $52 million Bright-Slocum renovation. Phase 1A $30 million (locker rooms / training) after the 2026 season; later phases through August 2029. Remaining principal is not named. FY2025 Category 52/34 stay pending \u2014 The Eagle NCAA FOIA story printed rounded $24 million debt service, not the exact Category 34 line.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP Category 52/34 line on the desk yet. Named project(s) are cited board / official / newsroom costs, not a Category 52 leftover. Empty outstanding means pending, not zero."
       }
     },
     "vanderbilt": {
@@ -4492,8 +4576,20 @@
           "asOf": null,
           "notes": "Pending a cited Category 34 / annual facilities debt service."
         },
-        "projects": [],
-        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+        "projects": [
+          {
+            "name": "Ross-Ade Stadium Phase 1 renovation",
+            "kind": "stadium",
+            "cost": 45400000,
+            "remaining": null,
+            "through": "2023",
+            "source": "Purdue News \u2014 Board of Trustees Ross-Ade / Mackey package",
+            "url": "https://www.purdue.edu/newsroom/2022/Q2/purdue-trustees-approve-namings-and-resolutions-of-appreciation-ross-ade-stadium-and-mackey-arena-renovations-contract-extension-for-brohm",
+            "notes": "Trustees: estimated total project cost $45.4 million, gift-funded. Tunnel from Kozuch Football Performance Complex, dining conversion, south-end concourse connector. Completion targeted August 2023. Remaining principal is not named. FY2025 Category 52/34 stay pending without a hosted MFRS.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP Category 52/34 line on the desk yet. Named project(s) are cited board / official / newsroom costs, not a Category 52 leftover. Empty outstanding means pending, not zero."
       }
     },
     "rutgers": {
@@ -8918,8 +9014,20 @@
           "asOf": null,
           "notes": "Pending a cited Category 34 / annual facilities debt service."
         },
-        "projects": [],
-        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+        "projects": [
+          {
+            "name": "Jones AT&T Stadium south end zone / Dustin R. Womble Football Center",
+            "kind": "stadium",
+            "cost": 242000000,
+            "remaining": null,
+            "through": "2025",
+            "source": "Lubbock Avalanche-Journal \u2014 Texas Tech $242 million football facilities project",
+            "url": "https://www.lubbockonline.com/story/sports/college/red-raiders/2024/08/09/texas-tech-football-jones-att-stadium-womble-football-center-latest/74725504007/",
+            "notes": "Newsroom: two-year $242 million project announced July 2022 (south end zone, Womble Football Center, visitors locker room). South end zone opened 2024; Womble completed that winter. A later cite discusses a 30-year payoff plan of more than $200 million \u2014 not an exact remaining principal, so remaining is not booked. FY2025 Category 52/34 stay pending.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP Category 52/34 line on the desk yet. Named project(s) are cited board / official / newsroom costs, not a Category 52 leftover. Empty outstanding means pending, not zero."
       }
     },
     "ucf": {
@@ -9047,8 +9155,20 @@
           "asOf": null,
           "notes": "Pending a cited Category 34 / annual facilities debt service."
         },
-        "projects": [],
-        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+        "projects": [
+          {
+            "name": "Roth Tower expansion \u2014 FBC Mortgage Stadium",
+            "kind": "stadium",
+            "cost": 88000000,
+            "remaining": null,
+            "through": "2026",
+            "source": "FOX 35 Orlando \u2014 UCF Board of Trustees Roth Tower expansion",
+            "url": "https://www.fox35orlando.com/news/ucf-football-stadium-roth-tower-expansion-project",
+            "notes": "Newsroom quoting university records: estimated price tag $88 million, Board of Trustees approved construction and financing. Orange County TDT funding is $90 million; BOT packet also cites $88.6 million of new debt. Cost is the announced estimated project price, not an invented leftover. Through fall 2026. FY2025 Category 52/34 stay pending.",
+            "confidence": "estimated"
+          }
+        ],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP Category 52/34 line on the desk yet. Named project(s) are cited board / official / newsroom costs, not a Category 52 leftover. Empty outstanding means pending, not zero."
       }
     },
     "utah": {
@@ -9284,8 +9404,20 @@
           "asOf": null,
           "notes": "Pending a cited Category 34 / annual facilities debt service."
         },
-        "projects": [],
-        "notes": "No hosted FY2025 NCAA MFRS / AUP athletics-debt line on the desk yet. Empty means pending, not zero."
+        "projects": [
+          {
+            "name": "Milan Puskar Stadium West Tower Press Box",
+            "kind": "stadium",
+            "cost": 150000000,
+            "remaining": null,
+            "through": "2028",
+            "source": "West Virginia Athletics \u2014 AD Wren Baker on the West Tower project",
+            "url": "https://wvusports.com/news/2026/5/22/football-wvus-baker-says-west-tower-press-box-project-moving-along",
+            "notes": "Official: estimated $150 million West Tower Press Box, approved by the Board of Governors. Construction after the 2026 season; open targeted for 2028. Remaining principal is not named. FY2025 Category 52/34 stay pending.",
+            "confidence": "reported"
+          }
+        ],
+        "notes": "No hosted FY2025 NCAA MFRS / AUP Category 52/34 line on the desk yet. Named project(s) are cited board / official / newsroom costs, not a Category 52 leftover. Empty outstanding means pending, not zero."
       }
     },
     "notre-dame": {

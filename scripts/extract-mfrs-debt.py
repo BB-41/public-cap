@@ -35,6 +35,7 @@ PDFS = {
     "south-carolina": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf",
     "colorado": "https://content.leg.colorado.gov/sites/default/files/documents/audits/2505F-B_university_of_colorado_boulder_ncaa_aup_fy25.pdf",
     "florida": "https://floridagators.com/documents/download/2025/9/22/UAA_Financial_Statements_2024_2025.pdf",
+    "lsu": "https://app2.lla.state.la.us/publicreports.nsf/0/f5626f9d09f9522486258d8f006c2429/$file/00009a43.pdf?.7773098=&openelement=",
 }
 
 MONEY = r"\$?\s*([0-9]{1,3}(?:,[0-9]{3})+(?:\.[0-9]+)?|[0-9]+(?:\.[0-9]+)?)"
