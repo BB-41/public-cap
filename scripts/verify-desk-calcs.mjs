@@ -156,6 +156,8 @@ const layers = JSON.parse(readFileSync(new URL('../public/data/layers.json', imp
 ok(layers.schools.wisconsin.apparel?.annualValue?.value === 7_000_000, 'Wisconsin UA $7M kept')
 ok(layers.schools.kentucky.apparel?.annualValue?.value === 7_000_000, 'Kentucky Nike $7M kept')
 ok(layers.schools.kentucky.apparel?.naming?.[0]?.annualValue === 1_850_000, 'Kroger Field $1.85M kept')
+ok(layers.schools['texas-am'].apparel?.annualValue?.value === 9_000_000, 'Texas A&M Adidas cash+product $9M')
+ok(layers.schools.lsu.apparel?.annualValue?.value == null, 'LSU Nike AAV stays pending')
 let feeCells = 0
 for (const s of data.schools) {
   if (s.capacity?.studentFees?.value != null) feeCells += 1
@@ -168,7 +170,7 @@ for (const s of data.schools) {
   const pay = s.staff?.athleticDirector?.pay
   if (pay && pay.value != null) adPaid += 1
 }
-ok(adPaid === 44, `44 paid AD cells kept (${adPaid})`)
+ok(adPaid === 49, `49 paid AD cells kept (${adPaid})`)
 ok(byId.minnesota.staff.athleticDirector.name === 'Mark Coyle', 'Minnesota current AD is Mark Coyle')
 ok(byId.minnesota.staff.athleticDirector.pay.value === 2_000_000, 'Coyle CY7 base $2.0M')
 ok(byId.minnesota.staff.athleticDirector.pay.year === 2026, 'Coyle pay is year-pinned 2026')
@@ -199,6 +201,17 @@ ok(byId.kansas.staff.athleticDirector.pay.value === 1_380_000, 'Goff 2026-27 $1.
 ok(byId['oklahoma-state'].staff.athleticDirector.pay.value === 750_000, 'Weiberg $750k')
 ok(byId.pittsburgh.staff.athleticDirector.name === 'Allen Greene', 'Pitt current AD is Allen Greene')
 ok(byId.pittsburgh.staff.athleticDirector.pay?.value == null, 'Greene pay stays pending')
+ok(byId['arizona-state'].staff.athleticDirector.name === 'Graham Rossini', 'ASU current AD is Graham Rossini')
+ok(byId['arizona-state'].staff.athleticDirector.pay.value === 950_000, 'Rossini July 1 2025 base $950k')
+ok(byId['arizona-state'].staff.athleticDirector.pay.year === 2025, 'Rossini pay is year-pinned 2025')
+ok(byId['west-virginia'].staff.athleticDirector.name === 'Wren Baker', 'WVU current AD is Wren Baker')
+ok(byId['west-virginia'].staff.athleticDirector.pay.value === 1_400_000, 'Baker 2026 step $1.4M')
+ok(byId.ucf.staff.athleticDirector.name === 'Terry Mohajir', 'UCF current AD is Terry Mohajir')
+ok(byId.ucf.staff.athleticDirector.pay.value === 1_000_000, 'Mohajir 2026 SID $1M')
+ok(byId.cincinnati.staff.athleticDirector.name === 'John Cunningham', 'Cincinnati current AD is John Cunningham')
+ok(byId.cincinnati.staff.athleticDirector.pay.value === 725_000, 'Cunningham 2026-27 $725k')
+ok(byId.houston.staff.athleticDirector.name === 'Eddie Nunez', 'Houston current AD is Eddie Nunez')
+ok(byId.houston.staff.athleticDirector.pay.value === 1_000_000, 'Nunez 2026 step $1M')
 ok(byId.maryland.staff.athleticDirector.pay.value === 1_500_000, 'Smith obtained-EA $1.5M')
 ok(byId.virginia.staff.athleticDirector.name === 'Carla Williams', 'UVA current AD is Carla Williams')
 ok(byId.virginia.staff.athleticDirector.pay.value === 1_405_470, 'Williams FOIA $1,405,470')
@@ -248,6 +261,12 @@ ok(layers.schools.auburn.buyoutsPaid.some((b) => b.coach === 'Hugh Freeze' && b.
 const freezeYears = layers.schools.auburn.buyoutsPaid.filter((b) => b.coach === 'Hugh Freeze' && b.year >= 2026)
 ok(freezeYears.length === 3 && freezeYears.every((b) => b.amount === 4_907_688 && b.year <= 2028), 'Freeze year-cash rows 2026–28 only')
 ok(byId.oklahoma.coachesByYear['2026'].football.pay.value == null, 'Venables 2026 not booked from AAV')
+ok(byId['nc-state'].coachesByYear['2026'].football.pay.value === 5_750_000, 'Doeren 2026 FOIA $5.75M')
+ok(!isUsaToday(byId['nc-state'].coachesByYear['2026'].football.pay), 'Doeren 2026 is not USA TODAY')
+ok(byId['nc-state'].coaches.football.pay.value === 6_215_377, 'Doeren current-deal line stays the USA TODAY 2025 snapshot')
+ok(byId['west-virginia'].coachesByYear['2026'].football.pay.value === 3_600_000, 'Rodriguez 2026 MOU step $3.6M')
+ok(!isUsaToday(byId['west-virginia'].coachesByYear['2026'].football.pay), 'Rodriguez 2026 is not USA TODAY')
+ok(byId['west-virginia'].coaches.football.pay.value === 3_600_000, 'Rodriguez current-deal line stays the USA TODAY 2025 snapshot')
 ok(layers.schools.lsu.buyoutsPaid.some((b) => b.coach === 'Ed Orgeron' && b.amount === 16_900_000 && b.through === '2025-12'), 'Orgeron lump through Dec 2025')
 const kellyYears = layers.schools.lsu.buyoutsPaid.filter((b) => b.coach === 'Brian Kelly')
 ok(kellyYears.length === 6 && kellyYears.every((b) => b.amount === 8_866_667), 'Kelly paid-buyout year rows 2026–31')

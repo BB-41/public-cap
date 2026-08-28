@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-27",
+  "asOf": "2026-08-28",
   "notes": "Year-pinned current-AD dollars only. USA TODAY Sports has no live athletics-director salary table on sportsdata.usatoday.com (see ad-usat/probe.json). Rows here are USA TODAY Network stories that name a dollar, or state payroll / university FOIA / board minutes that name current AD pay. Never invent. Never scrape On3 / Opendorse / NIL Go. A 2024 number is not applied to a 2026 AD who is a different person. Joe Castiglione $2.2M (USA TODAY 2024-08-29) is omitted because Oklahoma's current chair is Roger Denny.",
   "cites": [
     {
@@ -451,6 +451,61 @@
       "source": "U. of Minnesota Regents finance docket — Coyle third amendment",
       "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-06/docket-fin-june2026-v3.pdf",
       "notes": "CY7 (2026-27) base $2.0M. Longevity / supplemental retirement not added. Not the $2.76M AAV.",
+      "confidence": "reported"
+    },
+    {
+      "id": "arizona-state",
+      "name": "Graham Rossini",
+      "pay": 950000,
+      "year": 2025,
+      "asOf": "2025-04-10",
+      "source": "Arizona Sports — ABOR Rossini extension",
+      "url": "https://arizonasports.com/ncaa/arizona-state/arizona-state-football/rossini-ext",
+      "notes": "July 1, 2025 base $950k. $50k–$100k annual raise not invented.",
+      "confidence": "reported"
+    },
+    {
+      "id": "west-virginia",
+      "name": "Wren Baker",
+      "pay": 1400000,
+      "year": 2026,
+      "asOf": "2025-07-24",
+      "source": "WV MetroNews — Baker second amendment",
+      "url": "https://wvmetronews.com/2025/07/24/wvu-director-of-athletics-wren-baker-agree-on-contract-extension/",
+      "notes": "2026 calendar step $1.4M from the published +$100k schedule. Retention not added.",
+      "confidence": "reported"
+    },
+    {
+      "id": "ucf",
+      "name": "Terry Mohajir",
+      "pay": 1000000,
+      "year": 2026,
+      "asOf": "2025-06-20",
+      "source": "Sons of UCF — Mohajir SID extension summary",
+      "url": "https://www.sonsofucf.com/ucf-ad-terry-mohajir-talks-adjustments-for-knights/",
+      "notes": "SID schedule: $1.0M in 2026. Bonuses not added.",
+      "confidence": "reported"
+    },
+    {
+      "id": "cincinnati",
+      "name": "John Cunningham",
+      "pay": 725000,
+      "year": 2026,
+      "asOf": "2023-08-18",
+      "source": "The Athletic — Cunningham extension via public records",
+      "url": "https://www.nytimes.com/athletic/4785862/2023/08/18/cincinnati-ad-john-cunningham-contract/",
+      "notes": "2026-27 step $725k from the published +$25k schedule. Retention not added.",
+      "confidence": "reported"
+    },
+    {
+      "id": "houston",
+      "name": "Eddie Nunez",
+      "pay": 1000000,
+      "year": 2026,
+      "asOf": "2024-08-26",
+      "source": "Houston Chronicle / Albuquerque Journal — Nuñez UH hire table",
+      "url": "https://www.abqjournal.com/sports/lobo-coaches-confident-in-new-athletic-director-search-details-of-eddie-nuezs-houston-contract-emerge/438695",
+      "notes": "2026 step $1.0M from the published +$50k schedule. Incentives not added.",
       "confidence": "reported"
     }
   ]
