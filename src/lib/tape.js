@@ -9,6 +9,7 @@ export const KIND_LABELS = {
   naming: 'Naming',
   subsidy: 'Subsidy',
   'student-fee': 'Student fee',
+  debt: 'Athletics debt',
   990: '990',
   foia: 'FOIA',
   'house-cap': 'House cap',

@@ -1,7 +1,7 @@
 /**
  * Desk layers that sit beside the capacity stack:
  * transfer portal, apparel/naming, student-fee subsidy,
- * wins-per-dollar, and buyouts actually paid.
+ * athletics debt, wins-per-dollar, and buyouts actually paid.
  *
  * Efficiency is computed here. NIL denominator is booked when present,
  * else the modeled midpoint (labeled modeled).
@@ -123,4 +123,18 @@ export function publishedFeeTimesEnrollment(feeRate, enrollment) {
 
 export function layerHasBuyoutPaid(layer) {
   return (layer?.buyoutsPaid || []).some((b) => b.amount != null || b.confidence === 'pending')
+}
+
+/** Outstanding stock wins the headline. Debt service is the fallback. Projects alone stay in the breakdown. */
+export function debtHeadline(debt) {
+  if (debt?.outstanding?.value != null) return { field: debt.outstanding, kind: 'outstanding' }
+  if (debt?.debtService?.value != null) return { field: debt.debtService, kind: 'debtService' }
+  return { field: null, kind: null }
+}
+
+export function layerHasDebt(layer) {
+  const d = layer?.debt
+  if (!d) return false
+  if (d.outstanding?.value != null || d.debtService?.value != null) return true
+  return (d.projects || []).some((p) => p && (p.cost != null || p.remaining != null || p.name))
 }

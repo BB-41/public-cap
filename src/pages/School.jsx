@@ -714,7 +714,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
 
       <StaffSection school={s} season={season} />
 
-      <Layers school={s} />
+      <Layers school={s} open={open} onToggle={setOpen} />
 
       <TvContracts school={s} season={season} />
 

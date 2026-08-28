@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-28",
-    "itemCount": 252,
+    "itemCount": 294,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -3789,6 +3789,636 @@
         "url": "https://knightnewhousedata.org/fbs/big-12/west-virginia-university"
       },
       "field": "capacity.institutionalSupport"
+    },
+    {
+      "id": "arkansas-debt-outstanding-fy2025",
+      "date": "2026-01",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "debt",
+      "headline": "Arkansas FY2025 athletics-related debt (stock) is $131,210,939.",
+      "figure": 131210939,
+      "confidence": "reported",
+      "source": {
+        "label": "Arkansas FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $131,210,939",
+        "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "florida-state-debt-outstanding-fy2025",
+      "date": "2026-01-31",
+      "school": "florida-state",
+      "schoolName": "Florida State",
+      "kind": "debt",
+      "headline": "Florida State FY2025 athletics-related debt (stock) is $436,518,989.",
+      "figure": 436518989,
+      "confidence": "reported",
+      "source": {
+        "label": "Florida State FY2025 NCAA Membership Financial Report (DocumentCloud / Tallahassee Democrat) \u2014 Category 52 Total Athletics Related Debt $436,518,989",
+        "url": "https://s3.documentcloud.org/documents/26597309/fsu-ncaa-financial-report-fy25.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "georgia-debt-outstanding-fy2025",
+      "date": "2026-01-15",
+      "school": "georgia",
+      "schoolName": "Georgia",
+      "kind": "debt",
+      "headline": "Georgia FY2025 athletics-related debt (stock) is $148,629,203.",
+      "figure": 148629203,
+      "confidence": "reported",
+      "source": {
+        "label": "UGA FY2025 NCAA financial report \u2014 Category 52 Total Athletics Related Debt $148,629,203",
+        "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "illinois-debt-outstanding-fy2025",
+      "date": "2026-01-29",
+      "school": "illinois",
+      "schoolName": "Illinois",
+      "kind": "debt",
+      "headline": "Illinois FY2025 athletics-related debt (stock) is $304,463,059.",
+      "figure": 304463059,
+      "confidence": "reported",
+      "source": {
+        "label": "Illinois FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $304,463,059",
+        "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "iowa-state-debt-outstanding-fy2025",
+      "date": "2026-01-16",
+      "school": "iowa-state",
+      "schoolName": "Iowa State",
+      "kind": "debt",
+      "headline": "Iowa State FY2025 athletics-related debt (stock) is $132,414,190.",
+      "figure": 132414190,
+      "confidence": "reported",
+      "source": {
+        "label": "Iowa State FY2025 NCAA Financial Report \u2014 Category 52 Total Athletics Related Debt $132,414,190",
+        "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "kansas-debt-outstanding-fy2025",
+      "date": "2026-01-15",
+      "school": "kansas",
+      "schoolName": "Kansas",
+      "kind": "debt",
+      "headline": "Kansas FY2025 athletics-related debt (stock) is $198,099,309.",
+      "figure": 198099309,
+      "confidence": "reported",
+      "source": {
+        "label": "Kansas FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $198,099,309",
+        "url": "https://kuathletics.com/documents/download/2026/1/15/FY_24-25_NCAA_Final_Report.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "minnesota-debt-outstanding-fy2025",
+      "date": "2026-01-20",
+      "school": "minnesota",
+      "schoolName": "Minnesota",
+      "kind": "debt",
+      "headline": "Minnesota FY2025 athletics-related debt (stock) is $150,552,241.",
+      "figure": 150552241,
+      "confidence": "reported",
+      "source": {
+        "label": "Minnesota FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $150,552,241",
+        "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "north-carolina-debt-outstanding-fy2025",
+      "date": "2026-02-03",
+      "school": "north-carolina",
+      "schoolName": "North Carolina",
+      "kind": "debt",
+      "headline": "North Carolina FY2025 athletics-related debt (stock) is $48,677,171.",
+      "figure": 48677171,
+      "confidence": "reported",
+      "source": {
+        "label": "UNC FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $48,677,171",
+        "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "ohio-state-debt-outstanding-fy2025",
+      "date": "2026-01-30",
+      "school": "ohio-state",
+      "schoolName": "Ohio State",
+      "kind": "debt",
+      "headline": "Ohio State FY2025 athletics-related debt (stock) is $273,599,995.",
+      "figure": 273599995,
+      "confidence": "reported",
+      "source": {
+        "label": "Ohio State FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $273,599,995",
+        "url": "https://news.osu.edu/download/c91b5f24-f009-4455-81eb-4b89b108f1bc/fy25ncaamembershipreportfinal.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "ole-miss-debt-outstanding-fy2025",
+      "date": "2026-01-15",
+      "school": "ole-miss",
+      "schoolName": "Ole Miss",
+      "kind": "debt",
+      "headline": "Ole Miss FY2025 athletics-related debt (stock) is $85,470,702.",
+      "figure": 85470702,
+      "confidence": "reported",
+      "source": {
+        "label": "Ole Miss FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $85,470,702",
+        "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "oregon-debt-outstanding-fy2025",
+      "date": "2026-01-13",
+      "school": "oregon",
+      "schoolName": "Oregon",
+      "kind": "debt",
+      "headline": "Oregon FY2025 athletics-related debt (stock) is $157,942,463.",
+      "figure": 157942463,
+      "confidence": "reported",
+      "source": {
+        "label": "Oregon FY2025 NCAA FRS \u2014 Category 52 Total Athletics Related Debt $157,942,463",
+        "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "tennessee-debt-outstanding-fy2025",
+      "date": "2026-01-15",
+      "school": "tennessee",
+      "schoolName": "Tennessee",
+      "kind": "debt",
+      "headline": "Tennessee FY2025 athletics-related debt (stock) is $327,732,018.",
+      "figure": 327732018,
+      "confidence": "reported",
+      "source": {
+        "label": "Tennessee FY2025 NCAA AUP / Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $327,732,018",
+        "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "utah-debt-outstanding-fy2025",
+      "date": "2026-01-21",
+      "school": "utah",
+      "schoolName": "Utah",
+      "kind": "debt",
+      "headline": "Utah FY2025 athletics-related debt (stock) is $90,742,848.",
+      "figure": 90742848,
+      "confidence": "reported",
+      "source": {
+        "label": "Utah FY2025 NCAA Revenue and Expense Report \u2014 Category 52 Total Athletics Related Debt $90,742,848",
+        "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "virginia-debt-outstanding-fy2025",
+      "date": "2026-03",
+      "school": "virginia",
+      "schoolName": "Virginia",
+      "kind": "debt",
+      "headline": "Virginia FY2025 athletics-related debt (stock) is $24,939,741.",
+      "figure": 24939741,
+      "confidence": "reported",
+      "source": {
+        "label": "Virginia FY2025 NCAA Membership Financial Report (published copy) \u2014 Category 52 Total Athletics Related Debt $24,939,741",
+        "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "washington-debt-outstanding-fy2025",
+      "date": "2026-01-17",
+      "school": "washington",
+      "schoolName": "Washington",
+      "kind": "debt",
+      "headline": "Washington FY2025 athletics-related debt (stock) is $279,089,162.",
+      "figure": 279089162,
+      "confidence": "reported",
+      "source": {
+        "label": "Washington FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $279,089,162",
+        "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "wisconsin-debt-outstanding-fy2025",
+      "date": "2026-01-16",
+      "school": "wisconsin",
+      "schoolName": "Wisconsin",
+      "kind": "debt",
+      "headline": "Wisconsin FY2025 athletics-related debt (stock) is $130,627,132.",
+      "figure": 130627132,
+      "confidence": "reported",
+      "source": {
+        "label": "Wisconsin FY2025 NCAA Membership Financial Report \u2014 Category 52 Total Athletics Related Debt $130,627,132",
+        "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "south-carolina-debt-outstanding-fy2025",
+      "date": "2025-06-30",
+      "school": "south-carolina",
+      "schoolName": "South Carolina",
+      "kind": "debt",
+      "headline": "South Carolina FY2025 athletics-related debt (stock) is $153,235,000.",
+      "figure": 153235000,
+      "confidence": "reported",
+      "source": {
+        "label": "South Carolina FY2025 NCAA AUP (Columbia campus) \u2014 Category 52 Total Athletics Related Debt $153,235,000",
+        "url": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "colorado-debt-outstanding-fy2025",
+      "date": "2025-06-30",
+      "school": "colorado",
+      "schoolName": "Colorado",
+      "kind": "debt",
+      "headline": "Colorado FY2025 athletics-related debt (stock) is $138,829,000.",
+      "figure": 138829000,
+      "confidence": "reported",
+      "source": {
+        "label": "Colorado Boulder FY2025 NCAA AUP (Colorado OSA) \u2014 Category 52 Total Athletics Related Debt $138,829,000",
+        "url": "https://content.leg.colorado.gov/sites/default/files/documents/audits/2505F-B_university_of_colorado_boulder_ncaa_aup_fy25.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "florida-debt-outstanding-fy2025",
+      "date": "2025-06-30",
+      "school": "florida",
+      "schoolName": "Florida",
+      "kind": "debt",
+      "headline": "Florida FY2025 athletics-related debt (stock) is $134,895,000.",
+      "figure": 134895000,
+      "confidence": "reported",
+      "source": {
+        "label": "University Athletic Association (Florida) FY2025 audited financial statements \u2014 long-term debt $134,895,000",
+        "url": "https://floridagators.com/documents/download/2025/9/22/UAA_Financial_Statements_2024_2025.pdf"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "penn-state-debt-outstanding-fy2025",
+      "date": "2025-12",
+      "school": "penn-state",
+      "schoolName": "Penn State",
+      "kind": "debt",
+      "headline": "Penn State FY2025 athletics-related debt (stock) is $534,650,181.",
+      "figure": 534650181,
+      "confidence": "reported",
+      "source": {
+        "label": "StateCollege.com \u2014 Penn State FY2025 NCAA financial report \u2014 athletics-related debt $534,650,181",
+        "url": "https://www.statecollege.com/articles/penn-state-sports/analyzing-penn-state-athletics-financial-report/"
+      },
+      "field": "layers.debt.outstanding"
+    },
+    {
+      "id": "arkansas-debt-service-fy2025",
+      "date": "2026-01",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "debt",
+      "headline": "Arkansas FY2025 Category 34 athletic facilities debt service is $18,833,345.",
+      "figure": 18833345,
+      "confidence": "reported",
+      "source": {
+        "label": "Arkansas FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $18,833,345",
+        "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "florida-state-debt-service-fy2025",
+      "date": "2026-01-31",
+      "school": "florida-state",
+      "schoolName": "Florida State",
+      "kind": "debt",
+      "headline": "Florida State FY2025 Category 34 athletic facilities debt service is $25,664,066.",
+      "figure": 25664066,
+      "confidence": "reported",
+      "source": {
+        "label": "Florida State FY2025 NCAA Membership Financial Report (DocumentCloud / Tallahassee Democrat) \u2014 Category 34 Athletic Facilities Debt Service $25,664,066",
+        "url": "https://s3.documentcloud.org/documents/26597309/fsu-ncaa-financial-report-fy25.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "georgia-debt-service-fy2025",
+      "date": "2026-01-15",
+      "school": "georgia",
+      "schoolName": "Georgia",
+      "kind": "debt",
+      "headline": "Georgia FY2025 Category 34 athletic facilities debt service is $13,398,448.",
+      "figure": 13398448,
+      "confidence": "reported",
+      "source": {
+        "label": "UGA FY2025 NCAA financial report \u2014 Category 34 Athletic Facilities Debt Service $13,398,448",
+        "url": "https://georgiadogs.com/documents/download/2026/1/15/2025_NCAA_Financial_Report.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "illinois-debt-service-fy2025",
+      "date": "2026-01-29",
+      "school": "illinois",
+      "schoolName": "Illinois",
+      "kind": "debt",
+      "headline": "Illinois FY2025 Category 34 athletic facilities debt service is $17,770,740.",
+      "figure": 17770740,
+      "confidence": "reported",
+      "source": {
+        "label": "Illinois FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $17,770,740",
+        "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "iowa-state-debt-service-fy2025",
+      "date": "2026-01-16",
+      "school": "iowa-state",
+      "schoolName": "Iowa State",
+      "kind": "debt",
+      "headline": "Iowa State FY2025 Category 34 athletic facilities debt service is $12,090,096.",
+      "figure": 12090096,
+      "confidence": "reported",
+      "source": {
+        "label": "Iowa State FY2025 NCAA Financial Report \u2014 Category 34 Athletic Facilities Debt Service $12,090,096",
+        "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "kansas-debt-service-fy2025",
+      "date": "2026-01-15",
+      "school": "kansas",
+      "schoolName": "Kansas",
+      "kind": "debt",
+      "headline": "Kansas FY2025 Category 34 athletic facilities debt service is $5,852,923.",
+      "figure": 5852923,
+      "confidence": "reported",
+      "source": {
+        "label": "Kansas FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $5,852,923",
+        "url": "https://kuathletics.com/documents/download/2026/1/15/FY_24-25_NCAA_Final_Report.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "minnesota-debt-service-fy2025",
+      "date": "2026-01-20",
+      "school": "minnesota",
+      "schoolName": "Minnesota",
+      "kind": "debt",
+      "headline": "Minnesota FY2025 Category 34 athletic facilities debt service is $7,939,461.",
+      "figure": 7939461,
+      "confidence": "reported",
+      "source": {
+        "label": "Minnesota FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $7,939,461",
+        "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "north-carolina-debt-service-fy2025",
+      "date": "2026-02-03",
+      "school": "north-carolina",
+      "schoolName": "North Carolina",
+      "kind": "debt",
+      "headline": "North Carolina FY2025 Category 34 athletic facilities debt service is $5,213,340.",
+      "figure": 5213340,
+      "confidence": "reported",
+      "source": {
+        "label": "UNC FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $5,213,340",
+        "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "ohio-state-debt-service-fy2025",
+      "date": "2026-01-30",
+      "school": "ohio-state",
+      "schoolName": "Ohio State",
+      "kind": "debt",
+      "headline": "Ohio State FY2025 Category 34 athletic facilities debt service is $29,710,677.",
+      "figure": 29710677,
+      "confidence": "reported",
+      "source": {
+        "label": "Ohio State FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $29,710,677",
+        "url": "https://news.osu.edu/download/c91b5f24-f009-4455-81eb-4b89b108f1bc/fy25ncaamembershipreportfinal.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "ole-miss-debt-service-fy2025",
+      "date": "2026-01-15",
+      "school": "ole-miss",
+      "schoolName": "Ole Miss",
+      "kind": "debt",
+      "headline": "Ole Miss FY2025 Category 34 athletic facilities debt service is $12,798,652.",
+      "figure": 12798652,
+      "confidence": "reported",
+      "source": {
+        "label": "Ole Miss FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $12,798,652",
+        "url": "https://olemisssports.com/documents/download/2026/1/15/NCAAReport_FY25.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "oregon-debt-service-fy2025",
+      "date": "2026-01-13",
+      "school": "oregon",
+      "schoolName": "Oregon",
+      "kind": "debt",
+      "headline": "Oregon FY2025 Category 34 athletic facilities debt service is $18,303,978.",
+      "figure": 18303978,
+      "confidence": "reported",
+      "source": {
+        "label": "Oregon FY2025 NCAA FRS \u2014 Category 34 Athletic Facilities Debt Service $18,303,978",
+        "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_NCAA_FRS_FY2025_FINAL.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "tennessee-debt-service-fy2025",
+      "date": "2026-01-15",
+      "school": "tennessee",
+      "schoolName": "Tennessee",
+      "kind": "debt",
+      "headline": "Tennessee FY2025 Category 34 athletic facilities debt service is $12,732,343.",
+      "figure": 12732343,
+      "confidence": "reported",
+      "source": {
+        "label": "Tennessee FY2025 NCAA AUP / Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $12,732,343",
+        "url": "https://utsports.com/documents/download/2026/1/15/FY25_NCAA_AUP.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "utah-debt-service-fy2025",
+      "date": "2026-01-21",
+      "school": "utah",
+      "schoolName": "Utah",
+      "kind": "debt",
+      "headline": "Utah FY2025 Category 34 athletic facilities debt service is $11,181,497.",
+      "figure": 11181497,
+      "confidence": "reported",
+      "source": {
+        "label": "Utah FY2025 NCAA Revenue and Expense Report \u2014 Category 34 Athletic Facilities Debt Service $11,181,497",
+        "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "virginia-debt-service-fy2025",
+      "date": "2026-03",
+      "school": "virginia",
+      "schoolName": "Virginia",
+      "kind": "debt",
+      "headline": "Virginia FY2025 Category 34 athletic facilities debt service is $1,331,006.",
+      "figure": 1331006,
+      "confidence": "reported",
+      "source": {
+        "label": "Virginia FY2025 NCAA Membership Financial Report (published copy) \u2014 Category 34 Athletic Facilities Debt Service $1,331,006",
+        "url": "https://stuffsomerssays.com/wp-content/uploads/2026/03/NCAA_MFRS_Submission_FY25.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "washington-debt-service-fy2025",
+      "date": "2026-01-17",
+      "school": "washington",
+      "schoolName": "Washington",
+      "kind": "debt",
+      "headline": "Washington FY2025 Category 34 athletic facilities debt service is $9,922,009.",
+      "figure": 9922009,
+      "confidence": "reported",
+      "source": {
+        "label": "Washington FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $9,922,009",
+        "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "wisconsin-debt-service-fy2025",
+      "date": "2026-01-16",
+      "school": "wisconsin",
+      "schoolName": "Wisconsin",
+      "kind": "debt",
+      "headline": "Wisconsin FY2025 Category 34 athletic facilities debt service is $10,470,659.",
+      "figure": 10470659,
+      "confidence": "reported",
+      "source": {
+        "label": "Wisconsin FY2025 NCAA Membership Financial Report \u2014 Category 34 Athletic Facilities Debt Service $10,470,659",
+        "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "south-carolina-debt-service-fy2025",
+      "date": "2025-06-30",
+      "school": "south-carolina",
+      "schoolName": "South Carolina",
+      "kind": "debt",
+      "headline": "South Carolina FY2025 Category 34 athletic facilities debt service is $14,755,276.",
+      "figure": 14755276,
+      "confidence": "reported",
+      "source": {
+        "label": "South Carolina FY2025 NCAA AUP (Columbia campus) \u2014 Category 34 Athletic Facilities Debt Service $14,755,276",
+        "url": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "colorado-debt-service-fy2025",
+      "date": "2025-06-30",
+      "school": "colorado",
+      "schoolName": "Colorado",
+      "kind": "debt",
+      "headline": "Colorado FY2025 Category 34 athletic facilities debt service is $14,649,402.",
+      "figure": 14649402,
+      "confidence": "reported",
+      "source": {
+        "label": "Colorado Boulder FY2025 NCAA AUP (Colorado OSA) \u2014 Category 34 Athletic Facilities Debt Service $14,649,402",
+        "url": "https://content.leg.colorado.gov/sites/default/files/documents/audits/2505F-B_university_of_colorado_boulder_ncaa_aup_fy25.pdf"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "penn-state-debt-service-fy2025",
+      "date": "2025-12",
+      "school": "penn-state",
+      "schoolName": "Penn State",
+      "kind": "debt",
+      "headline": "Penn State FY2025 Category 34 athletic facilities debt service is $24,204,901.",
+      "figure": 24204901,
+      "confidence": "reported",
+      "source": {
+        "label": "StateCollege.com \u2014 Penn State FY2025 NCAA financial report \u2014 facilities debt, renting or leases $24,204,901",
+        "url": "https://www.statecollege.com/articles/penn-state-sports/analyzing-penn-state-athletics-financial-report/"
+      },
+      "field": "layers.debt.debtService"
+    },
+    {
+      "id": "penn-state-debt-project-0",
+      "date": "2025-12",
+      "school": "penn-state",
+      "schoolName": "Penn State",
+      "kind": "debt",
+      "headline": "Penn State named athletics-debt project: Beaver Stadium renovation ($700,000,000)",
+      "figure": 700000000,
+      "confidence": "reported",
+      "source": {
+        "label": "StateCollege.com quoting Penn State deputy AD Vinnie James / NCAA report coverage",
+        "url": "https://www.statecollege.com/articles/penn-state-sports/analyzing-penn-state-athletics-financial-report/"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "iowa-debt-project-0",
+      "date": "2025-07-01",
+      "school": "iowa",
+      "schoolName": "Iowa",
+      "kind": "debt",
+      "headline": "Iowa named athletics-debt project: Athletics COVID campus loan ($50,000,000)",
+      "figure": 50000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Gazette \u2014 UI Athletics $50M loan amended to 30 years",
+        "url": "https://www.thegazette.com/news/university-of-iowa-athletics-will-pay-back-50m-loan-in-30-years-not-15/article_25c9740e-fcd2-4511-b6f2-cf922e06641f.html"
+      },
+      "field": "layers.debt.projects"
+    },
+    {
+      "id": "nebraska-debt-project-0",
+      "date": "2026-04-24",
+      "school": "nebraska",
+      "schoolName": "Nebraska",
+      "kind": "debt",
+      "headline": "Nebraska named athletics-debt project: Memorial Stadium Big Red Rebuild ($600,000,000)",
+      "figure": 600000000,
+      "confidence": "reported",
+      "source": {
+        "label": "AP \u2014 Nebraska Board of Regents April 24, 2026",
+        "url": "https://apnews.com/article/nebraska-memorial-stadium-f6c32cfd79d29a4b8884cf5516ebf073"
+      },
+      "field": "layers.debt.projects"
     }
   ]
 }
