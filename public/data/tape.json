@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-28",
-    "itemCount": 242,
+    "itemCount": 243,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,21 @@
     ]
   },
   "items": [
+    {
+      "id": "minnesota-ad-coyle-2026-third-amendment",
+      "date": "2026-06-11",
+      "school": "minnesota",
+      "schoolName": "Minnesota",
+      "kind": "filing",
+      "headline": "Minnesota Regents June 11, 2026 finance docket (v3) books Mark Coyle Contract Year Seven base at $2,000,000.",
+      "figure": 2000000,
+      "confidence": "reported",
+      "source": {
+        "label": "U. of Minnesota Regents finance docket (June 11, 2026) \u2014 Coyle third amendment",
+        "url": "https://regents.umn.edu/sites/regents.umn.edu/files/2026-06/docket-fin-june2026-v3.pdf"
+      },
+      "field": "staff.athleticDirector.pay"
+    },
     {
       "id": "virginia-pay-elliott-2026-mou",
       "date": "2026-03-16",

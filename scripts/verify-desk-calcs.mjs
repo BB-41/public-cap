@@ -168,7 +168,11 @@ for (const s of data.schools) {
   const pay = s.staff?.athleticDirector?.pay
   if (pay && pay.value != null) adPaid += 1
 }
-ok(adPaid === 43, `43 paid AD cells kept (${adPaid})`)
+ok(adPaid === 44, `44 paid AD cells kept (${adPaid})`)
+ok(byId.minnesota.staff.athleticDirector.name === 'Mark Coyle', 'Minnesota current AD is Mark Coyle')
+ok(byId.minnesota.staff.athleticDirector.pay.value === 2_000_000, 'Coyle CY7 base $2.0M')
+ok(byId.minnesota.staff.athleticDirector.pay.year === 2026, 'Coyle pay is year-pinned 2026')
+ok(/not the .*2\.76|not .*average/i.test(byId.minnesota.staff.athleticDirector.pay.notes || ''), 'Coyle notes refuse the $2.76M AAV')
 ok(byId['ohio-state'].staff.athleticDirector.pay.value === 2_000_000, 'Ross Bjork AD pay kept')
 ok(byId.texas.staff.athleticDirector.pay.value === 2_900_000, 'Del Conte AD pay kept')
 ok(byId.kentucky.staff.athleticDirector.name === 'J Batt', 'Kentucky current AD is J Batt')
