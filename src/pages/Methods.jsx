@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { money, moneyRange } from '../lib/format.js'
 import {
   CONFERENCE_NIL,
@@ -14,9 +15,36 @@ import { useTvBook } from '../lib/tv.js'
 
 const EXAMPLE_MID = CONFERENCE_NIL.SEC.total // published example at the SEC median
 
-export default function Methods({ meta }) {
+export default function Methods({ meta: metaProp }) {
+  const [meta, setMeta] = useState(metaProp || null)
+  useEffect(() => {
+    if (metaProp) {
+      setMeta(metaProp)
+      return
+    }
+    let cancelled = false
+    fetch('/data/meta.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((m) => {
+        if (!cancelled) setMeta(m)
+      })
+      .catch(() => {
+        if (!cancelled) setMeta(null)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [metaProp])
   const example = rateCardForMethods(EXAMPLE_MID)
   const tv = useTvBook()
+  if (!meta) {
+    return (
+      <div className="page-wrap methods">
+        <h1 className="issue-hed">How the desk is built. · 68 schools</h1>
+        <p className="lede">Setting type…</p>
+      </div>
+    )
+  }
   return (
     <div className="page-wrap methods">
       <h1 className="issue-hed">How the desk is built. · 68 schools</h1>

@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "split-desk": "node scripts/split-desk-payload.mjs",
+    "verify": "node scripts/verify-desk-calcs.mjs && node scripts/verify-desk-split.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

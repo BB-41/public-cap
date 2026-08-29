@@ -1,0 +1,17 @@
+/logo-pc.png
+  Cache-Control: public, max-age=604800
+
+/logos/*
+  Cache-Control: public, max-age=604800
+
+/data/desk.json
+  Cache-Control: public, max-age=300
+
+/data/meta.json
+  Cache-Control: public, max-age=300
+
+/data/layers-lite.json
+  Cache-Control: public, max-age=300
+
+/data/school-full/*
+  Cache-Control: public, max-age=300

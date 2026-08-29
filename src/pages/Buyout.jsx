@@ -59,7 +59,7 @@ export default function Buyout() {
         return r.json()
       }),
       fetch('/data/schedules-2026.json').then((r) => (r.ok ? r.json() : { schools: {} })),
-      fetch('/data/schools.json').then((r) => (r.ok ? r.json() : { schools: [] })),
+      fetch('/data/desk.json').then((r) => (r.ok ? r.json() : { schools: [] })),
     ])
       .then(([b, sc, sk]) => {
         setBook(b)

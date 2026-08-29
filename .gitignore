@@ -4,3 +4,7 @@ dist/
 *.log
 __pycache__/
 data/__pycache__/
+public/data/desk.json
+public/data/meta.json
+public/data/layers-lite.json
+public/data/school-full/
