@@ -1,24 +1,29 @@
-import { useEffect, useMemo, useState } from 'react'
-import { Link, NavLink, Route, Routes, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
+import { Route, Routes, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import School from './pages/School.jsx'
 import Compare from './pages/Compare.jsx'
-import Methods from './pages/Methods.jsx'
-import Tape from './pages/Tape.jsx'
-import Tv from './pages/Tv.jsx'
-import Buyout from './pages/Buyout.jsx'
-import { computeCapacity, confidenceRollup, hasVal, parseAlumniParam, ratios, val } from './lib/compute.js'
-import { modeledNilForSeason } from './lib/nilModel.js'
-import { allocateNamedPlayers, namedRosterOnly, scaleRosterToModeled } from './lib/nilRoster.js'
-import { schoolNilPot } from './lib/nilHistory.js'
+import { parseAlumniParam } from './lib/compute.js'
+import { enrichSchools } from './lib/enrich.js'
 import {
-  CURRENT_SEASON,
-  applySeason,
-  houseFieldForSeason,
-  houseValueForSeason,
-  parseSeasonParam,
-} from './lib/seasons.js'
-import { computeEfficiency, mergeSubsidy } from './lib/layers.js'
+  loadDesk,
+  loadLayers,
+  loadLayersLite,
+  loadMeta,
+  loadRosters,
+  loadSchoolFull,
+  loadTape,
+  mergeFullSchool,
+  routeKind,
+  schoolIdFromPath,
+} from './lib/loadDesk.js'
+import { CURRENT_SEASON, houseFieldForSeason, houseValueForSeason, parseSeasonParam } from './lib/seasons.js'
+import Shell, { SettingType } from './components/Shell.jsx'
+
+const School = lazy(() => import('./pages/School.jsx'))
+const Methods = lazy(() => import('./pages/Methods.jsx'))
+const Tape = lazy(() => import('./pages/Tape.jsx'))
+const Tv = lazy(() => import('./pages/Tv.jsx'))
+const Buyout = lazy(() => import('./pages/Buyout.jsx'))
 
 export default function App() {
   const [params] = useSearchParams()
@@ -26,10 +31,16 @@ export default function App() {
   const navigate = useNavigate()
   const season = parseSeasonParam(params.get('season'))
   const includeAlumni = parseAlumniParam(params.get('alumni'))
-  const [data, setData] = useState(null)
+  const kind = routeKind(location.pathname)
+  const schoolId = schoolIdFromPath(location.pathname)
+
+  const [desk, setDesk] = useState(null)
+  const [fullSchool, setFullSchool] = useState(null)
+  const [fullStatus, setFullStatus] = useState('idle')
   const [rosters, setRosters] = useState(null)
   const [layers, setLayers] = useState(null)
   const [tape, setTape] = useState(null)
+  const [metaOnly, setMetaOnly] = useState(null)
   const [rosterYear, setRosterYear] = useState(null)
   const [err, setErr] = useState(null)
 
@@ -49,20 +60,78 @@ export default function App() {
     navigate({ pathname: location.pathname, search: search ? `?${search}` : '', hash: location.hash }, { replace: true })
   }
 
-  useEffect(() => {
-    fetch('/data/schools.json')
-      .then((r) => {
-        if (!r.ok) throw new Error(r.statusText)
-        return r.json()
-      })
-      .then(setData)
-      .catch((e) => setErr(String(e)))
-  }, [])
+  const needsDesk = kind === 'home' || kind === 'compare' || kind === 'school'
+  const needsLayersFull = kind === 'school'
+  const needsLayersLite = kind === 'home' || kind === 'compare'
+  const needsTape = kind === 'tape' || kind === 'school'
+  const needsRosters = kind === 'school'
+  const needsMeta = kind === 'methods'
 
   useEffect(() => {
+    if (!needsDesk) return
     let cancelled = false
-    fetch(`/data/rosters-${season}.json`)
-      .then((r) => (r.ok ? r.json() : { schools: {} }))
+    loadDesk()
+      .then((book) => {
+        if (!book?.schools) throw new Error('desk book missing')
+        if (!cancelled) setDesk(book)
+      })
+      .catch((e) => {
+        if (!cancelled) setErr(String(e))
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [needsDesk])
+
+  useEffect(() => {
+    if (!needsLayersLite) return
+    let cancelled = false
+    loadLayersLite()
+      .then((book) => {
+        if (!cancelled) setLayers(book)
+      })
+      .catch(() => {
+        if (!cancelled) setLayers({ schools: {} })
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [needsLayersLite])
+
+  useEffect(() => {
+    if (!needsLayersFull) return
+    let cancelled = false
+    loadLayers()
+      .then((book) => {
+        if (!cancelled) setLayers(book)
+      })
+      .catch(() => {
+        if (!cancelled) setLayers({ schools: {} })
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [needsLayersFull])
+
+  useEffect(() => {
+    if (!needsTape) return
+    let cancelled = false
+    loadTape()
+      .then((book) => {
+        if (!cancelled) setTape(book)
+      })
+      .catch(() => {
+        if (!cancelled) setTape({ items: [] })
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [needsTape])
+
+  useEffect(() => {
+    if (!needsRosters) return
+    let cancelled = false
+    loadRosters(season)
       .then((book) => {
         if (!cancelled) {
           setRosters(book)
@@ -78,161 +147,134 @@ export default function App() {
     return () => {
       cancelled = true
     }
-  }, [season])
+  }, [needsRosters, season])
 
   useEffect(() => {
-    fetch('/data/layers.json')
-      .then((r) => (r.ok ? r.json() : { schools: {} }))
-      .then(setLayers)
-      .catch(() => setLayers({ schools: {} }))
-  }, [])
+    if (!needsMeta) return
+    let cancelled = false
+    loadMeta()
+      .then((m) => {
+        if (!cancelled) setMetaOnly(m)
+      })
+      .catch((e) => {
+        if (!cancelled) setErr(String(e))
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [needsMeta])
 
   useEffect(() => {
-    fetch('/data/tape.json')
-      .then((r) => (r.ok ? r.json() : { items: [] }))
-      .then(setTape)
-      .catch(() => setTape({ items: [] }))
-  }, [])
+    if (!schoolId) {
+      setFullSchool(null)
+      setFullStatus('idle')
+      return
+    }
+    let cancelled = false
+    setFullStatus('loading')
+    loadSchoolFull(schoolId)
+      .then((full) => {
+        if (!cancelled) {
+          setFullSchool(full)
+          setFullStatus('done')
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setFullSchool(null)
+          setFullStatus('done')
+        }
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [schoolId])
+
+  const data = useMemo(() => mergeFullSchool(desk, fullSchool), [desk, fullSchool])
 
   const enriched = useMemo(() => {
     if (!data) return null
-    const houseVal = houseValueForSeason(data.meta, season)
-    const houseField = houseFieldForSeason(data.meta, season)
-    const seasonal = data.schools.map((s) => applySeason(s, season))
-    const withCap = seasonal.map((s) => ({ ...s, _cap: computeCapacity(s) }))
-    const capTotals = withCap.map((s) => s._cap.total)
-    const book = rosterYear === season ? rosters : { schools: {} }
-    return withCap.map((s) => {
-      const modeled = s._season.modeledNil
-        ? modeledNilForSeason(s, s._cap.total, capTotals, season, houseVal)
-        : null
-      const nil = { ...s.nil, modeled }
-      const r = ratios({ ...s, nil }, data.meta, s._season.houseKey, includeAlumni)
-      const bookedVal = hasVal(s.nil?.booked) ? val(s.nil.booked) : null
-      const pot = schoolNilPot(modeled, bookedVal)
-      const roster = pot?.mid ? scaleRosterToModeled(pot) : null
-      const named = pot?.mid
-        ? allocateNamedPlayers(book?.schools?.[s.id], pot, roster)
-        : namedRosterOnly(book?.schools?.[s.id])
-      const rawLayer = layers?.schools?.[s.id] || {}
-      const layer = {
-        ...rawLayer,
-        record: season >= 2025 ? rawLayer.record : { football: null },
-        portal: season >= 2026 ? rawLayer.portal : { additions: [], departures: [] },
-        apparel: season >= 2025 ? rawLayer.apparel : null,
-        subsidy: season >= 2025 ? mergeSubsidy(rawLayer.subsidy, s.capacity) : null,
-        debt: season >= 2025 ? rawLayer.debt : null,
-        buyoutsPaid: season >= 2025 ? rawLayer.buyoutsPaid : [],
-      }
-      const withNil = { ...s, nil, _cap: s._cap, _ratios: r }
-      const eff = computeEfficiency(withNil, layer, includeAlumni)
-      return {
-        ...s,
-        nil,
-        layers: layer,
-        _cap: s._cap,
-        _ratios: r,
-        _roster: roster,
-        _named: named,
-        _conf: confidenceRollup(s),
-        _houseField: houseField,
-        _eff: eff,
-      }
+    return enrichSchools({
+      data,
+      season,
+      includeAlumni,
+      layers,
+      rosters,
+      rosterYear,
     })
   }, [data, rosters, rosterYear, season, layers, includeAlumni])
 
-  if (err) return <div className="page-wrap"><p className="lede">Failed to load desk data. {err}</p></div>
-  if (!data || !enriched) return <div className="page-wrap"><p className="lede">Setting type…</p></div>
+  const meta = data?.meta || metaOnly
+  const house = meta ? houseValueForSeason(meta, season) : null
+  const houseField = meta ? houseFieldForSeason(meta, season) : null
 
-  const house = houseValueForSeason(data.meta, season)
-  const houseField = houseFieldForSeason(data.meta, season)
+  const ready =
+    (!needsDesk || (data && enriched)) &&
+    (kind !== 'school' || fullStatus === 'done') &&
+    (kind !== 'tape' || tape != null) &&
+    (kind !== 'methods' || metaOnly != null)
 
   return (
-    <div>
-      <div className="mast-rule" />
-      <header className="mast">
-        <div className="brand">
-          <Link to="/" className="mark" aria-label="Public Cap">
-            <img src="/logo-pc.png" alt="" />
-          </Link>
-          <div>
-            <div className="kicker">A college athletics capacity desk · v1.2 · Aug 25, 2026</div>
-            <Link to="/" className="wordmark">Public Cap</Link>
-          </div>
-        </div>
-        <p className="tagline">
-          Economic capacity versus the House revenue-share cap versus booked NIL
-          and a modeled conference range — football and men’s basketball, Power 4 plus Notre Dame.
-          Seasons run 2021–2026 (NIL era).
-        </p>
-        <nav className="nav">
-          <NavLink to={{ pathname: '/', search: params.toString() ? `?${params}` : '' }} end>Rank list</NavLink>
-          <NavLink to={{ pathname: '/compare', search: params.toString() ? `?${params}` : '' }}>Compare</NavLink>
-          <NavLink to={{ pathname: '/tape', search: params.toString() ? `?${params}` : '' }}>Tape</NavLink>
-          <NavLink to={{ pathname: '/tv', search: params.toString() ? `?${params}` : '' }}>TV</NavLink>
-          <NavLink to={{ pathname: '/buyout', search: params.toString() ? `?${params}` : '' }}>Buyout</NavLink>
-          <NavLink to={{ pathname: '/methods', search: params.toString() ? `?${params}` : '' }}>Methods</NavLink>
-        </nav>
-      </header>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              schools={enriched}
-              meta={data.meta}
-              house={house}
-              houseField={houseField}
-              season={season}
-              setSeason={setSeason}
-              includeAlumni={includeAlumni}
-              setIncludeAlumni={setIncludeAlumni}
+    <Shell params={params}>
+      {err ? (
+        <div className="page-wrap"><p className="lede">Failed to load desk data. {err}</p></div>
+      ) : !ready ? (
+        <SettingType />
+      ) : (
+        <Suspense fallback={<SettingType />}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home
+                  schools={enriched}
+                  meta={meta}
+                  house={house}
+                  houseField={houseField}
+                  season={season}
+                  setSeason={setSeason}
+                  includeAlumni={includeAlumni}
+                  setIncludeAlumni={setIncludeAlumni}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/school/:id"
-          element={
-            <School
-              schools={enriched}
-              meta={data.meta}
-              season={season}
-              setSeason={setSeason}
-              includeAlumni={includeAlumni}
-              setIncludeAlumni={setIncludeAlumni}
-              tape={tape?.items || []}
-              rawSchools={data.schools}
+            <Route
+              path="/school/:id"
+              element={
+                <School
+                  schools={enriched}
+                  meta={meta}
+                  season={season}
+                  setSeason={setSeason}
+                  includeAlumni={includeAlumni}
+                  setIncludeAlumni={setIncludeAlumni}
+                  tape={tape?.items || []}
+                  rawSchools={data.schools}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/compare"
-          element={
-            <Compare
-              schools={enriched}
-              meta={data.meta}
-              house={house}
-              houseField={houseField}
-              season={season}
-              setSeason={setSeason}
-              includeAlumni={includeAlumni}
-              setIncludeAlumni={setIncludeAlumni}
+            <Route
+              path="/compare"
+              element={
+                <Compare
+                  schools={enriched}
+                  meta={meta}
+                  house={house}
+                  houseField={houseField}
+                  season={season}
+                  setSeason={setSeason}
+                  includeAlumni={includeAlumni}
+                  setIncludeAlumni={setIncludeAlumni}
+                />
+              }
             />
-          }
-        />
-        <Route path="/tape" element={<Tape items={tape?.items || []} season={season} />} />
-        <Route path="/tv" element={<Tv />} />
-        <Route path="/buyout" element={<Buyout />} />
-        <Route path="/methods" element={<Methods meta={data.meta} />} />
-      </Routes>
-      <footer className="site-foot">
-        Capacity is annual, not lifetime. Current-coach buyouts are overhang; paid buyouts are a separate tape.
-        Booked NIL stays official. Collective 990 is a separate cited lane, not House.
-        Modeled NIL is a conference heuristic: House-era
-        (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era
-        third-party-only backcast for 2021–24. We do not scrape On3, Opendorse, NIL Go, or social apps.
-        Every figure carries a source, a date, and a confidence mark.
-      </footer>
-    </div>
+            <Route path="/tape" element={<Tape items={tape?.items || []} season={season} />} />
+            <Route path="/tv" element={<Tv />} />
+            <Route path="/buyout" element={<Buyout />} />
+            <Route path="/methods" element={<Methods meta={metaOnly} />} />
+          </Routes>
+        </Suspense>
+      )}
+    </Shell>
   )
 }

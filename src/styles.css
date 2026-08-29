@@ -106,8 +106,15 @@ a:hover { text-decoration: underline; }
 .dot.modeled { background: var(--slate); }
 .dot.pending { background: #5a5144; }
 
-.table-scroll { overflow: auto; max-height: calc(100vh - 140px); border-top: 2px solid var(--paper); }
+.table-scroll { overflow: auto; max-height: calc(100vh - 140px); border-top: 2px solid var(--paper); min-height: 420px; }
+.table-scroll.table-pending { min-height: 420px; }
 table.rank { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+table.rank.home-rank { min-width: 1100px; table-layout: fixed; }
+table.rank .col-rk { width: 2.4em; }
+table.rank .col-school { width: 18%; }
+table.rank .col-conf { width: 5.5em; }
+table.rank .col-num { width: 7.2%; }
+table.rank .col-mark { width: 2.6em; }
 table.rank th {
   font-family: Arial, Helvetica, system-ui, sans-serif;
   font-size: 10px;
@@ -274,6 +281,8 @@ table.rank thead th {
   border-radius: 8px;
   overflow: hidden;
   flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
   background: #ffffff;
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
 }

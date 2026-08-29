@@ -130,7 +130,22 @@ export default function Home({ schools, house, houseField, season, setSeason, in
       </section>
 
       <div className="table-scroll">
-        <table className="rank">
+        <table className="rank home-rank">
+          <colgroup>
+            <col className="col-rk" />
+            <col className="col-school" />
+            <col className="col-conf" />
+            <col className="col-num" />
+            <col className="col-num" />
+            <col className="col-num" />
+            <col className="col-num" />
+            <col className="col-num" />
+            <col className="col-num" />
+            <col className="col-num" />
+            <col className="col-num" />
+            <col className="col-num" />
+            <col className="col-mark" />
+          </colgroup>
           <thead>
             <tr>
               <th className="rk" title="Rank in the current sort">#</th>
@@ -150,7 +165,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
                 <td className="rk">{i + 1}</td>
                 <td>
                   <Link className="school-link" to={schoolPath(r.school.id, season, '', includeAlumni)}>
-                    <Logo school={r.school} size={28} />
+                    <Logo school={r.school} size={28} priority={i < 8} />
                     <span>{r.school.name}</span>
                   </Link>
                   {r.school.private && <span className="pill">private</span>}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Logo({ school, size = 28, className = '' }) {
+export default function Logo({ school, size = 28, className = '', priority = false }) {
   const [failed, setFailed] = useState(false)
   const src = school.logo
   const showImg = src && !failed
@@ -17,6 +17,9 @@ export default function Logo({ school, size = 28, className = '' }) {
           alt=""
           width={size}
           height={size}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchPriority={priority ? 'high' : 'low'}
           onError={() => setFailed(true)}
         />
       ) : (
