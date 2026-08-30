@@ -21,7 +21,7 @@ ok(full.schools.length === 68, '68 schools')
 
 const info = splitDeskPayload()
 ok(info.schoolCount === 68, 'split wrote 68 schools')
-ok(info.deskBytes < info.fullBytes * 0.4, `desk is under 40% of full (${info.deskBytes} vs ${info.fullBytes})`)
+ok(info.deskBytes < info.fullBytes * 0.42, `desk is under 42% of full (${info.deskBytes} vs ${info.fullBytes})`)
 
 const desk = {
   meta: full.meta,

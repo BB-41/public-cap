@@ -9,11 +9,17 @@ import {
   B12_GOR_QUOTE,
   B12_HALF_SHARE_IDS,
   B12_990,
+  B1G_FOIA_PLAIN,
+  B1G_GOR,
+  B1G_GOR_PLAIN,
+  B1G_NO_FEE,
+  B1G_NO_FEE_PLAIN,
   ND_HALE,
   SEC_STAIRS,
   accStepLabel,
   conferenceExitHasValue,
   conferenceExitHeadline,
+  conferenceExitIsNonePublished,
 } from '../lib/conferenceExit.js'
 
 function Meta({ field }) {
@@ -438,6 +444,7 @@ function ConferenceExitSection({ school, open, onToggle }) {
   const ladder = resolved.ladder || []
   const stairs = resolved.stairs || SEC_STAIRS
   const hasValue = conferenceExitHasValue(resolved)
+  const nonePublished = conferenceExitIsNonePublished(resolved)
   function toggle() {
     onToggle?.('conference-exit')
   }
@@ -450,7 +457,9 @@ function ConferenceExitSection({ school, open, onToggle }) {
           ? 'Big 12 bylaw cash formula — modeled 2× distributions'
           : resolved.instrument === 'nd-acc-membership-hale'
             ? 'Notre Dame ACC membership exit — modeled reporter estimate'
-            : 'No hosted exit schedule'
+            : resolved.instrument === 'bigten-gor-no-cash-fee'
+              ? 'Big Ten — no published cash fee; grant of rights through 2036'
+              : 'No hosted exit schedule'
   return (
     <section id="slice-conference-exit" className={expanded ? 'exit-sec open' : 'exit-sec'}>
       <h2 title={defTitle('conferenceExit')}>Conference exit</h2>
@@ -459,13 +468,13 @@ function ConferenceExitSection({ school, open, onToggle }) {
         spend, and not a coach-firing buyout. Not part of annual capacity.
         Booked instruments: an ACC settlement year ladder (rights in tow) and
         an SEC bylaw withdrawal fee. Big 12 cells are a labeled model of the
-        §3.4 cash formula. Empty means no hosted schedule.
-        Click the headline for the breakdown.
+        §3.4 cash formula. Big Ten has no published cash fee — the lock is
+        the grant of rights. Click the headline for the breakdown.
       </p>
       <div className="short-stack">
         <div>
           <div className="eyebrow">{instrument}</div>
-          {hasValue ? (
+          {hasValue || nonePublished ? (
             <div
               className={`field exit-head${expanded ? ' open' : ''}`}
               role="button"
@@ -479,8 +488,14 @@ function ConferenceExitSection({ school, open, onToggle }) {
                 }
               }}
             >
-              {exitHeadlineDisplay(head.field)}
-              <Meta field={head.field} />
+              {nonePublished ? (
+                <div className="field-val">
+                  None published <i className="dot reported" />
+                </div>
+              ) : (
+                exitHeadlineDisplay(head.field)
+              )}
+              <Meta field={nonePublished ? { ...head.field, confidence: 'reported' } : head.field} />
               {resolved.step && (
                 <div className="field-notes">{accStepLabel(resolved.step)}</div>
               )}
@@ -492,6 +507,9 @@ function ConferenceExitSection({ school, open, onToggle }) {
               )}
               {resolved.instrument === 'nd-acc-membership-hale' && (
                 <div className="field-notes">Modeled — not the FSU / Clemson football ladder</div>
+              )}
+              {nonePublished && (
+                <div className="field-notes">Grant of rights through 2036 — not $0, not a borrowed formula</div>
               )}
             </div>
           ) : (
@@ -720,6 +738,30 @@ function ConferenceExitSection({ school, open, onToggle }) {
                 {' '}
                 <a className="ext" href={ND_HALE.url} target="_blank" rel="noreferrer">247Sports ↗</a>
               </p>
+            </>
+          )}
+          {resolved.instrument === 'bigten-gor-no-cash-fee' && (
+            <>
+              <p className="fine">
+                <strong>No published cash exit fee.</strong> {B1G_NO_FEE_PLAIN}
+                {' '}
+                <a className="ext" href={B1G_NO_FEE.url} target="_blank" rel="noreferrer">Wake Forest Law Review ↗</a>
+              </p>
+              <p className="fine">
+                <strong>The lock is the grant of rights, currently through 2036.</strong>
+                {' '}{B1G_GOR_PLAIN}
+                {' '}
+                <a className="ext" href={B1G_GOR.url} target="_blank" rel="noreferrer">ESPN ↗</a>
+              </p>
+              <p className="fine">
+                {B1G_FOIA_PLAIN}
+              </p>
+              <div className="field pending-box">
+                <div className="field-val">None published</div>
+                <div className="field-meta">
+                  Not $0. Not the ACC ladder. Not the SEC $30M fee. Not the Big 12 2×-distributions model.
+                </div>
+              </div>
             </>
           )}
           {!resolved.instrument && (

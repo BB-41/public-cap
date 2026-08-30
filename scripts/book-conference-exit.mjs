@@ -15,6 +15,8 @@ import {
   B12_IDS,
   B12_990,
   B12_BYLAWS,
+  B1G_IDS,
+  B1G_NO_FEE,
   ND_HALE,
   PENDING_NOTES,
   SEC_IDS,
@@ -24,13 +26,14 @@ import {
   accStepLabel,
   b12ModeledFee,
   b12Record,
+  b1gRecord,
   ndRecord,
 } from '../src/lib/conferenceExit.js'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 
 const BLOCKER =
-  'Conference exit is a school-page stock, not annual capacity, and not a coach-firing buyout. ACC football members: settlement year ladder (rights in tow) from The Post and Courier quote of the 68-page Clemson/FSU/ACC settlement. SEC: 2023–24 bylaws §3.2.1 $30 million with-notice (hosted PDF); $40M/$45M stairs footnoted. Big 12 current football members: modeled 2× last cited FY2025 Form 990 Schedule I distribution from hosted bylaws §3.4; paying the fee does not abrogate the grant of rights (§3.1). Half-share FY2025 schools (BYU/Houston/UCF/Cincinnati) use a modeled full-share peer range, not a silent 2× of the half-share. Notre Dame: modeled ~$100M Hale/247Sports non-football ACC membership estimate — not the FSU/Clemson football ladder. Big Ten stays pending. Do not stamp the old Big 12 $100M Texas/Oklahoma one-off on remaining members. Texas and Oklahoma stay SEC.'
+  'Conference exit is a school-page stock, not annual capacity, and not a coach-firing buyout. ACC football members: settlement year ladder (rights in tow) from The Post and Courier quote of the 68-page Clemson/FSU/ACC settlement. SEC: 2023–24 bylaws §3.2.1 $30 million with-notice (hosted PDF); $40M/$45M stairs footnoted. Big 12 current football members: modeled 2× last cited FY2025 Form 990 Schedule I distribution from hosted bylaws §3.4; paying the fee does not abrogate the grant of rights (§3.1). Half-share FY2025 schools (BYU/Houston/UCF/Cincinnati) use a modeled full-share peer range, not a silent 2× of the half-share. Notre Dame: modeled ~$100M Hale/247Sports non-football ACC membership estimate — not the FSU/Clemson football ladder. Big Ten: no published cash exit fee (Wake Forest Law Review); the lock is the grant of rights through 2036 (ESPN / Acker). Not $0, not a borrowed 2× formula. Illinois FOIA sought the bylaws and they were withheld. Do not stamp the old Big 12 $100M Texas/Oklahoma one-off on remaining members. Texas and Oklahoma stay SEC.'
 
 function accRecord() {
   return {
@@ -116,6 +119,7 @@ function recordFor(school) {
   if (SEC_IDS.includes(school.id)) return secRecord()
   if (B12_IDS.includes(school.id)) return b12Record(school.id)
   if (school.id === 'notre-dame') return ndRecord()
+  if (B1G_IDS.includes(school.id)) return b1gRecord()
   return pendingRecord(school.conference)
 }
 
@@ -158,7 +162,12 @@ function replaceConferenceExit(raw, school, record) {
 
 function stampSchoolsText(raw, schools) {
   let out = raw
-  if (out.includes('Big Ten, Big 12, and Notre Dame football stay pending')) {
+  if (out.includes('Big Ten stays pending')) {
+    out = out.replace(
+      /Conference exit is a school-page stock, not annual capacity, and not a coach-firing buyout\.[^"]+Texas and Oklahoma stay SEC\./,
+      BLOCKER,
+    )
+  } else if (out.includes('Big Ten, Big 12, and Notre Dame football stay pending')) {
     out = out.replace(
       'Conference exit is a school-page stock, not annual capacity, and not a coach-firing buyout. ACC football members: settlement year ladder (rights in tow) from The Post and Courier quote of the 68-page Clemson/FSU/ACC settlement. SEC: 2023–24 bylaws §3.2.1 $30 million with-notice (hosted PDF); $40M/$45M stairs footnoted. Big Ten, Big 12, and Notre Dame football stay pending. Do not stamp the old Big 12 $100M Texas/Oklahoma one-off on remaining members.',
       BLOCKER,
@@ -168,7 +177,7 @@ function stampSchoolsText(raw, schools) {
     if (!out.includes(marker)) throw new Error('could not find last blockers line')
     out = out.replace(marker, `${marker},\n      "${BLOCKER}"`)
   }
-  const rewriteIds = new Set([...B12_IDS, 'notre-dame'])
+  const rewriteIds = new Set([...B12_IDS, ...B1G_IDS, 'notre-dame'])
   for (const school of schools) {
     const rec = recordFor(school)
     const hasExit = out.includes(`"id": "${school.id}"`) && /"conferenceExit"/.test(out)
@@ -235,7 +244,20 @@ function newModeledTapeItems(schools) {
     confidence: 'modeled',
     source: { label: ND_HALE.source, url: ND_HALE.url },
   })
-  return [...b12, nd]
+  const b1g = B1G_IDS.map((id) =>
+    tapeItem({
+      id: `${id}-conference-exit-bigten-gor-no-cash-fee`,
+      date: '2024-09-01',
+      school: id,
+      schoolName: byId[id].name,
+      headline:
+        'No published Big Ten cash exit fee (Wake Forest Law Review on the FSU/ACC case: “The Big 10 does not have an exit fee.”). The lock is the grant of rights through 2036; media rights stay with the league if a school leaves before then (ESPN: Michigan Regent Jordan Acker; paused PE plan would have extended GOR to 2046). Not $0. Not a borrowed Big 12 2× formula. Illinois FOIA sought the bylaws and they were withheld.',
+      figure: null,
+      confidence: 'reported',
+      source: { label: B1G_NO_FEE.source, url: B1G_NO_FEE.url },
+    }),
+  )
+  return [...b12, nd, ...b1g]
 }
 
 function stampTapeText(raw, schools) {

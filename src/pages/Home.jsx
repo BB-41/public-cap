@@ -62,6 +62,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
         confExitInstrument: s._conferenceExit?.instrument || null,
         confExitModeled: s._conferenceExit?.fee?.confidence === 'modeled',
         confExitApprox: s._conferenceExit?.fee?.approx === true,
+        confExitNonePublished: s._conferenceExit?.instrument === 'bigten-gor-no-cash-fee',
         capacity: includeAlumni ? s._cap.total : s._cap.booked,
         house,
         nil: s._ratios.nil,
@@ -184,7 +185,12 @@ export default function Home({ schools, house, houseField, season, setSeason, in
                 </td>
                 <td className="conf">{r.conference === 'Independent / ACC' ? 'ND / ACC' : r.conference === 'Big Ten' ? 'B1G' : r.conference === 'Independent' ? 'Ind.' : r.conference}</td>
                 <td className={`num ${r.confExitModeled ? 'modeled-cell' : ''}`} title={defTitle('conferenceExit')}>
-                  {r.confExit == null ? (
+                  {r.confExitNonePublished ? (
+                    <>
+                      <span className="pending-cell">none published</span>
+                      <div className="term-compact">grant of rights</div>
+                    </>
+                  ) : r.confExit == null ? (
                     <span className="pending-cell">pending</span>
                   ) : r.confExitLow != null && r.confExitHigh != null ? (
                     <>
@@ -233,7 +239,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
         {house == null
           ? 'No House cap (pre-settlement). Modeled NIL for 2021–2024 is a collective-era third-party-only backcast (labeled modeled) — no House rev-share. Capacity is the conference-media floor (plus modeled extra alumni only when that toggle is on); tickets / sponsorships / contributions stay pending.'
           : `House cap shown is ${season === 2026 ? '2026–27 (~$21.3M, estimated)' : '2025–26 ($20.5M, reported)'}. Capacity default is booked-only — the filing stack. Flip on + alumni model to add the Scorecard-based extra-alumni midpoint, net of booked gifts. Will move when Category 15 / tickets land.`}
-        {' '}Conference exit is a stock (ACC settlement ladder, SEC bylaw fee, or Big 12 modeled 2× 990s), not a coach buyout and not in capacity — modeled cells use the same slate mark as modeled NIL; empty cells are pending.
+        {' '}Conference exit is a stock (ACC settlement ladder, SEC bylaw fee, Big 12 modeled 2× 990s, or Big Ten none-published / grant of rights), not a coach buyout and not in capacity — modeled cells use the same slate mark as modeled NIL; Big Ten is not $0.
         {' '}Click a school.
       </p>
     </div>

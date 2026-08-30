@@ -2,13 +2,14 @@
  * Conference-exit lane. A stock / overhang, not annual capacity,
  * and not a coach-firing buyout.
  *
- * Four published instruments:
- *   ACC   — settlement year ladder, media rights in tow (booked)
- *   SEC   — bylaw withdrawal fee (cash). Does not say you leave with rights. (booked)
+ * Four published instruments, plus one modeled reporter estimate:
+ *   ACC    — settlement year ladder, media rights in tow (booked)
+ *   SEC    — bylaw withdrawal fee (cash). Does not say you leave with rights. (booked)
  *   Big 12 — bylaw §3.4 cash formula modeled as 2× last cited FY2025 990
  *            distribution. Paying the fee does NOT abrogate the grant of rights.
- *   ND    — modeled reporter estimate of the non-football ACC membership exit.
- * Empty — no hosted schedule (Big Ten).
+ *   Big Ten — no published cash exit fee. The lock is the grant of rights
+ *             through 2036. Not $0, not a borrowed 2× formula.
+ *   ND     — modeled reporter estimate of the non-football ACC membership exit.
  */
 
 import { SEASON_BY_YEAR } from './seasons.js'
@@ -67,6 +68,23 @@ export const B12_USAT_NAMED = {
     'USA TODAY — FY2025 school lines quoted from the 990 (Iowa State $41.2M, Oklahoma State $38M, Texas Tech $39.7M). FY2026 projections in that story are budgets, not used.',
   url: 'https://www.usatoday.com/story/sports/ncaaf/big12/2026/06/08/big-12-conference-revenue-dilution-realignment-big-ten-sec-acc/90375818007/',
   asOf: '2026-06-08',
+}
+
+export const B1G_NO_FEE = {
+  source:
+    'Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”',
+  url: 'https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/',
+  asOf: '2024-09',
+  confidence: 'reported',
+}
+
+export const B1G_GOR = {
+  source:
+    'ESPN — opposition at Michigan and USC pauses the $2.4B UC Investments Big Ten private-equity plan. Michigan Regent Jordan Acker discussed independence only “at the end of the Grant of Rights [in 2036]”; the paused PE plan would have extended the grant of rights to 2046.',
+  url: 'https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal',
+  asOf: '2025-08',
+  through: 2036,
+  pausedExtension: 2046,
 }
 
 export const ND_HALE = {
@@ -160,6 +178,27 @@ export const B12_IDS = [
 
 export const B12_HALF_SHARE_IDS = ['byu', 'cincinnati', 'houston', 'ucf']
 
+export const B1G_IDS = [
+  'illinois',
+  'indiana',
+  'iowa',
+  'maryland',
+  'michigan',
+  'michigan-state',
+  'minnesota',
+  'nebraska',
+  'northwestern',
+  'ohio-state',
+  'oregon',
+  'penn-state',
+  'purdue',
+  'rutgers',
+  'ucla',
+  'usc',
+  'washington',
+  'wisconsin',
+]
+
 /**
  * FY2025 Schedule I amounts named on the Plinth extract of the Big 12 990.
  * Houston is not named on that extract — do not invent a point.
@@ -208,9 +247,52 @@ export const B12_NOTES = `${B12_GOR_PLAIN} Hosted Big 12 bylaws §3.4: Buyout Am
 export const ND_NOTES =
   'Football independent; Notre Dame did not sign the ACC football grant of rights. This is a modeled reporter estimate of the non-football ACC membership exit — in the range of ~$100 million — not the FSU / Clemson settlement football ladder ($147M / $165M). Hale noted ND would be free of the football GOR charge. Not a filing. Not a coach-firing buyout. Not part of annual capacity.'
 
+export const B1G_NO_FEE_PLAIN =
+  'There is no published cash exit fee. Wake Forest Law Review, writing on the Florida State / ACC case: “The Big 10 does not have an exit fee.” That is not $0 — $0 would read as free to leave.'
+
+export const B1G_GOR_PLAIN =
+  'The lock is the grant of rights, currently through 2036. Media rights stay with the league if a school leaves before then. ESPN: Michigan Regent Jordan Acker discussed independence only “at the end of the Grant of Rights [in 2036]”; the paused UC Investments private-equity plan would have extended the grant of rights to 2046.'
+
+export const B1G_FOIA_PLAIN =
+  'Illinois FOIA has already been used to seek the Big Ten bylaws; they were withheld. We are not modeling a number from another conference’s constitution, and we do not apply the Big 12 2×-distributions formula or leftover TV value.'
+
+export const B1G_NOTES = `${B1G_NO_FEE_PLAIN} ${B1G_GOR_PLAIN} ${B1G_FOIA_PLAIN} Not a coach-firing buyout. Not part of annual capacity.`
+
+export function b1gRecord() {
+  return {
+    instrument: 'bigten-gor-no-cash-fee',
+    conference: 'Big Ten',
+    rightsInTow: false,
+    label: 'Conference exit',
+    status: 'none-published',
+    source: B1G_NO_FEE.source,
+    url: B1G_NO_FEE.url,
+    gorUrl: B1G_GOR.url,
+    asOf: B1G_NO_FEE.asOf,
+    confidence: 'reported',
+    fee: {
+      value: null,
+      low: null,
+      high: null,
+      confidence: 'reported',
+      source: B1G_NO_FEE.source,
+      url: B1G_NO_FEE.url,
+      asOf: B1G_NO_FEE.asOf,
+      fiscalYear: null,
+      notes: 'No published cash exit fee. Grant of rights through 2036. Not $0.',
+    },
+    grantOfRights: {
+      through: B1G_GOR.through,
+      pausedExtension: B1G_GOR.pausedExtension,
+      url: B1G_GOR.url,
+    },
+    notes: 'No published cash exit fee. Grant of rights through 2036. Not $0.',
+  }
+}
+
 export const PENDING_NOTES = {
   'Big Ten':
-    'No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee.',
+    B1G_NOTES,
   'Big 12':
     'The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending.',
   'Independent / ACC':
@@ -499,6 +581,17 @@ export function resolveConferenceExit(school, season) {
       step: null,
     }
   }
+  if (raw.instrument === 'bigten-gor-no-cash-fee') {
+    return {
+      ...raw,
+      fee: fieldFrom(B1G_NO_FEE, {
+        value: null,
+        confidence: 'reported',
+        notes: B1G_NOTES,
+      }),
+      step: null,
+    }
+  }
   return {
     ...raw,
     fee: pendingFee(raw.notes || PENDING_NOTES[raw.conference] || 'No hosted exit schedule on the desk.'),
@@ -525,4 +618,8 @@ export function conferenceExitHasValue(resolved) {
   const fee = resolved?.fee
   if (!fee) return false
   return fee.value != null || (fee.low != null && fee.high != null)
+}
+
+export function conferenceExitIsNonePublished(resolved) {
+  return resolved?.instrument === 'bigten-gor-no-cash-fee'
 }

@@ -152,7 +152,7 @@ export default function Methods({ meta: metaProp }) {
         <dd>
           What a school would pay the conference to leave — named Conference exit, not Buyout.
           A stock, not yearly spend, and not the coach-firing buyout on <code>/buyout</code>.
-          Three instruments. ACC: settlement year ladder, rights in tow
+          Four instruments. ACC: settlement year ladder, rights in tow
           (FY 2025–26 / 2026 season exit $165 million, then −$18 million a year to a $75 million
           floor from 2030–31 through the ACC/ESPN deal in 2036), cited from a newsroom quote
           of the 68-page Clemson/FSU/ACC settlement. SEC: 2023–24 bylaws §3.2.1 $30 million
@@ -161,10 +161,10 @@ export default function Methods({ meta: metaProp }) {
           cash formula (sum of distributions for the final two years of membership), modeled as
           2 × the last cited FY2025 Form 990 Schedule I line — labeled modeled, never booked.
           Paying that fee does not buy back media rights; the grant of rights still sits with
-          the league. Notre Dame: modeled ~$100 million Hale / 247Sports estimate of the
-          non-football ACC membership exit — not the FSU/Clemson football ladder. Empty means
-          no hosted schedule (Big Ten). Not part of annual capacity.
-          Booked-only remains the default capacity toggle.
+          the league. Big Ten: no published cash exit fee (not $0); the lock is the grant of
+          rights through 2036. Notre Dame: modeled ~$100 million Hale / 247Sports estimate of the
+          non-football ACC membership exit — not the FSU/Clemson football ladder. Not part of
+          annual capacity. Booked-only remains the default capacity toggle.
         </dd>
         <dt>Staff pay</dt>
         <dd>Cited public pay for the athletic director, other head coaches, and football assistants, keyed to the selected football season. Named football assistant dollars for 2021–2024 are the USA TODAY contract year from each team page (row asOf: Dec 9, 2021 / Dec 8, 2022 / Nov 16, 2023 / Dec 18, 2024) and sit on that year only, with that year’s published names — not the 2026 official directory. Titles are not invented. 2026 shows official-directory names and roles; assistant pay stays pending unless a cited 2026 dollar exists. 2025 is empty without a year-accurate tape (we do not clone 2026 names or 2024 dollars onto 2025). Athletic-director pay is cited-only and year-pinned: USA TODAY Sports has no live AD table on sportsdata.usatoday.com, so dollars come from USA TODAY Network stories that name a number, or from state payroll / university FOIA / board minutes. A 2024 AD snapshot is never copied onto a 2026 AD who is a different person. A newer cite already on the desk is not overwritten by an older snapshot. Privates and withheld chairs stay pending. WBB cells are cited-only. Empty means pending — we do not invent a title or a dollar.</dd>
@@ -809,7 +809,7 @@ export default function Methods({ meta: metaProp }) {
         default capacity toggle. We do not invent dollars or use “sources tell” figures.
       </p>
       <p>
-        Three instruments. They are not equivalent.
+        Four instruments. They are not equivalent.
       </p>
       <p>
         <strong>ACC — settlement year ladder, media rights in tow.</strong> The
@@ -902,8 +902,21 @@ export default function Methods({ meta: metaProp }) {
         Footnote: this is the non-football ACC membership exit estimate.
       </p>
       <p>
-        <strong>Big Ten — pending.</strong> No published exit stair (grant of
-        rights; a private-equity extension to 2046 is paused). Empty means pending.
+        <strong>Big Ten — no published cash fee; grant of rights through 2036.</strong>
+        Fourth instrument. There is no hosted cash exit fee.
+        {' '}<a href="https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/" target="_blank" rel="noreferrer">Wake Forest Law Review</a>
+        on the Florida State / ACC case: “The Big 10 does not have an exit fee.”
+        That is not $0 — $0 would read as free to leave. The lock is the grant
+        of rights, currently through 2036. Media rights stay with the league if
+        a school leaves before then.
+        {' '}<a href="https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal" target="_blank" rel="noreferrer">ESPN</a>:
+        Michigan Regent Jordan Acker discussed independence only “at the end of
+        the Grant of Rights [in 2036]”; the paused UC Investments private-equity
+        plan would have extended the grant of rights to 2046. Illinois FOIA has
+        already been used to seek the bylaws; they were withheld. We do not
+        model a number from another conference’s constitution, and we do not
+        apply the Big 12 2×-distributions formula or leftover TV value.
+        Homepage cell reads <em>none published</em> / <em>grant of rights</em>.
       </p>
 
       <h2>Buyouts actually paid</h2>
@@ -958,7 +971,7 @@ export default function Methods({ meta: metaProp }) {
         <li>No women’s sports or Olympic-sport roster math in v1 (the 7% unallocated slice is the placeholder).</li>
         <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
         <li>Athletics debt is a separate layer, not a capacity add-on. Category 53 university-wide institutional debt is refused unless the filing splits an athletics-related amount. We do not invent an amortization schedule from a project cost. Empty stays empty.</li>
-        <li>Conference exit is a separate layer, not a capacity add-on and not a coach-firing buyout. We do not invent an ACC dollar without a hosted packet or a newsroom quote of the filing. We do not stamp the Big 12 $100M Texas/Oklahoma one-off on remaining members. Big 12 remaining members are a labeled model of §3.4 (2× last cited 990), not a booked invoice, and not an ACC-style rights-in-tow ladder. Notre Dame is a modeled Hale / 247Sports membership estimate — not the FSU/Clemson football ladder. Big Ten stays empty. Empty stays empty.</li>
+        <li>Conference exit is a separate layer, not a capacity add-on and not a coach-firing buyout. We do not invent an ACC dollar without a hosted packet or a newsroom quote of the filing. We do not stamp the Big 12 $100M Texas/Oklahoma one-off on remaining members. Big 12 remaining members are a labeled model of §3.4 (2× last cited 990), not a booked invoice, and not an ACC-style rights-in-tow ladder. Notre Dame is a modeled Hale / 247Sports membership estimate — not the FSU/Clemson football ladder. Big Ten has no published cash fee — we do not print $0, do not borrow the Big 12 formula, and do not invent leftover TV value. Empty stays empty.</li>
       </ul>
     </div>
   )

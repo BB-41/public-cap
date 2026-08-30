@@ -18,6 +18,10 @@ import {
   B12_FORMULA_QUOTE,
   B12_GOR_PLAIN,
   B12_GOR_QUOTE,
+  B1G_IDS,
+  B1G_GOR,
+  B1G_NO_FEE,
+  B1G_NO_FEE_PLAIN,
   ND_HALE,
   SEC_IDS,
   SEC_SOURCE,
@@ -50,7 +54,7 @@ ok(DEFS.conferenceExit?.label === 'Conference exit', 'definition is named Confer
 ok(!/buyout/i.test(DEFS.conferenceExit.label), 'definition label is not Buyout')
 ok(DEFS.conferenceExit.text.includes('not a coach-firing buyout'), 'definition refuses coach buyout')
 ok(DEFS.conferenceExit.text.includes('Not part of annual capacity'), 'definition keeps exit out of capacity')
-ok(DEFS.conferenceExit.text.includes('three instruments') || DEFS.conferenceExit.text.includes('Big 12'), 'definition names Big 12 modeled instrument')
+ok(DEFS.conferenceExit.text.includes('Four instruments') || DEFS.conferenceExit.text.includes('Big Ten'), 'definition names Big Ten as a fourth instrument')
 ok(!buyoutPage.includes('conferenceExit') && !buyoutPage.includes('Conference exit'), 'Buyout page is unchanged')
 
 ok(accStepForSeason(2025)?.value === 165_000_000, '2025 season / FY 2025-26 is $165M')
@@ -64,14 +68,22 @@ ok(layersSrc.includes('B12_GOR_PLAIN') && layersSrc.includes('Grant of rights st
 ok(layersSrc.includes('B12_BYLAWS.url') && layersSrc.includes('§3.4'), 'drill cites hosted bylaws PDF')
 ok(homeSrc.includes('modeled-cell'), 'homepage still uses modeled-cell class')
 ok(/confExitModeled/.test(homeSrc), 'homepage tracks modeled conference-exit cells')
-ok(/Three instruments|three instruments|Big 12 — modeled/.test(methodsSrc), 'Methods names the Big 12 instrument')
+ok(/Four instruments|four instruments|Big 12 — modeled/.test(methodsSrc), 'Methods names the instruments')
 ok(methodsSrc.includes('grant of rights still sits with the league'), 'Methods says GOR stays with the league')
 ok(methodsSrc.includes('David Hale') || methodsSrc.includes('247Sports'), 'Methods cites Hale / 247Sports for ND')
+ok(homeSrc.includes('none published') && homeSrc.includes('grant of rights'), 'homepage B1G cell is none published / grant of rights')
+ok(!/confExitNonePublished[\s\S]{0,200}pending-cell">pending/.test(homeSrc) || homeSrc.includes('confExitNonePublished'), 'homepage tracks B1G none-published')
+ok(layersSrc.includes('B1G_NO_FEE_PLAIN') && layersSrc.includes('None published'), 'B1G drill says none published')
+ok(layersSrc.includes('B1G_GOR_PLAIN') && layersSrc.includes('B1G_FOIA_PLAIN'), 'B1G drill has GOR and FOIA sentences')
+ok(methodsSrc.includes('The Big 10 does not have an exit fee') || methodsSrc.includes('does not have an exit fee'), 'Methods quotes Wake Forest Law Review')
+ok(methodsSrc.includes(B1G_GOR.url), 'Methods cites ESPN GOR/PE story')
+ok(B1G_NO_FEE_PLAIN.includes('no published cash exit fee'), 'B1G plain language refuses a cash fee')
 
 const bookedAcc = []
 const bookedSec = []
 const modeledB12 = []
 const modeledNd = []
+const b1gNone = []
 const pending = []
 
 for (const s of schools.schools) {
@@ -167,6 +179,27 @@ for (const s of schools.schools) {
     ok(/independent/i.test(x.notes), 'ND note says football is independent')
     ok(resolveConferenceExit(s, 2026).fee.value === 100_000_000, 'ND 2026 resolve is $100M modeled')
     ok(resolveConferenceExit(s, 2024).fee.value == null, 'ND 2024 resolve pending')
+  } else if (B1G_IDS.includes(s.id)) {
+    b1gNone.push(s.id)
+    ok(x.instrument === 'bigten-gor-no-cash-fee', `${s.id} is Big Ten GOR / no-cash-fee`)
+    ok(x.fee?.value == null, `${s.id} has no invented dollar`)
+    ok(x.fee?.value !== 0, `${s.id} is not $0`)
+    ok(x.status === 'none-published', `${s.id} status is none-published`)
+    ok(x.rightsInTow === false, `${s.id} rights stay with the league`)
+    ok(x.url === B1G_NO_FEE.url, `${s.id} cites Wake Forest Law Review`)
+    ok(x.gorUrl === B1G_GOR.url, `${s.id} cites ESPN GOR story`)
+    ok(/no published cash exit fee/i.test(x.notes), `${s.id} notes no published cash fee`)
+    ok(/2036/.test(x.notes), `${s.id} notes GOR through 2036`)
+    ok(s.conference === 'Big Ten', `${s.id} current conference is Big Ten`)
+    const y26 = resolveConferenceExit(s, 2026)
+    const y24 = resolveConferenceExit(s, 2024)
+    ok(/does not have an exit fee/.test(y26.fee.notes), `${s.id} resolve quotes Wake Forest`)
+    ok(/withheld/.test(y26.fee.notes), `${s.id} resolve notes Illinois FOIA withheld`)
+    ok(/do not apply the Big 12/.test(y26.fee.notes), `${s.id} resolve refuses the Big 12 formula`)
+    ok(y26.fee.value == null, `${s.id} 2026 resolve still has no dollar`)
+    ok(y26.instrument === 'bigten-gor-no-cash-fee', `${s.id} 2026 keeps the B1G instrument`)
+    ok(!conferenceExitHasValue(y26), `${s.id} 2026 is not treated as a dollar cell`)
+    ok(y24.fee.value == null, `${s.id} 2024 resolve pending`)
   } else {
     pending.push(s.id)
     ok(x.instrument == null, `${s.id} instrument empty`)
@@ -180,9 +213,11 @@ ok(bookedAcc.length === 17, `17 ACC football schools booked (got ${bookedAcc.len
 ok(bookedSec.length === 16, `16 SEC schools booked (got ${bookedSec.length})`)
 ok(modeledB12.length === 16, `16 Big 12 modeled (got ${modeledB12.length})`)
 ok(modeledNd.length === 1, `1 ND modeled (got ${modeledNd.length})`)
-ok(pending.length === 18, `18 pending Big Ten (got ${pending.length})`)
+ok(b1gNone.length === 18, `18 Big Ten none-published (got ${b1gNone.length})`)
+ok(pending.length === 0, `no leftover pending Power schools (got ${pending.length})`)
 ok(!bookedAcc.includes('notre-dame'), 'Notre Dame is not on the ACC football ladder')
 ok(!pending.includes('notre-dame'), 'Notre Dame is no longer pending')
+ok(!b1gNone.includes('notre-dame'), 'Notre Dame is not on the Big Ten GOR cell')
 ok(bookedSec.includes('texas') && bookedSec.includes('oklahoma'), 'Texas and Oklahoma get the SEC $30M cell')
 ok(!modeledB12.includes('texas') && !modeledB12.includes('oklahoma'), 'Texas and Oklahoma are not stamped with Big 12 modeled 2×')
 ok(!pending.includes('texas') && !pending.includes('oklahoma'), 'Texas and Oklahoma are not left on the old Big 12 figure')
@@ -209,6 +244,7 @@ console.log(`ACC booked (${bookedAcc.length}): ${bookedAcc.sort().join(', ')}`)
 console.log(`SEC booked (${bookedSec.length}): ${bookedSec.sort().join(', ')}`)
 console.log(`Big 12 modeled (${modeledB12.length}): ${modeledB12.sort().join(', ')}`)
 console.log(`ND modeled (${modeledNd.length}): ${modeledNd.join(', ')}`)
+console.log(`Big Ten none-published (${b1gNone.length}): ${b1gNone.sort().join(', ')}`)
 console.log(`pending (${pending.length}): ${pending.sort().join(', ')}`)
 
 const failed = checks.filter((c) => !c.ok)
