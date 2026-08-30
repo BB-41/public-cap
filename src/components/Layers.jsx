@@ -1,8 +1,20 @@
-import { money, moneyExact, winsPerM } from '../lib/format.js'
+import { money, moneyExact, moneyRange, winsPerM } from '../lib/format.js'
 import { defTitle } from '../lib/definitions.js'
 import DrillNote, { DrillClose } from './DrillNote.jsx'
 import { debtHeadline, enrollmentHeadcount, impliedFeePerStudent, publishedFeeTimesEnrollment } from '../lib/layers.js'
-import { SEC_STAIRS, accStepLabel, conferenceExitHeadline } from '../lib/conferenceExit.js'
+import {
+  B12_BYLAWS,
+  B12_FORMULA_QUOTE,
+  B12_GOR_PLAIN,
+  B12_GOR_QUOTE,
+  B12_HALF_SHARE_IDS,
+  B12_990,
+  ND_HALE,
+  SEC_STAIRS,
+  accStepLabel,
+  conferenceExitHasValue,
+  conferenceExitHeadline,
+} from '../lib/conferenceExit.js'
 
 function Meta({ field }) {
   if (!field) return null
@@ -398,6 +410,26 @@ function DebtSection({ school, open, onToggle }) {
   )
 }
 
+function exitHeadlineDisplay(field) {
+  if (!field) return null
+  if (field.low != null && field.high != null) {
+    return (
+      <div className="field-val modeled-cell">
+        {moneyRange(field.low, field.high)} <i className={`dot ${field.confidence || 'modeled'}`} />
+      </div>
+    )
+  }
+  if (field.value != null) {
+    return (
+      <div className={`field-val${field.confidence === 'modeled' ? ' modeled-cell' : ''}`}>
+        {field.approx ? `~${moneyExact(field.value)}` : moneyExact(field.value)}{' '}
+        <i className={`dot ${field.confidence}`} />
+      </div>
+    )
+  }
+  return null
+}
+
 function ConferenceExitSection({ school, open, onToggle }) {
   const resolved = school?._conferenceExit
   if (!resolved) return null
@@ -405,6 +437,7 @@ function ConferenceExitSection({ school, open, onToggle }) {
   const head = conferenceExitHeadline(resolved)
   const ladder = resolved.ladder || []
   const stairs = resolved.stairs || SEC_STAIRS
+  const hasValue = conferenceExitHasValue(resolved)
   function toggle() {
     onToggle?.('conference-exit')
   }
@@ -413,21 +446,26 @@ function ConferenceExitSection({ school, open, onToggle }) {
       ? 'ACC settlement year ladder — rights in tow'
       : resolved.instrument === 'sec-bylaw-withdrawal'
         ? 'SEC bylaw withdrawal fee — cash, not a media-rights buyback'
-        : 'No hosted exit schedule'
+        : resolved.instrument === 'big12-bylaw-2x-distributions'
+          ? 'Big 12 bylaw cash formula — modeled 2× distributions'
+          : resolved.instrument === 'nd-acc-membership-hale'
+            ? 'Notre Dame ACC membership exit — modeled reporter estimate'
+            : 'No hosted exit schedule'
   return (
     <section id="slice-conference-exit" className={expanded ? 'exit-sec open' : 'exit-sec'}>
       <h2 title={defTitle('conferenceExit')}>Conference exit</h2>
       <p className="lede tight">
         What this school would pay the conference to leave — a stock, not yearly
         spend, and not a coach-firing buyout. Not part of annual capacity.
-        Two published instruments only: an ACC settlement year ladder (rights
-        in tow) and an SEC bylaw withdrawal fee. Empty means no hosted schedule.
+        Booked instruments: an ACC settlement year ladder (rights in tow) and
+        an SEC bylaw withdrawal fee. Big 12 cells are a labeled model of the
+        §3.4 cash formula. Empty means no hosted schedule.
         Click the headline for the breakdown.
       </p>
       <div className="short-stack">
         <div>
           <div className="eyebrow">{instrument}</div>
-          {head.field?.value != null ? (
+          {hasValue ? (
             <div
               className={`field exit-head${expanded ? ' open' : ''}`}
               role="button"
@@ -441,15 +479,19 @@ function ConferenceExitSection({ school, open, onToggle }) {
                 }
               }}
             >
-              <div className="field-val">
-                {moneyExact(head.field.value)} <i className={`dot ${head.field.confidence}`} />
-              </div>
+              {exitHeadlineDisplay(head.field)}
               <Meta field={head.field} />
               {resolved.step && (
                 <div className="field-notes">{accStepLabel(resolved.step)}</div>
               )}
               {resolved.instrument === 'sec-bylaw-withdrawal' && (
                 <div className="field-notes">§3.2.1 with required notice</div>
+              )}
+              {resolved.instrument === 'big12-bylaw-2x-distributions' && (
+                <div className="field-notes">Modeled — cash formula only; grant of rights stays with the league</div>
+              )}
+              {resolved.instrument === 'nd-acc-membership-hale' && (
+                <div className="field-notes">Modeled — not the FSU / Clemson football ladder</div>
               )}
             </div>
           ) : (
@@ -558,6 +600,126 @@ function ConferenceExitSection({ school, open, onToggle }) {
                 field={resolved.fee}
                 empty="Pending — no hosted SEC withdrawal-fee figure on the desk."
               />
+            </>
+          )}
+          {resolved.instrument === 'big12-bylaw-2x-distributions' && (
+            <>
+              <p className="fine">
+                Hosted Big 12 bylaws{' '}
+                <a className="ext" href={B12_BYLAWS.url} target="_blank" rel="noreferrer">§3.4</a>
+                {' '}(the withdrawal section — the PDF still lists old members;
+                we do not cite the stale roster):
+              </p>
+              <blockquote className="exit-quote">{B12_FORMULA_QUOTE}</blockquote>
+              <p className="fine">
+                <strong>Grant of rights still sits with the league.</strong>
+                {' '}{B12_GOR_PLAIN} Hosted §3.1:
+              </p>
+              <blockquote className="exit-quote">{B12_GOR_QUOTE}.</blockquote>
+              <p className="fine">
+                Modeled dollars: 2 × last cited FY2025 Form 990 Schedule I
+                distribution
+                {' '}
+                <a className="ext" href={B12_990.url} target="_blank" rel="noreferrer">source ↗</a>
+                . Labeled <span className="conf-label">modeled</span> — not a
+                booked invoice. The bylaw looks forward two membership years;
+                this desk uses the last filed year as the model.
+              </p>
+              <table className="roster staff-table">
+                <thead>
+                  <tr>
+                    <th>Line</th>
+                    <th className="num">Amount</th>
+                    <th>On this desk</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>FY2025 990 distribution{resolved.distribution?.grantee ? ` · ${resolved.distribution.grantee}` : ''}</td>
+                    <td className="num">
+                      {resolved.distribution?.amount != null
+                        ? moneyExact(resolved.distribution.amount)
+                        : <span className="pending-cell">not named</span>}
+                    </td>
+                    <td>
+                      {resolved.distribution?.named
+                        ? resolved.distribution.share === 'half'
+                          ? 'Named half-share — not the going-forward headline'
+                          : 'Named Schedule I line'
+                        : 'School line not independently extracted'}
+                    </td>
+                  </tr>
+                  {resolved.distribution?.share === 'half' && resolved.distribution?.amount != null && (
+                    <tr>
+                      <td>2 × last filed (half-share)</td>
+                      <td className="num modeled-cell">{moneyExact(resolved.distribution.amount * 2)}</td>
+                      <td>Footnote only — FY2026 is the first full-share year</td>
+                    </tr>
+                  )}
+                  <tr className="total">
+                    <td>
+                      {head.field?.low != null
+                        ? 'Modeled range · 2 × named full-share peers (Utah–ASU)'
+                        : 'Modeled 2 × last filed'}
+                    </td>
+                    <td className="num modeled-cell">
+                      {head.field?.low != null
+                        ? moneyRange(head.field.low, head.field.high)
+                        : moneyExact(head.field?.value)}
+                      {' '}
+                      <i className="dot modeled" />
+                    </td>
+                    <td>Headline cell — labeled modeled</td>
+                  </tr>
+                </tbody>
+              </table>
+              {B12_HALF_SHARE_IDS.includes(school.id) && (
+                <p className="fine">
+                  FY2025 was a half-share year. We do not silently 2× that
+                  half-share as if it were the going-forward buyout. The
+                  headline is a modeled range from named full-share peers on
+                  the same 990.
+                </p>
+              )}
+              <DrillNote
+                field={head.field}
+                exact={
+                  head.field?.low != null
+                    ? null
+                    : head.field?.value != null
+                      ? moneyExact(head.field.value)
+                      : null
+                }
+                range={head.field?.low != null ? moneyRange(head.field.low, head.field.high) : null}
+                empty="Pending — no modeled Big 12 figure on the desk."
+              />
+            </>
+          )}
+          {resolved.instrument === 'nd-acc-membership-hale' && (
+            <>
+              <p className="fine">
+                Notre Dame football is independent. The school did not sign
+                the ACC football grant of rights. This cell is <em>not</em> the
+                FSU / Clemson settlement football ladder ($165M / $147M).
+              </p>
+              <p className="fine">
+                ESPN’s David Hale has been cited putting the ACC membership
+                exit in the range of ~$100 million — equal to three times the
+                ACC’s then-recent annual revenue / the old 3× operating-budget
+                style fee — and noting Notre Dame would be free of the football
+                GOR charge. This desk did not find that dollar on espn.com;
+                the cite is the newsroom quoting Hale.
+              </p>
+              <DrillNote
+                field={head.field}
+                exact={head.field?.value != null ? `~${moneyExact(head.field.value)}` : null}
+                empty="Pending — no Hale / 247Sports estimate on the desk."
+              />
+              <p className="field-notes">
+                Reporter estimate, not a filing.
+                {' '}
+                <a className="ext" href={ND_HALE.url} target="_blank" rel="noreferrer">247Sports ↗</a>
+              </p>
             </>
           )}
           {!resolved.instrument && (

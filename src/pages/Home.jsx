@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { money, moneyRange, pct, throughShort, winsPerM } from '../lib/format.js'
+import { conferenceExitSortValue } from '../lib/conferenceExit.js'
 import { val } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
@@ -53,9 +54,14 @@ export default function Home({ schools, house, houseField, season, setSeason, in
         school: s,
         name: s.name,
         conference: s.conference,
-        confExit: s._conferenceExit?.fee?.value ?? null,
+        confExit: conferenceExitSortValue(s._conferenceExit),
+        confExitValue: s._conferenceExit?.fee?.value ?? null,
+        confExitLow: s._conferenceExit?.fee?.low ?? null,
+        confExitHigh: s._conferenceExit?.fee?.high ?? null,
         confExitFy: s._conferenceExit?.fee?.fiscalYear || null,
         confExitInstrument: s._conferenceExit?.instrument || null,
+        confExitModeled: s._conferenceExit?.fee?.confidence === 'modeled',
+        confExitApprox: s._conferenceExit?.fee?.approx === true,
         capacity: includeAlumni ? s._cap.total : s._cap.booked,
         house,
         nil: s._ratios.nil,
@@ -177,17 +183,24 @@ export default function Home({ schools, house, houseField, season, setSeason, in
                   {r.school.revenueGap && <span className="pill gap">rev. gap</span>}
                 </td>
                 <td className="conf">{r.conference === 'Independent / ACC' ? 'ND / ACC' : r.conference === 'Big Ten' ? 'B1G' : r.conference === 'Independent' ? 'Ind.' : r.conference}</td>
-                <td className="num" title={defTitle('conferenceExit')}>
+                <td className={`num ${r.confExitModeled ? 'modeled-cell' : ''}`} title={defTitle('conferenceExit')}>
                   {r.confExit == null ? (
                     <span className="pending-cell">pending</span>
+                  ) : r.confExitLow != null && r.confExitHigh != null ? (
+                    <>
+                      {moneyRange(r.confExitLow, r.confExitHigh)}
+                      <div className="term-compact">modeled range</div>
+                    </>
                   ) : (
                     <>
-                      {money(r.confExit)}
-                      {r.confExitFy && (
+                      {r.confExitApprox ? `~${money(r.confExitValue)}` : money(r.confExitValue)}
+                      {r.confExitModeled ? (
+                        <div className="term-compact">modeled</div>
+                      ) : r.confExitFy ? (
                         <div className="term-compact">
                           {r.confExitInstrument === 'acc-settlement-ladder' ? `FY ${r.confExitFy}` : 'bylaw fee'}
                         </div>
-                      )}
+                      ) : null}
                     </>
                   )}
                 </td>
@@ -220,7 +233,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
         {house == null
           ? 'No House cap (pre-settlement). Modeled NIL for 2021–2024 is a collective-era third-party-only backcast (labeled modeled) — no House rev-share. Capacity is the conference-media floor (plus modeled extra alumni only when that toggle is on); tickets / sponsorships / contributions stay pending.'
           : `House cap shown is ${season === 2026 ? '2026–27 (~$21.3M, estimated)' : '2025–26 ($20.5M, reported)'}. Capacity default is booked-only — the filing stack. Flip on + alumni model to add the Scorecard-based extra-alumni midpoint, net of booked gifts. Will move when Category 15 / tickets land.`}
-        {' '}Conference exit is a stock (ACC settlement ladder or SEC bylaw fee), not a coach buyout and not in capacity — empty cells are pending.
+        {' '}Conference exit is a stock (ACC settlement ladder, SEC bylaw fee, or Big 12 modeled 2× 990s), not a coach buyout and not in capacity — modeled cells use the same slate mark as modeled NIL; empty cells are pending.
         {' '}Click a school.
       </p>
     </div>

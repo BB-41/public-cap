@@ -152,14 +152,18 @@ export default function Methods({ meta: metaProp }) {
         <dd>
           What a school would pay the conference to leave — named Conference exit, not Buyout.
           A stock, not yearly spend, and not the coach-firing buyout on <code>/buyout</code>.
-          Two different instruments. ACC: settlement year ladder, rights in tow
+          Three instruments. ACC: settlement year ladder, rights in tow
           (FY 2025–26 / 2026 season exit $165 million, then −$18 million a year to a $75 million
           floor from 2030–31 through the ACC/ESPN deal in 2036), cited from a newsroom quote
           of the 68-page Clemson/FSU/ACC settlement. SEC: 2023–24 bylaws §3.2.1 $30 million
           with-notice withdrawal fee — cash, not a media-rights buyback; $40 million without
-          notice and $45 million if deemed withdrawn are footnoted. Empty means no hosted
-          schedule (Big Ten; Big 12’s $100 million was a Texas/Oklahoma 2023–24 one-off;
-          Notre Dame football is independent). Not part of annual capacity.
+          notice and $45 million if deemed withdrawn are footnoted. Big 12: hosted bylaws §3.4
+          cash formula (sum of distributions for the final two years of membership), modeled as
+          2 × the last cited FY2025 Form 990 Schedule I line — labeled modeled, never booked.
+          Paying that fee does not buy back media rights; the grant of rights still sits with
+          the league. Notre Dame: modeled ~$100 million Hale / 247Sports estimate of the
+          non-football ACC membership exit — not the FSU/Clemson football ladder. Empty means
+          no hosted schedule (Big Ten). Not part of annual capacity.
           Booked-only remains the default capacity toggle.
         </dd>
         <dt>Staff pay</dt>
@@ -173,7 +177,7 @@ export default function Methods({ meta: metaProp }) {
         <dt>TV / media rights</dt>
         <dd>Most Power 4 TV contracts are conference deals, not 68 school contracts. The school page and the <a href="/tv">TV book</a> show rights holders, term, the cited conference pot, and how the share is split when a 2024–26 source exists. A school media check is printed only when reported, or as a labeled equal-share estimate (cited pot ÷ cited members). Notre Dame’s NBC football deal is the school-level exception. The College Football Playoff is one national package. ACC Grant of Rights / viewership splits are described as cited — not flattened to equal share. Empty means pending.</dd>
         <dt>Confidence tags</dt>
-        <dd><strong>reported</strong> — a primary public document, or a newsroom story that quotes one. <strong>estimated</strong> — desk estimate, residual, or unofficial deal term; source still named. <strong>modeled</strong> — alumni cohort / wealth / giving, the conference NIL range, or the position rate card. <strong>pending</strong> — we looked, we do not have a number, cell stays empty.</dd>
+        <dd><strong>reported</strong> — a primary public document, or a newsroom story that quotes one. <strong>estimated</strong> — desk estimate, residual, or unofficial deal term; source still named. <strong>modeled</strong> — alumni cohort / wealth / giving, the conference NIL range, the position rate card, Big 12 conference-exit 2× Form 990 distributions, or the Notre Dame Hale membership-exit estimate. <strong>pending</strong> — we looked, we do not have a number, cell stays empty.</dd>
       </dl>
 
       <h2>TV / media rights</h2>
@@ -805,7 +809,7 @@ export default function Methods({ meta: metaProp }) {
         default capacity toggle. We do not invent dollars or use “sources tell” figures.
       </p>
       <p>
-        Two different instruments. They are not equivalent.
+        Three instruments. They are not equivalent.
       </p>
       <p>
         <strong>ACC — settlement year ladder, media rights in tow.</strong> The
@@ -836,13 +840,70 @@ export default function Methods({ meta: metaProp }) {
         This is not treated as equivalent to the ACC ladder.
       </p>
       <p>
-        <strong>Big Ten, Big 12, Notre Dame football — pending.</strong> Big Ten
-        has no published exit stair (grant of rights; a private-equity extension
-        to 2046 is paused). Big 12’s $100 million was a Texas / Oklahoma 2023–24
-        early-exit one-off, not a schedule for remaining members — we do not
-        stamp it on Kansas, Iowa State, or anyone still in the league.
-        Notre Dame football is independent; ACC membership for other sports is
-        a different contract. Empty means pending.
+        <strong>Big 12 — modeled 2× distributions from the FY2025 990 + hosted bylaws.</strong>
+        {' '}<a href="https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf" target="_blank" rel="noreferrer">§3.4</a>:
+        Buyout Amount = the sum of distributions that otherwise would be paid
+        during the final two years of membership. This desk models that as
+        2 × the last cited FY2025 Form 990 Schedule I line
+        {' '}(<a href="https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555" target="_blank" rel="noreferrer">Plinth extract</a>
+        of the IRS e-file;
+        {' '}<a href="https://projects.propublica.org/nonprofits/organizations/752604555" target="_blank" rel="noreferrer">ProPublica</a>).
+        Cells are labeled <strong>modeled</strong>, never booked. The hosted PDF
+        still lists old members; we cite the withdrawal section, not the stale roster.
+        The $100 million Texas / Oklahoma 2023–24 early-exit figure is not stamped
+        on remaining members. Texas and Oklahoma are SEC.
+      </p>
+      <p>
+        Paying the 2×-distributions formula does <em>not</em> buy back media
+        rights. The grant of rights still sits with the league. §3.1: payment
+        of the Buyout Amount “does not abrogate” the Grant of Rights Agreement.
+        This is a cash formula only — not the ACC settlement (rights in tow).
+        Every Big 12 school-page drill prints that sentence.
+      </p>
+      <p>
+        Named full-share Schedule I lines are 2× the exact dollar (Arizona
+        $38,009,311 → $76,018,622; Arizona State $43,009,550 → $86,019,100;
+        Baylor $39,950,085 → $79,900,170; Colorado $39,034,422 → $78,068,844;
+        Iowa State $41,194,426 → $82,388,852; Kansas $38,312,680 → $76,625,360;
+        Kansas State $39,830,544 → $79,661,088; Oklahoma State $38,038,756 →
+        $76,075,512; TCU $39,272,007 → $78,544,014; Texas Tech $39,734,106 →
+        $79,468,212; Utah $37,879,865 → $75,759,730; West Virginia $39,582,600 →
+        $79,165,200).
+        BYU / Houston / UCF / Cincinnati were half-shares in FY2025; FY2026 is
+        their first full-share year. We do not silently 2× the half-share as
+        the going-forward buyout. Those four use a modeled range from named
+        full-share peers (2 × $37,879,865–$43,009,550). Named half-share 990s
+        (BYU $23,110,622; Cincinnati $20,211,539; UCF $19,978,520) appear as
+        a 2× footnote only. Houston’s school-level FY2025 line was not
+        independently extracted — no fake point.
+        Cross-checks:
+        {' '}<a href="https://www.usatoday.com/story/sports/college/2026/05/22/power-4-conference-money-comparison-big-ten-sec-acc-big-12-pac-12-brett-yormark/90204563007/" target="_blank" rel="noreferrer">USA TODAY 2026-05-22</a>
+        (minimum full-share $37.9M; half-shares $19–23M);
+        {' '}<a href="https://apnews.com/article/acc-big-12-revenue-distribution-b114cc5b581d043344b0d06110e0e2b0" target="_blank" rel="noreferrer">AP</a>
+        /
+        {' '}<a href="https://www.foxsports.com/articles/cfb/tax-filings-acc-paid-average-of-471m-to-fullshare-member-schools-big-12-paid-average-of-395m" target="_blank" rel="noreferrer">FOX Sports</a>
+        (average ~$39.5M; Arizona/ASU/Colorado/Utah $37.9M–$43M);
+        {' '}<a href="https://www.usatoday.com/story/sports/ncaaf/big12/2026/06/08/big-12-conference-revenue-dilution-realignment-big-ten-sec-acc/90375818007/" target="_blank" rel="noreferrer">USA TODAY 2026-06-08</a>
+        named Iowa State $41.2M, Oklahoma State $38M, Texas Tech $39.7M.
+        FY2026 <em>projections</em> in that last story are budgets, not 990s —
+        unused.
+      </p>
+      <p>
+        <strong>Notre Dame — modeled reporter estimate, not the football ladder.</strong>
+        Football independent; they did not sign the ACC football grant of rights.
+        We do not stamp the ACC $147M / $165M settlement on ND.
+        {' '}<a href="https://247sports.com/article/explaining-notre-dames-realignment-dilemma-acc-grant-of-rights-fee-189990208/" target="_blank" rel="noreferrer">247Sports</a>
+        quotes ESPN’s David Hale putting the ACC membership exit in the range
+        of ~$100 million (three times the ACC’s then-recent annual revenue /
+        the old 3× operating-budget style fee) and noting ND would be free of
+        the football GOR charge. An original espn.com story or post with that
+        $100 million figure was not located; the cell cites the newsroom quote
+        and is labeled <strong>modeled</strong> (reporter estimate, not a filing).
+        Footnote: this is the non-football ACC membership exit estimate.
+      </p>
+      <p>
+        <strong>Big Ten — pending.</strong> No published exit stair (grant of
+        rights; a private-equity extension to 2046 is paused). Empty means pending.
       </p>
 
       <h2>Buyouts actually paid</h2>
@@ -884,7 +945,7 @@ export default function Methods({ meta: metaProp }) {
       <ul>
         <li><strong>reported</strong> — a primary public document or a newsroom story that quotes one.</li>
         <li><strong>estimated</strong> — desk estimate, residual, or unofficial deal term. Source is still named.</li>
-        <li><strong>modeled</strong> — alumni cohort / wealth / giving, conference NIL range, or position rate card.</li>
+        <li><strong>modeled</strong> — alumni cohort / wealth / giving, conference NIL range, position rate card, Big 12 conference-exit 2× 990s, or the Notre Dame Hale estimate.</li>
         <li><strong>pending</strong> — we looked, we do not have a number, cell stays empty.</li>
       </ul>
 
@@ -897,7 +958,7 @@ export default function Methods({ meta: metaProp }) {
         <li>No women’s sports or Olympic-sport roster math in v1 (the 7% unallocated slice is the placeholder).</li>
         <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
         <li>Athletics debt is a separate layer, not a capacity add-on. Category 53 university-wide institutional debt is refused unless the filing splits an athletics-related amount. We do not invent an amortization schedule from a project cost. Empty stays empty.</li>
-        <li>Conference exit is a separate layer, not a capacity add-on and not a coach-firing buyout. We do not invent an ACC dollar without a hosted packet or a newsroom quote of the filing. We do not stamp the Big 12 $100M Texas/Oklahoma one-off on remaining members. Notre Dame football stays empty. Empty stays empty.</li>
+        <li>Conference exit is a separate layer, not a capacity add-on and not a coach-firing buyout. We do not invent an ACC dollar without a hosted packet or a newsroom quote of the filing. We do not stamp the Big 12 $100M Texas/Oklahoma one-off on remaining members. Big 12 remaining members are a labeled model of §3.4 (2× last cited 990), not a booked invoice, and not an ACC-style rights-in-tow ladder. Notre Dame is a modeled Hale / 247Sports membership estimate — not the FSU/Clemson football ladder. Big Ten stays empty. Empty stays empty.</li>
       </ul>
     </div>
   )

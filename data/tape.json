@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-28",
-    "itemCount": 342,
+    "itemCount": 359,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,261 @@
     ]
   },
   "items": [
+    {
+      "id": "arizona-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "arizona",
+      "schoolName": "Arizona",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 38,009,311 × 2 = 76,018,622 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 76018622,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "arizona-state-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "arizona-state",
+      "schoolName": "Arizona State",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 43,009,550 × 2 = 86,019,100 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 86019100,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "baylor-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "baylor",
+      "schoolName": "Baylor",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 39,950,085 × 2 = 79,900,170 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 79900170,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "byu-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "byu",
+      "schoolName": "BYU",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. modeled range 2 × full-share peers $37,879,865–$43,009,550; last filed half-share 23,110,622 × 2 is a footnote only. Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 80889415,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "cincinnati-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "cincinnati",
+      "schoolName": "Cincinnati",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. modeled range 2 × full-share peers $37,879,865–$43,009,550; last filed half-share 20,211,539 × 2 is a footnote only. Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 80889415,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "colorado-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "colorado",
+      "schoolName": "Colorado",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 39,034,422 × 2 = 78,068,844 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 78068844,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "houston-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "houston",
+      "schoolName": "Houston",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. modeled range 2 × full-share peers $37,879,865–$43,009,550 (Houston Schedule I line not independently extracted). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 80889415,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "iowa-state-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "iowa-state",
+      "schoolName": "Iowa State",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 41,194,426 × 2 = 82,388,852 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 82388852,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "kansas-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "kansas",
+      "schoolName": "Kansas",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 38,312,680 × 2 = 76,625,360 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 76625360,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "kansas-state-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "kansas-state",
+      "schoolName": "Kansas State",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 39,830,544 × 2 = 79,661,088 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 79661088,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "oklahoma-state-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "oklahoma-state",
+      "schoolName": "Oklahoma State",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 38,038,756 × 2 = 76,077,512 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 76077512,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "tcu-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "tcu",
+      "schoolName": "TCU",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 39,272,007 × 2 = 78,544,014 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 78544014,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "texas-tech-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "texas-tech",
+      "schoolName": "Texas Tech",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 39,734,106 × 2 = 79,468,212 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 79468212,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "ucf-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "ucf",
+      "schoolName": "UCF",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. modeled range 2 × full-share peers $37,879,865–$43,009,550; last filed half-share 19,978,520 × 2 is a footnote only. Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 80889415,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "utah-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "utah",
+      "schoolName": "Utah",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 37,879,865 × 2 = 75,759,730 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 75759730,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "west-virginia-conference-exit-big12-2x-990-fy2025",
+      "date": "2026-05-14",
+      "school": "west-virginia",
+      "schoolName": "West Virginia",
+      "kind": "conference-exit",
+      "headline": "Hosted Big 12 bylaws §3.4: Buyout Amount = sum of distributions for the final two years of membership. Modeled as 2× last cited FY2025 Form 990. FY2025 990 39,582,600 × 2 = 79,165,200 (modeled). Paying the fee does not abrogate the grant of rights (§3.1) — cash formula only; media rights stay with the league.",
+      "figure": 79165200,
+      "confidence": "modeled",
+      "source": {
+        "label": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "notre-dame-conference-exit-hale-100m",
+      "date": "2022-08-01",
+      "school": "notre-dame",
+      "schoolName": "Notre Dame",
+      "kind": "conference-exit",
+      "headline": "247Sports quoting ESPN’s David Hale: Notre Dame ACC membership exit in the range of ~$100 million (3× then-recent ACC annual revenue / old 3× operating-budget style fee). Football independent — not the FSU/Clemson settlement ladder. Hale noted ND would be free of the football grant-of-rights charge. Reporter estimate, not a filing.",
+      "figure": 100000000,
+      "confidence": "modeled",
+      "source": {
+        "label": "247Sports quoting ESPN’s David Hale — Notre Dame ACC membership exit in the range of ~$100 million (equal to three times the ACC’s then-recent annual revenue / the old 3× operating-budget style fee); Hale noted ND would be free of the football grant-of-rights charge. Reporter estimate, not a filing. Original espn.com story or post with that $100 million figure was not located.",
+        "url": "https://247sports.com/article/explaining-notre-dames-realignment-dilemma-acc-grant-of-rights-fee-189990208/"
+      },
+      "field": "conferenceExit"
+    },
     {
       "id": "boston-college-conference-exit-acc-settlement-2025-07",
       "date": "2025-07-03",

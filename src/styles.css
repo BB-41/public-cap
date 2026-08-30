@@ -217,12 +217,17 @@ select {
 .bar.b { background: var(--blood); }
 
 .methods p, .methods li { color: var(--paper-dim); max-width: 740px; }
-.methods blockquote {
+.methods blockquote,
+.exit-quote {
   border-left: 3px solid var(--gold);
   margin: 16px 0;
   padding: 8px 16px;
   color: var(--paper);
   font-style: italic;
+}
+.exit-quote {
+  max-width: 740px;
+  font-size: 14px;
 }
 .crumb { font-family: Arial, Helvetica, system-ui, sans-serif; font-size: 11px; color: var(--muted); }
 .site-foot {
