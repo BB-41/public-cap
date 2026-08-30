@@ -142,6 +142,81 @@ export function canonicalUrl(path) {
   return `${publicOrigin()}${path}`
 }
 
+export const PAGE_TITLES = {
+  home: DEFAULT_TITLE,
+  tape: 'Tape — Public Cap',
+  methods: 'Methods — Public Cap',
+  buyout: 'Buyout — Public Cap',
+  compare: 'Compare — Public Cap',
+  tv: 'TV — Public Cap',
+}
+
+const HOME_JSON_LD_ID = 'public-cap-jsonld'
+
+function upsertMeta(attr, key, content) {
+  if (typeof document === 'undefined') return
+  let el = document.head.querySelector(`meta[${attr}="${key}"]`)
+  if (!el) {
+    el = document.createElement('meta')
+    el.setAttribute(attr, key)
+    document.head.appendChild(el)
+  }
+  el.setAttribute('content', content)
+}
+
+function upsertCanonical(href) {
+  if (typeof document === 'undefined') return
+  let el = document.head.querySelector('link[rel="canonical"]')
+  if (!el) {
+    el = document.createElement('link')
+    el.setAttribute('rel', 'canonical')
+    document.head.appendChild(el)
+  }
+  el.setAttribute('href', href)
+}
+
+function upsertHomeJsonLd(on) {
+  if (typeof document === 'undefined') return
+  let el = document.getElementById(HOME_JSON_LD_ID)
+  if (!on) {
+    el?.remove()
+    return
+  }
+  if (!el) {
+    el = document.createElement('script')
+    el.id = HOME_JSON_LD_ID
+    el.type = 'application/ld+json'
+    document.head.appendChild(el)
+  }
+  el.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        name: 'Public Cap',
+        url: `https://${SITE}/`,
+      },
+      {
+        '@type': 'Organization',
+        name: 'Public Cap',
+        url: `https://${SITE}/`,
+      },
+    ],
+  })
+}
+
+/** Set document title, matching og:title, and a canonical URL for the current route. */
+export function applyDocumentMeta({ title, path, jsonLd = false }) {
+  const href = canonicalUrl(path)
+  if (typeof document === 'undefined') return href
+  document.title = title
+  upsertMeta('property', 'og:title', title)
+  upsertMeta('property', 'og:url', href)
+  upsertCanonical(href)
+  upsertHomeJsonLd(jsonLd)
+  return href
+}
+
 export function schoolTitle(name, season) {
   const yr = season && season !== CURRENT_SEASON ? ` · ${season}` : ''
   return `${name}${yr} — Public Cap`

@@ -1,1 +1,12 @@
-/* /index.html 200
+# Identity-proxy crawl files first. Cloudflare follows _redirects even when a
+# matching static asset exists, so /* must not rewrite robots.txt or sitemap.xml.
+/robots.txt /robots.txt 200
+/sitemap.xml /sitemap.xml 200
+
+# SPA HTML routes only. JSON books, logos, and other public/ files stay files.
+/school/* /index.html 200
+/compare /index.html 200
+/tape /index.html 200
+/tv /index.html 200
+/buyout /index.html 200
+/methods /index.html 200

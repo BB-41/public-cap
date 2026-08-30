@@ -17,6 +17,13 @@ import {
   schoolIdFromPath,
 } from './lib/loadDesk.js'
 import { CURRENT_SEASON, houseFieldForSeason, houseValueForSeason, parseSeasonParam } from './lib/seasons.js'
+import {
+  DEFAULT_TITLE,
+  PAGE_TITLES,
+  applyDocumentMeta,
+  compareTitle,
+  schoolTitle,
+} from './lib/share.js'
 import Shell, { SettingType } from './components/Shell.jsx'
 
 const School = lazy(() => import('./pages/School.jsx'))
@@ -207,6 +214,30 @@ export default function App() {
   const meta = data?.meta || metaOnly
   const house = meta ? houseValueForSeason(meta, season) : null
   const houseField = meta ? houseFieldForSeason(meta, season) : null
+
+  useEffect(() => {
+    const path = location.pathname
+    if (kind === 'school') {
+      const school = enriched?.find((s) => s.id === schoolId)
+      applyDocumentMeta({
+        title: school ? schoolTitle(school.name, season) : DEFAULT_TITLE,
+        path: schoolId ? `/school/${schoolId}` : path,
+      })
+      return
+    }
+    if (kind === 'compare') {
+      const A = enriched?.find((s) => s.id === params.get('a'))
+      const B = enriched?.find((s) => s.id === params.get('b'))
+      applyDocumentMeta({
+        title: A && B ? compareTitle(A.name, B.name, season) : PAGE_TITLES.compare,
+        path: '/compare',
+      })
+      return
+    }
+    const title = PAGE_TITLES[kind] || DEFAULT_TITLE
+    const routePath = kind === 'home' ? '/' : path
+    applyDocumentMeta({ title, path: routePath, jsonLd: kind === 'home' })
+  }, [kind, schoolId, season, enriched, params, location.pathname])
 
   const ready =
     (!needsDesk || (data && enriched)) &&

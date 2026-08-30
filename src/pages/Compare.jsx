@@ -16,7 +16,6 @@ import {
   comparePath,
   compareSearch,
   compareTitle,
-  DEFAULT_TITLE,
   downloadComparePng,
   hashKey,
   schoolPath,
@@ -254,15 +253,6 @@ export default function Compare({ schools, meta, house, houseField, season, setS
     // first sync only when the URL is incomplete
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params, schools, location.hash])
-
-  useEffect(() => {
-    const prev = document.title
-    if (A && B) document.title = compareTitle(A.name, B.name, season)
-    else document.title = 'Compare — Public Cap'
-    return () => {
-      document.title = prev || DEFAULT_TITLE
-    }
-  }, [A, B, season])
 
   useEffect(() => {
     if (didScroll.current || !view) return
