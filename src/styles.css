@@ -109,7 +109,7 @@ a:hover { text-decoration: underline; }
 .table-scroll { overflow: auto; max-height: calc(100vh - 140px); border-top: 2px solid var(--paper); min-height: 420px; }
 .table-scroll.table-pending { min-height: 420px; }
 table.rank { width: 100%; border-collapse: collapse; font-size: 14.5px; }
-table.rank.home-rank { min-width: 1100px; table-layout: fixed; }
+table.rank.home-rank { min-width: 1180px; table-layout: fixed; }
 table.rank .col-rk { width: 2.4em; }
 table.rank .col-school { width: 18%; }
 table.rank .col-conf { width: 5.5em; }
@@ -557,18 +557,23 @@ table.staff-table { max-width: 760px; margin: 8px 0 18px; }
   margin: 12px 0 8px;
 }
 
-.debt-head[role="button"] {
+.debt-head[role="button"],
+.exit-head[role="button"] {
   cursor: pointer;
   padding: 6px 8px;
   margin: 0 -8px;
 }
 .debt-head[role="button"]:hover,
 .debt-head[role="button"]:focus-visible,
-.debt-head.open {
+.debt-head.open,
+.exit-head[role="button"]:hover,
+.exit-head[role="button"]:focus-visible,
+.exit-head.open {
   background: var(--ink-2);
   outline: none;
 }
-.debt-head[role="button"]:focus-visible {
+.debt-head[role="button"]:focus-visible,
+.exit-head[role="button"]:focus-visible {
   box-shadow: inset 0 0 0 1px var(--gold);
 }
 

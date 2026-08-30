@@ -2,6 +2,7 @@ import { money, moneyExact, winsPerM } from '../lib/format.js'
 import { defTitle } from '../lib/definitions.js'
 import DrillNote, { DrillClose } from './DrillNote.jsx'
 import { debtHeadline, enrollmentHeadcount, impliedFeePerStudent, publishedFeeTimesEnrollment } from '../lib/layers.js'
+import { SEC_STAIRS, accStepLabel, conferenceExitHeadline } from '../lib/conferenceExit.js'
 
 function Meta({ field }) {
   if (!field) return null
@@ -397,6 +398,182 @@ function DebtSection({ school, open, onToggle }) {
   )
 }
 
+function ConferenceExitSection({ school, open, onToggle }) {
+  const resolved = school?._conferenceExit
+  if (!resolved) return null
+  const expanded = open === 'conference-exit'
+  const head = conferenceExitHeadline(resolved)
+  const ladder = resolved.ladder || []
+  const stairs = resolved.stairs || SEC_STAIRS
+  function toggle() {
+    onToggle?.('conference-exit')
+  }
+  const instrument =
+    resolved.instrument === 'acc-settlement-ladder'
+      ? 'ACC settlement year ladder — rights in tow'
+      : resolved.instrument === 'sec-bylaw-withdrawal'
+        ? 'SEC bylaw withdrawal fee — cash, not a media-rights buyback'
+        : 'No hosted exit schedule'
+  return (
+    <section id="slice-conference-exit" className={expanded ? 'exit-sec open' : 'exit-sec'}>
+      <h2 title={defTitle('conferenceExit')}>Conference exit</h2>
+      <p className="lede tight">
+        What this school would pay the conference to leave — a stock, not yearly
+        spend, and not a coach-firing buyout. Not part of annual capacity.
+        Two published instruments only: an ACC settlement year ladder (rights
+        in tow) and an SEC bylaw withdrawal fee. Empty means no hosted schedule.
+        Click the headline for the breakdown.
+      </p>
+      <div className="short-stack">
+        <div>
+          <div className="eyebrow">{instrument}</div>
+          {head.field?.value != null ? (
+            <div
+              className={`field exit-head${expanded ? ' open' : ''}`}
+              role="button"
+              tabIndex={0}
+              aria-expanded={expanded}
+              onClick={toggle}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  toggle()
+                }
+              }}
+            >
+              <div className="field-val">
+                {moneyExact(head.field.value)} <i className={`dot ${head.field.confidence}`} />
+              </div>
+              <Meta field={head.field} />
+              {resolved.step && (
+                <div className="field-notes">{accStepLabel(resolved.step)}</div>
+              )}
+              {resolved.instrument === 'sec-bylaw-withdrawal' && (
+                <div className="field-notes">§3.2.1 with required notice</div>
+              )}
+            </div>
+          ) : (
+            <div
+              className={`field pending-box exit-head${expanded ? ' open' : ''}`}
+              role="button"
+              tabIndex={0}
+              aria-expanded={expanded}
+              onClick={toggle}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  toggle()
+                }
+              }}
+            >
+              <div className="field-val">Pending</div>
+              <div className="field-meta">{resolved.notes || head.field?.notes || 'No hosted conference-exit schedule on the desk.'}</div>
+            </div>
+          )}
+        </div>
+      </div>
+      {expanded && (
+        <div className="drill">
+          <p className="drill-kicker">Breakdown</p>
+          {resolved.instrument === 'acc-settlement-ladder' && (
+            <>
+              <p className="fine">
+                Year ladder from the 68-page ACC / Clemson / Florida State
+                settlement. FY 2025–26 is the 2026 season exit. Each later
+                fiscal year drops $18 million until the $75 million floor
+                (2030–31 through the ACC / ESPN deal, 2036). Paying the fee
+                lets the school leave <em>with</em> media rights.
+              </p>
+              <table className="roster staff-table">
+                <thead>
+                  <tr>
+                    <th>Fiscal year</th>
+                    <th>Season exit</th>
+                    <th className="num">Fee</th>
+                    <th>Source</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ladder.map((row) => {
+                    const on = resolved.step && row.fiscalYear === resolved.step.fiscalYear
+                    return (
+                      <tr key={row.fiscalYear} className={on ? 'total' : undefined}>
+                        <td>
+                          {row.throughFiscalYear
+                            ? `${row.fiscalYear} – ${row.throughFiscalYear}`
+                            : row.fiscalYear}
+                          {on ? ' · this season' : ''}
+                        </td>
+                        <td>{row.exitSeason}{row.throughFiscalYear ? '–36' : ''}</td>
+                        <td className="num">
+                          {moneyExact(row.value)} <i className={`dot ${row.confidence || 'reported'}`} />
+                        </td>
+                        <td>
+                          {row.url ? (
+                            <a className="ext" href={row.url} target="_blank" rel="noreferrer">{row.source || 'source'} ↗</a>
+                          ) : (
+                            row.source || '—'
+                          )}
+                          {row.notes && <div className="field-notes">{row.notes}</div>}
+                        </td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </>
+          )}
+          {resolved.instrument === 'sec-bylaw-withdrawal' && (
+            <>
+              <p className="fine">
+                Hosted 2023–24 SEC Bylaws §3.2. The school-page cell is the
+                <strong> $30 million with-notice</strong> figure (§3.2.1).
+                This is a cash withdrawal fee. It does not say the school
+                leaves with media rights, and it is not treated as equivalent
+                to the ACC ladder.
+              </p>
+              <table className="roster staff-table">
+                <thead>
+                  <tr>
+                    <th>Bylaw</th>
+                    <th>Trigger</th>
+                    <th className="num">Fee</th>
+                    <th>On this desk</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {stairs.map((row) => (
+                    <tr key={row.bylaw} className={row.booked ? 'total' : undefined}>
+                      <td>§{row.bylaw}</td>
+                      <td>{row.label}</td>
+                      <td className="num">
+                        {moneyExact(row.value)} <i className={`dot ${row.confidence || 'reported'}`} />
+                      </td>
+                      <td>{row.booked ? 'Headline cell' : 'Footnote only — not the school-page cell'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <DrillNote
+                field={resolved.fee}
+                empty="Pending — no hosted SEC withdrawal-fee figure on the desk."
+              />
+            </>
+          )}
+          {!resolved.instrument && (
+            <div className="field pending-box">
+              <div className="field-val">Pending</div>
+              <div className="field-meta">{resolved.notes || 'Empty means we looked and do not have a hosted exit schedule. We do not invent a dollar or reuse a coach buyout.'}</div>
+            </div>
+          )}
+          {resolved.notes && <p className="field-notes">{resolved.notes}</p>}
+          <DrillClose onClose={() => onToggle?.(null)} />
+        </div>
+      )}
+    </section>
+  )
+}
+
 function EfficiencySection({ school }) {
   const e = school._eff
   if (!e) return null
@@ -510,6 +687,7 @@ export default function Layers({ school, open, onToggle }) {
       <ApparelSection layer={layer} />
       <SubsidySection school={school} />
       <DebtSection school={school} open={open} onToggle={onToggle} />
+      <ConferenceExitSection school={school} open={open} onToggle={onToggle} />
       <EfficiencySection school={school} />
       <BuyoutsPaidSection layer={layer} />
     </>

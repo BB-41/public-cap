@@ -105,9 +105,13 @@ export const DEFS = {
     label: 'Athletics debt',
     text: 'Athletics facility debt from the NCAA Membership Financial Report or a cited bond/board story — not the university’s entire balance sheet, and not part of annual capacity. Outstanding (MFRS Category 52 / Other Reporting Items) is a stock, like a buyout overhang. Annual debt service (Category 34 — principal, interest, leases, and rental fees on athletic facilities) is this year’s check. Named stadium or building projects are a cited tape only: project name, announced cost, remaining if the filing names it, through-date if named. We do not invent an amortization schedule. University-wide institutional debt stays out unless the filing itself splits an athletics-related amount. $0 is a real cell only when the filing says $0. Empty means pending.',
   },
+  conferenceExit: {
+    label: 'Conference exit',
+    text: 'What a school would pay the conference to leave — a stock, not yearly spend, and not a coach-firing buyout. Two published instruments only. ACC: settlement year ladder (FY 2025–26 / 2026 exit $165M, then −$18M a year to a $75M floor through 2036); paying the fee lets the school leave with media rights. SEC: 2023–24 bylaws §3.2.1 $30 million with-notice withdrawal fee — cash, not a rights buyback; $40M / $45M stairs are footnoted. Empty means no hosted schedule (Big Ten grant of rights; Big 12’s $100M was a Texas/Oklahoma 2023–24 one-off; Notre Dame football is independent). Not part of annual capacity. Booked-only remains the default capacity toggle.',
+  },
   tape: {
     label: 'Desk tape',
-    text: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990s, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, athletics-debt filings, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
+    text: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990s, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, athletics-debt filings, conference-exit filings, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
   },
   tv: {
     label: 'TV / media rights',

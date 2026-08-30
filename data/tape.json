@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-08-28",
-    "itemCount": 309,
+    "itemCount": 342,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,501 @@
     ]
   },
   "items": [
+    {
+      "id": "boston-college-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "boston-college",
+      "schoolName": "Boston College",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "california-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "california",
+      "schoolName": "California",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "clemson-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "clemson",
+      "schoolName": "Clemson",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "duke-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "duke",
+      "schoolName": "Duke",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "florida-state-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "florida-state",
+      "schoolName": "Florida State",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "georgia-tech-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "georgia-tech",
+      "schoolName": "Georgia Tech",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "louisville-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "louisville",
+      "schoolName": "Louisville",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "miami-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "miami",
+      "schoolName": "Miami (FL)",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "nc-state-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "nc-state",
+      "schoolName": "NC State",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "north-carolina-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "north-carolina",
+      "schoolName": "North Carolina",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "pittsburgh-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "pittsburgh",
+      "schoolName": "Pittsburgh",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "smu-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "smu",
+      "schoolName": "SMU",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "stanford-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "stanford",
+      "schoolName": "Stanford",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "syracuse-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "syracuse",
+      "schoolName": "Syracuse",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "virginia-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "virginia",
+      "schoolName": "Virginia",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "virginia-tech-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "virginia-tech",
+      "schoolName": "Virginia Tech",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "wake-forest-conference-exit-acc-settlement-2025-07",
+      "date": "2025-07-03",
+      "school": "wake-forest",
+      "schoolName": "Wake Forest",
+      "kind": "conference-exit",
+      "headline": "Post and Courier quote of the 68-page ACC/Clemson/FSU settlement: year ladder $165M (FY 2025–26 / 2026 exit) stepping down $18M a year to a $75M floor (2030–31 through 2036), rights in tow.",
+      "figure": 165000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Post and Courier — 68-page ACC / Clemson / Florida State settlement (obtained by the newsroom)",
+        "url": "https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "alabama-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "alabama",
+      "schoolName": "Alabama",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "arkansas-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "auburn-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "auburn",
+      "schoolName": "Auburn",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "florida-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "florida",
+      "schoolName": "Florida",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "georgia-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "georgia",
+      "schoolName": "Georgia",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "kentucky-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "kentucky",
+      "schoolName": "Kentucky",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "lsu-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "mississippi-state-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "mississippi-state",
+      "schoolName": "Mississippi State",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "missouri-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "oklahoma-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "oklahoma",
+      "schoolName": "Oklahoma",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "ole-miss-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "ole-miss",
+      "schoolName": "Ole Miss",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "south-carolina-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "south-carolina",
+      "schoolName": "South Carolina",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "tennessee-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "tennessee",
+      "schoolName": "Tennessee",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "texas-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "texas-am-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "texas-am",
+      "schoolName": "Texas A&M",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
+    {
+      "id": "vanderbilt-conference-exit-sec-bylaws-3-2-1",
+      "date": "2024-06-14",
+      "school": "vanderbilt",
+      "schoolName": "Vanderbilt",
+      "kind": "conference-exit",
+      "headline": "Hosted 2023–24 SEC Bylaws §3.2.1: $30 million withdrawal fee with required notice. §3.2.2 $40M without notice and §3.2.3 $45M deemed withdrawn are footnoted. Cash fee — not an ACC-style rights-in-tow ladder.",
+      "figure": 30000000,
+      "confidence": "reported",
+      "source": {
+        "label": "2023–24 SEC Bylaws, §3.2 Withdrawal Fee (hosted PDF)",
+        "url": "https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf"
+      },
+      "field": "conferenceExit"
+    },
     {
       "id": "cincinnati-pay-satterfield-2026-mou",
       "date": "2022-12-06",
