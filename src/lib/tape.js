@@ -10,6 +10,7 @@ export const KIND_LABELS = {
   subsidy: 'Subsidy',
   'student-fee': 'Student fee',
   debt: 'Athletics debt',
+  'conference-exit': 'Conference exit',
   990: '990',
   foia: 'FOIA',
   'house-cap': 'House cap',

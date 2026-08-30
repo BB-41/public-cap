@@ -148,6 +148,20 @@ export default function Methods({ meta: metaProp }) {
           or even-split a project cost across years. University-wide institutional debt stays out unless the
           filing itself splits an athletics-related amount. $0 is a real cell only when the filing says $0. Empty means pending.
         </dd>
+        <dt>Conference exit</dt>
+        <dd>
+          What a school would pay the conference to leave — named Conference exit, not Buyout.
+          A stock, not yearly spend, and not the coach-firing buyout on <code>/buyout</code>.
+          Two different instruments. ACC: settlement year ladder, rights in tow
+          (FY 2025–26 / 2026 season exit $165 million, then −$18 million a year to a $75 million
+          floor from 2030–31 through the ACC/ESPN deal in 2036), cited from a newsroom quote
+          of the 68-page Clemson/FSU/ACC settlement. SEC: 2023–24 bylaws §3.2.1 $30 million
+          with-notice withdrawal fee — cash, not a media-rights buyback; $40 million without
+          notice and $45 million if deemed withdrawn are footnoted. Empty means no hosted
+          schedule (Big Ten; Big 12’s $100 million was a Texas/Oklahoma 2023–24 one-off;
+          Notre Dame football is independent). Not part of annual capacity.
+          Booked-only remains the default capacity toggle.
+        </dd>
         <dt>Staff pay</dt>
         <dd>Cited public pay for the athletic director, other head coaches, and football assistants, keyed to the selected football season. Named football assistant dollars for 2021–2024 are the USA TODAY contract year from each team page (row asOf: Dec 9, 2021 / Dec 8, 2022 / Nov 16, 2023 / Dec 18, 2024) and sit on that year only, with that year’s published names — not the 2026 official directory. Titles are not invented. 2026 shows official-directory names and roles; assistant pay stays pending unless a cited 2026 dollar exists. 2025 is empty without a year-accurate tape (we do not clone 2026 names or 2024 dollars onto 2025). Athletic-director pay is cited-only and year-pinned: USA TODAY Sports has no live AD table on sportsdata.usatoday.com, so dollars come from USA TODAY Network stories that name a number, or from state payroll / university FOIA / board minutes. A 2024 AD snapshot is never copied onto a 2026 AD who is a different person. A newer cite already on the desk is not overwritten by an older snapshot. Privates and withheld chairs stay pending. WBB cells are cited-only. Empty means pending — we do not invent a title or a dollar.</dd>
         <dt>Official alumni earnings vs modeled wealth</dt>
@@ -155,7 +169,7 @@ export default function Methods({ meta: metaProp }) {
         <dt>What backs this (earnings corroboration)</dt>
         <dd>A quiet check on the official average, not a second alumni net-worth engine. Scorecard stays the earnings number. Under it we cite BLS Occupational Employment and Wage Statistics for 2–4 occupations that match a simple career mix (flagship public, tech/engineering, or private elite) — national May 2025 medians/means, plus the state OEWS page. Those wages are reported BLS figures and estimated as a mix for that school type; they are not this school’s alumni. Where a state open-payroll site is obvious (Texas, Ohio, California, Florida) we link it so reporters know public-university alumni on the state payroll can be looked up. A handful of schools get one notable public-company alum with an EDGAR/DEF 14A or IR link (fat tail, not a cohort). Glassdoor and LinkedIn are not ingested.</dd>
         <dt>Desk tape</dt>
-        <dd>A dated log of filings that moved a Public Cap figure — not a news feed. Booked NIL, collective 990s, contract PDFs, paid buyouts, cited apparel or naming, student-fee / subsidy lines, athletics-debt filings, and House-cap Q&amp;As. We do not invent a headline. A school page that is quiet says so: “No public filing on the desk yet.”</dd>
+        <dd>A dated log of filings that moved a Public Cap figure — not a news feed. Booked NIL, collective 990s, contract PDFs, paid buyouts, cited apparel or naming, student-fee / subsidy lines, athletics-debt filings, conference-exit filings, and House-cap Q&amp;As. We do not invent a headline. A school page that is quiet says so: “No public filing on the desk yet.”</dd>
         <dt>TV / media rights</dt>
         <dd>Most Power 4 TV contracts are conference deals, not 68 school contracts. The school page and the <a href="/tv">TV book</a> show rights holders, term, the cited conference pot, and how the share is split when a 2024–26 source exists. A school media check is printed only when reported, or as a labeled equal-share estimate (cited pot ÷ cited members). Notre Dame’s NBC football deal is the school-level exception. The College Football Playoff is one national package. ACC Grant of Rights / viewership splits are described as cited — not flattened to equal share. Empty means pending.</dd>
         <dt>Confidence tags</dt>
@@ -782,6 +796,55 @@ export default function Methods({ meta: metaProp }) {
         booked on this pass without a matching athletics split. No On3 / Opendorse / NIL Go.
       </p>
 
+      <h2>Conference exit</h2>
+      <p>
+        A school-page layer, next to athletics debt. Named <em>Conference exit</em>,
+        not Buyout — the coach-firing calculator stays on <a href="/buyout">/buyout</a>
+        and is unchanged. Click opens a breakdown. Shareable as <code>#conference-exit</code>.
+        This number is not added to annual capacity. Booked-only remains the
+        default capacity toggle. We do not invent dollars or use “sources tell” figures.
+      </p>
+      <p>
+        Two different instruments. They are not equivalent.
+      </p>
+      <p>
+        <strong>ACC — settlement year ladder, media rights in tow.</strong> The
+        FSU / Clemson settlement published a stair. This desk cites
+        {' '}<a href="https://www.postandcourier.com/sports/clemson/clemson-settlement-acc-lawsuit-exit-date/article_534238b8-1ec1-4ec4-b484-57ae49cd2cf5.html" target="_blank" rel="noreferrer">The Post and Courier</a>,
+        which obtained the 68-page settlement: $165 million to exit in the
+        2025–26 fiscal year (2026 season exit), then $147 million (2026–27),
+        $129 million (2027–28), $111 million (2028–29), $93 million (2029–30),
+        and $75 million from 2030–31 through the remainder of the ACC / ESPN
+        deal (through 2036). Paying the fee lets the school leave <em>with</em>
+        media rights — unlike the old grant-of-rights plus 3× operating budget.
+        The school-page headline is year-honest: football 2025 (academic 2025–26)
+        shows the $165 million step; football 2026 (academic 2026–27) shows
+        $147 million. The full ladder sits in the drill. Applied only to current
+        ACC football members (Boston College, Cal, Clemson, Duke, Florida State,
+        Georgia Tech, Louisville, Miami, NC State, North Carolina, Pitt, SMU,
+        Stanford, Syracuse, Virginia, Virginia Tech, Wake Forest).
+      </p>
+      <p>
+        <strong>SEC — bylaw cash fee, not a media-rights buyback.</strong> Hosted
+        2023–24 SEC Bylaws
+        {' '}<a href="https://a.espncdn.com/sec/media/2023/2023-24%20SEC%20Bylaws.pdf" target="_blank" rel="noreferrer">§3.2</a>:
+        $30 million with required notice (3.2.1); $40 million without notice (3.2.2);
+        $45 million if deemed withdrawn (3.2.3). The school-page cell is the
+        $30 million with-notice figure for every current SEC member, including
+        Texas and Oklahoma. The $40 million / $45 million stairs are footnoted.
+        The bylaws do not say a departing school leaves with media rights.
+        This is not treated as equivalent to the ACC ladder.
+      </p>
+      <p>
+        <strong>Big Ten, Big 12, Notre Dame football — pending.</strong> Big Ten
+        has no published exit stair (grant of rights; a private-equity extension
+        to 2046 is paused). Big 12’s $100 million was a Texas / Oklahoma 2023–24
+        early-exit one-off, not a schedule for remaining members — we do not
+        stamp it on Kansas, Iowa State, or anyone still in the league.
+        Notre Dame football is independent; ACC membership for other sports is
+        a different contract. Empty means pending.
+      </p>
+
       <h2>Buyouts actually paid</h2>
       <p>
         Separate from the if-fired overhang on the current chair. This table is money a
@@ -834,6 +897,7 @@ export default function Methods({ meta: metaProp }) {
         <li>No women’s sports or Olympic-sport roster math in v1 (the 7% unallocated slice is the placeholder).</li>
         <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
         <li>Athletics debt is a separate layer, not a capacity add-on. Category 53 university-wide institutional debt is refused unless the filing splits an athletics-related amount. We do not invent an amortization schedule from a project cost. Empty stays empty.</li>
+        <li>Conference exit is a separate layer, not a capacity add-on and not a coach-firing buyout. We do not invent an ACC dollar without a hosted packet or a newsroom quote of the filing. We do not stamp the Big 12 $100M Texas/Oklahoma one-off on remaining members. Notre Dame football stays empty. Empty stays empty.</li>
       </ul>
     </div>
   )

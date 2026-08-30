@@ -21,6 +21,7 @@ export const SCHOOL_DRILLS = new Set([
   'nil',
   'nil-modeled',
   'debt',
+  'conference-exit',
 ])
 
 export function isSchoolDrill(key) {

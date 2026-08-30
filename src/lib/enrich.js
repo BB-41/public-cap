@@ -4,6 +4,7 @@ import { allocateNamedPlayers, namedRosterOnly, scaleRosterToModeled } from './n
 import { schoolNilPot } from './nilHistory.js'
 import { applySeason, houseFieldForSeason, houseValueForSeason } from './seasons.js'
 import { computeEfficiency, mergeSubsidy } from './layers.js'
+import { resolveConferenceExit } from './conferenceExit.js'
 
 /**
  * Same enrichment the desk has always run — capacity, House, booked/modeled NIL,
@@ -53,6 +54,8 @@ export function enrichSchools({
       ...s,
       nil,
       layers: layer,
+      conferenceExit: s.conferenceExit,
+      _conferenceExit: resolveConferenceExit(s, season),
       _cap: s._cap,
       _ratios: r,
       _roster: roster,

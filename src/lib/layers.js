@@ -1,7 +1,7 @@
 /**
  * Desk layers that sit beside the capacity stack:
  * transfer portal, apparel/naming, student-fee subsidy,
- * athletics debt, wins-per-dollar, and buyouts actually paid.
+ * athletics debt, conference exit, wins-per-dollar, and buyouts actually paid.
  *
  * Efficiency is computed here. NIL denominator is booked when present,
  * else the modeled midpoint (labeled modeled).
