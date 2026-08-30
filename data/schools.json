@@ -78,7 +78,7 @@
       "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 are the same USA TODAY team-page tape. No On3.",
       "Student-fee / institutional-support cells: hosted FY2025 MFRS PDFs first (Georgia, Tennessee, Oregon, Utah, UNC, Illinois, Minnesota, Washington, Wisconsin, Iowa State, Virginia, Ole Miss, Ohio State). EADA 2024-25 public file has no fee/support split — unused for those cells. Remaining publics use Knight-Newhouse FY2025 school-profile lines that cite the same MFRS categories. Privates and Pittsburgh stay empty. Do not mint $0 unless the report shows $0. Not added to booked capacity.",
       "Athletic-director pay is cited-only on staff.athleticDirector.pay (and the 2026 staff-year copy). USA TODAY Sports has no live AD table on sportsdata.usatoday.com; dollars come from USA TODAY Network stories that name a number, or from state payroll / university FOIA / board minutes. Each cell is year-pinned. A 2024 snapshot is never copied onto a 2026 AD who is a different person. A newer cite already on the desk is not overwritten by an older snapshot. Privates and withheld chairs stay pending. No On3 / Opendorse / NIL Go.",
-      "Conference exit is a school-page stock, not annual capacity, and not a coach-firing buyout. ACC football members: settlement year ladder (rights in tow) from The Post and Courier quote of the 68-page Clemson/FSU/ACC settlement. SEC: 2023–24 bylaws §3.2.1 $30 million with-notice (hosted PDF); $40M/$45M stairs footnoted. Big Ten, Big 12, and Notre Dame football stay pending. Do not stamp the old Big 12 $100M Texas/Oklahoma one-off on remaining members."
+      "Conference exit is a school-page stock, not annual capacity, and not a coach-firing buyout. ACC football members: settlement year ladder (rights in tow) from The Post and Courier quote of the 68-page Clemson/FSU/ACC settlement. SEC: 2023–24 bylaws §3.2.1 $30 million with-notice (hosted PDF); $40M/$45M stairs footnoted. Big 12 current football members: modeled 2× last cited FY2025 Form 990 Schedule I distribution from hosted bylaws §3.4; paying the fee does not abrogate the grant of rights (§3.1). Half-share FY2025 schools (BYU/Houston/UCF/Cincinnati) use a modeled full-share peer range, not a silent 2× of the half-share. Notre Dame: modeled ~$100M Hale/247Sports non-football ACC membership estimate — not the FSU/Clemson football ladder. Big Ten: no published cash exit fee (Wake Forest Law Review); the lock is the grant of rights through 2036 (ESPN / Acker). Not $0, not a borrowed 2× formula. Illinois FOIA sought the bylaws and they were withheld. Do not stamp the old Big 12 $100M Texas/Oklahoma one-off on remaining members. Texas and Oklahoma stay SEC."
     ],
     "sourcesIndex": {
       "usat_p4": "https://www.usatoday.com/story/sports/college/2026/05/22/power-4-conference-money-comparison-big-ten-sec-acc-big-12-pac-12-brett-yormark/90204563007/",
@@ -26125,23 +26125,33 @@
       "shortName": "Illinois",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -27846,23 +27856,33 @@
       "shortName": "Indiana",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -29417,23 +29437,33 @@
       "shortName": "Iowa",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -30823,23 +30853,33 @@
       "shortName": "Maryland",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -32301,23 +32341,33 @@
       "shortName": "Michigan",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -34048,23 +34098,33 @@
       "shortName": "Michigan State",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -35694,23 +35754,33 @@
       "shortName": "Minnesota",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -37274,23 +37344,33 @@
       "shortName": "Nebraska",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -38997,23 +39077,33 @@
       "shortName": "Northwestern",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": true,
       "revenueGap": true,
@@ -40407,23 +40497,33 @@
       "shortName": "Ohio State",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -41971,23 +42071,33 @@
       "shortName": "Oregon",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -43713,23 +43823,33 @@
       "shortName": "Penn State",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -45440,23 +45560,33 @@
       "shortName": "Purdue",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -46907,23 +47037,33 @@
       "shortName": "Rutgers",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -48496,23 +48636,33 @@
       "shortName": "UCLA",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -50137,23 +50287,33 @@
       "shortName": "USC",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": true,
       "revenueGap": true,
@@ -51598,23 +51758,33 @@
       "shortName": "Washington",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -53107,23 +53277,33 @@
       "shortName": "Wisconsin",
       "conference": "Big Ten",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "bigten-gor-no-cash-fee",
         "conference": "Big Ten",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "status": "none-published",
+        "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+        "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+        "gorUrl": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal",
+        "asOf": "2024-09",
+        "confidence": "reported",
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+          "low": null,
+          "high": null,
+          "confidence": "reported",
+          "source": "Wake Forest Law Review — Fumbling in Court: Exploring the Florida State–ACC Lawsuit: “The Big 10 does not have an exit fee.”",
+          "url": "https://www.wakeforestlawreview.com/2024/09/fumbling-in-court-exploring-the-florida-state-acc-lawsuit/",
+          "asOf": "2024-09",
+          "fiscalYear": null,
+          "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
         },
-        "notes": "No published Big Ten exit stair on the desk. Grant of rights; a private-equity extension through 2046 is paused. Empty means pending — not a coach buyout, and not a modeled fee."
+        "grantOfRights": {
+          "through": 2036,
+          "pausedExtension": 2046,
+          "url": "https://www.espn.com/college-sports/story/_/id/47003108/opposition-michigan-usc-pauses-24b-big-ten-deal"
+        },
+        "notes": "No published cash exit fee. Grant of rights through 2036. Not $0."
       },
       "private": false,
       "revenueGap": false,
@@ -81450,23 +81630,50 @@
       "shortName": "Arizona",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 38009311,
+          "grantee": "University of Arizona",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 76018622,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (University of Arizona) 38,009,311 × 2 = 76,018,622. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -82991,23 +83198,50 @@
       "shortName": "Arizona State",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 43009550,
+          "grantee": "Arizona State University",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 86019100,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (Arizona State University) 43,009,550 × 2 = 86,019,100. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -84507,23 +84741,50 @@
       "shortName": "BYU",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 23110622,
+          "grantee": "Brigham Young University",
+          "share": "half",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+          "low": 75759730,
+          "high": 86019100,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. FY2025 was a half-share year for BYU / Houston / UCF / Cincinnati; FY2026 is their first full-share year. We do not silently 2× the half-share as if that is the going-forward buyout. Headline is a modeled range from named full-share peers on the same 990 (2 × $37,879,865–$43,009,550). Last filed FY2025 half-share (Brigham Young University) 23,110,622 × 2 = 46,221,244 — shown as a footnote only, not the headline."
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": true,
       "revenueGap": true,
@@ -85855,23 +86116,50 @@
       "shortName": "Baylor",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 39950085,
+          "grantee": "Baylor University",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 79900170,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (Baylor University) 39,950,085 × 2 = 79,900,170. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": true,
       "revenueGap": true,
@@ -87223,23 +87511,50 @@
       "shortName": "Cincinnati",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 20211539,
+          "grantee": "University of Cincinnati",
+          "share": "half",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+          "low": 75759730,
+          "high": 86019100,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. FY2025 was a half-share year for BYU / Houston / UCF / Cincinnati; FY2026 is their first full-share year. We do not silently 2× the half-share as if that is the going-forward buyout. Headline is a modeled range from named full-share peers on the same 990 (2 × $37,879,865–$43,009,550). Last filed FY2025 half-share (University of Cincinnati) 20,211,539 × 2 = 40,423,078 — shown as a footnote only, not the headline."
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -88741,23 +89056,50 @@
       "shortName": "Colorado",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 39034422,
+          "grantee": "University of Colorado",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 78068844,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (University of Colorado) 39,034,422 × 2 = 78,068,844. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -90324,23 +90666,50 @@
       "shortName": "Houston",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": null,
+          "grantee": null,
+          "share": "half",
+          "named": false,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+          "low": 75759730,
+          "high": 86019100,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. FY2025 was a half-share year for BYU / Houston / UCF / Cincinnati; FY2026 is their first full-share year. We do not silently 2× the half-share as if that is the going-forward buyout. Headline is a modeled range from named full-share peers on the same 990 (2 × $37,879,865–$43,009,550). Houston’s school-level FY2025 Schedule I line was not independently extracted from the 990 (Plinth’s FY2025 table names 15 of 16 grants). USA TODAY grouped Houston with the $19–23M half-share band. No fake point estimate."
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -91827,23 +92196,50 @@
       "shortName": "Iowa State",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 41194426,
+          "grantee": "Iowa State",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 82388852,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (Iowa State) 41,194,426 × 2 = 82,388,852. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -93451,23 +93847,50 @@
       "shortName": "Kansas",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 38312680,
+          "grantee": "Kansas Athletics Inc.",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 76625360,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (Kansas Athletics Inc.) 38,312,680 × 2 = 76,625,360. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -95002,23 +95425,50 @@
       "shortName": "Kansas State",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 39830544,
+          "grantee": "Kansas State University",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 79661088,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (Kansas State University) 39,830,544 × 2 = 79,661,088. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -96616,23 +97066,50 @@
       "shortName": "Oklahoma State",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 38038756,
+          "grantee": "Oklahoma State University",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 76077512,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (Oklahoma State University) 38,038,756 × 2 = 76,077,512. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -98173,23 +98650,50 @@
       "shortName": "TCU",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 39272007,
+          "grantee": "Texas Christian University",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 78544014,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (Texas Christian University) 39,272,007 × 2 = 78,544,014. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": true,
       "revenueGap": true,
@@ -99524,23 +100028,50 @@
       "shortName": "Texas Tech",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 39734106,
+          "grantee": "Texas Tech University",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 79468212,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (Texas Tech University) 39,734,106 × 2 = 79,468,212. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -101014,23 +101545,50 @@
       "shortName": "UCF",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 19978520,
+          "grantee": "University of Central Florida",
+          "share": "half",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
         "fee": {
           "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+          "low": 75759730,
+          "high": 86019100,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. FY2025 was a half-share year for BYU / Houston / UCF / Cincinnati; FY2026 is their first full-share year. We do not silently 2× the half-share as if that is the going-forward buyout. Headline is a modeled range from named full-share peers on the same 990 (2 × $37,879,865–$43,009,550). Last filed FY2025 half-share (University of Central Florida) 19,978,520 × 2 = 39,957,040 — shown as a footnote only, not the headline."
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -102532,23 +103090,50 @@
       "shortName": "Utah",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 37879865,
+          "grantee": "University of Utah",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 75759730,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (University of Utah) 37,879,865 × 2 = 75,759,730. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -104143,23 +104728,50 @@
       "shortName": "West Virginia",
       "conference": "Big 12",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "big12-bylaw-2x-distributions",
         "conference": "Big 12",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
-        "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+        "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+        "bylawsUrl": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf",
+        "asOf": "2026-05",
+        "confidence": "modeled",
+        "formula": {
+          "bylaw": "3.4",
+          "text": "Any Withdrawing Member shall pay to the Conference a commitment buyout fee (the “Buyout Amount”) in an amount equal to the sum of the amount of distributions that otherwise would be paid to the Member during the final two years of its membership in the Conference.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
         },
-        "notes": "The $100 million Texas / Oklahoma 2023–24 early-exit figure was a one-off, not a schedule for remaining members. We do not stamp it on Kansas, Iowa State, or anyone still in the league. Texas and Oklahoma are now SEC. Empty means pending."
+        "grantOfRights": {
+          "bylaw": "3.1",
+          "text": "the Withdrawal of a Member and the payment of the Buyout Amount and implementation of the provisions of these Bylaws does not abrogate the obligations of such Withdrawing Member pursuant to that certain Amended and Restated Grant of Rights Agreement",
+          "plain": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow.",
+          "source": "Big 12 Conference Bylaws, §3.4 Buyout Amount and §3.1 Grant of Rights (hosted PDF)",
+          "url": "https://static.big12sports.com/custompages/pdfs/handbook/bylaws.pdf"
+        },
+        "distribution": {
+          "fiscalYear": "FY2025",
+          "amount": 39582600,
+          "grantee": "West Virginia University",
+          "share": "full",
+          "named": true,
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "propublica": "https://projects.propublica.org/nonprofits/organizations/752604555"
+        },
+        "fee": {
+          "value": 79165200,
+          "low": null,
+          "high": null,
+          "confidence": "modeled",
+          "source": "Big 12 Conference Inc. FY2025 Form 990, Schedule I grantee list (year ended June 2025) — Plinth extract of IRS e-file",
+          "url": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
+          "asOf": "2026-05",
+          "fiscalYear": "FY2025",
+          "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity. Named FY2025 Schedule I line (West Virginia University) 39,582,600 × 2 = 79,165,200. Labeled modeled — the bylaw looks forward two membership years; this is last filed × 2, not an invoice."
+        },
+        "notes": "Paying the 2×-distributions cash formula does not buy back media rights. The grant of rights still sits with the league. This is a cash fee only — not the ACC settlement ladder, which lets a school leave with rights in tow. Hosted Big 12 bylaws §3.4: Buyout Amount = the sum of distributions that otherwise would be paid during the final two years of membership. Modeled here as 2 × the last cited FY2025 Form 990 Schedule I distribution — a labeled model, not a booked invoice. The hosted PDF still lists old members; we cite the withdrawal section, not the stale roster. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": false,
       "revenueGap": false,
@@ -105622,23 +106234,27 @@
       "shortName": "Notre Dame",
       "conference": "Independent / ACC",
       "conferenceExit": {
-        "instrument": null,
+        "instrument": "nd-acc-membership-hale",
         "conference": "Independent / ACC",
-        "rightsInTow": null,
+        "rightsInTow": false,
         "label": "Conference exit",
-        "source": null,
-        "url": null,
-        "asOf": null,
-        "confidence": "pending",
+        "source": "247Sports quoting ESPN’s David Hale — Notre Dame ACC membership exit in the range of ~$100 million (equal to three times the ACC’s then-recent annual revenue / the old 3× operating-budget style fee); Hale noted ND would be free of the football grant-of-rights charge. Reporter estimate, not a filing. Original espn.com story or post with that $100 million figure was not located.",
+        "url": "https://247sports.com/article/explaining-notre-dames-realignment-dilemma-acc-grant-of-rights-fee-189990208/",
+        "asOf": "2022-08",
+        "confidence": "modeled",
         "fee": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Notre Dame football is independent. ACC membership for other sports is a different contract; no hosted football-exit schedule on the desk. Empty means pending."
+          "value": 100000000,
+          "low": null,
+          "high": null,
+          "approx": true,
+          "confidence": "modeled",
+          "source": "247Sports quoting ESPN’s David Hale — Notre Dame ACC membership exit in the range of ~$100 million (equal to three times the ACC’s then-recent annual revenue / the old 3× operating-budget style fee); Hale noted ND would be free of the football grant-of-rights charge. Reporter estimate, not a filing. Original espn.com story or post with that $100 million figure was not located.",
+          "url": "https://247sports.com/article/explaining-notre-dames-realignment-dilemma-acc-grant-of-rights-fee-189990208/",
+          "asOf": "2022-08",
+          "fiscalYear": null,
+          "notes": "Football independent; Notre Dame did not sign the ACC football grant of rights. This is a modeled reporter estimate of the non-football ACC membership exit — in the range of ~$100 million — not the FSU / Clemson settlement football ladder ($147M / $165M). Hale noted ND would be free of the football GOR charge. Not a filing. Not a coach-firing buyout. Not part of annual capacity."
         },
-        "notes": "Notre Dame football is independent. ACC membership for other sports is a different contract; no hosted football-exit schedule on the desk. Empty means pending."
+        "notes": "Football independent; Notre Dame did not sign the ACC football grant of rights. This is a modeled reporter estimate of the non-football ACC membership exit — in the range of ~$100 million — not the FSU / Clemson settlement football ladder ($147M / $165M). Hale noted ND would be free of the football GOR charge. Not a filing. Not a coach-firing buyout. Not part of annual capacity."
       },
       "private": true,
       "revenueGap": true,
