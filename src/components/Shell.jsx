@@ -23,9 +23,9 @@ export default function Shell({ params, children }) {
           </div>
         </div>
         <p className="tagline">
-          Economic capacity versus the House revenue-share cap versus booked NIL
-          and a modeled conference range — football and men’s basketball, Power 4 plus Notre Dame.
-          Seasons run 2021–2026 (NIL era).
+          Two ceilings on every Power 4 program: the House benefits cap, and what
+          they can actually write this year from public filings. Then whatever NIL
+          is in a filing. Seasons run 2021–2026 (NIL era).
         </p>
         <nav className="nav">
           <NavLink to={{ pathname: '/', search }} end>Rank list</NavLink>

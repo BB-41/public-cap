@@ -79,7 +79,10 @@ export default function Methods({ meta: metaProp }) {
         2021–24 use a labeled collective-era third-party-only backcast scaled by a
         published national market-size series. Booked NIL stays official and untouched:
         Louisville and Kentucky on 2025–26, plus Louisville’s cited FY2025 pre-cap
-        line on 2024. Empty booked cells stay pending.         The year picker shows the chair of record
+        line on 2024. Empty booked cells stay pending. The homepage 2026 rank still
+        shows House Year 1 booked / leftover (Louisville, Kentucky, Texas, UCLA, Cal)
+        with a 2025–26 / House Year 1 label — it does not mint a 2026–27 booked line.
+        The year picker shows the chair of record
         for that football season, not only the current hire — the 2021–2026 Wikipedia
         season-page infobox tape is on the desk for all 68 schools. Coach pay on a year
         prefers that year’s file; USA TODAY 2025 is attached only when that year cell
@@ -916,7 +919,7 @@ export default function Methods({ meta: metaProp }) {
         already been used to seek the bylaws; they were withheld. We do not
         model a number from another conference’s constitution, and we do not
         apply the Big 12 2×-distributions formula or leftover TV value.
-        Homepage cell reads <em>none published</em> / <em>grant of rights</em>.
+        School-page #conference-exit cell reads <em>none published</em> / <em>grant of rights</em>.
       </p>
 
       <h2>Buyouts actually paid</h2>

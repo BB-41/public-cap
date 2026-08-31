@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "split-desk": "node scripts/split-desk-payload.mjs",
     "sitemap": "node scripts/write-sitemap.mjs",
-    "verify": "node scripts/verify-desk-calcs.mjs && node scripts/verify-desk-split.mjs && node scripts/verify-crawl.mjs && node scripts/verify-conference-exit.mjs"
+    "verify": "node scripts/verify-desk-calcs.mjs && node scripts/verify-desk-split.mjs && node scripts/verify-crawl.mjs && node scripts/verify-conference-exit.mjs && node scripts/verify-home-lead.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

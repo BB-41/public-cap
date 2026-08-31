@@ -109,12 +109,14 @@ a:hover { text-decoration: underline; }
 .table-scroll { overflow: auto; max-height: calc(100vh - 140px); border-top: 2px solid var(--paper); min-height: 420px; }
 .table-scroll.table-pending { min-height: 420px; }
 table.rank { width: 100%; border-collapse: collapse; font-size: 14.5px; }
-table.rank.home-rank { min-width: 1180px; table-layout: fixed; }
+table.rank.home-rank { min-width: 920px; table-layout: fixed; }
 table.rank .col-rk { width: 2.4em; }
 table.rank .col-school { width: 18%; }
 table.rank .col-conf { width: 5.5em; }
 table.rank .col-num { width: 7.2%; }
+table.rank.home-rank .col-num { width: 12%; }
 table.rank .col-mark { width: 2.6em; }
+table.rank.home-rank th { white-space: normal; }
 table.rank th {
   font-family: Arial, Helvetica, system-ui, sans-serif;
   font-size: 10px;

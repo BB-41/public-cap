@@ -129,6 +129,60 @@ export function houseRemaining(school) {
   return hasVal(school?.nil?.houseRemaining) ? val(school.nil.houseRemaining) : null
 }
 
+export const YEAR1_LEAD_LABEL = '2025–26 filing / House Year 1'
+
+/**
+ * Homepage lead-column booked NIL.
+ * Uses the season overlay’s booked cell when one exists.
+ * On 2026, when 2026–27 booked has not been extracted, falls back to the
+ * House Year 1 / 2025–26 filing via year1Lead — labeled, not rebooked as 2026–27.
+ */
+export function leadBookedNil(school) {
+  if (hasVal(school?.nil?.booked)) {
+    return { value: val(school.nil.booked), field: school.nil.booked, carry: false, label: null }
+  }
+  const carry = school?.nil?.year1Lead
+  if (hasVal(carry?.booked)) {
+    return {
+      value: val(carry.booked),
+      field: carry.booked,
+      carry: true,
+      label: carry.label || YEAR1_LEAD_LABEL,
+    }
+  }
+  return { value: null, field: null, carry: false, label: null }
+}
+
+/**
+ * Homepage leftover / House remaining.
+ * Only when a booked House spent cell exists (overlay or Year 1 carry).
+ * Never invent leftover from a cap plan or “will spend $20.5M.”
+ */
+export function leadHouseRemaining(school) {
+  const booked = leadBookedNil(school)
+  if (booked.field == null) {
+    return { value: null, field: null, carry: false, label: null }
+  }
+  if (hasVal(school?.nil?.houseRemaining)) {
+    return {
+      value: val(school.nil.houseRemaining),
+      field: school.nil.houseRemaining,
+      carry: booked.carry,
+      label: booked.carry ? booked.label : null,
+    }
+  }
+  const carry = school?.nil?.year1Lead
+  if (hasVal(carry?.houseRemaining)) {
+    return {
+      value: val(carry.houseRemaining),
+      field: carry.houseRemaining,
+      carry: true,
+      label: carry.label || YEAR1_LEAD_LABEL,
+    }
+  }
+  return { value: null, field: null, carry: false, label: null }
+}
+
 /** Third-party collective 990 cells. Never a booked House / Item 44 input. */
 export function collective990Cells(school) {
   const rows = school?.nil?.collective990

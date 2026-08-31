@@ -30,8 +30,8 @@ export const DEFS = {
     text: 'Booked NIL divided by the $20.5M House cap. Pending if we have no booked NIL figure.',
   },
   houseRemaining: {
-    label: 'House remaining room',
-    text: 'Published House Year 1 cap ($20.5 million) minus that school’s booked House spent cell. Only computed when a House Year 1 spent total is on the desk — not pre-cap, not a 990, not a cap plan. A leftover of $0 is a real cell. Overhang (spent above the cap) is shown, not hidden. Texas is year-to-date. Collective 990s are not in this math.',
+    label: 'Leftover / House remaining',
+    text: 'Published House Year 1 cap ($20.5 million) minus that school’s booked House spent cell. Only computed when a House Year 1 spent total is on the desk — not pre-cap, not a 990, not a cap plan, not “will spend $20.5M.” A leftover of $0 is a real cell. Overhang (spent above the cap) is shown, not hidden. Texas is year-to-date. Collective 990s are not in this math. On the 2026 rank list this is still the Year 1 residual, labeled 2025–26 / House Year 1 — not a 2026–27 leftover.',
   },
   coachPay: {
     label: 'Coach pay',
