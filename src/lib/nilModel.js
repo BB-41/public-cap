@@ -1,7 +1,7 @@
 /**
  * Modeled NIL range (conference heuristic).
  *
- * Not a filing. Not an On3 / Opendorse / NIL Go player scrape. Booked NIL is untouched.
+ * Not a filing. Not an On3 / Opendorse / NIL Go player value. Booked NIL is untouched.
  *
  * House-era (2025–26 / 2026–27) — existing formula, unchanged:
  *   House 2025–26 institutional ceiling H = $20.5M.

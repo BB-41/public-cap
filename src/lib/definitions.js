@@ -19,7 +19,7 @@ export const DEFS = {
   },
   nilModeled: {
     label: 'NIL modeled',
-    text: 'Conference-heuristic range, not a filing. 2025–26 / 2026–27: House-era (rev-share + third-party) from the nil-ncaa.com table; low is 70% of the conference total or 50% of the $20.5M House cap for phase-in / half-share members. 2021–24: collective-era third-party only, scaled by the published national NIL market versus 2024–25. Estimates. Not an On3 / Opendorse / NIL Go player scrape. Does not replace booked NIL.',
+    text: 'Conference-heuristic range, not a filing. 2025–26 / 2026–27: House-era (rev-share + third-party) from the nil-ncaa.com table; low is 70% of the conference total or 50% of the $20.5M House cap for phase-in / half-share members. 2021–24: collective-era third-party only, scaled by the published national NIL market versus 2024–25. Estimates. Not an On3 / Opendorse / NIL Go player value. Does not replace booked NIL.',
   },
   nilCap: {
     label: 'NIL / capacity',
@@ -83,7 +83,7 @@ export const DEFS = {
   },
   portal: {
     label: 'Transfer portal',
-    text: 'Notable football portal additions and departures for the 2025–26 / 2026 cycle (NCAA single window Jan 2–16, 2026). Names from public ESPN/Wikipedia/school-release pages. Dollars only if a cited news number exists — otherwise name + position, no dollar. On3 is not scraped.',
+    text: 'Notable football portal additions and departures for the 2025–26 / 2026 cycle (NCAA single window Jan 2–16, 2026). Names from public ESPN/Wikipedia/school-release pages. Dollars only if a cited news number exists — otherwise name + position, no dollar. Not On3.',
   },
   apparel: {
     label: 'Apparel + naming rights',

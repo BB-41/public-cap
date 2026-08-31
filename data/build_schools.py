@@ -140,7 +140,7 @@ add({
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?228778-The-University-of-Texas-at-Austin",
     },
     "nil": {
-        "booked": empty("No FOIA / MFRS institutional NIL or collective 990 figure located for v1. Band left pending. We do not scrape On3, Opendorse, or NIL Go."),
+        "booked": empty("No FOIA / MFRS institutional NIL or collective 990 figure located for v1. Band left pending. Not On3 / Opendorse / NIL Go."),
     },
     "coaches": {
         "football": coach("Steve Sarkisian", 10_800_000, 60_307_500, SRC["usat_fb"], "2025-10-08"),

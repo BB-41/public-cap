@@ -160,7 +160,7 @@ def school(**kw):
         "color": kw["color"],
         "capacity": capacity_block(conf, private, kw["media"], kw.get("note")),
         "alumni": alumni_block(sid, ipeds, slug),
-        "nil": {"booked": empty("No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. We do not scrape On3, Opendorse, or NIL Go.")},
+        "nil": {"booked": empty("No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go.")},
         "coaches": {
             "football": coach_obj(kw["usat"], "fb"),
             "mbb": coach_obj(kw["usat"], "mbb"),

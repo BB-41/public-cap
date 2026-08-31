@@ -8,7 +8,7 @@
  * range instead of inventing an $80M Texas board.
  *
  * Low/high on each slot track the school's modeled low/high vs mid.
- * No On3 / Opendorse / NIL Go / social scrape.
+ * No On3 / Opendorse / NIL Go / social.
  * Named-player dollars are modeled shares of the school pot unless a news URL is attached (none in v1).
  */
 
