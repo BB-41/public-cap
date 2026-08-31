@@ -181,6 +181,19 @@ if (moss && moss.points.some((p) => p.booked != null)) {
 }
 if (!nameSlug('Miller Moss')) throw new Error('slug')
 
+const fsuHist = assertSchool('florida-state')
+const danielsHist = Object.values(fsuHist.playerSeries).find((p) => p.name === 'Ashton Daniels')
+const denobileHist = Object.values(fsuHist.playerSeries).find((p) => /denobile/i.test(p.name))
+if (!danielsHist || !denobileHist) throw new Error('FSU history missing Daniels / DeNobile player series')
+const d26 = danielsHist.points.find((p) => p.year === 2026)
+const b26 = denobileHist.points.find((p) => p.year === 2026)
+if (!d26 || d26.label !== 'modeled' || d26.mid == null) throw new Error('Daniels 2026 must be a modeled player cell')
+if (!b26 || b26.label !== 'modeled' || b26.mid == null) throw new Error('DeNobile 2026 must be a modeled player cell')
+if (d26.mid === b26.mid) throw new Error('FSU QB player graphs must not share one family band')
+if (d26.mid <= b26.mid) throw new Error('Daniels starter band must sit above the listed-order backup')
+if (d26.booked != null || b26.booked != null) throw new Error('FSU QBs must not invent booked player cells')
+console.log(`FSU 2026 player graphs: Daniels modeled ${d26.mid} vs DeNobile modeled ${b26.mid}`)
+
 console.log(
   'louisville QB',
   louQb.map((p) => `${p.year}:${p.via}/${p.potSource}/m${p.mid}`).join(' ')

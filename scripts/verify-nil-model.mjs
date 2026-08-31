@@ -251,4 +251,88 @@ for (const year of [2021, 2022, 2023, 2024, 2025, 2026]) {
   )
 }
 
+function qbs(named) {
+  return (named?.players || []).filter((p) => p.family === 'qb')
+}
+
+const y26 = pack(2026)
+const book26 = loadRoster(2026)
+if (!book26) throw new Error('2026 roster file required for seat-level named NIL')
+
+const fsu = y26.find((r) => r.school.id === 'florida-state')
+const fsuNamed = allocateNamedPlayers(book26.schools['florida-state'], fsu.modeled, scaleRosterToModeled(fsu.modeled))
+const fsuQb = qbs(fsuNamed)
+const daniels = fsuQb.find((p) => p.name === 'Ashton Daniels')
+if (!daniels) throw new Error('FSU 2026 missing Ashton Daniels')
+if (daniels.band !== 'qb1' || daniels.role !== 'starter' || daniels.units !== 100) {
+  throw new Error(`FSU Daniels should be QB1 starter 100 units, got ${daniels.band}/${daniels.role}/${daniels.units}`)
+}
+const fsuBackups = fsuQb.filter((p) => p.name !== 'Ashton Daniels')
+if (!fsuBackups.length) throw new Error('FSU 2026 needs backup QBs')
+if (fsuBackups.some((p) => p.mid === daniels.mid || p.units === daniels.units)) {
+  throw new Error('FSU backup QBs must not share Daniels’ starter band')
+}
+if (!fsuBackups.some((p) => p.band === 'qb-depth' && p.units === 15)) {
+  throw new Error('FSU should seat at least one QB on the qb-depth 15-unit band')
+}
+if (fsuNamed.sumMid > fsuNamed.cap + fsuNamed.players.length) {
+  throw new Error(`FSU named sum ${fsuNamed.sumMid} overran football slice ${fsuNamed.cap}`)
+}
+console.log(
+  `2026 FSU QBs: ${fsuQb.map((p) => `${p.name} ${p.band}/${p.units} mid ${p.mid}`).join(' · ')}`
+)
+
+const mia = y26.find((r) => r.school.id === 'miami')
+const miaNamed = allocateNamedPlayers(book26.schools.miami, mia.modeled, scaleRosterToModeled(mia.modeled))
+const mensah = qbs(miaNamed).find((p) => /mensah/i.test(p.name))
+const miaBackup = qbs(miaNamed).find((p) => p.band === 'qb-depth')
+if (!mensah || mensah.band !== 'qb1' || mensah.units !== 100) {
+  throw new Error(`Miami Mensah should be verified QB1, got ${mensah && `${mensah.band}/${mensah.units}`}`)
+}
+if (!miaBackup || miaBackup.mid === mensah.mid) {
+  throw new Error('Miami backup QB must sit on a different band than Mensah')
+}
+if (miaNamed.sumMid > miaNamed.cap + miaNamed.players.length) {
+  throw new Error(`Miami named sum ${miaNamed.sumMid} overran football slice ${miaNamed.cap}`)
+}
+console.log(
+  `2026 Miami QBs: ${qbs(miaNamed).map((p) => `${p.name} ${p.band}/${p.units} mid ${p.mid}`).join(' · ')}`
+)
+
+const bookedEntry = {
+  playerCount: 85,
+  players: [
+    {
+      name: 'Booked Starter',
+      pos: 'QB',
+      family: 'qb',
+      depthRank: 1,
+      booked: { value: 2_000_000, url: 'https://example.test/booked-qb', source: 'news cite' },
+    },
+    { name: 'Backup One', pos: 'QB', family: 'qb', depthRank: 2 },
+    { name: 'Backup Two', pos: 'QB', family: 'qb', depthRank: 3 },
+  ],
+}
+const bookedNamed = allocateNamedPlayers(bookedEntry, fsu.modeled, scaleRosterToModeled(fsu.modeled))
+const bookedRow = bookedNamed.players.find((p) => p.name === 'Booked Starter')
+if (!bookedRow || bookedRow.booked !== 2_000_000 || bookedRow.confidence !== 'reported' || bookedRow.mid !== 2_000_000) {
+  throw new Error('cited news-URL booked NIL must be kept and not overwritten by the rate-card band')
+}
+if (bookedNamed.players.filter((p) => p.name !== 'Booked Starter').some((p) => p.confidence !== 'modeled')) {
+  throw new Error('non-booked names stay modeled')
+}
+
+for (const id of Object.keys(book26.schools)) {
+  const row = y26.find((r) => r.school.id === id)
+  if (!row?.modeled?.mid) continue
+  const named = allocateNamedPlayers(book26.schools[id], row.modeled, scaleRosterToModeled(row.modeled))
+  const group = qbs(named)
+  if (group.length < 2) continue
+  const mids = new Set(group.map((p) => p.mid))
+  if (mids.size < 2) throw new Error(`${id} 2026 QBs all share one modeled mid — seat allocation failed`)
+  if (named.sumMid > named.cap + named.players.length) {
+    throw new Error(`${id} 2026 named sum ${named.sumMid} overran ${named.cap}`)
+  }
+}
+
 console.log('named-roster allocation ok')

@@ -75,7 +75,7 @@ export const DEFS = {
   },
   rosterNamed: {
     label: 'Named roster (modeled)',
-    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is a booked school cell when a FOIA / MFRS / counsel filing exists; otherwise the on-desk conference-heuristic modeled band. Collective 990 dollars are a cited side lane and are not the allocation pot. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end; no rank uses the midpoint. Sum of player mids stays inside the 93% pool. Not a filing. Not an On3 / Opendorse player value.',
+    text: 'Public-roster names (ESPN) with a modeled share of the school’s football NIL pot. Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is a booked school cell when a FOIA / MFRS / counsel filing exists; otherwise the on-desk conference-heuristic modeled band. Collective 990 dollars are a cited side lane and are not the allocation pot. Starters on a verified Wikipedia two-deep get the high end of the position band; backups the low end. On a full roster with no wiki rank, listed order fills starter then backup then developmental seats — not one family midpoint on every name. A cited news-URL booked player NIL is kept. Sum of player mids stays inside the 93% pool. Not a filing. Not an On3 / Opendorse player value.',
   },
   rosterHistory: {
     label: 'Position NIL history',

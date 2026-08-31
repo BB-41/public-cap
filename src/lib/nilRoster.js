@@ -149,34 +149,88 @@ export function rateCardForMethods(exampleMid) {
 }
 
 
+export const DEV_UNITS = 2
+
 /** Position family → starter / depth units (same card as FB_RATE_CARD). */
 export const FAMILY_SEATS = {
-  qb: { starterCount: 1, starterUnits: 100, depthCount: 2, depthUnits: 15 },
-  rb: { starterCount: 2, starterUnits: 30, depthCount: 3, depthUnits: 8 },
-  wr: { starterCount: 3, starterUnits: 45, depthCount: 6, depthUnits: 8 },
-  te: { starterCount: 2, starterUnits: 20, depthCount: 2, depthUnits: 6 },
-  ol: { starterCount: 5, starterUnits: 22, depthCount: 10, depthUnits: 8 },
-  edge: { starterCount: 2, starterUnits: 40, depthCount: 4, depthUnits: 10 },
-  dl: { starterCount: 2, starterUnits: 18, depthCount: 4, depthUnits: 6 },
-  lb: { starterCount: 3, starterUnits: 16, depthCount: 5, depthUnits: 6 },
-  cb: { starterCount: 2, starterUnits: 22, depthCount: 4, depthUnits: 7 },
-  s: { starterCount: 2, starterUnits: 18, depthCount: 4, depthUnits: 7 },
-  k: { starterCount: 4, starterUnits: 5, depthCount: 0, depthUnits: 5 },
-  ath: { starterCount: 0, starterUnits: 2, depthCount: 13, depthUnits: 2 },
+  qb: { starterCount: 1, starterUnits: 100, depthCount: 2, depthUnits: 15, starterId: 'qb1', depthId: 'qb-depth', starterShort: 'QB1', depthShort: 'QB2+' },
+  rb: { starterCount: 2, starterUnits: 30, depthCount: 3, depthUnits: 8, starterId: 'rb1', depthId: 'rb-depth', starterShort: 'RB', depthShort: 'RB+' },
+  wr: { starterCount: 3, starterUnits: 45, depthCount: 6, depthUnits: 8, starterId: 'wr-star', depthId: 'wr-depth', starterShort: 'WR1', depthShort: 'WR+' },
+  te: { starterCount: 2, starterUnits: 20, depthCount: 2, depthUnits: 6, starterId: 'te1', depthId: 'te-depth', starterShort: 'TE', depthShort: 'TE+' },
+  ol: { starterCount: 5, starterUnits: 22, depthCount: 10, depthUnits: 8, starterId: 'ol1', depthId: 'ol-depth', starterShort: 'OL', depthShort: 'OL+' },
+  edge: { starterCount: 2, starterUnits: 40, depthCount: 4, depthUnits: 10, starterId: 'edge1', depthId: 'edge-depth', starterShort: 'EDGE', depthShort: 'EDGE+' },
+  dl: { starterCount: 2, starterUnits: 18, depthCount: 4, depthUnits: 6, starterId: 'idl1', depthId: 'idl-depth', starterShort: 'IDL', depthShort: 'IDL+' },
+  lb: { starterCount: 3, starterUnits: 16, depthCount: 5, depthUnits: 6, starterId: 'lb1', depthId: 'lb-depth', starterShort: 'LB', depthShort: 'LB+' },
+  cb: { starterCount: 2, starterUnits: 22, depthCount: 4, depthUnits: 7, starterId: 'cb1', depthId: 'db-depth', starterShort: 'CB', depthShort: 'DB+' },
+  s: { starterCount: 2, starterUnits: 18, depthCount: 4, depthUnits: 7, starterId: 's1', depthId: 'db-depth', starterShort: 'S', depthShort: 'DB+' },
+  k: { starterCount: 4, starterUnits: 5, depthCount: 0, depthUnits: 5, starterId: 'st', depthId: 'st', starterShort: 'ST', depthShort: 'ST' },
+  ath: { starterCount: 0, starterUnits: 2, depthCount: 13, depthUnits: 2, starterId: 'scout', depthId: 'scout', starterShort: 'DEV', depthShort: 'DEV' },
+}
+
+/** MBB families when a named basketball roster file exists (none on the desk today). */
+export const MBB_FAMILY_SEATS = {
+  wing: { starterCount: 1, starterUnits: 50, depthCount: 4, depthUnits: 10, starterId: 'mbb-star', depthId: 'mbb-rot', starterShort: 'WING1', depthShort: 'ROT' },
+  pg: { starterCount: 1, starterUnits: 35, depthCount: 2, depthUnits: 10, starterId: 'mbb-pg', depthId: 'mbb-rot', starterShort: 'PG', depthShort: 'ROT' },
+  big: { starterCount: 1, starterUnits: 30, depthCount: 2, depthUnits: 10, starterId: 'mbb-big', depthId: 'mbb-rot', starterShort: 'BIG', depthShort: 'ROT' },
+  g: { starterCount: 2, starterUnits: 22, depthCount: 4, depthUnits: 4, starterId: 'mbb-starter', depthId: 'mbb-bench', starterShort: 'ST2', depthShort: 'BN' },
 }
 
 export function familyMidpointUnits(seat) {
   return (seat.starterUnits + seat.depthUnits) / 2
 }
 
-function namedPlayerNote(roleNote, modeled) {
-  if (modeled?.era === 'collective') {
-    return `${roleNote} Collective-era model, year-scaled — not a filing. Not an On3 / Opendorse player value.`
-  }
-  return roleNote
+export const RATE_CARD_SHARE_NOTE =
+  'Modeled share of the school pot from the desk rate card, not a contract. Not On3 / Opendorse / NIL Go.'
+
+export function isFullNamedRoster(rosterEntry, target = FB_UNITS_TARGET) {
+  const n = Number(rosterEntry?.playerCount) || rosterEntry?.players?.length || 0
+  return n >= target
 }
 
-function namedRosterNotes(modeled, confLabel, confMid) {
+/**
+ * Cited news-URL booked player NIL. Value + http(s) URL required — no invented cell.
+ */
+export function citedPlayerBooked(p) {
+  if (!p) return null
+  const field = p.booked && typeof p.booked === 'object' ? p.booked : p.bookedNil && typeof p.bookedNil === 'object' ? p.bookedNil : null
+  const value = field?.value ?? (typeof p.booked === 'number' ? p.booked : null)
+  const url = field?.url || field?.sourceUrl || p.newsUrl || p.nilUrl || p.url
+  if (value == null || !Number.isFinite(Number(value))) return null
+  if (!url || !/^https?:\/\//i.test(String(url))) return null
+  return {
+    value: Number(value),
+    url: String(url),
+    field: {
+      value: Number(value),
+      url: String(url),
+      source: field?.source || p.source || 'public news cite',
+      confidence: field?.confidence || 'reported',
+      notes: field?.notes || '',
+    },
+  }
+}
+
+export function seatBand(seat, role) {
+  if (role === 'starter') {
+    return { id: seat.starterId || 'starter', short: seat.starterShort || 'ST', units: seat.starterUnits }
+  }
+  if (role === 'backup') {
+    return { id: seat.depthId || 'depth', short: seat.depthShort || 'D', units: seat.depthUnits }
+  }
+  return { id: 'scout', short: 'DEV', units: DEV_UNITS }
+}
+
+function namedPlayerNote(roleNote, modeled) {
+  if (modeled?.era === 'collective') {
+    return `${roleNote} ${RATE_CARD_SHARE_NOTE} Collective-era model, year-scaled — not a filing. Not an On3 / Opendorse player value.`
+  }
+  return `${roleNote} ${RATE_CARD_SHARE_NOTE}`
+}
+
+function namedRosterNotes(modeled, confLabel, confMid, { fullRoster = false } = {}) {
+  const seatRule = fullRoster
+    ? ' On a full roster, missing wiki depth still fills starter then backup then developmental seats in listed order — not one midpoint copied onto every name at the position.'
+    : ' A thin roster with no depth rank still uses the position-band midpoint.'
   if (modeled?.era === 'collective') {
     const factor = modeled.yearFactor != null ? ` (year factor ${Number(modeled.yearFactor).toFixed(3)})` : ''
     return (
@@ -184,119 +238,243 @@ function namedRosterNotes(modeled, confLabel, confMid) {
       `Collective-era model: the same position-band units as every other ${confLabel} school, ` +
       `scaled by this school’s year-scaled third-party midpoint` +
       (confMid ? ` ($${(confMid / 1e6).toFixed(2)}M)` : '') +
-      `${factor}. Not a filing. Not a reported deal. No On3 / Opendorse player values.`
+      `${factor}.${seatRule} Not a filing. Not a reported deal. No On3 / Opendorse player values.`
     )
   }
   return (
     'Named-player ranges are modeled shares of this school’s football slice of the 93% pot. ' +
     `Comparative: the same position-band units as every other ${confLabel} school, scaled by this school’s modeled midpoint versus the conference median` +
     (confMid ? ` ($${(confMid / 1e6).toFixed(2)}M)` : '') +
-    '. Not a contract. Not a reported deal unless a news URL is attached.'
+    `.${seatRule} Not a contract. Not a reported deal unless a news URL is attached.`
   )
 }
 
-/**
- * Allocate a modeled low/high to each verified roster name.
- * Shares the football slice of the 93% school-modeled pot.
- * Starters (verified two-deep) get starter-band units; backups get depth-band
- * units; no rank → midpoint of the two. If the raw sum exceeds the football
- * slice, every mid is scaled down so the desk never overruns ~93%.
- */
-export function allocateNamedPlayers(rosterEntry, modeled, bands) {
-  const playersIn = rosterEntry?.players
-  if (!playersIn?.length || !modeled?.mid || !bands) return null
+function familyOf(p, seats, fallback) {
+  return seats[p.family] ? p.family : fallback
+}
 
-  const dollarPerUnit = bands.dollarPerUnit
-  const fbCap = bands.rollup.fbMid
-  const poolCap = Math.round(modeled.mid * ROSTER_POOL_SHARE)
-  const cap = Math.min(fbCap, poolCap)
-  const lowScale = modeled.low / modeled.mid
-  const highScale = modeled.high / modeled.mid
+function orderForSeats(playersIn) {
+  return playersIn
+    .map((p, i) => ({ p, i }))
+    .sort((a, b) => {
+      const ra = a.p.depthRank || 0
+      const rb = b.p.depthRank || 0
+      const aRanked = ra > 0
+      const bRanked = rb > 0
+      if (aRanked !== bRanked) return aRanked ? -1 : 1
+      if (aRanked && ra !== rb) return ra - rb
+      return a.i - b.i
+    })
+}
 
-  const used = {}
-  const rows = []
-  const sorted = [...playersIn].sort((a, b) => {
-    const ra = a.depthRank || 99
-    const rb = b.depthRank || 99
-    if (ra !== rb) return ra - rb
-    return (b.years || 0) - (a.years || 0) || String(a.name).localeCompare(String(b.name))
-  })
+function takeSeat(used, seat, kind) {
+  if (kind === 'starter') {
+    used.s += 1
+    return { units: seat.starterUnits, role: 'starter', via: 'seat' }
+  }
+  if (kind === 'depth') {
+    used.d += 1
+    return { units: seat.depthUnits, role: 'backup', via: 'seat' }
+  }
+  return { units: DEV_UNITS, role: 'depth', via: 'seat' }
+}
 
-  for (const p of sorted) {
-    const family = FAMILY_SEATS[p.family] ? p.family : 'ath'
-    const seat = FAMILY_SEATS[family]
-    const u = (used[family] ||= { s: 0, d: 0 })
-    let units
-    let role
-    let note
-    const rank = p.depthRank
+function assignNamedSeat(p, seat, used, { fullRoster, modeled }) {
+  const rank = p.depthRank
+  const booked = citedPlayerBooked(p)
+  let units
+  let role
+  let via
+  let note
 
-    if (rank === 1 && u.s < seat.starterCount) {
-      units = seat.starterUnits
-      u.s += 1
-      role = 'starter'
+  if (rank === 1 && used.s < seat.starterCount) {
+    ;({ units, role } = takeSeat(used, seat, 'starter'))
+    via = 'depth-chart'
+    note = namedPlayerNote('Verified two-deep starter — high end of the position band.', modeled)
+  } else if (rank && rank <= 3 && used.d < seat.depthCount) {
+    ;({ units, role } = takeSeat(used, seat, 'depth'))
+    via = 'depth-chart'
+    note = namedPlayerNote('Verified two-deep backup — low end of the position band.', modeled)
+  } else if (!rank && fullRoster) {
+    if (used.s < seat.starterCount) {
+      ;({ units, role } = takeSeat(used, seat, 'starter'))
+      via = 'listed-order'
       note = namedPlayerNote(
-        'Verified two-deep starter — high end of the position band.',
+        'Full roster, no verified depth rank — listed-order starter seat on the rate card.',
         modeled
       )
-    } else if (rank && rank <= 3 && u.d < seat.depthCount) {
-      units = seat.depthUnits
-      u.d += 1
-      role = 'backup'
+    } else if (used.d < seat.depthCount) {
+      ;({ units, role } = takeSeat(used, seat, 'depth'))
+      via = 'listed-order'
       note = namedPlayerNote(
-        'Verified two-deep backup — low end of the position band.',
-        modeled
-      )
-    } else if (!rank) {
-      units = familyMidpointUnits(seat)
-      role = 'unknown'
-      note = namedPlayerNote(
-        'Name and position only; no verified depth-chart rank — midpoint of the position band.',
+        'Full roster, no verified depth rank — listed-order backup seat on the rate card.',
         modeled
       )
     } else {
-      units = 2
-      role = 'depth'
+      ;({ units, role } = takeSeat(used, seat, 'dev'))
+      via = 'listed-order'
       note = namedPlayerNote(
-        'Beyond the two-deep seats on the rate card — developmental share.',
+        'Full roster, beyond the two-deep seats on the rate card — developmental share.',
         modeled
       )
     }
-
-    rows.push({ p, family, units, role, note })
+  } else if (!rank) {
+    units = familyMidpointUnits(seat)
+    role = 'unknown'
+    via = 'midpoint'
+    note = namedPlayerNote(
+      'Name and position only; no verified depth-chart rank on a thin roster — midpoint of the position band.',
+      modeled
+    )
+  } else {
+    ;({ units, role } = takeSeat(used, seat, 'dev'))
+    via = 'depth-chart'
+    note = namedPlayerNote('Beyond the two-deep seats on the rate card — developmental share.', modeled)
   }
 
-  const raw = rows.reduce((s, r) => s + r.units * dollarPerUnit, 0)
-  const scale = raw > cap && raw > 0 ? cap / raw : 1
+  if (booked) {
+    return {
+      booked,
+      units: 0,
+      role: 'booked',
+      via: 'booked',
+      note: `Cited booked NIL (${booked.url}) — kept; not overwritten by the rate-card band.`,
+    }
+  }
+  return { booked: null, units, role, via, note }
+}
+
+function allocateSportPlayers(playersIn, modeled, bands, { seats, cap, fullRoster, sport, fallbackFamily }) {
+  const dollarPerUnit = bands.dollarPerUnit
+  const lowScale = modeled.low / modeled.mid
+  const highScale = modeled.high / modeled.mid
+  const used = {}
+  const rows = []
+
+  for (const { p } of orderForSeats(playersIn)) {
+    const family = familyOf(p, seats, fallbackFamily)
+    const seat = seats[family]
+    const u = (used[family] ||= { s: 0, d: 0 })
+    const assigned = assignNamedSeat(p, seat, u, { fullRoster, modeled })
+    const band = assigned.role === 'booked' ? { id: 'booked', short: 'booked', units: 0 } : seatBand(seat, assigned.role)
+    rows.push({ p, family, sport, ...assigned, band })
+  }
+
+  const bookedSum = rows.reduce((s, r) => s + (r.booked ? r.booked.value : 0), 0)
+  const raw = rows.reduce((s, r) => (r.booked ? s : s + r.units * dollarPerUnit), 0)
+  const modeledCap = Math.max(0, cap - bookedSum)
+  const scale = raw > modeledCap && raw > 0 ? modeledCap / raw : 1
 
   const players = rows.map((r) => {
+    if (r.booked) {
+      const mid = Math.max(0, Math.round(r.booked.value))
+      return {
+        name: r.p.name,
+        pos: r.p.pos,
+        family: r.family,
+        sport: r.sport,
+        class: r.p.class || '',
+        className: r.p.className || '',
+        jersey: r.p.jersey || '',
+        depthRank: r.p.depthRank || null,
+        role: 'booked',
+        via: 'booked',
+        band: r.band.id,
+        bandShort: r.band.short,
+        units: 0,
+        mid,
+        low: mid,
+        high: mid,
+        booked: mid,
+        bookedField: r.booked.field,
+        confidence: 'reported',
+        note: r.note,
+      }
+    }
     const mid = Math.max(0, Math.round(r.units * dollarPerUnit * scale))
     return {
       name: r.p.name,
       pos: r.p.pos,
       family: r.family,
+      sport: r.sport,
       class: r.p.class || '',
       className: r.p.className || '',
       jersey: r.p.jersey || '',
       depthRank: r.p.depthRank || null,
       role: r.role,
+      via: r.via,
+      band: r.band.id,
+      bandShort: r.band.short,
+      units: r.units,
       mid,
       low: Math.round(mid * lowScale),
       high: Math.round(mid * highScale),
+      booked: null,
+      bookedField: null,
       confidence: 'modeled',
       note: r.note,
     }
   })
-  players.sort((a, b) => b.high - a.high || a.name.localeCompare(b.name))
+  players.sort((a, b) => (b.high || 0) - (a.high || 0) || a.name.localeCompare(b.name))
+  return { players, scale, bookedSum }
+}
+
+/**
+ * Allocate a modeled low/high to each verified roster name.
+ * Shares the football slice of the 93% school-modeled pot (and the MBB
+ * slice when a named basketball roster exists).
+ * Starters (verified two-deep) get starter-band units; backups get depth-band
+ * units. On a full roster with no rank, listed/depth-chart order fills
+ * starterCount then depthCount then the developmental 2-unit share — never
+ * one family midpoint copied onto every name. A cited news-URL booked NIL
+ * is kept and not overwritten. If the raw modeled sum exceeds the sport
+ * slice, modeled mids scale down so the desk never overruns ~93%.
+ */
+export function allocateNamedPlayers(rosterEntry, modeled, bands) {
+  const playersIn = rosterEntry?.players
+  const mbbIn = rosterEntry?.mbb || rosterEntry?.mbbPlayers
+  if ((!playersIn?.length && !mbbIn?.length) || !modeled?.mid || !bands) return null
+
+  const poolCap = Math.round(modeled.mid * ROSTER_POOL_SHARE)
+  const fbCap = Math.min(bands.rollup.fbMid, poolCap)
+  const mbbCap = bands.rollup.mbbMid
+  const fbFull = isFullNamedRoster({ playerCount: playersIn?.length, players: playersIn }, FB_UNITS_TARGET)
+  const mbbFull = isFullNamedRoster({ playerCount: mbbIn?.length, players: mbbIn }, MBB_UNITS_TARGET)
+
+  const fb = playersIn?.length
+    ? allocateSportPlayers(playersIn, modeled, bands, {
+        seats: FAMILY_SEATS,
+        cap: fbCap,
+        fullRoster: fbFull,
+        sport: 'fb',
+        fallbackFamily: 'ath',
+      })
+    : { players: [], scale: 1, bookedSum: 0 }
+  const mbb = mbbIn?.length
+    ? allocateSportPlayers(mbbIn, modeled, bands, {
+        seats: MBB_FAMILY_SEATS,
+        cap: mbbCap,
+        fullRoster: mbbFull,
+        sport: 'mbb',
+        fallbackFamily: 'g',
+      })
+    : { players: [], scale: 1, bookedSum: 0 }
+
+  const players = [...fb.players, ...mbb.players]
+  players.sort((a, b) => (b.high || 0) - (a.high || 0) || a.name.localeCompare(b.name))
 
   const sumMid = players.reduce((s, x) => s + x.mid, 0)
+  const cap = fbCap + (mbbIn?.length ? mbbCap : 0)
+  const scale = Math.min(fb.scale, mbb.players.length ? mbb.scale : 1)
   const confLabel = modeled.conferenceKey || 'conference'
   const confMid = modeled.conferenceTotal
+  const fullRoster = fbFull || mbbFull
   return {
     players,
     sumMid,
     cap,
     scale,
+    fullRoster,
     sourceUrl: rosterEntry.sourceUrl,
     wikiUrl: rosterEntry.wikiUrl,
     wikiYear: rosterEntry.wikiYear,
@@ -304,38 +482,70 @@ export function allocateNamedPlayers(rosterEntry, modeled, bands) {
     depthMatched: rosterEntry.depthMatched || 0,
     conferenceKey: confLabel,
     conferenceTotal: confMid,
-    notes: namedRosterNotes(modeled, confLabel, confMid),
+    notes: namedRosterNotes(modeled, confLabel, confMid, { fullRoster }),
   }
 }
 
 
 /** Public-roster names with no modeled dollar share (no school modeled midpoint). */
 export function namedRosterOnly(rosterEntry) {
-  const playersIn = rosterEntry?.players
-  if (!playersIn?.length) return null
-  const players = [...playersIn]
-    .map((p) => ({
-      name: p.name,
-      pos: p.pos,
-      family: p.family,
-      class: p.class || '',
-      className: p.className || '',
-      jersey: p.jersey || '',
-      depthRank: p.depthRank || null,
-      role: p.depthRank === 1 ? 'starter' : p.depthRank ? 'backup' : 'unknown',
-      mid: null,
-      low: null,
-      high: null,
-      confidence: 'reported',
-      note: 'Public ESPN roster name. No modeled NIL share — this season has no school modeled midpoint.',
-    }))
+  const playersIn = [...(rosterEntry?.players || []), ...(rosterEntry?.mbb || rosterEntry?.mbbPlayers || [])]
+  if (!playersIn.length) return null
+  const players = playersIn
+    .map((p) => {
+      const booked = citedPlayerBooked(p)
+      if (booked) {
+        const mid = Math.round(booked.value)
+        return {
+          name: p.name,
+          pos: p.pos,
+          family: p.family,
+          class: p.class || '',
+          className: p.className || '',
+          jersey: p.jersey || '',
+          depthRank: p.depthRank || null,
+          role: 'booked',
+          via: 'booked',
+          band: 'booked',
+          bandShort: 'booked',
+          mid,
+          low: mid,
+          high: mid,
+          booked: mid,
+          bookedField: booked.field,
+          confidence: 'reported',
+          note: `Cited booked NIL (${booked.url}) — kept; not overwritten by the rate-card band.`,
+        }
+      }
+      return {
+        name: p.name,
+        pos: p.pos,
+        family: p.family,
+        class: p.class || '',
+        className: p.className || '',
+        jersey: p.jersey || '',
+        depthRank: p.depthRank || null,
+        role: p.depthRank === 1 ? 'starter' : p.depthRank ? 'backup' : 'unknown',
+        via: null,
+        band: null,
+        bandShort: null,
+        mid: null,
+        low: null,
+        high: null,
+        booked: null,
+        bookedField: null,
+        confidence: 'reported',
+        note: 'Public ESPN roster name. No modeled NIL share — this season has no school modeled midpoint.',
+      }
+    })
     .sort((a, b) => a.name.localeCompare(b.name))
   return {
     players,
-    sumMid: 0,
+    sumMid: players.reduce((s, p) => s + (p.booked || 0), 0),
     cap: 0,
     scale: 1,
     namesOnly: true,
+    fullRoster: isFullNamedRoster(rosterEntry),
     sourceUrl: rosterEntry.sourceUrl,
     wikiUrl: rosterEntry.wikiUrl,
     wikiYear: rosterEntry.wikiYear,

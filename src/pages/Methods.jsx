@@ -530,10 +530,15 @@ export default function Methods({ meta: metaProp }) {
       <blockquote>
         Starter on a verified two-deep → high end of the position band (starter-spot weight).
         Backup on that two-deep → low end (depth-spot weight).
-        Name and position only → midpoint of the starter and depth weights, and the row says so.
-        If the sum of player mids would exceed the football slice (itself inside 93% of the
-        school modeled midpoint), every mid is scaled down so ~7% stays unallocated at school
-        level and men’s basketball keeps its card.
+        Full roster, no wiki rank → listed / depth-chart order fills starterCount, then
+        depthCount, then the developmental 2-unit share. We do not copy one family midpoint
+        onto every QB, WR, or other name at that position.
+        Thin roster, no rank → midpoint of the starter and depth weights, and the row says so.
+        A cited news-URL booked player NIL is kept and not overwritten by the band.
+        If the sum of modeled player mids would exceed the football slice (itself inside 93% of the
+        school modeled midpoint), every modeled mid is scaled down so ~7% stays unallocated at school
+        level and men’s basketball keeps its card. School-level modeled NIL, booked NIL, capacity,
+        and House cells do not change.
       </blockquote>
       <p>
         <em>Comparative</em> means the same position-band weight across the conference: a
@@ -589,9 +594,11 @@ export default function Methods({ meta: metaProp }) {
       </p>
       <p>
         Clicking a named player opens that player’s own year series when the name
-        appears on more than one season roster. Player cells stay modeled. This desk
-        still has no named booked dollar on an athlete unless a public file names
-        them — none in v1 — so a player graph does not mint a booked series.
+        appears on more than one season roster. Each player dollar is that player’s
+        allocated modeled range (starter vs backup vs developmental), labeled
+        modeled — not one family band copied onto every name. A cited news-URL
+        booked player cell is kept and not overwritten. This desk still has no named
+        booked dollar on an athlete unless a public file names them.
         Share URLs can deep-link an open position chart (<code>#pos-qb</code>) or
         player chart the same way the capacity-stack drills already share.
       </p>
