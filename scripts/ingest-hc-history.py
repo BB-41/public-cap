@@ -309,7 +309,7 @@ def ingest(path: Path) -> None:
         "Football chairs are year-keyed (coachesByYear, 2021–2026) from the Wikipedia "
         "season-page infobox tape. applySeason uses that year’s chair — we do not blank "
         "2021–24 to an em-dash and we do not copy a 2026 hire onto 2024. USA TODAY 2025 "
-        "pay is attached only when that year cell is on the tape. No On3."
+        "pay is attached only when that year cell is on the tape."
     )
     blockers = data.get("meta", {}).get("blockers") or []
     data["meta"]["blockers"] = [

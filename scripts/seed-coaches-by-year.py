@@ -384,7 +384,7 @@ def main():
 
     # meta note
     data["meta"]["blockers"].append(
-        "Football chairs are year-keyed (coachesByYear, 2021–2026). applySeason uses that year’s chair — we do not blank 2021–24 to an em-dash and we do not copy a 2026 hire onto 2024. A full 68-school year tape is still incoming; years without a key stay pending. No On3."
+        "Football chairs are year-keyed (coachesByYear, 2021–2026). applySeason uses that year’s chair — we do not blank 2021–24 to an em-dash and we do not copy a 2026 hire onto 2024. A full 68-school year tape is still incoming; years without a key stay pending."
     )
 
     path.write_text(json.dumps(data, indent=2, ensure_ascii=True) + "\n")

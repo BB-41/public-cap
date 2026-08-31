@@ -160,7 +160,7 @@ def school(**kw):
         "color": kw["color"],
         "capacity": capacity_block(conf, private, kw["media"], kw.get("note")),
         "alumni": alumni_block(sid, ipeds, slug),
-        "nil": {"booked": empty("No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go.")},
+        "nil": {"booked": empty("No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending.")},
         "coaches": {
             "football": coach_obj(kw["usat"], "fb"),
             "mbb": coach_obj(kw["usat"], "mbb"),
@@ -472,7 +472,7 @@ data["meta"]["blockers"] = [
     "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions.",
     "USA TODAY Sports football (Oct 8, 2025) and men's basketball (Apr 8, 2026) salary tables used for coach pay/buyouts. Blank private-school cells stay pending.",
     "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
-    "Most NIL bands are pending — only Louisville (FOIA) and Kentucky (counsel statement) are booked. No On3 / Opendorse / NIL Go.",
+    "Most NIL bands are pending — only Louisville (FOIA) and Kentucky (counsel statement) are booked.",
     "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
 ]
 data["meta"]["sourcesIndex"].update({

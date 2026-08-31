@@ -6,7 +6,7 @@
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
-      "Incomplete dates stay year or year-month. No On3 / Opendorse / NIL Go / social."
+      "Incomplete dates stay year or year-month."
     ]
   },
   "items": [

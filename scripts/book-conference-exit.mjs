@@ -173,7 +173,7 @@ function stampSchoolsText(raw, schools) {
       BLOCKER,
     )
   } else if (!out.includes('modeled 2× last cited FY2025 Form 990')) {
-    const marker = 'Privates and withheld chairs stay pending. No On3 / Opendorse / NIL Go."'
+    const marker = 'Privates and withheld chairs stay pending."'
     if (!out.includes(marker)) throw new Error('could not find last blockers line')
     out = out.replace(marker, `${marker},\n      "${BLOCKER}"`)
   }

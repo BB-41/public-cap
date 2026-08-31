@@ -340,8 +340,7 @@ def main() -> None:
             "notes": (
                 "Football names from ESPN public team roster JSON (2026 season). "
                 "Depth ranks from Wikipedia 2026/2025 team-page depth-chart templates when present. "
-                "CollegeFootballData roster API returned 401 without a key and was skipped. "
-                "No On3 / Opendorse / NIL Go / social."
+                "CollegeFootballData roster API returned 401 without a key and was skipped."
             ),
             "sources": [
                 {"id": "espn-roster", "label": "ESPN college-football team roster API", "url": ESPN_TEAMS},

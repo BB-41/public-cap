@@ -18,7 +18,7 @@ export default function Shell({ params, children }) {
             />
           </Link>
           <div>
-            <div className="kicker">A college athletics capacity desk · v1.2 · Aug 25, 2026</div>
+            <div className="kicker">A college athletics capacity desk · v1.2 · Aug 30, 2026</div>
             <Link to="/" className="wordmark">Public Cap</Link>
           </div>
         </div>
@@ -42,7 +42,7 @@ export default function Shell({ params, children }) {
         Booked NIL stays official. Collective 990 is a separate cited lane, not House.
         Modeled NIL is a conference heuristic: House-era
         (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era
-        third-party-only backcast for 2021–24. Sources are public filings and cited news — not On3, Opendorse player files, NIL Go, or social apps.
+        third-party-only backcast for 2021–24.
         Every figure carries a source, a date, and a confidence mark.
       </footer>
     </div>

@@ -5,7 +5,7 @@
     "cycle": "2025-26 / 2026 football portal; 2025 football season; FY2025\u201326 money",
     "notes": [
       "Every number carries source, date, confidence (reported|estimated|modeled|pending).",
-      "No On3 / Opendorse / NIL Go / LinkedIn / Glassdoor / Instagram / X.",
+      "No LinkedIn / Glassdoor / Instagram / X scrape.",
       "Portal names from Wikipedia 2026 team pages, NCAA.com, FOX, CBS, SI, Eleven Warriors. Dollars only if a cited news number exists \u2014 none do on this pass.",
       "Football wins from Wikipedia 2025 FBS standings (final) and the NCAA standings PDF.",
       "Wins per dollar is computed: 2025 FB wins \u00f7 booked NIL if present else modeled mid, and \u00f7 annual capacity.",
@@ -263,7 +263,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -434,7 +434,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -639,7 +639,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -834,7 +834,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -954,7 +954,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -1438,7 +1438,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -1556,7 +1556,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -1684,7 +1684,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -1814,7 +1814,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -1934,7 +1934,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -2064,7 +2064,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -2367,7 +2367,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -2510,7 +2510,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -2623,7 +2623,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -2960,7 +2960,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -3088,7 +3088,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -3205,7 +3205,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -3360,7 +3360,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -3503,7 +3503,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -3623,7 +3623,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -3765,7 +3765,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -4349,7 +4349,7 @@
         "annualValue": {
           "value": 30000000,
           "confidence": "estimated",
-          "source": "Sports Illustrated / On3 sourcing \u2014 ~$300M over 10 years (cash + product + NIL). Labeled estimated.",
+          "source": "Sports Illustrated \u2014 ~$300M over 10 years (cash + product + NIL). Labeled estimated.",
           "url": "https://www.si.com/onsi/jerseys/news/4-major-colleges-change-apparel-brands-this-week",
           "asOf": "2026-07",
           "notes": "SI: roughly $300 million over 10 years. Average ~$30M if spread flat. Not a filing."
@@ -4495,7 +4495,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -4624,7 +4624,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -4742,7 +4742,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -4929,7 +4929,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -5054,7 +5054,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -5173,7 +5173,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -5292,7 +5292,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -5405,7 +5405,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -5536,7 +5536,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -5652,7 +5652,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -5765,7 +5765,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -5884,7 +5884,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -6024,7 +6024,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -6262,7 +6262,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -6379,7 +6379,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -6512,7 +6512,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -6625,7 +6625,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -6738,7 +6738,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -6851,7 +6851,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -6964,7 +6964,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -7084,7 +7084,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -7240,7 +7240,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -7353,7 +7353,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -7482,7 +7482,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -7535,7 +7535,7 @@
             "source": "ASU News \u2014 15-year Mountain America Stadium naming partnership. Financial terms not disclosed.",
             "url": "https://news.asu.edu/20230802-university-news-asu-mountain-america-credit-union-naming-rights-deal-football-stadium",
             "asOf": "2023-08-02",
-            "notes": "School release names the 15-year term, not a dollar. An On3 $60 million figure is not booked."
+            "notes": "School release names the 15-year term, not a dollar."
           }
         ],
         "notes": null
@@ -7623,7 +7623,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -7736,7 +7736,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -7849,7 +7849,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -7966,7 +7966,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -8085,7 +8085,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -8214,7 +8214,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -8346,7 +8346,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -8465,7 +8465,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -8785,7 +8785,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -8910,7 +8910,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -9062,7 +9062,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -9203,7 +9203,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -9323,7 +9323,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,
@@ -9452,7 +9452,7 @@
           "source": "NCAA.com portal recap \u2014 school-level in/out not published as a single official table",
           "url": "https://www.ncaa.com/news/football/article/2026-01-16/10-numbers-breaking-down-2026-college-football-transfer-portal",
           "asOf": "2026-01-16",
-          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com). Not On3."
+          "notes": "Cycle-wide: ~3,300 FBS scholarship entries (CBS); 10,500+ across all divisions (NCAA.com)."
         },
         "outCount": {
           "value": null,

@@ -66,18 +66,18 @@
       "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions.",
       "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school cells stay pending.",
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
-      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (TPR: $13.5M House Year 1 YTD Jul 2025–Mar 2026). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. No On3 / Opendorse / NIL Go. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
+      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (TPR: $13.5M House Year 1 YTD Jul 2025–Mar 2026). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
       "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
       "Coach contract PDFs linked only when a school, state, board, or newsroom host posted the actual file (HTTP 200). Public-school buyouts prefer that file; articles are fallback only when no current file is loaded. Stale hire packets are not treated as the current deal. Private-school blanks stay pending. No invented URLs.",
-      "Coach contract terms (through-year / years remaining) are cited only from employment agreements, board packets, or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending. No On3.",
-      "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 use the same staffByYear slot when those USA TODAY tables are ingested. No On3.",
-      "Football chairs are year-keyed (coachesByYear, 2021–2026) from the Wikipedia season-page infobox tape. applySeason uses that year’s chair — we do not blank 2021–24 to an em-dash and we do not copy a 2026 hire onto 2024. USA TODAY team-page Total Pay is attached to that year’s chair when the names match; file/PDF dollars win. We do not copy a 2024 cell onto 2025 or 2026. No On3.",
-      "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 use the same staffByYear slot when those USA TODAY tables are ingested. No On3.",
-      "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 use the same staffByYear slot when those USA TODAY tables are ingested. No On3.",
-      "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 are the same USA TODAY team-page tape. No On3.",
-      "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 are the same USA TODAY team-page tape. No On3.",
+      "Coach contract terms (through-year / years remaining) are cited only from employment agreements, board packets, or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending.",
+      "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 use the same staffByYear slot when those USA TODAY tables are ingested.",
+      "Football chairs are year-keyed (coachesByYear, 2021–2026) from the Wikipedia season-page infobox tape. applySeason uses that year’s chair — we do not blank 2021–24 to an em-dash and we do not copy a 2026 hire onto 2024. USA TODAY team-page Total Pay is attached to that year’s chair when the names match; file/PDF dollars win. We do not copy a 2024 cell onto 2025 or 2026.",
+      "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 use the same staffByYear slot when those USA TODAY tables are ingested.",
+      "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 use the same staffByYear slot when those USA TODAY tables are ingested.",
+      "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 are the same USA TODAY team-page tape.",
+      "Football assistant pay is year-keyed (staffByYear). USA TODAY Sports assistant dollars (as of Dec 18, 2024) and the staff-total pool live on 2024 only, with that year's published names — not the 2026 official directory. 2025 is empty unless a distinct year-accurate directory exists; we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-directory names; pay stays pending without a cited 2026 dollar. 2021–2023 are the same USA TODAY team-page tape.",
       "Student-fee / institutional-support cells: hosted FY2025 MFRS PDFs first (Georgia, Tennessee, Oregon, Utah, UNC, Illinois, Minnesota, Washington, Wisconsin, Iowa State, Virginia, Ole Miss, Ohio State). EADA 2024-25 public file has no fee/support split — unused for those cells. Remaining publics use Knight-Newhouse FY2025 school-profile lines that cite the same MFRS categories. Privates and Pittsburgh stay empty. Do not mint $0 unless the report shows $0. Not added to booked capacity.",
-      "Athletic-director pay is cited-only on staff.athleticDirector.pay (and the 2026 staff-year copy). USA TODAY Sports has no live AD table on sportsdata.usatoday.com; dollars come from USA TODAY Network stories that name a number, or from state payroll / university FOIA / board minutes. Each cell is year-pinned. A 2024 snapshot is never copied onto a 2026 AD who is a different person. A newer cite already on the desk is not overwritten by an older snapshot. Privates and withheld chairs stay pending. No On3 / Opendorse / NIL Go.",
+      "Athletic-director pay is cited-only on staff.athleticDirector.pay (and the 2026 staff-year copy). USA TODAY Sports has no live AD table on sportsdata.usatoday.com; dollars come from USA TODAY Network stories that name a number, or from state payroll / university FOIA / board minutes. Each cell is year-pinned. A 2024 snapshot is never copied onto a 2026 AD who is a different person. A newer cite already on the desk is not overwritten by an older snapshot. Privates and withheld chairs stay pending.",
       "Conference exit is a school-page stock, not annual capacity, and not a coach-firing buyout. ACC football members: settlement year ladder (rights in tow) from The Post and Courier quote of the 68-page Clemson/FSU/ACC settlement. SEC: 2023–24 bylaws §3.2.1 $30 million with-notice (hosted PDF); $40M/$45M stairs footnoted. Big 12 current football members: modeled 2× last cited FY2025 Form 990 Schedule I distribution from hosted bylaws §3.4; paying the fee does not abrogate the grant of rights (§3.1). Half-share FY2025 schools (BYU/Houston/UCF/Cincinnati) use a modeled full-share peer range, not a silent 2× of the half-share. Notre Dame: modeled ~$100M Hale/247Sports non-football ACC membership estimate — not the FSU/Clemson football ladder. Big Ten: no published cash exit fee (Wake Forest Law Review); the lock is the grant of rights through 2036 (ESPN / Acker). Not $0, not a borrowed 2× formula. Illinois FOIA sought the bylaws and they were withheld. Do not stamp the old Big 12 $100M Texas/Oklahoma one-off on remaining members. Texas and Oklahoma stay SEC."
     ],
     "sourcesIndex": {
@@ -309,7 +309,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -1928,7 +1928,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         },
         "preCap": {
           "value": 0,
@@ -3605,7 +3605,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -5177,7 +5177,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -6850,7 +6850,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -10135,7 +10135,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -11867,7 +11867,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         },
         "preCap": {
           "value": 0,
@@ -13413,7 +13413,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. Collective 990 is a cited side lane on nil.collective990. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. Collective 990 is a cited side lane on nil.collective990."
         },
         "collective990": [
           {
@@ -16783,7 +16783,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         },
         "preCap": {
           "value": 0,
@@ -18432,7 +18432,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. Collective 990 is a cited side lane on nil.collective990. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. Collective 990 is a cited side lane on nil.collective990."
         },
         "collective990": [
           {
@@ -19948,7 +19948,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -23196,7 +23196,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -26253,7 +26253,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -27983,7 +27983,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -29564,7 +29564,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -30980,7 +30980,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -34225,7 +34225,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -35882,7 +35882,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -37472,7 +37472,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -39175,7 +39175,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -40619,7 +40619,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -42209,7 +42209,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -43951,7 +43951,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 18368391,
@@ -45688,7 +45688,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -47165,7 +47165,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -51878,7 +51878,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -53405,7 +53405,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -54988,7 +54988,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -59865,7 +59865,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -61304,7 +61304,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         },
         "preCap": {
           "value": 0,
@@ -63245,7 +63245,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -71048,7 +71048,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -72503,7 +72503,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -73966,7 +73966,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -75412,7 +75412,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -76893,7 +76893,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -78522,7 +78522,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -80236,7 +80236,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -81774,7 +81774,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -83342,7 +83342,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -84856,7 +84856,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -86231,7 +86231,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -87655,7 +87655,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -89200,7 +89200,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -90811,7 +90811,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -92341,7 +92341,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -95570,7 +95570,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -97211,7 +97211,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 16000000,
@@ -98765,7 +98765,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -100172,7 +100172,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -101689,7 +101689,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {
@@ -103235,7 +103235,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
         },
         "preCap": {
           "value": 0,
@@ -104872,7 +104872,7 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending. Not On3 / Opendorse / NIL Go."
+          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
         }
       },
       "coaches": {

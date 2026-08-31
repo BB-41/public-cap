@@ -33,7 +33,7 @@ BLOCKER = (
     "season-page infobox tape. applySeason uses that year’s chair — we do not blank "
     "2021–24 to an em-dash and we do not copy a 2026 hire onto 2024. USA TODAY "
     "team-page Total Pay is attached to that year’s chair when the names match; "
-    "file/PDF dollars win. We do not copy a 2024 cell onto 2025 or 2026. No On3."
+    "file/PDF dollars win. We do not copy a 2024 cell onto 2025 or 2026."
 )
 
 

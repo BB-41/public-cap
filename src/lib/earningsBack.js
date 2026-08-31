@@ -1,5 +1,5 @@
 /** Scorecard corroboration — labor-market context, not a second wealth engine.
- *  No LinkedIn / Glassdoor / On3 / Opendorse / NIL Go / social ingest.
+ *  No LinkedIn / Glassdoor / marketplace-player-file / social ingest.
  */
 
 const TECH_IDS = new Set([

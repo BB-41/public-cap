@@ -113,7 +113,7 @@ export default function NamedRoster({ school, season, open, onToggle, includeAlu
         {named.notes}
         {named.namesOnly
           ? ''
-          : ` Player-mid sum ${money(named.sumMid)} of football slice ${money(named.cap)}${named.scale < 1 ? ` (scaled ×${named.scale.toFixed(2)} to stay inside the pot)` : ''}. Each player dollar is modeled: a share of the school pot from the desk rate card, not a contract, not On3 / Opendorse / NIL Go.`}
+          : ` Player-mid sum ${money(named.sumMid)} of football slice ${money(named.cap)}${named.scale < 1 ? ` (scaled ×${named.scale.toFixed(2)} to stay inside the pot)` : ''}. Each player dollar is modeled: a share of the school pot from the desk rate card, not a contract.`}
         {named.depthMatched
           ? ` ${named.depthMatched} names matched a ${named.wikiYear} Wikipedia two-deep.`
           : named.namesOnly

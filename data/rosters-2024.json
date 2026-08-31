@@ -2,7 +2,7 @@
   "meta": {
     "asOf": "2026-08-24",
     "season": 2024,
-    "notes": "Football names from ESPN public core roster JSON (2024 season). Wikipedia two-deep skipped (pre-House; no modeled NIL share). site.web.api roster items are empty for closed seasons, so sports.core.api athlete lists were resolved. No On3 / Opendorse / NIL Go / social.",
+    "notes": "Football names from ESPN public core roster JSON (2024 season). Wikipedia two-deep skipped (pre-House; no modeled NIL share). site.web.api roster items are empty for closed seasons, so sports.core.api athlete lists were resolved.",
     "sources": [
       {
         "id": "espn-core-roster",

@@ -8,7 +8,7 @@
  * range instead of inventing an $80M Texas board.
  *
  * Low/high on each slot track the school's modeled low/high vs mid.
- * No On3 / Opendorse / NIL Go / social.
+ * No marketplace player-file or social scrape.
  * Named-player dollars are modeled shares of the school pot unless a news URL is attached (none in v1).
  */
 
@@ -180,7 +180,7 @@ export function familyMidpointUnits(seat) {
 }
 
 export const RATE_CARD_SHARE_NOTE =
-  'Modeled share of the school pot from the desk rate card, not a contract. Not On3 / Opendorse / NIL Go.'
+  'Modeled share of the school pot from the desk rate card, not a contract.'
 
 export function isFullNamedRoster(rosterEntry, target = FB_UNITS_TARGET) {
   const n = Number(rosterEntry?.playerCount) || rosterEntry?.players?.length || 0
@@ -222,7 +222,7 @@ export function seatBand(seat, role) {
 
 function namedPlayerNote(roleNote, modeled) {
   if (modeled?.era === 'collective') {
-    return `${roleNote} ${RATE_CARD_SHARE_NOTE} Collective-era model, year-scaled — not a filing. Not an On3 / Opendorse player value.`
+    return `${roleNote} ${RATE_CARD_SHARE_NOTE} Collective-era model, year-scaled — not a filing.`
   }
   return `${roleNote} ${RATE_CARD_SHARE_NOTE}`
 }
@@ -238,7 +238,7 @@ function namedRosterNotes(modeled, confLabel, confMid, { fullRoster = false } = 
       `Collective-era model: the same position-band units as every other ${confLabel} school, ` +
       `scaled by this school’s year-scaled third-party midpoint` +
       (confMid ? ` ($${(confMid / 1e6).toFixed(2)}M)` : '') +
-      `${factor}.${seatRule} Not a filing. Not a reported deal. No On3 / Opendorse player values.`
+      `${factor}.${seatRule} Not a filing. Not a reported deal.`
     )
   }
   return (
