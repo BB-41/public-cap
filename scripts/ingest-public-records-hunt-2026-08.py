@@ -278,7 +278,7 @@ def main():
                     source="ASU News — 15-year Mountain America Stadium naming partnership. Financial terms not disclosed.",
                     url=ASU,
                     asOf="2023-08-02",
-                    notes="School release names the 15-year term, not a dollar. An On3 $60 million figure is not booked.",
+                    notes="School release names the 15-year term, not a dollar.",
                 )
             ]
         },

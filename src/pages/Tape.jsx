@@ -24,7 +24,7 @@ export default function Tape({ items, season }) {
       <p className="lede">
         A dated log of filings that moved a Public Cap figure — booked NIL, collective 990s, contract PDFs,
         paid buyouts, apparel and naming, student-fee subsidies, athletics-debt filings, conference-exit filings, House-cap Q&amp;As.
-        This is not a news feed. No portal rumor, no On3, no social.
+        This is not a news feed. No portal rumor, no social.
       </p>
       <div className="chips" role="tablist" aria-label="Tape kind filter">
         {FILTERS.map((c) => (

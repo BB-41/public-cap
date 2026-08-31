@@ -140,7 +140,7 @@ add({
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?228778-The-University-of-Texas-at-Austin",
     },
     "nil": {
-        "booked": empty("No FOIA / MFRS institutional NIL or collective 990 figure located for v1. Band left pending. Not On3 / Opendorse / NIL Go."),
+        "booked": empty("No FOIA / MFRS institutional NIL or collective 990 figure located for v1. Band left pending."),
     },
     "coaches": {
         "football": coach("Steve Sarkisian", 10_800_000, 60_307_500, SRC["usat_fb"], "2025-10-08"),
@@ -878,9 +878,9 @@ meta = {
     "blockers": [
         "College Scorecard API requires an api.data.gov key; official earnings pulled from the College Transitions Dec 2025 Scorecard compilation and linked to Scorecard school pages.",
         "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; used school NCAA PDFs, CNBC-cited KN totals, and conference 990s instead.",
-        "USA TODAY salary pages loaded (no scrape of On3 / Opendorse / NIL Go).",
+        "USA TODAY salary pages loaded.",
         "Private schools (ND, USC, Vanderbilt, Miami) have structural revenue gaps.",
-        "Most NIL bands are pending — booked cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26). No On3 / Opendorse / NIL Go. Do not book a USC plan-to-distribute quote.",
+        "Most NIL bands are pending — booked cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26). Do not book a USC plan-to-distribute quote.",
     ],
     "sourcesIndex": SRC,
 }

@@ -34,7 +34,7 @@ BLOCKER = (
     "minutes. Each cell is year-pinned. A 2024 snapshot is never copied onto "
     "a 2026 AD who is a different person. A newer cite already on the desk "
     "is not overwritten by an older snapshot. Privates and withheld chairs "
-    "stay pending. No On3 / Opendorse / NIL Go."
+    "stay pending."
 )
 
 

@@ -92,7 +92,7 @@ export default function Methods({ meta: metaProp }) {
         Named football rosters are ESPN public JSON for each season (the live site
         API hydrates the current year; closed seasons are resolved from ESPN’s
         public core athlete lists). Wikipedia two-deep matching is used in modeled-NIL
-        years. No On3 / Opendorse / NIL Go / social.
+        years.
       </p>
 
       <h2>Definitions</h2>
@@ -103,7 +103,7 @@ export default function Methods({ meta: metaProp }) {
         <dt>Annual capacity / public cap</dt>
         <dd>Default is booked-only — the filing stack: media + sponsorships + tickets + booked contributions. A toggle, Include modeled alumni, adds the Scorecard-based extra-alumni midpoint (modeled athletics giving minus booked contributions, so we do not double-count). Extra low can be $0 when booked gifts already exceed the conservative alumni model. Annual, not lifetime. We never add lifetime wealth into the ranking.</dd>
         <dt>Booked NIL</dt>
-        <dd>FOIA ledgers, MFRS “Institutional NIL Revenue Share,” or counsel spent totals we can cite. Collective Form 990s live on a separate lane and never overwrite booked House / Item 44. Empty means pending — we do not have a number, not that spend is zero. Booked remains the official institutional number when it exists (today: Louisville and Kentucky). No On3 / Opendorse / NIL Go.</dd>
+        <dd>FOIA ledgers, MFRS “Institutional NIL Revenue Share,” or counsel spent totals we can cite. Collective Form 990s live on a separate lane and never overwrite booked House / Item 44. Empty means pending — we do not have a number, not that spend is zero. Booked remains the official institutional number when it exists (today: Louisville and Kentucky).</dd>
         <dt>Collective 990</dt>
         <dd>
           A third-party Form 990 line that names grants to individuals, athlete service compensation, or student-athlete appearances.
@@ -124,7 +124,7 @@ export default function Methods({ meta: metaProp }) {
         <dt>Contract term</dt>
         <dd>Through-year or years remaining on the current head-coach deal, cited from the employment agreement or a newsroom/school release that quotes one. Public-school buyouts prefer the file; articles are fallback only when no current file is loaded. Not a guess. Pending if we do not have a public through-year.</dd>
         <dt>Transfer portal</dt>
-        <dd>Notable football additions and departures for the 2025–26 / 2026 cycle. Names from public Wikipedia / NCAA.com / FOX / CBS pages. Dollars only if a cited news number exists. Not On3.</dd>
+        <dd>Notable football additions and departures for the 2025–26 / 2026 cycle. Names from public Wikipedia / NCAA.com / FOX / CBS pages. Dollars only if a cited news number exists.</dd>
         <dt>Apparel + naming rights</dt>
         <dd>Current outfitter and stadium or facility naming. Annual value only when a Sportico, Athletic, FOIA, or local-paper number exists.</dd>
         <dt>Student fees + institutional subsidy</dt>
@@ -226,7 +226,7 @@ export default function Methods({ meta: metaProp }) {
         NIL on this desk is a booked band only: FOIA ledgers, MFRS “Institutional NIL
         Revenue Share,” or counsel spent totals. Collective Form 990s are a separate
         cited lane (<code>nil.collective990</code>) and never overwrite booked House /
-        Item 44. If we do not have a booked institutional filing, that cell is pending. Not On3 / Opendorse / NIL Go. A public news article may be cited once when it is itself a FOIA,
+        Item 44. If we do not have a booked institutional filing, that cell is pending. A public news article may be cited once when it is itself a FOIA,
         ledger, or counsel-statement story (Courier-Journal, August 2026: Louisville
         $32.9M FOIA Mar 2025–Jul 1 2026, including ~$12.7M pre-cap KY NIL; prior desk
         cell was $20.27M for the House Year 1 window. Kentucky $18M from March 2025–July
@@ -364,8 +364,7 @@ export default function Methods({ meta: metaProp }) {
         including Notre Dame’s ACC × 1.08 premium. That median is then scaled by a
         published national NIL market-size series versus the 2024–25 baseline of $1.67B
         (Opendorse “NIL at 3,” recapped by Athletic Business). The year scalar is a
-        market total, not a player file. Not On3 / Opendorse player files, NIL Go,
-        social, or player valuations.
+        market total, not a player file.
       </p>
       <table className="roster methods-table">
         <thead>
@@ -522,8 +521,7 @@ export default function Methods({ meta: metaProp }) {
         slice of the 93% pot (the existing rate card). We do not call the names-only
         path once that midpoint exists. We do not invent a reported deal dollar.
         Confidence is <strong>modeled</strong>. In collective-era years the player note
-        says the share is year-scaled, not a filing, and is not an On3 / Opendorse
-        player value. Booked NIL (school and player) stays official-only. No named
+        says the share is year-scaled, not a filing. Booked NIL (school and player) stays official-only. No named
         booked dollars unless a public file names the athlete.
       </p>
       <blockquote>
@@ -551,7 +549,7 @@ export default function Methods({ meta: metaProp }) {
       </p>
       <p>
         Sources are linked in the roster footer: the ESPN roster page and, when used, the
-        Wikipedia team page. No On3, Opendorse, NIL Go, Instagram, X, or TikTok.
+        Wikipedia team page. No Instagram, X, or TikTok.
       </p>
 
       <h2>Position NIL history (modeled vs booked)</h2>
@@ -571,8 +569,7 @@ export default function Methods({ meta: metaProp }) {
         Alabama, Oregon, Utah, UNC, Ohio State, Illinois, Minnesota, Washington,
         Wisconsin, Iowa State, Virginia, and Ole Miss). Else the pot is the already-on-desk school modeled band —
         the conference heuristic, not a new national model. We spread that pot with
-        the existing named-player unit card and sum by position. No marketplace “QB
-        market” percentages. Years without a named roster file (today: 2022 and 2025)
+        the existing named-player unit card and sum by position. Years without a named roster file (today: 2022 and 2025)
         use the same position rate card, labeled as a rate-card year. Every position
         point or band is labeled <strong>modeled</strong> unless it is a real booked
         player or school cell. A missing booked cell is not invented. Louisville and
@@ -602,7 +599,7 @@ export default function Methods({ meta: metaProp }) {
         player chart the same way the capacity-stack drills already share.
       </p>
       <p>
-        Not On3 / Opendorse / NIL Go or social. The graph is a second cut of
+        The graph is a second cut of
         the school pot already on the desk, not extra money.
       </p>
 
@@ -626,8 +623,7 @@ export default function Methods({ meta: metaProp }) {
         so reporters know those tapes exist for public-university alumni on the state
         payroll; we do not invent databases. A few schools (Texas, Notre Dame, Stanford,
         Michigan) get one notable public-company alum with an EDGAR/DEF 14A link as a
-        fat-tail illustration. Not Glassdoor, LinkedIn, On3, Opendorse,
-        NIL Go, or social.
+        fat-tail illustration. We do not scrape Glassdoor, LinkedIn, or social.
       </p>
       <p>
         The extra-alumni row on the school stack is always shown. It is excluded from the
@@ -694,7 +690,7 @@ export default function Methods({ meta: metaProp }) {
         of 2026. A few named office roles (deputy AD, CFO)
         appear only with a source. We do not invent a title or a dollar.
         Knight-Newhouse coaches-compensation is a department total when we cite it —
-        not a stand-in for a missing name. No On3.
+        not a stand-in for a missing name.
       </p>
 
 
@@ -705,7 +701,7 @@ export default function Methods({ meta: metaProp }) {
         short extra window after the title game). Names come from public Wikipedia 2026
         team pages, NCAA.com, FOX, CBS, Sports Illustrated, or school releases. In/out
         counts appear only when one of those pages publishes a number. Dollars stay blank
-        unless a cited news figure exists — we do not invent a portal check. Not On3 / Opendorse / NIL Go.
+        unless a cited news figure exists — we do not invent a portal check.
       </p>
 
       <h2>Apparel and naming rights</h2>
@@ -757,8 +753,8 @@ export default function Methods({ meta: metaProp }) {
         filing). Rutgers keeps a newsroom 3-way split (fees / university / state).
         Government stays pending unless a source splits Line 2. Empty means pending,
         not zero. Privates and Pittsburgh have no public MFRS split. Cells live on
-        the school object and are not added to the capacity stack. Sources are hosted
-        MFRS / EADA / Knight-Newhouse, not bursar pages. Not On3 / Opendorse / NIL Go.
+        the school object and are not added to the capacity stack. We did not scrape
+        bursar pages.
       </p>
 
       <h2>Wins per dollar</h2>
@@ -805,7 +801,7 @@ export default function Methods({ meta: metaProp }) {
         Big Red Rebuild). Knight-Newhouse school profiles cite the same MFRS debt lines
         but are JS-rendered here; we did not invent KN dollars we could not read. EMMA
         official statements are allowed when they name athletics facilities — none were
-        booked on this pass without a matching athletics split. No On3 / Opendorse / NIL Go.
+        booked on this pass without a matching athletics split.
       </p>
 
       <h2>Conference exit</h2>
@@ -972,7 +968,7 @@ export default function Methods({ meta: metaProp }) {
 
       <h2>What we did not do</h2>
       <ul>
-        <li>Not On3 / Opendorse player files or NIL Go, and not Instagram / X / TikTok. The 2021–24 year scalar is a published national market total from the Opendorse “NIL at 3” report / Athletic Business recap — not a player file.</li>
+        <li>No Instagram / X / TikTok scrapers. The 2021–24 year scalar is a published national market total from the Opendorse “NIL at 3” report / Athletic Business recap — not a player file.</li>
         <li>No Glassdoor or LinkedIn ingest — those sites are not a source for the earnings corroboration block.</li>
         <li>No invented source labels.</li>
         <li>No invented player names, and no invented <em>reported</em> deal dollar on a named player (modeled shares of the school pot are labeled modeled).</li>

@@ -158,7 +158,7 @@ def book_ole_miss_item44(schools, tape):
         }
     s["nil"]["booked"]["notes"] = (
         "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. "
-        "FY2025 MFRS Item 44 is booked on nil.preCap. Not On3 / Opendorse / NIL Go."
+        "FY2025 MFRS Item 44 is booked on nil.preCap."
     )
     s["nil"]["preCap"] = {
         "value": 0,

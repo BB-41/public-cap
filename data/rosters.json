@@ -1,7 +1,7 @@
 {
   "meta": {
     "asOf": "2026-08-23",
-    "notes": "Football names from ESPN public team roster JSON (2026 season). Depth ranks from Wikipedia 2026 then 2025 team-page depth-chart templates when present. CollegeFootballData /roster returned 401 without an API key and was skipped. No On3 / Opendorse / NIL Go / social.",
+    "notes": "Football names from ESPN public team roster JSON (2026 season). Depth ranks from Wikipedia 2026 then 2025 team-page depth-chart templates when present. CollegeFootballData /roster returned 401 without an API key and was skipped.",
     "sources": [
       {
         "id": "cfbd",

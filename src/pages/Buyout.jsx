@@ -358,7 +358,7 @@ export default function Buyout() {
               We do not invent Saturday steps, we do not mint remaining-pay dollars from
               a bare percent clause, and we do not invent a dollar offset for new
               employment. Paid buyouts — money already owed after a firing — live
-              on the desk tape, not here. No On3, Opendorse, NIL Go, or social.
+              on the desk tape, not here.
             </p>
           </section>
         </>

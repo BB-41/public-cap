@@ -88,7 +88,7 @@ def staff_blocker() -> str:
         "directory. 2025 is empty unless a distinct year-accurate directory exists; "
         "we do not clone 2026 names or 2024 dollars onto 2025. 2026 keeps official-"
         "directory names; pay stays pending without a cited 2026 dollar. 2021–2023 "
-        "are the same USA TODAY team-page tape. No On3."
+        "are the same USA TODAY team-page tape."
     )
 
 

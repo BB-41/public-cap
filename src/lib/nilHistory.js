@@ -14,7 +14,7 @@
  * player cell or the school booked cell itself. We do not invent marketplace
  * “QB market” percentages or booked player dollars.
  *
- * No On3 / Opendorse / NIL Go / social.
+ * No marketplace player-file or social scrape.
  */
 
 import { hasVal, val, computeCapacity } from './compute.js'
@@ -94,7 +94,7 @@ export function parsePlayerSlug(key) {
 }
 
 export const HISTORY_NOTES =
-  'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when a FOIA / MFRS / counsel filing exists; otherwise the on-desk school modeled band. Collective 990 is a cited side lane and is not the pot. Years without a named roster file use the same position rate card. Not marketplace valuations. Not an On3 / Opendorse / NIL Go player value.'
+  'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when a FOIA / MFRS / counsel filing exists; otherwise the on-desk school modeled band. Collective 990 is a cited side lane and is not the pot. Years without a named roster file use the same position rate card. Not marketplace valuations.'
 
 export const HISTORY_METHOD =
   'Named football players at this position (or the position rate card when that year has no roster file) share that year’s school pot via the existing roster unit card, then we sum the position. Pot = booked school cell if one exists, else the conference-heuristic modeled band. The position split is labeled modeled. A booked label is only a real booked player or school cell — not an invented QB-market percentage.'
@@ -382,7 +382,7 @@ export const MODELED_POT_FOOTNOTE =
   'This pot is a labeled model (conference heuristic scaled to the published national market), not a reported player deal.'
 
 export const RATE_CARD_PLAYER_FOOTNOTE =
-  'This player dollar is a modeled share of the school pot from the desk rate card, not a contract, not On3 / Opendorse / NIL Go.'
+  'This player dollar is a modeled share of the school pot from the desk rate card, not a contract.'
 
 export function allocationSpreadLine(shareLabel, kind = 'position') {
   const share = shareLabel || (kind === 'player' ? 'player' : 'position')

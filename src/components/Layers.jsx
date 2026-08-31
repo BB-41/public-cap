@@ -111,7 +111,6 @@ function PortalSection({ layer }) {
         Notable football additions and departures for the NCAA’s single window
         (Jan 2–16, 2026). Names from public Wikipedia / NCAA.com / FOX / CBS / school pages.
         Dollars only if a cited news number exists — otherwise name + position, no dollar.
-        Not On3.
       </p>
       <div className="ratio-row">
         <div>

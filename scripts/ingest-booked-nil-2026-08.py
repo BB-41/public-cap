@@ -13,8 +13,7 @@ PUB = ROOT / "public" / "data"
 
 PENDING_HOUSE = (
     "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. "
-    "FY2025 MFRS Item 44 is booked on nil.preCap. "
-    "Not On3 / Opendorse / NIL Go."
+    "FY2025 MFRS Item 44 is booked on nil.preCap."
 )
 
 PSU_SPORTS = (
@@ -233,7 +232,7 @@ def main():
                 "Georgia / Tennessee / Alabama / Oregon / Utah / UNC Item 44 $0. "
                 "Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; "
                 "do not overwrite the $18M counsel cell. "
-                "No On3 / Opendorse / NIL Go. Do not book a USC plan-to-distribute quote "
+                "Do not book a USC plan-to-distribute quote "
                 "or the Texas $18M cap plan / on-track projection."
             )
 

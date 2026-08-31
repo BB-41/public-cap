@@ -1,7 +1,7 @@
 /**
  * Modeled NIL range (conference heuristic).
  *
- * Not a filing. Not an On3 / Opendorse / NIL Go player value. Booked NIL is untouched.
+ * Not a filing. Not a marketplace player scrape. Booked NIL is untouched.
  *
  * House-era (2025–26 / 2026–27) — existing formula, unchanged:
  *   House 2025–26 institutional ceiling H = $20.5M.
@@ -226,7 +226,7 @@ export function computeCollectiveEraNil(school, capacityTotal, allCapacityTotals
     `Mature (2024–25) ${conf.label} third-party median $${(conf.thirdParty / 1e6).toFixed(2)}M from ${NIL_MODEL_SOURCE.source}, scaled by published national NIL market ${academic} $${(market / 1e9).toFixed(season === 2021 ? 3 : 2)}B ÷ $1.67B (year factor ${factor.toFixed(3)}).`,
     `Low is 70% of that year’s median (no $10.25M House half-share floor). High is 1.25× the year median, then scaled by capacity quartile Q${q}/4 using this season’s conference-media-floor capacity totals.`,
     collectiveEraConfNote(school, season, conf),
-    'Estimates, not filings. Booked NIL (FOIA / MFRS / 990) is unchanged. The year scalar is a published market total, not an On3 / Opendorse / NIL Go player file.',
+    'Estimates, not filings. Booked NIL (FOIA / MFRS / 990) is unchanged. The year scalar is a published market total, not a player file.',
   ]
 
   return {
