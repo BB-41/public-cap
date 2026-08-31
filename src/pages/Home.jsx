@@ -20,13 +20,13 @@ const LEAD_COLS = [
 
 const MODELED_COL = { key: 'nilModeled', label: 'NIL modeled', type: 'num', def: 'nilModeled' }
 
-function leftoverCompact(field, carryLabel) {
-  if (!field) return carryLabel || null
+function yearCompact(field, carryLabel) {
+  if (!field && !carryLabel) return null
   const bits = []
-  if (field.overhang) bits.push('overhang')
-  else if (field.partialYear) bits.push('YTD')
+  if (field?.overhang) bits.push('overhang')
+  else if (field?.partialYear) bits.push('YTD')
   if (carryLabel) bits.push(carryLabel)
-  else bits.push('House Year 1')
+  else if (field) bits.push('House Year 1')
   return bits.join(' · ')
 }
 
@@ -239,7 +239,9 @@ export default function Home({ schools, house, houseField, season, setSeason, in
                   ) : (
                     <>
                       {money(r.nil)}
-                      {r.nilLabel ? <div className="term-compact">{r.nilLabel}</div> : null}
+                      {yearCompact(r.leftoverField, r.nilLabel) ? (
+                        <div className="term-compact">{yearCompact(r.leftoverField, r.nilLabel)}</div>
+                      ) : null}
                     </>
                   )}
                 </td>
@@ -249,7 +251,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
                   ) : (
                     <>
                       {money(r.leftover)}
-                      <div className="term-compact">{leftoverCompact(r.leftoverField, r.leftoverLabel)}</div>
+                      <div className="term-compact">{yearCompact(r.leftoverField, r.leftoverLabel)}</div>
                     </>
                   )}
                 </td>
