@@ -11,7 +11,7 @@
  * Years with no named roster file fall back to the same rate card.
  *
  * Every position point/band is labeled modeled unless it is a real booked
- * player cell or the school booked cell itself. We do not invent On3-style
+ * player cell or the school booked cell itself. We do not invent marketplace
  * “QB market” percentages or booked player dollars.
  *
  * No On3 / Opendorse / NIL Go / social.
@@ -94,7 +94,7 @@ export function parsePlayerSlug(key) {
 }
 
 export const HISTORY_NOTES =
-  'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when a FOIA / MFRS / counsel filing exists; otherwise the on-desk school modeled band. Collective 990 is a cited side lane and is not the pot. Years without a named roster file use the same position rate card. Not marketplace valuations. Not an On3 / Opendorse / NIL Go player scrape.'
+  'Position dollars are an allocation of the school pot across that year’s named roster, not reported player contracts. The pot is the booked school cell when a FOIA / MFRS / counsel filing exists; otherwise the on-desk school modeled band. Collective 990 is a cited side lane and is not the pot. Years without a named roster file use the same position rate card. Not marketplace valuations. Not an On3 / Opendorse / NIL Go player value.'
 
 export const HISTORY_METHOD =
   'Named football players at this position (or the position rate card when that year has no roster file) share that year’s school pot via the existing roster unit card, then we sum the position. Pot = booked school cell if one exists, else the conference-heuristic modeled band. The position split is labeled modeled. A booked label is only a real booked player or school cell — not an invented QB-market percentage.'

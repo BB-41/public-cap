@@ -14,7 +14,7 @@ PUB = ROOT / "public" / "data"
 PENDING_HOUSE = (
     "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. "
     "FY2025 MFRS Item 44 is booked on nil.preCap. "
-    "We do not scrape On3, Opendorse, or NIL Go."
+    "Not On3 / Opendorse / NIL Go."
 )
 
 PSU_SPORTS = (
