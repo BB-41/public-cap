@@ -113,12 +113,14 @@ export default function NamedRoster({ school, season, open, onToggle, includeAlu
         {named.notes}
         {named.namesOnly
           ? ''
-          : ` Player-mid sum ${money(named.sumMid)} of football slice ${money(named.cap)}${named.scale < 1 ? ` (scaled ×${named.scale.toFixed(2)} to stay inside the pot)` : ''}.`}
+          : ` Player-mid sum ${money(named.sumMid)} of football slice ${money(named.cap)}${named.scale < 1 ? ` (scaled ×${named.scale.toFixed(2)} to stay inside the pot)` : ''}. Each player dollar is modeled: a share of the school pot from the desk rate card, not a contract, not On3 / Opendorse / NIL Go.`}
         {named.depthMatched
           ? ` ${named.depthMatched} names matched a ${named.wikiYear} Wikipedia two-deep.`
           : named.namesOnly
             ? ''
-            : ' No verified two-deep for this school — every listed range is a position-band midpoint.'}
+            : named.fullRoster
+              ? ' No verified two-deep — starter, backup, and developmental seats follow listed roster order at each position.'
+              : ' No verified two-deep for this school — every listed range is a position-band midpoint.'}
       </p>
       <p className="fine">
         Roster source:{' '}
@@ -215,9 +217,18 @@ function GroupBlock({ group, expanded, school, season, includeAlumni, history, s
                 </span>{' '}
                 <i className={`dot ${p.confidence}`} title={p.note} />
               </td>
-              <td>{p.pos || '—'}</td>
+              <td>
+                {p.pos || '—'}
+                {p.bandShort ? <span className="fine-inline"> · {p.bandShort}</span> : null}
+              </td>
               <td>{p.className || p.class || '—'}</td>
-              <td className="num modeled-cell">{p.low == null ? '—' : moneyRange(p.low, p.high)}</td>
+              <td className={`num${p.booked != null ? '' : ' modeled-cell'}`}>
+                {p.low == null
+                  ? '—'
+                  : p.booked != null
+                    ? `booked ${moneyRange(p.low, p.high)}`
+                    : `modeled ${moneyRange(p.low, p.high)}`}
+              </td>
             </tr>
             {playerOpen && p.low != null ? (
               <tr className="player-fn-row">

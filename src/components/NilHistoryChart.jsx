@@ -190,8 +190,9 @@ export default function NilHistoryChart({
       </ul>
       {kind === 'player' ? (
         <p className="fine">
-          Player cells are modeled shares of that year’s school pot. This desk has no named booked
-          dollar on an athlete unless a public file names them — none in v1.
+          Each year is that player’s allocated modeled share of the school pot from the desk
+          rate card (starter vs backup vs developmental), not a contract, not On3 / Opendorse /
+          NIL Go. A cited news-URL booked player cell is kept and not overwritten.
         </p>
       ) : bookedPotYears.length ? (
         <p className="fine">

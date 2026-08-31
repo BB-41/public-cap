@@ -21,6 +21,7 @@ import { hasVal, val, computeCapacity } from './compute.js'
 import { modeledNilForSeason } from './nilModel.js'
 import {
   FAMILY_SEATS,
+  MBB_FAMILY_SEATS,
   allocateNamedPlayers,
   namedRosterOnly,
   scaleRosterToModeled,
@@ -44,8 +45,15 @@ export const FAMILY_LABELS = {
   ath: 'ATH',
 }
 
+export const MBB_FAMILY_LABELS = {
+  pg: 'PG',
+  wing: 'WING',
+  big: 'BIG',
+  g: 'G',
+}
+
 export function familyLabel(family) {
-  return FAMILY_LABELS[family] || String(family || '').toUpperCase() || '—'
+  return FAMILY_LABELS[family] || MBB_FAMILY_LABELS[family] || String(family || '').toUpperCase() || '—'
 }
 
 export function posHash(family) {
@@ -67,7 +75,8 @@ export function nameSlug(name) {
 
 export function isPosHash(key) {
   if (!key || !String(key).startsWith('pos-')) return false
-  return !!FAMILY_SEATS[String(key).slice(4)]
+  const fam = String(key).slice(4)
+  return !!FAMILY_SEATS[fam] || !!MBB_FAMILY_SEATS[fam]
 }
 
 export function isPlayerHash(key) {
@@ -111,7 +120,7 @@ export function schoolNilPot(modeled, booked) {
 }
 
 function familyUnits(family) {
-  const seat = FAMILY_SEATS[family] || FAMILY_SEATS.ath
+  const seat = FAMILY_SEATS[family] || MBB_FAMILY_SEATS[family] || FAMILY_SEATS.ath
   return seat.starterCount * seat.starterUnits + seat.depthCount * seat.depthUnits
 }
 
@@ -148,10 +157,15 @@ export function groupNamedByFamily(named) {
   const byFam = {}
   for (const fam of FAMILY_ORDER) byFam[fam] = []
   for (const p of players) {
-    const fam = FAMILY_SEATS[p.family] ? p.family : 'ath'
+    const fam = FAMILY_SEATS[p.family]
+      ? p.family
+      : MBB_FAMILY_SEATS[p.family]
+        ? p.family
+        : 'ath'
     ;(byFam[fam] || (byFam[fam] = [])).push({ ...p, family: fam })
   }
-  for (const fam of FAMILY_ORDER) {
+  const familyOrder = [...FAMILY_ORDER, ...Object.keys(MBB_FAMILY_SEATS)]
+  for (const fam of familyOrder) {
     const rows = byFam[fam] || []
     if (!rows.length) continue
     const modeled = rows.some((p) => p.mid != null)
@@ -234,19 +248,19 @@ function playerPoint(player, year, yearRow) {
       modeled,
     }
   }
-  // No named booked dollars unless a public file names the athlete (none in v1).
+  const playerBooked = player.booked != null && player.bookedField ? player.booked : null
   return {
     year,
     low: player.low,
     mid: player.mid,
     high: player.high,
-    label: 'modeled',
-    booked: null,
+    label: playerBooked != null ? 'booked' : 'modeled',
+    booked: playerBooked,
     bookedSchool: booked,
-    bookedField: null,
+    bookedField: playerBooked != null ? player.bookedField : null,
     potSource: pot?.potSource || null,
     name: player.name,
-    via: player.mid != null ? 'named' : 'names-only',
+    via: playerBooked != null ? 'booked' : player.mid != null ? 'named' : 'names-only',
     modeled,
   }
 }
@@ -367,9 +381,14 @@ export function historyCaption(kind, label) {
 export const MODELED_POT_FOOTNOTE =
   'This pot is a labeled model (conference heuristic scaled to the published national market), not a reported player deal.'
 
-export function allocationSpreadLine(shareLabel) {
-  const share = shareLabel || 'position'
-  return `We spread that school pot across the named roster for this year and summed the ${share} share. That is an allocation, not a contract.`
+export const RATE_CARD_PLAYER_FOOTNOTE =
+  'This player dollar is a modeled share of the school pot from the desk rate card, not a contract, not On3 / Opendorse / NIL Go.'
+
+export function allocationSpreadLine(shareLabel, kind = 'position') {
+  const share = shareLabel || (kind === 'player' ? 'player' : 'position')
+  const base = `We spread that school pot across the named roster for this year and summed the ${share} share. That is an allocation, not a contract.`
+  if (kind === 'player') return `${base} ${RATE_CARD_PLAYER_FOOTNOTE}`
+  return base
 }
 
 export function filingKind(field) {
@@ -439,7 +458,7 @@ export function allocationFootnote({ points, point, shareLabel, kind = 'position
     mode: 'allocation',
     lines,
     links,
-    spread: allocationSpreadLine(share),
+    spread: allocationSpreadLine(share, kind),
   }
 }
 
