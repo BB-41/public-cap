@@ -109,7 +109,7 @@ a:hover { text-decoration: underline; }
 .table-scroll { overflow: auto; max-height: calc(100vh - 140px); border-top: 2px solid var(--paper); min-height: 420px; }
 .table-scroll.table-pending { min-height: 420px; }
 table.rank { width: 100%; border-collapse: collapse; font-size: 14.5px; }
-table.rank.home-rank { min-width: 1180px; table-layout: fixed; }
+table.rank.home-rank { min-width: 820px; table-layout: fixed; }
 table.rank .col-rk { width: 2.4em; }
 table.rank .col-school { width: 18%; }
 table.rank .col-conf { width: 5.5em; }
