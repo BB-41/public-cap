@@ -12,6 +12,7 @@
 }
 
 * { box-sizing: border-box; }
+html { overflow-y: scroll; }
 html, body { margin: 0; background: var(--ink); color: var(--paper); }
 body {
   font-family: Arial, Helvetica, system-ui, sans-serif;
@@ -107,7 +108,16 @@ a:hover { text-decoration: underline; }
 .dot.pending { background: #5a5144; }
 
 .table-scroll { overflow: auto; max-height: calc(100vh - 140px); border-top: 2px solid var(--paper); min-height: 420px; }
-.table-scroll.table-pending { min-height: 420px; }
+.table-scroll.table-pending,
+.table-pending {
+  min-height: calc(100vh - 140px);
+}
+.board-pending-dek { min-height: 23rem; }
+.board-pending-fine { min-height: 4.25rem; }
+@media (max-width: 720px) {
+  .board-pending-dek { min-height: 45.5rem; }
+  .board-pending-fine { min-height: 11.75rem; }
+}
 table.rank { width: 100%; border-collapse: collapse; font-size: 14.5px; }
 table.rank.home-rank { min-width: 920px; table-layout: fixed; }
 table.rank .col-rk { width: 2.4em; }
