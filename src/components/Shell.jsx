@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 export default function Shell({ params, children }) {
   const search = params?.toString() ? `?${params}` : ''
   return (
-    <div>
+    <div className="shell">
       <div className="mast-rule" />
       <header className="mast">
         <div className="brand">
@@ -52,8 +52,11 @@ export default function Shell({ params, children }) {
 export function SettingType() {
   return (
     <div className="page-wrap">
-      <p className="lede">Setting type…</p>
+      <div className="board-pending-dek">
+        <p className="lede">Setting type…</p>
+      </div>
       <div className="table-scroll table-pending" aria-busy="true" />
+      <p className="fine board-pending-fine" aria-hidden="true" />
     </div>
   )
 }

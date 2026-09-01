@@ -15,6 +15,7 @@
     </script>
     <link rel="preload" href="/logo-pc.png" as="image" fetchpriority="high" />
     <style>
+      html { overflow-y: scroll; }
       html, body { margin: 0; background: #100e0b; color: #efe4cc; }
       body { font-family: Arial, Helvetica, system-ui, sans-serif; font-size: 17px; line-height: 1.55; min-height: 100vh; }
       a { color: #d4a24a; text-decoration: none; }
@@ -30,7 +31,16 @@
       .nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #efe4cc; border-bottom: 2px solid transparent; padding-bottom: 4px; text-decoration: none; }
       .page-wrap { max-width: 1180px; margin: 0 auto; padding: 28px 24px 80px; }
       .lede { color: #cfc3a8; max-width: 720px; }
-      .table-pending { min-height: 420px; }
+      .fine { font-size: 11px; color: #9a8d74; margin-top: 16px; }
+      .table-scroll { overflow: auto; max-height: calc(100vh - 140px); border-top: 2px solid #efe4cc; }
+      .table-pending { min-height: calc(100vh - 140px); }
+      .board-pending-dek { min-height: 23rem; }
+      .board-pending-fine { min-height: 4.25rem; }
+      .site-foot { max-width: 1180px; margin: 0 auto; padding: 24px; border-top: 1px solid #8a7d62; color: #9a8d74; font-size: 13px; }
+      @media (max-width: 720px) {
+        .board-pending-dek { min-height: 45.5rem; }
+        .board-pending-fine { min-height: 11.75rem; }
+      }
     </style>
     <script>
       (function () {
@@ -52,34 +62,47 @@
   </head>
   <body>
     <div id="root">
-      <div class="mast-rule"></div>
-      <header class="mast">
-        <div class="brand">
-          <a href="/" class="mark" aria-label="Public Cap">
-            <img src="/logo-pc.png" alt="" width="92" height="92" decoding="async" fetchpriority="high" />
-          </a>
-          <div>
-            <div class="kicker">A college athletics capacity desk · v1.2 · Aug 30, 2026</div>
-            <a href="/" class="wordmark">Public Cap</a>
+      <div class="shell">
+        <div class="mast-rule"></div>
+        <header class="mast">
+          <div class="brand">
+            <a href="/" class="mark" aria-label="Public Cap">
+              <img src="/logo-pc.png" alt="" width="92" height="92" decoding="async" fetchpriority="high" />
+            </a>
+            <div>
+              <div class="kicker">A college athletics capacity desk · v1.2 · Aug 30, 2026</div>
+              <a href="/" class="wordmark">Public Cap</a>
+            </div>
           </div>
+          <p class="tagline">
+            Two ceilings on every Power 4 program: the House benefits cap, and what
+            they can actually write this year from public filings. Then whatever NIL
+            is in a filing. Seasons run 2021–2026 (NIL era).
+          </p>
+          <nav class="nav">
+            <a href="/">Rank list</a>
+            <a href="/compare">Compare</a>
+            <a href="/tape">Tape</a>
+            <a href="/tv">TV</a>
+            <a href="/buyout">Buyout</a>
+            <a href="/methods">Methods</a>
+          </nav>
+        </header>
+        <div class="page-wrap">
+          <div class="board-pending-dek">
+            <p class="lede">Setting type…</p>
+          </div>
+          <div class="table-scroll table-pending" aria-busy="true"></div>
+          <p class="fine board-pending-fine" aria-hidden="true"></p>
         </div>
-        <p class="tagline">
-          Two ceilings on every Power 4 program: the House benefits cap, and what
-          they can actually write this year from public filings. Then whatever NIL
-          is in a filing. Seasons run 2021–2026 (NIL era).
-        </p>
-        <nav class="nav">
-          <a href="/">Rank list</a>
-          <a href="/compare">Compare</a>
-          <a href="/tape">Tape</a>
-          <a href="/tv">TV</a>
-          <a href="/buyout">Buyout</a>
-          <a href="/methods">Methods</a>
-        </nav>
-      </header>
-      <div class="page-wrap">
-        <p class="lede">Setting type…</p>
-        <div class="table-pending" aria-busy="true"></div>
+        <footer class="site-foot">
+          Capacity is annual, not lifetime. Current-coach buyouts are overhang; paid buyouts are a separate tape.
+          Booked NIL stays official. Collective 990 is a separate cited lane, not House.
+          Modeled NIL is a conference heuristic: House-era
+          (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era
+          third-party-only backcast for 2021–24.
+          Every figure carries a source, a date, and a confidence mark.
+        </footer>
       </div>
     </div>
     <script type="module" src="/src/main.jsx"></script>
