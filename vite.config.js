@@ -3,6 +3,31 @@ import react from '@vitejs/plugin-react'
 import { splitDeskPayload } from './scripts/split-desk-payload.mjs'
 import { writeSitemap } from './scripts/write-sitemap.mjs'
 
+function lcpHtmlPlugin() {
+  return {
+    name: 'lcp-html',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html) {
+        return html
+          .replace(
+            /<link rel="stylesheet"([^>]*?)href="([^"]+)"([^>]*)>/g,
+            (_m, _pre, href) =>
+              `<link rel="stylesheet" href="${href}" media="print" onload="this.media='all';this.onload=null"><noscript><link rel="stylesheet" href="${href}"></noscript>`,
+          )
+          .replace(
+            /<script type="module"([^>]*) src="([^"]+)"([^>]*)><\/script>/g,
+            '<script type="module" src="$2" fetchpriority="low"></script>',
+          )
+          .replace(
+            /<link rel="modulepreload"([^>]*?)href="([^"]+)"([^>]*)>/g,
+            '<link rel="modulepreload" href="$2" fetchpriority="low">',
+          )
+      },
+    },
+  }
+}
+
 function deskSplitPlugin() {
   return {
     name: 'desk-split',
@@ -20,6 +45,6 @@ function deskSplitPlugin() {
 }
 
 export default defineConfig({
-  plugins: [react(), deskSplitPlugin()],
+  plugins: [react(), deskSplitPlugin(), lcpHtmlPlugin()],
   server: { host: true, port: 5173 },
 })

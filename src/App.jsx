@@ -1,7 +1,6 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
 import { Route, Routes, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import Compare from './pages/Compare.jsx'
 import { parseAlumniParam } from './lib/compute.js'
 import { enrichSchools } from './lib/enrich.js'
 import {
@@ -26,6 +25,7 @@ import {
 } from './lib/share.js'
 import Shell, { SettingType } from './components/Shell.jsx'
 
+const Compare = lazy(() => import('./pages/Compare.jsx'))
 const School = lazy(() => import('./pages/School.jsx'))
 const Methods = lazy(() => import('./pages/Methods.jsx'))
 const Tape = lazy(() => import('./pages/Tape.jsx'))
@@ -245,30 +245,28 @@ export default function App() {
     (kind !== 'tape' || tape != null) &&
     (kind !== 'methods' || metaOnly != null)
 
+  const homeReady = !needsDesk || (data && enriched)
+
   return (
     <Shell params={params}>
       {err ? (
         <div className="page-wrap"><p className="lede">Failed to load desk data. {err}</p></div>
+      ) : location.pathname === '/' ? (
+        <Home
+          schools={homeReady ? enriched : null}
+          meta={meta}
+          house={house}
+          houseField={houseField}
+          season={season}
+          setSeason={setSeason}
+          includeAlumni={includeAlumni}
+          setIncludeAlumni={setIncludeAlumni}
+        />
       ) : !ready ? (
         <SettingType />
       ) : (
         <Suspense fallback={<SettingType />}>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <Home
-                  schools={enriched}
-                  meta={meta}
-                  house={house}
-                  houseField={houseField}
-                  season={season}
-                  setSeason={setSeason}
-                  includeAlumni={includeAlumni}
-                  setIncludeAlumni={setIncludeAlumni}
-                />
-              }
-            />
             <Route
               path="/school/:id"
               element={

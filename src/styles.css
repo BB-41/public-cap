@@ -112,11 +112,17 @@ a:hover { text-decoration: underline; }
 .table-pending {
   min-height: calc(100vh - 140px);
 }
-.board-pending-dek { min-height: 23rem; }
+.board-pending-dek { min-height: 11rem; }
 .board-pending-fine { min-height: 4.25rem; }
+.home-dek { padding-bottom: 0; }
+.home-board { padding-top: 0; }
+.home-board .dek { min-height: 11rem; }
+html:not([data-route="inner"]) #root > .page-wrap { padding-top: 0; }
+html[data-route="inner"] #home-dek { display: none; }
 @media (max-width: 720px) {
-  .board-pending-dek { min-height: 45.5rem; }
+  .board-pending-dek { min-height: 28rem; }
   .board-pending-fine { min-height: 11.75rem; }
+  .home-board .dek { min-height: 28rem; }
 }
 table.rank { width: 100%; border-collapse: collapse; font-size: 14.5px; }
 table.rank.home-rank { min-width: 920px; table-layout: fixed; }
