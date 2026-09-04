@@ -30,21 +30,29 @@
       .nav { display: flex; gap: 22px; padding: 8px 0 14px; }
       .nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #efe4cc; border-bottom: 2px solid transparent; padding-bottom: 4px; text-decoration: none; }
       .page-wrap { max-width: 1180px; margin: 0 auto; padding: 28px 24px 80px; }
+      .issue-hed { font-weight: 650; font-size: clamp(28px, 4vw, 42px); letter-spacing: -0.02em; margin: 0 0 12px; }
       .lede { color: #cfc3a8; max-width: 720px; }
       .fine { font-size: 11px; color: #9a8d74; margin-top: 16px; }
       .table-scroll { overflow: auto; max-height: calc(100vh - 140px); border-top: 2px solid #efe4cc; }
       .table-pending { min-height: calc(100vh - 140px); }
-      .board-pending-dek { min-height: 23rem; }
+      .board-pending-dek { min-height: 11rem; }
       .board-pending-fine { min-height: 4.25rem; }
+      .home-dek { padding-bottom: 0; }
+      .home-board { padding-top: 0; }
+      .home-board .dek { min-height: 11rem; }
+      html:not([data-route="inner"]) #root > .page-wrap { padding-top: 0; }
+      html[data-route="inner"] #home-dek { display: none; }
       .site-foot { max-width: 1180px; margin: 0 auto; padding: 24px; border-top: 1px solid #8a7d62; color: #9a8d74; font-size: 13px; }
       @media (max-width: 720px) {
-        .board-pending-dek { min-height: 45.5rem; }
+        .board-pending-dek { min-height: 28rem; }
         .board-pending-fine { min-height: 11.75rem; }
+        .home-board .dek { min-height: 28rem; }
       }
     </style>
     <script>
       (function () {
         var p = location.pathname
+        if (p !== '/') document.documentElement.dataset.route = 'inner'
         var href = null
         if (p === '/' || p === '/compare' || p.indexOf('/school/') === 0) href = '/data/desk.json'
         else if (p === '/methods') href = '/data/meta.json'
@@ -56,54 +64,66 @@
         l.href = href
         l.as = 'fetch'
         l.crossOrigin = 'anonymous'
+        l.setAttribute('fetchpriority', 'low')
         document.head.appendChild(l)
       })()
     </script>
   </head>
   <body>
-    <div id="root">
-      <div class="shell">
-        <div class="mast-rule"></div>
-        <header class="mast">
-          <div class="brand">
-            <a href="/" class="mark" aria-label="Public Cap">
-              <img src="/logo-pc.png" alt="" width="92" height="92" decoding="async" fetchpriority="high" />
-            </a>
-            <div>
-              <div class="kicker">A college athletics capacity desk · v1.2 · Aug 30, 2026</div>
-              <a href="/" class="wordmark">Public Cap</a>
-            </div>
+    <div class="shell">
+      <div class="mast-rule"></div>
+      <header class="mast">
+        <div class="brand">
+          <a href="/" class="mark" aria-label="Public Cap">
+            <img src="/logo-pc.png" alt="" width="92" height="92" decoding="async" fetchpriority="high" />
+          </a>
+          <div>
+            <div class="kicker">A college athletics capacity desk · v1.2 · Aug 30, 2026</div>
+            <a href="/" class="wordmark">Public Cap</a>
           </div>
-          <p class="tagline">
-            Two ceilings on every Power 4 program: the House benefits cap, and what
-            they can actually write this year from public filings. Then whatever NIL
-            is in a filing. Seasons run 2021–2026 (NIL era).
+        </div>
+        <p class="tagline">
+          Two ceilings on every Power 4 program: the House benefits cap, and what
+          they can actually write this year from public filings. Then whatever NIL
+          is in a filing. Seasons run 2021–2026 (NIL era).
+        </p>
+        <nav class="nav">
+          <a href="/">Rank list</a>
+          <a href="/compare">Compare</a>
+          <a href="/tape">Tape</a>
+          <a href="/tv">TV</a>
+          <a href="/buyout">Buyout</a>
+          <a href="/methods">Methods</a>
+        </nav>
+      </header>
+      <div id="home-dek" class="page-wrap home-dek">
+        <section class="dek">
+          <h1 class="issue-hed">Two ceilings, then booked NIL.</h1>
+          <p id="home-lcp-lede" class="lede">
+            Not total athletic revenue, and not a Group of 6 predictor — Power 4 only.
+            Every program is read against two ceilings: the House benefits cap, and what
+            the school can actually write this year from public filings. Then whatever
+            NIL is in a filing. Modeled stays labeled. Pending stays empty. Most publics
+            can write the max. The useful gap is capacity versus the cap versus what
+            they have actually booked.
           </p>
-          <nav class="nav">
-            <a href="/">Rank list</a>
-            <a href="/compare">Compare</a>
-            <a href="/tape">Tape</a>
-            <a href="/tv">TV</a>
-            <a href="/buyout">Buyout</a>
-            <a href="/methods">Methods</a>
-          </nav>
-        </header>
-        <div class="page-wrap">
-          <div class="board-pending-dek">
-            <p class="lede">Setting type…</p>
-          </div>
+        </section>
+      </div>
+      <div id="root">
+        <div class="page-wrap home-board">
+          <div class="board-pending-dek"></div>
           <div class="table-scroll table-pending" aria-busy="true"></div>
           <p class="fine board-pending-fine" aria-hidden="true"></p>
         </div>
-        <footer class="site-foot">
-          Capacity is annual, not lifetime. Current-coach buyouts are overhang; paid buyouts are a separate tape.
-          Booked NIL stays official. Collective 990 is a separate cited lane, not House.
-          Modeled NIL is a conference heuristic: House-era
-          (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era
-          third-party-only backcast for 2021–24.
-          Every figure carries a source, a date, and a confidence mark.
-        </footer>
       </div>
+      <footer class="site-foot">
+        Capacity is annual, not lifetime. Current-coach buyouts are overhang; paid buyouts are a separate tape.
+        Booked NIL stays official. Collective 990 is a separate cited lane, not House.
+        Modeled NIL is a conference heuristic: House-era
+        (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era
+        third-party-only backcast for 2021–24.
+        Every figure carries a source, a date, and a confidence mark.
+      </footer>
     </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

@@ -78,6 +78,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
   const latestExtract = schools?.[0]?._season?.capacityMode === 'latest-extract'
 
   const rows = useMemo(() => {
+    if (!schools) return []
     const needle = q.trim().toLowerCase()
     const mapped = schools
       .filter((s) => {
@@ -131,18 +132,10 @@ export default function Home({ schools, house, houseField, season, setSeason, in
     setSort((s) => (s.key === key ? { key, dir: s.dir === 'asc' ? 'desc' : 'asc' } : { key, dir: key === 'name' || key === 'conference' ? 'asc' : 'desc' }))
   }
 
+  // Hed + lede live in index.html #home-dek so LCP does not wait on JS.
   return (
-    <div className="page-wrap">
+    <div className="page-wrap home-board">
       <section className="dek">
-        <h1 className="issue-hed">Two ceilings, then booked NIL.</h1>
-        <p className="lede">
-          Not total athletic revenue, and not a Group of 6 predictor — Power 4 only.
-          Every program is read against two ceilings: the House benefits cap, and what
-          the school can actually write this year from public filings. Then whatever
-          NIL is in a filing. Modeled stays labeled. Pending stays empty. Most publics
-          can write the max. The useful gap is capacity versus the cap versus what
-          they have actually booked.
-        </p>
         <div className="legend">
           <span title={defTitle('reported')}><i className="dot reported" /> reported</span>
           <span title={defTitle('estimated')}><i className="dot estimated" /> estimated</span>
@@ -173,10 +166,17 @@ export default function Home({ schools, house, houseField, season, setSeason, in
               </button>
             ))}
           </div>
-          <div className="result-count">{rows.length} schools</div>
+          <div className="result-count">{schools ? `${rows.length} schools` : ''}</div>
         </div>
       </section>
 
+      {!schools ? (
+        <>
+          <div className="table-scroll table-pending" aria-busy="true" />
+          <p className="fine board-pending-fine" aria-hidden="true" />
+        </>
+      ) : (
+      <>
       <div className="table-scroll">
         <table className="rank home-rank">
           <colgroup>
@@ -274,6 +274,8 @@ export default function Home({ schools, house, houseField, season, setSeason, in
         {' '}FB pay, buyouts, conference exit, and wins-per-dollar live on the school page and on /buyout, /tape, and the school #conference-exit / #debt drills — not on this first-screen rank.
         {' '}Click a school.
       </p>
+      </>
+      )}
     </div>
   )
 }
