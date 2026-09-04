@@ -148,6 +148,7 @@ export const PAGE_TITLES = {
   tape: 'Tape — Public Cap',
   methods: 'Methods — Public Cap',
   buyout: 'Buyout — Public Cap',
+  coachFa: 'Offsets / free agents — Public Cap',
   compare: 'Compare — Public Cap',
   tv: 'TV — Public Cap',
 }

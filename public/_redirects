@@ -9,4 +9,6 @@
 /tape /index.html 200
 /tv /index.html 200
 /buyout /index.html 200
+/coach-fa /index.html 200
+/coach-fa/* /index.html 200
 /methods /index.html 200

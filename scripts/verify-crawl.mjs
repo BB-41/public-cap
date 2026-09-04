@@ -26,7 +26,7 @@ ok(schools.schools.length === 68, '68 schools in the book')
 
 const generated = writeSitemap()
 ok(generated.schoolCount === 68, 'sitemap writer saw 68 schools')
-ok(generated.urlCount === 5 + 68, `sitemap has ${5 + 68} URLs (static + schools)`)
+ok(generated.urlCount === 6 + 68, `sitemap has ${6 + 68} URLs (static + schools)`)
 
 const robots = readFileSync(join(publicDir, 'robots.txt'), 'utf8')
 ok(!/^\s*<!doctype html/i.test(robots), 'robots.txt is not HTML')

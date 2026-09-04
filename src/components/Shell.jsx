@@ -9,7 +9,9 @@ function syncRouteFlag(pathname) {
 function syncNav(pathname) {
   document.querySelectorAll('.nav a').forEach((a) => {
     const href = a.getAttribute('href')
-    const on = href === '/' ? pathname === '/' : pathname === href
+    const on = href === '/'
+      ? pathname === '/'
+      : pathname === href || (href !== '/' && pathname.startsWith(`${href}/`))
     a.classList.toggle('active', on)
     if (on) a.setAttribute('aria-current', 'page')
     else a.removeAttribute('aria-current')

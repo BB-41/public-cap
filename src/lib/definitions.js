@@ -101,6 +101,26 @@ export const DEFS = {
     label: 'Buyouts actually paid',
     text: 'Money the school (or a new employer, via offset) actually owes or has settled with a former coach after a firing — USA TODAY, The Athletic contract census, school 990, or local FOIA. Not the if-fired overhang on the current chair.',
   },
+  coachFa: {
+    label: 'Offsets / free agents',
+    text: 'Residual School A buyout after a firing, plus an optional labeled modeled School B salary. A-side dollars and offset / mitigation rules are booked / cite-only — empty without a cite. We do not invent today’s remaining principal. Sibling to the current-chair buyout calculator, not a replacement.',
+  },
+  offsetCredit: {
+    label: 'Offset credit',
+    text: 'What School A would subtract from the residual if the employment agreement offsets new pay. Zero when the file says no offset. Dollar-for-dollar overlap with a School B salary is only computed when a sitting-HC clause is on the desk. Empty without a cited formula.',
+  },
+  netCostToA: {
+    label: 'Net cost to A',
+    text: 'School A residual minus offset credit. When the formula is none, this equals the booked residual. Booked ∧ booked stays booked; any modeled input makes the cell modeled; missing required inputs stay pending and empty.',
+  },
+  allInToFan: {
+    label: 'All-in to fan',
+    text: 'Optional sum of net cost to A plus School B compensation. Two payers — the prior school’s residual check and the new school’s salary — not one combined invoice. Off by default.',
+  },
+  compBand: {
+    label: 'Comp band',
+    text: 'USA TODAY Total Pay peers for the named season, shown as a labeled modeled / reported-database band — not FOIA PDFs. Used to place a typed School B annual. Empty without the database snapshot.',
+  },
   debt: {
     label: 'Athletics debt',
     text: 'Athletics facility debt from the NCAA Membership Financial Report or a cited bond/board story — not the university’s entire balance sheet, and not part of annual capacity. Outstanding (MFRS Category 52 / Other Reporting Items) is a stock, like a buyout overhang. Annual debt service (Category 34 — principal, interest, leases, and rental fees on athletic facilities) is this year’s check. Named stadium or building projects are a cited tape only: project name, announced cost, remaining if the filing names it, through-date if named. We do not invent an amortization schedule. University-wide institutional debt stays out unless the filing itself splits an athletics-related amount. $0 is a real cell only when the filing says $0. Empty means pending.',

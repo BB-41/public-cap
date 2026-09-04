@@ -141,6 +141,22 @@ export default function Methods({ meta: metaProp }) {
         <dd>2025 football wins divided by booked NIL if present, else modeled NIL mid (labeled modeled), and by annual capacity (booked-only unless the alumni toggle is on). Wikipedia / NCAA standings.</dd>
         <dt>Buyouts actually paid</dt>
         <dd>Money actually owed or settled after a firing — not the if-fired overhang on the current coach. Athletic contract census, USA TODAY, 990, FOIA.</dd>
+        <dt>Offsets / free agents</dt>
+        <dd>
+          Residual School A buyout after a firing, on <code>/coach-fa</code>.
+          A-side dollars and offset / mitigation rules are booked / cite-only — empty without a cite.
+          School B annual salary may be a labeled modeled input. Optional all-in is A residual + B salary
+          (two payers), off by default. Comp band is a USA TODAY Total Pay snapshot, labeled modeled /
+          reported database — not a FOIA PDF. We do not invent today’s remaining principal.
+        </dd>
+        <dt>Offset credit</dt>
+        <dd>What School A would subtract if the employment agreement offsets new pay. Zero when the file says no offset. Dollar-for-dollar overlap with a School B salary is only computed when a sitting-HC clause is on the desk.</dd>
+        <dt>Net cost to A</dt>
+        <dd>School A residual minus offset credit. When the formula is none, this equals the booked residual. Booked ∧ booked stays booked; any modeled input makes the cell modeled; missing required inputs stay pending and empty.</dd>
+        <dt>All-in to fan</dt>
+        <dd>Optional sum of net cost to A plus School B compensation. Two payers, not one combined invoice. Off by default.</dd>
+        <dt>Comp band</dt>
+        <dd>USA TODAY Total Pay peers for the named season — a labeled modeled / reported-database band, not FOIA PDFs.</dd>
         <dt>Athletics debt</dt>
         <dd>
           Athletics facility debt from the NCAA Membership Financial Report or a cited bond/board story —
@@ -180,7 +196,7 @@ export default function Methods({ meta: metaProp }) {
         <dt>TV / media rights</dt>
         <dd>Most Power 4 TV contracts are conference deals, not 68 school contracts. The school page and the <a href="/tv">TV book</a> show rights holders, term, the cited conference pot, and how the share is split when a 2024–26 source exists. A school media check is printed only when reported, or as a labeled equal-share estimate (cited pot ÷ cited members). Notre Dame’s NBC football deal is the school-level exception. The College Football Playoff is one national package. ACC Grant of Rights / viewership splits are described as cited — not flattened to equal share. Empty means pending.</dd>
         <dt>Confidence tags</dt>
-        <dd><strong>reported</strong> — a primary public document, or a newsroom story that quotes one. <strong>estimated</strong> — desk estimate, residual, or unofficial deal term; source still named. <strong>modeled</strong> — alumni cohort / wealth / giving, the conference NIL range, the position rate card, Big 12 conference-exit 2× Form 990 distributions, or the Notre Dame Hale membership-exit estimate. <strong>pending</strong> — we looked, we do not have a number, cell stays empty.</dd>
+        <dd><strong>reported</strong> — a primary public document, or a newsroom story that quotes one. <strong>booked</strong> — a cited contract figure or clause on the offset / free-agent lane (same bar as reported; empty without a cite). <strong>estimated</strong> — desk estimate, residual, or unofficial deal term; source still named. <strong>modeled</strong> — alumni cohort / wealth / giving, the conference NIL range, the position rate card, Big 12 conference-exit 2× Form 990 distributions, the Notre Dame Hale membership-exit estimate, a typed School B salary, or a USA TODAY Total Pay comp band. <strong>pending</strong> — we looked, we do not have a number, cell stays empty.</dd>
       </dl>
 
       <h2>TV / media rights</h2>
@@ -934,6 +950,24 @@ export default function Methods({ meta: metaProp }) {
         filing names a schedule; otherwise the firing-year lump.
       </p>
 
+      <h2>Offsets / free agents</h2>
+      <p>
+        A sibling lane to the current-chair buyout calculator, at <a href="/coach-fa">/coach-fa</a>.
+        After a firing, School A may still owe a residual. That residual and the
+        offset / mitigation clause stay booked / cite-only — empty without a cite.
+        Fisher’s $77,562,500 figure is the cited remaining buyout at termination
+        (Nov. 12, 2023), labeled booked-at-termination; the unpaid balance as of
+        Sept. 4, 2026 is not ledger-verified, and the schedule continues through
+        Dec. 31, 2031. We do not invent today’s remaining principal.
+        Offset ¶5.3 of the Dec. 4, 2017 Texas A&amp;M agreement says the university
+        is not entitled to any offset whatsoever — offset credit is $0.
+        The public UI may accept a School B annual as a labeled modeled input.
+        Optional all-in adds A residual to B salary and footnotes two payers; it
+        stays off until flipped. Comp peers are USA TODAY 2025 Total Pay, labeled
+        modeled / reported database — not FOIA PDFs. Other free-agent chairs stay
+        empty until a booked residual is on the desk.
+      </p>
+
       <h2>Private-school gap</h2>
       <p>
         Notre Dame, USC, Vanderbilt, Miami (plus Duke, Stanford, Northwestern, Baylor, BYU, TCU, SMU, Syracuse, Wake Forest, and Boston College) do not
@@ -961,8 +995,9 @@ export default function Methods({ meta: metaProp }) {
       <h2>Confidence marks</h2>
       <ul>
         <li><strong>reported</strong> — a primary public document or a newsroom story that quotes one.</li>
+        <li><strong>booked</strong> — a cited contract figure or clause on the offset / free-agent lane. Empty without a cite.</li>
         <li><strong>estimated</strong> — desk estimate, residual, or unofficial deal term. Source is still named.</li>
-        <li><strong>modeled</strong> — alumni cohort / wealth / giving, conference NIL range, position rate card, Big 12 conference-exit 2× 990s, or the Notre Dame Hale estimate.</li>
+        <li><strong>modeled</strong> — alumni cohort / wealth / giving, conference NIL range, position rate card, Big 12 conference-exit 2× 990s, the Notre Dame Hale estimate, a typed School B salary, or a USA TODAY Total Pay comp band.</li>
         <li><strong>pending</strong> — we looked, we do not have a number, cell stays empty.</li>
       </ul>
 
@@ -976,6 +1011,7 @@ export default function Methods({ meta: metaProp }) {
         <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
         <li>Athletics debt is a separate layer, not a capacity add-on. Category 53 university-wide institutional debt is refused unless the filing splits an athletics-related amount. We do not invent an amortization schedule from a project cost. Empty stays empty.</li>
         <li>Conference exit is a separate layer, not a capacity add-on and not a coach-firing buyout. We do not invent an ACC dollar without a hosted packet or a newsroom quote of the filing. We do not stamp the Big 12 $100M Texas/Oklahoma one-off on remaining members. Big 12 remaining members are a labeled model of §3.4 (2× last cited 990), not a booked invoice, and not an ACC-style rights-in-tow ladder. Notre Dame is a modeled Hale / 247Sports membership estimate — not the FSU/Clemson football ladder. Big Ten has no published cash fee — we do not print $0, do not borrow the Big 12 formula, and do not invent leftover TV value. Empty stays empty.</li>
+        <li>Coach free-agent / offset residuals are a separate lane, not the if-fired overhang on the current chair. We do not invent today’s remaining principal from an old schedule, and we do not invent an offset credit when the file says none. School B salary is a labeled modeled input only. All-in is two payers, off by default. Comp band is a USA TODAY database snapshot, not a FOIA PDF. Other chairs stay empty until a cite is on the desk.</li>
       </ul>
     </div>
   )
