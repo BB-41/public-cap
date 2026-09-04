@@ -11,7 +11,9 @@ import {
   getCoach,
   hasDollar,
   jobTypeLabel,
+  coachCompBand,
   listCoaches,
+  offsetLabel,
   parseMoneyInput,
   parseScenarioParams,
   parseYearsInput,
@@ -95,9 +97,9 @@ function CoachFaIndex({ book, schools }) {
       </h1>
       <p className="lede">
         Residual School A buyout after a firing, plus a labeled modeled School B
-        salary if you type one. A-side dollars and offset rules stay booked /
-        cite-only — empty without a cite. We do not invent today’s remaining
-        principal. Optional all-in is two payers, off by default.
+        salary if you type one. A-side dollars and offset rules stay booked or
+        reported / cite-only — empty without a cite. We do not invent today’s
+        remaining principal. Optional all-in is two payers, off by default.
       </p>
 
       {rows.length === 0 ? (
@@ -150,9 +152,11 @@ function CoachFaIndex({ book, schools }) {
                         )}
                       </td>
                       <td>
-                        {c.offset?.offsetFormula === 'none' || c.offset?.offsetApplies === false
-                          ? 'None'
-                          : c.offset?.offsetFormula || <span className="pending-cell">pending</span>}
+                        {offsetLabel(c.offset) === 'pending' ? (
+                          <span className="pending-cell">pending</span>
+                        ) : (
+                          offsetLabel(c.offset)
+                        )}
                       </td>
                     </tr>
                   )
@@ -202,7 +206,7 @@ function CoachFaDetail({ book, schools, coachId }) {
   const scenario = useMemo(() => resolveScenario(coach, scenarioIn), [coach, scenarioIn])
   const schoolB = schoolById(schools, scenario.schoolBId)
   const cites = useMemo(() => (coach ? coachCites(book, coach) : []), [book, coach])
-  const band = coach?.compBand
+  const band = coachCompBand(book, coach)
   const range = bandRange(band)
   const vs = vsBand(scenario.annualSalary, band)
 
@@ -271,10 +275,10 @@ function CoachFaDetail({ book, schools, coachId }) {
         School A still owes. School B is modeled.
       </h1>
       <p className="lede">
-        Booked residual and offset language from the prior contract. Type a
-        School B annual as a labeled model — A-side dollars do not move unless
-        a cited offset formula applies. We do not invent today’s remaining
-        principal.
+        Cited residual and offset language from the prior contract. Type a
+        School B annual as a labeled model — A residual does not move when the
+        formula is none. A dollar-for-dollar offset only subtracts when you
+        type a modeled B salary. We do not invent today’s remaining principal.
       </p>
 
       <header className="school-hed buyout-hed">
@@ -306,13 +310,17 @@ function CoachFaDetail({ book, schools, coachId }) {
         </div>
         <div className="hero-num">
           <div className="eyebrow" title={defTitle('netCostToA')}>Still owe at A</div>
-          {hasDollar(scenario.netCostToA.value) ? (
+          {hasDollar(buyout.grossRemaining) ? (
             <>
-              <div className="display">{money(scenario.netCostToA.value)}</div>
+              <div className="display">{money(hasDollar(scenario.netCostToA.value) ? scenario.netCostToA.value : buyout.grossRemaining)}</div>
               <div className="field-meta">
-                {buyout.grossRemainingKind || 'booked residual'}
+                {hasDollar(scenario.netCostToA.value)
+                  ? (buyout.grossRemainingKind || 'cited residual')
+                  : 'residual cited · net after offset pending'}
                 {' · '}
-                <span className="conf-label">{scenario.netCostToA.confidence}</span>
+                <span className="conf-label">
+                  {hasDollar(scenario.netCostToA.value) ? scenario.netCostToA.confidence : buyout.confidence}
+                </span>
               </div>
             </>
           ) : (
@@ -395,9 +403,9 @@ function CoachFaDetail({ book, schools, coachId }) {
               {offset.paragraph ? `¶${offset.paragraph}` : 'clause'}
               {offset.asOf ? ` · ${formatLongDate(offset.asOf)}` : ''}
               {' · '}
-              formula {offset.offsetFormula || 'pending'}
+              formula {offsetLabel(offset)}
               {' · '}
-              {offset.offsetApplies === false ? 'does not apply' : 'applies if new pay is cited'}
+              {offset.offsetApplies === false ? 'does not apply' : 'applies if new pay is modeled'}
               {' · '}
               <Mark confidence={offset.confidence} />
             </p>
@@ -407,7 +415,7 @@ function CoachFaDetail({ book, schools, coachId }) {
                 : 'pending'}
               {scenario.offsetCredit.formula === 'none'
                 ? ' — the file says none. Typing a School B salary does not reduce A.'
-                : '.'}
+                : ' — dollar-for-dollar overlap with a modeled B salary; pending until you type one.'}
             </p>
           </>
         ) : (
@@ -521,7 +529,9 @@ function CoachFaDetail({ book, schools, coachId }) {
             </div>
             <div className="field-meta">
               Gross remaining − offset credit.
-              {scenario.offsetCredit.formula === 'none' ? ' Offset is none, so this equals the booked residual.' : ''}
+              {scenario.offsetCredit.formula === 'none'
+                ? ' Offset is none, so this equals the cited residual.'
+                : ' Offset applies: type a modeled B annual to compute the credit. Residual above does not change until then.'}
             </div>
           </article>
           <article className="tv-card" title={defTitle('coachFa')}>
