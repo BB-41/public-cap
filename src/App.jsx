@@ -237,9 +237,18 @@ export default function App() {
     }
     if (kind === 'coachFa') {
       const coachId = path.split('/')[2]
+      const names = {
+        'jimbo-fisher': 'Jimbo Fisher',
+        'brian-kelly': 'Brian Kelly',
+        'jonathan-smith': 'Jonathan Smith',
+        'hugh-freeze': 'Hugh Freeze',
+        'mike-gundy': 'Mike Gundy',
+        'justin-wilcox': 'Justin Wilcox',
+        'deshaun-foster': 'DeShaun Foster',
+      }
       applyDocumentMeta({
-        title: coachId === 'jimbo-fisher'
-          ? 'Jimbo Fisher — Offsets / free agents — Public Cap'
+        title: names[coachId]
+          ? `${names[coachId]} — Offsets / free agents — Public Cap`
           : PAGE_TITLES.coachFa,
         path,
       })

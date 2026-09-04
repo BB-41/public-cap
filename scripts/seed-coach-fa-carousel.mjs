@@ -1,0 +1,488 @@
+/**
+ * Merge the 2025 carousel free-agent chairs into data/coach-fa.json.
+ * Cited figures only. Does not invent today's remaining principal.
+ */
+import { readFileSync, writeFileSync } from 'node:fs'
+
+const dataPath = new URL('../data/coach-fa.json', import.meta.url)
+const pubPath = new URL('../public/data/coach-fa.json', import.meta.url)
+const book = JSON.parse(readFileSync(dataPath, 'utf8'))
+
+book.meta.asOf = '2026-09-04'
+book.meta.scope =
+  'Fired Power 4 football head coaches still carrying a cited residual buyout. School A residual and offset rules are booked / cite-only (reported when the cite is a newsroom figure, not a hosted EA). School B salary may be a labeled modeled input.'
+book.meta.notes =
+  'Sibling to the current-chair /buyout calculator. A-side dollars stay empty without a cite. We do not invent today’s remaining principal, and we do not invent an offset credit when the file says none. Optional all-in is A residual + B salary — two payers, off by default. 2025 carousel chairs are reported newsroom / census figures, not FOIA PDFs.'
+book.meta.sources = [
+  ...(book.meta.sources || []),
+  'The Athletic March 2026 contract census — 2025 firing buyouts (Kelly $53.2M*, Smith $33M*, Freeze $15.8M, Gundy $15M*, Wilcox $10.8M*, Foster $7.4M*)',
+  'Sports Illustrated / CBS Sports / The Advocate — Kelly without-cause buyout ~$53–54M, duty to mitigate, monthly through 2031',
+  'Detroit Free Press / MSU Athletics — Jonathan Smith fired Nov. 30, 2025; Free Press ~$33.5M with offset',
+  'AP / ESPN / SI / Montgomery Advertiser — Hugh Freeze $15.8M, no mitigation, monthly through Jan. 31, 2029',
+  'ESPN / The Athletic — Mike Gundy $15M flat through 2028, offset by future employment',
+  'USA TODAY / The Athletic — Justin Wilcox ~$10.8–10.9M through 2027, subject to offset',
+  'Los Angeles Times / The Athletic — DeShaun Foster range; Athletic census $7.4M through 2028, subject to offset',
+]
+
+const COMP_BAND = book.coaches['jimbo-fisher'].compBand
+
+book.compBand = COMP_BAND
+
+const cites = {
+  'athletic-census-2026-03-03': {
+    id: 'athletic-census-2026-03-03',
+    label: 'The Athletic (March 3, 2026) — 2025 coach-firing buyout census',
+    url: 'https://www.nytimes.com/athletic/7080378/2026/03/03/college-football-coach-firings-buyouts-total/',
+    asOf: '2026-03-03',
+    confidence: 'reported',
+  },
+  'si-kelly-54m': {
+    id: 'si-kelly-54m',
+    label: 'Sports Illustrated — LSU formally fires Kelly, triggering $54 million buyout',
+    url: 'https://www.si.com/college-football/lsu-formally-fires-brian-kelly-triggering-54-million-buyout',
+    asOf: '2025-11',
+    confidence: 'reported',
+  },
+  'cbs-kelly-fired': {
+    id: 'cbs-kelly-fired',
+    label: 'CBS Sports — Kelly fired; buyout among the largest ever',
+    url: 'https://www.cbssports.com/college-football/news/brian-kelly-fired-lsu-football-coach-buyout-contract/',
+    asOf: '2025-10-26',
+    confidence: 'reported',
+  },
+  'advocate-kelly-buyout': {
+    id: 'advocate-kelly-buyout',
+    label: 'The Advocate — LSU agrees to pay Kelly’s full buyout; duty to mitigate',
+    url: 'https://www.theadvocate.com/baton_rouge/sports/lsu/lsu-football-brian-kelly-firing-buyout-legal-dispute/article_00f46319-55db-57e6-ba22-2df3629558ba.html',
+    asOf: '2025-11-26',
+    confidence: 'reported',
+  },
+  'tigerrag-kelly-memphis': {
+    id: 'tigerrag-kelly-memphis',
+    label: 'TigerRag — unpaid Memphis consultant role does not offset the LSU residual',
+    url: 'https://www.tigerrag.com/brian-kelly-gets-a-job-but-it-doesnt-pay-so-lsu-will-continue-to-fork-over-most-of-54-million-buyout/',
+    asOf: '2026',
+    confidence: 'reported',
+  },
+  'msu-smith-release': {
+    id: 'msu-smith-release',
+    label: 'Michigan State Athletics — leadership change (Nov. 30, 2025)',
+    url: 'https://msuspartans.com/news/2025/11/30/michigan-state-announces-football-program-leadership-change',
+    asOf: '2025-11-30',
+    confidence: 'reported',
+  },
+  'freep-smith-fired': {
+    id: 'freep-smith-fired',
+    label: 'Detroit Free Press — Smith fired; ~$33.5 million with offset',
+    url: 'https://www.freep.com/story/sports/college/michigan-state/spartans/2025/11/30/jonathan-smith-fired-michigan-state-football-j-batt/86724751007/',
+    asOf: '2025-11-30',
+    confidence: 'reported',
+  },
+  'usat-smith-buyout': {
+    id: 'usat-smith-buyout',
+    label: 'USA TODAY / RGJ — Smith if-fired overhang $33,033,125 as of Dec. 1, 2025',
+    url: 'https://www.rgj.com/story/sports/college/michigan-state/2025/10/08/michigan-state-football-coach-jonathan-smith-2025-contract-details-salary-buyout-and-more/86574008007/',
+    asOf: '2025-10-08',
+    confidence: 'reported',
+  },
+  'ap-freeze-fired': {
+    id: 'ap-freeze-fired',
+    label: 'AP — Auburn fires Freeze; $15.8 million, no mitigation',
+    url: 'https://apnews.com/article/auburn-hugh-freeze-fired-ef4a157280be080d5a82220188eec0a3',
+    asOf: '2025-11-02',
+    confidence: 'reported',
+  },
+  'espn-freeze-fired': {
+    id: 'espn-freeze-fired',
+    label: 'ESPN — Freeze fired; $15.8 million buyout, no mitigation',
+    url: 'https://www.espn.com/college-football/story/_/id/46819253/sources-auburn-fires-coach-hugh-freeze-2-plus-seasons',
+    asOf: '2025-11-02',
+    confidence: 'reported',
+  },
+  'si-freeze-buyout': {
+    id: 'si-freeze-buyout',
+    label: 'Sports Illustrated — Freeze $15.8 million, not subject to offset',
+    url: 'https://www.si.com/college-football/hugh-freeze-buyout-how-much-auburn-owes',
+    asOf: '2025-11-02',
+    confidence: 'reported',
+  },
+  'advertiser-freeze-buyout': {
+    id: 'advertiser-freeze-buyout',
+    label: 'Montgomery Advertiser / USA TODAY Network — Freeze contract: $15.8M, no mitigation, monthly through Jan. 31, 2029',
+    url: 'https://www.usatoday.com/story/sports/college/auburn/2025/11/02/hugh-freeze-buyout-auburn-football/86645687007/',
+    asOf: '2025-11-02',
+    confidence: 'reported',
+  },
+  'espn-gundy-fired': {
+    id: 'espn-gundy-fired',
+    label: 'ESPN — Oklahoma State fires Gundy; $15 million buyout',
+    url: 'https://www.espn.com/college-football/story/_/id/46356439/sources-oklahoma-state-fires-head-coach-mike-gundy',
+    asOf: '2025-09-23',
+    confidence: 'reported',
+  },
+  'espn-gundy-ad': {
+    id: 'espn-gundy-ad',
+    label: 'ESPN — AD Weiberg: Gundy receives the $15 million buyout through 2028',
+    url: 'https://www.espn.com/college-football/story/_/id/46360295/oklahoma-state-ad-chad-weiberg-says-mike-gundy-firing-best-interest-moving-football-program-forward',
+    asOf: '2025-09-23',
+    confidence: 'reported',
+  },
+  'usat-wilcox-fired': {
+    id: 'usat-wilcox-fired',
+    label: 'USA TODAY — Cal fires Wilcox; contract figure $10,879,167',
+    url: 'https://www.usatoday.com/story/sports/ncaaf/2025/11/23/justin-wilcox-fired-cal-football-coach-buyout-california-golden-bears-bad-loss-to-stanford/87439435007/',
+    asOf: '2025-11-23',
+    confidence: 'reported',
+  },
+  'latimes-foster-fired': {
+    id: 'latimes-foster-fired',
+    label: 'Los Angeles Times — UCLA fires Foster; roughly $6.43 million, subject to offset',
+    url: 'https://www.latimes.com/sports/ucla/story/2025-09-14/ucla-fires-football-coach-deshaun-foster-after-winless-start',
+    asOf: '2025-09-14',
+    confidence: 'reported',
+  },
+}
+
+Object.assign(book.cites, cites)
+
+const shell = (schoolBId = 'florida-state') => ({
+  schoolBId,
+  jobType: 'head-coach',
+  annualSalary: null,
+  termYears: null,
+})
+
+const residualNote = (through) =>
+  `Unpaid balance as of 2026-09-04 is not ledger-verified. The cited remaining principal is the termination-date / census figure. The payment window continues through ${through}. We do not invent today’s remaining principal.`
+
+book.coaches['brian-kelly'] = {
+  id: 'brian-kelly',
+  name: 'Brian Kelly',
+  status: 'free-agent',
+  sport: 'fb',
+  priorSchoolId: 'lsu',
+  tapeId: 'lsu-paid-buyout-kelly-2026-03-03',
+  contract: {
+    schoolId: 'lsu',
+    role: 'football-hc',
+    signed: '2021-11',
+    through: '2031-12-31',
+    confidence: 'reported',
+    citeIds: ['cbs-kelly-fired', 'advocate-kelly-buyout'],
+  },
+  buyout: {
+    firedOn: '2025-10-26',
+    cause: 'without-cause',
+    grossRemaining: 53200000,
+    grossRemainingKind: 'reported-at-termination',
+    asOf: '2025-10-26',
+    confidence: 'reported',
+    rangeLow: 53200000,
+    rangeHigh: 54000000,
+    notes:
+      `${residualNote('2031')  } Athletic census current/max $53.2 million (starred). SI and The Advocate report ~$54 million. CBS published $52,380,000 as 90% of remaining salary if fired after the 2025 season, plus 90% of leftover 2025 pay for a midseason firing. We print the Athletic $53.2 million cell and leave the range in notes — we do not invent a reconciled total. Monthly installment dollars are not ledger-verified.`,
+    schedule: [
+      {
+        kind: 'monthly',
+        label: 'Monthly installments through 2031',
+        amount: null,
+        through: '2031-12-31',
+        confidence: 'pending',
+        notes: 'Advocate / SI: paid over six years into 2031. Per-month dollar not on this desk.',
+      },
+    ],
+    citeIds: ['athletic-census-2026-03-03', 'si-kelly-54m', 'cbs-kelly-fired', 'advocate-kelly-buyout'],
+  },
+  offset: {
+    offsetFormula: 'dollar_for_dollar',
+    offsetApplies: true,
+    paragraph: null,
+    asOf: '2025-11-26',
+    rule:
+      'Duty to mitigate. LSU’s liquidated-damages obligation is reduced by compensation Kelly earns for football-related employment (coaching, administration, or media). An unpaid Memphis consultant role does not clear the offset — there is no new salary to subtract.',
+    confidence: 'reported',
+    citeIds: ['advocate-kelly-buyout', 'si-kelly-54m', 'tigerrag-kelly-memphis'],
+  },
+  defaultScenario: shell('florida-state'),
+  citeIds: [
+    'athletic-census-2026-03-03',
+    'si-kelly-54m',
+    'cbs-kelly-fired',
+    'advocate-kelly-buyout',
+    'tigerrag-kelly-memphis',
+    'usat-salaries-2025',
+  ],
+}
+
+book.coaches['jonathan-smith'] = {
+  id: 'jonathan-smith',
+  name: 'Jonathan Smith',
+  status: 'free-agent',
+  sport: 'fb',
+  priorSchoolId: 'michigan-state',
+  tapeId: 'michigan-state-paid-buyout-smith-2026-03-03',
+  contract: {
+    schoolId: 'michigan-state',
+    role: 'football-hc',
+    signed: '2023-11',
+    through: '2030-12-31',
+    confidence: 'reported',
+    citeIds: ['freep-smith-fired', 'msu-smith-release'],
+  },
+  buyout: {
+    firedOn: '2025-11-30',
+    cause: 'without-cause',
+    grossRemaining: 33000000,
+    grossRemainingKind: 'reported-at-termination',
+    asOf: '2025-11-30',
+    confidence: 'reported',
+    rangeLow: 33000000,
+    rangeHigh: 33500000,
+    notes:
+      `${residualNote('2030')  } Athletic census $33 million (starred, unpaid as of March 2026). Free Press: approximately $33.5 million (85% of remaining base + supplemental). USA TODAY table: $33,033,125 as of Dec. 1, 2025. We print the Athletic $33 million cell and leave the range in notes. The MSU release does not name a dollar.`,
+    schedule: [
+      {
+        kind: 'monthly',
+        label: 'Monthly installments through 2030',
+        amount: null,
+        through: '2030-12-31',
+        confidence: 'pending',
+        notes: 'CBS: payable monthly through 2030. Per-month dollar not on this desk.',
+      },
+    ],
+    citeIds: ['athletic-census-2026-03-03', 'freep-smith-fired', 'usat-smith-buyout', 'msu-smith-release'],
+  },
+  offset: {
+    offsetFormula: 'dollar_for_dollar',
+    offsetApplies: true,
+    paragraph: null,
+    asOf: '2025-11-30',
+    rule:
+      'Duty to mitigate. Free Press: Smith must use best efforts to seek comparable NFL or Division I employment; new-job pay offsets what Michigan State owes. Not required to accept a job that is not in his best career interest.',
+    confidence: 'reported',
+    citeIds: ['freep-smith-fired', 'athletic-census-2026-03-03'],
+  },
+  defaultScenario: shell('ohio-state'),
+  citeIds: [
+    'athletic-census-2026-03-03',
+    'freep-smith-fired',
+    'usat-smith-buyout',
+    'msu-smith-release',
+    'usat-salaries-2025',
+  ],
+}
+
+book.coaches['hugh-freeze'] = {
+  id: 'hugh-freeze',
+  name: 'Hugh Freeze',
+  status: 'free-agent',
+  sport: 'fb',
+  priorSchoolId: 'auburn',
+  tapeId: 'auburn-paid-buyout-freeze-2026-03-03',
+  contract: {
+    schoolId: 'auburn',
+    role: 'football-hc',
+    signed: '2022-11',
+    through: '2029-01-31',
+    confidence: 'reported',
+    citeIds: ['advertiser-freeze-buyout', 'espn-freeze-fired'],
+  },
+  buyout: {
+    firedOn: '2025-11-02',
+    cause: 'without-cause',
+    grossRemaining: 15800000,
+    grossRemainingKind: 'reported-at-termination',
+    asOf: '2025-11-02',
+    confidence: 'reported',
+    notes:
+      `${residualNote('January 2029')  } Advertiser / USA TODAY Network obtained the contract: 75% of remaining payments, $15.8 million, equal monthly installments through Jan. 31, 2029 (~$408,974 / month ≈ $4.9 million a year). AP, ESPN, and SI match $15.8 million. Athletic census $15.8 million.`,
+    schedule: [
+      {
+        kind: 'monthly',
+        label: 'Equal monthly installments through Jan. 31, 2029',
+        amount: 408974,
+        through: '2029-01-31',
+        confidence: 'reported',
+        notes: 'Advertiser / USA TODAY Network quoting the contract. ≈ $4.9 million a year.',
+      },
+    ],
+    citeIds: ['advertiser-freeze-buyout', 'ap-freeze-fired', 'espn-freeze-fired', 'si-freeze-buyout', 'athletic-census-2026-03-03'],
+  },
+  offset: {
+    offsetFormula: 'none',
+    offsetApplies: false,
+    paragraph: null,
+    asOf: '2025-11-02',
+    rule:
+      'No mitigation / offset clause. Advertiser: like Malzahn and Harsin, Freeze’s contract does not offset new-job pay. AP and ESPN: $15.8 million with no mitigation. Typing a School B salary does not reduce A.',
+    confidence: 'reported',
+    citeIds: ['advertiser-freeze-buyout', 'ap-freeze-fired', 'espn-freeze-fired', 'si-freeze-buyout'],
+  },
+  defaultScenario: shell('alabama'),
+  citeIds: [
+    'advertiser-freeze-buyout',
+    'ap-freeze-fired',
+    'espn-freeze-fired',
+    'si-freeze-buyout',
+    'athletic-census-2026-03-03',
+    'usat-salaries-2025',
+  ],
+}
+
+book.coaches['mike-gundy'] = {
+  id: 'mike-gundy',
+  name: 'Mike Gundy',
+  status: 'free-agent',
+  sport: 'fb',
+  priorSchoolId: 'oklahoma-state',
+  tapeId: 'oklahoma-state-paid-buyout-gundy-2026-03-03',
+  contract: {
+    schoolId: 'oklahoma-state',
+    role: 'football-hc',
+    signed: '2024-12',
+    through: '2028-12-31',
+    confidence: 'reported',
+    citeIds: ['espn-gundy-fired', 'espn-gundy-ad'],
+  },
+  buyout: {
+    firedOn: '2025-09-23',
+    cause: 'without-cause',
+    grossRemaining: 15000000,
+    grossRemainingKind: 'reported-at-termination',
+    asOf: '2025-09-23',
+    confidence: 'reported',
+    notes:
+      `${residualNote('2028')  } Flat $15 million if fired without cause on or before Dec. 31, 2027 (restructured Dec. 2024 deal). ESPN: AD Weiberg said Gundy receives the full $15 million, paid through 2028. Athletic census $15 million (starred), subject to offset. Per-month dollar not on this desk.`,
+    schedule: [
+      {
+        kind: 'monthly',
+        label: 'Monthly installments through 2028',
+        amount: null,
+        through: '2028-12-31',
+        confidence: 'pending',
+        notes: 'Athletic: paid over three years, subject to offset. Installment dollar not cited.',
+      },
+    ],
+    citeIds: ['espn-gundy-fired', 'espn-gundy-ad', 'athletic-census-2026-03-03'],
+  },
+  offset: {
+    offsetFormula: 'dollar_for_dollar',
+    offsetApplies: true,
+    paragraph: null,
+    asOf: '2025-09-23',
+    rule:
+      'Flat $15 million buyout, paid in monthly installments and offset by future employment (The Athletic quoting the restructured EA). Athletic census: subject to offset.',
+    confidence: 'reported',
+    citeIds: ['athletic-census-2026-03-03', 'espn-gundy-ad'],
+  },
+  defaultScenario: shell('texas-tech'),
+  citeIds: ['espn-gundy-fired', 'espn-gundy-ad', 'athletic-census-2026-03-03', 'usat-salaries-2025'],
+}
+
+book.coaches['justin-wilcox'] = {
+  id: 'justin-wilcox',
+  name: 'Justin Wilcox',
+  status: 'free-agent',
+  sport: 'fb',
+  priorSchoolId: 'california',
+  tapeId: 'california-paid-buyout-wilcox-2026-03-03',
+  contract: {
+    schoolId: 'california',
+    role: 'football-hc',
+    signed: null,
+    through: '2027-12-31',
+    confidence: 'reported',
+    citeIds: ['usat-wilcox-fired'],
+  },
+  buyout: {
+    firedOn: '2025-11-23',
+    cause: 'without-cause',
+    grossRemaining: 10800000,
+    grossRemainingKind: 'reported-at-termination',
+    asOf: '2025-11-23',
+    confidence: 'reported',
+    rangeLow: 10800000,
+    rangeHigh: 10879167,
+    notes:
+      `${residualNote('2027')  } Athletic census $10.8 million (starred) through 2027, subject to offset. USA TODAY, quoting the contract: $10,879,167. We print the Athletic $10.8 million cell and leave the USA TODAY figure in the range. We do not invent a reconciled total or a payment calendar.`,
+    schedule: [
+      {
+        kind: 'open',
+        label: 'Through 2027',
+        amount: null,
+        through: '2027-12-31',
+        confidence: 'pending',
+        notes: 'Payout schedule not named beyond the through-year.',
+      },
+    ],
+    citeIds: ['athletic-census-2026-03-03', 'usat-wilcox-fired'],
+  },
+  offset: {
+    offsetFormula: 'dollar_for_dollar',
+    offsetApplies: true,
+    paragraph: null,
+    asOf: '2026-03-03',
+    rule:
+      'Athletic census: subject to offset. USA TODAY’s buyout table notes that many reviewed clauses offset new-job income; the Cal EA paragraph is not on this desk. Treated as dollar-for-dollar when a modeled B salary is typed — labeled reported, not booked.',
+    confidence: 'reported',
+    citeIds: ['athletic-census-2026-03-03', 'usat-wilcox-fired'],
+  },
+  defaultScenario: shell('stanford'),
+  citeIds: ['athletic-census-2026-03-03', 'usat-wilcox-fired', 'usat-salaries-2025'],
+}
+
+book.coaches['deshaun-foster'] = {
+  id: 'deshaun-foster',
+  name: 'DeShaun Foster',
+  status: 'free-agent',
+  sport: 'fb',
+  priorSchoolId: 'ucla',
+  tapeId: 'ucla-paid-buyout-foster-2026-03-03',
+  contract: {
+    schoolId: 'ucla',
+    role: 'football-hc',
+    signed: '2024-02',
+    through: '2028-12-31',
+    confidence: 'reported',
+    citeIds: ['latimes-foster-fired', 'athletic-census-2026-03-03'],
+  },
+  buyout: {
+    firedOn: '2025-09-14',
+    cause: 'without-cause',
+    grossRemaining: 7400000,
+    grossRemainingKind: 'reported-at-termination',
+    asOf: '2025-09-14',
+    confidence: 'reported',
+    rangeLow: 5000000,
+    rangeHigh: 7400000,
+    notes:
+      `${residualNote('2028')  } We print one cited figure — The Athletic census $7.4 million (starred) through 2028, subject to offset. Los Angeles Times at firing: roughly $6.43 million, barring a new job that offsets. Other estimates in the $5–7.4 million band. We do not invent a reconciled total.`,
+    schedule: [
+      {
+        kind: 'open',
+        label: 'Through 2028',
+        amount: null,
+        through: '2028-12-31',
+        confidence: 'pending',
+        notes: 'Athletic: through 2028. Installment calendar not on this desk.',
+      },
+    ],
+    citeIds: ['athletic-census-2026-03-03', 'latimes-foster-fired'],
+  },
+  offset: {
+    offsetFormula: 'dollar_for_dollar',
+    offsetApplies: true,
+    paragraph: null,
+    asOf: '2025-09-14',
+    rule:
+      'LA Times: owed roughly $6.43 million barring a new job that offsets that amount. Athletic census: $7.4 million, subject to offset. Dollar-for-dollar when a modeled B salary is typed.',
+    confidence: 'reported',
+    citeIds: ['latimes-foster-fired', 'athletic-census-2026-03-03'],
+  },
+  defaultScenario: shell('usc'),
+  citeIds: ['athletic-census-2026-03-03', 'latimes-foster-fired', 'usat-salaries-2025'],
+}
+
+writeFileSync(dataPath, `${JSON.stringify(book, null, 2)}\n`)
+writeFileSync(pubPath, `${JSON.stringify(book, null, 2)}\n`)
+console.log(`coaches: ${Object.keys(book.coaches).join(', ')}`)

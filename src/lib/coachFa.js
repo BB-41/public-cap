@@ -10,14 +10,22 @@ export const JOB_TYPES = [
 
 export const POWER4 = new Set(['ACC', 'Big Ten', 'Big 12', 'SEC'])
 
-/** booked ∧ booked → booked; any modeled → modeled; missing required → pending. */
+/** booked ∧ booked → booked; reported stays reported; any modeled → modeled; missing → pending. */
 export function inheritStatus(...marks) {
   const list = marks.filter((m) => m != null)
   if (!list.length) return 'pending'
   if (list.some((m) => m === 'pending' || m === 'missing')) return 'pending'
   if (list.some((m) => m === 'modeled' || m === 'estimated')) return 'modeled'
-  if (list.every((m) => m === 'booked' || m === 'reported')) return 'booked'
+  if (list.every((m) => m === 'booked')) return 'booked'
+  if (list.every((m) => m === 'booked' || m === 'reported')) return 'reported'
   return 'modeled'
+}
+
+export function normalizeOffsetFormula(raw) {
+  const f = String(raw || 'none').toLowerCase().replace(/_/g, '-')
+  if (f === 'none' || f === '') return 'none'
+  if (f === 'dollar-for-dollar' || f === 'dollar-for-dollar-overlap') return 'dollar-for-dollar'
+  return f
 }
 
 export function hasDollar(n) {
@@ -53,7 +61,7 @@ export function parseYearsInput(raw) {
  * dollar-for-dollar → overlap of B salary with the residual years (modeled).
  */
 export function offsetCredit({ offset, bAnnual, termYears } = {}) {
-  const formula = offset?.offsetFormula || 'none'
+  const formula = normalizeOffsetFormula(offset?.offsetFormula)
   const applies = offset?.offsetApplies !== false && formula !== 'none'
   if (!applies || formula === 'none') {
     const cited = Boolean(offset && (offset.confidence === 'booked' || offset.confidence === 'reported'))
@@ -150,9 +158,29 @@ export function listCoaches(book) {
   rows.sort((a, b) => {
     if (a.id === DEFAULT_COACH) return -1
     if (b.id === DEFAULT_COACH) return 1
+    const da = hasDollar(a.buyout?.grossRemaining) ? a.buyout.grossRemaining : -1
+    const db = hasDollar(b.buyout?.grossRemaining) ? b.buyout.grossRemaining : -1
+    if (db !== da) return db - da
     return String(a.name || '').localeCompare(String(b.name || ''))
   })
   return rows
+}
+
+export function coachCompBand(book, coach) {
+  return coach?.compBand || book?.compBand || null
+}
+
+export function offsetLabel(offset) {
+  const formula = normalizeOffsetFormula(offset?.offsetFormula)
+  if (!offset) return 'pending'
+  if (formula === 'none' || offset.offsetApplies === false) return 'None'
+  if (formula === 'dollar-for-dollar') return 'Dollar-for-dollar'
+  return offset.offsetFormula || 'pending'
+}
+
+export function coachPageTitle(coach) {
+  if (!coach?.name) return 'Offsets / free agents — Public Cap'
+  return `${coach.name} — Offsets / free agents — Public Cap`
 }
 
 export function getCoach(book, id) {

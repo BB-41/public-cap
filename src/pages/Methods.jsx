@@ -964,8 +964,14 @@ export default function Methods({ meta: metaProp }) {
         The public UI may accept a School B annual as a labeled modeled input.
         Optional all-in adds A residual to B salary and footnotes two payers; it
         stays off until flipped. Comp peers are USA TODAY 2025 Total Pay, labeled
-        modeled / reported database — not FOIA PDFs. Other free-agent chairs stay
+        modeled / reported database — not FOIA PDFs.         Other free-agent chairs stay
         empty until a booked residual is on the desk.
+        The 2025 carousel seed (Kelly, Smith, Freeze, Gundy, Wilcox, Foster) is
+        reported newsroom / Athletic-census figures — not FOIA PDFs and not
+        today’s unpaid principal. Ranges stay in notes; we do not invent a
+        reconciled total. Freeze is the no-offset case. Kelly / Smith / Gundy /
+        Wilcox / Foster are dollar-for-dollar when a modeled B salary is typed.
+        An unpaid next job does not mint an offset credit.
       </p>
 
       <h2>Private-school gap</h2>
