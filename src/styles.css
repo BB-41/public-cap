@@ -103,6 +103,7 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
 }
 .dot.reported { background: #3d9a6a; }
+.dot.booked { background: #3d9a6a; }
 .dot.estimated { background: var(--gold); }
 .dot.modeled { background: var(--slate); }
 .dot.pending { background: #5a5144; }
@@ -215,7 +216,9 @@ h2 { font-family: Arial, Helvetica, system-ui, sans-serif; font-weight: 650; fon
 
 .pickers { display: flex; gap: 20px; margin: 20px 0 28px; flex-wrap: wrap; }
 .pickers label { display: flex; flex-direction: column; gap: 6px; font-family: Arial, Helvetica, system-ui, sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-select {
+select,
+input[type="text"],
+input[type="number"] {
   background: var(--ink-2);
   color: var(--paper);
   border: 1px solid var(--rule);
@@ -223,6 +226,10 @@ select {
   font-family: Arial, Helvetica, system-ui, sans-serif;
   font-size: 18px;
   min-width: 240px;
+}
+input[type="text"],
+input[type="number"] {
+  min-width: 180px;
 }
 .compare-hed { display: flex; justify-content: space-between; align-items: baseline; font-family: Arial, Helvetica, system-ui, sans-serif; font-size: 28px; margin-bottom: 20px; }
 .compare-hed .vs { color: var(--muted); font-size: 14px; }
@@ -904,3 +911,21 @@ table.rank th.rk { cursor: default; }
 .house-remaining { margin-top: 12px; }
 .buyout-step-tape { margin: 12px 0 16px; }
 .buyout-step-tape .buyout-steps { margin-top: 6px; }
+
+.coach-fa-page .table-scroll { max-height: none; }
+.coach-fa-pickers { align-items: flex-end; }
+.coach-fa-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px 16px;
+  margin: 16px 0 8px;
+}
+.coach-fa-peers {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--paper-dim);
+}
+.coach-fa-peers li { margin-bottom: 4px; }
+.coach-fa-page p, .coach-fa-page li { color: var(--paper-dim); max-width: 740px; }
+.coach-fa-page .tv-card .field-val { margin: 6px 0; }

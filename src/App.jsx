@@ -31,6 +31,7 @@ const Methods = lazy(() => import('./pages/Methods.jsx'))
 const Tape = lazy(() => import('./pages/Tape.jsx'))
 const Tv = lazy(() => import('./pages/Tv.jsx'))
 const Buyout = lazy(() => import('./pages/Buyout.jsx'))
+const CoachFa = lazy(() => import('./pages/CoachFa.jsx'))
 
 export default function App() {
   const [params] = useSearchParams()
@@ -234,6 +235,16 @@ export default function App() {
       })
       return
     }
+    if (kind === 'coachFa') {
+      const coachId = path.split('/')[2]
+      applyDocumentMeta({
+        title: coachId === 'jimbo-fisher'
+          ? 'Jimbo Fisher — Offsets / free agents — Public Cap'
+          : PAGE_TITLES.coachFa,
+        path,
+      })
+      return
+    }
     const title = PAGE_TITLES[kind] || DEFAULT_TITLE
     const routePath = kind === 'home' ? '/' : path
     applyDocumentMeta({ title, path: routePath, jsonLd: kind === 'home' })
@@ -300,6 +311,8 @@ export default function App() {
             <Route path="/tape" element={<Tape items={tape?.items || []} season={season} />} />
             <Route path="/tv" element={<Tv />} />
             <Route path="/buyout" element={<Buyout />} />
+            <Route path="/coach-fa" element={<CoachFa />} />
+            <Route path="/coach-fa/:coachId" element={<CoachFa />} />
             <Route path="/methods" element={<Methods meta={metaOnly} />} />
           </Routes>
         </Suspense>

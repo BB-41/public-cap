@@ -58,6 +58,7 @@
         else if (p === '/methods') href = '/data/meta.json'
         else if (p === '/tape') href = '/data/tape.json'
         else if (p === '/buyout') href = '/data/desk.json'
+        else if (p === '/coach-fa' || p.indexOf('/coach-fa/') === 0) href = '/data/coach-fa.json'
         if (!href) return
         var l = document.createElement('link')
         l.rel = 'preload'
@@ -93,6 +94,7 @@
           <a href="/tape">Tape</a>
           <a href="/tv">TV</a>
           <a href="/buyout">Buyout</a>
+          <a href="/coach-fa">Offsets</a>
           <a href="/methods">Methods</a>
         </nav>
       </header>

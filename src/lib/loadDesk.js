@@ -34,6 +34,7 @@ export function routeKind(pathname) {
   if (pathname === '/tape') return 'tape'
   if (pathname === '/tv') return 'tv'
   if (pathname === '/buyout') return 'buyout'
+  if (pathname === '/coach-fa' || pathname.startsWith('/coach-fa/')) return 'coachFa'
   if (pathname === '/methods') return 'methods'
   if (pathname.startsWith('/school/')) return 'school'
   if (pathname === '/compare') return 'compare'

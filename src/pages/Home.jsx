@@ -271,7 +271,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
         {house == null
           ? 'No House cap (pre-settlement). Modeled NIL for 2021–2024 is a collective-era third-party-only backcast (labeled modeled) — no House rev-share. Capacity is the conference-media floor (plus modeled extra alumni only when that toggle is on); tickets / sponsorships / contributions stay pending.'
           : `House cap shown is ${season === 2026 ? '2026–27 (~$21.3M, estimated)' : '2025–26 ($20.5M, reported)'}. Capacity is the FY2025 filing stack, still labeled FY2025 — not a ${season === 2026 ? '2026' : '2025'} filing. Booked NIL on this list is the House Year 1 / 2025–26 filing when 2026–27 has not been extracted; those cells carry a year label. Leftover is House remaining only when a booked House spent cell exists — we do not invent leftover from a $20.5M cap plan. Capacity default is booked-only. Flip on + alumni model to add the Scorecard-based extra-alumni midpoint, net of booked gifts.`}
-        {' '}FB pay, buyouts, conference exit, and wins-per-dollar live on the school page and on /buyout, /tape, and the school #conference-exit / #debt drills — not on this first-screen rank.
+        {' '}FB pay, buyouts, conference exit, and wins-per-dollar live on the school page and on /buyout, /coach-fa, /tape, and the school #conference-exit / #debt drills — not on this first-screen rank.
         {' '}Click a school.
       </p>
       </>
