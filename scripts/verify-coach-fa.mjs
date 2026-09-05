@@ -6,6 +6,7 @@ import { readFileSync } from 'node:fs'
 import { DEFS } from '../src/lib/definitions.js'
 import {
   DEFAULT_COACH,
+  coachMatchesFilter,
   inheritStatus,
   listCoaches,
   netCostToA,
@@ -13,8 +14,11 @@ import {
   offsetCredit,
   offsetLabel,
   parseMoneyInput,
+  residualPayerLabel,
   resolveScenario,
+  shareCaption,
   sharePath,
+  statusLabel,
   totalCompCostToB,
 } from '../src/lib/coachFa.js'
 
@@ -22,6 +26,7 @@ const book = JSON.parse(readFileSync(new URL('../data/coach-fa.json', import.met
 const pub = JSON.parse(readFileSync(new URL('../public/data/coach-fa.json', import.meta.url), 'utf8'))
 const page = readFileSync(new URL('../src/pages/CoachFa.jsx', import.meta.url), 'utf8')
 const app = readFileSync(new URL('../src/App.jsx', import.meta.url), 'utf8')
+const shareLib = readFileSync(new URL('../src/lib/share.js', import.meta.url), 'utf8')
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8')
 const redirects = readFileSync(new URL('../public/_redirects', import.meta.url), 'utf8')
 
@@ -33,7 +38,7 @@ function ok(cond, msg) {
 
 ok(JSON.stringify(book) === JSON.stringify(pub), 'data/coach-fa.json synced to public/data')
 ok(book.meta?.defaultCoach === 'jimbo-fisher', 'default coach is jimbo-fisher')
-ok(Object.keys(book.coaches).length === 7, 'seven chairs on the desk')
+ok(Object.keys(book.coaches).length === 8, 'eight chairs on the desk')
 
 const ids = [
   'jimbo-fisher',
@@ -43,13 +48,16 @@ const ids = [
   'mike-gundy',
   'justin-wilcox',
   'deshaun-foster',
+  'mark-stoops',
 ]
 for (const id of ids) {
   const c = book.coaches[id]
-  ok(c?.status === 'free-agent', `${id} is free-agent`)
   ok(c?.defaultScenario?.annualSalary == null, `${id} B salary empty`)
   ok(c?.buyout?.confidence === 'booked' || c?.buyout?.confidence === 'reported', `${id} A residual cited`)
   ok(c?.buyout?.notes?.includes('not ledger-verified') || c?.buyout?.notes?.includes('do not invent'), `${id} refuses today’s principal`)
+}
+for (const id of ids.filter((id) => id !== 'mark-stoops')) {
+  ok(book.coaches[id]?.status === 'free-agent', `${id} is free-agent`)
 }
 
 const fisher = book.coaches['jimbo-fisher']
@@ -147,9 +155,69 @@ ok(app.includes('/coach-fa/:coachId'), 'App has detail route')
 ok(html.includes('href="/coach-fa"'), 'nav has Offsets')
 ok(/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), 'SPA rewrite for /coach-fa/*')
 ok(listCoaches(book)[0].id === 'jimbo-fisher', 'Fisher first on the index')
-ok(listCoaches(book).length === 7, 'index lists seven')
+ok(listCoaches(book).length === 8, 'index lists eight')
 ok(book.compBand?.peers?.length === 5, 'shared comp band')
 ok(!/On3/i.test(JSON.stringify(DEFS.coachFa)), 'no On3 in lane definition')
+
+const stoops = book.coaches['mark-stoops']
+ok(stoops?.status === 'employed-elsewhere', 'Stoops employed-elsewhere')
+ok(stoops?.priorSchoolId === 'kentucky', 'Stoops prior kentucky')
+ok(stoops?.currentEmployerSchoolId === 'texas', 'Stoops current texas')
+ok(stoops?.defaultScenario?.schoolBId === 'texas', 'Stoops default School B is texas')
+ok(stoops?.defaultScenario?.jobType === 'analyst', 'Stoops default job is analyst/other')
+ok(stoops?.buyout?.grossRemaining === 37_600_000, 'Stoops Athletic $37.6M')
+ok(stoops?.buyout?.confidence === 'reported', 'Stoops residual reported')
+ok(stoops?.buyout?.rangeHigh === 37_687_500, 'Stoops CJ $37,687,500 in range')
+ok(stoops?.buyout?.firedOn === '2025-12-01', 'Stoops fired 2025-12-01')
+ok(stoops?.offset?.offsetFormula === 'none', 'Stoops offset none')
+ok(stoops?.offset?.offsetApplies === false, 'Stoops offsetApplies false')
+ok(stoops?.tapeId === 'kentucky-paid-buyout-stoops-2026-03-03', 'Stoops tape id')
+ok(!hasCitedB(stoops), 'Stoops Texas salary empty')
+ok(/not subject to mitigation|No mitigation/i.test(stoops.offset?.rule || ''), 'Stoops no mitigation cited')
+ok(!/on3/i.test(JSON.stringify(stoops)), 'Stoops record has no On3')
+
+const stoopsTyped = resolveScenario(stoops, { schoolBId: 'texas', annualSalary: 2_000_000 })
+ok(stoopsTyped.offsetCredit.value === 0, 'Stoops modeled B does not mint a credit')
+ok(stoopsTyped.netCostToA.value === 37_600_000, 'Stoops A residual unchanged with modeled Texas salary')
+ok(stoopsTyped.totalCompCostToB.value === 2_000_000, 'Stoops B salary is a separate modeled cell')
+ok(stoopsTyped.netCostToA.confidence === 'reported', 'Stoops net stays reported when offset is none')
+
+ok(statusLabel('employed-elsewhere') === 'Employed elsewhere', 'status label')
+ok(residualPayerLabel(stoops, { shortName: 'Kentucky' }) === 'Kentucky still owes', 'Kentucky still owes chip')
+ok(coachMatchesFilter(stoops, 'employed-elsewhere'), 'Stoops matches employed-elsewhere chip')
+ok(coachMatchesFilter(stoops, 'no-offset'), 'Stoops matches no-offset chip')
+ok(!coachMatchesFilter(stoops, 'free-agent'), 'Stoops is not free-agent chip')
+ok(!coachMatchesFilter(stoops, 'offset'), 'Stoops is not offset chip')
+ok(coachMatchesFilter(fisher, 'no-offset'), 'Fisher matches no-offset')
+ok(coachMatchesFilter(kelly, 'offset'), 'Kelly matches offset')
+ok(coachMatchesFilter(kelly, 'free-agent'), 'Kelly matches free-agent')
+
+const cap = shareCaption({
+  coach: stoops,
+  prior: { shortName: 'Kentucky' },
+  current: { shortName: 'Texas' },
+  scenario: stoopsTyped,
+  cites: [{ label: 'The Athletic census' }],
+})
+ok(/Kentucky still owes/i.test(cap), 'share caption names Kentucky still owes')
+ok(/Modeled Texas salary/i.test(cap), 'share caption labels modeled B')
+ok(/The Athletic census/.test(cap), 'share caption includes cite')
+ok(!/On3/i.test(cap), 'share caption has no On3')
+
+ok(page.includes('ShareBar'), 'detail uses ShareBar')
+ok(page.includes('downloadCoachFaPng'), 'PNG share card')
+ok(shareLib.includes('export function downloadCoachFaPng'), 'share.js paints coach-fa card')
+ok(/Employed elsewhere/.test(page), 'employed-elsewhere labeled in UI')
+ok(/Kentucky still owes|residualPayerLabel/.test(page), 'residual-payer chip in UI')
+ok(/School B salary empty/.test(page), 'empty B salary state')
+ok(/Offset credit pending/.test(page), 'pending offset credit state')
+ok(/INDEX_FILTERS|coach-fa-filters/.test(page), 'index filter chips')
+ok(app.includes('mark-stoops'), 'App titles include Stoops')
+ok(/employed-elsewhere/i.test(DEFS.coachFa.text), 'definition mentions employed-elsewhere')
+
+function hasCitedB(coach) {
+  return coach?.defaultScenario?.annualSalary != null || coach?.currentEmployer?.annualSalary != null
+}
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} checks passed`)

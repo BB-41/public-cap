@@ -103,7 +103,7 @@ export const DEFS = {
   },
   coachFa: {
     label: 'Offsets / free agents',
-    text: 'Residual School A buyout after a firing, plus an optional labeled modeled School B salary. A-side dollars and offset / mitigation rules are booked / cite-only — empty without a cite. We do not invent today’s remaining principal. Sibling to the current-chair buyout calculator, not a replacement.',
+    text: 'Residual School A buyout after a firing, plus an optional labeled modeled School B salary. A-side dollars and offset / mitigation rules are booked / cite-only — empty without a cite. We do not invent today’s remaining principal. Employed-elsewhere means a new job at School B/C while School A still owes a residual — two payers, not one check. Sibling to the current-chair buyout calculator, not a replacement.',
   },
   offsetCredit: {
     label: 'Offset credit',

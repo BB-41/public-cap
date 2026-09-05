@@ -423,6 +423,120 @@ export function downloadComparePng({ A, B, season, house, metrics, values, openL
   downloadCanvas(canvas, pngName([A.shortName || A.id, B.shortName || B.id], season))
 }
 
+/**
+ * Coach-FA share card. Booked / reported stack + cites.
+ * Modeled B salary is labeled modeled. Empty cells stay empty — no invented $0.
+ */
+export function downloadCoachFaPng({
+  coach,
+  prior,
+  current,
+  scenario,
+  cites,
+  statusLine,
+}) {
+  const rows = []
+  const pushRow = (label, display, key) => {
+    rows.push({ label, display: display == null ? '' : String(display), key })
+  }
+
+  if (hasCitedDollar(coach?.buyout?.grossRemaining)) {
+    pushRow(
+      'A residual',
+      `${moneyExact(coach.buyout.grossRemaining)}  ${coach.buyout.confidence || ''}`.trim(),
+      'a',
+    )
+  } else {
+    pushRow('A residual', '', 'a')
+  }
+
+  pushRow('Offset', offsetFormulaDisplay(coach?.offset), 'offset')
+
+  if (hasCitedDollar(scenario?.offsetCredit?.value)) {
+    pushRow(
+      'Offset credit',
+      `${moneyExact(scenario.offsetCredit.value)}  ${scenario.offsetCredit.confidence || ''}`.trim(),
+      'credit',
+    )
+  } else {
+    pushRow('Offset credit', '', 'credit')
+  }
+
+  if (hasCitedDollar(scenario?.netCostToA?.value)) {
+    pushRow(
+      'Still owe at A',
+      `${moneyExact(scenario.netCostToA.value)}  ${scenario.netCostToA.confidence || ''}`.trim(),
+      'net',
+    )
+  } else {
+    pushRow('Still owe at A', '', 'net')
+  }
+
+  const bName = current?.shortName || current?.name || scenario?.schoolBId || 'School B'
+  if (hasCitedDollar(scenario?.annualSalary)) {
+    pushRow(`Modeled ${bName} salary`, `${moneyExact(scenario.annualSalary)}  modeled`, 'b')
+  } else {
+    pushRow(`Modeled ${bName} salary`, '', 'b')
+  }
+
+  if (scenario?.allIn && hasCitedDollar(scenario?.allInToFan?.value)) {
+    pushRow(
+      'All-in (two payers)',
+      `${moneyExact(scenario.allInToFan.value)}  ${scenario.allInToFan.confidence || ''}`.trim(),
+      'allin',
+    )
+  }
+
+  const citeLine = (cites || [])
+    .map((c) => c.label)
+    .filter(Boolean)
+    .slice(0, 2)
+    .join(' · ')
+
+  const w = 920
+  const rowH = 36
+  const top = 128
+  const extra = citeLine ? 28 : 0
+  const h = top + rows.length * rowH + 56 + extra
+  const { canvas, ctx } = makeCanvas(w, h)
+  const priorName = prior?.shortName || prior?.name || coach?.priorSchoolId || 'School A'
+  paintFrame(ctx, w, h, {
+    kicker: 'PUBLIC CAP',
+    title: coach?.name || 'Offsets',
+    sub: [statusLine, `${priorName} residual`].filter(Boolean).join(' · '),
+    footer: `Public Cap  ·  ${SITE}  ·  offsets / free agents`,
+  })
+  rows.forEach((r, i) => {
+    const y = top + i * rowH
+    ctx.fillStyle = PAPER_DIM
+    ctx.font = `13px ${FONT}`
+    ctx.fillText(fitText(ctx, r.label, 280), 36, y + 18)
+    ctx.fillStyle = r.key === 'b' ? SLATE : PAPER
+    ctx.font = `13px ${FONT}`
+    ctx.textAlign = 'right'
+    ctx.fillText(fitText(ctx, r.display, 360), w - 36, y + 18)
+    ctx.textAlign = 'left'
+  })
+  if (citeLine) {
+    ctx.fillStyle = MUTED
+    ctx.font = `11px ${FONT}`
+    ctx.fillText(fitText(ctx, citeLine, w - 72), 36, h - 44)
+  }
+  downloadCanvas(canvas, pngName(['coach-fa', coach?.id || 'coach']))
+}
+
+function hasCitedDollar(n) {
+  return n != null && Number.isFinite(Number(n))
+}
+
+function offsetFormulaDisplay(offset) {
+  if (!offset) return ''
+  const raw = String(offset.offsetFormula || '').toLowerCase().replace(/_/g, '-')
+  if (raw === 'none' || offset.offsetApplies === false) return 'None'
+  if (raw === 'dollar-for-dollar' || raw === 'dollar-for-dollar-overlap') return 'Dollar-for-dollar'
+  return offset.offsetFormula || ''
+}
+
 export function formatExact(n) {
   return moneyExact(n)
 }

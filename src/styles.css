@@ -929,3 +929,31 @@ table.rank th.rk { cursor: default; }
 .coach-fa-peers li { margin-bottom: 4px; }
 .coach-fa-page p, .coach-fa-page li { color: var(--paper-dim); max-width: 740px; }
 .coach-fa-page .tv-card .field-val { margin: 6px 0; }
+.coach-fa-filters { margin: 16px 0 6px; }
+.coach-fa-status-chips { margin: 10px 0 8px; }
+.coach-fa-status-chips .chip.mark { cursor: default; }
+.coach-fa-page .share-extra {
+  margin: -8px 0 20px;
+  font-size: 13px;
+}
+.coach-fa-page .pending-box { margin: 12px 0; }
+
+@media (max-width: 640px) {
+  .coach-fa-pickers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    align-items: stretch;
+  }
+  .coach-fa-pickers label,
+  .coach-fa-pickers .alumni-toggle {
+    width: 100%;
+    min-width: 0;
+  }
+  .coach-fa-pickers select,
+  .coach-fa-pickers input[type="text"] {
+    min-width: 0;
+    width: 100%;
+    font-size: 16px;
+  }
+}

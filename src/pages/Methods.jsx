@@ -146,7 +146,8 @@ export default function Methods({ meta: metaProp }) {
           Residual School A buyout after a firing, on <code>/coach-fa</code>.
           A-side dollars and offset / mitigation rules are booked / cite-only — empty without a cite.
           School B annual salary may be a labeled modeled input. Optional all-in is A residual + B salary
-          (two payers), off by default. Comp band is a USA TODAY Total Pay snapshot, labeled modeled /
+          (two payers), off by default. Employed-elsewhere chairs keep School A’s residual on the prior
+          school after a new job at B/C. Comp band is a USA TODAY Total Pay snapshot, labeled modeled /
           reported database — not a FOIA PDF. We do not invent today’s remaining principal.
         </dd>
         <dt>Offset credit</dt>
@@ -969,9 +970,13 @@ export default function Methods({ meta: metaProp }) {
         The 2025 carousel seed (Kelly, Smith, Freeze, Gundy, Wilcox, Foster) is
         reported newsroom / Athletic-census figures — not FOIA PDFs and not
         today’s unpaid principal. Ranges stay in notes; we do not invent a
-        reconciled total. Freeze is the no-offset case. Kelly / Smith / Gundy /
+        reconciled total. Freeze is the no-offset free-agent case. Kelly / Smith / Gundy /
         Wilcox / Foster are dollar-for-dollar when a modeled B salary is typed.
         An unpaid next job does not mint an offset credit.
+        Mark Stoops is the employed-elsewhere case: Athletic census $37.6 million
+        Kentucky residual (Courier Journal $37,687,500 in notes), no mitigation,
+        now a special assistant at Texas. Texas salary is empty until announced.
+        Typing a modeled Texas figure does not reduce Kentucky.
       </p>
 
       <h2>Private-school gap</h2>
@@ -1017,7 +1022,7 @@ export default function Methods({ meta: metaProp }) {
         <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
         <li>Athletics debt is a separate layer, not a capacity add-on. Category 53 university-wide institutional debt is refused unless the filing splits an athletics-related amount. We do not invent an amortization schedule from a project cost. Empty stays empty.</li>
         <li>Conference exit is a separate layer, not a capacity add-on and not a coach-firing buyout. We do not invent an ACC dollar without a hosted packet or a newsroom quote of the filing. We do not stamp the Big 12 $100M Texas/Oklahoma one-off on remaining members. Big 12 remaining members are a labeled model of §3.4 (2× last cited 990), not a booked invoice, and not an ACC-style rights-in-tow ladder. Notre Dame is a modeled Hale / 247Sports membership estimate — not the FSU/Clemson football ladder. Big Ten has no published cash fee — we do not print $0, do not borrow the Big 12 formula, and do not invent leftover TV value. Empty stays empty.</li>
-        <li>Coach free-agent / offset residuals are a separate lane, not the if-fired overhang on the current chair. We do not invent today’s remaining principal from an old schedule, and we do not invent an offset credit when the file says none. School B salary is a labeled modeled input only. All-in is two payers, off by default. Comp band is a USA TODAY database snapshot, not a FOIA PDF. Other chairs stay empty until a cite is on the desk.</li>
+        <li>Coach free-agent / offset residuals are a separate lane, not the if-fired overhang on the current chair. We do not invent today’s remaining principal from an old schedule, and we do not invent an offset credit when the file says none. School B salary is a labeled modeled input only. All-in is two payers, off by default. Employed-elsewhere does not move School A’s residual onto the new employer. Comp band is a USA TODAY database snapshot, not a FOIA PDF. Other chairs stay empty until a cite is on the desk.</li>
       </ul>
     </div>
   )

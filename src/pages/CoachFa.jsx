@@ -1,13 +1,17 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import Logo from '../components/Logo.jsx'
+import ShareBar from '../components/ShareBar.jsx'
 import { defTitle } from '../lib/definitions.js'
 import { money, moneyExact } from '../lib/format.js'
 import { formatLongDate } from '../lib/buyout.js'
+import { canonicalUrl, downloadCoachFaPng } from '../lib/share.js'
 import {
+  INDEX_FILTERS,
   JOB_TYPES,
   bandRange,
   coachCites,
+  coachMatchesFilter,
   getCoach,
   hasDollar,
   jobTypeLabel,
@@ -18,8 +22,10 @@ import {
   parseScenarioParams,
   parseYearsInput,
   power4Schools,
+  residualPayerLabel,
   resolveScenario,
   schoolById,
+  shareCaption,
   sharePath,
   statusLabel,
   vsBand,
@@ -84,7 +90,9 @@ function useCoachFaBook() {
 }
 
 function CoachFaIndex({ book, schools }) {
-  const rows = listCoaches(book)
+  const [filter, setFilter] = useState('all')
+  const allRows = listCoaches(book)
+  const rows = allRows.filter((c) => coachMatchesFilter(c, filter))
   return (
     <div className="page-wrap coach-fa-page">
       <p className="crumb">
@@ -100,13 +108,38 @@ function CoachFaIndex({ book, schools }) {
         salary if you type one. A-side dollars and offset rules stay booked or
         reported / cite-only — empty without a cite. We do not invent today’s
         remaining principal. Optional all-in is two payers, off by default.
+        Employed elsewhere means a new job at B/C while School A still owes.
       </p>
 
-      {rows.length === 0 ? (
+      <div className="chips coach-fa-filters" role="group" aria-label="Filter chairs">
+        {INDEX_FILTERS.map((f) => (
+          <button
+            key={f.id}
+            type="button"
+            className={filter === f.id ? 'chip on' : 'chip'}
+            aria-pressed={filter === f.id}
+            onClick={() => setFilter(f.id)}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+      <p className="result-count">
+        {rows.length} of {allRows.length} chair{allRows.length === 1 ? '' : 's'}
+      </p>
+
+      {allRows.length === 0 ? (
         <div className="field pending-box">
           <div className="field-val">No free-agent chairs on the desk</div>
           <div className="field-meta">
             Other chairs stay empty until a booked residual is cited. We do not invent a dollar.
+          </div>
+        </div>
+      ) : rows.length === 0 ? (
+        <div className="field pending-box">
+          <div className="field-val">No chairs on that chip</div>
+          <div className="field-meta">
+            The filter is empty — not a missing dollar. Switch chips or open All.
           </div>
         </div>
       ) : (
@@ -125,6 +158,8 @@ function CoachFaIndex({ book, schools }) {
               <tbody>
                 {rows.map((c) => {
                   const prior = schoolById(schools, c.priorSchoolId)
+                  const current = schoolById(schools, c.currentEmployerSchoolId)
+                  const payer = residualPayerLabel(c, prior)
                   return (
                     <tr key={c.id}>
                       <td>
@@ -140,7 +175,13 @@ function CoachFaIndex({ book, schools }) {
                           c.priorSchoolId
                         )}
                       </td>
-                      <td>{statusLabel(c.status)}</td>
+                      <td>
+                        <div>{statusLabel(c.status)}</div>
+                        {payer ? <div className="term-compact">{payer}</div> : null}
+                        {current ? (
+                          <div className="term-compact">Now: {current.shortName || current.name}</div>
+                        ) : null}
+                      </td>
                       <td className="num strong">
                         {hasDollar(c.buyout?.grossRemaining) ? (
                           <>
@@ -164,29 +205,24 @@ function CoachFaIndex({ book, schools }) {
               </tbody>
             </table>
           </div>
-          {rows.length === 1 && (
-            <div className="field pending-box">
-              <div className="field-val">Other chairs pending</div>
-              <div className="field-meta">
-                This lane starts with one booked residual. We do not seed a second
-                coach without a cite, and we do not invent an offset dollar.
-              </div>
-            </div>
-          )}
         </>
       )}
 
       <section>
         <h2>Methods</h2>
         <p>
-          School A residual and the offset / mitigation clause are booked only —
-          a cited employment-agreement paragraph or a newsroom story that quotes
-          one. Empty means pending, not zero. Gross remaining on a fired chair is
-          the termination-date figure unless a later ledger is cited; we do not
-          mint today’s unpaid principal from the original schedule. School B
-          annual salary is a labeled modeled input. Optional all-in adds A
-          residual to B salary and footnotes two payers. Comp band is a USA TODAY
-          Total Pay snapshot, labeled modeled / reported database — not a FOIA PDF.
+          School A residual and the offset / mitigation clause are booked or
+          reported — a cited employment-agreement paragraph or a newsroom story
+          that quotes one. Empty means pending, not zero. Gross remaining on a
+          fired chair is the termination-date figure unless a later ledger is
+          cited; we do not mint today’s unpaid principal from the original
+          schedule. School B annual salary is a labeled modeled input. When
+          offset is none, typing a modeled B salary does not reduce A.
+          Employed-elsewhere chairs (Stoops-style) keep School A’s residual on
+          the prior school and treat the new employer as a separate payer.
+          Optional all-in adds A residual to B salary and footnotes two payers.
+          Comp band is a USA TODAY Total Pay snapshot, labeled modeled /
+          reported database — not a FOIA PDF.
         </p>
       </section>
     </div>
@@ -195,12 +231,12 @@ function CoachFaIndex({ book, schools }) {
 
 function CoachFaDetail({ book, schools, coachId }) {
   const [params, setParams] = useSearchParams()
-  const [copied, setCopied] = useState(false)
   const [payDraft, setPayDraft] = useState(() => params.get('pay') || '')
   const [yearsDraft, setYearsDraft] = useState(() => params.get('years') || '')
 
   const coach = getCoach(book, coachId)
   const prior = schoolById(schools, coach?.priorSchoolId)
+  const current = schoolById(schools, coach?.currentEmployerSchoolId)
   const options = useMemo(() => power4Schools(schools), [schools])
   const scenarioIn = useMemo(() => parseScenarioParams(params, coach), [params, coach])
   const scenario = useMemo(() => resolveScenario(coach, scenarioIn), [coach, scenarioIn])
@@ -209,6 +245,7 @@ function CoachFaDetail({ book, schools, coachId }) {
   const band = coachCompBand(book, coach)
   const range = bandRange(band)
   const vs = vsBand(scenario.annualSalary, band)
+  const payer = residualPayerLabel(coach, prior)
 
   useEffect(() => {
     setPayDraft(params.get('pay') || '')
@@ -236,14 +273,6 @@ function CoachFaDetail({ book, schools, coachId }) {
     const n = parseYearsInput(yearsDraft)
     setYearsDraft(hasDollar(n) ? String(n) : '')
     patch({ termYears: n })
-  }
-
-  function copyShare() {
-    const url = `${window.location.origin}${sharePath(coachId, scenarioIn)}`
-    navigator.clipboard?.writeText(url).then(() => {
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1600)
-    })
   }
 
   if (!coach) {
@@ -285,17 +314,33 @@ function CoachFaDetail({ book, schools, coachId }) {
         <div>
           <div className="eyebrow">
             {statusLabel(coach.status)}
+            {payer ? ` · ${payer}` : ''}
             {prior?.conference ? ` · ${prior.conference}` : ''}
             {' · football HC (former)'}
           </div>
           <div className="buyout-names">
             {prior && <Logo school={prior} size={56} className="logo-lg" />}
+            {current && <Logo school={current} size={56} className="logo-lg" />}
             <div>
               <h2 className="buyout-school">{coach.name}</h2>
               <div className="coach-name">
                 Prior: {prior?.name || coach.priorSchoolId}
+                {current ? (
+                  <>
+                    {' · Now: '}
+                    {current.name}
+                    {coach.currentJobTitle ? ` — ${coach.currentJobTitle}` : ''}
+                  </>
+                ) : null}
               </div>
             </div>
+          </div>
+          <div className="chips coach-fa-status-chips" aria-label="Status">
+            <span className="chip mark on">{statusLabel(coach.status)}</span>
+            {payer ? <span className="chip mark">{payer}</span> : null}
+            {offsetLabel(offset) === 'None' ? <span className="chip mark">No offset</span> : (
+              <span className="chip mark">{offsetLabel(offset)}</span>
+            )}
           </div>
           <div className="field-meta">
             Fired {buyout.cause === 'without-cause' ? 'without cause' : buyout.cause || '—'}
@@ -332,15 +377,42 @@ function CoachFaDetail({ book, schools, coachId }) {
         </div>
       </header>
 
-      <div className="share-bar">
-        <span className="share-lab">Share</span>
+      <ShareBar
+        url={canonicalUrl(share)}
+        title={`${coach.name} — Offsets / free agents — Public Cap`}
+        caption={shareCaption({
+          coach,
+          prior,
+          current: schoolB || current,
+          scenario,
+          cites,
+        })}
+        onPng={() => downloadCoachFaPng({
+          coach,
+          prior,
+          current: schoolB || current,
+          scenario,
+          cites,
+          statusLine: [statusLabel(coach.status), payer].filter(Boolean).join(' · '),
+        })}
+      />
+      <p className="share-extra">
         <Link to={share}>{share}</Link>
-        <button type="button" className={copied ? 'copied' : ''} onClick={copyShare}>
-          {copied ? 'Copied' : 'Copy URL'}
-        </button>
-        {prior && <Link to={`/school/${prior.id}`}>School page</Link>}
+        {prior ? (
+          <>
+            {' · '}
+            <Link to={`/school/${prior.id}`}>{prior.shortName || prior.name} page</Link>
+          </>
+        ) : null}
+        {current ? (
+          <>
+            {' · '}
+            <Link to={`/school/${current.id}`}>{current.shortName || current.name} page</Link>
+          </>
+        ) : null}
+        {' · '}
         <Link to="/buyout">Buyout desk</Link>
-      </div>
+      </p>
 
       <section>
         <h2>School A residual</h2>
@@ -517,6 +589,25 @@ function CoachFaDetail({ book, schools, coachId }) {
           {' '}Salary stays empty until you type a modeled dollar.
           {' '}Accepts 8000000 or 8M.
         </p>
+        {!hasDollar(scenario.annualSalary) && (
+          <div className="field pending-box">
+            <div className="field-val">School B salary empty</div>
+            <div className="field-meta">
+              Empty until a cite or a modeled figure is typed. Modeled dollars are labeled modeled.
+              {scenario.offsetCredit.formula === 'none'
+                ? ' Typing a figure does not reduce School A when offset is none.'
+                : ' Offset credit stays empty until you type a modeled annual — empty, not zero.'}
+            </div>
+          </div>
+        )}
+        {scenario.offsetCredit.formula !== 'none' && !hasDollar(scenario.offsetCredit.value) && (
+          <div className="field pending-box">
+            <div className="field-val">Offset credit pending</div>
+            <div className="field-meta">
+              The clause applies, but there is no cited or modeled School B salary to subtract. Empty, not zero.
+            </div>
+          </div>
+        )}
       </section>
 
       <section>
@@ -537,7 +628,7 @@ function CoachFaDetail({ book, schools, coachId }) {
           <article className="tv-card" title={defTitle('coachFa')}>
             <div className="eyebrow">B pays on top?</div>
             <div className="field-val">
-              <DollarCell figure={scenario.totalCompCostToB} empty="pending — type a modeled annual" />
+              <DollarCell figure={scenario.totalCompCostToB} empty="empty — type a modeled annual" />
             </div>
             <div className="field-meta">
               {jobTypeLabel(scenario.jobType)}
@@ -620,11 +711,15 @@ function CoachFaDetail({ book, schools, coachId }) {
           {' '}is not ledger-verified, and the schedule continues through 2031.
           Offset ¶5.3 (Dec. 4, 2017) says the university is not entitled to any
           offset whatsoever; offset credit is therefore $0 and A does not move
-          when you type a B salary. School B annual is a labeled modeled input.
-          Optional all-in is A residual + B salary, footnoted as two payers, and
-          stays off until you flip it. Comp peers are USA TODAY 2025 Total Pay
-          — a reported database, labeled modeled, not FOIA PDFs. We do not
-          invent a second coach, and we do not invent an offset dollar.
+          when you type a B salary. Stoops is employed elsewhere: Kentucky still
+          owes the Athletic-census $37.6 million residual (Courier Journal
+          $37,687,500 in notes); Texas salary is empty until announced; offset
+          is none, so a modeled Texas figure does not reduce A. School B annual
+          is a labeled modeled input. Optional all-in is A residual + B salary,
+          footnoted as two payers, and stays off until you flip it. Comp peers
+          are USA TODAY 2025 Total Pay — a reported database, labeled modeled,
+          not FOIA PDFs. We do not invent today’s remaining principal, and we
+          do not invent an offset dollar.
         </p>
       </section>
     </div>
