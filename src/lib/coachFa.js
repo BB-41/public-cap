@@ -1,5 +1,7 @@
 /** Coach free-agent / buyout-offset lane. Booked A-side; modeled B salary. */
 
+import { moneyExact } from './format.js'
+
 export const DESK_AS_OF = '2026-09-04'
 export const DEFAULT_COACH = 'jimbo-fisher'
 export const JOB_TYPES = [
@@ -217,10 +219,75 @@ export function schoolById(schools, id) {
   return (schools || []).find((s) => s.id === id) || null
 }
 
+export const INDEX_FILTERS = [
+  { id: 'all', label: 'All' },
+  { id: 'free-agent', label: 'Free agent' },
+  { id: 'employed-elsewhere', label: 'Employed elsewhere' },
+  { id: 'no-offset', label: 'No offset' },
+  { id: 'offset', label: 'Offset' },
+]
+
 export function statusLabel(status) {
   if (status === 'free-agent') return 'Free agent'
+  if (status === 'employed-elsewhere') return 'Employed elsewhere'
   if (status === 'hired') return 'Hired'
   return status || 'pending'
+}
+
+/** Chip when School A still pays after a new job at B/C. */
+export function residualPayerLabel(coach, prior) {
+  if (coach?.status !== 'employed-elsewhere' && coach?.status !== 'hired') return null
+  const name = prior?.shortName || prior?.name || coach?.priorSchoolId
+  return name ? `${name} still owes` : 'Prior school still owes'
+}
+
+export function isEmployedElsewhere(coach) {
+  return coach?.status === 'employed-elsewhere' || coach?.status === 'hired'
+}
+
+export function isNoOffset(coach) {
+  const formula = normalizeOffsetFormula(coach?.offset?.offsetFormula)
+  return formula === 'none' || coach?.offset?.offsetApplies === false
+}
+
+export function coachMatchesFilter(coach, filterId) {
+  if (!filterId || filterId === 'all') return true
+  if (filterId === 'free-agent') return coach?.status === 'free-agent'
+  if (filterId === 'employed-elsewhere') return isEmployedElsewhere(coach)
+  if (filterId === 'no-offset') return isNoOffset(coach)
+  if (filterId === 'offset') return !isNoOffset(coach)
+  return true
+}
+
+export function shareCaption({ coach, prior, current, scenario, cites } = {}) {
+  const lines = []
+  const priorName = prior?.shortName || prior?.name || coach?.priorSchoolId || 'School A'
+  lines.push(`${coach?.name || 'Coach'} — ${priorName} residual`)
+  if (isEmployedElsewhere(coach)) {
+    const now = current?.shortName || current?.name || coach?.currentEmployerSchoolId
+    lines.push(now ? `Employed elsewhere · ${priorName} still owes · now ${now}` : `Employed elsewhere · ${priorName} still owes`)
+  }
+  if (hasDollar(coach?.buyout?.grossRemaining)) {
+    lines.push(`A residual ${moneyExact(coach.buyout.grossRemaining)} (${coach.buyout.confidence || 'cited'})`)
+  }
+  lines.push(`Offset: ${offsetLabel(coach?.offset)}`)
+  if (hasDollar(scenario?.offsetCredit?.value)) {
+    lines.push(`Offset credit ${moneyExact(scenario.offsetCredit.value)} (${scenario.offsetCredit.confidence})`)
+  }
+  if (hasDollar(scenario?.netCostToA?.value)) {
+    lines.push(`Still owe at A ${moneyExact(scenario.netCostToA.value)} (${scenario.netCostToA.confidence})`)
+  }
+  if (hasDollar(scenario?.annualSalary)) {
+    const bName = current?.shortName || current?.name || scenario?.schoolBId || 'School B'
+    lines.push(`Modeled ${bName} salary ${moneyExact(scenario.annualSalary)}`)
+  }
+  if (scenario?.allIn && hasDollar(scenario?.allInToFan?.value)) {
+    lines.push(`All-in (two payers) ${moneyExact(scenario.allInToFan.value)}`)
+  }
+  const citeLabs = (cites || []).map((c) => c.label).filter(Boolean).slice(0, 3)
+  if (citeLabs.length) lines.push(`Cites: ${citeLabs.join('; ')}`)
+  lines.push('Public Cap')
+  return lines.join('\n')
 }
 
 export function jobTypeLabel(id) {
