@@ -245,6 +245,7 @@ export default function App() {
         'mike-gundy': 'Mike Gundy',
         'justin-wilcox': 'Justin Wilcox',
         'deshaun-foster': 'DeShaun Foster',
+        'mark-stoops': 'Mark Stoops',
       }
       applyDocumentMeta({
         title: names[coachId]
