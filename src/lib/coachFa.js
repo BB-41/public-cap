@@ -181,8 +181,8 @@ export function offsetLabel(offset) {
 }
 
 export function coachPageTitle(coach) {
-  if (!coach?.name) return 'Offsets / free agents — Public Cap'
-  return `${coach.name} — Offsets / free agents — Public Cap`
+  if (!coach?.name) return 'Coach buyout offsets / free agents — Public Cap'
+  return `${coach.name} — Coach buyout offsets — Public Cap`
 }
 
 export function getCoach(book, id) {

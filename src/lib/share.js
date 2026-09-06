@@ -7,8 +7,9 @@ import { CURRENT_SEASON } from './seasons.js'
 import { money, moneyExact, moneyRange, winsPerM } from './format.js'
 import { isPlayerHash, isPosHash } from './nilHistory.js'
 
-export const DEFAULT_TITLE = 'Public Cap — College Athletics Capacity Desk'
+export const DEFAULT_TITLE = 'Public Cap — Capacity vs House cap vs booked NIL'
 export const SITE = 'thepubliccap.com'
+export const SCHOOL_TITLE_FRAME = 'Capacity vs House cap vs booked NIL'
 
 export const SCHOOL_DRILLS = new Set([
   'stack-media',
@@ -148,9 +149,20 @@ export const PAGE_TITLES = {
   tape: 'Tape — Public Cap',
   methods: 'Methods — Public Cap',
   buyout: 'Buyout — Public Cap',
-  coachFa: 'Offsets / free agents — Public Cap',
-  compare: 'Compare — Public Cap',
+  coachFa: 'Coach buyout offsets / free agents — Public Cap',
+  compare: 'Compare capacity vs House vs NIL — Public Cap',
   tv: 'TV — Public Cap',
+}
+
+export const PAGE_DESCRIPTIONS = {
+  home: 'Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL. Collective 990 payout is a separate cited lane. Pending stays empty.',
+  tape: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990 payouts, contracts, and House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
+  methods: 'How Public Cap books Power 4 capacity, the House benefits cap, booked NIL, and collective 990 payouts. Pending stays empty. We do not invent House or NIL dollars.',
+  buyout: 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.',
+  coachFa: 'Residual School A buyout after a firing, plus a labeled modeled School B salary. Offset rules stay booked or cite-only. Empty without a cite — we do not invent remaining principal.',
+  compare: 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.',
+  tv: 'Conference TV contracts, holders, and school media checks when a filing exists. Notre Dame’s NBC football deal is the school-level exception. Empty means pending.',
+  school: 'Annual capacity from public filings versus the House benefits cap versus booked NIL. Collective 990 payout is a separate cited lane, not House. Pending stays empty.',
 }
 
 const HOME_JSON_LD_ID = 'public-cap-jsonld'
@@ -177,10 +189,20 @@ function upsertCanonical(href) {
   el.setAttribute('href', href)
 }
 
-function upsertHomeJsonLd(on) {
+function siteJsonLd() {
+  return {
+    '@type': 'WebSite',
+    name: 'Public Cap',
+    alternateName: 'College Athletics Capacity Desk',
+    url: `https://${SITE}/`,
+    description: PAGE_DESCRIPTIONS.home,
+  }
+}
+
+function upsertRouteJsonLd(kind, { title, description, href }) {
   if (typeof document === 'undefined') return
   let el = document.getElementById(HOME_JSON_LD_ID)
-  if (!on) {
+  if (!kind) {
     el?.remove()
     return
   }
@@ -190,47 +212,128 @@ function upsertHomeJsonLd(on) {
     el.type = 'application/ld+json'
     document.head.appendChild(el)
   }
+  if (kind === 'home') {
+    el.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        siteJsonLd(),
+        {
+          '@type': 'Organization',
+          name: 'Public Cap',
+          url: `https://${SITE}/`,
+        },
+      ],
+    })
+    return
+  }
   el.textContent = JSON.stringify({
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebSite',
-        name: 'Public Cap',
-        url: `https://${SITE}/`,
-      },
-      {
-        '@type': 'Organization',
-        name: 'Public Cap',
-        url: `https://${SITE}/`,
-      },
-    ],
+    '@type': 'WebPage',
+    name: title,
+    description: description || PAGE_DESCRIPTIONS.school,
+    url: href,
+    isPartOf: siteJsonLd(),
   })
 }
 
-/** Set document title, matching og:title, and a canonical URL for the current route. */
-export function applyDocumentMeta({ title, path, jsonLd = false }) {
+/** Set document title, description, matching OG/Twitter tags, and a canonical URL. */
+export function applyDocumentMeta({ title, path, description, jsonLd = false }) {
   const href = canonicalUrl(path)
   if (typeof document === 'undefined') return href
   document.title = title
   upsertMeta('property', 'og:title', title)
   upsertMeta('property', 'og:url', href)
+  upsertMeta('property', 'og:site_name', 'Public Cap')
+  upsertMeta('name', 'twitter:card', 'summary')
+  upsertMeta('name', 'twitter:title', title)
+  if (description) {
+    upsertMeta('name', 'description', description)
+    upsertMeta('property', 'og:description', description)
+    upsertMeta('name', 'twitter:description', description)
+  }
   upsertCanonical(href)
-  upsertHomeJsonLd(jsonLd)
+  upsertRouteJsonLd(jsonLd, { title, description, href })
   return href
+}
+
+export function displayNameFromSlug(slug) {
+  return String(slug || '')
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ')
 }
 
 export function schoolTitle(name, season) {
   const yr = season && season !== CURRENT_SEASON ? ` · ${season}` : ''
-  return `${name}${yr} — Public Cap`
+  return `${name}${yr} — ${SCHOOL_TITLE_FRAME} — Public Cap`
 }
 
 export function compareTitle(nameA, nameB, season) {
   const yr = season && season !== CURRENT_SEASON ? ` · ${season}` : ''
-  return `${nameA} vs ${nameB}${yr} — Public Cap`
+  return `${nameA} vs ${nameB}${yr} — Capacity vs House vs NIL — Public Cap`
+}
+
+export function coachFaTitle(coachName) {
+  if (!coachName) return PAGE_TITLES.coachFa
+  return `${coachName} — Coach buyout offsets — Public Cap`
+}
+
+export function schoolDescription(schoolOrName) {
+  const name = typeof schoolOrName === 'string' ? schoolOrName : schoolOrName?.name
+  if (!name) return PAGE_DESCRIPTIONS.school
+  const gap = typeof schoolOrName === 'object' && !!(schoolOrName.revenueGap || schoolOrName.private)
+  if (gap) {
+    return `${name} football revenue on Public Cap is booked capacity from public filings, not a full athletic-revenue total. House cap and booked NIL sit beside it. Collective 990 payout is a separate cited lane. Pending stays empty.`
+  }
+  return `${name} — annual capacity from public filings versus the House benefits cap versus booked NIL. Collective 990 payout is a separate cited lane, not House. Pending stays empty.`
+}
+
+export function pageDescription(kind) {
+  return PAGE_DESCRIPTIONS[kind] || PAGE_DESCRIPTIONS.home
+}
+
+export function titleFromPath(pathname, { season, schoolName, compareNames, coachName } = {}) {
+  const p = pathname || '/'
+  if (p === '/') return PAGE_TITLES.home
+  if (p.startsWith('/school/')) {
+    const name = schoolName || displayNameFromSlug(p.split('/')[2])
+    return name ? schoolTitle(name, season) : PAGE_TITLES.home
+  }
+  if (p === '/compare') {
+    if (compareNames?.[0] && compareNames?.[1]) return compareTitle(compareNames[0], compareNames[1], season)
+    return PAGE_TITLES.compare
+  }
+  if (p === '/coach-fa' || p.startsWith('/coach-fa/')) return coachFaTitle(coachName)
+  if (p === '/tape') return PAGE_TITLES.tape
+  if (p === '/methods') return PAGE_TITLES.methods
+  if (p === '/buyout') return PAGE_TITLES.buyout
+  if (p === '/tv') return PAGE_TITLES.tv
+  return DEFAULT_TITLE
+}
+
+export function descriptionFromPath(pathname, { school, schoolName, coachName } = {}) {
+  const p = pathname || '/'
+  if (p === '/') return PAGE_DESCRIPTIONS.home
+  if (p.startsWith('/school/')) {
+    return schoolDescription(school || schoolName || displayNameFromSlug(p.split('/')[2]))
+  }
+  if (p === '/compare') return PAGE_DESCRIPTIONS.compare
+  if (p === '/coach-fa' || p.startsWith('/coach-fa/')) {
+    if (coachName) {
+      return `${coachName} — residual School A buyout after a firing, plus a labeled modeled School B salary. Offset rules stay booked or cite-only. Empty without a cite.`
+    }
+    return PAGE_DESCRIPTIONS.coachFa
+  }
+  if (p === '/tape') return PAGE_DESCRIPTIONS.tape
+  if (p === '/methods') return PAGE_DESCRIPTIONS.methods
+  if (p === '/buyout') return PAGE_DESCRIPTIONS.buyout
+  if (p === '/tv') return PAGE_DESCRIPTIONS.tv
+  return PAGE_DESCRIPTIONS.home
 }
 
 export function schoolCaption(name) {
-  return `${name} — capacity stack — Public Cap`
+  return `${name} — capacity vs House cap vs booked NIL — Public Cap`
 }
 
 export function compareCaption(nameA, nameB) {

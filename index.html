@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Public Cap — College Athletics Capacity Desk</title>
-    <meta name="description" content="Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL." />
-    <meta property="og:title" content="Public Cap — College Athletics Capacity Desk" />
-    <meta property="og:description" content="Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL." />
+    <title>Public Cap — Capacity vs House cap vs booked NIL</title>
+    <meta name="description" content="Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL. Collective 990 payout is a separate cited lane. Pending stays empty." />
+    <meta property="og:title" content="Public Cap — Capacity vs House cap vs booked NIL" />
+    <meta property="og:description" content="Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL. Collective 990 payout is a separate cited lane. Pending stays empty." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://thepubliccap.com/" />
+    <meta property="og:site_name" content="Public Cap" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Public Cap — Capacity vs House cap vs booked NIL" />
+    <meta name="twitter:description" content="Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL. Collective 990 payout is a separate cited lane. Pending stays empty." />
     <link rel="canonical" href="https://thepubliccap.com/" />
     <script type="application/ld+json" id="public-cap-jsonld">
-      {"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Public Cap","url":"https://thepubliccap.com/"},{"@type":"Organization","name":"Public Cap","url":"https://thepubliccap.com/"}]}
+      {"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Public Cap","alternateName":"College Athletics Capacity Desk","url":"https://thepubliccap.com/","description":"Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL. Collective 990 payout is a separate cited lane. Pending stays empty."},{"@type":"Organization","name":"Public Cap","url":"https://thepubliccap.com/"}]}
     </script>
     <link rel="preload" href="/logo-pc.png" as="image" fetchpriority="high" />
     <style>
@@ -53,6 +57,49 @@
       (function () {
         var p = location.pathname
         if (p !== '/') document.documentElement.dataset.route = 'inner'
+        function titleCaseSlug(slug) {
+          return String(slug || '').split('-').filter(Boolean).map(function (w) {
+            return w.charAt(0).toUpperCase() + w.slice(1)
+          }).join(' ')
+        }
+        function setMeta(attr, key, content) {
+          var el = document.head.querySelector('meta[' + attr + '="' + key + '"]')
+          if (!el) {
+            el = document.createElement('meta')
+            el.setAttribute(attr, key)
+            document.head.appendChild(el)
+          }
+          el.setAttribute('content', content)
+        }
+        var title = 'Public Cap — Capacity vs House cap vs booked NIL'
+        var desc = 'Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL. Collective 990 payout is a separate cited lane. Pending stays empty.'
+        if (p.indexOf('/school/') === 0) {
+          var schoolName = titleCaseSlug(p.split('/')[2])
+          if (schoolName) {
+            title = schoolName + ' — Capacity vs House cap vs booked NIL — Public Cap'
+            desc = schoolName + ' — annual capacity from public filings versus the House benefits cap versus booked NIL. Collective 990 payout is a separate cited lane, not House. Pending stays empty.'
+          }
+        } else if (p === '/coach-fa' || p.indexOf('/coach-fa/') === 0) {
+          title = 'Coach buyout offsets / free agents — Public Cap'
+          desc = 'Residual School A buyout after a firing, plus a labeled modeled School B salary. Offset rules stay booked or cite-only. Empty without a cite — we do not invent remaining principal.'
+        } else if (p === '/compare') {
+          title = 'Compare capacity vs House vs NIL — Public Cap'
+          desc = 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.'
+        } else if (p === '/tape') {
+          title = 'Tape — Public Cap'
+        } else if (p === '/methods') {
+          title = 'Methods — Public Cap'
+        } else if (p === '/buyout') {
+          title = 'Buyout — Public Cap'
+        } else if (p === '/tv') {
+          title = 'TV — Public Cap'
+        }
+        document.title = title
+        setMeta('property', 'og:title', title)
+        setMeta('name', 'twitter:title', title)
+        setMeta('name', 'description', desc)
+        setMeta('property', 'og:description', desc)
+        setMeta('name', 'twitter:description', desc)
         var href = null
         if (p === '/' || p === '/compare' || p.indexOf('/school/') === 0) href = '/data/desk.json'
         else if (p === '/methods') href = '/data/meta.json'
@@ -105,7 +152,8 @@
             Not total athletic revenue, and not a Group of 6 predictor — Power 4 only.
             Every program is read against two ceilings: the House benefits cap, and what
             the school can actually write this year from public filings. Then whatever
-            NIL is in a filing. Modeled stays labeled. Pending stays empty. Most publics
+            NIL is in a filing. Collective 990 payout is a separate cited lane, not House.
+            Modeled stays labeled. Pending stays empty. Most publics
             can write the max. The useful gap is capacity versus the cap versus what
             they have actually booked.
           </p>

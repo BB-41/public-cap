@@ -1,0 +1,126 @@
+/**
+ * SERP titles, meta descriptions, and school hed/lede stay booked-only.
+ * Templates carry query language. No invented House / NIL dollars. No On3.
+ *
+ * Run: node scripts/verify-seo.mjs
+ */
+import { readFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import {
+  DEFAULT_TITLE,
+  PAGE_DESCRIPTIONS,
+  PAGE_TITLES,
+  SCHOOL_TITLE_FRAME,
+  coachFaTitle,
+  compareTitle,
+  descriptionFromPath,
+  displayNameFromSlug,
+  schoolDescription,
+  schoolTitle,
+  titleFromPath,
+} from '../src/lib/share.js'
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..')
+const read = (rel) => readFileSync(join(root, rel), 'utf8')
+
+const checks = []
+function ok(cond, msg) {
+  checks.push({ ok: !!cond, msg })
+  if (!cond) console.error('FAIL', msg)
+}
+
+const share = read('src/lib/share.js')
+const app = read('src/App.jsx')
+const schoolPage = read('src/pages/School.jsx')
+const indexHtml = read('index.html')
+const home = read('src/pages/Home.jsx')
+const schools = JSON.parse(read('public/data/schools.json'))
+
+ok(DEFAULT_TITLE === 'Public Cap — Capacity vs House cap vs booked NIL', 'home title names the three lanes')
+ok(PAGE_TITLES.home === DEFAULT_TITLE, 'PAGE_TITLES.home matches DEFAULT_TITLE')
+ok(PAGE_TITLES.coachFa === 'Coach buyout offsets / free agents — Public Cap', 'coach-fa index title is discoverable')
+ok(SCHOOL_TITLE_FRAME === 'Capacity vs House cap vs booked NIL', 'school title frame is the three-lane sentence')
+
+ok(schoolTitle('Louisville') === 'Louisville — Capacity vs House cap vs booked NIL — Public Cap', 'Louisville title')
+ok(schoolTitle('Oklahoma State') === 'Oklahoma State — Capacity vs House cap vs booked NIL — Public Cap', 'Oklahoma State title')
+ok(schoolTitle('Notre Dame') === 'Notre Dame — Capacity vs House cap vs booked NIL — Public Cap', 'Notre Dame title')
+ok(schoolTitle('Indiana') === 'Indiana — Capacity vs House cap vs booked NIL — Public Cap', 'Indiana title')
+ok(schoolTitle('Cincinnati') === 'Cincinnati — Capacity vs House cap vs booked NIL — Public Cap', 'Cincinnati title')
+ok(schoolTitle('Louisville', 2024).includes('· 2024'), 'non-current season still tags the year')
+ok(!schoolTitle('Louisville').includes('$'), 'school title invents no dollars')
+
+ok(titleFromPath('/') === DEFAULT_TITLE, 'titleFromPath home')
+ok(titleFromPath('/school/louisville') === schoolTitle('Louisville'), 'slug title matches named title')
+ok(titleFromPath('/school/oklahoma-state') === schoolTitle('Oklahoma State'), 'oklahoma-state slug title-cases')
+ok(titleFromPath('/school/notre-dame') === schoolTitle('Notre Dame'), 'notre-dame slug title-cases')
+ok(titleFromPath('/coach-fa') === PAGE_TITLES.coachFa, 'titleFromPath coach-fa index')
+ok(coachFaTitle('Mark Stoops') === 'Mark Stoops — Coach buyout offsets — Public Cap', 'coach detail title')
+ok(
+  compareTitle('Louisville', 'Kentucky') === 'Louisville vs Kentucky — Capacity vs House vs NIL — Public Cap',
+  'compare title keeps the three lanes',
+)
+
+const louDesc = schoolDescription('Louisville')
+const nd = schools.schools.find((s) => s.id === 'notre-dame')
+const ndDesc = schoolDescription(nd)
+ok(/capacity/i.test(louDesc) && /House/i.test(louDesc) && /booked NIL/i.test(louDesc), 'Louisville description names the three lanes')
+ok(/Collective 990 payout/i.test(louDesc), 'Louisville description names collective payout')
+ok(/Pending stays empty/i.test(louDesc), 'Louisville description keeps pending empty')
+ok(!/\$/.test(louDesc), 'Louisville description invents no dollars')
+ok(/football revenue/i.test(ndDesc), 'Notre Dame description answers football-revenue queries')
+ok(/not a full athletic-revenue total/i.test(ndDesc), 'Notre Dame description refuses a full revenue number')
+ok(!/\$/.test(ndDesc), 'Notre Dame description invents no dollars')
+ok(descriptionFromPath('/school/indiana').includes('Indiana'), 'Indiana path description uses the name')
+ok(descriptionFromPath('/').includes('Collective 990 payout'), 'home description names collective payout')
+ok(PAGE_DESCRIPTIONS.coachFa.includes('do not invent remaining principal'), 'coach-fa description stays cite-only')
+
+const templateBlob = [
+  DEFAULT_TITLE,
+  SCHOOL_TITLE_FRAME,
+  ...Object.values(PAGE_TITLES),
+  ...Object.values(PAGE_DESCRIPTIONS),
+  schoolTitle('Louisville'),
+  schoolDescription('Louisville'),
+  schoolDescription(nd),
+  coachFaTitle('Jimbo Fisher'),
+].join('\n')
+ok(!/On3/i.test(templateBlob), 'title/description templates never name On3')
+ok(!/\$\d/.test(templateBlob), 'title/description templates have no dollar figures')
+
+ok(app.includes('descriptionFromPath'), 'App applies per-route descriptions')
+ok(app.includes("jsonLd: 'school'"), 'App attaches school JSON-LD')
+ok(app.includes('titleFromPath'), 'App uses the shared title helper')
+ok(!app.includes('DEFAULT_TITLE'), 'App no longer falls back to the homepage title on school routes')
+
+ok(schoolPage.includes('className="lede school-dek"'), 'school page has a first-screen lede')
+ok(schoolPage.includes('Collective 990 payout'), 'school page names collective payout')
+ok(schoolPage.includes('Student fees on this desk are not tuition'), 'school lede separates fees from tuition')
+ok(schoolPage.includes('the public stand-in for an NIL budget'), 'school page answers NIL-budget queries')
+ok(schoolPage.includes('No public collective Form 990 on the desk'), 'empty collective lane stays pending')
+ok(schoolPage.includes('leadBookedNil'), 'lane status uses lead booked NIL, not invented overlay dollars')
+ok(!schoolPage.includes('NIL booked band'), 'old NIL booked band hed is gone')
+ok(!/On3/i.test(schoolPage), 'school page has no On3')
+
+ok(indexHtml.includes(DEFAULT_TITLE), 'index.html first title matches the home template')
+ok(indexHtml.includes('Capacity vs House cap vs booked NIL — Public Cap'), 'index.html first-paints school titles')
+ok(indexHtml.includes('Coach buyout offsets / free agents — Public Cap'), 'index.html first-paints /coach-fa')
+ok(indexHtml.includes('twitter:card'), 'index.html has a Twitter card')
+ok(indexHtml.includes('og:site_name'), 'index.html has og:site_name')
+ok(indexHtml.includes('Collective 990 payout is a separate cited lane, not House.'), 'homepage LCP lede names collective payout')
+ok(indexHtml.includes('Not total athletic revenue, and not a Group of 6 predictor'), 'homepage LCP lede kept')
+ok(!/On3/i.test(indexHtml), 'index.html has no On3')
+ok(!home.includes('className="issue-hed"'), 'React Home still does not remount the LCP hed')
+
+ok(schools.schools.length === 68, 'desk still has 68 schools')
+ok(!JSON.stringify(schools).includes('On3'), 'schools.json was not edited to name On3')
+for (const s of schools.schools) {
+  const title = schoolTitle(s.name)
+  ok(title.startsWith(`${s.name} — `), `${s.id} title starts with the school name`)
+  ok(title.includes(SCHOOL_TITLE_FRAME), `${s.id} title uses the shared frame`)
+  ok(!title.includes('$'), `${s.id} title invents no dollars`)
+}
+
+const failed = checks.filter((c) => !c.ok)
+console.log(`${checks.length - failed.length}/${checks.length} checks passed`)
+if (failed.length) process.exit(1)
