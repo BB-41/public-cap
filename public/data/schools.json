@@ -33,7 +33,7 @@
       },
       "ACC": {
         "fullShareMin": 42800000,
-        "note": "Clemson high $55.13M; Cal $22.99M, Stanford $19.56M, SMU $17.07M partial shares",
+        "note": "Clemson high $55.13M; Cal $22.99M and Stanford $19.56M partial TV shares; SMU $17.07M is the early-membership 990 (no TV / not equal share)",
         "url": "https://www.usatoday.com/story/sports/college/2026/05/22/power-4-conference-money-comparison-big-ten-sec-acc-big-12-pac-12-brett-yormark/90204563007/"
       },
       "Big 12": {
@@ -72446,10 +72446,12 @@
         "mediaConference": {
           "value": 17070000,
           "confidence": "reported",
-          "source": "Courier-Journal — ACC FY2025 Form 990, SMU $17.07M (no TV money early in membership)",
+          "source": "Courier-Journal — ACC FY2025 Form 990, SMU $17.07M (early-membership 990 distribution — not ACC TV / not equal share)",
           "url": "https://www.courier-journal.com/story/sports/college/louisville/2026/07/21/acc-revenue-louisville-cardinals-college-football-basketball-fiscal-year-2025-federal-tax-returns/90663084007/",
           "asOf": "2026-07-21",
-          "fiscalYear": "FY2025"
+          "fiscalYear": "FY2025",
+          "stackLabel": "Media / conference (early-membership 990 — not ACC TV)",
+          "notes": "This cell is the published FY2025 ACC Form 990 conference distribution, not a television equal share. Courier-Journal: SMU received a league-low $17.07M after agreeing to take no TV money; ESPN (Sept. 2023) reported SMU would take no ACC television / broadcast media revenue for nine years. WRAL: Cal and Stanford took partial TV shares, while SMU receives nothing from media rights early in membership — the $17M check is the early-membership 990 (CFP / bowl / NCAA-type flow), not a media-rights share. Full ACC media equal share is deferred (~9 years from 2024–25 entry). We do not invent a year-by-year $0 TV schedule. Desk convention for this line is the cited conference 990 / MFRS distribution."
         },
         "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
         "sponsorships": {

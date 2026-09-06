@@ -22,7 +22,22 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 SCHOOLS = json.loads((ROOT / "schools.json").read_text())["schools"]
 OUT = ROOT / "rosters.json"
-UA = "PublicCap/1.1 (college athletics capacity desk; roster research; +https://localhost)"
+PUBLIC_2026 = ROOT.parent / "public" / "data" / "rosters-2026.json"
+PUBLIC_LEGACY = ROOT.parent / "public" / "data" / "rosters.json"
+UA = "Mozilla/5.0 (compatible; PublicCap/1.1; +https://github.com/BB-41/public-cap)"
+AS_OF = "2026-09-06"
+
+# Cited depth ranks applied after Wikipedia matching. Full name only.
+# Leave unmatched names at None — do not invent a two-deep.
+DEPTH_OVERRIDES = {
+    "smu": {
+        "Kevin Jennings": {
+            "depthRank": 1,
+            "source": "Wikipedia — 2026 SMU Mustangs football team: third consecutive year as the starter",
+            "url": "https://en.wikipedia.org/wiki/2026_SMU_Mustangs_football_team",
+        }
+    }
+}
 
 ESPN_TEAMS = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams?limit=1000"
 ESPN_ROSTER = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/{id}/roster"
@@ -53,21 +68,36 @@ def norm(s: str) -> str:
     return " ".join(s.split())
 
 
-def get(url: str, timeout: int = 30) -> tuple[int, bytes]:
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json,text/html"})
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.status, r.read()
-    except urllib.error.HTTPError as e:
-        return e.code, e.read() if e.fp else b""
-    except Exception as e:
-        return 0, str(e).encode()
+def get(url: str, timeout: int = 30, retries: int = 4) -> tuple[int, bytes]:
+    headers = {
+        "User-Agent": UA,
+        "Accept": "application/json,text/html;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": "https://www.espn.com/college-football/",
+    }
+    last_code, last_body = 0, b""
+    for attempt in range(retries):
+        req = urllib.request.Request(url, headers=headers)
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.status, r.read()
+        except urllib.error.HTTPError as e:
+            last_code = e.code
+            last_body = e.read() if e.fp else b""
+            if e.code not in {403, 429, 500, 502, 503} or attempt == retries - 1:
+                return e.code, last_body
+        except Exception as e:
+            last_code, last_body = 0, str(e).encode()
+            if attempt == retries - 1:
+                return last_code, last_body
+        time.sleep(1.5 * (attempt + 1))
+    return last_code, last_body
 
 
 def load_espn_index() -> list[dict]:
     code, body = get(ESPN_TEAMS)
     if code != 200:
-        raise SystemExit(f"ESPN teams list failed {code}")
+        raise SystemExit(f"ESPN teams list failed {code}: {body[:200]!r}")
     data = json.loads(body)
     return [t["team"] for t in data["sports"][0]["leagues"][0]["teams"]]
 
@@ -307,7 +337,26 @@ def wiki_titles(team: dict) -> list[str]:
     return titles
 
 
+def apply_depth_overrides(sid: str, players: list[dict]) -> int:
+    """Apply cited starter/backup ranks. Returns newly ranked count."""
+    ov = DEPTH_OVERRIDES.get(sid) or {}
+    if not ov:
+        return 0
+    added = 0
+    for p in players:
+        hit = ov.get(p.get("name") or "")
+        if not hit:
+            continue
+        if not p.get("depthRank"):
+            added += 1
+        p["depthRank"] = hit["depthRank"]
+        p["depthSource"] = hit.get("source")
+        p["depthUrl"] = hit.get("url")
+    return added
+
+
 def fetch_wiki_depth(team: dict) -> tuple[dict[str, int], str | None, int | None]:
+    page_2026: tuple[str, int] | None = None
     for title in wiki_titles(team):
         url = WIKI.format(title=title.replace(" ", "_"))
         code, body = get(url, timeout=25)
@@ -320,13 +369,18 @@ def fetch_wiki_depth(team: dict) -> tuple[dict[str, int], str | None, int | None
             continue
         ranks = parse_wiki_depth(html)
         year = 2026 if title.startswith("2026") else 2025
+        if year == 2026:
+            page_2026 = (url, year)
         if ranks:
             return ranks, url, year
-        # page exists but no depth — keep URL if 2026
+        # 2026 page exists but has no template — try 2025 ranks, keep the 2026 URL if 2025 is also empty
         if year == 2026:
-            # try 2025 next
             continue
+        if page_2026 and not ranks:
+            return {}, page_2026[0], page_2026[1]
         return {}, url, year
+    if page_2026:
+        return {}, page_2026[0], page_2026[1]
     return {}, None, None
 
 
@@ -336,15 +390,23 @@ def main() -> None:
     mapping = map_schools(espn_teams)
     out = {
         "meta": {
-            "asOf": "2026-08-23",
+            "asOf": AS_OF,
+            "season": 2026,
             "notes": (
                 "Football names from ESPN public team roster JSON (2026 season). "
                 "Depth ranks from Wikipedia 2026/2025 team-page depth-chart templates when present. "
+                "Cited starter overrides (full name + public URL) are applied after wiki matching — "
+                "SMU QB Kevin Jennings is depthRank 1 from the 2026 team-page starter note. "
                 "CollegeFootballData roster API returned 401 without a key and was skipped."
             ),
             "sources": [
                 {"id": "espn-roster", "label": "ESPN college-football team roster API", "url": ESPN_TEAMS},
                 {"id": "wikipedia-depth", "label": "Wikipedia team-page depth chart (2026 then 2025)"},
+                {
+                    "id": "smu-jennings-starter",
+                    "label": "Wikipedia — 2026 SMU Mustangs football team (Kevin Jennings starter)",
+                    "url": "https://en.wikipedia.org/wiki/2026_SMU_Mustangs_football_team",
+                },
             ],
         },
         "schools": {},
@@ -393,6 +455,7 @@ def main() -> None:
             p["depthRank"] = r  # 1/2/3 or None
             if r:
                 ranked += 1
+        ranked += apply_depth_overrides(sid, players)
 
         out["schools"][sid] = {
             "id": sid,
@@ -410,11 +473,12 @@ def main() -> None:
         print(f"    {len(players)} players, {ranked} depth-matched, wiki={wiki_year}", flush=True)
 
     OUT.write_text(json.dumps(out, indent=2))
-    public = ROOT.parent / "public" / "data" / "rosters.json"
-    public.write_text(json.dumps(out))
+    compact = json.dumps(out, separators=(",", ":"))
+    PUBLIC_2026.write_text(compact)
+    PUBLIC_LEGACY.write_text(compact)
     named = sum(1 for v in out["schools"].values() if v.get("playerCount"))
     players = sum(v.get("playerCount", 0) for v in out["schools"].values())
-    print(f"Wrote {OUT} and {public}")
+    print(f"Wrote {OUT}, {PUBLIC_2026}, and {PUBLIC_LEGACY}")
     print(f"Schools with names: {named}/{n}; players: {players}; failed: {out['failed']}")
 
 

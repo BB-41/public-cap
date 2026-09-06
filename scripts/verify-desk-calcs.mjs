@@ -278,6 +278,20 @@ ok(layers.schools['virginia-tech'].buyoutsPaid.filter((b) => b.coach === 'Brent 
 ok(layers.schools['oklahoma-state'].buyoutsPaid.filter((b) => b.coach === 'Mike Gundy').length === 3, 'Gundy year rows')
 ok(byId.pittsburgh.capacity?.studentFees?.value == null, 'Pitt student fees stay empty')
 
+const smuMedia = byId.smu.capacity.mediaConference
+ok(smuMedia.value === 17_070_000, 'SMU media keeps the cited $17.07M FY2025 990')
+ok(/not ACC TV|not a television/i.test(`${smuMedia.source || ''} ${smuMedia.notes || ''}`), 'SMU media is labeled not-TV / not equal share')
+ok(/9 years|nine years/i.test(smuMedia.notes || ''), 'SMU media notes cite the ~9-year TV deferral')
+ok(/early-membership/i.test(smuMedia.stackLabel || ''), 'SMU stack label is early-membership 990, not full ACC TV')
+
+const rosters2026 = JSON.parse(readFileSync(new URL('../public/data/rosters-2026.json', import.meta.url), 'utf8'))
+const smuPlayers = rosters2026.schools?.smu?.players || []
+const jennings = smuPlayers.find((p) => p.name === 'Kevin Jennings')
+ok(jennings?.depthRank === 1, 'Kevin Jennings is SMU QB depthRank 1')
+ok(/^https:\/\/en\.wikipedia\.org\//i.test(jennings?.depthUrl || ''), 'Jennings starter cite is the 2026 Wikipedia team page')
+const otherSmuQbRanked = smuPlayers.filter((p) => p.family === 'qb' && p.name !== 'Kevin Jennings' && p.depthRank)
+ok(otherSmuQbRanked.length === 0, 'other SMU QBs stay unranked without a cite')
+
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} desk-calc checks passed`)
 if (failed.length) process.exit(1)

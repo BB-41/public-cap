@@ -107,7 +107,7 @@
       "annualLabel": "Base ESPN AAV vs FY2025 TV receipts",
       "total": 4800000000,
       "split": "other",
-      "splitLabel": "Not equal. 2025 FSU/Clemson settlement: 40% of base media rights shared equally; 60% by five-year weighted football (75%) and mens basketball (25%) viewership. Cal and Stanford take partial TV shares. SMU forgoes TV money in early membership years. Grant of Rights / exit fees were rewritten; we do not flatten this to equal share.",
+      "splitLabel": "Not equal. 2025 FSU/Clemson settlement: 40% of base media rights shared equally; 60% by five-year weighted football (75%) and mens basketball (25%) viewership. Cal and Stanford take partial TV shares. SMU forgoes ACC television / broadcast media revenue for nine years from 2024-25 entry (ESPN 2023). Grant of Rights / exit fees were rewritten; we do not flatten this to equal share.",
       "confidence": "estimated",
       "notes": "The $240M / $4.8B / through-2036 figures are the long-cited 2016 ESPN base deal (SBJ table; FOS 2024). ESPN exercised its option in January 2025 so the partnership runs through 2036 (without that option it ended after 2027). WRAL, from FY2025 tax documents, reports $588.8M in conference television receipts \u2014 base rights plus ACC Network and expansion markets, not the same number as the 2016 AAV. Both are shown. No public per-school media-only breakdown for legacy members; we do not mint one.",
       "sources": [
@@ -362,16 +362,26 @@
     "smu": {
       "exceptions": [
         {
-          "name": "ACC \u2014 no TV money in early membership",
+          "name": "ACC \u2014 no TV money in early membership (9 years)",
           "kind": "reported-exception",
-          "value": 17000000,
+          "value": 17070000,
           "confidence": "reported",
-          "notes": "SMU agreed to forgo ACC media-rights payouts in early membership years. WRAL: $17M FY2025, attributed to the CFP berth, not a TV share. No equal-share estimate.",
+          "notes": "Not a full ACC media equal share and not a television check. Courier-Journal: SMU $17.07M FY2025 990, a league-low after agreeing to take no TV money. ESPN (Sept. 2023): SMU would take no ACC television / broadcast media revenue for nine years from 2024-25 entry. WRAL: Cal and Stanford took partial TV shares; SMU receives nothing from media rights early in membership \u2014 the ~$17M is the early-membership 990 (CFP / bowl / NCAA-type flow). Full ACC media equal share is deferred (~9 years). We do not invent a year-by-year $0 TV schedule. The desk capacity stack keeps the cited $17.07M 990 distribution, labeled as non-TV / non-equal. No equal-share estimate on this card.",
           "sources": [
             {
-              "label": "WRAL \u2014 SMU $17M FY2025; no TV money early",
+              "label": "Courier-Journal \u2014 ACC FY2025 Form 990, SMU $17.07M (no TV money)",
+              "url": "https://www.courier-journal.com/story/sports/college/louisville/2026/07/21/acc-revenue-louisville-cardinals-college-football-basketball-fiscal-year-2025-federal-tax-returns/90663084007/",
+              "asOf": "2026-07-21"
+            },
+            {
+              "label": "WRAL \u2014 SMU $17M FY2025; nothing from media rights early",
               "url": "https://www.wral.com/sports/acc-revenue-record-tax-documents-average-per-school-distribution-jim-phillips-may-2026/",
               "asOf": "2026-05"
+            },
+            {
+              "label": "ESPN \u2014 SMU nine years with no broadcast media revenue (2023)",
+              "url": "https://www.espn.com/college-sports/story/_/id/38304694/sources-acc-votes-invite-stanford-cal-smu",
+              "asOf": "2023-09-01"
             }
           ]
         }
