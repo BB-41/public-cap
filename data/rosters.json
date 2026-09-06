@@ -2,7 +2,7 @@
   "meta": {
     "asOf": "2026-09-06",
     "season": 2026,
-    "notes": "Football names from ESPN public team roster JSON (2026 season). Depth ranks from Wikipedia 2026/2025 team-page depth-chart templates when present. Cited starter overrides (full name + public URL) are applied after wiki matching \u2014 SMU QB Kevin Jennings is depthRank 1 from the 2026 team-page starter note. CollegeFootballData roster API returned 401 without a key and was skipped.",
+    "notes": "Football names from ESPN public team roster JSON (2026 season), pulled after Week 1. Depth ranks from Wikipedia 2026 then 2025 CFB Team Depth Chart (wikitext API, HTML fallback). A 2026 chart beats a 2025 chart. ESPN's public depthcharts JSON was empty on this pull. Last-name depth matches require a unique last name on the ESPN roster. Cited starter overrides (full name + public URL) are applied after wiki matching \u2014 SMU QB Kevin Jennings is depthRank 1 from the 2026 team-page starter note. CollegeFootballData roster API returned 401 without a key and was skipped.",
     "sources": [
       {
         "id": "espn-roster",
@@ -11,7 +11,7 @@
       },
       {
         "id": "wikipedia-depth",
-        "label": "Wikipedia team-page depth chart (2026 then 2025)"
+        "label": "Wikipedia CFB Team Depth Chart (2026 then 2025, wikitext)"
       },
       {
         "id": "smu-jennings-starter",
@@ -30,7 +30,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/333/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_Alabama_Crimson_Tide_football_team",
       "wikiYear": 2026,
-      "depthMatched": 51,
+      "depthMatched": 48,
       "playerCount": 100,
       "players": [
         {
@@ -863,7 +863,7 @@
           "jersey": "24",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5159246/amari-sabb",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5079317",
@@ -975,7 +975,7 @@
           "jersey": "10",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5159008/jireh-edwards",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5141800",
@@ -1631,7 +1631,7 @@
           "jersey": "55",
           "unit": "specialTeam",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/4917371/alex-rozier",
-          "depthRank": 2
+          "depthRank": null
         }
       ]
     },
@@ -1644,7 +1644,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/8/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2025_Arkansas_Razorbacks_football_team",
       "wikiYear": 2025,
-      "depthMatched": 19,
+      "depthMatched": 20,
       "playerCount": 100,
       "players": [
         {
@@ -2141,7 +2141,7 @@
           "jersey": "7",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5079516/kj-jackson",
-          "depthRank": null
+          "depthRank": 2
         },
         {
           "id": "5218705",
@@ -3256,8 +3256,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Auburn_Tigers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Auburn_Tigers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -4870,8 +4870,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/57",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Florida_Gators_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Florida_Gators_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -6486,7 +6486,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/61/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_Georgia_Bulldogs_football_team",
       "wikiYear": 2026,
-      "depthMatched": 56,
+      "depthMatched": 52,
       "playerCount": 100,
       "players": [
         {
@@ -6615,7 +6615,7 @@
           "jersey": "25",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5300518/jake-bobo",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5079335",
@@ -7735,7 +7735,7 @@
           "jersey": "56",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5146898/nasir-johnson",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5146897",
@@ -7879,7 +7879,7 @@
           "jersey": "41",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5161020/carter-luckie",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5293621",
@@ -8055,7 +8055,7 @@
           "jersey": "93",
           "unit": "specialTeam",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5293624/carter-horton",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5145507",
@@ -8098,8 +8098,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/96",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/96/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Kentucky_Wildcats_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Kentucky_Wildcats_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -9712,8 +9712,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/99",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/99/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_LSU_Tigers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_LSU_Tigers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -11326,8 +11326,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/344",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/344/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Mississippi_State_Bulldogs_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Mississippi_State_Bulldogs_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -12940,8 +12940,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/142",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Missouri_Tigers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Missouri_Tigers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -14554,8 +14554,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/201",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/201/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Oklahoma_Sooners_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Oklahoma_Sooners_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -16170,7 +16170,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/145/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2025_Ole_Miss_Rebels_football_team",
       "wikiYear": 2025,
-      "depthMatched": 23,
+      "depthMatched": 19,
       "playerCount": 100,
       "players": [
         {
@@ -16347,7 +16347,7 @@
           "jersey": "89",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5150432/dylan-davis",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5147724",
@@ -16603,7 +16603,7 @@
           "jersey": "36",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5159172/jamichael-jones",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5447140",
@@ -16619,7 +16619,7 @@
           "jersey": "29",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5447140/william-jones",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "4870782",
@@ -16987,7 +16987,7 @@
           "jersey": "13",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5218770/cedrick-beavers",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5139058",
@@ -17782,8 +17782,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2579",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2579/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_South_Carolina_Gamecocks_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_South_Carolina_Gamecocks_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -19396,8 +19396,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2633",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2633/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Tennessee_Volunteers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Tennessee_Volunteers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -21012,7 +21012,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/251/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2025_Texas_Longhorns_football_team",
       "wikiYear": 2025,
-      "depthMatched": 30,
+      "depthMatched": 26,
       "playerCount": 100,
       "players": [
         {
@@ -21253,7 +21253,7 @@
           "jersey": "8",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5079376/cam-coleman",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5213678",
@@ -21269,7 +21269,7 @@
           "jersey": "58",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5213678/devin-coleman",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5195700",
@@ -21621,7 +21621,7 @@
           "jersey": "72",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5162719/nicolas-robertson",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5290598",
@@ -21957,7 +21957,7 @@
           "jersey": "53",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5293825/isaiah-coleman",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "4918434",
@@ -22624,8 +22624,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/245",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/245/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Texas_A&M_Aggies_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Texas_A&M_Aggies_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -24238,8 +24238,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/238",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/238/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Vanderbilt_Commodores_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Vanderbilt_Commodores_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -25852,8 +25852,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/356",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/356/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Illinois_Fighting_Illini_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Illinois_Fighting_Illini_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -27468,7 +27468,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/84/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2025_Indiana_Hoosiers_football_team",
       "wikiYear": 2025,
-      "depthMatched": 25,
+      "depthMatched": 23,
       "playerCount": 100,
       "players": [
         {
@@ -27549,7 +27549,7 @@
           "jersey": "12",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5211476/jacob-bell",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5209424",
@@ -28797,7 +28797,7 @@
           "jersey": "19",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5216334/zacharey-smith",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5276957",
@@ -29080,8 +29080,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2294",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2294/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Iowa_Hawkeyes_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Iowa_Hawkeyes_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -30694,8 +30694,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/120",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/120/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Maryland_Terrapins_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Maryland_Terrapins_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -32308,8 +32308,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/130",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/130/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Michigan_Wolverines_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Michigan_Wolverines_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -33922,8 +33922,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/127",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/127/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Michigan_State_Spartans_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Michigan_State_Spartans_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -35536,8 +35536,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/135",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/135/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Minnesota_Golden_Gophers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Minnesota_Golden_Gophers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -37152,7 +37152,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/158/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_Nebraska_Cornhuskers_football_team",
       "wikiYear": 2026,
-      "depthMatched": 43,
+      "depthMatched": 49,
       "playerCount": 100,
       "players": [
         {
@@ -37185,7 +37185,7 @@
           "jersey": "55",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5154344/tree-babalade",
-          "depthRank": null
+          "depthRank": 2
         },
         {
           "id": "5083370",
@@ -37697,7 +37697,7 @@
           "jersey": "22",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5141607/isaiah-mozee",
-          "depthRank": null
+          "depthRank": 1
         },
         {
           "id": "5245133",
@@ -37761,7 +37761,7 @@
           "jersey": "29",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5110168/carter-nelson",
-          "depthRank": null
+          "depthRank": 3
         },
         {
           "id": "5227018",
@@ -37777,7 +37777,7 @@
           "jersey": "35",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5227018/mekhi-nelson",
-          "depthRank": null
+          "depthRank": 2
         },
         {
           "id": "5147687",
@@ -38273,7 +38273,7 @@
           "jersey": "37",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5148418/donovan-jones",
-          "depthRank": null
+          "depthRank": 1
         },
         {
           "id": "5214503",
@@ -38289,7 +38289,7 @@
           "jersey": "80",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5214503/jeremiah-jones",
-          "depthRank": null
+          "depthRank": 3
         },
         {
           "id": "4711228",
@@ -38764,8 +38764,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/77",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/77/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Northwestern_Wildcats_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Northwestern_Wildcats_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -40380,7 +40380,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/194/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2025_Ohio_State_Buckeyes_football_team",
       "wikiYear": 2025,
-      "depthMatched": 34,
+      "depthMatched": 33,
       "playerCount": 100,
       "players": [
         {
@@ -40733,7 +40733,7 @@
           "jersey": "24",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5151892/jakobi-jackson",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5226888",
@@ -40749,7 +40749,7 @@
           "jersey": "28",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5226888/stanley-jackson-jr",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5141494",
@@ -40765,7 +40765,7 @@
           "jersey": "8",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5141494/dezie-jones",
-          "depthRank": null
+          "depthRank": 3
         },
         {
           "id": "5375131",
@@ -40925,7 +40925,7 @@
           "jersey": "69",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5079606/ian-moore",
-          "depthRank": null
+          "depthRank": 2
         },
         {
           "id": "4870885",
@@ -41133,7 +41133,7 @@
           "jersey": "65",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5276929/tucker-smith",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5141355",
@@ -41581,7 +41581,7 @@
           "jersey": "94",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/4870950/jason-moore",
-          "depthRank": null
+          "depthRank": 3
         },
         {
           "id": "4869820",
@@ -41853,7 +41853,7 @@
           "jersey": "3",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/4870969/james-smith",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "4915838",
@@ -41992,8 +41992,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2483",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2483/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Oregon_Ducks_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Oregon_Ducks_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -43606,8 +43606,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/213",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/213/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Penn_State_Nittany_Lions_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Penn_State_Nittany_Lions_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -45220,8 +45220,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2509",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2509/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Purdue_Boilermakers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Purdue_Boilermakers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -46834,8 +46834,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/164",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/164/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Rutgers_Scarlet_Knights_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Rutgers_Scarlet_Knights_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -48448,8 +48448,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/26",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/26/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_UCLA_Bruins_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_UCLA_Bruins_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -50064,7 +50064,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/30/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_USC_Trojans_football_team",
       "wikiYear": 2026,
-      "depthMatched": 36,
+      "depthMatched": 31,
       "playerCount": 100,
       "players": [
         {
@@ -50769,7 +50769,7 @@
           "jersey": "81",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5295322/cameron-sermons",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5148664",
@@ -51297,7 +51297,7 @@
           "jersey": "28",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5296208/carrington-pierce",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "4921312",
@@ -51473,7 +51473,7 @@
           "jersey": "21",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5160501/rj-sermons",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "4870993",
@@ -51553,7 +51553,7 @@
           "jersey": "46",
           "unit": "specialTeam",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/4570478/dylan-black",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5295320",
@@ -51569,7 +51569,7 @@
           "jersey": "53",
           "unit": "specialTeam",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5295320/luke-brown",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5295365",
@@ -51676,8 +51676,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/264",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/264/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Washington_Huskies_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Washington_Huskies_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -53290,8 +53290,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/275",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/275/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Wisconsin_Badgers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Wisconsin_Badgers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -54904,8 +54904,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/103",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/103/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Boston_College_Eagles_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Boston_College_Eagles_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -56518,8 +56518,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/25",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/25/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_California_Golden_Bears_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_California_Golden_Bears_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -58132,8 +58132,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/228",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/228/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Clemson_Tigers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Clemson_Tigers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -59746,8 +59746,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/150",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/150/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Duke_Blue_Devils_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Duke_Blue_Devils_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -61360,8 +61360,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/52",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/52/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Florida_State_Seminoles_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Florida_State_Seminoles_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -62974,8 +62974,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/59",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/59/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Georgia_Tech_Yellow_Jackets_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Georgia_Tech_Yellow_Jackets_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -64588,8 +64588,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/97",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/97/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Louisville_Cardinals_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Louisville_Cardinals_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -66204,7 +66204,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2390/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_Miami_Hurricanes_football_team",
       "wikiYear": 2026,
-      "depthMatched": 46,
+      "depthMatched": 45,
       "playerCount": 100,
       "players": [
         {
@@ -66301,7 +66301,7 @@
           "jersey": "6",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5156998/charmar-brown",
-          "depthRank": null
+          "depthRank": 2
         },
         {
           "id": "5141389",
@@ -66637,7 +66637,7 @@
           "jersey": "2",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5079591/jordan-lyle",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5160496",
@@ -66781,7 +66781,7 @@
           "jersey": "84",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/4685484/jack-nickel",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5141605",
@@ -67085,7 +67085,7 @@
           "jersey": "2",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/4870650/damari-brown",
-          "depthRank": null
+          "depthRank": 2
         },
         {
           "id": "5271212",
@@ -67725,7 +67725,7 @@
           "jersey": "46",
           "unit": "specialTeam",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5081246/adam-booker",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5446985",
@@ -67816,8 +67816,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/152",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/152/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_NC_State_Wolfpack_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_NC_State_Wolfpack_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -69430,8 +69430,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/153",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/153/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_North_Carolina_Tar_Heels_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_North_Carolina_Tar_Heels_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -71044,8 +71044,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/221",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/221/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Pittsburgh_Panthers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Pittsburgh_Panthers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -74274,8 +74274,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/24",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/24/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Stanford_Cardinal_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Stanford_Cardinal_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -75888,8 +75888,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/183",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/183/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Syracuse_Orange_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Syracuse_Orange_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -77502,8 +77502,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/258",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/258/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Virginia_Cavaliers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Virginia_Cavaliers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -79116,8 +79116,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/259",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/259/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Virginia_Tech_Hokies_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Virginia_Tech_Hokies_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -80730,8 +80730,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/154",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/154/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Wake_Forest_Demon_Deacons_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Wake_Forest_Demon_Deacons_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -82346,7 +82346,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/12/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_Arizona_Wildcats_football_team",
       "wikiYear": 2026,
-      "depthMatched": 64,
+      "depthMatched": 59,
       "playerCount": 100,
       "players": [
         {
@@ -83131,7 +83131,7 @@
           "jersey": "33",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5258052/kason-brown",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5119569",
@@ -83323,7 +83323,7 @@
           "jersey": "19",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5158129/max-harris",
-          "depthRank": 3
+          "depthRank": null
         },
         {
           "id": "4910223",
@@ -83819,7 +83819,7 @@
           "jersey": "24",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5377776/kingston-spivey",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "4871067",
@@ -83883,7 +83883,7 @@
           "jersey": "47",
           "unit": "specialTeam",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5446560/braxton-hart",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5153602",
@@ -83899,7 +83899,7 @@
           "jersey": "43",
           "unit": "specialTeam",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5153602/drew-nicolson",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5377778",
@@ -83958,8 +83958,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/9",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/9/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Arizona_State_Sun_Devils_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Arizona_State_Sun_Devils_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -85574,7 +85574,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/252/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_BYU_Cougars_football_team",
       "wikiYear": 2026,
-      "depthMatched": 64,
+      "depthMatched": 58,
       "playerCount": 100,
       "players": [
         {
@@ -85703,7 +85703,7 @@
           "jersey": "28",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5219644/jovesa-damuni",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5393164",
@@ -86247,7 +86247,7 @@
           "jersey": "5",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5182121/jaron-pula",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5120457",
@@ -86455,7 +86455,7 @@
           "jersey": "59",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5296281/siosefa-brown",
-          "depthRank": 3
+          "depthRank": null
         },
         {
           "id": "5296276",
@@ -86807,7 +86807,7 @@
           "jersey": "93",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5296289/kelepi-latu-finau",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5186445",
@@ -87111,7 +87111,7 @@
           "jersey": "49",
           "unit": "specialTeam",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5393165/rayden-heintz",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "5193545",
@@ -87175,7 +87175,7 @@
           "jersey": "88",
           "unit": "specialTeam",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5219114/ty-smith",
-          "depthRank": 2
+          "depthRank": null
         }
       ]
     },
@@ -87186,8 +87186,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/239",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/239/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Baylor_Bears_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Baylor_Bears_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -88800,8 +88800,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2132",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2132/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Cincinnati_Bearcats_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Cincinnati_Bearcats_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -90414,8 +90414,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/38",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/38/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Colorado_Buffaloes_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Colorado_Buffaloes_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -92028,8 +92028,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/248",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/248/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Houston_Cougars_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Houston_Cougars_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -93642,8 +93642,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/66",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/66/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Iowa_State_Cyclones_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Iowa_State_Cyclones_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -95256,8 +95256,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2305",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2305/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Kansas_Jayhawks_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Kansas_Jayhawks_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -96870,8 +96870,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2306",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2306/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Kansas_State_Wildcats_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Kansas_State_Wildcats_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -98484,8 +98484,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/197",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/197/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Oklahoma_State_Cowboys_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Oklahoma_State_Cowboys_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -100098,8 +100098,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2628",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2628/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_TCU_Horned_Frogs_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_TCU_Horned_Frogs_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -101712,8 +101712,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2641",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2641/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Texas_Tech_Red_Raiders_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Texas_Tech_Red_Raiders_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -103326,8 +103326,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/2116",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2116/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_UCF_Knights_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_UCF_Knights_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -104940,8 +104940,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/254",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/254/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_Utah_Utes_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_Utah_Utes_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -106554,8 +106554,8 @@
       "season": 2026,
       "sourceUrl": "https://www.espn.com/college-football/team/roster/_/id/277",
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/277/roster",
-      "wikiUrl": "https://en.wikipedia.org/wiki/2025_West_Virginia_Mountaineers_football_team",
-      "wikiYear": 2025,
+      "wikiUrl": "https://en.wikipedia.org/wiki/2026_West_Virginia_Mountaineers_football_team",
+      "wikiYear": 2026,
       "depthMatched": 0,
       "playerCount": 100,
       "players": [
@@ -108170,7 +108170,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/87/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_Notre_Dame_Fighting_Irish_football_team",
       "wikiYear": 2026,
-      "depthMatched": 52,
+      "depthMatched": 50,
       "playerCount": 100,
       "players": [
         {
@@ -108315,7 +108315,7 @@
           "jersey": "16",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5207580/dylan-faison",
-          "depthRank": 1
+          "depthRank": null
         },
         {
           "id": "5150424",
@@ -109179,7 +109179,7 @@
           "jersey": "90",
           "unit": "defense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5159014/elijah-golden",
-          "depthRank": 2
+          "depthRank": null
         },
         {
           "id": "4870708",

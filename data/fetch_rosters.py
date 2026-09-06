@@ -4,7 +4,8 @@
 Sources (in order):
   1. CollegeFootballData /roster — skipped when 401 (API key required).
   2. ESPN public site API team roster (2026 season current).
-  3. Wikipedia 2026 then 2025 team-page depth-chart template (starter/backup rank).
+  3. Wikipedia 2026 then 2025 CFB Team Depth Chart (wikitext API, then HTML template).
+     Post–Week 1 2026 charts win over a stale 2025 chart when present.
 
 No On3 / Opendorse / NIL Go / social scrape.
 Names are only kept if they appear on the ESPN public roster.
@@ -16,6 +17,7 @@ import json
 import re
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -42,6 +44,7 @@ DEPTH_OVERRIDES = {
 ESPN_TEAMS = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams?limit=1000"
 ESPN_ROSTER = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/{id}/roster"
 WIKI = "https://en.wikipedia.org/wiki/{title}"
+WIKI_API = "https://en.wikipedia.org/w/api.php"
 
 OVERRIDE_SLUG = {
     "ole-miss": "ole-miss-rebels",
@@ -250,9 +253,11 @@ def clean_wiki_name(raw: str) -> list[str]:
     raw = re.sub(r"<[^>]+>", "", raw)
     raw = re.sub(r"'{2,}", "", raw)
     raw = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", raw)
+    raw = re.sub(r"^\s*\d+\s+", "", raw)
     parts = re.split(r"[|/]| and ", raw)
     out = []
     for p in parts:
+        p = re.sub(r"^\d+\s+", "", p)
         p = re.sub(r"\s+", " ", p).strip(" .,;:")
         # drop position-only or school-name tokens
         if len(p) < 3 or p.upper() == p and len(p) <= 6:
@@ -337,6 +342,47 @@ def wiki_titles(team: dict) -> list[str]:
     return titles
 
 
+def parse_wiki_depth_wikitext(wt: str) -> dict[str, int]:
+    """Parse {{CFB Team Depth Chart}} / {{CFB Depth Chart}} parameter lines."""
+    ranks: dict[str, int] = {}
+    if not wt:
+        return ranks
+    for m in re.finditer(r"\{\{\s*CFB(?:\s+Team)?\s+Depth\s+Chart\b(.*)\n\}\}", wt, flags=re.I | re.S):
+        for line in m.group(1).splitlines():
+            mm = re.match(
+                r"\|\s*([A-Za-z0-9]+)_((?:Starter|Backup|Third|Reserves?))\s*=\s*(.*)",
+                line,
+                flags=re.I,
+            )
+            if not mm:
+                continue
+            slot, kind, raw = mm.group(1), mm.group(2), mm.group(3)
+            if slot.endswith("SchoolName") or slot.startswith("Key") or slot in {"OffenseRef", "DefenseRef"}:
+                continue
+            rank = 1 if kind.lower() == "starter" else 2 if kind.lower() == "backup" else 3
+            for name in clean_wiki_name(raw):
+                key = norm(name)
+                if key and (key not in ranks or rank < ranks[key]):
+                    ranks[key] = rank
+    return ranks
+
+
+def fetch_wiki_wikitext(title: str) -> tuple[int, str]:
+    q = urllib.parse.urlencode(
+        {"action": "parse", "page": title, "prop": "wikitext", "format": "json", "redirects": 1}
+    )
+    code, body = get(f"{WIKI_API}?{q}", timeout=25)
+    if code != 200:
+        return code, ""
+    try:
+        data = json.loads(body)
+    except json.JSONDecodeError:
+        return 0, ""
+    if data.get("error"):
+        return 404, ""
+    return 200, (data.get("parse") or {}).get("wikitext", {}).get("*") or ""
+
+
 def apply_depth_overrides(sid: str, players: list[dict]) -> int:
     """Apply cited starter/backup ranks. Returns newly ranked count."""
     ov = DEPTH_OVERRIDES.get(sid) or {}
@@ -359,24 +405,27 @@ def fetch_wiki_depth(team: dict) -> tuple[dict[str, int], str | None, int | None
     page_2026: tuple[str, int] | None = None
     for title in wiki_titles(team):
         url = WIKI.format(title=title.replace(" ", "_"))
-        code, body = get(url, timeout=25)
-        time.sleep(0.25)
+        year = 2026 if title.startswith("2026") else 2025
+        code, wt = fetch_wiki_wikitext(title)
+        time.sleep(0.15)
         if code != 200:
             continue
-        html = body.decode("utf-8", "replace")
-        # skip soft-404 / missing
-        if "Wikipedia does not have a" in html and "depth chart" not in html.lower():
-            continue
-        ranks = parse_wiki_depth(html)
-        year = 2026 if title.startswith("2026") else 2025
         if year == 2026:
             page_2026 = (url, year)
+        ranks = parse_wiki_depth_wikitext(wt)
+        if not ranks:
+            # HTML fallback for pages whose template JSON is not in wikitext
+            hcode, body = get(url, timeout=25)
+            time.sleep(0.15)
+            if hcode == 200:
+                html = body.decode("utf-8", "replace")
+                if "Wikipedia does not have a" not in html or "depth chart" in html.lower():
+                    ranks = parse_wiki_depth(html)
         if ranks:
             return ranks, url, year
-        # 2026 page exists but has no template — try 2025 ranks, keep the 2026 URL if 2025 is also empty
         if year == 2026:
             continue
-        if page_2026 and not ranks:
+        if page_2026:
             return {}, page_2026[0], page_2026[1]
         return {}, url, year
     if page_2026:
@@ -393,15 +442,17 @@ def main() -> None:
             "asOf": AS_OF,
             "season": 2026,
             "notes": (
-                "Football names from ESPN public team roster JSON (2026 season). "
-                "Depth ranks from Wikipedia 2026/2025 team-page depth-chart templates when present. "
+                "Football names from ESPN public team roster JSON (2026 season), pulled after Week 1. "
+                "Depth ranks from Wikipedia 2026 then 2025 CFB Team Depth Chart (wikitext API, HTML fallback). "
+                "A 2026 chart beats a 2025 chart. ESPN's public depthcharts JSON was empty on this pull. "
+                "Last-name depth matches require a unique last name on the ESPN roster. "
                 "Cited starter overrides (full name + public URL) are applied after wiki matching — "
                 "SMU QB Kevin Jennings is depthRank 1 from the 2026 team-page starter note. "
                 "CollegeFootballData roster API returned 401 without a key and was skipped."
             ),
             "sources": [
                 {"id": "espn-roster", "label": "ESPN college-football team roster API", "url": ESPN_TEAMS},
-                {"id": "wikipedia-depth", "label": "Wikipedia team-page depth chart (2026 then 2025)"},
+                {"id": "wikipedia-depth", "label": "Wikipedia CFB Team Depth Chart (2026 then 2025, wikitext)"},
                 {
                     "id": "smu-jennings-starter",
                     "label": "Wikipedia — 2026 SMU Mustangs football team (Kevin Jennings starter)",
@@ -441,17 +492,24 @@ def main() -> None:
             continue
 
         ranks, wiki_url, wiki_year = fetch_wiki_depth(team)
+        last_counts: dict[str, int] = {}
+        for p in players:
+            ln = norm(p.get("last") or "")
+            if ln:
+                last_counts[ln] = last_counts.get(ln, 0) + 1
         ranked = 0
         for p in players:
             key = norm(p["name"])
             alt = norm(f"{p['first']} {p['last']}")
             r = ranks.get(key) or ranks.get(alt)
-            # last-name unique match if exactly one
+            # last-name unique match only if that last name is unique on the roster
+            # (avoids giving Jake Bobo Drew Bobo's OL starter rank)
             if r is None and p["last"]:
                 ln = norm(p["last"])
-                hits = [v for k, v in ranks.items() if k.endswith(" " + ln) or k == ln]
-                if len(hits) == 1:
-                    r = hits[0]
+                if last_counts.get(ln, 0) == 1:
+                    hits = [v for k, v in ranks.items() if k.endswith(" " + ln) or k == ln]
+                    if len(hits) == 1:
+                        r = hits[0]
             p["depthRank"] = r  # 1/2/3 or None
             if r:
                 ranked += 1
