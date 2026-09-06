@@ -7,7 +7,8 @@ import { defTitle } from '../lib/definitions.js'
 import { earningsBack } from '../lib/earningsBack.js'
 import Layers from '../components/Layers.jsx'
 import SeasonPicker from '../components/SeasonPicker.jsx'
-import StackChart from '../components/StackChart.jsx'
+import CapacityWaterfall from '../components/CapacityWaterfall.jsx'
+import HidePendingToggle, { readHidePending, writeHidePending } from '../components/HidePendingToggle.jsx'
 import { houseValueForSeason } from '../lib/seasons.js'
 import { EMPTY_TAPE, tapeForSchool } from '../lib/tape.js'
 import TapeItems from '../components/TapeItems.jsx'
@@ -188,7 +189,7 @@ function StaffSection({ school, season }) {
           </tbody>
         </table>
       ) : (
-        <p className="fine">No cited WBB / Olympic-sport head-coach pay on the desk for this school.</p>
+        <p className="fine desk-empty">No cited WBB / Olympic-sport head-coach pay on the desk for this school.</p>
       )}
       <h3 className="roster-hed">Football assistants</h3>
       {staff.notes && <p className="fine">{staff.notes}</p>}
@@ -219,7 +220,7 @@ function StaffSection({ school, season }) {
           </tbody>
         </table>
       ) : (
-        <p className="fine">{staffEmptyAssistants(year)}</p>
+        <p className="fine desk-empty">{staffEmptyAssistants(year)}</p>
       )}
       {pool?.value != null && (
         <p className="fine">
@@ -325,7 +326,7 @@ function Collective990Lane({ cells }) {
     <div className="collective-990">
       <div className="eyebrow" title={defTitle('nilCollective990')}>Collective 990 payout (third-party filing)</div>
       {!cells.length ? (
-        <div className="field pending-box">
+        <div className="field pending-box desk-empty">
           <div className="field-val">Pending</div>
           <div className="field-meta">
             No public collective Form 990 on the desk. Empty means we looked — not that payout is zero.
@@ -407,6 +408,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
   const navigate = useNavigate()
   const didScroll = useRef(false)
   const [rosterBooks, setRosterBooks] = useState(null)
+  const [hidePending, setHidePending] = useState(readHidePending)
   const s = schools.find((x) => x.id === id)
   const openRaw = hashKey(location.hash)
   const open = isSchoolDrill(openRaw) ? openRaw : ''
@@ -444,6 +446,11 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
     navigate({ pathname: location.pathname, search: location.search, hash: next ? `#${next}` : '' }, { replace: true })
   }
 
+  function setHidePendingPref(on) {
+    setHidePending(on)
+    writeHidePending(on)
+  }
+
   if (!s) return <div className="page-wrap"><p>School not on the desk.</p></div>
   const cap = s._cap
   const house = houseValueForSeason(meta, season)
@@ -454,11 +461,12 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
   const deskTape = tapeForSchool(tape, s.id)
 
   return (
-    <div className="page-wrap school">
+    <div className={`page-wrap school${hidePending ? ' hide-pending' : ''}`}>
       <p className="crumb"><Link to={homePath({ season, includeAlumni })}>Rank list</Link> / {s.name}</p>
       <div className="school-tools">
         <SeasonPicker season={season} onChange={setSeason} id="school-season" />
         <AlumniToggle on={includeAlumni} onChange={setIncludeAlumni} id="school-alumni" />
+        <HidePendingToggle on={hidePending} onChange={setHidePendingPref} id="school-hide-pending" />
         <span className="season-note">{spec?.academic} · football {season}</span>
       </div>
       <header className="school-hed">
@@ -483,18 +491,9 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           </p>
           {s.revenueGap && <p className="gap-banner">Revenue gap: private-school tickets, sponsorships, and contributions are not on the public MFRS tape.</p>}
         </div>
-        <div className="hero-num">
-          <div className="eyebrow">{includeAlumni ? 'Annual capacity' : 'Annual capacity · booked only'}</div>
-          <div className="display">{money(includeAlumni ? cap.total : cap.booked)}</div>
-          {includeAlumni ? (
-            <div className="eyebrow">range {money(cap.totalLow)}–{money(cap.totalHigh)}</div>
-          ) : (
-            <div className="eyebrow">extra alumni excluded</div>
-          )}
-        </div>
       </header>
 
-      <StackChart
+      <CapacityWaterfall
         school={s}
         cap={cap}
         house={house}
@@ -607,9 +606,9 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         </p>
       </section>
       ) : (
-      <section>
+      <section className="desk-may-empty">
         <h2 title={defTitle('nilModeled')}>NIL modeled range</h2>
-        <p className="lede tight">
+        <p className="lede tight desk-empty">
           No modeled NIL range on the desk for this season. 2021–24 should show a
           collective-era third-party-only model; 2025–26 and 2026–27 use the House-era
           conference heuristic.
@@ -739,7 +738,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
 
       <TvContracts school={s} season={season} />
 
-      <section>
+      <section className={deskTape.length ? undefined : 'desk-may-empty'}>
         <h2 title={defTitle('tape')}>Desk tape</h2>
         <p className="lede tight">
           Filings that moved a Public Cap figure for this school. Not a news feed.
@@ -747,7 +746,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         {deskTape.length ? (
           <TapeItems items={deskTape} season={season} showSchool={false} />
         ) : (
-          <p className="lede tight">{EMPTY_TAPE}</p>
+          <p className="lede tight desk-empty">{EMPTY_TAPE}</p>
         )}
       </section>
 

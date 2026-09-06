@@ -4,7 +4,7 @@
  */
 import { readFileSync } from 'node:fs'
 import { applySeason } from '../src/lib/seasons.js'
-import { leadBookedNil, leadHouseRemaining, houseRemaining, nilBooked, ratios } from '../src/lib/compute.js'
+import { leadBookedNil, leadHouseRemaining, leftoverWaterfall, houseRemaining, nilBooked, ratios, computeCapacity } from '../src/lib/compute.js'
 import { enrichSchools } from '../src/lib/enrich.js'
 
 const data = JSON.parse(readFileSync(new URL('../data/schools.json', import.meta.url), 'utf8'))
@@ -64,6 +64,49 @@ for (const [id, expect] of Object.entries(expectYear1)) {
   const r = ratios(row, data.meta, row._season.houseKey, false)
   ok(r.nil == null, `${id} ratios() still uses overlay booked, not year1Lead`)
 }
+
+for (const [id, expect] of Object.entries(expectYear1)) {
+  const y26 = applySeason(data.schools.find((s) => s.id === id), 2026)
+  const fall = leftoverWaterfall(y26, computeCapacity(y26), false)
+  ok(fall.leftover === expect.leftover, `${id} waterfall leftover is lead leftover, not invented`)
+  ok(fall.bookedNil === expect.booked, `${id} waterfall booked NIL is the Year 1 lead cell`)
+  ok(fall.spent === y26.nil.year1Lead.houseRemaining.spent, `${id} waterfall spent is the existing House spent cell`)
+  ok(fall.steps.every((step) => step.value != null), `${id} waterfall has no pending placeholder steps`)
+  ok(fall.steps.some((step) => step.key === 'leftover' && step.hero), `${id} leftover is the waterfall hero`)
+  ok(!fall.lines.some((line) => line.field?.value == null), `${id} waterfall capacity lines are booked only`)
+}
+
+const lou26fall = leftoverWaterfall(
+  applySeason(data.schools.find((s) => s.id === 'louisville'), 2026),
+  computeCapacity(applySeason(data.schools.find((s) => s.id === 'louisville'), 2026)),
+  false,
+)
+ok(lou26fall.spent === 20_200_000, 'louisville waterfall uses $20.2M House spent, not the $32.9M FOIA window')
+ok(lou26fall.bookedNil === 32_900_000, 'louisville waterfall still cites the $32.9M booked NIL window')
+ok(lou26fall.leftover === 300_000, 'louisville leftover stays $300k')
+ok(
+  lou26fall.capacity === lou26fall.lines.reduce((sum, line) => sum + line.value, 0),
+  'louisville athletic capacity is the sum of booked stack lines',
+)
+ok(
+  Math.abs(lou26fall.capacity - lou26fall.spent - lou26fall.bookedNil - lou26fall.leftover) > 1,
+  'louisville leftover is not capacity minus House minus NIL',
+)
+
+const smu26 = applySeason(data.schools.find((s) => s.id === 'smu'), 2026)
+const smuFall = leftoverWaterfall(smu26, computeCapacity(smu26), false)
+ok(
+  smuFall.lines.some((line) => /early-membership/i.test(line.label || '')),
+  'SMU waterfall keeps the early-membership media stackLabel',
+)
+
+const ala26fall = leftoverWaterfall(
+  applySeason(data.schools.find((s) => s.id === 'alabama'), 2026),
+  computeCapacity(applySeason(data.schools.find((s) => s.id === 'alabama'), 2026)),
+  false,
+)
+ok(ala26fall.leftover == null, 'alabama waterfall does not invent leftover')
+ok(!ala26fall.steps.some((step) => step.key === 'leftover'), 'alabama waterfall has no leftover step')
 
 const texas26 = applySeason(data.schools.find((s) => s.id === 'texas'), 2026)
 const texasRaw = data.schools.find((s) => s.id === 'texas')

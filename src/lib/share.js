@@ -19,6 +19,8 @@ export const SCHOOL_DRILLS = new Set([
   'stack-extra',
   'capacity',
   'house',
+  'house-spent',
+  'leftover',
   'nil',
   'nil-modeled',
   'debt',

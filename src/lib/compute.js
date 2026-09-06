@@ -188,6 +188,146 @@ export function leadHouseRemaining(school) {
   return { value: null, field: null, carry: false, label: null }
 }
 
+/**
+ * School-page leftover waterfall. Booked cells only — no pending placeholders,
+ * no leftover invented from a cap plan, no capacity − House − NIL arithmetic.
+ *
+ * Leftover stays leadHouseRemaining (House cap − booked House spent).
+ * Capacity is displayCap. House spent is the existing leftover.field.spent.
+ */
+export function leftoverWaterfall(school, cap, includeAlumni = false) {
+  const capacity = displayCap(cap, includeAlumni)
+  const booked = leadBookedNil(school)
+  const leftover = leadHouseRemaining(school)
+  const spent =
+    leftover.field && leftover.field.spent != null && leftover.field.spent !== ''
+      ? Number(leftover.field.spent)
+      : null
+  const leftoverCap =
+    leftover.field && leftover.field.cap != null && leftover.field.cap !== ''
+      ? Number(leftover.field.cap)
+      : null
+  const sameSpentAndNil = spent != null && booked.value != null && spent === booked.value
+
+  const lines = (cap?.components || [])
+    .filter((c) => {
+      if (c.key === 'extra') return !!(includeAlumni && c.value)
+      return hasVal(c.field)
+    })
+    .map((c) =>
+      c.key === 'extra'
+        ? { ...c, rangeLow: cap.extraLow, rangeHigh: cap.extraHigh }
+        : c
+    )
+
+  const yearBit =
+    leftover.label || leftover.carry || leftover.field?.partialYear
+      ? leftover.label || YEAR1_LEAD_LABEL
+      : null
+
+  function houseSpentLabel() {
+    const ytd = leftover.field?.partialYear ? ' (YTD)' : ''
+    if (sameSpentAndNil) {
+      return `${yearBit ? `${yearBit} / booked NIL` : 'House Year 1 / booked NIL'}${ytd}`
+    }
+    return `${yearBit ? `House spent · ${yearBit}` : 'House Year 1 spent'}${ytd}`
+  }
+
+  function leftoverLabel() {
+    if (leftover.field?.overhang) return 'Leftover (House overhang)'
+    if (leftover.field?.partialYear) return 'Leftover (House remaining, YTD)'
+    if (yearBit) return `Leftover · ${yearBit}`
+    return 'Leftover'
+  }
+
+  const steps = []
+  if (lines.length) {
+    steps.push({
+      key: 'capacity',
+      op: 'start',
+      label: includeAlumni ? 'Athletic capacity' : 'Athletic capacity (booked)',
+      value: capacity,
+      field: {
+        value: capacity,
+        confidence: school?._conf?.primary || 'estimated',
+        fiscalYear: school?.capacity?.fiscalYearPrimary,
+        notes: includeAlumni
+          ? school?.capacity?.fiscalYearNote || school?.capacity?.gapNote
+          : 'Booked-only filing stack. Modeled extra alumni is excluded unless that toggle is on.',
+      },
+      hash: 'capacity',
+      lines,
+    })
+  }
+
+  if (leftoverCap != null) {
+    steps.push({
+      key: 'houseCap',
+      op: 'vs',
+      label: yearBit ? `House cap · ${yearBit}` : 'House Year 1 cap',
+      value: leftoverCap,
+      field: {
+        value: leftoverCap,
+        confidence: leftover.field?.confidence || 'reported',
+        source: leftover.field?.source,
+        url: leftover.field?.url,
+        asOf: leftover.field?.asOf,
+        notes: leftover.field?.notes,
+      },
+      hash: 'house',
+    })
+  }
+
+  if (spent != null) {
+    steps.push({
+      key: 'houseSpent',
+      op: 'minus',
+      label: houseSpentLabel(),
+      value: spent,
+      field: {
+        ...leftover.field,
+        value: spent,
+      },
+      hash: sameSpentAndNil ? 'nil' : 'house-spent',
+    })
+  }
+
+  if (booked.value != null && !sameSpentAndNil) {
+    steps.push({
+      key: 'nil',
+      op: 'cited',
+      label: booked.label ? `Booked NIL · ${booked.label}` : 'Booked NIL',
+      value: booked.value,
+      field: booked.field,
+      hash: 'nil',
+    })
+  }
+
+  if (leftover.value != null) {
+    steps.push({
+      key: 'leftover',
+      op: 'equals',
+      label: leftoverLabel(),
+      value: leftover.value,
+      field: leftover.field,
+      hash: 'leftover',
+      hero: true,
+    })
+  }
+
+  return {
+    steps,
+    lines,
+    capacity: lines.length ? capacity : null,
+    spent,
+    bookedNil: booked.value,
+    leftover: leftover.value,
+    leftoverField: leftover.field,
+    booked,
+    leftoverLead: leftover,
+  }
+}
+
 /** Third-party collective 990 cells. Never a booked House / Item 44 input. */
 export function collective990Cells(school) {
   const rows = school?.nil?.collective990
