@@ -104,9 +104,10 @@ export default function StackChart({
     <section className="stack-sec">
       <h2>Capacity stack</h2>
       <p className="lede tight">
-        Annual, not lifetime. Extra alumni giving is always shown; it enters the total only when Include modeled alumni is on.
+        Annual capacity from public filings — not total athletic revenue, and not a lifetime number.
+        Extra alumni giving is always shown; it enters the total only when Include modeled alumni is on.
         Extra is modeled and net of booked contributions when both exist.
-        Click a row for the exact dollar and the source.
+        Click a row for the exact dollar and the source. Pending stays empty.
       </p>
       <ShareBar url={url} title={title} caption={caption} onPng={png} />
       <div className="stack">

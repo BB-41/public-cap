@@ -17,11 +17,10 @@ import {
 } from './lib/loadDesk.js'
 import { CURRENT_SEASON, houseFieldForSeason, houseValueForSeason, parseSeasonParam } from './lib/seasons.js'
 import {
-  DEFAULT_TITLE,
-  PAGE_TITLES,
   applyDocumentMeta,
-  compareTitle,
-  schoolTitle,
+  coachFaTitle,
+  descriptionFromPath,
+  titleFromPath,
 } from './lib/share.js'
 import Shell, { SettingType } from './components/Shell.jsx'
 
@@ -221,8 +220,10 @@ export default function App() {
     if (kind === 'school') {
       const school = enriched?.find((s) => s.id === schoolId)
       applyDocumentMeta({
-        title: school ? schoolTitle(school.name, season) : DEFAULT_TITLE,
+        title: titleFromPath(path, { season, schoolName: school?.name }),
+        description: descriptionFromPath(path, { school, schoolName: school?.name }),
         path: schoolId ? `/school/${schoolId}` : path,
+        jsonLd: 'school',
       })
       return
     }
@@ -230,8 +231,10 @@ export default function App() {
       const A = enriched?.find((s) => s.id === params.get('a'))
       const B = enriched?.find((s) => s.id === params.get('b'))
       applyDocumentMeta({
-        title: A && B ? compareTitle(A.name, B.name, season) : PAGE_TITLES.compare,
+        title: titleFromPath(path, { season, compareNames: A && B ? [A.name, B.name] : null }),
+        description: descriptionFromPath(path),
         path: '/compare',
+        jsonLd: 'webpage',
       })
       return
     }
@@ -247,17 +250,22 @@ export default function App() {
         'deshaun-foster': 'DeShaun Foster',
         'mark-stoops': 'Mark Stoops',
       }
+      const coachName = names[coachId] || null
       applyDocumentMeta({
-        title: names[coachId]
-          ? `${names[coachId]} — Offsets / free agents — Public Cap`
-          : PAGE_TITLES.coachFa,
+        title: coachFaTitle(coachName),
+        description: descriptionFromPath(path, { coachName }),
         path,
+        jsonLd: 'webpage',
       })
       return
     }
-    const title = PAGE_TITLES[kind] || DEFAULT_TITLE
     const routePath = kind === 'home' ? '/' : path
-    applyDocumentMeta({ title, path: routePath, jsonLd: kind === 'home' })
+    applyDocumentMeta({
+      title: titleFromPath(routePath),
+      description: descriptionFromPath(routePath),
+      path: routePath,
+      jsonLd: kind === 'home' ? 'home' : 'webpage',
+    })
   }, [kind, schoolId, season, enriched, params, location.pathname])
 
   const ready =

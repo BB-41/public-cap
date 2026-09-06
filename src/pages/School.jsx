@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
-import { collectSources, collective990Cells, hasVal } from '../lib/compute.js'
+import { collectSources, collective990Cells, hasVal, leadBookedNil } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import { earningsBack } from '../lib/earningsBack.js'
@@ -320,11 +320,18 @@ function BacksThis({ school }) {
 }
 
 function Collective990Lane({ cells }) {
-  if (!cells.length) return null
   const newestFirst = [...cells].sort((a, b) => (b.taxYear || 0) - (a.taxYear || 0))
   return (
     <div className="collective-990">
-      <div className="eyebrow" title={defTitle('nilCollective990')}>Collective 990 (third-party filing)</div>
+      <div className="eyebrow" title={defTitle('nilCollective990')}>Collective 990 payout (third-party filing)</div>
+      {!cells.length ? (
+        <div className="field pending-box">
+          <div className="field-val">Pending</div>
+          <div className="field-meta">
+            No public collective Form 990 on the desk. Empty means we looked — not that payout is zero.
+          </div>
+        </div>
+      ) : null}
       {newestFirst.map((cell) => (
         <div className="field" key={`${cell.ein || cell.organization}-${cell.taxYear}-${cell.value}`}>
           <div className="field-val">
@@ -349,11 +356,12 @@ function Collective990Lane({ cells }) {
         </div>
       ))}
       <p className="collective-990-foot">
-        {cells.some((c) => /501\(c\)\(6\)/i.test(`${c.notes || ''} ${c.source || ''}`))
-          ? 'This is a third-party Form 990 (a 501(c)(6) business-league return, not a 501(c)(3)).'
-          : 'This is a third-party 501(c)(3) Form 990.'}
-        {' '}The return is lagged. It is not a House spent total, not Item 44, and not a player contract.
-        These dollars are not added to booked NIL, pre-cap, capacity, or the booked-only rank.
+        {!cells.length
+          ? 'Collective 990 payout is a third-party Form 990 lane — lagged, not a House spent total, not Item 44, and not a player contract. Empty means pending.'
+          : cells.some((c) => /501\(c\)\(6\)/i.test(`${c.notes || ''} ${c.source || ''}`))
+            ? 'This is a third-party Form 990 (a 501(c)(6) business-league return, not a 501(c)(3)). The return is lagged. It is not a House spent total, not Item 44, and not a player contract.'
+            : 'This is a third-party 501(c)(3) Form 990. The return is lagged. It is not a House spent total, not Item 44, and not a player contract.'}
+        {' '}These dollars are not added to booked NIL, pre-cap, capacity, or the booked-only rank.
         Position allocation stays on booked-then-modeled only.
       </p>
     </div>
@@ -458,6 +466,21 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         <div>
           <div className="kicker">{s.conference} · {s.city}{s.private ? ' · private' : ''}</div>
           <h1>{s.name}</h1>
+          <p className="lede school-dek">
+            {s.revenueGap || s.private
+              ? `${s.name} football revenue on this desk is the booked capacity stack from public filings — not a full athletic-revenue total. Private tickets, sponsorships, and contributions stay pending.`
+              : `Two ceilings, then booked NIL: the House benefits cap versus what ${s.name} can actually write this year from public filings (annual capacity — not total athletic revenue).`}
+            {' '}Booked NIL is the official institutional number when a filing exists — the public stand-in for an NIL budget.
+            {' '}Collective 990 payout is a separate cited lane, not House.
+            {' '}Student fees on this desk are not tuition.
+            {' '}Pending stays empty.
+          </p>
+          <p className="lane-status">
+            <span>Capacity <b>booked stack</b></span>
+            <span>House cap <b>{house == null ? 'none (pre-settlement)' : season >= 2026 ? '2026–27' : '2025–26'}</b></span>
+            <span>Booked NIL <b>{leadBookedNil(s).value != null ? 'cited' : 'pending'}</b></span>
+            <span>Collective payout <b>{collective990Cells(s).some((c) => c.value != null) ? 'cited' : 'pending'}</b></span>
+          </p>
           {s.revenueGap && <p className="gap-banner">Revenue gap: private-school tickets, sponsorships, and contributions are not on the public MFRS tape.</p>}
         </div>
         <div className="hero-num">
@@ -526,7 +549,11 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
       </div>
 
       <section>
-        <h2 title={defTitle('nil')}>NIL booked band</h2>
+        <h2 title={defTitle('nil')}>Booked NIL</h2>
+        <p className="lede tight">
+          Official institutional NIL when a FOIA, MFRS, or counsel filing exists — the public stand-in for an NIL budget.
+          Collective 990 payout is a separate cited lane below. Empty means pending, not zero.
+        </p>
         <Field field={s.nil.booked} fallback="Empty / pending. FOIA, MFRS institutional NIL, or counsel spent totals only. Official House / Item 44 number when it exists. Collective 990 is a separate lane below." />
         {hasVal(s.nil.preCap) && (
           <div className="subfield">

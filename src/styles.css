@@ -168,6 +168,18 @@ table.rank .conf { color: var(--paper-dim); font-size: 13px; }
 
 .school-hed { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); padding-bottom: 20px; margin-bottom: 28px; }
 .school-hed h1 { font-family: Arial, Helvetica, system-ui, sans-serif; font-size: clamp(36px, 6vw, 64px); margin: 6px 0 0; letter-spacing: -0.03em; }
+.school-dek { margin: 10px 0 0; max-width: 38rem; font-size: 15px; }
+.lane-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 12px 0 0;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.lane-status b { color: var(--paper-dim); font-weight: 650; }
 .hero-num { text-align: right; }
 .display { font-family: Arial, Helvetica, system-ui, sans-serif; font-weight: 650; font-size: 48px; letter-spacing: -0.03em; line-height: 1; }
 .display.sm { font-size: 26px; }
@@ -333,6 +345,8 @@ table.rank thead th {
 .logo-lg { border-radius: 14px; }
 
 .school-hed { align-items: center; }
+.page-wrap.school .school-hed { align-items: flex-start; }
+.page-wrap.school .school-hed > div:not(.hero-num) { flex: 1 1 24rem; }
 .picker-row { display: flex; align-items: center; gap: 10px; }
 .compare-name { display: inline-flex; align-items: center; gap: 10px; }
 

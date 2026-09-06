@@ -5,7 +5,7 @@ import ShareBar from '../components/ShareBar.jsx'
 import { defTitle } from '../lib/definitions.js'
 import { money, moneyExact } from '../lib/format.js'
 import { formatLongDate } from '../lib/buyout.js'
-import { canonicalUrl, downloadCoachFaPng } from '../lib/share.js'
+import { canonicalUrl, coachFaTitle, downloadCoachFaPng } from '../lib/share.js'
 import {
   INDEX_FILTERS,
   JOB_TYPES,
@@ -379,7 +379,7 @@ function CoachFaDetail({ book, schools, coachId }) {
 
       <ShareBar
         url={canonicalUrl(share)}
-        title={`${coach.name} — Offsets / free agents — Public Cap`}
+        title={coachFaTitle(coach.name)}
         caption={shareCaption({
           coach,
           prior,
