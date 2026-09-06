@@ -97,7 +97,12 @@ export function computeCapacity(school) {
     totalHigh: booked + alumni.extraHigh,
     alumni,
     components: [
-      { key: 'media', label: 'Media / conference', value: media, field: c.mediaConference },
+      {
+        key: 'media',
+        label: c.mediaConference?.stackLabel || 'Media / conference',
+        value: media,
+        field: c.mediaConference,
+      },
       { key: 'spon', label: 'Sponsorships / licensing', value: spon, field: c.sponsorships },
       { key: 'tix', label: 'Tickets / premium gate', value: tick, field: c.tickets },
       { key: 'give', label: 'Athletic contributions booked', value: contrib, field: c.contributions },
