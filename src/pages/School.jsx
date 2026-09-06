@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
-import { collectSources, collective990Cells, hasVal, leadBookedNil } from '../lib/compute.js'
+import { collectSources, collective990Cells, hasVal, leadBookedNil, leadHouseRemaining } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import { earningsBack } from '../lib/earningsBack.js'
@@ -457,6 +457,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
   const houseField = s._houseField
   const spec = s._season
   const nil = s._ratios.nil
+  const leftoverLead = leadHouseRemaining(s)
   const sources = collectSources(s, meta)
   const deskTape = tapeForSchool(tape, s.id)
 
@@ -490,6 +491,27 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             <span>Collective payout <b>{collective990Cells(s).some((c) => c.value != null) ? 'cited' : 'pending'}</b></span>
           </p>
           {s.revenueGap && <p className="gap-banner">Revenue gap: private-school tickets, sponsorships, and contributions are not on the public MFRS tape.</p>}
+        </div>
+        <div className="hero-num">
+          {leftoverLead.value != null ? (
+            <>
+              <div className="eyebrow" title={defTitle('houseRemaining')}>
+                Leftover{leftoverLead.label ? ` · ${leftoverLead.label}` : leftoverLead.field?.partialYear ? ' · YTD' : ''}
+              </div>
+              <div className="display">{money(leftoverLead.value)}</div>
+              <div className="eyebrow">House remaining · booked</div>
+            </>
+          ) : (
+            <>
+              <div className="eyebrow">{includeAlumni ? 'Annual capacity' : 'Annual capacity · booked only'}</div>
+              <div className="display">{money(includeAlumni ? cap.total : cap.booked)}</div>
+              {includeAlumni ? (
+                <div className="eyebrow">range {money(cap.totalLow)}–{money(cap.totalHigh)}</div>
+              ) : (
+                <div className="eyebrow">extra alumni excluded</div>
+              )}
+            </>
+          )}
         </div>
       </header>
 

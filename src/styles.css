@@ -304,8 +304,13 @@ h2 { font-family: Arial, Helvetica, system-ui, sans-serif; font-weight: 650; fon
 }
 
 @media (max-width: 800px) {
-  .waterfall-row { grid-template-columns: 1.8rem 1fr auto; padding: 12px 4px; }
+  .waterfall-row { grid-template-columns: 1.8rem minmax(0, 1fr) auto; padding: 12px 4px; }
   .waterfall-lines { padding-left: 2.4rem; }
+  .waterfall-lab { font-size: 13px; }
+  .waterfall-val { font-size: 13px; }
+  .waterfall-val.display { font-size: clamp(28px, 10vw, 40px); min-height: 0; }
+  .page-wrap.school .school-hed > div:not(.hero-num) { flex: 1 1 100%; min-width: 0; }
+  .page-wrap.school .hero-num { text-align: left; }
 }
 
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }

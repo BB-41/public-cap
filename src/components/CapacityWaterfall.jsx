@@ -166,11 +166,9 @@ export default function CapacityWaterfall({
     <section className="waterfall-sec">
       <h2 title={defTitle('houseRemaining')}>Capacity vs House vs booked NIL</h2>
       <p className="lede tight">
-        Athletic capacity is the booked filing stack — not total athletic revenue.
-        Leftover is House remaining (published cap minus booked House spent) when that
-        spent cell exists. We do not invent leftover from a cap plan, and we do not
-        subtract capacity or a second NIL figure into leftover.
-        Click a row for the exact dollar and the source.
+        Booked filing stack, then House Year-1 spent, then booked NIL.
+        Leftover is House remaining when a spent cell exists — not capacity minus those
+        lines, and not a cap-plan leftover. Click a row for the source.
       </p>
       <ShareBar url={url} title={title} caption={caption} onPng={png} />
       <div className="waterfall">
