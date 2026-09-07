@@ -8,7 +8,8 @@ Sources (in order):
      Post–Week 1 2026 charts win over a stale 2025 chart when present.
 
 No On3 / Opendorse / NIL Go / social scrape.
-Names are only kept if they appear on the ESPN public roster.
+Names are kept from the ESPN public team roster, plus cited ESPN athlete
+records that are missing from that JSON (see ROSTER_ADDITIONS).
 """
 
 from __future__ import annotations
@@ -38,8 +39,83 @@ DEPTH_OVERRIDES = {
             "source": "Wikipedia — 2026 SMU Mustangs football team: third consecutive year as the starter",
             "url": "https://en.wikipedia.org/wiki/2026_SMU_Mustangs_football_team",
         }
-    }
+    },
+    "washington": {
+        "Demond Williams Jr.": {
+            "depthRank": 1,
+            "source": "ESPN Apple Cup box score (Washington vs Washington State, Sep 6, 2026): started and completed every Washington pass (24/35, 268 yards, 1 TD)",
+            "url": "https://www.espn.com/college-football/boxscore/_/gameId/401858437",
+        }
+    },
+    "wisconsin": {
+        "Colton Joseph": {
+            "depthRank": 1,
+            "source": "ESPN box score (Wisconsin at Notre Dame, Sep 6, 2026): started at QB",
+            "url": "https://www.espn.com/college-football/boxscore/_/gameId/401858438",
+        }
+    },
+    "louisville": {
+        "Lincoln Kienholz": {
+            "depthRank": 1,
+            "source": "ESPN box score (Louisville at Ole Miss, Sep 6, 2026): started at QB",
+            "url": "https://www.espn.com/college-football/boxscore/_/gameId/401856661",
+        }
+    },
 }
+
+# Players confirmed on a public ESPN athlete record / box score but missing
+# from the team roster JSON. Injected before depth matching so a cited
+# override can attach. Do not invent class/jersey — copy the ESPN athlete file.
+ROSTER_ADDITIONS = {
+    "washington": [
+        {
+            "id": "5079653",
+            "name": "Demond Williams Jr.",
+            "first": "Demond",
+            "last": "Williams Jr.",
+            "pos": "QB",
+            "posName": "Quarterback",
+            "family": "qb",
+            "class": "JR",
+            "className": "Junior",
+            "years": 3,
+            "jersey": "1",
+            "unit": "offense",
+            "playerUrl": "https://www.espn.com/college-football/player/_/id/5079653/demond-williams-jr",
+        }
+    ]
+}
+
+CITED_STARTER_SOURCES = [
+    {
+        "id": "smu-jennings-starter",
+        "label": "Wikipedia — 2026 SMU Mustangs football team (Kevin Jennings starter)",
+        "url": "https://en.wikipedia.org/wiki/2026_SMU_Mustangs_football_team",
+    },
+    {
+        "id": "washington-williams-starter",
+        "label": "ESPN box score — Apple Cup (Demond Williams Jr. started)",
+        "url": "https://www.espn.com/college-football/boxscore/_/gameId/401858437",
+    },
+    {
+        "id": "wisconsin-joseph-starter",
+        "label": "ESPN box score — Wisconsin at Notre Dame (Colton Joseph started)",
+        "url": "https://www.espn.com/college-football/boxscore/_/gameId/401858438",
+    },
+    {
+        "id": "louisville-kienholz-starter",
+        "label": "ESPN box score — Louisville at Ole Miss (Lincoln Kienholz started)",
+        "url": "https://www.espn.com/college-football/boxscore/_/gameId/401856661",
+    },
+]
+
+CITED_STARTER_NOTES = (
+    "Cited starter overrides (full name + public URL) are applied after wiki matching — "
+    "SMU QB Kevin Jennings is depthRank 1 from the 2026 team-page starter note; "
+    "Washington Demond Williams Jr., Wisconsin Colton Joseph, and Louisville Lincoln Kienholz "
+    "are depthRank 1 from Sep 6, 2026 ESPN box scores. "
+    "Demond Williams Jr. is injected from the ESPN athlete record when absent from the team roster JSON."
+)
 
 ESPN_TEAMS = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams?limit=1000"
 ESPN_ROSTER = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/{id}/roster"
@@ -383,6 +459,28 @@ def fetch_wiki_wikitext(title: str) -> tuple[int, str]:
     return 200, (data.get("parse") or {}).get("wikitext", {}).get("*") or ""
 
 
+def apply_roster_additions(sid: str, players: list[dict]) -> int:
+    """Inject cited ESPN athletes missing from the team roster JSON. Returns added count."""
+    extras = ROSTER_ADDITIONS.get(sid) or []
+    if not extras:
+        return 0
+    have_ids = {p.get("id") for p in players}
+    have_names = {norm(p.get("name") or "") for p in players}
+    added = 0
+    for extra in extras:
+        eid = str(extra.get("id") or "")
+        ename = norm(extra.get("name") or "")
+        if (eid and eid in have_ids) or (ename and ename in have_names):
+            continue
+        players.append(dict(extra))
+        if eid:
+            have_ids.add(eid)
+        if ename:
+            have_names.add(ename)
+        added += 1
+    return added
+
+
 def apply_depth_overrides(sid: str, players: list[dict]) -> int:
     """Apply cited starter/backup ranks. Returns newly ranked count."""
     ov = DEPTH_OVERRIDES.get(sid) or {}
@@ -399,6 +497,13 @@ def apply_depth_overrides(sid: str, players: list[dict]) -> int:
         p["depthSource"] = hit.get("source")
         p["depthUrl"] = hit.get("url")
     return added
+
+
+def write_roster_files(out: dict) -> None:
+    OUT.write_text(json.dumps(out, indent=2))
+    compact = json.dumps(out, separators=(",", ":"))
+    PUBLIC_2026.write_text(compact)
+    PUBLIC_LEGACY.write_text(compact)
 
 
 def fetch_wiki_depth(team: dict) -> tuple[dict[str, int], str | None, int | None]:
@@ -446,18 +551,13 @@ def main() -> None:
                 "Depth ranks from Wikipedia 2026 then 2025 CFB Team Depth Chart (wikitext API, HTML fallback). "
                 "A 2026 chart beats a 2025 chart. ESPN's public depthcharts JSON was empty on this pull. "
                 "Last-name depth matches require a unique last name on the ESPN roster. "
-                "Cited starter overrides (full name + public URL) are applied after wiki matching — "
-                "SMU QB Kevin Jennings is depthRank 1 from the 2026 team-page starter note. "
+                + CITED_STARTER_NOTES + " "
                 "CollegeFootballData roster API returned 401 without a key and was skipped."
             ),
             "sources": [
                 {"id": "espn-roster", "label": "ESPN college-football team roster API", "url": ESPN_TEAMS},
                 {"id": "wikipedia-depth", "label": "Wikipedia CFB Team Depth Chart (2026 then 2025, wikitext)"},
-                {
-                    "id": "smu-jennings-starter",
-                    "label": "Wikipedia — 2026 SMU Mustangs football team (Kevin Jennings starter)",
-                    "url": "https://en.wikipedia.org/wiki/2026_SMU_Mustangs_football_team",
-                },
+                *CITED_STARTER_SOURCES,
             ],
         },
         "schools": {},
@@ -486,6 +586,7 @@ def main() -> None:
             out["failed"].append({"id": sid, "reason": "ESPN roster not JSON"})
             continue
         players = parse_espn_roster(payload)
+        apply_roster_additions(sid, players)
         season = (payload.get("season") or {}).get("year")
         if not players:
             out["failed"].append({"id": sid, "reason": "ESPN roster empty"})
@@ -530,15 +631,55 @@ def main() -> None:
         }
         print(f"    {len(players)} players, {ranked} depth-matched, wiki={wiki_year}", flush=True)
 
-    OUT.write_text(json.dumps(out, indent=2))
-    compact = json.dumps(out, separators=(",", ":"))
-    PUBLIC_2026.write_text(compact)
-    PUBLIC_LEGACY.write_text(compact)
+    write_roster_files(out)
     named = sum(1 for v in out["schools"].values() if v.get("playerCount"))
     players = sum(v.get("playerCount", 0) for v in out["schools"].values())
     print(f"Wrote {OUT}, {PUBLIC_2026}, and {PUBLIC_LEGACY}")
     print(f"Schools with names: {named}/{n}; players: {players}; failed: {out['failed']}")
 
 
+def apply_overrides_only() -> None:
+    """Re-apply cited additions/overrides to the on-desk roster files without a live ESPN pull."""
+    out = json.loads(OUT.read_text())
+    notes = out.setdefault("meta", {}).get("notes") or ""
+    marker = "Cited starter overrides (full name + public URL)"
+    if marker in notes:
+        prefix, _sep, rest = notes.partition(marker)
+        # Drop the old cited-override sentence; keep the CFBD skip if present.
+        after = rest
+        if "CollegeFootballData" in after:
+            after = "CollegeFootballData" + after.split("CollegeFootballData", 1)[1]
+        else:
+            after = after.split(". ", 1)[-1] if ". " in after else ""
+        out["meta"]["notes"] = (prefix + CITED_STARTER_NOTES + (" " + after if after else "")).strip()
+    elif CITED_STARTER_NOTES not in notes:
+        out["meta"]["notes"] = (notes.rstrip() + " " + CITED_STARTER_NOTES).strip()
+    sources = out.setdefault("meta", {}).setdefault("sources", [])
+    have = {s.get("id") for s in sources}
+    for src in CITED_STARTER_SOURCES:
+        if src["id"] not in have:
+            sources.append(src)
+            have.add(src["id"])
+    schools = out.get("schools") or {}
+    for sid in sorted(set(ROSTER_ADDITIONS) | set(DEPTH_OVERRIDES)):
+        school = schools.get(sid)
+        if not school:
+            continue
+        players = school.get("players") or []
+        added = apply_roster_additions(sid, players)
+        ranked = apply_depth_overrides(sid, players)
+        school["players"] = players
+        school["playerCount"] = len(players)
+        school["depthMatched"] = sum(1 for p in players if p.get("depthRank"))
+        print(f"{sid}: +{added} roster rows, {ranked} cited ranks, depthMatched={school['depthMatched']}")
+    write_roster_files(out)
+    print(f"Wrote {OUT}, {PUBLIC_2026}, and {PUBLIC_LEGACY}")
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+
+    if "--apply-overrides-only" in sys.argv:
+        apply_overrides_only()
+    else:
+        main()

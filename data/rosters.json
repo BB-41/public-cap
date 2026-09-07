@@ -2,7 +2,7 @@
   "meta": {
     "asOf": "2026-09-06",
     "season": 2026,
-    "notes": "Football names from ESPN public team roster JSON (2026 season), pulled after Week 1. Depth ranks from Wikipedia 2026 then 2025 CFB Team Depth Chart (wikitext API, HTML fallback). A 2026 chart beats a 2025 chart. ESPN's public depthcharts JSON was empty on this pull. Last-name depth matches require a unique last name on the ESPN roster. Cited starter overrides (full name + public URL) are applied after wiki matching \u2014 SMU QB Kevin Jennings is depthRank 1 from the 2026 team-page starter note. CollegeFootballData roster API returned 401 without a key and was skipped.",
+    "notes": "Football names from ESPN public team roster JSON (2026 season), pulled after Week 1. Depth ranks from Wikipedia 2026 then 2025 CFB Team Depth Chart (wikitext API, HTML fallback). A 2026 chart beats a 2025 chart. ESPN's public depthcharts JSON was empty on this pull. Last-name depth matches require a unique last name on the ESPN roster. Cited starter overrides (full name + public URL) are applied after wiki matching \u2014 SMU QB Kevin Jennings is depthRank 1 from the 2026 team-page starter note; Washington Demond Williams Jr., Wisconsin Colton Joseph, and Louisville Lincoln Kienholz are depthRank 1 from Sep 6, 2026 ESPN box scores. Demond Williams Jr. is injected from the ESPN athlete record when absent from the team roster JSON. CollegeFootballData roster API returned 401 without a key and was skipped.",
     "sources": [
       {
         "id": "espn-roster",
@@ -17,6 +17,21 @@
         "id": "smu-jennings-starter",
         "label": "Wikipedia \u2014 2026 SMU Mustangs football team (Kevin Jennings starter)",
         "url": "https://en.wikipedia.org/wiki/2026_SMU_Mustangs_football_team"
+      },
+      {
+        "id": "washington-williams-starter",
+        "label": "ESPN box score \u2014 Apple Cup (Demond Williams Jr. started)",
+        "url": "https://www.espn.com/college-football/boxscore/_/gameId/401858437"
+      },
+      {
+        "id": "wisconsin-joseph-starter",
+        "label": "ESPN box score \u2014 Wisconsin at Notre Dame (Colton Joseph started)",
+        "url": "https://www.espn.com/college-football/boxscore/_/gameId/401858438"
+      },
+      {
+        "id": "louisville-kienholz-starter",
+        "label": "ESPN box score \u2014 Louisville at Ole Miss (Lincoln Kienholz started)",
+        "url": "https://www.espn.com/college-football/boxscore/_/gameId/401856661"
       }
     ]
   },
@@ -51678,8 +51693,8 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/264/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_Washington_Huskies_football_team",
       "wikiYear": 2026,
-      "depthMatched": 0,
-      "playerCount": 100,
+      "depthMatched": 1,
+      "playerCount": 101,
       "players": [
         {
           "id": "5294119",
@@ -53280,6 +53295,24 @@
           "unit": "specialTeam",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5209506/cj-wallace",
           "depthRank": null
+        },
+        {
+          "id": "5079653",
+          "name": "Demond Williams Jr.",
+          "first": "Demond",
+          "last": "Williams Jr.",
+          "pos": "QB",
+          "posName": "Quarterback",
+          "family": "qb",
+          "class": "JR",
+          "className": "Junior",
+          "years": 3,
+          "jersey": "1",
+          "unit": "offense",
+          "playerUrl": "https://www.espn.com/college-football/player/_/id/5079653/demond-williams-jr",
+          "depthRank": 1,
+          "depthSource": "ESPN Apple Cup box score (Washington vs Washington State, Sep 6, 2026): started and completed every Washington pass (24/35, 268 yards, 1 TD)",
+          "depthUrl": "https://www.espn.com/college-football/boxscore/_/gameId/401858437"
         }
       ]
     },
@@ -53292,7 +53325,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/275/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_Wisconsin_Badgers_football_team",
       "wikiYear": 2026,
-      "depthMatched": 0,
+      "depthMatched": 1,
       "playerCount": 100,
       "players": [
         {
@@ -53741,7 +53774,9 @@
           "jersey": "1",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5125715/colton-joseph",
-          "depthRank": null
+          "depthRank": 1,
+          "depthSource": "ESPN box score (Wisconsin at Notre Dame, Sep 6, 2026): started at QB",
+          "depthUrl": "https://www.espn.com/college-football/boxscore/_/gameId/401858438"
         },
         {
           "id": "4833363",
@@ -64590,7 +64625,7 @@
       "sourceApi": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/97/roster",
       "wikiUrl": "https://en.wikipedia.org/wiki/2026_Louisville_Cardinals_football_team",
       "wikiYear": 2026,
-      "depthMatched": 0,
+      "depthMatched": 1,
       "playerCount": 100,
       "players": [
         {
@@ -65055,7 +65090,9 @@
           "jersey": "3",
           "unit": "offense",
           "playerUrl": "https://www.espn.com/college-football/player/_/id/5078278/lincoln-kienholz",
-          "depthRank": null
+          "depthRank": 1,
+          "depthSource": "ESPN box score (Louisville at Ole Miss, Sep 6, 2026): started at QB",
+          "depthUrl": "https://www.espn.com/college-football/boxscore/_/gameId/401856661"
         },
         {
           "id": "4893702",
