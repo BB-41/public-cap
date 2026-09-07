@@ -285,12 +285,31 @@ ok(/9 years|nine years/i.test(smuMedia.notes || ''), 'SMU media notes cite the ~
 ok(/early-membership/i.test(smuMedia.stackLabel || ''), 'SMU stack label is early-membership 990, not full ACC TV')
 
 const rosters2026 = JSON.parse(readFileSync(new URL('../public/data/rosters-2026.json', import.meta.url), 'utf8'))
+const rostersData = JSON.parse(readFileSync(new URL('../data/rosters.json', import.meta.url), 'utf8'))
+const rostersPublic = JSON.parse(readFileSync(new URL('../public/data/rosters.json', import.meta.url), 'utf8'))
+ok(JSON.stringify(rosters2026) === JSON.stringify(rostersPublic), 'public/data/rosters.json matches rosters-2026.json')
+ok(JSON.stringify(rostersData) === JSON.stringify(rosters2026), 'data/rosters.json synced to public/data')
 const smuPlayers = rosters2026.schools?.smu?.players || []
 const jennings = smuPlayers.find((p) => p.name === 'Kevin Jennings')
 ok(jennings?.depthRank === 1, 'Kevin Jennings is SMU QB depthRank 1')
 ok(/^https:\/\/en\.wikipedia\.org\//i.test(jennings?.depthUrl || ''), 'Jennings starter cite is the 2026 Wikipedia team page')
 const otherSmuQbRanked = smuPlayers.filter((p) => p.family === 'qb' && p.name !== 'Kevin Jennings' && p.depthRank)
 ok(otherSmuQbRanked.length === 0, 'other SMU QBs stay unranked without a cite')
+
+function citedQb1(sid, name, gameId) {
+  const players = rosters2026.schools?.[sid]?.players || []
+  const p = players.find((row) => row.name === name)
+  ok(p, `${name} is on the ${sid} roster`)
+  ok(p?.depthRank === 1, `${name} is ${sid} QB depthRank 1`)
+  ok((p?.depthUrl || '').includes(`gameId/${gameId}`), `${name} cite is ESPN box ${gameId}`)
+  const otherRanked = players.filter((row) => row.family === 'qb' && row.name !== name && row.depthRank === 1)
+  ok(otherRanked.length === 0, `no other ${sid} QB is depthRank 1`)
+  return p
+}
+const williams = citedQb1('washington', 'Demond Williams Jr.', '401858437')
+ok(williams?.id === '5079653' && williams?.jersey === '1' && williams?.pos === 'QB', 'Demond Williams Jr. is ESPN 5079653 / #1 / QB')
+citedQb1('wisconsin', 'Colton Joseph', '401858438')
+citedQb1('louisville', 'Lincoln Kienholz', '401856661')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} desk-calc checks passed`)

@@ -299,6 +299,24 @@ console.log(
   `2026 Miami QBs: ${qbs(miaNamed).map((p) => `${p.name} ${p.band}/${p.units} mid ${p.mid}`).join(' · ')}`
 )
 
+for (const [id, name] of [
+  ['washington', 'Demond Williams Jr.'],
+  ['wisconsin', 'Colton Joseph'],
+  ['louisville', 'Lincoln Kienholz'],
+]) {
+  const row = y26.find((r) => r.school.id === id)
+  const named = allocateNamedPlayers(book26.schools[id], row.modeled, scaleRosterToModeled(row.modeled))
+  const starter = qbs(named).find((p) => p.name === name)
+  if (!starter || starter.band !== 'qb1' || starter.role !== 'starter' || starter.units !== 100) {
+    throw new Error(`${id} ${name} should be verified QB1, got ${starter && `${starter.band}/${starter.role}/${starter.units}`}`)
+  }
+  const listed = qbs(named).filter((p) => p.name !== name && p.band === 'qb1')
+  if (listed.length) {
+    throw new Error(`${id} listed-order still seated ${listed.map((p) => p.name).join(', ')} as QB1`)
+  }
+  console.log(`2026 ${id} QB1: ${starter.name} ${starter.band}/${starter.units} via ${starter.via}`)
+}
+
 const bookedEntry = {
   playerCount: 85,
   players: [
