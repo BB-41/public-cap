@@ -831,7 +831,7 @@ function EfficiencySection({ school }) {
 function BuyoutsPaidSection({ layer }) {
   const rows = layer?.buyoutsPaid || []
   return (
-    <section>
+    <section className={rows.length ? undefined : 'desk-may-empty'}>
       <h2 title={defTitle('buyoutPaid')}>Buyouts actually paid</h2>
       <p className="lede tight">
         Not the if-fired overhang on the current coach. Money the school actually
