@@ -31,6 +31,26 @@ const Tape = lazy(() => import('./pages/Tape.jsx'))
 const Tv = lazy(() => import('./pages/Tv.jsx'))
 const Buyout = lazy(() => import('./pages/Buyout.jsx'))
 const CoachFa = lazy(() => import('./pages/CoachFa.jsx'))
+const DeskChat = lazy(() => import('./components/DeskChat.jsx'))
+
+function IdleDeskChat({ desk, season, includeAlumni }) {
+  const [show, setShow] = useState(false)
+  useEffect(() => {
+    const start = () => setShow(true)
+    if (typeof requestIdleCallback === 'function') {
+      const id = requestIdleCallback(start, { timeout: 4000 })
+      return () => cancelIdleCallback(id)
+    }
+    const t = setTimeout(start, 2000)
+    return () => clearTimeout(t)
+  }, [])
+  if (!show) return null
+  return (
+    <Suspense fallback={null}>
+      <DeskChat desk={desk} season={season} includeAlumni={includeAlumni} />
+    </Suspense>
+  )
+}
 
 export default function App() {
   const [params] = useSearchParams()
@@ -335,6 +355,7 @@ export default function App() {
           </Routes>
         </Suspense>
       )}
+      <IdleDeskChat desk={desk} season={season} includeAlumni={includeAlumni} />
     </Shell>
   )
 }

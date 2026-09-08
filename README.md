@@ -13,6 +13,32 @@ npm run preview
 Data: public/data/schools.json
 Logos: public/logos/*.png (local files, not hotlinked).
 
+## Desk chat
+
+Fixed “Ask the desk” drawer (idle-loaded, not in the homepage hero). Local lookup
+against the public JSON — no API key, no hosted model. Empty cells stay pending.
+Booked and modeled stay distinct. Leftover is House cap − booked House spent
+when that cell exists, not capacity − House − NIL.
+
+```
+npm run dev
+# click Ask the desk (bottom right) after the rank list paints
+```
+
+Example questions that return real booked figures:
+
+- What's Louisville's leftover / House spent / booked NIL?
+  → leftover $300k · House spent $20.2M · booked NIL $32.9M (House Year 1)
+- Which schools have booked House spent?
+  → Louisville, Kentucky, Texas (YTD), UCLA, California
+- What's SMU's conference media line — is it full TV?
+  → $17.07M FY2025 ACC 990; not a full TV equal share
+- Who is Washington's starting QB on the roster?
+  → Demond Williams Jr. (cited ESPN box score)
+- Compare Louisville and Kentucky leftover
+  → $300k vs $2.5M
+- What does leftover mean?
+
 
 ## Seasons
 

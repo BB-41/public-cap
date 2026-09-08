@@ -1,6 +1,5 @@
 /** TV / media-rights overlay. Conference deals, not 68 school contracts. */
 
-import { useEffect, useState } from 'react'
 import { CURRENT_SEASON } from './seasons.js'
 
 export const CONF_KEY = {
@@ -9,25 +8,6 @@ export const CONF_KEY = {
   ACC: 'ACC',
   'Big 12': 'Big 12',
   'Independent / ACC': 'ACC',
-}
-
-export function useTvBook() {
-  const [book, setBook] = useState(null)
-  useEffect(() => {
-    let cancelled = false
-    fetch('/data/tv.json')
-      .then((r) => (r.ok ? r.json() : null))
-      .then((j) => {
-        if (!cancelled) setBook(j)
-      })
-      .catch(() => {
-        if (!cancelled) setBook(null)
-      })
-    return () => {
-      cancelled = true
-    }
-  }, [])
-  return book
 }
 
 export function remainingSeasons(termEnd, season = CURRENT_SEASON) {

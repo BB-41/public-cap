@@ -1063,7 +1063,179 @@ table.rank th.rk { cursor: default; }
 }
 .coach-fa-page .pending-box { margin: 12px 0; }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Fixed drawer — out of document flow so homepage LCP/CLS stay put. */
+.desk-chat {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 20;
+  pointer-events: none;
+}
+.desk-chat-launch,
+.desk-chat-panel,
+.desk-chat-form,
+.desk-chat-suggest {
+  pointer-events: auto;
+}
+.desk-chat-launch {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--ink-2);
+  color: var(--paper);
+  border: 1px solid var(--gold);
+  padding: 10px 14px;
+  cursor: pointer;
+  min-width: 8.5rem;
+  min-height: 2.5rem;
+}
+.desk-chat-launch:hover,
+.desk-chat-launch:focus-visible {
+  background: var(--paper);
+  color: var(--ink);
+  outline: none;
+}
+.desk-chat-panel {
+  position: absolute;
+  right: 0;
+  bottom: 48px;
+  width: min(420px, calc(100vw - 24px));
+  height: min(560px, calc(100vh - 96px));
+  display: flex;
+  flex-direction: column;
+  background: var(--ink);
+  border: 1px solid var(--rule);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  padding: 14px 14px 12px;
+}
+.desk-chat-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.desk-chat-hed {
+  font-weight: 650;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  margin: 4px 0 0;
+}
+.desk-chat-x {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--paper-dim);
+  border: 1px solid var(--rule);
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.desk-chat-x:hover,
+.desk-chat-x:focus-visible {
+  color: var(--paper);
+  border-color: var(--paper);
+}
+.desk-chat-dek {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 8px 0 10px;
+}
+.desk-chat-log {
+  flex: 1;
+  overflow: auto;
+  border-top: 1px solid var(--rule);
+  padding-top: 10px;
+  min-height: 0;
+}
+.desk-chat-msg {
+  margin: 0 0 12px;
+  font-size: 14.5px;
+  color: var(--paper-dim);
+}
+.desk-chat-msg p { margin: 0 0 6px; }
+.desk-chat-msg.you p {
+  color: var(--gold);
+}
+.desk-chat-facts {
+  margin: 6px 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--paper);
+}
+.desk-chat-facts li { margin-bottom: 3px; }
+.desk-chat-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 8px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.desk-chat-suggest {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 8px;
+}
+.desk-chat-suggest .chip {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 11px;
+  line-height: 1.35;
+  text-align: left;
+  max-width: 100%;
+}
+.desk-chat-form {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.desk-chat-input {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.desk-chat-go {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--blood);
+  color: var(--paper);
+  border: 1px solid var(--blood);
+  padding: 0 14px;
+  cursor: pointer;
+}
+.desk-chat-go:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.desk-chat-go:hover:not(:disabled),
+.desk-chat-go:focus-visible:not(:disabled) {
+  background: #a8321c;
+}
+
 @media (max-width: 640px) {
+  .desk-chat { right: 10px; bottom: 10px; }
+  .desk-chat-panel {
+    width: min(100vw - 16px, 420px);
+    height: min(72vh, 560px);
+    bottom: 46px;
+  }
   .coach-fa-pickers {
     display: grid;
     grid-template-columns: 1fr;

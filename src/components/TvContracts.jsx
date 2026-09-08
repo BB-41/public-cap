@@ -9,8 +9,8 @@ import {
   remainingSeasons,
   schoolCheck,
   schoolRecord,
-  useTvBook,
 } from '../lib/tv.js'
+import { useTvBook } from '../lib/useTvBook.js'
 
 function ConfTag({ confidence }) {
   if (!confidence) return null
