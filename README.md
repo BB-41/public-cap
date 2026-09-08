@@ -53,11 +53,11 @@ Coverage / included-vs-not (Methods language, no invented policy):
 - What's LSU's industry football roster estimate?
   → $40–50M (closer to $50M per CBS) — modeled / survey, not House spent; leftover still pending
 - What's the industry roster estimate for Alabama?
-  → not in the published CBS/SI survey — empty, not a typical-SEC fill
+  → modeled $25–33M (SI SEC median) — not a survey cell
 - What's the industry estimate for Miami's QB?
-  → more than $6M, reported-estimate — industry estimate, not a contract
+  → survey more than $6M (reported-estimate) plus a modeled starter/backup range
 - What's Alabama's QB salary?
-  → no public position band — empty, not a guessed payroll
+  → modeled starter/backup range from the SEC-median stack — not a contract
 
 
 ## Seasons

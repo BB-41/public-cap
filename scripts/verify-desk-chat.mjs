@@ -93,7 +93,7 @@ ok(def.links.some((l) => l.to === '/methods'), 'definition links Methods')
 
 const ala = ask("What's Alabama's leftover?")
 ok(/pending/i.test(ala.text), `Alabama leftover stays pending: ${ala.text}`)
-ok(!/\$\d/.test(ala.text), 'Alabama leftover invents no leftover dollar')
+ok(!/leftover is \$/.test(ala.text), 'Alabama leftover invents no leftover dollar')
 ok(ala.links.some((l) => l.to.includes('/school/alabama')), 'Alabama leftover points at the school page')
 
 const alaNil = ask("What's Alabama's booked NIL?")
@@ -147,11 +147,12 @@ ok(!/On3/.test(smuMiss.text) || /does not/.test(smuMiss.text), 'SMU missing does
 
 const haveAla = ask('Do you have leftover for Alabama?')
 ok(/not on the desk|pending/i.test(haveAla.text), 'Alabama leftover do-you-have is not on the desk')
-ok(!/\$\d/.test(haveAla.text), 'Alabama leftover do-you-have invents no dollar')
+ok(!/leftover is \$/.test(haveAla.text), 'Alabama leftover do-you-have invents no leftover dollar')
 ok(haveAla.links.some((l) => l.to.includes('/school/alabama')), 'do-you-have leftover links Alabama')
 
 const lsuEst = ask("What's LSU's industry football roster estimate?")
 ok(/\$40–50M|\$40-50M|40–50/.test(lsuEst.text), `LSU survey range: ${lsuEst.text}`)
+ok(/labeled survey/i.test(lsuEst.text), 'LSU answer says survey, not modeled')
 ok(/closer to \$50M/i.test(lsuEst.text), 'LSU survey names the CBS closer-to-$50M qualifier')
 ok(/not booked NIL|not House spent/i.test(lsuEst.text), 'LSU survey stays off booked NIL / House spent')
 ok(/leftover only exists|do not have a booked/i.test(lsuEst.text), 'LSU survey does not invent leftover')
@@ -179,16 +180,18 @@ ok(/LSU/.test(listEst.text) && /Texas A&M/.test(listEst.text), 'list names LSU a
 ok(/Miami/.test(listEst.text) && /Oregon/.test(listEst.text), 'list names the other CBS/SI above-$40M schools')
 ok(/Georgia/.test(listEst.text) && /Texas Tech/.test(listEst.text), 'list includes CBS right-off-$40M and SI Tech')
 ok(/Indiana/.test(listEst.text), 'list includes Indiana $30–35M')
-ok(!/Alabama/.test(listEst.text) && !/Clemson/.test(listEst.text) && !/Houston/.test(listEst.text), 'list does not invent unnamed schools')
+ok(/Alabama/.test(listEst.text) && /Clemson/.test(listEst.text), 'list includes modeled conference-median schools')
+ok(/modeled/i.test(listEst.text) && /survey/i.test(listEst.text), 'list separates modeled vs survey')
 ok(!/On3/.test(listEst.text), 'list does not name On3')
 
 const alaEst = ask("What's the industry roster estimate for Alabama?")
-ok(/not in the published survey/i.test(alaEst.text), `Alabama empty: ${alaEst.text}`)
-ok(!/estimate is \$/.test(alaEst.text), 'Alabama survey invents no dollar')
+ok(/modeled/i.test(alaEst.text), `Alabama is modeled: ${alaEst.text}`)
+ok(/\$25M–\$33M|\$25–33M|\$25-33M|25–33/.test(alaEst.text), 'Alabama uses the SI SEC median range')
+ok(/not a survey cell/i.test(alaEst.text), 'Alabama is not labeled survey')
 
 const clemEst = ask("What's the industry roster estimate for Clemson?")
-ok(/not in the published survey/i.test(clemEst.text), 'Clemson unnamed dollar stays empty')
-ok(!/estimate is \$/.test(clemEst.text), 'Clemson survey invents no dollar')
+ok(/modeled/i.test(clemEst.text), 'Clemson is modeled')
+ok(/\$17M–\$24M|\$17–24M|\$17-24M|17–24/.test(clemEst.text), 'Clemson uses the SI ACC median range')
 
 const indEst = ask("What's the industry roster estimate for Indiana?")
 ok(/\$30–35M|\$30-35M|30–35/.test(indEst.text), `Indiana range: ${indEst.text}`)
@@ -208,11 +211,12 @@ ok(/not a (player )?contract/i.test(miaQb.text), 'Miami QB is not a contract')
 ok(!/mensah/i.test(miaQb.text), 'Miami QB prefers the position band over a named player')
 
 const alaQb = ask("What's Alabama's QB salary?")
-ok(/no public position band/i.test(alaQb.text), `Alabama QB empty: ${alaQb.text}`)
-ok(!/estimate is \$/.test(alaQb.text), 'Alabama QB invents no dollar')
+ok(/modeled/i.test(alaQb.text), `Alabama QB is modeled: ${alaQb.text}`)
+ok(/starter/i.test(alaQb.text), 'Alabama QB shows a modeled starter range')
+ok(/not a contract/i.test(alaQb.text), 'Alabama QB is not a contract')
 
 const lsuOt = ask("What's the industry estimate for LSU's OT?")
-ok(/no public position band/i.test(lsuOt.text), 'LSU OT stays empty')
+ok(/modeled/i.test(lsuOt.text), 'LSU OT is a modeled seat share')
 ok(!/seaton/i.test(lsuOt.text), 'LSU OT does not book Seaton')
 
 const washQb = ask("Who is Washington's starting QB on the roster?")
@@ -221,8 +225,8 @@ ok(/Demond Williams Jr/i.test(washQb.text), 'Washington starter question still r
 const posList = ask('Which positions have an industry salary band?')
 ok(/Miami/.test(posList.text) && /Texas A&M/.test(posList.text), 'position list names cited schools')
 ok(/QB/.test(posList.text) && /WR/.test(posList.text) && /EDGE/.test(posList.text), 'position list names cited families')
-ok(/TE/.test(posList.text) && /no public band/i.test(posList.text), 'position list says TE has no public band')
-ok(!/Alabama/.test(posList.text) && !/On3/.test(posList.text), 'position list does not invent Alabama or name On3')
+ok(/modeled/i.test(posList.text), 'position list names the modeled seat-share method')
+ok(!/On3/.test(posList.text), 'position list does not name On3')
 
 const lsuMiss = ask('What data is missing for LSU?')
 ok(/House spent/i.test(lsuMiss.text) && /pending/i.test(lsuMiss.text), 'LSU missing names House spent pending')

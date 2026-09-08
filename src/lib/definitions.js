@@ -23,11 +23,11 @@ export const DEFS = {
   },
   industryRosterEstimate: {
     label: 'Industry football roster estimate',
-    text: 'A labeled modeled / survey lane from the public CBS Sports (Hummer/Talty, Aug 17, 2026) poll and the SI $50M-era piece (TigerRag on LSU’s mix). A range when the article gives one (LSU $40–50M; Indiana $30–35M); otherwise the stated tier, not a fake precise dollar. Only schools those pieces actually name. The CBS/247Sports full Power 4 table is paywalled — unnamed schools stay empty. We do not invent a typical-conference fill. Combines football’s share of institutional revenue-share plus third-party NIL — not a university check, not a school filing, not booked NIL, and not House spent. Never subtracted from capacity or leftover. Leftover still only exists when a booked House spent cell exists. Not On3. Not a named player deal.',
+    text: 'A labeled modeled / survey lane. Prefer an explicit CBS Sports (Hummer/Talty, Aug 17, 2026) or SI (Fischer, Aug 27, 2026) range or tier (LSU $40–50M; Indiana $30–35M; above-$40M and other named tiers). Those stay survey — a published tier is not turned into a midpoint. Where those pieces are silent, the cell is modeled from SI’s published conference-median band (ACC $17–24M, Big 12 $18–25M, Big Ten $22–28M, SEC $25–33M) — the same band for every silent school in that league, not a school-by-school guess. The public CBS article does not publish a Power 4 average. Combines football rev-share plus third-party NIL — not a filing, not booked NIL, not House spent. Never subtracted from capacity or leftover. Not On3.',
   },
   industryPositionEstimate: {
     label: 'Industry estimate by position',
-    text: 'Approximate player salaries by position when the public CBS / SI roster-spend pieces state a band. Prefer a position band (seven-figure WR, seven-figure OT) over a named player. A named-article dollar, when kept, is labeled reported-estimate — not a school filing and not booked NIL. Positions with no public band stay empty. We do not invent a full position payroll for every school. The existing roster rate card (starter vs backup) stays the modeled seat machinery and is not replaced. Never subtracted from capacity or leftover. Not On3.',
+    text: 'Approximate player salaries by position. Prefer a CBS / SI position band or reported-estimate when one exists. Every other seat is a modeled range: that school’s football stack (survey range, or a documented allocation envelope for a survey tier, or the SI conference median) split by the existing rate-card seat weights (QB1 = 100). Starter and backup are ranges, not point estimates. Industry estimate, not a contract. Not booked NIL. Not On3.',
   },
   nilCap: {
     label: 'NIL / capacity',

@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
 import { collectSources, collective990Cells, hasVal, leadBookedNil, leadHouseRemaining } from '../lib/compute.js'
 import {
-  industryRosterEstimate,
   rosterEstimateCites,
   rosterEstimateDisplay,
   ROSTER_ESTIMATE_HASH,
@@ -11,11 +10,13 @@ import {
 import {
   industryPositionEstimates,
   positionEstimateCites,
-  positionEstimateDisplay,
   POSITION_ESTIMATE_HASH,
-  FOOTBALL_POSITIONS,
-  positionLabel,
 } from '../lib/positionEstimate.js'
+import {
+  footballRosterStack,
+  stackFormula,
+  stackPositionRows,
+} from '../lib/rosterStack.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import { earningsBack } from '../lib/earningsBack.js'
@@ -383,11 +384,14 @@ function Collective990Lane({ cells }) {
   )
 }
 
-function IndustryRosterEstimateLane({ field, leftoverPending, schoolName, season }) {
-  const display = rosterEstimateDisplay(field)
-  const cites = rosterEstimateCites(field)
-  if (!field) {
-    const offYear = season != null && season !== 2026
+function IndustryRosterEstimateLane({ school, leftoverPending, schoolName, season }) {
+  const offYear = season != null && season !== 2026
+  const stack = offYear ? null : footballRosterStack(school)
+  const survey = stack?.survey
+  const modeled = stack?.modeled
+  const display = survey ? rosterEstimateDisplay(survey) : modeled?.display
+  const cites = rosterEstimateCites(survey)
+  if (!stack || !display) {
     return (
       <section id={`slice-${ROSTER_ESTIMATE_HASH}`} className="desk-may-empty">
         <h2 title={defTitle('industryRosterEstimate')}>
@@ -398,44 +402,52 @@ function IndustryRosterEstimateLane({ field, leftoverPending, schoolName, season
           Leftover still only exists when House spent is booked.
         </p>
         <div className="field pending-box desk-empty">
-          <div className="field-val">{offYear ? '2026 survey only' : 'Not in the published survey'}</div>
+          <div className="field-val">{offYear ? '2026 survey only' : 'No defensible public input'}</div>
           <div className="field-meta">
             {offYear
-              ? `The CBS / SI industry football roster survey is a 2026 cell. Switch to 2026 to see whether ${schoolName} was named.`
-              : `${schoolName} is not named with a range, tier, or figure in the public CBS Sports (Hummer/Talty, Aug 17, 2026) poll or the SI $50M-era piece. The CBS/247Sports full Power 4 table is paywalled — we do not invent a typical-conference fill. Empty is not zero.`}
+              ? `The CBS / SI industry football roster stack is a 2026 cell. Switch to 2026 to see the survey or the SI conference-median model.`
+              : `No CBS / SI survey cell and no cited conference median for ${schoolName}. Empty is not zero.`}
           </div>
         </div>
       </section>
     )
   }
+  const laneLabel = stack.lane === 'survey'
+    ? (survey.kind === 'range' ? 'Survey range (not a filing)' : 'Survey tier (not a filing)')
+    : 'Modeled range (not a filing)'
   return (
     <section id={`slice-${ROSTER_ESTIMATE_HASH}`}>
       <h2 title={defTitle('industryRosterEstimate')}>
         Industry football roster estimate <i className="dot modeled" />
       </h2>
       <p className="lede tight">
-        Labeled modeled / survey — not booked NIL and not House spent.
+        {stack.lane === 'survey' ? 'Labeled survey' : 'Labeled modeled'} — not booked NIL and not House spent.
         Combines football’s share of institutional revenue-share plus third-party NIL.
         Not a school filing. Do not subtract from capacity or leftover.
         {leftoverPending
           ? ` The desk does not have a booked ${schoolName} House spent total. Leftover still only exists when House spent is booked.`
-          : ' Leftover on this page is still House cap minus booked House spent, not this survey.'}
+          : ' Leftover on this page is still House cap minus booked House spent, not this stack.'}
       </p>
       <div className="range-box">
         <div>
-          <div className="eyebrow">
-            {field.kind === 'range' ? 'Survey range (not a filing)' : 'Survey tier (not a filing)'}
-          </div>
+          <div className="eyebrow">{laneLabel}</div>
           <div className="display sm modeled-cell">{display}</div>
         </div>
-        {field.qualifier ? (
+        {survey?.qualifier ? (
           <div>
             <div className="eyebrow">Survey qualifier</div>
-            <div className="display sm modeled-cell">{field.qualifier}</div>
+            <div className="display sm modeled-cell">{survey.qualifier}</div>
+          </div>
+        ) : null}
+        {stack.lane === 'survey' && survey?.kind === 'tier' && stack.allocation ? (
+          <div>
+            <div className="eyebrow">Modeled allocation range (positions)</div>
+            <div className="display sm modeled-cell">{stack.allocation.display}</div>
           </div>
         ) : null}
       </div>
-      <p className="field-notes">{field.notes}</p>
+      <p className="field-notes">{survey?.notes || stackFormula(stack)}</p>
+      <p className="fine">{stackFormula(stack)}</p>
       {cites.length ? (
         <p className="fine">
           {cites.map((c, i) => (
@@ -449,17 +461,21 @@ function IndustryRosterEstimateLane({ field, leftoverPending, schoolName, season
             </span>
           ))}
         </p>
+      ) : modeled?.url ? (
+        <p className="fine">
+          Source:{' '}
+          <a className="ext" href={modeled.url} target="_blank" rel="noreferrer">{modeled.source} ↗</a>
+        </p>
       ) : null}
     </section>
   )
 }
 
-function IndustryPositionEstimatesLane({ field, leftoverPending, schoolName, season }) {
-  const rows = field?.positions || []
+function IndustryPositionEstimatesLane({ school, leftoverPending, schoolName, season }) {
   const offYear = season != null && season !== 2026
-  const emptyCopy = offYear
-    ? `The CBS / SI position bands are a 2026 cell. Switch to 2026 to see whether ${schoolName} was named at a position.`
-    : `${schoolName} has no public position band in the CBS Sports (Hummer/Talty, Aug 17, 2026) poll or the SI $50M-era piece. Empty is not zero. We do not invent a full position payroll. Modeled starter vs backup seats stay on the roster rate card below — labeled modeled, not a contract.`
+  const stack = offYear ? null : footballRosterStack(school)
+  const rows = offYear ? [] : stackPositionRows(school)
+  const citedField = industryPositionEstimates(school)
   if (!rows.length) {
     return (
       <section id={`slice-${POSITION_ESTIMATE_HASH}`} className="desk-may-empty">
@@ -471,70 +487,73 @@ function IndustryPositionEstimatesLane({ field, leftoverPending, schoolName, sea
           Not booked NIL and not House spent.
         </p>
         <div className="field pending-box desk-empty">
-          <div className="field-val">{offYear ? '2026 survey only' : 'No public position band'}</div>
-          <div className="field-meta">{emptyCopy}</div>
+          <div className="field-val">{offYear ? '2026 stack only' : 'No defensible public input'}</div>
+          <div className="field-meta">
+            {offYear
+              ? `Position approximates are a 2026 cell. Switch to 2026 to see modeled seat shares of the football stack.`
+              : `${schoolName} has no football stack to split. Empty is not zero.`}
+          </div>
         </div>
       </section>
     )
   }
-  const cited = new Set(rows.map((r) => r.family))
-  const other = FOOTBALL_POSITIONS.map((p) => p.family).filter((f) => !cited.has(f))
   return (
     <section id={`slice-${POSITION_ESTIMATE_HASH}`}>
       <h2 title={defTitle('industryPositionEstimate')}>
         Industry estimate by position <i className="dot modeled" />
       </h2>
       <p className="lede tight">
-        Approximate player salaries by position when CBS / SI stated a band.
-        Industry estimate, not a contract. Prefer a position band over a named player.
-        A named-article dollar is labeled reported-estimate — not a school filing.
-        Other positions stay empty. The roster rate card below is the modeled starter / backup
-        machinery and is not replaced.
+        Modeled starter / backup ranges split this school’s football stack
+        ({stack.lane === 'survey' ? `survey ${stack.display}` : `modeled ${stack.display}`})
+        by the existing rate-card seat weights (QB1 = 100). Industry estimate, not a contract.
+        A CBS / SI position band, when one exists, is preferred and labeled survey or reported-estimate.
+        Named-player deals are not booked as contracts.
         {leftoverPending
           ? ` Leftover still only exists when House spent is booked.`
-          : ' Leftover on this page is still House cap minus booked House spent, not this survey.'}
+          : ' Leftover on this page is still House cap minus booked House spent, not this stack.'}
       </p>
+      <p className="fine">{stack.allocation?.formula}</p>
       <table className="roster">
         <thead>
           <tr>
             <th>Position</th>
-            <th>Band</th>
-            <th>Mark</th>
+            <th className="num">Starter (modeled)</th>
+            <th className="num">Backup (modeled)</th>
+            <th>Survey / reported-estimate</th>
           </tr>
         </thead>
         <tbody>
           {rows.map((r) => (
             <tr key={r.family}>
-              <td>{r.label || positionLabel(r.family)}</td>
-              <td className="modeled-cell">
-                {positionEstimateDisplay(r)}
-                {r.qualifier ? ` · ${r.qualifier}` : ''}
+              <td>{r.label}</td>
+              <td className="num modeled-cell">{r.starterDisplay}</td>
+              <td className="num modeled-cell">{r.backupDisplay || '—'}</td>
+              <td>
+                {r.surveyDisplay
+                  ? `${r.surveyDisplay}${r.surveyMark === 'reported-estimate' ? ' · reported-estimate' : ' · survey'}`
+                  : '—'}
               </td>
-              <td>{r.mark === 'reported-estimate' ? 'reported-estimate' : 'survey'}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <p className="field-notes">{field.notes}</p>
-      <p className="fine">
-        Other football positions
-        {other.length ? ` (${other.map(positionLabel).join(', ')})` : ''}: no public band.
-        Empty beats a guess.
-      </p>
-      {rows.flatMap((r) => positionEstimateCites(r)).length ? (
-        <p className="fine">
-          {rows.flatMap((r) => positionEstimateCites(r)).map((c, i) => (
-            <span key={`${c.url || c.source}-${i}`}>
-              {i > 0 ? ' · ' : 'Sources: '}
-              {c.url ? (
-                <a className="ext" href={c.url} target="_blank" rel="noreferrer">{c.source} ↗</a>
-              ) : (
-                c.source
-              )}
-            </span>
-          ))}
-        </p>
-      ) : null}
+      {citedField?.notes ? <p className="field-notes">{citedField.notes}</p> : null}
+      {citedField
+        ? (
+          <p className="fine">
+            {citedField.positions.flatMap((r) => positionEstimateCites(r)).map((c, i) => (
+              <span key={`${c.url || c.source}-${i}`}>
+                {i > 0 ? ' · ' : 'Survey sources: '}
+                {c.url ? (
+                  <a className="ext" href={c.url} target="_blank" rel="noreferrer">{c.source} ↗</a>
+                ) : (
+                  c.source
+                )}
+              </span>
+            ))}
+          </p>
+        )
+        : null}
     </section>
   )
 }
@@ -628,8 +647,6 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
   const spec = s._season
   const nil = s._ratios.nil
   const leftoverLead = leadHouseRemaining(s)
-  const rosterEstimate = industryRosterEstimate(s)
-  const positionEstimates = industryPositionEstimates(s)
   const sources = collectSources(s, meta)
   const deskTape = tapeForSchool(tape, s.id)
 
@@ -653,7 +670,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
               : `Two ceilings, then booked NIL: the House benefits cap versus what ${s.name} can actually write this year from public filings (annual capacity — not total athletic revenue).`}
             {' '}Booked NIL is the official institutional number when a filing exists — the public stand-in for an NIL budget.
             {' '}Collective 990 payout is a separate cited lane, not House.
-            {' '}An industry football roster estimate is a labeled modeled / survey lane — not booked NIL, not House spent, and not leftover. Empty means the school is not in the published CBS/SI survey, not that spend is zero.
+            {' '}An industry football roster estimate is a labeled modeled / survey lane — not booked NIL, not House spent, and not leftover. A named CBS/SI cell is survey; otherwise the SI conference-median range is modeled.
             {' '}Student fees on this desk are not tuition.
             {' '}Pending stays empty.
           </p>
@@ -782,14 +799,14 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
       </section>
 
       <IndustryRosterEstimateLane
-        field={rosterEstimate}
+        school={s}
         leftoverPending={leftoverLead.value == null}
         schoolName={s.name}
         season={season}
       />
 
       <IndustryPositionEstimatesLane
-        field={positionEstimates}
+        school={s}
         leftoverPending={leftoverLead.value == null}
         schoolName={s.name}
         season={season}

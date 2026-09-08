@@ -127,10 +127,14 @@ export default function Methods({ meta: metaProp }) {
           LSU is a <em>range</em> ($40–50M, closer to $50M per CBS). Indiana is $30–35M (SI).
           Other named schools are stored as the article’s tier (above $40M; right off the $40M line /
           upper or high $30s; at or slightly under $40M; closer to $30M; around / more than / at least $20M).
-          The CBS/247Sports full Power 4 table is paywalled — we do not guess the rest or invent a
-          typical-conference fill. Unnamed schools stay empty. Conference medians are not copied onto
-          schools. Combines football’s share of institutional revenue-share plus third-party NIL;
-          not a university check, not a school filing, not booked NIL, and not House spent.
+          The CBS/247Sports full Power 4 table is paywalled — we do not reconstruct it.
+          Where a school is not named, the cell is <strong>modeled</strong> from SI’s published
+          conference-median band (ACC $17–24M, Big 12 $18–25M, Big Ten $22–28M, SEC $25–33M).
+          Same band for every silent school in that league — not a school-by-school guess.
+          The public CBS article does not publish a Power 4 average; SI’s “at least $20M”
+          line is a competitive floor, not that average. Combines football’s share of
+          institutional revenue-share plus third-party NIL; not a university check, not a
+          school filing, not booked NIL, and not House spent.
           House cap remains ~$20.5M all sports. Never added to the capacity waterfall or capacity total.
           Never subtracted from leftover. Leftover still only exists when a booked House spent cell exists.
           Not On3. Not a named player deal.
@@ -141,11 +145,15 @@ export default function Methods({ meta: metaProp }) {
           state a band. Prefer a position band (seven-figure WR, seven-figure OT, seven-figure RB)
           over a named player. A named-article dollar, when kept, is labeled
           <strong>reported-estimate</strong> — not a school filing and not booked NIL.
-          Cited today: QB, RB, WR, OT/OL, EDGE at the schools those articles actually name.
-          TE, IDL, LB, CB, S, and specialists have no public band. We do not invent a full
-          position payroll for every school. Empty beats a guess.
-          The existing roster rate card (QB1 / WR1 / EDGE starter vs backup) stays the
-          modeled seat machinery and is not replaced by invented industry salaries.
+          Prefer a CBS / SI position band (seven-figure WR / OT / RB / EDGE) or a labeled
+          reported-estimate when the article states one.
+          Every other seat is a <strong>modeled</strong> range: that school’s football stack
+          split by the existing rate-card seat weights (QB1 = 100 units; football unit sum
+          is the card). Starter and backup are ranges, never a single point.
+          A published school tier stays a tier on the school cell; positions use a documented
+          allocation envelope from the same articles, not an invented midpoint.
+          The existing roster rate card table (conference-heuristic NIL) stays on the page
+          and is not replaced.
           Never added to booked NIL, House spent, leftover, or the capacity waterfall.
           Not On3.
         </dd>

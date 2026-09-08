@@ -5,11 +5,14 @@
 import { readFileSync } from 'node:fs'
 import { applySeason } from '../src/lib/seasons.js'
 import { computeCapacity, houseRemaining, leftoverWaterfall, val } from '../src/lib/compute.js'
+import { footballRosterStack, stackPositionRows, STACK_BASELINES } from '../src/lib/rosterStack.js'
 import { mergeSchoolSteps, stepInForce } from '../src/lib/buyout.js'
 
 const data = JSON.parse(readFileSync(new URL('../data/schools.json', import.meta.url), 'utf8'))
 const publicData = JSON.parse(readFileSync(new URL('../public/data/schools.json', import.meta.url), 'utf8'))
 const buyouts = JSON.parse(readFileSync(new URL('../data/buyouts.json', import.meta.url), 'utf8'))
+const stackData = JSON.parse(readFileSync(new URL('../data/roster-stack-baselines.json', import.meta.url), 'utf8'))
+const stackPublic = JSON.parse(readFileSync(new URL('../public/data/roster-stack-baselines.json', import.meta.url), 'utf8'))
 
 function fold(name) {
   return String(name || '')
@@ -31,6 +34,9 @@ function ok(cond, msg) {
 
 ok(data.schools.length === 68, '68 schools')
 ok(JSON.stringify(data) === JSON.stringify(publicData), 'data/schools.json synced to public/data')
+ok(JSON.stringify(stackData) === JSON.stringify(stackPublic), 'roster-stack baselines stay in sync')
+ok(stackData.conferenceMedians.SEC.low === STACK_BASELINES.conferenceMedians.SEC.low, 'SEC median matches the lib')
+ok(stackData.conferenceMedians.ACC.high === 24_000_000, 'ACC median high is $24M')
 
 const byId = Object.fromEntries(data.schools.map((s) => [s.id, s]))
 
@@ -233,6 +239,21 @@ ok(applySeason(byId.miami, 2025).nil.industryPositionEstimates == null, '2025 ov
 ok(applySeason(byId.miami, 2026).nil.industryPositionEstimates?.positions?.length >= 1, '2026 overlay keeps Miami position bands')
 ok(!fallLsu.steps.some((s) => s.hash === 'position-estimate' || s.key === 'positionEstimate'), 'LSU waterfall has no position-survey step')
 ok(!txFall.steps.some((s) => s.hash === 'position-estimate'), 'Texas waterfall has no position-survey step')
+
+const alaStack = footballRosterStack(byId.alabama)
+ok(alaStack?.lane === 'modeled', 'Alabama stack is modeled, not survey')
+ok(alaStack.low == null && alaStack.modeled.low === 25_000_000 && alaStack.modeled.high === 33_000_000, 'Alabama uses SI SEC median $25–33M')
+ok(footballRosterStack(byId.lsu)?.lane === 'survey', 'LSU stack stays survey')
+ok(footballRosterStack(byId.clemson)?.modeled?.low === 17_000_000, 'Clemson uses SI ACC median')
+ok(footballRosterStack(byId.houston)?.modeled?.low === 18_000_000, 'Houston “perhaps” still uses the Big 12 median model')
+ok(footballRosterStack(byId['notre-dame'])?.lane === 'survey', 'Notre Dame stays the survey $40-plus cell')
+const alaQbRow = stackPositionRows(byId.alabama).find((r) => r.family === 'qb')
+ok(alaQbRow && alaQbRow.starterLow > 0 && alaQbRow.starterHigh > alaQbRow.starterLow, 'Alabama QB is a modeled range')
+ok(!alaQbRow.survey, 'Alabama QB has no survey overlay')
+const lsuQbRow = stackPositionRows(byId.lsu).find((r) => r.family === 'qb')
+ok(lsuQbRow && lsuQbRow.starterHigh > lsuQbRow.starterLow, 'LSU QB modeled range splits the $40–50M survey')
+ok(stackPositionRows(byId.miami).find((r) => r.family === 'qb')?.surveyDisplay, 'Miami QB keeps the survey overlay')
+ok(!fallLsu.steps.some((s) => s.value === 25_000_000 || s.value === 33_000_000), 'LSU waterfall does not book a conference median')
 
 const layers = JSON.parse(readFileSync(new URL('../public/data/layers.json', import.meta.url), 'utf8'))
 ok(layers.schools.wisconsin.apparel?.annualValue?.value === 7_000_000, 'Wisconsin UA $7M kept')
