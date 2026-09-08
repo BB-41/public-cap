@@ -780,7 +780,7 @@ function coverageMapAnswer() {
       `${DEFS.pending.label}: ${DEFS.pending.text} Empty is not zero.`,
       `${DEFS.nil.label}: ${DEFS.nil.text} The desk does not carry On3 or invented player deals. Roster position dollars are a labeled modeled allocation of the school pot — not contracts.`,
       `${DEFS.nilCollective990.label}: ${DEFS.nilCollective990.text}`,
-      `${DEFS.house.label} House spent is the booked Year 1 spent cell when one exists. ${DEFS.houseRemaining.label}: ${DEFS.houseRemaining.text}`,
+      `${DEFS.house.label}: ${DEFS.house.text} House spent is the booked Year 1 spent cell when one exists. ${DEFS.houseRemaining.label}: ${DEFS.houseRemaining.text}`,
       `${DEFS.capacity.label}: ${DEFS.capacity.text} Filed 990 / MFRS lines are tagged reported. Conference-floor media and equal-share TV math are tagged estimated.`,
       `${DEFS.buyout.label}: ${DEFS.buyout.text}`,
     ].join(' '),
