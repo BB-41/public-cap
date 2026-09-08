@@ -4,7 +4,7 @@
  */
 import { readFileSync } from 'node:fs'
 import { applySeason } from '../src/lib/seasons.js'
-import { houseRemaining, val } from '../src/lib/compute.js'
+import { computeCapacity, houseRemaining, leftoverWaterfall, val } from '../src/lib/compute.js'
 import { mergeSchoolSteps, stepInForce } from '../src/lib/buyout.js'
 
 const data = JSON.parse(readFileSync(new URL('../data/schools.json', import.meta.url), 'utf8'))
@@ -151,6 +151,50 @@ ok(houseRemaining(applySeason(byId.louisville, 2026)) === 300_000, '2026 overlay
 ok(houseRemaining(applySeason(byId.louisville, 2024)) == null, '2024 overlay drops Year 1 remaining')
 ok(val(byId['penn-state'].nil.preCap) === 18_368_391, 'Penn State preCap not used as remaining')
 ok(byId['oklahoma-state'].nil.houseRemaining == null, 'OSU 990/preCap is not remaining')
+
+const ESTIMATE_IDS = ['lsu', 'miami', 'notre-dame', 'ohio-state', 'oregon', 'texas', 'texas-am']
+for (const sid of ESTIMATE_IDS) {
+  const est = byId[sid].nil.industryRosterEstimate
+  ok(est && est.confidence === 'modeled', `${sid} industry roster estimate is modeled`)
+  ok(est.value == null, `${sid} estimate has no fake point value`)
+  ok(!/on3/i.test(JSON.stringify(est)), `${sid} estimate does not name On3`)
+  ok(!/seaton/i.test(JSON.stringify(est)), `${sid} estimate does not book a named player deal`)
+}
+const lsuEst = byId.lsu.nil.industryRosterEstimate
+ok(lsuEst.kind === 'range' && lsuEst.low === 40_000_000 && lsuEst.high === 50_000_000, 'LSU estimate is $40–50M')
+ok(/closer to \$50M/i.test(lsuEst.qualifier), 'LSU qualifier is closer to $50M per CBS')
+ok(lsuEst.cites.length === 3, 'LSU cites CBS, SI, and TigerRag')
+ok(lsuEst.cites.some((c) => /tigerrag\.com/.test(c.url)), 'LSU cites TigerRag URL')
+ok(byId.lsu.nil.houseRemaining == null, 'LSU estimate did not invent House remaining')
+ok(byId.lsu.nil.booked.value == null, 'LSU booked NIL stays pending')
+for (const sid of ['texas', 'texas-am', 'miami', 'notre-dame', 'ohio-state', 'oregon']) {
+  ok(byId[sid].nil.industryRosterEstimate.kind === 'tier', `${sid} is a survey tier`)
+  ok(byId[sid].nil.industryRosterEstimate.tier === 'above $40M', `${sid} tier is above $40M`)
+}
+ok(!byId['texas-tech']?.nil?.industryRosterEstimate, 'Texas Tech is not in the above-$40M tier')
+ok(!byId.georgia?.nil?.industryRosterEstimate, 'Georgia is not invented into the above-$40M tier')
+ok(byId.texas.nil.houseRemaining.value === 7_000_000, 'Texas leftover unchanged by the survey')
+
+const lsu26 = applySeason(byId.lsu, 2026)
+ok(lsu26.nil.industryRosterEstimate?.display === '$40–50M', '2026 overlay keeps the LSU survey')
+ok(applySeason(byId.lsu, 2025).nil.industryRosterEstimate == null, '2025 overlay strips the 2026 survey')
+ok(houseRemaining(lsu26) == null, 'LSU 2026 leftover stays empty')
+const lsuCap = computeCapacity(lsu26)
+ok(
+  !lsuCap.components.some((c) => /industry|roster estimate/i.test(c.label || '')),
+  'LSU capacity stack does not include the survey',
+)
+const fallLsu = leftoverWaterfall(lsu26, lsuCap, false)
+ok(fallLsu.spent == null && fallLsu.leftover == null, 'LSU waterfall has no leftover from the survey')
+ok(!fallLsu.steps.some((s) => s.key === 'rosterEstimate' || s.hash === 'roster-estimate'), 'LSU waterfall has no survey step')
+ok(
+  !fallLsu.steps.some((s) => s.value === 40_000_000 || s.value === 50_000_000),
+  'LSU waterfall does not book the survey dollars',
+)
+const tx26 = applySeason(byId.texas, 2026)
+const txFall = leftoverWaterfall(tx26, computeCapacity(tx26), false)
+ok(txFall.leftover === 7_000_000, 'Texas waterfall leftover stays $7M')
+ok(!txFall.steps.some((s) => s.value === 40_000_000), 'Texas waterfall does not subtract the survey')
 
 const layers = JSON.parse(readFileSync(new URL('../public/data/layers.json', import.meta.url), 'utf8'))
 ok(layers.schools.wisconsin.apparel?.annualValue?.value === 7_000_000, 'Wisconsin UA $7M kept')

@@ -194,6 +194,7 @@ export function leadHouseRemaining(school) {
  *
  * Leftover stays leadHouseRemaining (House cap − booked House spent).
  * Capacity is displayCap. House spent is the existing leftover.field.spent.
+ * Industry football roster estimates never enter these steps.
  */
 export function leftoverWaterfall(school, cap, includeAlumni = false) {
   const capacity = displayCap(cap, includeAlumni)

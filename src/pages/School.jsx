@@ -2,6 +2,12 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
 import { collectSources, collective990Cells, hasVal, leadBookedNil, leadHouseRemaining } from '../lib/compute.js'
+import {
+  industryRosterEstimate,
+  rosterEstimateCites,
+  rosterEstimateDisplay,
+  ROSTER_ESTIMATE_HASH,
+} from '../lib/rosterEstimate.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import { earningsBack } from '../lib/earningsBack.js'
@@ -369,6 +375,56 @@ function Collective990Lane({ cells }) {
   )
 }
 
+function IndustryRosterEstimateLane({ field, leftoverPending, schoolName }) {
+  if (!field) return null
+  const display = rosterEstimateDisplay(field)
+  const cites = rosterEstimateCites(field)
+  return (
+    <section id={`slice-${ROSTER_ESTIMATE_HASH}`}>
+      <h2 title={defTitle('industryRosterEstimate')}>
+        Industry football roster estimate <i className="dot modeled" />
+      </h2>
+      <p className="lede tight">
+        Labeled modeled / survey — not booked NIL and not House spent.
+        Combines football’s share of institutional revenue-share plus third-party NIL.
+        Not a school filing. Do not subtract from capacity or leftover.
+        {leftoverPending
+          ? ` The desk does not have a booked ${schoolName} House spent total. Leftover still only exists when House spent is booked.`
+          : ' Leftover on this page is still House cap minus booked House spent, not this survey.'}
+      </p>
+      <div className="range-box">
+        <div>
+          <div className="eyebrow">
+            {field.kind === 'range' ? 'Survey range (not a filing)' : 'Survey tier (not a filing)'}
+          </div>
+          <div className="display sm modeled-cell">{display}</div>
+        </div>
+        {field.qualifier ? (
+          <div>
+            <div className="eyebrow">CBS qualifier</div>
+            <div className="display sm modeled-cell">{field.qualifier}</div>
+          </div>
+        ) : null}
+      </div>
+      <p className="field-notes">{field.notes}</p>
+      {cites.length ? (
+        <p className="fine">
+          {cites.map((c, i) => (
+            <span key={c.url || i}>
+              {i > 0 ? ' · ' : 'Sources: '}
+              {c.url ? (
+                <a className="ext" href={c.url} target="_blank" rel="noreferrer">{c.source} ↗</a>
+              ) : (
+                c.source
+              )}
+            </span>
+          ))}
+        </p>
+      ) : null}
+    </section>
+  )
+}
+
 function Field({ field, fallback = '—' }) {
   if (!field || field.value == null) {
     return (
@@ -458,6 +514,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
   const spec = s._season
   const nil = s._ratios.nil
   const leftoverLead = leadHouseRemaining(s)
+  const rosterEstimate = industryRosterEstimate(s)
   const sources = collectSources(s, meta)
   const deskTape = tapeForSchool(tape, s.id)
 
@@ -481,6 +538,9 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
               : `Two ceilings, then booked NIL: the House benefits cap versus what ${s.name} can actually write this year from public filings (annual capacity — not total athletic revenue).`}
             {' '}Booked NIL is the official institutional number when a filing exists — the public stand-in for an NIL budget.
             {' '}Collective 990 payout is a separate cited lane, not House.
+            {rosterEstimate
+              ? ' An industry football roster estimate, when shown, is a labeled modeled / survey lane — not booked NIL, not House spent, and not leftover.'
+              : ''}
             {' '}Student fees on this desk are not tuition.
             {' '}Pending stays empty.
           </p>
@@ -489,6 +549,9 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             <span>House cap <b>{house == null ? 'none (pre-settlement)' : season >= 2026 ? '2026–27' : '2025–26'}</b></span>
             <span>Booked NIL <b>{leadBookedNil(s).value != null ? 'cited' : 'pending'}</b></span>
             <span>Collective payout <b>{collective990Cells(s).some((c) => c.value != null) ? 'cited' : 'pending'}</b></span>
+            {rosterEstimate ? (
+              <span>Industry roster estimate <b>survey</b></span>
+            ) : null}
           </p>
           {s.revenueGap && <p className="gap-banner">Revenue gap: private-school tickets, sponsorships, and contributions are not on the public MFRS tape.</p>}
         </div>
@@ -606,6 +669,12 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           )}
         </div>
       </section>
+
+      <IndustryRosterEstimateLane
+        field={rosterEstimate}
+        leftoverPending={leftoverLead.value == null}
+        schoolName={s.name}
+      />
 
       {s.nil.modeled ? (
       <section>

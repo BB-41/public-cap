@@ -150,6 +150,42 @@ ok(/not on the desk|pending/i.test(haveAla.text), 'Alabama leftover do-you-have 
 ok(!/\$\d/.test(haveAla.text), 'Alabama leftover do-you-have invents no dollar')
 ok(haveAla.links.some((l) => l.to.includes('/school/alabama')), 'do-you-have leftover links Alabama')
 
+const lsuEst = ask("What's LSU's industry football roster estimate?")
+ok(/\$40–50M|\$40-50M|40–50/.test(lsuEst.text), `LSU survey range: ${lsuEst.text}`)
+ok(/closer to \$50M/i.test(lsuEst.text), 'LSU survey names the CBS closer-to-$50M qualifier')
+ok(/not booked NIL|not House spent/i.test(lsuEst.text), 'LSU survey stays off booked NIL / House spent')
+ok(/leftover only exists|do not have a booked/i.test(lsuEst.text), 'LSU survey does not invent leftover')
+ok(!/seaton/i.test(lsuEst.text), 'LSU survey does not book Seaton')
+ok(lsuEst.links.some((l) => l.to.includes('roster-estimate')), 'LSU survey links the school lane')
+
+const lsuLeft = ask("What's LSU's leftover?")
+ok(/pending/i.test(lsuLeft.text), 'LSU leftover stays pending')
+ok(/industry football roster estimate/i.test(lsuLeft.text), 'LSU leftover names the separate survey')
+ok(/\$40–50M|\$40-50M|40–50/.test(lsuLeft.text), 'LSU leftover answer still shows the survey range')
+ok(/not House spent|does not create leftover|only exists when/i.test(lsuLeft.text), 'LSU leftover refuses to book the survey as leftover')
+
+const lsuNil = ask('What NIL do you have for LSU?')
+ok(/pending/i.test(lsuNil.text), 'LSU booked NIL pending')
+ok(/industry football roster estimate/i.test(lsuNil.text), 'LSU NIL coverage names the survey lane')
+ok(/leftover only exists|House spent/i.test(lsuNil.text), 'LSU NIL coverage keeps leftover pending')
+
+const txEst = ask("What's Texas industry football roster estimate?")
+ok(/above[-\s]?\$40M/i.test(txEst.text), 'Texas survey is a tier, not a point estimate')
+ok(/not a point estimate/i.test(txEst.text), 'Texas survey refuses a fake precise dollar')
+ok(/House cap minus booked House spent/i.test(txEst.text), 'Texas survey keeps leftover on the booked spent cell')
+
+const listEst = ask('Which schools have an industry roster estimate?')
+ok(/LSU/.test(listEst.text) && /Texas A&M/.test(listEst.text), 'list names LSU and Texas A&M')
+ok(/Miami/.test(listEst.text) && /Oregon/.test(listEst.text), 'list names the other CBS/SI above-$40M schools')
+ok(!/Georgia/.test(listEst.text) && !/Texas Tech/.test(listEst.text), 'list does not invent off-tier schools')
+ok(!/On3/.test(listEst.text), 'list does not name On3')
+
+ok(SUGGESTED_PROMPTS.some((p) => /LSU.*industry football roster estimate/i.test(p)), 'suggested prompt: LSU industry roster estimate')
+
+const lsuMiss = ask('What data is missing for LSU?')
+ok(/House spent/i.test(lsuMiss.text) && /pending/i.test(lsuMiss.text), 'LSU missing names House spent pending')
+ok(/Industry football roster estimate/i.test(lsuMiss.text), 'LSU missing still lists the survey as on the desk')
+
 const buy = ask('Is a buyout annual spend?')
 ok(/overhang|liability/i.test(buy.text) && /not yearly spend/i.test(buy.text), 'buyout definition is overhang')
 

@@ -10129,6 +10129,7 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?159391-Louisiana-State-University-and-Agricultural-Mechanical-College"
       },
       "nil": {
+
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -10136,6 +10137,37 @@
           "url": null,
           "asOf": null,
           "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
+        },
+        "industryRosterEstimate": {
+          "label": "Industry football roster estimate",
+          "kind": "range",
+          "display": "$40–50M",
+          "low": 40000000,
+          "high": 50000000,
+          "qualifier": "closer to $50M per CBS",
+          "season": 2026,
+          "confidence": "modeled",
+          "asOf": "2026-08-17",
+          "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) industry poll — LSU most expensive 2026 football roster",
+          "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+          "cites": [
+            {
+              "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. LSU may be closer to $50M; several sources over $50M; most expensive 2026 football roster.",
+              "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+              "asOf": "2026-08-17"
+            },
+            {
+              "source": "Sports Illustrated — Fischer, Aug 27, 2026. Close to $50M and well above $40M.",
+              "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+              "asOf": "2026-08-27"
+            },
+            {
+              "source": "TigerRag — Horne. No public payroll sheet; figure is football’s share of institutional revenue-share plus third-party NIL, not a $50M university check.",
+              "url": "https://www.tigerrag.com/lsu-footballs-40-million-bet/",
+              "asOf": "2026-08"
+            }
+          ],
+          "notes": "Modeled / survey range — not booked NIL and not House spent. Combines football’s share of institutional revenue-share plus third-party NIL; not a school filing and not a $50M university check. House cap remains ~$20.5M all sports. Do not subtract from capacity or leftover. The desk does not have a booked LSU House spent total. Leftover still only exists when House spent is booked."
         }
       },
       "coaches": {
@@ -21623,6 +21655,7 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?228778-The-University-of-Texas-at-Austin"
       },
       "nil": {
+
         "booked": {
           "value": 13500000,
           "confidence": "reported",
@@ -21695,6 +21728,30 @@
           "overhang": false,
           "notes": "Published House Year 1 cap minus booked House spent. Residual, not a filing. Year-to-date window — not a full-year leftover.",
           "footnote": "House Year 1 remaining as of YTD (Jul 2025–Mar 2026) = $20.5M cap − $13.5M booked. Partial-year, not a full-year leftover. The $3.2M pre-cap / MFRS line is inside the $13.5M — not added. Collective 990s are not in this math."
+        },
+        "industryRosterEstimate": {
+          "label": "Industry football roster estimate",
+          "kind": "tier",
+          "display": "above $40M, survey",
+          "tier": "above $40M",
+          "season": 2026,
+          "confidence": "modeled",
+          "asOf": "2026-08-17",
+          "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M tier; SI $40M or more",
+          "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+          "cites": [
+            {
+              "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Texas listed in the more-than-$40M grouping.",
+              "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+              "asOf": "2026-08-17"
+            },
+            {
+              "source": "Sports Illustrated — Fischer, Aug 27, 2026. Texas named with LSU and Texas A&M as comfortably $40 million or more.",
+              "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+              "asOf": "2026-08-27"
+            }
+          ],
+          "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Texas leftover on this desk, when shown, is House cap minus the booked House Year 1 spent cell — not this survey."
         }
       },
       "coaches": {
@@ -23190,6 +23247,7 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?228723-Texas-AM-University-College-Station"
       },
       "nil": {
+
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -23197,6 +23255,30 @@
           "url": null,
           "asOf": null,
           "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
+        },
+        "industryRosterEstimate": {
+          "label": "Industry football roster estimate",
+          "kind": "tier",
+          "display": "above $40M, survey",
+          "tier": "above $40M",
+          "season": 2026,
+          "confidence": "modeled",
+          "asOf": "2026-08-17",
+          "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M grouping; SI $40M or more",
+          "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+          "cites": [
+            {
+              "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Texas A&M listed in the more-than-$40M grouping. Program sources described 2026 as the upper $30-million range with incentives that could push into the $40s — stored as a tier, not a point estimate.",
+              "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+              "asOf": "2026-08-17"
+            },
+            {
+              "source": "Sports Illustrated — Fischer, Aug 27, 2026. Texas A&M named with LSU and Texas as comfortably $40 million or more.",
+              "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+              "asOf": "2026-08-27"
+            }
+          ],
+          "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. CBS listed A&M in the more-than-$40M grouping; program sources put 2026 in the upper $30-million range with incentives that could push into the $40s. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
         }
       },
       "coaches": {
@@ -40613,6 +40695,7 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?204796-Ohio-State-University-Main-Campus"
       },
       "nil": {
+
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -40629,6 +40712,30 @@
           "asOf": "2026-01-30",
           "fiscalYear": "FY2025",
           "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
+        },
+        "industryRosterEstimate": {
+          "label": "Industry football roster estimate",
+          "kind": "tier",
+          "display": "above $40M, survey",
+          "tier": "above $40M",
+          "season": 2026,
+          "confidence": "modeled",
+          "asOf": "2026-08-17",
+          "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M tier",
+          "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+          "cites": [
+            {
+              "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Ohio State listed in the more-than-$40M grouping.",
+              "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+              "asOf": "2026-08-17"
+            },
+            {
+              "source": "Sports Illustrated — Fischer, Aug 27, 2026. Ohio State named among the Big Ten’s most expensive rosters.",
+              "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+              "asOf": "2026-08-27"
+            }
+          ],
+          "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
         }
       },
       "coaches": {
@@ -42203,6 +42310,7 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?209551-University-of-Oregon"
       },
       "nil": {
+
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -42219,6 +42327,30 @@
           "asOf": "2026-01-13",
           "fiscalYear": "FY2025",
           "notes": "FY2025 Item 44 Institutional NIL Revenue Share is $0 (pre-House, year ended Jun 30 2025). Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
+        },
+        "industryRosterEstimate": {
+          "label": "Industry football roster estimate",
+          "kind": "tier",
+          "display": "above $40M, survey",
+          "tier": "above $40M",
+          "season": 2026,
+          "confidence": "modeled",
+          "asOf": "2026-08-17",
+          "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M tier",
+          "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+          "cites": [
+            {
+              "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Oregon listed in the more-than-$40M grouping.",
+              "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+              "asOf": "2026-08-17"
+            },
+            {
+              "source": "Sports Illustrated — Fischer, Aug 27, 2026. Oregon named among the Big Ten’s most expensive rosters.",
+              "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+              "asOf": "2026-08-27"
+            }
+          ],
+          "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
         }
       },
       "coaches": {
@@ -66374,6 +66506,7 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?135726-University-of-Miami"
       },
       "nil": {
+
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -66381,6 +66514,30 @@
           "url": null,
           "asOf": null,
           "notes": "Private school. No FOIA path. Band pending."
+        },
+        "industryRosterEstimate": {
+          "label": "Industry football roster estimate",
+          "kind": "tier",
+          "display": "above $40M, survey",
+          "tier": "above $40M",
+          "season": 2026,
+          "confidence": "modeled",
+          "asOf": "2026-08-17",
+          "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M tier; SI $40-plus",
+          "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+          "cites": [
+            {
+              "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Miami listed in the more-than-$40M grouping; well into the $40 million range.",
+              "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+              "asOf": "2026-08-17"
+            },
+            {
+              "source": "Sports Illustrated — Fischer, Aug 27, 2026. Miami in the $40-plus million range.",
+              "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+              "asOf": "2026-08-27"
+            }
+          ],
+          "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
         }
       },
       "coaches": {
@@ -106341,6 +106498,7 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?152080-University-of-Notre-Dame"
       },
       "nil": {
+
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -106389,7 +106547,31 @@
             "line": "Part IX other expenses — ATHLETE SERVICE COMP.",
             "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3) FUND collective. Calendar-year return filed Aug. 21, 2025."
           }
-        ]
+        ],
+        "industryRosterEstimate": {
+          "label": "Industry football roster estimate",
+          "kind": "tier",
+          "display": "above $40M, survey",
+          "tier": "above $40M",
+          "season": 2026,
+          "confidence": "modeled",
+          "asOf": "2026-08-17",
+          "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M tier; SI $40-plus club",
+          "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+          "cites": [
+            {
+              "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Notre Dame listed in the more-than-$40M grouping.",
+              "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+              "asOf": "2026-08-17"
+            },
+            {
+              "source": "Sports Illustrated — Fischer, Aug 27, 2026. Notre Dame in the $40-plus million club.",
+              "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+              "asOf": "2026-08-27"
+            }
+          ],
+          "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+        }
       },
       "coaches": {
         "football": {

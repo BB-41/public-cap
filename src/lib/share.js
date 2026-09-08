@@ -23,6 +23,7 @@ export const SCHOOL_DRILLS = new Set([
   'leftover',
   'nil',
   'nil-modeled',
+  'roster-estimate',
   'debt',
   'conference-exit',
 ])

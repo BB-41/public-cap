@@ -21,6 +21,10 @@ export const DEFS = {
     label: 'NIL modeled',
     text: 'Conference-heuristic range, not a filing. 2025–26 / 2026–27: House-era (rev-share + third-party) from the nil-ncaa.com table; low is 70% of the conference total or 50% of the $20.5M House cap for phase-in / half-share members. 2021–24: collective-era third-party only, scaled by the published national NIL market versus 2024–25. Estimates. Does not replace booked NIL.',
   },
+  industryRosterEstimate: {
+    label: 'Industry football roster estimate',
+    text: 'A labeled modeled / survey lane from named CBS Sports and Sports Illustrated insider polls (TigerRag on LSU’s mix). A range when the article gives one (LSU $40–50M, closer to $50M per CBS); otherwise an above-$40M tier, not a fake precise dollar. Combines football’s share of institutional revenue-share plus third-party NIL — not a university check at that figure, not a school filing, not booked NIL, and not House spent. Never subtracted from capacity or leftover. Leftover still only exists when a booked House spent cell exists. Not On3. Not a named player deal.',
+  },
   nilCap: {
     label: 'NIL / capacity',
     text: 'Booked NIL divided by annual capacity. Pending if we have no booked NIL figure.',
@@ -31,7 +35,7 @@ export const DEFS = {
   },
   houseRemaining: {
     label: 'Leftover / House remaining',
-    text: 'Published House Year 1 cap ($20.5 million) minus that school’s booked House spent cell. Only computed when a House Year 1 spent total is on the desk — not pre-cap, not a 990, not a cap plan, not “will spend $20.5M.” A leftover of $0 is a real cell. Overhang (spent above the cap) is shown, not hidden. Texas is year-to-date. Collective 990s are not in this math. On the 2026 rank list this is still the Year 1 residual, labeled 2025–26 / House Year 1 — not a 2026–27 leftover.',
+    text: 'Published House Year 1 cap ($20.5 million) minus that school’s booked House spent cell. Only computed when a House Year 1 spent total is on the desk — not pre-cap, not a 990, not a cap plan, not “will spend $20.5M,” and not an industry football roster survey. A leftover of $0 is a real cell. Overhang (spent above the cap) is shown, not hidden. Texas is year-to-date. Collective 990s and industry roster estimates are not in this math. On the 2026 rank list this is still the Year 1 residual, labeled 2025–26 / House Year 1 — not a 2026–27 leftover.',
   },
   coachPay: {
     label: 'Coach pay',
@@ -71,7 +75,7 @@ export const DEFS = {
   },
   modeled: {
     label: 'modeled',
-    text: 'A desk construct: alumni cohort / wealth / giving, the conference-heuristic NIL range, the position rate card, a named-player share of that card, or wins-per-dollar when the NIL denominator is modeled. Labeled as such. Not a filing.',
+    text: 'A desk construct: alumni cohort / wealth / giving, the conference-heuristic NIL range, an industry football roster survey (CBS/SI), the position rate card, a named-player share of that card, or wins-per-dollar when the NIL denominator is modeled. Labeled as such. Not a filing.',
   },
   rosterNamed: {
     label: 'Named roster (modeled)',

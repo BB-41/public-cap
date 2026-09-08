@@ -18,7 +18,9 @@ Logos: public/logos/*.png (local files, not hotlinked).
 Fixed “Ask the desk” drawer (idle-loaded, not in the homepage hero). Local lookup
 against the public JSON — no API key, no hosted model. Empty cells stay pending.
 Booked and modeled stay distinct. Leftover is House cap − booked House spent
-when that cell exists, not capacity − House − NIL.
+when that cell exists, not capacity − House − NIL. An industry football roster
+estimate (CBS/SI survey) is a separate labeled modeled / survey lane — not
+House spent and not booked NIL.
 
 ```
 npm run dev
@@ -48,6 +50,8 @@ Coverage / included-vs-not (Methods language, no invented policy):
   → booked NIL / leftover pending (no cite); tickets, sponsorships, contributions are a private-school gap; media $17.07M is on the desk
 - Do you have leftover for Alabama?
   → not on the desk — leftover only when House spent exists
+- What's LSU's industry football roster estimate?
+  → $40–50M (closer to $50M per CBS) — modeled / survey, not House spent; leftover still pending
 
 
 ## Seasons
