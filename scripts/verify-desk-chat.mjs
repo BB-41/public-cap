@@ -173,6 +173,7 @@ ok(/leftover only exists|House spent/i.test(lsuNil.text), 'LSU NIL coverage keep
 const txEst = ask("What's Texas industry football roster estimate?")
 ok(/above[-\s]?\$40M/i.test(txEst.text), 'Texas survey is a tier, not a point estimate')
 ok(/not a point estimate/i.test(txEst.text), 'Texas survey refuses a fake precise dollar')
+ok(!/\$45M/.test(txEst.text), 'Texas survey is not turned into a $45M midpoint')
 ok(/House cap minus booked House spent/i.test(txEst.text), 'Texas survey keeps leftover on the booked spent cell')
 
 const listEst = ask('Which schools have an industry roster estimate?')
@@ -187,7 +188,9 @@ ok(!/On3/.test(listEst.text), 'list does not name On3')
 const alaEst = ask("What's the industry roster estimate for Alabama?")
 ok(/modeled/i.test(alaEst.text), `Alabama is modeled: ${alaEst.text}`)
 ok(/\$25M–\$33M|\$25–33M|\$25-33M|25–33/.test(alaEst.text), 'Alabama uses the SI SEC median range')
+ok(/–|to/.test(alaEst.text), 'Alabama modeled figure is a range')
 ok(/not a survey cell/i.test(alaEst.text), 'Alabama is not labeled survey')
+ok(/SI SEC median|formula|same band/i.test(alaEst.text), 'Alabama answer shows the formula')
 
 const clemEst = ask("What's the industry roster estimate for Clemson?")
 ok(/modeled/i.test(clemEst.text), 'Clemson is modeled')

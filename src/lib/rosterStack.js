@@ -212,7 +212,7 @@ export function allocateStackBySeats(allocation) {
       backupLow,
       backupHigh,
       starterDisplay: moneyRange(starterLow, starterHigh, 1),
-      backupDisplay: seat.depthCount === 0 ? null : moneyRange(backupLow, backupHigh, 1),
+      backupDisplay: moneyRange(backupLow, backupHigh, 1),
       formula: `${seat.starterShort} = ${seat.starterUnits} / ${FB_UNIT_SUM} of the football stack. Backup = ${seat.depthUnits} / ${FB_UNIT_SUM}. Modeled seat weights, not a contract.`,
       confidence: 'modeled',
     }

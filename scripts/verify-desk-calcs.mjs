@@ -255,6 +255,30 @@ ok(lsuQbRow && lsuQbRow.starterHigh > lsuQbRow.starterLow, 'LSU QB modeled range
 ok(stackPositionRows(byId.miami).find((r) => r.family === 'qb')?.surveyDisplay, 'Miami QB keeps the survey overlay')
 ok(!fallLsu.steps.some((s) => s.value === 25_000_000 || s.value === 33_000_000), 'LSU waterfall does not book a conference median')
 
+for (const s of data.schools) {
+  const stack = footballRosterStack(s)
+  ok(stack, `${s.id} has a 2026 football stack — no blank`)
+  if (!stack) continue
+  if (stack.lane === 'modeled') {
+    ok(stack.kind === 'range' && stack.modeled.low < stack.modeled.high, `${s.id} modeled cell is a range`)
+    ok(!/midpoint/i.test(stack.display), `${s.id} modeled display is not a midpoint`)
+  }
+  if (stack.lane === 'survey' && stack.kind === 'tier') {
+    ok(stack.survey.tier && stack.display.includes(stack.survey.tier), `${s.id} survey tier stays a tier`)
+    ok(stack.survey.value == null, `${s.id} survey tier has no invented point value`)
+  }
+  if (stack.lane === 'survey' && stack.kind === 'range') {
+    ok(stack.survey.low < stack.survey.high, `${s.id} survey range stays a range`)
+  }
+  const rows = stackPositionRows(s)
+  ok(rows.length === 11, `${s.id} has modeled ranges for every football family`)
+  for (const r of rows) {
+    ok(r.starterLow < r.starterHigh, `${s.id} ${r.family} starter is a range`)
+    ok(r.backupLow < r.backupHigh, `${s.id} ${r.family} backup is a range`)
+    ok(r.starterDisplay.includes('–') || r.starterDisplay.includes('-'), `${s.id} ${r.family} starter display is a range`)
+  }
+}
+
 const layers = JSON.parse(readFileSync(new URL('../public/data/layers.json', import.meta.url), 'utf8'))
 ok(layers.schools.wisconsin.apparel?.annualValue?.value === 7_000_000, 'Wisconsin UA $7M kept')
 ok(layers.schools.kentucky.apparel?.annualValue?.value === 7_000_000, 'Kentucky Nike $7M kept')

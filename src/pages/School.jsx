@@ -446,8 +446,10 @@ function IndustryRosterEstimateLane({ school, leftoverPending, schoolName, seaso
           </div>
         ) : null}
       </div>
-      <p className="field-notes">{survey?.notes || stackFormula(stack)}</p>
-      <p className="fine">{stackFormula(stack)}</p>
+      <p className="field-notes">{survey?.notes}</p>
+      <p className="fine">
+        <strong>Formula.</strong> {stackFormula(stack)}
+      </p>
       {cites.length ? (
         <p className="fine">
           {cites.map((c, i) => (
@@ -512,7 +514,9 @@ function IndustryPositionEstimatesLane({ school, leftoverPending, schoolName, se
           ? ` Leftover still only exists when House spent is booked.`
           : ' Leftover on this page is still House cap minus booked House spent, not this stack.'}
       </p>
-      <p className="fine">{stack.allocation?.formula}</p>
+      <p className="fine">
+        <strong>Formula.</strong> {stack.allocation?.formula} Starter and backup are ranges, not a point estimate.
+      </p>
       <table className="roster">
         <thead>
           <tr>
@@ -527,11 +531,11 @@ function IndustryPositionEstimatesLane({ school, leftoverPending, schoolName, se
             <tr key={r.family}>
               <td>{r.label}</td>
               <td className="num modeled-cell">{r.starterDisplay}</td>
-              <td className="num modeled-cell">{r.backupDisplay || '—'}</td>
+              <td className="num modeled-cell">{r.backupDisplay}</td>
               <td>
                 {r.surveyDisplay
                   ? `${r.surveyDisplay}${r.surveyMark === 'reported-estimate' ? ' · reported-estimate' : ' · survey'}`
-                  : '—'}
+                  : 'no survey band'}
               </td>
             </tr>
           ))}
