@@ -5,7 +5,14 @@
 import { readFileSync } from 'node:fs'
 import { applySeason } from '../src/lib/seasons.js'
 import { computeCapacity, houseRemaining, leftoverWaterfall, val } from '../src/lib/compute.js'
-import { footballRosterStack, stackPositionRows, STACK_BASELINES } from '../src/lib/rosterStack.js'
+import {
+  footballRosterStack,
+  reportedBarBreakdown,
+  reportedBarMax,
+  reportedNilBar,
+  STACK_BASELINES,
+  stackPositionRows,
+} from '../src/lib/rosterStack.js'
 import { mergeSchoolSteps, stepInForce } from '../src/lib/buyout.js'
 
 const data = JSON.parse(readFileSync(new URL('../data/schools.json', import.meta.url), 'utf8'))
@@ -254,6 +261,31 @@ const lsuQbRow = stackPositionRows(byId.lsu).find((r) => r.family === 'qb')
 ok(lsuQbRow && lsuQbRow.starterHigh > lsuQbRow.starterLow, 'LSU QB modeled range splits the $40–50M survey')
 ok(stackPositionRows(byId.miami).find((r) => r.family === 'qb')?.surveyDisplay, 'Miami QB keeps the survey overlay')
 ok(!fallLsu.steps.some((s) => s.value === 25_000_000 || s.value === 33_000_000), 'LSU waterfall does not book a conference median')
+
+ok(reportedBarMax() === 50_000_000, 'reported bar max is $50M')
+ok(stackData.reportedBar.max === 50_000_000, 'baseline JSON documents the $50M scale')
+ok(/\$50M/.test(stackData.reportedBar.maxNote), 'baseline JSON names the $50M anchor')
+const lsuBar = reportedNilBar(byId.lsu)
+const alaBar = reportedNilBar(byId.alabama)
+const txBar = reportedNilBar(tx26)
+const lou26 = applySeason(byId.louisville, 2026)
+const louBar = reportedNilBar(lou26)
+ok(lsuBar.low === 40_000_000 && lsuBar.high === 50_000_000, 'LSU bar is the $40–50M survey range')
+ok(lsuBar.lane === 'survey', 'LSU bar stays survey')
+ok(alaBar.low === 25_000_000 && alaBar.high === 33_000_000, 'Alabama bar is the SI SEC median')
+ok(alaBar.lane === 'modeled', 'Alabama bar is modeled')
+ok(lsuBar.leftPct > alaBar.leftPct && lsuBar.rightPct > alaBar.rightPct, 'LSU band sits higher than Alabama on the same scale')
+ok(lsuBar.max === alaBar.max && lsuBar.max === 50_000_000, 'LSU and Alabama share the $50M scale')
+ok(!lsuBar.booked && !lsuBar.spent, 'LSU bar has no booked/spent marks to mix in')
+ok(txBar.sameBookedSpent && txBar.booked?.value === 13_500_000, 'Texas booked and House spent share one $13.5M mark')
+ok(txBar.booked.pct !== txBar.leftPct, 'Texas cite mark is not mixed into the $40–50M band start')
+ok(louBar.booked?.value === 32_900_000 && louBar.spent?.value === 20_200_000, 'Louisville keeps booked $32.9M and spent $20.2M as separate marks')
+ok(!louBar.sameBookedSpent, 'Louisville booked and spent stay two marks')
+ok(txFall.leftover === 7_000_000, 'Texas leftover stays $7M after the reported bar')
+ok(!fallLsu.steps.some((s) => s.hash === 'nil-reported' || s.key === 'nilReported'), 'LSU waterfall has no reported-bar step')
+ok(!txFall.steps.some((s) => s.hash === 'nil-reported'), 'Texas waterfall has no reported-bar step')
+ok(reportedBarBreakdown(byId.lsu).every((r) => r.starterLow < r.starterHigh), 'LSU bar breakdown starter cells are ranges')
+ok(reportedBarBreakdown(byId.alabama).length === 5, 'Alabama bar breakdown is QB/RB/WR/OL/EDGE')
 
 for (const s of data.schools) {
   const stack = footballRosterStack(s)

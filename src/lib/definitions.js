@@ -29,6 +29,10 @@ export const DEFS = {
     label: 'Industry estimate by position',
     text: 'Approximate player salaries by position. Prefer a CBS / SI position band or reported-estimate when one exists. Every other seat is a modeled range: that school’s football stack (survey range, or a documented allocation envelope for a survey tier, or the SI conference median) split by the existing rate-card seat weights (QB1 = 100). Starter and backup are ranges, not point estimates. Industry estimate, not a contract. Not booked NIL. Not On3.',
   },
+  nilReportedBar: {
+    label: 'NIL reported bar',
+    text: 'A comparable gold band on every Power 4 + Notre Dame school page. The band is that school’s industry/survey or modeled football-stack range (rev-share + third-party NIL) — not booked NIL and not House spent. Every school uses the same $0–$50M scale; $50M is the highest published or modeled top in the set (LSU survey high and the above-$40M allocation envelope). Booked NIL and House spent, when cited, are separate marks or a second thin track — never mixed into the reported band. Position starter ranges under the bar are a modeled/range breakdown of the same stack. The bar never enters leftover or the capacity waterfall. Not On3.',
+  },
   nilCap: {
     label: 'NIL / capacity',
     text: 'Booked NIL divided by annual capacity. Pending if we have no booked NIL figure.',

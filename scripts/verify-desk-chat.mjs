@@ -206,6 +206,46 @@ ok(/not a point estimate/i.test(gaEst.text), 'Georgia refuses a fake precise dol
 
 ok(SUGGESTED_PROMPTS.some((p) => /LSU.*industry football roster estimate/i.test(p)), 'suggested prompt: LSU industry roster estimate')
 ok(SUGGESTED_PROMPTS.some((p) => /industry estimate for Miami/i.test(p)), 'suggested prompt: Miami QB position estimate')
+ok(SUGGESTED_PROMPTS.some((p) => /compare on reported NIL/i.test(p)), 'suggested prompt: reported NIL compare')
+
+const alaBarChat = ask('How does Alabama compare on reported NIL?')
+ok(/\$25M–\$33M|\$25–33M|\$25-33M|25–33/.test(alaBarChat.text), `Alabama reported bar range: ${alaBarChat.text}`)
+ok(/modeled/i.test(alaBarChat.text), 'Alabama reported bar is modeled')
+ok(/\$0–\$50M|\$0-\$50M|0–\$50M/.test(alaBarChat.text), 'Alabama reported bar names the shared $0–$50M scale')
+ok(/not booked NIL/i.test(alaBarChat.text) && /not House spent/i.test(alaBarChat.text), 'Alabama reported bar stays off booked / House spent')
+ok(/does not create leftover|House cap minus booked House spent/i.test(alaBarChat.text), 'Alabama reported bar does not invent leftover')
+ok(alaBarChat.links.some((l) => l.to.includes('nil-reported')), 'Alabama reported bar links the school hash')
+ok(!/On3/.test(alaBarChat.text), 'Alabama reported bar does not name On3')
+
+const lsuBarChat = ask('How does LSU compare on reported NIL?')
+ok(/\$40M–\$50M|\$40–50M|\$40-50M|40–50/.test(lsuBarChat.text), `LSU reported bar range: ${lsuBarChat.text}`)
+ok(/labeled survey/i.test(lsuBarChat.text), 'LSU reported bar is survey')
+ok(!/seaton/i.test(lsuBarChat.text), 'LSU reported bar does not book Seaton')
+
+const cmpBar = ask('Compare LSU and Alabama on reported NIL')
+ok(/LSU/.test(cmpBar.text) && /Alabama/.test(cmpBar.text), 'compare names both schools')
+ok(/higher/.test(cmpBar.text) && /LSU/.test(cmpBar.text), 'compare says LSU sits higher')
+ok(/not booked NIL/i.test(cmpBar.text), 'compare keeps the bar off booked NIL')
+ok(!/leftover is \$/.test(cmpBar.text), 'reported-NIL compare does not fall through to leftover dollars')
+
+const txBarChat = ask('How does Texas compare on reported NIL?')
+ok(/above[-\s]?\$40M|\$40M–\$50M|\$40–50M/.test(txBarChat.text), 'Texas reported bar uses the survey allocation')
+ok(/\$13\.5M|\$13,500,000/.test(txBarChat.text), 'Texas reported bar still names the booked/spent mark')
+ok(/same separate mark|same mark|Booked NIL and House spent/i.test(txBarChat.text), 'Texas booked and spent share one mark')
+ok(/\$7\.0M|\$7,000,000|House cap minus booked House spent/i.test(txBarChat.text), 'Texas leftover stays on the booked spent cell')
+
+const louBarChat = ask('How does Louisville compare on reported NIL?')
+ok(/\$32\.9M|\$32,900,000/.test(louBarChat.text), 'Louisville reported bar names booked $32.9M as a separate mark')
+ok(/\$20\.2M|\$20,200,000/.test(louBarChat.text), 'Louisville reported bar names House spent $20.2M as a separate mark')
+
+const leftoverStill = ask("Compare Louisville and Kentucky leftover")
+ok(/\$300,000|\$0\.3M|\$300k/.test(leftoverStill.text), 'leftover compare still answers leftover')
+ok(!/reported NIL band/i.test(leftoverStill.text), 'leftover compare is not stolen by the reported bar')
+
+const defBar = ask('What is the NIL reported bar?')
+ok(/\$0–\$50M|\$50M/.test(defBar.text), 'definition names the $50M scale')
+ok(/not booked NIL/i.test(defBar.text), 'definition says the bar is not booked NIL')
+ok(defBar.links.some((l) => l.to === '/methods'), 'definition links Methods')
 
 const miaQb = ask("What's the industry estimate for Miami's QB?")
 ok(/more than \$6M/i.test(miaQb.text), `Miami QB band: ${miaQb.text}`)

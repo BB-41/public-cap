@@ -8,7 +8,9 @@
 
 import { moneyRange } from './format.js'
 import { FAMILY_SEATS, FB_UNIT_SUM } from './nilRoster.js'
+import { leadBookedNil, leadHouseRemaining } from './compute.js'
 import {
+  CITED_POSITION_FAMILIES,
   FOOTBALL_POSITIONS,
   industryPositionEstimates,
   positionEstimateDisplay,
@@ -86,6 +88,12 @@ export const STACK_BASELINES = {
       high: 33_000_000,
       note: 'SI named SEC floor $20M; $33M is the SI SEC median high — narrowest cited SEC band that contains that floor.',
     },
+  },
+  surveyRangeHighs: [50_000_000, 35_000_000],
+  reportedBar: {
+    min: 0,
+    maxNote:
+      'Highest published/modeled top among Power 4 + Notre Dame: LSU survey high $50M and the above-$40M allocation envelope high $50M. Same $0–$50M scale on every school page.',
   },
 }
 const baselines = STACK_BASELINES
@@ -235,4 +243,76 @@ export function stackPositionRows(school) {
   })
 }
 
+export function reportedBarMax() {
+  const highs = [
+    ...(STACK_BASELINES.surveyRangeHighs || []),
+    ...Object.values(STACK_BASELINES.conferenceMedians).map((r) => r.high),
+    ...Object.values(STACK_BASELINES.tierAllocationEnvelopes).map((r) => r.high),
+  ]
+  return Math.max(...highs)
+}
+
+function pctOfScale(value, max) {
+  if (value == null || !Number.isFinite(value) || max <= 0) return null
+  return Math.max(0, Math.min(100, (Number(value) / max) * 100))
+}
+
+function citeBooked(school, override) {
+  if (override != null && override !== '') return Number(override)
+  const lead = leadBookedNil(school)
+  return lead.value != null ? Number(lead.value) : null
+}
+
+function citeSpent(school, override) {
+  if (override != null && override !== '') return Number(override)
+  const leftover = leadHouseRemaining(school)
+  if (leftover.field && leftover.field.spent != null && leftover.field.spent !== '') {
+    return Number(leftover.field.spent)
+  }
+  return null
+}
+
+/**
+ * Comparable NIL reported bar. Band is the football-stack range
+ * (rev-share + third-party NIL). Booked NIL / House spent are
+ * separate marks — never mixed into the band, leftover, or waterfall.
+ */
+export function reportedNilBar(school, extras = {}) {
+  const stack = footballRosterStack(school)
+  if (!stack?.allocation) return null
+  const max = reportedBarMax()
+  const { low, high } = stack.allocation
+  const left = pctOfScale(low, max)
+  const right = pctOfScale(high, max)
+  const bookedVal = citeBooked(school, extras.booked)
+  const spentVal = citeSpent(school, extras.spent)
+  const bookedMark = bookedVal != null ? { value: bookedVal, pct: pctOfScale(bookedVal, max) } : null
+  const spentMark = spentVal != null ? { value: spentVal, pct: pctOfScale(spentVal, max) } : null
+  return {
+    max,
+    low,
+    high,
+    mid: (low + high) / 2,
+    rangeDisplay: moneyRange(low, high, 0),
+    lane: stack.lane,
+    kind: stack.kind,
+    display: stack.display,
+    formula: stack.allocation.formula,
+    leftPct: left,
+    rightPct: right,
+    widthPct: right == null || left == null ? 0 : Math.max(1.2, right - left),
+    booked: bookedMark,
+    spent: spentMark,
+    sameBookedSpent: !!(bookedMark && spentMark && bookedMark.value === spentMark.value),
+    scaleNote: `Same $0–$${(max / 1e6).toFixed(0)}M scale for every Power 4 + Notre Dame school. Max is the highest published or modeled top in the set (LSU survey high $50M; above-$40M allocation envelope $50M). The gold band is the football-stack range (rev-share + third-party NIL) — not booked NIL and not House spent.`,
+    stack,
+  }
+}
+
+export function reportedBarBreakdown(school) {
+  const want = new Set(CITED_POSITION_FAMILIES)
+  return stackPositionRows(school).filter((row) => want.has(row.family))
+}
+
+export const REPORTED_BAR_HASH = 'nil-reported'
 export { FB_UNIT_SUM }

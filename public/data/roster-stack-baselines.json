@@ -65,5 +65,11 @@
       "high": 33000000,
       "note": "SI named SEC floor $20M; $33M is the SI SEC median high — narrowest cited SEC band that contains that floor."
     }
+  },
+  "surveyRangeHighs": [50000000, 35000000],
+  "reportedBar": {
+    "min": 0,
+    "max": 50000000,
+    "maxNote": "Highest published/modeled top among Power 4 + Notre Dame: LSU survey high $50M and the above-$40M allocation envelope high $50M. Same $0–$50M scale on every school page."
   }
 }
