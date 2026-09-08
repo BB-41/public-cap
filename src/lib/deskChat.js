@@ -14,6 +14,27 @@ import {
 import { DEFS } from './definitions.js'
 import { money, moneyExact, moneyRange } from './format.js'
 import { modeledNilForSeason } from './nilModel.js'
+import {
+  industryRosterEstimate,
+  rosterEstimateDisplay,
+  ROSTER_ESTIMATE_HASH,
+} from './rosterEstimate.js'
+import {
+  detectPositionFamily,
+  industryPositionEstimates,
+  positionEstimateDisplay,
+  positionEstimateFor,
+  positionLabel,
+  POSITION_ESTIMATE_HASH,
+  FOOTBALL_POSITIONS,
+} from './positionEstimate.js'
+import {
+  footballRosterStack,
+  reportedNilBar,
+  REPORTED_BAR_HASH,
+  stackFormula,
+  stackPositionRows,
+} from './rosterStack.js'
 import { applySeason, CURRENT_SEASON, houseFieldForSeason, houseValueForSeason } from './seasons.js'
 import { comparePath, schoolPath } from './share.js'
 import { deskMedia, schoolCheck } from './tv.js'
@@ -29,6 +50,9 @@ export const SUGGESTED_PROMPTS = [
   'What data is missing for SMU?',
   'What is booked vs modeled vs pending?',
   'What does leftover mean?',
+  "What's LSU's industry football roster estimate?",
+  "What's the industry estimate for Miami's QB?",
+  'How does Alabama compare on reported NIL?',
 ]
 
 const EXTRA_ALIASES = {
@@ -179,8 +203,17 @@ function detectIntents(q) {
     intents.add('defineNil')
   }
   if (/what is (annual )?capacity|what does capacity mean|explain capacity/.test(t)) intents.add('defineCapacity')
-  if (/what is (nil )?modeled|explain modeled nil|what does modeled/.test(t) && !/vs|versus|booked|pending/.test(t)) {
+  if (/what is (nil )?modeled|explain modeled nil|what does modeled/.test(t) && !/vs|versus|booked|pending|roster estimate|industry/.test(t)) {
     intents.add('defineModeled')
+  }
+  if (/what is (an |the )?(industry )?(football )?roster estimate|explain (the )?industry (football )?roster|what does industry roster/.test(t)) {
+    intents.add('defineRosterEstimate')
+  }
+  if (/what is (an |the )?(industry )?(position|player salary)|explain (the )?industry (position|player salary)|position estimate mean/.test(t)) {
+    intents.add('definePositionEstimate')
+  }
+  if (/what is (the )?(nil )?reported bar|explain (the )?(nil )?reported bar|what does reported nil/.test(t)) {
+    intents.add('defineReportedNil')
   }
   if (/what is (a )?buyout|buyout overhang|is (a )?buyout|buyout.*(annual|yearly|spend)/.test(t)) {
     intents.add('defineBuyout')
@@ -197,16 +230,55 @@ function detectIntents(q) {
   if (/which schools|who has booked|schools have booked|booked house spent/.test(t) && /house spent|booked house|leftover/.test(t)) {
     intents.add('listHouseSpent')
   }
+  if (/which schools|who has/.test(t) && /roster estimate|industry roster|above.?40/.test(t)) {
+    intents.add('listRosterEstimate')
+  }
+  if (/which (schools|positions)|who has/.test(t) && /position (estimate|band|salary)|industry estimate by position|player salary|salary band/.test(t)) {
+    intents.add('listPositionEstimate')
+  }
+  const posHit = detectPositionFamily(t)
+  if (
+    posHit &&
+    (/industry|survey|estimate|position (salary|pay|band)|player salary|how much/.test(t) ||
+      (/salary|pay|band/.test(t) && !/coach|buyout|who is|starting qb|depth chart/.test(t)))
+  ) {
+    intents.add('positionEstimate')
+  }
+  if (/industry estimate by position|position (salary|pay) band|approximate player salary/.test(t)) {
+    intents.add('positionEstimate')
+  }
+  if (/industry (football )?roster|roster estimate|football roster (payroll|spend|spending)|40.?50\s*m|50 million roster|40 million roster|most expensive roster/.test(t)) {
+    intents.add('rosterEstimate')
+  }
+  if (/\bpayroll\b/.test(t) && /roster|football|industry/.test(t)) intents.add('rosterEstimate')
+  if (
+    /reported nil|nil reported|reported bar/.test(t) ||
+    (/how does .+ compare/.test(t) && /reported|industry roster|roster stack/.test(t))
+  ) {
+    intents.add('reportedNil')
+  }
   if (/leftover|house remaining|remaining house/.test(t)) intents.add('leftover')
   if (/house spent|spent cell|year 1 spent/.test(t)) intents.add('houseSpent')
-  if (/booked nil|nil booked/.test(t) || (/\bnil\b/.test(t) && !/modeled/.test(t) && !/990/.test(t))) {
+  if (
+    /booked nil|nil booked/.test(t) ||
+    (/\bnil\b/.test(t) &&
+      !/modeled/.test(t) &&
+      !/990/.test(t) &&
+      !intents.has('rosterEstimate') &&
+      !intents.has('reportedNil'))
+  ) {
     intents.add('bookedNil')
   }
   if (/modeled nil|nil modeled/.test(t)) intents.add('modeledNil')
   if (/house cap/.test(t) && !intents.has('defineHouse')) intents.add('houseCap')
   if (/\bcapacity\b/.test(t) && !intents.has('defineCapacity')) intents.add('capacity')
   if (/\btv\b|media (rights|line|check|deal)|conference media|full tv|broadcast media/.test(t)) intents.add('tv')
-  if (/starting qb|qb1|\bqb\b|roster|who is .+ start|depth chart/.test(t)) intents.add('roster')
+  if (
+    /starting qb|qb1|\bqb\b|who is .+ start|depth chart/.test(t) ||
+    (/\broster\b/.test(t) && !intents.has('rosterEstimate') && !intents.has('listRosterEstimate') && !intents.has('defineRosterEstimate'))
+  ) {
+    intents.add('roster')
+  }
   if (/buyout|coach pay|head coach|salary/.test(t)) intents.add('coach')
   if (/compare|\bvs\b|versus/.test(t)) intents.add('compare')
   if (/methods|how (is|does) the desk/.test(t)) intents.add('methods')
@@ -234,6 +306,23 @@ function leftoverBundle(school) {
       ? Number(leftover.field.spent)
       : null
   return { leftover, booked, spent }
+}
+
+function estimateAside(school, spent) {
+  const stack = footballRosterStack(school)
+  if (!stack) return null
+  const display = stack.display
+  const bits = [
+    `A separate industry football roster estimate is on the desk (${display}, labeled ${stack.lane}) — not booked NIL, not House spent, and not subtracted from capacity or leftover.`,
+  ]
+  if (spent == null) {
+    bits.push(
+      `We do not have a booked ${school.name} House spent total. Leftover only exists when that spent cell is booked.`,
+    )
+  } else {
+    bits.push('Leftover on this desk is House cap minus booked House spent, not this survey.')
+  }
+  return bits.join(' ')
 }
 
 function capacityOf(school, includeAlumni) {
@@ -271,7 +360,7 @@ function factLine(label, value, opts = {}) {
   return bits.join(' · ')
 }
 
-function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk) {
+function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, question) {
   const { school, leftover, booked, spent, cap, coach } = schoolFacts(raw, season, includeAlumni, desk)
   const lines = []
   const facts = []
@@ -294,11 +383,23 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk) {
     return tvAnswer(school, tv, season)
   }
 
-  if (intents.has('roster')) {
+  if (intents.has('positionEstimate') && !intents.has('leftover') && !intents.has('houseSpent') && !intents.has('bookedNil')) {
+    return positionEstimateAnswer(school, season, spent, question)
+  }
+
+  if (intents.has('reportedNil') && !intents.has('leftover') && !intents.has('houseSpent') && !intents.has('bookedNil')) {
+    return reportedNilAnswer(school, season, spent, booked)
+  }
+
+  if (intents.has('rosterEstimate') && !intents.has('leftover') && !intents.has('houseSpent') && !intents.has('bookedNil')) {
+    return rosterEstimateAnswer(school, season, spent)
+  }
+
+  if (intents.has('roster') && !intents.has('positionEstimate')) {
     return rosterAnswer(school, rosters, season)
   }
 
-  if (intents.has('coach') && !intents.has('leftover') && !intents.has('bookedNil') && !intents.has('capacity')) {
+  if (intents.has('coach') && !intents.has('positionEstimate') && !intents.has('leftover') && !intents.has('bookedNil') && !intents.has('capacity')) {
     return coachAnswer(school, coach, season)
   }
 
@@ -364,7 +465,13 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk) {
     } else {
       lines.push(pendingLine(school, 'House spent', 'house-spent', leftover.field || school.nil?.houseRemaining))
       lines.push('Leftover is only computed when a booked House spent cell exists. We do not invent leftover from a cap plan.')
+      const mentionEstimateHere = !intents.has('leftover') && !wantAll
+      const houseAside = mentionEstimateHere ? estimateAside(school, spent) : null
+      if (houseAside) lines.push(houseAside)
       links.push({ to: schoolHref(school.id, season, 'house'), label: `${school.name} House` })
+      if (houseAside) {
+        links.push({ to: schoolHref(school.id, season, ROSTER_ESTIMATE_HASH), label: `${school.name} industry roster estimate` })
+      }
     }
   }
 
@@ -379,12 +486,22 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk) {
       lines.push(
         `${school.name} leftover is ${money(leftover.value)}${yl ? ` (${yl})` : ''}. House cap minus booked House spent.${extra} Not capacity − House − NIL.`,
       )
+      const leftoverOnAside = estimateAside(school, spent)
+      if (leftoverOnAside) lines.push(leftoverOnAside)
       facts.push(factLine('Leftover', leftover.value, { mark: mark(leftover.field, 'estimated'), note: yl }))
       links.push({ to: schoolHref(school.id, season, 'leftover'), label: `${school.name} leftover` })
+      if (leftoverOnAside) {
+        links.push({ to: schoolHref(school.id, season, ROSTER_ESTIMATE_HASH), label: `${school.name} industry roster estimate` })
+      }
     } else {
       lines.push(pendingLine(school, 'leftover', 'leftover', leftover.field || school.nil?.houseRemaining))
       lines.push('Leftover is House Year 1 cap minus booked House spent, only when that spent cell exists — not capacity − House − NIL.')
+      const leftoverAside = estimateAside(school, spent)
+      if (leftoverAside) lines.push(leftoverAside)
       links.push({ to: schoolHref(school.id, season, 'leftover'), label: `${school.name} leftover` })
+      if (leftoverAside) {
+        links.push({ to: schoolHref(school.id, season, ROSTER_ESTIMATE_HASH), label: `${school.name} industry roster estimate` })
+      }
     }
   }
 
@@ -482,6 +599,300 @@ function tvAnswer(school, tv, season) {
   }
 
   return { text: lines.join(' '), facts, links, suggested: SUGGESTED_PROMPTS.slice(0, 3) }
+}
+
+function rosterEstimateAnswer(school, season, spent) {
+  const links = [
+    { to: schoolHref(school.id, season, ROSTER_ESTIMATE_HASH), label: `${school.name} industry roster estimate` },
+    { to: '/methods', label: 'Methods' },
+  ]
+  const offYear = season != null && season !== 2026
+  if (offYear) {
+    return {
+      text: `${school.name} has no industry football roster estimate on ${season}. That lane is a 2026 modeled / survey cell. Switch the season to 2026.`,
+      facts: ['Industry football roster estimate: 2026 only'],
+      links,
+      suggested: ["What's LSU's industry football roster estimate?", "What's the industry roster estimate for Alabama?"],
+    }
+  }
+  const stack = footballRosterStack(school)
+  if (!stack) {
+    return {
+      text: `${school.name} has no defensible public input for a football roster stack — no CBS / SI named cell and no cited conference median. Empty is not zero. Not booked NIL, not House spent.`,
+      facts: ['Industry football roster estimate: no defensible public input'],
+      links,
+      suggested: ["What's LSU's industry football roster estimate?"],
+    }
+  }
+  const leftoverBit =
+    spent == null
+      ? ` We do not have a booked ${school.name} House spent total. Leftover only exists when that spent cell is booked — this stack does not create leftover.`
+      : ' Leftover on this desk is House cap minus booked House spent, not this stack.'
+  if (stack.lane === 'survey') {
+    const est = stack.survey
+    const display = stack.display
+    const lines = [
+      est.kind === 'range'
+        ? `${school.name} industry football roster estimate is ${display}${est.qualifier ? ` (${est.qualifier})` : ''}. Labeled survey — not modeled from a conference median, not booked NIL, not House spent. Combines football’s share of institutional revenue-share plus third-party NIL; not a school filing. Do not subtract from capacity or leftover.`
+        : `${school.name} industry football roster estimate is ${display}${est.qualifier ? ` (${est.qualifier})` : ''}. Labeled survey — a published tier, not a point estimate and not a modeled midpoint. Not booked NIL, not House spent. Do not subtract from capacity or leftover.`,
+    ]
+    if (est.kind === 'tier' && stack.allocation) {
+      lines.push(`Position allocation uses the modeled envelope ${stack.allocation.display}. ${stack.allocation.formula}`)
+    }
+    lines.push(leftoverBit.trim())
+    return {
+      text: lines.join(' '),
+      facts: [`Industry roster estimate: ${display} (survey)`, est.qualifier, 'survey — not House spent'].filter(Boolean),
+      links,
+      suggested: [`What's ${school.name}'s leftover?`, "What's the industry roster estimate for Alabama?"],
+    }
+  }
+  return {
+    text: `${school.name} is not named in the published CBS / SI survey. The industry football roster estimate is modeled ${stack.display} — ${stackFormula(stack)} Not a survey cell, not a filing, not booked NIL, not House spent.${leftoverBit}`,
+    facts: [`Industry roster estimate: ${stack.display} (modeled)`, 'modeled — not survey — not House spent'],
+    links,
+    suggested: ["What's LSU's industry football roster estimate?", `What's the industry estimate for ${school.name}'s QB?`],
+  }
+}
+
+function reportedNilAnswer(school, season, spent, booked) {
+  const links = [
+    { to: schoolHref(school.id, season, REPORTED_BAR_HASH), label: `${school.name} NIL reported bar` },
+    { to: schoolHref(school.id, season, ROSTER_ESTIMATE_HASH), label: `${school.name} industry roster estimate` },
+  ]
+  if (season !== 2026) {
+    return {
+      text: `${school.name} has no NIL reported bar on ${season}. That comparable bar is a 2026 modeled / survey cell. Switch the season to 2026.`,
+      facts: ['NIL reported bar: 2026 only'],
+      links,
+      suggested: ['How does Alabama compare on reported NIL?', "What's LSU's industry football roster estimate?"],
+    }
+  }
+  const bar = reportedNilBar(school, {
+    booked: typeof booked === 'number' ? booked : booked?.value,
+    spent,
+  })
+  if (!bar) {
+    return {
+      text: `${school.name} has no football stack to plot on the NIL reported bar. Empty is not zero. Not booked NIL, not House spent.`,
+      facts: ['NIL reported bar: no defensible public input'],
+      links,
+      suggested: ['How does Alabama compare on reported NIL?'],
+    }
+  }
+  const maxM = Math.round(bar.max / 1_000_000)
+  const citeBits = []
+  if (bar.sameBookedSpent && bar.booked) {
+    citeBits.push(
+      `Booked NIL and House spent sit at the same separate mark (${money(bar.booked.value)}) — not mixed into the reported band.`,
+    )
+  } else {
+    if (bar.booked) citeBits.push(`Booked NIL is a separate mark at ${money(bar.booked.value)}.`)
+    if (bar.spent) citeBits.push(`House spent is a separate mark at ${money(bar.spent.value)}.`)
+  }
+  const leftoverBit =
+    spent == null
+      ? ` Leftover only exists when a booked House spent cell exists — this bar does not create leftover.`
+      : ' Leftover on this desk is House cap minus booked House spent, not this bar.'
+  const laneBit =
+    bar.lane === 'survey'
+      ? `Labeled survey (${bar.display}). The comparable band is ${bar.rangeDisplay}.`
+      : `Labeled modeled (${bar.display}).`
+  return {
+    text: `${school.name} reported NIL bar is ${bar.rangeDisplay} on the shared $0–$${maxM}M Power 4 + Notre Dame scale. ${laneBit} The gold band is the industry/survey or modeled football-stack range (rev-share + third-party NIL) — not booked NIL and not House spent. Scale max is the highest published or modeled top in the set ($${maxM}M — LSU survey high and the above-$40M allocation envelope). ${citeBits.join(' ')}${leftoverBit}`,
+    facts: [
+      `NIL reported bar: ${bar.rangeDisplay} (${bar.lane})`,
+      `Scale: $0–$${maxM}M`,
+      bar.booked ? `Booked NIL mark: ${money(bar.booked.value)}` : null,
+      bar.spent ? `House spent mark: ${money(bar.spent.value)}` : null,
+    ].filter(Boolean),
+    links,
+    suggested: [
+      'How does Alabama compare on reported NIL?',
+      'Compare LSU and Alabama on reported NIL',
+      "What's LSU's industry football roster estimate?",
+    ],
+  }
+}
+
+function compareReportedNil(rawA, rawB, season, includeAlumni, desk) {
+  const A = schoolFacts(rawA, season, includeAlumni, desk)
+  const B = schoolFacts(rawB, season, includeAlumni, desk)
+  const barA = reportedNilBar(A.school, { booked: A.booked.value, spent: A.spent })
+  const barB = reportedNilBar(B.school, { booked: B.booked.value, spent: B.spent })
+  const links = [
+    { to: schoolHref(A.school.id, season, REPORTED_BAR_HASH), label: `${A.school.name} NIL reported bar` },
+    { to: schoolHref(B.school.id, season, REPORTED_BAR_HASH), label: `${B.school.name} NIL reported bar` },
+  ]
+  if (!barA || !barB) {
+    const missing = !barA ? A.school.name : B.school.name
+    return {
+      text: `${missing} has no football stack on this season, so the desk will not compare reported NIL bars. Empty is not zero.`,
+      links,
+      suggested: ['How does Alabama compare on reported NIL?'],
+    }
+  }
+  const maxM = Math.round(barA.max / 1_000_000)
+  const higher =
+    barA.mid === barB.mid
+      ? null
+      : barA.mid > barB.mid
+        ? A.school.name
+        : B.school.name
+  const lead = higher
+    ? `${A.school.name} reported NIL band is ${barA.rangeDisplay} (${barA.lane}); ${B.school.name} is ${barB.rangeDisplay} (${barB.lane}). Same $0–$${maxM}M scale. ${higher} sits higher on the comparable bar.`
+    : `${A.school.name} and ${B.school.name} share the same reported NIL band (${barA.rangeDisplay}) on the $0–$${maxM}M scale.`
+  return {
+    text: `${lead} The band is the industry/survey or modeled football-stack range (rev-share + third-party NIL) — not booked NIL and not House spent. Booked cites stay separate marks. Leftover is still House cap minus booked House spent when that cell exists.`,
+    facts: [
+      `${A.school.name}: ${barA.rangeDisplay} (${barA.lane})`,
+      `${B.school.name}: ${barB.rangeDisplay} (${barB.lane})`,
+      `Scale: $0–$${maxM}M`,
+    ],
+    links,
+    suggested: ['How does Alabama compare on reported NIL?', "What's LSU's leftover?"],
+  }
+}
+
+function listRosterEstimates(desk, season) {
+  const survey = []
+  const modeled = []
+  for (const raw of desk?.schools || []) {
+    const school = overlaySchool(raw, season)
+    const stack = footballRosterStack(school)
+    if (!stack) continue
+    const row = { id: school.id, name: school.name, display: stack.display, lane: stack.lane, kind: stack.kind }
+    if (stack.lane === 'survey') survey.push(row)
+    else modeled.push(row)
+  }
+  if (!survey.length && !modeled.length) {
+    return {
+      text: 'No industry football roster estimate is on this season. That lane is a 2026 modeled / survey cell only.',
+      links: [{ to: '/methods', label: 'Methods' }],
+    }
+  }
+  const lines = [
+    `Industry football roster estimate is a labeled modeled / survey lane — not booked NIL, not House spent, and not leftover. ${survey.length} survey cell${survey.length === 1 ? '' : 's'}; ${modeled.length} modeled from the SI conference median.`,
+  ]
+  if (survey.length) {
+    lines.push('Survey: ' + survey.map((r) => `${r.name} ${r.display}`).join('; ') + '.')
+  }
+  if (modeled.length) {
+    lines.push('Modeled (same conference band, not a school-by-school guess): ' + modeled.map((r) => `${r.name} ${r.display}`).join('; ') + '.')
+  }
+  lines.push('Leftover still only exists when a booked House spent cell exists.')
+  return {
+    text: lines.join(' '),
+    facts: [...survey, ...modeled].map((r) => `${r.name}: ${r.display} (${r.lane})`),
+    links: [
+      ...survey.slice(0, 8).map((r) => ({ to: schoolHref(r.id, season, ROSTER_ESTIMATE_HASH), label: r.name })),
+      { to: '/methods', label: 'Methods' },
+    ],
+  }
+}
+
+function positionEstimateAnswer(school, season, spent, question) {
+  const family = detectPositionFamily(question || '')
+  const links = [
+    { to: schoolHref(school.id, season, POSITION_ESTIMATE_HASH), label: `${school.name} position estimate` },
+    { to: '/methods', label: 'Methods' },
+  ]
+  const offYear = season != null && season !== 2026
+  if (offYear) {
+    return {
+      text: `${school.name} has no industry position estimate on ${season}. That lane is a 2026 modeled / survey cell. Switch the season to 2026.`,
+      facts: ['Industry estimate by position: 2026 only'],
+      links,
+      suggested: ["What's the industry estimate for Miami's QB?", 'Which positions have an industry salary band?'],
+    }
+  }
+  const stack = footballRosterStack(school)
+  const rows = stackPositionRows(school)
+  const leftoverBit =
+    spent == null
+      ? ` Leftover only exists when a booked House spent cell exists — this stack does not create leftover.`
+      : ' Leftover on this desk is House cap minus booked House spent, not this stack.'
+  if (!stack || !rows.length) {
+    return {
+      text: `${school.name} has no defensible public input for a football stack, so there is no modeled position range. Empty is not zero. Not booked NIL.`,
+      facts: ['Industry estimate by position: no defensible public input'],
+      links,
+      suggested: ["What's the industry estimate for Miami's QB?"],
+    }
+  }
+  const modeledRow = family ? rows.find((r) => r.family === family.family) : null
+  const surveyRow = family ? positionEstimateFor(school, family.family) : null
+  if (family && modeledRow) {
+    const modeledBit = `Modeled ${family.label} starter ${modeledRow.starterDisplay}${modeledRow.backupDisplay ? `, backup ${modeledRow.backupDisplay}` : ''} — ${modeledRow.formula} Stack is ${stack.lane} ${stack.display}.`
+    if (surveyRow) {
+      const mark = surveyRow.mark === 'reported-estimate' ? 'reported-estimate' : 'survey'
+      return {
+        text: `${school.name} ${family.label} survey band is ${positionEstimateDisplay(surveyRow)} (${mark} — industry estimate, not a contract). ${modeledBit} Not booked NIL, not House spent.${leftoverBit}`,
+        facts: [`${family.label}: ${positionEstimateDisplay(surveyRow)} (${mark})`, `Modeled starter: ${modeledRow.starterDisplay}`],
+        links,
+        suggested: [`What's ${school.name}'s leftover?`, "What's Alabama's QB salary?"],
+      }
+    }
+    return {
+      text: `${school.name} ${family.label} has no CBS / SI position band. The modeled range is starter ${modeledRow.starterDisplay}${modeledRow.backupDisplay ? `, backup ${modeledRow.backupDisplay}` : ''}. Labeled modeled, not survey. ${modeledRow.formula} Stack is ${stack.lane} ${stack.display}. Industry estimate, not a contract. Not booked NIL.${leftoverBit}`,
+      facts: [`${family.label} starter: ${modeledRow.starterDisplay} (modeled)`, `stack: ${stack.display} (${stack.lane})`],
+      links,
+      suggested: ["What's the industry estimate for Miami's QB?", `What's ${school.name}'s industry football roster estimate?`],
+    }
+  }
+  const cited = industryPositionEstimates(school)
+  const citedBits = cited
+    ? cited.positions.map((p) => `${p.label || positionLabel(p.family)} ${positionEstimateDisplay(p)} (${p.mark === 'reported-estimate' ? 'reported-estimate' : 'survey'})`)
+    : []
+  return {
+    text: `${school.name} position approximates are modeled shares of the ${stack.lane} football stack ${stack.display}. ${rows.slice(0, 4).map((r) => `${r.label} starter ${r.starterDisplay}`).join('; ')}. ${citedBits.length ? `Survey / reported-estimate overlays: ${citedBits.join('; ')}.` : 'No CBS / SI position band on this school — modeled only.'} Industry estimate, not a contract. Not booked NIL.${leftoverBit}`,
+    facts: rows.slice(0, 6).map((r) => `${r.label}: ${r.starterDisplay} (modeled)`),
+    links,
+    suggested: [`What's the industry estimate for ${school.name}'s QB?`],
+  }
+}
+
+function listPositionEstimates(desk, season) {
+  const rows = []
+  for (const raw of desk?.schools || []) {
+    const school = overlaySchool(raw, season)
+    const field = industryPositionEstimates(school)
+    if (!field) continue
+    for (const p of field.positions) {
+      rows.push({
+        id: school.id,
+        name: school.name,
+        family: p.family,
+        label: p.label || positionLabel(p.family),
+        display: positionEstimateDisplay(p),
+        mark: p.mark,
+      })
+    }
+  }
+  if (!rows.length) {
+    return {
+      text: 'No industry position estimate is on this season. That lane is a 2026 modeled / survey cell only.',
+      links: [{ to: '/methods', label: 'Methods' }],
+    }
+  }
+  const cited = [...new Set(rows.map((r) => r.label))]
+  const missing = FOOTBALL_POSITIONS.filter((p) => !rows.some((r) => r.family === p.family)).map((p) => p.label)
+  const lines = [
+    `Every Power 4 + Notre Dame school has modeled starter / backup ranges — the football stack split by existing seat weights (QB1 = 100). Labeled modeled, not a contract. ${rows.length} CBS / SI cited overlay${rows.length === 1 ? '' : 's'}:`,
+    rows.map((r) => `${r.name} ${r.label} ${r.display}${r.mark === 'reported-estimate' ? ' (reported-estimate)' : ' (survey)'}`).join('; ') + '.',
+    `Cited overlays: ${cited.join(', ')}. Positions with no CBS / SI band still show the modeled seat share (including ${missing.join(', ') || 'none'}). Not booked NIL.`,
+  ]
+  return {
+    text: lines.join(' '),
+    facts: rows.map((r) => `${r.name} ${r.label}: ${r.display}`),
+    links: [
+      ...[...new Set(rows.map((r) => r.id))].map((id) => ({
+        to: schoolHref(id, season, POSITION_ESTIMATE_HASH),
+        label: `${rows.find((r) => r.id === id).name} position estimate`,
+      })),
+      { to: '/methods', label: 'Methods' },
+    ],
+  }
 }
 
 function rosterAnswer(school, rosters, season) {
@@ -767,6 +1178,62 @@ function schoolCoverage(raw, season, includeAlumni, desk) {
     rows[0].mark = mark(booked.field, 'reported')
   }
   const nines = collective990Cells(school).filter((r) => r.value != null)
+  const est = industryRosterEstimate(school)
+  if (est) {
+    rows.push({
+      on: true,
+      label: 'Industry football roster estimate',
+      value: rosterEstimateDisplay(est),
+      mark: 'modeled',
+      note: est.qualifier || 'survey — not House spent',
+      hash: ROSTER_ESTIMATE_HASH,
+    })
+  } else if (season === 2026) {
+    const stack = footballRosterStack(school)
+    if (stack?.lane === 'modeled') {
+      rows.push({
+        on: true,
+        label: 'Industry football roster estimate',
+        value: stack.display,
+        mark: 'modeled',
+        note: 'SI conference median — not survey, not House spent',
+        hash: ROSTER_ESTIMATE_HASH,
+      })
+    } else {
+      rows.push({
+        on: false,
+        label: 'Industry football roster estimate',
+        mark: 'pending',
+        why: 'No CBS / SI named cell and no cited conference median.',
+        hash: ROSTER_ESTIMATE_HASH,
+      })
+    }
+  }
+  if (season === 2026 && footballRosterStack(school)?.allocation) {
+    const bar = reportedNilBar(school, { booked: booked.value, spent })
+    rows.push({
+      on: true,
+      label: 'NIL reported bar',
+      value: bar?.rangeDisplay,
+      mark: 'modeled',
+      note: 'comparable $0–$50M scale — not booked NIL, not House spent',
+      hash: REPORTED_BAR_HASH,
+    })
+  }
+  const pos = industryPositionEstimates(school)
+  const stackPos = season === 2026 ? footballRosterStack(school) : null
+  if (pos || stackPos) {
+    rows.push({
+      on: true,
+      label: 'Industry estimate by position',
+      value: pos
+        ? pos.positions.map((p) => `${p.label || positionLabel(p.family)} ${positionEstimateDisplay(p)}`).join('; ')
+        : `modeled shares of ${stackPos.display}`,
+      mark: 'modeled',
+      note: pos ? 'survey overlay + modeled seat shares' : 'modeled seat shares of the football stack',
+      hash: POSITION_ESTIMATE_HASH,
+    })
+  }
   return { school, leftover, booked, spent, cap, coach, rows, nines }
 }
 
@@ -780,6 +1247,8 @@ function coverageMapAnswer() {
       `${DEFS.pending.label}: ${DEFS.pending.text} Empty is not zero.`,
       `${DEFS.nil.label}: ${DEFS.nil.text} The desk does not carry On3 or invented player deals. Roster position dollars are a labeled modeled allocation of the school pot — not contracts.`,
       `${DEFS.nilCollective990.label}: ${DEFS.nilCollective990.text}`,
+      `${DEFS.industryRosterEstimate.label}: ${DEFS.industryRosterEstimate.text}`,
+      `${DEFS.industryPositionEstimate.label}: ${DEFS.industryPositionEstimate.text}`,
       `${DEFS.house.label}: ${DEFS.house.text} House spent is the booked Year 1 spent cell when one exists. ${DEFS.houseRemaining.label}: ${DEFS.houseRemaining.text}`,
       `${DEFS.capacity.label}: ${DEFS.capacity.text} Filed 990 / MFRS lines are tagged reported. Conference-floor media and equal-share TV math are tagged estimated.`,
       `${DEFS.buyout.label}: ${DEFS.buyout.text}`,
@@ -804,6 +1273,8 @@ function lanesAnswer() {
       `${DEFS.nil.label}: ${DEFS.nil.text}`,
       `${DEFS.houseRemaining.label}: ${DEFS.houseRemaining.text}`,
       'Leftover is House remaining. It is not capacity − House − NIL.',
+      `${DEFS.industryRosterEstimate.label}: ${DEFS.industryRosterEstimate.text}`,
+      `${DEFS.industryPositionEstimate.label}: ${DEFS.industryPositionEstimate.text}`,
     ].join(' '),
     links: [{ to: '/methods', label: 'Methods' }, { to: '/', label: 'Rank list' }],
     suggested: [
@@ -848,6 +1319,8 @@ function nilCoverageAnswer(raw, season, includeAlumni, desk) {
     links.push({ to: schoolHref(school.id, season, 'leftover'), label: `${school.name} leftover` })
   } else {
     lines.push('House spent and leftover are not on the desk — leftover only exists when a booked House spent cell exists.')
+    const aside = estimateAside(school, spent)
+    if (aside) lines.push(aside)
   }
 
   if (nines.length) {
@@ -857,9 +1330,15 @@ function nilCoverageAnswer(raw, season, includeAlumni, desk) {
   } else {
     lines.push('No public collective Form 990 on the desk. That lane stays pending — not that payout is zero.')
   }
+  if (industryRosterEstimate(school)) {
+    links.push({ to: schoolHref(school.id, season, ROSTER_ESTIMATE_HASH), label: `${school.name} industry roster estimate` })
+  }
+
+  const estimateOn = estimateAside(school, spent)
+  if (estimateOn && spent != null) lines.push(estimateOn)
 
   lines.push(
-    'The desk does not have On3, recruiting ranks, franchise valuations, or invented player deals. Roster position bands are labeled modeled allocations of the school pot when a midpoint exists — not booked contracts. Modeled NIL is a separate conference heuristic and is not a substitute for booked.',
+    'The desk does not have On3, recruiting ranks, franchise valuations, or invented player deals. Roster position bands are labeled modeled allocations of the school pot when a midpoint exists — not booked contracts. A cited CBS / SI position band, when present, is a separate modeled / survey lane (industry estimate, not a contract) and is not booked NIL. Modeled NIL is a separate conference heuristic and is not a substitute for booked. An industry football roster estimate, when present, is a labeled modeled / survey lane and is not booked NIL or House spent. The NIL reported bar plots that same range on one $0–$50M scale; booked NIL and House spent stay separate marks.',
   )
 
   return {
@@ -934,7 +1413,7 @@ function missingAnswer(raw, season, includeAlumni, desk, { leadMissing = true } 
 
 function refuseAnswer() {
   return {
-    text: 'Public Cap does not carry On3, recruiting ranks, or franchise valuations. The desk is capacity, the House cap, booked NIL, leftover (when House spent exists), TV, buyouts, and public rosters.',
+    text: 'Public Cap does not carry On3, recruiting ranks, or franchise valuations. The desk is capacity, the House cap, booked NIL, leftover (when House spent exists), a labeled industry football roster survey when CBS/SI named a school, cited position bands when those pieces state one, the comparable NIL reported bar, TV, buyouts, and public rosters.',
     links: [
       { to: '/', label: 'Rank list' },
       { to: '/methods', label: 'Methods' },
@@ -946,7 +1425,7 @@ function refuseAnswer() {
 
 function helpAnswer() {
   return {
-    text: 'Ask about a Power 4 school (plus Notre Dame), or about coverage: what is booked vs modeled vs pending, what NIL the desk has (cites only — no On3), and what is missing. Numbers come from the public JSON only. Empty cells stay pending. Leftover is House cap minus booked House spent — not capacity − House − NIL. Buyouts are overhang, not yearly spend.',
+    text: 'Ask about a Power 4 school (plus Notre Dame), or about coverage: what is booked vs modeled vs pending, what NIL the desk has (cites only — no On3), and what is missing. Numbers come from the public JSON only. Empty cells stay pending. Leftover is House cap minus booked House spent — not capacity − House − NIL. An industry football roster estimate is a separate modeled / survey lane and does not create leftover. The NIL reported bar plots that range on one $0–$50M scale so schools can be compared — not booked NIL and not House spent. A cited position band is an industry estimate, not a contract. Buyouts are overhang, not yearly spend.',
     links: [
       { to: '/', label: 'Rank list' },
       { to: '/methods', label: 'Methods' },
@@ -1001,6 +1480,15 @@ export function answerDeskQuestion(question, ctx = {}) {
   if (intents.has('defineNil') && !intents.has('coverage')) return answerDefine('nil')
   if (intents.has('defineCapacity') && !intents.has('coverage')) return answerDefine('capacity')
   if (intents.has('defineModeled') && !intents.has('coverage')) return answerDefine('nilModeled')
+  if (intents.has('defineRosterEstimate') && matchSchools(q, desk.schools).length === 0) {
+    return answerDefine('industryRosterEstimate')
+  }
+  if (intents.has('definePositionEstimate') && matchSchools(q, desk.schools).length === 0) {
+    return answerDefine('industryPositionEstimate')
+  }
+  if (intents.has('defineReportedNil') && matchSchools(q, desk.schools).length === 0) {
+    return answerDefine('nilReportedBar')
+  }
   if (intents.has('defineBuyout') && matchSchools(q, desk.schools).length === 0) {
     return answerDefine('buyout')
   }
@@ -1021,9 +1509,24 @@ export function answerDeskQuestion(question, ctx = {}) {
   if (intents.has('listHouseSpent') || (/which schools|who has/.test(fold(q)) && /house spent|booked house|leftover/.test(fold(q)))) {
     return listHouseSpent(desk, season)
   }
+  if (intents.has('listRosterEstimate')) {
+    return listRosterEstimates(desk, season)
+  }
+  if (intents.has('listPositionEstimate')) {
+    return listPositionEstimates(desk, season)
+  }
 
   const ids = matchSchools(q, desk.schools)
   const byId = Object.fromEntries(desk.schools.map((s) => [s.id, s]))
+
+  if (ids.length >= 1 && intents.has('reportedNil')) {
+    if (ids.length >= 2) {
+      return compareReportedNil(byId[ids[0]], byId[ids[1]], season, includeAlumni, desk)
+    }
+    const raw = byId[ids[0]]
+    const facts = schoolFacts(raw, season, includeAlumni, desk)
+    return reportedNilAnswer(facts.school, season, facts.spent, facts.booked)
+  }
 
   if (ids.length >= 2 && (intents.has('compare') || intents.has('leftover') || intents.has('capacity') || intents.has('bookedNil') || /compare|\bvs\b|versus| and /.test(fold(q)))) {
     return compareSchools(byId[ids[0]], byId[ids[1]], season, includeAlumni, intents, desk)
@@ -1034,10 +1537,10 @@ export function answerDeskQuestion(question, ctx = {}) {
     if (intents.has('nilCoverage') || (intents.has('doYouHave') && intents.has('bookedNil') && !intents.has('leftover') && !intents.has('houseSpent'))) {
       return nilCoverageAnswer(raw, season, includeAlumni, desk)
     }
-    if (intents.has('missing') || (intents.has('coverage') && !intents.has('leftover') && !intents.has('tv') && !intents.has('roster'))) {
+    if (intents.has('missing') || (intents.has('coverage') && !intents.has('leftover') && !intents.has('tv') && !intents.has('roster') && !intents.has('positionEstimate') && !intents.has('rosterEstimate'))) {
       return missingAnswer(raw, season, includeAlumni, desk, { leadMissing: intents.has('missing') || /missing/.test(fold(q)) })
     }
-    const out = schoolAnswer(raw, season, includeAlumni, intents, ctx.tv, ctx.rosters, desk)
+    const out = schoolAnswer(raw, season, includeAlumni, intents, ctx.tv, ctx.rosters, desk, q)
     if (intents.has('houseCap') && desk.meta) {
       const house = houseValueForSeason(desk.meta, season)
       const field = houseFieldForSeason(desk.meta, season)
@@ -1070,7 +1573,7 @@ export function answerDeskQuestion(question, ctx = {}) {
   if (/hello|hi there|help|what can you/.test(fold(q))) return helpAnswer()
 
   return {
-    text: 'I can look up booked cells — leftover, House spent, booked NIL, capacity, conference media, buyouts, and roster starters. Name a Power 4 school (or Notre Dame), or ask what leftover means. I will not invent a dollar.',
+    text: 'I can look up booked cells — leftover, House spent, booked NIL, capacity, conference media, buyouts, roster starters, the labeled industry football roster survey when one exists, cited position bands when CBS/SI stated one, and how a school compares on the NIL reported bar. Name a Power 4 school (or Notre Dame), or ask what leftover means. I will not invent a dollar.',
     links: [
       { to: '/', label: 'Rank list' },
       { to: '/methods', label: 'Methods' },

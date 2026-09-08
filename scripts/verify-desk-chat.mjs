@@ -93,7 +93,7 @@ ok(def.links.some((l) => l.to === '/methods'), 'definition links Methods')
 
 const ala = ask("What's Alabama's leftover?")
 ok(/pending/i.test(ala.text), `Alabama leftover stays pending: ${ala.text}`)
-ok(!/\$\d/.test(ala.text), 'Alabama leftover invents no leftover dollar')
+ok(!/leftover is \$/.test(ala.text), 'Alabama leftover invents no leftover dollar')
 ok(ala.links.some((l) => l.to.includes('/school/alabama')), 'Alabama leftover points at the school page')
 
 const alaNil = ask("What's Alabama's booked NIL?")
@@ -147,8 +147,133 @@ ok(!/On3/.test(smuMiss.text) || /does not/.test(smuMiss.text), 'SMU missing does
 
 const haveAla = ask('Do you have leftover for Alabama?')
 ok(/not on the desk|pending/i.test(haveAla.text), 'Alabama leftover do-you-have is not on the desk')
-ok(!/\$\d/.test(haveAla.text), 'Alabama leftover do-you-have invents no dollar')
+ok(!/leftover is \$/.test(haveAla.text), 'Alabama leftover do-you-have invents no leftover dollar')
 ok(haveAla.links.some((l) => l.to.includes('/school/alabama')), 'do-you-have leftover links Alabama')
+
+const lsuEst = ask("What's LSU's industry football roster estimate?")
+ok(/\$40–50M|\$40-50M|40–50/.test(lsuEst.text), `LSU survey range: ${lsuEst.text}`)
+ok(/labeled survey/i.test(lsuEst.text), 'LSU answer says survey, not modeled')
+ok(/closer to \$50M/i.test(lsuEst.text), 'LSU survey names the CBS closer-to-$50M qualifier')
+ok(/not booked NIL|not House spent/i.test(lsuEst.text), 'LSU survey stays off booked NIL / House spent')
+ok(/leftover only exists|do not have a booked/i.test(lsuEst.text), 'LSU survey does not invent leftover')
+ok(!/seaton/i.test(lsuEst.text), 'LSU survey does not book Seaton')
+ok(lsuEst.links.some((l) => l.to.includes('roster-estimate')), 'LSU survey links the school lane')
+
+const lsuLeft = ask("What's LSU's leftover?")
+ok(/pending/i.test(lsuLeft.text), 'LSU leftover stays pending')
+ok(/industry football roster estimate/i.test(lsuLeft.text), 'LSU leftover names the separate survey')
+ok(/\$40–50M|\$40-50M|40–50/.test(lsuLeft.text), 'LSU leftover answer still shows the survey range')
+ok(/not House spent|does not create leftover|only exists when/i.test(lsuLeft.text), 'LSU leftover refuses to book the survey as leftover')
+
+const lsuNil = ask('What NIL do you have for LSU?')
+ok(/pending/i.test(lsuNil.text), 'LSU booked NIL pending')
+ok(/industry football roster estimate/i.test(lsuNil.text), 'LSU NIL coverage names the survey lane')
+ok(/leftover only exists|House spent/i.test(lsuNil.text), 'LSU NIL coverage keeps leftover pending')
+
+const txEst = ask("What's Texas industry football roster estimate?")
+ok(/above[-\s]?\$40M/i.test(txEst.text), 'Texas survey is a tier, not a point estimate')
+ok(/not a point estimate/i.test(txEst.text), 'Texas survey refuses a fake precise dollar')
+ok(!/\$45M/.test(txEst.text), 'Texas survey is not turned into a $45M midpoint')
+ok(/House cap minus booked House spent/i.test(txEst.text), 'Texas survey keeps leftover on the booked spent cell')
+
+const listEst = ask('Which schools have an industry roster estimate?')
+ok(/LSU/.test(listEst.text) && /Texas A&M/.test(listEst.text), 'list names LSU and Texas A&M')
+ok(/Miami/.test(listEst.text) && /Oregon/.test(listEst.text), 'list names the other CBS/SI above-$40M schools')
+ok(/Georgia/.test(listEst.text) && /Texas Tech/.test(listEst.text), 'list includes CBS right-off-$40M and SI Tech')
+ok(/Indiana/.test(listEst.text), 'list includes Indiana $30–35M')
+ok(/Alabama/.test(listEst.text) && /Clemson/.test(listEst.text), 'list includes modeled conference-median schools')
+ok(/modeled/i.test(listEst.text) && /survey/i.test(listEst.text), 'list separates modeled vs survey')
+ok(!/On3/.test(listEst.text), 'list does not name On3')
+
+const alaEst = ask("What's the industry roster estimate for Alabama?")
+ok(/modeled/i.test(alaEst.text), `Alabama is modeled: ${alaEst.text}`)
+ok(/\$25M–\$33M|\$25–33M|\$25-33M|25–33/.test(alaEst.text), 'Alabama uses the SI SEC median range')
+ok(/–|to/.test(alaEst.text), 'Alabama modeled figure is a range')
+ok(/not a survey cell/i.test(alaEst.text), 'Alabama is not labeled survey')
+ok(/SI SEC median|formula|same band/i.test(alaEst.text), 'Alabama answer shows the formula')
+
+const clemEst = ask("What's the industry roster estimate for Clemson?")
+ok(/modeled/i.test(clemEst.text), 'Clemson is modeled')
+ok(/\$17M–\$24M|\$17–24M|\$17-24M|17–24/.test(clemEst.text), 'Clemson uses the SI ACC median range')
+
+const indEst = ask("What's the industry roster estimate for Indiana?")
+ok(/\$30–35M|\$30-35M|30–35/.test(indEst.text), `Indiana range: ${indEst.text}`)
+ok(/not House spent/i.test(indEst.text), 'Indiana survey stays off House spent')
+
+const gaEst = ask("What's the industry roster estimate for Georgia?")
+ok(/upper \$30M/i.test(gaEst.text), `Georgia tier: ${gaEst.text}`)
+ok(/not a point estimate/i.test(gaEst.text), 'Georgia refuses a fake precise dollar')
+
+ok(SUGGESTED_PROMPTS.some((p) => /LSU.*industry football roster estimate/i.test(p)), 'suggested prompt: LSU industry roster estimate')
+ok(SUGGESTED_PROMPTS.some((p) => /industry estimate for Miami/i.test(p)), 'suggested prompt: Miami QB position estimate')
+ok(SUGGESTED_PROMPTS.some((p) => /compare on reported NIL/i.test(p)), 'suggested prompt: reported NIL compare')
+
+const alaBarChat = ask('How does Alabama compare on reported NIL?')
+ok(/\$25M–\$33M|\$25–33M|\$25-33M|25–33/.test(alaBarChat.text), `Alabama reported bar range: ${alaBarChat.text}`)
+ok(/modeled/i.test(alaBarChat.text), 'Alabama reported bar is modeled')
+ok(/\$0–\$50M|\$0-\$50M|0–\$50M/.test(alaBarChat.text), 'Alabama reported bar names the shared $0–$50M scale')
+ok(/not booked NIL/i.test(alaBarChat.text) && /not House spent/i.test(alaBarChat.text), 'Alabama reported bar stays off booked / House spent')
+ok(/does not create leftover|House cap minus booked House spent/i.test(alaBarChat.text), 'Alabama reported bar does not invent leftover')
+ok(alaBarChat.links.some((l) => l.to.includes('nil-reported')), 'Alabama reported bar links the school hash')
+ok(!/On3/.test(alaBarChat.text), 'Alabama reported bar does not name On3')
+
+const lsuBarChat = ask('How does LSU compare on reported NIL?')
+ok(/\$40M–\$50M|\$40–50M|\$40-50M|40–50/.test(lsuBarChat.text), `LSU reported bar range: ${lsuBarChat.text}`)
+ok(/labeled survey/i.test(lsuBarChat.text), 'LSU reported bar is survey')
+ok(!/seaton/i.test(lsuBarChat.text), 'LSU reported bar does not book Seaton')
+
+const cmpBar = ask('Compare LSU and Alabama on reported NIL')
+ok(/LSU/.test(cmpBar.text) && /Alabama/.test(cmpBar.text), 'compare names both schools')
+ok(/higher/.test(cmpBar.text) && /LSU/.test(cmpBar.text), 'compare says LSU sits higher')
+ok(/not booked NIL/i.test(cmpBar.text), 'compare keeps the bar off booked NIL')
+ok(!/leftover is \$/.test(cmpBar.text), 'reported-NIL compare does not fall through to leftover dollars')
+
+const txBarChat = ask('How does Texas compare on reported NIL?')
+ok(/above[-\s]?\$40M|\$40M–\$50M|\$40–50M/.test(txBarChat.text), 'Texas reported bar uses the survey allocation')
+ok(/\$13\.5M|\$13,500,000/.test(txBarChat.text), 'Texas reported bar still names the booked/spent mark')
+ok(/same separate mark|same mark|Booked NIL and House spent/i.test(txBarChat.text), 'Texas booked and spent share one mark')
+ok(/\$7\.0M|\$7,000,000|House cap minus booked House spent/i.test(txBarChat.text), 'Texas leftover stays on the booked spent cell')
+
+const louBarChat = ask('How does Louisville compare on reported NIL?')
+ok(/\$32\.9M|\$32,900,000/.test(louBarChat.text), 'Louisville reported bar names booked $32.9M as a separate mark')
+ok(/\$20\.2M|\$20,200,000/.test(louBarChat.text), 'Louisville reported bar names House spent $20.2M as a separate mark')
+
+const leftoverStill = ask("Compare Louisville and Kentucky leftover")
+ok(/\$300,000|\$0\.3M|\$300k/.test(leftoverStill.text), 'leftover compare still answers leftover')
+ok(!/reported NIL band/i.test(leftoverStill.text), 'leftover compare is not stolen by the reported bar')
+
+const defBar = ask('What is the NIL reported bar?')
+ok(/\$0–\$50M|\$50M/.test(defBar.text), 'definition names the $50M scale')
+ok(/not booked NIL/i.test(defBar.text), 'definition says the bar is not booked NIL')
+ok(defBar.links.some((l) => l.to === '/methods'), 'definition links Methods')
+
+const miaQb = ask("What's the industry estimate for Miami's QB?")
+ok(/more than \$6M/i.test(miaQb.text), `Miami QB band: ${miaQb.text}`)
+ok(/reported-estimate/i.test(miaQb.text), 'Miami QB is reported-estimate')
+ok(/not a (player )?contract/i.test(miaQb.text), 'Miami QB is not a contract')
+ok(!/mensah/i.test(miaQb.text), 'Miami QB prefers the position band over a named player')
+
+const alaQb = ask("What's Alabama's QB salary?")
+ok(/modeled/i.test(alaQb.text), `Alabama QB is modeled: ${alaQb.text}`)
+ok(/starter/i.test(alaQb.text), 'Alabama QB shows a modeled starter range')
+ok(/not a contract/i.test(alaQb.text), 'Alabama QB is not a contract')
+
+const lsuOt = ask("What's the industry estimate for LSU's OT?")
+ok(/modeled/i.test(lsuOt.text), 'LSU OT is a modeled seat share')
+ok(!/seaton/i.test(lsuOt.text), 'LSU OT does not book Seaton')
+
+const washQb = ask("Who is Washington's starting QB on the roster?")
+ok(/Demond Williams Jr/i.test(washQb.text), 'Washington starter question still returns the name')
+
+const posList = ask('Which positions have an industry salary band?')
+ok(/Miami/.test(posList.text) && /Texas A&M/.test(posList.text), 'position list names cited schools')
+ok(/QB/.test(posList.text) && /WR/.test(posList.text) && /EDGE/.test(posList.text), 'position list names cited families')
+ok(/modeled/i.test(posList.text), 'position list names the modeled seat-share method')
+ok(!/On3/.test(posList.text), 'position list does not name On3')
+
+const lsuMiss = ask('What data is missing for LSU?')
+ok(/House spent/i.test(lsuMiss.text) && /pending/i.test(lsuMiss.text), 'LSU missing names House spent pending')
+ok(/Industry football roster estimate/i.test(lsuMiss.text), 'LSU missing still lists the survey as on the desk')
 
 const buy = ask('Is a buyout annual spend?')
 ok(/overhang|liability/i.test(buy.text) && /not yearly spend/i.test(buy.text), 'buyout definition is overhang')

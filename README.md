@@ -18,7 +18,11 @@ Logos: public/logos/*.png (local files, not hotlinked).
 Fixed “Ask the desk” drawer (idle-loaded, not in the homepage hero). Local lookup
 against the public JSON — no API key, no hosted model. Empty cells stay pending.
 Booked and modeled stay distinct. Leftover is House cap − booked House spent
-when that cell exists, not capacity − House − NIL.
+when that cell exists, not capacity − House − NIL. An industry football roster
+estimate (CBS/SI survey) is a separate labeled modeled / survey lane — not
+House spent and not booked NIL. A NIL reported bar plots that range on one
+$0–$50M scale (max = highest published/modeled top in the Power 4 + ND set)
+so schools can be compared. Booked NIL / House spent stay separate marks.
 
 ```
 npm run dev
@@ -48,6 +52,18 @@ Coverage / included-vs-not (Methods language, no invented policy):
   → booked NIL / leftover pending (no cite); tickets, sponsorships, contributions are a private-school gap; media $17.07M is on the desk
 - Do you have leftover for Alabama?
   → not on the desk — leftover only when House spent exists
+- What's LSU's industry football roster estimate?
+  → $40–50M (closer to $50M per CBS) — modeled / survey, not House spent; leftover still pending
+- What's the industry roster estimate for Alabama?
+  → modeled $25–33M (SI SEC median) — not a survey cell
+- What's the industry estimate for Miami's QB?
+  → survey more than $6M (reported-estimate) plus a modeled starter/backup range
+- What's Alabama's QB salary?
+  → modeled starter/backup range from the SEC-median stack — not a contract
+- How does Alabama compare on reported NIL?
+  → modeled $25–33M on the shared $0–$50M bar; not booked NIL / not House spent
+- Compare LSU and Alabama on reported NIL
+  → LSU survey $40–50M sits higher than Alabama’s modeled $25–33M; leftover unchanged
 
 
 ## Seasons

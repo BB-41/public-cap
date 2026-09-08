@@ -1,0 +1,476 @@
+{
+  "lsu": {
+    "label": "Industry football roster estimate",
+    "kind": "range",
+    "display": "$40–50M",
+    "low": 40000000,
+    "high": 50000000,
+    "qualifier": "closer to $50M per CBS",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) industry poll — LSU most expensive 2026 football roster",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. LSU may be closer to $50M; several sources over $50M; most expensive 2026 football roster.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Close to $50M and well above $40M.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      },
+      {
+        "source": "TigerRag — Horne. No public payroll sheet; figure is football’s share of institutional revenue-share plus third-party NIL, not a $50M university check.",
+        "url": "https://www.tigerrag.com/lsu-footballs-40-million-bet/",
+        "asOf": "2026-08"
+      }
+    ],
+    "notes": "Modeled / survey range — not booked NIL and not House spent. Combines football’s share of institutional revenue-share plus third-party NIL; not a school filing and not a $50M university check. House cap remains ~$20.5M all sports. Do not subtract from capacity or leftover. The desk does not have a booked LSU House spent total. Leftover still only exists when House spent is booked."
+  },
+  "miami": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "above $40M, survey",
+    "tier": "above $40M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M tier; SI $40-plus",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Miami listed in the more-than-$40M grouping; well into the $40 million range.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Miami in the $40-plus million range.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "notre-dame": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "above $40M, survey",
+    "tier": "above $40M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M tier; SI $40-plus club",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Notre Dame listed in the more-than-$40M grouping.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Notre Dame in the $40-plus million club.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "ohio-state": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "above $40M, survey",
+    "tier": "above $40M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M tier",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Ohio State listed in the more-than-$40M grouping.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Ohio State named among the Big Ten’s most expensive rosters.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "oregon": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "above $40M, survey",
+    "tier": "above $40M",
+    "qualifier": "nearly $50M per SI caption — stored as a tier, not a point estimate",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M tier",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Oregon listed in the more-than-$40M grouping.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Oregon named among the Big Ten’s most expensive rosters; caption says nearly $50 million. Stored as a tier, not a point estimate.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "texas": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "above $40M, survey",
+    "tier": "above $40M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M tier; SI $40M or more",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Texas listed in the more-than-$40M grouping.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Texas named with LSU and Texas A&M as comfortably $40 million or more.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Texas leftover on this desk, when shown, is House cap minus the booked House Year 1 spent cell — not this survey."
+  },
+  "texas-am": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "above $40M, survey",
+    "tier": "above $40M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) more-than-$40M grouping; SI $40M or more",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Texas A&M listed in the more-than-$40M grouping. Program sources described 2026 as the upper $30-million range with incentives that could push into the $40s — stored as a tier, not a point estimate.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Texas A&M named with LSU and Texas as comfortably $40 million or more.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. CBS listed A&M in the more-than-$40M grouping; program sources put 2026 in the upper $30-million range with incentives that could push into the $40s. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "georgia": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "upper $30M, survey",
+    "tier": "upper $30M",
+    "qualifier": "right off the $40M line per CBS",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) right-off-the-$40M line; SI upward of $35M",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Georgia listed under “Right off the $40 million line”; roster in the upper-$30-million range.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Georgia spending upward of $35 million.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "michigan": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "just below $40M, survey",
+    "tier": "just below $40M",
+    "qualifier": "right off the $40M line per CBS",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) right-off-the-$40M line",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Michigan listed under “Right off the $40 million line”; just a smidge below the $40 million mark after the winter transfer cycle.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Michigan not far behind the $40 million mark.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "ole-miss": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "right off the $40M line, survey",
+    "tier": "right off the $40M line",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) right-off-the-$40M line; SI upward of $35M",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Ole Miss listed under “Right off the $40 million line”; just below the elite spenders. No school-level dollar beyond that heading.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Ole Miss spending upward of $35 million.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Named player deals from the articles are not booked. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "tennessee": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "high $30M, survey",
+    "tier": "high $30M",
+    "qualifier": "right off the $40M line per CBS",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) high-$30M; SI upward of $35M",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. Tennessee listed under “Right off the $40 million line”; multiple sources put the roster in the high-$30 million range.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Tennessee spending upward of $35 million.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "usc": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "high $30s, survey",
+    "tier": "high $30s",
+    "qualifier": "right off the $40M line per CBS",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-17",
+    "source": "CBS Sports (Hummer/Talty, Aug 17, 2026) right-off-the-$40M line",
+    "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+    "cites": [
+      {
+        "source": "CBS Sports — Hummer/Talty, Aug 17, 2026. USC listed under “Right off the $40 million line.” If not at $40M — some Big Ten sources believe it is — just below in the high $30s. Stored as the stated high-$30s band, not a $40M point estimate.",
+        "url": "https://www.cbssports.com/college-football/news/college-football-roster-spending-rankings-most-expensive-teams-2026/",
+        "asOf": "2026-08-17"
+      },
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. USC not far behind the $40 million mark.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "texas-tech": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "at or slightly under $40M, survey",
+    "tier": "at or slightly under $40M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-27",
+    "source": "Sports Illustrated — Fischer, Aug 27, 2026. Texas Tech most expensive Big 12 roster, at or slightly under $40M",
+    "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+    "cites": [
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Texas Tech is the most expensive Big 12 roster; the survey places it at, or slightly under, the $40 million range. Not a point estimate.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Not in the public CBS more-than-$40M list. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "indiana": {
+    "label": "Industry football roster estimate",
+    "kind": "range",
+    "display": "$30–35M",
+    "low": 30000000,
+    "high": 35000000,
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-27",
+    "source": "Sports Illustrated — Fischer, Aug 27, 2026. Indiana $30 million to $35 million range",
+    "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+    "cites": [
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Indiana closer to the top of the Big Ten, competitive in the $30 million to $35 million range — not the absolute top end.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey range — not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Not subtracted from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "byu": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "closer to $30M, survey",
+    "tier": "closer to $30M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-27",
+    "source": "Sports Illustrated — Fischer, Aug 27, 2026. Big 12 top third closer to $30M, including BYU",
+    "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+    "cites": [
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. A Big 12 coach said the top third of the league, which includes BYU and TCU, is closer to the $30 million range than the $20 million or so estimated last year.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "tcu": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "closer to $30M, survey",
+    "tier": "closer to $30M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-27",
+    "source": "Sports Illustrated — Fischer, Aug 27, 2026. Big 12 top third closer to $30M, including TCU",
+    "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+    "cites": [
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. A Big 12 coach said the top third of the league, which includes BYU and TCU, is closer to the $30 million range than the $20 million or so estimated last year.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "virginia-tech": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "more than $20M, survey",
+    "tier": "more than $20M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-27",
+    "source": "Sports Illustrated — Fischer, Aug 27, 2026. Virginia Tech exceeding more than $20 million",
+    "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+    "cites": [
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Virginia Tech approaching the ACC upper third after hiring James Franklin — exceeding more than $20 million this year and for the future.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — a named floor, not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "purdue": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "around $20M, survey",
+    "tier": "around $20M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-27",
+    "source": "Sports Illustrated — Fischer, Aug 27, 2026. Purdue budgets around the $20 million mark",
+    "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+    "cites": [
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Purdue and Rutgers have more money than in recent years and budgets around the $20 million mark.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "rutgers": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "around $20M, survey",
+    "tier": "around $20M",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-27",
+    "source": "Sports Illustrated — Fischer, Aug 27, 2026. Rutgers budgets around the $20 million mark",
+    "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+    "cites": [
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. Purdue and Rutgers have more money than in recent years and budgets around the $20 million mark.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "vanderbilt": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "at least $20M, survey",
+    "tier": "at least $20M",
+    "qualifier": "SI SEC floor, named",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-27",
+    "source": "Sports Illustrated — Fischer, Aug 27, 2026. SEC floor no team under $20M, including Vanderbilt",
+    "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+    "cites": [
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. No SEC team is expected to field a roster costing less than $20 million. That includes Vanderbilt and South Carolina. Named floor only — not a typical-SEC fill applied to unnamed schools.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — SI’s named SEC floor, not a point estimate, not booked NIL, not House spent. Not applied to unnamed SEC schools. Combines football rev-share plus third-party NIL. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  },
+  "south-carolina": {
+    "label": "Industry football roster estimate",
+    "kind": "tier",
+    "display": "at least $20M, survey",
+    "tier": "at least $20M",
+    "qualifier": "SI SEC floor, named",
+    "season": 2026,
+    "confidence": "modeled",
+    "asOf": "2026-08-27",
+    "source": "Sports Illustrated — Fischer, Aug 27, 2026. SEC floor no team under $20M, including South Carolina",
+    "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+    "cites": [
+      {
+        "source": "Sports Illustrated — Fischer, Aug 27, 2026. No SEC team is expected to field a roster costing less than $20 million. That includes Vanderbilt and South Carolina. Named floor only — not a typical-SEC fill applied to unnamed schools.",
+        "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+        "asOf": "2026-08-27"
+      }
+    ],
+    "notes": "Modeled / survey tier — SI’s named SEC floor, not a point estimate, not booked NIL, not House spent. Not applied to unnamed SEC schools. Combines football rev-share plus third-party NIL. Do not subtract from capacity or leftover. Leftover still only exists when a booked House spent cell exists."
+  }
+}

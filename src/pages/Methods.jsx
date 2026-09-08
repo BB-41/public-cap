@@ -119,6 +119,58 @@ export default function Methods({ meta: metaProp }) {
           NIL market total versus 2024–25 — tagged <strong>modeled</strong>, collective-era, no House rev-share. Those numbers are estimates,
           not filings. The model never overwrites booked NIL.
         </dd>
+        <dt>Industry football roster estimate</dt>
+        <dd>
+          A labeled <strong>modeled / survey</strong> lane from the public CBS Sports (Hummer/Talty, Aug 17, 2026)
+          poll and the SI $50M-era piece (Fischer, Aug 27, 2026) — TigerRag on LSU’s mix.
+          Only a range, tier, or figure those pieces actually state for that school.
+          LSU is a <em>range</em> ($40–50M, closer to $50M per CBS). Indiana is $30–35M (SI).
+          Other named schools are stored as the article’s tier (above $40M; right off the $40M line /
+          upper or high $30s; at or slightly under $40M; closer to $30M; around / more than / at least $20M).
+          The CBS/247Sports full Power 4 table is paywalled — we do not reconstruct it.
+          Where a school is not named, the cell is <strong>modeled</strong> from SI’s published
+          conference-median band (ACC $17–24M, Big 12 $18–25M, Big Ten $22–28M, SEC $25–33M).
+          Same band for every silent school in that league — not a school-by-school guess.
+          The public CBS article does not publish a Power 4 average; SI’s “at least $20M”
+          line is a competitive floor, not that average. Combines football’s share of
+          institutional revenue-share plus third-party NIL; not a university check, not a
+          school filing, not booked NIL, and not House spent.
+          House cap remains ~$20.5M all sports. Never added to the capacity waterfall or capacity total.
+          Never subtracted from leftover. Leftover still only exists when a booked House spent cell exists.
+          Not On3. Not a named player deal.
+        </dd>
+        <dt>NIL reported bar</dt>
+        <dd>
+          A comparable gold band on every Power 4 + Notre Dame school page.
+          The band is that school’s industry/survey or modeled football-stack
+          range (rev-share + third-party NIL) — not booked NIL and not House spent.
+          Every school uses the same $0–$50M scale. $50M is the highest published
+          or modeled top in the set (LSU’s survey high and the above-$40M allocation
+          envelope). Booked NIL and House spent, when a cite exists, are separate
+          marks or a second thin track — never mixed into the reported band.
+          Position starter ranges under the bar are a modeled/range breakdown of
+          the same stack (QB / RB / WR / OT·OL / EDGE). The bar does not sit in
+          the capacity waterfall and does not change leftover math.
+          Not On3.
+        </dd>
+        <dt>Industry estimate by position</dt>
+        <dd>
+          Approximate player salaries by position only when the public CBS / SI pieces
+          state a band. Prefer a position band (seven-figure WR, seven-figure OT, seven-figure RB)
+          over a named player. A named-article dollar, when kept, is labeled
+          <strong>reported-estimate</strong> — not a school filing and not booked NIL.
+          Prefer a CBS / SI position band (seven-figure WR / OT / RB / EDGE) or a labeled
+          reported-estimate when the article states one.
+          Every other seat is a <strong>modeled</strong> range: that school’s football stack
+          split by the existing rate-card seat weights (QB1 = 100 units; football unit sum
+          is the card). Starter and backup are ranges, never a single point.
+          A published school tier stays a tier on the school cell; positions use a documented
+          allocation envelope from the same articles, not an invented midpoint.
+          The existing roster rate card table (conference-heuristic NIL) stays on the page
+          and is not replaced.
+          Never added to booked NIL, House spent, leftover, or the capacity waterfall.
+          Not On3.
+        </dd>
         <dt>Coach pay vs buyout overhang</dt>
         <dd>Pay is an annual flow for the chair of record in the selected football season. A current-year file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. The year picker does not copy a new hire backward onto 2024. A buyout is overhang — a liability if the school fires without cause on the as-of date — not yearly spend. Private-school blanks stay blank.</dd>
         <dt>Contract term</dt>
@@ -271,6 +323,12 @@ export default function Methods({ meta: metaProp }) {
         is $0, a real cell. If spent is above the cap we print the overhang; we do not
         hide it. The other 63 schools stay empty — we do not invent a $20.5M leftover
         from a missing spent cell. Collective 990s never enter booked or remaining.
+        An industry football roster estimate (CBS/SI survey) is a separate labeled
+        modeled / survey lane and never creates leftover or House spent.
+        The NIL reported bar plots that range on a shared $0–$50M scale and never
+        enters leftover or the capacity waterfall.
+        A cited industry position band is the same: industry estimate, not a contract,
+        and never creates leftover.
       </p>
 
       <h2>Collective 990 (separate lane)</h2>
@@ -1008,7 +1066,7 @@ export default function Methods({ meta: metaProp }) {
         <li><strong>reported</strong> — a primary public document or a newsroom story that quotes one.</li>
         <li><strong>booked</strong> — a cited contract figure or clause on the offset / free-agent lane. Empty without a cite.</li>
         <li><strong>estimated</strong> — desk estimate, residual, or unofficial deal term. Source is still named.</li>
-        <li><strong>modeled</strong> — alumni cohort / wealth / giving, conference NIL range, position rate card, Big 12 conference-exit 2× 990s, the Notre Dame Hale estimate, a typed School B salary, or a USA TODAY Total Pay comp band.</li>
+        <li><strong>modeled</strong> — alumni cohort / wealth / giving, conference NIL range, industry football roster survey (CBS/SI), cited industry position bands, position rate card, Big 12 conference-exit 2× 990s, the Notre Dame Hale estimate, a typed School B salary, or a USA TODAY Total Pay comp band.</li>
         <li><strong>pending</strong> — we looked, we do not have a number, cell stays empty.</li>
       </ul>
 
@@ -1017,7 +1075,10 @@ export default function Methods({ meta: metaProp }) {
         <li>No Instagram / X / TikTok scrapers. The 2021–24 year scalar is a published national market total from the Opendorse “NIL at 3” report / Athletic Business recap — not a player file.</li>
         <li>No Glassdoor or LinkedIn ingest — those sites are not a source for the earnings corroboration block.</li>
         <li>No invented source labels.</li>
-        <li>No invented player names, and no invented <em>reported</em> deal dollar on a named player (modeled shares of the school pot are labeled modeled).</li>
+        <li>No invented player names, and no invented <em>reported</em> deal dollar on a named player (modeled shares of the school pot are labeled modeled). Industry football roster estimates do not book named portal dollars.</li>
+        <li>Industry football roster estimates are a labeled modeled / survey lane from named CBS/SI (and TigerRag for LSU) articles. They are not booked NIL, not House spent, and are never subtracted from capacity or leftover. We do not invent a leftover from a survey range. We do not name On3.</li>
+        <li>The NIL reported bar plots that same football-stack range on one $0–$50M scale so schools can be compared. Booked NIL and House spent stay separate marks. The bar is not leftover, not House spent, and not a waterfall step.</li>
+        <li>Industry estimates by position prefer a CBS / SI band or reported-estimate when one exists. Every other seat is a modeled range from the football stack ÷ existing seat weights. Named “sources say $X” player deals stay out unless the article is the cite and the cell is labeled reported-estimate. We do not invent school-by-school points. Not On3.</li>
         <li>No women’s sports or Olympic-sport roster math in v1 (the 7% unallocated slice is the placeholder).</li>
         <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
         <li>Athletics debt is a separate layer, not a capacity add-on. Category 53 university-wide institutional debt is refused unless the filing splits an athletics-related amount. We do not invent an amortization schedule from a project cost. Empty stays empty.</li>

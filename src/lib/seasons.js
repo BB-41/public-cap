@@ -501,6 +501,10 @@ export function applySeasonForNil(school, year) {
   // House remaining is a Year 1 (2025–26) residual. Keep it on 2025–26
   // overlays, labeled as Year 1 — not a 2026 leftover and not a 2024 pre-cap cell.
   if (year < 2025) delete nil.houseRemaining
+  // Industry football roster estimates are a 2026 survey lane only.
+  // Never treat them as booked NIL, House spent, leftover, or capacity.
+  if (year !== 2026) delete nil.industryRosterEstimate
+  if (year !== 2026) delete nil.industryPositionEstimates
   out.nil = nil
   return out
 }

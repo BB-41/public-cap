@@ -4,12 +4,22 @@
  */
 import { readFileSync } from 'node:fs'
 import { applySeason } from '../src/lib/seasons.js'
-import { houseRemaining, val } from '../src/lib/compute.js'
+import { computeCapacity, houseRemaining, leftoverWaterfall, val } from '../src/lib/compute.js'
+import {
+  footballRosterStack,
+  reportedBarBreakdown,
+  reportedBarMax,
+  reportedNilBar,
+  STACK_BASELINES,
+  stackPositionRows,
+} from '../src/lib/rosterStack.js'
 import { mergeSchoolSteps, stepInForce } from '../src/lib/buyout.js'
 
 const data = JSON.parse(readFileSync(new URL('../data/schools.json', import.meta.url), 'utf8'))
 const publicData = JSON.parse(readFileSync(new URL('../public/data/schools.json', import.meta.url), 'utf8'))
 const buyouts = JSON.parse(readFileSync(new URL('../data/buyouts.json', import.meta.url), 'utf8'))
+const stackData = JSON.parse(readFileSync(new URL('../data/roster-stack-baselines.json', import.meta.url), 'utf8'))
+const stackPublic = JSON.parse(readFileSync(new URL('../public/data/roster-stack-baselines.json', import.meta.url), 'utf8'))
 
 function fold(name) {
   return String(name || '')
@@ -31,6 +41,9 @@ function ok(cond, msg) {
 
 ok(data.schools.length === 68, '68 schools')
 ok(JSON.stringify(data) === JSON.stringify(publicData), 'data/schools.json synced to public/data')
+ok(JSON.stringify(stackData) === JSON.stringify(stackPublic), 'roster-stack baselines stay in sync')
+ok(stackData.conferenceMedians.SEC.low === STACK_BASELINES.conferenceMedians.SEC.low, 'SEC median matches the lib')
+ok(stackData.conferenceMedians.ACC.high === 24_000_000, 'ACC median high is $24M')
 
 const byId = Object.fromEntries(data.schools.map((s) => [s.id, s]))
 
@@ -151,6 +164,152 @@ ok(houseRemaining(applySeason(byId.louisville, 2026)) === 300_000, '2026 overlay
 ok(houseRemaining(applySeason(byId.louisville, 2024)) == null, '2024 overlay drops Year 1 remaining')
 ok(val(byId['penn-state'].nil.preCap) === 18_368_391, 'Penn State preCap not used as remaining')
 ok(byId['oklahoma-state'].nil.houseRemaining == null, 'OSU 990/preCap is not remaining')
+
+const ESTIMATE_IDS = [
+  'lsu', 'miami', 'notre-dame', 'ohio-state', 'oregon', 'texas', 'texas-am',
+  'georgia', 'michigan', 'ole-miss', 'tennessee', 'usc',
+  'texas-tech', 'indiana', 'byu', 'tcu',
+  'virginia-tech', 'purdue', 'rutgers', 'vanderbilt', 'south-carolina',
+]
+const EMPTY_ESTIMATE_IDS = data.schools.map((s) => s.id).filter((id) => !ESTIMATE_IDS.includes(id))
+ok(ESTIMATE_IDS.length === 21, `21 cited estimates (${ESTIMATE_IDS.length})`)
+ok(EMPTY_ESTIMATE_IDS.length === 47, `47 empty (${EMPTY_ESTIMATE_IDS.length})`)
+for (const sid of ESTIMATE_IDS) {
+  const est = byId[sid].nil.industryRosterEstimate
+  ok(est && est.confidence === 'modeled', `${sid} industry roster estimate is modeled`)
+  ok(est.value == null, `${sid} estimate has no fake point value`)
+  ok(!/on3/i.test(JSON.stringify(est)), `${sid} estimate does not name On3`)
+  ok(!/seaton/i.test(JSON.stringify(est)), `${sid} estimate does not book a named player deal`)
+}
+for (const sid of EMPTY_ESTIMATE_IDS) {
+  ok(!byId[sid].nil.industryRosterEstimate, `${sid} stays empty — not in the published survey`)
+}
+const lsuEst = byId.lsu.nil.industryRosterEstimate
+ok(lsuEst.kind === 'range' && lsuEst.low === 40_000_000 && lsuEst.high === 50_000_000, 'LSU estimate is $40–50M')
+ok(/closer to \$50M/i.test(lsuEst.qualifier), 'LSU qualifier is closer to $50M per CBS')
+ok(lsuEst.cites.length === 3, 'LSU cites CBS, SI, and TigerRag')
+ok(lsuEst.cites.some((c) => /tigerrag\.com/.test(c.url)), 'LSU cites TigerRag URL')
+ok(byId.lsu.nil.houseRemaining == null, 'LSU estimate did not invent House remaining')
+ok(byId.lsu.nil.booked.value == null, 'LSU booked NIL stays pending')
+for (const sid of ['texas', 'texas-am', 'miami', 'notre-dame', 'ohio-state', 'oregon']) {
+  ok(byId[sid].nil.industryRosterEstimate.kind === 'tier', `${sid} is a survey tier`)
+  ok(byId[sid].nil.industryRosterEstimate.tier === 'above $40M', `${sid} tier is above $40M`)
+}
+ok(byId.indiana.nil.industryRosterEstimate.kind === 'range', 'Indiana is a published range')
+ok(byId.indiana.nil.industryRosterEstimate.low === 30_000_000 && byId.indiana.nil.industryRosterEstimate.high === 35_000_000, 'Indiana is $30–35M')
+ok(byId.georgia.nil.industryRosterEstimate.tier === 'upper $30M', 'Georgia is upper $30M, not above $40M')
+ok(byId['texas-tech'].nil.industryRosterEstimate.tier === 'at or slightly under $40M', 'Texas Tech is at or slightly under $40M')
+ok(!byId.houston?.nil?.industryRosterEstimate, 'Houston “perhaps” is not booked')
+ok(!byId.clemson?.nil?.industryRosterEstimate, 'Clemson unnamed dollar stays empty')
+ok(!byId.alabama?.nil?.industryRosterEstimate, 'Alabama stays empty')
+ok(byId.texas.nil.houseRemaining.value === 7_000_000, 'Texas leftover unchanged by the survey')
+
+const lsu26 = applySeason(byId.lsu, 2026)
+ok(lsu26.nil.industryRosterEstimate?.display === '$40–50M', '2026 overlay keeps the LSU survey')
+ok(applySeason(byId.lsu, 2025).nil.industryRosterEstimate == null, '2025 overlay strips the 2026 survey')
+ok(houseRemaining(lsu26) == null, 'LSU 2026 leftover stays empty')
+const lsuCap = computeCapacity(lsu26)
+ok(
+  !lsuCap.components.some((c) => /industry|roster estimate/i.test(c.label || '')),
+  'LSU capacity stack does not include the survey',
+)
+const fallLsu = leftoverWaterfall(lsu26, lsuCap, false)
+ok(fallLsu.spent == null && fallLsu.leftover == null, 'LSU waterfall has no leftover from the survey')
+ok(!fallLsu.steps.some((s) => s.key === 'rosterEstimate' || s.hash === 'roster-estimate'), 'LSU waterfall has no survey step')
+ok(
+  !fallLsu.steps.some((s) => s.value === 40_000_000 || s.value === 50_000_000),
+  'LSU waterfall does not book the survey dollars',
+)
+const tx26 = applySeason(byId.texas, 2026)
+const txFall = leftoverWaterfall(tx26, computeCapacity(tx26), false)
+ok(txFall.leftover === 7_000_000, 'Texas waterfall leftover stays $7M')
+ok(!txFall.steps.some((s) => s.value === 40_000_000), 'Texas waterfall does not subtract the survey')
+
+const POS_IDS = ['miami', 'texas-am', 'ole-miss', 'ohio-state']
+ok(POS_IDS.every((sid) => byId[sid].nil.industryPositionEstimates?.positions?.length), 'four schools have cited position bands')
+ok(!byId.lsu.nil.industryPositionEstimates, 'LSU has no position survey (no Seaton)')
+ok(!byId.alabama.nil.industryPositionEstimates, 'Alabama has no invented position payroll')
+ok(!byId.texas.nil.industryPositionEstimates, 'Texas WR bidding is not booked as a position band')
+for (const sid of POS_IDS) {
+  const blob = JSON.stringify(byId[sid].nil.industryPositionEstimates)
+  ok(!/on3/i.test(blob), `${sid} position survey does not name On3`)
+  ok(!/seaton/i.test(blob), `${sid} position survey does not book Seaton`)
+  ok(byId[sid].nil.industryPositionEstimates.positions.every((p) => p.value == null), `${sid} position rows have no fake point value`)
+}
+const miaPos = byId.miami.nil.industryPositionEstimates.positions
+ok(miaPos.some((p) => p.family === 'qb' && /more than \$6M/.test(p.display)), 'Miami QB is more than $6M')
+ok(miaPos.some((p) => p.family === 'wr' && p.tier === 'seven-figure'), 'Miami WR is seven-figure')
+ok(miaPos.some((p) => p.family === 'edge' && p.tier === 'seven-figure'), 'Miami EDGE is seven-figure')
+ok(byId['ole-miss'].nil.industryPositionEstimates.positions.some((p) => p.family === 'rb'), 'Ole Miss RB is cited')
+ok(!byId['texas-am'].nil.industryPositionEstimates.positions.some((p) => p.family === 'te'), 'Texas A&M TE stays empty')
+ok(applySeason(byId.miami, 2025).nil.industryPositionEstimates == null, '2025 overlay strips the position survey')
+ok(applySeason(byId.miami, 2026).nil.industryPositionEstimates?.positions?.length >= 1, '2026 overlay keeps Miami position bands')
+ok(!fallLsu.steps.some((s) => s.hash === 'position-estimate' || s.key === 'positionEstimate'), 'LSU waterfall has no position-survey step')
+ok(!txFall.steps.some((s) => s.hash === 'position-estimate'), 'Texas waterfall has no position-survey step')
+
+const alaStack = footballRosterStack(byId.alabama)
+ok(alaStack?.lane === 'modeled', 'Alabama stack is modeled, not survey')
+ok(alaStack.low == null && alaStack.modeled.low === 25_000_000 && alaStack.modeled.high === 33_000_000, 'Alabama uses SI SEC median $25–33M')
+ok(footballRosterStack(byId.lsu)?.lane === 'survey', 'LSU stack stays survey')
+ok(footballRosterStack(byId.clemson)?.modeled?.low === 17_000_000, 'Clemson uses SI ACC median')
+ok(footballRosterStack(byId.houston)?.modeled?.low === 18_000_000, 'Houston “perhaps” still uses the Big 12 median model')
+ok(footballRosterStack(byId['notre-dame'])?.lane === 'survey', 'Notre Dame stays the survey $40-plus cell')
+const alaQbRow = stackPositionRows(byId.alabama).find((r) => r.family === 'qb')
+ok(alaQbRow && alaQbRow.starterLow > 0 && alaQbRow.starterHigh > alaQbRow.starterLow, 'Alabama QB is a modeled range')
+ok(!alaQbRow.survey, 'Alabama QB has no survey overlay')
+const lsuQbRow = stackPositionRows(byId.lsu).find((r) => r.family === 'qb')
+ok(lsuQbRow && lsuQbRow.starterHigh > lsuQbRow.starterLow, 'LSU QB modeled range splits the $40–50M survey')
+ok(stackPositionRows(byId.miami).find((r) => r.family === 'qb')?.surveyDisplay, 'Miami QB keeps the survey overlay')
+ok(!fallLsu.steps.some((s) => s.value === 25_000_000 || s.value === 33_000_000), 'LSU waterfall does not book a conference median')
+
+ok(reportedBarMax() === 50_000_000, 'reported bar max is $50M')
+ok(stackData.reportedBar.max === 50_000_000, 'baseline JSON documents the $50M scale')
+ok(/\$50M/.test(stackData.reportedBar.maxNote), 'baseline JSON names the $50M anchor')
+const lsuBar = reportedNilBar(byId.lsu)
+const alaBar = reportedNilBar(byId.alabama)
+const txBar = reportedNilBar(tx26)
+const lou26 = applySeason(byId.louisville, 2026)
+const louBar = reportedNilBar(lou26)
+ok(lsuBar.low === 40_000_000 && lsuBar.high === 50_000_000, 'LSU bar is the $40–50M survey range')
+ok(lsuBar.lane === 'survey', 'LSU bar stays survey')
+ok(alaBar.low === 25_000_000 && alaBar.high === 33_000_000, 'Alabama bar is the SI SEC median')
+ok(alaBar.lane === 'modeled', 'Alabama bar is modeled')
+ok(lsuBar.leftPct > alaBar.leftPct && lsuBar.rightPct > alaBar.rightPct, 'LSU band sits higher than Alabama on the same scale')
+ok(lsuBar.max === alaBar.max && lsuBar.max === 50_000_000, 'LSU and Alabama share the $50M scale')
+ok(!lsuBar.booked && !lsuBar.spent, 'LSU bar has no booked/spent marks to mix in')
+ok(txBar.sameBookedSpent && txBar.booked?.value === 13_500_000, 'Texas booked and House spent share one $13.5M mark')
+ok(txBar.booked.pct !== txBar.leftPct, 'Texas cite mark is not mixed into the $40–50M band start')
+ok(louBar.booked?.value === 32_900_000 && louBar.spent?.value === 20_200_000, 'Louisville keeps booked $32.9M and spent $20.2M as separate marks')
+ok(!louBar.sameBookedSpent, 'Louisville booked and spent stay two marks')
+ok(txFall.leftover === 7_000_000, 'Texas leftover stays $7M after the reported bar')
+ok(!fallLsu.steps.some((s) => s.hash === 'nil-reported' || s.key === 'nilReported'), 'LSU waterfall has no reported-bar step')
+ok(!txFall.steps.some((s) => s.hash === 'nil-reported'), 'Texas waterfall has no reported-bar step')
+ok(reportedBarBreakdown(byId.lsu).every((r) => r.starterLow < r.starterHigh), 'LSU bar breakdown starter cells are ranges')
+ok(reportedBarBreakdown(byId.alabama).length === 5, 'Alabama bar breakdown is QB/RB/WR/OL/EDGE')
+
+for (const s of data.schools) {
+  const stack = footballRosterStack(s)
+  ok(stack, `${s.id} has a 2026 football stack — no blank`)
+  if (!stack) continue
+  if (stack.lane === 'modeled') {
+    ok(stack.kind === 'range' && stack.modeled.low < stack.modeled.high, `${s.id} modeled cell is a range`)
+    ok(!/midpoint/i.test(stack.display), `${s.id} modeled display is not a midpoint`)
+  }
+  if (stack.lane === 'survey' && stack.kind === 'tier') {
+    ok(stack.survey.tier && stack.display.includes(stack.survey.tier), `${s.id} survey tier stays a tier`)
+    ok(stack.survey.value == null, `${s.id} survey tier has no invented point value`)
+  }
+  if (stack.lane === 'survey' && stack.kind === 'range') {
+    ok(stack.survey.low < stack.survey.high, `${s.id} survey range stays a range`)
+  }
+  const rows = stackPositionRows(s)
+  ok(rows.length === 11, `${s.id} has modeled ranges for every football family`)
+  for (const r of rows) {
+    ok(r.starterLow < r.starterHigh, `${s.id} ${r.family} starter is a range`)
+    ok(r.backupLow < r.backupHigh, `${s.id} ${r.family} backup is a range`)
+    ok(r.starterDisplay.includes('–') || r.starterDisplay.includes('-'), `${s.id} ${r.family} starter display is a range`)
+  }
+}
 
 const layers = JSON.parse(readFileSync(new URL('../public/data/layers.json', import.meta.url), 'utf8'))
 ok(layers.schools.wisconsin.apparel?.annualValue?.value === 7_000_000, 'Wisconsin UA $7M kept')

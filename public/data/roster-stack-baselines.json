@@ -1,0 +1,75 @@
+{
+  "asOf": "2026-08-27",
+  "source": "Sports Illustrated — Fischer, Aug 27, 2026. Estimate for the median team, by conference.",
+  "url": "https://www.si.com/college-football/welcome-to-college-football-50-million-era-inside-the-roster-spending-explosion",
+  "notes": "Narrowest published conference bands in the public SI $50M-era piece. Same band for every school the CBS/SI articles do not name — not a school-by-school guess. The public CBS Aug 17, 2026 poll does not publish a Power 4 average or a full ranking table (the 247Sports companion is paywalled). SI’s “at least $20M” competitive floor is a floor, not a P4 average. Not a filing. Not booked NIL.",
+  "conferenceMedians": {
+    "ACC": { "low": 17000000, "high": 24000000, "label": "SI ACC median" },
+    "Big 12": { "low": 18000000, "high": 25000000, "label": "SI Big 12 median" },
+    "Big Ten": { "low": 22000000, "high": 28000000, "label": "SI Big Ten median" },
+    "SEC": { "low": 25000000, "high": 33000000, "label": "SI SEC median" }
+  },
+  "tierAllocationEnvelopes": {
+    "above $40M": {
+      "low": 40000000,
+      "high": 50000000,
+      "note": "Allocation envelope only. School cell stays the above-$40M survey tier. Floor is the CBS/SI $40M line; high is the articles’ $50M-era top, not a school filing."
+    },
+    "just below $40M": {
+      "low": 35000000,
+      "high": 40000000,
+      "note": "CBS just a smidge below $40M; SI not far behind $40M. Allocation envelope only — school cell stays the tier."
+    },
+    "right off the $40M line": {
+      "low": 35000000,
+      "high": 40000000,
+      "note": "CBS “right off the $40 million line”; SI upward of $35M for this group. Allocation envelope only."
+    },
+    "upper $30M": {
+      "low": 35000000,
+      "high": 40000000,
+      "note": "CBS upper-$30-million range; SI upward of $35M. Allocation envelope only."
+    },
+    "high $30M": {
+      "low": 35000000,
+      "high": 40000000,
+      "note": "CBS high-$30 million range; SI upward of $35M. Allocation envelope only."
+    },
+    "high $30s": {
+      "low": 35000000,
+      "high": 40000000,
+      "note": "CBS high $30s / just below $40M. Allocation envelope only."
+    },
+    "at or slightly under $40M": {
+      "low": 35000000,
+      "high": 40000000,
+      "note": "SI at or slightly under $40M. Allocation envelope only."
+    },
+    "closer to $30M": {
+      "low": 20000000,
+      "high": 30000000,
+      "note": "SI: closer to the $30 million range than the $20 million estimated last year. Those two poles are the allocation envelope."
+    },
+    "around $20M": {
+      "low": 20000000,
+      "high": 22000000,
+      "note": "SI around the $20 million mark; $22M is the SI Big Ten median floor. Allocation envelope only."
+    },
+    "more than $20M": {
+      "low": 20000000,
+      "high": 24000000,
+      "note": "SI named floor more than $20M; $24M is the SI ACC median high — narrowest cited ACC band that contains that floor."
+    },
+    "at least $20M": {
+      "low": 20000000,
+      "high": 33000000,
+      "note": "SI named SEC floor $20M; $33M is the SI SEC median high — narrowest cited SEC band that contains that floor."
+    }
+  },
+  "surveyRangeHighs": [50000000, 35000000],
+  "reportedBar": {
+    "min": 0,
+    "max": 50000000,
+    "maxNote": "Highest published/modeled top among Power 4 + Notre Dame: LSU survey high $50M and the above-$40M allocation envelope high $50M. Same $0–$50M scale on every school page."
+  }
+}

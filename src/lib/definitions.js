@@ -21,6 +21,18 @@ export const DEFS = {
     label: 'NIL modeled',
     text: 'Conference-heuristic range, not a filing. 2025–26 / 2026–27: House-era (rev-share + third-party) from the nil-ncaa.com table; low is 70% of the conference total or 50% of the $20.5M House cap for phase-in / half-share members. 2021–24: collective-era third-party only, scaled by the published national NIL market versus 2024–25. Estimates. Does not replace booked NIL.',
   },
+  industryRosterEstimate: {
+    label: 'Industry football roster estimate',
+    text: 'A labeled modeled / survey lane. Prefer an explicit CBS Sports (Hummer/Talty, Aug 17, 2026) or SI (Fischer, Aug 27, 2026) range or tier (LSU $40–50M; Indiana $30–35M; above-$40M and other named tiers). Those stay survey — a published tier is not turned into a midpoint. Where those pieces are silent, the cell is modeled from SI’s published conference-median band (ACC $17–24M, Big 12 $18–25M, Big Ten $22–28M, SEC $25–33M) — the same band for every silent school in that league, not a school-by-school guess. The public CBS article does not publish a Power 4 average. Combines football rev-share plus third-party NIL — not a filing, not booked NIL, not House spent. Never subtracted from capacity or leftover. Not On3.',
+  },
+  industryPositionEstimate: {
+    label: 'Industry estimate by position',
+    text: 'Approximate player salaries by position. Prefer a CBS / SI position band or reported-estimate when one exists. Every other seat is a modeled range: that school’s football stack (survey range, or a documented allocation envelope for a survey tier, or the SI conference median) split by the existing rate-card seat weights (QB1 = 100). Starter and backup are ranges, not point estimates. Industry estimate, not a contract. Not booked NIL. Not On3.',
+  },
+  nilReportedBar: {
+    label: 'NIL reported bar',
+    text: 'A comparable gold band on every Power 4 + Notre Dame school page. The band is that school’s industry/survey or modeled football-stack range (rev-share + third-party NIL) — not booked NIL and not House spent. Every school uses the same $0–$50M scale; $50M is the highest published or modeled top in the set (LSU survey high and the above-$40M allocation envelope). Booked NIL and House spent, when cited, are separate marks or a second thin track — never mixed into the reported band. Position starter ranges under the bar are a modeled/range breakdown of the same stack. The bar never enters leftover or the capacity waterfall. Not On3.',
+  },
   nilCap: {
     label: 'NIL / capacity',
     text: 'Booked NIL divided by annual capacity. Pending if we have no booked NIL figure.',
@@ -31,7 +43,7 @@ export const DEFS = {
   },
   houseRemaining: {
     label: 'Leftover / House remaining',
-    text: 'Published House Year 1 cap ($20.5 million) minus that school’s booked House spent cell. Only computed when a House Year 1 spent total is on the desk — not pre-cap, not a 990, not a cap plan, not “will spend $20.5M.” A leftover of $0 is a real cell. Overhang (spent above the cap) is shown, not hidden. Texas is year-to-date. Collective 990s are not in this math. On the 2026 rank list this is still the Year 1 residual, labeled 2025–26 / House Year 1 — not a 2026–27 leftover.',
+    text: 'Published House Year 1 cap ($20.5 million) minus that school’s booked House spent cell. Only computed when a House Year 1 spent total is on the desk — not pre-cap, not a 990, not a cap plan, not “will spend $20.5M,” and not an industry football roster survey. A leftover of $0 is a real cell. Overhang (spent above the cap) is shown, not hidden. Texas is year-to-date. Collective 990s and industry roster estimates are not in this math. On the 2026 rank list this is still the Year 1 residual, labeled 2025–26 / House Year 1 — not a 2026–27 leftover.',
   },
   coachPay: {
     label: 'Coach pay',
@@ -71,7 +83,7 @@ export const DEFS = {
   },
   modeled: {
     label: 'modeled',
-    text: 'A desk construct: alumni cohort / wealth / giving, the conference-heuristic NIL range, the position rate card, a named-player share of that card, or wins-per-dollar when the NIL denominator is modeled. Labeled as such. Not a filing.',
+    text: 'A desk construct: alumni cohort / wealth / giving, the conference-heuristic NIL range, an industry football roster survey (CBS/SI), a cited industry position band, the position rate card, a named-player share of that card, or wins-per-dollar when the NIL denominator is modeled. Labeled as such. Not a filing.',
   },
   rosterNamed: {
     label: 'Named roster (modeled)',
