@@ -314,5 +314,57 @@ export function reportedBarBreakdown(school) {
   return stackPositionRows(school).filter((row) => want.has(row.family))
 }
 
+/**
+ * Visible board label. Survey tiers keep the published words
+ * (e.g. “above $40M”) — never the allocation-envelope midpoint.
+ * Survey ranges and modeled conference bands stay their published range.
+ */
+export function reportedNilVisibleLabel(bar) {
+  if (!bar) return null
+  if (bar.lane === 'survey' && bar.kind === 'tier') {
+    const tier = bar.stack?.survey?.tier
+    if (tier) return tier
+    return String(bar.display || '').replace(/, survey$/i, '')
+  }
+  return bar.display || bar.rangeDisplay || null
+}
+
+/** Rank by allocation high, then survey before modeled, then low, then range before tier. */
+export function compareReportedNilRows(a, b) {
+  const ah = a?.bar?.high ?? -1
+  const bh = b?.bar?.high ?? -1
+  if (bh !== ah) return bh - ah
+  const aSurvey = a?.bar?.lane === 'survey' ? 0 : 1
+  const bSurvey = b?.bar?.lane === 'survey' ? 0 : 1
+  if (aSurvey !== bSurvey) return aSurvey - bSurvey
+  const al = a?.bar?.low ?? -1
+  const bl = b?.bar?.low ?? -1
+  if (bl !== al) return bl - al
+  const aRange = a?.bar?.kind === 'range' ? 0 : 1
+  const bRange = b?.bar?.kind === 'range' ? 0 : 1
+  if (aRange !== bRange) return aRange - bRange
+  return String(a?.school?.name || '').localeCompare(String(b?.school?.name || ''))
+}
+
+/**
+ * One row per school for the reported-NIL board. Reuses the same
+ * footballRosterStack / reportedNilBar resolution as school pages.
+ */
+export function reportedNilBoardRows(schools) {
+  const rows = []
+  for (const school of schools || []) {
+    const bar = reportedNilBar(school)
+    if (!bar) continue
+    rows.push({
+      school,
+      bar,
+      label: reportedNilVisibleLabel(bar),
+    })
+  }
+  rows.sort(compareReportedNilRows)
+  return rows
+}
+
 export const REPORTED_BAR_HASH = 'nil-reported'
+export const REPORTED_NIL_PATH = '/reported-nil'
 export { FB_UNIT_SUM }

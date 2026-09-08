@@ -10,6 +10,8 @@ import {
   reportedBarBreakdown,
   reportedBarMax,
   reportedNilBar,
+  reportedNilBoardRows,
+  reportedNilVisibleLabel,
   STACK_BASELINES,
   stackPositionRows,
 } from '../src/lib/rosterStack.js'
@@ -286,6 +288,40 @@ ok(!fallLsu.steps.some((s) => s.hash === 'nil-reported' || s.key === 'nilReporte
 ok(!txFall.steps.some((s) => s.hash === 'nil-reported'), 'Texas waterfall has no reported-bar step')
 ok(reportedBarBreakdown(byId.lsu).every((r) => r.starterLow < r.starterHigh), 'LSU bar breakdown starter cells are ranges')
 ok(reportedBarBreakdown(byId.alabama).length === 5, 'Alabama bar breakdown is QB/RB/WR/OL/EDGE')
+
+const board = reportedNilBoardRows(data.schools)
+ok(board.length === 68, `reported-NIL board has 68 rows (${board.length})`)
+ok(board[0].school.id === 'lsu', 'LSU is first on the reported-NIL board')
+ok(board[0].bar.high === 50_000_000 && board[0].label === '$40–50M', 'LSU board label is the $40–50M survey range')
+ok(board.every((r) => r.bar.max === 50_000_000), 'every board row shares the $50M scale')
+const boardIds = new Set(board.map((r) => r.school.id))
+ok(boardIds.size === 68, 'board rows are unique schools')
+const txBoard = board.find((r) => r.school.id === 'texas')
+ok(txBoard?.label === 'above $40M', 'Texas board label stays the survey words, not a midpoint')
+ok(!/\$\d/.test(txBoard?.label || '') || /above/.test(txBoard.label), 'Texas label is not a fake envelope dollar')
+ok(txBoard.bar.high === 50_000_000, 'Texas still ranks on the $40–50M allocation envelope')
+ok(txBoard.bar.lane === 'survey', 'Texas board lane is survey')
+ok(txBoard.bar.booked?.value === 13_500_000, 'Texas booked $13.5M stays a separate mark on the board')
+const alaBoard = board.find((r) => r.school.id === 'alabama')
+ok(alaBoard?.bar.lane === 'modeled', 'Alabama board lane is modeled')
+ok(/25/.test(alaBoard?.label || '') && /33/.test(alaBoard?.label || ''), 'Alabama board label is the SI SEC median')
+ok(board.findIndex((r) => r.school.id === 'lsu') < board.findIndex((r) => r.school.id === 'alabama'), 'LSU ranks above Alabama')
+ok(board.findIndex((r) => r.school.id === 'texas') < board.findIndex((r) => r.school.id === 'alabama'), 'above-$40M survey ranks above SEC modeled')
+const louBoard = board.find((r) => r.school.id === 'louisville')
+ok(louBoard?.bar.booked?.value === 32_900_000 && louBoard.bar.spent?.value === 20_200_000, 'Louisville board keeps booked and spent as two marks')
+ok(!louBoard.bar.sameBookedSpent && louBoard.bar.booked.value !== louBoard.bar.low, 'Louisville cite is not mixed into the gold band')
+const kyBoard = board.find((r) => r.school.id === 'kentucky')
+ok(kyBoard?.bar.booked?.value === 18_000_000, 'Kentucky booked $18M is a board mark')
+const uclaBoard = board.find((r) => r.school.id === 'ucla')
+const calBoard = board.find((r) => r.school.id === 'california')
+ok(uclaBoard?.bar.booked?.value === 20_500_000, 'UCLA booked ~$20.5M is a board mark')
+ok(calBoard?.bar.booked?.value === 20_500_000, 'Cal booked ~$20.5M is a board mark')
+ok(reportedNilVisibleLabel(txBoard.bar) === 'above $40M', 'visible-label helper keeps Texas as above $40M')
+ok(reportedNilVisibleLabel(board[0].bar) === '$40–50M', 'visible-label helper keeps LSU as the published range')
+ok(board.filter((r) => r.bar.lane === 'survey').length === 21, 'board has 21 survey rows')
+ok(board.filter((r) => r.bar.lane === 'modeled').length === 47, 'board has 47 modeled conference-median rows')
+ok(txFall.leftover === 7_000_000, 'Texas leftover stays $7M after the board helper')
+ok(!fallLsu.steps.some((s) => s.hash === 'nil-reported'), 'board helper does not add a waterfall step')
 
 for (const s of data.schools) {
   const stack = footballRosterStack(s)

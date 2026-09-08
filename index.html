@@ -31,7 +31,7 @@
       .kicker { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #d4a24a; }
       .wordmark { display: block; font-weight: 800; font-size: clamp(48px, 8vw, 84px); line-height: 0.9; letter-spacing: -0.03em; color: #efe4cc; margin: 8px 0 10px; text-decoration: none; }
       .tagline { max-width: 640px; color: #cfc3a8; margin: 0 0 18px; }
-      .nav { display: flex; gap: 22px; padding: 8px 0 14px; }
+      .nav { display: flex; flex-wrap: wrap; gap: 22px; padding: 8px 0 14px; }
       .nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #efe4cc; border-bottom: 2px solid transparent; padding-bottom: 4px; text-decoration: none; }
       .page-wrap { max-width: 1180px; margin: 0 auto; padding: 28px 24px 80px; }
       .issue-hed { font-weight: 650; font-size: clamp(28px, 4vw, 42px); letter-spacing: -0.02em; margin: 0 0 12px; }
@@ -85,6 +85,9 @@
         } else if (p === '/compare') {
           title = 'Compare capacity vs House vs NIL — Public Cap'
           desc = 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.'
+        } else if (p === '/reported-nil') {
+          title = 'Reported NIL — Public Cap'
+          desc = 'Compare every Power 4 plus Notre Dame football roster stack on one shared scale. Survey cells stay the published words. Modeled conference bands stay labeled modeled. Booked NIL and House spent stay separate marks. Not leftover. Pending stays empty.'
         } else if (p === '/tape') {
           title = 'Tape — Public Cap'
         } else if (p === '/methods') {
@@ -101,7 +104,7 @@
         setMeta('property', 'og:description', desc)
         setMeta('name', 'twitter:description', desc)
         var href = null
-        if (p === '/' || p === '/compare' || p.indexOf('/school/') === 0) href = '/data/desk.json'
+        if (p === '/' || p === '/compare' || p === '/reported-nil' || p.indexOf('/school/') === 0) href = '/data/desk.json'
         else if (p === '/methods') href = '/data/meta.json'
         else if (p === '/tape') href = '/data/tape.json'
         else if (p === '/buyout') href = '/data/desk.json'
@@ -138,6 +141,7 @@
         <nav class="nav">
           <a href="/">Rank list</a>
           <a href="/compare">Compare</a>
+          <a href="/reported-nil">Reported NIL</a>
           <a href="/tape">Tape</a>
           <a href="/tv">TV</a>
           <a href="/buyout">Buyout</a>

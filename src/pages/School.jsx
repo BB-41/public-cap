@@ -517,6 +517,8 @@ function NilReportedBarLane({ school, leftoverPending, schoolName, season }) {
       <NilReportedBar bar={bar} />
       <p className="fine">
         <strong>Scale.</strong> {bar.scaleNote}
+        {' '}
+        <Link to="/reported-nil">See all 68 on the reported-NIL board</Link>.
       </p>
       {breakdown.length ? (
         <>
