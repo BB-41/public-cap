@@ -23,7 +23,7 @@ export const DEFS = {
   },
   industryRosterEstimate: {
     label: 'Industry football roster estimate',
-    text: 'A labeled modeled / survey lane from named CBS Sports and Sports Illustrated insider polls (TigerRag on LSU’s mix). A range when the article gives one (LSU $40–50M, closer to $50M per CBS); otherwise an above-$40M tier, not a fake precise dollar. Combines football’s share of institutional revenue-share plus third-party NIL — not a university check at that figure, not a school filing, not booked NIL, and not House spent. Never subtracted from capacity or leftover. Leftover still only exists when a booked House spent cell exists. Not On3. Not a named player deal.',
+    text: 'A labeled modeled / survey lane from the public CBS Sports (Hummer/Talty, Aug 17, 2026) poll and the SI $50M-era piece (TigerRag on LSU’s mix). A range when the article gives one (LSU $40–50M; Indiana $30–35M); otherwise the stated tier, not a fake precise dollar. Only schools those pieces actually name. The CBS/247Sports full Power 4 table is paywalled — unnamed schools stay empty. We do not invent a typical-conference fill. Combines football’s share of institutional revenue-share plus third-party NIL — not a university check, not a school filing, not booked NIL, and not House spent. Never subtracted from capacity or leftover. Leftover still only exists when a booked House spent cell exists. Not On3. Not a named player deal.',
   },
   nilCap: {
     label: 'NIL / capacity',

@@ -121,16 +121,19 @@ export default function Methods({ meta: metaProp }) {
         </dd>
         <dt>Industry football roster estimate</dt>
         <dd>
-          A labeled <strong>modeled / survey</strong> lane from named CBS Sports (Hummer/Talty, Aug 17, 2026)
-          and Sports Illustrated (Fischer, Aug 27, 2026) insider polls — TigerRag on LSU’s mix.
-          LSU is a <em>range</em> ($40–50M, closer to $50M per CBS), not a fake precise dollar.
-          Other schools those articles name in the above-$40M grouping (Texas, Texas A&amp;M, Miami,
-          Notre Dame, Ohio State, Oregon) are stored as a tier — “above $40M, survey” — unless the
-          article gave a real range. The figure combines football’s share of institutional revenue-share
-          plus third-party NIL; it is not a university check at that figure, not a school filing,
-          not booked NIL, and not House spent. House cap remains ~$20.5M all sports.
-          Never added to the capacity waterfall or capacity total. Never subtracted from leftover.
-          Leftover still only exists when a booked House spent cell exists. Not On3. Not a named player deal.
+          A labeled <strong>modeled / survey</strong> lane from the public CBS Sports (Hummer/Talty, Aug 17, 2026)
+          poll and the SI $50M-era piece (Fischer, Aug 27, 2026) — TigerRag on LSU’s mix.
+          Only a range, tier, or figure those pieces actually state for that school.
+          LSU is a <em>range</em> ($40–50M, closer to $50M per CBS). Indiana is $30–35M (SI).
+          Other named schools are stored as the article’s tier (above $40M; right off the $40M line /
+          upper or high $30s; at or slightly under $40M; closer to $30M; around / more than / at least $20M).
+          The CBS/247Sports full Power 4 table is paywalled — we do not guess the rest or invent a
+          typical-conference fill. Unnamed schools stay empty. Conference medians are not copied onto
+          schools. Combines football’s share of institutional revenue-share plus third-party NIL;
+          not a university check, not a school filing, not booked NIL, and not House spent.
+          House cap remains ~$20.5M all sports. Never added to the capacity waterfall or capacity total.
+          Never subtracted from leftover. Leftover still only exists when a booked House spent cell exists.
+          Not On3. Not a named player deal.
         </dd>
         <dt>Coach pay vs buyout overhang</dt>
         <dd>Pay is an annual flow for the chair of record in the selected football season. A current-year file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. The year picker does not copy a new hire backward onto 2024. A buyout is overhang — a liability if the school fires without cause on the as-of date — not yearly spend. Private-school blanks stay blank.</dd>

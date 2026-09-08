@@ -52,6 +52,8 @@ Coverage / included-vs-not (Methods language, no invented policy):
   → not on the desk — leftover only when House spent exists
 - What's LSU's industry football roster estimate?
   → $40–50M (closer to $50M per CBS) — modeled / survey, not House spent; leftover still pending
+- What's the industry roster estimate for Alabama?
+  → not in the published CBS/SI survey — empty, not a typical-SEC fill
 
 
 ## Seasons

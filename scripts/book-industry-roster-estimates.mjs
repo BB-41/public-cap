@@ -43,6 +43,24 @@ function insertKey(objText, key, valueJson) {
   return `{\n${body},\n${valueJson}\n      }`
 }
 
+function upsertKey(objText, key, valueJson) {
+  const marker = `"${key}":`
+  const start = objText.indexOf(marker)
+  if (start < 0) return insertKey(objText, key, valueJson)
+  const brace = objText.indexOf('{', start)
+  let depth = 0
+  for (let j = brace; j < objText.length; j++) {
+    if (objText[j] === '{') depth += 1
+    else if (objText[j] === '}') {
+      depth -= 1
+      if (depth === 0) {
+        return objText.slice(0, start) + valueJson.trimStart() + objText.slice(j + 1)
+      }
+    }
+  }
+  throw new Error(`unclosed ${key}`)
+}
+
 function stripNulls(obj) {
   if (Array.isArray(obj)) return obj.map(stripNulls)
   if (obj && typeof obj === 'object') {
@@ -67,23 +85,19 @@ if (byId.lsu.nil.booked.value != null) throw new Error('LSU booked must stay pen
 if (byId.lsu.nil.houseRemaining) throw new Error('refusing: LSU already has houseRemaining')
 
 const ids = Object.keys(cells).sort((a, b) => findNilSpan(text, b)[0] - findNilSpan(text, a)[0])
-const inserted = []
+const upserted = []
 for (const sid of ids) {
   const [lo, hi] = findNilSpan(text, sid)
   const obj = text.slice(lo, hi + 1)
-  if (obj.includes('"industryRosterEstimate"')) {
-    console.log('skip already-present', sid)
-    continue
-  }
   const cleaned = stripNulls(cells[sid])
   const dumped = JSON.stringify(cleaned, null, 2)
     .split('\n')
     .map((line, i) => (i === 0 ? line : `        ${line}`))
     .join('\n')
   const valueJson = `        "industryRosterEstimate": ${dumped}`
-  const next = insertKey(obj, 'industryRosterEstimate', valueJson)
+  const next = upsertKey(obj, 'industryRosterEstimate', valueJson)
   text = text.slice(0, lo) + next + text.slice(hi + 1)
-  inserted.push(sid)
+  upserted.push(sid)
 }
 
 writeFileSync(src, text)
@@ -99,4 +113,7 @@ if (after.lsu.nil.houseRemaining) throw new Error('post-write invented LSU House
 if (after.lsu.nil.industryRosterEstimate.low !== 40_000_000) throw new Error('LSU range missing')
 if (after.lsu.nil.industryRosterEstimate.value != null) throw new Error('LSU estimate must not have a point value')
 if (after.texas.nil.houseRemaining.value !== 7_000_000) throw new Error('Texas leftover drifted')
-console.log('inserted industryRosterEstimate for', inserted.sort().join(', ') || '(none)')
+if (Object.keys(cells).length !== upserted.length) throw new Error('upsert count mismatch')
+if (after.indiana.nil.industryRosterEstimate.low !== 30_000_000) throw new Error('Indiana range missing')
+if (after.alabama.nil.industryRosterEstimate) throw new Error('Alabama must stay empty — not in the published survey')
+console.log('upserted industryRosterEstimate for', upserted.sort().join(', '))

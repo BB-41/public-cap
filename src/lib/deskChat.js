@@ -549,11 +549,14 @@ function rosterEstimateAnswer(school, season, spent) {
     { to: '/methods', label: 'Methods' },
   ]
   if (!est) {
+    const offYear = season != null && season !== 2026
     return {
-      text: `${school.name} has no industry football roster estimate on this season. That lane is a labeled modeled / survey cell for 2026 programs CBS Sports / Sports Illustrated named in the above-$40M grouping. It is not booked NIL and not House spent. Leftover still only exists when a booked House spent cell exists.`,
-      facts: ['Industry football roster estimate: not on this season'],
+      text: offYear
+        ? `${school.name} has no industry football roster estimate on ${season}. That lane is a 2026 modeled / survey cell from the public CBS / SI pieces. Switch the season to 2026.`
+        : `${school.name} is not in the published survey. The industry football roster estimate lane stays empty — CBS Sports (Hummer/Talty, Aug 17, 2026) and the SI $50M-era piece do not name a range, tier, or figure for this school. The CBS/247Sports full Power 4 table is paywalled; we do not invent a typical-conference fill. Empty is not zero. Not booked NIL, not House spent. Leftover still only exists when a booked House spent cell exists.`,
+      facts: [offYear ? 'Industry football roster estimate: 2026 survey only' : 'Industry football roster estimate: not in the published survey'],
       links,
-      suggested: ["What's LSU's industry football roster estimate?", 'What does leftover mean?'],
+      suggested: ["What's LSU's industry football roster estimate?", 'Which schools have an industry roster estimate?'],
     }
   }
   const display = rosterEstimateDisplay(est)
@@ -564,7 +567,7 @@ function rosterEstimateAnswer(school, season, spent) {
     )
   } else {
     lines.push(
-      `${school.name} is in the industry above-$40M football roster tier (survey). Not a point estimate. Labeled modeled / survey — not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Do not subtract from capacity or leftover.`,
+      `${school.name} industry football roster estimate is ${display}${est.qualifier ? ` (${est.qualifier})` : ''}. Not a point estimate. Labeled modeled / survey — not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Do not subtract from capacity or leftover.`,
     )
   }
   if (spent == null) {
@@ -617,9 +620,9 @@ function listRosterEstimates(desk, season) {
     lines.push(range.map((r) => `${r.name} ${r.display}${r.qualifier ? ` (${r.qualifier})` : ''}`).join('; ') + '.')
   }
   if (tier.length) {
-    lines.push(`${tier.map((r) => r.name).join(', ')}: above $40M, survey — not a point estimate.`)
+    lines.push(tier.map((r) => `${r.name} ${r.display}`).join('; ') + ' — tiers, not point estimates.')
   }
-  lines.push('Leftover still only exists when a booked House spent cell exists.')
+  lines.push('Schools the public CBS / SI pieces do not name stay empty. Leftover still only exists when a booked House spent cell exists.')
   return {
     text: lines.join(' '),
     facts: rows.map((r) => `${r.name}: ${r.display}`),
@@ -921,6 +924,14 @@ function schoolCoverage(raw, season, includeAlumni, desk) {
       value: rosterEstimateDisplay(est),
       mark: 'modeled',
       note: est.qualifier || 'survey — not House spent',
+      hash: ROSTER_ESTIMATE_HASH,
+    })
+  } else if (season === 2026) {
+    rows.push({
+      on: false,
+      label: 'Industry football roster estimate',
+      mark: 'pending',
+      why: 'Not in the published CBS / SI survey. Empty — we do not invent a typical-conference fill.',
       hash: ROSTER_ESTIMATE_HASH,
     })
   }

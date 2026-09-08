@@ -152,13 +152,24 @@ ok(houseRemaining(applySeason(byId.louisville, 2024)) == null, '2024 overlay dro
 ok(val(byId['penn-state'].nil.preCap) === 18_368_391, 'Penn State preCap not used as remaining')
 ok(byId['oklahoma-state'].nil.houseRemaining == null, 'OSU 990/preCap is not remaining')
 
-const ESTIMATE_IDS = ['lsu', 'miami', 'notre-dame', 'ohio-state', 'oregon', 'texas', 'texas-am']
+const ESTIMATE_IDS = [
+  'lsu', 'miami', 'notre-dame', 'ohio-state', 'oregon', 'texas', 'texas-am',
+  'georgia', 'michigan', 'ole-miss', 'tennessee', 'usc',
+  'texas-tech', 'indiana', 'byu', 'tcu',
+  'virginia-tech', 'purdue', 'rutgers', 'vanderbilt', 'south-carolina',
+]
+const EMPTY_ESTIMATE_IDS = data.schools.map((s) => s.id).filter((id) => !ESTIMATE_IDS.includes(id))
+ok(ESTIMATE_IDS.length === 21, `21 cited estimates (${ESTIMATE_IDS.length})`)
+ok(EMPTY_ESTIMATE_IDS.length === 47, `47 empty (${EMPTY_ESTIMATE_IDS.length})`)
 for (const sid of ESTIMATE_IDS) {
   const est = byId[sid].nil.industryRosterEstimate
   ok(est && est.confidence === 'modeled', `${sid} industry roster estimate is modeled`)
   ok(est.value == null, `${sid} estimate has no fake point value`)
   ok(!/on3/i.test(JSON.stringify(est)), `${sid} estimate does not name On3`)
   ok(!/seaton/i.test(JSON.stringify(est)), `${sid} estimate does not book a named player deal`)
+}
+for (const sid of EMPTY_ESTIMATE_IDS) {
+  ok(!byId[sid].nil.industryRosterEstimate, `${sid} stays empty — not in the published survey`)
 }
 const lsuEst = byId.lsu.nil.industryRosterEstimate
 ok(lsuEst.kind === 'range' && lsuEst.low === 40_000_000 && lsuEst.high === 50_000_000, 'LSU estimate is $40–50M')
@@ -171,8 +182,13 @@ for (const sid of ['texas', 'texas-am', 'miami', 'notre-dame', 'ohio-state', 'or
   ok(byId[sid].nil.industryRosterEstimate.kind === 'tier', `${sid} is a survey tier`)
   ok(byId[sid].nil.industryRosterEstimate.tier === 'above $40M', `${sid} tier is above $40M`)
 }
-ok(!byId['texas-tech']?.nil?.industryRosterEstimate, 'Texas Tech is not in the above-$40M tier')
-ok(!byId.georgia?.nil?.industryRosterEstimate, 'Georgia is not invented into the above-$40M tier')
+ok(byId.indiana.nil.industryRosterEstimate.kind === 'range', 'Indiana is a published range')
+ok(byId.indiana.nil.industryRosterEstimate.low === 30_000_000 && byId.indiana.nil.industryRosterEstimate.high === 35_000_000, 'Indiana is $30–35M')
+ok(byId.georgia.nil.industryRosterEstimate.tier === 'upper $30M', 'Georgia is upper $30M, not above $40M')
+ok(byId['texas-tech'].nil.industryRosterEstimate.tier === 'at or slightly under $40M', 'Texas Tech is at or slightly under $40M')
+ok(!byId.houston?.nil?.industryRosterEstimate, 'Houston “perhaps” is not booked')
+ok(!byId.clemson?.nil?.industryRosterEstimate, 'Clemson unnamed dollar stays empty')
+ok(!byId.alabama?.nil?.industryRosterEstimate, 'Alabama stays empty')
 ok(byId.texas.nil.houseRemaining.value === 7_000_000, 'Texas leftover unchanged by the survey')
 
 const lsu26 = applySeason(byId.lsu, 2026)

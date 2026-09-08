@@ -177,8 +177,26 @@ ok(/House cap minus booked House spent/i.test(txEst.text), 'Texas survey keeps l
 const listEst = ask('Which schools have an industry roster estimate?')
 ok(/LSU/.test(listEst.text) && /Texas A&M/.test(listEst.text), 'list names LSU and Texas A&M')
 ok(/Miami/.test(listEst.text) && /Oregon/.test(listEst.text), 'list names the other CBS/SI above-$40M schools')
-ok(!/Georgia/.test(listEst.text) && !/Texas Tech/.test(listEst.text), 'list does not invent off-tier schools')
+ok(/Georgia/.test(listEst.text) && /Texas Tech/.test(listEst.text), 'list includes CBS right-off-$40M and SI Tech')
+ok(/Indiana/.test(listEst.text), 'list includes Indiana $30–35M')
+ok(!/Alabama/.test(listEst.text) && !/Clemson/.test(listEst.text) && !/Houston/.test(listEst.text), 'list does not invent unnamed schools')
 ok(!/On3/.test(listEst.text), 'list does not name On3')
+
+const alaEst = ask("What's the industry roster estimate for Alabama?")
+ok(/not in the published survey/i.test(alaEst.text), `Alabama empty: ${alaEst.text}`)
+ok(!/estimate is \$/.test(alaEst.text), 'Alabama survey invents no dollar')
+
+const clemEst = ask("What's the industry roster estimate for Clemson?")
+ok(/not in the published survey/i.test(clemEst.text), 'Clemson unnamed dollar stays empty')
+ok(!/estimate is \$/.test(clemEst.text), 'Clemson survey invents no dollar')
+
+const indEst = ask("What's the industry roster estimate for Indiana?")
+ok(/\$30–35M|\$30-35M|30–35/.test(indEst.text), `Indiana range: ${indEst.text}`)
+ok(/not House spent/i.test(indEst.text), 'Indiana survey stays off House spent')
+
+const gaEst = ask("What's the industry roster estimate for Georgia?")
+ok(/upper \$30M/i.test(gaEst.text), `Georgia tier: ${gaEst.text}`)
+ok(/not a point estimate/i.test(gaEst.text), 'Georgia refuses a fake precise dollar')
 
 ok(SUGGESTED_PROMPTS.some((p) => /LSU.*industry football roster estimate/i.test(p)), 'suggested prompt: LSU industry roster estimate')
 

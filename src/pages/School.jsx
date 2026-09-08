@@ -375,10 +375,31 @@ function Collective990Lane({ cells }) {
   )
 }
 
-function IndustryRosterEstimateLane({ field, leftoverPending, schoolName }) {
-  if (!field) return null
+function IndustryRosterEstimateLane({ field, leftoverPending, schoolName, season }) {
   const display = rosterEstimateDisplay(field)
   const cites = rosterEstimateCites(field)
+  if (!field) {
+    const offYear = season != null && season !== 2026
+    return (
+      <section id={`slice-${ROSTER_ESTIMATE_HASH}`} className="desk-may-empty">
+        <h2 title={defTitle('industryRosterEstimate')}>
+          Industry football roster estimate
+        </h2>
+        <p className="lede tight">
+          Labeled modeled / survey — not booked NIL and not House spent.
+          Leftover still only exists when House spent is booked.
+        </p>
+        <div className="field pending-box desk-empty">
+          <div className="field-val">{offYear ? '2026 survey only' : 'Not in the published survey'}</div>
+          <div className="field-meta">
+            {offYear
+              ? `The CBS / SI industry football roster survey is a 2026 cell. Switch to 2026 to see whether ${schoolName} was named.`
+              : `${schoolName} is not named with a range, tier, or figure in the public CBS Sports (Hummer/Talty, Aug 17, 2026) poll or the SI $50M-era piece. The CBS/247Sports full Power 4 table is paywalled — we do not invent a typical-conference fill. Empty is not zero.`}
+          </div>
+        </div>
+      </section>
+    )
+  }
   return (
     <section id={`slice-${ROSTER_ESTIMATE_HASH}`}>
       <h2 title={defTitle('industryRosterEstimate')}>
@@ -401,7 +422,7 @@ function IndustryRosterEstimateLane({ field, leftoverPending, schoolName }) {
         </div>
         {field.qualifier ? (
           <div>
-            <div className="eyebrow">CBS qualifier</div>
+            <div className="eyebrow">Survey qualifier</div>
             <div className="display sm modeled-cell">{field.qualifier}</div>
           </div>
         ) : null}
@@ -538,9 +559,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
               : `Two ceilings, then booked NIL: the House benefits cap versus what ${s.name} can actually write this year from public filings (annual capacity — not total athletic revenue).`}
             {' '}Booked NIL is the official institutional number when a filing exists — the public stand-in for an NIL budget.
             {' '}Collective 990 payout is a separate cited lane, not House.
-            {rosterEstimate
-              ? ' An industry football roster estimate, when shown, is a labeled modeled / survey lane — not booked NIL, not House spent, and not leftover.'
-              : ''}
+            {' '}An industry football roster estimate is a labeled modeled / survey lane — not booked NIL, not House spent, and not leftover. Empty means the school is not in the published CBS/SI survey, not that spend is zero.
             {' '}Student fees on this desk are not tuition.
             {' '}Pending stays empty.
           </p>
@@ -549,9 +568,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             <span>House cap <b>{house == null ? 'none (pre-settlement)' : season >= 2026 ? '2026–27' : '2025–26'}</b></span>
             <span>Booked NIL <b>{leadBookedNil(s).value != null ? 'cited' : 'pending'}</b></span>
             <span>Collective payout <b>{collective990Cells(s).some((c) => c.value != null) ? 'cited' : 'pending'}</b></span>
-            {rosterEstimate ? (
-              <span>Industry roster estimate <b>survey</b></span>
-            ) : null}
+            <span>Industry roster estimate <b>{rosterEstimate ? 'survey' : 'pending'}</b></span>
           </p>
           {s.revenueGap && <p className="gap-banner">Revenue gap: private-school tickets, sponsorships, and contributions are not on the public MFRS tape.</p>}
         </div>
@@ -674,6 +691,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         field={rosterEstimate}
         leftoverPending={leftoverLead.value == null}
         schoolName={s.name}
+        season={season}
       />
 
       {s.nil.modeled ? (
