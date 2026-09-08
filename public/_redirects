@@ -6,6 +6,7 @@
 # SPA HTML routes only. JSON books, logos, and other public/ files stay files.
 /school/* /index.html 200
 /compare /index.html 200
+/reported-nil /index.html 200
 /tape /index.html 200
 /tv /index.html 200
 /buyout /index.html 200

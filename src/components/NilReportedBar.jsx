@@ -13,7 +13,7 @@ function Mark({ mark, kind, label }) {
   )
 }
 
-export default function NilReportedBar({ bar }) {
+export default function NilReportedBar({ bar, compact = false }) {
   if (!bar) return null
   const maxM = Math.round(bar.max / 1_000_000)
   const ticks = [0, maxM / 2, maxM]
@@ -28,7 +28,7 @@ export default function NilReportedBar({ bar }) {
     .join('. ')
 
   return (
-    <div className="nil-reported">
+    <div className={compact ? 'nil-reported compact' : 'nil-reported'}>
       <div
         className="nil-reported-track"
         role="img"
@@ -59,38 +59,42 @@ export default function NilReportedBar({ bar }) {
           )}
         </div>
       )}
-      <div className="nil-reported-ticks">
-        {ticks.map((t) => (
-          <span key={t}>${t}M</span>
-        ))}
-      </div>
-      <ul className="nil-reported-legend">
-        <li>
-          <i className="nil-reported-swatch band" />
-          Gold band = industry / survey or modeled football-stack range (rev-share + third-party NIL). Not booked NIL. Not House spent.
-        </li>
-        {bar.sameBookedSpent && bar.booked ? (
-          <li>
-            <i className="nil-reported-swatch both" />
-            Booked NIL / House spent cite {money(bar.booked.value)} — one mark, not mixed into the band.
-          </li>
-        ) : (
-          <>
-            {bar.booked ? (
+      {compact ? null : (
+        <>
+          <div className="nil-reported-ticks">
+            {ticks.map((t) => (
+              <span key={t}>${t}M</span>
+            ))}
+          </div>
+          <ul className="nil-reported-legend">
+            <li>
+              <i className="nil-reported-swatch band" />
+              Gold band = industry / survey or modeled football-stack range (rev-share + third-party NIL). Not booked NIL. Not House spent.
+            </li>
+            {bar.sameBookedSpent && bar.booked ? (
               <li>
-                <i className="nil-reported-swatch booked" />
-                Booked NIL {money(bar.booked.value)} — separate mark.
+                <i className="nil-reported-swatch both" />
+                Booked NIL / House spent cite {money(bar.booked.value)} — one mark, not mixed into the band.
               </li>
-            ) : null}
-            {bar.spent ? (
-              <li>
-                <i className="nil-reported-swatch spent" />
-                House spent {money(bar.spent.value)} — separate mark.
-              </li>
-            ) : null}
-          </>
-        )}
-      </ul>
+            ) : (
+              <>
+                {bar.booked ? (
+                  <li>
+                    <i className="nil-reported-swatch booked" />
+                    Booked NIL {money(bar.booked.value)} — separate mark.
+                  </li>
+                ) : null}
+                {bar.spent ? (
+                  <li>
+                    <i className="nil-reported-swatch spent" />
+                    House spent {money(bar.spent.value)} — separate mark.
+                  </li>
+                ) : null}
+              </>
+            )}
+          </ul>
+        </>
+      )}
     </div>
   )
 }

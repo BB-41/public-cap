@@ -31,7 +31,7 @@ export const DEFS = {
   },
   nilReportedBar: {
     label: 'NIL reported bar',
-    text: 'A comparable gold band on every Power 4 + Notre Dame school page. The band is that school’s industry/survey or modeled football-stack range (rev-share + third-party NIL) — not booked NIL and not House spent. Every school uses the same $0–$50M scale; $50M is the highest published or modeled top in the set (LSU survey high and the above-$40M allocation envelope). Booked NIL and House spent, when cited, are separate marks or a second thin track — never mixed into the reported band. Position starter ranges under the bar are a modeled/range breakdown of the same stack. The bar never enters leftover or the capacity waterfall. Not On3.',
+    text: 'A comparable gold band on every Power 4 + Notre Dame school page, and on the /reported-nil board. The band is that school’s industry/survey or modeled football-stack range (rev-share + third-party NIL) — not booked NIL and not House spent. Every school uses the same $0–$50M scale; $50M is the highest published or modeled top in the set (LSU survey high and the above-$40M allocation envelope). Survey tiers keep the published words on the board; rank uses the allocation envelope, not a midpoint. Booked NIL and House spent, when cited, are separate marks or a second thin track — never mixed into the reported band. Position starter ranges under the bar are a modeled/range breakdown of the same stack. The bar never enters leftover or the capacity waterfall. Not On3.',
   },
   nilCap: {
     label: 'NIL / capacity',

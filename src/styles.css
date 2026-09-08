@@ -65,7 +65,7 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
 }
 .tagline { max-width: 640px; color: var(--paper-dim); margin: 0 0 18px; }
-.nav { display: flex; gap: 22px; padding: 8px 0 14px; }
+.nav { display: flex; flex-wrap: wrap; gap: 22px; padding: 8px 0 14px; }
 .nav a {
   font-family: Arial, Helvetica, system-ui, sans-serif;
   font-size: 12px;
@@ -376,6 +376,37 @@ h2 { font-family: Arial, Helvetica, system-ui, sans-serif; font-weight: 650; fon
 }
 .nil-reported-breakdown th.num,
 .nil-reported-breakdown td.num { text-align: right; }
+
+.nil-reported.compact { margin: 0; }
+.nil-reported.compact .nil-reported-track { height: 16px; }
+.nil-reported.compact .nil-reported-band { top: 3px; height: 10px; }
+.nil-reported.compact .nil-reported-cite-track { height: 8px; margin-top: 2px; }
+
+.legend .nil-reported-swatch { margin-top: 4px; }
+table.rank.reported-nil-rank { min-width: 920px; table-layout: fixed; }
+table.rank.reported-nil-rank .col-range { width: 14%; }
+table.rank.reported-nil-rank .col-lane { width: 5.5em; }
+table.rank.reported-nil-rank .col-bar { width: 42%; }
+table.rank.reported-nil-rank th { white-space: normal; }
+.reported-nil-label { font-family: Arial, Helvetica, system-ui, sans-serif; font-size: 14px; }
+.reported-nil-bar-cell { min-width: 180px; }
+.reported-nil-scale-lab {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.reported-nil-head-ticks { margin-top: 4px; }
+.reported-nil-board .legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  margin: 8px 0 4px;
+  font-size: 13px;
+  color: var(--paper-dim);
+}
+.reported-nil-board .legend span { display: inline-flex; align-items: center; gap: 8px; }
 
 @media (max-width: 800px) {
   .waterfall-row { grid-template-columns: 1.8rem minmax(0, 1fr) auto; padding: 12px 4px; }

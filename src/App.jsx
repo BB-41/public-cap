@@ -32,6 +32,7 @@ const Tv = lazy(() => import('./pages/Tv.jsx'))
 const Buyout = lazy(() => import('./pages/Buyout.jsx'))
 const CoachFa = lazy(() => import('./pages/CoachFa.jsx'))
 const DeskChat = lazy(() => import('./components/DeskChat.jsx'))
+const ReportedNil = lazy(() => import('./pages/ReportedNil.jsx'))
 
 function IdleDeskChat({ desk, season, includeAlumni }) {
   const [show, setShow] = useState(false)
@@ -87,7 +88,7 @@ export default function App() {
     navigate({ pathname: location.pathname, search: search ? `?${search}` : '', hash: location.hash }, { replace: true })
   }
 
-  const needsDesk = kind === 'home' || kind === 'compare' || kind === 'school'
+  const needsDesk = kind === 'home' || kind === 'compare' || kind === 'school' || kind === 'reportedNil'
   const needsLayersFull = kind === 'school'
   const needsLayersLite = kind === 'home' || kind === 'compare'
   const needsTape = kind === 'tape' || kind === 'school'
@@ -258,6 +259,15 @@ export default function App() {
       })
       return
     }
+    if (kind === 'reportedNil') {
+      applyDocumentMeta({
+        title: titleFromPath(path),
+        description: descriptionFromPath(path),
+        path: '/reported-nil',
+        jsonLd: 'webpage',
+      })
+      return
+    }
     if (kind === 'coachFa') {
       const coachId = path.split('/')[2]
       const names = {
@@ -289,7 +299,7 @@ export default function App() {
   }, [kind, schoolId, season, enriched, params, location.pathname])
 
   const ready =
-    (!needsDesk || (data && enriched)) &&
+    (!needsDesk || (data && (kind === 'reportedNil' || enriched))) &&
     (kind !== 'school' || fullStatus === 'done') &&
     (kind !== 'tape' || tape != null) &&
     (kind !== 'methods' || metaOnly != null)
@@ -346,6 +356,7 @@ export default function App() {
                 />
               }
             />
+            <Route path="/reported-nil" element={<ReportedNil schools={data?.schools} />} />
             <Route path="/tape" element={<Tape items={tape?.items || []} season={season} />} />
             <Route path="/tv" element={<Tv />} />
             <Route path="/buyout" element={<Buyout />} />

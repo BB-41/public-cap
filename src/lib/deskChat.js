@@ -32,6 +32,7 @@ import {
   footballRosterStack,
   reportedNilBar,
   REPORTED_BAR_HASH,
+  REPORTED_NIL_PATH,
   stackFormula,
   stackPositionRows,
 } from './rosterStack.js'
@@ -336,9 +337,11 @@ function capacityOf(school, includeAlumni) {
 
 function answerDefine(key, extra) {
   const def = DEFS[key]
+  const links = [{ to: '/methods', label: 'Methods' }]
+  if (key === 'nilReportedBar') links.unshift({ to: REPORTED_NIL_PATH, label: 'Reported NIL board' })
   return {
     text: def ? `${def.label}: ${def.text}` : extra || 'See Methods.',
-    links: [{ to: '/methods', label: 'Methods' }],
+    links,
     suggested: SUGGESTED_PROMPTS.slice(0, 3),
   }
 }
@@ -657,6 +660,7 @@ function rosterEstimateAnswer(school, season, spent) {
 
 function reportedNilAnswer(school, season, spent, booked) {
   const links = [
+    { to: REPORTED_NIL_PATH, label: 'Reported NIL board' },
     { to: schoolHref(school.id, season, REPORTED_BAR_HASH), label: `${school.name} NIL reported bar` },
     { to: schoolHref(school.id, season, ROSTER_ESTIMATE_HASH), label: `${school.name} industry roster estimate` },
   ]
@@ -721,6 +725,7 @@ function compareReportedNil(rawA, rawB, season, includeAlumni, desk) {
   const barA = reportedNilBar(A.school, { booked: A.booked.value, spent: A.spent })
   const barB = reportedNilBar(B.school, { booked: B.booked.value, spent: B.spent })
   const links = [
+    { to: REPORTED_NIL_PATH, label: 'Reported NIL board' },
     { to: schoolHref(A.school.id, season, REPORTED_BAR_HASH), label: `${A.school.name} NIL reported bar` },
     { to: schoolHref(B.school.id, season, REPORTED_BAR_HASH), label: `${B.school.name} NIL reported bar` },
   ]
@@ -785,6 +790,7 @@ function listRosterEstimates(desk, season) {
     text: lines.join(' '),
     facts: [...survey, ...modeled].map((r) => `${r.name}: ${r.display} (${r.lane})`),
     links: [
+      { to: REPORTED_NIL_PATH, label: 'Reported NIL board' },
       ...survey.slice(0, 8).map((r) => ({ to: schoolHref(r.id, season, ROSTER_ESTIMATE_HASH), label: r.name })),
       { to: '/methods', label: 'Methods' },
     ],

@@ -22,7 +22,8 @@ when that cell exists, not capacity − House − NIL. An industry football rost
 estimate (CBS/SI survey) is a separate labeled modeled / survey lane — not
 House spent and not booked NIL. A NIL reported bar plots that range on one
 $0–$50M scale (max = highest published/modeled top in the Power 4 + ND set)
-so schools can be compared. Booked NIL / House spent stay separate marks.
+so schools can be compared — on each school page and on `/reported-nil`.
+Booked NIL / House spent stay separate marks.
 
 ```
 npm run dev
@@ -64,6 +65,8 @@ Coverage / included-vs-not (Methods language, no invented policy):
   → modeled $25–33M on the shared $0–$50M bar; not booked NIL / not House spent
 - Compare LSU and Alabama on reported NIL
   → LSU survey $40–50M sits higher than Alabama’s modeled $25–33M; leftover unchanged
+- Compare every school on reported NIL
+  → the /reported-nil board; LSU first; survey words stay survey words
 
 
 ## Seasons
