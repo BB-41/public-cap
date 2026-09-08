@@ -8,6 +8,14 @@ import {
   rosterEstimateDisplay,
   ROSTER_ESTIMATE_HASH,
 } from '../lib/rosterEstimate.js'
+import {
+  industryPositionEstimates,
+  positionEstimateCites,
+  positionEstimateDisplay,
+  POSITION_ESTIMATE_HASH,
+  FOOTBALL_POSITIONS,
+  positionLabel,
+} from '../lib/positionEstimate.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import { earningsBack } from '../lib/earningsBack.js'
@@ -446,6 +454,91 @@ function IndustryRosterEstimateLane({ field, leftoverPending, schoolName, season
   )
 }
 
+function IndustryPositionEstimatesLane({ field, leftoverPending, schoolName, season }) {
+  const rows = field?.positions || []
+  const offYear = season != null && season !== 2026
+  const emptyCopy = offYear
+    ? `The CBS / SI position bands are a 2026 cell. Switch to 2026 to see whether ${schoolName} was named at a position.`
+    : `${schoolName} has no public position band in the CBS Sports (Hummer/Talty, Aug 17, 2026) poll or the SI $50M-era piece. Empty is not zero. We do not invent a full position payroll. Modeled starter vs backup seats stay on the roster rate card below — labeled modeled, not a contract.`
+  if (!rows.length) {
+    return (
+      <section id={`slice-${POSITION_ESTIMATE_HASH}`} className="desk-may-empty">
+        <h2 title={defTitle('industryPositionEstimate')}>
+          Industry estimate by position
+        </h2>
+        <p className="lede tight">
+          Labeled modeled / survey — industry estimate, not a contract.
+          Not booked NIL and not House spent.
+        </p>
+        <div className="field pending-box desk-empty">
+          <div className="field-val">{offYear ? '2026 survey only' : 'No public position band'}</div>
+          <div className="field-meta">{emptyCopy}</div>
+        </div>
+      </section>
+    )
+  }
+  const cited = new Set(rows.map((r) => r.family))
+  const other = FOOTBALL_POSITIONS.map((p) => p.family).filter((f) => !cited.has(f))
+  return (
+    <section id={`slice-${POSITION_ESTIMATE_HASH}`}>
+      <h2 title={defTitle('industryPositionEstimate')}>
+        Industry estimate by position <i className="dot modeled" />
+      </h2>
+      <p className="lede tight">
+        Approximate player salaries by position when CBS / SI stated a band.
+        Industry estimate, not a contract. Prefer a position band over a named player.
+        A named-article dollar is labeled reported-estimate — not a school filing.
+        Other positions stay empty. The roster rate card below is the modeled starter / backup
+        machinery and is not replaced.
+        {leftoverPending
+          ? ` Leftover still only exists when House spent is booked.`
+          : ' Leftover on this page is still House cap minus booked House spent, not this survey.'}
+      </p>
+      <table className="roster">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Band</th>
+            <th>Mark</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.family}>
+              <td>{r.label || positionLabel(r.family)}</td>
+              <td className="modeled-cell">
+                {positionEstimateDisplay(r)}
+                {r.qualifier ? ` · ${r.qualifier}` : ''}
+              </td>
+              <td>{r.mark === 'reported-estimate' ? 'reported-estimate' : 'survey'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="field-notes">{field.notes}</p>
+      <p className="fine">
+        Other football positions
+        {other.length ? ` (${other.map(positionLabel).join(', ')})` : ''}: no public band.
+        Empty beats a guess.
+      </p>
+      {rows.flatMap((r) => positionEstimateCites(r)).length ? (
+        <p className="fine">
+          {rows.flatMap((r) => positionEstimateCites(r)).map((c, i) => (
+            <span key={`${c.url || c.source}-${i}`}>
+              {i > 0 ? ' · ' : 'Sources: '}
+              {c.url ? (
+                <a className="ext" href={c.url} target="_blank" rel="noreferrer">{c.source} ↗</a>
+              ) : (
+                c.source
+              )}
+            </span>
+          ))}
+        </p>
+      ) : null}
+    </section>
+  )
+}
+
 function Field({ field, fallback = '—' }) {
   if (!field || field.value == null) {
     return (
@@ -536,6 +629,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
   const nil = s._ratios.nil
   const leftoverLead = leadHouseRemaining(s)
   const rosterEstimate = industryRosterEstimate(s)
+  const positionEstimates = industryPositionEstimates(s)
   const sources = collectSources(s, meta)
   const deskTape = tapeForSchool(tape, s.id)
 
@@ -694,6 +788,13 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         season={season}
       />
 
+      <IndustryPositionEstimatesLane
+        field={positionEstimates}
+        leftoverPending={leftoverLead.value == null}
+        schoolName={s.name}
+        season={season}
+      />
+
       {s.nil.modeled ? (
       <section>
         <h2 title={defTitle('nilModeled')}>NIL modeled range <i className="dot modeled" /></h2>
@@ -729,7 +830,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
       <section>
         <h2>Roster bands (modeled)</h2>
         <p className="lede tight">
-          Position rate card, not player contracts. Slots are labeled QB1 / WR1 / EDGE. Named football players below are a second cut of the same card — not extra money. Football 85 + MBB 13 scale into 93% of this school’s modeled midpoint.
+          Position rate card, not player contracts. Slots are labeled QB1 / WR1 / EDGE — starter vs backup units on the existing seat card, labeled modeled. We do not replace these bands with invented industry salaries. Cited CBS / SI position bands, when they exist, sit in the industry-estimate-by-position lane above. Named football players below are a second cut of the same card — not extra money. Football 85 + MBB 13 scale into 93% of this school’s modeled midpoint.
         </p>
         <div className="roster-split">
           <div>

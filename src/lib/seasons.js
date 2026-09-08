@@ -504,6 +504,7 @@ export function applySeasonForNil(school, year) {
   // Industry football roster estimates are a 2026 survey lane only.
   // Never treat them as booked NIL, House spent, leftover, or capacity.
   if (year !== 2026) delete nil.industryRosterEstimate
+  if (year !== 2026) delete nil.industryPositionEstimates
   out.nil = nil
   return out
 }

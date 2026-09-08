@@ -199,6 +199,30 @@ ok(/upper \$30M/i.test(gaEst.text), `Georgia tier: ${gaEst.text}`)
 ok(/not a point estimate/i.test(gaEst.text), 'Georgia refuses a fake precise dollar')
 
 ok(SUGGESTED_PROMPTS.some((p) => /LSU.*industry football roster estimate/i.test(p)), 'suggested prompt: LSU industry roster estimate')
+ok(SUGGESTED_PROMPTS.some((p) => /industry estimate for Miami/i.test(p)), 'suggested prompt: Miami QB position estimate')
+
+const miaQb = ask("What's the industry estimate for Miami's QB?")
+ok(/more than \$6M/i.test(miaQb.text), `Miami QB band: ${miaQb.text}`)
+ok(/reported-estimate/i.test(miaQb.text), 'Miami QB is reported-estimate')
+ok(/not a (player )?contract/i.test(miaQb.text), 'Miami QB is not a contract')
+ok(!/mensah/i.test(miaQb.text), 'Miami QB prefers the position band over a named player')
+
+const alaQb = ask("What's Alabama's QB salary?")
+ok(/no public position band/i.test(alaQb.text), `Alabama QB empty: ${alaQb.text}`)
+ok(!/estimate is \$/.test(alaQb.text), 'Alabama QB invents no dollar')
+
+const lsuOt = ask("What's the industry estimate for LSU's OT?")
+ok(/no public position band/i.test(lsuOt.text), 'LSU OT stays empty')
+ok(!/seaton/i.test(lsuOt.text), 'LSU OT does not book Seaton')
+
+const washQb = ask("Who is Washington's starting QB on the roster?")
+ok(/Demond Williams Jr/i.test(washQb.text), 'Washington starter question still returns the name')
+
+const posList = ask('Which positions have an industry salary band?')
+ok(/Miami/.test(posList.text) && /Texas A&M/.test(posList.text), 'position list names cited schools')
+ok(/QB/.test(posList.text) && /WR/.test(posList.text) && /EDGE/.test(posList.text), 'position list names cited families')
+ok(/TE/.test(posList.text) && /no public band/i.test(posList.text), 'position list says TE has no public band')
+ok(!/Alabama/.test(posList.text) && !/On3/.test(posList.text), 'position list does not invent Alabama or name On3')
 
 const lsuMiss = ask('What data is missing for LSU?')
 ok(/House spent/i.test(lsuMiss.text) && /pending/i.test(lsuMiss.text), 'LSU missing names House spent pending')

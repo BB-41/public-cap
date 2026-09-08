@@ -25,6 +25,10 @@ export const DEFS = {
     label: 'Industry football roster estimate',
     text: 'A labeled modeled / survey lane from the public CBS Sports (Hummer/Talty, Aug 17, 2026) poll and the SI $50M-era piece (TigerRag on LSU’s mix). A range when the article gives one (LSU $40–50M; Indiana $30–35M); otherwise the stated tier, not a fake precise dollar. Only schools those pieces actually name. The CBS/247Sports full Power 4 table is paywalled — unnamed schools stay empty. We do not invent a typical-conference fill. Combines football’s share of institutional revenue-share plus third-party NIL — not a university check, not a school filing, not booked NIL, and not House spent. Never subtracted from capacity or leftover. Leftover still only exists when a booked House spent cell exists. Not On3. Not a named player deal.',
   },
+  industryPositionEstimate: {
+    label: 'Industry estimate by position',
+    text: 'Approximate player salaries by position when the public CBS / SI roster-spend pieces state a band. Prefer a position band (seven-figure WR, seven-figure OT) over a named player. A named-article dollar, when kept, is labeled reported-estimate — not a school filing and not booked NIL. Positions with no public band stay empty. We do not invent a full position payroll for every school. The existing roster rate card (starter vs backup) stays the modeled seat machinery and is not replaced. Never subtracted from capacity or leftover. Not On3.',
+  },
   nilCap: {
     label: 'NIL / capacity',
     text: 'Booked NIL divided by annual capacity. Pending if we have no booked NIL figure.',
@@ -75,7 +79,7 @@ export const DEFS = {
   },
   modeled: {
     label: 'modeled',
-    text: 'A desk construct: alumni cohort / wealth / giving, the conference-heuristic NIL range, an industry football roster survey (CBS/SI), the position rate card, a named-player share of that card, or wins-per-dollar when the NIL denominator is modeled. Labeled as such. Not a filing.',
+    text: 'A desk construct: alumni cohort / wealth / giving, the conference-heuristic NIL range, an industry football roster survey (CBS/SI), a cited industry position band, the position rate card, a named-player share of that card, or wins-per-dollar when the NIL denominator is modeled. Labeled as such. Not a filing.',
   },
   rosterNamed: {
     label: 'Named roster (modeled)',

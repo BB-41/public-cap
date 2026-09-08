@@ -24,6 +24,7 @@ export const SCHOOL_DRILLS = new Set([
   'nil',
   'nil-modeled',
   'roster-estimate',
+  'position-estimate',
   'debt',
   'conference-exit',
 ])

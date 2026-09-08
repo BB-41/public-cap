@@ -212,6 +212,28 @@ const txFall = leftoverWaterfall(tx26, computeCapacity(tx26), false)
 ok(txFall.leftover === 7_000_000, 'Texas waterfall leftover stays $7M')
 ok(!txFall.steps.some((s) => s.value === 40_000_000), 'Texas waterfall does not subtract the survey')
 
+const POS_IDS = ['miami', 'texas-am', 'ole-miss', 'ohio-state']
+ok(POS_IDS.every((sid) => byId[sid].nil.industryPositionEstimates?.positions?.length), 'four schools have cited position bands')
+ok(!byId.lsu.nil.industryPositionEstimates, 'LSU has no position survey (no Seaton)')
+ok(!byId.alabama.nil.industryPositionEstimates, 'Alabama has no invented position payroll')
+ok(!byId.texas.nil.industryPositionEstimates, 'Texas WR bidding is not booked as a position band')
+for (const sid of POS_IDS) {
+  const blob = JSON.stringify(byId[sid].nil.industryPositionEstimates)
+  ok(!/on3/i.test(blob), `${sid} position survey does not name On3`)
+  ok(!/seaton/i.test(blob), `${sid} position survey does not book Seaton`)
+  ok(byId[sid].nil.industryPositionEstimates.positions.every((p) => p.value == null), `${sid} position rows have no fake point value`)
+}
+const miaPos = byId.miami.nil.industryPositionEstimates.positions
+ok(miaPos.some((p) => p.family === 'qb' && /more than \$6M/.test(p.display)), 'Miami QB is more than $6M')
+ok(miaPos.some((p) => p.family === 'wr' && p.tier === 'seven-figure'), 'Miami WR is seven-figure')
+ok(miaPos.some((p) => p.family === 'edge' && p.tier === 'seven-figure'), 'Miami EDGE is seven-figure')
+ok(byId['ole-miss'].nil.industryPositionEstimates.positions.some((p) => p.family === 'rb'), 'Ole Miss RB is cited')
+ok(!byId['texas-am'].nil.industryPositionEstimates.positions.some((p) => p.family === 'te'), 'Texas A&M TE stays empty')
+ok(applySeason(byId.miami, 2025).nil.industryPositionEstimates == null, '2025 overlay strips the position survey')
+ok(applySeason(byId.miami, 2026).nil.industryPositionEstimates?.positions?.length >= 1, '2026 overlay keeps Miami position bands')
+ok(!fallLsu.steps.some((s) => s.hash === 'position-estimate' || s.key === 'positionEstimate'), 'LSU waterfall has no position-survey step')
+ok(!txFall.steps.some((s) => s.hash === 'position-estimate'), 'Texas waterfall has no position-survey step')
+
 const layers = JSON.parse(readFileSync(new URL('../public/data/layers.json', import.meta.url), 'utf8'))
 ok(layers.schools.wisconsin.apparel?.annualValue?.value === 7_000_000, 'Wisconsin UA $7M kept')
 ok(layers.schools.kentucky.apparel?.annualValue?.value === 7_000_000, 'Kentucky Nike $7M kept')

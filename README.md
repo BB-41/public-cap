@@ -54,6 +54,10 @@ Coverage / included-vs-not (Methods language, no invented policy):
   → $40–50M (closer to $50M per CBS) — modeled / survey, not House spent; leftover still pending
 - What's the industry roster estimate for Alabama?
   → not in the published CBS/SI survey — empty, not a typical-SEC fill
+- What's the industry estimate for Miami's QB?
+  → more than $6M, reported-estimate — industry estimate, not a contract
+- What's Alabama's QB salary?
+  → no public position band — empty, not a guessed payroll
 
 
 ## Seasons
