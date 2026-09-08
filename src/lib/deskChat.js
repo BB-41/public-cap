@@ -7,6 +7,7 @@ import {
   computeCapacity,
   displayCap,
   hasVal,
+  collective990Cells,
   leadBookedNil,
   leadHouseRemaining,
 } from './compute.js'
@@ -24,9 +25,9 @@ export const CHAT_VOICE =
 export const SUGGESTED_PROMPTS = [
   "What's Louisville's leftover / House spent / booked NIL?",
   'Which schools have booked House spent?',
-  "What's SMU's conference media line — is it full TV?",
-  "Who is Washington's starting QB on the roster?",
-  'Compare Louisville and Kentucky leftover',
+  'What NIL do you have for Texas?',
+  'What data is missing for SMU?',
+  'What is booked vs modeled vs pending?',
   'What does leftover mean?',
 ]
 
@@ -109,8 +110,14 @@ function schoolHref(id, season, hash) {
   return schoolPath(id, season, hash || '')
 }
 
-function pendingLine(school, cell, hash) {
-  return `${school.name}’s ${cell} cell is pending — the desk does not have a number. See the ${school.name} page.`
+function pendingWhy(field) {
+  const notes = String(field?.notes || '').trim()
+  if (notes) return notes
+  return 'No public cite on the desk. We looked. The cell stays empty — not that the number is zero.'
+}
+
+function pendingLine(school, cell, _hash, field) {
+  return `${school.name}’s ${cell} is not on the desk — pending. ${pendingWhy(field)} See the ${school.name} page.`
 }
 
 function buildSchoolIndex(schools) {
@@ -164,13 +171,29 @@ function detectIntents(q) {
   const t = fold(q)
   const intents = new Set()
   if (/on3|franchise valu|enterprise valu|nil rank|recruiting rank/.test(t)) intents.add('refuse')
-  if (/what does leftover|explain leftover|leftover mean|meaning of leftover|what is leftover|what leftover is/.test(t)) {
+  if (/what does leftover|explain leftover|leftover mean|meaning of leftover|what leftover is/.test(t) || (/what is leftover/.test(t) && !/ vs |versus|house spent|booked nil/.test(t))) {
     intents.add('defineLeftover')
   }
   if (/what is (the )?house cap|what does house cap|explain house cap/.test(t)) intents.add('defineHouse')
-  if (/what is booked nil|what does booked nil|explain booked nil/.test(t)) intents.add('defineNil')
+  if (/what is booked nil|what does booked nil|explain booked nil/.test(t) && !/vs|versus|modeled|pending/.test(t)) {
+    intents.add('defineNil')
+  }
   if (/what is (annual )?capacity|what does capacity mean|explain capacity/.test(t)) intents.add('defineCapacity')
-  if (/what is (nil )?modeled|explain modeled nil|what does modeled/.test(t)) intents.add('defineModeled')
+  if (/what is (nil )?modeled|explain modeled nil|what does modeled/.test(t) && !/vs|versus|booked|pending/.test(t)) {
+    intents.add('defineModeled')
+  }
+  if (/what is (a )?buyout|buyout overhang|is (a )?buyout|buyout.*(annual|yearly|spend)/.test(t)) {
+    intents.add('defineBuyout')
+  }
+  if (/booked vs|modeled vs|pending vs|vs modeled|vs pending|confidence|what is booked|reported vs|included vs|not included|what data (do you|does the desk)|whats on (the )?(desk|public cap)|what do you (track|include|cover|have)|what does (the )?desk (have|include|cover)/.test(t)) {
+    intents.add('coverage')
+  }
+  if (/missing|not on the desk|what dont you|what do you not|dont you have/.test(t)) intents.add('missing')
+  if (/do you have|have you got|is there (a |any )?(booked |house )?/.test(t)) intents.add('doYouHave')
+  if (/what nil do you have|which nil|nil do you have|what nil (is |are )?(on|for)/.test(t)) intents.add('nilCoverage')
+  if (/house spent vs|leftover vs|booked nil vs|house cap vs|difference between (leftover|house|booked)/.test(t)) {
+    intents.add('lanes')
+  }
   if (/which schools|who has booked|schools have booked|booked house spent/.test(t) && /house spent|booked house|leftover/.test(t)) {
     intents.add('listHouseSpent')
   }
@@ -287,7 +310,7 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk) {
       facts.push(factLine('Capacity (booked)', cap.value, { mark: school.capacity?.mediaConference?.confidence || 'estimated', note: cap.fy }))
       links.push({ to: schoolHref(school.id, season, 'capacity'), label: `${school.name} capacity` })
     } else {
-      lines.push(pendingLine(school, 'capacity', 'capacity'))
+      lines.push(pendingLine(school, 'capacity', 'capacity', school.capacity?.mediaConference))
     }
   }
 
@@ -304,7 +327,7 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk) {
       facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
       links.push({ to: schoolHref(school.id, season, 'nil'), label: `${school.name} booked NIL` })
     } else {
-      lines.push(pendingLine(school, 'booked NIL', 'nil'))
+      lines.push(pendingLine(school, 'booked NIL', 'nil', bookedPendingField(school, booked, raw)))
       if (intents.has('modeledNil') && school.nil?.modeled) {
         lines.push(
           `Labeled modeled NIL band is ${moneyRange(school.nil.modeled.low, school.nil.modeled.high)} — a conference heuristic, not a filing.`,
@@ -339,7 +362,7 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk) {
       facts.push(factLine('House spent', spent, { mark: mark(leftover.field, 'reported'), note: yl }))
       links.push({ to: schoolHref(school.id, season, 'house-spent'), label: `${school.name} House spent` })
     } else {
-      lines.push(pendingLine(school, 'House spent', 'house-spent'))
+      lines.push(pendingLine(school, 'House spent', 'house-spent', leftover.field || school.nil?.houseRemaining))
       lines.push('Leftover is only computed when a booked House spent cell exists. We do not invent leftover from a cap plan.')
       links.push({ to: schoolHref(school.id, season, 'house'), label: `${school.name} House` })
     }
@@ -359,8 +382,8 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk) {
       facts.push(factLine('Leftover', leftover.value, { mark: mark(leftover.field, 'estimated'), note: yl }))
       links.push({ to: schoolHref(school.id, season, 'leftover'), label: `${school.name} leftover` })
     } else {
-      lines.push(pendingLine(school, 'leftover', 'leftover'))
-      lines.push('Leftover is House Year 1 cap minus booked House spent, only when that spent cell exists.')
+      lines.push(pendingLine(school, 'leftover', 'leftover', leftover.field || school.nil?.houseRemaining))
+      lines.push('Leftover is House Year 1 cap minus booked House spent, only when that spent cell exists — not capacity − House − NIL.')
       links.push({ to: schoolHref(school.id, season, 'leftover'), label: `${school.name} leftover` })
     }
   }
@@ -431,7 +454,7 @@ function tvAnswer(school, tv, season) {
     }
     facts.push(factLine('Conference media', media.value, { mark: mark(media), note: media.fiscalYear }))
   } else {
-    lines.push(pendingLine(school, 'conference media', 'stack-media'))
+    lines.push(pendingLine(school, 'conference media', 'stack-media', school.capacity?.mediaConference))
   }
 
   for (const ex of checks) {
@@ -663,6 +686,252 @@ function coachFaAnswer(coach, season) {
   }
 }
 
+function capLineStatus(field, label, hash) {
+  if (field && field.value != null) {
+    return {
+      on: true,
+      label,
+      value: field.value,
+      mark: field.confidence || 'reported',
+      note: [field.fiscalYear, field.stackLabel].filter(Boolean).join(' · ') || null,
+      source: field.source || null,
+      hash,
+    }
+  }
+  return {
+    on: false,
+    label,
+    mark: 'pending',
+    why: pendingWhy(field),
+    hash,
+  }
+}
+
+function bookedPendingField(school, booked, raw) {
+  if (booked.value != null) return booked.field
+  const overlay = school.nil?.booked
+  const source = raw?.nil?.booked
+  if (source && source.value == null && /not extracted/i.test(overlay?.notes || '')) return source
+  return booked.field || overlay || source
+}
+
+function schoolCoverage(raw, season, includeAlumni, desk) {
+  const { school, leftover, booked, spent, cap, coach } = schoolFacts(raw, season, includeAlumni, desk)
+  const c = school.capacity || {}
+  const rows = [
+    capLineStatus(
+      bookedPendingField(school, booked, raw),
+      'Booked NIL',
+      'nil',
+    ),
+    {
+      ...(spent != null
+        ? {
+            on: true,
+            label: 'House spent',
+            value: spent,
+            mark: mark(leftover.field, 'reported'),
+            note: yearLabel(leftover),
+            hash: 'house-spent',
+          }
+        : { on: false, label: 'House spent', mark: 'pending', why: pendingWhy(leftover.field || school.nil?.houseRemaining), hash: 'house-spent' }),
+    },
+    {
+      ...(leftover.value != null
+        ? {
+            on: true,
+            label: 'Leftover',
+            value: leftover.value,
+            mark: mark(leftover.field, 'estimated'),
+            note: yearLabel(leftover),
+            hash: 'leftover',
+          }
+        : {
+            on: false,
+            label: 'Leftover',
+            mark: 'pending',
+            why: 'Leftover is House remaining (cap − booked House spent) only when that spent cell exists. We do not invent leftover from a cap plan.',
+            hash: 'leftover',
+          }),
+    },
+    capLineStatus(c.mediaConference, c.mediaConference?.stackLabel || 'Media / conference', 'stack-media'),
+    capLineStatus(c.sponsorships, 'Sponsorships / licensing', 'stack-spon'),
+    capLineStatus(c.tickets, 'Tickets / premium gate', 'stack-tix'),
+    capLineStatus(c.contributions, 'Athletic contributions booked', 'stack-give'),
+    capLineStatus(coach?.pay, 'Coach pay', null),
+    capLineStatus(coach?.buyout, 'Buyout overhang', null),
+  ]
+  if (booked.field && booked.value != null) {
+    rows[0].value = booked.value
+    rows[0].note = yearLabel(booked) || rows[0].note
+    rows[0].mark = mark(booked.field, 'reported')
+  }
+  const nines = collective990Cells(school).filter((r) => r.value != null)
+  return { school, leftover, booked, spent, cap, coach, rows, nines }
+}
+
+function coverageMapAnswer() {
+  return {
+    text: [
+      'Included vs not, in the desk’s own language.',
+      `${DEFS.reported.label}: ${DEFS.reported.text}`,
+      `${DEFS.estimated.label}: ${DEFS.estimated.text}`,
+      `${DEFS.modeled.label}: ${DEFS.modeled.text}`,
+      `${DEFS.pending.label}: ${DEFS.pending.text} Empty is not zero.`,
+      `${DEFS.nil.label}: ${DEFS.nil.text} The desk does not carry On3 or invented player deals. Roster position dollars are a labeled modeled allocation of the school pot — not contracts.`,
+      `${DEFS.nilCollective990.label}: ${DEFS.nilCollective990.text}`,
+      `${DEFS.house.label} House spent is the booked Year 1 spent cell when one exists. ${DEFS.houseRemaining.label}: ${DEFS.houseRemaining.text}`,
+      `${DEFS.capacity.label}: ${DEFS.capacity.text} Filed 990 / MFRS lines are tagged reported. Conference-floor media and equal-share TV math are tagged estimated.`,
+      `${DEFS.buyout.label}: ${DEFS.buyout.text}`,
+    ].join(' '),
+    links: [
+      { to: '/methods', label: 'Methods' },
+      { to: '/', label: 'Rank list' },
+    ],
+    suggested: [
+      'What NIL do you have for Texas?',
+      'What data is missing for SMU?',
+      'Which schools have booked House spent?',
+    ],
+  }
+}
+
+function lanesAnswer() {
+  return {
+    text: [
+      `${DEFS.house.label}: ${DEFS.house.text}`,
+      'House spent is the booked House Year 1 spent cell — only on schools that have one.',
+      `${DEFS.nil.label}: ${DEFS.nil.text}`,
+      `${DEFS.houseRemaining.label}: ${DEFS.houseRemaining.text}`,
+      'Leftover is House remaining. It is not capacity − House − NIL.',
+    ].join(' '),
+    links: [{ to: '/methods', label: 'Methods' }, { to: '/', label: 'Rank list' }],
+    suggested: [
+      "What's Louisville's leftover / House spent / booked NIL?",
+      'Which schools have booked House spent?',
+      'What does leftover mean?',
+    ],
+  }
+}
+
+function nilCoverageAnswer(raw, season, includeAlumni, desk) {
+  const cov = schoolCoverage(raw, season, includeAlumni, desk)
+  const { school, leftover, booked, spent, nines } = cov
+  const lines = []
+  const facts = []
+  const links = [
+    { to: schoolHref(school.id, season, 'nil'), label: `${school.name} NIL` },
+    { to: '/methods', label: 'Methods' },
+  ]
+
+  if (booked.value != null) {
+    const yl = yearLabel(booked)
+    const src = booked.field?.source ? ` Source: ${booked.field.source}.` : ''
+    lines.push(
+      `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`,
+    )
+    facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
+  } else {
+    lines.push(
+      `No. ${school.name} booked NIL is not on the desk — pending. ${pendingWhy(bookedPendingField(school, booked, raw))} Booked NIL is cites only. Empty is not zero.`,
+    )
+    facts.push('Booked NIL: pending — no public cite')
+  }
+
+  if (spent != null) {
+    const yl = yearLabel(leftover)
+    lines.push(
+      `House spent is ${money(spent)}${yl ? ` (${yl})` : ''}${leftover.field?.partialYear ? ' · YTD' : ''}. Leftover is ${money(leftover.value)} — House cap minus that spent cell, not capacity − House − NIL.`,
+    )
+    facts.push(factLine('House spent', spent, { note: yl }))
+    facts.push(factLine('Leftover', leftover.value, { note: yl }))
+    links.push({ to: schoolHref(school.id, season, 'leftover'), label: `${school.name} leftover` })
+  } else {
+    lines.push('House spent and leftover are not on the desk — leftover only exists when a booked House spent cell exists.')
+  }
+
+  if (nines.length) {
+    lines.push(
+      `Collective 990s sit on a separate cited lane (${nines.length} return${nines.length === 1 ? '' : 's'}) — not House spent, not Item 44, not added to booked NIL.`,
+    )
+  } else {
+    lines.push('No public collective Form 990 on the desk. That lane stays pending — not that payout is zero.')
+  }
+
+  lines.push(
+    'The desk does not have On3, recruiting ranks, franchise valuations, or invented player deals. Roster position bands are labeled modeled allocations of the school pot when a midpoint exists — not booked contracts. Modeled NIL is a separate conference heuristic and is not a substitute for booked.',
+  )
+
+  return {
+    text: lines.join(' '),
+    facts,
+    links: dedupeLinks(links),
+    suggested: SUGGESTED_PROMPTS.filter((p) => !fold(p).includes(fold(school.name))).slice(0, 3),
+  }
+}
+
+function missingAnswer(raw, season, includeAlumni, desk, { leadMissing = true } = {}) {
+  const cov = schoolCoverage(raw, season, includeAlumni, desk)
+  const { school, rows, cap } = cov
+  const on = rows.filter((r) => r.on)
+  const off = rows.filter((r) => !r.on)
+  const lines = []
+  const facts = []
+
+  if (leadMissing) {
+    lines.push(
+      off.length
+        ? `${school.name} cells not on the desk (pending — no public cite, not zero): ${off.map((r) => r.label).join(', ')}.`
+        : `${school.name} lead cells that this chat checks are on the desk.`,
+    )
+    for (const r of off) {
+      facts.push(`${r.label}: pending — ${r.why}`)
+    }
+    if (on.length) {
+      lines.push(
+        `On the desk: ${on
+          .map((r) => `${r.label} ${typeof r.value === 'number' ? money(r.value) : ''} (${r.mark}${r.note ? ` · ${r.note}` : ''})`.replace(/\s+/g, ' ').trim())
+          .join('; ')}.`,
+      )
+    }
+  } else {
+    lines.push(`${school.name} — what the desk has, then what it does not.`)
+    for (const r of on) {
+      facts.push(factLine(r.label, r.value, { mark: r.mark, note: r.note }))
+    }
+    for (const r of off) {
+      facts.push(`${r.label}: pending — ${r.why}`)
+    }
+  }
+
+  const filed = on.filter((r) => r.mark === 'reported')
+  const est = on.filter((r) => r.mark === 'estimated')
+  if (filed.length || est.length) {
+    lines.push(
+      'Capacity / pay lines tagged reported are a filing or a newsroom story that quotes one (990 / MFRS / FOIA). Estimated is a named residual or unofficial term. Modeled stays labeled and is not a filing.',
+    )
+  }
+  if (cap.fy) lines.push(`Capacity stack year label: ${cap.fy} — latest extract, not invented ${season} dollars.`)
+  if (school.capacity?.gapNote) lines.push(school.capacity.gapNote)
+  lines.push(`${DEFS.buyout.label}: ${DEFS.buyout.text}`)
+  lines.push('See the school page for every source. Empty means we looked.')
+
+  return {
+    text: lines.join(' '),
+    facts,
+    links: dedupeLinks([
+      { to: schoolHref(school.id, season), label: `${school.name} page` },
+      { to: '/methods', label: 'Methods' },
+      ...off.slice(0, 3).map((r) => (r.hash ? { to: schoolHref(school.id, season, r.hash), label: r.label } : null)).filter(Boolean),
+    ]),
+    suggested: [
+      `What NIL do you have for ${school.name}?`,
+      'What is booked vs modeled vs pending?',
+      'Which schools have booked House spent?',
+    ],
+  }
+}
+
 function refuseAnswer() {
   return {
     text: 'Public Cap does not carry On3, recruiting ranks, or franchise valuations. The desk is capacity, the House cap, booked NIL, leftover (when House spent exists), TV, buyouts, and public rosters.',
@@ -677,7 +946,7 @@ function refuseAnswer() {
 
 function helpAnswer() {
   return {
-    text: 'Ask about a Power 4 school (plus Notre Dame): leftover, House spent, booked NIL, capacity, conference media, buyouts, or a roster starter. Numbers come from the public JSON only. Empty cells stay pending. Booked and modeled stay distinct. Leftover is House cap minus booked House spent — not capacity − House − NIL.',
+    text: 'Ask about a Power 4 school (plus Notre Dame), or about coverage: what is booked vs modeled vs pending, what NIL the desk has (cites only — no On3), and what is missing. Numbers come from the public JSON only. Empty cells stay pending. Leftover is House cap minus booked House spent — not capacity − House − NIL. Buyouts are overhang, not yearly spend.',
     links: [
       { to: '/', label: 'Rank list' },
       { to: '/methods', label: 'Methods' },
@@ -728,10 +997,19 @@ export function answerDeskQuestion(question, ctx = {}) {
   if (intents.has('defineLeftover') && matchSchools(q, desk.schools).length === 0) {
     return answerDefine('houseRemaining')
   }
-  if (intents.has('defineHouse')) return answerDefine('house')
-  if (intents.has('defineNil')) return answerDefine('nil')
-  if (intents.has('defineCapacity')) return answerDefine('capacity')
-  if (intents.has('defineModeled')) return answerDefine('nilModeled')
+  if (intents.has('defineHouse') && !intents.has('lanes')) return answerDefine('house')
+  if (intents.has('defineNil') && !intents.has('coverage')) return answerDefine('nil')
+  if (intents.has('defineCapacity') && !intents.has('coverage')) return answerDefine('capacity')
+  if (intents.has('defineModeled') && !intents.has('coverage')) return answerDefine('nilModeled')
+  if (intents.has('defineBuyout') && matchSchools(q, desk.schools).length === 0) {
+    return answerDefine('buyout')
+  }
+  if (intents.has('lanes') && matchSchools(q, desk.schools).length === 0) {
+    return lanesAnswer()
+  }
+  if (intents.has('coverage') && matchSchools(q, desk.schools).length === 0 && !intents.has('listHouseSpent')) {
+    return coverageMapAnswer()
+  }
   if (intents.has('methods') && matchSchools(q, desk.schools).length === 0) {
     return {
       text: 'Methods is the source of record for every definition on this desk. Pending means we looked and do not have a number.',
@@ -752,7 +1030,14 @@ export function answerDeskQuestion(question, ctx = {}) {
   }
 
   if (ids.length === 1) {
-    const out = schoolAnswer(byId[ids[0]], season, includeAlumni, intents, ctx.tv, ctx.rosters, desk)
+    const raw = byId[ids[0]]
+    if (intents.has('nilCoverage') || (intents.has('doYouHave') && intents.has('bookedNil') && !intents.has('leftover') && !intents.has('houseSpent'))) {
+      return nilCoverageAnswer(raw, season, includeAlumni, desk)
+    }
+    if (intents.has('missing') || (intents.has('coverage') && !intents.has('leftover') && !intents.has('tv') && !intents.has('roster'))) {
+      return missingAnswer(raw, season, includeAlumni, desk, { leadMissing: intents.has('missing') || /missing/.test(fold(q)) })
+    }
+    const out = schoolAnswer(raw, season, includeAlumni, intents, ctx.tv, ctx.rosters, desk)
     if (intents.has('houseCap') && desk.meta) {
       const house = houseValueForSeason(desk.meta, season)
       const field = houseFieldForSeason(desk.meta, season)

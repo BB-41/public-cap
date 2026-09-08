@@ -39,6 +39,16 @@ Example questions that return real booked figures:
   → $300k vs $2.5M
 - What does leftover mean?
 
+Coverage / included-vs-not (Methods language, no invented policy):
+
+- What is booked vs modeled vs pending?
+- What NIL do you have for Texas?
+  → booked $13.5M House Year 1 YTD; leftover $7.0M; collective 990 is a separate lane; no On3; no player deals
+- What data is missing for SMU?
+  → booked NIL / leftover pending (no cite); tickets, sponsorships, contributions are a private-school gap; media $17.07M is on the desk
+- Do you have leftover for Alabama?
+  → not on the desk — leftover only when House spent exists
+
 
 ## Seasons
 

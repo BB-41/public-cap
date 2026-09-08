@@ -16,9 +16,9 @@ function Welcome() {
   return (
     <div className="desk-chat-msg bot">
       <p>
-        Ask the desk in plain language. Answers are lookups against the public JSON — leftover,
-        House spent, booked NIL, capacity, TV, buyouts, roster names. Empty stays empty. Booked
-        and modeled stay distinct.
+        Ask the desk in plain language. Lookups against the public JSON — leftover, House spent,
+        booked NIL, capacity, TV, buyouts, roster names — and what is included vs pending. Empty
+        stays empty. Booked and modeled stay distinct. No On3. No invented player deals.
       </p>
     </div>
   )
