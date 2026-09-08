@@ -439,13 +439,12 @@ function tvAnswer(school, tv, season) {
       const fullTv = /no tv|not a television|not an equal|partial|nothing from media|nine years/i.test(
         `${ex.name || ''} ${ex.notes || ''}`,
       )
-      if (ex.value != null) {
+      if (ex.value != null && media?.value !== ex.value) {
         lines.push(`${ex.name}: ${money(ex.value)} (${ex.confidence || 'reported'}).`)
-      } else {
+      } else if (ex.value == null) {
         lines.push(`${ex.name}.`)
       }
       if (fullTv) lines.push('The TV book says this is not a full media equal share.')
-      if (ex.notes) lines.push(ex.notes)
     } else if (ex.kind === 'equal-share-estimate' && ex.value != null) {
       lines.push(
         `Implied conference media check ${money(ex.value)} — labeled estimated (${ex.formula}). Not a school contract.`,
