@@ -11,7 +11,7 @@ import {
 } from '../lib/nilModel.js'
 import { FB_RATE_CARD, MBB_RATE_CARD, ROSTER_POOL_SHARE, rateCardForMethods } from '../lib/nilRoster.js'
 import { ConferenceStrip } from '../components/TvContracts.jsx'
-import { useTvBook } from '../lib/tv.js'
+import { useTvBook } from '../lib/useTvBook.js'
 
 const EXAMPLE_MID = CONFERENCE_NIL.SEC.total // published example at the SEC median
 

@@ -133,5 +133,7 @@ ok(homeSrc.includes("label: 'Booked NIL'") && homeSrc.includes("label: 'Leftover
 ok(!homeSrc.includes("label: 'Conf. exit'"), 'conference exit is not a default rank column')
 ok(!homeSrc.includes("label: 'FB W/$M NIL'"), 'wins-per-dollar is not a default rank column')
 ok(!homeSrc.includes("label: 'FB pay'") && !homeSrc.includes("label: 'FB buyout'"), 'coach pay / buyout are not default rank columns')
+ok(!homeSrc.includes('DeskChat') && !homeSrc.includes('Ask the desk'), 'chat is not in the homepage LCP board')
+ok(!indexSrc.includes('desk-chat') && !indexSrc.includes('Ask the desk'), 'chat is not in the first-paint HTML dek')
 
 console.log('homepage lead Year 1 carry ok')
