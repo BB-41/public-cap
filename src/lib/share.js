@@ -502,7 +502,7 @@ export function downloadStackPng({ school, season, cap, house, nil, houseLabel, 
 }
 
 export function downloadComparePng({ A, B, season, house, metrics, values, openLabel }) {
-  const w = 1000
+  const w = 1100
   const rowH = 36
   const top = 128
   const extra = openLabel ? 36 : 0
@@ -514,7 +514,7 @@ export function downloadComparePng({ A, B, season, house, metrics, values, openL
   paintFrame(ctx, w, h, {
     kicker: 'PUBLIC CAP',
     title: `${A.name} vs ${B.name}`,
-    sub: seasonTag(season, fy),
+    sub: `${seasonTag(season, fy)}  ·  difference is A − B`,
     footer: `Public Cap  ·  ${SITE}  ·  ${seasonTag(season, fy)}`,
   })
   const max = Math.max(1, ...values)
@@ -524,21 +524,26 @@ export function downloadComparePng({ A, B, season, house, metrics, values, openL
     const vb = m.vb
     ctx.fillStyle = PAPER_DIM
     ctx.font = `12px ${FONT}`
-    ctx.fillText(fitText(ctx, m.label, 200), 36, y + 18)
-    const mid = 250
-    const half = 250
+    ctx.fillText(fitText(ctx, m.label, 176), 36, y + 18)
+    const mid = 220
+    const half = 210
+    const gap = 12
     ctx.fillStyle = INK2
     ctx.fillRect(mid, y + 6, half, 12)
-    ctx.fillRect(mid + half + 16, y + 6, half, 12)
+    ctx.fillRect(mid + half + gap, y + 6, half, 12)
     ctx.fillStyle = GOLD
     ctx.fillRect(mid, y + 6, va ? Math.max(2, (va / max) * half) : 0, 12)
     ctx.fillStyle = BLOOD
-    ctx.fillRect(mid + half + 16, y + 6, vb ? Math.max(2, (vb / max) * half) : 0, 12)
+    ctx.fillRect(mid + half + gap, y + 6, vb ? Math.max(2, (vb / max) * half) : 0, 12)
     ctx.fillStyle = PAPER
     ctx.font = `11px ${FONT}`
     ctx.fillText(fitText(ctx, m.da, 118), mid, y + 32)
     ctx.textAlign = 'right'
-    ctx.fillText(fitText(ctx, m.db, 118), mid + half + 16 + half, y + 32)
+    ctx.fillText(fitText(ctx, m.db, 118), mid + half + gap + half, y + 32)
+    if (m.dd) {
+      ctx.fillStyle = m.dd === 'pending' ? MUTED : PAPER
+      ctx.fillText(fitText(ctx, m.dd, 220), w - 36, y + 18)
+    }
     ctx.textAlign = 'left'
   })
   if (openLabel) {

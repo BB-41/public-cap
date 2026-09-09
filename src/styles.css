@@ -458,12 +458,58 @@ input[type="text"],
 input[type="number"] {
   min-width: 180px;
 }
-.compare-hed { display: flex; justify-content: space-between; align-items: baseline; font-family: Arial, Helvetica, system-ui, sans-serif; font-size: 28px; margin-bottom: 20px; }
+.compare-hed,
+.compare-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 180px) minmax(0, 1fr) minmax(0, 1fr) minmax(128px, 0.72fr);
+  gap: 12px;
+  align-items: center;
+}
+.compare-hed {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
 .compare-hed .vs { color: var(--muted); font-size: 14px; }
-.compare-row { display: grid; grid-template-columns: 180px 1fr 1fr; gap: 12px; align-items: center; margin-bottom: 10px; }
+.compare-row { margin-bottom: 10px; }
 .compare-lab { font-size: 13px; color: var(--paper-dim); }
 .compare-side { display: flex; align-items: center; gap: 8px; font-family: Arial, Helvetica, system-ui, sans-serif; font-size: 11px; }
 .compare-side.right { justify-content: flex-end; }
+.compare-hed .compare-name { width: 100%; }
+.compare-name.b { justify-content: flex-end; text-align: right; }
+.compare-diff-lab {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+}
+.compare-diff {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 11px;
+  color: var(--paper);
+  text-align: right;
+  line-height: 1.3;
+}
+.compare-diff.pending { color: var(--muted); font-style: italic; }
+.compare-diff.same { color: var(--paper-dim); }
+.compare-diff.higher-a { color: var(--gold); }
+.compare-diff.higher-b { color: var(--blood); }
+@media (max-width: 720px) {
+  .compare-hed,
+  .compare-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .compare-hed .compare-lab,
+  .compare-row .compare-lab {
+    grid-column: 1 / -1;
+  }
+  .compare-hed .compare-diff-lab,
+  .compare-row .compare-diff {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+}
 .bar { height: 12px; min-width: 2px; }
 .bar.a { background: var(--gold); }
 .bar.b { background: var(--blood); }
@@ -563,7 +609,7 @@ table.rank thead th {
 .page-wrap.school .school-hed { align-items: flex-start; }
 .page-wrap.school .school-hed > div:not(.hero-num) { flex: 1 1 24rem; }
 .picker-row { display: flex; align-items: center; gap: 10px; }
-.compare-name { display: inline-flex; align-items: center; gap: 10px; }
+.compare-name { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
 
 .info-mark {
   display: inline-flex;

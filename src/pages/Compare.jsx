@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, pct, winsPerM } from '../lib/format.js'
 import { val } from '../lib/compute.js'
+import { compareDiffTone, formatCompareDiff, metricUnit, schoolCompareName } from '../lib/compareDiff.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import SeasonPicker from '../components/SeasonPicker.jsx'
@@ -274,8 +275,8 @@ export default function Compare({ schools, meta, house, houseField, season, setS
     { key: 'extra', label: 'Extra alumni giving (modeled)', get: (s) => s._cap.extraAlumni },
     { key: 'fb', label: 'FB coach pay', def: 'coachPay', get: (s) => val(s.coaches.football.pay) || null },
     { key: 'buy', label: 'FB buyout overhang', def: 'buyout', get: (s) => val(s.coaches.football.buyout) || null },
-    { key: 'winsPerNil', label: 'FB wins / $M NIL', def: 'winsPerDollar', get: (s) => s._eff?.winsPerNilPerM ?? null, show: (s) => s._eff?.winsPerNilPerM == null ? '—' : winsPerM(s._eff.winsPerNilPerM) + ' W/$M' },
-    { key: 'winsPerCap', label: 'FB wins / $M capacity', def: 'winsPerDollar', get: (s) => s._eff?.winsPerCapPerM ?? null, show: (s) => s._eff?.winsPerCapPerM == null ? '—' : winsPerM(s._eff.winsPerCapPerM) + ' W/$M' },
+    { key: 'winsPerNil', label: 'FB wins / $M NIL', def: 'winsPerDollar', unit: 'wins', get: (s) => s._eff?.winsPerNilPerM ?? null, show: (s) => s._eff?.winsPerNilPerM == null ? '—' : winsPerM(s._eff.winsPerNilPerM) + ' W/$M' },
+    { key: 'winsPerCap', label: 'FB wins / $M capacity', def: 'winsPerDollar', unit: 'wins', get: (s) => s._eff?.winsPerCapPerM ?? null, show: (s) => s._eff?.winsPerCapPerM == null ? '—' : winsPerM(s._eff.winsPerCapPerM) + ' W/$M' },
   ]
   const max = Math.max(
     ...metrics.flatMap((m) => [A, B].filter(Boolean).map((s) => m.get(s) || 0)),
@@ -288,13 +289,24 @@ export default function Compare({ schools, meta, house, houseField, season, setS
 
   function png() {
     if (!A || !B) return
-    const rows = metrics.map((m) => ({
-      label: m.label,
-      va: m.get(A) || 0,
-      vb: m.get(B) || 0,
-      da: metricDisplay(m, A, house),
-      db: metricDisplay(m, B, house),
-    }))
+    const rows = metrics.map((m) => {
+      const va = m.get(A)
+      const vb = m.get(B)
+      return {
+        label: m.label,
+        va: va || 0,
+        vb: vb || 0,
+        da: metricDisplay(m, A, house),
+        db: metricDisplay(m, B, house),
+        dd: formatCompareDiff({
+          va,
+          vb,
+          unit: metricUnit(m.key, m.unit),
+          nameA: schoolCompareName(A),
+          nameB: schoolCompareName(B),
+        }),
+      }
+    })
     downloadComparePng({
       A,
       B,
@@ -313,7 +325,7 @@ export default function Compare({ schools, meta, house, houseField, season, setS
   return (
     <div className="page-wrap">
       <h1 className="issue-hed">Compare two programs.</h1>
-      <p className="lede">Capacity vs House vs booked NIL vs modeled NIL vs coach spend. Same FY tags as the school pages. Football seasons 2021-2026. Click a row for both schools’ figures and the source.</p>
+      <p className="lede">Capacity vs House vs booked NIL vs modeled NIL vs coach spend. Same FY tags as the school pages. Football seasons 2021-2026. Difference is school A minus school B — who is higher, and by how much. Pending stays pending. Click a row for both schools’ figures and the source.</p>
       <div className="pickers">
         <SeasonPicker season={season} onChange={setSeason} id="compare-season" />
         <AlumniToggle on={includeAlumni} onChange={setIncludeAlumni} id="compare-alumni" />
@@ -339,15 +351,25 @@ export default function Compare({ schools, meta, house, houseField, season, setS
       {A && B && (
         <>
           <div className="compare-hed">
+            <div className="compare-lab"><span className="vs">vs</span></div>
             <Link className="compare-name" to={schoolPath(A.id, season, '', includeAlumni)}><Logo school={A} size={40} />{A.name}</Link>
-            <span className="vs">vs</span>
-            <Link className="compare-name" to={schoolPath(B.id, season, '', includeAlumni)}><Logo school={B} size={40} />{B.name}</Link>
+            <Link className="compare-name b" to={schoolPath(B.id, season, '', includeAlumni)}><Logo school={B} size={40} />{B.name}</Link>
+            <div className="compare-diff-lab" title="School A minus school B">Difference</div>
           </div>
           <ShareBar url={shareUrl} title={title} caption={caption} onPng={png} />
           <div className="compare-grid">
             {metrics.map((m) => {
               const va = m.get(A)
               const vb = m.get(B)
+              const unit = metricUnit(m.key, m.unit)
+              const diff = formatCompareDiff({
+                va,
+                vb,
+                unit,
+                nameA: schoolCompareName(A),
+                nameB: schoolCompareName(B),
+              })
+              const tone = compareDiffTone(va, vb)
               const open = view === m.key
               return (
                 <div key={m.key} className={`compare-block${open ? ' open' : ''}${m.key === 'extra' && !includeAlumni ? ' excluded' : ''}`} id={`compare-${m.key}`}>
@@ -368,6 +390,7 @@ export default function Compare({ schools, meta, house, houseField, season, setS
                       <span>{metricDisplay(m, B, house)}</span>
                       <div className="bar b" style={{ width: vb ? `${(vb / max) * 100}%` : '0' }} />
                     </div>
+                    <div className={`compare-diff ${tone}`}>{diff}</div>
                   </div>
                   {open ? (
                     <div className="compare-drill">
