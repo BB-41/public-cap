@@ -3,11 +3,9 @@
 /robots.txt /robots.txt 200
 /sitemap.xml /sitemap.xml 200
 
-# Do not 200-rewrite exact SPA paths to /index.html. Workers / Pages
-# html_handling pretty-URLs /index.html → / with a 308, so a share or
-# hard refresh of /reported-nil (and /methods, /compare, /tape, /tv,
-# /buyout, /coach-fa) bounced home. Nested /school/:id and /coach-fa/:id
-# already 200 without an exact rewrite — keep the splats. Exact shells
-# are real dist/*.html files from scripts/write-spa-html.mjs.
-/school/* /index.html 200
+# Do not 200-rewrite exact SPA paths — or /school/:id — to /index.html.
+# html_handling pretty-URLs /index.html → / with a 308, and a rewrite
+# would also serve homepage title/canonical to crawlers. Exact shells
+# and school/{id}.html come from scripts/write-spa-html.mjs.
+# Keep /coach-fa/* for detail URLs that are not prerendered files.
 /coach-fa/* /index.html 200

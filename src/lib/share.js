@@ -177,9 +177,10 @@ export const PAGE_DESCRIPTIONS = {
   coachFa: 'Residual School A buyout after a firing, plus a labeled modeled School B salary. Offset rules stay booked or cite-only. Empty without a cite — we do not invent remaining principal.',
   compare: 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.',
   reportedNil:
-    'Named survey ranges and labeled modeled conference bands for all 68 Power 4 + Notre Dame schools, on one $0–$50M scale. Booked NIL and House spent stay separate. Not leftover.',
+    'Reported NIL by school: named survey ranges versus labeled modeled conference bands for the Power 4 football roster stack — all 68 Power 4 + Notre Dame schools on one $0–$50M scale. Booked NIL and House spent stay separate. Not leftover.',
   tv: 'Conference TV contracts, holders, and school media checks when a filing exists. Notre Dame’s NBC football deal is the school-level exception. Empty means pending.',
-  school: 'Annual capacity from public filings versus the House benefits cap versus booked NIL. Collective 990 payout is a separate cited lane, not House. Pending stays empty.',
+  school:
+    'Annual capacity from public filings versus the House benefits cap versus booked NIL. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane, not House. Pending stays empty.',
 }
 
 const HOME_JSON_LD_ID = 'public-cap-jsonld'
@@ -286,7 +287,7 @@ export function displayNameFromSlug(slug) {
 
 export function schoolTitle(name, season) {
   const yr = season && season !== CURRENT_SEASON ? ` · ${season}` : ''
-  return `${name}${yr} — ${SCHOOL_TITLE_FRAME} — Public Cap`
+  return `${name}${yr} — ${SCHOOL_TITLE_FRAME} — reported football NIL — Public Cap`
 }
 
 export function compareTitle(nameA, nameB, season) {
@@ -304,9 +305,9 @@ export function schoolDescription(schoolOrName) {
   if (!name) return PAGE_DESCRIPTIONS.school
   const gap = typeof schoolOrName === 'object' && !!(schoolOrName.revenueGap || schoolOrName.private)
   if (gap) {
-    return `${name} football revenue on Public Cap is booked capacity from public filings, not a full athletic-revenue total. House cap and booked NIL sit beside it. Collective 990 payout is a separate cited lane. Pending stays empty.`
+    return `${name} football revenue on Public Cap is booked capacity from public filings, not a full athletic-revenue total. House cap and booked NIL sit beside it. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane. Pending stays empty.`
   }
-  return `${name} — annual capacity from public filings versus the House benefits cap versus booked NIL. Collective 990 payout is a separate cited lane, not House. Pending stays empty.`
+  return `${name} — annual capacity from public filings versus the House benefits cap versus booked NIL. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane, not House. Pending stays empty.`
 }
 
 export function pageDescription(kind) {

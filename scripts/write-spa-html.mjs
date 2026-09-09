@@ -2,21 +2,22 @@
  * Stamp route-specific title / description / canonical / og tags onto copies
  * of the built index.html so crawlers and unfurls do not see the homepage.
  *
- * Cloudflare pretty-URLs serve dist/reported-nil.html at /reported-nil.
- * Do not also 200-rewrite those paths to /index.html — html_handling then
- * 308s /index.html to /.
+ * Cloudflare pretty-URLs serve dist/reported-nil.html at /reported-nil and
+ * dist/school/lsu.html at /school/lsu. Do not also 200-rewrite those paths
+ * to /index.html — html_handling then 308s /index.html to /, and crawlers
+ * would index the homepage title.
  *
  * Run from the Vite writeBundle hook, or: node scripts/write-spa-html.mjs
  */
-import { existsSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
-  PAGE_DESCRIPTIONS,
-  PAGE_TITLES,
   SITE,
   descriptionFromPath,
   ogImageFromPath,
+  schoolDescription,
+  schoolTitle,
   titleFromPath,
 } from '../src/lib/share.js'
 
@@ -45,16 +46,34 @@ function replaceAttr(html, attr, key, content) {
   return html.replace('</head>', `    ${tag} />\n  </head>`)
 }
 
-export function routeShell(path) {
-  const title = titleFromPath(path)
-  const description = descriptionFromPath(path)
+export function routeShell(path, extras = {}) {
+  const title = extras.title || titleFromPath(path, extras)
+  const description = extras.description || descriptionFromPath(path, extras)
   const url = `https://${SITE}${path}`
   const image = ogImageFromPath(path)
-  return { path, title, description, url, image }
+  const hed = extras.hed || (path === '/reported-nil' ? 'Reported NIL by school' : title.split(' — ')[0])
+  return { path, title, description, url, image, hed }
+}
+
+export function schoolShells(schools) {
+  return (schools || []).map((school) =>
+    routeShell(`/school/${school.id}`, {
+      title: schoolTitle(school.name),
+      description: schoolDescription(school),
+      schoolName: school.name,
+      school,
+      hed: school.name,
+    }),
+  )
+}
+
+export function loadSchoolShells() {
+  const data = JSON.parse(readFileSync(join(root, 'public/data/schools.json'), 'utf8'))
+  return schoolShells(data.schools)
 }
 
 export function applyRouteMeta(html, route) {
-  const { title, description, url, image, path } = route
+  const { title, description, url, image, path, hed } = route
   let out = html
   out = out.replace(/<html\s+lang="en">/, '<html lang="en" data-route="inner">')
   out = out.replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
@@ -87,12 +106,12 @@ export function applyRouteMeta(html, route) {
     `<script type="application/ld+json" id="public-cap-jsonld">\n      ${jsonLd}\n    </script>`,
   )
 
-  const hed = path === '/reported-nil' ? 'Reported NIL by school' : title.split(' — ')[0]
+  const heading = hed || (path === '/reported-nil' ? 'Reported NIL by school' : title.split(' — ')[0])
   out = out.replace(
     /<div id="home-dek" class="page-wrap home-dek">[\s\S]*?<\/div>\s*<div id="root">/,
     `<div id="home-dek" class="page-wrap home-dek">
         <section class="dek">
-          <h1 class="issue-hed">${hed}</h1>
+          <h1 class="issue-hed">${heading}</h1>
           <p class="lede">${description}</p>
         </section>
       </div>
@@ -101,15 +120,20 @@ export function applyRouteMeta(html, route) {
   return out
 }
 
-export function writeSpaHtml({ distDir = join(root, 'dist'), indexHtml } = {}) {
+function fileForPath(path) {
+  if (path.startsWith('/school/')) return `school/${path.split('/')[2]}.html`
+  return `${path.slice(1)}.html`
+}
+
+export function writeSpaHtml({ distDir = join(root, 'dist'), indexHtml, schools } = {}) {
   const source = indexHtml ?? readFileSync(join(distDir, 'index.html'), 'utf8')
+  const routes = [...SPA_SHELL_PATHS.map((path) => routeShell(path)), ...(schools || loadSchoolShells())]
+  mkdirSync(join(distDir, 'school'), { recursive: true })
   const written = []
-  for (const path of SPA_SHELL_PATHS) {
-    const route = routeShell(path)
-    const file = `${path.slice(1)}.html`
-    const out = applyRouteMeta(source, route)
-    writeFileSync(join(distDir, file), out)
-    written.push({ path, file, title: route.title, url: route.url })
+  for (const route of routes) {
+    const file = fileForPath(route.path)
+    writeFileSync(join(distDir, file), applyRouteMeta(source, route))
+    written.push({ path: route.path, file, title: route.title, url: route.url })
   }
   return written
 }

@@ -15,6 +15,9 @@ export const SITE_ORIGIN = 'https://thepubliccap.com'
 /** Public HTML routes listed for the sitemap. /about does not exist. */
 export const STATIC_PATHS = ['/', '/tape', '/methods', '/buyout', '/coach-fa', '/compare', '/reported-nil']
 
+/** Bump when generated HTML routes change. Never older than schools.json meta.asOf. */
+export const PAGE_LASTMOD = '2026-09-09'
+
 export function isIsoDate(value) {
   return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
 }
@@ -53,7 +56,7 @@ export function writeSitemap({
 } = {}) {
   const data = JSON.parse(readFileSync(schoolsPath, 'utf8'))
   const paths = sitemapPaths(data.schools)
-  const lastmod = isIsoDate(data.meta?.asOf) ? data.meta.asOf : null
+  const lastmod = [data.meta?.asOf, PAGE_LASTMOD].filter(isIsoDate).sort().at(-1) || null
   writeFileSync(outPath, renderSitemapXml({ paths, lastmod }))
   return { path: outPath, urlCount: paths.length, schoolCount: data.schools.length, lastmod }
 }
