@@ -2,7 +2,21 @@ import { useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, pct, winsPerM } from '../lib/format.js'
 import { val } from '../lib/compute.js'
-import { compareDiffTone, formatCompareDiff, metricUnit, schoolCompareName } from '../lib/compareDiff.js'
+import {
+  compareDiffTone,
+  formatCompareDiff,
+  formatReportedNilDiff,
+  metricUnit,
+  reportedNilDiffTone,
+  schoolCompareName,
+} from '../lib/compareDiff.js'
+import {
+  footballRosterStack,
+  reportedNilBarForCompare,
+  reportedNilCompareDisplay,
+  stackFormula,
+} from '../lib/rosterStack.js'
+import { rosterEstimateCites } from '../lib/rosterEstimate.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import SeasonPicker from '../components/SeasonPicker.jsx'
@@ -118,7 +132,7 @@ function WinsDrill({ school }) {
   )
 }
 
-function fieldFor(school, key, houseField) {
+function fieldFor(school, key, houseField, season) {
   if (key === 'media') return school.capacity?.mediaConference
   if (key === 'tix') return school.capacity?.tickets
   if (key === 'give') return school.capacity?.contributions
@@ -143,13 +157,88 @@ function fieldFor(school, key, houseField) {
       notes: m.notes,
     }
   }
+  if (key === 'reportedNil') {
+    const stack = season === 2026 ? footballRosterStack(school) : null
+    if (!stack) return null
+    const survey = stack.survey
+    const modeled = stack.modeled
+    return {
+      confidence: 'modeled',
+      source: survey?.cites?.[0]?.source || modeled?.source,
+      url: survey?.cites?.[0]?.url || modeled?.url,
+      notes: survey?.notes || modeled?.formula || stackFormula(stack),
+    }
+  }
   return null
+}
+
+function ReportedNilDrill({ school, season }) {
+  const offYear = season != null && season !== 2026
+  const bar = reportedNilBarForCompare(school, season)
+  const stack = offYear ? null : footballRosterStack(school)
+  if (!bar || !stack) {
+    return (
+      <p className="drill-notes">
+        {offYear
+          ? 'Reported NIL is a 2026 survey / modeled football-stack cell. Switch to 2026. Empty is not zero.'
+          : 'No football stack on the desk for this school. Empty is not zero.'}
+      </p>
+    )
+  }
+  const survey = stack.survey
+  const cites = rosterEstimateCites(survey)
+  const laneLabel =
+    stack.lane === 'survey'
+      ? survey?.kind === 'range'
+        ? 'Survey range (not a filing)'
+        : 'Survey tier (not a filing)'
+      : 'Modeled range (not a filing)'
+  return (
+    <div className="drill-body">
+      <p className="drill-kicker">{laneLabel}</p>
+      <div className="drill-val modeled-cell">{reportedNilCompareDisplay(bar)}</div>
+      {survey?.qualifier ? <p className="drill-notes">{survey.qualifier}</p> : null}
+      <p className="drill-notes">
+        Industry football roster stack — rev-share plus third-party NIL. Not booked NIL, not House spent, not leftover, and not a capacity waterfall step.
+        {stack.lane === 'survey' && stack.kind === 'tier'
+          ? ' The published words stay the survey tier. The allocation envelope is ranking-only — not a midpoint.'
+          : ''}
+      </p>
+      <p className="fine">
+        <strong>Formula.</strong> {stackFormula(stack)}
+      </p>
+      {cites.length ? (
+        <p className="drill-src">
+          {cites.map((c, i) => (
+            <span key={c.url || i}>
+              {i > 0 ? ' · ' : 'Sources: '}
+              {c.url ? (
+                <a className="ext" href={c.url} target="_blank" rel="noreferrer">
+                  {c.source} ↗
+                </a>
+              ) : (
+                c.source
+              )}
+            </span>
+          ))}
+        </p>
+      ) : stack.modeled?.url ? (
+        <p className="drill-src">
+          <a className="ext" href={stack.modeled.url} target="_blank" rel="noreferrer">
+            {stack.modeled.source} ↗
+          </a>
+        </p>
+      ) : (
+        <p className="drill-src muted">No source link on the desk for this slice.</p>
+      )}
+    </div>
+  )
 }
 
 function SchoolDrill({ school, metric, house, houseField, season, view, includeAlumni }) {
   const hash = COMPARE_TO_SCHOOL_HASH[view] || ''
   const href = schoolPath(school.id, season, hash, includeAlumni)
-  const field = fieldFor(school, metric.key, houseField)
+  const field = fieldFor(school, metric.key, houseField, season)
   const shown = includeAlumni ? school._cap.total : school._cap.booked
   return (
     <div className="compare-drill-school">
@@ -194,6 +283,8 @@ function SchoolDrill({ school, metric, house, houseField, season, view, includeA
         ) : (
           <p className="drill-notes">No modeled NIL range on the desk. 2021–24 is a collective-era third-party-only model, not a hidden cell.</p>
         )
+      ) : metric.key === 'reportedNil' ? (
+        <ReportedNilDrill school={school} season={season} />
       ) : metric.key === 'winsPerNil' || metric.key === 'winsPerCap' ? (
         <WinsDrill school={school} />
       ) : metric.key === 'extra' ? (
@@ -269,6 +360,13 @@ export default function Compare({ schools, meta, house, houseField, season, setS
     { key: 'house', label: house == null ? 'House cap' : (season >= 2026 ? 'House cap 2026-27' : 'House cap 2025-26'), def: 'house', get: () => house },
     { key: 'nil', label: 'NIL booked', def: 'nil', get: (s) => s._ratios.nil },
     { key: 'nilModeled', label: 'NIL modeled (mid)', def: 'nilModeled', get: (s) => s.nil.modeled?.mid ?? null, show: (s) => s.nil.modeled ? moneyRange(s.nil.modeled.low, s.nil.modeled.high) : '—' },
+    {
+      key: 'reportedNil',
+      label: 'Reported NIL',
+      def: 'nilReportedBar',
+      get: (s) => reportedNilBarForCompare(s, season)?.high ?? null,
+      show: (s) => reportedNilCompareDisplay(reportedNilBarForCompare(s, season)),
+    },
     { key: 'media', label: 'Media / conference', get: (s) => s._cap.media },
     { key: 'tix', label: 'Tickets', get: (s) => s._cap.tickets },
     { key: 'give', label: 'Booked contributions', get: (s) => s._cap.contributions },
@@ -292,19 +390,28 @@ export default function Compare({ schools, meta, house, houseField, season, setS
     const rows = metrics.map((m) => {
       const va = m.get(A)
       const vb = m.get(B)
+      const barA = m.key === 'reportedNil' ? reportedNilBarForCompare(A, season) : null
+      const barB = m.key === 'reportedNil' ? reportedNilBarForCompare(B, season) : null
       return {
         label: m.label,
         va: va || 0,
         vb: vb || 0,
         da: metricDisplay(m, A, house),
         db: metricDisplay(m, B, house),
-        dd: formatCompareDiff({
-          va,
-          vb,
-          unit: metricUnit(m.key, m.unit),
-          nameA: schoolCompareName(A),
-          nameB: schoolCompareName(B),
-        }),
+        dd: m.key === 'reportedNil'
+          ? formatReportedNilDiff({
+              barA,
+              barB,
+              nameA: schoolCompareName(A),
+              nameB: schoolCompareName(B),
+            })
+          : formatCompareDiff({
+              va,
+              vb,
+              unit: metricUnit(m.key, m.unit),
+              nameA: schoolCompareName(A),
+              nameB: schoolCompareName(B),
+            }),
       }
     })
     downloadComparePng({
@@ -325,7 +432,7 @@ export default function Compare({ schools, meta, house, houseField, season, setS
   return (
     <div className="page-wrap">
       <h1 className="issue-hed">Compare two programs.</h1>
-      <p className="lede">Capacity vs House vs booked NIL vs modeled NIL vs coach spend. Same FY tags as the school pages. Football seasons 2021-2026. Difference is school A minus school B — who is higher, and by how much. Pending stays pending. Click a row for both schools’ figures and the source.</p>
+      <p className="lede">Capacity vs House vs booked NIL vs modeled NIL vs reported NIL vs coach spend. Reported NIL is the industry football roster stack — named survey words or a labeled conference band, not booked NIL. Same FY tags as the school pages. Football seasons 2021-2026; reported NIL is 2026 only. Difference is school A minus school B — who is higher, and by how much. A survey tier is not a midpoint. Pending stays pending. Click a row for both schools’ figures and the source.</p>
       <div className="pickers">
         <SeasonPicker season={season} onChange={setSeason} id="compare-season" />
         <AlumniToggle on={includeAlumni} onChange={setIncludeAlumni} id="compare-alumni" />
@@ -362,14 +469,23 @@ export default function Compare({ schools, meta, house, houseField, season, setS
               const va = m.get(A)
               const vb = m.get(B)
               const unit = metricUnit(m.key, m.unit)
-              const diff = formatCompareDiff({
-                va,
-                vb,
-                unit,
-                nameA: schoolCompareName(A),
-                nameB: schoolCompareName(B),
-              })
-              const tone = compareDiffTone(va, vb)
+              const barA = m.key === 'reportedNil' ? reportedNilBarForCompare(A, season) : null
+              const barB = m.key === 'reportedNil' ? reportedNilBarForCompare(B, season) : null
+              const diff = m.key === 'reportedNil'
+                ? formatReportedNilDiff({
+                    barA,
+                    barB,
+                    nameA: schoolCompareName(A),
+                    nameB: schoolCompareName(B),
+                  })
+                : formatCompareDiff({
+                    va,
+                    vb,
+                    unit,
+                    nameA: schoolCompareName(A),
+                    nameB: schoolCompareName(B),
+                  })
+              const tone = m.key === 'reportedNil' ? reportedNilDiffTone(barA, barB) : compareDiffTone(va, vb)
               const open = view === m.key
               return (
                 <div key={m.key} className={`compare-block${open ? ' open' : ''}${m.key === 'extra' && !includeAlumni ? ' excluded' : ''}`} id={`compare-${m.key}`}>
