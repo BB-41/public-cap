@@ -10,9 +10,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://thepubliccap.com/" />
     <meta property="og:site_name" content="Public Cap" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://thepubliccap.com/og-default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Public Cap — Capacity vs House cap vs booked NIL" />
     <meta name="twitter:description" content="Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL. Collective 990 payout is a separate cited lane. Pending stays empty." />
+    <meta name="twitter:image" content="https://thepubliccap.com/og-default.png" />
     <link rel="canonical" href="https://thepubliccap.com/" />
     <script type="application/ld+json" id="public-cap-jsonld">
       {"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Public Cap","alternateName":"College Athletics Capacity Desk","url":"https://thepubliccap.com/","description":"Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL. Collective 990 payout is a separate cited lane. Pending stays empty."},{"@type":"Organization","name":"Public Cap","url":"https://thepubliccap.com/"}]}
@@ -86,8 +88,8 @@
           title = 'Compare capacity vs House vs NIL — Public Cap'
           desc = 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.'
         } else if (p === '/reported-nil') {
-          title = 'Reported NIL — Public Cap'
-          desc = 'Compare every Power 4 plus Notre Dame football roster stack on one shared scale. Survey cells stay the published words. Modeled conference bands stay labeled modeled. Booked NIL and House spent stay separate marks. Not leftover. Pending stays empty.'
+          title = 'Reported NIL by school — Power 4 football roster stack — Public Cap'
+          desc = 'Named survey ranges and labeled modeled conference bands for all 68 Power 4 + Notre Dame schools, on one $0–$50M scale. Booked NIL and House spent stay separate. Not leftover.'
         } else if (p === '/tape') {
           title = 'Tape — Public Cap'
         } else if (p === '/methods') {
@@ -103,6 +105,16 @@
         setMeta('name', 'description', desc)
         setMeta('property', 'og:description', desc)
         setMeta('name', 'twitter:description', desc)
+        setMeta('name', 'twitter:card', 'summary_large_image')
+        var canon = 'https://thepubliccap.com' + (p === '/' ? '/' : p)
+        var img = p === '/reported-nil'
+          ? 'https://thepubliccap.com/og-reported-nil.png'
+          : 'https://thepubliccap.com/og-default.png'
+        setMeta('property', 'og:url', canon)
+        setMeta('property', 'og:image', img)
+        setMeta('name', 'twitter:image', img)
+        var link = document.head.querySelector('link[rel="canonical"]')
+        if (link) link.setAttribute('href', canon)
         var href = null
         if (p === '/' || p === '/compare' || p === '/reported-nil' || p.indexOf('/school/') === 0) href = '/data/desk.json'
         else if (p === '/methods') href = '/data/meta.json'

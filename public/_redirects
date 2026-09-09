@@ -3,13 +3,11 @@
 /robots.txt /robots.txt 200
 /sitemap.xml /sitemap.xml 200
 
-# SPA HTML routes only. JSON books, logos, and other public/ files stay files.
+# Do not 200-rewrite exact SPA paths to /index.html. Workers / Pages
+# html_handling pretty-URLs /index.html → / with a 308, so a share or
+# hard refresh of /reported-nil (and /methods, /compare, /tape, /tv,
+# /buyout, /coach-fa) bounced home. Nested /school/:id and /coach-fa/:id
+# already 200 without an exact rewrite — keep the splats. Exact shells
+# are real dist/*.html files from scripts/write-spa-html.mjs.
 /school/* /index.html 200
-/compare /index.html 200
-/reported-nil /index.html 200
-/tape /index.html 200
-/tv /index.html 200
-/buyout /index.html 200
-/coach-fa /index.html 200
 /coach-fa/* /index.html 200
-/methods /index.html 200

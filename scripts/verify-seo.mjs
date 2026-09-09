@@ -9,6 +9,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   DEFAULT_TITLE,
+  OG_REPORTED_NIL_PATH,
   PAGE_DESCRIPTIONS,
   PAGE_TITLES,
   SCHOOL_TITLE_FRAME,
@@ -16,10 +17,12 @@ import {
   compareTitle,
   descriptionFromPath,
   displayNameFromSlug,
+  ogImageFromPath,
   schoolDescription,
   schoolTitle,
   titleFromPath,
 } from '../src/lib/share.js'
+import { applyRouteMeta, routeShell } from './write-spa-html.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const read = (rel) => readFileSync(join(root, rel), 'utf8')
@@ -56,10 +59,17 @@ ok(titleFromPath('/school/oklahoma-state') === schoolTitle('Oklahoma State'), 'o
 ok(titleFromPath('/school/notre-dame') === schoolTitle('Notre Dame'), 'notre-dame slug title-cases')
 ok(titleFromPath('/coach-fa') === PAGE_TITLES.coachFa, 'titleFromPath coach-fa index')
 ok(titleFromPath('/reported-nil') === PAGE_TITLES.reportedNil, 'titleFromPath reported-nil')
-ok(PAGE_TITLES.reportedNil === 'Reported NIL — Public Cap', 'reported-nil title is discoverable')
-ok(PAGE_DESCRIPTIONS.reportedNil.includes('shared scale'), 'reported-nil description names the shared scale')
+ok(
+  PAGE_TITLES.reportedNil === 'Reported NIL by school — Power 4 football roster stack — Public Cap',
+  'reported-nil title names the board',
+)
+ok(PAGE_DESCRIPTIONS.reportedNil.includes('$0–$50M scale'), 'reported-nil description names the published scale')
+ok(PAGE_DESCRIPTIONS.reportedNil.includes('68 Power 4'), 'reported-nil description names the 68-school set')
 ok(PAGE_DESCRIPTIONS.reportedNil.includes('Not leftover'), 'reported-nil description keeps leftover out')
+ok(PAGE_DESCRIPTIONS.reportedNil.includes('Booked NIL and House spent stay separate'), 'reported-nil description keeps booked cells separate')
 ok(descriptionFromPath('/reported-nil') === PAGE_DESCRIPTIONS.reportedNil, 'descriptionFromPath reported-nil')
+ok(ogImageFromPath('/reported-nil').endsWith(OG_REPORTED_NIL_PATH), 'reported-nil og image is the board card')
+ok(ogImageFromPath('/').endsWith('/og-default.png'), 'home og image is the default card')
 ok(coachFaTitle('Mark Stoops') === 'Mark Stoops — Coach buyout offsets — Public Cap', 'coach detail title')
 ok(
   compareTitle('Louisville', 'Kentucky') === 'Louisville vs Kentucky — Capacity vs House vs NIL — Public Cap',
@@ -91,7 +101,18 @@ const templateBlob = [
   coachFaTitle('Jimbo Fisher'),
 ].join('\n')
 ok(!/On3/i.test(templateBlob), 'title/description templates never name On3')
-ok(!/\$\d/.test(templateBlob), 'title/description templates have no dollar figures')
+ok(
+  !/\$\d/.test(templateBlob.replaceAll('$0–$50M', '')),
+  'title/description templates have no invented dollar figures',
+)
+
+const reportedShell = applyRouteMeta(indexHtml, routeShell('/reported-nil'))
+ok(reportedShell.includes('<title>Reported NIL by school — Power 4 football roster stack — Public Cap</title>'), 'reported-nil shell title is static')
+ok(reportedShell.includes('content="https://thepubliccap.com/reported-nil"'), 'reported-nil shell canonical/og:url')
+ok(reportedShell.includes('https://thepubliccap.com/og-reported-nil.png'), 'reported-nil shell og:image')
+ok(reportedShell.includes('summary_large_image'), 'reported-nil shell twitter large image')
+ok(reportedShell.includes('data-route="inner"'), 'reported-nil shell is an inner route')
+ok(!reportedShell.includes('<title>Public Cap — Capacity vs House cap vs booked NIL</title>'), 'reported-nil shell dropped the homepage title')
 
 ok(app.includes('descriptionFromPath'), 'App applies per-route descriptions')
 ok(app.includes("jsonLd: 'school'"), 'App attaches school JSON-LD')
@@ -110,10 +131,13 @@ ok(!/On3/i.test(schoolPage), 'school page has no On3')
 ok(indexHtml.includes(DEFAULT_TITLE), 'index.html first title matches the home template')
 ok(indexHtml.includes('Capacity vs House cap vs booked NIL — Public Cap'), 'index.html first-paints school titles')
 ok(indexHtml.includes('Coach buyout offsets / free agents — Public Cap'), 'index.html first-paints /coach-fa')
-ok(indexHtml.includes('Reported NIL — Public Cap'), 'index.html first-paints /reported-nil')
+ok(indexHtml.includes('Reported NIL by school — Power 4 football roster stack — Public Cap'), 'index.html first-paints /reported-nil')
 ok(indexHtml.includes('href="/reported-nil"'), 'index.html nav links the reported-NIL board')
 ok(indexHtml.includes('twitter:card'), 'index.html has a Twitter card')
+ok(indexHtml.includes('summary_large_image'), 'index.html uses a large Twitter card')
+ok(indexHtml.includes('og-reported-nil.png'), 'index.html points reported-nil unfurls at the board card')
 ok(indexHtml.includes('og:site_name'), 'index.html has og:site_name')
+ok(indexHtml.includes('og:image'), 'index.html has og:image')
 ok(indexHtml.includes('Collective 990 payout is a separate cited lane, not House.'), 'homepage LCP lede names collective payout')
 ok(indexHtml.includes('Not total athletic revenue, and not a Group of 6 predictor'), 'homepage LCP lede kept')
 ok(!/On3/i.test(indexHtml), 'index.html has no On3')

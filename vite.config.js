@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { splitDeskPayload } from './scripts/split-desk-payload.mjs'
+import { writeSpaHtml } from './scripts/write-spa-html.mjs'
 import { writeSitemap } from './scripts/write-sitemap.mjs'
 
 function lcpHtmlPlugin() {
@@ -40,6 +41,10 @@ function deskSplitPlugin() {
       this.info(
         `sitemap: ${sitemap.urlCount} URLs · ${sitemap.schoolCount} schools${sitemap.lastmod ? ` · lastmod ${sitemap.lastmod}` : ''}`,
       )
+    },
+    writeBundle() {
+      const rows = writeSpaHtml()
+      this.info(`spa html: ${rows.map((r) => r.file).join(', ')}`)
     },
   }
 }

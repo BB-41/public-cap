@@ -67,6 +67,24 @@ const redirects = readFileSync(join(root, 'public/_redirects'), 'utf8')
 ok(!/^\s*\/\*\s+\/index\.html/m.test(redirects), '_redirects has no catch-all /* → index.html')
 ok(/\/robots\.txt\s+\/robots\.txt\s+200/.test(redirects), '_redirects identity-proxies robots.txt')
 ok(/\/sitemap\.xml\s+\/sitemap\.xml\s+200/.test(redirects), '_redirects identity-proxies sitemap.xml')
+ok(/\/school\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects keeps /school/* splat')
+ok(/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects keeps /coach-fa/* splat')
+for (const path of ['/reported-nil', '/compare', '/methods', '/tape', '/tv', '/buyout', '/coach-fa']) {
+  ok(
+    !new RegExp(`${path}\\s+/index\\.html`).test(redirects),
+    `_redirects does not rewrite ${path} to /index.html (that 308s home)`,
+  )
+}
+
+ok(existsSync(join(root, 'public', 'og-reported-nil.png')), 'og-reported-nil.png is in public/')
+ok(existsSync(join(root, 'public', 'og-default.png')), 'og-default.png is in public/')
+
+if (process.env.PUBLIC_DIR) {
+  const reported = readFileSync(join(publicDir, 'reported-nil.html'), 'utf8')
+  ok(/<title>Reported NIL by school — Power 4 football roster stack — Public Cap<\/title>/.test(reported), 'dist reported-nil.html has the board title')
+  ok(reported.includes('https://thepubliccap.com/reported-nil'), 'dist reported-nil.html points canonical at the board')
+  ok(!reported.includes('<title>Public Cap — Capacity vs House cap vs booked NIL</title>'), 'dist reported-nil.html is not the homepage title')
+}
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} checks passed`)

@@ -149,6 +149,15 @@ export function canonicalUrl(path) {
   return `${publicOrigin()}${path}`
 }
 
+export const OG_DEFAULT_PATH = '/og-default.png'
+export const OG_REPORTED_NIL_PATH = '/og-reported-nil.png'
+
+export function ogImageFromPath(pathname) {
+  const origin = typeof location === 'undefined' ? `https://${SITE}` : publicOrigin()
+  if (pathname === '/reported-nil') return `${origin}${OG_REPORTED_NIL_PATH}`
+  return `${origin}${OG_DEFAULT_PATH}`
+}
+
 export const PAGE_TITLES = {
   home: DEFAULT_TITLE,
   tape: 'Tape — Public Cap',
@@ -156,7 +165,7 @@ export const PAGE_TITLES = {
   buyout: 'Buyout — Public Cap',
   coachFa: 'Coach buyout offsets / free agents — Public Cap',
   compare: 'Compare capacity vs House vs NIL — Public Cap',
-  reportedNil: 'Reported NIL — Public Cap',
+  reportedNil: 'Reported NIL by school — Power 4 football roster stack — Public Cap',
   tv: 'TV — Public Cap',
 }
 
@@ -167,7 +176,8 @@ export const PAGE_DESCRIPTIONS = {
   buyout: 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.',
   coachFa: 'Residual School A buyout after a firing, plus a labeled modeled School B salary. Offset rules stay booked or cite-only. Empty without a cite — we do not invent remaining principal.',
   compare: 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.',
-  reportedNil: 'Compare every Power 4 plus Notre Dame football roster stack on one shared scale. Survey cells stay the published words. Modeled conference bands stay labeled modeled. Booked NIL and House spent stay separate marks. Not leftover. Pending stays empty.',
+  reportedNil:
+    'Named survey ranges and labeled modeled conference bands for all 68 Power 4 + Notre Dame schools, on one $0–$50M scale. Booked NIL and House spent stay separate. Not leftover.',
   tv: 'Conference TV contracts, holders, and school media checks when a filing exists. Notre Dame’s NBC football deal is the school-level exception. Empty means pending.',
   school: 'Annual capacity from public filings versus the House benefits cap versus booked NIL. Collective 990 payout is a separate cited lane, not House. Pending stays empty.',
 }
@@ -244,15 +254,18 @@ function upsertRouteJsonLd(kind, { title, description, href }) {
 }
 
 /** Set document title, description, matching OG/Twitter tags, and a canonical URL. */
-export function applyDocumentMeta({ title, path, description, jsonLd = false }) {
+export function applyDocumentMeta({ title, path, description, jsonLd = false, image }) {
   const href = canonicalUrl(path)
+  const img = image || ogImageFromPath(path)
   if (typeof document === 'undefined') return href
   document.title = title
   upsertMeta('property', 'og:title', title)
   upsertMeta('property', 'og:url', href)
   upsertMeta('property', 'og:site_name', 'Public Cap')
-  upsertMeta('name', 'twitter:card', 'summary')
+  upsertMeta('property', 'og:image', img)
+  upsertMeta('name', 'twitter:card', 'summary_large_image')
   upsertMeta('name', 'twitter:title', title)
+  upsertMeta('name', 'twitter:image', img)
   if (description) {
     upsertMeta('name', 'description', description)
     upsertMeta('property', 'og:description', description)
