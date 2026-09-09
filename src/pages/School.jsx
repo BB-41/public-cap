@@ -518,7 +518,7 @@ function NilReportedBarLane({ school, leftoverPending, schoolName, season }) {
       <p className="fine">
         <strong>Scale.</strong> {bar.scaleNote}
         {' '}
-        <Link to="/reported-nil">See all 68 on the reported-NIL board</Link>.
+        <Link to="/reported-nil">Compare reported NIL by school on the Power 4 board</Link>.
       </p>
       {breakdown.length ? (
         <>
@@ -755,6 +755,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             {' '}Collective 990 payout is a separate cited lane, not House.
             {' '}An industry football roster estimate is a labeled modeled / survey lane — not booked NIL, not House spent, and not leftover. A named CBS/SI cell is survey; otherwise the SI conference-median range is modeled.
             {' '}The NIL reported bar plots that same range on one $0–$50M scale so schools can be compared. Booked NIL and House spent stay separate marks.
+            {' '}<Link to="/reported-nil">Compare reported NIL by school</Link> for every Power 4 football roster stack.
             {' '}Student fees on this desk are not tuition.
             {' '}Pending stays empty.
           </p>

@@ -7,6 +7,12 @@
 /logo-pc.png
   Cache-Control: public, max-age=604800
 
+/og-default.png
+  Cache-Control: public, max-age=604800
+
+/og-reported-nil.png
+  Cache-Control: public, max-age=604800
+
 /logos/*
   Cache-Control: public, max-age=604800
 
