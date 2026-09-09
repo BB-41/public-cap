@@ -76,6 +76,8 @@ const EXTRA_ALIASES = {
   'ole-miss': ['ole miss'],
   georgia: ['uga', 'dawgs', 'bulldogs'],
   tennessee: ['vols', 'volunteers'],
+  alabama: ['bama', 'tide', 'crimson tide'],
+  texas: ['longhorns'],
   'georgia-tech': ['georgia tech', 'ga tech'],
   'boston-college': ['boston college'],
   'wake-forest': ['wake forest'],
@@ -170,18 +172,44 @@ function buildSchoolIndex(schools) {
 
 export function matchSchools(question, schools) {
   const index = buildSchoolIndex(schools)
-  let hay = ` ${fold(question)} `
-  const ids = []
+  const original = ` ${fold(question)} `
+  let hay = original
+  const hits = []
   const seen = new Set()
   for (const e of index) {
     if (seen.has(e.id)) continue
     const re = new RegExp(`\\s${escapeRe(e.phrase)}s?\\s`)
-    if (!re.test(hay)) continue
-    ids.push(e.id)
+    const m = hay.match(re)
+    if (!m) continue
+    const at = original.search(new RegExp(`\\s${escapeRe(e.phrase)}s?\\s`))
+    hits.push({ id: e.id, at: at < 0 ? original.length : at })
     seen.add(e.id)
     hay = hay.replace(re, ' ')
   }
-  return ids
+  hits.sort((a, b) => a.at - b.at || a.id.localeCompare(b.id))
+  return hits.map((h) => h.id)
+}
+
+/** Facility / sponsor names from layers.apparel.naming when the question omits the school. */
+export function matchNamingSchools(question, layers) {
+  const hay = ` ${fold(question)} `
+  const hits = []
+  const seen = new Set()
+  for (const [id, layer] of Object.entries(layers?.schools || {})) {
+    for (const n of layer?.apparel?.naming || []) {
+      const phrases = [n.facility, n.sponsor]
+        .filter(Boolean)
+        .map(fold)
+        .filter((p) => p && p.length >= 5)
+      for (const phrase of phrases) {
+        const re = new RegExp(`\\s${escapeRe(phrase)}s?\\s`)
+        if (!re.test(hay) || seen.has(id)) continue
+        hits.push(id)
+        seen.add(id)
+      }
+    }
+  }
+  return hits
 }
 
 function matchCoaches(question, coachFa) {
@@ -1859,7 +1887,7 @@ export function answerDeskQuestion(question, ctx = {}) {
     return reportedNilAnswer(facts.school, season, facts.spent, facts.booked)
   }
 
-  if (ids.length >= 2 && (intents.has('compare') || intents.has('leftover') || intents.has('capacity') || intents.has('bookedNil') || intents.has('apparel') || /compare|\bvs\b|versus|differ|difference| and /.test(fold(q)))) {
+  if (ids.length === 2) {
     return compareSchools(byId[ids[0]], byId[ids[1]], season, includeAlumni, intents, desk, layers)
   }
 
@@ -1899,6 +1927,11 @@ export function answerDeskQuestion(question, ctx = {}) {
       text: `Offsets desk matches: ${coaches.map((c) => c.name).join(', ')}. Ask for one name.`,
       links: coaches.map((c) => ({ to: `/coach-fa/${c.id}`, label: c.name })),
     }
+  }
+
+  const namedIds = ids.length ? ids : matchNamingSchools(q, layers)
+  if (!ids.length && namedIds.length === 1 && byId[namedIds[0]]) {
+    return apparelAnswer(byId[namedIds[0]], season, includeAlumni, desk, layers, `stadium naming ${q}`)
   }
 
   if (/hello|hi there|help|what can you/.test(fold(q))) return helpAnswer()

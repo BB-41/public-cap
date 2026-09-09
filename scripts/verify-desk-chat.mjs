@@ -365,6 +365,39 @@ ok(blankMiss.suggested.some((p) => /difference/i.test(p)), 'total miss offers a 
 ok(blankMiss.suggested.some((p) => /reported NIL/i.test(p)), 'total miss offers reported NIL')
 ok(blankMiss.suggested.some((p) => /Louisville/i.test(p)), 'total miss includes a working example')
 
+ok(matchSchools('Bama leftover', desk.schools)[0] === 'alabama', 'Bama is Alabama')
+ok(matchSchools('the Tide leftover', desk.schools)[0] === 'alabama', 'Tide is Alabama')
+ok(matchSchools('Texas vs Bama', desk.schools).join(',') === 'texas,alabama', 'Texas vs Bama keeps question order')
+
+const juxta = ask('Texas Alabama')
+ok(/capacity/i.test(juxta.text) && /higher/i.test(juxta.text), `juxtaposed schools compare: ${juxta.text}`)
+ok(!/Ask a Power 4 school/i.test(juxta.text), 'Texas Alabama is not the miss wall')
+ok(/Texas/.test(juxta.text) && /Alabama/.test(juxta.text), 'Texas Alabama names both')
+
+const stack = ask('how does Texas stack up against Alabama')
+ok(/capacity/i.test(stack.text) && /higher/i.test(stack.text), `stack-up compare: ${stack.text}`)
+ok(!/Ask a Power 4 school/i.test(stack.text), 'stack-up is not the miss wall')
+
+const orMore = ask('which is higher Texas or Alabama')
+ok(/higher/i.test(orMore.text) && /capacity|leftover|reported NIL/i.test(orMore.text), `or-higher compare: ${orMore.text}`)
+ok(!/Ask a Power 4 school/i.test(orMore.text), 'which-is-higher is not the miss wall')
+
+const vsBama = ask('Texas vs Bama')
+ok(/Texas/.test(vsBama.text) && /Alabama/.test(vsBama.text), `Texas vs Bama names both: ${vsBama.text}`)
+ok(/higher|pending/i.test(vsBama.text), 'Texas vs Bama prints a gap or pending')
+ok(!/Ask a Power 4 school/i.test(vsBama.text), 'Texas vs Bama is not the miss wall')
+
+const bamaLeft = ask("What's Bama leftover?")
+ok(/pending/i.test(bamaLeft.text), `Bama leftover stays pending: ${bamaLeft.text}`)
+ok(!/leftover is \$/.test(bamaLeft.text), 'Bama leftover invents no leftover dollar')
+ok(bamaLeft.links.some((l) => l.to.includes('/school/alabama')), 'Bama leftover links Alabama')
+
+const kroger = ask('Kroger Field')
+ok(/Kentucky/i.test(kroger.text) && /Kroger/i.test(kroger.text), `Kroger Field names Kentucky: ${kroger.text}`)
+ok(/\$1,850,000|1,850,000/.test(kroger.text), 'Kroger Field prints the cited annual')
+ok(/not leftover/i.test(kroger.text), 'Kroger Field stays on apparel/naming')
+ok(!/Ask a Power 4 school/i.test(kroger.text), 'Kroger Field is not the miss wall')
+
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} desk-chat checks passed`)
 if (failed.length) process.exit(1)
