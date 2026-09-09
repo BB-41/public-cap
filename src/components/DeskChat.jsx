@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { answerDeskQuestion, CHAT_VOICE, SUGGESTED_PROMPTS } from '../lib/deskChat.js'
-import { jsonOr, loadDesk, loadRosters } from '../lib/loadDesk.js'
+import { jsonOr, loadDesk, loadLayers, loadRosters } from '../lib/loadDesk.js'
 import { CURRENT_SEASON } from '../lib/seasons.js'
 
 function loadTv() {
@@ -60,6 +60,7 @@ export default function DeskChat({ desk: deskProp, season = CURRENT_SEASON, incl
     tv: null,
     rosters: null,
     coachFa: null,
+    layers: null,
   })
   const [ready, setReady] = useState(!!deskProp)
   const inputRef = useRef(null)
@@ -100,10 +101,11 @@ export default function DeskChat({ desk: deskProp, season = CURRENT_SEASON, incl
       loadTv(),
       loadRosters(season),
       loadCoachFa(),
+      loadLayers(),
     ])
-      .then(([desk, tv, rosters, coachFa]) => {
+      .then(([desk, tv, rosters, coachFa, layers]) => {
         if (cancelled) return
-        setBooks({ desk, tv, rosters, coachFa })
+        setBooks({ desk, tv, rosters, coachFa, layers })
         setReady(true)
       })
       .catch(() => {
@@ -122,6 +124,7 @@ export default function DeskChat({ desk: deskProp, season = CURRENT_SEASON, incl
       tv: books.tv,
       rosters: books.rosters,
       coachFa: books.coachFa,
+      layers: books.layers,
       season,
       includeAlumni,
     })

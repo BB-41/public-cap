@@ -31,6 +31,8 @@ import {
 import {
   footballRosterStack,
   reportedNilBar,
+  reportedNilVisibleLabel,
+  compareReportedNilRows,
   REPORTED_BAR_HASH,
   REPORTED_NIL_PATH,
   stackFormula,
@@ -54,6 +56,8 @@ export const SUGGESTED_PROMPTS = [
   "What's LSU's industry football roster estimate?",
   "What's the industry estimate for Miami's QB?",
   'How does Alabama compare on reported NIL?',
+  "What's Georgia's jersey patch deal?",
+  "What's the difference between Louisville and Kentucky?",
 ]
 
 const EXTRA_ALIASES = {
@@ -70,6 +74,8 @@ const EXTRA_ALIASES = {
   'mississippi-state': ['miss state'],
   'nc-state': ['nc state', 'n c state'],
   'ole-miss': ['ole miss'],
+  georgia: ['uga', 'dawgs', 'bulldogs'],
+  tennessee: ['vols', 'volunteers'],
   'georgia-tech': ['georgia tech', 'ga tech'],
   'boston-college': ['boston college'],
   'wake-forest': ['wake forest'],
@@ -225,8 +231,15 @@ function detectIntents(q) {
   if (/missing|not on the desk|what dont you|what do you not|dont you have/.test(t)) intents.add('missing')
   if (/do you have|have you got|is there (a |any )?(booked |house )?/.test(t)) intents.add('doYouHave')
   if (/what nil do you have|which nil|nil do you have|what nil (is |are )?(on|for)/.test(t)) intents.add('nilCoverage')
-  if (/house spent vs|leftover vs|booked nil vs|house cap vs|difference between (leftover|house|booked)/.test(t)) {
+  if (/house spent vs|leftover vs|booked nil vs|house cap vs|difference between (leftover|house spent|house cap|booked nil|booked and modeled)/.test(t)) {
     intents.add('lanes')
+  }
+  if (
+    /apparel|outfitter|naming rights|stadium nam|facility nam|\bjersey\b|\bpatch\b|jersey sponsor|logo (on|deal|sponsor)|nike|adidas|under armour|underarmour/.test(
+      t,
+    )
+  ) {
+    intents.add('apparel')
   }
   if (/which schools|who has booked|schools have booked|booked house spent/.test(t) && /house spent|booked house|leftover/.test(t)) {
     intents.add('listHouseSpent')
@@ -281,7 +294,7 @@ function detectIntents(q) {
     intents.add('roster')
   }
   if (/buyout|coach pay|head coach|salary/.test(t)) intents.add('coach')
-  if (/compare|\bvs\b|versus/.test(t)) intents.add('compare')
+  if (/compare|\bvs\b|versus|differ(?:ence)?/.test(t)) intents.add('compare')
   if (/methods|how (is|does) the desk/.test(t)) intents.add('methods')
   return intents
 }
@@ -307,6 +320,216 @@ function leftoverBundle(school) {
       ? Number(leftover.field.spent)
       : null
   return { leftover, booked, spent }
+}
+
+function layerFor(school, layers) {
+  return school?.layers || layers?.schools?.[school?.id] || null
+}
+
+function apparelOf(school, layers) {
+  return layerFor(school, layers)?.apparel || null
+}
+
+function chatterDollar(text) {
+  return /\$?\s*100\s*m(?:illion)?\b|\$40\.8|40,800,000|100,000,000/i.test(String(text || ''))
+}
+
+function apparelCite(field) {
+  if (!field) return null
+  const bits = [field.source, field.notes].filter((s) => s && !chatterDollar(s))
+  return bits[0] || null
+}
+
+function gapLine(label, aName, aVal, bName, bVal) {
+  if (aVal == null && bVal == null) {
+    return `${label}: pending on both ${aName} and ${bName} — no difference to print.`
+  }
+  if (aVal == null || bVal == null) {
+    const missing = aVal == null ? aName : bName
+    const have = aVal == null ? bName : aName
+    const haveVal = aVal == null ? bVal : aVal
+    return `${label}: pending on ${missing}, so the difference is pending. ${have} is ${money(haveVal)}.`
+  }
+  const delta = aVal - bVal
+  if (delta === 0) return `${label}: ${aName} and ${bName} match at ${money(aVal)}.`
+  const higher = delta > 0 ? aName : bName
+  return `${label}: ${aName} ${money(aVal)}; ${bName} ${money(bVal)} (${money(Math.abs(delta))} higher at ${higher}).`
+}
+
+function reportedLabel(school, booked, spent) {
+  const bar = reportedNilBar(school, {
+    booked: typeof booked === 'number' ? booked : booked?.value,
+    spent,
+  })
+  if (!bar) return null
+  return {
+    bar,
+    label: reportedNilVisibleLabel(bar) || bar.display || bar.rangeDisplay,
+    lane: bar.lane,
+  }
+}
+
+function WORKING_EXAMPLE() {
+  return "What's Louisville's leftover / House spent / booked NIL?"
+}
+
+function missSuggested(question) {
+  const t = fold(question)
+  const out = []
+  if (/jersey|naming|patch|outfitter|nike|adidas|apparel|logo/.test(t)) {
+    out.push("What's Georgia's jersey patch deal?")
+  }
+  if (/differ|difference|compare|\bvs\b|versus/.test(t)) {
+    out.push("What's the difference between Louisville and Kentucky?")
+  }
+  if (/reported|nil/.test(t)) {
+    out.push('How does Alabama compare on reported NIL?')
+  }
+  const pool = [
+    "What's Georgia's jersey patch deal?",
+    "What's the difference between Louisville and Kentucky?",
+    'How does Alabama compare on reported NIL?',
+  ]
+  for (const p of pool) {
+    if (out.length >= 3) break
+    if (!out.includes(p)) out.push(p)
+  }
+  if (!out.includes(WORKING_EXAMPLE())) out.push(WORKING_EXAMPLE())
+  return out
+}
+
+function missAnswer(question) {
+  return {
+    text: 'Ask a Power 4 school (or Notre Dame) about leftover, booked NIL, reported NIL, apparel/naming, or how two schools differ.',
+    links: [
+      { to: '/', label: 'Rank list' },
+      { to: '/methods', label: 'Methods' },
+    ],
+    suggested: missSuggested(question),
+  }
+}
+
+function apparelAnswer(raw, season, includeAlumni, desk, layers, question) {
+  const { school } = schoolFacts(raw, season, includeAlumni, desk)
+  const apparel = apparelOf(school, layers) || apparelOf(raw, layers)
+  const t = fold(question)
+  const wantNaming = /naming|stadium|facility/.test(t)
+  const wantJersey = /jersey|patch|logo/.test(t)
+  const links = [{ to: schoolHref(school.id, season), label: `${school.name} page` }]
+  const suggested = [
+    "What's Kentucky's stadium naming rights?",
+    "What's Tennessee's apparel deal?",
+    WORKING_EXAMPLE(),
+  ]
+
+  if (!apparel) {
+    return {
+      text: `${school.name} has no apparel / naming cell on this desk. The dollar stays pending. This lane is not leftover and not reported NIL.`,
+      facts: ['Apparel annual: pending'],
+      links,
+      suggested,
+    }
+  }
+
+  const brand = apparel.brand?.value || null
+  const annual = apparel.annualValue?.value
+  const naming = apparel.naming || []
+  const lines = []
+  const facts = []
+
+  if (wantNaming && !wantJersey) {
+    if (!naming.length) {
+      lines.push(`${school.name} has no cited stadium or facility naming deal on the desk.`)
+    } else {
+      for (const n of naming) {
+        if (n.annualValue != null) {
+          lines.push(
+            `${school.name} naming: ${n.facility} — ${n.sponsor}, ${moneyExact(n.annualValue)} annual (${n.confidence || 'reported'}).`,
+          )
+          facts.push(`${n.facility}: ${moneyExact(n.annualValue)} (${n.confidence || 'reported'})`)
+        } else {
+          lines.push(
+            `${school.name} naming: ${n.facility || 'facility'} — ${n.sponsor || 'sponsor cited'}. Annual dollar pending.`,
+          )
+          facts.push(`${n.facility || 'Naming'}: pending`)
+        }
+      }
+    }
+    if (brand) lines.push(`Outfitter is ${brand}.`)
+    if (annual != null) {
+      lines.push(`Apparel annual value is ${moneyExact(annual)} (${apparel.annualValue.confidence || 'reported'}).`)
+    } else {
+      lines.push('Apparel annual value is pending.')
+    }
+  } else {
+    if (brand) {
+      lines.push(`${school.name} outfitter is ${brand}.`)
+      facts.push(`Outfitter: ${brand}`)
+    } else {
+      lines.push(`${school.name} outfitter is pending.`)
+    }
+    if (annual != null) {
+      lines.push(`Apparel annual value is ${moneyExact(annual)} (${apparel.annualValue.confidence || 'reported'}).`)
+      facts.push(factLine('Apparel annual', annual, { mark: apparel.annualValue.confidence }))
+    } else if (/not disclosed/i.test(`${apparel.annualValue?.source || ''} ${apparel.notes || ''}`)) {
+      lines.push('Apparel annual value is pending — terms were not disclosed.')
+      facts.push('Apparel annual: pending')
+    } else {
+      lines.push('Apparel annual value is pending — no cited dollar on the cell.')
+      facts.push('Apparel annual: pending')
+    }
+    if (wantJersey) {
+      const jerseyCite = [apparel.brand?.source, apparel.brand?.notes, apparel.notes].find(
+        (s) => s && /jersey|logo|patch/i.test(s) && !chatterDollar(s),
+      )
+      if (jerseyCite) {
+        lines.push('Jersey / logo talks are on the desk as a cite. The dollar stays pending.')
+      } else if (/jersey|logo|patch/i.test(`${apparel.brand?.source || ''} ${apparel.notes || ''}`)) {
+        lines.push('Jersey / logo talks are cited; the annual dollar is pending.')
+      }
+    }
+    if (naming.length) {
+      const named = naming
+        .map((n) =>
+          n.annualValue != null
+            ? `${n.facility} (${n.sponsor}, ${moneyExact(n.annualValue)} annual)`
+            : `${n.facility} (${n.sponsor}, annual pending)`,
+        )
+        .join('; ')
+      lines.push(`Naming: ${named}.`)
+    } else if (wantNaming) {
+      lines.push('No cited stadium or facility naming deal on the desk.')
+    }
+  }
+
+  lines.push('This lane is apparel / naming — not leftover and not reported NIL.')
+  return { text: lines.join(' '), facts, links, suggested }
+}
+
+function compareApparel(rawA, rawB, season, includeAlumni, desk, layers) {
+  const A = schoolFacts(rawA, season, includeAlumni, desk)
+  const B = schoolFacts(rawB, season, includeAlumni, desk)
+  const a = apparelOf(A.school, layers) || apparelOf(rawA, layers)
+  const b = apparelOf(B.school, layers) || apparelOf(rawB, layers)
+  const aVal = a?.annualValue?.value ?? null
+  const bVal = b?.annualValue?.value ?? null
+  const brandA = a?.brand?.value || 'pending'
+  const brandB = b?.brand?.value || 'pending'
+  const links = [
+    { to: comparePath({ a: A.school.id, b: B.school.id, season, includeAlumni }), label: `Compare ${A.school.name} / ${B.school.name}` },
+    { to: schoolHref(A.school.id, season), label: A.school.name },
+    { to: schoolHref(B.school.id, season), label: B.school.name },
+  ]
+  const lead = gapLine('Apparel annual', A.school.name, aVal, B.school.name, bVal)
+  return {
+    text: `${lead} Outfitters: ${A.school.name} ${brandA}; ${B.school.name} ${brandB}. This lane is apparel / naming — not leftover and not reported NIL.`,
+    facts: [
+      `${A.school.name}: ${brandA}${aVal != null ? ` · ${money(aVal)}` : ' · annual pending'}`,
+      `${B.school.name}: ${brandB}${bVal != null ? ` · ${money(bVal)}` : ' · annual pending'}`,
+    ],
+    links,
+    suggested: SUGGESTED_PROMPTS.filter((p) => /jersey|difference/i.test(p)).slice(0, 3),
+  }
 }
 
 function estimateAside(school, spent) {
@@ -363,16 +586,25 @@ function factLine(label, value, opts = {}) {
   return bits.join(' · ')
 }
 
-function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, question) {
+function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, question, layers) {
   const { school, leftover, booked, spent, cap, coach } = schoolFacts(raw, season, includeAlumni, desk)
   const lines = []
   const facts = []
   const links = [{ to: schoolHref(school.id, season), label: `${school.name} page` }]
-  const wantAll = !intents.size || (intents.has('leftover') && intents.has('houseSpent') && intents.has('bookedNil'))
-  const broad = !intents.size || (intents.has('leftover') && (intents.has('houseSpent') || intents.has('bookedNil')))
+  const wantAll = intents.has('leftover') && intents.has('houseSpent') && intents.has('bookedNil')
+  const broad = intents.has('leftover') && (intents.has('houseSpent') || intents.has('bookedNil'))
+  const fuzzy = !intents.size
 
   if (intents.has('refuse')) {
     return refuseAnswer()
+  }
+
+  if (intents.has('apparel') && !intents.has('leftover') && !intents.has('bookedNil') && !intents.has('houseSpent')) {
+    return apparelAnswer(raw, season, includeAlumni, desk, layers, question)
+  }
+
+  if (fuzzy) {
+    return snapshotAnswer(raw, season, includeAlumni, desk)
   }
 
   if (intents.has('defineLeftover')) {
@@ -531,23 +763,56 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, qu
 }
 
 function snapshotAnswer(raw, season, includeAlumni, desk) {
-  const { school, leftover, booked, spent, cap, coach } = schoolFacts(raw, season, includeAlumni, desk)
-  const facts = [
-    factLine('Capacity (booked)', cap.value || null, { note: cap.fy }),
-    factLine('Booked NIL', booked.value, { note: yearLabel(booked) }),
-    factLine('House spent', spent, { note: yearLabel(leftover) }),
-    factLine('Leftover', leftover.value, { note: yearLabel(leftover) }),
-  ]
-  const bits = [`${school.name} on the desk (booked cells only).`]
-  if (booked.value == null && leftover.value == null) {
-    bits.push('Booked NIL and leftover are pending.')
+  const { school, leftover, booked, spent, cap } = schoolFacts(raw, season, includeAlumni, desk)
+  const reported = reportedLabel(school, booked, spent)
+  const facts = [factLine('Capacity (booked)', cap.value || null, { note: cap.fy })]
+  const bits = []
+
+  if (cap.value) {
+    bits.push(`${school.name} booked-only capacity is ${money(cap.value)}${cap.fy ? ` (${cap.fy})` : ''}.`)
+  } else {
+    bits.push(`${school.name} booked-only capacity is pending.`)
   }
-  if (coach?.name) bits.push(`Football chair: ${coach.name}.`)
+
+  if (spent != null && leftover.value != null) {
+    const yl = yearLabel(leftover)
+    const ytd = leftover.field?.partialYear ? ' · YTD' : ''
+    bits.push(
+      `Leftover ${money(leftover.value)} — House cap minus booked House spent ${money(spent)}${yl ? ` (${yl}${ytd})` : ytd}.`,
+    )
+    facts.push(factLine('House spent', spent, { note: yearLabel(leftover) }))
+    facts.push(factLine('Leftover', leftover.value, { note: yearLabel(leftover) }))
+  } else {
+    bits.push('House leftover and spent are pending — leftover is only House cap minus booked House spent.')
+    facts.push('Leftover: pending')
+  }
+
+  if (booked.value != null) {
+    bits.push(`Booked NIL ${money(booked.value)}${yearLabel(booked) ? ` (${yearLabel(booked)})` : ''}.`)
+    facts.push(factLine('Booked NIL', booked.value, { note: yearLabel(booked) }))
+  } else {
+    bits.push('Booked NIL is pending.')
+    facts.push('Booked NIL: pending')
+  }
+
+  if (reported) {
+    bits.push(`Reported NIL ${reported.label} (${reported.lane}) — not booked NIL.`)
+    facts.push(`Reported NIL: ${reported.label} (${reported.lane})`)
+  } else {
+    bits.push('Reported NIL is pending.')
+    facts.push('Reported NIL: pending')
+  }
+
+  const holes = []
+  if (booked.value == null) holes.push('booked NIL')
+  if (leftover.value == null) holes.push('leftover')
+  if (holes.length) bits.push(`Pending holes: ${holes.join(', ')}.`)
+
   return {
     text: bits.join(' '),
     facts,
     links: [{ to: schoolHref(school.id, season), label: `${school.name} page` }],
-    suggested: SUGGESTED_PROMPTS.slice(0, 4),
+    suggested: SUGGESTED_PROMPTS.filter((p) => !fold(p).includes(fold(school.name))).slice(0, 4),
   }
 }
 
@@ -1000,22 +1265,7 @@ function listHouseSpent(desk, season) {
   }
 }
 
-function compareSchools(rawA, rawB, season, includeAlumni, intents, desk) {
-  const A = schoolFacts(rawA, season, includeAlumni, desk)
-  const B = schoolFacts(rawB, season, includeAlumni, desk)
-  const meta = desk?.meta
-  const metric = intents.has('leftover')
-    ? 'leftover'
-    : intents.has('houseSpent')
-      ? 'houseSpent'
-      : intents.has('bookedNil')
-        ? 'bookedNil'
-        : intents.has('capacity')
-          ? 'capacity'
-          : intents.has('houseCap')
-            ? 'houseCap'
-            : 'leftover'
-
+function compareNamedLane(A, B, metric, meta, season, includeAlumni) {
   const pick = (bundle) => {
     if (metric === 'leftover') return { value: bundle.leftover.value, hash: 'leftover', label: 'Leftover', lead: bundle.leftover }
     if (metric === 'houseSpent') return { value: bundle.spent, hash: 'house-spent', label: 'House spent', lead: bundle.leftover }
@@ -1072,6 +1322,79 @@ function compareSchools(rawA, rawB, season, includeAlumni, intents, desk) {
     links,
     suggested: SUGGESTED_PROMPTS.slice(0, 3),
   }
+}
+
+function compareReviewerLanes(A, B, season, includeAlumni) {
+  const links = [
+    { to: comparePath({ a: A.school.id, b: B.school.id, season, includeAlumni }), label: `Compare ${A.school.name} / ${B.school.name}` },
+    { to: schoolHref(A.school.id, season), label: A.school.name },
+    { to: schoolHref(B.school.id, season), label: B.school.name },
+  ]
+  const leftoverPresent = A.leftover.value != null || B.leftover.value != null
+  const moneyLane = leftoverPresent
+    ? gapLine('Leftover', A.school.name, A.leftover.value, B.school.name, B.leftover.value)
+    : gapLine('Booked NIL', A.school.name, A.booked.value, B.school.name, B.booked.value)
+  const capLine = gapLine('Booked capacity', A.school.name, A.cap.value, B.school.name, B.cap.value)
+
+  const barA = reportedLabel(A.school, A.booked, A.spent)
+  const barB = reportedLabel(B.school, B.booked, B.spent)
+  let reportedLine
+  if (!barA || !barB) {
+    const missing = !barA ? A.school.name : B.school.name
+    reportedLine = `Reported NIL: pending on ${missing}, so the difference is pending.`
+  } else {
+    const cmp = compareReportedNilRows({ school: A.school, bar: barA.bar }, { school: B.school, bar: barB.bar })
+    const higher = cmp < 0 ? A.school.name : cmp > 0 ? B.school.name : null
+    const who = higher ? ` ${higher} sits higher.` : ' Same reported-NIL band.'
+    reportedLine = `Reported NIL: ${A.school.name} ${barA.label} (${barA.lane}); ${B.school.name} ${barB.label} (${barB.lane}).${who} Words/range only — not a midpoint.`
+  }
+
+  const leftoverBit = leftoverPresent
+    ? ' Leftover is House cap minus booked House spent when that cell exists.'
+    : ''
+
+  return {
+    text: `${capLine} ${moneyLane} ${reportedLine}${leftoverBit}`,
+    facts: [
+      factLine(`${A.school.name} capacity`, A.cap.value, { note: A.cap.fy }),
+      factLine(`${B.school.name} capacity`, B.cap.value, { note: B.cap.fy }),
+      leftoverPresent
+        ? factLine(`${A.school.name} leftover`, A.leftover.value)
+        : factLine(`${A.school.name} booked NIL`, A.booked.value),
+      leftoverPresent
+        ? factLine(`${B.school.name} leftover`, B.leftover.value)
+        : factLine(`${B.school.name} booked NIL`, B.booked.value),
+      barA ? `${A.school.name} reported NIL: ${barA.label} (${barA.lane})` : `${A.school.name} reported NIL: pending`,
+      barB ? `${B.school.name} reported NIL: ${barB.label} (${barB.lane})` : `${B.school.name} reported NIL: pending`,
+    ],
+    links,
+    suggested: SUGGESTED_PROMPTS.filter((p) => /difference|reported NIL|leftover/i.test(p)).slice(0, 3),
+  }
+}
+
+function compareSchools(rawA, rawB, season, includeAlumni, intents, desk, layers) {
+  const A = schoolFacts(rawA, season, includeAlumni, desk)
+  const B = schoolFacts(rawB, season, includeAlumni, desk)
+  const meta = desk?.meta
+
+  if (intents.has('apparel') && !intents.has('leftover') && !intents.has('bookedNil') && !intents.has('capacity')) {
+    return compareApparel(rawA, rawB, season, includeAlumni, desk, layers)
+  }
+
+  const named = intents.has('leftover')
+    ? 'leftover'
+    : intents.has('houseSpent')
+      ? 'houseSpent'
+      : intents.has('bookedNil')
+        ? 'bookedNil'
+        : intents.has('capacity')
+          ? 'capacity'
+          : intents.has('houseCap')
+            ? 'houseCap'
+            : null
+
+  if (named) return compareNamedLane(A, B, named, meta, season, includeAlumni)
+  return compareReviewerLanes(A, B, season, includeAlumni)
 }
 
 function coachFaAnswer(coach, season) {
@@ -1470,6 +1793,8 @@ export function answerDeskQuestion(question, ctx = {}) {
   const includeAlumni = !!ctx.includeAlumni
   const intents = detectIntents(q)
 
+  const layers = ctx.layers || null
+
   if (!q) return helpAnswer()
   if (intents.has('refuse')) return refuseAnswer()
   if (!desk?.schools?.length) {
@@ -1534,8 +1859,8 @@ export function answerDeskQuestion(question, ctx = {}) {
     return reportedNilAnswer(facts.school, season, facts.spent, facts.booked)
   }
 
-  if (ids.length >= 2 && (intents.has('compare') || intents.has('leftover') || intents.has('capacity') || intents.has('bookedNil') || /compare|\bvs\b|versus| and /.test(fold(q)))) {
-    return compareSchools(byId[ids[0]], byId[ids[1]], season, includeAlumni, intents, desk)
+  if (ids.length >= 2 && (intents.has('compare') || intents.has('leftover') || intents.has('capacity') || intents.has('bookedNil') || intents.has('apparel') || /compare|\bvs\b|versus|differ|difference| and /.test(fold(q)))) {
+    return compareSchools(byId[ids[0]], byId[ids[1]], season, includeAlumni, intents, desk, layers)
   }
 
   if (ids.length === 1) {
@@ -1543,10 +1868,10 @@ export function answerDeskQuestion(question, ctx = {}) {
     if (intents.has('nilCoverage') || (intents.has('doYouHave') && intents.has('bookedNil') && !intents.has('leftover') && !intents.has('houseSpent'))) {
       return nilCoverageAnswer(raw, season, includeAlumni, desk)
     }
-    if (intents.has('missing') || (intents.has('coverage') && !intents.has('leftover') && !intents.has('tv') && !intents.has('roster') && !intents.has('positionEstimate') && !intents.has('rosterEstimate'))) {
+    if (intents.has('missing') || (intents.has('coverage') && !intents.has('leftover') && !intents.has('tv') && !intents.has('roster') && !intents.has('positionEstimate') && !intents.has('rosterEstimate') && !intents.has('apparel'))) {
       return missingAnswer(raw, season, includeAlumni, desk, { leadMissing: intents.has('missing') || /missing/.test(fold(q)) })
     }
-    const out = schoolAnswer(raw, season, includeAlumni, intents, ctx.tv, ctx.rosters, desk, q)
+    const out = schoolAnswer(raw, season, includeAlumni, intents, ctx.tv, ctx.rosters, desk, q, layers)
     if (intents.has('houseCap') && desk.meta) {
       const house = houseValueForSeason(desk.meta, season)
       const field = houseFieldForSeason(desk.meta, season)
@@ -1578,14 +1903,18 @@ export function answerDeskQuestion(question, ctx = {}) {
 
   if (/hello|hi there|help|what can you/.test(fold(q))) return helpAnswer()
 
-  return {
-    text: 'I can look up booked cells — leftover, House spent, booked NIL, capacity, conference media, buyouts, roster starters, the labeled industry football roster survey when one exists, cited position bands when CBS/SI stated one, and how a school compares on the NIL reported bar. Name a Power 4 school (or Notre Dame), or ask what leftover means. I will not invent a dollar.',
-    links: [
-      { to: '/', label: 'Rank list' },
-      { to: '/methods', label: 'Methods' },
-    ],
-    suggested: SUGGESTED_PROMPTS,
+  if (intents.has('apparel')) {
+    return {
+      text: 'Name a school for apparel or naming — annual dollars only when that cell has one.',
+      links: [
+        { to: '/', label: 'Rank list' },
+        { to: '/methods', label: 'Methods' },
+      ],
+      suggested: missSuggested(q),
+    }
   }
+
+  return missAnswer(q)
 }
 
 /** Schools with a leftover / House spent cell after the season overlay. */
