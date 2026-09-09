@@ -329,21 +329,57 @@ export function reportedNilVisibleLabel(bar) {
   return bar.display || bar.rangeDisplay || null
 }
 
+/**
+ * Published numeric high only. Survey ranges and modeled conference bands
+ * have one. A survey tier (“above $40M”) does not — the allocation
+ * envelope high is ranking-only and must not become a midpoint.
+ */
+export function publishedReportedNilHigh(bar) {
+  if (!bar || bar.kind !== 'range') return null
+  const high = bar.high
+  if (high == null || high === '' || !Number.isFinite(Number(high))) return null
+  return Number(high)
+}
+
+/**
+ * Same rank keys as the /reported-nil board, without the name tie-break.
+ * Negative means A ranks higher (comes first).
+ */
+export function compareReportedNilRank(barA, barB) {
+  const ah = barA?.high ?? -1
+  const bh = barB?.high ?? -1
+  if (bh !== ah) return bh - ah
+  const aSurvey = barA?.lane === 'survey' ? 0 : 1
+  const bSurvey = barB?.lane === 'survey' ? 0 : 1
+  if (aSurvey !== bSurvey) return aSurvey - bSurvey
+  const al = barA?.low ?? -1
+  const bl = barB?.low ?? -1
+  if (bl !== al) return bl - al
+  const aRange = barA?.kind === 'range' ? 0 : 1
+  const bRange = barB?.kind === 'range' ? 0 : 1
+  if (aRange !== bRange) return aRange - bRange
+  return 0
+}
+
 /** Rank by allocation high, then survey before modeled, then low, then range before tier. */
 export function compareReportedNilRows(a, b) {
-  const ah = a?.bar?.high ?? -1
-  const bh = b?.bar?.high ?? -1
-  if (bh !== ah) return bh - ah
-  const aSurvey = a?.bar?.lane === 'survey' ? 0 : 1
-  const bSurvey = b?.bar?.lane === 'survey' ? 0 : 1
-  if (aSurvey !== bSurvey) return aSurvey - bSurvey
-  const al = a?.bar?.low ?? -1
-  const bl = b?.bar?.low ?? -1
-  if (bl !== al) return bl - al
-  const aRange = a?.bar?.kind === 'range' ? 0 : 1
-  const bRange = b?.bar?.kind === 'range' ? 0 : 1
-  if (aRange !== bRange) return aRange - bRange
+  const rank = compareReportedNilRank(a?.bar, b?.bar)
+  if (rank !== 0) return rank
   return String(a?.school?.name || '').localeCompare(String(b?.school?.name || ''))
+}
+
+/** 2026 overlay only — same gate as school pages. Earlier seasons stay empty. */
+export function reportedNilBarForCompare(school, season) {
+  if (season != null && season !== 2026) return null
+  return reportedNilBar(school)
+}
+
+/** Visible compare cell: published words plus survey vs modeled. */
+export function reportedNilCompareDisplay(bar) {
+  if (!bar) return 'pending'
+  const label = reportedNilVisibleLabel(bar)
+  if (!label) return 'pending'
+  return `${label} ${bar.lane}`
 }
 
 /**

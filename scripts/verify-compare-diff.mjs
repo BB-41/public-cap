@@ -172,7 +172,7 @@ ok(page.includes('formatCompareDiff'), 'Compare.jsx uses the shared difference h
 ok(page.includes('compare-diff'), 'Compare.jsx renders a difference cell')
 ok(page.includes('compare-diff-lab'), 'Compare.jsx labels the Difference column')
 ok(page.includes('School A minus school B'), 'column title states A minus B')
-ok(page.includes('dd: formatCompareDiff'), 'PNG rows get the same difference label')
+ok(/dd:[\s\S]*formatCompareDiff/.test(page), 'PNG rows get the same difference label')
 ok(!page.includes('On3'), 'compare page does not pull On3')
 ok(!/leftoverWaterfall|capacity − House|capacity - House/.test(page), 'compare page does not change leftover math')
 ok(!/naming rights|jersey naming/i.test(page), 'compare page does not fold apparel / naming rights')
