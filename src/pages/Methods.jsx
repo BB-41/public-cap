@@ -311,8 +311,9 @@ export default function Methods({ meta: metaProp }) {
         $16M estimated — not $16,000,001; Texas school-FY $3.2M, only two months of
         House. Georgia, Tennessee, Alabama, Oregon, Utah, UNC, Ohio State, Illinois,
         Minnesota, Washington, Wisconsin, Iowa State, Virginia, Ole Miss, and Colorado FY2025 Item 44 $0
-        from the cited filings (Colorado via USA TODAY / Brent Schrotenboer, hosted MFRS PDF). Kentucky FY2025 $0 is not booked — no public MFRS PDF
-        on the desk; the $18M counsel cell stays).
+        from the cited filings. Colorado is USA TODAY / Brent Schrotenboer, hosted MFRS PDF.
+        Kentucky FY2025 $0 is not booked — no public MFRS PDF
+        on the desk; the $18M counsel cell stays.
       </p>
       <p>
         Ratios: NIL ÷ House cap, and NIL ÷ our capacity. A school can sit near 100% of
