@@ -89856,16 +89856,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk — that cell stays pending. FY2025 MFRS Item 44 Institutional NIL Revenue Share ($0, pre-House) is a separate companion cell on nil.preCap. Item 44 $0 is not House spent and not total/collective NIL."
         },
         "preCap": {
           "value": 0,
           "confidence": "reported",
-          "source": "USA TODAY / Brent Schrotenboer — Colorado FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share $0",
+          "source": "FY2025 NCAA MFRS Item 44 Institutional NIL Revenue Share $0 (pre-House, year ended Jun 30 2025) — not House Year 1 spent, not collective/total NIL. Cite: USA TODAY / Brent Schrotenboer",
           "url": "/colorado-fy2025-ncaa-mfrs.pdf",
           "asOf": "2026-09-10",
           "fiscalYear": "FY2025",
-          "notes": "USA TODAY’s Brent Schrotenboer confirmed Item 44 is $0 (email, Sept. 10, 2026) and authorized credit plus hosting the FY2025 MFRS PDF he provided (CU NCAA financial report FY 2025.pdf). Hosted at /colorado-fy2025-ncaa-mfrs.pdf. Pages 16 / 74 / 93 print Item 44 as $0 (pre-House, year ended Jun 30 2025). Booked $0 because the report shows $0 — not an invented blank. Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
+          "notes": "FY2025 MFRS Item 44 is institutional NIL revenue-share only (pre-House, year ended Jun 30 2025). CU reported no institutional NIL revenue-share payments in that fiscal year — booked $0 because pages 16 / 74 / 93 of the hosted PDF print $0, not an invented blank. This is not collective/third-party NIL, not House Year 1 (2025-26) spent (that cell stays pending), not an unpaid roster, and not current NIL capacity. Does not count against the 2025-26 House cap. USA TODAY’s Brent Schrotenboer confirmed Item 44 is $0 (email, Sept. 10, 2026) and authorized credit plus hosting the FY2025 MFRS PDF he provided (CU NCAA financial report FY 2025.pdf)."
         }
       },
       "coaches": {

@@ -129,6 +129,25 @@ export function nilBooked(school) {
   return hasVal(school.nil.booked) ? val(school.nil.booked) : null
 }
 
+/** FY2025 MFRS Item 44 companion cell — institutional only, not House Year 1 spent. */
+export function isItem44Field(field) {
+  if (!field) return false
+  return /item 44/i.test(`${field.source || ''} ${field.notes || ''}`)
+}
+
+export const ITEM44_COMPANION_EYEBROW =
+  'FY2025 MFRS Item 44 — institutional only, pre-House'
+
+export const ITEM44_COMPANION_LEDE =
+  'Institutional NIL revenue share for the year ended Jun 30 2025. Not House Year 1 spent. Not collective or total NIL.'
+
+export function item44Compact(field) {
+  if (!isItem44Field(field)) return null
+  return field.value === 0
+    ? 'FY2025 Item 44 · institutional · not House spent'
+    : 'FY2025 Item 44 · pre-House'
+}
+
 /** House Year 1 leftover (cap − booked House spent). Only exists on five booked schools. */
 export function houseRemaining(school) {
   return hasVal(school?.nil?.houseRemaining) ? val(school.nil.houseRemaining) : null

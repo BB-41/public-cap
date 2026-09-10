@@ -466,14 +466,32 @@ export function applySeasonForNil(school, year) {
 
   const nil = { ...(school.nil || {}) }
   delete nil.year1Lead
-  if (year === 2025) {
-    // House Year 1 window — booked figures stay. FY2025 preCap stays as a companion cell.
+  if (year === 2025 || year === 2026) {
+    // House window — 2025 booked stays; 2026–27 booked stays pending.
+    // FY2025 preCap stays as a companion so Item 44 $0 cannot hide behind a season switch.
+    if (year === 2026) {
+      const year1Booked = school.nil?.booked?.value != null ? clone(school.nil.booked) : null
+      const year1Remaining = school.nil?.houseRemaining?.value != null ? clone(school.nil.houseRemaining) : null
+      if (year1Booked || year1Remaining) {
+        nil.year1Lead = {
+          booked: year1Booked,
+          houseRemaining: year1Remaining,
+          label: '2025–26 filing / House Year 1',
+        }
+      }
+      const pre = school.nil?.preCap
+      const preHint =
+        pre && pre.value != null
+          ? ` FY2025 MFRS Item 44 is the companion pre-cap cell (${pre.value === 0 ? '$0 institutional, pre-House' : 'cited institutional line'}) — not House Year 1 spent and not total/collective NIL.`
+          : ' House Year 1 (2025–26) and FY2025 MFRS cells stay on those seasons.'
+      nil.booked = pendingNil(`2026–27 booked NIL not extracted.${preHint}`)
+    }
   } else if (year === 2024 && school.nil?.preCap && school.nil.preCap.value != null) {
     nil.booked = {
       ...school.nil.preCap,
       notes:
         (school.nil.preCap.notes || '') +
-        ' Shown on football 2024 as the cited FY2025 institutional NIL line.',
+        ' Shown on football 2024 as the cited FY2025 MFRS Item 44 institutional line — not House Year 1 spent and not total/collective NIL.',
     }
     delete nil.preCap
   } else {
@@ -497,7 +515,7 @@ export function applySeasonForNil(school, year) {
     )
     delete nil.preCap
   }
-  if (year !== 2025) delete nil.preCap
+  if (year < 2025 || year > 2026) delete nil.preCap
   // House remaining is a Year 1 (2025–26) residual. Keep it on 2025–26
   // overlays, labeled as Year 1 — not a 2026 leftover and not a 2024 pre-cap cell.
   if (year < 2025) delete nil.houseRemaining

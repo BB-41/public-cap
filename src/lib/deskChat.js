@@ -8,6 +8,7 @@ import {
   displayCap,
   hasVal,
   collective990Cells,
+  isItem44Field,
   leadBookedNil,
   leadHouseRemaining,
 } from './compute.js'
@@ -350,6 +351,23 @@ function leftoverBundle(school) {
   return { leftover, booked, spent }
 }
 
+function rawPreCap(raw) {
+  const pre = raw?.nil?.preCap
+  return pre && pre.value != null ? pre : null
+}
+
+function bookedIsPreCap(raw, booked) {
+  const pre = rawPreCap(raw)
+  if (!pre || booked?.value == null) return false
+  return booked.value === pre.value && isItem44Field(booked.field)
+}
+
+function preCapLine(raw, schoolName) {
+  const pre = rawPreCap(raw)
+  if (!pre || !isItem44Field(pre)) return null
+  return `${schoolName} FY2025 MFRS Item 44 Institutional NIL Revenue Share is ${money(pre.value)} — institutional only, pre-House (year ended Jun 30 2025). Not House Year 1 spent (that cell stays pending). Not collective or total NIL.`
+}
+
 function layerFor(school, layers) {
   return school?.layers || layers?.schools?.[school?.id] || null
 }
@@ -684,14 +702,23 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, qu
 
   if (intents.has('bookedNil') || wantAll || (broad && intents.has('leftover'))) {
     if (booked.value != null) {
-      const yl = yearLabel(booked)
-      lines.push(
-        `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''}. Booked — FOIA / MFRS / counsel. Not modeled.`,
-      )
-      facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
+      if (bookedIsPreCap(raw, booked)) {
+        lines.push(preCapLine(raw, school.name))
+        facts.push(factLine('FY2025 MFRS Item 44 (institutional, pre-House)', booked.value, { mark: mark(booked.field, 'reported') }))
+      } else {
+        const yl = yearLabel(booked)
+        lines.push(
+          `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''}. Booked — FOIA / MFRS / counsel. Not modeled.`,
+        )
+        facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
+        const aside = preCapLine(raw, school.name)
+        if (aside) lines.push(aside)
+      }
       links.push({ to: schoolHref(school.id, season, 'nil'), label: `${school.name} booked NIL` })
     } else {
       lines.push(pendingLine(school, 'booked NIL', 'nil', bookedPendingField(school, booked, raw)))
+      const aside = preCapLine(raw, school.name)
+      if (aside) lines.push(aside)
       if (intents.has('modeledNil') && school.nil?.modeled) {
         lines.push(
           `Labeled modeled NIL band is ${moneyRange(school.nil.modeled.low, school.nil.modeled.high)} — a conference heuristic, not a filing.`,
@@ -816,11 +843,20 @@ function snapshotAnswer(raw, season, includeAlumni, desk) {
   }
 
   if (booked.value != null) {
-    bits.push(`Booked NIL ${money(booked.value)}${yearLabel(booked) ? ` (${yearLabel(booked)})` : ''}.`)
-    facts.push(factLine('Booked NIL', booked.value, { note: yearLabel(booked) }))
+    if (bookedIsPreCap(raw, booked)) {
+      bits.push(preCapLine(raw, school.name))
+      facts.push(factLine('FY2025 MFRS Item 44 (institutional, pre-House)', booked.value))
+    } else {
+      bits.push(`Booked NIL ${money(booked.value)}${yearLabel(booked) ? ` (${yearLabel(booked)})` : ''}.`)
+      facts.push(factLine('Booked NIL', booked.value, { note: yearLabel(booked) }))
+      const aside = preCapLine(raw, school.name)
+      if (aside) bits.push(aside)
+    }
   } else {
     bits.push('Booked NIL is pending.')
     facts.push('Booked NIL: pending')
+    const aside = preCapLine(raw, school.name)
+    if (aside) bits.push(aside)
   }
 
   if (reported) {
@@ -1332,11 +1368,15 @@ function compareNamedLane(A, B, metric, meta, season, includeAlumni) {
   const lead = same
     ? `${A.school.name} and ${B.school.name} match on ${a.label.toLowerCase()} at ${money(a.value)}.`
     : `${A.school.name} ${a.label.toLowerCase()} is ${money(a.value)}; ${B.school.name} is ${money(b.value)} (${money(Math.abs(delta))} ${delta > 0 ? 'higher at ' + A.school.name : 'higher at ' + B.school.name}).`
+  const item44 =
+    metric === 'bookedNil' && (isItem44Field(A.booked.field) || isItem44Field(B.booked.field))
+      ? ' A cited $0 / Item 44 cell is FY2025 MFRS institutional only (pre-House) — not House Year 1 spent and not total/collective NIL.'
+      : ''
   const caveat =
     metric === 'leftover'
       ? ' Leftover is House cap minus booked House spent when that cell exists — not capacity − House − NIL.'
       : metric === 'bookedNil'
-        ? ' Booked only — modeled stays off this comparison.'
+        ? ` Booked only — modeled stays off this comparison.${item44}`
         : metric === 'capacity'
           ? ' Booked-only capacity (filing stack). Modeled extra alumni is off unless that toggle is on.'
           : ''
@@ -1359,9 +1399,13 @@ function compareReviewerLanes(A, B, season, includeAlumni) {
     { to: schoolHref(B.school.id, season), label: B.school.name },
   ]
   const leftoverPresent = A.leftover.value != null || B.leftover.value != null
+  const item44Bit =
+    !leftoverPresent && (isItem44Field(A.booked.field) || isItem44Field(B.booked.field))
+      ? ' A cited $0 / Item 44 cell is FY2025 MFRS institutional only (pre-House) — not House Year 1 spent and not total/collective NIL.'
+      : ''
   const moneyLane = leftoverPresent
     ? gapLine('Leftover', A.school.name, A.leftover.value, B.school.name, B.leftover.value)
-    : gapLine('Booked NIL', A.school.name, A.booked.value, B.school.name, B.booked.value)
+    : `${gapLine('Booked NIL', A.school.name, A.booked.value, B.school.name, B.booked.value)}${item44Bit}`
   const capLine = gapLine('Booked capacity', A.school.name, A.cap.value, B.school.name, B.cap.value)
 
   const barA = reportedLabel(A.school, A.booked, A.spent)
@@ -1653,17 +1697,26 @@ function nilCoverageAnswer(raw, season, includeAlumni, desk) {
   ]
 
   if (booked.value != null) {
-    const yl = yearLabel(booked)
-    const src = booked.field?.source ? ` Source: ${booked.field.source}.` : ''
-    lines.push(
-      `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`,
-    )
-    facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
+    if (bookedIsPreCap(raw, booked)) {
+      lines.push(preCapLine(raw, school.name))
+      facts.push(factLine('FY2025 MFRS Item 44 (institutional, pre-House)', booked.value, { mark: mark(booked.field, 'reported') }))
+    } else {
+      const yl = yearLabel(booked)
+      const src = booked.field?.source ? ` Source: ${booked.field.source}.` : ''
+      lines.push(
+        `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`,
+      )
+      facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
+      const aside = preCapLine(raw, school.name)
+      if (aside) lines.push(aside)
+    }
   } else {
     lines.push(
       `No. ${school.name} booked NIL is not on the desk — pending. ${pendingWhy(bookedPendingField(school, booked, raw))} Booked NIL is cites only. Empty is not zero.`,
     )
     facts.push('Booked NIL: pending — no public cite')
+    const aside = preCapLine(raw, school.name)
+    if (aside) lines.push(aside)
   }
 
   if (spent != null) {
