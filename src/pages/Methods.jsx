@@ -310,8 +310,8 @@ export default function Methods({ meta: metaProp }) {
         with published sport lines; Oklahoma State “just over $16 million,” booked as
         $16M estimated — not $16,000,001; Texas school-FY $3.2M, only two months of
         House. Georgia, Tennessee, Alabama, Oregon, Utah, UNC, Ohio State, Illinois,
-        Minnesota, Washington, Wisconsin, Iowa State, Virginia, and Ole Miss FY2025 Item 44 $0
-        from the cited filings. Kentucky FY2025 $0 is not booked — no public MFRS PDF
+        Minnesota, Washington, Wisconsin, Iowa State, Virginia, Ole Miss, and Colorado FY2025 Item 44 $0
+        from the cited filings (Colorado via USA TODAY / Brent Schrotenboer, hosted MFRS PDF). Kentucky FY2025 $0 is not booked — no public MFRS PDF
         on the desk; the $18M counsel cell stays).
       </p>
       <p>
@@ -646,7 +646,7 @@ export default function Methods({ meta: metaProp }) {
         UCLA and Cal 2025, Texas 2024 pre-cap and 2025, Penn State and Oklahoma State
         2024 pre-cap, and the cited FY2025 Item 44 $0 cells at Georgia, Tennessee,
         Alabama, Oregon, Utah, UNC, Ohio State, Illinois, Minnesota, Washington,
-        Wisconsin, Iowa State, Virginia, and Ole Miss). Else the pot is the already-on-desk school modeled band —
+        Wisconsin, Iowa State, Virginia, Ole Miss, and Colorado). Else the pot is the already-on-desk school modeled band —
         the conference heuristic, not a new national model. We spread that pot with
         the existing named-player unit card and sum by position. Years without a named roster file (today: 2022 and 2025)
         use the same position rate card, labeled as a rate-card year. Every position
