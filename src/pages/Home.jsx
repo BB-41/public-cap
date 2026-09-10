@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { money, moneyRange } from '../lib/format.js'
-import { leadBookedNil, leadHouseRemaining } from '../lib/compute.js'
+import { item44Compact, leadBookedNil, leadHouseRemaining } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
 import SeasonPicker from '../components/SeasonPicker.jsx'
@@ -106,6 +106,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
           nil: booked.value,
           nilCarry: booked.carry,
           nilLabel: booked.label,
+          nilFrame: item44Compact(booked.field),
           leftover: leftover.value,
           leftoverField: leftover.field,
           leftoverLabel: leftover.label,
@@ -239,8 +240,8 @@ export default function Home({ schools, house, houseField, season, setSeason, in
                   ) : (
                     <>
                       {money(r.nil)}
-                      {yearCompact(r.leftoverField, r.nilLabel) ? (
-                        <div className="term-compact">{yearCompact(r.leftoverField, r.nilLabel)}</div>
+                      {r.nilFrame || yearCompact(r.leftoverField, r.nilLabel) ? (
+                        <div className="term-compact">{r.nilFrame || yearCompact(r.leftoverField, r.nilLabel)}</div>
                       ) : null}
                     </>
                   )}

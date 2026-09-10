@@ -1,7 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
-import { collectSources, collective990Cells, hasVal, leadBookedNil, leadHouseRemaining } from '../lib/compute.js'
+import {
+  collectSources,
+  collective990Cells,
+  hasVal,
+  isItem44Field,
+  ITEM44_COMPANION_EYEBROW,
+  ITEM44_COMPANION_LEDE,
+  leadBookedNil,
+  leadHouseRemaining,
+} from '../lib/compute.js'
 import {
   rosterEstimateCites,
   rosterEstimateDisplay,
@@ -660,6 +669,15 @@ function Field({ field, fallback = '—' }) {
         {field.asOf && <span>as of {field.asOf} · </span>}
         <span className="conf-label">{field.confidence}</span>
         {field.source && <span> · {field.source}</span>}
+        {field.url && (
+          <span>
+            {' '}
+            ·{' '}
+            <a className="ext" href={field.url} target="_blank" rel="noreferrer">
+              filing ↗
+            </a>
+          </span>
+        )}
       </div>
       {field.notes && <div className="field-notes">{field.notes}</div>}
       {field.had?.value != null && (
@@ -852,10 +870,17 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           Official institutional NIL when a FOIA, MFRS, or counsel filing exists — the public stand-in for an NIL budget.
           Collective 990 payout is a separate cited lane below. Empty means pending, not zero.
         </p>
+        {isItem44Field(s.nil.booked) && (
+          <>
+            <div className="eyebrow">{ITEM44_COMPANION_EYEBROW}</div>
+            <p className="lede tight">{ITEM44_COMPANION_LEDE}</p>
+          </>
+        )}
         <Field field={s.nil.booked} fallback="Empty / pending. FOIA, MFRS institutional NIL, or counsel spent totals only. Official House / Item 44 number when it exists. Collective 990 is a separate lane below." />
         {hasVal(s.nil.preCap) && (
           <div className="subfield">
-            <div className="eyebrow">Pre-cap institutional NIL (does not count against House)</div>
+            <div className="eyebrow">{ITEM44_COMPANION_EYEBROW}</div>
+            <p className="lede tight">{ITEM44_COMPANION_LEDE}</p>
             <Field field={s.nil.preCap} />
           </div>
         )}
@@ -882,6 +907,11 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             <div><span className="eyebrow">House note</span><strong className="house-note">{house == null ? 'No House cap (pre-settlement)' : houseField.confidence}</strong></div>
           )}
         </div>
+        {isItem44Field(s.nil.booked) && (
+          <p className="fine">
+            NIL ratios on this season use the FY2025 MFRS Item 44 institutional line — not House Year 1 spent and not total/collective NIL.
+          </p>
+        )}
       </section>
 
       <IndustryRosterEstimateLane

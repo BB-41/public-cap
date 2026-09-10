@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, pct, winsPerM } from '../lib/format.js'
-import { val } from '../lib/compute.js'
+import { hasVal, isItem44Field, ITEM44_COMPANION_EYEBROW, ITEM44_COMPANION_LEDE, val } from '../lib/compute.js'
 import {
   compareDiffTone,
   formatCompareDiff,
@@ -49,6 +49,9 @@ function metricDisplay(m, school, house) {
   if (m.show) return m.show(school)
   const v = m.get(school)
   if (v == null) return m.key === 'house' && house == null ? 'no House cap' : 'pending'
+  if (m.key === 'nil' && isItem44Field(school.nil?.booked)) {
+    return `${money(v)} · Item 44 pre-House`
+  }
   return money(v)
 }
 
@@ -261,7 +264,15 @@ function SchoolDrill({ school, metric, house, houseField, season, view, includeA
       ) : metric.key === 'nil' ? (
         <>
           <p className="drill-kicker">Booked</p>
+          {isItem44Field(school.nil?.booked) && <p className="drill-notes">{ITEM44_COMPANION_LEDE}</p>}
           <DrillNote field={school.nil?.booked} exact={school._ratios.nil == null ? null : moneyExact(school._ratios.nil)} empty={school.nil?.booked?.notes || 'No booked FOIA / MFRS / counsel figure. Collective 990 is a separate lane.'} />
+          {hasVal(school.nil?.preCap) && (
+            <>
+              <p className="drill-kicker">{ITEM44_COMPANION_EYEBROW}</p>
+              <p className="drill-notes">{ITEM44_COMPANION_LEDE}</p>
+              <DrillNote field={school.nil.preCap} />
+            </>
+          )}
           <p className="drill-kicker">Modeled range</p>
           {school.nil?.modeled ? (
             <DrillNote

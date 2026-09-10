@@ -4,7 +4,7 @@
  */
 import { readFileSync } from 'node:fs'
 import { applySeason } from '../src/lib/seasons.js'
-import { leadBookedNil, leadHouseRemaining, leftoverWaterfall, houseRemaining, nilBooked, ratios, computeCapacity } from '../src/lib/compute.js'
+import { isItem44Field, leadBookedNil, leadHouseRemaining, leftoverWaterfall, houseRemaining, nilBooked, ratios, computeCapacity } from '../src/lib/compute.js'
 import { enrichSchools } from '../src/lib/enrich.js'
 
 const data = JSON.parse(readFileSync(new URL('../data/schools.json', import.meta.url), 'utf8'))
@@ -56,9 +56,22 @@ const colo26 = applySeason(data.schools.find((s) => s.id === 'colorado'), 2026)
 ok(leadBookedNil(colo26).value == null, 'colorado 2026 lead booked stays pending — Item 44 is not House Year 1')
 ok(leadHouseRemaining(colo26).value == null, 'colorado 2026 leftover stays empty')
 ok(colo26.nil.year1Lead == null, 'colorado 2026 has no year1Lead')
+ok(colo26.nil.preCap?.value === 0, 'colorado 2026 keeps the FY2025 Item 44 companion cell')
+ok(/not House Year 1 spent/i.test(colo26.nil.preCap.source), 'colorado 2026 preCap source refuses House spent')
+ok(/\$0 institutional, pre-House/i.test(colo26.nil.booked.notes), 'colorado 2026 pending booked points at Item 44 $0 as companion')
+ok(!isItem44Field(colo26.nil.booked), 'colorado 2026 pending booked is not treated as the Item 44 cell')
+ok(isItem44Field(colo26.nil.preCap), 'colorado 2026 preCap is the Item 44 cell')
 const colo24 = applySeason(data.schools.find((s) => s.id === 'colorado'), 2024)
 ok(leadBookedNil(colo24).value === 0, 'colorado 2024 overlay books the FY2025 Item 44 $0 cell')
 ok(leadHouseRemaining(colo24).value == null, 'colorado 2024 leftover stays empty')
+ok(/Item 44/i.test(colo24.nil.booked.source), 'colorado 2024 booked source is still Item 44')
+ok(/not House Year 1 spent/i.test(colo24.nil.booked.notes), 'colorado 2024 booked notes refuse House spent')
+ok(colo24.nil.preCap == null, 'colorado 2024 does not double-print preCap')
+const colo24Fall = leftoverWaterfall(colo24, computeCapacity(colo24), false)
+ok(
+  colo24Fall.steps.some((step) => step.key === 'nil' && /Item 44/i.test(step.label)),
+  'colorado 2024 waterfall labels the $0 step as Item 44, not bare booked NIL',
+)
 
 const ky24 = applySeason(data.schools.find((s) => s.id === 'kentucky'), 2024)
 ok(leadBookedNil(ky24).value == null, 'kentucky 2024 booked stays pending')
