@@ -131,7 +131,7 @@ export function nilBooked(school) {
 
 /** FY2025 MFRS Item 44 companion cell — institutional only, not House Year 1 spent. */
 export function isItem44Field(field) {
-  if (!field) return false
+  if (!field || field.value == null) return false
   return /item 44/i.test(`${field.source || ''} ${field.notes || ''}`)
 }
 
@@ -317,7 +317,9 @@ export function leftoverWaterfall(school, cap, includeAlumni = false) {
     steps.push({
       key: 'nil',
       op: 'cited',
-      label: booked.label ? `Booked NIL · ${booked.label}` : 'Booked NIL',
+      label: isItem44Field(booked.field)
+        ? 'FY2025 Item 44 (institutional, pre-House)'
+        : booked.label ? `Booked NIL · ${booked.label}` : 'Booked NIL',
       value: booked.value,
       field: booked.field,
       hash: 'nil',
