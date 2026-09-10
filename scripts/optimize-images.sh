@@ -5,10 +5,10 @@ root="$(cd "$(dirname "$0")/.." && pwd)"
 tmp="$(mktemp -d)"
 trap 'rm -rf "$tmp"' EXIT
 
-# Mast mark is 92×92 CSS. Source is 1536×1024. Keep aspect; 3× is enough.
+# Mast mark is 92×92 CSS. Source is a square circular crop of the gold PC ring.
 ffmpeg -y -hide_banner -loglevel error \
   -i "$root/public/logo-pc.png" \
-  -vf "scale=276:-1" \
+  -vf "scale=276:276" \
   -frames:v 1 \
   -compression_level 100 \
   "$tmp/logo-pc.png"
