@@ -2,7 +2,7 @@
  * Stamp / step-tape / House-remaining honesty.
  * Run: node scripts/verify-desk-calcs.mjs
  */
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { applySeason } from '../src/lib/seasons.js'
 import { computeCapacity, houseRemaining, leftoverWaterfall, val } from '../src/lib/compute.js'
 import {
@@ -422,6 +422,13 @@ ok(byId['florida-state'].nil.preCap.value === 0, 'Florida State Item 44 $0')
 ok(byId.kansas.nil.preCap.value === 0, 'Kansas Item 44 $0')
 ok(byId.missouri.nil.preCap.value === 0, 'Missouri Item 44 $0')
 ok(byId['mississippi-state'].nil.preCap.value === 0, 'Mississippi State Item 44 $0')
+ok(byId.colorado.nil.preCap.value === 0, 'Colorado Item 44 $0')
+ok(byId.colorado.nil.booked.value == null, 'Colorado House booked stays pending')
+ok(byId.colorado.nil.houseRemaining == null, 'Colorado leftover stays empty — Item 44 is not House Year 1')
+ok(/USA TODAY/i.test(byId.colorado.nil.preCap.source), 'Colorado Item 44 credits USA TODAY')
+ok(/Schrotenboer/i.test(byId.colorado.nil.preCap.source), 'Colorado Item 44 credits Schrotenboer')
+ok(byId.colorado.nil.preCap.url === '/colorado-fy2025-ncaa-mfrs.pdf', 'Colorado Item 44 cites the hosted MFRS PDF')
+ok(existsSync(new URL('../public/colorado-fy2025-ncaa-mfrs.pdf', import.meta.url)), 'hosted Colorado FY2025 MFRS PDF is on the public path')
 ok(byId.kentucky.nil.preCap?.value == null, 'Kentucky Item 44 stays empty so 2024 overlay does not mint House $0')
 ok(byId.georgia.coachesByYear['2026'].football.pay.value === 13_003_000, 'Smart 2026 FOIA $13.003M')
 ok(!isUsaToday(byId.georgia.coachesByYear['2026'].football.pay), 'Smart 2026 is not USA TODAY 2025-10-08')

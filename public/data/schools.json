@@ -66,7 +66,7 @@
       "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions.",
       "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school cells stay pending.",
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
-      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (TPR: $13.5M House Year 1 YTD Jul 2025–Mar 2026). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
+      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (TPR: $13.5M House Year 1 YTD Jul 2025–Mar 2026). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
       "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
       "Coach contract PDFs linked only when a school, state, board, or newsroom host posted the actual file (HTTP 200). Public-school buyouts prefer that file; articles are fallback only when no current file is loaded. Stale hire packets are not treated as the current deal. Private-school blanks stay pending. No invented URLs.",
       "Coach contract terms (through-year / years remaining) are cited only from employment agreements, board packets, or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending.",
@@ -89856,7 +89856,16 @@
           "source": null,
           "url": null,
           "asOf": null,
-          "notes": "No FOIA / MFRS institutional NIL or collective 990 figure located. Band left pending."
+          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk. FY2025 MFRS Item 44 is booked on nil.preCap."
+        },
+        "preCap": {
+          "value": 0,
+          "confidence": "reported",
+          "source": "USA TODAY / Brent Schrotenboer — Colorado FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share $0",
+          "url": "/colorado-fy2025-ncaa-mfrs.pdf",
+          "asOf": "2026-09-10",
+          "fiscalYear": "FY2025",
+          "notes": "USA TODAY’s Brent Schrotenboer confirmed Item 44 is $0 (email, Sept. 10, 2026) and authorized credit plus hosting the FY2025 MFRS PDF he provided (CU NCAA financial report FY 2025.pdf). Hosted at /colorado-fy2025-ncaa-mfrs.pdf. Pages 16 / 74 / 93 print Item 44 as $0 (pre-House, year ended Jun 30 2025). Booked $0 because the report shows $0 — not an invented blank. Does not count against the 2025-26 House cap. Does not replace a House Year 1 spent total — that cell stays pending unless separately booked."
         }
       },
       "coaches": {

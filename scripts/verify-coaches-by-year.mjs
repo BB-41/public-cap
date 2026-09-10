@@ -253,7 +253,7 @@ ok(byId.louisville.nil?.booked?.value != null, 'Louisville booked NIL untouched'
 ok(byId.kentucky.nil?.booked?.value != null, 'Kentucky booked NIL untouched')
 ok(byId.ucla.nil?.booked?.value != null, 'UCLA booked NIL untouched')
 ok(byId.california.nil?.booked?.value != null, 'Cal booked NIL untouched')
-for (const sid of ['georgia', 'tennessee', 'alabama', 'oregon', 'utah', 'north-carolina', 'ole-miss']) {
+for (const sid of ['georgia', 'tennessee', 'alabama', 'oregon', 'utah', 'north-carolina', 'ole-miss', 'colorado']) {
   ok(byId[sid].nil?.preCap?.value === 0, `${sid} Item 44 $0 untouched`)
 }
 ok(chair('auburn', 2026).pay.value === 6_750_000, 'Auburn 2026 Golesh file $6.75M')

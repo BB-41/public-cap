@@ -1,8 +1,8 @@
 {
   "meta": {
     "product": "Public Cap desk tape",
-    "asOf": "2026-08-28",
-    "itemCount": 377,
+    "asOf": "2026-09-10",
+    "itemCount": 378,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -10,6 +10,21 @@
     ]
   },
   "items": [
+    {
+      "id": "colorado-precap-item44-fy2025",
+      "date": "2026-09-10",
+      "school": "colorado",
+      "schoolName": "Colorado",
+      "kind": "filing",
+      "headline": "Colorado FY2025 NCAA Membership Financial Report Item 44 Institutional NIL Revenue Share is $0. Cite: USA TODAY / Brent Schrotenboer, who provided the MFRS PDF and authorized hosting + credit.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "USA TODAY / Brent Schrotenboer — hosted Colorado FY2025 NCAA MFRS PDF",
+        "url": "/colorado-fy2025-ncaa-mfrs.pdf"
+      },
+      "field": "nil.preCap"
+    },
     {
       "id": "illinois-conference-exit-bigten-gor-no-cash-fee",
       "date": "2024-09-01",
