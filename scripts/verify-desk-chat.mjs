@@ -19,6 +19,7 @@ const desk = JSON.parse(readFileSync(join(root, 'data/schools.json'), 'utf8'))
 const tv = JSON.parse(readFileSync(join(root, 'public/data/tv.json'), 'utf8'))
 const rosters = JSON.parse(readFileSync(join(root, 'public/data/rosters-2026.json'), 'utf8'))
 const coachFa = JSON.parse(readFileSync(join(root, 'public/data/coach-fa.json'), 'utf8'))
+const layers = JSON.parse(readFileSync(join(root, 'public/data/layers.json'), 'utf8'))
 const app = readFileSync(join(root, 'src/App.jsx'), 'utf8')
 const home = readFileSync(join(root, 'src/pages/Home.jsx'), 'utf8')
 const indexHtml = readFileSync(join(root, 'index.html'), 'utf8')
@@ -32,7 +33,7 @@ function ok(cond, msg) {
 }
 
 function ask(q, extra = {}) {
-  return answerDeskQuestion(q, { desk, tv, rosters, coachFa, season: 2026, ...extra })
+  return answerDeskQuestion(q, { desk, tv, rosters, coachFa, layers, season: 2026, ...extra })
 }
 
 ok(desk.schools.length === 68, '68 schools in the book')
@@ -284,6 +285,8 @@ ok(/overhang|liability/i.test(buy.text) && /not yearly spend/i.test(buy.text), '
 ok(SUGGESTED_PROMPTS.some((p) => /What NIL do you have for Texas/i.test(p)), 'suggested prompt: Texas NIL coverage')
 ok(SUGGESTED_PROMPTS.some((p) => /missing for SMU/i.test(p)), 'suggested prompt: SMU missing')
 ok(SUGGESTED_PROMPTS.some((p) => /booked vs modeled vs pending/i.test(p)), 'suggested prompt: marks')
+ok(SUGGESTED_PROMPTS.some((p) => /jersey|naming|patch/i.test(p)), 'suggested prompt: jersey / naming')
+ok(SUGGESTED_PROMPTS.some((p) => /difference between Louisville and Kentucky/i.test(p)), 'suggested prompt: two-school difference')
 
 const louRaw = desk.schools.find((s) => s.id === 'louisville')
 const lou26 = applySeason(louRaw, 2026)
@@ -303,6 +306,97 @@ ok(chatUi.includes('SUGGESTED_PROMPTS'), 'UI shows suggested prompts')
 ok(!/On3/.test(chatLib) || /does not carry On3/.test(chatLib), 'engine copy does not promote On3')
 ok(!chatLib.includes('openai') && !chatLib.includes('api.openai') && !chatLib.includes('ANTHROPIC'), 'no hosted LLM path')
 ok(!chatUi.includes('openai'), 'UI has no LLM key field')
+ok(chatUi.includes('loadLayers') || chatUi.includes('layers:'), 'chat loads layers.json for apparel')
+
+const fuzzyGa = ask('Tell me about Georgia')
+ok(/capacity/i.test(fuzzyGa.text), `fuzzy Georgia names capacity: ${fuzzyGa.text}`)
+ok(/pending/i.test(fuzzyGa.text), 'fuzzy Georgia keeps pending holes')
+ok(/booked NIL/i.test(fuzzyGa.text), 'fuzzy Georgia names booked NIL')
+ok(/survey|modeled/i.test(fuzzyGa.text), 'fuzzy Georgia labels reported NIL lane')
+ok(!/I can look up booked cells/i.test(fuzzyGa.text), 'fuzzy Georgia is not the miss wall')
+ok(fuzzyGa.links.some((l) => l.to.includes('/school/georgia')), 'fuzzy Georgia links the school page')
+ok(!/leftover is only computed when a booked House spent cell exists\. We do not invent leftover from a cap plan/i.test(fuzzyGa.text), 'fuzzy Georgia is not the leftover lecture')
+
+const jerseyGa = ask("What's Georgia's jersey patch deal?")
+ok(/Nike/i.test(jerseyGa.text), `Georgia jersey names Nike: ${jerseyGa.text}`)
+ok(/pending/i.test(jerseyGa.text), 'Georgia jersey dollar pending')
+ok(/jersey|logo|patch/i.test(jerseyGa.text), 'Georgia jersey mentions the cite')
+ok(!/40\.8|\$40/.test(jerseyGa.text), 'Georgia jersey does not book the expired FOIA')
+ok(/not leftover/i.test(jerseyGa.text) && /not reported NIL/i.test(jerseyGa.text), 'Georgia jersey stays off leftover / reported NIL')
+ok(!/leftover is \$/.test(jerseyGa.text), 'Georgia jersey invents no leftover dollar')
+
+const tnNike = ask("What's Tennessee's Nike deal?")
+ok(/Adidas/i.test(tnNike.text), `Tennessee names Adidas: ${tnNike.text}`)
+ok(/pending/i.test(tnNike.text), 'Tennessee apparel dollar pending')
+ok(/not disclosed|pending/i.test(tnNike.text), 'Tennessee says terms were not disclosed or pending')
+ok(!/100/.test(tnNike.text), 'Tennessee does not print $100M chatter')
+ok(/not leftover/i.test(tnNike.text), 'Tennessee apparel is not leftover')
+ok(!/House spent is \$|leftover is \$/.test(tnNike.text), 'Tennessee apparel invents no leftover / spent dollar')
+
+const kyName = ask("What's Kentucky's stadium naming rights?")
+ok(/Kroger/i.test(kyName.text), `Kentucky naming names Kroger: ${kyName.text}`)
+ok(/\$1\.85M|\$1,850,000|1,850,000/.test(kyName.text), `Kentucky naming prints the cited annual: ${kyName.text}`)
+ok(/not leftover/i.test(kyName.text), 'Kentucky naming stays off leftover')
+
+const txAla = ask("What's the difference between Texas and Alabama?")
+ok(/capacity/i.test(txAla.text), `difference names capacity: ${txAla.text}`)
+ok(/higher/i.test(txAla.text), 'difference says who is higher')
+ok(/pending/i.test(txAla.text), 'difference pending where a cell is empty')
+ok(!/leftover cell is pending, so the desk will not compare/i.test(txAla.text), 'difference is not leftover-only refuse')
+ok(/survey|modeled/i.test(txAla.text), 'difference labels reported NIL')
+ok(!/I can look up booked cells/i.test(txAla.text), 'difference is not the miss wall')
+ok(txAla.links.some((l) => l.to.startsWith('/compare')), 'difference links /compare')
+
+const louKyDiff = ask("What's the difference between Louisville and Kentucky?")
+ok(/capacity/i.test(louKyDiff.text), 'Louisville / Kentucky difference names capacity')
+ok(/leftover|booked NIL/i.test(louKyDiff.text), 'Louisville / Kentucky difference names leftover or booked NIL')
+ok(/Kentucky/.test(louKyDiff.text) && /higher/.test(louKyDiff.text), 'Louisville / Kentucky difference says who is higher')
+
+const jerseyMiss = ask('jersey patch')
+ok(!/I can look up booked cells/i.test(jerseyMiss.text), 'jersey miss is not the lecture wall')
+ok(jerseyMiss.text.split(/[.!?]/).filter(Boolean).length <= 2, `jersey miss is one sentence: ${jerseyMiss.text}`)
+ok(jerseyMiss.suggested.some((p) => /jersey|naming|patch/i.test(p)), 'jersey miss suggests a jersey/naming prompt')
+ok(jerseyMiss.suggested.some((p) => /Louisville/i.test(p)), 'jersey miss includes a working example')
+
+const blankMiss = ask('asdfasdf')
+ok(!/I can look up booked cells/i.test(blankMiss.text), 'total miss is not the lecture wall')
+ok(blankMiss.suggested.some((p) => /jersey|naming|patch/i.test(p)), 'total miss offers jersey/naming')
+ok(blankMiss.suggested.some((p) => /difference/i.test(p)), 'total miss offers a two-school difference')
+ok(blankMiss.suggested.some((p) => /reported NIL/i.test(p)), 'total miss offers reported NIL')
+ok(blankMiss.suggested.some((p) => /Louisville/i.test(p)), 'total miss includes a working example')
+
+ok(matchSchools('Bama leftover', desk.schools)[0] === 'alabama', 'Bama is Alabama')
+ok(matchSchools('the Tide leftover', desk.schools)[0] === 'alabama', 'Tide is Alabama')
+ok(matchSchools('Texas vs Bama', desk.schools).join(',') === 'texas,alabama', 'Texas vs Bama keeps question order')
+
+const juxta = ask('Texas Alabama')
+ok(/capacity/i.test(juxta.text) && /higher/i.test(juxta.text), `juxtaposed schools compare: ${juxta.text}`)
+ok(!/Ask a Power 4 school/i.test(juxta.text), 'Texas Alabama is not the miss wall')
+ok(/Texas/.test(juxta.text) && /Alabama/.test(juxta.text), 'Texas Alabama names both')
+
+const stack = ask('how does Texas stack up against Alabama')
+ok(/capacity/i.test(stack.text) && /higher/i.test(stack.text), `stack-up compare: ${stack.text}`)
+ok(!/Ask a Power 4 school/i.test(stack.text), 'stack-up is not the miss wall')
+
+const orMore = ask('which is higher Texas or Alabama')
+ok(/higher/i.test(orMore.text) && /capacity|leftover|reported NIL/i.test(orMore.text), `or-higher compare: ${orMore.text}`)
+ok(!/Ask a Power 4 school/i.test(orMore.text), 'which-is-higher is not the miss wall')
+
+const vsBama = ask('Texas vs Bama')
+ok(/Texas/.test(vsBama.text) && /Alabama/.test(vsBama.text), `Texas vs Bama names both: ${vsBama.text}`)
+ok(/higher|pending/i.test(vsBama.text), 'Texas vs Bama prints a gap or pending')
+ok(!/Ask a Power 4 school/i.test(vsBama.text), 'Texas vs Bama is not the miss wall')
+
+const bamaLeft = ask("What's Bama leftover?")
+ok(/pending/i.test(bamaLeft.text), `Bama leftover stays pending: ${bamaLeft.text}`)
+ok(!/leftover is \$/.test(bamaLeft.text), 'Bama leftover invents no leftover dollar')
+ok(bamaLeft.links.some((l) => l.to.includes('/school/alabama')), 'Bama leftover links Alabama')
+
+const kroger = ask('Kroger Field')
+ok(/Kentucky/i.test(kroger.text) && /Kroger/i.test(kroger.text), `Kroger Field names Kentucky: ${kroger.text}`)
+ok(/\$1,850,000|1,850,000/.test(kroger.text), 'Kroger Field prints the cited annual')
+ok(/not leftover/i.test(kroger.text), 'Kroger Field stays on apparel/naming')
+ok(!/Ask a Power 4 school/i.test(kroger.text), 'Kroger Field is not the miss wall')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} desk-chat checks passed`)
