@@ -80,8 +80,8 @@ function AmountCell({ amount, confidence, empty = 'pending' }) {
   )
 }
 
-function GameNotes({ game, book }) {
-  const cites = gameCites(book, game)
+function GameNotes({ game, book, extraCites = false }) {
+  const cites = extraCites ? gameCites(book, game).slice(1) : []
   return (
     <>
       {game.notes ? <div className="term-compact">{game.notes}</div> : null}
@@ -142,7 +142,7 @@ function GuaranteeTable({ rows, book, schools, season, sort, onSort, compact }) 
                 {!compact ? <td>{kindLabel(g.kind)}</td> : null}
                 <td>
                   <SourceLink source={cite} />
-                  {!compact ? <GameNotes game={g} book={book} /> : g.notes ? <div className="term-compact">{g.notes}</div> : null}
+                  {!compact ? <GameNotes game={g} book={book} extraCites /> : g.notes ? <div className="term-compact">{g.notes}</div> : null}
                 </td>
               </tr>
             )
