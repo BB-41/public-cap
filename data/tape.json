@@ -1,15 +1,317 @@
 {
   "meta": {
     "product": "Public Cap desk tape",
-    "asOf": "2026-09-10",
-    "itemCount": 378,
+    "asOf": "2026-09-11",
+    "itemCount": 398,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
-      "Incomplete dates stay year or year-month."
+      "Incomplete dates stay year or year-month.",
+      "Guarantee-game rows are seeded from data/guarantee-games.json FOIA/newsroom contracts. Football guarantee stays distinct from band fees."
     ]
   },
   "items": [
+    {
+      "id": "miami-guarantee-2026-miami-famu",
+      "date": "2026-09-09",
+      "school": "miami",
+      "schoolName": "Miami",
+      "kind": "guarantee-game",
+      "headline": "Miami pays Florida A&M a $720,000 football guarantee; band $40,000 is a separate cell.",
+      "figure": 720000,
+      "figureNote": "football guarantee; band separate",
+      "confidence": "reported",
+      "source": {
+        "label": "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via FOIA",
+        "url": "https://www.tallahassee.com/story/sports/college/famu/2026/09/09/famu-rattlers-football-miami-hurricanes-payout/91592909007/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "texas-am-guarantee-2026-texas-am-missouri-state",
+      "date": "2026-08-13",
+      "school": "texas-am",
+      "schoolName": "Texas A&M",
+      "kind": "guarantee-game",
+      "headline": "Texas A&M pays Missouri State a $1,200,000 football guarantee.",
+      "figure": 1200000,
+      "confidence": "reported",
+      "source": {
+        "label": "KBTX (Aug. 13, 2026) — Texas A&M home nonconference contracts via open records",
+        "url": "https://www.kbtx.com/2026/08/13/texas-am-pay-significantly-less-home-nonconference-football-games/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "texas-am-guarantee-2026-texas-am-citadel",
+      "date": "2026-08-13",
+      "school": "texas-am",
+      "schoolName": "Texas A&M",
+      "kind": "guarantee-game",
+      "headline": "Texas A&M pays The Citadel a $600,000 football guarantee.",
+      "figure": 600000,
+      "confidence": "reported",
+      "source": {
+        "label": "KBTX (Aug. 13, 2026) — Texas A&M home nonconference contracts via open records",
+        "url": "https://www.kbtx.com/2026/08/13/texas-am-pay-significantly-less-home-nonconference-football-games/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "texas-am-guarantee-2026-texas-am-arizona-state",
+      "date": "2026-08-13",
+      "school": "texas-am",
+      "schoolName": "Texas A&M",
+      "kind": "guarantee-game",
+      "headline": "Texas A&M pays Arizona State a $0 football guarantee.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "KBTX (Aug. 13, 2026) — Texas A&M home nonconference contracts via open records",
+        "url": "https://www.kbtx.com/2026/08/13/texas-am-pay-significantly-less-home-nonconference-football-games/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "arizona-state-guarantee-received-2026-texas-am-arizona-state",
+      "date": "2026-08-13",
+      "school": "arizona-state",
+      "schoolName": "Arizona State",
+      "kind": "guarantee-game",
+      "headline": "Arizona State receives a $0 football guarantee from Texas A&M.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "KBTX (Aug. 13, 2026) — Texas A&M home nonconference contracts via open records",
+        "url": "https://www.kbtx.com/2026/08/13/texas-am-pay-significantly-less-home-nonconference-football-games/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "utah-guarantee-2026-utah-idaho",
+      "date": "2026-07-19",
+      "school": "utah",
+      "schoolName": "Utah",
+      "kind": "guarantee-game",
+      "headline": "Utah pays Idaho a $600,000 football guarantee.",
+      "figure": 600000,
+      "confidence": "reported",
+      "source": {
+        "label": "Deseret News (July 19, 2026) — Utah nonconference contracts via public records",
+        "url": "https://www.deseret.com/sports/2026/07/19/utah-utes-football-nonconference-game-contracts-arkansas-utah-state-idaho/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "utah-guarantee-2026-utah-utah-state",
+      "date": "2026-07-19",
+      "school": "utah",
+      "schoolName": "Utah",
+      "kind": "guarantee-game",
+      "headline": "Utah pays Utah State a $600,000 football guarantee.",
+      "figure": 600000,
+      "confidence": "reported",
+      "source": {
+        "label": "Deseret News (July 19, 2026) — Utah nonconference contracts via public records",
+        "url": "https://www.deseret.com/sports/2026/07/19/utah-utes-football-nonconference-game-contracts-arkansas-utah-state-idaho/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "utah-guarantee-2026-utah-arkansas",
+      "date": "2026-07-19",
+      "school": "utah",
+      "schoolName": "Utah",
+      "kind": "guarantee-game",
+      "headline": "Utah pays Arkansas a $250,000 football guarantee.",
+      "figure": 250000,
+      "confidence": "reported",
+      "source": {
+        "label": "Deseret News (July 19, 2026) — Utah nonconference contracts via public records",
+        "url": "https://www.deseret.com/sports/2026/07/19/utah-utes-football-nonconference-game-contracts-arkansas-utah-state-idaho/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "arkansas-guarantee-received-2026-utah-arkansas",
+      "date": "2026-07-19",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "guarantee-game",
+      "headline": "Arkansas receives a $250,000 football guarantee from Utah.",
+      "figure": 250000,
+      "confidence": "reported",
+      "source": {
+        "label": "Deseret News (July 19, 2026) — Utah nonconference contracts via public records",
+        "url": "https://www.deseret.com/sports/2026/07/19/utah-utes-football-nonconference-game-contracts-arkansas-utah-state-idaho/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "kansas-state-guarantee-2026-kansas-state-nicholls",
+      "date": "2026-09-02",
+      "school": "kansas-state",
+      "schoolName": "Kansas State",
+      "kind": "guarantee-game",
+      "headline": "Kansas State pays Nicholls a $500,000 football guarantee.",
+      "figure": 500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Topeka Capital-Journal (Sept. 2, 2026) — Kansas State–Nicholls guarantee contract",
+        "url": "https://www.cjonline.com/story/sports/college/cat-zone/2026/09/02/kansas-state-football-nicholls-payment-guarantee/90961443007/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "nc-state-guarantee-2026-nc-state-richmond",
+      "date": "2026-07-24",
+      "school": "nc-state",
+      "schoolName": "NC State",
+      "kind": "guarantee-game",
+      "headline": "NC State pays Richmond a $400,000 football guarantee.",
+      "figure": 400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Pack Insider (July 24, 2026) — NC State 2026 nonconference contracts via FOIA",
+        "url": "https://packinsider.com/2026/07/24/nc-state-2026-football-non-conference-contracts/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "vanderbilt-guarantee-2026-vanderbilt-nc-state",
+      "date": "2026-07-24",
+      "school": "vanderbilt",
+      "schoolName": "Vanderbilt",
+      "kind": "guarantee-game",
+      "headline": "Vanderbilt pays NC State a $400,000 football guarantee.",
+      "figure": 400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Pack Insider (July 24, 2026) — NC State 2026 nonconference contracts via FOIA",
+        "url": "https://packinsider.com/2026/07/24/nc-state-2026-football-non-conference-contracts/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "nc-state-guarantee-received-2026-vanderbilt-nc-state",
+      "date": "2026-07-24",
+      "school": "nc-state",
+      "schoolName": "NC State",
+      "kind": "guarantee-game",
+      "headline": "NC State receives a $400,000 football guarantee from Vanderbilt.",
+      "figure": 400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Pack Insider (July 24, 2026) — NC State 2026 nonconference contracts via FOIA",
+        "url": "https://packinsider.com/2026/07/24/nc-state-2026-football-non-conference-contracts/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "nc-state-guarantee-2026-nc-state-app-state",
+      "date": "2026-07-24",
+      "school": "nc-state",
+      "schoolName": "NC State",
+      "kind": "guarantee-game",
+      "headline": "NC State pays Appalachian State a $0 football guarantee.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Pack Insider (July 24, 2026) — NC State 2026 nonconference contracts via FOIA",
+        "url": "https://packinsider.com/2026/07/24/nc-state-2026-football-non-conference-contracts/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "duke-guarantee-2026-duke-william-mary",
+      "date": "2026-08-25",
+      "school": "duke",
+      "schoolName": "Duke",
+      "kind": "guarantee-game",
+      "headline": "Duke pays William & Mary a $400,000 football guarantee.",
+      "figure": 400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Fayetteville Observer (Aug. 25, 2026) — Duke nonconference contracts via public records",
+        "url": "https://www.fayobserver.com/story/sports/college/football/2026/08/25/duke-football-nonconference-game-contracts-pay-for-2026-season/91386367007/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "illinois-guarantee-2026-illinois-duke",
+      "date": "2026-08-25",
+      "school": "illinois",
+      "schoolName": "Illinois",
+      "kind": "guarantee-game",
+      "headline": "Illinois pays Duke a $250,000 football guarantee.",
+      "figure": 250000,
+      "confidence": "reported",
+      "source": {
+        "label": "Fayetteville Observer (Aug. 25, 2026) — Duke nonconference contracts via public records",
+        "url": "https://www.fayobserver.com/story/sports/college/football/2026/08/25/duke-football-nonconference-game-contracts-pay-for-2026-season/91386367007/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "duke-guarantee-received-2026-illinois-duke",
+      "date": "2026-08-25",
+      "school": "duke",
+      "schoolName": "Duke",
+      "kind": "guarantee-game",
+      "headline": "Duke receives a $250,000 football guarantee from Illinois.",
+      "figure": 250000,
+      "confidence": "reported",
+      "source": {
+        "label": "Fayetteville Observer (Aug. 25, 2026) — Duke nonconference contracts via public records",
+        "url": "https://www.fayobserver.com/story/sports/college/football/2026/08/25/duke-football-nonconference-game-contracts-pay-for-2026-season/91386367007/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "rutgers-guarantee-2026-rutgers-umass",
+      "date": "2022-10-14",
+      "school": "rutgers",
+      "schoolName": "Rutgers",
+      "kind": "guarantee-game",
+      "headline": "Rutgers pays UMass a $1,550,000 football guarantee.",
+      "figure": 1550000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Oct. 14, 2022) — Rutgers–UMass contract via New Jersey public records",
+        "url": "https://fbschedules.com/rutgers-adds-ohio-umass-to-future-football-schedules/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "ohio-state-guarantee-2026-ohio-state-ball-state",
+      "date": "2020-03-02",
+      "school": "ohio-state",
+      "schoolName": "Ohio State",
+      "kind": "guarantee-game",
+      "headline": "Ohio State pays Ball State a $1,900,000 football guarantee.",
+      "figure": 1900000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (March 2, 2020) — Ohio State–Ball State contract via Ball State public records",
+        "url": "https://fbschedules.com/ball-state-to-play-at-ohio-state-in-2026-at-kentucky-in-2027/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "arizona-guarantee-2026-arizona-nau",
+      "date": "2026-09-04",
+      "school": "arizona",
+      "schoolName": "Arizona",
+      "kind": "guarantee-game",
+      "headline": "Arizona pays Northern Arizona a $550,000 football guarantee.",
+      "figure": 550000,
+      "confidence": "reported",
+      "source": {
+        "label": "Arizona Republic (Sept. 4, 2026) — Arizona–NAU contract via public records",
+        "url": "https://tucson.com/sports/arizonawildcats/article_89e04432-cddd-4d15-9bd8-438d7d687908.html"
+      },
+      "field": "guaranteeGames"
+    },
     {
       "id": "colorado-precap-item44-fy2025",
       "date": "2026-09-10",

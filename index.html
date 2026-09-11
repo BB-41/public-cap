@@ -84,6 +84,9 @@
         } else if (p === '/coach-fa' || p.indexOf('/coach-fa/') === 0) {
           title = 'Coach buyout offsets / free agents — Public Cap'
           desc = 'Residual School A buyout after a firing, plus a labeled modeled School B salary. Offset rules stay booked or cite-only. Empty without a cite — we do not invent remaining principal.'
+        } else if (p === '/guarantee-games') {
+          title = 'Guarantee games — Public Cap'
+          desc = 'How much larger (usually Power 4) schools pay smaller opponents to play them on the 2026 football schedule. Football guarantee stays distinct from band fees. Not House spent, not booked NIL, not coach buyouts. Empty without a FOIA or named newsroom cite.'
         } else if (p === '/compare') {
           title = 'Compare capacity vs House vs NIL — Public Cap'
           desc = 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.'
@@ -121,6 +124,7 @@
         else if (p === '/tape') href = '/data/tape.json'
         else if (p === '/buyout') href = '/data/desk.json'
         else if (p === '/coach-fa' || p.indexOf('/coach-fa/') === 0) href = '/data/coach-fa.json'
+        else if (p === '/guarantee-games') href = '/data/guarantee-games.json'
         if (!href) return
         var l = document.createElement('link')
         l.rel = 'preload'
@@ -158,6 +162,7 @@
           <a href="/tv">TV</a>
           <a href="/buyout">Buyout</a>
           <a href="/coach-fa">Offsets</a>
+          <a href="/guarantee-games">Guarantees</a>
           <a href="/methods">Methods</a>
         </nav>
       </header>
@@ -184,6 +189,7 @@
       </div>
       <footer class="site-foot">
         Capacity is annual, not lifetime. Current-coach buyouts are overhang; paid buyouts are a separate tape.
+        Football guarantees (buy games) are a separate cited lane — not House spent, not booked NIL.
         Booked NIL stays official. Collective 990 is a separate cited lane, not House.
         Modeled NIL is a conference heuristic: House-era
         (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era

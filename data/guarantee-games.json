@@ -1,0 +1,320 @@
+{
+  "meta": {
+    "product": "Public Cap guarantee / buy-game desk",
+    "asOf": "2026-09-11",
+    "season": 2026,
+    "scope": "2026 football game guarantees: how much larger (usually Power 4) schools pay smaller opponents to play them. Football guarantee dollars stay distinct from band / other fees. Empty without a hosted contract or named newsroom FOIA. Not House spent, not booked NIL, not coach buyouts.",
+    "notes": "A buy game (guarantee game) is a one-off or lopsided nonconference date: the home school writes a check so the visitor comes without a return trip, or for less than a true home-and-home. $0 is a real cell only when the contract says $0 (home-and-home / no guarantee). We do not invent dollars. We do not book On3. We do not book social figures that disagree with the FOIA (Miami–FAMU social $740k is not the primary). Band money is a side cell, not the football guarantee. Ticket allotments appear in notes only when the cite names them.",
+    "hunts": [
+      "Ohio State → Ball State $1.9M is booked from FBSchedules (Ball State public-records contract), also named as Week 1’s largest guarantee in the Topeka Capital-Journal Nicholls story. Columbus Dispatch / NBC Sports corroborate the same figure; we did not re-host the PDF.",
+      "Rutgers → UMass $1.55M is booked from FBSchedules (Rutgers OPRA / public-records contract). On the Banks / Yahoo Sports reprint the same OPRA table. The Sports Cast recap is not the primary.",
+      "Kansas State article’s Missouri State $1.2M at Texas A&M is the same KBTX open-records figure already booked on the A&M row — not a second source of dollars."
+    ],
+    "sources": [
+      "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
+      "KBTX (Aug. 13, 2026) — Texas A&M 2026 home nonconference contracts via open records",
+      "Deseret News (July 19, 2026) — Utah 2026 nonconference contracts via public records",
+      "Topeka Capital-Journal (Sept. 2, 2026) — Kansas State–Nicholls contract",
+      "Pack Insider (July 24, 2026) — NC State 2026 nonconference contracts via FOIA",
+      "Fayetteville Observer / USA TODAY Network (Aug. 25, 2026) — Duke–Illinois and Duke–William & Mary contracts via public records",
+      "FBSchedules (Oct. 14, 2022) — Rutgers–UMass contract from Rutgers via state public records",
+      "FBSchedules (March 2, 2020) — Ohio State–Ball State contract from Ball State via state public records",
+      "Arizona Republic (Sept. 4, 2026) — Arizona–NAU contract via public records"
+    ]
+  },
+  "cites": {
+    "tallahassee-democrat-famu-miami-2026": {
+      "id": "tallahassee-democrat-famu-miami-2026",
+      "label": "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via FOIA",
+      "url": "https://www.tallahassee.com/story/sports/college/famu/2026/09/09/famu-rattlers-football-miami-hurricanes-payout/91592909007/",
+      "asOf": "2026-09-09",
+      "confidence": "reported"
+    },
+    "cbs-miami-famu-2026": {
+      "id": "cbs-miami-famu-2026",
+      "label": "CBS Sports — Miami 70-point beatdown; cites the Democrat FOIA ($720k + $40k band)",
+      "url": "https://www.cbssports.com/college-football/news/miami-70-point-beatdown-florida-a-m-indictment-fcs-buy-games/",
+      "asOf": "2026-09",
+      "confidence": "reported"
+    },
+    "kbtx-texas-am-noncon-2026": {
+      "id": "kbtx-texas-am-noncon-2026",
+      "label": "KBTX (Aug. 13, 2026) — Texas A&M home nonconference contracts via open records",
+      "url": "https://www.kbtx.com/2026/08/13/texas-am-pay-significantly-less-home-nonconference-football-games/",
+      "asOf": "2026-08-13",
+      "confidence": "reported"
+    },
+    "deseret-utah-noncon-2026": {
+      "id": "deseret-utah-noncon-2026",
+      "label": "Deseret News (July 19, 2026) — Utah nonconference contracts via public records",
+      "url": "https://www.deseret.com/sports/2026/07/19/utah-utes-football-nonconference-game-contracts-arkansas-utah-state-idaho/",
+      "asOf": "2026-07-19",
+      "confidence": "reported"
+    },
+    "cjonline-kstate-nicholls-2026": {
+      "id": "cjonline-kstate-nicholls-2026",
+      "label": "Topeka Capital-Journal (Sept. 2, 2026) — Kansas State–Nicholls guarantee contract",
+      "url": "https://www.cjonline.com/story/sports/college/cat-zone/2026/09/02/kansas-state-football-nicholls-payment-guarantee/90961443007/",
+      "asOf": "2026-09-02",
+      "confidence": "reported"
+    },
+    "packinsider-ncstate-noncon-2026": {
+      "id": "packinsider-ncstate-noncon-2026",
+      "label": "Pack Insider (July 24, 2026) — NC State 2026 nonconference contracts via FOIA",
+      "url": "https://packinsider.com/2026/07/24/nc-state-2026-football-non-conference-contracts/",
+      "asOf": "2026-07-24",
+      "confidence": "reported"
+    },
+    "fayobserver-duke-noncon-2026": {
+      "id": "fayobserver-duke-noncon-2026",
+      "label": "Fayetteville Observer (Aug. 25, 2026) — Duke nonconference contracts via public records",
+      "url": "https://www.fayobserver.com/story/sports/college/football/2026/08/25/duke-football-nonconference-game-contracts-pay-for-2026-season/91386367007/",
+      "asOf": "2026-08-25",
+      "confidence": "reported"
+    },
+    "fbschedules-rutgers-umass-2026": {
+      "id": "fbschedules-rutgers-umass-2026",
+      "label": "FBSchedules (Oct. 14, 2022) — Rutgers–UMass contract via New Jersey public records",
+      "url": "https://fbschedules.com/rutgers-adds-ohio-umass-to-future-football-schedules/",
+      "asOf": "2022-10-14",
+      "confidence": "reported"
+    },
+    "fbschedules-osu-ballstate-2026": {
+      "id": "fbschedules-osu-ballstate-2026",
+      "label": "FBSchedules (March 2, 2020) — Ohio State–Ball State contract via Ball State public records",
+      "url": "https://fbschedules.com/ball-state-to-play-at-ohio-state-in-2026-at-kentucky-in-2027/",
+      "asOf": "2020-03-02",
+      "confidence": "reported"
+    },
+    "azcentral-arizona-nau-2026": {
+      "id": "azcentral-arizona-nau-2026",
+      "label": "Arizona Republic (Sept. 4, 2026) — Arizona–NAU contract via public records",
+      "url": "https://tucson.com/sports/arizonawildcats/article_89e04432-cddd-4d15-9bd8-438d7d687908.html",
+      "asOf": "2026-09-04",
+      "confidence": "reported"
+    }
+  },
+  "games": [
+    {
+      "id": "2026-miami-famu",
+      "season": 2026,
+      "date": "2026-09-10",
+      "payerSchoolId": "miami",
+      "payeeLabel": "Florida A&M",
+      "payeeSlug": "famu",
+      "amount": 720000,
+      "bandAmount": 40000,
+      "homeSchoolId": "miami",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["tallahassee-democrat-famu-miami-2026", "cbs-miami-famu-2026"],
+      "notes": "One-off buy game at Hard Rock Stadium. Football guarantee $720,000 is distinct from the FAMU Marching 100 band $40,000. Total cash is often reported $760,000. Not the social $740k figure. 2024 date in the same two-game 2020 agreement paid $700,000."
+    },
+    {
+      "id": "2026-texas-am-missouri-state",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "texas-am",
+      "payeeLabel": "Missouri State",
+      "payeeSlug": "missouri-state",
+      "amount": 1200000,
+      "homeSchoolId": "texas-am",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["kbtx-texas-am-noncon-2026"],
+      "notes": "Season opener at Kyle Field. Contract finalized November 2024. One-off buy game — Missouri State left a cheaper Kansas State date for this check."
+    },
+    {
+      "id": "2026-texas-am-citadel",
+      "season": 2026,
+      "date": "2026-10-17",
+      "payerSchoolId": "texas-am",
+      "payeeLabel": "The Citadel",
+      "payeeSlug": "the-citadel",
+      "amount": 600000,
+      "homeSchoolId": "texas-am",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["kbtx-texas-am-noncon-2026"],
+      "notes": "One-off at Kyle Field. Contract signed October 2025."
+    },
+    {
+      "id": "2026-texas-am-arizona-state",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "texas-am",
+      "payeeSchoolId": "arizona-state",
+      "amount": 0,
+      "homeSchoolId": "texas-am",
+      "kind": "home-and-home",
+      "confidence": "reported",
+      "citeIds": ["kbtx-texas-am-noncon-2026"],
+      "notes": "Home-and-home signed in 2018 (then-Pac-12 Arizona State). Contract says no guarantee payment. Return is Sept. 11, 2027 in Tempe, also $0 on this desk. $0 is the cited cell, not pending."
+    },
+    {
+      "id": "2026-utah-idaho",
+      "season": 2026,
+      "date": "2026-09-03",
+      "payerSchoolId": "utah",
+      "payeeLabel": "Idaho",
+      "payeeSlug": "idaho",
+      "amount": 600000,
+      "homeSchoolId": "utah",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["deseret-utah-noncon-2026"],
+      "notes": "Season opener at Rice-Eccles. Idaho receives 300 complimentary tickets and the option to purchase up to (but not limited to) 2,000 visitor-section tickets. Utah also provides one 30-second message on each national/cable telecast."
+    },
+    {
+      "id": "2026-utah-utah-state",
+      "season": 2026,
+      "date": "2026-09-19",
+      "payerSchoolId": "utah",
+      "payeeLabel": "Utah State",
+      "payeeSlug": "utah-state",
+      "amount": 600000,
+      "homeSchoolId": "utah",
+      "kind": "two-for-one",
+      "confidence": "reported",
+      "citeIds": ["deseret-utah-noncon-2026"],
+      "notes": "Battle of the Brothers at Rice-Eccles, part of a two-for-one signed December 2023. Utah State receives 300 complimentary tickets and the option to purchase up to (but not limited to) 2,000 visitor-section tickets. Contract allowed cancel-without-penalty if either school moved conferences; Utah State joined the Pac-12 and Utah kept the date."
+    },
+    {
+      "id": "2026-utah-arkansas",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "utah",
+      "payeeSchoolId": "arkansas",
+      "amount": 250000,
+      "homeSchoolId": "utah",
+      "kind": "home-and-home",
+      "confidence": "reported",
+      "citeIds": ["deseret-utah-noncon-2026"],
+      "notes": "Home-and-home signed July 2019. Utah pays Arkansas $250,000 for the 2026 trip to Rice-Eccles; Arkansas pays Utah the same $250,000 when the Utes go to Fayetteville in 2028 (not a 2026 row). Arkansas receives 400 complimentary tickets and a 2,500-ticket visitor allotment. Series buyout is $2 million per game — a cancellation fee, not this guarantee."
+    },
+    {
+      "id": "2026-kansas-state-nicholls",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "kansas-state",
+      "payeeLabel": "Nicholls",
+      "payeeSlug": "nicholls",
+      "amount": 500000,
+      "homeSchoolId": "kansas-state",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["cjonline-kstate-nicholls-2026"],
+      "notes": "One-off Week 1 at Bill Snyder Family Stadium. Replaced a canceled Missouri State date that had been $450,000. Article also names Ohio State → Ball State ~$1.9M as Week 1’s largest guarantee — that figure is booked on its own FBSchedules FOIA row, not from this story."
+    },
+    {
+      "id": "2026-nc-state-richmond",
+      "season": 2026,
+      "date": "2026-09-11",
+      "payerSchoolId": "nc-state",
+      "payeeLabel": "Richmond",
+      "payeeSlug": "richmond",
+      "amount": 400000,
+      "homeSchoolId": "nc-state",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["packinsider-ncstate-noncon-2026"],
+      "notes": "FCS buy game at Carter-Finley. Richmond receives 300 complimentary tickets and up to 1,000 additional tickets for purchase. Date from NC State’s published 2026 slate (Friday, Sept. 11)."
+    },
+    {
+      "id": "2026-vanderbilt-nc-state",
+      "season": 2026,
+      "date": "2026-09-19",
+      "payerSchoolId": "vanderbilt",
+      "payeeSchoolId": "nc-state",
+      "amount": 400000,
+      "homeSchoolId": "vanderbilt",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["packinsider-ncstate-noncon-2026"],
+      "notes": "NC State at Vanderbilt. Unlike many Power 4 home-and-homes, Vanderbilt pays NC State $400,000 for the trip to Nashville. NC State receives 500 complimentary tickets and up to 3,000 additional tickets for purchase."
+    },
+    {
+      "id": "2026-nc-state-app-state",
+      "season": 2026,
+      "date": "2026-09-26",
+      "payerSchoolId": "nc-state",
+      "payeeLabel": "Appalachian State",
+      "payeeSlug": "app-state",
+      "amount": 0,
+      "homeSchoolId": "nc-state",
+      "kind": "no-guarantee",
+      "confidence": "reported",
+      "citeIds": ["packinsider-ncstate-noncon-2026"],
+      "notes": "App State at Carter-Finley. Contract says no guarantee payment either way. Visitor allotment: 500 complimentary tickets and up to 2,000 additional for purchase. $0 is the cited cell, not pending."
+    },
+    {
+      "id": "2026-duke-william-mary",
+      "season": 2026,
+      "date": "2026-09-26",
+      "payerSchoolId": "duke",
+      "payeeLabel": "William & Mary",
+      "payeeSlug": "william-mary",
+      "amount": 400000,
+      "homeSchoolId": "duke",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fayobserver-duke-noncon-2026"],
+      "notes": "One-off at Wallace Wade. Payment due by Feb. 15, 2027. William & Mary receives 300 complimentary tickets. Agreement signed Aug. 7, 2023. Tulane (season opener) contract was not available — private school; that date stays empty."
+    },
+    {
+      "id": "2026-illinois-duke",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "illinois",
+      "payeeSchoolId": "duke",
+      "amount": 250000,
+      "homeSchoolId": "illinois",
+      "kind": "home-and-home",
+      "confidence": "reported",
+      "citeIds": ["fayobserver-duke-noncon-2026"],
+      "notes": "Duke at Illinois (Memorial Stadium). Home-and-home signed in 2015: Illinois pays Duke $250,000 for 2026; the same $250,000 applied when Illinois visited Duke in 2025. The 2025 return payment is not a 2026 row."
+    },
+    {
+      "id": "2026-rutgers-umass",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "rutgers",
+      "payeeLabel": "UMass",
+      "payeeSlug": "umass",
+      "amount": 1550000,
+      "homeSchoolId": "rutgers",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-rutgers-umass-2026"],
+      "notes": "One-off at SHI Stadium. FBSchedules obtained the Rutgers contract via New Jersey public records. On the Banks / Yahoo Sports reprint the same OPRA table (UMass $1.55 million and 500 complimentary tickets). Not booked from The Sports Cast recap."
+    },
+    {
+      "id": "2026-ohio-state-ball-state",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "ohio-state",
+      "payeeLabel": "Ball State",
+      "payeeSlug": "ball-state",
+      "amount": 1900000,
+      "homeSchoolId": "ohio-state",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-osu-ballstate-2026", "cjonline-kstate-nicholls-2026"],
+      "notes": "Week 1 at Ohio Stadium. FBSchedules obtained the Ball State contract via Indiana public records. Topeka Capital-Journal names this as Week 1’s largest 2026 guarantee (~$1.9M). Not invented from a social figure."
+    },
+    {
+      "id": "2026-arizona-nau",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "arizona",
+      "payeeLabel": "Northern Arizona",
+      "payeeSlug": "nau",
+      "amount": 550000,
+      "homeSchoolId": "arizona",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["azcentral-arizona-nau-2026"],
+      "notes": "Season opener at Casino Del Sol Stadium. Arizona Republic obtained the contract via public records. In-state FCS date; Arizona also hosts NAU in 2027 and 2030–33 on the same partnership."
+    }
+  ]
+}

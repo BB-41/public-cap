@@ -206,6 +206,14 @@ export default function Methods({ meta: metaProp }) {
           school after a new job at B/C. Comp band is a USA TODAY Total Pay snapshot, labeled modeled /
           reported database — not a FOIA PDF. We do not invent today’s remaining principal.
         </dd>
+        <dt>Guarantee games</dt>
+        <dd>
+          How much a larger school (usually Power 4) pays a smaller opponent to play them
+          on the football schedule, on <code>/guarantee-games</code>. Football guarantee
+          dollars stay distinct from band or other fees. $0 only when the contract says $0.
+          Not House spent, not booked NIL, not a coach buyout. Empty without a hosted
+          contract or named newsroom FOIA. We do not invent dollars.
+        </dd>
         <dt>Offset credit</dt>
         <dd>What School A would subtract if the employment agreement offsets new pay. Zero when the file says no offset. Dollar-for-dollar overlap with a School B salary is only computed when a sitting-HC clause is on the desk.</dd>
         <dt>Net cost to A</dt>
@@ -249,7 +257,7 @@ export default function Methods({ meta: metaProp }) {
         <dt>What backs this (earnings corroboration)</dt>
         <dd>A quiet check on the official average, not a second alumni net-worth engine. Scorecard stays the earnings number. Under it we cite BLS Occupational Employment and Wage Statistics for 2–4 occupations that match a simple career mix (flagship public, tech/engineering, or private elite) — national May 2025 medians/means, plus the state OEWS page. Those wages are reported BLS figures and estimated as a mix for that school type; they are not this school’s alumni. Where a state open-payroll site is obvious (Texas, Ohio, California, Florida) we link it so reporters know public-university alumni on the state payroll can be looked up. A handful of schools get one notable public-company alum with an EDGAR/DEF 14A or IR link (fat tail, not a cohort). Glassdoor and LinkedIn are not ingested.</dd>
         <dt>Desk tape</dt>
-        <dd>A dated log of filings that moved a Public Cap figure — not a news feed. Booked NIL, collective 990s, contract PDFs, paid buyouts, cited apparel or naming, student-fee / subsidy lines, athletics-debt filings, conference-exit filings, and House-cap Q&amp;As. We do not invent a headline. A school page that is quiet says so: “No public filing on the desk yet.”</dd>
+        <dd>A dated log of filings that moved a Public Cap figure — not a news feed. Booked NIL, collective 990s, contract PDFs, paid buyouts, cited apparel or naming, student-fee / subsidy lines, athletics-debt filings, conference-exit filings, guarantee-game contracts, and House-cap Q&amp;As. We do not invent a headline. A school page that is quiet says so: “No public filing on the desk yet.”</dd>
         <dt>TV / media rights</dt>
         <dd>Most Power 4 TV contracts are conference deals, not 68 school contracts. The school page and the <a href="/tv">TV book</a> show rights holders, term, the cited conference pot, and how the share is split when a 2024–26 source exists. A school media check is printed only when reported, or as a labeled equal-share estimate (cited pot ÷ cited members). Notre Dame’s NBC football deal is the school-level exception. The College Football Playoff is one national package. ACC Grant of Rights / viewership splits are described as cited — not flattened to equal share. Empty means pending.</dd>
         <dt>Confidence tags</dt>
@@ -1040,6 +1048,22 @@ export default function Methods({ meta: metaProp }) {
         Kentucky residual (Courier Journal $37,687,500 in notes), no mitigation,
         now a special assistant at Texas. Texas salary is empty until announced.
         Typing a modeled Texas figure does not reduce Kentucky.
+      </p>
+
+      <h2>Guarantee games</h2>
+      <p>
+        A separate lane at <a href="/guarantee-games">/guarantee-games</a>: how much a
+        larger school (usually Power 4) pays a smaller opponent to play them on the
+        football schedule. That check is the football guarantee. Band or other fees
+        (FAMU Marching 100 $40,000 beside Miami’s $720,000 game check) stay in their
+        own cell — we do not roll them into the football figure, and we do not book
+        the social “$740k” number. $0 is a real cell only when the contract says $0
+        (Texas A&amp;M / Arizona State home-and-home; NC State / App State). Empty
+        means pending. This is not House spent, not booked NIL, and not a coach
+        buyout. Rows need a hosted contract or a named newsroom FOIA. Power 4
+        payer/payee schools on the 68-school desk get a small paid-out / received
+        card when a row exists. FCS and Group of 5 visitors stay an external label.
+        We do not invent dollars, and we do not use On3.
       </p>
 
       <h2>Private-school gap</h2>

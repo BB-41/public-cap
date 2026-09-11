@@ -41,6 +41,7 @@ import { houseValueForSeason } from '../lib/seasons.js'
 import { EMPTY_TAPE, tapeForSchool } from '../lib/tape.js'
 import TapeItems from '../components/TapeItems.jsx'
 import TvContracts from '../components/TvContracts.jsx'
+import { GuaranteeSchoolSection } from './GuaranteeGames.jsx'
 import { hashKey, homePath, isSchoolDrill } from '../lib/share.js'
 import NamedRoster from '../components/NamedRoster.jsx'
 import { buildSchoolNilHistory, fetchRosterBooks } from '../lib/nilHistory.js'
@@ -1087,6 +1088,8 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
       <Layers school={s} open={open} onToggle={setOpen} />
 
       <TvContracts school={s} season={season} />
+
+      <GuaranteeSchoolSection schoolId={s.id} season={season} />
 
       <section className={deskTape.length ? undefined : 'desk-may-empty'}>
         <h2 title={defTitle('tape')}>Desk tape</h2>

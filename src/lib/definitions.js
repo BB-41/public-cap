@@ -141,9 +141,13 @@ export const DEFS = {
     label: 'Conference exit',
     text: 'What a school would pay the conference to leave — a stock, not yearly spend, and not a coach-firing buyout. Four instruments, plus one modeled reporter estimate. ACC: settlement year ladder (FY 2025–26 / 2026 exit $165M, then −$18M a year to a $75M floor through 2036); paying the fee lets the school leave with media rights. SEC: 2023–24 bylaws §3.2.1 $30 million with-notice withdrawal fee — cash, not a rights buyback; $40M / $45M stairs are footnoted. Big 12: hosted bylaws §3.4 cash formula (sum of distributions for the final two years of membership), modeled as 2 × the last cited FY2025 Form 990 Schedule I line — labeled modeled, never booked; paying the fee does not buy back media rights (the grant of rights still sits with the league). Big Ten: no published cash exit fee (not $0); the lock is the grant of rights through 2036. Notre Dame: modeled ~$100 million Hale / 247Sports estimate of the non-football ACC membership exit — not the FSU/Clemson football ladder. Not part of annual capacity. Booked-only remains the default capacity toggle.',
   },
+  guaranteeGames: {
+    label: 'Guarantee games',
+    text: 'How much a larger school (usually Power 4) pays a smaller opponent to play them on the football schedule — a buy-game check. Football guarantee dollars stay distinct from band or other fees. $0 only when the contract says $0 (home-and-home / no guarantee). Not House spent, not booked NIL, not a coach buyout. Empty without a hosted contract or named newsroom FOIA. We do not invent dollars.',
+  },
   tape: {
     label: 'Desk tape',
-    text: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990s, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, athletics-debt filings, conference-exit filings, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
+    text: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990s, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, athletics-debt filings, conference-exit filings, guarantee-game contracts, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
   },
   tv: {
     label: 'TV / media rights',
