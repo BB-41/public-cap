@@ -43,6 +43,7 @@ const schools = JSON.parse(read('public/data/schools.json'))
 ok(DEFAULT_TITLE === 'Public Cap — Capacity vs House cap vs booked NIL', 'home title names the three lanes')
 ok(PAGE_TITLES.home === DEFAULT_TITLE, 'PAGE_TITLES.home matches DEFAULT_TITLE')
 ok(PAGE_TITLES.coachFa === 'Coach buyout offsets / free agents — Public Cap', 'coach-fa index title is discoverable')
+ok(PAGE_TITLES.guaranteeGames === 'Guarantee games — Public Cap', 'guarantee-games index title is discoverable')
 ok(SCHOOL_TITLE_FRAME === 'Capacity vs House cap vs booked NIL', 'school title frame is the three-lane sentence')
 
 ok(
@@ -62,6 +63,7 @@ ok(titleFromPath('/school/louisville') === schoolTitle('Louisville'), 'slug titl
 ok(titleFromPath('/school/oklahoma-state') === schoolTitle('Oklahoma State'), 'oklahoma-state slug title-cases')
 ok(titleFromPath('/school/notre-dame') === schoolTitle('Notre Dame'), 'notre-dame slug title-cases')
 ok(titleFromPath('/coach-fa') === PAGE_TITLES.coachFa, 'titleFromPath coach-fa index')
+ok(titleFromPath('/guarantee-games') === PAGE_TITLES.guaranteeGames, 'titleFromPath guarantee-games')
 ok(titleFromPath('/reported-nil') === PAGE_TITLES.reportedNil, 'titleFromPath reported-nil')
 ok(
   PAGE_TITLES.reportedNil === 'Reported NIL by school — Power 4 football roster stack — Public Cap',
@@ -98,6 +100,10 @@ ok(!/\$/.test(ndDesc), 'Notre Dame description invents no dollars')
 ok(descriptionFromPath('/school/indiana').includes('Indiana'), 'Indiana path description uses the name')
 ok(descriptionFromPath('/').includes('Collective 990 payout'), 'home description names collective payout')
 ok(PAGE_DESCRIPTIONS.coachFa.includes('do not invent remaining principal'), 'coach-fa description stays cite-only')
+ok(PAGE_DESCRIPTIONS.guaranteeGames.includes('Football guarantee stays distinct from band fees'), 'guarantee-games description splits band')
+ok(PAGE_DESCRIPTIONS.guaranteeGames.includes('Not House spent'), 'guarantee-games description splits House')
+ok(PAGE_DESCRIPTIONS.guaranteeGames.includes('not booked NIL'), 'guarantee-games description splits booked NIL')
+ok(descriptionFromPath('/guarantee-games') === PAGE_DESCRIPTIONS.guaranteeGames, 'descriptionFromPath guarantee-games')
 
 const templateBlob = [
   DEFAULT_TITLE,
@@ -143,6 +149,8 @@ ok(!/On3/i.test(schoolPage), 'school page has no On3')
 ok(indexHtml.includes(DEFAULT_TITLE), 'index.html first title matches the home template')
 ok(indexHtml.includes('Capacity vs House cap vs booked NIL — reported football NIL — Public Cap'), 'index.html first-paints school titles')
 ok(indexHtml.includes('Coach buyout offsets / free agents — Public Cap'), 'index.html first-paints /coach-fa')
+ok(indexHtml.includes('Guarantee games — Public Cap'), 'index.html first-paints /guarantee-games')
+ok(indexHtml.includes('href="/guarantee-games"'), 'index.html nav links the guarantee board')
 ok(indexHtml.includes('Reported NIL by school — Power 4 football roster stack — Public Cap'), 'index.html first-paints /reported-nil')
 ok(indexHtml.includes('href="/reported-nil"'), 'index.html nav links the reported-NIL board')
 ok(indexHtml.includes('twitter:card'), 'index.html has a Twitter card')

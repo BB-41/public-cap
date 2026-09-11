@@ -26,7 +26,7 @@ ok(schools.schools.length === 68, '68 schools in the book')
 
 const generated = writeSitemap()
 ok(generated.schoolCount === 68, 'sitemap writer saw 68 schools')
-ok(generated.urlCount === 7 + 68, `sitemap has ${7 + 68} URLs (static + schools)`)
+ok(generated.urlCount === STATIC_PATHS.length + 68, `sitemap has ${STATIC_PATHS.length + 68} URLs (static + schools)`)
 
 const robots = readFileSync(join(publicDir, 'robots.txt'), 'utf8')
 ok(!/^\s*<!doctype html/i.test(robots), 'robots.txt is not HTML')
@@ -70,7 +70,7 @@ ok(/\/sitemap\.xml\s+\/sitemap\.xml\s+200/.test(redirects), '_redirects identity
 ok(!/\/school\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /school/* to /index.html (crawlers would get homepage title)')
 ok(/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects keeps /coach-fa/* splat')
 ok(!/Disallow:\s*\/reported-nil/i.test(robots), 'robots.txt does not Disallow /reported-nil')
-for (const path of ['/reported-nil', '/compare', '/methods', '/tape', '/tv', '/buyout', '/coach-fa']) {
+for (const path of ['/reported-nil', '/compare', '/methods', '/tape', '/tv', '/buyout', '/coach-fa', '/guarantee-games']) {
   ok(
     !new RegExp(`${path}\\s+/index\\.html`).test(redirects),
     `_redirects does not rewrite ${path} to /index.html (that 308s home)`,

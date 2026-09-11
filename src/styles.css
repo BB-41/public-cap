@@ -1188,6 +1188,23 @@ table.rank th.rk { cursor: default; }
 .buyout-step-tape { margin: 12px 0 16px; }
 .buyout-step-tape .buyout-steps { margin-top: 6px; }
 
+.guarantee-page .table-scroll,
+.guarantee-school .table-scroll { max-height: none; }
+.guarantee-page p, .guarantee-page li { color: var(--paper-dim); max-width: 740px; }
+.guarantee-party {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.guarantee-cites {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+.guarantee-school { margin: 28px 0; }
+.guarantee-table th { cursor: pointer; }
+
 .coach-fa-page .table-scroll { max-height: none; }
 .coach-fa-pickers { align-items: flex-end; }
 .coach-fa-cards {

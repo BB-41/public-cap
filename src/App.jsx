@@ -31,6 +31,7 @@ const Tape = lazy(() => import('./pages/Tape.jsx'))
 const Tv = lazy(() => import('./pages/Tv.jsx'))
 const Buyout = lazy(() => import('./pages/Buyout.jsx'))
 const CoachFa = lazy(() => import('./pages/CoachFa.jsx'))
+const GuaranteeGames = lazy(() => import('./pages/GuaranteeGames.jsx'))
 const DeskChat = lazy(() => import('./components/DeskChat.jsx'))
 const ReportedNil = lazy(() => import('./pages/ReportedNil.jsx'))
 
@@ -362,6 +363,7 @@ export default function App() {
             <Route path="/buyout" element={<Buyout />} />
             <Route path="/coach-fa" element={<CoachFa />} />
             <Route path="/coach-fa/:coachId" element={<CoachFa />} />
+            <Route path="/guarantee-games" element={<GuaranteeGames />} />
             <Route path="/methods" element={<Methods meta={metaOnly} />} />
           </Routes>
         </Suspense>
