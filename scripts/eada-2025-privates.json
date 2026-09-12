@@ -1,0 +1,31 @@
+{
+  "file": "EADA_2025.xlsx",
+  "sheet": "eada_2025",
+  "zip": "EADA_All_Data_Combined_2024-2025_SAS_SPSS_EXCEL.zip",
+  "zipUrl": "https://ope.ed.gov/athletics/api/dataFiles/file?fileName=EADA_All_Data_Combined_2024-2025_SAS_SPSS_EXCEL.zip",
+  "dataFileList": "https://ope.ed.gov/athletics/#/datafile/list",
+  "asOf": "2026-04",
+  "fiscalYear": "FY2025",
+  "columns": {
+    "unitid": "unitid",
+    "eadaTotal": "GRND_TOTAL_REVENUE",
+    "eadaFootball": "REV_MEN_Football"
+  },
+  "notes": "Extracted from the official U.S. Dept. of Education EADA 2024–25 workbook (xlsx dated 2026-04-17 in the zip). Grand total revenues include institutional support and other allocated items. Football is sport-attributed team revenue, not a capacity-category unpack.",
+  "schools": {
+    "baylor": { "unitid": 223232, "eadaTotal": 144126427, "eadaFootball": 44260293 },
+    "boston-college": { "unitid": 164924, "eadaTotal": 142122049, "eadaFootball": 47531226 },
+    "byu": { "unitid": 230038, "eadaTotal": 153351328, "eadaFootball": 51715899 },
+    "duke": { "unitid": 198419, "eadaTotal": 181607802, "eadaFootball": 67356450 },
+    "miami": { "unitid": 135726, "eadaTotal": 230484608, "eadaFootball": 99864288 },
+    "northwestern": { "unitid": 147767, "eadaTotal": 131779238, "eadaFootball": 85587606 },
+    "notre-dame": { "unitid": 152080, "eadaTotal": 289616198, "eadaFootball": 195723436 },
+    "smu": { "unitid": 228246, "eadaTotal": 150225313, "eadaFootball": 45315587 },
+    "stanford": { "unitid": 243744, "eadaTotal": 192802320, "eadaFootball": 35992019 },
+    "syracuse": { "unitid": 196413, "eadaTotal": 120839134, "eadaFootball": 64585287 },
+    "tcu": { "unitid": 228875, "eadaTotal": 155989500, "eadaFootball": 59568339 },
+    "usc": { "unitid": 123961, "eadaTotal": 234029848, "eadaFootball": 74014972 },
+    "vanderbilt": { "unitid": 221999, "eadaTotal": 146388389, "eadaFootball": 44124525 },
+    "wake-forest": { "unitid": 199847, "eadaTotal": 114628069, "eadaFootball": 39399925 }
+  }
+}

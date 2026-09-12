@@ -4,8 +4,10 @@ import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkL
 import {
   collectSources,
   collective990Cells,
+  eadaLane,
   hasVal,
   isItem44Field,
+  isPrivateGap,
   ITEM44_COMPANION_EYEBROW,
   ITEM44_COMPANION_LEDE,
   leadBookedNil,
@@ -650,6 +652,53 @@ function IndustryPositionEstimatesLane({ school, leftoverPending, schoolName, se
   )
 }
 
+function PrivateCheckbook({ school }) {
+  if (!isPrivateGap(school)) return null
+  const media = school.capacity?.mediaConference
+  const nbc = school.capacity?.nbcDeal
+  const acc = school.capacity?.accMedia
+  const eada = eadaLane(school)
+  if (!hasVal(media) && !eada.total) return null
+  return (
+    <section className="private-checkbook">
+      <h2 title={defTitle('eada')}>Private checkbook</h2>
+      <p className="lede tight">
+        Two cited lanes. Conference media is the 990 / deal check. EADA is the federal
+        athletics-revenue top-line. They are not added into one capacity stack, and EADA
+        is not unpacked into tickets, sponsorships, or contributions.
+      </p>
+      <div className="two-col">
+        <div className="checkbook-lane" id="slice-stack-media">
+          <div className="eyebrow">Conference media</div>
+          <Field field={media} />
+          {hasVal(nbc) ? (
+            <div className="subfield">
+              <div className="eyebrow">NBC football deal</div>
+              <Field field={nbc} />
+            </div>
+          ) : null}
+          {hasVal(acc) ? (
+            <div className="subfield">
+              <div className="eyebrow">ACC media</div>
+              <Field field={acc} />
+            </div>
+          ) : null}
+        </div>
+        <div className="checkbook-lane" id="slice-eada">
+          <div className="eyebrow" title={defTitle('eada')}>EADA athletics revenue</div>
+          <Field field={eada.total} fallback="No EADA grand total on the desk." />
+          {eada.football ? (
+            <div className="subfield" id="slice-eada-football">
+              <div className="eyebrow">EADA football (sport-attributed)</div>
+              <Field field={eada.football} />
+            </div>
+          ) : null}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Field({ field, fallback = '—' }) {
   if (!field || field.value == null) {
     return (
@@ -767,8 +816,8 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           <div className="kicker">{s.conference} · {s.city}{s.private ? ' · private' : ''}</div>
           <h1>{s.name}</h1>
           <p className="lede school-dek">
-            {s.revenueGap || s.private
-              ? `${s.name} football revenue on this desk is the booked capacity stack from public filings — not a full athletic-revenue total. Private tickets, sponsorships, and contributions stay pending.`
+            {isPrivateGap(s)
+              ? `${s.name} checkbook on this desk is two cited lanes: conference media and federal EADA athletics revenue. They are not added into one MFRS-equivalent capacity stack. Tickets, sponsorships, and contributions stay empty — no FOIA / no Knight-Newhouse split. EADA is not unpacked into those categories.`
               : `Two ceilings, then booked NIL: the House benefits cap versus what ${s.name} can actually write this year from public filings (annual capacity — not total athletic revenue).`}
             {' '}Booked NIL is the official institutional number when a filing exists — the public stand-in for an NIL budget.
             {' '}Collective 990 payout is a separate cited lane, not House.
@@ -779,14 +828,19 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             {' '}Pending stays empty.
           </p>
           <p className="lane-status">
-            <span>Capacity <b>booked stack</b></span>
+            <span>Capacity <b>{isPrivateGap(s) ? 'conference media' : 'booked stack'}</b></span>
+            {eadaLane(s).total ? <span>EADA <b>cited</b></span> : null}
             <span>House cap <b>{house == null ? 'none (pre-settlement)' : season >= 2026 ? '2026–27' : '2025–26'}</b></span>
             <span>Booked NIL <b>{leadBookedNil(s).value != null ? 'cited' : 'pending'}</b></span>
             <span>Collective payout <b>{collective990Cells(s).some((c) => c.value != null) ? 'cited' : 'pending'}</b></span>
             <span>Industry roster estimate <b>{rosterStack ? rosterStack.lane : 'pending'}</b></span>
             <span>NIL reported bar <b>{rosterStack ? rosterStack.lane : 'pending'}</b></span>
           </p>
-          {s.revenueGap && <p className="gap-banner">Revenue gap: private-school tickets, sponsorships, and contributions are not on the public MFRS tape.</p>}
+          {isPrivateGap(s) && (
+            <p className="gap-banner">
+              Revenue gap: private-school tickets, sponsorships, and contributions are not on the public MFRS tape. EADA is the federal workaround — a separate lane, not an MFRS unpack.
+            </p>
+          )}
         </div>
         <div className="hero-num">
           {leftoverLead.value != null ? (
@@ -799,9 +853,19 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             </>
           ) : (
             <>
-              <div className="eyebrow">{includeAlumni ? 'Annual capacity' : 'Annual capacity · booked only'}</div>
+              <div className="eyebrow">
+                {isPrivateGap(s)
+                  ? includeAlumni
+                    ? 'Conference media + alumni'
+                    : 'Conference media'
+                  : includeAlumni
+                    ? 'Annual capacity'
+                    : 'Annual capacity · booked only'}
+              </div>
               <div className="display">{money(includeAlumni ? cap.total : cap.booked)}</div>
-              {includeAlumni ? (
+              {isPrivateGap(s) ? (
+                <div className="eyebrow">EADA is a separate lane — not summed</div>
+              ) : includeAlumni ? (
                 <div className="eyebrow">range {money(cap.totalLow)}–{money(cap.totalHigh)}</div>
               ) : (
                 <div className="eyebrow">extra alumni excluded</div>
@@ -810,6 +874,8 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           )}
         </div>
       </header>
+
+      <PrivateCheckbook school={s} />
 
       <CapacityWaterfall
         school={s}

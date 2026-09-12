@@ -17,6 +17,8 @@ export const SCHOOL_DRILLS = new Set([
   'stack-tix',
   'stack-give',
   'stack-extra',
+  'eada',
+  'eada-football',
   'capacity',
   'house',
   'house-spent',
@@ -42,6 +44,7 @@ export const COMPARE_VIEWS = new Set([
   'nilModeled',
   'reportedNil',
   'media',
+  'eada',
   'tix',
   'give',
   'extra',
@@ -58,6 +61,7 @@ export const COMPARE_TO_SCHOOL_HASH = {
   nilModeled: 'nil-modeled',
   reportedNil: 'nil-reported',
   media: 'stack-media',
+  eada: 'eada',
   tix: 'stack-tix',
   give: 'stack-give',
   extra: 'stack-extra',
@@ -310,7 +314,7 @@ export function schoolDescription(schoolOrName) {
   if (!name) return PAGE_DESCRIPTIONS.school
   const gap = typeof schoolOrName === 'object' && !!(schoolOrName.revenueGap || schoolOrName.private)
   if (gap) {
-    return `${name} football revenue on Public Cap is booked capacity from public filings, not a full athletic-revenue total. House cap and booked NIL sit beside it. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane. Pending stays empty.`
+    return `${name} football revenue on Public Cap is booked capacity from public filings, not a full athletic-revenue total. The private checkbook is two lanes — conference media and federal EADA athletics revenue — not unpacked into tickets, sponsorships, or contributions, and not summed into one MFRS-equivalent stack. House cap and booked NIL sit beside it. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane. Empty stays empty.`
   }
   return `${name} — annual capacity from public filings versus the House benefits cap versus booked NIL. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane, not House. Pending stays empty.`
 }

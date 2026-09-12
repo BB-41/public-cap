@@ -137,6 +137,7 @@ function WinsDrill({ school }) {
 
 function fieldFor(school, key, houseField, season) {
   if (key === 'media') return school.capacity?.mediaConference
+  if (key === 'eada') return school.capacity?.eadaTotal
   if (key === 'tix') return school.capacity?.tickets
   if (key === 'give') return school.capacity?.contributions
   if (key === 'extra') {
@@ -379,6 +380,7 @@ export default function Compare({ schools, meta, house, houseField, season, setS
       show: (s) => reportedNilCompareDisplay(reportedNilBarForCompare(s, season)),
     },
     { key: 'media', label: 'Media / conference', get: (s) => s._cap.media },
+    { key: 'eada', label: 'EADA athletics revenue (not MFRS)', def: 'eada', get: (s) => s._cap.eadaTotal },
     { key: 'tix', label: 'Tickets', get: (s) => s._cap.tickets },
     { key: 'give', label: 'Booked contributions', get: (s) => s._cap.contributions },
     { key: 'extra', label: 'Extra alumni giving (modeled)', get: (s) => s._cap.extraAlumni },
