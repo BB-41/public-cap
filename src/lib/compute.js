@@ -9,6 +9,10 @@
  * Student fees and institutional/government support live on capacity as
  * cited side cells. They are not added to the booked stack.
  *
+ * Private-school EADA grand totals (`eadaTotal`) are a separate federal
+ * lane. They are never added to booked / total and are never unpacked
+ * into tickets, sponsorships, or contributions.
+ *
  * Alumni net worth is NEVER shown as a silent point total.
  * Official line = College Scorecard 10-year median earnings.
  * Second line = modeled wealth RANGE (low/high).
@@ -74,6 +78,20 @@ export function computeAlumni(school) {
   }
 }
 
+export function isPrivateGap(school) {
+  return !!(school?.private || school?.revenueGap)
+}
+
+/** Federal EADA cells. Never part of the booked MFRS / 990 stack. */
+export function eadaLane(school) {
+  const total = school?.capacity?.eadaTotal
+  const football = school?.capacity?.eadaFootball
+  return {
+    total: hasVal(total) ? total : null,
+    football: hasVal(football) ? football : null,
+  }
+}
+
 export function computeCapacity(school) {
   const c = school.capacity
   const media = val(c.mediaConference)
@@ -83,11 +101,14 @@ export function computeCapacity(school) {
   const alumni = computeAlumni(school)
   const booked = media + spon + tick + contrib
   const extra = alumni.extraMid
+  const eada = eadaLane(school)
   return {
     media,
     sponsorships: spon,
     tickets: tick,
     contributions: contrib,
+    eadaTotal: eada.total ? val(eada.total) : null,
+    eadaFootball: eada.football ? val(eada.football) : null,
     booked,
     extraAlumni: extra,
     extraLow: alumni.extraLow,
@@ -230,9 +251,11 @@ export function leftoverWaterfall(school, cap, includeAlumni = false) {
       : null
   const sameSpentAndNil = spent != null && booked.value != null && spent === booked.value
 
+  const priv = isPrivateGap(school)
   const lines = (cap?.components || [])
     .filter((c) => {
       if (c.key === 'extra') return !!(includeAlumni && c.value)
+      if (c.key === 'eada' || c.key === 'eadaFootball') return false
       return hasVal(c.field)
     })
     .map((c) =>
@@ -266,15 +289,23 @@ export function leftoverWaterfall(school, cap, includeAlumni = false) {
     steps.push({
       key: 'capacity',
       op: 'start',
-      label: includeAlumni ? 'Athletic capacity' : 'Athletic capacity (booked)',
+      label: priv
+        ? includeAlumni
+          ? 'Conference media + modeled alumni'
+          : 'Conference media (booked stack)'
+        : includeAlumni
+          ? 'Athletic capacity'
+          : 'Athletic capacity (booked)',
       value: capacity,
       field: {
         value: capacity,
         confidence: school?._conf?.primary || 'estimated',
         fiscalYear: school?.capacity?.fiscalYearPrimary,
-        notes: includeAlumni
-          ? school?.capacity?.fiscalYearNote || school?.capacity?.gapNote
-          : 'Booked-only filing stack. Modeled extra alumni is excluded unless that toggle is on.',
+        notes: priv
+          ? 'Booked conference-media stack only. EADA athletics revenue is a separate federal lane and is not added here.'
+          : includeAlumni
+            ? school?.capacity?.fiscalYearNote || school?.capacity?.gapNote
+            : 'Booked-only filing stack. Modeled extra alumni is excluded unless that toggle is on.',
       },
       hash: 'capacity',
       lines,

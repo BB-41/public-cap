@@ -7,7 +7,11 @@ export const DEFS = {
   },
   capacity: {
     label: 'Annual capacity',
-    text: 'Default is booked-only: media + sponsorships + tickets + booked contributions — the filing stack. Flip on Include modeled alumni to add the Scorecard-based extra-alumni midpoint, net of booked gifts. Annual, not lifetime.',
+    text: 'Default is booked-only: media + sponsorships + tickets + booked contributions — the filing stack. Flip on Include modeled alumni to add the Scorecard-based extra-alumni midpoint, net of booked gifts. Annual, not lifetime. Private EADA athletics revenue is a separate federal lane and is not added to this stack.',
+  },
+  eada: {
+    label: 'EADA athletics revenue',
+    text: 'Federal Equity in Athletics Disclosure Act grand total revenues for the school’s athletics department. Cited from the U.S. Dept. of Education public data file. Includes institutional support and other allocated items. Not comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. We do not unpack it into tickets, sponsorships, or contributions. On private pages it sits beside conference media — the two lanes are not summed into one fake capacity.',
   },
   nil: {
     label: 'Booked NIL',

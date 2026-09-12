@@ -451,6 +451,9 @@ export function applySeasonForNil(school, year) {
       contributions: priv
         ? { ...PRIOR_LINE, notes: 'Private-school gap. Prior-year line not extracted.' }
         : { ...PRIOR_LINE },
+      // FY2025 federal EADA stays visible as a labeled cite — not reused as this year's dollars.
+      ...(school.capacity?.eadaTotal ? { eadaTotal: school.capacity.eadaTotal } : {}),
+      ...(school.capacity?.eadaFootball ? { eadaFootball: school.capacity.eadaFootball } : {}),
     }
   } else {
     out.capacity = {

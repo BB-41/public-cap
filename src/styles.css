@@ -418,6 +418,14 @@ table.rank.reported-nil-rank th { white-space: normal; }
   .page-wrap.school .hero-num { text-align: left; }
 }
 
+.private-checkbook { margin-top: 8px; }
+.checkbook-lane {
+  background: var(--ink-2);
+  padding: 16px;
+  border-top: 2px solid var(--gold);
+}
+.checkbook-lane .field { margin-bottom: 0; }
+
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 @media (max-width: 800px) {
   .two-col { grid-template-columns: 1fr; }

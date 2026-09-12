@@ -24987,7 +24987,7 @@
       "scorecardUrl": "https://collegescorecard.ed.gov/school/?221999-Vanderbilt-University",
       "capacity": {
         "fiscalYearPrimary": "FY2025",
-        "gapNote": "Private. No Knight-Newhouse categories. Capacity is conference floor plus modeled alumni flow only.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "mediaConference": {
           "value": 70300000,
           "confidence": "reported",
@@ -25019,6 +25019,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap."
+        },
+        "eadaTotal": {
+          "value": 146388389,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 44124525,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -39480,7 +39498,7 @@
           "asOf": "2026-05-23",
           "fiscalYear": "FY2025"
         },
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "sponsorships": {
           "value": null,
           "confidence": "pending",
@@ -39504,6 +39522,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap. No public Category 8."
+        },
+        "eadaTotal": {
+          "value": 131779238,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 85587606,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -50805,7 +50841,7 @@
       "scorecardUrl": "https://collegescorecard.ed.gov/school/?123961-University-of-Southern-California",
       "capacity": {
         "fiscalYearPrimary": "FY2025",
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "mediaConference": {
           "value": 76000000,
           "confidence": "reported",
@@ -50839,13 +50875,22 @@
           "notes": "Private-school gap. No public Category 8."
         },
         "eadaTotal": {
-          "value": 242000000,
+          "value": 234029848,
           "confidence": "reported",
-          "source": "CNBC valuations 2025 citing EADA / Knight-Newhouse — USC FY2024 athletics revenue ~$242M",
-          "url": "https://www.cnbc.com/2025/12/19/cnbc-official-college-sports-valuations-2025-top-75-athletic-programs.html",
-          "asOf": "2025-12-19",
-          "fiscalYear": "FY2024",
-          "notes": "Top-line only. Not allocated into capacity components."
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 74014972,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -55445,7 +55490,7 @@
           "fiscalYear": "FY2025",
           "notes": "Named ACC 990 grant $47,087,682. Floor was $42.8M. ProPublica hosts the FY2025 Form 990 (https://projects.propublica.org/nonprofits/organizations/560599082/202631349349301238/full). We do not replace already-reported Courier-Journal / WRAL school lines."
         },
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "sponsorships": {
           "value": null,
           "confidence": "pending",
@@ -55469,6 +55514,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap. No public Category 8."
+        },
+        "eadaTotal": {
+          "value": 142122049,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 47531226,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -60322,7 +60385,7 @@
           "asOf": "2026-07-21",
           "fiscalYear": "FY2025"
         },
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "sponsorships": {
           "value": null,
           "confidence": "pending",
@@ -60346,6 +60409,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap. No public Category 8."
+        },
+        "eadaTotal": {
+          "value": 181607802,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 67356450,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -66831,7 +66912,7 @@
       "scorecardUrl": "https://collegescorecard.ed.gov/school/?135726-University-of-Miami",
       "capacity": {
         "fiscalYearPrimary": "FY2025",
-        "gapNote": "Private. Tickets, sponsorships, contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "mediaConference": {
           "value": 48250000,
           "confidence": "reported",
@@ -66863,6 +66944,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap."
+        },
+        "eadaTotal": {
+          "value": 230484608,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 99864288,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -73067,7 +73166,7 @@
           "stackLabel": "Media / conference (early-membership 990 — not ACC TV)",
           "notes": "This cell is the published FY2025 ACC Form 990 conference distribution, not a television equal share. Courier-Journal: SMU received a league-low $17.07M after agreeing to take no TV money; ESPN (Sept. 2023) reported SMU would take no ACC television / broadcast media revenue for nine years. WRAL: Cal and Stanford took partial TV shares, while SMU receives nothing from media rights early in membership — the $17M check is the early-membership 990 (CFP / bowl / NCAA-type flow), not a media-rights share. Full ACC media equal share is deferred (~9 years from 2024–25 entry). We do not invent a year-by-year $0 TV schedule. Desk convention for this line is the cited conference 990 / MFRS distribution."
         },
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "sponsorships": {
           "value": null,
           "confidence": "pending",
@@ -73091,6 +73190,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap. No public Category 8."
+        },
+        "eadaTotal": {
+          "value": 150225313,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 45315587,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -74530,7 +74647,7 @@
           "asOf": "2026-07-21",
           "fiscalYear": "FY2025"
         },
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "sponsorships": {
           "value": null,
           "confidence": "pending",
@@ -74554,6 +74671,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap. No public Category 8."
+        },
+        "eadaTotal": {
+          "value": 192802320,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 35992019,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -75976,7 +76111,7 @@
           "asOf": "2026-07-21",
           "fiscalYear": "FY2025"
         },
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "sponsorships": {
           "value": null,
           "confidence": "pending",
@@ -76000,6 +76135,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap. No public Category 8."
+        },
+        "eadaTotal": {
+          "value": 120839134,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 64585287,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -80820,7 +80973,7 @@
           "fiscalYear": "FY2025",
           "notes": "Named ACC 990 grant $42,814,168. Floor was $42.8M. ProPublica hosts the FY2025 Form 990 (https://projects.propublica.org/nonprofits/organizations/560599082/202631349349301238/full). We do not replace already-reported Courier-Journal / WRAL school lines."
         },
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "sponsorships": {
           "value": null,
           "confidence": "pending",
@@ -80844,6 +80997,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap. No public Category 8."
+        },
+        "eadaTotal": {
+          "value": 114628069,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 39399925,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -85440,7 +85611,7 @@
           "asOf": "2026-05",
           "fiscalYear": "FY2025"
         },
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "sponsorships": {
           "value": null,
           "confidence": "pending",
@@ -85464,6 +85635,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap. No public Category 8."
+        },
+        "eadaTotal": {
+          "value": 153351328,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 51715899,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -86835,7 +87024,7 @@
           "asOf": "2026-05",
           "fiscalYear": "FY2025"
         },
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "sponsorships": {
           "value": null,
           "confidence": "pending",
@@ -86859,6 +87048,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap. No public Category 8."
+        },
+        "eadaTotal": {
+          "value": 144126427,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 44260293,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -99378,7 +99585,7 @@
           "asOf": "2026-05",
           "fiscalYear": "FY2025"
         },
-        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap.",
+        "gapNote": "Private institution. Knight-Newhouse does not publish MFRS categories. Tickets, sponsorships, and athletic contributions are a revenue gap. FY2025 EADA grand total is a separate federal lane — not unpacked into those MFRS categories, and not added to the booked capacity stack.",
         "sponsorships": {
           "value": null,
           "confidence": "pending",
@@ -99402,6 +99609,24 @@
           "url": null,
           "asOf": null,
           "notes": "Private-school gap. No public Category 8."
+        },
+        "eadaTotal": {
+          "value": 155989500,
+          "confidence": "reported",
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 59568339,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
@@ -106968,7 +107193,7 @@
       "scorecardUrl": "https://collegescorecard.ed.gov/school/?152080-University-of-Notre-Dame",
       "capacity": {
         "fiscalYearPrimary": "FY2025 / deal years",
-        "gapNote": "Private. No Knight-Newhouse category stack. Media is NBC + ACC scheduling agreement.",
+        "gapNote": "Private. No Knight-Newhouse category stack. Media is NBC + ACC scheduling agreement. FY2025 EADA grand total is a separate federal lane — not unpacked into tickets/sponsorships/contributions, and not added to the booked capacity stack.",
         "nbcDeal": {
           "value": 50000000,
           "confidence": "estimated",
@@ -107018,12 +107243,22 @@
           "notes": "Private-school gap."
         },
         "eadaTotal": {
-          "value": 235000000,
+          "value": 289616198,
           "confidence": "reported",
-          "source": "CNBC valuations 2025 — Notre Dame FY2024 athletics revenue ~$235M",
-          "url": "https://www.cnbc.com/2025/12/19/cnbc-official-college-sports-valuations-2025-top-75-athletic-programs.html",
-          "asOf": "2025-12-19",
-          "fiscalYear": "FY2024"
+          "source": "U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, grand total revenues",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Federal EADA athletics revenue. Includes institutional support and other allocated items; NOT comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. Do not unpack into tickets/sponsorships/contributions."
+        },
+        "eadaFootball": {
+          "value": 195723436,
+          "confidence": "reported",
+          "source": "EADA 2024–25 — men’s football team revenues (REV_MEN_Football)",
+          "url": "https://ope.ed.gov/athletics/#/datafile/list",
+          "asOf": "2026-04",
+          "fiscalYear": "FY2025",
+          "notes": "Sport-attributed EADA football revenue. Not a filing of NIL or House spend."
         }
       },
       "alumni": {
