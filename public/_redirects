@@ -8,7 +8,10 @@
 # www → apex cannot be done here. Cloudflare Pages _redirects does not
 # support domain-level / host redirects (source must be a path). Do not
 # add `/* https://thepubliccap.com/:splat 301` — that would 301 the apex.
-# Dashboard + DNS (outside this repo):
+# Do not add functions/_middleware.js for this: a root middleware invokes
+# Functions on every request and Pages then ignores this file (coach-fa
+# splat + crawl identity proxies would have to be rewritten in JS).
+# Dashboard + DNS (outside this repo) — official Pages www guide:
 #   1. Proxied A www → 192.0.2.1 (or attach www as a Pages custom domain).
 #   2. Bulk Redirect: www.thepubliccap.com → https://thepubliccap.com
 #      301, preserve query string, subpath matching, preserve path suffix.

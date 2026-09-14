@@ -88,6 +88,11 @@ ok(/\/robots\.txt\s+\/robots\.txt\s+200/.test(redirects), '_redirects identity-p
 ok(/\/sitemap\.xml\s+\/sitemap\.xml\s+200/.test(redirects), '_redirects identity-proxies sitemap.xml')
 ok(/\/llms\.txt\s+\/llms\.txt\s+200/.test(redirects), '_redirects identity-proxies llms.txt')
 ok(/Bulk Redirect/i.test(redirects), '_redirects documents www → apex Bulk Redirect (DNS outside repo)')
+ok(
+  /functions\/_middleware\.js/.test(redirects) && /ignores this file/i.test(redirects),
+  '_redirects records why www is not Functions middleware (would drop this file)',
+)
+ok(!existsSync(join(root, 'functions/_middleware.js')), 'no functions/_middleware.js (would disable _redirects)')
 ok(!/\/school\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /school/* to /index.html (crawlers would get homepage title)')
 ok(/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects keeps /coach-fa/* splat')
 ok(!/Disallow:\s*\/reported-nil/i.test(robots), 'robots.txt does not Disallow /reported-nil')
