@@ -20,6 +20,7 @@ const tv = JSON.parse(readFileSync(join(root, 'public/data/tv.json'), 'utf8'))
 const rosters = JSON.parse(readFileSync(join(root, 'public/data/rosters-2026.json'), 'utf8'))
 const coachFa = JSON.parse(readFileSync(join(root, 'public/data/coach-fa.json'), 'utf8'))
 const layers = JSON.parse(readFileSync(join(root, 'public/data/layers.json'), 'utf8'))
+const guarantees = JSON.parse(readFileSync(join(root, 'public/data/guarantee-games.json'), 'utf8'))
 const app = readFileSync(join(root, 'src/App.jsx'), 'utf8')
 const home = readFileSync(join(root, 'src/pages/Home.jsx'), 'utf8')
 const indexHtml = readFileSync(join(root, 'index.html'), 'utf8')
@@ -33,7 +34,7 @@ function ok(cond, msg) {
 }
 
 function ask(q, extra = {}) {
-  return answerDeskQuestion(q, { desk, tv, rosters, coachFa, layers, season: 2026, ...extra })
+  return answerDeskQuestion(q, { desk, tv, rosters, coachFa, layers, guarantees, season: 2026, ...extra })
 }
 
 ok(desk.schools.length === 68, '68 schools in the book')
@@ -337,6 +338,7 @@ ok(!/On3/.test(chatLib) || /does not carry On3/.test(chatLib), 'engine copy does
 ok(!chatLib.includes('openai') && !chatLib.includes('api.openai') && !chatLib.includes('ANTHROPIC'), 'no hosted LLM path')
 ok(!chatUi.includes('openai'), 'UI has no LLM key field')
 ok(chatUi.includes('loadLayers') || chatUi.includes('layers:'), 'chat loads layers.json for apparel')
+ok(chatUi.includes('guarantee-games.json') || chatUi.includes('guarantees:'), 'chat loads guarantee-games.json')
 
 const fuzzyGa = ask('Tell me about Georgia')
 ok(/capacity/i.test(fuzzyGa.text), `fuzzy Georgia names capacity: ${fuzzyGa.text}`)
@@ -427,6 +429,181 @@ ok(/Kentucky/i.test(kroger.text) && /Kroger/i.test(kroger.text), `Kroger Field n
 ok(/\$1,850,000|1,850,000/.test(kroger.text), 'Kroger Field prints the cited annual')
 ok(/not leftover/i.test(kroger.text), 'Kroger Field stays on apparel/naming')
 ok(!/Ask a Power 4 school/i.test(kroger.text), 'Kroger Field is not the miss wall')
+
+const alaPay = ask("What's Alabama's coach pay?")
+ok(/Kalen DeBoer/i.test(alaPay.text), `Alabama coach names DeBoer: ${alaPay.text}`)
+ok(/\$12\.5M|12,500,000/.test(alaPay.text), 'Alabama coach pay is $12.5M')
+ok(/not lifetime/i.test(alaPay.text), 'Alabama coach pay is this year’s check')
+ok(alaPay.links.some((l) => l.to.includes('/school/alabama')), 'Alabama coach pay links the school page')
+
+const payCoach = ask('How much does Alabama pay their coach?')
+ok(/Kalen DeBoer/i.test(payCoach.text) && /\$12\.5M|12,500,000/.test(payCoach.text), `pay-their-coach: ${payCoach.text}`)
+ok(!/Ask a Power 4 school/i.test(payCoach.text), 'pay-their-coach is not the miss wall')
+ok(!/leftover is only computed when a booked House spent cell exists\. We do not invent leftover from a cap plan/i.test(payCoach.text), 'pay-their-coach is not the leftover lecture')
+
+const deboer = ask("What's Kalen DeBoer's salary?")
+ok(/Alabama/i.test(deboer.text) && /\$12\.5M|12,500,000/.test(deboer.text), `DeBoer salary: ${deboer.text}`)
+ok(!/Washington/i.test(deboer.text) || /Alabama/i.test(deboer.text), 'DeBoer prefers the current Alabama chair')
+ok(!/Ask a Power 4 school/i.test(deboer.text), 'DeBoer salary is not the miss wall')
+
+const smart = ask("What's Kirby Smart's salary?")
+ok(/Georgia/i.test(smart.text) && /\$13\.0M|13,003,000|13,000,000/.test(smart.text), `Smart salary: ${smart.text}`)
+
+const saban = ask("What's Saban's buyout?")
+ok(/2023/i.test(saban.text) && /Saban/i.test(saban.text), `Saban is labeled a prior chair: ${saban.text}`)
+ok(/\$11\.4M|11,407,000/.test(saban.text), 'Saban 2023 pay is the USA TODAY cell')
+ok(/pending/i.test(saban.text), 'Saban buyout stays pending')
+ok(!/leftover is \$/.test(saban.text), 'Saban answer invents no leftover')
+
+const cmpPay = ask('Compare Alabama and Georgia coach pay')
+ok(/DeBoer/i.test(cmpPay.text) && /Smart/i.test(cmpPay.text), 'coach-pay compare names both chairs')
+ok(/higher/i.test(cmpPay.text) && /Georgia/i.test(cmpPay.text), 'coach-pay compare says Georgia is higher')
+ok(cmpPay.links.some((l) => l.to.startsWith('/compare')), 'coach-pay compare links /compare')
+
+const louSpent = ask('How much has Louisville spent on the House cap?')
+ok(/\$20\.2M|20,200,000/.test(louSpent.text), `House-spent phrasing: ${louSpent.text}`)
+ok(/House spent/i.test(louSpent.text), 'House-spent phrasing names the spent cell')
+ok(!/Ask a Power 4 school/i.test(louSpent.text), 'House-spent phrasing is not the miss wall')
+
+const txLeft = ask('How much House cap does Texas have left?')
+ok(/\$7\.0M|7,000,000/.test(txLeft.text), `House remaining phrasing: ${txLeft.text}`)
+ok(/leftover/i.test(txLeft.text), 'House remaining phrasing answers leftover')
+ok(/year-to-date|YTD/i.test(txLeft.text), 'Texas leftover stays YTD')
+
+const txSpent = ask('How much has Texas spent this year?')
+ok(/\$13\.5M|13,500,000/.test(txSpent.text), `spent-this-year: ${txSpent.text}`)
+ok(/House spent/i.test(txSpent.text), 'spent-this-year names House spent')
+
+const room = ask('How much room does Louisville have under the cap?')
+ok(/\$300,000|\$0\.3M|\$300k/.test(room.text), `room-under-cap leftover: ${room.text}`)
+
+const mostNil = ask('Who has the most booked NIL?')
+ok(/Louisville/.test(mostNil.text) && /\$32\.9M/.test(mostNil.text), `most booked NIL: ${mostNil.text}`)
+ok(/Kentucky/.test(mostNil.text) && /Texas/.test(mostNil.text), 'most booked NIL lists the five booked cells')
+ok(!/Colorado/.test(mostNil.text) || /not/.test(mostNil.text), 'most booked NIL does not lead with Colorado Item 44')
+ok(!/booked NIL is \$0/i.test(mostNil.text), 'most booked NIL does not print a $0 Item 44 lead')
+
+const moreNil = ask('Who has more booked NIL Texas or Louisville?')
+ok(/Louisville/.test(moreNil.text) && /higher/.test(moreNil.text), 'who-has-more booked NIL names the higher school')
+ok(/\$32\.9M/.test(moreNil.text) && /\$13\.5M/.test(moreNil.text), 'who-has-more booked NIL prints both cells')
+
+const affordLou = ask('Can Louisville afford a $5M QB?')
+ok(/\$300,000|\$0\.3M|\$300k/.test(affordLou.text), `afford leftover: ${affordLou.text}`)
+ok(/larger than/i.test(affordLou.text), 'afford says the ask is larger than leftover')
+ok(/do not invent/i.test(affordLou.text), 'afford refuses to invent another pot')
+ok(!/Lincoln Kienholz/i.test(affordLou.text), 'afford is not stolen by the roster name')
+
+const affordAla = ask('Can Alabama afford a $10M buyout?')
+ok(/pending/i.test(affordAla.text), `afford Alabama leftover pending: ${affordAla.text}`)
+ok(/not a \$20\.5M leftover/i.test(affordAla.text), 'afford Alabama invents no cap-plan leftover')
+ok(!/leftover is \$/.test(affordAla.text), 'afford Alabama invents no leftover dollar')
+
+const affordTx = ask('Can Texas afford another $5 million in NIL?')
+ok(/\$7\.0M/.test(affordTx.text), 'afford Texas leftover is $7.0M')
+ok(/covers/i.test(affordTx.text), 'afford Texas leftover covers a $5M ask')
+ok(/Year-to-date/i.test(affordTx.text), 'afford Texas leftover stays YTD')
+
+const secLeft = ask('Which SEC school has booked leftover?')
+ok(/Kentucky/.test(secLeft.text) && /Texas/.test(secLeft.text), `SEC leftover list: ${secLeft.text}`)
+ok(!/Louisville/.test(secLeft.text), 'SEC leftover list does not include ACC Louisville')
+ok(/2 SEC/.test(secLeft.text), 'SEC leftover list is conference-scoped')
+
+const accSpent = ask('Which ACC schools have booked House spent?')
+ok(/Louisville/.test(accSpent.text) && /California/.test(accSpent.text), 'ACC House spent is Louisville and Cal')
+ok(!/Texas/.test(accSpent.text), 'ACC House spent list does not include Texas')
+ok(!/Kentucky/.test(accSpent.text), 'ACC House spent list does not include Kentucky')
+
+const b12Spent = ask('Which Big 12 schools have booked House spent?')
+ok(/No Big 12/i.test(b12Spent.text), `Big 12 House spent empty: ${b12Spent.text}`)
+ok(/empty until that cell exists/i.test(b12Spent.text), 'Big 12 House spent stays empty')
+
+const secPay = ask('Who has the highest coach pay in the SEC?')
+ok(/Kirby Smart/i.test(secPay.text) && /Georgia/i.test(secPay.text), `SEC coach pay: ${secPay.text}`)
+ok(/\$13\.0M/.test(secPay.text), 'SEC coach pay names the $13.0M cell')
+ok(/DeBoer/i.test(secPay.text), 'SEC coach pay still lists Alabama')
+ok(!/pending chairs stay off the list/i.test(secPay.text) || /Pending chairs stay off/i.test(secPay.text), 'SEC coach pay does not invent pending dollars')
+
+const bigTenTv = ask("What's the Big Ten media check?")
+ok(/\$1\.1B|1,150,000,000/.test(bigTenTv.text), `Big Ten pot: ${bigTenTv.text}`)
+ok(/\$63\.9M|63,888,889/.test(bigTenTv.text), 'Big Ten equal-share is labeled')
+ok(/estimated/i.test(bigTenTv.text), 'Big Ten equal-share stays estimated')
+ok(/not a school contract/i.test(bigTenTv.text), 'Big Ten TV is not a school contract')
+ok(bigTenTv.links.some((l) => l.to === '/tv'), 'Big Ten TV links /tv')
+
+const confTv = ask('Compare SEC and Big Ten TV')
+ok(/SEC/.test(confTv.text) && /Big Ten/.test(confTv.text), 'conference TV compare names both')
+ok(/higher/i.test(confTv.text) && /Big Ten/.test(confTv.text), 'conference TV compare says Big Ten pot is higher')
+ok(/estimated/i.test(confTv.text), 'conference TV compare keeps equal-share estimated')
+ok(!/leftover is \$/.test(confTv.text), 'conference TV compare invents no leftover')
+
+ok(matchSchools("What's UF leftover?", desk.schools)[0] === 'florida', 'UF is Florida')
+ok(matchSchools("What's the Ducks leftover?", desk.schools)[0] === 'oregon', 'Ducks are Oregon')
+ok(matchSchools("What's the Gators leftover?", desk.schools)[0] === 'florida', 'Gators are Florida')
+ok(matchSchools("What's the Buckeyes leftover?", desk.schools)[0] === 'ohio-state', 'Buckeyes are Ohio State')
+ok(matchSchools("What's the Sooners leftover?", desk.schools)[0] === 'oklahoma', 'Sooners are Oklahoma')
+ok(matchSchools("What's Vandy leftover?", desk.schools)[0] === 'vanderbilt', 'Vandy is Vanderbilt')
+ok(matchSchools("What's the Canes leftover?", desk.schools)[0] === 'miami', 'Canes are Miami')
+ok(matchSchools("What's Mizzou leftover?", desk.schools)[0] === 'missouri', 'Mizzou is Missouri')
+ok(matchSchools("What's the Aggies leftover?", desk.schools)[0] === 'texas-am', 'Aggies are Texas A&M')
+ok(matchSchools("What's the Huskers leftover?", desk.schools)[0] === 'nebraska', 'Huskers are Nebraska')
+ok(matchSchools("What's the Noles leftover?", desk.schools)[0] === 'florida-state', 'Noles are Florida State')
+ok(matchSchools("What's Cuse leftover?", desk.schools)[0] === 'syracuse', 'Cuse is Syracuse')
+ok(matchSchools("What's the Wolverines leftover?", desk.schools)[0] === 'michigan', 'Wolverines are Michigan')
+
+const ufLeft = ask("What's UF leftover?")
+ok(/pending/i.test(ufLeft.text), 'UF leftover stays pending')
+ok(ufLeft.links.some((l) => l.to.includes('/school/florida')), 'UF leftover links Florida')
+ok(!/leftover is \$/.test(ufLeft.text), 'UF leftover invents no leftover dollar')
+
+const bobby = ask("What's Bobby Dodd Stadium naming?")
+ok(/Georgia Tech/i.test(bobby.text) && /Hyundai/i.test(bobby.text), `Bobby Dodd: ${bobby.text}`)
+ok(/\$2,750,000|2,750,000/.test(bobby.text), 'Bobby Dodd prints the cited Hyundai annual')
+ok(/not leftover/i.test(bobby.text), 'Bobby Dodd stays on apparel/naming')
+ok(!/Ask a Power 4 school/i.test(bobby.text), 'Bobby Dodd is not the miss wall')
+
+const miaBuy = ask("What's Miami's buy game?")
+ok(/Florida A&M|FAMU/i.test(miaBuy.text), `Miami buy game opponent: ${miaBuy.text}`)
+ok(/\$720,000|720,000/.test(miaBuy.text), 'Miami football guarantee is $720,000')
+ok(/\$40,000|40,000/.test(miaBuy.text), 'Miami band fee stays a separate cell')
+ok(/not the football guarantee/i.test(miaBuy.text), 'Miami band is not the football guarantee')
+ok(/House spent/i.test(miaBuy.text) && /booked NIL/i.test(miaBuy.text), 'Miami buy game names House spent and booked NIL as not this lane')
+ok(/≠|not /i.test(miaBuy.text), 'Miami buy game refuses House spent / booked NIL')
+ok(miaBuy.links.some((l) => l.to === '/guarantee-games' || l.to.includes('guarantee')), 'Miami buy game links the board')
+
+const osuBall = ask('How much did Ohio State pay Ball State?')
+ok(/\$1,900,000|1,900,000/.test(osuBall.text), `OSU Ball State: ${osuBall.text}`)
+ok(/Ball State/i.test(osuBall.text), 'OSU Ball State names the opponent')
+ok(!/Ask a Power 4 school/i.test(osuBall.text), 'OSU Ball State is not the miss wall')
+ok(!/leftover is only House cap minus booked House spent, and that spent cell is empty/i.test(osuBall.text), 'OSU Ball State is not a leftover dump')
+
+const tamuG = ask("What's Texas A&M's guarantee?")
+ok(/Missouri State/i.test(tamuG.text) && /\$1,200,000|1,200,000/.test(tamuG.text), `A&M Missouri State: ${tamuG.text}`)
+ok(/Citadel/i.test(tamuG.text) && /\$600,000|600,000/.test(tamuG.text), 'A&M Citadel is $600k')
+ok(/Arizona State/i.test(tamuG.text) && /\$0/.test(tamuG.text), 'A&M Arizona State $0 is the cited home-and-home')
+ok(/cited contract cell/i.test(tamuG.text), 'A&M $0 is cited, not pending')
+
+const famu = ask("What's the FAMU guarantee?")
+ok(/Miami/i.test(famu.text) && /\$720,000|720,000/.test(famu.text), `FAMU guarantee: ${famu.text}`)
+ok(!/Ask a Power 4 school/i.test(famu.text), 'FAMU guarantee is not the miss wall')
+
+const dukeRev = ask("What's Duke's athletics revenue?")
+ok(/\$181\.6M|181,607,802/.test(dukeRev.text), `Duke EADA: ${dukeRev.text}`)
+ok(/not added to the booked stack/i.test(dukeRev.text), 'Duke athletics revenue stays off the booked stack')
+ok(!/House leftover and spent are pending — leftover is only House cap minus booked House spent/i.test(dukeRev.text), 'Duke athletics revenue is not the leftover snapshot')
+
+const stanEada = ask("What's Stanford's EADA?")
+ok(/\$192\.8M|192,802,320/.test(stanEada.text), `Stanford EADA: ${stanEada.text}`)
+ok(/not unpacked/i.test(stanEada.text), 'Stanford EADA is not an MFRS unpack')
+
+const tcuRev = ask("What's TCU's athletics revenue?")
+ok(/\$156\.0M|155,989,500/.test(tcuRev.text), `TCU EADA: ${tcuRev.text}`)
+
+ok(SUGGESTED_PROMPTS.some((p) => /Alabama's coach pay/i.test(p)), 'suggested prompt: Alabama coach pay')
+ok(SUGGESTED_PROMPTS.some((p) => /buy-game guarantee/i.test(p)), 'suggested prompt: Miami buy-game')
+
+const coachMiss = ask('coach salary')
+ok(coachMiss.suggested.some((p) => /coach pay/i.test(p)), 'coach miss suggests coach pay')
+ok(coachMiss.suggested.some((p) => /Louisville/i.test(p)), 'coach miss includes a working example')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} desk-chat checks passed`)

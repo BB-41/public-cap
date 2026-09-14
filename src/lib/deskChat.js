@@ -43,8 +43,20 @@ import {
 } from './rosterStack.js'
 import { applySeason, CURRENT_SEASON, houseFieldForSeason, houseValueForSeason } from './seasons.js'
 import { comparePath, schoolPath } from './share.js'
-import { deskMedia, schoolCheck } from './tv.js'
+import { conferenceList, deskMedia, equalShareEstimate, schoolCheck } from './tv.js'
 import { getCoach, hasDollar, listCoaches } from './coachFa.js'
+import {
+  BOARD_PATH as GUARANTEE_PATH,
+  SCHOOL_HASH as GUARANTEE_HASH,
+  formatGameDate,
+  gamesForSchool,
+  hasDollar as guaranteeHasDollar,
+  kindLabel,
+  listGames,
+  party,
+  partyLabel,
+  sumAmounts,
+} from './guaranteeGames.js'
 
 export const CHAT_VOICE =
   'Lookup only. Grounded in the public desk JSON. Empty stays empty. Booked and modeled stay distinct.'
@@ -61,41 +73,66 @@ export const SUGGESTED_PROMPTS = [
   'How does Alabama compare on reported NIL?',
   "What's Georgia's jersey patch deal?",
   "What's the difference between Louisville and Kentucky?",
+  "What's Alabama's coach pay?",
+  "What's Miami's buy-game guarantee?",
 ]
 
 const EXTRA_ALIASES = {
   louisville: ['uofl', 'u of l', 'university of louisville'],
   kentucky: ['university of kentucky'],
   california: ['cal', 'berkeley', 'uc berkeley', 'ucb'],
-  washington: ['uw', 'university of washington'],
-  'notre-dame': ['nd', 'irish'],
-  'texas-am': ['texas a and m', 'texas am', 'tamu', 'a and m'],
-  'ohio-state': ['ohio st', 'the ohio state'],
-  'oklahoma-state': ['ok state', 'oklahoma st'],
-  'penn-state': ['penn st'],
-  'michigan-state': ['michigan st'],
+  washington: ['uw', 'university of washington', 'huskies'],
+  'notre-dame': ['nd', 'irish', 'fighting irish'],
+  'texas-am': ['texas a and m', 'texas am', 'tamu', 'a and m', 'aggies'],
+  'ohio-state': ['ohio st', 'the ohio state', 'buckeyes'],
+  'oklahoma-state': ['ok state', 'oklahoma st', 'pokes'],
+  'penn-state': ['penn st', 'nittany lions'],
+  'michigan-state': ['michigan st', 'spartans'],
   'mississippi-state': ['miss state'],
-  'nc-state': ['nc state', 'n c state'],
-  'ole-miss': ['ole miss'],
+  'nc-state': ['nc state', 'n c state', 'wolfpack'],
+  'ole-miss': ['ole miss', 'rebels'],
   georgia: ['uga', 'dawgs', 'bulldogs'],
   tennessee: ['vols', 'volunteers'],
   alabama: ['bama', 'tide', 'crimson tide'],
   texas: ['longhorns'],
-  'georgia-tech': ['georgia tech', 'ga tech'],
+  'georgia-tech': ['georgia tech', 'ga tech', 'yellow jackets'],
   'boston-college': ['boston college'],
-  'wake-forest': ['wake forest'],
-  'west-virginia': ['west virginia'],
-  'arizona-state': ['arizona state'],
-  'kansas-state': ['kansas state'],
-  'iowa-state': ['iowa state'],
-  'florida-state': ['florida state'],
-  'north-carolina': ['north carolina'],
-  'south-carolina': ['south carolina'],
-  'texas-tech': ['texas tech'],
-  'miami': ['the u'],
+  'wake-forest': ['wake forest', 'deacs', 'demon deacons'],
+  'west-virginia': ['west virginia', 'mountaineers'],
+  'arizona-state': ['arizona state', 'sun devils'],
+  'kansas-state': ['kansas state', 'k state', 'kstate'],
+  'iowa-state': ['iowa state', 'cyclones'],
+  'florida-state': ['florida state', 'noles', 'seminoles'],
+  'north-carolina': ['north carolina', 'unc', 'tar heels'],
+  'south-carolina': ['south carolina', 'gamecocks'],
+  'texas-tech': ['texas tech', 'red raiders'],
+  miami: ['the u', 'canes', 'hurricanes'],
   smu: ['southern methodist'],
-  ucla: ['ucla'],
-  usc: ['usc'],
+  ucla: ['bruins'],
+  usc: ['trojans'],
+  florida: ['uf', 'gators'],
+  oklahoma: ['sooners'],
+  oregon: ['ducks'],
+  vanderbilt: ['vandy', 'commodores'],
+  missouri: ['mizzou'],
+  nebraska: ['huskers'],
+  tcu: ['horned frogs'],
+  syracuse: ['cuse'],
+  michigan: ['wolverines'],
+  pittsburgh: ['pitt', 'panthers'],
+  arkansas: ['razorbacks', 'hogs'],
+  indiana: ['hoosiers'],
+  purdue: ['boilermakers'],
+  iowa: ['hawkeyes'],
+  wisconsin: ['badgers'],
+  minnesota: ['gophers'],
+  illinois: ['illini'],
+  maryland: ['terps', 'terrapins'],
+  colorado: ['buffs', 'buffaloes'],
+  utah: ['utes'],
+  kansas: ['jayhawks', 'ku'],
+  'virginia-tech': ['hokies', 'vt'],
+  virginia: ['cavaliers', 'hoos'],
 }
 
 const STOP_PHRASES = new Set([
@@ -114,6 +151,39 @@ const STOP_PHRASES = new Set([
   'who',
   'school',
   'schools',
+  'guarantee',
+  'sec',
+  'acc',
+])
+
+const CONFERENCE_ALIASES = [
+  { id: 'SEC', phrases: ['sec', 'southeastern'] },
+  { id: 'Big Ten', phrases: ['big ten', 'b1g', 'big 10', 'bigten'] },
+  { id: 'ACC', phrases: ['acc', 'atlantic coast'] },
+  { id: 'Big 12', phrases: ['big 12', 'big xii', 'big12'] },
+]
+
+const COACH_LAST_BLOCK = new Set([
+  'day',
+  'key',
+  'brown',
+  'frost',
+  'lea',
+  'odom',
+  'stein',
+  'morris',
+  'rogers',
+  'campbell',
+  'elliott',
+  'sanders',
+  'riley',
+  'franklin',
+  'white',
+  'smith',
+  'johnson',
+  'williams',
+  'jones',
+  'davis',
 ])
 
 function fold(raw) {
@@ -193,6 +263,19 @@ export function matchSchools(question, schools) {
   return hits.map((h) => h.id)
 }
 
+function namingPhrases(n) {
+  const raw = [n.facility, n.sponsor].filter(Boolean).map(fold).filter((p) => p && p.length >= 5)
+  const extra = []
+  for (const phrase of raw) {
+    const words = phrase.split(' ')
+    if (words.length >= 3) {
+      const stem = words.slice(0, 3).join(' ')
+      if (stem.length >= 10 && !/memorial stadium|football stadium/.test(stem)) extra.push(stem)
+    }
+  }
+  return [...new Set([...raw, ...extra])]
+}
+
 /** Facility / sponsor names from layers.apparel.naming when the question omits the school. */
 export function matchNamingSchools(question, layers) {
   const hay = ` ${fold(question)} `
@@ -200,11 +283,7 @@ export function matchNamingSchools(question, layers) {
   const seen = new Set()
   for (const [id, layer] of Object.entries(layers?.schools || {})) {
     for (const n of layer?.apparel?.naming || []) {
-      const phrases = [n.facility, n.sponsor]
-        .filter(Boolean)
-        .map(fold)
-        .filter((p) => p && p.length >= 5)
-      for (const phrase of phrases) {
+      for (const phrase of namingPhrases(n)) {
         const re = new RegExp(`\\s${escapeRe(phrase)}s?\\s`)
         if (!re.test(hay) || seen.has(id)) continue
         hits.push(id)
@@ -215,15 +294,95 @@ export function matchNamingSchools(question, layers) {
   return hits
 }
 
+export function detectConferences(question) {
+  const hay = ` ${fold(question)} `
+  const hits = []
+  for (const c of CONFERENCE_ALIASES) {
+    if (c.phrases.some((p) => new RegExp(`\\s${escapeRe(p)}s?\\s`).test(hay))) hits.push(c.id)
+  }
+  return hits
+}
+
+function conferenceOfSchool(school) {
+  return school?.conference || null
+}
+
+function schoolsInConference(schools, conference) {
+  if (!conference) return schools || []
+  return (schools || []).filter((s) => conferenceOfSchool(s) === conference)
+}
+
 function matchCoaches(question, coachFa) {
   const coaches = listCoaches(coachFa)
   if (!coaches.length) return []
   const hay = ` ${fold(question)} `
   const hits = []
   for (const c of coaches) {
-    const names = [c.name, c.id.replace(/-/g, ' '), ...(c.name || '').split(/\s+/).slice(-1)]
+    const last = (c.name || '').split(/\s+/).slice(-1)[0]
+    const names = [c.name, c.id.replace(/-/g, ' ')]
+    if (last && fold(last).length >= 5 && !COACH_LAST_BLOCK.has(fold(last))) names.push(last)
     if (names.some((n) => n && new RegExp(`\\s${escapeRe(fold(n))}s?\\s`).test(hay))) {
       hits.push(c)
+    }
+  }
+  return hits
+}
+
+function chairLastName(name) {
+  const parts = String(name || '')
+    .split(/\s+/)
+    .filter((p) => p && p !== '—' && !/^[A-Z]\.$/.test(p))
+  return parts[parts.length - 1] || ''
+}
+
+function matchDeskChairs(question, schools, season) {
+  const hay = ` ${fold(question)} `
+  const hits = []
+  for (const s of schools || []) {
+    const yearKeys = Object.keys(s.coachesByYear || {})
+    const years = [...new Set([...(season ? [String(season)] : []), ...yearKeys])].sort((a, b) => Number(b) - Number(a))
+    for (const y of years) {
+      const coach = s.coachesByYear?.[y]?.football || (String(y) === String(season) ? s.coaches?.football : null)
+      if (!coach?.name || coach.name === '—') continue
+      const last = chairLastName(coach.name)
+      const names = [coach.name]
+      const lastFold = fold(last)
+      if (lastFold.length >= 5 && !COACH_LAST_BLOCK.has(lastFold) && !STOP_PHRASES.has(lastFold)) names.push(last)
+      if (names.some((n) => n && new RegExp(`\\s${escapeRe(fold(n))}s?\\s`).test(hay))) {
+        hits.push({ id: s.id, year: Number(y) || season, coach, name: coach.name })
+        break
+      }
+    }
+  }
+  const byName = new Map()
+  for (const h of hits) {
+    const key = fold(h.name)
+    const prev = byName.get(key)
+    if (!prev || (h.year || 0) > (prev.year || 0)) byName.set(key, h)
+  }
+  return [...byName.values()]
+}
+
+function matchGuaranteeParties(question, book) {
+  if (!book?.games) return []
+  const hay = ` ${fold(question)} `
+  const hits = []
+  const seen = new Set()
+  for (const g of book.games) {
+    const labels = [
+      g.payeeLabel,
+      g.payerLabel,
+      g.payeeSlug?.replace(/-/g, ' '),
+      g.payerSlug?.replace(/-/g, ' '),
+      g.homeLabel,
+    ].filter(Boolean)
+    for (const label of labels) {
+      const phrase = fold(label)
+      if (!phrase || phrase.length < 3) continue
+      if (new RegExp(`\\s${escapeRe(phrase)}s?\\s`).test(hay) && !seen.has(g.id)) {
+        hits.push(g)
+        seen.add(g.id)
+      }
     }
   }
   return hits
@@ -272,7 +431,10 @@ function detectIntents(q) {
   ) {
     intents.add('apparel')
   }
-  if (/which schools|who has booked|schools have booked|booked house spent/.test(t) && /house spent|booked house|leftover/.test(t)) {
+  if (
+    (/which schools?|who has|who in/.test(t) && /house spent|booked house|leftover/.test(t)) ||
+    (/booked leftover|schools have leftover/.test(t))
+  ) {
     intents.add('listHouseSpent')
   }
   if (/which schools|who has/.test(t) && /roster estimate|industry roster|above.?40/.test(t)) {
@@ -302,8 +464,18 @@ function detectIntents(q) {
   ) {
     intents.add('reportedNil')
   }
-  if (/leftover|house remaining|remaining house/.test(t)) intents.add('leftover')
-  if (/house spent|spent cell|year 1 spent/.test(t)) intents.add('houseSpent')
+  if (
+    /leftover|house remaining|remaining house/.test(t) ||
+    /house (cap )?(left|remaining)|left of .+ house|room .+ under the (house )?cap|how much .+ (have|has) left/.test(t)
+  ) {
+    intents.add('leftover')
+  }
+  if (
+    /house spent|spent cell|year 1 spent/.test(t) ||
+    /spent on (the )?house|house (cap )?spend|spent (this year|ytd|year to date)/.test(t)
+  ) {
+    intents.add('houseSpent')
+  }
   if (
     /booked nil|nil booked/.test(t) ||
     (/\bnil\b/.test(t) &&
@@ -316,17 +488,36 @@ function detectIntents(q) {
   }
   if (/modeled nil|nil modeled/.test(t)) intents.add('modeledNil')
   if (/house cap/.test(t) && !intents.has('defineHouse')) intents.add('houseCap')
-  if (/\beada\b|equity in athletics/.test(t)) intents.add('eada')
+  if (/\beada\b|equity in athletics|athletics revenue|athletic(?:s)? (?:dept |department )?revenue/.test(t)) {
+    intents.add('eada')
+  }
   if (/\bcapacity\b/.test(t) && !intents.has('defineCapacity')) intents.add('capacity')
-  if (/\btv\b|media (rights|line|check|deal)|conference media|full tv|broadcast media/.test(t)) intents.add('tv')
+  if (/\btv\b|media (rights|line|check|deal|pot)|conference media|full tv|broadcast media/.test(t)) {
+    intents.add('tv')
+  }
+  if (/guarantee|buy[-\s]?game|game check|game payout/.test(t)) intents.add('guarantee')
+  if (/can (they|we|.+) afford|afford (a |another |the )?\$|afford another|enough (leftover|house|room) to/.test(t)) {
+    intents.add('afford')
+  }
   if (
     /starting qb|qb1|\bqb\b|who is .+ start|depth chart/.test(t) ||
     (/\broster\b/.test(t) && !intents.has('rosterEstimate') && !intents.has('listRosterEstimate') && !intents.has('defineRosterEstimate'))
   ) {
     intents.add('roster')
   }
-  if (/buyout|coach pay|head coach|salary/.test(t)) intents.add('coach')
-  if (/compare|\bvs\b|versus|differ(?:ence)?/.test(t)) intents.add('compare')
+  if (
+    /buyout|coach pay|head coach|football coach|football chair|\bhc\b/.test(t) ||
+    (/\bsalary\b/.test(t) && !detectPositionFamily(t)) ||
+    /how much does .+ (pay|make)|what does .+ pay|pay (their|the|his|her) (head )?coach|who (is|coaches) .+ coach/.test(t)
+  ) {
+    intents.add('coach')
+  }
+  if (/who has (the )?(most|highest|more) (booked )?nil|which schools? (has|have) (the )?(most|highest) (booked )?nil/.test(t)) {
+    intents.add('listBookedNil')
+  }
+  if (/compare|\bvs\b|versus|differ(?:ence)?|who has more|which is higher|stack up/.test(t)) {
+    intents.add('compare')
+  }
   if (/methods|how (is|does) the desk/.test(t)) intents.add('methods')
   return intents
 }
@@ -434,10 +625,21 @@ function missSuggested(question) {
   if (/reported|nil/.test(t)) {
     out.push('How does Alabama compare on reported NIL?')
   }
+  if (/coach|salary|buyout|pay/.test(t)) {
+    out.push("What's Alabama's coach pay?")
+  }
+  if (/guarantee|buy.?game|payout/.test(t)) {
+    out.push("What's Miami's buy-game guarantee?")
+  }
+  if (/leftover|house spent|cap/.test(t)) {
+    out.push(WORKING_EXAMPLE())
+  }
   const pool = [
     "What's Georgia's jersey patch deal?",
     "What's the difference between Louisville and Kentucky?",
     'How does Alabama compare on reported NIL?',
+    "What's Alabama's coach pay?",
+    "What's Miami's buy-game guarantee?",
   ]
   for (const p of pool) {
     if (out.length >= 3) break
@@ -449,7 +651,7 @@ function missSuggested(question) {
 
 function missAnswer(question) {
   return {
-    text: 'Ask a Power 4 school (or Notre Dame) about leftover, booked NIL, reported NIL, apparel/naming, or how two schools differ.',
+    text: 'Ask a Power 4 school (or Notre Dame) about leftover, House spent, booked NIL, coach pay, buy-game guarantees, reported NIL, apparel/naming, or how two schools differ.',
     links: [
       { to: '/', label: 'Rank list' },
       { to: '/methods', label: 'Methods' },
@@ -635,7 +837,7 @@ function factLine(label, value, opts = {}) {
   return bits.join(' · ')
 }
 
-function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, question, layers) {
+function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, question, layers, guarantees) {
   const { school, leftover, booked, spent, cap, coach } = schoolFacts(raw, season, includeAlumni, desk)
   const lines = []
   const facts = []
@@ -646,6 +848,18 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, qu
 
   if (intents.has('refuse')) {
     return refuseAnswer()
+  }
+
+  if (intents.has('afford') && !intents.has('leftover') && !intents.has('houseSpent')) {
+    return affordAnswer(raw, season, includeAlumni, desk, question)
+  }
+
+  if (intents.has('guarantee') && !intents.has('leftover') && !intents.has('bookedNil') && !intents.has('houseSpent')) {
+    return guaranteeAnswer(raw, season, desk, guarantees, question)
+  }
+
+  if (intents.has('eada') && !intents.has('leftover') && !intents.has('bookedNil') && !intents.has('houseSpent') && !intents.has('capacity')) {
+    return eadaAnswer(raw, season, includeAlumni, desk)
   }
 
   if (intents.has('apparel') && !intents.has('leftover') && !intents.has('bookedNil') && !intents.has('houseSpent')) {
@@ -1322,9 +1536,333 @@ function coachAnswer(school, coach, season) {
   return { text: lines.join(' '), facts, links, suggested: SUGGESTED_PROMPTS.slice(0, 3) }
 }
 
-function listHouseSpent(desk, season) {
+function parseAskedDollars(question) {
+  const raw = String(question || '')
+  const tagged = raw.match(/\$\s*([\d,.]+)\s*(m(?:illion)?|k)?/i)
+  const words = fold(question).match(/\b(\d+(?:\.\d+)?)\s*(million|thousand)\b/)
+  const m = tagged || words
+  if (!m) return null
+  let n = Number(String(m[1]).replace(/,/g, ''))
+  if (!Number.isFinite(n) || n <= 0) return null
+  const unit = String(m[2] || '').toLowerCase()
+  if (unit.startsWith('m')) n *= 1e6
+  else if (unit.startsWith('k') || unit.startsWith('thousand')) n *= 1e3
+  if (n < 1000) return null
+  return n
+}
+
+function affordAnswer(raw, season, includeAlumni, desk, question) {
+  const { school, leftover, spent } = schoolFacts(raw, season, includeAlumni, desk)
+  const asked = parseAskedDollars(question)
+  const links = [
+    { to: schoolHref(school.id, season, 'leftover'), label: `${school.name} leftover` },
+    { to: '/methods', label: 'Methods' },
+  ]
+  const suggested = [
+    "What's Louisville's leftover / House spent / booked NIL?",
+    `What's ${school.name}'s leftover?`,
+    WORKING_EXAMPLE(),
+  ]
+  if (leftover.value == null || spent == null) {
+    return {
+      text: `${school.name} leftover is pending — leftover is only House cap minus booked House spent, and that spent cell is empty. We cannot answer “can they afford” from a cap plan or a modeled roster. Empty is not a $20.5M leftover.`,
+      facts: ['Leftover: pending', 'House spent: pending'],
+      links,
+      suggested,
+    }
+  }
+  const yl = yearLabel(leftover)
+  const ytd = leftover.field?.partialYear ? ' Year-to-date residual, not a full-year leftover.' : ''
+  if (asked == null) {
+    return {
+      text: `${school.name} leftover is ${money(leftover.value)}${yl ? ` (${yl})` : ''}. House cap minus booked House spent ${money(spent)}.${ytd} Afford on this desk is that leftover cell — we do not invent a yes/no from capacity or modeled NIL.`,
+      facts: [factLine('Leftover', leftover.value, { note: yl }), factLine('House spent', spent)],
+      links,
+      suggested,
+    }
+  }
+  if (leftover.value >= asked) {
+    return {
+      text: `${school.name} leftover is ${money(leftover.value)}${yl ? ` (${yl})` : ''} — House cap minus booked House spent ${money(spent)}. That booked leftover covers a ${money(asked)} ask on this desk.${ytd} Other pots (capacity, TV, a buyout overhang) are not leftover.`,
+      facts: [factLine('Leftover', leftover.value, { note: yl }), `Ask: ${money(asked)}`],
+      links,
+      suggested,
+    }
+  }
+  return {
+    text: `${school.name} leftover is ${money(leftover.value)}${yl ? ` (${yl})` : ''}. A ${money(asked)} ask is larger than that booked leftover (House cap minus booked House spent ${money(spent)}).${ytd} We do not invent whether they can pay from capacity or another pot.`,
+    facts: [factLine('Leftover', leftover.value, { note: yl }), `Ask: ${money(asked)}`],
+    links,
+    suggested,
+  }
+}
+
+function eadaAnswer(raw, season, includeAlumni, desk) {
+  const { school, cap } = schoolFacts(raw, season, includeAlumni, desk)
+  const eada = eadaLane(school)
+  const links = [{ to: schoolHref(school.id, season, 'eada'), label: `${school.name} EADA` }]
+  if (eada.total) {
+    const facts = [factLine('EADA athletics revenue', eada.total.value, { mark: 'reported', note: eada.total.fiscalYear || 'FY2025' })]
+    if (eada.football) facts.push(factLine('EADA football', eada.football.value, { mark: 'reported' }))
+    return {
+      text: `${school.name} EADA FY2025 athletics revenue is ${money(eada.total.value)} (reported) — a separate federal top-line that includes institutional support. Not added to the booked stack, and not unpacked into tickets, sponsorships, or contributions.`,
+      facts,
+      links,
+      suggested: ["What's SMU's EADA athletics revenue?", WORKING_EXAMPLE()],
+    }
+  }
+  const capBit = cap.value
+    ? ` Booked-only capacity is a different lane (${money(cap.value)}${cap.fy ? `, ${cap.fy}` : ''}).`
+    : ''
+  return {
+    text: `${school.name} has no EADA athletics-revenue cell on the desk.${capBit} We do not invent a federal total.`,
+    facts: ['EADA athletics revenue: pending'],
+    links,
+    suggested: ["What's SMU's EADA athletics revenue?", WORKING_EXAMPLE()],
+  }
+}
+
+function guaranteeGameLine(game, schools) {
+  const payer = party(game, 'payer', schools)
+  const payee = party(game, 'payee', schools)
+  const amt = guaranteeHasDollar(game.amount) ? moneyExact(game.amount) : 'pending'
+  const kind = kindLabel(game.kind)
+  const date = formatGameDate(game.date)
+  const bits = [`${payer.label} → ${payee.label}: football guarantee ${amt} (${game.confidence || 'reported'}${kind ? `, ${kind}` : ''}${date && date !== '—' ? `, ${date}` : ''}).`]
+  if (guaranteeHasDollar(game.bandAmount)) {
+    bits.push(`Band ${moneyExact(game.bandAmount)} is a separate cell — not the football guarantee.`)
+  }
+  if (game.amount === 0) bits.push('$0 is the cited contract cell, not pending.')
+  return bits.join(' ')
+}
+
+function guaranteeAnswer(raw, season, desk, book, question) {
+  const school = overlaySchool(raw, season)
+  const links = [
+    { to: schoolHref(school.id, season, GUARANTEE_HASH), label: `${school.name} guarantee games` },
+    { to: GUARANTEE_PATH, label: 'Guarantee-games board' },
+  ]
+  const suggested = [
+    "What's Miami's buy-game guarantee?",
+    "What's Ohio State's Ball State guarantee?",
+    WORKING_EXAMPLE(),
+  ]
+  if (!book?.games) {
+    return {
+      text: `${school.name} guarantee / buy-game cells live on /guarantee-games. Open the chat on the site to load that book, or see the board. Football guarantee is not House spent and not booked NIL.`,
+      links,
+      suggested,
+    }
+  }
+  const { paid, received } = gamesForSchool(book, school.id, season)
+  const rows = [...paid, ...received]
+  const opponentHits = matchGuaranteeParties(question, book).filter(
+    (g) => g.payerSchoolId === school.id || g.payeeSchoolId === school.id,
+  )
+  const use = opponentHits.length ? opponentHits : rows
+  if (!use.length) {
+    return {
+      text: `${school.name} has no 2026 football guarantee / buy-game cite on the desk. Empty is not zero. Not House spent, not booked NIL. See /guarantee-games for the schools that do.`,
+      facts: ['Football guarantee: pending'],
+      links,
+      suggested,
+    }
+  }
+  const lines = use.map((g) => guaranteeGameLine(g, desk.schools))
+  lines.push('Football guarantee ≠ band. ≠ House spent. ≠ booked NIL.')
+  const paidSum = sumAmounts(paid)
+  const facts = use.map((g) => {
+    const payee = partyLabel(g, 'payee', desk.schools)
+    return `${partyLabel(g, 'payer', desk.schools)} → ${payee}: ${guaranteeHasDollar(g.amount) ? moneyExact(g.amount) : 'pending'}`
+  })
+  if (paidSum != null && paid.length > 1 && opponentHits.length === 0) {
+    facts.push(`Paid football guarantees on desk: ${moneyExact(paidSum)}`)
+  }
+  return { text: lines.join(' '), facts, links, suggested }
+}
+
+function guaranteeBoardAnswer(book, desk, season, question) {
+  const links = [{ to: GUARANTEE_PATH, label: 'Guarantee-games board' }]
+  const suggested = [
+    "What's Miami's buy-game guarantee?",
+    "What's Ohio State's Ball State guarantee?",
+    WORKING_EXAMPLE(),
+  ]
+  if (!book?.games) {
+    return {
+      text: 'Guarantee / buy-game cells live on /guarantee-games. Open the chat on the site to load that book. Football guarantee is not House spent and not booked NIL.',
+      links,
+      suggested,
+    }
+  }
+  const hits = matchGuaranteeParties(question, book)
+  const rows = hits.length ? hits : listGames(book, { season }).filter((g) => guaranteeHasDollar(g.amount)).sort((a, b) => Number(b.amount) - Number(a.amount)).slice(0, 5)
+  if (!rows.length) {
+    return {
+      text: 'No 2026 football guarantee / buy-game cite is on the desk. Empty is not zero. See /guarantee-games.',
+      links,
+      suggested,
+    }
+  }
+  const lead = hits.length
+    ? `Booked football guarantee${rows.length === 1 ? '' : 's'} on the desk:`
+    : `Largest booked 2026 football guarantees on the desk (cite-only):`
+  return {
+    text: `${lead} ${rows.map((g) => guaranteeGameLine(g, desk.schools)).join(' ')} Football guarantee ≠ band. ≠ House spent. ≠ booked NIL.`,
+    facts: rows.map((g) => `${partyLabel(g, 'payer', desk.schools)} → ${partyLabel(g, 'payee', desk.schools)}: ${moneyExact(g.amount)}`),
+    links,
+    suggested,
+  }
+}
+
+function conferenceTvAnswer(conference, tv) {
+  const conf = (tv && conferenceList(tv).find((c) => c.id === conference)) || tv?.conferences?.[conference]
+  const links = [{ to: '/tv', label: 'TV desk' }]
+  if (!conf) {
+    return {
+      text: `${conference} conference media is on /tv. Open the chat on the site to load the TV book. That pot is not a school contract.`,
+      links,
+      suggested: ['Which schools have booked House spent?', WORKING_EXAMPLE()],
+    }
+  }
+  const est = equalShareEstimate(conf)
+  const lines = [
+    `${conf.name} cited conference rights pot is ${money(conf.annual)} a year (${conf.confidence || 'reported'}${conf.termLabel ? ` · ${conf.termLabel}` : ''}).`,
+  ]
+  if (est) {
+    lines.push(
+      `Implied equal-share media check ${money(est.value)} — labeled estimated (${est.formula}). Not a school contract, and not the full 990 distribution (CFP / bowls / NCAA sit on top).`,
+    )
+  } else {
+    lines.push(conf.splitLabel || 'This conference does not publish an equal per-school media check. We do not invent one.')
+  }
+  if (conf.splitLabel && est) lines.push(conf.splitLabel)
+  return {
+    text: lines.join(' '),
+    facts: [
+      factLine(`${conf.name} pot`, conf.annual, { mark: conf.confidence || 'reported' }),
+      est ? factLine('Equal-share estimate', est.value, { mark: 'estimated' }) : 'Equal-share: pending',
+    ],
+    links,
+    suggested: ['Compare SEC and Big Ten TV', WORKING_EXAMPLE()],
+  }
+}
+
+function compareConferenceTv(aId, bId, tv) {
+  const A = conferenceTvAnswer(aId, tv)
+  const B = conferenceTvAnswer(bId, tv)
+  const aConf = tv?.conferences?.[aId]
+  const bConf = tv?.conferences?.[bId]
+  const aEst = aConf ? equalShareEstimate(aConf) : null
+  const bEst = bConf ? equalShareEstimate(bConf) : null
+  const potLine = gapLine('Cited rights pot', aId, aConf?.annual ?? null, bId, bConf?.annual ?? null)
+  const shareLine = gapLine('Equal-share estimate', aId, aEst?.value ?? null, bId, bEst?.value ?? null)
+  return {
+    text: `${potLine} ${shareLine} Equal-share is labeled estimated (cited pot ÷ members) — not a school contract, and not leftover.`,
+    facts: [...(A.facts || []), ...(B.facts || [])],
+    links: [{ to: '/tv', label: 'TV desk' }],
+    suggested: ["What's the Big Ten media check?", WORKING_EXAMPLE()],
+  }
+}
+
+function listBookedNil(desk, season, conference) {
+  const pool = schoolsInConference(desk.schools, conference)
   const rows = []
-  for (const raw of desk.schools) {
+  for (const raw of pool) {
+    const school = overlaySchool(raw, season)
+    const booked = leadBookedNil(school)
+    if (booked.value == null || bookedIsPreCap(raw, booked)) continue
+    rows.push({
+      id: school.id,
+      name: school.name,
+      value: booked.value,
+      label: yearLabel(booked),
+    })
+  }
+  rows.sort((a, b) => b.value - a.value || a.name.localeCompare(b.name))
+  const scope = conference ? `${conference} ` : ''
+  if (!rows.length) {
+    return {
+      text: `No ${scope}school on this season overlay has a booked NIL cell (Item 44 $0 is not a House booked-NIL lead). Empty stays empty.`,
+      links: [{ to: '/', label: 'Rank list' }, { to: '/methods', label: 'Methods' }],
+    }
+  }
+  const top = rows[0]
+  return {
+    text: `Booked NIL is on the desk for ${rows.length} ${scope}school${rows.length === 1 ? '' : 's'}. Highest: ${top.name} ${money(top.value)}${top.label ? ` (${top.label})` : ''}. ${rows.map((r) => `${r.name} ${money(r.value)}`).join('; ')}. Booked only — modeled and Item 44 pre-House $0 stay off this list.`,
+    facts: rows.map((r) => `${r.name}: ${money(r.value)}${r.label ? ` · ${r.label}` : ''}`),
+    links: [
+      ...rows.map((r) => ({ to: schoolHref(r.id, season, 'nil'), label: r.name })),
+      { to: '/', label: 'Rank list' },
+    ],
+    suggested: SUGGESTED_PROMPTS.filter((p) => /NIL|House spent/i.test(p)).slice(0, 3),
+  }
+}
+
+function listCoachPay(desk, season, conference) {
+  const pool = schoolsInConference(desk.schools, conference)
+  const rows = []
+  for (const raw of pool) {
+    const school = overlaySchool(raw, season)
+    const coach = school.coaches?.football
+    if (!coach?.name || coach.name === '—' || !hasVal(coach.pay)) continue
+    rows.push({
+      id: school.id,
+      name: school.name,
+      coach: coach.name,
+      value: coach.pay.value,
+      mark: mark(coach.pay),
+    })
+  }
+  rows.sort((a, b) => b.value - a.value || a.name.localeCompare(b.name))
+  const scope = conference ? `${conference} ` : ''
+  if (!rows.length) {
+    return {
+      text: `No ${scope}school has a booked football chair pay cell on this season. We do not invent a dollar.`,
+      links: [{ to: '/', label: 'Rank list' }, { to: '/buyout', label: 'Buyout calculator' }],
+    }
+  }
+  const top = rows[0]
+  const shown = rows.slice(0, 8)
+  const more = rows.length > shown.length ? ` ${rows.length - shown.length} more booked cells on school pages.` : ''
+  return {
+    text: `Highest booked ${scope}football chair pay on the desk: ${top.coach} (${top.name}) ${money(top.value)} (${top.mark}). ${shown.map((r) => `${r.coach} ${r.name} ${money(r.value)}`).join('; ')}.${more} This year’s check, not lifetime wealth. Pending chairs stay off the list.`,
+    facts: shown.map((r) => `${r.name}: ${r.coach} ${moneyExact(r.value)} (${r.mark})`),
+    links: [
+      ...shown.slice(0, 6).map((r) => ({ to: schoolHref(r.id, season), label: r.name })),
+      { to: '/buyout', label: 'Buyout calculator' },
+    ],
+    suggested: ["What's Alabama's coach pay?", WORKING_EXAMPLE()],
+  }
+}
+
+function compareCoachPay(rawA, rawB, season, includeAlumni, desk) {
+  const A = schoolFacts(rawA, season, includeAlumni, desk)
+  const B = schoolFacts(rawB, season, includeAlumni, desk)
+  const aPay = hasVal(A.coach?.pay) ? A.coach.pay.value : null
+  const bPay = hasVal(B.coach?.pay) ? B.coach.pay.value : null
+  const aName = A.coach?.name && A.coach.name !== '—' ? A.coach.name : 'pending chair'
+  const bName = B.coach?.name && B.coach.name !== '—' ? B.coach.name : 'pending chair'
+  const lead = gapLine('Coach pay', A.school.name, aPay, B.school.name, bPay)
+  return {
+    text: `${lead} Chairs: ${A.school.name} ${aName}; ${B.school.name} ${bName}. This year’s check, not lifetime wealth. Buyout overhang is a liability, not yearly spend.`,
+    facts: [
+      `${A.school.name}: ${aName}${aPay != null ? ` · ${money(aPay)}` : ' · pay pending'}`,
+      `${B.school.name}: ${bName}${bPay != null ? ` · ${money(bPay)}` : ' · pay pending'}`,
+    ],
+    links: [
+      { to: comparePath({ a: A.school.id, b: B.school.id, season, includeAlumni }), label: `Compare ${A.school.name} / ${B.school.name}` },
+      { to: schoolHref(A.school.id, season), label: A.school.name },
+      { to: schoolHref(B.school.id, season), label: B.school.name },
+    ],
+    suggested: ["What's Alabama's coach pay?", WORKING_EXAMPLE()],
+  }
+}
+
+function listHouseSpent(desk, season, conference) {
+  const rows = []
+  const pool = schoolsInConference(desk.schools, conference)
+  for (const raw of pool) {
     const school = overlaySchool(raw, season)
     const { leftover, booked, spent } = leftoverBundle(school)
     if (leftover.value == null || spent == null) continue
@@ -1339,9 +1877,12 @@ function listHouseSpent(desk, season) {
     })
   }
   rows.sort((a, b) => a.name.localeCompare(b.name))
+  const scope = conference ? `${conference} ` : ''
   if (!rows.length) {
     return {
-      text: 'No school on this season overlay has a booked House spent cell. Leftover stays empty until that cell exists.',
+      text: conference
+        ? `No ${conference} school on this season overlay has a booked House spent cell. Leftover stays empty until that cell exists.`
+        : 'No school on this season overlay has a booked House spent cell. Leftover stays empty until that cell exists.',
       links: [{ to: '/', label: 'Rank list' }, { to: '/methods', label: 'Methods' }],
     }
   }
@@ -1350,7 +1891,7 @@ function listHouseSpent(desk, season) {
     return `${r.name}: House spent ${money(r.spent)}, leftover ${money(r.leftover)}${ytd}`
   })
   return {
-    text: `Booked House spent is on the desk for ${rows.length} school${rows.length === 1 ? '' : 's'}: ${rows.map((r) => r.name).join(', ')}. Leftover is House Year 1 cap minus that spent cell — including $0 leftovers. Collective 990s are not in this math.`,
+    text: `Booked House spent is on the desk for ${rows.length} ${scope}school${rows.length === 1 ? '' : 's'}: ${rows.map((r) => r.name).join(', ')}. Leftover is House Year 1 cap minus that spent cell — including $0 leftovers. Collective 990s are not in this math.`,
     facts,
     links: [
       ...rows.map((r) => ({ to: schoolHref(r.id, season, 'leftover'), label: r.name })),
@@ -1366,6 +1907,10 @@ function compareNamedLane(A, B, metric, meta, season, includeAlumni) {
     if (metric === 'houseSpent') return { value: bundle.spent, hash: 'house-spent', label: 'House spent', lead: bundle.leftover }
     if (metric === 'bookedNil') return { value: bundle.booked.value, hash: 'nil', label: 'Booked NIL', lead: bundle.booked }
     if (metric === 'capacity') return { value: bundle.cap.value, hash: 'capacity', label: 'Capacity (booked)', lead: null }
+    if (metric === 'eada') {
+      const eada = eadaLane(bundle.school)
+      return { value: eada.total?.value ?? null, hash: 'eada', label: 'EADA athletics revenue', lead: null }
+    }
     const house = houseValueForSeason(meta, season)
     return { value: house, hash: 'house', label: 'House cap', lead: null }
   }
@@ -1410,7 +1955,9 @@ function compareNamedLane(A, B, metric, meta, season, includeAlumni) {
         ? ` Booked only — modeled stays off this comparison.${item44}`
         : metric === 'capacity'
           ? ' Booked-only capacity (filing stack). Modeled extra alumni is off unless that toggle is on.'
-          : ''
+          : metric === 'eada'
+            ? ' Federal EADA top-line — not added to the booked stack, and not unpacked into tickets or gifts.'
+            : ''
 
   return {
     text: lead + caveat,
@@ -1483,6 +2030,9 @@ function compareSchools(rawA, rawB, season, includeAlumni, intents, desk, layers
   if (intents.has('apparel') && !intents.has('leftover') && !intents.has('bookedNil') && !intents.has('capacity')) {
     return compareApparel(rawA, rawB, season, includeAlumni, desk, layers)
   }
+  if (intents.has('coach') && !intents.has('leftover') && !intents.has('bookedNil') && !intents.has('houseSpent')) {
+    return compareCoachPay(rawA, rawB, season, includeAlumni, desk)
+  }
 
   const named = intents.has('leftover')
     ? 'leftover'
@@ -1494,7 +2044,9 @@ function compareSchools(rawA, rawB, season, includeAlumni, intents, desk, layers
           ? 'capacity'
           : intents.has('houseCap')
             ? 'houseCap'
-            : null
+            : intents.has('eada')
+              ? 'eada'
+              : null
 
   if (named) return compareNamedLane(A, B, named, meta, season, includeAlumni)
   return compareReviewerLanes(A, B, season, includeAlumni)
@@ -1950,9 +2502,6 @@ export function answerDeskQuestion(question, ctx = {}) {
     }
   }
 
-  if (intents.has('listHouseSpent') || (/which schools|who has/.test(fold(q)) && /house spent|booked house|leftover/.test(fold(q)))) {
-    return listHouseSpent(desk, season)
-  }
   if (intents.has('listRosterEstimate')) {
     return listRosterEstimates(desk, season)
   }
@@ -1961,7 +2510,29 @@ export function answerDeskQuestion(question, ctx = {}) {
   }
 
   const ids = matchSchools(q, desk.schools)
+  const conferences = detectConferences(q)
   const byId = Object.fromEntries(desk.schools.map((s) => [s.id, s]))
+  const listScope = conferences.length === 1 ? conferences[0] : null
+
+  if (ids.length === 0 && conferences.length === 2 && (intents.has('tv') || intents.has('compare'))) {
+    return compareConferenceTv(conferences[0], conferences[1], ctx.tv)
+  }
+  if (ids.length === 0 && conferences.length === 1 && intents.has('tv')) {
+    return conferenceTvAnswer(conferences[0], ctx.tv)
+  }
+  if (ids.length === 0 && intents.has('listBookedNil')) {
+    return listBookedNil(desk, season, listScope)
+  }
+  if (
+    ids.length === 0 &&
+    (intents.has('listHouseSpent') ||
+      ((intents.has('leftover') || intents.has('houseSpent')) && (conferences.length === 1 || /which schools?|who has|who in/.test(fold(q)))))
+  ) {
+    return listHouseSpent(desk, season, listScope)
+  }
+  if (ids.length === 0 && intents.has('coach') && (conferences.length === 1 || /who has|highest|most/.test(fold(q)))) {
+    return listCoachPay(desk, season, listScope)
+  }
 
   if (ids.length >= 1 && intents.has('reportedNil')) {
     if (ids.length >= 2) {
@@ -1972,19 +2543,52 @@ export function answerDeskQuestion(question, ctx = {}) {
     return reportedNilAnswer(facts.school, season, facts.spent, facts.booked)
   }
 
+  if (ids.length === 2 && intents.has('guarantee') && !intents.has('leftover') && !intents.has('bookedNil')) {
+    const games = listGames(ctx.guarantees, { season }).filter((g) => {
+      const pair = new Set([g.payerSchoolId, g.payeeSchoolId].filter(Boolean))
+      return pair.has(ids[0]) && pair.has(ids[1])
+    })
+    if (games.length) {
+      return {
+        text: `${games.map((g) => guaranteeGameLine(g, desk.schools)).join(' ')} Football guarantee ≠ band. ≠ House spent. ≠ booked NIL.`,
+        facts: games.map((g) => `${partyLabel(g, 'payer', desk.schools)} → ${partyLabel(g, 'payee', desk.schools)}: ${guaranteeHasDollar(g.amount) ? moneyExact(g.amount) : 'pending'}`),
+        links: [
+          { to: GUARANTEE_PATH, label: 'Guarantee-games board' },
+          { to: schoolHref(ids[0], season, GUARANTEE_HASH), label: byId[ids[0]].name },
+          { to: schoolHref(ids[1], season, GUARANTEE_HASH), label: byId[ids[1]].name },
+        ],
+        suggested: ["What's Miami's buy-game guarantee?", WORKING_EXAMPLE()],
+      }
+    }
+  }
+
   if (ids.length === 2) {
     return compareSchools(byId[ids[0]], byId[ids[1]], season, includeAlumni, intents, desk, layers)
   }
 
   if (ids.length === 1) {
     const raw = byId[ids[0]]
+    const gHits = matchGuaranteeParties(q, ctx.guarantees).filter(
+      (g) => g.payerSchoolId === raw.id || g.payeeSchoolId === raw.id,
+    )
+    if (
+      gHits.length &&
+      !intents.has('leftover') &&
+      !intents.has('bookedNil') &&
+      !intents.has('houseSpent') &&
+      !intents.has('coach') &&
+      !intents.has('apparel') &&
+      !intents.has('eada')
+    ) {
+      intents.add('guarantee')
+    }
     if (intents.has('nilCoverage') || (intents.has('doYouHave') && intents.has('bookedNil') && !intents.has('leftover') && !intents.has('houseSpent'))) {
       return nilCoverageAnswer(raw, season, includeAlumni, desk)
     }
-    if (intents.has('missing') || (intents.has('coverage') && !intents.has('leftover') && !intents.has('tv') && !intents.has('roster') && !intents.has('positionEstimate') && !intents.has('rosterEstimate') && !intents.has('apparel'))) {
+    if (intents.has('missing') || (intents.has('coverage') && !intents.has('leftover') && !intents.has('tv') && !intents.has('roster') && !intents.has('positionEstimate') && !intents.has('rosterEstimate') && !intents.has('apparel') && !intents.has('guarantee') && !intents.has('coach'))) {
       return missingAnswer(raw, season, includeAlumni, desk, { leadMissing: intents.has('missing') || /missing/.test(fold(q)) })
     }
-    const out = schoolAnswer(raw, season, includeAlumni, intents, ctx.tv, ctx.rosters, desk, q, layers)
+    const out = schoolAnswer(raw, season, includeAlumni, intents, ctx.tv, ctx.rosters, desk, q, layers, ctx.guarantees)
     if (intents.has('houseCap') && desk.meta) {
       const house = houseValueForSeason(desk.meta, season)
       const field = houseFieldForSeason(desk.meta, season)
@@ -2005,6 +2609,20 @@ export function answerDeskQuestion(question, ctx = {}) {
     }
   }
 
+  const chairs = matchDeskChairs(q, desk.schools, season)
+  if (chairs.length === 1) {
+    const raw = byId[chairs[0].id]
+    const school = overlaySchool(raw, chairs[0].year || season)
+    const out = coachAnswer(school, chairs[0].coach, chairs[0].year || season)
+    if (chairs[0].year && chairs[0].year !== season) {
+      out.text = `${chairs[0].name} is the ${chairs[0].year} ${school.name} chair on this desk. ${out.text}`
+    }
+    return out
+  }
+  if (chairs.length === 2) {
+    return compareCoachPay(byId[chairs[0].id], byId[chairs[1].id], season, includeAlumni, desk)
+  }
+
   const coaches = matchCoaches(q, ctx.coachFa)
   if (coaches.length === 1) return coachFaAnswer(coaches[0], season)
   if (coaches.length > 1) {
@@ -2014,9 +2632,13 @@ export function answerDeskQuestion(question, ctx = {}) {
     }
   }
 
-  const namedIds = ids.length ? ids : matchNamingSchools(q, layers)
-  if (!ids.length && namedIds.length === 1 && byId[namedIds[0]]) {
+  const namedIds = matchNamingSchools(q, layers)
+  if (namedIds.length === 1 && byId[namedIds[0]]) {
     return apparelAnswer(byId[namedIds[0]], season, includeAlumni, desk, layers, `stadium naming ${q}`)
+  }
+
+  if (intents.has('guarantee') || matchGuaranteeParties(q, ctx.guarantees).length) {
+    return guaranteeBoardAnswer(ctx.guarantees, desk, season, q)
   }
 
   if (/hello|hi there|help|what can you/.test(fold(q))) return helpAnswer()
@@ -2027,6 +2649,17 @@ export function answerDeskQuestion(question, ctx = {}) {
       links: [
         { to: '/', label: 'Rank list' },
         { to: '/methods', label: 'Methods' },
+      ],
+      suggested: missSuggested(q),
+    }
+  }
+
+  if (intents.has('coach')) {
+    return {
+      text: 'Name a Power 4 school (or a current chair) for booked coach pay. We do not invent a dollar.',
+      links: [
+        { to: '/', label: 'Rank list' },
+        { to: '/buyout', label: 'Buyout calculator' },
       ],
       suggested: missSuggested(q),
     }

@@ -12,13 +12,18 @@ function loadCoachFa() {
   return jsonOr('/data/coach-fa.json', null)
 }
 
+function loadGuarantees() {
+  return jsonOr('/data/guarantee-games.json', null)
+}
+
 function Welcome() {
   return (
     <div className="desk-chat-msg bot">
       <p>
         Ask the desk in plain language. Lookups against the public JSON — leftover, House spent,
-        booked NIL, capacity, TV, buyouts, roster names — and what is included vs pending. Empty
-        stays empty. Booked and modeled stay distinct. No On3. No invented player deals.
+        booked NIL, coach pay, buy-game guarantees, capacity, TV, buyouts, roster names — and what
+        is included vs pending. Empty stays empty. Booked and modeled stay distinct. No On3. No
+        invented player deals.
       </p>
     </div>
   )
@@ -61,6 +66,7 @@ export default function DeskChat({ desk: deskProp, season = CURRENT_SEASON, incl
     rosters: null,
     coachFa: null,
     layers: null,
+    guarantees: null,
   })
   const [ready, setReady] = useState(!!deskProp)
   const inputRef = useRef(null)
@@ -102,10 +108,11 @@ export default function DeskChat({ desk: deskProp, season = CURRENT_SEASON, incl
       loadRosters(season),
       loadCoachFa(),
       loadLayers(),
+      loadGuarantees(),
     ])
-      .then(([desk, tv, rosters, coachFa, layers]) => {
+      .then(([desk, tv, rosters, coachFa, layers, guarantees]) => {
         if (cancelled) return
-        setBooks({ desk, tv, rosters, coachFa, layers })
+        setBooks({ desk, tv, rosters, coachFa, layers, guarantees })
         setReady(true)
       })
       .catch(() => {
@@ -125,6 +132,7 @@ export default function DeskChat({ desk: deskProp, season = CURRENT_SEASON, incl
       rosters: books.rosters,
       coachFa: books.coachFa,
       layers: books.layers,
+      guarantees: books.guarantees,
       season,
       includeAlumni,
     })
@@ -199,7 +207,7 @@ export default function DeskChat({ desk: deskProp, season = CURRENT_SEASON, incl
               ref={inputRef}
               className="search desk-chat-input"
               type="search"
-              placeholder="Louisville leftover, SMU TV, Washington QB…"
+              placeholder="Louisville leftover, Bama coach pay, Miami buy game…"
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
               autoComplete="off"
