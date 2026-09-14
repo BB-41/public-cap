@@ -131,6 +131,8 @@ ok(!reportedShell.includes('<title>Public Cap — Capacity vs House cap vs booke
 
 ok(app.includes('descriptionFromPath'), 'App applies per-route descriptions')
 ok(app.includes("jsonLd: 'school'"), 'App attaches school JSON-LD')
+ok(app.includes('schoolName: school?.name'), 'App passes booked school name into school JSON-LD')
+ok(share.includes('CollegeOrUniversity'), 'share.js can emit CollegeOrUniversity for school routes')
 ok(app.includes('titleFromPath'), 'App uses the shared title helper')
 ok(!app.includes('DEFAULT_TITLE'), 'App no longer falls back to the homepage title on school routes')
 
@@ -185,6 +187,27 @@ ok(lsuShell.includes('<title>LSU — Capacity vs House cap vs booked NIL — rep
 ok(lsuShell.includes('content="https://thepubliccap.com/school/lsu"'), 'LSU shell canonical/og:url')
 ok(!lsuShell.includes('<title>Public Cap — Capacity vs House cap vs booked NIL</title>'), 'LSU shell dropped the homepage title')
 ok(loadSchoolShells().length === 68, 'writer emits 68 school shells')
+
+function jsonLdFrom(html) {
+  const m = html.match(/<script type="application\/ld\+json" id="public-cap-jsonld">\s*([\s\S]*?)\s*<\/script>/)
+  return m ? JSON.parse(m[1]) : null
+}
+
+const lsuLd = jsonLdFrom(lsuShell)
+const lsuCollege = (lsuLd?.['@graph'] || []).find((n) => n['@type'] === 'CollegeOrUniversity')
+ok(lsuCollege, 'LSU shell has CollegeOrUniversity JSON-LD')
+ok(lsuCollege?.name === 'LSU', 'LSU CollegeOrUniversity name is the booked school name')
+ok(lsuCollege?.url === 'https://thepubliccap.com/school/lsu', 'LSU CollegeOrUniversity url is the page url')
+ok(
+  JSON.stringify(lsuCollege) ===
+    JSON.stringify({ '@type': 'CollegeOrUniversity', name: 'LSU', url: 'https://thepubliccap.com/school/lsu' }),
+  'LSU CollegeOrUniversity has only name and url — no invented NIL/capacity',
+)
+ok(!/\$/.test(JSON.stringify(lsuCollege || {})), 'LSU CollegeOrUniversity invents no dollars')
+
+const reportedLd = jsonLdFrom(reportedShell)
+ok(reportedLd?.['@type'] === 'WebPage', 'reported-nil shell stays WebPage JSON-LD')
+ok(!(reportedLd?.['@graph'] || []).some((n) => n['@type'] === 'CollegeOrUniversity'), 'reported-nil shell is not a college')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} checks passed`)
