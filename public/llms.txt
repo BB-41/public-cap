@@ -1,0 +1,23 @@
+# Public Cap
+
+> NCAA Power 4 money desk: annual capacity from public filings versus the House benefits cap versus booked NIL.
+
+Public Cap is the college athletics capacity desk at https://thepubliccap.com. It covers the Power 4 plus Notre Dame (68 schools). Pending stays empty. The desk does not invent House or NIL dollars. Collective 990 payout is a separate cited lane, not House. Reported football NIL is a survey range or labeled modeled conference band — not booked NIL and not a midpoint.
+
+## Pages
+
+- Home: https://thepubliccap.com/ — rank list, capacity vs House cap vs booked NIL
+- Methods: https://thepubliccap.com/methods — how the desk books capacity, House, booked NIL, and collective 990 payouts
+- School pages: https://thepubliccap.com/school/<slug> — one page per school (examples: /school/lsu, /school/notre-dame)
+- Compare: https://thepubliccap.com/compare
+- Reported NIL: https://thepubliccap.com/reported-nil
+- TV: https://thepubliccap.com/tv — conference TV contracts and school media checks when a filing exists
+- Tape: https://thepubliccap.com/tape
+- Buyout: https://thepubliccap.com/buyout
+- Coach buyout offsets: https://thepubliccap.com/coach-fa
+- Guarantee games: https://thepubliccap.com/guarantee-games
+
+## Crawlers
+
+- Sitemap: https://thepubliccap.com/sitemap.xml
+- Empty or pending cells are not zero

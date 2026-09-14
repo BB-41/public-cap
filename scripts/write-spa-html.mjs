@@ -53,7 +53,7 @@ export function routeShell(path, extras = {}) {
   const url = `https://${SITE}${path}`
   const image = ogImageFromPath(path)
   const hed = extras.hed || (path === '/reported-nil' ? 'Reported NIL by school' : title.split(' — ')[0])
-  return { path, title, description, url, image, hed }
+  return { path, title, description, url, image, hed, schoolName: extras.schoolName || null }
 }
 
 export function schoolShells(schools) {
@@ -73,6 +73,38 @@ export function loadSchoolShells() {
   return schoolShells(data.schools)
 }
 
+function routeJsonLd(route) {
+  const { title, description, url, image, path, schoolName } = route
+  const webpage = {
+    '@type': 'WebPage',
+    name: title,
+    description,
+    url,
+    image,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Public Cap',
+      url: `https://${SITE}/`,
+    },
+  }
+  // School shells: CollegeOrUniversity with facts already on the page (name, url).
+  // No capacity / House / NIL figures — those are not in this graph.
+  if (path.startsWith('/school/') && schoolName) {
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [
+        webpage,
+        {
+          '@type': 'CollegeOrUniversity',
+          name: schoolName,
+          url,
+        },
+      ],
+    }
+  }
+  return { '@context': 'https://schema.org', ...webpage }
+}
+
 export function applyRouteMeta(html, route) {
   const { title, description, url, image, path, hed } = route
   let out = html
@@ -89,19 +121,7 @@ export function applyRouteMeta(html, route) {
   out = replaceAttr(out, 'name', 'twitter:image', image)
   out = out.replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${url}" />`)
 
-  const jsonLd = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: title,
-    description,
-    url,
-    image,
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'Public Cap',
-      url: `https://${SITE}/`,
-    },
-  })
+  const jsonLd = JSON.stringify(routeJsonLd(route))
   out = out.replace(
     /<script type="application\/ld\+json" id="public-cap-jsonld">[\s\S]*?<\/script>/,
     `<script type="application/ld+json" id="public-cap-jsonld">\n      ${jsonLd}\n    </script>`,

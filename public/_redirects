@@ -1,7 +1,18 @@
 # Identity-proxy crawl files first. Cloudflare follows _redirects even when a
-# matching static asset exists, so /* must not rewrite robots.txt or sitemap.xml.
+# matching static asset exists, so /* must not rewrite robots.txt, sitemap.xml,
+# or llms.txt (those would otherwise fall through to the SPA HTML shell).
 /robots.txt /robots.txt 200
 /sitemap.xml /sitemap.xml 200
+/llms.txt /llms.txt 200
+
+# www → apex cannot be done here. Cloudflare Pages _redirects does not
+# support domain-level / host redirects (source must be a path). Do not
+# add `/* https://thepubliccap.com/:splat 301` — that would 301 the apex.
+# Dashboard + DNS (outside this repo):
+#   1. Proxied A www → 192.0.2.1 (or attach www as a Pages custom domain).
+#   2. Bulk Redirect: www.thepubliccap.com → https://thepubliccap.com
+#      301, preserve query string, subpath matching, preserve path suffix.
+# Today www.thepubliccap.com has no DNS record.
 
 # Do not 200-rewrite exact SPA paths — or /school/:id — to /index.html.
 # html_handling pretty-URLs /index.html → / with a 308, and a rewrite

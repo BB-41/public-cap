@@ -246,6 +246,7 @@ export default function App() {
         description: descriptionFromPath(path, { school, schoolName: school?.name }),
         path: schoolId ? `/school/${schoolId}` : path,
         jsonLd: 'school',
+        schoolName: school?.name,
       })
       return
     }

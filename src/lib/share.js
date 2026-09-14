@@ -222,7 +222,7 @@ function siteJsonLd() {
   }
 }
 
-function upsertRouteJsonLd(kind, { title, description, href }) {
+function upsertRouteJsonLd(kind, { title, description, href, schoolName }) {
   if (typeof document === 'undefined') return
   let el = document.getElementById(HOME_JSON_LD_ID)
   if (!kind) {
@@ -249,18 +249,35 @@ function upsertRouteJsonLd(kind, { title, description, href }) {
     })
     return
   }
-  el.textContent = JSON.stringify({
-    '@context': 'https://schema.org',
+  const webpage = {
     '@type': 'WebPage',
     name: title,
     description: description || PAGE_DESCRIPTIONS.school,
     url: href,
     isPartOf: siteJsonLd(),
+  }
+  if (kind === 'school' && schoolName) {
+    el.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        webpage,
+        {
+          '@type': 'CollegeOrUniversity',
+          name: schoolName,
+          url: href,
+        },
+      ],
+    })
+    return
+  }
+  el.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    ...webpage,
   })
 }
 
 /** Set document title, description, matching OG/Twitter tags, and a canonical URL. */
-export function applyDocumentMeta({ title, path, description, jsonLd = false, image }) {
+export function applyDocumentMeta({ title, path, description, jsonLd = false, image, schoolName }) {
   const href = canonicalUrl(path)
   const img = image || ogImageFromPath(path)
   if (typeof document === 'undefined') return href
@@ -278,7 +295,7 @@ export function applyDocumentMeta({ title, path, description, jsonLd = false, im
     upsertMeta('name', 'twitter:description', description)
   }
   upsertCanonical(href)
-  upsertRouteJsonLd(jsonLd, { title, description, href })
+  upsertRouteJsonLd(jsonLd, { title, description, href, schoolName })
   return href
 }
 
