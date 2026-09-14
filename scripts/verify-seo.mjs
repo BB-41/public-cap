@@ -95,6 +95,8 @@ ok(/Pending stays empty/i.test(louDesc), 'Louisville description keeps pending e
 ok(!/\$/.test(louDesc), 'Louisville description invents no dollars')
 ok(/football revenue/i.test(ndDesc), 'Notre Dame description answers football-revenue queries')
 ok(/not a full athletic-revenue total/i.test(ndDesc), 'Notre Dame description refuses a full revenue number')
+ok(/EADA/i.test(ndDesc) && /conference media/i.test(ndDesc), 'Notre Dame description names the two private lanes')
+ok(/not unpacked|not summed/i.test(ndDesc), 'Notre Dame description refuses an EADA unpack / fake sum')
 ok(/reported football NIL/i.test(ndDesc), 'Notre Dame description names reported football NIL as its own lane')
 ok(!/\$/.test(ndDesc), 'Notre Dame description invents no dollars')
 ok(descriptionFromPath('/school/indiana').includes('Indiana'), 'Indiana path description uses the name')

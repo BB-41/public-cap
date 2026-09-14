@@ -162,9 +162,19 @@ ok(/pending/i.test(smuMiss.text) && /booked NIL/i.test(smuMiss.text), 'SMU missi
 ok(/private-school gap|Private institution/i.test(smuMiss.text), 'SMU missing uses the private-gap note')
 ok(/tickets|sponsorships|contributions/i.test(smuMiss.text), 'SMU missing names the pending capacity lines')
 ok(/\$17\.1M|\$17,070,000|17\.07/.test(smuMiss.text), 'SMU missing still cites the on-desk media 990')
+ok(/EADA/i.test(smuMiss.text) && /\$150\.2M|150,225,313/.test(smuMiss.text), 'SMU missing cites FY2025 EADA as on the desk')
 ok(/buyout/i.test(smuMiss.text) && /pending/i.test(smuMiss.facts?.join(' ') || smuMiss.text), 'SMU buyout stays pending')
 ok(smuMiss.links.some((l) => l.to.includes('/school/smu')), 'SMU missing links the school page')
 ok(!/On3/.test(smuMiss.text) || /does not/.test(smuMiss.text), 'SMU missing does not promote On3')
+
+const smuEada = ask("What's SMU's EADA athletics revenue?")
+ok(/\$150\.2M|150,225,313/.test(smuEada.text), `SMU EADA dollar: ${smuEada.text}`)
+ok(/not added|not unpacked|not an MFRS/i.test(smuEada.text), 'SMU EADA stays off the booked stack')
+ok(!/ticket|sponsorship|contribution/.test(smuEada.text) || /not unpacked/i.test(smuEada.text), 'SMU EADA is not an MFRS unpack')
+
+const ndEada = ask("What's Notre Dame's EADA?")
+ok(/\$289\.6M|289,616,198/.test(ndEada.text), `Notre Dame EADA is the official FY2025 file: ${ndEada.text}`)
+ok(!/235/.test(ndEada.text), 'Notre Dame EADA is not the old CNBC ~$235M cell')
 
 const haveAla = ask('Do you have leftover for Alabama?')
 ok(/not on the desk|pending/i.test(haveAla.text), 'Alabama leftover do-you-have is not on the desk')

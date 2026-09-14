@@ -6,6 +6,8 @@
 import {
   computeCapacity,
   displayCap,
+  eadaLane,
+  isPrivateGap,
   hasVal,
   collective990Cells,
   isItem44Field,
@@ -314,6 +316,7 @@ function detectIntents(q) {
   }
   if (/modeled nil|nil modeled/.test(t)) intents.add('modeledNil')
   if (/house cap/.test(t) && !intents.has('defineHouse')) intents.add('houseCap')
+  if (/\beada\b|equity in athletics/.test(t)) intents.add('eada')
   if (/\bcapacity\b/.test(t) && !intents.has('defineCapacity')) intents.add('capacity')
   if (/\btv\b|media (rights|line|check|deal)|conference media|full tv|broadcast media/.test(t)) intents.add('tv')
   if (
@@ -684,15 +687,32 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, qu
     return coachAnswer(school, coach, season)
   }
 
-  if (intents.has('capacity') || (!intents.size && !broad)) {
+  if (intents.has('capacity') || intents.has('eada') || (!intents.size && !broad)) {
     if (cap.value) {
-      lines.push(
-        `${school.name} booked-only capacity is ${money(cap.value)}${cap.fy ? ` (${cap.fy})` : ''}. Latest extracted stack — not invented ${season} dollars.`,
-      )
+      if (isPrivateGap(school)) {
+        lines.push(
+          `${school.name} booked-only capacity is conference media ${money(cap.value)}${cap.fy ? ` (${cap.fy})` : ''} — not an MFRS stack.`,
+        )
+      } else {
+        lines.push(
+          `${school.name} booked-only capacity is ${money(cap.value)}${cap.fy ? ` (${cap.fy})` : ''}. Latest extracted stack — not invented ${season} dollars.`,
+        )
+      }
       facts.push(factLine('Capacity (booked)', cap.value, { mark: school.capacity?.mediaConference?.confidence || 'estimated', note: cap.fy }))
       links.push({ to: schoolHref(school.id, season, 'capacity'), label: `${school.name} capacity` })
     } else {
       lines.push(pendingLine(school, 'capacity', 'capacity', school.capacity?.mediaConference))
+    }
+    const eada = eadaLane(school)
+    if (eada.total) {
+      lines.push(
+        `EADA FY2025 athletics revenue is ${money(eada.total.value)} (reported) — a separate federal top-line that includes institutional support. Not added to the booked stack, and not unpacked into tickets, sponsorships, or contributions.`,
+      )
+      facts.push(factLine('EADA athletics revenue', eada.total.value, { mark: 'reported', note: eada.total.fiscalYear || 'FY2025' }))
+      if (eada.football) {
+        facts.push(factLine('EADA football', eada.football.value, { mark: 'reported', note: 'REV_MEN_Football' }))
+      }
+      links.push({ to: schoolHref(school.id, season, 'eada'), label: `${school.name} EADA` })
     }
   }
 
@@ -824,9 +844,20 @@ function snapshotAnswer(raw, season, includeAlumni, desk) {
   const bits = []
 
   if (cap.value) {
-    bits.push(`${school.name} booked-only capacity is ${money(cap.value)}${cap.fy ? ` (${cap.fy})` : ''}.`)
+    bits.push(
+      isPrivateGap(school)
+        ? `${school.name} booked-only capacity is conference media ${money(cap.value)}${cap.fy ? ` (${cap.fy})` : ''} — not an MFRS stack.`
+        : `${school.name} booked-only capacity is ${money(cap.value)}${cap.fy ? ` (${cap.fy})` : ''}.`,
+    )
   } else {
     bits.push(`${school.name} booked-only capacity is pending.`)
+  }
+  const snapEada = eadaLane(school)
+  if (snapEada.total) {
+    bits.push(
+      `EADA FY2025 athletics revenue ${money(snapEada.total.value)} is a separate federal lane — not added to that stack, and not unpacked into tickets/sponsorships/contributions.`,
+    )
+    facts.push(factLine('EADA athletics revenue', snapEada.total.value, { mark: 'reported', note: 'FY2025' }))
   }
 
   if (spent != null && leftover.value != null) {
@@ -1567,6 +1598,7 @@ function schoolCoverage(raw, season, includeAlumni, desk) {
           }),
     },
     capLineStatus(c.mediaConference, c.mediaConference?.stackLabel || 'Media / conference', 'stack-media'),
+    ...(isPrivateGap(school) ? [capLineStatus(c.eadaTotal, 'EADA athletics revenue', 'eada')] : []),
     capLineStatus(c.sponsorships, 'Sponsorships / licensing', 'stack-spon'),
     capLineStatus(c.tickets, 'Tickets / premium gate', 'stack-tix'),
     capLineStatus(c.contributions, 'Athletic contributions booked', 'stack-give'),

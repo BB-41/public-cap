@@ -101,7 +101,16 @@ export default function Methods({ meta: metaProp }) {
         <dt>House cap</dt>
         <dd>Official settlement benefits pool. $20.5 million in 2025–26 — the same number for every participating school. The 2026–27 ~$21.3 million figure is labeled estimated until the NCAA publishes year two the same way it published $20.5M.</dd>
         <dt>Annual capacity / public cap</dt>
-        <dd>Default is booked-only — the filing stack: media + sponsorships + tickets + booked contributions. A toggle, Include modeled alumni, adds the Scorecard-based extra-alumni midpoint (modeled athletics giving minus booked contributions, so we do not double-count). Extra low can be $0 when booked gifts already exceed the conservative alumni model. Annual, not lifetime. We never add lifetime wealth into the ranking.</dd>
+        <dd>Default is booked-only — the filing stack: media + sponsorships + tickets + booked contributions. A toggle, Include modeled alumni, adds the Scorecard-based extra-alumni midpoint (modeled athletics giving minus booked contributions, so we do not double-count). Extra low can be $0 when booked gifts already exceed the conservative alumni model. Annual, not lifetime. We never add lifetime wealth into the ranking. Private EADA athletics revenue is a separate federal lane and is not added to this stack.</dd>
+        <dt>EADA athletics revenue</dt>
+        <dd>
+          Federal Equity in Athletics Disclosure Act grand total revenues from the U.S. Dept. of Education
+          public data file at <a href="https://ope.ed.gov/athletics/#/datafile/list" target="_blank" rel="noreferrer">ope.ed.gov/athletics</a>.
+          Includes institutional support and other allocated items. Not comparable 1:1 to a public school’s
+          Knight-Newhouse / MFRS capacity stack. We cite the top-line and, when present, men’s football team
+          revenues — we do not unpack EADA leftovers into tickets, sponsorships, or contributions. On private
+          pages the two lanes sit side by side and are not summed into one fake “capacity.”
+        </dd>
         <dt>Booked NIL</dt>
         <dd>FOIA ledgers, MFRS “Institutional NIL Revenue Share,” or counsel spent totals we can cite. Collective Form 990s live on a separate lane and never overwrite booked House / Item 44. Empty means pending — we do not have a number, not that spend is zero. Booked remains the official institutional number when it exists (today: Louisville and Kentucky).</dd>
         <dt>Collective 990</dt>
@@ -296,6 +305,7 @@ export default function Methods({ meta: metaProp }) {
         The toggle adds modeled extra alumni giving (booked contributions already subtracted
         so we do not double-count). Extra is the midpoint of max(0, modeled athletics giving − booked gifts).
         The 0.5-2% wealth flow is all-cause philanthropy; the extra uses a modeled 4% athletics-directed slice of that flow.
+        Private EADA grand totals are a separate federal lane and are not added to this equation.
       </blockquote>
       <p>
         Capacity is annual. Alumni wealth is lifetime. We show both on the school page and
@@ -1069,11 +1079,33 @@ export default function Methods({ meta: metaProp }) {
       <h2>Private-school gap</h2>
       <p>
         Notre Dame, USC, Vanderbilt, Miami (plus Duke, Stanford, Northwestern, Baylor, BYU, TCU, SMU, Syracuse, Wake Forest, and Boston College) do not
-        publish Knight-Newhouse MFRS categories. We use conference 990 distributions
-        and, for Notre Dame, the widely reported NBC deal (~$50M/yr on the new contract;
-        AP: prior deal ~$22M; FOS/Athletic: roughly double / ~$50M — labeled estimated
-        because terms were not officially disclosed) plus ~$17M ACC media. EADA top-lines
-        are cited when useful but not unpacked into fake categories.
+        publish Knight-Newhouse MFRS categories. There is no FOIA path for tickets,
+        sponsorships, or contributions, so those lanes stay empty — we do not invent an
+        MFRS split. The private checkbook is two cited lanes that we do not add together:
+      </p>
+      <ul>
+        <li>
+          <strong>Conference media</strong> — Form 990 distributions, and for Notre Dame the
+          widely reported NBC deal (~$50M/yr on the new contract; AP: prior deal ~$22M;
+          FOS/Athletic: roughly double / ~$50M — labeled estimated because terms were not
+          officially disclosed) plus ~$17M ACC media.
+        </li>
+        <li>
+          <strong>EADA athletics revenue</strong> — the federal Equity in Athletics Disclosure
+          Act grand total from the U.S. Dept. of Education 2024–25 public file
+          (<a href="https://ope.ed.gov/athletics/#/datafile/list" target="_blank" rel="noreferrer">ope.ed.gov/athletics data files</a>,
+          <code>EADA_2025.xlsx</code> column <code>GRND_TOTAL_REVENUE</code>). That number includes
+          institutional support and other allocated items. It is <em>not</em> comparable 1:1
+          to a public school’s Knight-Newhouse / MFRS capacity stack. Men’s football team
+          revenues (<code>REV_MEN_Football</code>) sit as a sport-attributed subline when the
+          column is non-null — not a filing of NIL or House spend.
+        </li>
+      </ul>
+      <p>
+        We do not unpack an EADA leftover into fake ticket / sponsorship / contribution
+        categories. We do not add EADA into the booked-only capacity sum that ranks public
+        schools. Notre Dame and USC older CNBC-era top-lines were replaced by the official
+        FY2025 file numbers.
       </p>
 
       <h2>FY tagging and conference floors</h2>
@@ -1109,7 +1141,7 @@ export default function Methods({ meta: metaProp }) {
         <li>The NIL reported bar plots that same football-stack range on one $0–$50M scale so schools can be compared — on each school page and on <code>/reported-nil</code>. Survey tiers keep the published words; sort uses the allocation envelope. Booked NIL and House spent stay separate marks. The bar is not leftover, not House spent, and not a waterfall step.</li>
         <li>Industry estimates by position prefer a CBS / SI band or reported-estimate when one exists. Every other seat is a modeled range from the football stack ÷ existing seat weights. Named “sources say $X” player deals stay out unless the article is the cite and the cell is labeled reported-estimate. We do not invent school-by-school points. Not On3.</li>
         <li>No women’s sports or Olympic-sport roster math in v1 (the 7% unallocated slice is the placeholder).</li>
-        <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
+        <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split — we book the private grand total as its own lane and do not unpack it. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
         <li>Athletics debt is a separate layer, not a capacity add-on. Category 53 university-wide institutional debt is refused unless the filing splits an athletics-related amount. We do not invent an amortization schedule from a project cost. Empty stays empty.</li>
         <li>Conference exit is a separate layer, not a capacity add-on and not a coach-firing buyout. We do not invent an ACC dollar without a hosted packet or a newsroom quote of the filing. We do not stamp the Big 12 $100M Texas/Oklahoma one-off on remaining members. Big 12 remaining members are a labeled model of §3.4 (2× last cited 990), not a booked invoice, and not an ACC-style rights-in-tow ladder. Notre Dame is a modeled Hale / 247Sports membership estimate — not the FSU/Clemson football ladder. Big Ten has no published cash fee — we do not print $0, do not borrow the Big 12 formula, and do not invent leftover TV value. Empty stays empty.</li>
         <li>Coach free-agent / offset residuals are a separate lane, not the if-fired overhang on the current chair. We do not invent today’s remaining principal from an old schedule, and we do not invent an offset credit when the file says none. School B salary is a labeled modeled input only. All-in is two payers, off by default. Employed-elsewhere does not move School A’s residual onto the new employer. Comp band is a USA TODAY database snapshot, not a FOIA PDF. Other chairs stay empty until a cite is on the desk.</li>

@@ -1,5 +1,5 @@
 import { money, moneyExact, moneyRange } from '../lib/format.js'
-import { leftoverWaterfall } from '../lib/compute.js'
+import { isPrivateGap, leftoverWaterfall } from '../lib/compute.js'
 import { defTitle } from '../lib/definitions.js'
 import ShareBar from './ShareBar.jsx'
 import DrillNote, { DrillClose } from './DrillNote.jsx'
@@ -166,9 +166,10 @@ export default function CapacityWaterfall({
     <section className="waterfall-sec">
       <h2 title={defTitle('houseRemaining')}>Capacity vs House vs booked NIL</h2>
       <p className="lede tight">
-        Booked filing stack, then House Year-1 spent, then booked NIL.
-        Leftover is House remaining when a spent cell exists — not capacity minus those
-        lines, and not a cap-plan leftover. Click a row for the source.
+        {isPrivateGap(school)
+          ? 'Private booked stack is conference media only. EADA athletics revenue sits in the checkbook above — not added here, and not unpacked into tickets, sponsorships, or contributions.'
+          : 'Booked filing stack, then House Year-1 spent, then booked NIL. Leftover is House remaining when a spent cell exists — not capacity minus those lines, and not a cap-plan leftover.'}{' '}
+        Click a row for the source.
       </p>
       <ShareBar url={url} title={title} caption={caption} onPng={png} />
       <div className="waterfall">
