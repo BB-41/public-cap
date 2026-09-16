@@ -3,7 +3,7 @@
 export const DEFS = {
   house: {
     label: 'House cap',
-    text: 'Official House settlement benefits pool. $20.5 million in 2025–26 (reported) and ~$21.3 million in 2026–27 (estimated). The same number for every participating school. No House cap before 2025–26 (pre-settlement). Not our capacity stack.',
+    text: 'Official House settlement benefits pool. $20.5 million in 2025–26 (reported) and $21.6 million ($21,583,913) in 2026–27 (reported, class counsel / NCAA / Power Five audit). The same number for every participating school. No House cap before 2025–26 (pre-settlement). Not our capacity stack.',
   },
   capacity: {
     label: 'Annual capacity',

@@ -3015,16 +3015,16 @@
     },
     {
       "id": "ncaa-house-cap-2026-27",
-      "date": "2026",
+      "date": "2026-09-01",
       "school": null,
       "schoolName": null,
       "kind": "house-cap",
-      "headline": "Year-two House cap posted as ~$21.3 million (~4% escalation); still estimated until the NCAA publishes it the same way it published $20.5M.",
-      "figure": 21300000,
-      "confidence": "estimated",
+      "headline": "Class counsel (Winston Taylor / Hagens Berman), NCAA, and Power Five conferences announce the audited 2026–27 House benefits pool at $21,583,913 per participating school.",
+      "figure": 21583913,
+      "confidence": "reported",
       "source": {
-        "label": "College Sports Commission / The NIL Standard",
-        "url": "https://thenilstandard.com/guides/revenue-sharing-explained"
+        "label": "Winston Taylor / class counsel — House Year 2 audit",
+        "url": "https://www.winstontaylor.com/insights/class-counsel-ncaa-and-power-five-conferences-announce-usd44m-in-additional-compensation-and-benefits-following-first-audit"
       },
       "field": "meta.houseCap.y2026_27"
     },

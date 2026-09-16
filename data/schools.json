@@ -13,11 +13,11 @@
         "asOf": "2025-06"
       },
       "y2026_27": {
-        "value": 21300000,
-        "confidence": "estimated",
-        "source": "College Sports Commission / The NIL Standard — 2026-27 cap rises to roughly $21.3 million (~4% escalation). NCAA Q&A still cites $20.5M as the published 2025-26 figure.",
-        "url": "https://thenilstandard.com/guides/revenue-sharing-explained",
-        "asOf": "2026"
+        "value": 21583913,
+        "confidence": "reported",
+        "source": "Class counsel (Winston Taylor / Hagens Berman), NCAA, and Power Five conferences — first House revenue-share audit. 2026-27 benefits pool is $21,583,913 per participating school after $131,438 added from the Power 5 revenue audit.",
+        "url": "https://www.winstontaylor.com/insights/class-counsel-ncaa-and-power-five-conferences-announce-usd44m-in-additional-compensation-and-benefits-following-first-audit",
+        "asOf": "2026-09-01"
       }
     },
     "conferenceFloorsFY2025": {
@@ -93,6 +93,7 @@
       "ncaa_pdf": "https://ncaaorg.s3.amazonaws.com/governance/d1/legislation/May2026D1Gov_PhaseEightSetQuestionandAnswer.pdf",
       "ncsl": "https://www.ncsl.org/resources/details/what-the-ncaa-settlement-means-for-colleges-and-state-legislatures",
       "nilstd": "https://thenilstandard.com/guides/revenue-sharing-explained",
+      "wt_house_audit": "https://www.winstontaylor.com/insights/class-counsel-ncaa-and-power-five-conferences-announce-usd44m-in-additional-compensation-and-benefits-following-first-audit",
       "cj_nil": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/",
       "usat_fb": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
       "usat_fb_m": "https://www.usatoday.com/story/sports/ncaaf/2025/10/05/2025-ncaa-football-coach-salaries-methodology/86526058007/",
