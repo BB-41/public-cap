@@ -127,7 +127,7 @@ const house25 = houseValueForSeason(data.meta, 2025)
 const house26 = houseValueForSeason(data.meta, 2026)
 const house24 = houseValueForSeason(data.meta, 2024)
 ok(house25 === 20_500_000, '2025 House cap is the cited $20.5M')
-ok(house26 === 21_300_000, '2026 House cap is the cited $21.3M')
+ok(house26 === 21_583_913, '2026 House cap is the audited $21,583,913')
 ok(house24 == null, '2024 has no House cap')
 ok(
   formatCompareDiff({ va: house25, vb: house25, nameA: 'Louisville', nameB: 'Kentucky' }) === `same ${money(0)}`,

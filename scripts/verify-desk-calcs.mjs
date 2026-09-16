@@ -47,6 +47,16 @@ ok(JSON.stringify(stackData) === JSON.stringify(stackPublic), 'roster-stack base
 ok(stackData.conferenceMedians.SEC.low === STACK_BASELINES.conferenceMedians.SEC.low, 'SEC median matches the lib')
 ok(stackData.conferenceMedians.ACC.high === 24_000_000, 'ACC median high is $24M')
 
+const houseY1 = data.meta.houseCap.y2025_26
+const houseY2 = data.meta.houseCap.y2026_27
+ok(houseY1.value === 20_500_000 && houseY1.confidence === 'reported', '2025-26 House cap stays $20.5M reported')
+ok(houseY2.value === 21_583_913 && houseY2.confidence === 'reported', '2026-27 House cap is the audited $21,583,913 reported')
+ok(
+  /winstontaylor\.com/.test(houseY2.url || '') && /21,583,913/.test(houseY2.source || ''),
+  '2026-27 House cap cites Winston Taylor / class counsel and the exact pool',
+)
+ok(data.meta.sourcesIndex.wt_house_audit === houseY2.url, 'sourcesIndex carries the Year 2 audit URL')
+
 const byId = Object.fromEntries(data.schools.map((s) => [s.id, s]))
 
 // --- 1) 2026 stamps ---

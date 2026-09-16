@@ -598,6 +598,17 @@ ok(/not unpacked/i.test(stanEada.text), 'Stanford EADA is not an MFRS unpack')
 const tcuRev = ask("What's TCU's athletics revenue?")
 ok(/\$156\.0M|155,989,500/.test(tcuRev.text), `TCU EADA: ${tcuRev.text}`)
 
+const houseDef = ask('What is the House cap?')
+ok(/\$21\.6 million|\$21,583,913/.test(houseDef.text), `House definition names the audited Year 2 pool: ${houseDef.text}`)
+ok(/reported/.test(houseDef.text), 'House definition marks Year 2 reported')
+ok(!/~\$21\.3|21\.3 million/.test(houseDef.text), 'House definition dropped the Year 2 estimate')
+
+const house2026 = ask("What's Alabama's House cap?")
+ok(/\$21\.6M/.test(house2026.text) && /reported/.test(house2026.text), `2026 school House cap is $21.6M reported: ${house2026.text}`)
+
+ok(!/~\$21\.3M, estimated/.test(home), 'Home footnote dropped estimated $21.3M')
+ok(/\$21\.6M, reported/.test(home), 'Home footnote shows $21.6M reported')
+
 ok(SUGGESTED_PROMPTS.some((p) => /Alabama's coach pay/i.test(p)), 'suggested prompt: Alabama coach pay')
 ok(SUGGESTED_PROMPTS.some((p) => /buy-game guarantee/i.test(p)), 'suggested prompt: Miami buy-game')
 

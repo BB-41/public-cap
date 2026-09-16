@@ -16,6 +16,7 @@ SRC = {
     "ncaa_pdf": "https://ncaaorg.s3.amazonaws.com/governance/d1/legislation/May2026D1Gov_PhaseEightSetQuestionandAnswer.pdf",
     "ncsl": "https://www.ncsl.org/resources/details/what-the-ncaa-settlement-means-for-colleges-and-state-legislatures",
     "nilstd": "https://thenilstandard.com/guides/revenue-sharing-explained",
+    "wt_house_audit": "https://www.winstontaylor.com/insights/class-counsel-ncaa-and-power-five-conferences-announce-usd44m-in-additional-compensation-and-benefits-following-first-audit",
     "cj_nil": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/",
     "cj_nil_foia": "https://www.courier-journal.com/story/sports/college/kentucky/2026/08/05/university-of-kentucky-nil-revenue-sharing-records-louisville-budget-foia-ncaa-house-settlement/90345933007/",
     "calmatters_nil": "https://calmatters.org/education/higher-education/2026/08/student-athlete-payments-california/",
@@ -88,7 +89,7 @@ def coach(name, pay, buyout, url, as_of, notes=None):
     }
 
 HOUSE_26 = 20_500_000
-HOUSE_27 = 21_300_000
+HOUSE_27 = 21_583_913
 
 schools = []
 
@@ -847,9 +848,9 @@ meta = {
         "y2025_26": n(HOUSE_26, "reported",
             "NCAA House settlement Q&A — 2025-26 benefits cap is $20.5 million (22% of average of eight MFRS categories across defendant conferences + Notre Dame)",
             SRC["ncaa_qa"], "2025-06"),
-        "y2026_27": n(HOUSE_27, "estimated",
-            "College Sports Commission / The NIL Standard — 2026-27 cap rises to roughly $21.3 million (~4% escalation). NCAA Q&A still cites $20.5M as the published 2025-26 figure.",
-            SRC["nilstd"], "2026"),
+        "y2026_27": n(HOUSE_27, "reported",
+            "Class counsel (Winston Taylor / Hagens Berman), NCAA, and Power Five conferences — first House revenue-share audit. 2026-27 benefits pool is $21,583,913 per participating school after $131,438 added from the Power 5 revenue audit.",
+            SRC["wt_house_audit"], "2026-09-01"),
     },
     "conferenceFloorsFY2025": {
         "Big Ten": {"fullShareMin": 76_000_000, "note": "Oregon $48.4M, Washington $46.7M half-shares", "url": SRC["b1g_dist"]},

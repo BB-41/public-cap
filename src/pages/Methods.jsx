@@ -71,8 +71,8 @@ export default function Methods({ meta: metaProp }) {
         tagged estimated, not a school 990.
       </p>
       <p>
-        House cap exists only for 2025–26 ($20.5M, reported) and 2026–27 (~$21.3M,
-        estimated). Earlier years read “no House cap (pre-settlement).” We do not
+        House cap exists only for 2025–26 ($20.5M, reported) and 2026–27 ($21.6M,
+        reported). Earlier years read “no House cap (pre-settlement).” We do not
         invent a pre-settlement cap. NIL ÷ House stays empty when there is no House
         number. Modeled NIL is shown in every football season on the desk: 2025–26
         and 2026–27 keep the House-era conference heuristic (rev-share + third-party);
@@ -99,7 +99,7 @@ export default function Methods({ meta: metaProp }) {
       <p className="lede tight">The same language that sits on the rank list and school pages. Hover a header there and you get this copy.</p>
       <dl className="defs">
         <dt>House cap</dt>
-        <dd>Official settlement benefits pool. $20.5 million in 2025–26 — the same number for every participating school. The 2026–27 ~$21.3 million figure is labeled estimated until the NCAA publishes year two the same way it published $20.5M.</dd>
+        <dd>Official settlement benefits pool. $20.5 million in 2025–26 — the same number for every participating school. The 2026–27 figure is $21,583,913 (reported) after the class counsel / NCAA / Power Five first audit.</dd>
         <dt>Annual capacity / public cap</dt>
         <dd>Default is booked-only — the filing stack: media + sponsorships + tickets + booked contributions. A toggle, Include modeled alumni, adds the Scorecard-based extra-alumni midpoint (modeled athletics giving minus booked contributions, so we do not double-count). Extra low can be $0 when booked gifts already exceed the conservative alumni model. Annual, not lifetime. We never add lifetime wealth into the ranking. Private EADA athletics revenue is a separate federal lane and is not added to this stack.</dd>
         <dt>EADA athletics revenue</dt>
@@ -290,9 +290,10 @@ export default function Methods({ meta: metaProp }) {
         Every school is read against two ceilings. The <em>official House cap</em> is the
         settlement benefits pool: $20.5 million for 2025–26 (NCAA Q&amp;A; 22% of the average
         of eight MFRS revenue categories across the defendant conferences plus Notre Dame).
-        For 2026–27 the desk shows ~$21.3 million, the ~4% escalation cited by the College
-        Sports Commission and legal writeups. That second figure is labeled estimated until
-        the NCAA publishes the year-two number the same way it published $20.5M.
+        For 2026–27 the desk books $21,583,913 (shown as $21.6M), the audited pool announced
+        by class counsel (Winston Taylor / Hagens Berman), the NCAA, and the Power Five
+        conferences after the first House revenue-share audit. That year-two figure is
+        labeled reported.
       </p>
       <p>
         The <em>capacity cap</em> is our annual-flow construct — what the athletic economy
