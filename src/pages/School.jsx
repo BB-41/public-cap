@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
+import { formatLongDate } from '../lib/buyout.js'
 import {
   collectSources,
   collective990Cells,
@@ -716,7 +717,7 @@ function Field({ field, fallback = '—' }) {
       <div className="field-meta">
         {field.fiscalYear && <span>{field.fiscalYear} · </span>}
         {field.window && <span>{field.window} · </span>}
-        {field.asOf && <span>as of {field.asOf} · </span>}
+        {field.asOf && <span>as of {formatLongDate(field.asOf)} · </span>}
         <span className="conf-label">{field.confidence}</span>
         {field.source && <span> · {field.source}</span>}
         {field.url && (

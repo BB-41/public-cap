@@ -55,7 +55,7 @@ export const DEFS = {
   },
   buyout: {
     label: 'Buyout overhang',
-    text: 'What the school would owe if it fired the coach without cause on the as-of date. A liability, not yearly spend.',
+    text: 'What the school would owe if it fired the coach without cause on the as-of date. A liability, not yearly spend. When the cited file prorates partial years on a daily basis, the headline is that dated remaining amount — not the January 1 full-year figure.',
   },
   coachTerm: {
     label: 'Contract term',

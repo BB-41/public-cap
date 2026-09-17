@@ -17,6 +17,7 @@ import {
   mapGames,
   mergeSchoolSteps,
   sharePath,
+  stepDateLabel,
 } from '../lib/buyout.js'
 
 function SourceLink({ source, className = 'ext' }) {
@@ -120,8 +121,11 @@ export default function Buyout() {
         Most football head-coach contracts step the termination fee on a calendar date
         — Dec. 1, Jan. 1, the end of the season, Feb. 1 / signing day — or on remaining
         contract years. They do not renegotiate after each Saturday. This page maps the
-        cited step onto the remaining 2026 slate. After Alabama and after Florida are
-        often the same number, and that is the honest reading of the PDF.
+        cited remaining onto the remaining 2026 slate. Where the file prorates partial
+        years daily, the number after kickoff is the latest remaining as of the next
+        calendar day. After Alabama and after Florida are often the same number when
+        the contract only steps at a year boundary — and that is the honest reading
+        of those PDFs.
       </p>
 
       <div className="pickers">
@@ -193,8 +197,12 @@ export default function Buyout() {
                 <>
                   <div className="display">{money(todayStep.amount)}</div>
                   <div className="field-meta">
-                    {todayStep.through ? formatThrough(todayStep.through) : 'current if-fired overhang'}
-                    {' · '}
+                    {todayStep.asOf
+                      ? `as of ${formatLongDate(todayStep.asOf)}`
+                      : todayStep.through
+                        ? formatThrough(todayStep.through)
+                        : 'current if-fired overhang'}
+                    {' · overhang, not yearly spend · '}
                     <span className="conf-label">{todayStep.confidence}</span>
                   </div>
                 </>
@@ -297,7 +305,7 @@ export default function Buyout() {
                 {coach.steps.map((s, i) => (
                   <li key={`${s.through || s.asOf || 'open'}-${i}`}>
                     <strong>
-                      {s.through ? formatThrough(s.through) : s.asOf ? `as of ${s.asOf}` : 'Current overhang'}
+                      {stepDateLabel(s)}
                       {s.contractYear ? ` · ${s.contractYear}` : ''}:
                     </strong>
                     {' '}
@@ -353,12 +361,14 @@ export default function Buyout() {
               This is the contract schedule mapped onto remaining games, not a weekly
               renegotiation. For each upcoming kickoff we ask: if the school fires him
               without cause on the calendar day after that game, which cited step is in
-              force? When the only public number is a USA TODAY or school if-fired
-              overhang, we print that one number and mark the game-by-game tape pending.
-              We do not invent Saturday steps, we do not mint remaining-pay dollars from
-              a bare percent clause, and we do not invent a dollar offset for new
-              employment. Paid buyouts — money already owed after a firing — live
-              on the desk tape, not here.
+              force? When the file prorates partial years on a daily basis, that step is
+              the dated remaining amount, not the January 1 full-year figure. When the
+              only public number is a USA TODAY or school if-fired overhang, we print
+              that one number and mark the game-by-game tape pending. We do not invent
+              Saturday steps, we do not mint remaining-pay dollars from a bare percent
+              clause, and we do not invent a dollar offset for new employment. Paid
+              buyouts — money already owed after a firing — live on the desk tape, not
+              here.
             </p>
           </section>
         </>

@@ -1,6 +1,6 @@
 /** Map a cited contract step schedule onto remaining games. */
 
-export const DESK_TODAY = '2026-08-25'
+export const DESK_TODAY = '2026-09-16'
 export const DEFAULT_SCHOOL = 'florida-state'
 
 const MONTHS = [
@@ -80,17 +80,37 @@ export function mergeSchoolSteps(bookCoach, schoolBuyout) {
   }
 }
 
-/** Step in force on a calendar date (inclusive through). */
+/** Step in force on a calendar date.
+ * Prefer the latest remaining asOf on or before the date (daily-proration tapes).
+ * Fall back to inclusive through-date stairs when asOf is missing.
+ */
 export function stepInForce(steps, isoDate) {
   if (!steps?.length || !isoDate) return null
   const dated = normalizeSteps(steps)
+  const withAsOf = dated.filter((s) => s.asOf).slice().sort((a, b) => cmpIso(a.asOf, b.asOf))
+  if (withAsOf.length) {
+    let pick = null
+    for (const s of withAsOf) {
+      if (cmpIso(s.asOf, isoDate) <= 0) pick = s
+    }
+    return pick || withAsOf[0]
+  }
+  const withThrough = dated
     .filter((s) => s.through)
     .slice()
     .sort((a, b) => cmpIso(a.through, b.through))
-  for (const s of dated) {
+  for (const s of withThrough) {
     if (isoDate <= s.through) return s
   }
-  return dated[dated.length - 1] || null
+  return withThrough[withThrough.length - 1] || null
+}
+
+/** Label a remaining-as-of or through-date step. */
+export function stepDateLabel(step) {
+  if (!step) return 'step'
+  if (step.asOf) return `as of ${formatLongDate(step.asOf)}`
+  if (step.through) return formatThrough(step.through)
+  return 'Current overhang'
 }
 
 export function afterKickoffDate(game) {
