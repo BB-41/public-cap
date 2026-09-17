@@ -114,7 +114,7 @@ export function BuyoutRuleLine({ buyout, fallback }) {
   )
 }
 
-export function BuyoutStepTape({ steps }) {
+export function BuyoutStepTape({ steps, compact = false }) {
   if (!steps?.length) return null
   return (
     <div className="buyout-step-tape">
@@ -130,7 +130,7 @@ export function BuyoutStepTape({ steps }) {
             {s.remaining != null || s.amount != null
               ? moneyExact(s.remaining ?? s.amount)
               : 'pending'}
-            {s.notes && <div className="field-notes">{s.notes}</div>}
+            {s.notes && !compact && <div className="field-notes">{s.notes}</div>}
           </li>
         ))}
       </ol>
