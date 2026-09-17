@@ -1,10 +1,10 @@
 {
   "meta": {
     "product": "Public Cap buyout tool",
-    "asOf": "2026-08-26",
-    "today": "2026-08-26",
+    "asOf": "2026-09-16",
+    "today": "2026-09-16",
     "scope": "Power 4 plus Notre Dame football head coaches, 2026 season",
-    "notes": "Maps a cited contract step-down onto remaining 2026 games. Public-school buyouts prefer the employment agreement, amendment, or board packet; articles are the fallback only when no current file is on the desk. The buyout in force after a kickoff is the step that covers the next calendar day \u2014 not a renegotiation after each Saturday. We do not invent Saturday stairs or mint remaining-pay dollars from a bare percent clause. Paid buyouts (already-owed money after a firing) live on the tape/layers desk, not here.",
+    "notes": "Maps a cited contract step-down onto remaining 2026 games. Public-school buyouts prefer the employment agreement, amendment, or board packet; articles are the fallback only when no current file is on the desk. The buyout in force after a kickoff is the latest cited remaining as of the next calendar day \u2014 not a renegotiation after each Saturday. Where a file prorates partial years on a daily basis (FSU Norvell 7th Amendment V.E.; UNC Belichick \u00a74/\u00a75/\u00a712), the tape includes mid-season remaining amounts. We do not invent Saturday stairs or mint remaining-pay dollars from a bare percent clause. Paid buyouts (already-owed money after a firing) live on the tape/layers desk, not here.",
     "defaultSchool": "florida-state",
     "sources": [
       "Public-school employment agreements, amendments, board packets, and binding term sheets / LOIs. Articles are fallback only when no current file is on the desk.",
@@ -2604,9 +2604,9 @@
       "termThrough": "2031-12-31",
       "steps": [
         {
-          "through": "2026-12-31",
+          "through": "2026-08-31",
           "amount": 58192500,
-          "rule": "If FSU terminates without cause in Contract Year 7 (2026): 85% of remaining Total Annual Compensation (base $215,000 + Additional Comp) for CY7\u201312, plus the CY7 reinstatement. TAC from the 6th Amendment: $10.3M / $10.45M / $10.6M / $10.75M / $10.9M / $11.05M = $64.05M. $64.05M \u00d7 85% + $3.75M = $58,192,500. Full remaining years at the start of 2026 \u2014 the file allows daily proration of partial years; this desk does not mint a mid-year dollar.",
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
           "confidence": "reported",
           "source": {
             "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
@@ -2615,12 +2615,110 @@
           "asOf": "2026-01-01",
           "remaining": 58192500,
           "contractYear": "CY7 (2026)",
-          "notes": "Derived from the 6th Amendment CY7\u201312 TAC table ($10.3 / $10.45 / $10.6 / $10.75 / $10.9 / $11.05 million = $64.05 million) \u00d7 85% + CY7 reinstatement $3.75 million (7th Amendment V.E.). $64.05 million \u00d7 85% + $3.75 million = $58,192,500. Full remaining years at the start of 2026 \u2014 the file allows daily proration of partial years; this desk does not mint a mid-year dollar. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          "notes": "Derived from the 6th Amendment CY7\u201312 TAC table ($10.3 / $10.45 / $10.6 / $10.75 / $10.9 / $11.05 million = $64.05 million) \u00d7 85% + CY7 reinstatement $3.75 million (7th Amendment V.E.). $64.05 million \u00d7 85% + $3.75 million = $58,192,500. Inclusive remaining days from the termination date through Dec. 31 of that CY (365/365 in 2026). Jan 1 full-year matches this desk $58,192,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+        },
+        {
+          "through": "2026-09-15",
+          "amount": 49867253,
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          },
+          "asOf": "2026-09-01",
+          "remaining": 49867253,
+          "contractYear": "CY7 (2026)",
+          "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-09-01 through Dec. 31, 2026 = 122/365. Remaining TAC = CY7 (2026) $10,300,000 \u00d7 122/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 \u00d7 122/365 = $49,867,253. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+        },
+        {
+          "through": "2026-09-19",
+          "amount": 49353349,
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          },
+          "asOf": "2026-09-16",
+          "remaining": 49353349,
+          "contractYear": "CY7 (2026)",
+          "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-09-16 through Dec. 31, 2026 = 107/365. Remaining TAC = CY7 (2026) $10,300,000 \u00d7 107/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 \u00d7 107/365 = $49,353,349. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+        },
+        {
+          "through": "2026-09-30",
+          "amount": 49216308,
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          },
+          "asOf": "2026-09-20",
+          "remaining": 49216308,
+          "contractYear": "CY7 (2026)",
+          "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-09-20 through Dec. 31, 2026 = 103/365. Remaining TAC = CY7 (2026) $10,300,000 \u00d7 103/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 \u00d7 103/365 = $49,216,308. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+        },
+        {
+          "through": "2026-10-31",
+          "amount": 48839445,
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          },
+          "asOf": "2026-10-01",
+          "remaining": 48839445,
+          "contractYear": "CY7 (2026)",
+          "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-10-01 through Dec. 31, 2026 = 92/365. Remaining TAC = CY7 (2026) $10,300,000 \u00d7 92/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 \u00d7 92/365 = $48,839,445. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+        },
+        {
+          "through": "2026-11-30",
+          "amount": 47777377,
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          },
+          "asOf": "2026-11-01",
+          "remaining": 47777377,
+          "contractYear": "CY7 (2026)",
+          "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-11-01 through Dec. 31, 2026 = 61/365. Remaining TAC = CY7 (2026) $10,300,000 \u00d7 61/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 \u00d7 61/365 = $47,777,377. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+        },
+        {
+          "through": "2026-12-30",
+          "amount": 46749568,
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          },
+          "asOf": "2026-12-01",
+          "remaining": 46749568,
+          "contractYear": "CY7 (2026)",
+          "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-12-01 through Dec. 31, 2026 = 31/365. Remaining TAC = CY7 (2026) $10,300,000 \u00d7 31/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 \u00d7 31/365 = $46,749,568. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+        },
+        {
+          "through": "2026-12-31",
+          "amount": 45721760,
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
+          "confidence": "reported",
+          "source": {
+            "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
+            "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          },
+          "asOf": "2026-12-31",
+          "remaining": 45721760,
+          "contractYear": "CY7 (2026)",
+          "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-12-31 through Dec. 31, 2026 = 1/365. Remaining TAC = CY7 (2026) $10,300,000 \u00d7 1/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 \u00d7 1/365 = $45,721,760. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
         },
         {
           "through": "2027-12-31",
           "amount": 48687500,
-          "rule": "If terminated in Contract Year 8 (2027): 85% of remaining CY8\u201312 TAC ($53.75M \u00d7 85% = $45,687,500) plus the CY8 reinstatement of $3.0M = $48,687,500. That is the file, not the CBS $45.6M press estimate.",
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
           "confidence": "reported",
           "source": {
             "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
@@ -2629,12 +2727,12 @@
           "asOf": "2027-01-01",
           "remaining": 48687500,
           "contractYear": "CY8 (2027)",
-          "notes": "Derived from remaining CY8\u201312 TAC ($53.75 million) \u00d7 85% + CY8 reinstatement $3.0 million = $48,687,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          "notes": "Derived from remaining CY8\u2013CY12 TAC ($10.45 million / $10.6 million / $10.75 million / $10.9 million / $11.05 million = $53,750,000) \u00d7 85% + CY8 reinstatement $3,000,000 (7th Amendment V.E.). $53,750,000 \u00d7 85% + $3,000,000 = $48,687,500. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $48,687,500). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
         },
         {
           "through": "2028-12-31",
           "amount": 39055000,
-          "rule": "If terminated in Contract Year 9 (2028): 85% of remaining CY9\u201312 TAC ($43.3M) plus the CY9 reinstatement of $2.25M = $39,055,000.",
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
           "confidence": "reported",
           "source": {
             "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
@@ -2643,12 +2741,12 @@
           "asOf": "2028-01-01",
           "remaining": 39055000,
           "contractYear": "CY9 (2028)",
-          "notes": "Derived from remaining CY9\u201312 TAC ($43.3 million) \u00d7 85% + CY9 reinstatement $2.25 million = $39,055,000. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          "notes": "Derived from remaining CY9\u2013CY12 TAC ($10.6 million / $10.75 million / $10.9 million / $11.05 million = $43,300,000) \u00d7 85% + CY9 reinstatement $2,250,000 (7th Amendment V.E.). $43,300,000 \u00d7 85% + $2,250,000 = $39,055,000. Jan 1 full-year uses inclusive remaining days 366/366 of the contract year (reproduces the desk $39,055,000). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
         },
         {
           "through": "2029-12-31",
           "amount": 29295000,
-          "rule": "If terminated in Contract Year 10 (2029): 85% of remaining CY10\u201312 TAC ($32.7M) plus the CY10 reinstatement of $1.5M = $29,295,000.",
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
           "confidence": "reported",
           "source": {
             "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
@@ -2657,12 +2755,12 @@
           "asOf": "2029-01-01",
           "remaining": 29295000,
           "contractYear": "CY10 (2029)",
-          "notes": "Derived from remaining CY10\u201312 TAC ($32.7 million) \u00d7 85% + CY10 reinstatement $1.5 million = $29,295,000. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          "notes": "Derived from remaining CY10\u2013CY12 TAC ($10.75 million / $10.9 million / $11.05 million = $32,700,000) \u00d7 85% + CY10 reinstatement $1,500,000 (7th Amendment V.E.). $32,700,000 \u00d7 85% + $1,500,000 = $29,295,000. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $29,295,000). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
         },
         {
           "through": "2030-12-31",
           "amount": 19407500,
-          "rule": "If terminated in Contract Year 11 (2030): 85% of remaining CY11\u201312 TAC ($21.95M) plus the CY11 reinstatement of $0.75M = $19,407,500.",
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
           "confidence": "reported",
           "source": {
             "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
@@ -2671,12 +2769,12 @@
           "asOf": "2030-01-01",
           "remaining": 19407500,
           "contractYear": "CY11 (2030)",
-          "notes": "Derived from remaining CY11\u201312 TAC ($21.95 million) \u00d7 85% + CY11 reinstatement $0.75 million = $19,407,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          "notes": "Derived from remaining CY11\u2013CY12 TAC ($10.9 million / $11.05 million = $21,950,000) \u00d7 85% + CY11 reinstatement $750,000 (7th Amendment V.E.). $21,950,000 \u00d7 85% + $750,000 = $19,407,500. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $19,407,500). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
         },
         {
           "through": "2031-12-31",
           "amount": 9392500,
-          "rule": "If terminated in Contract Year 12 (2031): 85% of remaining CY12 TAC ($11.05M) plus the CY12 reinstatement of $0 = $9,392,500.",
+          "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, \u2026).",
           "confidence": "reported",
           "source": {
             "label": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) via DocumentCloud / Tallahassee Democrat",
@@ -2685,10 +2783,10 @@
           "asOf": "2031-01-01",
           "remaining": 9392500,
           "contractYear": "CY12 (2031)",
-          "notes": "Derived from remaining CY12 TAC ($11.05 million) \u00d7 85% + CY12 reinstatement $0 = $9,392,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+          "notes": "Derived from remaining CY12\u2013CY12 TAC ($11.05 million = $11,050,000) \u00d7 85% + CY12 reinstatement $0 (7th Amendment V.E.). $11,050,000 \u00d7 85% + $0 = $9,392,500. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $9,392,500). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
         }
       ],
-      "notes": "7th Amendment V.E. (Dec. 13, 2024) is the current buyout rule. 6th Amendment sets the Total Term through Dec. 31, 2031 and the CY7\u201312 Additional Comp table (plus $215,000 base = TAC). Calendar years, not Saturdays. We do not repeat CBS\u2019s $58.4M / $45.6M as the source of the dollars.",
+      "notes": "PDF-math as of 2026-09-16 (Alabama-weekend desk). 7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term, partial years prorated on a daily basis, plus a pro rata CY reinstatement (CY7 $3.75M / CY8 $3.0M / CY9 $2.25M / CY10 $1.5M / CY11 $0.75M / CY12 $0). Inclusive remaining days from the termination date through Dec. 31 of that contract year (Jan 1 2026 full-year = $58,192,500; Dec 1 2026 = $46,749,568, matching USA TODAY ~$46.7M). Not the CBS $58.4M estimate. Liability/overhang, not annual spend.",
       "mitigation": {
         "rule": "Dollar-for-dollar. Norvell must use best efforts to obtain full-time comparable employment at a market-rate salary. If he is hired, Florida State\u2019s remaining Termination Amount is reduced dollar-for-dollar by what he earns during the Termination Period. We do not invent a dollar offset.",
         "source": {
@@ -2866,9 +2964,9 @@
       "termThrough": "2029-12-31",
       "steps": [
         {
-          "through": "2026-12-31",
+          "through": "2026-08-31",
           "amount": 20000000,
-          "rule": "University without-cause (\u00a712): remaining unpaid Base ($1,000,000/year) + Supplemental Income ($9,000,000/year) through Dec. 31, 2027 only. Full remaining 2026 and 2027 years = $20,000,000. Labeled full remaining years \u2014 the file allows daily earning of Supplemental Income; this desk does not mint a mid-year dollar. Earned-but-unpaid bonuses are not added.",
+          "rule": "\u00a712 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
           "confidence": "reported",
           "source": {
             "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
@@ -2877,12 +2975,110 @@
           "asOf": "2026-01-01",
           "remaining": 20000000,
           "contractYear": "2026",
-          "notes": "Derived from \u00a712 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Full remaining 2026 and 2027 years = $20,000,000. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          "notes": "Derived from \u00a712 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Full remaining 2026 and 2027 years = $20,000,000. \u00a74 prorates Base for a partial Contract Year; \u00a75 earns Supplemental pro rata daily. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+        },
+        {
+          "through": "2026-09-15",
+          "amount": 13342466,
+          "rule": "\u00a712 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
+          "confidence": "reported",
+          "source": {
+            "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          },
+          "asOf": "2026-09-01",
+          "remaining": 13342466,
+          "contractYear": "2026",
+          "notes": "\u00a712 remaining unpaid Base + Supplemental through Dec. 31, 2027. \u00a74 Base is prorated for a partial Contract Year; \u00a75 Supplemental is earned pro rata daily. Inclusive remaining days 2026-09-01 through Dec. 31, 2026 = 122/365. Remaining = $10,000,000 \u00d7 122/365 + $10,000,000 (2027). = $13,342,466. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+        },
+        {
+          "through": "2026-09-19",
+          "amount": 12931507,
+          "rule": "\u00a712 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
+          "confidence": "reported",
+          "source": {
+            "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          },
+          "asOf": "2026-09-16",
+          "remaining": 12931507,
+          "contractYear": "2026",
+          "notes": "\u00a712 remaining unpaid Base + Supplemental through Dec. 31, 2027. \u00a74 Base is prorated for a partial Contract Year; \u00a75 Supplemental is earned pro rata daily. Inclusive remaining days 2026-09-16 through Dec. 31, 2026 = 107/365. Remaining = $10,000,000 \u00d7 107/365 + $10,000,000 (2027). = $12,931,507. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+        },
+        {
+          "through": "2026-09-30",
+          "amount": 12821918,
+          "rule": "\u00a712 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
+          "confidence": "reported",
+          "source": {
+            "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          },
+          "asOf": "2026-09-20",
+          "remaining": 12821918,
+          "contractYear": "2026",
+          "notes": "\u00a712 remaining unpaid Base + Supplemental through Dec. 31, 2027. \u00a74 Base is prorated for a partial Contract Year; \u00a75 Supplemental is earned pro rata daily. Inclusive remaining days 2026-09-20 through Dec. 31, 2026 = 103/365. Remaining = $10,000,000 \u00d7 103/365 + $10,000,000 (2027). = $12,821,918. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+        },
+        {
+          "through": "2026-10-31",
+          "amount": 12520548,
+          "rule": "\u00a712 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
+          "confidence": "reported",
+          "source": {
+            "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          },
+          "asOf": "2026-10-01",
+          "remaining": 12520548,
+          "contractYear": "2026",
+          "notes": "\u00a712 remaining unpaid Base + Supplemental through Dec. 31, 2027. \u00a74 Base is prorated for a partial Contract Year; \u00a75 Supplemental is earned pro rata daily. Inclusive remaining days 2026-10-01 through Dec. 31, 2026 = 92/365. Remaining = $10,000,000 \u00d7 92/365 + $10,000,000 (2027). = $12,520,548. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+        },
+        {
+          "through": "2026-11-30",
+          "amount": 11671233,
+          "rule": "\u00a712 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
+          "confidence": "reported",
+          "source": {
+            "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          },
+          "asOf": "2026-11-01",
+          "remaining": 11671233,
+          "contractYear": "2026",
+          "notes": "\u00a712 remaining unpaid Base + Supplemental through Dec. 31, 2027. \u00a74 Base is prorated for a partial Contract Year; \u00a75 Supplemental is earned pro rata daily. Inclusive remaining days 2026-11-01 through Dec. 31, 2026 = 61/365. Remaining = $10,000,000 \u00d7 61/365 + $10,000,000 (2027). = $11,671,233. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+        },
+        {
+          "through": "2026-12-30",
+          "amount": 10849315,
+          "rule": "\u00a712 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
+          "confidence": "reported",
+          "source": {
+            "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          },
+          "asOf": "2026-12-01",
+          "remaining": 10849315,
+          "contractYear": "2026",
+          "notes": "\u00a712 remaining unpaid Base + Supplemental through Dec. 31, 2027. \u00a74 Base is prorated for a partial Contract Year; \u00a75 Supplemental is earned pro rata daily. Inclusive remaining days 2026-12-01 through Dec. 31, 2026 = 31/365. Remaining = $10,000,000 \u00d7 31/365 + $10,000,000 (2027). = $10,849,315. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+        },
+        {
+          "through": "2026-12-31",
+          "amount": 10027397,
+          "rule": "\u00a712 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
+          "confidence": "reported",
+          "source": {
+            "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
+            "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          },
+          "asOf": "2026-12-31",
+          "remaining": 10027397,
+          "contractYear": "2026",
+          "notes": "\u00a712 remaining unpaid Base + Supplemental through Dec. 31, 2027. \u00a74 Base is prorated for a partial Contract Year; \u00a75 Supplemental is earned pro rata daily. Inclusive remaining days 2026-12-31 through Dec. 31, 2026 = 1/365. Remaining = $10,000,000 \u00d7 1/365 + $10,000,000 (2027). = $10,027,397. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
         },
         {
           "through": "2027-12-31",
           "amount": 10000000,
-          "rule": "If terminated in 2027 (still on or before Dec. 31, 2027): remaining 2027 Base + Supplemental = $10,000,000. Full remaining year, labeled.",
+          "rule": "\u00a712 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
           "confidence": "reported",
           "source": {
             "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
@@ -2891,12 +3087,12 @@
           "asOf": "2027-01-01",
           "remaining": 10000000,
           "contractYear": "2027",
-          "notes": "Remaining 2027 Base + Supplemental = $10,000,000. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          "notes": "Derived from \u00a712 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Remaining 2027 Base + Supplemental = $10,000,000. \u00a74 prorates Base for a partial Contract Year; \u00a75 earns Supplemental pro rata daily. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
         },
         {
-          "through": "2029-12-31",
+          "through": "2028-12-31",
           "amount": 0,
-          "rule": "If terminated after Dec. 31, 2027: $0. Section 12 pays Base + Supplemental only through Dec. 31, 2027. Contract years 2028\u201329 are $0 on a university fire.",
+          "rule": "\u00a712 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
           "confidence": "reported",
           "source": {
             "label": "UNC signed employment agreement (31 pages) via DocumentCloud",
@@ -2905,10 +3101,10 @@
           "asOf": "2028-01-01",
           "remaining": 0,
           "contractYear": "2028\u201329",
-          "notes": "If terminated after Dec. 31, 2027: $0. Section 12 pays Base + Supplemental only through Dec. 31, 2027. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+          "notes": "If terminated after Dec. 31, 2027: $0. Section 12 pays remaining unpaid Base + Supplemental only through Dec. 31, 2027. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
         }
       ],
-      "notes": "Term through Dec. 31, 2029. No mitigation or offset in \u00a712. Calendar steps, not Saturdays.",
+      "notes": "PDF-math as of 2026-09-16. \u00a712 remaining unpaid Base + Supplemental through Dec. 31, 2027 only. \u00a74 prorates Base for a partial Contract Year; \u00a75 earns Supplemental pro rata on a daily basis. Inclusive remaining days from the termination date through Dec. 31 of that year. 2028\u201329 are $0 on a university fire. No mitigation in \u00a712. Liability/overhang, not annual spend.",
       "mitigation": {
         "rule": "No mitigation and no offset in \u00a712. The university-fire amount is remaining Base + Supplemental through Dec. 31, 2027 only.",
         "source": {
@@ -3372,18 +3568,21 @@
       "termThrough": null,
       "steps": [],
       "overhang": {
-        "amount": 10375000,
-        "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
+        "amount": 19000000,
+        "asOf": "2026-08-27",
+        "rule": "Printed term-sheet dollar: UH owes $19 million if it fires Fritz without cause before Dec. 31, 2026. After that date the file switches to 60% of remaining salary \u2014 we do not invent that later remainder. 2026 is a flat calendar-year dollar, not daily-prorated.",
         "confidence": "reported",
         "source": {
-          "label": "USA TODAY Sports coach salary database",
-          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+          "label": "Houston Chronicle / The Athletic quoting UH Fritz term sheet",
+          "url": "https://www.houstonchronicle.com/texas-sports-nation/college/article/uh-football-willie-fritz-contract-incentives-18533360.php"
         }
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "notes": "Printed $19 million if fired without cause before Dec. 31, 2026. Flat 2026 dollar, not daily-prorated. Liability/overhang, not annual spend.",
       "mitigation": null,
-      "contract": null
+      "contract": {
+        "label": "Houston Chronicle / UH Fritz term sheet",
+        "url": "https://www.houstonchronicle.com/texas-sports-nation/college/article/uh-football-willie-fritz-contract-incentives-18533360.php"
+      }
     },
     "iowa-state": {
       "sport": "fb",

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
+import { formatLongDate } from '../lib/buyout.js'
 import {
   collectSources,
   collective990Cells,
@@ -716,7 +717,7 @@ function Field({ field, fallback = '—' }) {
       <div className="field-meta">
         {field.fiscalYear && <span>{field.fiscalYear} · </span>}
         {field.window && <span>{field.window} · </span>}
-        {field.asOf && <span>as of {field.asOf} · </span>}
+        {field.asOf && <span>as of {formatLongDate(field.asOf)} · </span>}
         <span className="conf-label">{field.confidence}</span>
         {field.source && <span> · {field.source}</span>}
         {field.url && (
@@ -1130,9 +1131,9 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
               <BuyoutRuleLine buyout={s.coaches.football.buyout} />
             </>
           )}
-          <BuyoutStepTape steps={s.coaches.football.buyout?.steps} />
           <div className="eyebrow" title={defTitle('buyout')}>Buyout overhang (not yearly spend)</div>
           <Field field={s.coaches.football.buyout} />
+          <BuyoutStepTape steps={s.coaches.football.buyout?.steps} compact />
           <IncentiveList items={s.coaches.football.pay?.incentives} />
           <ContractFiles files={s.coaches.football.contract?.files} />
         </section>

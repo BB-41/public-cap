@@ -1,5 +1,5 @@
 import { moneyExact } from '../lib/format.js'
-import { formatThrough } from '../lib/buyout.js'
+import { stepDateLabel } from '../lib/buyout.js'
 
 /** Annual pay from a current-chair file (or USA TODAY fallback), plus any schedule/incentives. */
 export function CoachPayField({ pay, fallback = '—' }) {
@@ -114,7 +114,7 @@ export function BuyoutRuleLine({ buyout, fallback }) {
   )
 }
 
-export function BuyoutStepTape({ steps }) {
+export function BuyoutStepTape({ steps, compact = false }) {
   if (!steps?.length) return null
   return (
     <div className="buyout-step-tape">
@@ -124,13 +124,13 @@ export function BuyoutStepTape({ steps }) {
           <li key={`${s.through || s.asOf || i}-${s.contractYear || ''}`}>
             <strong>
               {s.contractYear ? `${s.contractYear} · ` : ''}
-              {s.through ? formatThrough(s.through) : s.asOf ? `as of ${s.asOf}` : 'step'}
+              {stepDateLabel(s)}
               {': '}
             </strong>
             {s.remaining != null || s.amount != null
               ? moneyExact(s.remaining ?? s.amount)
               : 'pending'}
-            {s.notes && <div className="field-notes">{s.notes}</div>}
+            {s.notes && !compact && <div className="field-notes">{s.notes}</div>}
           </li>
         ))}
       </ol>

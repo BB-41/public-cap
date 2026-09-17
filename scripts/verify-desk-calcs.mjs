@@ -117,6 +117,12 @@ for (const s of data.schools) {
   }
 }
 ok(byId['florida-state'].coaches.football.buyout.steps[0].remaining === 58_192_500, 'Norvell CY7 remaining')
+ok(byId['florida-state'].coaches.football.buyout.value === 49_353_349, 'Norvell headline is Sep 16 remaining')
+ok(byId['florida-state'].coaches.football.buyout.asOf === '2026-09-16', 'Norvell headline asOf is 2026-09-16')
+ok((byId['florida-state'].coaches.football.buyout.rule || '').includes('daily'), 'Norvell rule states daily proration')
+ok(byId['florida-state'].coaches.football.pay.value === 10_300_000, 'Norvell 2026 TAC pay unchanged')
+ok(byId['north-carolina'].coaches.football.buyout.value === 12_931_507, 'Belichick headline is Sep 16 remaining')
+ok(byId['north-carolina'].coaches.football.buyout.asOf === '2026-09-16', 'Belichick headline asOf is 2026-09-16')
 ok(byId['penn-state'].coaches.football.buyout.steps[0].remaining === 70_500_000, 'Campbell 2026 remaining')
 ok((byId.kentucky.coaches.football.buyout.rule || '').includes('70%'), 'Kentucky keeps the percent rule')
 ok(byId.kentucky.coaches.football.buyout.steps[0].remaining === 19_950_000, 'Stein derived remaining $19.95M')
@@ -130,7 +136,13 @@ ok(byId['ole-miss'].nil.booked.value == null, 'Ole Miss House booked stays pendi
 const fsuMerged = mergeSchoolSteps(buyouts.coaches['florida-state'], byId['florida-state'].coaches.football.buyout)
 ok(fsuMerged.tape === 'steps', 'calculator tape is steps when school steps exist')
 ok(stepInForce(fsuMerged.steps, '2026-08-26').amount === 58_192_500, 'calculator consumes remaining as amount')
+ok(stepInForce(fsuMerged.steps, '2026-09-16').amount === 49_353_349, 'calculator uses Sep 16 daily remaining')
+ok(stepInForce(fsuMerged.steps, '2026-09-20').amount === 49_216_308, 'calculator uses Sep 20 after-Alabama remaining')
+ok(stepInForce(fsuMerged.steps, '2026-12-01').amount === 46_749_568, 'calculator uses Dec 1 USA TODAY-matching remaining')
 ok(stepInForce(fsuMerged.steps, '2027-06-01').amount === 48_687_500, 'calculator walks the CY8 step')
+const uncMerged = mergeSchoolSteps(buyouts.coaches['north-carolina'], byId['north-carolina'].coaches.football.buyout)
+ok(stepInForce(uncMerged.steps, '2026-09-16').amount === 12_931_507, 'Belichick Sep 16 remaining')
+ok(stepInForce(uncMerged.steps, '2026-01-01').amount === 20_000_000, 'Belichick Jan 1 remaining stays $20M')
 
 const remainingOnly = [{ asOf: '2026-01-01', remaining: 70_500_000, contractYear: '2026', notes: 'PDF: x' }]
 ok(stepInForce(remainingOnly, '2026-09-01').amount === 70_500_000, 'remaining-only step normalizes')

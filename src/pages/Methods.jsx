@@ -185,7 +185,7 @@ export default function Methods({ meta: metaProp }) {
           Not On3.
         </dd>
         <dt>Coach pay vs buyout overhang</dt>
-        <dd>Pay is an annual flow for the chair of record in the selected football season. A current-year file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. The year picker does not copy a new hire backward onto 2024. A buyout is overhang — a liability if the school fires without cause on the as-of date — not yearly spend. Private-school blanks stay blank.</dd>
+        <dd>Pay is an annual flow for the chair of record in the selected football season. A current-year file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. The year picker does not copy a new hire backward onto 2024. A buyout is overhang — a liability if the school fires without cause on the as-of date — not yearly spend. When the file prorates partial years daily, the headline is that dated remaining. Private-school blanks stay blank.</dd>
         <dt>Contract term</dt>
         <dd>Through-year or years remaining on the current head-coach deal, cited from the employment agreement or a newsroom/school release that quotes one. Public-school buyouts prefer the file; articles are fallback only when no current file is loaded. Not a guess. Pending if we do not have a public through-year.</dd>
         <dt>Transfer portal</dt>
@@ -760,8 +760,15 @@ export default function Methods({ meta: metaProp }) {
         year-by-year remaining pay, the school buyout cell also carries a step tape
         — remaining = sum of remaining contract-year TAC or guaranteed × the
         school-side percent rule, labeled derived from that table + rule, with the
-        PDF URL. A bare percent with no year table stays a rule. We do not invent
-        a staircase. The buyout calculator consumes those steps when they exist.
+        PDF URL. Where the file also prorates partial years on a daily basis
+        (FSU Norvell 7th Amendment V.E.; inclusive remaining days from the
+        termination date through December 31 of that contract year, plus any
+        cited pro rata reinstatement), the tape adds mid-season remaining
+        amounts and the headline overhang is the current as-of remaining, not
+        the January 1 full-year figure. A bare percent with no year table stays
+        a rule. We do not invent a staircase and we do not mint mid-year dollars
+        without that proration clause. The buyout calculator consumes those
+        steps when they exist.
       </p>
       <p>
         Football 2026 year cells (<code>coachesByYear.2026.football.pay</code>) take a

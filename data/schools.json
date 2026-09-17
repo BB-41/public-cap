@@ -1998,7 +1998,7 @@
             "source": "Southwest Times Record (Dec. 1, 2025), quoting Silverfield term sheet via open records",
             "url": "https://www.swtimes.com/story/sports/college/sec/2025/12/01/arkansas-football-coach-ryan-silverfield-salary-bonuses-buyouts/87557612007/",
             "asOf": "2026-01-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "70% of remaining annual compensation, including scheduled increases, through Dec. 31, 2030 (article quoting term sheet).",
             "coachSide": "Coach-side LD if Silverfield walks: $10M on or before Dec. 31, 2026; $7.5M / $5M / $2.5M / $1.25M on the later Dec. 31 windows through 2030.",
             "steps": [
@@ -2603,7 +2603,7 @@
               "source": "Southwest Times Record (Dec. 1, 2025), quoting Silverfield term sheet via open records",
               "url": "https://www.swtimes.com/story/sports/college/sec/2025/12/01/arkansas-football-coach-ryan-silverfield-salary-bonuses-buyouts/87557612007/",
               "asOf": null,
-              "notes": "70% of remaining annual compensation, including scheduled increases — we do not invent the remainder. Pittman’s paid buyout lives on the tape.",
+              "notes": "70% of remaining annual compensation, including scheduled increases — we do not invent the remainder. Pittman’s paid buyout lives on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "70% of remaining annual compensation, including scheduled increases, through Dec. 31, 2030 (article quoting term sheet).",
               "coachSide": "Coach-side LD if Silverfield walks: $10M on or before Dec. 31, 2026; $7.5M / $5M / $2.5M / $1.25M on the later Dec. 31 windows through 2030."
             },
@@ -3626,7 +3626,7 @@
             "source": "Montgomery Advertiser (Aug. 24, 2026), quoting Auburn employment agreement obtained via records request",
             "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/",
             "asOf": "2026-01-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "steps": [
               {
                 "asOf": "2026-01-01",
@@ -4185,7 +4185,7 @@
               "source": "Montgomery Advertiser (Aug. 24, 2026), quoting Auburn employment agreement obtained via records request",
               "url": "https://www.montgomeryadvertiser.com/story/sports/college/auburn/2026/08/24/alex-golesh-contract-auburn-football-buyout-details/87624147007/",
               "asOf": "2026-08-24",
-              "notes": "School without-cause: 75% of remaining compensation, paid monthly through the term end. No published dollar staircase in the article — we will not invent 75% × remaining years. Coach-side LD if Golesh walks: $8M / $6M / $5M / $3M by Dec. 1 windows through 2030."
+              "notes": "School without-cause: 75% of remaining compensation, paid monthly through the term end. No published dollar staircase in the article — we will not invent 75% × remaining years. Coach-side LD if Golesh walks: $8M / $6M / $5M / $3M by Dec. 1 windows through 2030. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause."
             },
             "term": {
               "confidence": "reported",
@@ -5199,7 +5199,7 @@
             "source": "Gainesville Sun (Dec. 1, 2025), quoting UF payment details",
             "url": "https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/",
             "asOf": "2026-01-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "70% remaining annualized compensation through Dec. 31, 2031 (article).",
             "coachSide": "Coach-side LD if Sumrall walks: $10M in 2026, then $8 / $3 / $2 / $1 / $0.",
             "steps": [
@@ -5805,7 +5805,7 @@
               "source": "Gainesville Sun (Dec. 1, 2025), quoting UF payment details",
               "url": "https://www.gainesville.com/story/sports/college/football/2025/12/01/breaking-down-contract-terms-of-florida-football-coach-jon-sumrall/87484907007/",
               "asOf": null,
-              "notes": "70% of remaining annualized compensation through Dec. 31, 2031 — we do not invent the remainder. Napier’s paid buyout lives on the tape.",
+              "notes": "70% of remaining annualized compensation through Dec. 31, 2031 — we do not invent the remainder. Napier’s paid buyout lives on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "70% remaining annualized compensation through Dec. 31, 2031 (article).",
               "coachSide": "Coach-side LD if Sumrall walks: $10M in 2026, then $8 / $3 / $2 / $1 / $0."
             },
@@ -6845,7 +6845,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?139959-University-of-Georgia"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -8537,7 +8536,7 @@
             "source": "University of Kentucky — Stein FY2025–26 employment agreement PDF (posted Feb 2026)",
             "url": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf",
             "asOf": "2025-12-02",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "70% of remaining Regular Compensation, paid monthly through Jan. 31, 2031. Subject to mitigate/offset.",
             "steps": [
               {
@@ -9154,7 +9153,7 @@
               "source": null,
               "url": null,
               "asOf": null,
-              "notes": "No current-chair if-fired dollar on this desk. File is 70% of remaining Regular Comp — we do not invent the remainder. Stoops’s paid buyout lives on the tape.",
+              "notes": "No current-chair if-fired dollar on this desk. File is 70% of remaining Regular Comp — we do not invent the remainder. Stoops’s paid buyout lives on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "70% of remaining Regular Compensation, paid monthly through Jan. 31, 2031. Subject to mitigate/offset."
             },
             "contractUrl": "https://legal.uky.edu/sites/default/files/2026-02/stein-fy2526.pdf",
@@ -10156,7 +10155,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?159391-Louisiana-State-University-and-Agricultural-Mechanical-College"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -10236,7 +10234,7 @@
             "source": "LSU signed employment agreement — Lane Kiffin (Nov. 30, 2025)",
             "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf",
             "asOf": null,
-            "notes": "Signed EA is 80% of remaining Base + Supplemental — we do not invent the remainder. Kelly’s paid buyout lives on the tape.",
+            "notes": "Signed EA is 80% of remaining Base + Supplemental — we do not invent the remainder. Kelly’s paid buyout lives on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "80% remaining Base + Supplemental, no mitigate/offset.",
             "coachSide": "Coach-side LD: $7M / $6M / $5M / $3M / $2M / $1.5M by calendar year through 2031; 50% if Verge Ausberry is not AD.",
             "steps": [
@@ -10859,7 +10857,7 @@
               "source": "LSU signed employment agreement — Lane Kiffin (Nov. 30, 2025)",
               "url": "https://ath-ems.lsu.edu/prr/contracts/Employment%20Contracts/Football/Lane%20Kiffin%20-%2011.30.25.pdf",
               "asOf": null,
-              "notes": "Signed EA is 80% of remaining Base + Supplemental — we do not invent the remainder. Kelly’s paid buyout lives on the tape.",
+              "notes": "Signed EA is 80% of remaining Base + Supplemental — we do not invent the remainder. Kelly’s paid buyout lives on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "80% remaining Base + Supplemental, no mitigate/offset.",
               "coachSide": "Coach-side LD: $7M / $6M / $5M / $3M / $2M / $1.5M by calendar year through 2031; 50% if Verge Ausberry is not AD."
             },
@@ -13531,7 +13529,7 @@
             "source": "Missouri Drinkwitz Second Restated and Amended EA §6.4.2.3 + pp. 2–3 / 6 compensation table",
             "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf",
             "asOf": "2026-01-16",
-            "notes": "Derived start-of-Contract-Year remaining (compensation table × 80%). Labeled derived. Liability/overhang, not annual spend. Not the USA TODAY Oct. 8, 2025 overhang. Duty to mitigate (EA §6.4.2.5 / 6.4.4) — we do not invent a dollar offset.",
+            "notes": "Derived start-of-Contract-Year remaining (compensation table × 80%). Labeled derived. Liability/overhang, not annual spend. Not the USA TODAY Oct. 8, 2025 overhang. Duty to mitigate (EA §6.4.2.5 / 6.4.4) — we do not invent a dollar offset. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate (EA §6.4.2.3–6.4.4).",
             "coachSide": "Coach-side LD: $5,000,000 through Dec. 1, 2026; $4,000,000 Dec. 2, 2026–Dec. 1, 2027; never more than $4,000,000 on or after Dec. 2, 2026 (p. 14 table).",
             "steps": [
@@ -14158,7 +14156,7 @@
               "source": "Missouri Drinkwitz Second Restated and Amended EA §6.4.2.3 + pp. 2–3 / 6 compensation table",
               "url": "https://mutigers.com/documents/2025/12/8/Eli_Drinkwitz_Second_Restated_and_Amended_Employment_Contract.pdf",
               "asOf": "2026-01-16",
-              "notes": "Derived start-of-Contract-Year remaining (compensation table × 80%). Labeled derived. Liability/overhang, not annual spend. Not the USA TODAY Oct. 8, 2025 overhang. Duty to mitigate (EA §6.4.2.5 / 6.4.4) — we do not invent a dollar offset.",
+              "notes": "Derived start-of-Contract-Year remaining (compensation table × 80%). Labeled derived. Liability/overhang, not annual spend. Not the USA TODAY Oct. 8, 2025 overhang. Duty to mitigate (EA §6.4.2.5 / 6.4.4) — we do not invent a dollar offset. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "80% of remaining Base + Non-Salary + Publicity Rights, with a duty to mitigate (EA §6.4.2.3–6.4.4).",
               "coachSide": "Coach-side LD: $5,000,000 through Dec. 1, 2026; $4,000,000 Dec. 2, 2026–Dec. 1, 2027; never more than $4,000,000 on or after Dec. 2, 2026 (p. 14 table).",
               "steps": [
@@ -16836,8 +16834,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?176017-University-of-Mississippi"
       },
       "nil": {
-
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -16978,7 +16974,7 @@
             "source": "Clarion Ledger / Daily Journal, quoting Golding term sheet with the Ole Miss Athletic Foundation",
             "url": "https://www.clarionledger.com/story/sports/college/ole-miss/2026/07/01/pete-golding-contract-salary-ole-miss-football-coach/90754060007/",
             "asOf": "2026-01-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "75% of remaining OMAF annual compensation through the otherwise unexpired term (article quoting term sheet).",
             "steps": [
               {
@@ -17582,7 +17578,7 @@
               "source": "Clarion Ledger / Daily Journal, quoting Golding term sheet with the Ole Miss Athletic Foundation",
               "url": "https://www.clarionledger.com/story/sports/college/ole-miss/2026/07/01/pete-golding-contract-salary-ole-miss-football-coach/90754060007/",
               "asOf": null,
-              "notes": "75% of remaining OMAF annual compensation through the unexpired term — we do not invent the remainder. Kiffin’s paid buyout lives on the tape.",
+              "notes": "75% of remaining OMAF annual compensation through the unexpired term — we do not invent the remainder. Kiffin’s paid buyout lives on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "75% of remaining OMAF annual compensation through the otherwise unexpired term (article quoting term sheet)."
             },
             "term": {
@@ -18556,7 +18552,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?218663-University-of-South-Carolina-Columbia"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -20093,7 +20088,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?221759-The-University-of-Tennessee-Knoxville"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -20165,7 +20159,7 @@
             "source": "University of Tennessee Heupel Amendment 3 PDF",
             "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
             "asOf": null,
-            "notes": "School-side without-cause is 75% of remaining Base + Supplemental if fired on or after Dec. 15, 2025 and before Dec. 15, 2027 (50% after). We do not invent the remainder.",
+            "notes": "School-side without-cause is 75% of remaining Base + Supplemental if fired on or after Dec. 15, 2025 and before Dec. 15, 2027 (50% after). We do not invent the remainder. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "steps": [
               {
                 "asOf": "2025-10-08",
@@ -20777,7 +20771,7 @@
               "source": "University of Tennessee Heupel Amendment 3 PDF",
               "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
               "asOf": null,
-              "notes": "School-side without-cause is 75% of remaining Base + Supplemental if fired on or after Dec. 15, 2025 and before Dec. 15, 2027 (50% after). We do not invent the remainder."
+              "notes": "School-side without-cause is 75% of remaining Base + Supplemental if fired on or after Dec. 15, 2025 and before Dec. 15, 2027 (50% after). We do not invent the remainder. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause."
             },
             "contractUrl": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf",
             "contract": {
@@ -21800,7 +21794,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?228778-The-University-of-Texas-at-Austin"
       },
       "nil": {
-
         "booked": {
           "value": 13500000,
           "confidence": "reported",
@@ -23392,8 +23385,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?228723-Texas-AM-University-College-Station"
       },
       "nil": {
-
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -25058,7 +25049,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?221999-Vanderbilt-University"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -28306,7 +28296,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?151351-Indiana-University-Bloomington"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -32821,7 +32810,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?170976-University-of-Michigan-Ann-Arbor"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -32910,7 +32898,7 @@
             "source": "Detroit Free Press (Jan. 23, 2026), quoting Whittingham memorandum of understanding via FOIA",
             "url": "https://www.freep.com/story/sports/college/university-michigan/wolverines/2026/01/23/kyle-whittingham-contract-michigan-football/88318877007/",
             "asOf": "2026-01-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "75% of remaining base salary through Jan. 31, 2031 (article quoting MOU).",
             "coachSide": "Coach-side LD if Whittingham walks: $5 million before Feb. 1, 2027, then down $1 million each Feb. 1.",
             "steps": [
@@ -33567,7 +33555,7 @@
               "source": "Detroit Free Press (Jan. 23, 2026), quoting Whittingham memorandum of understanding via FOIA",
               "url": "https://www.freep.com/story/sports/college/university-michigan/wolverines/2026/01/23/kyle-whittingham-contract-michigan-football/88318877007/",
               "asOf": null,
-              "notes": "75% of remaining base salary if fired without cause before Jan. 31, 2031 — we do not invent the remainder. Moore’s for-cause firing is a $0 paid-buyout on the tape.",
+              "notes": "75% of remaining base salary if fired without cause before Jan. 31, 2031 — we do not invent the remainder. Moore’s for-cause firing is a $0 paid-buyout on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "75% of remaining base salary through Jan. 31, 2031 (article quoting MOU).",
               "coachSide": "Coach-side LD if Whittingham walks: $5 million before Feb. 1, 2027, then down $1 million each Feb. 1."
             },
@@ -34662,7 +34650,7 @@
             "source": "Michigan State Head Football Coach Terms Sheet (Dec. 1, 2025) via WLNS",
             "url": "https://www.wlns.com/wp-content/uploads/sites/50/2025/12/Fitzgerald-terms-sheet.pdf",
             "asOf": "2025-12-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "72.5% of remaining Annual Compensation, paid monthly through Jan. 31, 2031. Subject to mitigate/offset.",
             "coachSide": "Coach-side LD starts at $6.5 million in 2026 and decreases annually to $1 million in 2030 (State News / MLive quoting the terms sheet; PDF coach-side table was not fully extractable).",
             "steps": [
@@ -35267,7 +35255,7 @@
               "source": "Michigan State Head Football Coach Terms Sheet (Dec. 1, 2025) via WLNS",
               "url": "https://www.wlns.com/wp-content/uploads/sites/50/2025/12/Fitzgerald-terms-sheet.pdf",
               "asOf": null,
-              "notes": "72.5% of remaining Annual Compensation, paid monthly through the unexpired term — we do not invent the remainder. Smith’s paid-buyout lives on the tape.",
+              "notes": "72.5% of remaining Annual Compensation, paid monthly through the unexpired term — we do not invent the remainder. Smith’s paid-buyout lives on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "72.5% of remaining Annual Compensation, paid monthly through Jan. 31, 2031. Subject to mitigate/offset.",
               "coachSide": "Coach-side LD starts at $6.5 million in 2026 and decreases annually to $1 million in 2030 (State News / MLive quoting the terms sheet; PDF coach-side table was not fully extractable)."
             },
@@ -41007,8 +40995,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?204796-Ohio-State-University-Main-Campus"
       },
       "nil": {
-
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -42657,7 +42643,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?209551-University-of-Oregon"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -42760,7 +42745,7 @@
             "source": "U. of Oregon BOT Mar. 7, 2025 packet — Exhibit A Amendment #3 (Lanning)",
             "url": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf",
             "asOf": "2026-02-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "100% remaining guaranteed salary + remaining deferred, monthly, subject to §6.2.e mitigation.",
             "steps": [
               {
@@ -43419,7 +43404,7 @@
               "source": null,
               "url": null,
               "asOf": null,
-              "notes": "USA TODAY buyout cell not reused on a year without a tape pay cell."
+              "notes": "USA TODAY buyout cell not reused on a year without a tape pay cell. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause."
             },
             "contractUrl": "https://trustees.uoregon.edu/sites/default/files/2025-03/final-bot-march-7-materials.pdf",
             "contract": {
@@ -44513,7 +44498,7 @@
             "source": "Penn State — Matt Campbell Head Coach Term Sheet (Dec. 8, 2025) — 100% of remaining 2026–2033 Guaranteed Compensation",
             "url": "https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf",
             "asOf": "2026-01-01",
-            "notes": "PDF-math at the start of 2026 (full remaining years of the Guaranteed Compensation table). Retention bonus is not in this line. Franklin’s paid buyout lives on the tape. Liability/overhang, not annual spend.",
+            "notes": "PDF-math at the start of 2026 (full remaining years of the Guaranteed Compensation table). Retention bonus is not in this line. Franklin’s paid buyout lives on the tape. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "100% of remaining Guaranteed Compensation (base + supplemental), subject to Coach’s mitigation.",
             "coachSide": "Coach-side LD: $10M (2026), $8M (2027), $6M (2028), $4M (2029), $2M (2030), then $1M (2031–2033).",
             "steps": [
@@ -45151,7 +45136,7 @@
               "source": "Penn State — Matt Campbell Head Coach Term Sheet (Dec. 8, 2025) — 100% of remaining 2026–2033 Guaranteed Compensation",
               "url": "https://gopsusports.com/documents/2eb86a0c-2980-40cf-b0df-7cc2f56e13f7.pdf",
               "asOf": "2026-01-01",
-              "notes": "PDF-math at the start of 2026 (full remaining years of the Guaranteed Compensation table). Retention bonus is not in this line. Franklin’s paid buyout lives on the tape. Liability/overhang, not annual spend.",
+              "notes": "PDF-math at the start of 2026 (full remaining years of the Guaranteed Compensation table). Retention bonus is not in this line. Franklin’s paid buyout lives on the tape. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "100% of remaining Guaranteed Compensation (base + supplemental), subject to Coach’s mitigation.",
               "coachSide": "Coach-side LD: $10M (2026), $8M (2027), $6M (2028), $4M (2029), $2M (2030), then $1M (2031–2033).",
               "steps": [
@@ -46162,7 +46147,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?243780-Purdue-University-Main-Campus"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -47659,7 +47643,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?186380-Rutgers-University-New-Brunswick"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -49361,7 +49344,7 @@
             "source": "Yahoo Sports / California Post (Jan. 29, 2026), quoting Chesney employment agreement",
             "url": "https://sports.yahoo.com/articles/contract-details-revealed-ucla-got-035156125.html",
             "asOf": "2026-01-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "75% of remaining base salary and talent fee, subject to mitigation (article quoting EA).",
             "coachSide": "Coach-side LD if Chesney walks: $8M on or before Dec. 21, 2026; then $5M / $3.5M / $2M / $1M on later Dec. 31 windows through 2030.",
             "steps": [
@@ -49960,7 +49943,7 @@
               "source": "Yahoo Sports / California Post (Jan. 29, 2026), quoting Chesney employment agreement",
               "url": "https://sports.yahoo.com/articles/contract-details-revealed-ucla-got-035156125.html",
               "asOf": null,
-              "notes": "75% of remaining base salary and talent fee — we do not invent the remainder. Foster’s paid buyout lives on the tape.",
+              "notes": "75% of remaining base salary and talent fee — we do not invent the remainder. Foster’s paid buyout lives on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "75% of remaining base salary and talent fee, subject to mitigation (article quoting EA).",
               "coachSide": "Coach-side LD if Chesney walks: $8M on or before Dec. 21, 2026; then $5M / $3.5M / $2M / $1M on later Dec. 31 windows through 2030."
             },
@@ -50912,7 +50895,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?123961-University-of-Southern-California"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -58636,7 +58618,7 @@
             "source": "Clemson 2022 BOT term sheet — $57M flat if terminated in 2026",
             "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf",
             "asOf": "2026-01-01",
-            "notes": "University without-cause schedule amount for 2026. No mitigation. Liability/overhang, not annual spend.",
+            "notes": "University without-cause schedule amount for 2026. No mitigation. Liability/overhang, not annual spend. 2026 is a printed flat calendar-year dollar, not a daily-prorated remaining.",
             "rule": "University without-cause: $57M flat if terminated in 2026; remaining Base + Supplemental + Licensing thereafter. No mitigate.",
             "steps": [
               {
@@ -59332,7 +59314,7 @@
               "source": "Clemson 2022 BOT term sheet — $57M flat if terminated in 2026",
               "url": "https://sportstalksc.com/wp-content/uploads/2022/09/Swinney-Term-Sheet-Sept-2022.pdf",
               "asOf": "2026-01-01",
-              "notes": "University without-cause schedule amount for 2026. No mitigation. Liability/overhang, not annual spend.",
+              "notes": "University without-cause schedule amount for 2026. No mitigation. Liability/overhang, not annual spend. 2026 is a printed flat calendar-year dollar, not a daily-prorated remaining.",
               "rule": "University without-cause: $57M flat if terminated in 2026; remaining Base + Supplemental + Licensing thereafter. No mitigate.",
               "steps": [
                 {
@@ -61970,55 +61952,104 @@
             ]
           },
           "buyout": {
-            "value": 58192500,
+            "value": 49353349,
             "confidence": "reported",
-            "source": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) — 85% of remaining CY7–12 TAC + $3.75M CY7 reinstatement",
+            "source": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) — 85% of remaining TAC + pro rata CY reinstatement, daily-prorated partial years",
             "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf",
-            "asOf": "2026-01-01",
-            "notes": "PDF-math at the start of Contract Year 7 (full remaining years). Not the CBS $58.4M estimate. Liability/overhang, not annual spend.",
-            "rule": "85% of remaining CY TAC + CY reinstatement (7th Amendment V.E.).",
+            "asOf": "2026-09-16",
+            "notes": "PDF-math as of 2026-09-16 (Alabama-weekend desk). 7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term, partial years prorated on a daily basis, plus a pro rata CY reinstatement (CY7 $3.75M / CY8 $3.0M / CY9 $2.25M / CY10 $1.5M / CY11 $0.75M / CY12 $0). Inclusive remaining days from the termination date through Dec. 31 of that contract year (Jan 1 2026 full-year = $58,192,500; Dec 1 2026 = $46,749,568, matching USA TODAY ~$46.7M). Not the CBS $58.4M estimate. Liability/overhang, not annual spend.",
+            "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, …).",
             "steps": [
               {
                 "asOf": "2026-01-01",
                 "remaining": 58192500,
                 "contractYear": "CY7 (2026)",
+                "through": "2026-08-31",
+                "notes": "Derived from the 6th Amendment CY7–12 TAC table ($10.3 / $10.45 / $10.6 / $10.75 / $10.9 / $11.05 million = $64.05 million) × 85% + CY7 reinstatement $3.75 million (7th Amendment V.E.). $64.05 million × 85% + $3.75 million = $58,192,500. Inclusive remaining days from the termination date through Dec. 31 of that CY (365/365 in 2026). Jan 1 full-year matches this desk $58,192,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2026-09-01",
+                "remaining": 49867253,
+                "contractYear": "CY7 (2026)",
+                "through": "2026-09-15",
+                "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-09-01 through Dec. 31, 2026 = 122/365. Remaining TAC = CY7 (2026) $10,300,000 × 122/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 122/365 = $49,867,253. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2026-09-16",
+                "remaining": 49353349,
+                "contractYear": "CY7 (2026)",
+                "through": "2026-09-19",
+                "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-09-16 through Dec. 31, 2026 = 107/365. Remaining TAC = CY7 (2026) $10,300,000 × 107/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 107/365 = $49,353,349. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2026-09-20",
+                "remaining": 49216308,
+                "contractYear": "CY7 (2026)",
+                "through": "2026-09-30",
+                "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-09-20 through Dec. 31, 2026 = 103/365. Remaining TAC = CY7 (2026) $10,300,000 × 103/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 103/365 = $49,216,308. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2026-10-01",
+                "remaining": 48839445,
+                "contractYear": "CY7 (2026)",
+                "through": "2026-10-31",
+                "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-10-01 through Dec. 31, 2026 = 92/365. Remaining TAC = CY7 (2026) $10,300,000 × 92/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 92/365 = $48,839,445. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2026-11-01",
+                "remaining": 47777377,
+                "contractYear": "CY7 (2026)",
+                "through": "2026-11-30",
+                "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-11-01 through Dec. 31, 2026 = 61/365. Remaining TAC = CY7 (2026) $10,300,000 × 61/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 61/365 = $47,777,377. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2026-12-01",
+                "remaining": 46749568,
+                "contractYear": "CY7 (2026)",
+                "through": "2026-12-30",
+                "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-12-01 through Dec. 31, 2026 = 31/365. Remaining TAC = CY7 (2026) $10,300,000 × 31/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 31/365 = $46,749,568. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+              },
+              {
+                "asOf": "2026-12-31",
+                "remaining": 45721760,
+                "contractYear": "CY7 (2026)",
                 "through": "2026-12-31",
-                "notes": "Derived from the 6th Amendment CY7–12 TAC table ($10.3 / $10.45 / $10.6 / $10.75 / $10.9 / $11.05 million = $64.05 million) × 85% + CY7 reinstatement $3.75 million (7th Amendment V.E.). $64.05 million × 85% + $3.75 million = $58,192,500. Full remaining years at the start of 2026 — the file allows daily proration of partial years; this desk does not mint a mid-year dollar. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-12-31 through Dec. 31, 2026 = 1/365. Remaining TAC = CY7 (2026) $10,300,000 × 1/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 1/365 = $45,721,760. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
               },
               {
                 "asOf": "2027-01-01",
                 "remaining": 48687500,
                 "contractYear": "CY8 (2027)",
                 "through": "2027-12-31",
-                "notes": "Derived from remaining CY8–12 TAC ($53.75 million) × 85% + CY8 reinstatement $3.0 million = $48,687,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                "notes": "Derived from remaining CY8–CY12 TAC ($10.45 million / $10.6 million / $10.75 million / $10.9 million / $11.05 million = $53,750,000) × 85% + CY8 reinstatement $3,000,000 (7th Amendment V.E.). $53,750,000 × 85% + $3,000,000 = $48,687,500. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $48,687,500). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
               },
               {
                 "asOf": "2028-01-01",
                 "remaining": 39055000,
                 "contractYear": "CY9 (2028)",
                 "through": "2028-12-31",
-                "notes": "Derived from remaining CY9–12 TAC ($43.3 million) × 85% + CY9 reinstatement $2.25 million = $39,055,000. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                "notes": "Derived from remaining CY9–CY12 TAC ($10.6 million / $10.75 million / $10.9 million / $11.05 million = $43,300,000) × 85% + CY9 reinstatement $2,250,000 (7th Amendment V.E.). $43,300,000 × 85% + $2,250,000 = $39,055,000. Jan 1 full-year uses inclusive remaining days 366/366 of the contract year (reproduces the desk $39,055,000). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
               },
               {
                 "asOf": "2029-01-01",
                 "remaining": 29295000,
                 "contractYear": "CY10 (2029)",
                 "through": "2029-12-31",
-                "notes": "Derived from remaining CY10–12 TAC ($32.7 million) × 85% + CY10 reinstatement $1.5 million = $29,295,000. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                "notes": "Derived from remaining CY10–CY12 TAC ($10.75 million / $10.9 million / $11.05 million = $32,700,000) × 85% + CY10 reinstatement $1,500,000 (7th Amendment V.E.). $32,700,000 × 85% + $1,500,000 = $29,295,000. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $29,295,000). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
               },
               {
                 "asOf": "2030-01-01",
                 "remaining": 19407500,
                 "contractYear": "CY11 (2030)",
                 "through": "2030-12-31",
-                "notes": "Derived from remaining CY11–12 TAC ($21.95 million) × 85% + CY11 reinstatement $0.75 million = $19,407,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                "notes": "Derived from remaining CY11–CY12 TAC ($10.9 million / $11.05 million = $21,950,000) × 85% + CY11 reinstatement $750,000 (7th Amendment V.E.). $21,950,000 × 85% + $750,000 = $19,407,500. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $19,407,500). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
               },
               {
                 "asOf": "2031-01-01",
                 "remaining": 9392500,
                 "contractYear": "CY12 (2031)",
                 "through": "2031-12-31",
-                "notes": "Derived from remaining CY12 TAC ($11.05 million) × 85% + CY12 reinstatement $0 = $9,392,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                "notes": "Derived from remaining CY12–CY12 TAC ($11.05 million = $11,050,000) × 85% + CY12 reinstatement $0 (7th Amendment V.E.). $11,050,000 × 85% + $0 = $9,392,500. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $9,392,500). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
               }
             ]
           },
@@ -63531,55 +63562,104 @@
               ]
             },
             "buyout": {
-              "value": 58192500,
+              "value": 49353349,
               "confidence": "reported",
-              "source": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) — 85% of remaining CY7–12 TAC + $3.75M CY7 reinstatement",
+              "source": "FSU 7th Amendment to 2019 EA (Dec. 13, 2024) — 85% of remaining TAC + pro rata CY reinstatement, daily-prorated partial years",
               "url": "https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf",
-              "asOf": "2026-01-01",
-              "notes": "PDF-math at the start of Contract Year 7 (full remaining years). Not the CBS $58.4M estimate. Liability/overhang, not annual spend.",
-              "rule": "85% of remaining CY TAC + CY reinstatement (7th Amendment V.E.).",
+              "asOf": "2026-09-16",
+              "notes": "PDF-math as of 2026-09-16 (Alabama-weekend desk). 7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term, partial years prorated on a daily basis, plus a pro rata CY reinstatement (CY7 $3.75M / CY8 $3.0M / CY9 $2.25M / CY10 $1.5M / CY11 $0.75M / CY12 $0). Inclusive remaining days from the termination date through Dec. 31 of that contract year (Jan 1 2026 full-year = $58,192,500; Dec 1 2026 = $46,749,568, matching USA TODAY ~$46.7M). Not the CBS $58.4M estimate. Liability/overhang, not annual spend.",
+              "rule": "7th Amendment V.E.: 85% of remaining Total Annual Compensation from the termination date through the end of the Total Term; partial years prorated on a daily basis; plus a pro rata reinstatement for the Contract Year of termination (CY7 $3.75M, CY8 $3M, …).",
               "steps": [
                 {
                   "asOf": "2026-01-01",
                   "remaining": 58192500,
                   "contractYear": "CY7 (2026)",
+                  "through": "2026-08-31",
+                  "notes": "Derived from the 6th Amendment CY7–12 TAC table ($10.3 / $10.45 / $10.6 / $10.75 / $10.9 / $11.05 million = $64.05 million) × 85% + CY7 reinstatement $3.75 million (7th Amendment V.E.). $64.05 million × 85% + $3.75 million = $58,192,500. Inclusive remaining days from the termination date through Dec. 31 of that CY (365/365 in 2026). Jan 1 full-year matches this desk $58,192,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2026-09-01",
+                  "remaining": 49867253,
+                  "contractYear": "CY7 (2026)",
+                  "through": "2026-09-15",
+                  "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-09-01 through Dec. 31, 2026 = 122/365. Remaining TAC = CY7 (2026) $10,300,000 × 122/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 122/365 = $49,867,253. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2026-09-16",
+                  "remaining": 49353349,
+                  "contractYear": "CY7 (2026)",
+                  "through": "2026-09-19",
+                  "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-09-16 through Dec. 31, 2026 = 107/365. Remaining TAC = CY7 (2026) $10,300,000 × 107/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 107/365 = $49,353,349. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2026-09-20",
+                  "remaining": 49216308,
+                  "contractYear": "CY7 (2026)",
+                  "through": "2026-09-30",
+                  "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-09-20 through Dec. 31, 2026 = 103/365. Remaining TAC = CY7 (2026) $10,300,000 × 103/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 103/365 = $49,216,308. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2026-10-01",
+                  "remaining": 48839445,
+                  "contractYear": "CY7 (2026)",
+                  "through": "2026-10-31",
+                  "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-10-01 through Dec. 31, 2026 = 92/365. Remaining TAC = CY7 (2026) $10,300,000 × 92/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 92/365 = $48,839,445. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2026-11-01",
+                  "remaining": 47777377,
+                  "contractYear": "CY7 (2026)",
+                  "through": "2026-11-30",
+                  "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-11-01 through Dec. 31, 2026 = 61/365. Remaining TAC = CY7 (2026) $10,300,000 × 61/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 61/365 = $47,777,377. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2026-12-01",
+                  "remaining": 46749568,
+                  "contractYear": "CY7 (2026)",
+                  "through": "2026-12-30",
+                  "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-12-01 through Dec. 31, 2026 = 31/365. Remaining TAC = CY7 (2026) $10,300,000 × 31/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 31/365 = $46,749,568. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                },
+                {
+                  "asOf": "2026-12-31",
+                  "remaining": 45721760,
+                  "contractYear": "CY7 (2026)",
                   "through": "2026-12-31",
-                  "notes": "Derived from the 6th Amendment CY7–12 TAC table ($10.3 / $10.45 / $10.6 / $10.75 / $10.9 / $11.05 million = $64.05 million) × 85% + CY7 reinstatement $3.75 million (7th Amendment V.E.). $64.05 million × 85% + $3.75 million = $58,192,500. Full remaining years at the start of 2026 — the file allows daily proration of partial years; this desk does not mint a mid-year dollar. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                  "notes": "7th Amendment V.E. daily proration + pro rata CY reinstatement. Inclusive remaining days from 2026-12-31 through Dec. 31, 2026 = 1/365. Remaining TAC = CY7 (2026) $10,300,000 × 1/365 + later years $53,750,000; 85% of that plus CY7 (2026) reinstatement $3,750,000 × 1/365 = $45,721,760. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
                 },
                 {
                   "asOf": "2027-01-01",
                   "remaining": 48687500,
                   "contractYear": "CY8 (2027)",
                   "through": "2027-12-31",
-                  "notes": "Derived from remaining CY8–12 TAC ($53.75 million) × 85% + CY8 reinstatement $3.0 million = $48,687,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                  "notes": "Derived from remaining CY8–CY12 TAC ($10.45 million / $10.6 million / $10.75 million / $10.9 million / $11.05 million = $53,750,000) × 85% + CY8 reinstatement $3,000,000 (7th Amendment V.E.). $53,750,000 × 85% + $3,000,000 = $48,687,500. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $48,687,500). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
                 },
                 {
                   "asOf": "2028-01-01",
                   "remaining": 39055000,
                   "contractYear": "CY9 (2028)",
                   "through": "2028-12-31",
-                  "notes": "Derived from remaining CY9–12 TAC ($43.3 million) × 85% + CY9 reinstatement $2.25 million = $39,055,000. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                  "notes": "Derived from remaining CY9–CY12 TAC ($10.6 million / $10.75 million / $10.9 million / $11.05 million = $43,300,000) × 85% + CY9 reinstatement $2,250,000 (7th Amendment V.E.). $43,300,000 × 85% + $2,250,000 = $39,055,000. Jan 1 full-year uses inclusive remaining days 366/366 of the contract year (reproduces the desk $39,055,000). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
                 },
                 {
                   "asOf": "2029-01-01",
                   "remaining": 29295000,
                   "contractYear": "CY10 (2029)",
                   "through": "2029-12-31",
-                  "notes": "Derived from remaining CY10–12 TAC ($32.7 million) × 85% + CY10 reinstatement $1.5 million = $29,295,000. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                  "notes": "Derived from remaining CY10–CY12 TAC ($10.75 million / $10.9 million / $11.05 million = $32,700,000) × 85% + CY10 reinstatement $1,500,000 (7th Amendment V.E.). $32,700,000 × 85% + $1,500,000 = $29,295,000. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $29,295,000). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
                 },
                 {
                   "asOf": "2030-01-01",
                   "remaining": 19407500,
                   "contractYear": "CY11 (2030)",
                   "through": "2030-12-31",
-                  "notes": "Derived from remaining CY11–12 TAC ($21.95 million) × 85% + CY11 reinstatement $0.75 million = $19,407,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                  "notes": "Derived from remaining CY11–CY12 TAC ($10.9 million / $11.05 million = $21,950,000) × 85% + CY11 reinstatement $750,000 (7th Amendment V.E.). $21,950,000 × 85% + $750,000 = $19,407,500. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $19,407,500). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
                 },
                 {
                   "asOf": "2031-01-01",
                   "remaining": 9392500,
                   "contractYear": "CY12 (2031)",
                   "through": "2031-12-31",
-                  "notes": "Derived from remaining CY12 TAC ($11.05 million) × 85% + CY12 reinstatement $0 = $9,392,500. PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
+                  "notes": "Derived from remaining CY12–CY12 TAC ($11.05 million = $11,050,000) × 85% + CY12 reinstatement $0 (7th Amendment V.E.). $11,050,000 × 85% + $0 = $9,392,500. Jan 1 full-year uses inclusive remaining days 365/365 of the contract year (reproduces the desk $9,392,500). PDF: https://s3.documentcloud.org/documents/25460174/norvell-mike-7th-amendment-to-2019-ea-final-12.pdf"
                 }
               ]
             },
@@ -66983,8 +67063,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?135726-University-of-Miami"
       },
       "nil": {
-
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -70105,34 +70183,83 @@
             ]
           },
           "buyout": {
-            "value": 20000000,
+            "value": 12931507,
             "confidence": "reported",
             "source": "UNC Belichick EA §12 — remaining Base $1M + Supplemental $9M through Dec. 31, 2027",
             "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf",
-            "asOf": "2026-01-01",
-            "notes": "Full remaining 2026 and 2027 years. 2028–29 are $0 on a university fire. No mitigation in §12.",
-            "rule": "Remaining Base + Supplemental through Dec. 31, 2027; 2028–29 are $0 on a university fire. No mitigation in §12.",
+            "asOf": "2026-09-16",
+            "notes": "PDF-math as of 2026-09-16. §12 remaining unpaid Base + Supplemental through Dec. 31, 2027 only. §4 prorates Base for a partial Contract Year; §5 earns Supplemental pro rata on a daily basis. Inclusive remaining days from the termination date through Dec. 31 of that year. 2028–29 are $0 on a university fire. No mitigation in §12. Liability/overhang, not annual spend.",
+            "rule": "§12 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
             "steps": [
               {
                 "asOf": "2026-01-01",
                 "remaining": 20000000,
                 "contractYear": "2026",
+                "through": "2026-08-31",
+                "notes": "Derived from §12 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Full remaining 2026 and 2027 years = $20,000,000. §4 prorates Base for a partial Contract Year; §5 earns Supplemental pro rata daily. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              },
+              {
+                "asOf": "2026-09-01",
+                "remaining": 13342466,
+                "contractYear": "2026",
+                "through": "2026-09-15",
+                "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-09-01 through Dec. 31, 2026 = 122/365. Remaining = $10,000,000 × 122/365 + $10,000,000 (2027). = $13,342,466. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              },
+              {
+                "asOf": "2026-09-16",
+                "remaining": 12931507,
+                "contractYear": "2026",
+                "through": "2026-09-19",
+                "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-09-16 through Dec. 31, 2026 = 107/365. Remaining = $10,000,000 × 107/365 + $10,000,000 (2027). = $12,931,507. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              },
+              {
+                "asOf": "2026-09-20",
+                "remaining": 12821918,
+                "contractYear": "2026",
+                "through": "2026-09-30",
+                "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-09-20 through Dec. 31, 2026 = 103/365. Remaining = $10,000,000 × 103/365 + $10,000,000 (2027). = $12,821,918. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              },
+              {
+                "asOf": "2026-10-01",
+                "remaining": 12520548,
+                "contractYear": "2026",
+                "through": "2026-10-31",
+                "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-10-01 through Dec. 31, 2026 = 92/365. Remaining = $10,000,000 × 92/365 + $10,000,000 (2027). = $12,520,548. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              },
+              {
+                "asOf": "2026-11-01",
+                "remaining": 11671233,
+                "contractYear": "2026",
+                "through": "2026-11-30",
+                "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-11-01 through Dec. 31, 2026 = 61/365. Remaining = $10,000,000 × 61/365 + $10,000,000 (2027). = $11,671,233. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              },
+              {
+                "asOf": "2026-12-01",
+                "remaining": 10849315,
+                "contractYear": "2026",
+                "through": "2026-12-30",
+                "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-12-01 through Dec. 31, 2026 = 31/365. Remaining = $10,000,000 × 31/365 + $10,000,000 (2027). = $10,849,315. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+              },
+              {
+                "asOf": "2026-12-31",
+                "remaining": 10027397,
+                "contractYear": "2026",
                 "through": "2026-12-31",
-                "notes": "Derived from §12 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Full remaining 2026 and 2027 years = $20,000,000. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-12-31 through Dec. 31, 2026 = 1/365. Remaining = $10,000,000 × 1/365 + $10,000,000 (2027). = $10,027,397. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
               },
               {
                 "asOf": "2027-01-01",
                 "remaining": 10000000,
                 "contractYear": "2027",
                 "through": "2027-12-31",
-                "notes": "Remaining 2027 Base + Supplemental = $10,000,000. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                "notes": "Derived from §12 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Remaining 2027 Base + Supplemental = $10,000,000. §4 prorates Base for a partial Contract Year; §5 earns Supplemental pro rata daily. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
               },
               {
                 "asOf": "2028-01-01",
                 "remaining": 0,
                 "contractYear": "2028–29",
-                "through": "2029-12-31",
-                "notes": "If terminated after Dec. 31, 2027: $0. Section 12 pays Base + Supplemental only through Dec. 31, 2027. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                "through": "2028-12-31",
+                "notes": "If terminated after Dec. 31, 2027: $0. Section 12 pays remaining unpaid Base + Supplemental only through Dec. 31, 2027. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
               }
             ]
           },
@@ -70701,34 +70828,83 @@
               ]
             },
             "buyout": {
-              "value": 20000000,
+              "value": 12931507,
               "confidence": "reported",
               "source": "UNC Belichick EA §12 — remaining Base $1M + Supplemental $9M through Dec. 31, 2027",
               "url": "https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf",
-              "asOf": "2026-01-01",
-              "notes": "Full remaining 2026 and 2027 years. 2028–29 are $0 on a university fire. No mitigation in §12.",
-              "rule": "Remaining Base + Supplemental through Dec. 31, 2027; 2028–29 are $0 on a university fire. No mitigation in §12.",
+              "asOf": "2026-09-16",
+              "notes": "PDF-math as of 2026-09-16. §12 remaining unpaid Base + Supplemental through Dec. 31, 2027 only. §4 prorates Base for a partial Contract Year; §5 earns Supplemental pro rata on a daily basis. Inclusive remaining days from the termination date through Dec. 31 of that year. 2028–29 are $0 on a university fire. No mitigation in §12. Liability/overhang, not annual spend.",
+              "rule": "§12 remaining unpaid Base ($1M/year) + Supplemental ($9M/year) through Dec. 31, 2027 only. Partial-year Base is prorated; Supplemental is earned pro rata daily.",
               "steps": [
                 {
                   "asOf": "2026-01-01",
                   "remaining": 20000000,
                   "contractYear": "2026",
+                  "through": "2026-08-31",
+                  "notes": "Derived from §12 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Full remaining 2026 and 2027 years = $20,000,000. §4 prorates Base for a partial Contract Year; §5 earns Supplemental pro rata daily. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                },
+                {
+                  "asOf": "2026-09-01",
+                  "remaining": 13342466,
+                  "contractYear": "2026",
+                  "through": "2026-09-15",
+                  "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-09-01 through Dec. 31, 2026 = 122/365. Remaining = $10,000,000 × 122/365 + $10,000,000 (2027). = $13,342,466. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                },
+                {
+                  "asOf": "2026-09-16",
+                  "remaining": 12931507,
+                  "contractYear": "2026",
+                  "through": "2026-09-19",
+                  "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-09-16 through Dec. 31, 2026 = 107/365. Remaining = $10,000,000 × 107/365 + $10,000,000 (2027). = $12,931,507. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                },
+                {
+                  "asOf": "2026-09-20",
+                  "remaining": 12821918,
+                  "contractYear": "2026",
+                  "through": "2026-09-30",
+                  "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-09-20 through Dec. 31, 2026 = 103/365. Remaining = $10,000,000 × 103/365 + $10,000,000 (2027). = $12,821,918. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                },
+                {
+                  "asOf": "2026-10-01",
+                  "remaining": 12520548,
+                  "contractYear": "2026",
+                  "through": "2026-10-31",
+                  "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-10-01 through Dec. 31, 2026 = 92/365. Remaining = $10,000,000 × 92/365 + $10,000,000 (2027). = $12,520,548. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                },
+                {
+                  "asOf": "2026-11-01",
+                  "remaining": 11671233,
+                  "contractYear": "2026",
+                  "through": "2026-11-30",
+                  "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-11-01 through Dec. 31, 2026 = 61/365. Remaining = $10,000,000 × 61/365 + $10,000,000 (2027). = $11,671,233. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                },
+                {
+                  "asOf": "2026-12-01",
+                  "remaining": 10849315,
+                  "contractYear": "2026",
+                  "through": "2026-12-30",
+                  "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-12-01 through Dec. 31, 2026 = 31/365. Remaining = $10,000,000 × 31/365 + $10,000,000 (2027). = $10,849,315. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                },
+                {
+                  "asOf": "2026-12-31",
+                  "remaining": 10027397,
+                  "contractYear": "2026",
                   "through": "2026-12-31",
-                  "notes": "Derived from §12 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Full remaining 2026 and 2027 years = $20,000,000. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                  "notes": "§12 remaining unpaid Base + Supplemental through Dec. 31, 2027. §4 Base is prorated for a partial Contract Year; §5 Supplemental is earned pro rata daily. Inclusive remaining days 2026-12-31 through Dec. 31, 2026 = 1/365. Remaining = $10,000,000 × 1/365 + $10,000,000 (2027). = $10,027,397. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
                 },
                 {
                   "asOf": "2027-01-01",
                   "remaining": 10000000,
                   "contractYear": "2027",
                   "through": "2027-12-31",
-                  "notes": "Remaining 2027 Base + Supplemental = $10,000,000. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                  "notes": "Derived from §12 remaining unpaid Base ($1,000,000/year) + Supplemental ($9,000,000/year) through Dec. 31, 2027 only. Remaining 2027 Base + Supplemental = $10,000,000. §4 prorates Base for a partial Contract Year; §5 earns Supplemental pro rata daily. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
                 },
                 {
                   "asOf": "2028-01-01",
                   "remaining": 0,
                   "contractYear": "2028–29",
-                  "through": "2029-12-31",
-                  "notes": "If terminated after Dec. 31, 2027: $0. Section 12 pays Base + Supplemental only through Dec. 31, 2027. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
+                  "through": "2028-12-31",
+                  "notes": "If terminated after Dec. 31, 2027: $0. Section 12 pays remaining unpaid Base + Supplemental only through Dec. 31, 2027. PDF: https://s3.documentcloud.org/documents/25502765/unc-coach-bill-belichick-contract.pdf"
                 }
               ]
             },
@@ -79286,7 +79462,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?233921-Virginia-Polytechnic-Institute-and-State-University"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -85676,7 +85851,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?230038-Brigham-Young-University"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -91711,7 +91885,7 @@
             "source": "Houston Chronicle / The Athletic quoting UH Fritz term sheet",
             "url": "https://www.houstonchronicle.com/texas-sports-nation/college/article/uh-football-willie-fritz-contract-incentives-18533360.php",
             "asOf": "2026-08-27",
-            "notes": "Printed dollar: UH owes $19 million if it fires Fritz without cause before Dec. 31, 2026. After that date the file switches to 60% of remaining salary — we do not invent that later remainder. Liability/overhang, not annual spend.",
+            "notes": "Printed dollar: UH owes $19 million if it fires Fritz without cause before Dec. 31, 2026. After that date the file switches to 60% of remaining salary — we do not invent that later remainder. Liability/overhang, not annual spend. 2026 is a printed flat calendar-year dollar, not a daily-prorated remaining.",
             "rule": "$19 million if terminated without cause before Dec. 31, 2026; 60% of remaining salary on or after Jan. 1, 2027 (term sheet)."
           },
           "term": {
@@ -92232,7 +92406,7 @@
               "source": "Houston Chronicle / The Athletic quoting UH Fritz term sheet",
               "url": "https://www.houstonchronicle.com/texas-sports-nation/college/article/uh-football-willie-fritz-contract-incentives-18533360.php",
               "asOf": "2026-08-27",
-              "notes": "Printed dollar: UH owes $19 million if it fires Fritz without cause before Dec. 31, 2026. After that date the file switches to 60% of remaining salary — we do not invent that later remainder. Liability/overhang, not annual spend.",
+              "notes": "Printed dollar: UH owes $19 million if it fires Fritz without cause before Dec. 31, 2026. After that date the file switches to 60% of remaining salary — we do not invent that later remainder. Liability/overhang, not annual spend. 2026 is a printed flat calendar-year dollar, not a daily-prorated remaining.",
               "rule": "$19 million if terminated without cause before Dec. 31, 2026; 60% of remaining salary on or after Jan. 1, 2027 (term sheet)."
             },
             "term": {
@@ -96499,7 +96673,7 @@
             "source": "Topeka Capital-Journal (Dec. 10, 2025), quoting Klein employment agreement released by K-State",
             "url": "https://www.cjonline.com/story/sports/college/cat-zone/2025/12/10/collin-klein-contract-kansas-state-football-salary-buyout-bonuses-chris-klieman/87702201007/",
             "asOf": "2026-01-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "75% of remaining unpaid base salary through the then-current term (article quoting EA).",
             "coachSide": "Coach-side LD if Klein walks: $5M before Dec. 31, 2026; then $4M / $3M / $2M / $1M on later windows through Dec. 1, 2030; $0 after Dec. 2, 2030.",
             "steps": [
@@ -97092,7 +97266,7 @@
               "source": "Topeka Capital-Journal (Dec. 10, 2025), quoting Klein employment agreement released by K-State",
               "url": "https://www.cjonline.com/story/sports/college/cat-zone/2025/12/10/collin-klein-contract-kansas-state-football-salary-buyout-bonuses-chris-klieman/87702201007/",
               "asOf": null,
-              "notes": "75% of remaining unpaid base salary — we do not invent the remainder or reuse the article’s after-season dollar table. Klieman’s paid-buyout lives on the tape.",
+              "notes": "75% of remaining unpaid base salary — we do not invent the remainder or reuse the article’s after-season dollar table. Klieman’s paid-buyout lives on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "75% of remaining unpaid base salary through the then-current term (article quoting EA).",
               "coachSide": "Coach-side LD if Klein walks: $5M before Dec. 31, 2026; then $4M / $3M / $2M / $1M on later windows through Dec. 1, 2030; $0 after Dec. 2, 2030."
             },
@@ -98149,7 +98323,7 @@
             "source": "The Oklahoman (Dec. 12, 2025), quoting Morris employment agreement",
             "url": "https://www.usatoday.com/story/sports/college/cowboys/2025/12/12/eric-morris-contract-salary-buyout-details-oklahoma-state-football-coach/87726037007/",
             "asOf": "2026-01-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "75% of remaining base if terminated before February 2029; a lower remaining-percent thereafter (article quoting EA).",
             "coachSide": "Coach-side LD if Morris walks: $7M through Jan. 31, 2027; then $4M / $3M / $1M / $0 on later Feb. 1 windows.",
             "steps": [
@@ -98702,7 +98876,7 @@
               "source": "The Oklahoman (Dec. 12, 2025), quoting Morris employment agreement",
               "url": "https://www.usatoday.com/story/sports/college/cowboys/2025/12/12/eric-morris-contract-salary-buyout-details-oklahoma-state-football-coach/87726037007/",
               "asOf": null,
-              "notes": "75% of remaining base if terminated before February 2029; a lower remaining-percent thereafter. We do not invent the remainder or pick 60% vs 65% without the file. Gundy’s paid buyout lives on the tape.",
+              "notes": "75% of remaining base if terminated before February 2029; a lower remaining-percent thereafter. We do not invent the remainder or pick 60% vs 65% without the file. Gundy’s paid buyout lives on the tape. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "75% of remaining base if terminated before February 2029; a lower remaining-percent thereafter (article quoting EA).",
               "coachSide": "Coach-side LD if Morris walks: $7M through Jan. 31, 2027; then $4M / $3M / $1M / $0 on later Feb. 1 windows."
             },
@@ -99650,7 +99824,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?228875-Texas-Christian-University"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -101077,7 +101250,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?229115-Texas-Tech-University"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
@@ -104239,7 +104411,7 @@
             "source": "Deseret News (March 20, 2026), quoting Scalley employment agreement via public records",
             "url": "https://www.deseret.com/sports/2026/03/20/morgan-scalley-utah-football-coach-contract-details/",
             "asOf": "2026-01-01",
-            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend.",
+            "notes": "Derived start-of-year remaining (compensation table × school-side percent). Labeled derived. Liability/overhang, not annual spend. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
             "rule": "75% of remaining Base Salary, Outfitter Payment, and MMR Payment through the remainder of the term (article quoting EA).",
             "steps": [
               {
@@ -104826,7 +104998,7 @@
               "source": "Deseret News (March 20, 2026), quoting Scalley employment agreement via public records",
               "url": "https://www.deseret.com/sports/2026/03/20/morgan-scalley-utah-football-coach-contract-details/",
               "asOf": null,
-              "notes": "75% of remaining Base + Outfitter + MMR for each year (or partial year, prorated) — we do not invent the remainder.",
+              "notes": "75% of remaining Base + Outfitter + MMR for each year (or partial year, prorated) — we do not invent the remainder. Mid-year remaining dollars are not minted — the cited source has no daily-proration clause.",
               "rule": "75% of remaining Base Salary, Outfitter Payment, and MMR Payment through the remainder of the term (article quoting EA)."
             },
             "term": {
@@ -107280,7 +107452,6 @@
         "scorecardUrl": "https://collegescorecard.ed.gov/school/?152080-University-of-Notre-Dame"
       },
       "nil": {
-
         "booked": {
           "value": null,
           "confidence": "pending",
