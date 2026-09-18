@@ -5,6 +5,7 @@
 
 import {
   computeCapacity,
+  datedSpentSteps,
   displayCap,
   eadaLane,
   isPrivateGap,
@@ -545,6 +546,13 @@ function leftoverBundle(school) {
   return { leftover, booked, spent }
 }
 
+function spentWindowsLine(field) {
+  const steps = datedSpentSteps(field)
+  if (steps.length < 2) return null
+  const bits = steps.map((s) => `${moneyExact(s.value)}${s.window ? ` (${s.window})` : ''}`)
+  return `Dated windows ${bits.join(' and ')} — not stacked.`
+}
+
 function rawPreCap(raw) {
   const pre = raw?.nil?.preCap
   return pre && pre.value != null ? pre : null
@@ -941,8 +949,11 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, qu
         facts.push(factLine('FY2025 MFRS Item 44 (institutional, pre-House)', booked.value, { mark: mark(booked.field, 'reported') }))
       } else {
         const yl = yearLabel(booked)
+        const windows = spentWindowsLine(booked.field)
         lines.push(
-          `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''}. Booked — FOIA / MFRS / counsel. Not modeled.`,
+          windows
+            ? `${school.name} booked NIL is ${moneyExact(booked.value)}${yl ? ` (${yl})` : ''}. ${windows} Booked — FOIA / MFRS / counsel. Not modeled.`
+            : `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''}. Booked — FOIA / MFRS / counsel. Not modeled.`,
         )
         facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
         const aside = preCapLine(raw, school.name)
@@ -981,8 +992,11 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, qu
     if (spent != null) {
       const yl = yearLabel(leftover)
       const ytd = leftover.field?.partialYear ? ' · YTD' : ''
+      const windows = spentWindowsLine(booked.field)
       lines.push(
-        `${school.name} booked House spent is ${money(spent)}${yl ? ` (${yl}${ytd})` : ytd}. This is the House Year 1 spent cell — not leftover, not the full booked-NIL window when those differ.`,
+        windows
+          ? `${school.name} booked House spent is ${moneyExact(spent)}${yl ? ` (${yl}${ytd})` : ytd}. ${windows} Leftover uses the House Year 1 window only — not leftover, not a stacked total.`
+          : `${school.name} booked House spent is ${money(spent)}${yl ? ` (${yl}${ytd})` : ytd}. This is the House Year 1 spent cell — not leftover, not the full booked-NIL window when those differ.`,
       )
       facts.push(factLine('House spent', spent, { mark: mark(leftover.field, 'reported'), note: yl }))
       links.push({ to: schoolHref(school.id, season, 'house-spent'), label: `${school.name} House spent` })
@@ -2287,8 +2301,11 @@ function nilCoverageAnswer(raw, season, includeAlumni, desk) {
     } else {
       const yl = yearLabel(booked)
       const src = booked.field?.source ? ` Source: ${booked.field.source}.` : ''
+      const windows = spentWindowsLine(booked.field)
       lines.push(
-        `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`,
+        windows
+          ? `${school.name} booked NIL is ${moneyExact(booked.value)}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} ${windows} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`
+          : `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`,
       )
       facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
       const aside = preCapLine(raw, school.name)
@@ -2305,8 +2322,11 @@ function nilCoverageAnswer(raw, season, includeAlumni, desk) {
 
   if (spent != null) {
     const yl = yearLabel(leftover)
+    const windows = spentWindowsLine(booked.field)
     lines.push(
-      `House spent is ${money(spent)}${yl ? ` (${yl})` : ''}${leftover.field?.partialYear ? ' · YTD' : ''}. Leftover is ${money(leftover.value)} — House cap minus that spent cell, not capacity − House − NIL.`,
+      windows
+        ? `House spent is ${moneyExact(spent)}${yl ? ` (${yl})` : ''}${leftover.field?.partialYear ? ' · YTD' : ''}. ${windows} Leftover is ${moneyExact(leftover.value)} — House cap minus the House Year 1 window only, not a stacked total, not capacity − House − NIL.`
+        : `House spent is ${money(spent)}${yl ? ` (${yl})` : ''}${leftover.field?.partialYear ? ' · YTD' : ''}. Leftover is ${money(leftover.value)} — House cap minus that spent cell, not capacity − House − NIL.`,
     )
     facts.push(factLine('House spent', spent, { note: yl }))
     facts.push(factLine('Leftover', leftover.value, { note: yl }))

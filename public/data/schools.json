@@ -66,7 +66,7 @@
       "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions.",
       "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school cells stay pending.",
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
-      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (TPR: $13.5M House Year 1 YTD Jul 2025–Mar 2026). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
+      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (coordinator letter R013976-090126: $17,999,479.04 Jul 1 2025–Jun 30 2026 and $4,808,560.63 Jul 1–Aug 31 2026, not stacked; $13.5M HPM YTD hold replaced). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
       "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
       "Coach contract PDFs linked only when a school, state, board, or newsroom host posted the actual file (HTTP 200). Public-school buyouts prefer that file; articles are fallback only when no current file is loaded. Stale hire packets are not treated as the current deal. Private-school blanks stay pending. No invented URLs.",
       "Coach contract terms (through-year / years remaining) are cited only from employment agreements, board packets, or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending.",
@@ -21795,13 +21795,38 @@
       },
       "nil": {
         "booked": {
-          "value": 13500000,
+          "value": 17999479.04,
           "confidence": "reported",
-          "source": "Texas Public Radio / Houston Public Media — UT-Austin disclosed $13.5M revenue-share payments Jul 2025–end Mar 2026",
-          "url": "https://www.tpr.org/economy-and-labor/2026-04-05/how-much-money-do-college-athletes-in-texas-make-public-universities-wont-say",
-          "asOf": "2026-04-05",
-          "window": "2025-07-01 to 2026-03",
-          "notes": "School disclosure of House Year 1 year-to-date spend. On-track ~$18M is a projection — not booked. Do not add the FY2025 $3.2M MFRS line below (Jul–Aug 2025 overlaps this window). Do not book the $18M cap plan."
+          "source": "Bob Bonner-Davis, Chief Public Information Coordinator, UT Austin Office of the Vice President for Legal Affairs — Records Center request R013976-090126 (email Sep. 17, 2026, to brett@bryantalliance.com). School-wide aggregate House / revenue-share payments, all sports combined. Two dated expended windows released in the letter: $17,999,479.04 (July 1, 2025–June 30, 2026) and $4,808,560.63 (July 1, 2026–August 31, 2026). Stored as steps — not stacked. Other responsive records remain pending an AG ruling under Tex. Gov't Code 552.104.",
+          "url": null,
+          "asOf": "2026-09-17",
+          "window": "2025-07-01 to 2026-06-30",
+          "notes": "Coordinator-letter House / revenue-share expended, school-wide, all sports. Not a by-sport split and not named athletes. Replaces the Houston Public Media $13.5M YTD hold (July 2025–March 2026) — that earlier window is superseded, not added. Do not add the July 1–August 31, 2026 step onto this cell. Do not add the FY2025 $3.2M MFRS line (July–August 2025 overlaps the first window). Do not book the $18M cap plan. Other records from R013976-090126 remain pending an AG ruling under Tex. Gov't Code 552.104.",
+          "steps": [
+            {
+              "value": 17999479.04,
+              "window": "2025-07-01 to 2026-06-30",
+              "label": "House / revenue-share expended",
+              "confidence": "reported",
+              "asOf": "2026-09-17",
+              "notes": "July 1, 2025 to June 30, 2026. Supersedes the Houston Public Media $13.5M YTD hold (July 2025–March 2026) for that fiscal year — replaced, not stacked."
+            },
+            {
+              "value": 4808560.63,
+              "window": "2026-07-01 to 2026-08-31",
+              "label": "House / revenue-share expended",
+              "confidence": "reported",
+              "asOf": "2026-09-17",
+              "notes": "July 1, 2026 to August 31, 2026. Separate dated window — not added to the July 2025–June 2026 cell and not a 2026–27 leftover."
+            }
+          ],
+          "had": {
+            "value": 13500000,
+            "window": "2025-07-01 to 2026-03",
+            "notes": "Houston Public Media / TPR $13.5M YTD (July 2025 through March 2026). Superseded by the coordinator-letter July 1, 2025–June 30, 2026 window — replaced, not stacked.",
+            "source": "Texas Public Radio / Houston Public Media — UT-Austin disclosed $13.5M revenue-share payments Jul 2025–end Mar 2026",
+            "url": "https://www.tpr.org/economy-and-labor/2026-04-05/how-much-money-do-college-athletes-in-texas-make-public-universities-wont-say"
+          }
         },
         "preCap": {
           "value": 3200000,
@@ -21810,7 +21835,7 @@
           "url": "https://www.statesman.com/sports/college/longhorns/football/article/texas-longhorns-nil-revenue-sharing-21304634.php",
           "asOf": "2026-01-23",
           "fiscalYear": "FY2025",
-          "notes": "School FY ends Aug 31, so this MFRS line is only two months of House (Jul 1–Aug 31, 2025). Not the $18M cap plan (Del Conte / Novak). Included in the House Year 1 YTD $13.5M above — not additional."
+          "notes": "School FY ends Aug 31, so this MFRS line is only two months of House (Jul 1–Aug 31, 2025). Not the $18M cap plan (Del Conte / Novak). Included in the coordinator-letter July 1, 2025–June 30, 2026 window above — not additional. The $13.5M Houston Public Media YTD hold was replaced by that window, not stacked."
         },
         "collective990": [
           {
@@ -21854,18 +21879,18 @@
           }
         ],
         "houseRemaining": {
-          "value": 7000000,
+          "value": 2500520.96,
           "confidence": "estimated",
           "source": "House Year 1 remaining = published $20.5M NCAA House cap minus this school’s booked House spent cell",
           "url": "https://on.ncaa.com/QA61325",
-          "asOf": "2026-04-05",
-          "window": "2025-07-01 to 2026-03",
-          "spent": 13500000,
+          "asOf": "2026-09-17",
+          "window": "2025-07-01 to 2026-06-30",
+          "spent": 17999479.04,
           "cap": 20500000,
-          "partialYear": true,
+          "partialYear": false,
           "overhang": false,
-          "notes": "Published House Year 1 cap minus booked House spent. Residual, not a filing. Year-to-date window — not a full-year leftover.",
-          "footnote": "House Year 1 remaining as of YTD (Jul 2025–Mar 2026) = $20.5M cap − $13.5M booked. Partial-year, not a full-year leftover. The $3.2M pre-cap / MFRS line is inside the $13.5M — not added. Collective 990s are not in this math."
+          "notes": "Published House Year 1 cap minus booked House spent (July 1, 2025–June 30, 2026 coordinator-letter window). Residual, not a filing. The July 1–August 31, 2026 window is a later dated step — not in this leftover.",
+          "footnote": "House Year 1 remaining = $20.5M cap − $17,999,479.04 booked (Jul 1, 2025–Jun 30, 2026). The $13.5M Houston Public Media YTD hold was replaced by that window, not stacked. The $4,808,560.63 Jul 1–Aug 31, 2026 step is not added. The $3.2M pre-cap / MFRS line is inside the Jul 2025–Jun 2026 window — not added. Collective 990s are not in this math. Other R013976-090126 records remain pending an AG ruling under Tex. Gov't Code 552.104."
         },
         "industryRosterEstimate": {
           "label": "Industry football roster estimate",
@@ -21889,7 +21914,7 @@
               "asOf": "2026-08-27"
             }
           ],
-          "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Texas leftover on this desk, when shown, is House cap minus the booked House Year 1 spent cell — not this survey."
+          "notes": "Modeled / survey tier — not a point estimate, not booked NIL, not House spent. Combines football rev-share plus third-party NIL. Not a school filing. Do not subtract from capacity or leftover. Texas leftover on this desk, when shown, is House cap minus the booked July 1, 2025–June 30, 2026 House spent window — not this survey and not the July–August 2026 step."
         }
       },
       "coaches": {

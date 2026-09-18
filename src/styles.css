@@ -436,6 +436,13 @@ table.rank.reported-nil-rank th { white-space: normal; }
 .field-val { font-family: Arial, Helvetica, system-ui, sans-serif; font-size: 20px; }
 .field-meta { font-size: 13px; color: var(--muted); }
 .field-notes { font-size: 13px; color: var(--paper-dim); margin-top: 4px; }
+.field-steps {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+.field-steps li { margin-bottom: 12px; }
+.field-steps-lede { margin: 0 0 8px; }
+.drill-steps { margin-top: 10px; font-size: 13px; color: var(--paper-dim); }
 .pending-box { border-left: 2px solid #5a5144; padding-left: 12px; }
 .subfield { margin-top: 12px; }
 .collective-990 { margin-top: 20px; padding-top: 14px; border-top: 1px dashed var(--rule); }

@@ -323,9 +323,12 @@ export default function Methods({ meta: metaProp }) {
         $32.9M FOIA Mar 2025–Jul 1 2026, including ~$12.7M pre-cap KY NIL; prior desk
         cell was $20.27M for the House Year 1 window. Kentucky $18M from March 2025–July
         2026 as reported by counsel. CalMatters, August 2026: UCLA and California each
-        about $20.5M in 2025-26; names/sport splits not released. Texas Public Radio,
-        April 2026: Texas $13.5M House Year 1 YTD Jul 2025–Mar 2026; on-track ~$18M
-        left unbooked. FY2025 MFRS / pre-cap cells: Penn State Item 44 $18,368,391
+        about $20.5M in 2025-26; names/sport splits not released. UT Austin coordinator
+        letter, Sep. 17, 2026, Records Center request R013976-090126: Texas
+        $17,999,479.04 expended Jul 1 2025–Jun 30 2026 and $4,808,560.63 expended
+        Jul 1–Aug 31 2026 — two dated windows, not stacked; the $13.5M Houston Public
+        Media YTD hold was replaced, not added; other records remain pending an AG
+        ruling under Tex. Gov’t Code 552.104. FY2025 MFRS / pre-cap cells: Penn State Item 44 $18,368,391
         with published sport lines; Oklahoma State “just over $16 million,” booked as
         $16M estimated — not $16,000,001; Texas school-FY $3.2M, only two months of
         House. Georgia, Tennessee, Alabama, Oregon, Utah, UNC, Ohio State, Illinois,
@@ -342,8 +345,9 @@ export default function Methods({ meta: metaProp }) {
         House remaining room is a residual on those five House Year 1 booked cells only:
         published $20.5 million cap minus booked House spent. Louisville uses the House
         portion of the $32.9M FOIA window ($32.9M minus the $12.7M pre-cap line), not
-        the full window. Texas is year-to-date ($13.5M through March 2026), labeled YTD
-        — not a full-year leftover. UCLA and California book about $20.5M, so remaining
+        the full window. Texas leftover uses the Jul 1, 2025–Jun 30, 2026
+        coordinator-letter window ($17,999,479.04) only — the later Jul–Aug 2026 step
+        is not subtracted, and the $13.5M hold was replaced, not stacked. UCLA and California book about $20.5M, so remaining
         is $0, a real cell. If spent is above the cap we print the overhang; we do not
         hide it. The other 63 schools stay empty — we do not invent a $20.5M leftover
         from a missing spent cell. Collective 990s never enter booked or remaining.

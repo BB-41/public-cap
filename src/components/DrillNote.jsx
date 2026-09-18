@@ -1,8 +1,10 @@
 import { moneyExact, moneyRange } from '../lib/format.js'
+import { datedSpentSteps } from '../lib/compute.js'
 
 /** Honest source / confidence / FY block. Does not invent a dollar. */
 export default function DrillNote({ field, exact, range, empty }) {
   const hasVal = field && field.value != null
+  const windowSteps = datedSpentSteps(field)
   const show = exact != null ? exact : hasVal ? moneyExact(field.value) : null
   const conf = field?.confidence
   return (
@@ -18,6 +20,19 @@ export default function DrillNote({ field, exact, range, empty }) {
         {field?.window ? <span>{field.window}</span> : null}
         {conf ? <span className="conf-label">{conf}</span> : null}
       </div>
+      {windowSteps.length > 1 ? (
+        <ol className="field-steps drill-steps">
+          {windowSteps.map((step, i) => (
+            <li key={`${step.window || step.asOf || 'step'}-${i}`}>
+              {moneyExact(step.value)}
+              {step.window ? ` · ${step.window}` : ''}
+              {step.asOf ? ` · as of ${step.asOf}` : ''}
+              {step.confidence ? ` · ${step.confidence}` : ''}
+              {step.notes ? ` — ${step.notes}` : ''}
+            </li>
+          ))}
+        </ol>
+      ) : null}
       {field?.notes ? <p className="drill-notes">{field.notes}</p> : null}
       {field?.url ? (
         <p className="drill-src">

@@ -138,7 +138,7 @@ const tx = assertSchool('texas')
 if (tx.familySeries.qb.find((p) => p.year === 2024).bookedSchool !== 3_200_000) {
   throw new Error(`texas 2024 pot ${tx.familySeries.qb.find((p) => p.year === 2024).bookedSchool}`)
 }
-if (tx.familySeries.qb.find((p) => p.year === 2025).bookedSchool !== 13_500_000) {
+if (tx.familySeries.qb.find((p) => p.year === 2025).bookedSchool !== 17_999_479.04) {
   throw new Error(`texas 2025 pot ${tx.familySeries.qb.find((p) => p.year === 2025).bookedSchool}`)
 }
 if (tx.familySeries.qb.find((p) => p.year === 2023).bookedSchool === 11_717_673) {

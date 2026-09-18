@@ -150,13 +150,16 @@ ok(/House remaining|cap minus/i.test(lanes.text), 'lanes leftover is House remai
 ok(/not capacity/i.test(lanes.text), 'lanes refuse capacity − House − NIL')
 
 const txNil = ask('What NIL do you have for Texas?')
-ok(/\$13\.5M|\$13,500,000/.test(txNil.text), `Texas booked NIL: ${txNil.text}`)
-ok(/YTD|year-to-date|Year 1/i.test(txNil.text), 'Texas NIL coverage keeps the YTD / Year 1 label')
-ok(/\$7\.0M|\$7,000,000/.test(txNil.text), 'Texas leftover stays $7.0M')
+ok(/17,999,479\.04/.test(txNil.text), `Texas booked window 1: ${txNil.text}`)
+ok(/4,808,560\.63/.test(txNil.text), 'Texas booked window 2 is named')
+ok(/not stacked/i.test(txNil.text), 'Texas windows are not stacked')
+ok(/Year 1/i.test(txNil.text), 'Texas NIL coverage keeps the Year 1 label')
+ok(/2,500,520\.96|\$2\.5M/.test(txNil.text), 'Texas leftover is cap minus window 1')
 ok(/collective 990/i.test(txNil.text), 'Texas NIL coverage names the 990 lane as separate')
 ok(/does not have On3/i.test(txNil.text), 'Texas NIL coverage refuses On3')
 ok(/not booked contracts|not a substitute/i.test(txNil.text), 'Texas NIL coverage keeps modeled distinct')
 ok(!/will spend \$18|on-track/i.test(txNil.text), 'Texas NIL coverage does not book the cap-plan projection')
+ok(!/22,808,039|\$22\.8M/.test(txNil.text), 'Texas NIL coverage does not flatten the two windows')
 
 const smuMiss = ask('What data is missing for SMU?')
 ok(/pending/i.test(smuMiss.text) && /booked NIL/i.test(smuMiss.text), 'SMU missing names booked NIL pending')
@@ -262,9 +265,9 @@ ok(!/leftover is \$/.test(cmpBar.text), 'reported-NIL compare does not fall thro
 
 const txBarChat = ask('How does Texas compare on reported NIL?')
 ok(/above[-\s]?\$40M|\$40M–\$50M|\$40–50M/.test(txBarChat.text), 'Texas reported bar uses the survey allocation')
-ok(/\$13\.5M|\$13,500,000/.test(txBarChat.text), 'Texas reported bar still names the booked/spent mark')
+ok(/\$18\.0M|17,999,479\.04/.test(txBarChat.text), 'Texas reported bar still names the booked/spent mark')
 ok(/same separate mark|same mark|Booked NIL and House spent/i.test(txBarChat.text), 'Texas booked and spent share one mark')
-ok(/\$7\.0M|\$7,000,000|House cap minus booked House spent/i.test(txBarChat.text), 'Texas leftover stays on the booked spent cell')
+ok(/\$2\.5M|2,500,520\.96|House cap minus booked House spent/i.test(txBarChat.text), 'Texas leftover stays on the booked spent cell')
 
 const louBarChat = ask('How does Louisville compare on reported NIL?')
 ok(/\$32\.9M|\$32,900,000/.test(louBarChat.text), 'Louisville reported bar names booked $32.9M as a separate mark')
@@ -466,12 +469,14 @@ ok(/House spent/i.test(louSpent.text), 'House-spent phrasing names the spent cel
 ok(!/Ask a Power 4 school/i.test(louSpent.text), 'House-spent phrasing is not the miss wall')
 
 const txLeft = ask('How much House cap does Texas have left?')
-ok(/\$7\.0M|7,000,000/.test(txLeft.text), `House remaining phrasing: ${txLeft.text}`)
+ok(/\$2\.5M|2,500,520\.96/.test(txLeft.text), `House remaining phrasing: ${txLeft.text}`)
 ok(/leftover/i.test(txLeft.text), 'House remaining phrasing answers leftover')
-ok(/year-to-date|YTD/i.test(txLeft.text), 'Texas leftover stays YTD')
+ok(!/year-to-date|YTD/i.test(txLeft.text), 'Texas leftover is no longer the $13.5M YTD hold')
 
 const txSpent = ask('How much has Texas spent this year?')
-ok(/\$13\.5M|13,500,000/.test(txSpent.text), `spent-this-year: ${txSpent.text}`)
+ok(/17,999,479\.04/.test(txSpent.text), `spent-this-year window 1: ${txSpent.text}`)
+ok(/4,808,560\.63/.test(txSpent.text), 'spent-this-year names window 2')
+ok(/not stacked/i.test(txSpent.text), 'spent-this-year does not stack the windows')
 ok(/House spent/i.test(txSpent.text), 'spent-this-year names House spent')
 
 const room = ask('How much room does Louisville have under the cap?')
@@ -485,7 +490,7 @@ ok(!/booked NIL is \$0/i.test(mostNil.text), 'most booked NIL does not print a $
 
 const moreNil = ask('Who has more booked NIL Texas or Louisville?')
 ok(/Louisville/.test(moreNil.text) && /higher/.test(moreNil.text), 'who-has-more booked NIL names the higher school')
-ok(/\$32\.9M/.test(moreNil.text) && /\$13\.5M/.test(moreNil.text), 'who-has-more booked NIL prints both cells')
+ok(/\$32\.9M/.test(moreNil.text) && /\$18\.0M|17,999,479\.04/.test(moreNil.text), 'who-has-more booked NIL prints both cells')
 
 const affordLou = ask('Can Louisville afford a $5M QB?')
 ok(/\$300,000|\$0\.3M|\$300k/.test(affordLou.text), `afford leftover: ${affordLou.text}`)
@@ -499,9 +504,9 @@ ok(/not a \$20\.5M leftover/i.test(affordAla.text), 'afford Alabama invents no c
 ok(!/leftover is \$/.test(affordAla.text), 'afford Alabama invents no leftover dollar')
 
 const affordTx = ask('Can Texas afford another $5 million in NIL?')
-ok(/\$7\.0M/.test(affordTx.text), 'afford Texas leftover is $7.0M')
-ok(/covers/i.test(affordTx.text), 'afford Texas leftover covers a $5M ask')
-ok(/Year-to-date/i.test(affordTx.text), 'afford Texas leftover stays YTD')
+ok(/\$2\.5M|2,500,520\.96/.test(affordTx.text), 'afford Texas leftover is cap minus window 1')
+ok(/larger than/i.test(affordTx.text), 'afford Texas leftover no longer covers a $5M ask')
+ok(/do not invent/i.test(affordTx.text), 'afford Texas refuses to invent another pot')
 
 const secLeft = ask('Which SEC school has booked leftover?')
 ok(/Kentucky/.test(secLeft.text) && /Texas/.test(secLeft.text), `SEC leftover list: ${secLeft.text}`)

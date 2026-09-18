@@ -16,7 +16,7 @@ function ok(cond, msg) {
 const expectYear1 = {
   louisville: { booked: 32_900_000, leftover: 300_000 },
   kentucky: { booked: 18_000_000, leftover: 2_500_000 },
-  texas: { booked: 13_500_000, leftover: 7_000_000 },
+  texas: { booked: 17_999_479.04, leftover: 2_500_520.96 },
   ucla: { booked: 20_500_000, leftover: 0 },
   california: { booked: 20_500_000, leftover: 0 },
 }

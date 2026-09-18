@@ -10,7 +10,14 @@ export function money(n, digits = 1) {
 
 export function moneyExact(n) {
   if (n == null || Number.isNaN(n)) return '—'
-  return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
+  const rounded = Math.round((Number(n) + Number.EPSILON) * 100) / 100
+  const hasCents = Math.abs(rounded - Math.round(rounded)) > 0.0005
+  return rounded.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: hasCents ? 2 : 0,
+    maximumFractionDigits: hasCents ? 2 : 0,
+  })
 }
 
 export function pct(n) {

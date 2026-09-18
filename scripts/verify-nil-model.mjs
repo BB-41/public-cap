@@ -96,7 +96,7 @@ const expect25 = {
   kentucky: 18_000_000,
   ucla: 20_500_000,
   california: 20_500_000,
-  texas: 13_500_000,
+  texas: 17_999_479.04,
 }
 for (const [id, n] of Object.entries(expect25)) {
   const row = y25.find((r) => r.school.id === id)
@@ -156,10 +156,10 @@ for (const [id, values] of Object.entries(expect990)) {
   }
 }
 if (rawById.louisville.nil.booked.value !== 32_900_000) throw new Error('louisville booked overwritten')
-if (rawById.texas.nil.booked.value !== 13_500_000) throw new Error('texas booked overwritten')
+if (rawById.texas.nil.booked.value !== 17_999_479.04) throw new Error('texas booked overwritten')
 if (rawById.texas.nil.preCap.value !== 3_200_000) throw new Error('texas preCap overwritten')
-if (y25.find((r) => r.school.id === 'texas')?.booked !== 13_500_000) {
-  throw new Error('2025 texas booked must stay $13.5M — collective 990 is not House')
+if (y25.find((r) => r.school.id === 'texas')?.booked !== 17_999_479.04) {
+  throw new Error('2025 texas booked must stay the Jul 2025–Jun 2026 window — collective 990 is not House')
 }
 if (y25.find((r) => r.school.id === 'notre-dame')?.booked != null) {
   throw new Error('2025 ND booked must stay pending — FUND 990 is collective990 only')
