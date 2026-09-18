@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-11",
-    "itemCount": 398,
+    "itemCount": 399,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -11,6 +11,21 @@
     ]
   },
   "items": [
+    {
+      "id": "texas-booked-nil-windows-2026-09-17",
+      "date": "2026-09-17",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "booked-nil",
+      "headline": "UT Austin coordinator letter (Records Center request R013976-090126): $17,999,479.04 House / revenue-share expended July 1, 2025–June 30, 2026 and $4,808,560.63 expended July 1, 2026–August 31, 2026. School-wide, all sports. Stored as two dated windows — not stacked. The $13.5M Houston Public Media YTD hold is replaced, not added. Other records remain pending an AG ruling under Tex. Gov't Code 552.104.",
+      "figure": 17999479.04,
+      "confidence": "reported",
+      "source": {
+        "label": "Bob Bonner-Davis, UT Austin Office of the Vice President for Legal Affairs — R013976-090126"
+      },
+      "field": "nil.booked",
+      "notes": "Two dated windows on steps. Do not flatten to $22.8M. Window 2 is not in Year 1 leftover."
+    },
     {
       "id": "miami-guarantee-2026-miami-famu",
       "date": "2026-09-09",
@@ -2523,14 +2538,15 @@
       "school": "texas",
       "schoolName": "Texas",
       "kind": "booked-nil",
-      "headline": "Texas Public Radio: UT-Austin disclosed $13.5 million in revenue-share payments from July 2025 through the end of March 2026. On-track ~$18M is a projection \u2014 left unbooked.",
+      "headline": "Texas Public Radio: UT-Austin disclosed $13.5 million in revenue-share payments from July 2025 through the end of March 2026. Superseded Sep. 17, 2026 by the coordinator-letter July 1, 2025–June 30, 2026 window — replaced, not stacked. On-track ~$18M was a projection \u2014 left unbooked.",
       "figure": 13500000,
       "confidence": "reported",
       "source": {
         "label": "Texas Public Radio / Houston Public Media",
         "url": "https://www.tpr.org/economy-and-labor/2026-04-05/how-much-money-do-college-athletes-in-texas-make-public-universities-wont-say"
       },
-      "field": "nil.booked"
+      "field": "nil.booked",
+      "notes": "Superseded by texas-booked-nil-windows-2026-09-17. Do not add this $13.5M onto the later windows."
     },
     {
       "id": "virginia-precap-nil-2026-03",

@@ -35,7 +35,7 @@ Example questions that return real booked figures:
 - What's Louisville's leftover / House spent / booked NIL?
   → leftover $300k · House spent $20.2M · booked NIL $32.9M (House Year 1)
 - Which schools have booked House spent?
-  → Louisville, Kentucky, Texas (YTD), UCLA, California
+  → Louisville, Kentucky, Texas (two dated windows), UCLA, California
 - What's SMU's conference media line — is it full TV?
   → $17.07M FY2025 ACC 990; not a full TV equal share
 - Who is Washington's starting QB on the roster?
@@ -48,7 +48,7 @@ Coverage / included-vs-not (Methods language, no invented policy):
 
 - What is booked vs modeled vs pending?
 - What NIL do you have for Texas?
-  → booked $13.5M House Year 1 YTD; leftover $7.0M; collective 990 is a separate lane; no On3; no player deals
+  → booked $17,999,479.04 (Jul 1 2025–Jun 30 2026) and $4,808,560.63 (Jul 1–Aug 31 2026), not stacked; leftover is cap minus the first window; collective 990 is a separate lane; no On3; no player deals
 - What data is missing for SMU?
   → booked NIL / leftover pending (no cite); tickets, sponsorships, contributions are a private-school gap; media $17.07M is on the desk
 - Do you have leftover for Alabama?

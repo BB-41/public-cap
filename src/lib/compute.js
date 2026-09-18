@@ -150,6 +150,13 @@ export function nilBooked(school) {
   return hasVal(school.nil.booked) ? val(school.nil.booked) : null
 }
 
+/** Dated spent windows on a booked / leftover field. Never summed. */
+export function datedSpentSteps(field) {
+  const steps = field?.steps
+  if (!Array.isArray(steps)) return []
+  return steps.filter((s) => s && s.value != null)
+}
+
 /** FY2025 MFRS Item 44 companion cell — institutional only, not House Year 1 spent. */
 export function isItem44Field(field) {
   if (!field || field.value == null) return false
@@ -331,6 +338,7 @@ export function leftoverWaterfall(school, cap, includeAlumni = false) {
   }
 
   if (spent != null) {
+    const windowSteps = datedSpentSteps(booked.field)
     steps.push({
       key: 'houseSpent',
       op: 'minus',
@@ -339,6 +347,7 @@ export function leftoverWaterfall(school, cap, includeAlumni = false) {
       field: {
         ...leftover.field,
         value: spent,
+        ...(windowSteps.length ? { steps: windowSteps } : {}),
       },
       hash: sameSpentAndNil ? 'nil' : 'house-spent',
     })

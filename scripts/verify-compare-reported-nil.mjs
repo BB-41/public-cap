@@ -212,7 +212,7 @@ ok(reportedNilBar(applySeason(data.schools.find((s) => s.id === 'alabama'), 2025
 const lsuFall = leftoverWaterfall(lsu, computeCapacity(lsu), false)
 const txFall = leftoverWaterfall(texas, computeCapacity(texas), false)
 ok(lsuFall.spent == null && lsuFall.leftover == null, 'LSU leftover stays empty — survey is not House spent')
-ok(txFall.leftover === 7_000_000, 'Texas leftover stays $7M — survey is not booked')
+ok(txFall.leftover === 2_500_520.96, 'Texas leftover stays cap minus window 1 — survey is not booked')
 ok(!lsuFall.steps.some((s) => s.key === 'reportedNil' || s.hash === 'nil-reported'), 'waterfall has no reported-NIL step')
 
 const page = read('src/pages/Compare.jsx')

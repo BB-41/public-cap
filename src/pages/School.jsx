@@ -5,6 +5,7 @@ import { formatLongDate } from '../lib/buyout.js'
 import {
   collectSources,
   collective990Cells,
+  datedSpentSteps,
   eadaLane,
   hasVal,
   isItem44Field,
@@ -700,8 +701,48 @@ function PrivateCheckbook({ school }) {
   )
 }
 
+function FieldMeta({ field }) {
+  if (!field) return null
+  return (
+    <div className="field-meta">
+      {field.fiscalYear && <span>{field.fiscalYear} · </span>}
+      {field.window && <span>{field.window} · </span>}
+      {field.asOf && <span>as of {formatLongDate(field.asOf)} · </span>}
+      {field.confidence && <span className="conf-label">{field.confidence}</span>}
+      {field.source && <span> · {field.source}</span>}
+      {field.url && (
+        <span>
+          {' '}
+          ·{' '}
+          <a className="ext" href={field.url} target="_blank" rel="noreferrer">
+            filing ↗
+          </a>
+        </span>
+      )}
+    </div>
+  )
+}
+
+function FieldSteps({ steps }) {
+  if (!steps?.length) return null
+  return (
+    <ol className="field-steps">
+      {steps.map((step, i) => (
+        <li key={`${step.window || step.asOf || 'step'}-${i}`}>
+          <div className="field-val">
+            {moneyExact(step.value)} <i className={`dot ${step.confidence || 'reported'}`} />
+          </div>
+          <FieldMeta field={step} />
+          {step.notes && <div className="field-notes">{step.notes}</div>}
+        </li>
+      ))}
+    </ol>
+  )
+}
+
 function Field({ field, fallback = '—' }) {
-  if (!field || field.value == null) {
+  const windowSteps = datedSpentSteps(field)
+  if (!field || (field.value == null && !windowSteps.length)) {
     return (
       <div className="field pending-box">
         <div className="field-val">Pending</div>
@@ -709,27 +750,20 @@ function Field({ field, fallback = '—' }) {
       </div>
     )
   }
+  const multiWindow = windowSteps.length > 1
   return (
     <div className="field">
-      <div className="field-val">
-        {moneyExact(field.value)} <i className={`dot ${field.confidence}`} />
-      </div>
-      <div className="field-meta">
-        {field.fiscalYear && <span>{field.fiscalYear} · </span>}
-        {field.window && <span>{field.window} · </span>}
-        {field.asOf && <span>as of {formatLongDate(field.asOf)} · </span>}
-        <span className="conf-label">{field.confidence}</span>
-        {field.source && <span> · {field.source}</span>}
-        {field.url && (
-          <span>
-            {' '}
-            ·{' '}
-            <a className="ext" href={field.url} target="_blank" rel="noreferrer">
-              filing ↗
-            </a>
-          </span>
-        )}
-      </div>
+      {multiWindow ? (
+        <>
+          <p className="fine field-steps-lede">Dated windows — not a stacked total.</p>
+          <FieldSteps steps={windowSteps} />
+        </>
+      ) : (
+        <div className="field-val">
+          {moneyExact(field.value)} <i className={`dot ${field.confidence}`} />
+        </div>
+      )}
+      <FieldMeta field={field} />
       {field.notes && <div className="field-notes">{field.notes}</div>}
       {field.had?.value != null && (
         <div className="field-notes">
@@ -943,6 +977,12 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             <div className="eyebrow">{ITEM44_COMPANION_EYEBROW}</div>
             <p className="lede tight">{ITEM44_COMPANION_LEDE}</p>
           </>
+        )}
+        {!hasVal(s.nil.booked) && datedSpentSteps(s.nil.year1Lead?.booked).length > 1 && (
+          <div className="subfield">
+            <div className="eyebrow">{s.nil.year1Lead.label}</div>
+            <Field field={s.nil.year1Lead.booked} />
+          </div>
         )}
         <Field field={s.nil.booked} fallback="Empty / pending. FOIA, MFRS institutional NIL, or counsel spent totals only. Official House / Item 44 number when it exists. Collective 990 is a separate lane below." />
         {hasVal(s.nil.preCap) && (

@@ -159,10 +159,21 @@ ok(byId.ucla.nil.booked.value === 20_500_000, 'UCLA booked untouched')
 ok(byId.ucla.nil.houseRemaining.value === 0, 'UCLA $0 leftover')
 ok(byId.california.nil.booked.value === 20_500_000, 'Cal booked untouched')
 ok(byId.california.nil.houseRemaining.value === 0, 'Cal $0 leftover')
-ok(byId.texas.nil.booked.value === 13_500_000, 'Texas booked untouched')
-ok(byId.texas.nil.houseRemaining.value === HOUSE - 13_500_000, 'Texas YTD remaining')
-ok(byId.texas.nil.houseRemaining.partialYear === true, 'Texas labeled YTD')
+const TX_W1 = 17_999_479.04
+const TX_W2 = 4_808_560.63
+const TX_LEFT = 2_500_520.96
+ok(byId.texas.nil.booked.value === TX_W1, 'Texas booked is the Jul 2025–Jun 2026 window')
+ok(byId.texas.nil.booked.steps?.length === 2, 'Texas booked stores both dated windows on steps')
+ok(byId.texas.nil.booked.steps[0].value === TX_W1, 'Texas step 1 is $17,999,479.04')
+ok(byId.texas.nil.booked.steps[1].value === TX_W2, 'Texas step 2 is $4,808,560.63')
+ok(byId.texas.nil.booked.value !== TX_W1 + TX_W2, 'Texas booked is not the stacked $22.8M')
+ok(byId.texas.nil.booked.had?.value === 13_500_000, 'Texas $13.5M hold is replaced on had, not stacked')
+ok(/replaced, not stacked/i.test(byId.texas.nil.booked.had.notes), 'Texas had-notes say the $13.5M was replaced')
+ok(byId.texas.nil.houseRemaining.value === TX_LEFT, 'Texas remaining is cap minus window 1')
+ok(byId.texas.nil.houseRemaining.spent === TX_W1, 'Texas leftover spent is window 1 only')
+ok(byId.texas.nil.houseRemaining.partialYear === false, 'Texas Jul 2025–Jun 2026 window is not YTD')
 ok(byId.texas.nil.houseRemaining.overhang === false, 'Texas is under the cap')
+ok(!/13\.5/.test(`${byId.texas.nil.houseRemaining.spent}`), 'Texas leftover did not keep the $13.5M hold as spent')
 
 let remainingCount = 0
 for (const s of data.schools) {
@@ -226,7 +237,7 @@ ok(byId['texas-tech'].nil.industryRosterEstimate.tier === 'at or slightly under 
 ok(!byId.houston?.nil?.industryRosterEstimate, 'Houston “perhaps” is not booked')
 ok(!byId.clemson?.nil?.industryRosterEstimate, 'Clemson unnamed dollar stays empty')
 ok(!byId.alabama?.nil?.industryRosterEstimate, 'Alabama stays empty')
-ok(byId.texas.nil.houseRemaining.value === 7_000_000, 'Texas leftover unchanged by the survey')
+ok(byId.texas.nil.houseRemaining.value === TX_LEFT, 'Texas leftover unchanged by the survey')
 
 const lsu26 = applySeason(byId.lsu, 2026)
 ok(lsu26.nil.industryRosterEstimate?.display === '$40–50M', '2026 overlay keeps the LSU survey')
@@ -246,7 +257,13 @@ ok(
 )
 const tx26 = applySeason(byId.texas, 2026)
 const txFall = leftoverWaterfall(tx26, computeCapacity(tx26), false)
-ok(txFall.leftover === 7_000_000, 'Texas waterfall leftover stays $7M')
+ok(txFall.leftover === TX_LEFT, 'Texas waterfall leftover stays cap minus window 1')
+ok(txFall.spent === TX_W1, 'Texas waterfall spent is window 1, not a stack')
+ok(!txFall.steps.some((s) => s.value === TX_W1 + TX_W2), 'Texas waterfall does not flatten the two windows')
+ok(
+  txFall.steps.find((s) => s.key === 'houseSpent')?.field?.steps?.length === 2,
+  'Texas waterfall House spent carries both dated windows',
+)
 ok(!txFall.steps.some((s) => s.value === 40_000_000), 'Texas waterfall does not subtract the survey')
 
 const POS_IDS = ['miami', 'texas-am', 'ole-miss', 'ohio-state']
@@ -301,11 +318,11 @@ ok(alaBar.lane === 'modeled', 'Alabama bar is modeled')
 ok(lsuBar.leftPct > alaBar.leftPct && lsuBar.rightPct > alaBar.rightPct, 'LSU band sits higher than Alabama on the same scale')
 ok(lsuBar.max === alaBar.max && lsuBar.max === 50_000_000, 'LSU and Alabama share the $50M scale')
 ok(!lsuBar.booked && !lsuBar.spent, 'LSU bar has no booked/spent marks to mix in')
-ok(txBar.sameBookedSpent && txBar.booked?.value === 13_500_000, 'Texas booked and House spent share one $13.5M mark')
+ok(txBar.sameBookedSpent && txBar.booked?.value === TX_W1, 'Texas booked and House spent share the Jul 2025–Jun 2026 mark')
 ok(txBar.booked.pct !== txBar.leftPct, 'Texas cite mark is not mixed into the $40–50M band start')
 ok(louBar.booked?.value === 32_900_000 && louBar.spent?.value === 20_200_000, 'Louisville keeps booked $32.9M and spent $20.2M as separate marks')
 ok(!louBar.sameBookedSpent, 'Louisville booked and spent stay two marks')
-ok(txFall.leftover === 7_000_000, 'Texas leftover stays $7M after the reported bar')
+ok(txFall.leftover === TX_LEFT, 'Texas leftover stays cap minus window 1 after the reported bar')
 ok(!fallLsu.steps.some((s) => s.hash === 'nil-reported' || s.key === 'nilReported'), 'LSU waterfall has no reported-bar step')
 ok(!txFall.steps.some((s) => s.hash === 'nil-reported'), 'Texas waterfall has no reported-bar step')
 ok(reportedBarBreakdown(byId.lsu).every((r) => r.starterLow < r.starterHigh), 'LSU bar breakdown starter cells are ranges')
@@ -323,7 +340,7 @@ ok(txBoard?.label === 'above $40M', 'Texas board label stays the survey words, n
 ok(!/\$\d/.test(txBoard?.label || '') || /above/.test(txBoard.label), 'Texas label is not a fake envelope dollar')
 ok(txBoard.bar.high === 50_000_000, 'Texas still ranks on the $40–50M allocation envelope')
 ok(txBoard.bar.lane === 'survey', 'Texas board lane is survey')
-ok(txBoard.bar.booked?.value === 13_500_000, 'Texas booked $13.5M stays a separate mark on the board')
+ok(txBoard.bar.booked?.value === TX_W1, 'Texas booked window 1 stays a separate mark on the board')
 const alaBoard = board.find((r) => r.school.id === 'alabama')
 ok(alaBoard?.bar.lane === 'modeled', 'Alabama board lane is modeled')
 ok(/25/.test(alaBoard?.label || '') && /33/.test(alaBoard?.label || ''), 'Alabama board label is the SI SEC median')
@@ -342,7 +359,7 @@ ok(reportedNilVisibleLabel(txBoard.bar) === 'above $40M', 'visible-label helper 
 ok(reportedNilVisibleLabel(board[0].bar) === '$40–50M', 'visible-label helper keeps LSU as the published range')
 ok(board.filter((r) => r.bar.lane === 'survey').length === 21, 'board has 21 survey rows')
 ok(board.filter((r) => r.bar.lane === 'modeled').length === 47, 'board has 47 modeled conference-median rows')
-ok(txFall.leftover === 7_000_000, 'Texas leftover stays $7M after the board helper')
+ok(txFall.leftover === TX_LEFT, 'Texas leftover stays cap minus window 1 after the board helper')
 ok(!fallLsu.steps.some((s) => s.hash === 'nil-reported'), 'board helper does not add a waterfall step')
 
 for (const s of data.schools) {
