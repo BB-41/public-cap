@@ -131,7 +131,8 @@ ok(!ala26fall.steps.some((step) => step.key === 'leftover'), 'alabama waterfall 
 
 const texas26 = applySeason(data.schools.find((s) => s.id === 'texas'), 2026)
 const texasRaw = data.schools.find((s) => s.id === 'texas')
-ok(leadHouseRemaining(texas26).field.partialYear === true, 'texas leftover stays YTD')
+ok(leadHouseRemaining(texas26).field.partialYear === false, 'texas leftover is the full Jul 2025–Jun 2026 window, not the old YTD hold')
+ok(leadHouseRemaining(texas26).field.spent === 17_999_479.04, 'texas leftover spent is window 1 only')
 ok(texas26.capacity.fiscalYearPrimary === texasRaw.capacity.fiscalYearPrimary, 'texas 2026 capacity keeps its source FY label')
 ok(!String(texas26.capacity.fiscalYearPrimary || '').includes('2026'), 'texas 2026 capacity is not stamped as a 2026 filing')
 ok((texas26.capacity.fiscalYearNote || '').includes('not invented 2026 dollars'), 'texas 2026 capacity note refuses a 2026 stamp')
