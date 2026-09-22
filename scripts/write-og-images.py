@@ -217,9 +217,9 @@ def write_default(fonts: dict[str, ImageFont.FreeTypeFont], mark: Image.Image) -
     draw.line((248, 220, W - 56, 220), fill=RULE, width=2)
     for i, line in enumerate(
         (
-            "Two ceilings on every Power 4 program, then booked NIL.",
-            "Collective 990 payout stays a separate cited lane.",
-            "Pending stays empty. We do not invent House or NIL dollars.",
+            "What can your team actually afford?",
+            "Power 4 only · House share · capacity · booked NIL.",
+            "Pending stays empty.",
         )
     ):
         draw.text((248, 252 + i * 40), line, font=fonts["row"], fill=PAPER)
