@@ -100,7 +100,19 @@ ok(/not unpacked|not summed/i.test(ndDesc), 'Notre Dame description refuses an E
 ok(/reported football NIL/i.test(ndDesc), 'Notre Dame description names reported football NIL as its own lane')
 ok(!/\$/.test(ndDesc), 'Notre Dame description invents no dollars')
 ok(descriptionFromPath('/school/indiana').includes('Indiana'), 'Indiana path description uses the name')
-ok(descriptionFromPath('/').includes('Collective 990 payout'), 'home description names collective payout')
+ok(
+  PAGE_DESCRIPTIONS.home === 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.',
+  'home description leads with the locked slogan',
+)
+ok(descriptionFromPath('/') === PAGE_DESCRIPTIONS.home, 'descriptionFromPath home uses the locked slogan')
+ok(indexHtml.includes(`content="${PAGE_DESCRIPTIONS.home}"`), 'index.html home meta/og/twitter description matches')
+ok(indexHtml.includes(`"description":"${PAGE_DESCRIPTIONS.home}"`), 'index.html JSON-LD home description matches')
+ok(indexHtml.includes(`var desc = '${PAGE_DESCRIPTIONS.home}'`), 'index.html head script home desc matches')
+ok(indexHtml.includes('<p class="slogan">What can your team actually afford?</p>'), 'homepage mast slogan is the locked line')
+ok(
+  indexHtml.includes('Power 4 only · House share · capacity · booked NIL. Pending stays empty.'),
+  'homepage mast subline is the short clarifying line',
+)
 ok(PAGE_DESCRIPTIONS.coachFa.includes('do not invent remaining principal'), 'coach-fa description stays cite-only')
 ok(PAGE_DESCRIPTIONS.guaranteeGames.includes('Football guarantee stays distinct from band fees'), 'guarantee-games description splits band')
 ok(PAGE_DESCRIPTIONS.guaranteeGames.includes('Not House spent'), 'guarantee-games description splits House')
