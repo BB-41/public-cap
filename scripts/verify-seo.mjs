@@ -100,7 +100,19 @@ ok(/not unpacked|not summed/i.test(ndDesc), 'Notre Dame description refuses an E
 ok(/reported football NIL/i.test(ndDesc), 'Notre Dame description names reported football NIL as its own lane')
 ok(!/\$/.test(ndDesc), 'Notre Dame description invents no dollars')
 ok(descriptionFromPath('/school/indiana').includes('Indiana'), 'Indiana path description uses the name')
-ok(descriptionFromPath('/').includes('Collective 990 payout'), 'home description names collective payout')
+ok(
+  PAGE_DESCRIPTIONS.home === 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.',
+  'home description leads with the locked slogan',
+)
+ok(descriptionFromPath('/') === PAGE_DESCRIPTIONS.home, 'descriptionFromPath home uses the locked slogan')
+ok(indexHtml.includes(`content="${PAGE_DESCRIPTIONS.home}"`), 'index.html home meta/og/twitter description matches')
+ok(indexHtml.includes(`"description":"${PAGE_DESCRIPTIONS.home}"`), 'index.html JSON-LD home description matches')
+ok(indexHtml.includes(`var desc = '${PAGE_DESCRIPTIONS.home}'`), 'index.html head script home desc matches')
+ok(indexHtml.includes('<p class="slogan">What can your team actually afford?</p>'), 'homepage mast slogan is the locked line')
+ok(
+  indexHtml.includes('Power 4 only · House share · capacity · booked NIL. Pending stays empty.'),
+  'homepage mast subline is the short clarifying line',
+)
 ok(PAGE_DESCRIPTIONS.coachFa.includes('do not invent remaining principal'), 'coach-fa description stays cite-only')
 ok(PAGE_DESCRIPTIONS.guaranteeGames.includes('Football guarantee stays distinct from band fees'), 'guarantee-games description splits band')
 ok(PAGE_DESCRIPTIONS.guaranteeGames.includes('Not House spent'), 'guarantee-games description splits House')
@@ -162,6 +174,9 @@ ok(indexHtml.includes('summary_large_image'), 'index.html uses a large Twitter c
 ok(indexHtml.includes('og-reported-nil.png'), 'index.html points reported-nil unfurls at the board card')
 ok(indexHtml.includes('og:site_name'), 'index.html has og:site_name')
 ok(indexHtml.includes('og:image'), 'index.html has og:image')
+ok(indexHtml.includes('<h1 class="issue-hed">What can your team actually afford?</h1>'), 'homepage LCP hed is the locked slogan')
+ok(indexHtml.includes('What a Power 4 program can actually afford is annual capacity from public filings'), 'homepage LCP lede leads with capacity vs House vs booked NIL')
+ok(!indexHtml.includes('Two ceilings, then booked NIL.'), 'homepage LCP hed dropped the two-ceilings sentence')
 ok(indexHtml.includes('Collective 990 payout is a separate cited lane, not House.'), 'homepage LCP lede names collective payout')
 ok(indexHtml.includes('Not total athletic revenue, and not a Group of 6 predictor'), 'homepage LCP lede kept')
 ok(!/On3/i.test(indexHtml), 'index.html has no On3')

@@ -30,7 +30,7 @@ a:hover { text-decoration: underline; }
   padding: 28px 24px 12px;
   border-bottom: 1px solid var(--rule);
 }
-.brand { display: flex; align-items: center; gap: 22px; margin: 6px 0 4px; }
+.brand { display: flex; align-items: flex-start; gap: 22px; margin: 6px 0 4px; }
 .mark { display: block; flex: 0 0 auto; line-height: 0; }
 .mark {
   width: 92px;
@@ -61,10 +61,26 @@ a:hover { text-decoration: underline; }
   line-height: 0.9;
   letter-spacing: -0.03em;
   color: var(--paper);
-  margin: 8px 0 10px;
+  margin: 8px 0 6px;
   text-decoration: none;
 }
-.tagline { max-width: 640px; color: var(--paper-dim); margin: 0 0 18px; }
+.slogan {
+  max-width: 720px;
+  margin: 4px 0 8px;
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 3.1vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--paper);
+}
+.tagline {
+  max-width: 720px;
+  color: var(--paper-dim);
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0 0 16px;
+}
 .nav { display: flex; flex-wrap: wrap; gap: 22px; padding: 8px 0 14px; }
 .nav a {
   font-family: Arial, Helvetica, system-ui, sans-serif;

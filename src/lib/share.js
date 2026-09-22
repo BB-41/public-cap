@@ -178,7 +178,7 @@ export const PAGE_TITLES = {
 }
 
 export const PAGE_DESCRIPTIONS = {
-  home: 'Two ceilings on every Power 4 program: the House benefits cap, and what they can actually write this year from public filings. Then booked NIL. Collective 990 payout is a separate cited lane. Pending stays empty.',
+  home: 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.',
   tape: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990 payouts, contracts, and House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
   methods: 'How Public Cap books Power 4 capacity, the House benefits cap, booked NIL, and collective 990 payouts. Pending stays empty. We do not invent House or NIL dollars.',
   buyout: 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.',
