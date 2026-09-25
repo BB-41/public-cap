@@ -1429,7 +1429,43 @@ table.rank th.rk { cursor: default; }
   background: #a8321c;
 }
 
+.rev-share {
+  margin-top: 8px;
+  background: var(--ink-2);
+  padding: 16px 16px 12px;
+  border-top: 2px solid var(--gold);
+}
+.rev-share h2 { margin-top: 0; }
+.rev-share-status {
+  margin: 4px 0 8px;
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 15px;
+  color: var(--gold);
+}
+.rev-share-statement + .rev-share-statement {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--rule);
+}
+.rev-share-scroll { overflow-x: auto; }
+table.rev-share-table { min-width: 280px; }
+table.rev-share-table .num { white-space: nowrap; }
+table.rev-share-table tr.nested td:first-child { padding-left: 22px; }
+.rev-share-caveats {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--paper-dim);
+  font-size: 14px;
+}
+.rev-share-caveats li { margin: 6px 0; }
+.rev-share-sources { margin-top: 10px; }
+.rev-share-sources .field-meta { margin-top: 4px; }
+
 @media (max-width: 640px) {
+  .rev-share { padding: 12px 12px 8px; }
+  table.rev-share-table { font-size: 15px; }
+  table.rev-share-table td { padding: 8px 6px; }
+  table.rev-share-table .num { font-size: 14px; }
   .desk-chat { right: 10px; bottom: 10px; }
   .desk-chat-panel {
     width: min(100vw - 16px, 420px);

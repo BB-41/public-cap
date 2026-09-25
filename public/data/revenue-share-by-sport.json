@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "asOf": "2026-09-24",
+    "lane": "Revenue share by sport",
+    "displayOnly": true,
+    "rule": "Stated splits and filed by-sport figures only. A named official or a filed document, with a source link. Display only. Not House spent, not booked NIL, not capacity, not a ranking, and not compare math. Approximate marks stay approximate. No invented dollars."
+  },
+  "schools": {
+    "north-carolina": [
+      {
+        "id": "north-carolina-2025-26",
+        "fiscalYear": "2025-26",
+        "status": "Stated plan (AD, on record)",
+        "official": "Bubba Cunningham, athletic director, on the Carolina Insider podcast",
+        "shareHeading": "Stated amount",
+        "rows": [
+          { "sport": "Football", "amount": 13000000, "amountApproximate": true },
+          { "sport": "Men's basketball", "amount": 7000000, "amountApproximate": true },
+          { "sport": "Baseball", "amount": 250000 },
+          { "sport": "Women's basketball", "amount": 250000 }
+        ],
+        "caveats": [
+          "Cunningham also said commercial activity is roughly 65% football and 35% men's basketball. He said that pair is already about 100%, with baseball and women's basketball after it. The dollar lines are the 2025-26 amounts he named. The rough percents are not a second allocation."
+        ],
+        "sources": [
+          {
+            "name": "Sports Illustrated",
+            "date": "2025-08-15",
+            "url": "https://www.si.com/college/unc/bubba-cunningham-tar-heels-courtney-banghart-bill-belichick"
+          },
+          {
+            "name": "The Assembly",
+            "url": "https://www.theassemblync.com/news/culture/sports/lawmakers-advance-bill-exempting-sports-revenue-sharing-from-public-records-laws/"
+          }
+        ]
+      }
+    ],
+    "nc-state": [
+      {
+        "id": "nc-state-direct-2025-26",
+        "fiscalYear": "2025-26",
+        "status": "Stated plan (AD, on record)",
+        "official": "Boo Corrigan, athletic director, at a Board of Trustees committee",
+        "shareHeading": "Direct revenue share",
+        "rows": [
+          { "sport": "Football", "amount": 13000000 },
+          { "sport": "Men's basketball", "amount": 4000000 },
+          { "sport": "Women's basketball", "amount": 1000000 },
+          { "sport": "Total direct revenue share", "amount": 18000000, "total": true },
+          {
+            "sport": "Added scholarships",
+            "amount": 2500000,
+            "note": "The other $2.5 million of the $20.5 million went to added scholarships, not direct revenue share."
+          }
+        ],
+        "caveats": [
+          "Direct revenue share from the board presentation. A separate records release, below, is a different set of numbers."
+        ],
+        "sources": [
+          {
+            "name": "WRAL",
+            "date": "2026-02-19",
+            "url": "https://www.wral.com/sports/ncstate-financial-outlook-boo-corrigan-budget-presentation-february-2026/"
+          }
+        ]
+      },
+      {
+        "id": "nc-state-records-2025-26",
+        "fiscalYear": "2025-26",
+        "status": "Records release",
+        "official": "WRAL public-records release",
+        "shareHeading": "Release total",
+        "rows": [
+          { "sport": "Football", "amount": 13500000 },
+          { "sport": "Men's basketball", "amount": 4000000 },
+          { "sport": "Women's basketball", "amount": 1000000 },
+          {
+            "sport": "Baseball",
+            "amount": 792000,
+            "note": "Includes scholarships, revenue share, Alston awards, and summer school."
+          }
+        ],
+        "caveats": [
+          "Not revenue share alone. Football, men's basketball, and women's basketball in this release include new scholarships, revenue share, and Alston awards. Baseball also includes summer school. Kept separate from the direct revenue-share lines above."
+        ],
+        "sources": [
+          {
+            "name": "WRAL",
+            "date": "2025-12",
+            "url": "https://www.wral.com/sports/ncstate-revenue-sharing-payments-football-basketball-boo-corrigan-december-2025/"
+          }
+        ]
+      }
+    ],
+    "texas-tech": [
+      {
+        "id": "texas-tech-2025-26-plan",
+        "fiscalYear": "2025-26",
+        "yearNote": "Announced plan",
+        "status": "Stated plan (AD, on record)",
+        "official": "Kirby Hocutt, athletic director, and Jonathan Botros, deputy athletic director",
+        "shareHeading": "Announced plan",
+        "rows": [
+          { "sport": "Football", "percent": 74, "percentApproximate": true, "amount": 15100000, "amountApproximate": true },
+          { "sport": "Men's basketball", "percent": 17, "percentHigh": 18, "amount": 3600000, "amountApproximate": true },
+          { "sport": "Women's basketball", "percent": 2 },
+          { "sport": "Baseball", "percent": 1.9, "amount": 390000, "amountApproximate": true }
+        ],
+        "caveats": [
+          "Announced plan, not a filing of money spent. Hocutt said every other team is under $500,000. No per-team dollar for those sports is on the desk.",
+          "A later 2026-27 shift was reported, but that page did not load and it named no new percentages, so no 2026-27 split is on the desk."
+        ],
+        "sources": [
+          {
+            "name": "Lubbock Avalanche-Journal",
+            "date": "2025-04-07",
+            "url": "https://www.lubbockonline.com/story/sports/college/red-raiders/2025/04/07/texas-tech-baseball-tim-tadlock-on-revenue-sharing-house-v-ncaa/80774061007/"
+          }
+        ]
+      }
+    ],
+    "tennessee": [
+      {
+        "id": "tennessee-2025-26",
+        "fiscalYear": "2025-26",
+        "status": "Stated plan (AD, on record)",
+        "official": "Danny White, athletic director, press conference",
+        "shareHeading": "Stated share",
+        "rows": [
+          { "sport": "Football", "percent": 75 },
+          { "sport": "Men's basketball", "percent": 15 },
+          { "sport": "Women's basketball", "percent": 5 },
+          { "sport": "Other sports", "percent": 5, "amount": 900000, "note": "White said this bucket is $900,000." },
+          {
+            "sport": "Baseball",
+            "amount": 750000,
+            "nested": true,
+            "note": "Of the $900,000 other-sports bucket. Not a slice on top of the 5%."
+          }
+        ],
+        "caveats": [
+          "White's words. Football, men's basketball, and women's basketball are percents only. He did not state dollar amounts for those three sports, so none are shown."
+        ],
+        "sources": [
+          {
+            "name": "Rocky Top Insider",
+            "date": "2025-10-22",
+            "url": "https://www.rockytopinsider.com/2025/10/22/danny-white-dispels-factually-incorrect-rumor-that-lady-vols-basketball-took-baseballs-money/"
+          }
+        ]
+      }
+    ],
+    "lsu": [
+      {
+        "id": "lsu-2026-27",
+        "fiscalYear": "2026-27",
+        "status": "Stated plan (AD, on record)",
+        "official": "Verge Ausberry, athletic director, on 104.5 ESPN Baton Rouge",
+        "shareHeading": "Stated share",
+        "rows": [
+          { "sport": "Football", "percent": 75 },
+          { "sport": "Men's basketball", "percent": 15 },
+          {
+            "sport": "Baseball",
+            "percent": 5,
+            "percentApproximate": true,
+            "note": "About equal to women's basketball."
+          }
+        ],
+        "caveats": [
+          "2026-27, as Ausberry described it. In 2025-26, baseball shared one 5% slice with softball, gymnastics, and the other Olympic sports, and women's basketball had its own 5%. No dollar amounts were stated, so none are shown."
+        ],
+        "sources": [
+          {
+            "name": "The Advocate",
+            "date": "2026-04-09",
+            "url": "https://www.theadvocate.com/baton_rouge/sports/lsu/lsu-baseball-revenue-sharing-nil-money-verge-ausberry-jay-johnson/article_ba969997-0ec1-570e-b0f8-7ca5f8eca9d0.html"
+          }
+        ]
+      }
+    ],
+    "penn-state": [
+      {
+        "id": "penn-state-fy2025-item44",
+        "fiscalYear": "FY2025",
+        "yearNote": "Jul 2024–Jun 2025",
+        "status": "Filed NCAA report",
+        "official": "Penn State NCAA Membership Financial Report, Item 44 (Institutional NIL Revenue Share)",
+        "shareHeading": "Filed amount",
+        "rows": [
+          { "sport": "Football", "amount": 13338959 },
+          { "sport": "Men's basketball", "amount": 3004666 },
+          { "sport": "Wrestling", "amount": 1449766 },
+          { "sport": "Baseball", "amount": 300000 },
+          { "sport": "Women's basketball", "amount": 110000 },
+          { "sport": "Men's hockey", "amount": 95000 },
+          { "sport": "Men's lacrosse", "amount": 50000 },
+          { "sport": "Men's tennis", "amount": 10000 },
+          { "sport": "Women's volleyball", "amount": 10000 },
+          { "sport": "Total", "amount": 18368391, "total": true }
+        ],
+        "caveats": [
+          "FY2025 ended June 30, 2025, before House payments began July 1, 2025. Filed Item 44 spending. Not the 2025-26 House cap year. The FY2026 report is the one to request next.",
+          "Figures as published by StateCollege.com and Yahoo Sports / Centre Daily Times from the report Penn State released. Penn State's own PDF is not hosted on this desk."
+        ],
+        "sources": [
+          {
+            "name": "StateCollege.com",
+            "date": "2026-02-06",
+            "url": "https://www.statecollege.com/articles/penn-state-sports/analyzing-penn-state-athletics-financial-report/"
+          },
+          {
+            "name": "Yahoo Sports / Centre Daily Times",
+            "url": "https://sports.yahoo.com/articles/penn-state-releases-nil-revenue-195237442.html"
+          }
+        ]
+      }
+    ],
+    "boston-college": [
+      {
+        "id": "boston-college-75-15-5-5",
+        "fiscalYear": "2025-26 / 2026-27",
+        "status": "Stated plan (AD, on record)",
+        "official": "Blake James, athletic director, on the school show From the Desk of Blake James",
+        "shareHeading": "Stated share",
+        "rows": [
+          { "sport": "Football", "percent": 75 },
+          { "sport": "Men's basketball", "percent": 15 },
+          { "sport": "Women's basketball", "percent": 5 },
+          { "sport": "Everyone else", "percent": 5 }
+        ],
+        "caveats": [
+          "James said the department is following the 75 / 15 / 5 / 5 lines. No per-sport dollar amount was stated, so none are shown."
+        ],
+        "sources": [
+          {
+            "name": "Sports Illustrated",
+            "date": "2026-01-26",
+            "url": "https://www.si.com/college/bostoncollege/all-things-bc/boston-college-ad-blake-james-revenue-share-nil"
+          }
+        ]
+      }
+    ],
+    "texas": [
+      {
+        "id": "texas-2025-26-paraphrase",
+        "fiscalYear": "2025-26",
+        "yearNote": "Stated May 28, 2025, before final approval",
+        "status": "Stated plan (AD, on record)",
+        "official": "Chris Del Conte, athletic director, at SEC Spring Meetings",
+        "shareHeading": "Stated share",
+        "rows": [
+          { "sport": "Football", "percent": 75 },
+          { "sport": "Men's basketball", "percent": 15 },
+          { "sport": "Women's basketball", "percent": 5 },
+          { "sport": "The rest", "percent": 5, "note": "Still being divided when this was said." }
+        ],
+        "caveats": [
+          "On3 paraphrase, not a direct quote. Stated May 28, 2025, before final approval. No per-sport dollar amount was stated, so none are shown."
+        ],
+        "sources": [
+          {
+            "name": "On3",
+            "date": "2025-05-28",
+            "url": "https://www.on3.com/teams/texas-longhorns/news/what-chris-del-conte-said-about-the-house-settlement-sec-scheduling-and-more-at-sec-spring-meetings/"
+          }
+        ]
+      }
+    ]
+  }
+}
