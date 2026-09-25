@@ -1,4 +1,4 @@
-import { money, moneyExact, moneyRange } from '../lib/format.js'
+import { money, moneyCited, moneyExact, moneyRange } from '../lib/format.js'
 import { isPrivateGap, leftoverWaterfall } from '../lib/compute.js'
 import { defTitle } from '../lib/definitions.js'
 import ShareBar from './ShareBar.jsx'
@@ -61,7 +61,13 @@ function WaterfallRow({ step, open, onToggle, children }) {
           {step.field?.confidence ? <i className={`dot ${step.field.confidence}`} /> : null}
         </div>
         <div className={`waterfall-val${step.hero ? ' display' : ''}`}>
-          {step.value == null ? '—' : step.hero ? money(step.value) : moneyExact(step.value)}
+          {step.value == null
+            ? '—'
+            : step.field?.approximate
+              ? moneyCited(step.value, { approximate: true })
+              : step.hero
+                ? money(step.value)
+                : moneyExact(step.value)}
         </div>
       </div>
       {step.lines?.length ? (
@@ -177,7 +183,13 @@ export default function CapacityWaterfall({
           <WaterfallRow key={step.key} step={step} open={open} onToggle={onToggle}>
             <DrillNote
               field={step.key === 'houseCap' && !step.field?.source ? houseField : step.field}
-              exact={step.value == null ? null : moneyExact(step.value)}
+              exact={
+                step.value == null
+                  ? null
+                  : step.field?.approximate
+                    ? moneyCited(step.value, { approximate: true })
+                    : moneyExact(step.value)
+              }
               range={
                 step.key === 'capacity' && includeAlumni && cap.extraLow != null
                   ? moneyRange(cap.totalLow, cap.totalHigh)

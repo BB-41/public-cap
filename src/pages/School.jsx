@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
-import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
+import { money, moneyCited, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel, coachPayBlankLabel } from '../lib/format.js'
 import { formatLongDate } from '../lib/buyout.js'
 import {
   collectSources,
@@ -87,6 +87,8 @@ function TermBlock({ term }) {
 }
 
 function StaffPayCell({ field }) {
+  const blank = coachPayBlankLabel(field)
+  if (blank) return <span>{blank}</span>
   if (!field || field.value == null) return <span className="pending-cell">pending</span>
   return (
     <>
@@ -742,7 +744,16 @@ function FieldSteps({ steps }) {
 
 function Field({ field, fallback = '—' }) {
   const windowSteps = datedSpentSteps(field)
+  const blank = coachPayBlankLabel(field)
   if (!field || (field.value == null && !windowSteps.length)) {
+    if (blank) {
+      return (
+        <div className="field disclosure-box">
+          <div className="field-val">{blank}</div>
+          <div className="field-meta">{field?.notes || fallback}</div>
+        </div>
+      )
+    }
     return (
       <div className="field pending-box">
         <div className="field-val">Pending</div>
@@ -760,7 +771,7 @@ function Field({ field, fallback = '—' }) {
         </>
       ) : (
         <div className="field-val">
-          {moneyExact(field.value)} <i className={`dot ${field.confidence}`} />
+          {moneyCited(field.value, { approximate: field.approximate })} <i className={`dot ${field.confidence}`} />
         </div>
       )}
       <FieldMeta field={field} />
@@ -978,7 +989,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             <p className="lede tight">{ITEM44_COMPANION_LEDE}</p>
           </>
         )}
-        {!hasVal(s.nil.booked) && datedSpentSteps(s.nil.year1Lead?.booked).length > 1 && (
+        {!hasVal(s.nil.booked) && hasVal(s.nil.year1Lead?.booked) && (
           <div className="subfield">
             <div className="eyebrow">{s.nil.year1Lead.label}</div>
             <Field field={s.nil.year1Lead.booked} />

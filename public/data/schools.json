@@ -64,7 +64,7 @@
     "blockers": [
       "College Scorecard API key not used; official earnings and UGDS from the June 2026 Most Recent Institution file (collegescorecard.ed.gov/data) for the 52 added schools. The original 16 keep their College Transitions Dec 2025 Scorecard compilation figures (same Scorecard median, earlier compile).",
       "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions.",
-      "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school cells stay pending.",
+      "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school head-coach cells are labeled Contract not public (private school). A public chair with no released contract is labeled Not disclosed. We do not invent a dollar.",
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
       "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (coordinator letter R013976-090126: $17,999,479.04 Jul 1 2025–Jun 30 2026 and $4,808,560.63 Jul 1–Aug 31 2026, not stacked; $13.5M HPM YTD hold replaced). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
       "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
@@ -25131,6 +25131,7 @@
           "name": "Mark Byington",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -25608,6 +25609,7 @@
             "name": "Mark Byington",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -25660,6 +25662,7 @@
             "name": "Mark Byington",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -39590,6 +39593,7 @@
           "name": "David Braun",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -39931,6 +39935,7 @@
             "name": "David Braun",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -39983,6 +39988,7 @@
             "name": "David Braun",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -40035,6 +40041,7 @@
             "name": "David Braun",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -40087,6 +40094,7 @@
             "name": "David Braun",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -49288,6 +49296,7 @@
       "nil": {
         "booked": {
           "value": 20500000,
+          "approximate": true,
           "confidence": "reported",
           "source": "CalMatters — UCLA said it spent about $20.5 million paying 229 athletes in 2025-26 (House Year 1 maximum). Names and sport splits not released.",
           "url": "https://calmatters.org/education/higher-education/2026/08/student-athlete-payments-california/",
@@ -50982,6 +50991,7 @@
           "name": "Eric Musselman",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -51459,6 +51469,7 @@
             "name": "Eric Musselman",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -51511,6 +51522,7 @@
             "name": "Eric Musselman",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -55576,6 +55588,7 @@
           "name": "Bill O'Brien",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -55914,6 +55927,7 @@
             "name": "Bill O'Brien",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -55966,6 +55980,7 @@
             "name": "Bill O'Brien",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -56018,6 +56033,7 @@
             "name": "Bill O'Brien",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -56951,6 +56967,7 @@
       "nil": {
         "booked": {
           "value": 20500000,
+          "approximate": true,
           "confidence": "reported",
           "source": "CalMatters — UC Berkeley said it spent about $20.5 million paying 147 athletes in 2025-26 (House Year 1 maximum). Names and sport splits not released.",
           "url": "https://calmatters.org/education/higher-education/2026/08/student-athlete-payments-california/",
@@ -56978,6 +56995,7 @@
           "name": "Tosh Lupoi",
           "pay": {
             "value": null,
+            "unavailable": "undisclosed",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -57519,6 +57537,7 @@
             "name": "Tosh Lupoi",
             "pay": {
               "value": null,
+              "unavailable": "undisclosed",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -60471,6 +60490,7 @@
           "name": "Manny Diaz",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -60834,6 +60854,7 @@
             "name": "Manny Diaz",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -60886,6 +60907,7 @@
             "name": "Manny Diaz",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -60938,6 +60960,7 @@
             "name": "Manny Diaz",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -67232,6 +67255,7 @@
           "name": "Jai Lucas",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -67653,6 +67677,7 @@
             "name": "Jai Lucas",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -67705,6 +67730,7 @@
             "name": "Jai Lucas",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -73470,6 +73496,7 @@
           "name": "Andy Enfield",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -73915,6 +73942,7 @@
             "name": "Andy Enfield",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -73967,6 +73995,7 @@
             "name": "Andy Enfield",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -74927,6 +74956,7 @@
           "name": "Tavita Pritchard",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -74953,6 +74983,7 @@
           "name": "Kyle Smith",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -75384,6 +75415,7 @@
             "name": "Kyle Smith",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -75410,6 +75442,7 @@
             "name": "Tavita Pritchard",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -75436,6 +75469,7 @@
             "name": "Kyle Smith",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -76391,6 +76425,7 @@
           "name": "Fran Brown",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -76769,6 +76804,7 @@
             "name": "Fran Brown",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -76821,6 +76857,7 @@
             "name": "Fran Brown",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -76873,6 +76910,7 @@
             "name": "Fran Brown",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -81252,6 +81290,7 @@
           "name": "Jake Dickert",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -81722,6 +81761,7 @@
             "name": "Jake Dickert",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -81774,6 +81814,7 @@
             "name": "Jake Dickert",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -85909,6 +85950,7 @@
           "name": "Kalani Sitake",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -85933,6 +85975,7 @@
           "name": "Kevin Young",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -86118,6 +86161,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86170,6 +86214,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86222,6 +86267,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86274,6 +86320,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86326,6 +86373,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86352,6 +86400,7 @@
             "name": "Kevin Young",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86378,6 +86427,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86404,6 +86454,7 @@
             "name": "Kevin Young",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,

@@ -152,6 +152,8 @@ ok(chair('indiana', 2026).pay.value === 12_025_000, 'Indiana 2026 Cignetti FOIA 
 ok(chair('alabama', 2026).pay.value === 12_500_000, 'Alabama 2026 DeBoer trustee $12.5M')
 ok(chair('ohio-state', 2026).pay.value === 12_500_000, 'Ohio State 2026 Day FOIA EA $12.5M')
 ok(chair('california', 2026).pay.value == null, 'Cal 2026 Lupoi — no EA dollar')
+ok(chair('california', 2026).pay.unavailable === 'undisclosed', 'Cal 2026 Lupoi is Not disclosed')
+ok(chair('northwestern', 2026).pay.value == null && chair('northwestern', 2026).pay.unavailable === 'private', 'Northwestern 2026 Braun is private, not a dollar')
 ok(chair('virginia', 2026).pay.value === 5_400_000, 'Virginia 2026 Elliott MOU $5.4M')
 ok(!(chair('virginia', 2026).pay?.source || '').includes('USA TODAY'), 'Virginia 2026 is not USA TODAY')
 ok(chair('virginia', 2025).pay.value === 4_406_000, 'Virginia 2025 stays USA TODAY $4,406,000')

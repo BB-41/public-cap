@@ -1,14 +1,16 @@
 {
   "meta": {
     "product": "Public Cap guarantee / buy-game desk",
-    "asOf": "2026-09-11",
+    "asOf": "2026-09-25",
     "season": 2026,
     "scope": "2026 football game guarantees: how much larger (usually Power 4) schools pay smaller opponents to play them. Football guarantee dollars stay distinct from band / other fees. Empty without a hosted contract or named newsroom FOIA. Not House spent, not booked NIL, not coach buyouts.",
     "notes": "A buy game (guarantee game) is a one-off or lopsided nonconference date: the home school writes a check so the visitor comes without a return trip, or for less than a true home-and-home. $0 is a real cell only when the contract says $0 (home-and-home / no guarantee). We do not invent dollars. We do not book On3. We do not book social figures that disagree with the FOIA (Miami–FAMU social $740k is not the primary). Band money is a side cell, not the football guarantee. Ticket allotments appear in notes only when the cite names them.",
     "hunts": [
       "Ohio State → Ball State $1.9M is booked from FBSchedules (Ball State public-records contract), also named as Week 1’s largest guarantee in the Topeka Capital-Journal Nicholls story. Columbus Dispatch / NBC Sports corroborate the same figure; we did not re-host the PDF.",
       "Rutgers → UMass $1.55M is booked from FBSchedules (Rutgers OPRA / public-records contract). On the Banks / Yahoo Sports reprint the same OPRA table. The Sports Cast recap is not the primary.",
-      "Kansas State article’s Missouri State $1.2M at Texas A&M is the same KBTX open-records figure already booked on the A&M row — not a second source of dollars."
+      "Kansas State article’s Missouri State $1.2M at Texas A&M is the same KBTX open-records figure already booked on the A&M row — not a second source of dollars.",
+      "Indiana → Howard $525,000 is booked from FBSchedules (Aug. 18, 2025), which obtained the Indiana–Howard contract via Indiana public records. IndyStar / USA TODAY Network the same day reports the same $525,000.",
+      "Rutgers → Howard $475,000 is booked from FBSchedules (Aug. 3, 2024) via New Jersey public records. The contract date was Saturday, Sept. 19, 2026; the game was later moved to Friday, Sept. 25, 2026. The dollar is the original contract amount. On the Banks (Aug. 24, 2026) reprints the same OPRA figure."
     ],
     "sources": [
       "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
@@ -19,7 +21,11 @@
       "Fayetteville Observer / USA TODAY Network (Aug. 25, 2026) — Duke–Illinois and Duke–William & Mary contracts via public records",
       "FBSchedules (Oct. 14, 2022) — Rutgers–UMass contract from Rutgers via state public records",
       "FBSchedules (March 2, 2020) — Ohio State–Ball State contract from Ball State via state public records",
-      "Arizona Republic (Sept. 4, 2026) — Arizona–NAU contract via public records"
+      "Arizona Republic (Sept. 4, 2026) — Arizona–NAU contract via public records",
+      "FBSchedules (Aug. 18, 2025) — Indiana–Howard contract from Indiana via state public records",
+      "IndyStar / USA TODAY Network (Aug. 18, 2025) — Indiana nonconference guarantees, Howard $525,000",
+      "FBSchedules (Aug. 3, 2024) — Rutgers–Howard contract from Rutgers via state public records",
+      "On the Banks (Aug. 24, 2026) — Rutgers OPRA game contracts, Howard $475,000 in 2026"
     ]
   },
   "cites": {
@@ -91,6 +97,34 @@
       "label": "Arizona Republic (Sept. 4, 2026) — Arizona–NAU contract via public records",
       "url": "https://tucson.com/sports/arizonawildcats/article_89e04432-cddd-4d15-9bd8-438d7d687908.html",
       "asOf": "2026-09-04",
+      "confidence": "reported"
+    },
+    "fbschedules-indiana-howard-2026": {
+      "id": "fbschedules-indiana-howard-2026",
+      "label": "FBSchedules (Aug. 18, 2025) — Indiana–Howard contract via Indiana public records",
+      "url": "https://fbschedules.com/indiana-adds-howard-miami-ohio-to-future-football-schedules/",
+      "asOf": "2025-08-18",
+      "confidence": "reported"
+    },
+    "indystar-indiana-howard-2026": {
+      "id": "indystar-indiana-howard-2026",
+      "label": "IndyStar / USA TODAY Network (Aug. 18, 2025) — Indiana nonconference guarantees, Howard $525,000",
+      "url": "https://www.indystar.com/story/sports/college/iu/2025/08/18/indiana-football-completes-non-conference-schedules-through-2030/85704531007/",
+      "asOf": "2025-08-18",
+      "confidence": "reported"
+    },
+    "fbschedules-rutgers-howard-2026": {
+      "id": "fbschedules-rutgers-howard-2026",
+      "label": "FBSchedules (Aug. 3, 2024) — Rutgers–Howard contract via New Jersey public records",
+      "url": "https://fbschedules.com/rutgers-adds-howard-to-2026-football-schedule/",
+      "asOf": "2024-08-03",
+      "confidence": "reported"
+    },
+    "onthebanks-rutgers-howard-2026": {
+      "id": "onthebanks-rutgers-howard-2026",
+      "label": "On the Banks (Aug. 24, 2026) — Rutgers OPRA game contracts, Howard $475,000 in 2026",
+      "url": "https://www.onthebanks.com/big-ten-football/54306/__trashed",
+      "asOf": "2026-08-24",
       "confidence": "reported"
     }
   },
@@ -315,6 +349,35 @@
       "confidence": "reported",
       "citeIds": ["azcentral-arizona-nau-2026"],
       "notes": "Season opener at Casino Del Sol Stadium. Arizona Republic obtained the contract via public records. In-state FCS date; Arizona also hosts NAU in 2027 and 2030–33 on the same partnership."
+    },
+    {
+      "id": "2026-indiana-howard",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "indiana",
+      "payeeLabel": "Howard",
+      "payeeSlug": "howard",
+      "amount": 525000,
+      "homeSchoolId": "indiana",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-indiana-howard-2026", "indystar-indiana-howard-2026"],
+      "notes": "One-off at Memorial Stadium. FBSchedules obtained the Indiana–Howard contract via Indiana public records: the Hoosiers pay Howard $525,000. IndyStar / USA TODAY Network the same day reports the same $525,000. Played Sept. 12, 2026."
+    },
+    {
+      "id": "2026-rutgers-howard",
+      "season": 2026,
+      "date": "2026-09-25",
+      "dateNote": "Moved from the contract date of Sat, Sept. 19, 2026. The $475,000 is the original contract amount.",
+      "payerSchoolId": "rutgers",
+      "payeeLabel": "Howard",
+      "payeeSlug": "howard",
+      "amount": 475000,
+      "homeSchoolId": "rutgers",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-rutgers-howard-2026", "onthebanks-rutgers-howard-2026"],
+      "notes": "One-off at SHI Stadium. FBSchedules obtained the Rutgers contract via New Jersey public records: $475,000, then dated Saturday, Sept. 19, 2026. Rutgers later moved the game to Friday, Sept. 25, 2026. The dollar on this row is the original contract amount, not a renegotiated figure. On the Banks (Aug. 24, 2026) reprints the same OPRA figure ($475,000 in 2026; $450,000 for the 2024 meeting, which is not a 2026 row)."
     }
   ]
 }

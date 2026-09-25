@@ -8,6 +8,24 @@ export function money(n, digits = 1) {
   return `${sign}$${abs.toFixed(0)}`
 }
 
+/** Private-school contract, or a public chair whose contract was not released. Not a dollar. */
+export const COACH_PAY_PRIVATE_LABEL = 'Contract not public (private school)'
+export const COACH_PAY_UNDISCLOSED_LABEL = 'Not disclosed'
+
+export function coachPayBlankLabel(pay) {
+  if (!pay || pay.value != null) return null
+  if (pay.unavailable === 'private') return COACH_PAY_PRIVATE_LABEL
+  if (pay.unavailable === 'undisclosed') return COACH_PAY_UNDISCLOSED_LABEL
+  return null
+}
+
+/** "about $20.5M" when the cite is approximate. Exact cents stay exact. */
+export function moneyCited(n, { approximate = false } = {}) {
+  if (n == null || Number.isNaN(n)) return '—'
+  if (approximate) return `about ${money(n)}`
+  return moneyExact(n)
+}
+
 export function moneyExact(n) {
   if (n == null || Number.isNaN(n)) return '—'
   const rounded = Math.round((Number(n) + Number.EPSILON) * 100) / 100

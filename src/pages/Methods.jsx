@@ -750,7 +750,9 @@ export default function Methods({ meta: metaProp }) {
         (updated Apr 8, 2026; buyout as of Apr 1, 2026). Pay is an annual flow —
         incentives listed in the file stay out of that cell. A buyout is overhang — a
         liability if the school fires without cause on that date — not yearly spend.
-        Private-school blanks stay blank.
+        A private-school blank is labeled “Contract not public (private school).”
+        A public chair with no released contract is labeled “Not disclosed.”
+        We do not invent a dollar.
       </p>
       <p>
         Contract term is a through-year or years remaining, cited from the employment
@@ -781,8 +783,10 @@ export default function Methods({ meta: metaProp }) {
         EA, or a 2026-asOf source). A 2024 or 2025 USA TODAY snapshot is not copied
         onto 2026. When the year-key already holds an independent 2026 cite and the
         current cell is a stale USA TODAY snapshot, current is stamped from that
-        year-key (DeBoer $12.5M, Cignetti $12,025,000, Day $12.5M). Privates stay
-        pending unless independently cited. Chair names are not rewritten.
+        year-key (DeBoer $12.5M, Cignetti $12,025,000, Day $12.5M). A private
+        chair with no released contract is labeled “Contract not public (private school),”
+        not left as an empty pending cell, unless an independent cite exists.
+        Chair names are not rewritten.
       </p>
 
       <h2>Athletics staff pay</h2>

@@ -158,7 +158,19 @@ ok(byId.kentucky.nil.houseRemaining.value === HOUSE - 18_000_000, 'Kentucky rema
 ok(byId.ucla.nil.booked.value === 20_500_000, 'UCLA booked untouched')
 ok(byId.ucla.nil.houseRemaining.value === 0, 'UCLA $0 leftover')
 ok(byId.california.nil.booked.value === 20_500_000, 'Cal booked untouched')
+ok(byId.california.nil.booked.approximate === true, 'Cal booked is approximate (about $20.5M), not $20,500,000')
+ok(byId.ucla.nil.booked.approximate === true, 'UCLA booked is approximate from the same CalMatters sentence')
+ok(/about \$20\.5 million/i.test(byId.california.nil.booked.source || ''), 'Cal source keeps CalMatters “about $20.5 million”')
 ok(byId.california.nil.houseRemaining.value === 0, 'Cal $0 leftover')
+ok(byId.california.coaches.football.pay.value == null, 'Lupoi pay stays null')
+ok(byId.california.coaches.football.pay.unavailable === 'undisclosed', 'Lupoi is labeled Not disclosed')
+ok(byId.california.coachesByYear['2026'].football.pay.unavailable === 'undisclosed', 'Lupoi 2026 year key is Not disclosed')
+ok(byId.northwestern.coaches.football.pay.value == null, 'Braun pay stays null')
+ok(byId.northwestern.coaches.football.pay.unavailable === 'private', 'Braun is labeled private-school contract')
+ok(byId.northwestern.coachesByYear['2026'].football.pay.unavailable === 'private', 'Braun 2026 year key is private')
+ok(byId.oklahoma.coaches.football.pay.value != null, 'Oklahoma current coach dollar is kept')
+ok(byId.oklahoma.coachesByYear['2026'].football.pay.unavailable == null, 'Venables 2026 stays unlabeled pending')
+ok(byId.oklahoma.coachesByYear['2026'].football.pay.value == null, 'Venables 2026 is still not a booked dollar')
 const TX_W1 = 17_999_479.04
 const TX_W2 = 4_808_560.63
 const TX_LEFT = 2_500_520.96

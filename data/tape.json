@@ -1,8 +1,8 @@
 {
   "meta": {
     "product": "Public Cap desk tape",
-    "asOf": "2026-09-11",
-    "itemCount": 399,
+    "asOf": "2026-09-25",
+    "itemCount": 401,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -281,6 +281,37 @@
         "url": "https://www.fayobserver.com/story/sports/college/football/2026/08/25/duke-football-nonconference-game-contracts-pay-for-2026-season/91386367007/"
       },
       "field": "guaranteeGames"
+    },
+    {
+      "id": "indiana-guarantee-2026-indiana-howard",
+      "date": "2025-08-18",
+      "school": "indiana",
+      "schoolName": "Indiana",
+      "kind": "guarantee-game",
+      "headline": "Indiana pays Howard a $525,000 football guarantee.",
+      "figure": 525000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Aug. 18, 2025) — Indiana–Howard contract via Indiana public records",
+        "url": "https://fbschedules.com/indiana-adds-howard-miami-ohio-to-future-football-schedules/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "rutgers-guarantee-2026-rutgers-howard",
+      "date": "2024-08-03",
+      "school": "rutgers",
+      "schoolName": "Rutgers",
+      "kind": "guarantee-game",
+      "headline": "Rutgers pays Howard a $475,000 football guarantee. Game date later moved to Sept. 25, 2026; the dollar is the original contract amount.",
+      "figure": 475000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Aug. 3, 2024) — Rutgers–Howard contract via New Jersey public records",
+        "url": "https://fbschedules.com/rutgers-adds-howard-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Contract date was Sat, Sept. 19, 2026. Official slate is Fri, Sept. 25, 2026. Amount not renegotiated on this desk."
     },
     {
       "id": "rutgers-guarantee-2026-rutgers-umass",

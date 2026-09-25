@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
-import { money, moneyExact, moneyRange, pct, winsPerM } from '../lib/format.js'
+import { coachPayBlankLabel, money, moneyCited, moneyExact, moneyRange, pct, winsPerM } from '../lib/format.js'
 import { hasVal, isItem44Field, ITEM44_COMPANION_EYEBROW, ITEM44_COMPANION_LEDE, val } from '../lib/compute.js'
 import {
   compareDiffTone,
@@ -51,6 +51,9 @@ function metricDisplay(m, school, house) {
   if (v == null) return m.key === 'house' && house == null ? 'no House cap' : 'pending'
   if (m.key === 'nil' && isItem44Field(school.nil?.booked)) {
     return `${money(v)} · Item 44 pre-House`
+  }
+  if (m.key === 'nil' && school.nil?.booked?.approximate) {
+    return moneyCited(v, { approximate: true })
   }
   return money(v)
 }
@@ -266,7 +269,7 @@ function SchoolDrill({ school, metric, house, houseField, season, view, includeA
         <>
           <p className="drill-kicker">Booked</p>
           {isItem44Field(school.nil?.booked) && <p className="drill-notes">{ITEM44_COMPANION_LEDE}</p>}
-          <DrillNote field={school.nil?.booked} exact={school._ratios.nil == null ? null : moneyExact(school._ratios.nil)} empty={school.nil?.booked?.notes || 'No booked FOIA / MFRS / counsel figure. Collective 990 is a separate lane.'} />
+          <DrillNote field={school.nil?.booked} exact={school._ratios.nil == null ? null : moneyCited(school._ratios.nil, { approximate: school.nil?.booked?.approximate })} empty={school.nil?.booked?.notes || 'No booked FOIA / MFRS / counsel figure. Collective 990 is a separate lane.'} />
           {hasVal(school.nil?.preCap) && (
             <>
               <p className="drill-kicker">{ITEM44_COMPANION_EYEBROW}</p>
@@ -308,8 +311,12 @@ function SchoolDrill({ school, metric, house, houseField, season, view, includeA
       ) : (
         <DrillNote
           field={field}
-          exact={metric.key === 'house' ? (house == null ? null : moneyExact(house)) : field?.value != null ? moneyExact(field.value) : null}
-          empty={field?.notes || 'Pending — no cited dollar on the desk.'}
+          exact={
+            metric.key === 'house'
+              ? (house == null ? null : moneyExact(house))
+              : coachPayBlankLabel(field) || (field?.value != null ? moneyExact(field.value) : null)
+          }
+          empty={coachPayBlankLabel(field) || field?.notes || 'Pending — no cited dollar on the desk.'}
         />
       )}
     </div>
@@ -384,7 +391,17 @@ export default function Compare({ schools, meta, house, houseField, season, setS
     { key: 'tix', label: 'Tickets', get: (s) => (hasVal(s.capacity?.tickets) ? s._cap.tickets : null) },
     { key: 'give', label: 'Booked contributions', get: (s) => (hasVal(s.capacity?.contributions) ? s._cap.contributions : null) },
     { key: 'extra', label: 'Extra alumni giving (modeled)', get: (s) => s._cap.extraAlumni },
-    { key: 'fb', label: 'FB coach pay', def: 'coachPay', get: (s) => val(s.coaches.football.pay) || null },
+    {
+      key: 'fb',
+      label: 'FB coach pay',
+      def: 'coachPay',
+      get: (s) => val(s.coaches.football.pay) || null,
+      show: (s) => {
+        const pay = s.coaches?.football?.pay
+        if (pay?.value != null) return money(pay.value)
+        return coachPayBlankLabel(pay) || 'pending'
+      },
+    },
     { key: 'buy', label: 'FB buyout overhang', def: 'buyout', get: (s) => val(s.coaches.football.buyout) || null },
     { key: 'winsPerNil', label: 'FB wins / $M NIL', def: 'winsPerDollar', unit: 'wins', get: (s) => s._eff?.winsPerNilPerM ?? null, show: (s) => s._eff?.winsPerNilPerM == null ? '—' : winsPerM(s._eff.winsPerNilPerM) + ' W/$M' },
     { key: 'winsPerCap', label: 'FB wins / $M capacity', def: 'winsPerDollar', unit: 'wins', get: (s) => s._eff?.winsPerCapPerM ?? null, show: (s) => s._eff?.winsPerCapPerM == null ? '—' : winsPerM(s._eff.winsPerCapPerM) + ' W/$M' },

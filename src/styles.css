@@ -460,6 +460,7 @@ table.rank.reported-nil-rank th { white-space: normal; }
 .field-steps-lede { margin: 0 0 8px; }
 .drill-steps { margin-top: 10px; font-size: 13px; color: var(--paper-dim); }
 .pending-box { border-left: 2px solid #5a5144; padding-left: 12px; }
+.disclosure-box { border-left: 2px solid #8a7d62; padding-left: 12px; }
 .subfield { margin-top: 12px; }
 .collective-990 { margin-top: 20px; padding-top: 14px; border-top: 1px dashed var(--rule); }
 .collective-990-foot { font-size: 13px; color: var(--paper-dim); margin: 8px 0 0; max-width: 62rem; }

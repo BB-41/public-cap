@@ -347,6 +347,7 @@ export function leftoverWaterfall(school, cap, includeAlumni = false) {
       field: {
         ...leftover.field,
         value: spent,
+        approximate: Boolean(booked.field?.approximate) || undefined,
         ...(windowSteps.length ? { steps: windowSteps } : {}),
       },
       hash: sameSpentAndNil ? 'nil' : 'house-spent',

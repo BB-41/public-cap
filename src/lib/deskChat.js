@@ -16,7 +16,7 @@ import {
   leadHouseRemaining,
 } from './compute.js'
 import { DEFS } from './definitions.js'
-import { money, moneyExact, moneyRange } from './format.js'
+import { coachPayBlankLabel, money, moneyCited, moneyExact, moneyRange } from './format.js'
 import { modeledNilForSeason } from './nilModel.js'
 import {
   industryRosterEstimate,
@@ -950,10 +950,15 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, qu
       } else {
         const yl = yearLabel(booked)
         const windows = spentWindowsLine(booked.field)
+        const bookedDisplay = booked.field?.approximate
+          ? moneyCited(booked.value, { approximate: true })
+          : windows
+            ? moneyExact(booked.value)
+            : money(booked.value)
         lines.push(
           windows
-            ? `${school.name} booked NIL is ${moneyExact(booked.value)}${yl ? ` (${yl})` : ''}. ${windows} Booked — FOIA / MFRS / counsel. Not modeled.`
-            : `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''}. Booked — FOIA / MFRS / counsel. Not modeled.`,
+            ? `${school.name} booked NIL is ${bookedDisplay}${yl ? ` (${yl})` : ''}. ${windows} Booked — FOIA / MFRS / counsel. Not modeled.`
+            : `${school.name} booked NIL is ${bookedDisplay}${yl ? ` (${yl})` : ''}. Booked — FOIA / MFRS / counsel. Not modeled.`,
         )
         facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
         const aside = preCapLine(raw, school.name)
@@ -1534,9 +1539,13 @@ function coachAnswer(school, coach, season) {
   }
   const lines = [`${school.name} football chair: ${coach.name}.`]
   const facts = []
+  const payBlank = coachPayBlankLabel(coach.pay)
   if (hasVal(coach.pay)) {
     lines.push(`Annual pay ${money(coach.pay.value)} (${mark(coach.pay)}). This year’s check, not lifetime wealth.`)
     facts.push(factLine('Coach pay', coach.pay.value, { mark: mark(coach.pay) }))
+  } else if (payBlank) {
+    lines.push(`Annual pay: ${payBlank}. We do not invent a dollar.`)
+    facts.push(`Coach pay: ${payBlank}`)
   } else {
     lines.push('Coach pay is pending — we do not invent a dollar.')
   }
@@ -1647,6 +1656,7 @@ function guaranteeGameLine(game, schools) {
     bits.push(`Band ${moneyExact(game.bandAmount)} is a separate cell — not the football guarantee.`)
   }
   if (game.amount === 0) bits.push('$0 is the cited contract cell, not pending.')
+  if (game.dateNote) bits.push(game.dateNote)
   return bits.join(' ')
 }
 
@@ -2302,10 +2312,15 @@ function nilCoverageAnswer(raw, season, includeAlumni, desk) {
       const yl = yearLabel(booked)
       const src = booked.field?.source ? ` Source: ${booked.field.source}.` : ''
       const windows = spentWindowsLine(booked.field)
+      const bookedDisplay = booked.field?.approximate
+        ? moneyCited(booked.value, { approximate: true })
+        : windows
+          ? moneyExact(booked.value)
+          : money(booked.value)
       lines.push(
         windows
-          ? `${school.name} booked NIL is ${moneyExact(booked.value)}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} ${windows} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`
-          : `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`,
+          ? `${school.name} booked NIL is ${bookedDisplay}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} ${windows} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`
+          : `${school.name} booked NIL is ${bookedDisplay}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`,
       )
       facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
       const aside = preCapLine(raw, school.name)
