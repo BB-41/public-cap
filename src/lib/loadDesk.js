@@ -2,6 +2,17 @@ export function jsonOr(url, fallback) {
   return fetch(url).then((r) => (r.ok ? r.json() : fallback))
 }
 
+/** Roster files that are missing come back as the SPA homepage (200 HTML). */
+export function parseRosterBook(text) {
+  try {
+    const data = JSON.parse(text)
+    if (!data || typeof data !== 'object' || !data.schools) return { schools: {}, missing: true }
+    return data
+  } catch {
+    return { schools: {}, missing: true }
+  }
+}
+
 export function loadMeta() {
   return jsonOr('/data/meta.json', null)
 }
@@ -23,7 +34,10 @@ export function loadTape() {
 }
 
 export function loadRosters(season) {
-  return jsonOr(`/data/rosters-${season}.json`, { schools: {} })
+  return fetch(`/data/rosters-${season}.json`).then(async (r) => {
+    if (!r.ok) return { schools: {}, missing: true }
+    return parseRosterBook(await r.text())
+  })
 }
 
 export function loadSchoolFull(id) {
@@ -40,7 +54,8 @@ export function routeKind(pathname) {
   if (pathname.startsWith('/school/')) return 'school'
   if (pathname === '/compare') return 'compare'
   if (pathname === '/reported-nil') return 'reportedNil'
-  return 'home'
+  if (pathname === '/' || pathname === '') return 'home'
+  return 'missing'
 }
 
 export function schoolIdFromPath(pathname) {

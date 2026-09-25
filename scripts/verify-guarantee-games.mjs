@@ -96,6 +96,21 @@ ok(!/yahoo\.com/i.test(JSON.stringify(ruHoward) + JSON.stringify(book.cites['ont
 ok(gamesForSchool(book, 'indiana').paid.some((g) => g.id === '2026-indiana-howard'), 'Indiana school card shows Howard')
 ok(gamesForSchool(book, 'rutgers').paid.some((g) => g.id === '2026-rutgers-howard'), 'Rutgers school card shows Howard')
 
+ok(game('2026-texas-tech-sam-houston')?.amount === 1_000_000, 'Texas Tech → Sam Houston $1,000,000')
+ok(game('2026-texas-tech-sam-houston')?.date === '2026-09-26', 'Sam Houston date is Sept. 26, 2026')
+ok(game('2026-texas-tech-kent-state')?.amount === 1_500_000, 'Texas Tech → Kent State $1,500,000')
+ok(game('2026-lsu-mcneese')?.amount === 750_000 && game('2026-lsu-mcneese')?.date === '2026-10-03', 'LSU → McNeese $750,000 on the moved Oct. 3 date')
+ok(/Sept\. 12, 2026/.test(game('2026-lsu-mcneese')?.dateNote || ''), 'LSU–McNeese dateNote keeps the contract date')
+ok(game('2026-kansas-middle-tennessee')?.amount === 925_000 && game('2026-kansas-middle-tennessee')?.date === '2026-10-03', 'Kansas → Middle Tennessee $925,000 on Oct. 3')
+ok(/Sept\. 19, 2026/.test(game('2026-kansas-middle-tennessee')?.dateNote || ''), 'Kansas–MTSU dateNote keeps the contract date')
+ok(game('2026-georgia-western-kentucky')?.amount === 1_900_000, 'Georgia → Western Kentucky $1,900,000')
+ok(game('2026-georgia-tennessee-state')?.amount === 600_000, 'Georgia → Tennessee State $600,000')
+ok(game('2026-wisconsin-western-illinois')?.amount === 575_000, 'Wisconsin → Western Illinois $575,000')
+ok(game('2026-iowa-northern-iowa')?.amount === 700_000, 'Iowa → Northern Iowa $700,000')
+ok(game('2026-indiana-western-kentucky')?.amount === 1_100_000, 'Indiana → Western Kentucky $1,100,000')
+ok(!book.games.some((g) => /herosports\.com/i.test(JSON.stringify(g))), 'HERO Sports compilation URL is not booked')
+ok(gamesForSchool(book, 'georgia').paid.some((g) => g.amount === 1_900_000), 'Georgia school card shows Western Kentucky')
+
 const zeroIds = new Set(['2026-texas-am-arizona-state', '2026-nc-state-app-state'])
 for (const g of book.games) {
   ok(g.season === 2026, `${g.id} is season 2026`)

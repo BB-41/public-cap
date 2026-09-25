@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import NotFound from './NotFound.jsx'
 import { money, moneyCited, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel, coachPayBlankLabel } from '../lib/format.js'
 import { formatLongDate } from '../lib/buyout.js'
 import {
@@ -271,7 +272,7 @@ function StaffSection({ school, season }) {
   )
 }
 
-function ContractLink({ url, label }) {
+function ContractLink({ url, label, pay, isPrivate }) {
   if (url) {
     return (
       <a className="ext contract-link" href={url} title={label || undefined} target="_blank" rel="noreferrer">
@@ -279,7 +280,12 @@ function ContractLink({ url, label }) {
       </a>
     )
   }
-  return <span className="no-contract">no public contract</span>
+  // A cited dollar is not a claim that the contract is unpublished.
+  if (pay?.value != null) return null
+  const text = pay?.unavailable === 'private' || isPrivate
+    ? 'Contract not public'
+    : 'Contract not yet released'
+  return <span className="no-contract">{text}</span>
 }
 
 function BacksThis({ school }) {
@@ -761,12 +767,17 @@ function Field({ field, fallback = '—' }) {
       </div>
     )
   }
-  const multiWindow = windowSteps.length > 1
+  const partialWindow = Boolean(field.partialYear && windowSteps.length)
+  const multiWindow = windowSteps.length > 1 || partialWindow
   return (
     <div className="field">
       {multiWindow ? (
         <>
-          <p className="fine field-steps-lede">Dated windows — not a stacked total.</p>
+          <p className="fine field-steps-lede">
+            {partialWindow && windowSteps.length === 1
+              ? 'Dated partial window — not a full-year total.'
+              : 'Dated windows — not a stacked total.'}
+          </p>
           <FieldSteps steps={windowSteps} />
         </>
       ) : (
@@ -836,7 +847,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
     writeHidePending(on)
   }
 
-  if (!s) return <div className="page-wrap"><p>School not on the desk.</p></div>
+  if (!s) return <NotFound />
   const cap = s._cap
   const house = houseValueForSeason(meta, season)
   const houseField = s._houseField
@@ -894,8 +905,11 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
               <div className="eyebrow" title={defTitle('houseRemaining')}>
                 Leftover{leftoverLead.label ? ` · ${leftoverLead.label}` : leftoverLead.field?.partialYear ? ' · YTD' : ''}
               </div>
-              <div className="display">{money(leftoverLead.value)}</div>
+              <div className="display">
+                {Math.abs(leftoverLead.value) < 1_000_000 ? moneyExact(leftoverLead.value) : money(leftoverLead.value)}
+              </div>
               <div className="eyebrow">House remaining · booked</div>
+              {leftoverLead.field?.footnote ? <p className="fine">{leftoverLead.field.footnote}</p> : null}
             </>
           ) : (
             <>
@@ -1171,7 +1185,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         <section>
           <h2>Football coach</h2>
           <div className="coach-name">{s.coaches.football.name}</div>
-          <ContractLink url={s.coaches.football.contractUrl} label={s.coaches.football.term?.source} />
+          <ContractLink url={s.coaches.football.contractUrl} label={s.coaches.football.term?.source} pay={s.coaches.football.pay} isPrivate={s.private} />
           <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>
           <CoachPayField pay={s.coaches.football.pay} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
@@ -1191,7 +1205,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         <section>
           <h2>Men’s basketball coach</h2>
           <div className="coach-name">{s.coaches.mbb.name}</div>
-          <ContractLink url={s.coaches.mbb.contractUrl} label={s.coaches.mbb.term?.source} />
+          <ContractLink url={s.coaches.mbb.contractUrl} label={s.coaches.mbb.term?.source} pay={s.coaches.mbb.pay} isPrivate={s.private} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
           <TermBlock term={s.coaches.mbb.term} />
           <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>

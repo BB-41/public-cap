@@ -75,16 +75,27 @@ for (const [sid, years] of Object.entries(tape)) {
         `${sid} ${year} pay source is USA TODAY`
       )
     } else if (fb.pay?.value != null && isUsaToday(fb.pay)) {
-      const pinned = usatCoach(sid, year)
-      ok(
-        pinned?.pay === fb.pay.value && String(fb.pay.source || '').includes(String(year)),
-        `${sid} ${year} USA TODAY cell is year-pinned, not copied`
-      )
+      const carried = fb.pay.yearLabel && Number(fb.pay.yearLabel) < year
+      if (carried) {
+        ok(
+          /not a 2026 contract-year schedule/i.test(fb.pay.notes || ''),
+          `${sid} ${year} prior-year USA TODAY dollar is labeled, not stored as this season`
+        )
+        ok(byId[sid].coachesByYear[String(year)].football.pay.value == null, `${sid} ${year} JSON year key stays empty`)
+      } else {
+        const pinned = usatCoach(sid, year)
+        ok(
+          pinned?.pay === fb.pay.value && String(fb.pay.source || '').includes(String(year)),
+          `${sid} ${year} USA TODAY cell is year-pinned, not copied`
+        )
+      }
     }
-    ok(
-      (fb.term?.url || '').includes(String(year)),
-      `${sid} ${year} Wikipedia season-page URL`
-    )
+    const termUrl = fb.term?.url || ''
+    if (year === 2026 && fb.term?.through && !termUrl.includes('2026_')) {
+      ok(Boolean(fb.term.source), `${sid} 2026 term is a cited through-year`)
+    } else {
+      ok(termUrl.includes(String(year)), `${sid} ${year} Wikipedia season-page URL`)
+    }
   }
 }
 
@@ -154,6 +165,13 @@ ok(chair('ohio-state', 2026).pay.value === 12_500_000, 'Ohio State 2026 Day FOIA
 ok(chair('california', 2026).pay.value == null, 'Cal 2026 Lupoi — no EA dollar')
 ok(chair('california', 2026).pay.unavailable === 'undisclosed', 'Cal 2026 Lupoi is Not disclosed')
 ok(chair('northwestern', 2026).pay.value == null && chair('northwestern', 2026).pay.unavailable === 'private', 'Northwestern 2026 Braun is private, not a dollar')
+ok(chair('northwestern', 2026).term?.through === '2031', 'Braun 2026 term is through 2031')
+ok(chair('oklahoma', 2026).pay.value === 7_552_750, 'Venables 2026 view shows the cited 2025 dollar')
+ok(chair('oklahoma', 2026).pay.yearLabel === '2025', 'Venables 2026 view labels the dollar 2025')
+ok(byId.oklahoma.coachesByYear['2026'].football.pay.value == null, 'Venables 2026 JSON stays unlabeled')
+ok(chair('california', 2025).name !== chair('california', 2026).name, 'Cal 2025 chair is not Lupoi')
+ok(chair('california', 2026).pay.value == null, 'Lupoi does not inherit Wilcox pay')
+ok(chair('vanderbilt', 2026).pay.yearLabel === '2025', 'Lea 2026 view labels the pre-extension dollar 2025')
 ok(chair('virginia', 2026).pay.value === 5_400_000, 'Virginia 2026 Elliott MOU $5.4M')
 ok(!(chair('virginia', 2026).pay?.source || '').includes('USA TODAY'), 'Virginia 2026 is not USA TODAY')
 ok(chair('virginia', 2025).pay.value === 4_406_000, 'Virginia 2025 stays USA TODAY $4,406,000')

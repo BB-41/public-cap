@@ -750,8 +750,8 @@ export default function Methods({ meta: metaProp }) {
         (updated Apr 8, 2026; buyout as of Apr 1, 2026). Pay is an annual flow —
         incentives listed in the file stay out of that cell. A buyout is overhang — a
         liability if the school fires without cause on that date — not yearly spend.
-        A private-school blank is labeled “Contract not public (private school).”
-        A public chair with no released contract is labeled “Not disclosed.”
+        A private-school blank is labeled “Contract not public.”
+        A public chair whose contract is not yet released is labeled “Contract not yet released.”
         We do not invent a dollar.
       </p>
       <p>
@@ -780,11 +780,14 @@ export default function Methods({ meta: metaProp }) {
         Football 2026 year cells (<code>coachesByYear.2026.football.pay</code>) take a
         copy of the current-chair pay object only when the names match and the
         current cell is a cited 2026 / current-deal dollar (PDF, article quoting the
-        EA, or a 2026-asOf source). A 2024 or 2025 USA TODAY snapshot is not copied
-        onto 2026. When the year-key already holds an independent 2026 cite and the
-        current cell is a stale USA TODAY snapshot, current is stamped from that
-        year-key (DeBoer $12.5M, Cignetti $12,025,000, Day $12.5M). A private
-        chair with no released contract is labeled “Contract not public (private school),”
+        EA, or a 2026-asOf source). A 2024 or 2025 USA TODAY snapshot is not stored
+        on the 2026 year key as if it were a 2026 schedule. On the 2026 card, when
+        that year key has no dollar and the current chair is the same person, the
+        desk shows the cited prior-year cell labeled with its year. A different
+        chair’s dollar is not copied. When the year-key already holds an independent
+        2026 cite and the current cell is a stale USA TODAY snapshot, current is
+        stamped from that year-key (DeBoer $12.5M, Cignetti $12,025,000, Day $12.5M).
+        A private chair with no released contract is labeled “Contract not public,”
         not left as an empty pending cell, unless an independent cite exists.
         Chair names are not rewritten.
       </p>

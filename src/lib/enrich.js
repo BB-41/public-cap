@@ -26,6 +26,7 @@ export function enrichSchools({
   const withCap = seasonal.map((s) => ({ ...s, _cap: computeCapacity(s) }))
   const capTotals = withCap.map((s) => s._cap.total)
   const book = rosterYear === season ? rosters : { schools: {} }
+  const rosterMissing = Boolean(rosterYear === season && rosters?.missing)
   return withCap.map((s) => {
     const modeled = s._season.modeledNil
       ? modeledNilForSeason(s, s._cap.total, capTotals, season, houseVal)
@@ -60,6 +61,7 @@ export function enrichSchools({
       _ratios: r,
       _roster: roster,
       _named: named,
+      _rosterMissing: rosterMissing,
       _conf: confidenceRollup(s),
       _houseField: houseField,
       _eff: eff,

@@ -10,7 +10,12 @@
       "Rutgers → UMass $1.55M is booked from FBSchedules (Rutgers OPRA / public-records contract). On the Banks / Yahoo Sports reprint the same OPRA table. The Sports Cast recap is not the primary.",
       "Kansas State article’s Missouri State $1.2M at Texas A&M is the same KBTX open-records figure already booked on the A&M row — not a second source of dollars.",
       "Indiana → Howard $525,000 is booked from FBSchedules (Aug. 18, 2025), which obtained the Indiana–Howard contract via Indiana public records. IndyStar / USA TODAY Network the same day reports the same $525,000.",
-      "Rutgers → Howard $475,000 is booked from FBSchedules (Aug. 3, 2024) via New Jersey public records. The contract date was Saturday, Sept. 19, 2026; the game was later moved to Friday, Sept. 25, 2026. The dollar is the original contract amount. On the Banks (Aug. 24, 2026) reprints the same OPRA figure."
+      "Rutgers → Howard $475,000 is booked from FBSchedules (Aug. 3, 2024) via New Jersey public records. The contract date was Saturday, Sept. 19, 2026; the game was later moved to Friday, Sept. 25, 2026. The dollar is the original contract amount. On the Banks (Aug. 24, 2026) reprints the same OPRA figure.",
+      "Texas Tech → Sam Houston $1,000,000 (Sept. 26, 2026) and Texas Tech → Kent State $1,500,000 (Sept. 6, 2026) are booked from FBSchedules (Aug. 19, 2024), which obtained the contracts. UIW has no dollar in that story.",
+      "LSU → McNeese $750,000 is booked from FBSchedules (Nov. 29, 2023) via LSU public records and McNeese Athletics (Dec. 5, 2023). The contract date was Sept. 12, 2026; the official slate is Oct. 3, 2026. The dollar is the original contract amount. The 2029 $775,000 is not a 2026 row.",
+      "Kansas → Middle Tennessee $925,000 is booked from FBSchedules (Aug. 11, 2025) via MTSU records. The contract date was Sept. 19, 2026; Kansas Athletics lists Oct. 3, 2026. The dollar is the original contract amount.",
+      "Georgia → Western Kentucky $1,900,000 (Sept. 12) and Georgia → Tennessee State $600,000 (Sept. 5) are booked from UGA Wire (Sept. 11, 2026). WKU’s $1.9 million is also in FBSchedules (Nov. 4, 2025) via WKU records. Indiana → Western Kentucky $1,100,000 (Sept. 19) is that same WKU records story.",
+      "Wisconsin → Western Illinois $575,000 is booked from FBSchedules (Oct. 15, 2019) via Western Illinois FOIA. Iowa → Northern Iowa $700,000 is booked from FBSchedules (June 27, 2022) via UNI public records." 
     ],
     "sources": [
       "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
@@ -25,7 +30,15 @@
       "FBSchedules (Aug. 18, 2025) — Indiana–Howard contract from Indiana via state public records",
       "IndyStar / USA TODAY Network (Aug. 18, 2025) — Indiana nonconference guarantees, Howard $525,000",
       "FBSchedules (Aug. 3, 2024) — Rutgers–Howard contract from Rutgers via state public records",
-      "On the Banks (Aug. 24, 2026) — Rutgers OPRA game contracts, Howard $475,000 in 2026"
+      "On the Banks (Aug. 24, 2026) — Rutgers OPRA game contracts, Howard $475,000 in 2026",
+      "FBSchedules (Aug. 19, 2024) — Texas Tech–Sam Houston and Kent State contracts",
+      "FBSchedules (Nov. 29, 2023) — LSU–McNeese contract via LSU public records",
+      "McNeese Athletics (Dec. 5, 2023) — LSU pays McNeese $750,000 in 2026",
+      "FBSchedules (Aug. 11, 2025) — Kansas–Middle Tennessee contract via MTSU records",
+      "FBSchedules (Nov. 4, 2025) — Western Kentucky contracts via WKU records",
+      "UGA Wire (Sept. 11, 2026) — Georgia pays Western Kentucky $1.9 million and Tennessee State $600,000",
+      "FBSchedules (Oct. 15, 2019) — Wisconsin–Western Illinois contract via FOIA",
+      "FBSchedules (June 27, 2022) — Iowa–Northern Iowa contract via UNI public records" 
     ]
   },
   "cites": {
@@ -125,6 +138,62 @@
       "label": "On the Banks (Aug. 24, 2026) — Rutgers OPRA game contracts, Howard $475,000 in 2026",
       "url": "https://www.onthebanks.com/big-ten-football/54306/__trashed",
       "asOf": "2026-08-24",
+      "confidence": "reported"
+    },
+    "fbschedules-texastech-samhouston-2026": {
+      "id": "fbschedules-texastech-samhouston-2026",
+      "label": "FBSchedules (Aug. 19, 2024) — Texas Tech–Sam Houston and Kent State contracts via open records",
+      "url": "https://fbschedules.com/texas-tech-adds-sam-houston-uiw-to-future-football-schedules/",
+      "asOf": "2024-08-19",
+      "confidence": "reported"
+    },
+    "fbschedules-lsu-mcneese-2026": {
+      "id": "fbschedules-lsu-mcneese-2026",
+      "label": "FBSchedules (Nov. 29, 2023) — LSU–McNeese contract via LSU public records",
+      "url": "https://fbschedules.com/lsu-adds-mcneese-to-2026-2029-football-schedules/",
+      "asOf": "2023-11-29",
+      "confidence": "reported"
+    },
+    "mcneese-lsu-2026": {
+      "id": "mcneese-lsu-2026",
+      "label": "McNeese Athletics (Dec. 5, 2023) — LSU pays McNeese $750,000 in 2026",
+      "url": "https://mcneesesports.com/news/2023/12/5/football-mcneese-lsu-to-play-in-26-and-26-for-record-guarantee-amount.aspx",
+      "asOf": "2023-12-05",
+      "confidence": "reported"
+    },
+    "fbschedules-kansas-mtsu-2026": {
+      "id": "fbschedules-kansas-mtsu-2026",
+      "label": "FBSchedules (Aug. 11, 2025) — Kansas–Middle Tennessee contract via MTSU records",
+      "url": "https://fbschedules.com/middle-tennessee-to-get-big-payout-for-2027-auburn-football-game/",
+      "asOf": "2025-08-11",
+      "confidence": "reported"
+    },
+    "fbschedules-wku-georgia-indiana-2026": {
+      "id": "fbschedules-wku-georgia-indiana-2026",
+      "label": "FBSchedules (Nov. 4, 2025) — Western Kentucky contracts via WKU records",
+      "url": "https://fbschedules.com/western-kentucky-adds-mercyhurst-to-2026-football-schedule/",
+      "asOf": "2025-11-04",
+      "confidence": "reported"
+    },
+    "ugawire-georgia-wku-2026": {
+      "id": "ugawire-georgia-wku-2026",
+      "label": "UGA Wire (Sept. 11, 2026) — Georgia pays Western Kentucky $1.9 million and Tennessee State $600,000",
+      "url": "https://ugawire.usatoday.com/story/sports/college/bulldogs/football/2026/09/11/how-much-georgia-bulldogs-football-paying-western-kentucky/91679263007/",
+      "asOf": "2026-09-11",
+      "confidence": "reported"
+    },
+    "fbschedules-wisconsin-wiu-2026": {
+      "id": "fbschedules-wisconsin-wiu-2026",
+      "label": "FBSchedules (Oct. 15, 2019) — Wisconsin–Western Illinois contract via Western Illinois FOIA",
+      "url": "https://fbschedules.com/western-illinois-to-play-at-wisconsin-in-2026/",
+      "asOf": "2019-10-15",
+      "confidence": "reported"
+    },
+    "fbschedules-iowa-uni-2026": {
+      "id": "fbschedules-iowa-uni-2026",
+      "label": "FBSchedules (June 27, 2022) — Iowa–Northern Iowa contract via UNI public records",
+      "url": "https://fbschedules.com/iowa-adds-northern-iowa-to-2026-football-schedule/",
+      "asOf": "2022-06-27",
       "confidence": "reported"
     }
   },
@@ -378,6 +447,134 @@
       "confidence": "reported",
       "citeIds": ["fbschedules-rutgers-howard-2026", "onthebanks-rutgers-howard-2026"],
       "notes": "One-off at SHI Stadium. FBSchedules obtained the Rutgers contract via New Jersey public records: $475,000, then dated Saturday, Sept. 19, 2026. Rutgers later moved the game to Friday, Sept. 25, 2026. The dollar on this row is the original contract amount, not a renegotiated figure. On the Banks (Aug. 24, 2026) reprints the same OPRA figure ($475,000 in 2026; $450,000 for the 2024 meeting, which is not a 2026 row)."
+    },
+    {
+      "id": "2026-texas-tech-sam-houston",
+      "season": 2026,
+      "date": "2026-09-26",
+      "payerSchoolId": "texas-tech",
+      "payeeLabel": "Sam Houston",
+      "payeeSlug": "sam-houston",
+      "amount": 1000000,
+      "homeSchoolId": "texas-tech",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-texastech-samhouston-2026"],
+      "notes": "Jones AT&T Stadium. FBSchedules (Aug. 19, 2024) obtained the contract: Texas Tech pays Sam Houston $1,000,000 for Sat, Sept. 26, 2026. UIW is on the same story with no dollar in the loaded text, so UIW is not a row."
+    },
+    {
+      "id": "2026-texas-tech-kent-state",
+      "season": 2026,
+      "date": "2026-09-06",
+      "payerSchoolId": "texas-tech",
+      "payeeLabel": "Kent State",
+      "payeeSlug": "kent-state",
+      "amount": 1500000,
+      "homeSchoolId": "texas-tech",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-texastech-samhouston-2026"],
+      "notes": "Same FBSchedules open-records story as Sam Houston: Texas Tech pays Kent State $1,500,000 for Sept. 6, 2026. Not a HERO Sports row. The preceding sentence in that story is a 2025 announcement; the contract sentence dates Sept. 6, 2026."
+    },
+    {
+      "id": "2026-lsu-mcneese",
+      "season": 2026,
+      "date": "2026-10-03",
+      "dateNote": "Moved from the contract date of Sat, Sept. 12, 2026. The $750,000 is the original contract amount.",
+      "payerSchoolId": "lsu",
+      "payeeLabel": "McNeese",
+      "payeeSlug": "mcneese",
+      "amount": 750000,
+      "homeSchoolId": "lsu",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-lsu-mcneese-2026", "mcneese-lsu-2026"],
+      "notes": "Tiger Stadium. FBSchedules (Nov. 29, 2023) via LSU public records: $750,000 for 2026 and $775,000 for 2029. McNeese Athletics (Dec. 5, 2023) says LSU pays $750,000 in 2026 and the 2026 game was September 12. LSU's official slate and ESPN list Sat, Oct. 3. The 2029 $775,000 is not a 2026 row."
+    },
+    {
+      "id": "2026-kansas-middle-tennessee",
+      "season": 2026,
+      "date": "2026-10-03",
+      "dateNote": "Moved from the contract date of Sat, Sept. 19, 2026. The $925,000 is the original contract amount.",
+      "payerSchoolId": "kansas",
+      "payeeLabel": "Middle Tennessee",
+      "payeeSlug": "middle-tennessee",
+      "amount": 925000,
+      "homeSchoolId": "kansas",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-kansas-mtsu-2026"],
+      "notes": "FBSchedules (Aug. 11, 2025) via MTSU records: at Kansas on Sept. 19, 2026 for $925,000. Kansas Athletics (Sept. 21, 2026) and ESPN list the game on Oct. 3, 2026. The 2027 Auburn $1.45 million in that article is not a 2026 row."
+    },
+    {
+      "id": "2026-georgia-western-kentucky",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "georgia",
+      "payeeLabel": "Western Kentucky",
+      "payeeSlug": "western-kentucky",
+      "amount": 1900000,
+      "homeSchoolId": "georgia",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["ugawire-georgia-wku-2026", "fbschedules-wku-georgia-indiana-2026"],
+      "notes": "Sanford Stadium. UGA Wire (Sept. 11, 2026): Georgia pays Western Kentucky $1.9 million. FBSchedules (Nov. 4, 2025) via WKU records: $1.9 million from Georgia on Sept. 12. Georgia's official schedule confirms Sept. 12."
+    },
+    {
+      "id": "2026-georgia-tennessee-state",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "georgia",
+      "payeeLabel": "Tennessee State",
+      "payeeSlug": "tennessee-state",
+      "amount": 600000,
+      "homeSchoolId": "georgia",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["ugawire-georgia-wku-2026"],
+      "notes": "Week 1 at Sanford Stadium. UGA Wire (Sept. 11, 2026): Tennessee State received $600,000. Georgia's schedule and ESPN list Sat, Sept. 5. Newsroom figure, not a hosted contract PDF."
+    },
+    {
+      "id": "2026-wisconsin-western-illinois",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "wisconsin",
+      "payeeLabel": "Western Illinois",
+      "payeeSlug": "western-illinois",
+      "amount": 575000,
+      "homeSchoolId": "wisconsin",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-wisconsin-wiu-2026"],
+      "notes": "Camp Randall. FBSchedules (Oct. 15, 2019) obtained the contract via Western Illinois FOIA: Wisconsin pays $575,000 on September 12, 2026."
+    },
+    {
+      "id": "2026-iowa-northern-iowa",
+      "season": 2026,
+      "date": "2026-09-19",
+      "payerSchoolId": "iowa",
+      "payeeLabel": "Northern Iowa",
+      "payeeSlug": "northern-iowa",
+      "amount": 700000,
+      "homeSchoolId": "iowa",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-iowa-uni-2026"],
+      "notes": "Kinnick Stadium. FBSchedules (June 27, 2022) obtained the Iowa contract via UNI public records: $700,000 on Saturday, Sept. 19, 2026."
+    },
+    {
+      "id": "2026-indiana-western-kentucky",
+      "season": 2026,
+      "date": "2026-09-19",
+      "payerSchoolId": "indiana",
+      "payeeLabel": "Western Kentucky",
+      "payeeSlug": "western-kentucky",
+      "amount": 1100000,
+      "homeSchoolId": "indiana",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-wku-georgia-indiana-2026"],
+      "notes": "FBSchedules (Nov. 4, 2025) via WKU records: Western Kentucky visits Indiana on Sept. 19 and receives $1.1 million from Indiana. The dollar and the date are two sentences in that contract story, not a second document."
     }
   ]
 }

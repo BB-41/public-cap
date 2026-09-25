@@ -64,9 +64,9 @@
     "blockers": [
       "College Scorecard API key not used; official earnings and UGDS from the June 2026 Most Recent Institution file (collegescorecard.ed.gov/data) for the 52 added schools. The original 16 keep their College Transitions Dec 2025 Scorecard compilation figures (same Scorecard median, earlier compile).",
       "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions.",
-      "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school head-coach cells are labeled Contract not public (private school). A public chair with no released contract is labeled Not disclosed. We do not invent a dollar.",
+      "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school head-coach cells are labeled Contract not public. A public chair with no released contract is labeled Contract not yet released. We do not invent a dollar.",
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
-      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (coordinator letter R013976-090126: $17,999,479.04 Jul 1 2025–Jun 30 2026 and $4,808,560.63 Jul 1–Aug 31 2026, not stacked; $13.5M HPM YTD hold replaced). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
+      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Colorado (Sportico Nov. 6, 2025: $7,672,052.88 across 262 payments, July 1–September 30, 2025 — partial window, not a full-year total), Texas (coordinator letter R013976-090126: $17,999,479.04 Jul 1 2025–Jun 30 2026 and $4,808,560.63 Jul 1–Aug 31 2026, not stacked; $13.5M HPM YTD hold replaced). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
       "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
       "Coach contract PDFs linked only when a school, state, board, or newsroom host posted the actual file (HTTP 200). Public-school buyouts prefer that file; articles are fallback only when no current file is loaded. Stale hire packets are not treated as the current deal. Private-school blanks stay pending. No invented URLs.",
       "Coach contract terms (through-year / years remaining) are cited only from employment agreements, board packets, or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending.",
@@ -15247,7 +15247,7 @@
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
             "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "notes": "Total pay. Annual flow, not a wealth stock. USA TODAY as of Oct. 8, 2025, before the extension. Sports Illustrated (Sept. 16, 2026) reports the regents-approved deal pays an average of $10.5 million per season, not a 2026 schedule line. The $7,552,750 cell is not replaced."
           },
           "buyout": {
             "value": 36158333,
@@ -15264,7 +15264,7 @@
             "asOf": "2026-08",
             "through": "2031",
             "yearsRemaining": 5,
-            "notes": "Two-year add-on; six-year deal through the 2031 season."
+            "notes": "Two-year add-on; six-year deal through the 2031 season. OU Athletics (Aug. 20, 2026): the add-on runs through Jan. 31, 2032. Sports Illustrated (Sept. 16, 2026) reports an average of $10.5 million per season; that average is not booked as the 2026 annual cell."
           }
         },
         "mbb": {
@@ -21797,7 +21797,7 @@
         "booked": {
           "value": 17999479.04,
           "confidence": "reported",
-          "source": "Bob Bonner-Davis, Chief Public Information Coordinator, UT Austin Office of the Vice President for Legal Affairs — Records Center request R013976-090126 (email Sep. 17, 2026, to brett@bryantalliance.com). School-wide aggregate House / revenue-share payments, all sports combined. Two dated expended windows released in the letter: $17,999,479.04 (July 1, 2025–June 30, 2026) and $4,808,560.63 (July 1, 2026–August 31, 2026). Stored as steps — not stacked. Other responsive records remain pending an AG ruling under Tex. Gov't Code 552.104.",
+          "source": "Bob Bonner-Davis, Chief Public Information Coordinator, UT Austin Office of the Vice President for Legal Affairs — Records Center request R013976-090126 (letter dated Sep. 17, 2026). School-wide aggregate House / revenue-share payments, all sports combined. Two dated expended windows released in the letter: $17,999,479.04 (July 1, 2025–June 30, 2026) and $4,808,560.63 (July 1, 2026–August 31, 2026). Stored as steps — not stacked. Other responsive records remain pending an AG ruling under Tex. Gov't Code 552.104.",
           "url": null,
           "asOf": "2026-09-17",
           "window": "2025-07-01 to 2026-06-30",
@@ -25111,7 +25111,8 @@
             "confidence": "reported",
             "source": "USA TODAY Sports football coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08"
+            "asOf": "2025-10-08",
+            "notes": "Pre-extension. USA TODAY as of Oct. 8, 2025. Vanderbilt announced a contract extension on Nov. 28, 2025; the release does not state a dollar or a through-year."
           },
           "buyout": {
             "value": null,
@@ -39598,7 +39599,7 @@
             "source": null,
             "url": null,
             "asOf": null,
-            "notes": "USA TODAY left pay blank (private-school / unreleased contract)."
+            "notes": "USA TODAY left pay blank (private-school / unreleased contract). Contract not public. Northwestern announced an extension through the 2031 season on Sept. 17, 2026; terms not disclosed."
           },
           "buyout": {
             "value": null,
@@ -39609,9 +39610,12 @@
             "notes": "USA TODAY left the buyout cell blank (private-school or unreleased)."
           },
           "term": {
-            "confidence": "pending",
-            "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "confidence": "reported",
+            "asOf": "2026-09-17",
+            "source": "Northwestern University Athletics",
+            "url": "https://nusports.com/news/2026/09/17/northwestern-university-and-football-coach-david-braun-agree-to-extend-contract-through-2031",
+            "through": "2031",
+            "notes": "Northwestern announced Sept. 17, 2026 that David Braun's contract is extended through the 2031 season. Terms not disclosed. ESPN (Adam Rittenberg, Sept. 17, 2026) reports a three-year extension. No pay figure."
           }
         },
         "mbb": {
@@ -40110,11 +40114,12 @@
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
-              "url": "https://en.wikipedia.org/wiki/2026_Northwestern_Wildcats_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "confidence": "reported",
+              "asOf": "2026-09-17",
+              "source": "Northwestern University Athletics",
+              "url": "https://nusports.com/news/2026/09/17/northwestern-university-and-football-coach-david-braun-agree-to-extend-contract-through-2031",
+              "through": "2031",
+              "notes": "Northwestern announced Sept. 17, 2026 that David Braun's contract is extended through the 2031 season. Terms not disclosed. ESPN (Adam Rittenberg, Sept. 17, 2026) reports a three-year extension. No pay figure. Chair of record who started football 2026."
             }
           },
           "mbb": {
@@ -65544,7 +65549,7 @@
           "partialYear": false,
           "overhang": false,
           "notes": "Published House Year 1 cap minus booked House spent. Residual, not a filing.",
-          "footnote": "House Year 1 remaining = $20.5M cap − $20.2M House spent ($32.9M FOIA window minus the $12.7M pre-cap line). Not the full $32.9M, not a 990."
+          "footnote": "House Year 1 remaining = $20,500,000 cap − ($32,900,000 booked − $12,700,000 pre-cap) = $300,000. Not the prior $20,270,000 House-year cell. Not the full $32,900,000. Not a 990."
         }
       },
       "coaches": {
@@ -90309,12 +90314,24 @@
       },
       "nil": {
         "booked": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk — that cell stays pending. FY2025 MFRS Item 44 Institutional NIL Revenue Share ($0, pre-House) is a separate companion cell on nil.preCap. Item 44 $0 is not House spent and not total/collective NIL."
+          "value": 7672052.88,
+          "confidence": "reported",
+          "source": "Sportico (Daniel Libit, Nov. 6, 2025) — Colorado made 262 payments totaling $7,672,052.88 in the first three months of the House revenue-share era",
+          "url": "https://www.sportico.com/leagues/college-sports/2025/college-athlete-pay-public-records-hide-1234875974/",
+          "asOf": "2025-11-06",
+          "window": "2025-07-01 to 2025-09-30",
+          "partialYear": true,
+          "notes": "Partial window only: the first three months of the House revenue-share era (July 1-September 30, 2025), 262 payments. Not a full House Year 1 total and not a leftover. Extra Points (Nov. 10, 2025) reprints the same Sportico sentence. FY2025 MFRS Item 44 $0 stays on nil.preCap and is not this cell. Do not book the same sentence's Kentucky $1,486,099.20 over Kentucky's counsel cell.",
+          "steps": [
+            {
+              "value": 7672052.88,
+              "window": "2025-07-01 to 2025-09-30",
+              "label": "House / revenue-share expended (first three months)",
+              "confidence": "reported",
+              "asOf": "2025-11-06",
+              "notes": "Sportico, Nov. 6, 2025: 262 payments totaling $7,672,052.88. House on this desk starts July 1, 2025, so the first three months are July 1-September 30, 2025. Not stacked into a full-year total."
+            }
+          ]
         },
         "preCap": {
           "value": 0,
@@ -90323,7 +90340,7 @@
           "url": "/colorado-fy2025-ncaa-mfrs.pdf",
           "asOf": "2026-09-10",
           "fiscalYear": "FY2025",
-          "notes": "FY2025 MFRS Item 44 is institutional NIL revenue-share only (pre-House, year ended Jun 30 2025). CU reported no institutional NIL revenue-share payments in that fiscal year — booked $0 because pages 16 / 74 / 93 of the hosted PDF print $0, not an invented blank. This is not collective/third-party NIL, not House Year 1 (2025-26) spent (that cell stays pending), not an unpaid roster, and not current NIL capacity. Does not count against the 2025-26 House cap. USA TODAY’s Brent Schrotenboer confirmed Item 44 is $0 (email, Sept. 10, 2026) and authorized credit plus hosting the FY2025 MFRS PDF he provided (CU NCAA financial report FY 2025.pdf)."
+          "notes": "FY2025 MFRS Item 44 is institutional NIL revenue-share only (pre-House, year ended Jun 30 2025). CU reported no institutional NIL revenue-share payments in that fiscal year — booked $0 because pages 16 / 74 / 93 of the hosted PDF print $0, not an invented blank. This is not collective/third-party NIL, not House Year 1 (2025-26) spent (House spent is the separate partial-window cell, not this Item 44 line), not an unpaid roster, and not current NIL capacity. Does not count against the 2025-26 House cap. USA TODAY’s Brent Schrotenboer confirmed Item 44 is $0 (email, Sept. 10, 2026) and authorized credit plus hosting the FY2025 MFRS PDF he provided (CU NCAA financial report FY 2025.pdf)."
         }
       },
       "coaches": {

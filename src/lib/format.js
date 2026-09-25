@@ -9,8 +9,8 @@ export function money(n, digits = 1) {
 }
 
 /** Private-school contract, or a public chair whose contract was not released. Not a dollar. */
-export const COACH_PAY_PRIVATE_LABEL = 'Contract not public (private school)'
-export const COACH_PAY_UNDISCLOSED_LABEL = 'Not disclosed'
+export const COACH_PAY_PRIVATE_LABEL = 'Contract not public'
+export const COACH_PAY_UNDISCLOSED_LABEL = 'Contract not yet released'
 
 export function coachPayBlankLabel(pay) {
   if (!pay || pay.value != null) return null

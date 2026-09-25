@@ -23,6 +23,7 @@ import {
   titleFromPath,
 } from './lib/share.js'
 import Shell, { SettingType } from './components/Shell.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 const Compare = lazy(() => import('./pages/Compare.jsx'))
 const School = lazy(() => import('./pages/School.jsx'))
@@ -169,7 +170,7 @@ export default function App() {
       })
       .catch(() => {
         if (!cancelled) {
-          setRosters({ schools: {} })
+          setRosters({ schools: {}, missing: true })
           setRosterYear(season)
         }
       })
@@ -366,6 +367,7 @@ export default function App() {
             <Route path="/coach-fa/:coachId" element={<CoachFa />} />
             <Route path="/guarantee-games" element={<GuaranteeGames />} />
             <Route path="/methods" element={<Methods meta={metaOnly} />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       )}

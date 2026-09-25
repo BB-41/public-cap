@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-25",
-    "itemCount": 401,
+    "itemCount": 411,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -3386,7 +3386,7 @@
       "confidence": "reported",
       "source": {
         "label": "Arizona Athletics",
-        "url": "https://arizonawildcats.com/news/2025/11/17/arizona-athletics-and-casino-del-sol-announce-transformative-60-million-plus-stadium-naming-rights-partnership"
+        "url": "https://arizonawildcats.com/news/2025/11/17/football-arizona-athletics-and-casino-del-sol-announce-transformative-60-million-plus-stadium-naming-rights-partnership"
       },
       "field": "layers.apparel.naming"
     },
@@ -3401,7 +3401,7 @@
       "confidence": "reported",
       "source": {
         "label": "Illinois Athletics",
-        "url": "https://fightingillini.com/news/2025/9/9/larry-gies-makes-transformational-100-million-gift-to-illinois-athletics"
+        "url": "https://fightingillini.com/news/2025/9/9/football-larry-gies-makes-transformational-100-million-gift-to-illinois-athletics"
       },
       "field": "layers.apparel.naming"
     },
@@ -6028,6 +6028,160 @@
         "url": "https://app2.lla.state.la.us/publicreports.nsf/0/f5626f9d09f9522486258d8f006c2429/$file/00009a43.pdf?.7773098=&openelement="
       },
       "field": "capacity.mediaConference"
+    },
+    {
+      "id": "colorado-house-partial-2025-11-06",
+      "date": "2025-11-06",
+      "school": "colorado",
+      "schoolName": "Colorado",
+      "kind": "booked-nil",
+      "headline": "Sportico: Colorado made 262 House revenue-share payments totaling $7,672,052.88 in the first three months of the House era (July 1–September 30, 2025). Partial window, not a full-year total and not a leftover.",
+      "figure": 7672052.88,
+      "confidence": "reported",
+      "source": {
+        "label": "Sportico (Daniel Libit, Nov. 6, 2025) — first three months of House revenue share",
+        "url": "https://www.sportico.com/leagues/college-sports/2025/college-athlete-pay-public-records-hide-1234875974/"
+      },
+      "field": "nil.booked",
+      "notes": "Extra Points (Nov. 10, 2025) reprints the same sentence. Item 44 $0 stays a companion. Do not invent leftover from a three-month window."
+    },
+    {
+      "id": "texas-tech-guarantee-2026-texas-tech-sam-houston",
+      "date": "2024-08-19",
+      "school": "texas-tech",
+      "schoolName": "Texas Tech",
+      "kind": "guarantee-game",
+      "headline": "Texas Tech pays Sam Houston a $1,000,000 football guarantee.",
+      "figure": 1000000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Aug. 19, 2024) — Texas Tech–Sam Houston contract via open records",
+        "url": "https://fbschedules.com/texas-tech-adds-sam-houston-uiw-to-future-football-schedules/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "texas-tech-guarantee-2026-texas-tech-kent-state",
+      "date": "2024-08-19",
+      "school": "texas-tech",
+      "schoolName": "Texas Tech",
+      "kind": "guarantee-game",
+      "headline": "Texas Tech pays Kent State a $1,500,000 football guarantee.",
+      "figure": 1500000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Aug. 19, 2024) — Texas Tech–Kent State contract via open records",
+        "url": "https://fbschedules.com/texas-tech-adds-sam-houston-uiw-to-future-football-schedules/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "lsu-guarantee-2026-lsu-mcneese",
+      "date": "2023-11-29",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "guarantee-game",
+      "headline": "LSU pays McNeese a $750,000 football guarantee. Game date later moved to Oct. 3, 2026; the dollar is the original contract amount.",
+      "figure": 750000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Nov. 29, 2023) — LSU–McNeese contract via LSU public records",
+        "url": "https://fbschedules.com/lsu-adds-mcneese-to-2026-2029-football-schedules/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Contract date was Sat, Sept. 12, 2026. Official slate is Sat, Oct. 3, 2026. The 2029 $775,000 is not a 2026 row."
+    },
+    {
+      "id": "kansas-guarantee-2026-kansas-middle-tennessee",
+      "date": "2025-08-11",
+      "school": "kansas",
+      "schoolName": "Kansas",
+      "kind": "guarantee-game",
+      "headline": "Kansas pays Middle Tennessee a $925,000 football guarantee. Game date later moved to Oct. 3, 2026; the dollar is the original contract amount.",
+      "figure": 925000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Aug. 11, 2025) — Kansas–Middle Tennessee contract via MTSU records",
+        "url": "https://fbschedules.com/middle-tennessee-to-get-big-payout-for-2027-auburn-football-game/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Contract date was Sat, Sept. 19, 2026. Kansas Athletics lists Oct. 3, 2026."
+    },
+    {
+      "id": "georgia-guarantee-2026-georgia-western-kentucky",
+      "date": "2026-09-11",
+      "school": "georgia",
+      "schoolName": "Georgia",
+      "kind": "guarantee-game",
+      "headline": "Georgia pays Western Kentucky a $1,900,000 football guarantee.",
+      "figure": 1900000,
+      "confidence": "reported",
+      "source": {
+        "label": "UGA Wire (Sept. 11, 2026) — Georgia pays Western Kentucky $1.9 million",
+        "url": "https://ugawire.usatoday.com/story/sports/college/bulldogs/football/2026/09/11/how-much-georgia-bulldogs-football-paying-western-kentucky/91679263007/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "georgia-guarantee-2026-georgia-tennessee-state",
+      "date": "2026-09-11",
+      "school": "georgia",
+      "schoolName": "Georgia",
+      "kind": "guarantee-game",
+      "headline": "Georgia pays Tennessee State a $600,000 football guarantee.",
+      "figure": 600000,
+      "confidence": "reported",
+      "source": {
+        "label": "UGA Wire (Sept. 11, 2026) — Tennessee State received $600,000",
+        "url": "https://ugawire.usatoday.com/story/sports/college/bulldogs/football/2026/09/11/how-much-georgia-bulldogs-football-paying-western-kentucky/91679263007/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "wisconsin-guarantee-2026-wisconsin-western-illinois",
+      "date": "2019-10-15",
+      "school": "wisconsin",
+      "schoolName": "Wisconsin",
+      "kind": "guarantee-game",
+      "headline": "Wisconsin pays Western Illinois a $575,000 football guarantee.",
+      "figure": 575000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Oct. 15, 2019) — Wisconsin–Western Illinois contract via FOIA",
+        "url": "https://fbschedules.com/western-illinois-to-play-at-wisconsin-in-2026/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "iowa-guarantee-2026-iowa-northern-iowa",
+      "date": "2022-06-27",
+      "school": "iowa",
+      "schoolName": "Iowa",
+      "kind": "guarantee-game",
+      "headline": "Iowa pays Northern Iowa a $700,000 football guarantee.",
+      "figure": 700000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (June 27, 2022) — Iowa–Northern Iowa contract via UNI public records",
+        "url": "https://fbschedules.com/iowa-adds-northern-iowa-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "indiana-guarantee-2026-indiana-western-kentucky",
+      "date": "2025-11-04",
+      "school": "indiana",
+      "schoolName": "Indiana",
+      "kind": "guarantee-game",
+      "headline": "Indiana pays Western Kentucky a $1,100,000 football guarantee.",
+      "figure": 1100000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Nov. 4, 2025) — Western Kentucky contracts via WKU records",
+        "url": "https://fbschedules.com/western-kentucky-adds-mercyhurst-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Dollar and Sept. 19 date are two sentences in the same WKU records story."
     }
   ]
 }
