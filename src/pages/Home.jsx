@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { money, moneyRange } from '../lib/format.js'
+import { money, moneyCited, moneyRange } from '../lib/format.js'
 import { item44Compact, leadBookedNil, leadHouseRemaining } from '../lib/compute.js'
 import Logo from '../components/Logo.jsx'
 import { defTitle } from '../lib/definitions.js'
@@ -104,6 +104,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
           capacityFy: latestExtract ? s.capacity?.fiscalYearPrimary || 'FY2025' : null,
           house,
           nil: booked.value,
+          nilApproximate: Boolean(booked.field?.approximate),
           nilCarry: booked.carry,
           nilLabel: booked.label,
           nilFrame: item44Compact(booked.field),
@@ -239,7 +240,7 @@ export default function Home({ schools, house, houseField, season, setSeason, in
                     <span className="pending-cell">pending</span>
                   ) : (
                     <>
-                      {money(r.nil)}
+                      {r.nilApproximate ? moneyCited(r.nil, { approximate: true }) : money(r.nil)}
                       {r.nilFrame || yearCompact(r.leftoverField, r.nilLabel) ? (
                         <div className="term-compact">{r.nilFrame || yearCompact(r.leftoverField, r.nilLabel)}</div>
                       ) : null}

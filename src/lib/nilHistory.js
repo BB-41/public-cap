@@ -479,9 +479,18 @@ export async function fetchRosterBooks(fetcher = fetch) {
   const run = Promise.all(
     ROSTER_YEARS.map((year) =>
       fetcher(`/data/rosters-${year}.json`)
-        .then((r) => (r.ok ? r.json() : emptyRosterBook()))
-        .then((book) => [year, book])
-        .catch(() => [year, emptyRosterBook()])
+        .then(async (r) => {
+          if (!r.ok) return [year, { schools: {}, missing: true }]
+          const text = await r.text()
+          try {
+            const data = JSON.parse(text)
+            if (!data || typeof data !== 'object' || !data.schools) return [year, { schools: {}, missing: true }]
+            return [year, data]
+          } catch {
+            return [year, { schools: {}, missing: true }]
+          }
+        })
+        .catch(() => [year, { schools: {}, missing: true }])
     )
   ).then((pairs) => {
     const map = Object.fromEntries(pairs)

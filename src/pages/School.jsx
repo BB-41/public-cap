@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
-import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
+import NotFound from './NotFound.jsx'
+import { money, moneyCited, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel, coachPayBlankLabel } from '../lib/format.js'
 import { formatLongDate } from '../lib/buyout.js'
 import {
   collectSources,
@@ -87,6 +88,8 @@ function TermBlock({ term }) {
 }
 
 function StaffPayCell({ field }) {
+  const blank = coachPayBlankLabel(field)
+  if (blank) return <span>{blank}</span>
   if (!field || field.value == null) return <span className="pending-cell">pending</span>
   return (
     <>
@@ -269,7 +272,7 @@ function StaffSection({ school, season }) {
   )
 }
 
-function ContractLink({ url, label }) {
+function ContractLink({ url, label, pay, isPrivate }) {
   if (url) {
     return (
       <a className="ext contract-link" href={url} title={label || undefined} target="_blank" rel="noreferrer">
@@ -277,7 +280,12 @@ function ContractLink({ url, label }) {
       </a>
     )
   }
-  return <span className="no-contract">no public contract</span>
+  // A cited dollar is not a claim that the contract is unpublished.
+  if (pay?.value != null) return null
+  const text = pay?.unavailable === 'private' || isPrivate
+    ? 'Contract not public'
+    : 'Contract not yet released'
+  return <span className="no-contract">{text}</span>
 }
 
 function BacksThis({ school }) {
@@ -742,7 +750,16 @@ function FieldSteps({ steps }) {
 
 function Field({ field, fallback = '—' }) {
   const windowSteps = datedSpentSteps(field)
+  const blank = coachPayBlankLabel(field)
   if (!field || (field.value == null && !windowSteps.length)) {
+    if (blank) {
+      return (
+        <div className="field disclosure-box">
+          <div className="field-val">{blank}</div>
+          <div className="field-meta">{field?.notes || fallback}</div>
+        </div>
+      )
+    }
     return (
       <div className="field pending-box">
         <div className="field-val">Pending</div>
@@ -750,17 +767,22 @@ function Field({ field, fallback = '—' }) {
       </div>
     )
   }
-  const multiWindow = windowSteps.length > 1
+  const partialWindow = Boolean(field.partialYear && windowSteps.length)
+  const multiWindow = windowSteps.length > 1 || partialWindow
   return (
     <div className="field">
       {multiWindow ? (
         <>
-          <p className="fine field-steps-lede">Dated windows — not a stacked total.</p>
+          <p className="fine field-steps-lede">
+            {partialWindow && windowSteps.length === 1
+              ? 'Dated partial window — not a full-year total.'
+              : 'Dated windows — not a stacked total.'}
+          </p>
           <FieldSteps steps={windowSteps} />
         </>
       ) : (
         <div className="field-val">
-          {moneyExact(field.value)} <i className={`dot ${field.confidence}`} />
+          {moneyCited(field.value, { approximate: field.approximate })} <i className={`dot ${field.confidence}`} />
         </div>
       )}
       <FieldMeta field={field} />
@@ -825,7 +847,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
     writeHidePending(on)
   }
 
-  if (!s) return <div className="page-wrap"><p>School not on the desk.</p></div>
+  if (!s) return <NotFound />
   const cap = s._cap
   const house = houseValueForSeason(meta, season)
   const houseField = s._houseField
@@ -883,8 +905,11 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
               <div className="eyebrow" title={defTitle('houseRemaining')}>
                 Leftover{leftoverLead.label ? ` · ${leftoverLead.label}` : leftoverLead.field?.partialYear ? ' · YTD' : ''}
               </div>
-              <div className="display">{money(leftoverLead.value)}</div>
+              <div className="display">
+                {Math.abs(leftoverLead.value) < 1_000_000 ? moneyExact(leftoverLead.value) : money(leftoverLead.value)}
+              </div>
               <div className="eyebrow">House remaining · booked</div>
+              {leftoverLead.field?.footnote ? <p className="fine">{leftoverLead.field.footnote}</p> : null}
             </>
           ) : (
             <>
@@ -978,7 +1003,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             <p className="lede tight">{ITEM44_COMPANION_LEDE}</p>
           </>
         )}
-        {!hasVal(s.nil.booked) && datedSpentSteps(s.nil.year1Lead?.booked).length > 1 && (
+        {!hasVal(s.nil.booked) && hasVal(s.nil.year1Lead?.booked) && (
           <div className="subfield">
             <div className="eyebrow">{s.nil.year1Lead.label}</div>
             <Field field={s.nil.year1Lead.booked} />
@@ -1160,7 +1185,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         <section>
           <h2>Football coach</h2>
           <div className="coach-name">{s.coaches.football.name}</div>
-          <ContractLink url={s.coaches.football.contractUrl} label={s.coaches.football.term?.source} />
+          <ContractLink url={s.coaches.football.contractUrl} label={s.coaches.football.term?.source} pay={s.coaches.football.pay} isPrivate={s.private} />
           <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>
           <CoachPayField pay={s.coaches.football.pay} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
@@ -1180,7 +1205,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         <section>
           <h2>Men’s basketball coach</h2>
           <div className="coach-name">{s.coaches.mbb.name}</div>
-          <ContractLink url={s.coaches.mbb.contractUrl} label={s.coaches.mbb.term?.source} />
+          <ContractLink url={s.coaches.mbb.contractUrl} label={s.coaches.mbb.term?.source} pay={s.coaches.mbb.pay} isPrivate={s.private} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
           <TermBlock term={s.coaches.mbb.term} />
           <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>

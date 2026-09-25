@@ -51,7 +51,7 @@ export const DEFS = {
   },
   coachPay: {
     label: 'Coach pay',
-    text: 'Annual pay for the chair of record in the selected football season. A current-chair file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. A new hire’s number is not copied onto a prior chair. This year’s check, not lifetime wealth. Incentives stay out of the annual cell.',
+    text: 'Annual pay for the chair of record in the selected football season. A current-chair file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. A new hire’s number is not copied onto a prior chair. This year’s check, not lifetime wealth. Incentives stay out of the annual cell. A private-school blank is labeled “Contract not public.” A public chair whose contract is not yet released is labeled “Contract not yet released.” A same-chair prior-year dollar on the 2026 card is labeled with that year and is not a 2026 schedule. Pending means we looked and do not have a number. We do not invent a dollar.',
   },
   buyout: {
     label: 'Buyout overhang',

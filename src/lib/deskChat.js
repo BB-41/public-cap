@@ -16,7 +16,7 @@ import {
   leadHouseRemaining,
 } from './compute.js'
 import { DEFS } from './definitions.js'
-import { money, moneyExact, moneyRange } from './format.js'
+import { coachPayBlankLabel, money, moneyCited, moneyExact, moneyRange } from './format.js'
 import { modeledNilForSeason } from './nilModel.js'
 import {
   industryRosterEstimate,
@@ -564,10 +564,21 @@ function bookedIsPreCap(raw, booked) {
   return booked.value === pre.value && isItem44Field(booked.field)
 }
 
+function bookedMoney(booked) {
+  if (booked.field?.approximate) return moneyCited(booked.value, { approximate: true })
+  if (booked.field?.partialYear || datedSpentSteps(booked.field).length) return moneyExact(booked.value)
+  return money(booked.value)
+}
+
 function preCapLine(raw, schoolName) {
   const pre = rawPreCap(raw)
   if (!pre || !isItem44Field(pre)) return null
-  return `${schoolName} FY2025 MFRS Item 44 Institutional NIL Revenue Share is ${money(pre.value)} — institutional only, pre-House (year ended Jun 30 2025). Not House Year 1 spent (that cell stays pending). Not collective or total NIL.`
+  const house = raw?.nil?.booked
+  const houseBooked = house && house.value != null && !isItem44Field(house)
+  const houseBit = houseBooked
+    ? 'Not House Year 1 spent. The House cell is a separate dated window, not this Item 44 line.'
+    : 'Not House Year 1 spent (that cell stays pending).'
+  return `${schoolName} FY2025 MFRS Item 44 Institutional NIL Revenue Share is ${money(pre.value)} — institutional only, pre-House (year ended Jun 30 2025). ${houseBit} Not collective or total NIL.`
 }
 
 function layerFor(school, layers) {
@@ -950,10 +961,14 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, qu
       } else {
         const yl = yearLabel(booked)
         const windows = spentWindowsLine(booked.field)
+        const bookedDisplay = bookedMoney(booked)
+        const partialBit = booked.field?.partialYear
+          ? ' Partial window only — not a full-year House total and not a leftover.'
+          : ''
         lines.push(
           windows
-            ? `${school.name} booked NIL is ${moneyExact(booked.value)}${yl ? ` (${yl})` : ''}. ${windows} Booked — FOIA / MFRS / counsel. Not modeled.`
-            : `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''}. Booked — FOIA / MFRS / counsel. Not modeled.`,
+            ? `${school.name} booked NIL is ${bookedDisplay}${yl ? ` (${yl})` : ''}. ${windows} Booked — FOIA / MFRS / counsel. Not modeled.${partialBit}`
+            : `${school.name} booked NIL is ${bookedDisplay}${yl ? ` (${yl})` : ''}. Booked — FOIA / MFRS / counsel. Not modeled.${partialBit}`,
         )
         facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
         const aside = preCapLine(raw, school.name)
@@ -1495,7 +1510,9 @@ function rosterAnswer(school, rosters, season) {
   const links = [{ to: schoolHref(school.id, season), label: `${school.name} roster` }]
   if (!players.length) {
     return {
-      text: `No verified public football roster names on the desk for ${school.name} this season. See the school page.`,
+      text: rosters?.missing
+        ? `The ${season} roster file is not on the desk, so public football names for ${school.name} are not loaded. See the school page.`
+        : `No verified public football roster names on the desk for ${school.name} this season. See the school page.`,
       links,
       suggested: SUGGESTED_PROMPTS.slice(0, 3),
     }
@@ -1534,9 +1551,19 @@ function coachAnswer(school, coach, season) {
   }
   const lines = [`${school.name} football chair: ${coach.name}.`]
   const facts = []
+  const payBlank = coachPayBlankLabel(coach.pay)
   if (hasVal(coach.pay)) {
-    lines.push(`Annual pay ${money(coach.pay.value)} (${mark(coach.pay)}). This year’s check, not lifetime wealth.`)
-    facts.push(factLine('Coach pay', coach.pay.value, { mark: mark(coach.pay) }))
+    if (coach.pay.yearLabel) {
+      lines.push(
+        `Annual pay ${moneyExact(coach.pay.value)} is the cited ${coach.pay.yearLabel} cell for this chair (${mark(coach.pay)}). Not a ${season} contract-year schedule.`,
+      )
+    } else {
+      lines.push(`Annual pay ${money(coach.pay.value)} (${mark(coach.pay)}). This year’s check, not lifetime wealth.`)
+    }
+    facts.push(factLine('Coach pay', coach.pay.value, { mark: mark(coach.pay), note: coach.pay.yearLabel || null }))
+  } else if (payBlank) {
+    lines.push(`Annual pay: ${payBlank}. We do not invent a dollar.`)
+    facts.push(`Coach pay: ${payBlank}`)
   } else {
     lines.push('Coach pay is pending — we do not invent a dollar.')
   }
@@ -1647,6 +1674,7 @@ function guaranteeGameLine(game, schools) {
     bits.push(`Band ${moneyExact(game.bandAmount)} is a separate cell — not the football guarantee.`)
   }
   if (game.amount === 0) bits.push('$0 is the cited contract cell, not pending.')
+  if (game.dateNote) bits.push(game.dateNote)
   return bits.join(' ')
 }
 
@@ -2302,10 +2330,14 @@ function nilCoverageAnswer(raw, season, includeAlumni, desk) {
       const yl = yearLabel(booked)
       const src = booked.field?.source ? ` Source: ${booked.field.source}.` : ''
       const windows = spentWindowsLine(booked.field)
+      const bookedDisplay = bookedMoney(booked)
+      const partialBit = booked.field?.partialYear
+        ? ' Partial window only — not a full-year House total and not a leftover.'
+        : ''
       lines.push(
         windows
-          ? `${school.name} booked NIL is ${moneyExact(booked.value)}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} ${windows} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`
-          : `${school.name} booked NIL is ${money(booked.value)}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.`,
+          ? `${school.name} booked NIL is ${bookedDisplay}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} ${windows} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.${partialBit}`
+          : `${school.name} booked NIL is ${bookedDisplay}${yl ? ` (${yl})` : ''} — ${mark(booked.field, 'reported')}.${src} That is the official institutional cite on the desk (FOIA / MFRS / counsel). Not modeled.${partialBit}`,
       )
       facts.push(factLine('Booked NIL', booked.value, { mark: mark(booked.field, 'reported'), note: yl }))
       const aside = preCapLine(raw, school.name)
