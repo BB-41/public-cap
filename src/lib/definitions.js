@@ -17,6 +17,10 @@ export const DEFS = {
     label: 'Booked NIL',
     text: 'FOIA, MFRS institutional NIL, or counsel spent totals we can cite. Collective Form 990s sit on a separate lane and never overwrite booked House / Item 44. Empty means pending — we do not have a number, not that spend is zero. Booked is the official institutional number when it exists.',
   },
+  revenueShareBySport: {
+    label: 'Revenue share by sport',
+    text: 'A stated split or a filed by-sport figure from a named athletic director or a filed document, with a source link. Shown only when that cite exists. Approximate marks stay approximate. Penn State’s lines are FY2025 (July 2024–June 2025), filed before House payments began, and are not the 2025–26 House cap year. Not money shown as spent in that year. Not House spent, not booked NIL, not capacity, and not a ranking.',
+  },
   nilCollective990: {
     label: 'Collective 990',
     text: 'A third-party 501(c)(3) (or other public Form 990) line that names grants to individuals, athlete service compensation, or student-athlete appearances. Lagged. Not a House spent total, not Item 44, not a player contract. Never added to booked NIL, pre-cap, capacity, or the booked-only rank. Position allocation stays on booked-then-modeled only.',

@@ -113,6 +113,18 @@ export default function Methods({ meta: metaProp }) {
         </dd>
         <dt>Booked NIL</dt>
         <dd>FOIA ledgers, MFRS “Institutional NIL Revenue Share,” or counsel spent totals we can cite. Collective Form 990s live on a separate lane and never overwrite booked House / Item 44. Empty means pending — we do not have a number, not that spend is zero. Booked remains the official institutional number when it exists (today: Louisville and Kentucky).</dd>
+        <dt>Revenue share by sport</dt>
+        <dd>
+          A display-only block on a school page when a named athletic director or a filed document
+          states a by-sport split. Dollars and percents are the ones they stated or filed.
+          Approximate marks stay approximate. A school with no such cite shows nothing — not zeros.
+          Penn State’s lines are the FY2025 NCAA report (July 2024–June 2025), filed before House
+          payments began, and are not the 2025–26 House cap year. NC State’s board figures and its
+          records release are labeled separately; the records release includes scholarships and Alston
+          awards and is not revenue share alone. Texas Tech is an announced plan. A newsroom paraphrase
+          is labeled as a paraphrase. These figures are not House spent, not booked NIL, not capacity,
+          and they do not enter rankings or the compare page. The season picker does not change them.
+        </dd>
         <dt>Collective 990</dt>
         <dd>
           A third-party Form 990 line that names grants to individuals, athlete service compensation, or student-athlete appearances.

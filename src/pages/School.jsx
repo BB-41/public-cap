@@ -53,6 +53,7 @@ import { buildSchoolNilHistory, fetchRosterBooks } from '../lib/nilHistory.js'
 import AlumniToggle from '../components/AlumniToggle.jsx'
 import { ContractFiles } from '../components/ContractFiles.jsx'
 import { BuyoutRuleLine, BuyoutStepTape, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
+import RevenueShareBySport from '../components/RevenueShareBySport.jsx'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -1046,6 +1047,8 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           </p>
         )}
       </section>
+
+      <RevenueShareBySport schoolId={s.id} />
 
       <IndustryRosterEstimateLane
         school={s}
