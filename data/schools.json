@@ -63,7 +63,7 @@
     },
     "blockers": [
       "College Scorecard API key not used; official earnings and UGDS from the June 2026 Most Recent Institution file (collegescorecard.ed.gov/data) for the 52 added schools. The original 16 keep their College Transitions Dec 2025 Scorecard compilation figures (same Scorecard median, earlier compile).",
-      "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions.",
+      "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA. Where a FY2025 NCAA membership report, NCAA agreed-upon procedures statement, or athletic-association audit was opened, ticket sales, contributions, and royalties/sponsorships replace the peer-scaled estimates and are tagged reported with the filing URL and date. Category 9 in-kind is not folded into contributions. Conference media lines are unchanged. Public schools whose FY2025 filing was not verified keep the labeled desk estimate. Private schools stay a revenue gap.",
       "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school cells stay pending.",
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
       "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (coordinator letter R013976-090126: $17,999,479.04 Jul 1 2025–Jun 30 2026 and $4,808,560.63 Jul 1–Aug 31 2026, not stacked; $13.5M HPM YTD hold replaced). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
@@ -1848,31 +1848,31 @@
           "notes": "SEC floor was $70.3M. We use the school's MFRS media+conference stack so we do not double-count the floor. Same hosted PDF as Category 52/34."
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 19416571,
+          "confidence": "reported",
+          "source": "Arkansas FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf",
+          "asOf": "2026-01-29",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 24000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 63481717,
+          "confidence": "reported",
+          "source": "Arkansas FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf",
+          "asOf": "2026-01-29",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 37051389,
+          "confidence": "reported",
+          "source": "Arkansas FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://arkansasrazorbacks.com/pdf/athletics/ncaa-membership/2024-25.pdf",
+          "asOf": "2026-01-29",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 0,
@@ -5098,31 +5098,31 @@
           "notes": "School-level 990 not independently extracted. Using conference floor as estimated media/conference flow."
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 28537957,
+          "confidence": "reported",
+          "source": "Florida University Athletic Association FY2025 audited financial statements — Royalties and sponsorships",
+          "url": "https://floridagators.com/documents/download/2025/9/22/UAA_Financial_Statements_2024_2025.pdf",
+          "asOf": "2025-09-22",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "University Athletic Association audited financial statements, year ended June 30, 2025 (column headed 2025). Operating line. Capital contributions are a separate line and are not included. This is the athletic-association audit, not an MFRS category printout."
         },
         "tickets": {
-          "value": 24000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 49082356,
+          "confidence": "reported",
+          "source": "Florida University Athletic Association FY2025 audited financial statements — Ticket sales",
+          "url": "https://floridagators.com/documents/download/2025/9/22/UAA_Financial_Statements_2024_2025.pdf",
+          "asOf": "2025-09-22",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "University Athletic Association audited financial statements, year ended June 30, 2025 (column headed 2025). Operating line. Capital contributions are a separate line and are not included. This is the athletic-association audit, not an MFRS category printout."
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 42345758,
+          "confidence": "reported",
+          "source": "Florida University Athletic Association FY2025 audited financial statements — Contributions",
+          "url": "https://floridagators.com/documents/download/2025/9/22/UAA_Financial_Statements_2024_2025.pdf",
+          "asOf": "2025-09-22",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "University Athletic Association audited financial statements, year ended June 30, 2025 (column headed 2025). Operating line. Capital contributions are a separate line and are not included. This is the athletic-association audit, not an MFRS category printout."
         },
         "studentFees": {
           "value": 2571952,
@@ -10080,31 +10080,31 @@
           "notes": "SEC floor was $70.3M. We use the school's AUP media+conference stack so we do not double-count the floor. Same hosted AUP as Category 34."
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 5056844,
+          "confidence": "reported",
+          "source": "LSU FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://ath-ems.lsu.edu/prr/contracts/NCAA%20Financial%20Reports/NCAA%20Financial%20Report%20-%20FY25.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 24000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 53627722,
+          "confidence": "reported",
+          "source": "LSU FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://ath-ems.lsu.edu/prr/contracts/NCAA%20Financial%20Reports/NCAA%20Financial%20Report%20-%20FY25.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 65702463,
+          "confidence": "reported",
+          "source": "LSU FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://ath-ems.lsu.edu/prr/contracts/NCAA%20Financial%20Reports/NCAA%20Financial%20Report%20-%20FY25.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 0,
@@ -15143,7 +15143,7 @@
       "color": "#841617",
       "capacity": {
         "fiscalYearPrimary": "FY2025",
-        "fiscalYearNote": "FY2025 SEC distribution is a phase-in ($2.6M cited). Tickets/sponsorships/contributions are desk estimates; media is the cited phase-in only.",
+        "fiscalYearNote": "FY2025 SEC distribution is a phase-in ($2.6M cited) and stays on the media line. Tickets, contributions, and sponsorships are the FY2025 NCAA report lines from the Sooners on SI open-records table (Feb 12, 2026).",
         "mediaConference": {
           "value": 2600000,
           "confidence": "reported",
@@ -15154,31 +15154,31 @@
           "notes": "Cited phase-in, not a full SEC share. Not blended with a prior-year Big 12 check."
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 19200045,
+          "confidence": "reported",
+          "source": "Sooners on SI — Oklahoma FY2025 NCAA financial report (open-records copy) — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://www.si.com/college/oklahoma/football/oklahoma-takes-financial-hit-with-early-move-to-sec-but-set-up-for-brighter-days-ahead-01kh9cm770jy",
+          "asOf": "2026-02-12",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "Sooners on SI (Feb 12, 2026) table of Oklahoma's FY2025 NCAA financial report, obtained by open-records request; the school filed the report Jan 14, 2026. The hosted NCAA PDF was not posted. Category dollars below are the article's table, not a rounded retelling."
         },
         "tickets": {
-          "value": 24000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 54512302,
+          "confidence": "reported",
+          "source": "Sooners on SI — Oklahoma FY2025 NCAA financial report (open-records copy) — Category 1 Ticket Sales",
+          "url": "https://www.si.com/college/oklahoma/football/oklahoma-takes-financial-hit-with-early-move-to-sec-but-set-up-for-brighter-days-ahead-01kh9cm770jy",
+          "asOf": "2026-02-12",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "Sooners on SI (Feb 12, 2026) table of Oklahoma's FY2025 NCAA financial report, obtained by open-records request; the school filed the report Jan 14, 2026. The hosted NCAA PDF was not posted. Category dollars below are the article's table, not a rounded retelling."
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 92923040,
+          "confidence": "reported",
+          "source": "Sooners on SI — Oklahoma FY2025 NCAA financial report (open-records copy) — Category 8 Contributions",
+          "url": "https://www.si.com/college/oklahoma/football/oklahoma-takes-financial-hit-with-early-move-to-sec-but-set-up-for-brighter-days-ahead-01kh9cm770jy",
+          "asOf": "2026-02-12",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "Sooners on SI (Feb 12, 2026) table of Oklahoma's FY2025 NCAA financial report, obtained by open-records request; the school filed the report Jan 14, 2026. The hosted NCAA PDF was not posted. Category dollars below are the article's table, not a rounded retelling. Category 9 in-kind is not in this contributions line."
         },
         "studentFees": {
           "value": 0,
@@ -18478,31 +18478,31 @@
           "notes": "SEC floor was $70.3M. We use the school's AUP media+conference stack so we do not double-count the floor. Same hosted AUP as Category 52/34."
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 10684070,
+          "confidence": "reported",
+          "source": "South Carolina FY2025 NCAA agreed-upon procedures — Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf",
+          "asOf": "2025-10-29",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "University of South Carolina NCAA agreed-upon procedures statement of revenues and expenses, year ended June 30, 2025 (CliftonLarsonAllen, Oct 29, 2025). Department total column."
         },
         "tickets": {
-          "value": 24000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 33353886,
+          "confidence": "reported",
+          "source": "South Carolina FY2025 NCAA agreed-upon procedures — Ticket Sales",
+          "url": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf",
+          "asOf": "2025-10-29",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "University of South Carolina NCAA agreed-upon procedures statement of revenues and expenses, year ended June 30, 2025 (CliftonLarsonAllen, Oct 29, 2025). Department total column."
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 17503606,
+          "confidence": "reported",
+          "source": "South Carolina FY2025 NCAA agreed-upon procedures — Contributions",
+          "url": "https://sc.edu/about/offices_and_divisions/controller/documents/usc_columbia_ncaa_aup_report_2025.pdf",
+          "asOf": "2025-10-29",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "University of South Carolina NCAA agreed-upon procedures statement of revenues and expenses, year ended June 30, 2025 (CliftonLarsonAllen, Oct 29, 2025). Department total column. In-kind is a separate line and is not included."
         },
         "studentFees": {
           "value": 0,
@@ -26516,31 +26516,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 8725169,
+          "confidence": "reported",
+          "source": "Illinois FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf",
+          "asOf": "2026-01-22",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 26000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 29973328,
+          "confidence": "reported",
+          "source": "Illinois FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf",
+          "asOf": "2026-01-22",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 50481505,
+          "confidence": "reported",
+          "source": "Illinois FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://fightingillini.com/documents/download/2026/1/29/FY25_IL_NCAA_Full_Report__Revised_1-22-26_.pdf",
+          "asOf": "2026-01-22",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 3639531,
@@ -36190,31 +36190,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 13006804,
+          "confidence": "reported",
+          "source": "Minnesota FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf",
+          "asOf": "2025-12-19",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 26000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 19598839,
+          "confidence": "reported",
+          "source": "Minnesota FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf",
+          "asOf": "2025-12-19",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 22368997,
+          "confidence": "reported",
+          "source": "Minnesota FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://gophersports.com/documents/download/2026/1/20/Minnesota_FY25_NCAA_Online_Report_-_FINAL_01.14.26.pdf",
+          "asOf": "2025-12-19",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 0,
@@ -40949,13 +40949,13 @@
           "notes": "Includes CFP title premium. Dispatch also reported $64.9M media rights as a subset; we use the 990 distribution as the media/conference flow so we do not double-count."
         },
         "sponsorships": {
-          "value": 40000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Ohio State does not break out royalties/sponsorships in the public FY2025 news release. Scaled from peer Power programs with published Category 15.",
-          "url": "https://news.osu.edu/ohio-state-athletics-sets-record-with-336m-in-fy25-revenue-after-national-championship-season/",
-          "asOf": "2026-01",
+          "value": 42770263,
+          "confidence": "reported",
+          "source": "Ohio State FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://news.osu.edu/download/c91b5f24-f009-4455-81eb-4b89b108f1bc/fy25ncaamembershipreportfinal.pdf",
+          "asOf": "2026-01-13",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Nike/Learfield-scale program. Not a reported line."
+          "notes": "NCAA MFRS Category 15 department total for FY2025. Replaces the residual desk estimate. Tickets and contributions on this desk already matched this report and were left in place."
         },
         "tickets": {
           "value": 81650892,
@@ -44360,31 +44360,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 25114673,
+          "confidence": "reported",
+          "source": "Penn State FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://storage.googleapis.com/gopsusports-prod/2026/02/05/IW8b4ZXbrdkZIDoc9OFKuwsOMrNWoYNqwPs8w3Gl.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 26000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 50362976,
+          "confidence": "reported",
+          "source": "Penn State FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://storage.googleapis.com/gopsusports-prod/2026/02/05/IW8b4ZXbrdkZIDoc9OFKuwsOMrNWoYNqwPs8w3Gl.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 64557754,
+          "confidence": "reported",
+          "source": "Penn State FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://storage.googleapis.com/gopsusports-prod/2026/02/05/IW8b4ZXbrdkZIDoc9OFKuwsOMrNWoYNqwPs8w3Gl.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 0,
@@ -52364,28 +52364,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — no public Category 15 extract located quickly. Peer-scaled below Oregon.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025"
+          "value": 21732337,
+          "confidence": "reported",
+          "source": "Washington FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Husky Stadium gate, no FY2025 Category 1 extract located quickly.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025"
+          "value": 31138233,
+          "confidence": "reported",
+          "source": "Washington FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 30000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — contributions not independently confirmed for FY2025.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025"
+          "value": 52876796,
+          "confidence": "reported",
+          "source": "Washington FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://gohuskies.com/documents/download/2026/1/17/FY25_NCAA_FINAL.pdf",
+          "asOf": "2026-01-15",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 0,
@@ -53886,31 +53889,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 24757630,
+          "confidence": "reported",
+          "source": "Wisconsin FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
+          "asOf": "2025-12-22",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 26000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 38384715,
+          "confidence": "reported",
+          "source": "Wisconsin FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
+          "asOf": "2025-12-22",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 25581915,
+          "confidence": "reported",
+          "source": "Wisconsin FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://uwbadgers.com/documents/download/2026/1/16/Final_FY25_NCAA_Report.pdf",
+          "asOf": "2025-12-22",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 0,
@@ -63861,31 +63864,31 @@
           "notes": "Named ACC 990 grant $46,052,588. Floor was $42.8M. ProPublica hosts the FY2025 Form 990 (https://projects.propublica.org/nonprofits/organizations/560599082/202631349349301238/full). We do not replace already-reported Courier-Journal / WRAL school lines."
         },
         "sponsorships": {
-          "value": 14000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 9938436,
+          "confidence": "reported",
+          "source": "Georgia Tech Athletic Association FY2025 audited financial statements — Sponsorships",
+          "url": "https://controller.gatech.edu/sites/default/files/2025-10/GTAA%20FY25%20Audited%20Financial%20Statements.pdf",
+          "asOf": "2025-10",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "Georgia Tech Athletic Association audited financial statements, year ended June 30, 2025. Athletic-association audit line, not an MFRS category printout. The audit's sponsorships line. Multimedia rights are not restated into this cell."
         },
         "tickets": {
-          "value": 20000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 15294542,
+          "confidence": "reported",
+          "source": "Georgia Tech Athletic Association FY2025 audited financial statements — Ticket sales",
+          "url": "https://controller.gatech.edu/sites/default/files/2025-10/GTAA%20FY25%20Audited%20Financial%20Statements.pdf",
+          "asOf": "2025-10",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "Georgia Tech Athletic Association audited financial statements, year ended June 30, 2025. Athletic-association audit line, not an MFRS category printout."
         },
         "contributions": {
-          "value": 22000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 78598932,
+          "confidence": "reported",
+          "source": "Georgia Tech Athletic Association FY2025 audited financial statements — Contributions",
+          "url": "https://controller.gatech.edu/sites/default/files/2025-10/GTAA%20FY25%20Audited%20Financial%20Statements.pdf",
+          "asOf": "2025-10",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "Georgia Tech Athletic Association audited financial statements, year ended June 30, 2025. Athletic-association audit line, not an MFRS category printout. Premium seat licenses ($9,674,769) are a separate audit line and are not included here."
         },
         "studentFees": {
           "value": 6947958,
@@ -70092,31 +70095,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 14000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 23973222,
+          "confidence": "reported",
+          "source": "North Carolina FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf",
+          "asOf": "2026-02-03",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 20000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 32116531,
+          "confidence": "reported",
+          "source": "North Carolina FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf",
+          "asOf": "2026-02-03",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 22000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 39554448,
+          "confidence": "reported",
+          "source": "North Carolina FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://goheels.com/documents/download/2026/2/3/NCAAMembershipFinancialReport2025.pdf",
+          "asOf": "2026-02-03",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 8504951,
@@ -90183,31 +90186,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 14000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 12354633,
+          "confidence": "reported",
+          "source": "Colorado FY2025 NCAA agreed-upon procedures — Royalties, licensing, advertisement and sponsorships",
+          "url": "https://content.leg.colorado.gov/sites/default/files/documents/audits/2505F-B_university_of_colorado_boulder_ncaa_aup_fy25.pdf",
+          "asOf": "2026-01-13",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "Colorado Legislative Audit Committee NCAA agreed-upon procedures, statement of revenues and expenses, year ended June 30, 2025. Department total. Royalties, licensing, advertisement and sponsorships."
         },
         "tickets": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 27581300,
+          "confidence": "reported",
+          "source": "Colorado FY2025 NCAA agreed-upon procedures — Ticket sales",
+          "url": "https://content.leg.colorado.gov/sites/default/files/documents/audits/2505F-B_university_of_colorado_boulder_ncaa_aup_fy25.pdf",
+          "asOf": "2026-01-13",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "Colorado Legislative Audit Committee NCAA agreed-upon procedures, statement of revenues and expenses, year ended June 30, 2025. Department total. Ticket sales."
         },
         "contributions": {
-          "value": 22000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 18741651,
+          "confidence": "reported",
+          "source": "Colorado FY2025 NCAA agreed-upon procedures — Contributions",
+          "url": "https://content.leg.colorado.gov/sites/default/files/documents/audits/2505F-B_university_of_colorado_boulder_ncaa_aup_fy25.pdf",
+          "asOf": "2026-01-13",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "Colorado Legislative Audit Committee NCAA agreed-upon procedures, statement of revenues and expenses, year ended June 30, 2025. Department total. Contributions. In-kind is a separate line and is not included."
         },
         "studentFees": {
           "value": 1710502,
@@ -93332,31 +93335,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 14000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 2281324,
+          "confidence": "reported",
+          "source": "Iowa State FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 23693203,
+          "confidence": "reported",
+          "source": "Iowa State FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 22000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 28560875,
+          "confidence": "reported",
+          "source": "Iowa State FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://cyclones.com/documents/download/2026/1/16/NCAA_Financial_Report_-_FY25_-_FINAL.pdf",
+          "asOf": "2026-01-15",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 1819397,
@@ -94980,28 +94983,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 16000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for v1.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025"
+          "value": 12147484,
+          "confidence": "reported",
+          "source": "Kansas FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://kuathletics.com/documents/download/2026/1/15/FY_24-25_NCAA_Final_Report.pdf",
+          "asOf": "2026-01-09",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 22000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Allen Fieldhouse + Memorial Stadium. No FY2025 Category 1 extract.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
-          "fiscalYear": "FY2025"
+          "value": 26751470,
+          "confidence": "reported",
+          "source": "Kansas FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://kuathletics.com/documents/download/2026/1/15/FY_24-25_NCAA_Final_Report.pdf",
+          "asOf": "2026-01-09",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 28000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — below Power 4 median donations in FY2024 KN commentary (~$34M median).",
-          "url": "https://www.nilnomics.com/p/the-war-over-athletic-donations",
-          "asOf": "2024",
-          "fiscalYear": "FY2024"
+          "value": 42645502,
+          "confidence": "reported",
+          "source": "Kansas FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://kuathletics.com/documents/download/2026/1/15/FY_24-25_NCAA_Final_Report.pdf",
+          "asOf": "2026-01-09",
+          "fiscalYear": "FY2025",
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 0,
@@ -104282,31 +104288,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 14000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 15717133,
+          "confidence": "reported",
+          "source": "Utah FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf",
+          "asOf": "2026-01-14",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 14035708,
+          "confidence": "reported",
+          "source": "Utah FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf",
+          "asOf": "2026-01-14",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 22000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 49502956,
+          "confidence": "reported",
+          "source": "Utah FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://utahutes.com/documents/download/2026/1/21/FY25_NCAA_Revenue_and_Expense_Report.pdf",
+          "asOf": "2026-01-14",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 6458932,
@@ -105920,31 +105926,31 @@
           "fiscalYear": "FY2025"
         },
         "sponsorships": {
-          "value": 14000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 15 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 9550743,
+          "confidence": "reported",
+          "source": "West Virginia FY2025 NCAA Membership Financial Report — Category 15 Royalties, Licensing, Advertisement and Sponsorships",
+          "url": "https://wvusports.com/documents/download/2026/1/16/2025_NCAA__MFRS__Financial__Report.pdf",
+          "asOf": "2026-01-16",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 15 Royalties, Licensing, Advertisement and Sponsorships for FY2025."
         },
         "tickets": {
-          "value": 18000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 1 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 23573673,
+          "confidence": "reported",
+          "source": "West Virginia FY2025 NCAA Membership Financial Report — Category 1 Ticket Sales",
+          "url": "https://wvusports.com/documents/download/2026/1/16/2025_NCAA__MFRS__Financial__Report.pdf",
+          "asOf": "2026-01-16",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 1 department total for FY2025 (year ended Jun 30, 2025). All sports, not football-only."
         },
         "contributions": {
-          "value": 22000000,
-          "confidence": "estimated",
-          "source": "Desk estimate — Category 8 not extracted for this school in the 68-school expansion. Peer-scaled from conference programs with published stacks.",
-          "url": "https://www.knightnewhousedata.org/",
-          "asOf": "2026-08",
+          "value": 31342719,
+          "confidence": "reported",
+          "source": "West Virginia FY2025 NCAA Membership Financial Report — Category 8 Contributions",
+          "url": "https://wvusports.com/documents/download/2026/1/16/2025_NCAA__MFRS__Financial__Report.pdf",
+          "asOf": "2026-01-16",
           "fiscalYear": "FY2025",
-          "notes": "Estimate only. Not a reported line."
+          "notes": "NCAA MFRS Category 8 Contributions for FY2025. In-kind (Category 9) is not included."
         },
         "studentFees": {
           "value": 3948358,
