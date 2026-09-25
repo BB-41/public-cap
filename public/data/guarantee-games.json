@@ -23,7 +23,12 @@
       "Illinois → Southern Illinois $525,000 is booked from FBSchedules (Kevin Kelley, Oct. 3, 2018) via SIU public records. Memorial Stadium, Champaign, Sept. 19, 2026. The contract story does not name a separate band fee.",
       "Clemson → Georgia Southern $1,500,000 is booked from The State (Chapel Fowler, updated Sept. 9, 2026) via public records, due by Feb. 15, 2027. Band, cheerleaders, and mascot admission is complimentary — not a football-guarantee add-on. Clemson athletics confirms the game was played Sept. 12, 2026.",
       "Ohio State → Kent State $1,900,000 is booked from the Record-Courier (May 5, 2022) public-records contract and the Eleven Warriors public-records copy. Dallas Sports Journal (Sept. 12, 2026) names the same $1.9 million. The Sept. 5 Ball State $1.9 million is a separate row. Ticket language that includes the band is an allotment, not a band fee.",
-      "Youngstown State–Kentucky is not booked. A reported figure was not verified against a game that still happened; the schedule may have moved."
+      "Youngstown State–Kentucky is not booked. A reported figure was not verified against a game that still happened; the schedule may have moved.",
+      "Oklahoma → New Mexico $1,600,000 is booked from the Albuquerque Journal (Sean Reider, published Sept. 17, 2026, updated Sept. 18). The Journal reviewed the November 2019 contract for the Sept. 19 game at Gaylord Family–Oklahoma Memorial Stadium. A $250,000 partial was due before April 21, 2021 and is part of that $1.6 million, not a second check. 400 complimentary tickets are named. No separate band fee is named.",
+      "Auburn → Southern Miss $1,850,000 is booked from AL.com (Peter Rauterkus, Sept. 10, 2026), which obtained the contract for the Sept. 12 home opener at Jordan-Hare. Band admission up to 500 seats is complimentary inside the ticket allotment, not a separate band fee. The series was first set for Sept. 26, 2020 and moved after the shortened 2020 season; the dollar on this row is the 2026 contract copy.",
+      "South Carolina → Kent State $1,300,000 is booked from The State (Jordan Kaye, Sept. 1, 2026). The contract total is $1.3 million: $300,000 on or before Jan. 31, 2026 and $1 million on or before Jan. 31, 2027. The cell is the total, not either installment. Signed December 2025. No separate band fee is named.",
+      "South Carolina → Towson $550,000 is booked from The State (Jordan Kaye, Sept. 9, 2026). The September 2022 contract requires the full $550,000 on or before Jan. 31, 2027. Williams-Brice, Sept. 12, 2026. No separate band fee is named.",
+      "Florida State → New Mexico State $1,400,000 is booked from the Tallahassee Democrat (Dan Rorabaugh, Aug. 29, 2026). Payment was due by July 15. The official FSU slate lists Sat, Aug. 29, 2026; the story is dated that morning and calls it today’s game, while its TV box says Saturday, Aug. 30. The row date is the official slate. The same story names a Sept. 26 Central Arkansas buy game and does not state that dollar — the $450,000 stays on the May 1, 2025 open-records row. No separate band fee is named."
     ],
     "sources": [
       "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
@@ -54,7 +59,12 @@
       "The State (updated Sept. 9, 2026) — Clemson–Georgia Southern game contract via public records",
       "Clemson Athletics (Sept. 12, 2026) — Georgia Southern game played at Memorial Stadium",
       "Record-Courier (May 5, 2022) — Ohio State–Kent State contract via public records",
-      "Eleven Warriors (May 2022) — Ohio State–Kent State contract via public records"
+      "Eleven Warriors (May 2022) — Ohio State–Kent State contract via public records",
+      "Albuquerque Journal (Sept. 17, 2026) — Oklahoma–New Mexico contract",
+      "AL.com (Sept. 10, 2026) — Auburn–Southern Miss contract",
+      "The State (Sept. 1, 2026) — South Carolina–Kent State contract, $1.3 million total",
+      "The State (Sept. 9, 2026) — South Carolina–Towson contract",
+      "Tallahassee Democrat (Aug. 29, 2026) — Florida State–New Mexico State buy-game payout"
     ]
   },
   "cites": {
@@ -266,6 +276,41 @@
       "label": "Eleven Warriors (May 2022) — Ohio State–Kent State contract via public records",
       "url": "https://www.elevenwarriors.com/ohio-state-football/2022/05/130719/ohio-state-will-pay-kent-state-19-million-to-play-at-ohio-stadium-in-2026",
       "asOf": "2022-05",
+      "confidence": "reported"
+    },
+    "abqjournal-oklahoma-newmexico-2026": {
+      "id": "abqjournal-oklahoma-newmexico-2026",
+      "label": "Albuquerque Journal (Sept. 17, 2026; updated Sept. 18) — Oklahoma–New Mexico contract",
+      "url": "https://www.abqjournal.com/news/unms-trip-to-no-24-oklahoma-brings-a-big-payout-but-games-like-these-are-getting-harder-to-schedule/3124167",
+      "asOf": "2026-09-17",
+      "confidence": "reported"
+    },
+    "alcom-auburn-southernmiss-2026": {
+      "id": "alcom-auburn-southernmiss-2026",
+      "label": "AL.com (Sept. 10, 2026) — Auburn–Southern Miss contract",
+      "url": "https://www.al.com/auburnfootball/2026/09/how-much-is-auburn-paying-southern-miss-for-saturdays-game.html",
+      "asOf": "2026-09-10",
+      "confidence": "reported"
+    },
+    "thestate-southcarolina-kentstate-2026": {
+      "id": "thestate-southcarolina-kentstate-2026",
+      "label": "The State (Sept. 1, 2026) — South Carolina–Kent State contract, $1.3 million total",
+      "url": "https://www.thestate.com/sports/college/university-of-south-carolina/usc-football/article317046891.html",
+      "asOf": "2026-09-01",
+      "confidence": "reported"
+    },
+    "thestate-southcarolina-towson-2026": {
+      "id": "thestate-southcarolina-towson-2026",
+      "label": "The State (Sept. 9, 2026) — South Carolina–Towson contract",
+      "url": "https://www.thestate.com/sports/college/university-of-south-carolina/usc-football/article317158786.html",
+      "asOf": "2026-09-09",
+      "confidence": "reported"
+    },
+    "tallahassee-democrat-fsu-nmsu-2026": {
+      "id": "tallahassee-democrat-fsu-nmsu-2026",
+      "label": "Tallahassee Democrat (Aug. 29, 2026) — Florida State–New Mexico State buy-game payout",
+      "url": "https://www.tallahassee.com/story/sports/college/fsu/football/2026/08/29/florida-state-new-mexico-state-buy-game-payout/91465283007/",
+      "asOf": "2026-08-29",
       "confidence": "reported"
     }
   },
@@ -744,6 +789,76 @@
       "confidence": "reported",
       "citeIds": ["recordcourier-osu-kentstate-2026", "elevenwarriors-osu-kentstate-2026", "dallassportsjournal-texas-guarantees-2026"],
       "notes": "Ohio Stadium, Sat, Sept. 19, 2026. Record-Courier (May 5, 2022) obtained the game contract via public records: Kent State receives $1,900,000. The Eleven Warriors public-records copy names the same $1.9 million for Sept. 19, 2026. Dallas Sports Journal (Sept. 12, 2026) names that $1.9 million from the Eleven Warriors copies. This is not the Sept. 5 Ball State $1.9 million already booked. Kent State may purchase 3,500 tickets, including tickets for band members, plus 60 sideline passes — a ticket allotment, not a separate band fee. No return trip."
+    },
+    {
+      "id": "2026-oklahoma-new-mexico",
+      "season": 2026,
+      "date": "2026-09-19",
+      "payerSchoolId": "oklahoma",
+      "payeeLabel": "New Mexico",
+      "payeeSlug": "new-mexico",
+      "amount": 1600000,
+      "homeSchoolId": "oklahoma",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["abqjournal-oklahoma-newmexico-2026"],
+      "notes": "Gaylord Family–Oklahoma Memorial Stadium, Sat, Sept. 19, 2026. Albuquerque Journal (Sean Reider, published Sept. 17, 2026, updated Sept. 18) reviewed the November 2019 contract: New Mexico nets $1,600,000. A partial payment of $250,000 was due before April 21, 2021 and is part of that $1.6 million, not a second check. Oklahoma allotted 400 complimentary tickets. No separate band fee is named. One-off buy game."
+    },
+    {
+      "id": "2026-auburn-southern-miss",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "auburn",
+      "payeeLabel": "Southern Miss",
+      "payeeSlug": "southern-miss",
+      "amount": 1850000,
+      "homeSchoolId": "auburn",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["alcom-auburn-southernmiss-2026"],
+      "notes": "Jordan-Hare Stadium, Sat, Sept. 12, 2026. AL.com (Peter Rauterkus, Sept. 10, 2026) obtained the contract: Auburn pays Southern Miss $1,850,000. Southern Miss is allotted 5,000 tickets for sale, including complimentary band admission up to 500 seats, plus 500 complimentary tickets for staff and student-athlete guests and any unused band seats. That band admission is not a separate band fee and is not added to the football guarantee. 60 sideline passes. The series was first set for Sept. 26, 2020 and moved after the shortened 2020 season; the dollar on this row is the 2026 contract copy."
+    },
+    {
+      "id": "2026-south-carolina-kent-state",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "south-carolina",
+      "payeeLabel": "Kent State",
+      "payeeSlug": "kent-state",
+      "amount": 1300000,
+      "homeSchoolId": "south-carolina",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["thestate-southcarolina-kentstate-2026"],
+      "notes": "Williams-Brice Stadium, Sat, Sept. 5, 2026. The State (Jordan Kaye, Sept. 1, 2026) obtained the December 2025 contract. The football guarantee total is $1,300,000: $300,000 on or before Jan. 31, 2026 and $1,000,000 on or before Jan. 31, 2027. This cell is that total, not either installment. Kent State received 600 complimentary tickets and 4,000 additional tickets to sell, plus 60 sideline passes. No separate band fee is named. Not the Ohio State–Kent State $1.9 million row."
+    },
+    {
+      "id": "2026-south-carolina-towson",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "south-carolina",
+      "payeeLabel": "Towson",
+      "payeeSlug": "towson",
+      "amount": 550000,
+      "homeSchoolId": "south-carolina",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["thestate-southcarolina-towson-2026"],
+      "notes": "Williams-Brice Stadium, Sat, Sept. 12, 2026. The State (Jordan Kaye, Sept. 9, 2026): the September 2022 contract requires South Carolina to pay Towson the full $550,000 on or before Jan. 31, 2027. Towson received 600 complimentary tickets and 4,000 additional tickets to sell. No separate band fee is named. FCS buy game. The same story restates the Kent State appearance at $1.3 million, already booked on its own row."
+    },
+    {
+      "id": "2026-florida-state-new-mexico-state",
+      "season": 2026,
+      "date": "2026-08-29",
+      "payerSchoolId": "florida-state",
+      "payeeLabel": "New Mexico State",
+      "payeeSlug": "new-mexico-state",
+      "amount": 1400000,
+      "homeSchoolId": "florida-state",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["tallahassee-democrat-fsu-nmsu-2026"],
+      "notes": "Doak Campbell Stadium. Tallahassee Democrat (Dan Rorabaugh, Aug. 29, 2026): Florida State owed New Mexico State $1,400,000, to be paid by July 15. The official FSU slate lists Sat, Aug. 29, 2026. The story is dated that morning and calls it today’s game; its TV box says Saturday, Aug. 30. The row date is the official slate, not the TV box. No separate band fee is named. The same story names a Sept. 26 Central Arkansas buy game and does not state that dollar. The $450,000 stays on the May 1, 2025 open-records row."
     }
   ]
 }

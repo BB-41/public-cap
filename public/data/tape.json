@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-25",
-    "itemCount": 419,
+    "itemCount": 424,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6300,6 +6300,81 @@
       "source": {
         "label": "Record-Courier (May 5, 2022) — Ohio State–Kent State contract via public records",
         "url": "https://www.record-courier.com/story/sports/college/football/2022/05/05/kent-state-receive-1-9-million-playing-ohio-state/9643209002/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "oklahoma-guarantee-2026-oklahoma-new-mexico",
+      "date": "2026-09-17",
+      "school": "oklahoma",
+      "schoolName": "Oklahoma",
+      "kind": "guarantee-game",
+      "headline": "Oklahoma pays New Mexico a $1,600,000 football guarantee.",
+      "figure": 1600000,
+      "confidence": "reported",
+      "source": {
+        "label": "Albuquerque Journal (Sept. 17, 2026; updated Sept. 18) — Oklahoma–New Mexico contract",
+        "url": "https://www.abqjournal.com/news/unms-trip-to-no-24-oklahoma-brings-a-big-payout-but-games-like-these-are-getting-harder-to-schedule/3124167"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "auburn-guarantee-2026-auburn-southern-miss",
+      "date": "2026-09-10",
+      "school": "auburn",
+      "schoolName": "Auburn",
+      "kind": "guarantee-game",
+      "headline": "Auburn pays Southern Miss a $1,850,000 football guarantee.",
+      "figure": 1850000,
+      "confidence": "reported",
+      "source": {
+        "label": "AL.com (Sept. 10, 2026) — Auburn–Southern Miss contract",
+        "url": "https://www.al.com/auburnfootball/2026/09/how-much-is-auburn-paying-southern-miss-for-saturdays-game.html"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "south-carolina-guarantee-2026-south-carolina-kent-state",
+      "date": "2026-09-01",
+      "school": "south-carolina",
+      "schoolName": "South Carolina",
+      "kind": "guarantee-game",
+      "headline": "South Carolina pays Kent State a $1,300,000 football guarantee.",
+      "figure": 1300000,
+      "confidence": "reported",
+      "source": {
+        "label": "The State (Sept. 1, 2026) — South Carolina–Kent State contract, $1.3 million total",
+        "url": "https://www.thestate.com/sports/college/university-of-south-carolina/usc-football/article317046891.html"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "south-carolina-guarantee-2026-south-carolina-towson",
+      "date": "2026-09-09",
+      "school": "south-carolina",
+      "schoolName": "South Carolina",
+      "kind": "guarantee-game",
+      "headline": "South Carolina pays Towson a $550,000 football guarantee.",
+      "figure": 550000,
+      "confidence": "reported",
+      "source": {
+        "label": "The State (Sept. 9, 2026) — South Carolina–Towson contract",
+        "url": "https://www.thestate.com/sports/college/university-of-south-carolina/usc-football/article317158786.html"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "florida-state-guarantee-2026-florida-state-new-mexico-state",
+      "date": "2026-08-29",
+      "school": "florida-state",
+      "schoolName": "Florida State",
+      "kind": "guarantee-game",
+      "headline": "Florida State pays New Mexico State a $1,400,000 football guarantee.",
+      "figure": 1400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Tallahassee Democrat (Aug. 29, 2026) — Florida State–New Mexico State buy-game payout",
+        "url": "https://www.tallahassee.com/story/sports/college/fsu/football/2026/08/29/florida-state-new-mexico-state-buy-game-payout/91465283007/"
       },
       "field": "guaranteeGames"
     }
