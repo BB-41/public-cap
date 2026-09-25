@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-25",
-    "itemCount": 411,
+    "itemCount": 419,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6182,6 +6182,126 @@
       },
       "field": "guaranteeGames",
       "notes": "Dollar and Sept. 19 date are two sentences in the same WKU records story."
+    },
+    {
+      "id": "florida-state-guarantee-2026-florida-state-central-arkansas",
+      "date": "2025-05-01",
+      "school": "florida-state",
+      "schoolName": "Florida State",
+      "kind": "guarantee-game",
+      "headline": "Florida State pays Central Arkansas a $450,000 football guarantee.",
+      "figure": 450000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (May 1, 2025) — Florida State–Central Arkansas contract via University of Central Arkansas open records",
+        "url": "https://fbschedules.com/florida-state-adds-fcs-opponent-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "texas-guarantee-2026-texas-utsa",
+      "date": "2026-09-17",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "guarantee-game",
+      "headline": "Texas pays UTSA a $1,700,000 football guarantee.",
+      "figure": 1700000,
+      "confidence": "reported",
+      "source": {
+        "label": "Texas Public Radio (Sept. 17, 2026) — Texas pays UTSA $1.7 million",
+        "url": "https://www.tpr.org/sports/2026-09-17/utsa-heads-to-no-1-texas-as-a-30-point-underdog-and-coach-traylor-questions-games-like-this"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "texas-guarantee-2026-texas-texas-state",
+      "date": "2026-09-12",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "guarantee-game",
+      "headline": "Texas pays Texas State a $1,400,000 football guarantee.",
+      "figure": 1400000,
+      "confidence": "reported",
+      "source": {
+        "label": "Dallas Sports Journal (Sept. 12, 2026) — Texas nonconference payments, citing Bohls / Houston Chronicle FOIA for the Ohio State travel figure",
+        "url": "https://dallassportsjournal.com/texas-ohio-state-500000-payment-game-contract/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "texas-guarantee-2026-texas-ohio-state",
+      "date": "2026-09-12",
+      "school": "texas",
+      "schoolName": "Texas",
+      "kind": "guarantee-game",
+      "headline": "Texas pays Ohio State a $500,000 football guarantee.",
+      "figure": 500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Dallas Sports Journal (Sept. 12, 2026) — Texas nonconference payments, citing Bohls / Houston Chronicle FOIA for the Ohio State travel figure",
+        "url": "https://dallassportsjournal.com/texas-ohio-state-500000-payment-game-contract/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "ohio-state-guarantee-received-2026-texas-ohio-state",
+      "date": "2026-09-12",
+      "school": "ohio-state",
+      "schoolName": "Ohio State",
+      "kind": "guarantee-game",
+      "headline": "Ohio State receives a $500,000 football guarantee from Texas.",
+      "figure": 500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Dallas Sports Journal (Sept. 12, 2026) — Texas nonconference payments, citing Bohls / Houston Chronicle FOIA for the Ohio State travel figure",
+        "url": "https://dallassportsjournal.com/texas-ohio-state-500000-payment-game-contract/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "illinois-guarantee-2026-illinois-southern-illinois",
+      "date": "2018-10-03",
+      "school": "illinois",
+      "schoolName": "Illinois",
+      "kind": "guarantee-game",
+      "headline": "Illinois pays Southern Illinois a $525,000 football guarantee.",
+      "figure": 525000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Oct. 3, 2018) — Illinois–Southern Illinois contract via SIU public records",
+        "url": "https://fbschedules.com/southern-illinois-play-at-illinois-2026/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "clemson-guarantee-2026-clemson-georgia-southern",
+      "date": "2026-09-09",
+      "school": "clemson",
+      "schoolName": "Clemson",
+      "kind": "guarantee-game",
+      "headline": "Clemson pays Georgia Southern a $1,500,000 football guarantee.",
+      "figure": 1500000,
+      "confidence": "reported",
+      "source": {
+        "label": "The State (updated Sept. 9, 2026) — Clemson–Georgia Southern game contract via public records",
+        "url": "https://www.thestate.com/sports/college/acc/clemson-university/article317155612.html"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "ohio-state-guarantee-2026-ohio-state-kent-state",
+      "date": "2022-05-05",
+      "school": "ohio-state",
+      "schoolName": "Ohio State",
+      "kind": "guarantee-game",
+      "headline": "Ohio State pays Kent State a $1,900,000 football guarantee.",
+      "figure": 1900000,
+      "confidence": "reported",
+      "source": {
+        "label": "Record-Courier (May 5, 2022) — Ohio State–Kent State contract via public records",
+        "url": "https://www.record-courier.com/story/sports/college/football/2022/05/05/kent-state-receive-1-9-million-playing-ohio-state/9643209002/"
+      },
+      "field": "guaranteeGames"
     }
   ]
 }
