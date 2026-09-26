@@ -88,6 +88,9 @@
         } else if (p === '/guarantee-games') {
           title = 'Guarantee games — Public Cap'
           desc = 'How much larger (usually Power 4) schools pay smaller opponents to play them on the 2026 football schedule. Football guarantee stays distinct from band fees. Not House spent, not booked NIL, not coach buyouts. Empty without a FOIA or named newsroom cite.'
+        } else if (p === '/checkbook-bowl') {
+          title = 'Does the bigger spender win? — Public Cap'
+          desc = 'Does the bigger spender win? In every big college football game — both teams on the 68-school Power 4 plus Notre Dame desk, and at least one AP-ranked — the checkbook favorite is the school with the higher FY2025 EADA football expense. Final games move the record. Unplayed games stay upcoming. We do not invent dollars.'
         } else if (p === '/compare') {
           title = 'Compare capacity vs House vs NIL — Public Cap'
           desc = 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.'
@@ -126,6 +129,7 @@
         else if (p === '/buyout') href = '/data/desk.json'
         else if (p === '/coach-fa' || p.indexOf('/coach-fa/') === 0) href = '/data/coach-fa.json'
         else if (p === '/guarantee-games') href = '/data/guarantee-games.json'
+        else if (p === '/checkbook-bowl') href = '/data/checkbook-bowl.json'
         if (!href) return
         var l = document.createElement('link')
         l.rel = 'preload'
@@ -161,6 +165,7 @@
           <a href="/buyout">Buyout</a>
           <a href="/coach-fa">Offsets</a>
           <a href="/guarantee-games">Guarantees</a>
+          <a href="/checkbook-bowl">Checkbook</a>
           <a href="/methods">Methods</a>
         </nav>
       </header>
@@ -185,6 +190,7 @@
       <footer class="site-foot">
         Capacity is annual, not lifetime. Current-coach buyouts are overhang; paid buyouts are a separate tape.
         Football guarantees (buy games) are a separate cited lane — not House spent, not booked NIL.
+        The checkbook bowl asks whether the bigger football spender won the big game — FY2025 EADA football expense, both teams on the 68-school desk, at least one AP-ranked. Unplayed stays upcoming.
         Booked NIL stays official. Collective 990 is a separate cited lane, not House.
         Modeled NIL is a conference heuristic: House-era
         (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era

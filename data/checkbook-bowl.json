@@ -1,0 +1,738 @@
+{
+  "season": 2026,
+  "asOf": "2026-09-26",
+  "method": "A big game is both teams among the 68 schools on this desk (Power 4 plus Notre Dame) and at least one team in the AP top 25. The bigger spender is the school with the higher FY2025 EADA football expense. The checkbook wins when that school wins the game. A game moves the record only after it is final. An unplayed or in-progress game stays upcoming and does not get a winner, a score, or a biggerSpenderWon flag. Gap is the difference between the two filed expense totals. Equal spend is not in this book.",
+  "source": "Football spending is each school's FY2025 federal EADA filing, TOTAL_EXPENSE_ALL_Football, keyed by site school id. spendFy2025 is that filing for all 68 desk schools. Scores, the winner, and AP ranks are the logged ESPN results for 2026 weeks 1–4. Weeks 1–3 are final. Week 4 was not final when this book was written, including a Friday game that had a partial score and was left upcoming. No dollar in this file is estimated.",
+  "spendFy2025": {
+    "alabama": 81502191,
+    "arizona": 37795880,
+    "arizona-state": 50352139,
+    "arkansas": 57370871,
+    "auburn": 58724402,
+    "baylor": 41050130,
+    "boston-college": 41224780,
+    "byu": 44561032,
+    "california": 46721911,
+    "cincinnati": 30429185,
+    "clemson": 81136726,
+    "colorado": 42805019,
+    "duke": 47363558,
+    "florida": 51766013,
+    "florida-state": 83267924,
+    "georgia": 71107704,
+    "georgia-tech": 42709508,
+    "houston": 23271364,
+    "illinois": 48001399,
+    "indiana": 50207544,
+    "iowa": 50894414,
+    "iowa-state": 32337385,
+    "kansas": 34516494,
+    "kansas-state": 27087822,
+    "kentucky": 43281917,
+    "louisville": 30745125,
+    "lsu": 50738587,
+    "maryland": 35502618,
+    "miami": 88117956,
+    "michigan": 61663186,
+    "michigan-state": 48227813,
+    "minnesota": 45452693,
+    "mississippi-state": 37575575,
+    "missouri": 49316139,
+    "nc-state": 40535367,
+    "nebraska": 70574668,
+    "north-carolina": 49145749,
+    "northwestern": 37901761,
+    "notre-dame": 93255797,
+    "ohio-state": 92359309,
+    "oklahoma": 71184826,
+    "oklahoma-state": 32830617,
+    "ole-miss": 61846036,
+    "oregon": 60847472,
+    "penn-state": 77386097,
+    "pittsburgh": 47141722,
+    "purdue": 37193229,
+    "rutgers": 75922954,
+    "smu": 45315587,
+    "south-carolina": 55859501,
+    "stanford": 35992019,
+    "syracuse": 42090055,
+    "tcu": 59568339,
+    "tennessee": 61240437,
+    "texas": 70405628,
+    "texas-am": 60230146,
+    "texas-tech": 39745662,
+    "ucf": 38695138,
+    "ucla": 55205071,
+    "usc": 74014972,
+    "utah": 41410554,
+    "vanderbilt": 44124525,
+    "virginia": 33611796,
+    "virginia-tech": 37803976,
+    "wake-forest": 39399925,
+    "washington": 68921774,
+    "west-virginia": 35250569,
+    "wisconsin": 40903448
+  },
+  "games": [
+    {
+      "date": "2026-09-05T01:00Z",
+      "week": 1,
+      "home": {
+        "id": "stanford",
+        "spend": 35992019,
+        "score": 6
+      },
+      "away": {
+        "id": "miami",
+        "spend": 88117956,
+        "rank": 7,
+        "score": 45
+      },
+      "winner": "miami",
+      "biggerSpenderWon": true,
+      "gap": 52125937
+    },
+    {
+      "date": "2026-09-06T01:40Z",
+      "week": 1,
+      "home": {
+        "id": "lsu",
+        "spend": 50738587,
+        "rank": 11,
+        "score": 51
+      },
+      "away": {
+        "id": "clemson",
+        "spend": 81136726,
+        "score": 10
+      },
+      "winner": "lsu",
+      "biggerSpenderWon": false,
+      "gap": 30398139
+    },
+    {
+      "date": "2026-09-06T23:30Z",
+      "week": 1,
+      "home": {
+        "id": "ole-miss",
+        "spend": 61846036,
+        "rank": 9,
+        "score": 41
+      },
+      "away": {
+        "id": "louisville",
+        "spend": 30745125,
+        "rank": 24,
+        "score": 38
+      },
+      "winner": "ole-miss",
+      "biggerSpenderWon": true,
+      "gap": 31100911,
+      "neutral": true
+    },
+    {
+      "date": "2026-09-06T23:30Z",
+      "week": 1,
+      "home": {
+        "id": "notre-dame",
+        "spend": 93255797,
+        "rank": 4,
+        "score": 41
+      },
+      "away": {
+        "id": "wisconsin",
+        "spend": 40903448,
+        "score": 13
+      },
+      "winner": "notre-dame",
+      "biggerSpenderWon": true,
+      "gap": 52352349,
+      "neutral": true
+    },
+    {
+      "date": "2026-09-07T23:30Z",
+      "week": 1,
+      "home": {
+        "id": "florida-state",
+        "spend": 83267924,
+        "score": 24
+      },
+      "away": {
+        "id": "smu",
+        "spend": 45315587,
+        "rank": 19,
+        "score": 27
+      },
+      "winner": "smu",
+      "biggerSpenderWon": false,
+      "gap": 37952337
+    },
+    {
+      "date": "2026-09-12T00:00Z",
+      "week": 2,
+      "home": {
+        "id": "kansas",
+        "spend": 34516494,
+        "score": 21
+      },
+      "away": {
+        "id": "missouri",
+        "spend": 49316139,
+        "rank": 23,
+        "score": 38
+      },
+      "winner": "missouri",
+      "biggerSpenderWon": true,
+      "gap": 14799645
+    },
+    {
+      "date": "2026-09-12T16:00Z",
+      "week": 2,
+      "home": {
+        "id": "texas-am",
+        "spend": 60230146,
+        "rank": 10,
+        "score": 48
+      },
+      "away": {
+        "id": "arizona-state",
+        "spend": 50352139,
+        "score": 20
+      },
+      "winner": "texas-am",
+      "biggerSpenderWon": true,
+      "gap": 9878007
+    },
+    {
+      "date": "2026-09-12T16:00Z",
+      "week": 2,
+      "home": {
+        "id": "michigan",
+        "spend": 61663186,
+        "score": 17
+      },
+      "away": {
+        "id": "oklahoma",
+        "spend": 71184826,
+        "rank": 11,
+        "score": 10
+      },
+      "winner": "michigan",
+      "biggerSpenderWon": false,
+      "gap": 9521640
+    },
+    {
+      "date": "2026-09-12T17:30Z",
+      "week": 2,
+      "home": {
+        "id": "oklahoma-state",
+        "spend": 32830617,
+        "score": 39
+      },
+      "away": {
+        "id": "oregon",
+        "spend": 60847472,
+        "rank": 6,
+        "score": 31
+      },
+      "winner": "oklahoma-state",
+      "biggerSpenderWon": false,
+      "gap": 28016855
+    },
+    {
+      "date": "2026-09-12T19:30Z",
+      "week": 2,
+      "home": {
+        "id": "kentucky",
+        "spend": 43281917,
+        "score": 17
+      },
+      "away": {
+        "id": "alabama",
+        "spend": 81502191,
+        "rank": 12,
+        "score": 45
+      },
+      "winner": "alabama",
+      "biggerSpenderWon": true,
+      "gap": 38220274
+    },
+    {
+      "date": "2026-09-12T19:30Z",
+      "week": 2,
+      "home": {
+        "id": "byu",
+        "spend": 44561032,
+        "rank": 15,
+        "score": 28
+      },
+      "away": {
+        "id": "arizona",
+        "spend": 37795880,
+        "score": 17
+      },
+      "winner": "byu",
+      "biggerSpenderWon": true,
+      "gap": 6765152
+    },
+    {
+      "date": "2026-09-12T23:00Z",
+      "week": 2,
+      "home": {
+        "id": "georgia-tech",
+        "spend": 42709508,
+        "score": 24
+      },
+      "away": {
+        "id": "tennessee",
+        "spend": 61240437,
+        "rank": 18,
+        "score": 45
+      },
+      "winner": "tennessee",
+      "biggerSpenderWon": true,
+      "gap": 18530929
+    },
+    {
+      "date": "2026-09-12T23:30Z",
+      "week": 2,
+      "home": {
+        "id": "iowa",
+        "spend": 50894414,
+        "rank": 21,
+        "score": 16
+      },
+      "away": {
+        "id": "iowa-state",
+        "spend": 32337385,
+        "score": 13
+      },
+      "winner": "iowa",
+      "biggerSpenderWon": true,
+      "gap": 18557029
+    },
+    {
+      "date": "2026-09-12T23:30Z",
+      "week": 2,
+      "home": {
+        "id": "texas",
+        "spend": 70405628,
+        "rank": 4,
+        "score": 24
+      },
+      "away": {
+        "id": "ohio-state",
+        "spend": 92359309,
+        "rank": 1,
+        "score": 23
+      },
+      "winner": "texas",
+      "biggerSpenderWon": false,
+      "gap": 21953681
+    },
+    {
+      "date": "2026-09-13T02:30Z",
+      "week": 2,
+      "home": {
+        "id": "utah",
+        "spend": 41410554,
+        "rank": 20,
+        "score": 43
+      },
+      "away": {
+        "id": "arkansas",
+        "spend": 57370871,
+        "score": 10
+      },
+      "winner": "utah",
+      "biggerSpenderWon": false,
+      "gap": 15960317
+    },
+    {
+      "date": "2026-09-18T23:30Z",
+      "week": 3,
+      "home": {
+        "id": "wake-forest",
+        "spend": 39399925,
+        "score": 20
+      },
+      "away": {
+        "id": "miami",
+        "spend": 88117956,
+        "rank": 5,
+        "score": 33
+      },
+      "winner": "miami",
+      "biggerSpenderWon": true,
+      "gap": 48718031
+    },
+    {
+      "date": "2026-09-19T00:00Z",
+      "week": 3,
+      "home": {
+        "id": "texas-tech",
+        "spend": 39745662,
+        "rank": 13,
+        "score": 28
+      },
+      "away": {
+        "id": "houston",
+        "spend": 23271364,
+        "rank": 22,
+        "score": 26
+      },
+      "winner": "texas-tech",
+      "biggerSpenderWon": true,
+      "gap": 16474298
+    },
+    {
+      "date": "2026-09-19T16:00Z",
+      "week": 3,
+      "home": {
+        "id": "arkansas",
+        "spend": 57370871,
+        "score": 17
+      },
+      "away": {
+        "id": "georgia",
+        "spend": 71107704,
+        "rank": 2,
+        "score": 45
+      },
+      "winner": "georgia",
+      "biggerSpenderWon": true,
+      "gap": 13736833
+    },
+    {
+      "date": "2026-09-19T19:30Z",
+      "week": 3,
+      "home": {
+        "id": "louisville",
+        "spend": 30745125,
+        "rank": 23,
+        "score": 41
+      },
+      "away": {
+        "id": "smu",
+        "spend": 45315587,
+        "rank": 16,
+        "score": 31
+      },
+      "winner": "louisville",
+      "biggerSpenderWon": false,
+      "gap": 14570462
+    },
+    {
+      "date": "2026-09-19T19:30Z",
+      "week": 3,
+      "home": {
+        "id": "rutgers",
+        "spend": 75922954,
+        "score": 35
+      },
+      "away": {
+        "id": "usc",
+        "spend": 74014972,
+        "rank": 12,
+        "score": 42
+      },
+      "winner": "usc",
+      "biggerSpenderWon": false,
+      "gap": 1907982
+    },
+    {
+      "date": "2026-09-19T19:40Z",
+      "week": 3,
+      "home": {
+        "id": "texas-am",
+        "spend": 60230146,
+        "rank": 9,
+        "score": 21
+      },
+      "away": {
+        "id": "kentucky",
+        "spend": 43281917,
+        "score": 31
+      },
+      "winner": "kentucky",
+      "biggerSpenderWon": false,
+      "gap": 16948229
+    },
+    {
+      "date": "2026-09-19T21:15Z",
+      "week": 3,
+      "home": {
+        "id": "alabama",
+        "spend": 81502191,
+        "rank": 10,
+        "score": 50
+      },
+      "away": {
+        "id": "florida-state",
+        "spend": 83267924,
+        "score": 36
+      },
+      "winner": "alabama",
+      "biggerSpenderWon": false,
+      "gap": 1765733
+    },
+    {
+      "date": "2026-09-19T23:30Z",
+      "week": 3,
+      "home": {
+        "id": "ole-miss",
+        "spend": 61846036,
+        "rank": 8,
+        "score": 32
+      },
+      "away": {
+        "id": "lsu",
+        "spend": 50738587,
+        "rank": 7,
+        "score": 24
+      },
+      "winner": "ole-miss",
+      "biggerSpenderWon": true,
+      "gap": 11107449
+    },
+    {
+      "date": "2026-09-19T23:30Z",
+      "week": 3,
+      "home": {
+        "id": "notre-dame",
+        "spend": 93255797,
+        "rank": 3,
+        "score": 27
+      },
+      "away": {
+        "id": "michigan-state",
+        "spend": 48227813,
+        "score": 10
+      },
+      "winner": "notre-dame",
+      "biggerSpenderWon": true,
+      "gap": 45027984
+    },
+    {
+      "date": "2026-09-19T23:30Z",
+      "week": 3,
+      "home": {
+        "id": "virginia",
+        "spend": 33611796,
+        "rank": 25,
+        "score": 27
+      },
+      "away": {
+        "id": "west-virginia",
+        "spend": 35250569,
+        "score": 38
+      },
+      "winner": "west-virginia",
+      "biggerSpenderWon": true,
+      "gap": 1638773,
+      "neutral": true
+    },
+    {
+      "date": "2026-09-26T00:00Z",
+      "week": 4,
+      "home": {
+        "id": "indiana",
+        "spend": 50207544,
+        "rank": 5
+      },
+      "away": {
+        "id": "northwestern",
+        "spend": 37901761
+      },
+      "gap": 12305783
+    },
+    {
+      "date": "2026-09-26T16:00Z",
+      "week": 4,
+      "home": {
+        "id": "ohio-state",
+        "spend": 92359309,
+        "rank": 7
+      },
+      "away": {
+        "id": "illinois",
+        "spend": 48001399
+      },
+      "gap": 44357910
+    },
+    {
+      "date": "2026-09-26T16:00Z",
+      "week": 4,
+      "home": {
+        "id": "tennessee",
+        "spend": 61240437,
+        "rank": 14
+      },
+      "away": {
+        "id": "texas",
+        "spend": 70405628,
+        "rank": 1
+      },
+      "gap": 9165191
+    },
+    {
+      "date": "2026-09-26T16:00Z",
+      "week": 4,
+      "home": {
+        "id": "louisville",
+        "spend": 30745125,
+        "rank": 16
+      },
+      "away": {
+        "id": "wake-forest",
+        "spend": 39399925
+      },
+      "gap": 8654800
+    },
+    {
+      "date": "2026-09-26T18:00Z",
+      "week": 4,
+      "home": {
+        "id": "purdue",
+        "spend": 37193229
+      },
+      "away": {
+        "id": "notre-dame",
+        "spend": 93255797,
+        "rank": 3
+      },
+      "gap": 56062568
+    },
+    {
+      "date": "2026-09-26T19:30Z",
+      "week": 4,
+      "home": {
+        "id": "michigan",
+        "spend": 61663186,
+        "rank": 18
+      },
+      "away": {
+        "id": "iowa",
+        "spend": 50894414,
+        "rank": 17
+      },
+      "gap": 10768772
+    },
+    {
+      "date": "2026-09-26T19:30Z",
+      "week": 4,
+      "home": {
+        "id": "georgia",
+        "spend": 71107704,
+        "rank": 2
+      },
+      "away": {
+        "id": "oklahoma",
+        "spend": 71184826
+      },
+      "gap": 77122
+    },
+    {
+      "date": "2026-09-26T19:30Z",
+      "week": 4,
+      "home": {
+        "id": "florida",
+        "spend": 51766013,
+        "rank": 21
+      },
+      "away": {
+        "id": "ole-miss",
+        "spend": 61846036,
+        "rank": 4
+      },
+      "gap": 10080023
+    },
+    {
+      "date": "2026-09-26T19:30Z",
+      "week": 4,
+      "home": {
+        "id": "iowa-state",
+        "spend": 32337385
+      },
+      "away": {
+        "id": "utah",
+        "spend": 41410554,
+        "rank": 15
+      },
+      "gap": 9073169
+    },
+    {
+      "date": "2026-09-26T21:00Z",
+      "week": 4,
+      "home": {
+        "id": "penn-state",
+        "spend": 77386097,
+        "rank": 13
+      },
+      "away": {
+        "id": "wisconsin",
+        "spend": 40903448
+      },
+      "gap": 36482649
+    },
+    {
+      "date": "2026-09-26T23:00Z",
+      "week": 4,
+      "home": {
+        "id": "alabama",
+        "spend": 81502191,
+        "rank": 8
+      },
+      "away": {
+        "id": "south-carolina",
+        "spend": 55859501
+      },
+      "gap": 25642690
+    },
+    {
+      "date": "2026-09-26T23:30Z",
+      "week": 4,
+      "home": {
+        "id": "usc",
+        "spend": 74014972,
+        "rank": 12
+      },
+      "away": {
+        "id": "oregon",
+        "spend": 60847472,
+        "rank": 20
+      },
+      "gap": 13167500
+    },
+    {
+      "date": "2026-09-26T23:30Z",
+      "week": 4,
+      "home": {
+        "id": "lsu",
+        "spend": 50738587,
+        "rank": 10
+      },
+      "away": {
+        "id": "texas-am",
+        "spend": 60230146,
+        "rank": 23
+      },
+      "gap": 9491559
+    },
+    {
+      "date": "2026-09-26T23:45Z",
+      "week": 4,
+      "home": {
+        "id": "mississippi-state",
+        "spend": 37575575,
+        "rank": 24
+      },
+      "away": {
+        "id": "missouri",
+        "spend": 49316139,
+        "rank": 19
+      },
+      "gap": 11740564
+    }
+  ]
+}

@@ -149,6 +149,10 @@ export const DEFS = {
     label: 'Guarantee games',
     text: 'How much a larger school (usually Power 4) pays a smaller opponent to play them on the football schedule — a buy-game check. Football guarantee dollars stay distinct from band or other fees. $0 only when the contract says $0 (home-and-home / no guarantee). Not House spent, not booked NIL, not a coach buyout. Empty without a hosted contract or named newsroom FOIA. We do not invent dollars.',
   },
+  checkbookBowl: {
+    label: 'Checkbook bowl',
+    text: 'Whether the school that spent more on football won the big game. A big game is both teams on the 68-school desk (Power 4 plus Notre Dame) and at least one AP-ranked team. The dollar is FY2025 EADA TOTAL_EXPENSE_ALL_Football, not House spent, not booked NIL, and not a coach buyout. Unplayed games stay upcoming. We do not invent the score or the dollar.',
+  },
   tape: {
     label: 'Desk tape',
     text: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990s, contract PDFs, paid buyouts, apparel and naming, student-fee subsidies, athletics-debt filings, conference-exit filings, guarantee-game contracts, House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',

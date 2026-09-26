@@ -1263,6 +1263,150 @@ table.rank th.rk { cursor: default; }
 }
 .coach-fa-page .pending-box { margin: 12px 0; }
 
+.checkbook-page .table-scroll { max-height: none; }
+.checkbook-page p,
+.checkbook-page li { color: var(--paper-dim); }
+.checkbook-page .lede,
+.checkbook-page .fine { max-width: 740px; }
+.checkbook-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px 40px;
+  align-items: flex-end;
+  margin: 8px 0 8px;
+}
+.checkbook-page .checkbook-record {
+  color: var(--gold);
+  font-size: clamp(56px, 9vw, 92px);
+  margin: 2px 0 6px;
+}
+.checkbook-rate {
+  margin: 0;
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+}
+.checkbook-weeks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.checkbook-weeks li {
+  background: var(--ink-2);
+  border-top: 2px solid var(--gold);
+  padding: 10px 14px;
+  min-width: 108px;
+}
+.checkbook-week-rec {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-weight: 650;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+  color: var(--gold);
+  line-height: 1.1;
+}
+.checkbook-matchup,
+.checkbook-card-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.checkbook-at { color: var(--muted); font-size: 13px; }
+.checkbook-page a.checkbook-fav { color: var(--gold); font-weight: 700; }
+.checkbook-page a.checkbook-dog { color: var(--paper); font-weight: 500; }
+.checkbook-dog-num { color: var(--paper-dim); font-weight: 400; }
+.checkbook-score { font-variant-numeric: tabular-nums; color: var(--paper); }
+.checkbook-badge {
+  display: inline-block;
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 5px 8px;
+  border: 1px solid var(--gold);
+  white-space: nowrap;
+}
+.checkbook-page a.checkbook-badge:hover { text-decoration: none; }
+.checkbook-badge.win { background: var(--gold); color: var(--ink); }
+.checkbook-badge.upset { background: transparent; color: var(--blood); border-color: var(--blood); }
+.checkbook-badge.upcoming { background: transparent; color: var(--muted); border-color: var(--rule); }
+.checkbook-table th { cursor: pointer; }
+.checkbook-table tr.checkbook-win td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
+.checkbook-table tr.checkbook-loss td:first-child { box-shadow: inset 3px 0 0 var(--blood); }
+.checkbook-upsets {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  max-width: 860px;
+}
+.checkbook-upsets li {
+  display: grid;
+  grid-template-columns: 5.5em 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #2a261e;
+}
+.checkbook-upset-gap {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-weight: 650;
+  font-size: 20px;
+  color: var(--blood);
+  letter-spacing: -0.03em;
+}
+.checkbook-day { margin-top: 16px; }
+.checkbook-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+.checkbook-card {
+  background: var(--ink-2);
+  border-top: 2px solid var(--gold);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.checkbook-kick {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.checkbook-card-spend {
+  margin-left: auto;
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--gold);
+}
+.checkbook-card-line:last-of-type .checkbook-card-spend { color: var(--paper-dim); }
+.checkbook-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+}
+.checkbook-card-gap {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-weight: 650;
+  color: var(--gold);
+}
+@media (max-width: 640px) {
+  .checkbook-upsets li { grid-template-columns: 1fr; gap: 4px; }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
