@@ -1,7 +1,7 @@
 {
   "meta": {
     "product": "Public Cap guarantee / buy-game desk",
-    "asOf": "2026-09-25",
+    "asOf": "2026-09-26",
     "season": 2026,
     "scope": "2026 football game guarantees: how much larger (usually Power 4) schools pay smaller opponents to play them. Football guarantee dollars stay distinct from band / other fees. Empty without a hosted contract or named newsroom FOIA. Not House spent, not booked NIL, not coach buyouts.",
     "notes": "A buy game (guarantee game) is a one-off or lopsided nonconference date: the home school writes a check so the visitor comes without a return trip, or for less than a true home-and-home. $0 is a real cell only when the contract says $0 (home-and-home / no guarantee). We do not invent dollars. We do not book On3. We do not book social figures that disagree with the FOIA (Miami–FAMU social $740k is not the primary). Band money is a side cell, not the football guarantee. Ticket allotments appear in notes only when the cite names them.",
@@ -23,7 +23,11 @@
       "Illinois → Southern Illinois $525,000 is booked from FBSchedules (Kevin Kelley, Oct. 3, 2018) via SIU public records. Memorial Stadium, Champaign, Sept. 19, 2026. The contract story does not name a separate band fee.",
       "Clemson → Georgia Southern $1,500,000 is booked from The State (Chapel Fowler, updated Sept. 9, 2026) via public records, due by Feb. 15, 2027. Band, cheerleaders, and mascot admission is complimentary — not a football-guarantee add-on. Clemson athletics confirms the game was played Sept. 12, 2026.",
       "Ohio State → Kent State $1,900,000 is booked from the Record-Courier (May 5, 2022) public-records contract and the Eleven Warriors public-records copy. Dallas Sports Journal (Sept. 12, 2026) names the same $1.9 million. The Sept. 5 Ball State $1.9 million is a separate row. Ticket language that includes the band is an allotment, not a band fee.",
-      "Youngstown State–Kentucky is not booked. A reported figure was not verified against a game that still happened; the schedule may have moved.",
+      "Louisville → Villanova $500,000 is booked from FBSchedules (July 25, 2023) via Louisville open records. The contract date was Saturday, Sept. 5, 2026; the desk schedule lists Friday, Sept. 11, 2026. The dollar is the original contract amount. Louisville → Charlotte $1,100,000 (contract date Sept. 26, 2026) in that same story is not booked — that game was cancelled and Charlotte is not on the 2026 slate.",
+      "Kentucky → Youngstown State $575,000 is booked from FBSchedules (March 21, 2019) via Youngstown State open records. The contract date was Sept. 19, 2026; the desk schedule lists Sept. 5, 2026. The dollar is the original contract amount. The 2022 meeting in that story is not a 2026 row.",
+      "Tennessee → Furman $500,000 is booked from FBSchedules (May 24, 2022). The dollar is the 2020 contract (canceled for COVID); Furman athletics called 2026 the make-up of that year. The story did not name a 2026 date. Tennessee Athletics lists Sat, Sept. 5, 2026 (Tennessee 56, Furman 9).",
+      "Alabama → Chattanooga $500,000 is booked from FBSchedules (updated Dec. 5, 2025) via Chattanooga public records, for Nov. 21, 2026 at Bryant-Denny. The 2027 Marshall $1.35 million in that story is not a 2026 row. The USF cancellation fees are not a guarantee cell.",
+      "Virginia → Norfolk State $420,000 is booked from FBSchedules (March 12, 2020) via Virginia FOIA. The contract date was Saturday, Nov. 21, 2026; Virginia Athletics lists Friday, Sept. 11, 2026. The dollar is the original contract amount. The 2028 Richmond $505,000 is not a 2026 row.",
       "Oklahoma → New Mexico $1,600,000 is booked from the Albuquerque Journal (Sean Reider, published Sept. 17, 2026, updated Sept. 18). The Journal reviewed the November 2019 contract for the Sept. 19 game at Gaylord Family–Oklahoma Memorial Stadium. A $250,000 partial was due before April 21, 2021 and is part of that $1.6 million, not a second check. 400 complimentary tickets are named. No separate band fee is named.",
       "Auburn → Southern Miss $1,850,000 is booked from AL.com (Peter Rauterkus, Sept. 10, 2026), which obtained the contract for the Sept. 12 home opener at Jordan-Hare. Band admission up to 500 seats is complimentary inside the ticket allotment, not a separate band fee. The series was first set for Sept. 26, 2020 and moved after the shortened 2020 season; the dollar on this row is the 2026 contract copy.",
       "South Carolina → Kent State $1,300,000 is booked from The State (Jordan Kaye, Sept. 1, 2026). The contract total is $1.3 million: $300,000 on or before Jan. 31, 2026 and $1 million on or before Jan. 31, 2027. The cell is the total, not either installment. Signed December 2025. No separate band fee is named.",
@@ -64,7 +68,12 @@
       "AL.com (Sept. 10, 2026) — Auburn–Southern Miss contract",
       "The State (Sept. 1, 2026) — South Carolina–Kent State contract, $1.3 million total",
       "The State (Sept. 9, 2026) — South Carolina–Towson contract",
-      "Tallahassee Democrat (Aug. 29, 2026) — Florida State–New Mexico State buy-game payout"
+      "Tallahassee Democrat (Aug. 29, 2026) — Florida State–New Mexico State buy-game payout",
+      "FBSchedules (July 25, 2023) — Louisville–Villanova contract via Louisville open records",
+      "FBSchedules (March 21, 2019) — Kentucky–Youngstown State contract via Youngstown State open records",
+      "FBSchedules (May 24, 2022) — Tennessee–Furman COVID make-up of the 2020 contract dollar",
+      "FBSchedules (Dec. 5, 2025) — Alabama–Chattanooga contract via Chattanooga public records",
+      "FBSchedules (March 12, 2020) — Virginia–Norfolk State contract via Virginia FOIA"
     ]
   },
   "cites": {
@@ -311,6 +320,41 @@
       "label": "Tallahassee Democrat (Aug. 29, 2026) — Florida State–New Mexico State buy-game payout",
       "url": "https://www.tallahassee.com/story/sports/college/fsu/football/2026/08/29/florida-state-new-mexico-state-buy-game-payout/91465283007/",
       "asOf": "2026-08-29",
+      "confidence": "reported"
+    },
+    "fbschedules-louisville-villanova-2026": {
+      "id": "fbschedules-louisville-villanova-2026",
+      "label": "FBSchedules (July 25, 2023) — Louisville–Villanova contract via Louisville open records",
+      "url": "https://fbschedules.com/louisville-adds-charlotte-villanova-to-2026-football-schedule/",
+      "asOf": "2023-07-25",
+      "confidence": "reported"
+    },
+    "fbschedules-kentucky-youngstown-state-2026": {
+      "id": "fbschedules-kentucky-youngstown-state-2026",
+      "label": "FBSchedules (March 21, 2019) — Kentucky–Youngstown State contract via Youngstown State open records",
+      "url": "https://fbschedules.com/youngstown-state-to-play-at-kentucky-in-2026/",
+      "asOf": "2019-03-21",
+      "confidence": "reported"
+    },
+    "fbschedules-tennessee-furman-2026": {
+      "id": "fbschedules-tennessee-furman-2026",
+      "label": "FBSchedules (May 24, 2022) — Tennessee–Furman COVID make-up of the 2020 contract dollar",
+      "url": "https://fbschedules.com/tennessee-adds-furman-to-2026-football-schedule/",
+      "asOf": "2022-05-24",
+      "confidence": "reported"
+    },
+    "fbschedules-alabama-chattanooga-2026": {
+      "id": "fbschedules-alabama-chattanooga-2026",
+      "label": "FBSchedules (Dec. 5, 2025) — Alabama–Chattanooga contract via Chattanooga public records",
+      "url": "https://fbschedules.com/alabama-adds-games-vs-marshall-and-chattanooga-reschedules-usf/",
+      "asOf": "2025-12-05",
+      "confidence": "reported"
+    },
+    "fbschedules-virginia-norfolk-state-2026": {
+      "id": "fbschedules-virginia-norfolk-state-2026",
+      "label": "FBSchedules (March 12, 2020) — Virginia–Norfolk State contract via Virginia FOIA",
+      "url": "https://fbschedules.com/virginia-to-host-norfolk-state-in-2026-richmond-in-2028/",
+      "asOf": "2020-03-12",
       "confidence": "reported"
     }
   },
@@ -859,6 +903,79 @@
       "confidence": "reported",
       "citeIds": ["tallahassee-democrat-fsu-nmsu-2026"],
       "notes": "Doak Campbell Stadium. Tallahassee Democrat (Dan Rorabaugh, Aug. 29, 2026): Florida State owed New Mexico State $1,400,000, to be paid by July 15. The official FSU slate lists Sat, Aug. 29, 2026. The story is dated that morning and calls it today’s game; its TV box says Saturday, Aug. 30. The row date is the official slate, not the TV box. No separate band fee is named. The same story names a Sept. 26 Central Arkansas buy game and does not state that dollar. The $450,000 stays on the May 1, 2025 open-records row."
+    },
+    {
+      "id": "2026-louisville-villanova",
+      "season": 2026,
+      "date": "2026-09-11",
+      "dateNote": "Moved from the contract date of Sat, Sept. 5, 2026. The $500,000 is the original contract amount.",
+      "payerSchoolId": "louisville",
+      "payeeLabel": "Villanova",
+      "payeeSlug": "villanova",
+      "amount": 500000,
+      "homeSchoolId": "louisville",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-louisville-villanova-2026"],
+      "notes": "Home game. FBSchedules (Kevin Kelley, July 25, 2023) obtained the contract from Louisville via a state open records request: Louisville pays Villanova $500,000, then dated Saturday, Sept. 5, 2026. The desk schedule lists Friday, Sept. 11, 2026. The dollar on this row is the original contract amount. The contract story does not name a separate band fee. The same story's Charlotte $1,100,000 (contract date Sept. 26, 2026, L&N Stadium) is not a row — that game was cancelled and Charlotte is not on the 2026 slate."
+    },
+    {
+      "id": "2026-kentucky-youngstown-state",
+      "season": 2026,
+      "date": "2026-09-05",
+      "dateNote": "Moved from the contract date of Sat, Sept. 19, 2026. The $575,000 is the original contract amount.",
+      "payerSchoolId": "kentucky",
+      "payeeLabel": "Youngstown State",
+      "payeeSlug": "youngstown-state",
+      "amount": 575000,
+      "homeSchoolId": "kentucky",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-kentucky-youngstown-state-2026"],
+      "notes": "Kroger Field. FBSchedules (Kevin Kelley, March 21, 2019) obtained the contract from Youngstown State via a state open records request: Kentucky pays Youngstown State $575,000, then dated Sept. 19, 2026. The desk schedule lists Sat, Sept. 5, 2026. The dollar on this row is the original contract amount. The contract story does not name a separate band fee. The 2022 meeting named in that story is not a 2026 row."
+    },
+    {
+      "id": "2026-tennessee-furman",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "tennessee",
+      "payeeLabel": "Furman",
+      "payeeSlug": "furman",
+      "amount": 500000,
+      "homeSchoolId": "tennessee",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-tennessee-furman-2026"],
+      "notes": "Neyland Stadium. FBSchedules (Kevin Kelley, May 24, 2022): Furman was scheduled at Tennessee on Sept. 19, 2020 for a $500,000 guarantee, and that game was canceled in the COVID year. Furman director of athletics Jason Donnelly called the 2026 date a make-up of that COVID year. The May 2022 story did not name a 2026 date. Tennessee Athletics lists Sat, Sept. 5, 2026; the final was Tennessee 56, Furman 9. This cell is that 2020 contract dollar on the make-up date. The story does not name a separate band fee."
+    },
+    {
+      "id": "2026-alabama-chattanooga",
+      "season": 2026,
+      "date": "2026-11-21",
+      "payerSchoolId": "alabama",
+      "payeeLabel": "Chattanooga",
+      "payeeSlug": "chattanooga",
+      "amount": 500000,
+      "homeSchoolId": "alabama",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-alabama-chattanooga-2026"],
+      "notes": "Bryant-Denny Stadium, Sat, Nov. 21, 2026. FBSchedules (Kevin Kelley; updated Dec. 5, 2025) obtained the contract from the University of Tennessee at Chattanooga via public records: Alabama pays Chattanooga $500,000. The contract story does not name a separate band fee. The Dec. 3 update in that story names a 2027 Marshall guarantee of $1.35 million — not a 2026 row. USF cancellation fees in the same story are not a football-guarantee cell."
+    },
+    {
+      "id": "2026-virginia-norfolk-state",
+      "season": 2026,
+      "date": "2026-09-11",
+      "dateNote": "Moved from the contract date of Sat, Nov. 21, 2026. The $420,000 is the original contract amount.",
+      "payerSchoolId": "virginia",
+      "payeeLabel": "Norfolk State",
+      "payeeSlug": "norfolk-state",
+      "amount": 420000,
+      "homeSchoolId": "virginia",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-virginia-norfolk-state-2026"],
+      "notes": "Scott Stadium. FBSchedules (Kevin Kelley, March 12, 2020) obtained the contract from Virginia via FOIA: Virginia pays Norfolk State $420,000, then dated Saturday, Nov. 21, 2026. Virginia Athletics (May 26, 2026) lists the home opener as Friday, Sept. 11, 2026. Norfolk State Athletics (April 2026) said the game had moved to that Friday from Saturday, Sept. 12. The desk schedule lists Sept. 11, 2026. The dollar on this row is the original contract amount. The contract story does not name a separate band fee. The 2028 Richmond $505,000 in that story is not a 2026 row."
     }
   ]
 }
