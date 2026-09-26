@@ -40,7 +40,7 @@ const indexHtml = read('index.html')
 const home = read('src/pages/Home.jsx')
 const schools = JSON.parse(read('public/data/schools.json'))
 
-ok(DEFAULT_TITLE === 'Public Cap — Capacity vs House cap vs booked NIL', 'home title names the three lanes')
+ok(DEFAULT_TITLE === 'Public Cap: NCAA NIL & college football money desk', 'home title names NCAA NIL and college football money')
 ok(PAGE_TITLES.home === DEFAULT_TITLE, 'PAGE_TITLES.home matches DEFAULT_TITLE')
 ok(PAGE_TITLES.coachFa === 'Coach buyout offsets / free agents — Public Cap', 'coach-fa index title is discoverable')
 ok(PAGE_TITLES.guaranteeGames === 'Guarantee games — Public Cap', 'guarantee-games index title is discoverable')
@@ -108,9 +108,14 @@ ok(/reported football NIL/i.test(ndDesc), 'Notre Dame description names reported
 ok(!/\$/.test(ndDesc), 'Notre Dame description invents no dollars')
 ok(descriptionFromPath('/school/indiana').includes('Indiana'), 'Indiana path description uses the name')
 ok(
-  PAGE_DESCRIPTIONS.home === 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.',
-  'home description leads with the locked slogan',
+  PAGE_DESCRIPTIONS.home === 'What can your team actually afford? NCAA NIL and college football money desk: Power 4 House share, capacity, and booked NIL. Pending stays empty.',
+  'home description leads with the locked slogan and names NCAA NIL',
 )
+ok(PAGE_DESCRIPTIONS.home.includes('What can your team actually afford?'), 'home description keeps the slogan')
+ok(PAGE_DESCRIPTIONS.home.includes('NCAA') && PAGE_DESCRIPTIONS.home.includes('NIL'), 'home description names NCAA and NIL')
+ok(indexHtml.includes('<span class="brand-desk-full">College football NIL &amp; NCAA money</span>'), 'mast descriptor is college football NIL and NCAA money')
+ok(indexHtml.includes('<span class="brand-desk-short">NIL &amp; NCAA money</span>'), 'narrow mast descriptor is NIL and NCAA money')
+ok(indexHtml.includes('>Public Cap</a>'), 'wordmark stays Public Cap')
 ok(descriptionFromPath('/') === PAGE_DESCRIPTIONS.home, 'descriptionFromPath home uses the locked slogan')
 ok(indexHtml.includes(`content="${PAGE_DESCRIPTIONS.home}"`), 'index.html home meta/og/twitter description matches')
 ok(indexHtml.includes(`"description":"${PAGE_DESCRIPTIONS.home}"`), 'index.html JSON-LD home description matches')
@@ -167,7 +172,7 @@ ok(reportedShell.includes('content="https://thepubliccap.com/reported-nil"'), 'r
 ok(reportedShell.includes('https://thepubliccap.com/og-reported-nil.png'), 'reported-nil shell og:image')
 ok(reportedShell.includes('summary_large_image'), 'reported-nil shell twitter large image')
 ok(reportedShell.includes('data-route="inner"'), 'reported-nil shell is an inner route')
-ok(!reportedShell.includes('<title>Public Cap — Capacity vs House cap vs booked NIL</title>'), 'reported-nil shell dropped the homepage title')
+ok(!reportedShell.includes(`<title>${DEFAULT_TITLE}</title>`), 'reported-nil shell dropped the homepage title')
 
 ok(app.includes('descriptionFromPath'), 'App applies per-route descriptions')
 ok(app.includes("jsonLd: 'school'"), 'App attaches school JSON-LD')
@@ -234,7 +239,7 @@ const lsuShell = applyRouteMeta(indexHtml, routeShell(`/school/${lsu.id}`, {
 }))
 ok(lsuShell.includes('<title>LSU — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap</title>'), 'LSU shell uses the booked name, not Lsu')
 ok(lsuShell.includes('content="https://thepubliccap.com/school/lsu"'), 'LSU shell canonical/og:url')
-ok(!lsuShell.includes('<title>Public Cap — Capacity vs House cap vs booked NIL</title>'), 'LSU shell dropped the homepage title')
+ok(!lsuShell.includes(`<title>${DEFAULT_TITLE}</title>`), 'LSU shell dropped the homepage title')
 ok(loadSchoolShells().length === 68, 'writer emits 68 school shells')
 
 function jsonLdFrom(html) {

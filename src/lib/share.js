@@ -7,7 +7,7 @@ import { CURRENT_SEASON } from './seasons.js'
 import { money, moneyExact, moneyRange, winsPerM } from './format.js'
 import { isPlayerHash, isPosHash } from './nilHistory.js'
 
-export const DEFAULT_TITLE = 'Public Cap — Capacity vs House cap vs booked NIL'
+export const DEFAULT_TITLE = 'Public Cap: NCAA NIL & college football money desk'
 export const SITE = 'thepubliccap.com'
 export const SCHOOL_TITLE_FRAME = 'Capacity vs House cap vs booked NIL'
 
@@ -180,7 +180,7 @@ export const PAGE_TITLES = {
 }
 
 export const PAGE_DESCRIPTIONS = {
-  home: 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.',
+  home: 'What can your team actually afford? NCAA NIL and college football money desk: Power 4 House share, capacity, and booked NIL. Pending stays empty.',
   tape: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990 payouts, contracts, and House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
   methods: 'How Public Cap books Power 4 capacity, the House benefits cap, booked NIL, and collective 990 payouts. Pending stays empty. We do not invent House or NIL dollars.',
   buyout: 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.',
