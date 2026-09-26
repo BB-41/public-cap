@@ -16,6 +16,7 @@ Public Cap is the college athletics capacity desk at https://thepubliccap.com. I
 - Buyout: https://thepubliccap.com/buyout
 - Coach buyout offsets: https://thepubliccap.com/coach-fa
 - Guarantee games: https://thepubliccap.com/guarantee-games
+- Checkbook bowl: https://thepubliccap.com/checkbook-bowl — did the bigger football spender win the big game?
 
 ## Crawlers
 

@@ -44,6 +44,7 @@ ok(DEFAULT_TITLE === 'Public Cap — Capacity vs House cap vs booked NIL', 'home
 ok(PAGE_TITLES.home === DEFAULT_TITLE, 'PAGE_TITLES.home matches DEFAULT_TITLE')
 ok(PAGE_TITLES.coachFa === 'Coach buyout offsets / free agents — Public Cap', 'coach-fa index title is discoverable')
 ok(PAGE_TITLES.guaranteeGames === 'Guarantee games — Public Cap', 'guarantee-games index title is discoverable')
+ok(PAGE_TITLES.checkbookBowl === 'Does the bigger spender win? — Public Cap', 'checkbook-bowl index title is discoverable')
 ok(SCHOOL_TITLE_FRAME === 'Capacity vs House cap vs booked NIL', 'school title frame is the three-lane sentence')
 
 ok(
@@ -64,6 +65,7 @@ ok(titleFromPath('/school/oklahoma-state') === schoolTitle('Oklahoma State'), 'o
 ok(titleFromPath('/school/notre-dame') === schoolTitle('Notre Dame'), 'notre-dame slug title-cases')
 ok(titleFromPath('/coach-fa') === PAGE_TITLES.coachFa, 'titleFromPath coach-fa index')
 ok(titleFromPath('/guarantee-games') === PAGE_TITLES.guaranteeGames, 'titleFromPath guarantee-games')
+ok(titleFromPath('/checkbook-bowl') === PAGE_TITLES.checkbookBowl, 'titleFromPath checkbook-bowl')
 ok(titleFromPath('/reported-nil') === PAGE_TITLES.reportedNil, 'titleFromPath reported-nil')
 ok(
   PAGE_TITLES.reportedNil === 'Reported NIL by school — Power 4 football roster stack — Public Cap',
@@ -118,6 +120,11 @@ ok(PAGE_DESCRIPTIONS.guaranteeGames.includes('Football guarantee stays distinct 
 ok(PAGE_DESCRIPTIONS.guaranteeGames.includes('Not House spent'), 'guarantee-games description splits House')
 ok(PAGE_DESCRIPTIONS.guaranteeGames.includes('not booked NIL'), 'guarantee-games description splits booked NIL')
 ok(descriptionFromPath('/guarantee-games') === PAGE_DESCRIPTIONS.guaranteeGames, 'descriptionFromPath guarantee-games')
+ok(PAGE_DESCRIPTIONS.checkbookBowl.includes('FY2025 EADA'), 'checkbook-bowl description names the EADA filing')
+ok(PAGE_DESCRIPTIONS.checkbookBowl.includes('68-school'), 'checkbook-bowl description names the 68-school desk')
+ok(PAGE_DESCRIPTIONS.checkbookBowl.includes('AP-ranked'), 'checkbook-bowl description names the big-game rule')
+ok(PAGE_DESCRIPTIONS.checkbookBowl.includes('do not invent dollars'), 'checkbook-bowl description stays cite-only')
+ok(descriptionFromPath('/checkbook-bowl') === PAGE_DESCRIPTIONS.checkbookBowl, 'descriptionFromPath checkbook-bowl')
 
 const templateBlob = [
   DEFAULT_TITLE,
@@ -167,6 +174,9 @@ ok(indexHtml.includes('Capacity vs House cap vs booked NIL — reported football
 ok(indexHtml.includes('Coach buyout offsets / free agents — Public Cap'), 'index.html first-paints /coach-fa')
 ok(indexHtml.includes('Guarantee games — Public Cap'), 'index.html first-paints /guarantee-games')
 ok(indexHtml.includes('href="/guarantee-games"'), 'index.html nav links the guarantee board')
+ok(indexHtml.includes('Does the bigger spender win? — Public Cap'), 'index.html first-paints /checkbook-bowl')
+ok(indexHtml.includes(PAGE_DESCRIPTIONS.checkbookBowl), 'index.html first-paints the checkbook-bowl description')
+ok(indexHtml.includes('href="/checkbook-bowl"'), 'index.html nav links the checkbook bowl')
 ok(indexHtml.includes('Reported NIL by school — Power 4 football roster stack — Public Cap'), 'index.html first-paints /reported-nil')
 ok(indexHtml.includes('href="/reported-nil"'), 'index.html nav links the reported-NIL board')
 ok(indexHtml.includes('twitter:card'), 'index.html has a Twitter card')

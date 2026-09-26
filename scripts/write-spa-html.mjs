@@ -32,6 +32,7 @@ export const SPA_SHELL_PATHS = [
   '/buyout',
   '/coach-fa',
   '/guarantee-games',
+  '/checkbook-bowl',
 ]
 
 function escAttr(value) {

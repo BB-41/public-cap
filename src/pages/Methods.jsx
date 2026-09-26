@@ -223,6 +223,14 @@ export default function Methods({ meta: metaProp }) {
           Not House spent, not booked NIL, not a coach buyout. Empty without a hosted
           contract or named newsroom FOIA. We do not invent dollars.
         </dd>
+        <dt>Checkbook bowl</dt>
+        <dd>
+          Whether the bigger football spender won the big game, on <code>/checkbook-bowl</code>.
+          A big game is both teams on the 68-school desk and at least one AP-ranked team.
+          The dollar is FY2025 EADA total football expense. Final games move the record.
+          Unplayed games stay upcoming. Not House spent, not booked NIL, not a coach buyout.
+          We do not invent the score or the dollar.
+        </dd>
         <dt>Offset credit</dt>
         <dd>What School A would subtract if the employment agreement offsets new pay. Zero when the file says no offset. Dollar-for-dollar overlap with a School B salary is only computed when a sitting-HC clause is on the desk.</dd>
         <dt>Net cost to A</dt>
@@ -1091,8 +1099,19 @@ export default function Methods({ meta: metaProp }) {
         means pending. This is not House spent, not booked NIL, and not a coach
         buyout. Rows need a hosted contract or a named newsroom FOIA. Power 4
         payer/payee schools on the 68-school desk get a small paid-out / received
-        card when a row exists. FCS and Group of 5 visitors stay an external label.
+        card when a row exists.         FCS and Group of 5 visitors stay an external label.
         We do not invent dollars, and we do not use On3.
+      </p>
+
+      <h2>Checkbook bowl</h2>
+      <p>
+        A separate board at <a href="/checkbook-bowl">/checkbook-bowl</a>: in every big
+        college football game, did the school that spent more on football win?
+        Both teams are among the 68 Power 4 plus Notre Dame schools, and at least one
+        is AP-ranked. The spend figure is the FY2025 EADA football expense
+        (TOTAL_EXPENSE_ALL_Football), copied from the filing — not House spent, not
+        booked NIL, and not a coach buyout. The record counts only final games.
+        An unplayed or in-progress score stays upcoming. We do not invent dollars.
       </p>
 
       <h2>Private-school gap</h2>

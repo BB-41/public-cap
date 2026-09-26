@@ -172,6 +172,7 @@ export const PAGE_TITLES = {
   buyout: 'Buyout — Public Cap',
   coachFa: 'Coach buyout offsets / free agents — Public Cap',
   guaranteeGames: 'Guarantee games — Public Cap',
+  checkbookBowl: 'Does the bigger spender win? — Public Cap',
   compare: 'Compare capacity vs House vs NIL — Public Cap',
   reportedNil: 'Reported NIL by school — Power 4 football roster stack — Public Cap',
   tv: 'TV — Public Cap',
@@ -184,6 +185,8 @@ export const PAGE_DESCRIPTIONS = {
   buyout: 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.',
   coachFa: 'Residual School A buyout after a firing, plus a labeled modeled School B salary. Offset rules stay booked or cite-only. Empty without a cite — we do not invent remaining principal.',
   guaranteeGames: 'How much larger (usually Power 4) schools pay smaller opponents to play them on the 2026 football schedule. Football guarantee stays distinct from band fees. Not House spent, not booked NIL, not coach buyouts. Empty without a FOIA or named newsroom cite.',
+  checkbookBowl:
+    'Does the bigger spender win? In every big college football game — both teams on the 68-school Power 4 plus Notre Dame desk, and at least one AP-ranked — the checkbook favorite is the school with the higher FY2025 EADA football expense. Final games move the record. Unplayed games stay upcoming. We do not invent dollars.',
   compare: 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.',
   reportedNil:
     'Reported NIL by school: named survey ranges versus labeled modeled conference bands for the Power 4 football roster stack — all 68 Power 4 + Notre Dame schools on one $0–$50M scale. Booked NIL and House spent stay separate. Not leftover.',
@@ -354,6 +357,7 @@ export function titleFromPath(pathname, { season, schoolName, compareNames, coac
   if (p === '/reported-nil') return PAGE_TITLES.reportedNil
   if (p === '/coach-fa' || p.startsWith('/coach-fa/')) return coachFaTitle(coachName)
   if (p === '/guarantee-games') return PAGE_TITLES.guaranteeGames
+  if (p === '/checkbook-bowl') return PAGE_TITLES.checkbookBowl
   if (p === '/tape') return PAGE_TITLES.tape
   if (p === '/methods') return PAGE_TITLES.methods
   if (p === '/buyout') return PAGE_TITLES.buyout
@@ -376,6 +380,7 @@ export function descriptionFromPath(pathname, { school, schoolName, coachName } 
     return PAGE_DESCRIPTIONS.coachFa
   }
   if (p === '/guarantee-games') return PAGE_DESCRIPTIONS.guaranteeGames
+  if (p === '/checkbook-bowl') return PAGE_DESCRIPTIONS.checkbookBowl
   if (p === '/tape') return PAGE_DESCRIPTIONS.tape
   if (p === '/methods') return PAGE_DESCRIPTIONS.methods
   if (p === '/buyout') return PAGE_DESCRIPTIONS.buyout
