@@ -34,6 +34,7 @@ const Buyout = lazy(() => import('./pages/Buyout.jsx'))
 const CoachFa = lazy(() => import('./pages/CoachFa.jsx'))
 const GuaranteeGames = lazy(() => import('./pages/GuaranteeGames.jsx'))
 const CheckbookBowl = lazy(() => import('./pages/CheckbookBowl.jsx'))
+const Nil101 = lazy(() => import('./pages/Nil101.jsx'))
 const DeskChat = lazy(() => import('./components/DeskChat.jsx'))
 const ReportedNil = lazy(() => import('./pages/ReportedNil.jsx'))
 
@@ -368,6 +369,7 @@ export default function App() {
             <Route path="/coach-fa/:coachId" element={<CoachFa />} />
             <Route path="/guarantee-games" element={<GuaranteeGames />} />
             <Route path="/checkbook-bowl" element={<CheckbookBowl />} />
+            <Route path="/nil-101" element={<Nil101 />} />
             <Route path="/methods" element={<Methods meta={metaOnly} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

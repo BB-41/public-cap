@@ -33,6 +33,7 @@ export const SPA_SHELL_PATHS = [
   '/coach-fa',
   '/guarantee-games',
   '/checkbook-bowl',
+  '/nil-101',
 ]
 
 function escAttr(value) {
@@ -53,7 +54,7 @@ export function routeShell(path, extras = {}) {
   const description = extras.description || descriptionFromPath(path, extras)
   const url = `https://${SITE}${path}`
   const image = ogImageFromPath(path)
-  const hed = extras.hed || (path === '/reported-nil' ? 'Reported NIL by school' : title.split(' — ')[0])
+  const hed = extras.hed || (path === '/reported-nil' ? 'Reported NIL by school' : path === '/nil-101' ? 'NIL 101' : title.split(' — ')[0])
   return { path, title, description, url, image, hed, schoolName: extras.schoolName || null }
 }
 

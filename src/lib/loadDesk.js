@@ -51,6 +51,7 @@ export function routeKind(pathname) {
   if (pathname === '/coach-fa' || pathname.startsWith('/coach-fa/')) return 'coachFa'
   if (pathname === '/guarantee-games') return 'guaranteeGames'
   if (pathname === '/checkbook-bowl') return 'checkbookBowl'
+  if (pathname === '/nil-101') return 'nil101'
   if (pathname === '/methods') return 'methods'
   if (pathname.startsWith('/school/')) return 'school'
   if (pathname === '/compare') return 'compare'

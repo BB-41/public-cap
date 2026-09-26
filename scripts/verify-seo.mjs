@@ -66,6 +66,11 @@ ok(titleFromPath('/school/notre-dame') === schoolTitle('Notre Dame'), 'notre-dam
 ok(titleFromPath('/coach-fa') === PAGE_TITLES.coachFa, 'titleFromPath coach-fa index')
 ok(titleFromPath('/guarantee-games') === PAGE_TITLES.guaranteeGames, 'titleFromPath guarantee-games')
 ok(titleFromPath('/checkbook-bowl') === PAGE_TITLES.checkbookBowl, 'titleFromPath checkbook-bowl')
+ok(PAGE_TITLES.nil101 === 'NIL 101: College Athlete Pay Explained in Plain English | The Public Cap', 'nil-101 title is the plain-English guide')
+ok(titleFromPath('/nil-101') === PAGE_TITLES.nil101, 'titleFromPath nil-101')
+ok(descriptionFromPath('/nil-101') === PAGE_DESCRIPTIONS.nil101, 'descriptionFromPath nil-101')
+ok(PAGE_DESCRIPTIONS.nil101.includes('What can your team actually afford?'), 'nil-101 description keeps the slogan')
+ok(!PAGE_DESCRIPTIONS.nil101.includes('$'), 'nil-101 description invents no dollars')
 ok(titleFromPath('/reported-nil') === PAGE_TITLES.reportedNil, 'titleFromPath reported-nil')
 ok(
   PAGE_TITLES.reportedNil === 'Reported NIL by school — Power 4 football roster stack — Public Cap',
@@ -126,6 +131,20 @@ ok(PAGE_DESCRIPTIONS.checkbookBowl.includes('AP-ranked'), 'checkbook-bowl descri
 ok(PAGE_DESCRIPTIONS.checkbookBowl.includes('do not invent dollars'), 'checkbook-bowl description stays cite-only')
 ok(descriptionFromPath('/checkbook-bowl') === PAGE_DESCRIPTIONS.checkbookBowl, 'descriptionFromPath checkbook-bowl')
 
+const nil101 = read('src/pages/Nil101.jsx')
+ok(nil101.includes('HOUSE_2025_26'), 'nil 101 reuses the year-1 house constant')
+ok(nil101.includes('y2026_27'), 'nil 101 reads the booked year-2 cap')
+ok(!nil101.includes('21583913') && !nil101.includes('21.58'), 'nil 101 does not hardcode the year-2 cap')
+ok(!/for dummies/i.test(nil101), 'nil 101 page avoids the trademark phrase')
+ok(nil101.includes('href="/nil-101"') || nil101.includes('to="/nil-101"') || nil101.includes('to="/"'), 'nil 101 has an in-app call to action')
+for (const path of ['/methods', '/reported-nil', '/school/texas', '/school/ohio-state', '/compare', '/checkbook-bowl']) {
+  ok(nil101.includes(`to="${path}"`), `nil 101 links ${path}`)
+}
+ok(nil101.includes('alt='), 'nil 101 mascots have alt text')
+ok(home.includes('New to NIL? Start with NIL 101'), 'homepage links NIL 101')
+ok(read('src/pages/ReportedNil.jsx').includes('New to NIL? Start with NIL 101'), 'reported-nil links NIL 101')
+ok(!/for dummies/i.test(indexHtml), 'index.html avoids the trademark phrase')
+
 const templateBlob = [
   DEFAULT_TITLE,
   SCHOOL_TITLE_FRAME,
@@ -177,6 +196,9 @@ ok(indexHtml.includes('href="/guarantee-games"'), 'index.html nav links the guar
 ok(indexHtml.includes('Does the bigger spender win? — Public Cap'), 'index.html first-paints /checkbook-bowl')
 ok(indexHtml.includes(PAGE_DESCRIPTIONS.checkbookBowl), 'index.html first-paints the checkbook-bowl description')
 ok(indexHtml.includes('href="/checkbook-bowl"'), 'index.html nav links the checkbook bowl')
+ok(indexHtml.includes(PAGE_TITLES.nil101), 'index.html first-paints /nil-101')
+ok(indexHtml.includes(PAGE_DESCRIPTIONS.nil101), 'index.html first-paints the nil-101 description')
+ok(indexHtml.includes('href="/nil-101"'), 'index.html nav links NIL 101')
 ok(indexHtml.includes('Reported NIL by school — Power 4 football roster stack — Public Cap'), 'index.html first-paints /reported-nil')
 ok(indexHtml.includes('href="/reported-nil"'), 'index.html nav links the reported-NIL board')
 ok(indexHtml.includes('twitter:card'), 'index.html has a Twitter card')

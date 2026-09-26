@@ -138,6 +138,9 @@ export default function Home({ schools, house, houseField, season, setSeason, in
   return (
     <div className="page-wrap home-board">
       <section className="dek">
+        <p className="fine nil-101-cue">
+          <Link to="/nil-101">New to NIL? Start with NIL 101</Link>
+        </p>
         <div className="legend">
           <span title={defTitle('reported')}><i className="dot reported" /> reported</span>
           <span title={defTitle('estimated')}><i className="dot estimated" /> estimated</span>

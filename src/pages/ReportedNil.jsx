@@ -72,6 +72,9 @@ export default function ReportedNil({ schools }) {
         Booked NIL and House spent stay separate marks. Not leftover. Not the capacity
         waterfall. Not On3.
       </p>
+      <p className="fine nil-101-cue">
+        <Link to="/nil-101">New to NIL? Start with NIL 101</Link>
+      </p>
       <div className="legend">
         <span title={defTitle('industryRosterEstimate')}>
           <i className="nil-reported-swatch band" /> gold band = survey or modeled stack
