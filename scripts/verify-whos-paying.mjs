@@ -4,7 +4,7 @@
  * Run: node scripts/verify-whos-paying.mjs
  */
 import { readFileSync } from 'node:fs'
-import { citeNodes, fullPicture, schoolWhosPaying } from '../src/lib/whosPaying.js'
+import { apparelShort, citeNodes, fullPicture, mediaShort, outsideShort, schoolWhosPaying } from '../src/lib/whosPaying.js'
 
 const book = JSON.parse(readFileSync(new URL('../data/whos-paying.json', import.meta.url), 'utf8'))
 const pub = JSON.parse(readFileSync(new URL('../public/data/whos-paying.json', import.meta.url), 'utf8'))
@@ -77,6 +77,9 @@ for (const [id, entry] of Object.entries(book.schools || {})) {
 
 ok(schoolWhosPaying(book, 'georgia') == null, 'a school with no row renders nothing')
 ok(page.includes('if (!entry) return null'), 'component renders nothing when the school has no data')
+ok(page.includes('<details>'), 'details start closed')
+ok(!page.includes('<details open'), 'details are not open by default')
+ok(page.includes('already inside capacity'), 'collapsed line says the company money is already inside capacity')
 ok(page.includes('insideExplainer'), 'component shows the inside explainer')
 ok(page.includes('outsideExplainer'), 'component shows the outside explainer')
 ok(page.includes('Outside the school'), 'component has an outside-money block')
@@ -111,6 +114,24 @@ const picture = fullPicture(booked, texas.outside[0])
 ok(picture?.outside === 14540650, 'full picture keeps the collective figure visible')
 ok(picture?.sum === booked + 14540650, 'full picture is capacity plus the sourced figure')
 ok(fullPicture(booked, osu.outside[0]) == null, 'Ohio State’s football estimate is not summed into department capacity')
+
+ok(apparelShort(texas.partners.find((p) => p.kind === 'apparel')) === 'Nike, $250 million over 15 years', 'Texas apparel short line keeps the published total')
+ok(mediaShort(texas.partners.find((p) => p.kind === 'multimedia')) === 'Learfield', 'Texas media short line is the company')
+ok(outsideShort(texas.outside) === 'Texas One Fund, $14,540,650', 'Texas outside short line is the 2024 filing')
+ok(
+  apparelShort(osu.partners.find((p) => p.kind === 'apparel')) ===
+    'Nike, $252 million over 15 years, through the 2033 academic year',
+  'Ohio State apparel short line keeps the published total and term',
+)
+ok(outsideShort(osu.outside) === 'Third-party football NIL, around $20 million', 'Ohio State outside short line keeps “around”')
+ok(apparelShort(alabama.partners.find((p) => p.kind === 'apparel')) === 'Nike', 'Alabama apparel short line is the company only')
+ok(outsideShort(alabama.outside) === 'No reliable public figure', 'Alabama outside short line is not the $10,000 side filing')
+ok(
+  apparelShort(oregon.partners.find((p) => p.kind === 'apparel')) ===
+    'Nike, $88 million in cash and gear, 11 years, through May 31, 2028',
+  'Oregon apparel short line keeps the published total and term',
+)
+ok(outsideShort(oregon.outside) === 'No reliable public figure', 'Oregon outside short line has no figure')
 
 const failed = checks.filter((c) => !c.ok)
 if (failed.length) {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { moneyExact } from '../lib/format.js'
 import { defTitle } from '../lib/definitions.js'
-import { fullPicture, schoolWhosPaying } from '../lib/whosPaying.js'
+import { apparelShort, fullPicture, mediaShort, outsideShort, schoolWhosPaying } from '../lib/whosPaying.js'
 
 const KIND_LABEL = {
   apparel: 'Shoe and apparel',
@@ -49,6 +49,16 @@ function Row({ label, value, entry, note }) {
   )
 }
 
+function ShortLine({ label, text }) {
+  if (!text) return null
+  return (
+    <div className="whos-line">
+      <div className="lab">{label}</div>
+      <div>{text}</div>
+    </div>
+  )
+}
+
 export default function WhosPaying({ school, cap }) {
   const [book, setBook] = useState(null)
 
@@ -74,103 +84,116 @@ export default function WhosPaying({ school, cap }) {
   const partners = entry.partners || []
   const naming = entry.naming || []
   const outside = entry.outside || []
+  const apparel = partners.find((row) => row.kind === 'apparel')
+  const media = partners.find((row) => row.kind === 'multimedia')
   const picture = fullPicture(cap?.booked, outside.find((row) => row.combineWithCapacity))
   const insideExplainer = book?.meta?.insideExplainer
   const outsideExplainer = book?.meta?.outsideExplainer
+  const filed =
+    filing?.status === 'reported' && filing.value != null
+      ? `${moneyExact(filing.value)}${filing.fiscalYear ? `, ${filing.fiscalYear}` : ''}`
+      : null
 
   const kinds = ['apparel', 'multimedia', 'licensing', 'partner']
 
   return (
     <section className="whos-paying">
       <h2 title={defTitle('whosPaying')}>Who's paying</h2>
-      <p className="lede tight">{insideExplainer}</p>
+      <p className="lede tight">This company money is already inside capacity and is not added again.</p>
 
-      {filing && (
-        <div className="whos-block">
-          <div className="eyebrow">Sponsorships and licensing on the filing</div>
-          <Row
-            label={filing.label}
-            value={
-              filing.status === 'reported' && filing.value != null
-                ? moneyExact(filing.value)
-                : null
-            }
-            entry={filing}
-            note={[filing.fiscalYear, filing.notes].filter(Boolean).join(' · ')}
-          />
+      <ShortLine label="Apparel" text={apparelShort(apparel)} />
+      <ShortLine label="Media rights" text={mediaShort(media)} />
+      <ShortLine label="Sponsorships and licensing" text={filed} />
+      <ShortLine label="Outside NIL" text={outsideShort(outside)} />
+
+      {picture && (
+        <div className="whos-full">
+          <div className="eyebrow">Full picture</div>
+          <div className="whos-val">
+            {moneyExact(picture.sum)} = {moneyExact(picture.booked)} booked capacity + {moneyExact(picture.outside)}
+          </div>
+          <p className="whos-meta">
+            {picture.outsideLabel}. {picture.yearNote} Not the capacity rank.
+          </p>
         </div>
       )}
 
-      {kinds.map((kind) => {
-        const rows = partners.filter((row) => row.kind === kind)
-        if (!rows.length) return null
-        return (
-          <div className="whos-block" key={kind}>
-            <div className="eyebrow">{KIND_LABEL[kind]}</div>
-            {rows.map((row) => (
+      <details>
+        <summary>Deals, names, and sources</summary>
+        <p className="lede tight">{insideExplainer}</p>
+
+        {filing && (
+          <div className="whos-block">
+            <div className="eyebrow">Sponsorships and licensing on the filing</div>
+            <Row
+              label={filing.label}
+              value={filed ? moneyExact(filing.value) : null}
+              entry={filing}
+              note={[filing.fiscalYear, filing.notes].filter(Boolean).join(' · ')}
+            />
+          </div>
+        )}
+
+        {kinds.map((kind) => {
+          const rows = partners.filter((row) => row.kind === kind)
+          if (!rows.length) return null
+          return (
+            <div className="whos-block" key={kind}>
+              <div className="eyebrow">{KIND_LABEL[kind]}</div>
+              {rows.map((row) => (
+                <Row
+                  key={`${row.company}-${row.term}`}
+                  label={[row.company, row.term].filter(Boolean).join(' · ')}
+                  value={row.valueLabel}
+                  entry={row}
+                  note={row.notes}
+                />
+              ))}
+            </div>
+          )
+        })}
+
+        {naming.length > 0 && (
+          <div className="whos-block">
+            <div className="eyebrow">Stadium and arena</div>
+            {naming.map((row) => (
               <Row
-                key={`${row.company}-${row.term}`}
-                label={[row.company, row.term].filter(Boolean).join(' · ')}
+                key={row.facility}
+                label={[row.facility, row.company, row.term].filter(Boolean).join(' · ')}
                 value={row.valueLabel}
                 entry={row}
                 note={row.notes}
               />
             ))}
           </div>
-        )
-      })}
+        )}
 
-      {naming.length > 0 && (
-        <div className="whos-block">
-          <div className="eyebrow">Stadium and arena</div>
-          {naming.map((row) => (
-            <Row
-              key={row.facility}
-              label={[row.facility, row.company, row.term].filter(Boolean).join(' · ')}
-              value={row.valueLabel}
-              entry={row}
-              note={row.notes}
-            />
-          ))}
-        </div>
-      )}
-
-      {outside.length > 0 && (
-        <div className="whos-block">
-          <div className="eyebrow">Outside the school's books</div>
-          <p className="lede tight">{outsideExplainer}</p>
-          {outside.map((row) => (
-            <div key={row.organization}>
-              <Row
-                label={[row.organization, row.line].filter(Boolean).join(' · ')}
-                value={row.valueLabel}
-                entry={row}
-                note={row.notes}
-              />
-              {(row.prior || []).map((prior) => (
+        {outside.length > 0 && (
+          <div className="whos-block">
+            <div className="eyebrow">Outside the school's books</div>
+            <p className="lede tight">{outsideExplainer}</p>
+            {outside.map((row) => (
+              <div key={row.organization}>
                 <Row
-                  key={prior.url}
-                  label={prior.line}
-                  value={prior.valueLabel}
-                  entry={prior}
-                  note="Earlier filing. Not added to the latest figure."
+                  label={[row.organization, row.line].filter(Boolean).join(' · ')}
+                  value={row.valueLabel}
+                  entry={row}
+                  note={row.notes}
                 />
-              ))}
-            </div>
-          ))}
-          {picture && (
-            <div className="whos-full">
-              <div className="eyebrow">Full picture</div>
-              <div className="whos-val">
-                {moneyExact(picture.sum)} = {moneyExact(picture.booked)} booked capacity + {moneyExact(picture.outside)}
+                {(row.prior || []).map((prior) => (
+                  <Row
+                    key={prior.url}
+                    label={prior.line}
+                    value={prior.valueLabel}
+                    entry={prior}
+                    note="Earlier filing. Not added to the latest figure."
+                  />
+                ))}
               </div>
-              <p className="whos-meta">
-                {picture.outsideLabel}. {picture.yearNote} Not the capacity rank.
-              </p>
-            </div>
-          )}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
+      </details>
     </section>
   )
 }
