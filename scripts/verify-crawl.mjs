@@ -96,7 +96,7 @@ ok(!existsSync(join(root, 'functions/_middleware.js')), 'no functions/_middlewar
 ok(!/\/school\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /school/* to /index.html (crawlers would get homepage title)')
 ok(/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects keeps /coach-fa/* splat')
 ok(!/Disallow:\s*\/reported-nil/i.test(robots), 'robots.txt does not Disallow /reported-nil')
-for (const path of ['/reported-nil', '/compare', '/methods', '/tape', '/tv', '/buyout', '/coach-fa', '/guarantee-games', '/checkbook-bowl']) {
+for (const path of ['/reported-nil', '/compare', '/methods', '/tape', '/tv', '/buyout', '/coach-fa', '/guarantee-games', '/checkbook-bowl', '/nil-101']) {
   ok(
     !new RegExp(`${path}\\s+/index\\.html`).test(redirects),
     `_redirects does not rewrite ${path} to /index.html (that 308s home)`,

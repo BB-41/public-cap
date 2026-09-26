@@ -11,6 +11,7 @@ Public Cap is the college athletics capacity desk at https://thepubliccap.com. I
 - School pages: https://thepubliccap.com/school/<slug> — one page per school (examples: /school/lsu, /school/notre-dame)
 - Compare: https://thepubliccap.com/compare
 - Reported NIL: https://thepubliccap.com/reported-nil
+- NIL 101: https://thepubliccap.com/nil-101 — plain-English guide to how college athletes get paid
 - TV: https://thepubliccap.com/tv — conference TV contracts and school media checks when a filing exists
 - Tape: https://thepubliccap.com/tape
 - Buyout: https://thepubliccap.com/buyout

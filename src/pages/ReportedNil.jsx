@@ -69,8 +69,11 @@ export default function ReportedNil({ schools }) {
         Every Power 4 + Notre Dame football stack on one $0–${maxM}M scale.
         Gold is the industry survey range or the SI conference-median band — rev-share
         plus third-party NIL. Survey tiers keep the published words, not a midpoint.
-        Booked NIL and House spent stay separate marks. Not leftover. Not the capacity
+        Booked NIL and House spent stay separate marks.         Not leftover. Not the capacity
         waterfall. Not On3.
+      </p>
+      <p className="nil101-nudge">
+        <Link to="/nil-101">New to NIL? Start with NIL 101</Link>
       </p>
       <div className="legend">
         <span title={defTitle('industryRosterEstimate')}>
