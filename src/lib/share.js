@@ -158,10 +158,12 @@ export function canonicalUrl(path) {
 
 export const OG_DEFAULT_PATH = '/og-default.png'
 export const OG_REPORTED_NIL_PATH = '/og-reported-nil.png'
+export const OG_NIL_101_PATH = '/og-nil-101.png'
 
 export function ogImageFromPath(pathname) {
   const origin = typeof location === 'undefined' ? `https://${SITE}` : publicOrigin()
   if (pathname === '/reported-nil') return `${origin}${OG_REPORTED_NIL_PATH}`
+  if (pathname === '/nil-101') return `${origin}${OG_NIL_101_PATH}`
   return `${origin}${OG_DEFAULT_PATH}`
 }
 
@@ -175,6 +177,7 @@ export const PAGE_TITLES = {
   checkbookBowl: 'Does the bigger spender win? — Public Cap',
   compare: 'Compare capacity vs House vs NIL — Public Cap',
   reportedNil: 'Reported NIL by school — Power 4 football roster stack — Public Cap',
+  nil101: 'NIL 101: College Athlete Pay Explained in Plain English | The Public Cap',
   tv: 'TV — Public Cap',
 }
 
@@ -190,6 +193,8 @@ export const PAGE_DESCRIPTIONS = {
   compare: 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.',
   reportedNil:
     'Reported NIL by school: named survey ranges versus labeled modeled conference bands for the Power 4 football roster stack — all 68 Power 4 + Notre Dame schools on one $0–$50M scale. Booked NIL and House spent stay separate. Not leftover.',
+  nil101:
+    'A short plain-English guide to how college athletes get paid. Outside NIL deals, school revenue sharing, and how those checks relate to House spend, capacity, and reported NIL on this desk.',
   tv: 'Conference TV contracts, holders, and school media checks when a filing exists. Notre Dame’s NBC football deal is the school-level exception. Empty means pending.',
   school:
     'Annual capacity from public filings versus the House benefits cap versus booked NIL. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane, not House. Pending stays empty.',
@@ -355,6 +360,7 @@ export function titleFromPath(pathname, { season, schoolName, compareNames, coac
     return PAGE_TITLES.compare
   }
   if (p === '/reported-nil') return PAGE_TITLES.reportedNil
+  if (p === '/nil-101') return PAGE_TITLES.nil101
   if (p === '/coach-fa' || p.startsWith('/coach-fa/')) return coachFaTitle(coachName)
   if (p === '/guarantee-games') return PAGE_TITLES.guaranteeGames
   if (p === '/checkbook-bowl') return PAGE_TITLES.checkbookBowl
@@ -373,6 +379,7 @@ export function descriptionFromPath(pathname, { school, schoolName, coachName } 
   }
   if (p === '/compare') return PAGE_DESCRIPTIONS.compare
   if (p === '/reported-nil') return PAGE_DESCRIPTIONS.reportedNil
+  if (p === '/nil-101') return PAGE_DESCRIPTIONS.nil101
   if (p === '/coach-fa' || p.startsWith('/coach-fa/')) {
     if (coachName) {
       return `${coachName} — residual School A buyout after a firing, plus a labeled modeled School B salary. Offset rules stay booked or cite-only. Empty without a cite.`

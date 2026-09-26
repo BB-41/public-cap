@@ -36,6 +36,7 @@ const GuaranteeGames = lazy(() => import('./pages/GuaranteeGames.jsx'))
 const CheckbookBowl = lazy(() => import('./pages/CheckbookBowl.jsx'))
 const DeskChat = lazy(() => import('./components/DeskChat.jsx'))
 const ReportedNil = lazy(() => import('./pages/ReportedNil.jsx'))
+const Nil101 = lazy(() => import('./pages/Nil101.jsx'))
 
 function IdleDeskChat({ desk, season, includeAlumni }) {
   const [show, setShow] = useState(false)
@@ -361,6 +362,7 @@ export default function App() {
               }
             />
             <Route path="/reported-nil" element={<ReportedNil schools={data?.schools} />} />
+            <Route path="/nil-101" element={<Nil101 />} />
             <Route path="/tape" element={<Tape items={tape?.items || []} season={season} />} />
             <Route path="/tv" element={<Tv />} />
             <Route path="/buyout" element={<Buyout />} />

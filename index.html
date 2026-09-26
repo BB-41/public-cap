@@ -97,6 +97,9 @@
         } else if (p === '/reported-nil') {
           title = 'Reported NIL by school — Power 4 football roster stack — Public Cap'
           desc = 'Reported NIL by school: named survey ranges versus labeled modeled conference bands for the Power 4 football roster stack — all 68 Power 4 + Notre Dame schools on one $0–$50M scale. Booked NIL and House spent stay separate. Not leftover.'
+        } else if (p === '/nil-101') {
+          title = 'NIL 101: College Athlete Pay Explained in Plain English | The Public Cap'
+          desc = 'A short plain-English guide to how college athletes get paid. Outside NIL deals, school revenue sharing, and how those checks relate to House spend, capacity, and reported NIL on this desk.'
         } else if (p === '/tape') {
           title = 'Tape — Public Cap'
         } else if (p === '/methods') {
@@ -116,7 +119,9 @@
         var canon = 'https://thepubliccap.com' + (p === '/' ? '/' : p)
         var img = p === '/reported-nil'
           ? 'https://thepubliccap.com/og-reported-nil.png'
-          : 'https://thepubliccap.com/og-default.png'
+          : p === '/nil-101'
+            ? 'https://thepubliccap.com/og-nil-101.png'
+            : 'https://thepubliccap.com/og-default.png'
         setMeta('property', 'og:url', canon)
         setMeta('property', 'og:image', img)
         setMeta('name', 'twitter:image', img)
@@ -160,6 +165,7 @@
           <a href="/">Rank list</a>
           <a href="/compare">Compare</a>
           <a href="/reported-nil">Reported NIL</a>
+          <a href="/nil-101">NIL 101</a>
           <a href="/tape">Tape</a>
           <a href="/tv">TV</a>
           <a href="/buyout">Buyout</a>
@@ -191,6 +197,7 @@
         Capacity is annual, not lifetime. Current-coach buyouts are overhang; paid buyouts are a separate tape.
         Football guarantees (buy games) are a separate cited lane — not House spent, not booked NIL.
         The checkbook bowl asks whether the bigger football spender won the big game — FY2025 EADA football expense, both teams on the 68-school desk, at least one AP-ranked. Unplayed stays upcoming.
+        <a href="/nil-101">New to NIL? Start with NIL 101</a>.
         Booked NIL stays official. Collective 990 is a separate cited lane, not House.
         Modeled NIL is a conference heuristic: House-era
         (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era

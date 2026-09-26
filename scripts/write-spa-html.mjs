@@ -33,7 +33,14 @@ export const SPA_SHELL_PATHS = [
   '/coach-fa',
   '/guarantee-games',
   '/checkbook-bowl',
+  '/nil-101',
 ]
+
+function shellHed(path, title) {
+  if (path === '/reported-nil') return 'Reported NIL by school'
+  if (path === '/nil-101') return 'NIL 101'
+  return title.split(' — ')[0]
+}
 
 function escAttr(value) {
   return String(value)
@@ -53,7 +60,7 @@ export function routeShell(path, extras = {}) {
   const description = extras.description || descriptionFromPath(path, extras)
   const url = `https://${SITE}${path}`
   const image = ogImageFromPath(path)
-  const hed = extras.hed || (path === '/reported-nil' ? 'Reported NIL by school' : title.split(' — ')[0])
+  const hed = extras.hed || shellHed(path, title)
   return { path, title, description, url, image, hed, schoolName: extras.schoolName || null }
 }
 
@@ -128,7 +135,7 @@ export function applyRouteMeta(html, route) {
     `<script type="application/ld+json" id="public-cap-jsonld">\n      ${jsonLd}\n    </script>`,
   )
 
-  const heading = hed || (path === '/reported-nil' ? 'Reported NIL by school' : title.split(' — ')[0])
+  const heading = hed || shellHed(path, title)
   out = out.replace(
     /<div id="home-dek" class="page-wrap home-dek">[\s\S]*?<\/div>\s*<div id="root">/,
     `<div id="home-dek" class="page-wrap home-dek">
