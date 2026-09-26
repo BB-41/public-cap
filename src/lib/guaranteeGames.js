@@ -2,7 +2,7 @@
 
 import { moneyExact } from './format.js'
 
-export const DESK_AS_OF = '2026-09-25'
+export const DESK_AS_OF = '2026-09-26'
 export const DEFAULT_SEASON = 2026
 export const BOARD_PATH = '/guarantee-games'
 export const SCHOOL_HASH = 'guarantee-games'

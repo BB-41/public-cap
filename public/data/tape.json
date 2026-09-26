@@ -1,8 +1,8 @@
 {
   "meta": {
     "product": "Public Cap desk tape",
-    "asOf": "2026-09-25",
-    "itemCount": 424,
+    "asOf": "2026-09-26",
+    "itemCount": 429,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6375,6 +6375,81 @@
       "source": {
         "label": "Tallahassee Democrat (Aug. 29, 2026) — Florida State–New Mexico State buy-game payout",
         "url": "https://www.tallahassee.com/story/sports/college/fsu/football/2026/08/29/florida-state-new-mexico-state-buy-game-payout/91465283007/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "louisville-guarantee-2026-louisville-villanova",
+      "date": "2023-07-25",
+      "school": "louisville",
+      "schoolName": "Louisville",
+      "kind": "guarantee-game",
+      "headline": "Louisville pays Villanova a $500,000 football guarantee.",
+      "figure": 500000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (July 25, 2023) — Louisville–Villanova contract via Louisville open records",
+        "url": "https://fbschedules.com/louisville-adds-charlotte-villanova-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "kentucky-guarantee-2026-kentucky-youngstown-state",
+      "date": "2019-03-21",
+      "school": "kentucky",
+      "schoolName": "Kentucky",
+      "kind": "guarantee-game",
+      "headline": "Kentucky pays Youngstown State a $575,000 football guarantee.",
+      "figure": 575000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (March 21, 2019) — Kentucky–Youngstown State contract via Youngstown State open records",
+        "url": "https://fbschedules.com/youngstown-state-to-play-at-kentucky-in-2026/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "tennessee-guarantee-2026-tennessee-furman",
+      "date": "2022-05-24",
+      "school": "tennessee",
+      "schoolName": "Tennessee",
+      "kind": "guarantee-game",
+      "headline": "Tennessee pays Furman a $500,000 football guarantee.",
+      "figure": 500000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (May 24, 2022) — Tennessee–Furman COVID make-up of the 2020 contract dollar",
+        "url": "https://fbschedules.com/tennessee-adds-furman-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "alabama-guarantee-2026-alabama-chattanooga",
+      "date": "2025-12-05",
+      "school": "alabama",
+      "schoolName": "Alabama",
+      "kind": "guarantee-game",
+      "headline": "Alabama pays Chattanooga a $500,000 football guarantee.",
+      "figure": 500000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Dec. 5, 2025) — Alabama–Chattanooga contract via Chattanooga public records",
+        "url": "https://fbschedules.com/alabama-adds-games-vs-marshall-and-chattanooga-reschedules-usf/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "virginia-guarantee-2026-virginia-norfolk-state",
+      "date": "2020-03-12",
+      "school": "virginia",
+      "schoolName": "Virginia",
+      "kind": "guarantee-game",
+      "headline": "Virginia pays Norfolk State a $420,000 football guarantee.",
+      "figure": 420000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (March 12, 2020) — Virginia–Norfolk State contract via Virginia FOIA",
+        "url": "https://fbschedules.com/virginia-to-host-norfolk-state-in-2026-richmond-in-2028/"
       },
       "field": "guaranteeGames"
     }
