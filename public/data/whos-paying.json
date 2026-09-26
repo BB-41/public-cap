@@ -202,7 +202,7 @@
           "valueStatus": "published",
           "approximate": true,
           "value": 20000000,
-          "valueLabel": "$20 million",
+          "valueLabel": "around $20 million",
           "line": "That year’s war chest, per the athletic director",
           "combineWithCapacity": false,
           "source": "ESPN — Jake Trotter, Aug. 26, 2024. Athletic director Ross Bjork put that year’s name, image, and likeness war chest at $20 million.",
@@ -211,9 +211,9 @@
           "notes": "Football only, for that year. Not a school filing. Not added to department capacity. The same story names the collectives THE Foundation and the 1870 Society.",
           "cites": [
             {
-              "source": "Yahoo Sports — Bjork described the total as the whole ecosystem: brand contracts and collectives, including THE Foundation.",
+              "source": "Yahoo Sports — July 25, 2024. Bjork said players received around $20 million over the past year from third-party deals, including collectives and THE Foundation.",
               "url": "https://sports.yahoo.com/much-ohio-state-football-players-155152143.html",
-              "asOf": "2024-08-26"
+              "asOf": "2024-07-25"
             }
           ]
         }
