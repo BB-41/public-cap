@@ -110,7 +110,7 @@ if (process.env.PUBLIC_DIR) {
   const reported = readFileSync(join(publicDir, 'reported-nil.html'), 'utf8')
   ok(/<title>Reported NIL by school — Power 4 football roster stack — Public Cap<\/title>/.test(reported), 'dist reported-nil.html has the board title')
   ok(reported.includes('https://thepubliccap.com/reported-nil'), 'dist reported-nil.html points canonical at the board')
-  ok(!reported.includes('<title>Public Cap — Capacity vs House cap vs booked NIL</title>'), 'dist reported-nil.html is not the homepage title')
+  ok(!reported.includes('<title>Public Cap: NCAA NIL & college football money desk</title>'), 'dist reported-nil.html is not the homepage title')
   const lsuHtml = readFileSync(join(publicDir, 'school/lsu.html'), 'utf8')
   ok(/<title>LSU — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap<\/title>/.test(lsuHtml), 'dist school/lsu.html has the LSU title')
   ok(lsuHtml.includes('https://thepubliccap.com/school/lsu'), 'dist school/lsu.html points canonical at LSU')
