@@ -320,6 +320,14 @@ export default function Methods({ meta: metaProp }) {
         Capacity is annual. Alumni wealth is lifetime. We show both on the school page and
         never add the stock into the ranking.
       </p>
+      <p>
+        Who’s paying, on the Texas, Ohio State, Alabama, and Oregon pages, names the
+        apparel company, the multimedia-rights holder, and facility sponsors behind that
+        sponsorships and licensing line. These companies' money is already counted in capacity.
+        It is not added again. Collective and brand money that never touches the school's
+        books is a separate line. A full-picture sum is booked capacity plus one sourced
+        outside figure, with both parts visible. It is not the capacity rank.
+      </p>
 
       <h2>What “booked NIL” means</h2>
       <p>

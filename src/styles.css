@@ -1598,3 +1598,34 @@ table.rank th.rk { cursor: default; }
     font-size: 16px;
   }
 }
+
+.whos-paying { margin: 8px 0 28px; }
+.whos-paying h2 { margin-bottom: 6px; }
+.whos-block { margin-top: 16px; }
+.whos-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-top: 1px solid var(--rule);
+}
+.whos-main { min-width: 0; flex: 1 1 16rem; }
+.whos-val {
+  font-family: Arial, Helvetica, system-ui, sans-serif;
+  font-size: 15px;
+  text-align: right;
+}
+.whos-meta { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.whos-full {
+  background: var(--ink-2);
+  padding: 12px 14px;
+  margin-top: 8px;
+  border-top: 2px solid var(--gold);
+}
+.whos-full .whos-val { text-align: left; font-size: 16px; }
+@media (max-width: 800px) {
+  .whos-row { flex-direction: column; align-items: stretch; }
+  .whos-val { text-align: left; }
+}

@@ -41,6 +41,7 @@ import { earningsBack } from '../lib/earningsBack.js'
 import Layers from '../components/Layers.jsx'
 import SeasonPicker from '../components/SeasonPicker.jsx'
 import CapacityWaterfall from '../components/CapacityWaterfall.jsx'
+import WhosPaying from '../components/WhosPaying.jsx'
 import HidePendingToggle, { readHidePending, writeHidePending } from '../components/HidePendingToggle.jsx'
 import { houseValueForSeason } from '../lib/seasons.js'
 import { EMPTY_TAPE, tapeForSchool } from '../lib/tape.js'
@@ -948,6 +949,8 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         onToggle={setOpen}
         includeAlumni={includeAlumni}
       />
+
+      <WhosPaying school={s} cap={cap} />
 
       <div className="two-col">
         <section>

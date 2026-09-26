@@ -1,0 +1,395 @@
+{
+  "meta": {
+    "asOf": "2026-09-26",
+    "capacityTreatment": "already-inside",
+    "insideExplainer": "These companies' money is already counted in capacity.",
+    "outsideExplainer": "Outside money never touches the school's books.",
+    "note": "Booked capacity already includes sponsorships and licensing, plus media, tickets, and booked contributions. Company rows explain that money. They are not added again. Outside rows are third-party NIL. A full-picture line, when shown, is booked capacity plus one sourced outside figure, with both parts visible. It is not the capacity rank."
+  },
+  "schools": {
+    "texas": {
+      "sponsorshipFiling": {
+        "status": "reported",
+        "label": "Corporate sponsorship, advertising, and licensing",
+        "value": 68790000,
+        "valueStatus": "published",
+        "fiscalYear": "FY2024",
+        "confidence": "reported",
+        "source": "Knight-Newhouse via CNBC — corporate sponsorship, advertising, licensing",
+        "url": "https://www.cnbc.com/2025/12/19/cnbc-official-college-sports-valuations-2025-top-75-athletic-programs.html",
+        "asOf": "2025-12-19",
+        "notes": "Same figure as this desk’s capacity sponsorships line for FY2024. Already inside booked capacity."
+      },
+      "partners": [
+        {
+          "kind": "apparel",
+          "company": "Nike",
+          "term": "15 years",
+          "valueStatus": "published",
+          "valueLabel": "$250 million over 15 years",
+          "detail": "$20 million up front and $6.5 million a year in cash, plus apparel and equipment.",
+          "source": "The Texas Tribune — UT System regents approved a 15-year, $250 million Nike licensing and apparel agreement on Oct. 30, 2015.",
+          "url": "https://www.texastribune.org/2015/10/30/ut-signs-record-apparel-deal-nike-250-million-over/",
+          "asOf": "2015-10-30",
+          "notes": "Life of the contract, not one year’s check. The annual piece is what can sit in sponsorships and licensing. The $250 million is not added on top of capacity."
+        },
+        {
+          "kind": "multimedia",
+          "company": "Learfield (Longhorn Sports Properties)",
+          "term": "not public",
+          "valueStatus": "not-public",
+          "valueLabel": "not public",
+          "source": "Learfield — Longhorn Sports Properties is the University of Texas exclusive athletics multimedia rights holder. No term or dollar on the page.",
+          "url": "https://www.learfield.com/partner/longhorn-sports-properties/",
+          "asOf": "2026-09-26",
+          "notes": "Partner page checked Sept. 26, 2026."
+        },
+        {
+          "kind": "licensing",
+          "company": "CLC (Learfield)",
+          "term": "Until 2032",
+          "valueStatus": "not-public",
+          "valueLabel": "not public",
+          "source": "University of Texas Athletics — CLC named full-service licensing representative, term until 2032. The release does not publish a dollar.",
+          "url": "https://texaslonghorns.com/news/2019/12/10/longhorn-sports-properties-learfield-img-college-ut-austin-selects-clc-for-full-service-licensing-agreement",
+          "asOf": "2019-12-10",
+          "notes": "Trademark licensing agent. Not the multimedia-rights fee."
+        }
+      ],
+      "naming": [
+        {
+          "facility": "Darrell K Royal–Texas Memorial Stadium",
+          "company": null,
+          "status": "none",
+          "valueStatus": "none",
+          "valueLabel": "No corporate naming-rights sponsor",
+          "source": "University of Texas Athletics — the stadium’s official name is Darrell K Royal-Texas Memorial Stadium. No company is in that name.",
+          "url": "https://texaslonghorns.com/facilities/dkr-texas-memorial-stadium/1",
+          "asOf": "2026-09-26",
+          "notes": "Facility page checked Sept. 26, 2026."
+        },
+        {
+          "facility": "Moody Center",
+          "company": "Moody Foundation",
+          "status": "named",
+          "valueStatus": "published",
+          "value": 130000000,
+          "valueLabel": "$130 million grant",
+          "countsInThisCapacity": false,
+          "source": "UT Austin News — the arena is named Moody Center for a $130 million Moody Foundation grant.",
+          "url": "https://news.utexas.edu/2022/04/19/multi-purpose-moody-center-opens/",
+          "asOf": "2022-04-19",
+          "notes": "One-time grant. Not this year’s capacity, and not added on top."
+        }
+      ],
+      "outside": [
+        {
+          "organization": "Texas One Fund",
+          "valueStatus": "published",
+          "value": 14540650,
+          "valueLabel": "$14,540,650",
+          "line": "2024 student-athlete appearances",
+          "combineWithCapacity": true,
+          "approximate": false,
+          "yearNote": "Calendar 2024 filing. Booked capacity on this page is not that same year.",
+          "source": "IRS Form 990 — Texas One Fund Inc (EIN 87-3873183), calendar 2024, via ProPublica. Student athlete appearances $14,540,650.",
+          "url": "https://projects.propublica.org/nonprofits/organizations/873873183/202503359349301145/IRS990",
+          "asOf": "2026-03-06",
+          "notes": "All sports on the return, not football only. Earlier years below are not added to this figure.",
+          "prior": [
+            {
+              "line": "2023 student-athlete appearances",
+              "value": 11717673,
+              "valueLabel": "$11,717,673",
+              "valueStatus": "published",
+              "source": "IRS Form 990 — Texas One Fund Inc, calendar 2023, via ProPublica. Student athlete appearances $11,717,673.",
+              "url": "https://projects.propublica.org/nonprofits/organizations/873873183/202413239349302061/IRS990",
+              "asOf": "2024-11-19"
+            },
+            {
+              "line": "2022 student-athlete contractors",
+              "value": 423157,
+              "valueLabel": "$423,157",
+              "valueStatus": "published",
+              "source": "IRS Form 990 — Texas One Fund Inc, calendar 2022, via ProPublica. Student athlete contractors $423,157.",
+              "url": "https://projects.propublica.org/nonprofits/organizations/873873183/202333199349308883/IRS990",
+              "asOf": "2023-11-15"
+            }
+          ]
+        }
+      ]
+    },
+    "ohio-state": {
+      "sponsorshipFiling": {
+        "status": "not-reported",
+        "label": "No reported sponsorship and licensing line on this desk",
+        "value": null,
+        "valueStatus": "not-public",
+        "source": "Ohio State FY2025 athletics release — tickets and donor contributions are published. Royalties, licensing, advertising, and sponsorships are not broken out. The desk’s sponsorship cell is an estimate and is not repeated here.",
+        "url": "https://news.osu.edu/ohio-state-athletics-sets-record-with-336m-in-fy25-revenue-after-national-championship-season/",
+        "asOf": "2026-01-30"
+      },
+      "partners": [
+        {
+          "kind": "apparel",
+          "company": "Nike",
+          "term": "15 years, through the 2033 academic year",
+          "valueStatus": "published",
+          "valueLabel": "$252 million over 15 years",
+          "detail": "$22.5 million in cash and $5 million in products up front.",
+          "source": "Associated Press — Ohio State and Nike announced a 15-year, $252 million extension through 2033.",
+          "url": "https://apnews.com/general-news-d9841eacce78437d9ea9a9e1fd365348",
+          "asOf": "2016-01-14",
+          "notes": "Life of the contract. It includes benefits beyond the athletic department. Not added on top of capacity."
+        },
+        {
+          "kind": "multimedia",
+          "company": "Learfield",
+          "term": "Through 2036",
+          "valueStatus": "not-public",
+          "valueLabel": "not public",
+          "source": "Sports Business Journal — Ohio State and Learfield extended the multimedia deal through 2036. Exact financial details were not available.",
+          "url": "https://www.sportsbusinessjournal.com/Articles/2026/01/07/ohio-state-learfield-agree-to-massive-mmr-extension/",
+          "asOf": "2026-01-07",
+          "notes": "Revenue-share structure. No dollar in the story.",
+          "cites": [
+            {
+              "source": "Learfield — Ohio State announced the extension on Jan. 7, 2026. The release does not publish a dollar or an end year.",
+              "url": "https://www.learfield.com/2026/01/ohio-state-athletics-and-learfield-announce-long-term-partnership-extension-to-expand-nil-opportunities-and-grow-new-revenue-during-a-critical-time-in-college-sports/",
+              "asOf": "2026-01-07"
+            }
+          ]
+        }
+      ],
+      "naming": [
+        {
+          "facility": "Ohio Stadium",
+          "company": null,
+          "status": "none",
+          "valueStatus": "none",
+          "valueLabel": "No corporate naming-rights sponsor",
+          "source": "Buckeyes Wire / USA TODAY — athletic director Ross Bjork said there were no plans to sell Ohio Stadium naming rights. The stadium stays Ohio Stadium.",
+          "url": "https://buckeyeswire.usatoday.com/story/sports/college/buckeyes/football/2026/06/25/ross-bjork-says-no-plans-to-sell-ohio-stadium-naming-rights/90694027007/",
+          "asOf": "2026-06-25"
+        },
+        {
+          "facility": "Ohio Stadium playing field (Safelite Field)",
+          "company": "Safelite",
+          "status": "named",
+          "term": "Multi-year",
+          "valueStatus": "not-public",
+          "valueLabel": "not public",
+          "source": "WOSU — the playing surface is Safelite Field under a multi-year deal with Learfield’s Ohio State Sports Properties. No financial terms were disclosed.",
+          "url": "https://www.wosu.org/sports/2022-08-26/safelite-becomes-sponsor-of-ohio-stadium-field",
+          "asOf": "2022-08-26",
+          "notes": "Field name only. The stadium is still Ohio Stadium."
+        },
+        {
+          "facility": "Value City Arena at the Jerome Schottenstein Center",
+          "company": "Value City / Schottenstein",
+          "status": "named",
+          "valueStatus": "not-public",
+          "valueLabel": "not public",
+          "source": "Buckeyes Wire / USA TODAY — the basketball arena has carried those names since 1998. The story does not publish a dollar.",
+          "url": "https://buckeyeswire.usatoday.com/story/sports/college/buckeyes/football/2026/06/25/ross-bjork-says-no-plans-to-sell-ohio-stadium-naming-rights/90694027007/",
+          "asOf": "2026-06-25",
+          "notes": "Arena name. Dollar not public. Not added on top of capacity."
+        }
+      ],
+      "outside": [
+        {
+          "organization": "Third-party football NIL",
+          "valueStatus": "published",
+          "approximate": true,
+          "value": 20000000,
+          "valueLabel": "$20 million",
+          "line": "That year’s war chest, per the athletic director",
+          "combineWithCapacity": false,
+          "source": "ESPN — Jake Trotter, Aug. 26, 2024. Athletic director Ross Bjork put that year’s name, image, and likeness war chest at $20 million.",
+          "url": "https://www.espn.com/college-football/story/_/id/40979635/ohio-state-college-football-20-million-offseason-michigan-motivated",
+          "asOf": "2024-08-26",
+          "notes": "Football only, for that year. Not a school filing. Not added to department capacity. The same story names the collectives THE Foundation and the 1870 Society.",
+          "cites": [
+            {
+              "source": "Yahoo Sports — Bjork described the total as the whole ecosystem: brand contracts and collectives, including THE Foundation.",
+              "url": "https://sports.yahoo.com/much-ohio-state-football-players-155152143.html",
+              "asOf": "2024-08-26"
+            }
+          ]
+        }
+      ]
+    },
+    "alabama": {
+      "sponsorshipFiling": {
+        "status": "not-reported",
+        "label": "No reported sponsorship and licensing line on this desk",
+        "value": null,
+        "valueStatus": "not-public",
+        "source": "Alabama FY2025 report copy — tickets and contributions are published. Royalties, licensing, advertisements, and sponsorships are not independently confirmed. The desk’s sponsorship cell is a residual estimate and is not repeated here.",
+        "url": "https://www.scribd.com/document/996414831/Alabama-s-2024-25-athletics-financial-report",
+        "asOf": "FY2025"
+      },
+      "partners": [
+        {
+          "kind": "apparel",
+          "company": "Nike",
+          "term": "not public",
+          "valueStatus": "not-public",
+          "valueLabel": "not public",
+          "source": "AL.com — Greg Byrne said Alabama extended its Nike deal a few years ago and that the extension is not available for public inspection.",
+          "url": "https://www.al.com/alabamafootball/2025/08/alabama-quietly-extended-nike-deal-details-remain-a-mystery.html",
+          "asOf": "2025-08-27",
+          "notes": "The last disclosed contract ran through June 30, 2025 and was worth $63 million in cash and apparel plus a $5 million signing bonus. That contract is over. It is not the current deal."
+        },
+        {
+          "kind": "multimedia",
+          "company": "Learfield",
+          "term": "15 years",
+          "valueStatus": "not-public",
+          "valueLabel": "not public",
+          "source": "Alabama Athletics — 15-year multimedia rights extension with Learfield, announced Jan. 24, 2023. The release does not publish a dollar.",
+          "url": "https://rolltide.com/news/2023/1/24/general-alabama-athletics-extends-multimedia-rights-relationship-with-learfield-in-landmark-deal",
+          "asOf": "2023-01-24"
+        }
+      ],
+      "naming": [
+        {
+          "facility": "Bryant-Denny Stadium",
+          "company": null,
+          "status": "none",
+          "valueStatus": "none",
+          "valueLabel": "No corporate naming-rights sponsor",
+          "source": "Alabama Athletics — the stadium’s official name is Bryant-Denny Stadium. No company is in that name.",
+          "url": "https://rolltide.com/facilities/bryant-denny-stadium/1",
+          "asOf": "2026-09-26",
+          "notes": "Facility page checked Sept. 26, 2026."
+        }
+      ],
+      "outside": [
+        {
+          "organization": "Yea Alabama",
+          "valueStatus": "no-reliable-figure",
+          "value": null,
+          "approximate": false,
+          "combineWithCapacity": false,
+          "valueLabel": "no reliable public figure",
+          "line": "Private collective",
+          "source": "AL.com — Yea Alabama is a private collective. The story says the program’s NIL total is not public.",
+          "url": "https://www.al.com/alabama/2024/08/boosters-started-a-nonprofit-to-pay-alabama-athletes-millions-now-its-shutting-down.html",
+          "asOf": "2024-08",
+          "notes": "Widely documented. No public budget."
+        },
+        {
+          "organization": "Walk of Champions",
+          "valueStatus": "published",
+          "value": 10000,
+          "approximate": false,
+          "combineWithCapacity": false,
+          "valueLabel": "$10,000",
+          "line": "2023 appearance fees",
+          "source": "IRS Form 990 — Walk of Champions (EIN 92-2221008), calendar 2023, via ProPublica. Appearance fees $10,000.",
+          "url": "https://projects.propublica.org/nonprofits/organizations/922221008/202401369349314385/IRS990",
+          "asOf": "2024-05-15",
+          "notes": "One nonprofit’s filed appearance-fee line. Not a program budget. Not Yea Alabama."
+        }
+      ]
+    },
+    "oregon": {
+      "sponsorshipFiling": {
+        "status": "reported",
+        "label": "Royalties, licensing, advertisements, and sponsorship",
+        "value": 26607027,
+        "valueStatus": "published",
+        "fiscalYear": "FY2025",
+        "confidence": "reported",
+        "source": "Oregon FY2025 AUP — Royalties, Licensing, Advertisements, and Sponsorship",
+        "url": "https://goducks.com/documents/download/2026/1/13/University_of_Oregon_FY2025_AUP_Report_FINAL.pdf",
+        "asOf": "2026-01-13",
+        "notes": "Same figure as this desk’s capacity sponsorships line for FY2025. Already inside booked capacity."
+      },
+      "partners": [
+        {
+          "kind": "apparel",
+          "company": "Nike",
+          "term": "11 years, through May 31, 2028",
+          "valueStatus": "published",
+          "valueLabel": "$88 million in cash and gear",
+          "detail": "Cash starts at $2 million a year and rises to $2.5 million. Apparel starts at $5 million a year and rises to $6 million. $3 million signing bonus.",
+          "source": "Associated Press — university documents described an 11-year, $88 million cash-and-gear agreement, including the annual steps and a $3 million signing bonus.",
+          "url": "https://apnews.com/general-news-462ca17443ae44428ec8dc67f5508bcb",
+          "asOf": "2017-12-08",
+          "notes": "Life of the contract. Not added on top of capacity.",
+          "cites": [
+            {
+              "source": "KVAL — the Board of Trustees approved the agreement. It runs through May 31, 2028.",
+              "url": "https://kval.com/news/local/university-of-oregon-re-ups-nike-athletics-apparel-agreement",
+              "asOf": "2017-12-08"
+            }
+          ]
+        },
+        {
+          "kind": "multimedia",
+          "company": "Learfield (Oregon Sports Properties)",
+          "term": "not public",
+          "valueStatus": "not-public",
+          "valueLabel": "not public",
+          "source": "Learfield — Oregon Sports Properties is Oregon Athletics’ media rights holder. The release does not publish a term or a fee.",
+          "url": "https://www.learfield.com/2024/08/oregon-athletics-launches-charter-partners-program-to-celebrate-seven-key-sponsorships-over-the-last-decade/",
+          "asOf": "2024-08-05"
+        },
+        {
+          "kind": "partner",
+          "company": "Charter partners",
+          "term": "Recognized Aug. 5, 2024",
+          "valueStatus": "not-public",
+          "valueLabel": "not public",
+          "detail": "Bigfoot Beverages, Bi-Mart, Carl’s Jr., Country Financial, McDonald’s, Oregon Community Credit Union, and Toyota.",
+          "source": "Learfield / Oregon Athletics — Charter Partners program for seven long-time sponsors. No dollars in the release.",
+          "url": "https://www.learfield.com/2024/08/oregon-athletics-launches-charter-partners-program-to-celebrate-seven-key-sponsorships-over-the-last-decade/",
+          "asOf": "2024-08-05",
+          "notes": "The school lists them together. Individual deal sizes are not public, so they are not ranked."
+        }
+      ],
+      "naming": [
+        {
+          "facility": "Autzen Stadium",
+          "company": null,
+          "status": "none",
+          "valueStatus": "none",
+          "valueLabel": "No corporate naming-rights sponsor",
+          "source": "University of Oregon Athletics — the stadium’s official name is Autzen Stadium. No company is in that name.",
+          "url": "https://goducks.com/facilities/autzen-stadium/1",
+          "asOf": "2026-09-26",
+          "notes": "Facility page checked Sept. 26, 2026."
+        },
+        {
+          "facility": "Autzen suite level and field logos",
+          "company": "Edward Jones",
+          "status": "named",
+          "term": "Four years",
+          "valueStatus": "not-public",
+          "valueLabel": "not public",
+          "source": "Central Oregon Daily — four-year Edward Jones deal starting with the Sept. 5, 2026 Boise State game. The suite level is presented by Edward Jones. Logos go on the 25-yard lines.",
+          "url": "https://www.centraloregondaily.com/sports/oregon_ducks/oregon-football-to-add-on-field-sponsor-in-deal-with-edward-jones/article_59050880-5600-5899-b842-c3a045bc49ff.html",
+          "asOf": "2026-09-05",
+          "notes": "The story’s dollar figure is a three-school Learfield package. Oregon’s share is not public. Not the stadium name."
+        }
+      ],
+      "outside": [
+        {
+          "organization": "Division Street",
+          "valueStatus": "no-reliable-figure",
+          "value": null,
+          "approximate": false,
+          "combineWithCapacity": false,
+          "valueLabel": "no reliable public figure",
+          "line": "Collective",
+          "source": "On3 — Division Street is named as Oregon’s collective. That account does not publish a budget.",
+          "url": "https://www.on3.com/nil/news/on3s-top-15-nil-collectives-in-college-sports/",
+          "asOf": "2026-09-26",
+          "notes": "Widely documented. Page checked Sept. 26, 2026. No public dollar."
+        }
+      ]
+    }
+  }
+}

@@ -9,6 +9,10 @@ export const DEFS = {
     label: 'Annual capacity',
     text: 'Default is booked-only: media + sponsorships + tickets + booked contributions — the filing stack. Flip on Include modeled alumni to add the Scorecard-based extra-alumni midpoint, net of booked gifts. Annual, not lifetime. Private EADA athletics revenue is a separate federal lane and is not added to this stack.',
   },
+  whosPaying: {
+    label: "Who's paying",
+    text: "Companies tied to the athletic department — apparel, multimedia rights, and facility names — explain money already counted in capacity. They are not added on top. Outside money is collective or brand NIL that never touches the school's books. A full-picture line is booked capacity plus one sourced outside figure, with both parts visible. It is not the capacity rank. Empty means this school has no who's-paying row.",
+  },
   eada: {
     label: 'EADA athletics revenue',
     text: 'Federal Equity in Athletics Disclosure Act grand total revenues for the school’s athletics department. Cited from the U.S. Dept. of Education public data file. Includes institutional support and other allocated items. Not comparable 1:1 to a public school’s Knight-Newhouse / MFRS capacity stack. We do not unpack it into tickets, sponsorships, or contributions. On private pages it sits beside conference media — the two lanes are not summed into one fake capacity.',
