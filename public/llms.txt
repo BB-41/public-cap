@@ -8,6 +8,7 @@ Public Cap is the college athletics capacity desk at https://thepubliccap.com. I
 
 - Home: https://thepubliccap.com/ — rank list, capacity vs House cap vs booked NIL
 - Methods: https://thepubliccap.com/methods — how the desk books capacity, House, booked NIL, and collective 990 payouts
+- NIL 101: https://thepubliccap.com/nil-101 — a plain-English guide to how college athletes get paid
 - School pages: https://thepubliccap.com/school/<slug> — one page per school (examples: /school/lsu, /school/notre-dame)
 - Compare: https://thepubliccap.com/compare
 - Reported NIL: https://thepubliccap.com/reported-nil

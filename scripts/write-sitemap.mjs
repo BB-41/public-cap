@@ -13,7 +13,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 export const SITE_ORIGIN = 'https://thepubliccap.com'
 
 /** Public HTML routes listed for the sitemap. /about does not exist. */
-export const STATIC_PATHS = ['/', '/tape', '/methods', '/buyout', '/coach-fa', '/guarantee-games', '/checkbook-bowl', '/compare', '/reported-nil', '/tv']
+export const STATIC_PATHS = ['/', '/tape', '/methods', '/nil-101', '/buyout', '/coach-fa', '/guarantee-games', '/checkbook-bowl', '/compare', '/reported-nil', '/tv']
 
 /** Bump when generated HTML routes change. Never older than schools.json meta.asOf. */
 export const PAGE_LASTMOD = '2026-09-26'
