@@ -75,6 +75,11 @@ ok(!locs.some((u) => u.includes('/data/')), 'sitemap does not list /data/ JSON')
 if (generated.lastmod) {
   ok(xml.includes(`<lastmod>${generated.lastmod}</lastmod>`), `sitemap lastmod is ${generated.lastmod}`)
 }
+ok(
+  /<loc>https:\/\/thepubliccap\.com\/nil-101<\/loc>\s*<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(xml),
+  'sitemap /nil-101 has a lastmod',
+)
+ok(!/noindex/i.test(xml), 'sitemap does not noindex')
 
 const headers = readFileSync(join(root, 'public/_headers'), 'utf8')
 ok(/\/robots\.txt[\s\S]*Content-Type:\s*text\/plain/i.test(headers), '_headers sets robots.txt text/plain')
@@ -115,6 +120,17 @@ if (process.env.PUBLIC_DIR) {
   ok(/<title>LSU — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap<\/title>/.test(lsuHtml), 'dist school/lsu.html has the LSU title')
   ok(lsuHtml.includes('https://thepubliccap.com/school/lsu'), 'dist school/lsu.html points canonical at LSU')
   ok(lsuHtml.includes('"@type":"CollegeOrUniversity"'), 'dist school/lsu.html has CollegeOrUniversity JSON-LD')
+  ok(lsuHtml.includes('>How NIL works</a>'), 'dist school/lsu.html links How NIL works')
+  ok(!/noindex/i.test(lsuHtml), 'dist school/lsu.html is not noindex')
+  const nilHtml = readFileSync(join(publicDir, 'nil-101.html'), 'utf8')
+  ok(/<h1 class="issue-hed">NIL 101<\/h1>/.test(nilHtml), 'dist nil-101.html has one NIL 101 h1')
+  ok((nilHtml.match(/<h1\b/g) || []).length === 1, 'dist nil-101.html has exactly one h1')
+  ok(nilHtml.includes('<h2>What is NIL?</h2>'), 'dist nil-101.html has the What is NIL heading')
+  ok(nilHtml.includes('<h2>Are players employees?</h2>'), 'dist nil-101.html has the employees heading')
+  ok(nilHtml.includes('"@type":"FAQPage"'), 'dist nil-101.html has FAQPage JSON-LD')
+  ok(nilHtml.includes('"@type":"Article"'), 'dist nil-101.html has Article JSON-LD')
+  ok(!/noindex/i.test(nilHtml), 'dist nil-101.html is not noindex')
+  JSON.parse(nilHtml.match(/<script type="application\/ld\+json" id="public-cap-jsonld">\s*([\s\S]*?)\s*<\/script>/)[1])
   const distLlms = readFileSync(join(publicDir, 'llms.txt'), 'utf8')
   ok(/^# Public Cap/m.test(distLlms) && !/<html[\s>]/i.test(distLlms), 'dist llms.txt is plain text, not SPA HTML')
 }
