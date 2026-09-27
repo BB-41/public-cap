@@ -12,6 +12,7 @@ import {
   biggerSpenderId,
   compareHref,
   deriveGame,
+  FOOTBALL_REVENUE_LABEL,
   FOOTBALL_SPEND_LABEL,
   footballSpendField,
   isFinal,
@@ -181,60 +182,49 @@ ok(read('public/llms.txt').includes('https://thepubliccap.com/checkbook-bowl'), 
 ok(read('public/sitemap.xml').includes('https://thepubliccap.com/checkbook-bowl'), 'sitemap.xml lists the board')
 
 const schoolPage = read('src/pages/School.jsx')
+const chat = read('src/lib/deskChat.js')
 ok(schoolPage.includes('{FOOTBALL_SPEND_LABEL}'), 'school page renders the FY2025 football spending label')
-ok(read('src/lib/checkbookBowl.js').includes(`'${FOOTBALL_SPEND_LABEL}'`), 'label constant is the federal EADA filing line')
-ok(schoolPage.includes('footballSpendField'), 'school page resolves football spending through footballSpendField')
-ok(schoolPage.includes('id="slice-eada-football"'), 'school page keeps the eada-football drill target')
-ok(!schoolPage.includes('EADA football (sport-attributed)'), 'school page no longer uses the old football eyebrow')
+ok(schoolPage.includes('{FOOTBALL_REVENUE_LABEL}'), 'school page renders the EADA football revenue label')
+ok(read('src/lib/checkbookBowl.js').includes(`'${FOOTBALL_SPEND_LABEL}'`), 'spend label constant is the federal EADA filing line')
 ok(FOOTBALL_SPEND_LABEL === 'FY2025 football spending (federal EADA filing)', 'label is the federal EADA filing line')
+ok(FOOTBALL_REVENUE_LABEL === 'EADA reported football revenue', 'revenue label names football revenue')
+ok(schoolPage.includes('footballSpendField'), 'school page resolves football spending through footballSpendField')
+ok(schoolPage.includes('id="slice-eada-football"'), 'private football revenue keeps the eada-football drill target')
+ok(schoolPage.includes('id="slice-football-spend"'), 'spending card is its own block')
+ok(!schoolPage.includes('EADA football (sport-attributed)'), 'school page does not use the old football eyebrow')
+ok(!chat.includes("factLine('EADA football',"), 'desk chat does not label REV_MEN_Football as bare EADA football')
+ok(chat.includes("factLine('EADA football revenue'"), 'desk chat labels REV_MEN_Football as football revenue')
 
-let alreadyShown = 0
-let gained = 0
-let blank = 0
-const mismatches = []
+let spendShown = 0
 for (const school of schools.schools) {
-  const existing = school.capacity?.eadaFootball
-  const hasExisting = existing != null && existing.value != null && Number.isFinite(Number(existing.value))
   const field = footballSpendField(school, book.spendFy2025)
   const expense = book.spendFy2025[school.id]
-  if (hasExisting) {
-    alreadyShown += 1
-    ok(field === existing, `${school.id} keeps the existing football figure object`)
-    ok(field.value === existing.value, `${school.id} spending dollar is the existing figure`)
-    if (existing.value !== expense) {
-      mismatches.push({ id: school.id, name: school.name, existing: existing.value, spendFy2025: expense })
-    }
-  } else if (Number.isInteger(expense) && expense > 0) {
-    gained += 1
-    ok(field?.value === expense, `${school.id} falls back to spendFy2025`)
-    ok(field?.confidence === 'reported', `${school.id} fallback is reported`)
-    ok(field?.fiscalYear === 'FY2025', `${school.id} fallback is FY2025`)
-    ok(/TOTAL_EXPENSE_ALL_Football/.test(field?.source || ''), `${school.id} fallback cites TOTAL_EXPENSE_ALL_Football`)
-    ok(/ope\.ed\.gov\/athletics/.test(field?.url || ''), `${school.id} fallback cites the EADA file`)
-    ok(!/estimat/i.test(field?.source || '') && !/estimat/i.test(field?.notes || ''), `${school.id} fallback is not an estimate`)
-  } else {
-    blank += 1
-    ok(field == null, `${school.id} shows nothing without a filed dollar`)
+  const revenue = school.capacity?.eadaFootball
+  ok(field?.value === expense, `${school.id} spending is spendFy2025`)
+  ok(field !== revenue, `${school.id} spending is not the revenue cell`)
+  ok(field?.confidence === 'reported', `${school.id} spending is reported`)
+  ok(field?.fiscalYear === 'FY2025', `${school.id} spending is FY2025`)
+  ok(/TOTAL_EXPENSE_ALL_Football/.test(field?.source || ''), `${school.id} spending cites TOTAL_EXPENSE_ALL_Football`)
+  ok(/ope\.ed\.gov\/athletics/.test(field?.url || ''), `${school.id} spending cites the EADA file`)
+  ok(!/estimat/i.test(field?.source || '') && !/estimat/i.test(field?.notes || ''), `${school.id} spending is not an estimate`)
+  if (revenue?.value != null) {
+    ok(revenue.value !== field.value || revenue.value === expense, `${school.id} revenue stays a separate cell`)
   }
+  spendShown += 1
 }
-ok(alreadyShown + gained + blank === schools.schools.length, 'every desk school is counted once')
-ok(gained === schools.schools.filter((s) => !(s.capacity?.eadaFootball?.value != null)).length, 'pages without an existing figure are the ones that gain spendFy2025')
-ok(footballSpendField({ id: 'not-a-school' }, book.spendFy2025) == null, 'an unknown school with no figure stays blank')
+ok(spendShown === 68, 'all 68 school pages get a spendFy2025 dollar')
+ok(footballSpendField({ id: 'not-a-school', capacity: { eadaFootball: { value: 1 } } }, book.spendFy2025) == null, 'revenue without a spend map stays blank')
 ok(
-  footballSpendField({ id: 'alabama', capacity: { eadaFootball: { value: 1, source: 'existing' } } }, book.spendFy2025).value === 1,
-  'a disagreeing existing figure is kept',
+  footballSpendField({ id: 'notre-dame', capacity: { eadaFootball: { value: 195723436 } } }, book.spendFy2025).value === 93255797,
+  'Notre Dame spending is the expense filing, not REV_MEN_Football',
 )
 ok(
-  footballSpendField({ id: 'alabama', capacity: { eadaFootball: { value: null } } }, book.spendFy2025).value === book.spendFy2025.alabama,
-  'a null existing figure falls through to spendFy2025',
+  footballSpendField({ id: 'alabama', capacity: { eadaFootball: { value: 1 } } }, book.spendFy2025).value === book.spendFy2025.alabama,
+  'a revenue cell cannot replace spendFy2025',
 )
-ok(footballSpendField({ id: 'alabama' }, { alabama: 0 }) == null, 'a non-positive fallback is not shown')
-ok(footballSpendField({ id: 'alabama' }, {}) == null, 'a missing fallback is not shown')
+ok(footballSpendField({ id: 'alabama' }, { alabama: 0 }) == null, 'a non-positive spend map is not shown')
+ok(footballSpendField({ id: 'alabama' }, {}) == null, 'a missing spend map is not shown')
 
 const failed = checks.filter((c) => !c.ok)
-console.log(`school pages already showing football spending: ${alreadyShown}; gained: ${gained}; blank: ${blank}; mismatches: ${mismatches.length}`)
-for (const row of mismatches) {
-  console.log(`  mismatch ${row.name} (${row.id}): existing ${row.existing} kept; spendFy2025 ${row.spendFy2025}`)
-}
 console.log(`${checks.length - failed.length}/${checks.length} checks passed`)
 if (failed.length) process.exit(1)

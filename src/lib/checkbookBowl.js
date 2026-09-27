@@ -7,25 +7,18 @@ export const BOOK_PATH = '/data/checkbook-bowl.json'
 export const PAGE_PATH = '/checkbook-bowl'
 
 export const FOOTBALL_SPEND_LABEL = 'FY2025 football spending (federal EADA filing)'
+export const FOOTBALL_REVENUE_LABEL = 'EADA reported football revenue'
 
 const EADA_EXPENSE_SOURCE =
   'U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, TOTAL_EXPENSE_ALL_Football'
 const EADA_FILE_URL = 'https://ope.ed.gov/athletics/#/datafile/list'
 
-function filedDollar(field) {
-  if (!field || field.value == null || field.value === '') return false
-  const n = Number(field.value)
-  return Number.isFinite(n)
-}
-
 /**
  * Dollar for the school-page FY2025 football spending block.
- * Keep capacity.eadaFootball when that cell is already on the page.
- * Otherwise copy spendFy2025 (TOTAL_EXPENSE_ALL_Football). Never estimate.
+ * Always spendFy2025 (TOTAL_EXPENSE_ALL_Football). Never the revenue cell
+ * capacity.eadaFootball (REV_MEN_Football), and never an estimate.
  */
 export function footballSpendField(school, spendMap) {
-  const existing = school?.capacity?.eadaFootball
-  if (filedDollar(existing)) return existing
   const id = school?.id
   if (typeof id !== 'string' || !spendMap || !Object.prototype.hasOwnProperty.call(spendMap, id)) {
     return null
@@ -39,7 +32,7 @@ export function footballSpendField(school, spendMap) {
     source: EADA_EXPENSE_SOURCE,
     url: EADA_FILE_URL,
     notes:
-      'Federal EADA football expenses (TOTAL_EXPENSE_ALL_Football). Not House spent, not booked NIL, and not a coach buyout.',
+      'Federal EADA football expenses (TOTAL_EXPENSE_ALL_Football). Not football revenue, not House spent, not booked NIL, and not a coach buyout.',
   }
 }
 
