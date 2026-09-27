@@ -6,6 +6,36 @@
 export const BOOK_PATH = '/data/checkbook-bowl.json'
 export const PAGE_PATH = '/checkbook-bowl'
 
+export const FOOTBALL_SPEND_LABEL = 'FY2025 football spending (federal EADA filing)'
+export const FOOTBALL_REVENUE_LABEL = 'EADA reported football revenue'
+
+const EADA_EXPENSE_SOURCE =
+  'U.S. Dept. of Education — Equity in Athletics Disclosure Act (EADA) 2024–25, TOTAL_EXPENSE_ALL_Football'
+const EADA_FILE_URL = 'https://ope.ed.gov/athletics/#/datafile/list'
+
+/**
+ * Dollar for the school-page FY2025 football spending block.
+ * Always spendFy2025 (TOTAL_EXPENSE_ALL_Football). Never the revenue cell
+ * capacity.eadaFootball (REV_MEN_Football), and never an estimate.
+ */
+export function footballSpendField(school, spendMap) {
+  const id = school?.id
+  if (typeof id !== 'string' || !spendMap || !Object.prototype.hasOwnProperty.call(spendMap, id)) {
+    return null
+  }
+  const value = spendMap[id]
+  if (!Number.isInteger(value) || value <= 0) return null
+  return {
+    value,
+    confidence: 'reported',
+    fiscalYear: 'FY2025',
+    source: EADA_EXPENSE_SOURCE,
+    url: EADA_FILE_URL,
+    notes:
+      'Federal EADA football expenses (TOTAL_EXPENSE_ALL_Football). Not football revenue, not House spent, not booked NIL, and not a coach buyout.',
+  }
+}
+
 export function isFinal(game) {
   return typeof game?.biggerSpenderWon === 'boolean'
 }

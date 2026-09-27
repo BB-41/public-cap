@@ -12,6 +12,9 @@ import {
   biggerSpenderId,
   compareHref,
   deriveGame,
+  FOOTBALL_REVENUE_LABEL,
+  FOOTBALL_SPEND_LABEL,
+  footballSpendField,
   isFinal,
   seasonRecord,
   upsetGames,
@@ -177,6 +180,50 @@ ok(methods.includes('/checkbook-bowl'), 'Methods names the board')
 ok(sitemap.includes("'/checkbook-bowl'"), 'sitemap static paths include /checkbook-bowl')
 ok(read('public/llms.txt').includes('https://thepubliccap.com/checkbook-bowl'), 'llms.txt lists the board')
 ok(read('public/sitemap.xml').includes('https://thepubliccap.com/checkbook-bowl'), 'sitemap.xml lists the board')
+
+const schoolPage = read('src/pages/School.jsx')
+const chat = read('src/lib/deskChat.js')
+ok(schoolPage.includes('{FOOTBALL_SPEND_LABEL}'), 'school page renders the FY2025 football spending label')
+ok(schoolPage.includes('{FOOTBALL_REVENUE_LABEL}'), 'school page renders the EADA football revenue label')
+ok(read('src/lib/checkbookBowl.js').includes(`'${FOOTBALL_SPEND_LABEL}'`), 'spend label constant is the federal EADA filing line')
+ok(FOOTBALL_SPEND_LABEL === 'FY2025 football spending (federal EADA filing)', 'label is the federal EADA filing line')
+ok(FOOTBALL_REVENUE_LABEL === 'EADA reported football revenue', 'revenue label names football revenue')
+ok(schoolPage.includes('footballSpendField'), 'school page resolves football spending through footballSpendField')
+ok(schoolPage.includes('id="slice-eada-football"'), 'private football revenue keeps the eada-football drill target')
+ok(schoolPage.includes('id="slice-football-spend"'), 'spending card is its own block')
+ok(!schoolPage.includes('EADA football (sport-attributed)'), 'school page does not use the old football eyebrow')
+ok(!chat.includes("factLine('EADA football',"), 'desk chat does not label REV_MEN_Football as bare EADA football')
+ok(chat.includes("factLine('EADA football revenue'"), 'desk chat labels REV_MEN_Football as football revenue')
+
+let spendShown = 0
+for (const school of schools.schools) {
+  const field = footballSpendField(school, book.spendFy2025)
+  const expense = book.spendFy2025[school.id]
+  const revenue = school.capacity?.eadaFootball
+  ok(field?.value === expense, `${school.id} spending is spendFy2025`)
+  ok(field !== revenue, `${school.id} spending is not the revenue cell`)
+  ok(field?.confidence === 'reported', `${school.id} spending is reported`)
+  ok(field?.fiscalYear === 'FY2025', `${school.id} spending is FY2025`)
+  ok(/TOTAL_EXPENSE_ALL_Football/.test(field?.source || ''), `${school.id} spending cites TOTAL_EXPENSE_ALL_Football`)
+  ok(/ope\.ed\.gov\/athletics/.test(field?.url || ''), `${school.id} spending cites the EADA file`)
+  ok(!/estimat/i.test(field?.source || '') && !/estimat/i.test(field?.notes || ''), `${school.id} spending is not an estimate`)
+  if (revenue?.value != null) {
+    ok(revenue.value !== field.value || revenue.value === expense, `${school.id} revenue stays a separate cell`)
+  }
+  spendShown += 1
+}
+ok(spendShown === 68, 'all 68 school pages get a spendFy2025 dollar')
+ok(footballSpendField({ id: 'not-a-school', capacity: { eadaFootball: { value: 1 } } }, book.spendFy2025) == null, 'revenue without a spend map stays blank')
+ok(
+  footballSpendField({ id: 'notre-dame', capacity: { eadaFootball: { value: 195723436 } } }, book.spendFy2025).value === 93255797,
+  'Notre Dame spending is the expense filing, not REV_MEN_Football',
+)
+ok(
+  footballSpendField({ id: 'alabama', capacity: { eadaFootball: { value: 1 } } }, book.spendFy2025).value === book.spendFy2025.alabama,
+  'a revenue cell cannot replace spendFy2025',
+)
+ok(footballSpendField({ id: 'alabama' }, { alabama: 0 }) == null, 'a non-positive spend map is not shown')
+ok(footballSpendField({ id: 'alabama' }, {}) == null, 'a missing spend map is not shown')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} checks passed`)

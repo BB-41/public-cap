@@ -48,6 +48,8 @@ import TapeItems from '../components/TapeItems.jsx'
 import TvContracts from '../components/TvContracts.jsx'
 import { GuaranteeSchoolSection } from './GuaranteeGames.jsx'
 import { hashKey, homePath, isSchoolDrill } from '../lib/share.js'
+import { FOOTBALL_REVENUE_LABEL, FOOTBALL_SPEND_LABEL, footballSpendField } from '../lib/checkbookBowl.js'
+import bowlBook from '../../data/checkbook-bowl.json'
 import NamedRoster from '../components/NamedRoster.jsx'
 import { buildSchoolNilHistory, fetchRosterBooks } from '../lib/nilHistory.js'
 import AlumniToggle from '../components/AlumniToggle.jsx'
@@ -699,11 +701,24 @@ function PrivateCheckbook({ school }) {
           <Field field={eada.total} fallback="No EADA grand total on the desk." />
           {eada.football ? (
             <div className="subfield" id="slice-eada-football">
-              <div className="eyebrow">EADA football (sport-attributed)</div>
+              <div className="eyebrow">{FOOTBALL_REVENUE_LABEL}</div>
               <Field field={eada.football} />
             </div>
           ) : null}
         </div>
+      </div>
+    </section>
+  )
+}
+
+function FootballSpend({ school }) {
+  const field = footballSpendField(school, bowlBook.spendFy2025)
+  if (!field || field.value == null) return null
+  return (
+    <section className="football-spend" id="slice-football-spend">
+      <div className="checkbook-lane">
+        <div className="eyebrow">{FOOTBALL_SPEND_LABEL}</div>
+        <Field field={field} />
       </div>
     </section>
   )
@@ -936,6 +951,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
       </header>
 
       <PrivateCheckbook school={s} />
+      <FootballSpend school={s} />
 
       <CapacityWaterfall
         school={s}

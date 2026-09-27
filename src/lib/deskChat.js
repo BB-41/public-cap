@@ -943,7 +943,7 @@ function schoolAnswer(raw, season, includeAlumni, intents, tv, rosters, desk, qu
       )
       facts.push(factLine('EADA athletics revenue', eada.total.value, { mark: 'reported', note: eada.total.fiscalYear || 'FY2025' }))
       if (eada.football) {
-        facts.push(factLine('EADA football', eada.football.value, { mark: 'reported', note: 'REV_MEN_Football' }))
+        facts.push(factLine('EADA football revenue', eada.football.value, { mark: 'reported', note: 'REV_MEN_Football' }))
       }
       links.push({ to: schoolHref(school.id, season, 'eada'), label: `${school.name} EADA` })
     }
@@ -1644,7 +1644,7 @@ function eadaAnswer(raw, season, includeAlumni, desk) {
   const links = [{ to: schoolHref(school.id, season, 'eada'), label: `${school.name} EADA` }]
   if (eada.total) {
     const facts = [factLine('EADA athletics revenue', eada.total.value, { mark: 'reported', note: eada.total.fiscalYear || 'FY2025' })]
-    if (eada.football) facts.push(factLine('EADA football', eada.football.value, { mark: 'reported' }))
+    if (eada.football) facts.push(factLine('EADA football revenue', eada.football.value, { mark: 'reported', note: 'REV_MEN_Football' }))
     return {
       text: `${school.name} EADA FY2025 athletics revenue is ${money(eada.total.value)} (reported) — a separate federal top-line that includes institutional support. Not added to the booked stack, and not unpacked into tickets, sponsorships, or contributions.`,
       facts,
