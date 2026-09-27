@@ -23,6 +23,7 @@ import {
   titleFromPath,
 } from '../src/lib/share.js'
 import {
+  NIL101_FAQ_SKIP,
   NIL101_HOME_LINK_TEXT,
   NIL101_SCHOOL_LINK_TEXT,
   articleAnswersFromHtml,
@@ -303,15 +304,22 @@ ok(nilArticle?.url === 'https://thepubliccap.com/nil-101', 'article url is the c
 ok(nilArticle?.image === 'https://thepubliccap.com/og-default.png', 'article image is the default share image')
 const extracted = articleAnswersFromHtml(nilShell)
 ok(extracted.length === nilModel.sections.length, 'nil-101 shell has one article per question')
-ok(nilFaq.mainEntity.length === nilModel.sections.length, 'FAQPage has one question per guide section')
+const faqSections = nilModel.sections.filter((section) => !NIL101_FAQ_SKIP.has(section.question))
+ok(nilFaq.mainEntity.length === faqSections.length, 'FAQPage skips the flattened comparison table')
+ok(faqSections.length === 7, 'FAQPage keeps the other 7 questions')
+ok(!nilFaq.mainEntity.some((q) => q.name === 'NIL money vs. school money'), 'FAQPage omits NIL money vs. school money')
+ok(nilShell.includes('<h2>NIL money vs. school money</h2>'), 'the comparison table stays on the page')
 for (let i = 0; i < nilModel.sections.length; i++) {
   const section = nilModel.sections[i]
   const expected = sectionAnswer(section)
   ok(extracted[i].question === section.question, `visible heading ${section.question}`)
   ok(extracted[i].answer === expected, `visible answer matches the guide for ${section.question}`)
-  ok(nilFaq.mainEntity[i].name === section.question, `FAQ question ${section.question}`)
-  ok(nilFaq.mainEntity[i].acceptedAnswer.text === expected, `FAQ answer matches visible text for ${section.question}`)
   ok(!/Cartoon piggy/.test(expected), `answer omits image alt for ${section.question}`)
+}
+for (let i = 0; i < faqSections.length; i++) {
+  const section = faqSections[i]
+  ok(nilFaq.mainEntity[i].name === section.question, `FAQ question ${section.question}`)
+  ok(nilFaq.mainEntity[i].acceptedAnswer.text === sectionAnswer(section), `FAQ answer matches visible text for ${section.question}`)
 }
 const employees = nilFaq.mainEntity.find((q) => q.name === 'Are players employees?')
 ok(

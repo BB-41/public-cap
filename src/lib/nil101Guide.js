@@ -6,6 +6,9 @@
  */
 import { money, moneyExact } from './format.js'
 
+/** Stays on the page. Its flattened table reads badly as an FAQ answer. */
+export const NIL101_FAQ_SKIP = new Set(['NIL money vs. school money'])
+
 export const NIL101_H1 = 'NIL 101'
 export const NIL101_LEDE = 'How college athletes get paid. Plain words. You can read this in about three minutes.'
 export const NIL101_HOME_LINK_TEXT = 'NIL 101: how college athletes get paid'
@@ -326,7 +329,7 @@ export function nil101StructuredData({
   datePublished = NIL101_DATE_PUBLISHED,
   dateModified = NIL101_DATE_MODIFIED,
 }) {
-  const faqs = articleAnswersFromHtml(pageHtml)
+  const faqs = articleAnswersFromHtml(pageHtml).filter((faq) => !NIL101_FAQ_SKIP.has(faq.question))
   const org = { '@type': 'Organization', name: 'The Public Cap' }
   return {
     '@context': 'https://schema.org',
