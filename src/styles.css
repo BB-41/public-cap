@@ -434,7 +434,8 @@ table.rank.reported-nil-rank th { white-space: normal; }
   .page-wrap.school .hero-num { text-align: left; }
 }
 
-.private-checkbook { margin-top: 8px; }
+.private-checkbook,
+.football-spend { margin-top: 8px; }
 .checkbook-lane {
   background: var(--ink-2);
   padding: 16px;

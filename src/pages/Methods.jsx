@@ -1112,6 +1112,11 @@ export default function Methods({ meta: metaProp }) {
         (TOTAL_EXPENSE_ALL_Football), copied from the filing — not House spent, not
         booked NIL, and not a coach buyout. The record counts only final games.
         An unplayed or in-progress score stays upcoming. We do not invent dollars.
+        Every school page cites FY2025 football spending (federal EADA filing).
+        Where that page already showed a football figure, the cited dollar and its
+        source stay, including when the integer is not <code>TOTAL_EXPENSE_ALL_Football</code>.
+        Otherwise the page uses this book’s <code>spendFy2025</code> expense.
+        A school with neither dollar shows nothing.
       </p>
 
       <h2>Private-school gap</h2>
@@ -1135,7 +1140,7 @@ export default function Methods({ meta: metaProp }) {
           <code>EADA_2025.xlsx</code> column <code>GRND_TOTAL_REVENUE</code>). That number includes
           institutional support and other allocated items. It is <em>not</em> comparable 1:1
           to a public school’s Knight-Newhouse / MFRS capacity stack. Men’s football team
-          revenues (<code>REV_MEN_Football</code>) sit as a sport-attributed subline when the
+          revenues (<code>REV_MEN_Football</code>) stay on the private capacity record when the
           column is non-null — not a filing of NIL or House spend.
         </li>
       </ul>
