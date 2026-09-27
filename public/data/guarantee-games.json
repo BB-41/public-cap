@@ -35,7 +35,8 @@
       "Florida State → New Mexico State $1,400,000 is booked from the Tallahassee Democrat (Dan Rorabaugh, Aug. 29, 2026). Payment was due by July 15. The official FSU slate lists Sat, Aug. 29, 2026; the story is dated that morning and calls it today’s game, while its TV box says Saturday, Aug. 30. The row date is the official slate. The same story names a Sept. 26 Central Arkansas buy game and does not state that dollar — the $450,000 stays on the May 1, 2025 open-records row. No separate band fee is named.",
       "Wisconsin → Eastern Michigan $1,400,000 is booked from FBSchedules (Kevin Kelley; article Dec. 5, 2025, UPDATE Dec. 10, 2025), which obtained the contract from Eastern Michigan University via a public records request. Camp Randall on Sept. 19, 2026, replacing the mutually cancelled Wisconsin–Pitt date. The 2027 Dublin game is not a 2026 row. No separate band fee is named.",
       "Kentucky → South Alabama $1,600,000 is booked from the Lexington Herald-Leader (Mark Story, Ask Mark Anything, June 22, 2026). Newsroom figure for Sept. 26 at Kroger Field. The same column restates Kentucky → Youngstown State $575,000, already booked from the March 21, 2019 open-records row — not a second source of dollars. No separate band fee is named.",
-      "Indiana → North Texas $1,200,000 is booked from FBSchedules (Kevin Kelley, Sept. 24, 2025), which obtained the contract via a state public records request. Memorial Stadium on Sept. 5, 2026, replacing a cancelled Colorado State opener. Colorado State paid Indiana a $100,000 cancellation fee — that fee is not a 2026 guarantee row. No separate band fee is named."
+      "Indiana → North Texas $1,200,000 is booked from FBSchedules (Kevin Kelley, Sept. 24, 2025), which obtained the contract via a state public records request. Memorial Stadium on Sept. 5, 2026, replacing a cancelled Colorado State opener. Colorado State paid Indiana a $100,000 cancellation fee — that fee is not a 2026 guarantee row. No separate band fee is named.",
+      "Miami → Central Michigan $1,300,000 is booked from the Detroit News (Jan. 20, 2022). The headline and lede name CMU's $1.3 million payday for the 2026 trip to Miami (Fla.); a university spokesperson confirmed the figure. Newsroom figure, not a hosted contract. CMU athletics the same day confirms Saturday, Sept. 26, 2026 at Hard Rock Stadium and does not name the dollar. No separate band fee is named. Distinct from Miami → Florida A&M $720,000."
     ],
     "sources": [
       "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
@@ -79,7 +80,10 @@
       "FBSchedules (March 12, 2020) — Virginia–Norfolk State contract via Virginia FOIA",
       "FBSchedules (Dec. 5, 2025; update Dec. 10, 2025) — Wisconsin–Eastern Michigan contract via Eastern Michigan public records",
       "Lexington Herald-Leader (June 22, 2026) — Kentucky pays South Alabama $1.6 million",
-      "FBSchedules (Sept. 24, 2025) — Indiana–North Texas contract via state public records"
+      "FBSchedules (Sept. 24, 2025) — Indiana–North Texas contract via state public records",
+      "Detroit News (Jan. 20, 2022) — Central Michigan nets a $1.3 million payday at Miami (Fla.) in 2026",
+      "CMU Athletics (Jan. 20, 2022) — Central Michigan at Miami (Fla.) on Sept. 26, 2026, Hard Rock Stadium; no dollar",
+      "Miami Athletics (Sept. 26, 2026) — Central Michigan played at Hard Rock Stadium, Miami 52, Central Michigan 3"
     ]
   },
   "cites": {
@@ -382,6 +386,27 @@
       "label": "FBSchedules (Sept. 24, 2025) — Indiana–North Texas contract via state public records",
       "url": "https://fbschedules.com/indiana-adds-north-texas-to-2026-football-schedule/",
       "asOf": "2025-09-24",
+      "confidence": "reported"
+    },
+    "detroit-news-miami-central-michigan-2026": {
+      "id": "detroit-news-miami-central-michigan-2026",
+      "label": "Detroit News (Jan. 20, 2022) — CMU nets a $1.3 million payday at Miami (Fla.) in 2026",
+      "url": "https://www.detroitnews.com/story/sports/college/2022/01/20/cmu-football-adds-miami-fla-2026-net-1-3-m-payday/6592207001/",
+      "asOf": "2022-01-20",
+      "confidence": "reported"
+    },
+    "cmu-athletics-miami-2026": {
+      "id": "cmu-athletics-miami-2026",
+      "label": "CMU Athletics (Jan. 20, 2022) — Central Michigan at Miami (Fla.) on Sept. 26, 2026, Hard Rock Stadium",
+      "url": "https://cmuchippewas.com/news/2022/1/20/football-cmu-miami-fla-to-meet-in-2026",
+      "asOf": "2022-01-20",
+      "confidence": "reported"
+    },
+    "miami-athletics-central-michigan-2026": {
+      "id": "miami-athletics-central-michigan-2026",
+      "label": "Miami Athletics (Sept. 26, 2026) — Central Michigan played at Hard Rock Stadium, final Miami 52, Central Michigan 3",
+      "url": "https://miamihurricanes.com/news/2026/09/27/no-6-miami-storms-past-central-michigan",
+      "asOf": "2026-09-26",
       "confidence": "reported"
     }
   },
@@ -1045,6 +1070,20 @@
       "confidence": "reported",
       "citeIds": ["fbschedules-indiana-north-texas-2026"],
       "notes": "Memorial Stadium, Sat, Sept. 5, 2026. FBSchedules (Kevin Kelley, Sept. 24, 2025) obtained the contract via a state public records request: Indiana pays North Texas $1,200,000. Replaced a cancelled Colorado State opener. The same story, citing The Herald-Times, says Colorado State paid Indiana $100,000 to cancel, negotiated down from the $1.3 million in that contract. That cancellation fee is not a 2026 guarantee row. The contract story does not name a separate band fee. Desk schedule lists Sat, Sept. 5, 2026."
+    },
+    {
+      "id": "2026-miami-central-michigan",
+      "season": 2026,
+      "date": "2026-09-26",
+      "payerSchoolId": "miami",
+      "payeeLabel": "Central Michigan",
+      "payeeSlug": "central-michigan",
+      "amount": 1300000,
+      "homeSchoolId": "miami",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["detroit-news-miami-central-michigan-2026", "cmu-athletics-miami-2026", "miami-athletics-central-michigan-2026"],
+      "notes": "Hard Rock Stadium, Sat, Sept. 26, 2026. Detroit News (Jan. 20, 2022): the game will net Central Michigan a $1.3 million payday; a university spokesperson confirmed the figure. This cell is that newsroom figure, not a hosted contract PDF. CMU athletics (Jan. 20, 2022) announces Central Michigan at Miami (Fla.) on Saturday, Sept. 26, 2026 at Hard Rock Stadium and does not name the dollar. Desk schedule lists Sat, Sept. 26, 2026. Miami athletics (Sept. 26, 2026) reports the final, Miami 52, Central Michigan 3. No separate band fee is named. Distinct from the Florida A&M $720,000 football guarantee."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-27",
-    "itemCount": 432,
+    "itemCount": 433,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6495,6 +6495,21 @@
       "source": {
         "label": "FBSchedules (Sept. 24, 2025) — Indiana–North Texas contract via state public records",
         "url": "https://fbschedules.com/indiana-adds-north-texas-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "miami-guarantee-2026-miami-central-michigan",
+      "date": "2022-01-20",
+      "school": "miami",
+      "schoolName": "Miami",
+      "kind": "guarantee-game",
+      "headline": "Miami pays Central Michigan a $1,300,000 football guarantee.",
+      "figure": 1300000,
+      "confidence": "reported",
+      "source": {
+        "label": "Detroit News (Jan. 20, 2022) — CMU nets a $1.3 million payday at Miami (Fla.) in 2026",
+        "url": "https://www.detroitnews.com/story/sports/college/2022/01/20/cmu-football-adds-miami-fla-2026-net-1-3-m-payday/6592207001/"
       },
       "field": "guaranteeGames"
     }
