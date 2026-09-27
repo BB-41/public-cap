@@ -14,6 +14,7 @@ import {
   primaryCite,
   schoolHasGames,
   sortGames,
+  sumAmounts,
 } from '../src/lib/guaranteeGames.js'
 
 const book = JSON.parse(readFileSync(new URL('../data/guarantee-games.json', import.meta.url), 'utf8'))
@@ -167,8 +168,56 @@ ok(/original contract amount/.test(uvaNsu?.dateNote || ''), 'Virginia–Norfolk 
 ok(book.cites['fbschedules-virginia-norfolk-state-2026']?.asOf === '2020-03-12', 'FBSchedules Virginia cite is March 12, 2020')
 ok(!book.games.some((g) => g.payerSchoolId === 'virginia' && (g.payeeSlug === 'richmond' || (g.id || '').includes('richmond'))), '2028 Richmond is not a 2026 Virginia row')
 
-ok(book.games.length === 44, '44 guarantee rows')
-ok(book.meta?.asOf === '2026-09-26', 'guarantee desk asOf is 2026-09-26')
+const wisEmu = game('2026-wisconsin-eastern-michigan')
+ok(wisEmu?.amount === 1_400_000 && wisEmu?.date === '2026-09-19', 'Wisconsin → Eastern Michigan $1,400,000 on Sept. 19')
+ok(wisEmu?.payerSchoolId === 'wisconsin' && wisEmu?.payeeSlug === 'eastern-michigan' && wisEmu?.homeSchoolId === 'wisconsin', 'Wisconsin pays Eastern Michigan at Camp Randall')
+ok(wisEmu?.kind === 'buy-game', 'Wisconsin–Eastern Michigan is a buy game')
+ok(wisEmu?.citeIds?.includes('fbschedules-wisconsin-eastern-michigan-2026'), 'Wisconsin–Eastern Michigan cites FBSchedules')
+ok(book.cites['fbschedules-wisconsin-eastern-michigan-2026']?.asOf === '2025-12-10', 'FBSchedules Wisconsin–EMU cite is the Dec. 10, 2025 update')
+ok(/Pitt/.test(wisEmu?.notes || '') && /not a 2026 row/.test(wisEmu?.notes || ''), 'Wisconsin–EMU notes keep the cancelled Pitt date off the book')
+ok(/does not name a separate band fee/.test(wisEmu?.notes || ''), 'Wisconsin–EMU notes name no band fee')
+ok(!book.games.some((g) => g.payeeSlug === 'pitt' || (g.id || '').includes('pitt')), 'Wisconsin–Pitt is not a 2026 guarantee row')
+
+const ukUsa = game('2026-kentucky-south-alabama')
+ok(ukUsa?.amount === 1_600_000 && ukUsa?.date === '2026-09-26', 'Kentucky → South Alabama $1,600,000 on Sept. 26')
+ok(ukUsa?.payerSchoolId === 'kentucky' && ukUsa?.payeeSlug === 'south-alabama' && ukUsa?.homeSchoolId === 'kentucky', 'Kentucky pays South Alabama at Kroger Field')
+ok(ukUsa?.kind === 'buy-game', 'Kentucky–South Alabama is a buy game')
+ok(ukUsa?.citeIds?.includes('herald-leader-kentucky-south-alabama-2026'), 'Kentucky–South Alabama cites the Herald-Leader')
+ok(book.cites['herald-leader-kentucky-south-alabama-2026']?.asOf === '2026-06-22', 'Herald-Leader cite is June 22, 2026')
+ok(book.cites['herald-leader-kentucky-south-alabama-2026']?.url?.includes('kentucky.com'), 'South Alabama primary cite is kentucky.com')
+ok(!/aol\.com/i.test(book.cites['herald-leader-kentucky-south-alabama-2026']?.url || ''), 'AOL reprint is not the South Alabama cite')
+ok(/newsroom figure/i.test(ukUsa?.notes || ''), 'South Alabama notes say newsroom figure')
+ok(/Youngstown State/.test(ukUsa?.notes || ''), 'South Alabama notes keep the Youngstown State row distinct')
+ok(/[Nn]o separate band fee/.test(ukUsa?.notes || ''), 'South Alabama notes name no band fee')
+ok(ukUsa?.id !== '2026-kentucky-youngstown-state', 'South Alabama is not a duplicate of Youngstown State')
+
+const iuUnt = game('2026-indiana-north-texas')
+ok(iuUnt?.amount === 1_200_000 && iuUnt?.date === '2026-09-05', 'Indiana → North Texas $1,200,000 on Sept. 5')
+ok(iuUnt?.payerSchoolId === 'indiana' && iuUnt?.payeeSlug === 'north-texas' && iuUnt?.homeSchoolId === 'indiana', 'Indiana pays North Texas at Memorial Stadium')
+ok(iuUnt?.kind === 'buy-game', 'Indiana–North Texas is a buy game')
+ok(iuUnt?.citeIds?.includes('fbschedules-indiana-north-texas-2026'), 'Indiana–North Texas cites FBSchedules')
+ok(book.cites['fbschedules-indiana-north-texas-2026']?.asOf === '2025-09-24', 'FBSchedules Indiana–North Texas cite is Sept. 24, 2025')
+ok(/\$100,000/.test(iuUnt?.notes || '') && /not a 2026 guarantee row/.test(iuUnt?.notes || ''), 'Colorado State $100,000 cancel fee stays in notes, not a row')
+ok(/does not name a separate band fee/.test(iuUnt?.notes || ''), 'Indiana–North Texas notes name no band fee')
+ok(!book.games.some((g) => g.payeeSlug === 'colorado-state' || /colorado state/i.test(g.payeeLabel || '') || g.amount === 100_000), 'Colorado State cancel fee is not a guarantee cell')
+
+const miaCmu = game('2026-miami-central-michigan')
+ok(miaCmu?.amount === 1_300_000 && miaCmu?.date === '2026-09-26', 'Miami → Central Michigan $1,300,000 on Sept. 26')
+ok(miaCmu?.payerSchoolId === 'miami' && miaCmu?.payeeSlug === 'central-michigan' && miaCmu?.homeSchoolId === 'miami', 'Miami pays Central Michigan at Hard Rock Stadium')
+ok(miaCmu?.kind === 'buy-game', 'Miami–Central Michigan is a buy game')
+ok(miaCmu?.citeIds?.[0] === 'detroit-news-miami-central-michigan-2026', 'Detroit News is the primary Central Michigan cite')
+ok(miaCmu?.citeIds?.includes('cmu-athletics-miami-2026'), 'CMU athletics corroborates the Central Michigan matchup')
+ok(book.cites['detroit-news-miami-central-michigan-2026']?.asOf === '2022-01-20', 'Detroit News cite is Jan. 20, 2022')
+ok(book.cites['detroit-news-miami-central-michigan-2026']?.url?.includes('detroitnews.com'), 'Central Michigan dollar cite is detroitnews.com')
+ok(/does not name the dollar/.test(miaCmu?.notes || ''), 'CMU athletics does not supply the dollar')
+ok(/newsroom figure/i.test(miaCmu?.notes || ''), 'Central Michigan notes say newsroom figure')
+ok(/[Nn]o separate band fee/.test(miaCmu?.notes || ''), 'Central Michigan notes name no band fee')
+ok(/Florida A&M/.test(miaCmu?.notes || ''), 'Central Michigan notes stay distinct from FAMU')
+ok(miaCmu?.id !== '2026-miami-famu' && miaCmu?.amount !== 720_000, 'Central Michigan is not the FAMU cell')
+ok(!book.games.some((g) => g.payeeSlug === 'bucknell' || g.payeeSlug === 'delaware'), 'Pitt–Bucknell and Virginia–Delaware stay off the book')
+
+ok(book.games.length === 48, '48 guarantee rows')
+ok(book.meta?.asOf === '2026-09-27', 'guarantee desk asOf is 2026-09-27')
 ok(!book.games.some((g) => /herosports\.com/i.test(JSON.stringify(g))), 'HERO Sports compilation URL is not booked')
 ok(gamesForSchool(book, 'georgia').paid.some((g) => g.amount === 1_900_000), 'Georgia school card shows Western Kentucky')
 
@@ -198,7 +247,9 @@ ok(!book.games.some((g) => /on3/i.test(JSON.stringify(g))), 'no On3 on game rows
 ok(!Object.values(book.cites || {}).some((c) => /on3/i.test(`${c.label} ${c.url}`)), 'no On3 in cites')
 
 const miamiSchool = gamesForSchool(book, 'miami')
-ok(miamiSchool.paid.length === 1 && miamiSchool.paid[0].amount === 720_000, 'Miami school card paid $720k')
+ok(miamiSchool.paid.some((g) => g.id === '2026-miami-famu' && g.amount === 720_000), 'Miami–FAMU football stays $720,000')
+ok(miamiSchool.paid.some((g) => g.id === '2026-miami-central-michigan'), 'Miami school card shows Central Michigan')
+ok(sumAmounts(miamiSchool.paid) === 2_020_000, 'Miami paid-out football is $2,020,000')
 ok(miamiSchool.received.length === 0, 'Miami has no received row')
 ok(schoolHasGames(book, 'duke'), 'Duke has guarantee rows')
 ok(gamesForSchool(book, 'duke').paid.some((g) => g.amount === 400_000), 'Duke paid W&M')
@@ -209,6 +260,12 @@ ok(gamesForSchool(book, 'louisville').paid.some((g) => g.id === '2026-louisville
 ok(gamesForSchool(book, 'kentucky').paid.some((g) => g.id === '2026-kentucky-youngstown-state'), 'Kentucky school card shows Youngstown State')
 ok(gamesForSchool(book, 'tennessee').paid.some((g) => g.id === '2026-tennessee-furman'), 'Tennessee school card shows Furman')
 ok(gamesForSchool(book, 'virginia').paid.some((g) => g.id === '2026-virginia-norfolk-state'), 'Virginia school card shows Norfolk State')
+ok(gamesForSchool(book, 'wisconsin').paid.some((g) => g.id === '2026-wisconsin-eastern-michigan'), 'Wisconsin school card shows Eastern Michigan')
+ok(sumAmounts(gamesForSchool(book, 'wisconsin').paid) === 1_975_000, 'Wisconsin paid-out football is $1,975,000')
+ok(gamesForSchool(book, 'kentucky').paid.some((g) => g.id === '2026-kentucky-south-alabama'), 'Kentucky school card shows South Alabama')
+ok(sumAmounts(gamesForSchool(book, 'kentucky').paid) === 2_175_000, 'Kentucky paid-out football is $2,175,000')
+ok(gamesForSchool(book, 'indiana').paid.some((g) => g.id === '2026-indiana-north-texas'), 'Indiana school card shows North Texas')
+ok(sumAmounts(gamesForSchool(book, 'indiana').paid) === 2_825_000, 'Indiana paid-out football is $2,825,000')
 
 const sorted = sortGames(listGames(book), { key: 'amount', dir: 'desc' })
 ok(sorted[0]?.amount === 1_900_000, 'amount desc puts OSU $1.9M first')
@@ -232,6 +289,11 @@ ok(tapeKinds.some((it) => it.id === 'kentucky-guarantee-2026-kentucky-youngstown
 ok(tapeKinds.some((it) => it.id === 'tennessee-guarantee-2026-tennessee-furman' && it.figure === 500_000 && it.date === '2022-05-24'), 'tape books Tennessee–Furman')
 ok(tapeKinds.some((it) => it.id === 'alabama-guarantee-2026-alabama-chattanooga' && it.figure === 500_000 && it.date === '2025-12-05'), 'tape books Alabama–Chattanooga')
 ok(tapeKinds.some((it) => it.id === 'virginia-guarantee-2026-virginia-norfolk-state' && it.figure === 420_000 && it.date === '2020-03-12'), 'tape books Virginia–Norfolk State from the contract date')
+ok(tapeKinds.some((it) => it.id === 'wisconsin-guarantee-2026-wisconsin-eastern-michigan' && it.figure === 1_400_000 && it.date === '2025-12-10'), 'tape books Wisconsin–Eastern Michigan from the contract update')
+ok(tapeKinds.some((it) => it.id === 'kentucky-guarantee-2026-kentucky-south-alabama' && it.figure === 1_600_000 && it.date === '2026-06-22'), 'tape books Kentucky–South Alabama from the Herald-Leader date')
+ok(tapeKinds.some((it) => it.id === 'indiana-guarantee-2026-indiana-north-texas' && it.figure === 1_200_000 && it.date === '2025-09-24'), 'tape books Indiana–North Texas from the contract date')
+ok(tapeKinds.some((it) => it.id === 'miami-guarantee-2026-miami-central-michigan' && it.figure === 1_300_000 && it.date === '2022-01-20'), 'tape books Miami–Central Michigan from the Detroit News date')
+ok(tape.meta?.asOf === '2026-09-27', 'tape asOf matches the guarantee desk')
 ok(!tapeKinds.some((it) => it.figure === 740_000), 'tape does not book social $740k')
 ok(tape.meta?.itemCount === tape.items.length, 'tape itemCount matches items')
 
