@@ -899,6 +899,9 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             {' '}Student fees on this desk are not tuition.
             {' '}Pending stays empty.
           </p>
+          <p className="fine nil-101-cue">
+            <Link to="/nil-101">How NIL works</Link>
+          </p>
           <p className="lane-status">
             <span>Capacity <b>{isPrivateGap(s) ? 'conference media' : 'booked stack'}</b></span>
             {eadaLane(s).total ? <span>EADA <b>cited</b></span> : null}

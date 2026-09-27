@@ -22,6 +22,15 @@ import {
   schoolTitle,
   titleFromPath,
 } from '../src/lib/share.js'
+import {
+  NIL101_FAQ_SKIP,
+  NIL101_HOME_LINK_TEXT,
+  NIL101_SCHOOL_LINK_TEXT,
+  articleAnswersFromHtml,
+  capPhrase,
+  nil101Model,
+  sectionAnswer,
+} from '../src/lib/nil101Guide.js'
 import { applyRouteMeta, loadSchoolShells, routeShell } from './write-spa-html.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
@@ -132,18 +141,25 @@ ok(PAGE_DESCRIPTIONS.checkbookBowl.includes('do not invent dollars'), 'checkbook
 ok(descriptionFromPath('/checkbook-bowl') === PAGE_DESCRIPTIONS.checkbookBowl, 'descriptionFromPath checkbook-bowl')
 
 const nil101 = read('src/pages/Nil101.jsx')
+const nilGuide = read('src/lib/nil101Guide.js')
 ok(nil101.includes('HOUSE_2025_26'), 'nil 101 reuses the year-1 house constant')
 ok(nil101.includes('y2026_27'), 'nil 101 reads the booked year-2 cap')
+ok(nil101.includes('nil101Model'), 'nil 101 renders the shared guide')
 ok(!nil101.includes('21583913') && !nil101.includes('21.58'), 'nil 101 does not hardcode the year-2 cap')
-ok(!/for dummies/i.test(nil101), 'nil 101 page avoids the trademark phrase')
-ok(nil101.includes('href="/nil-101"') || nil101.includes('to="/nil-101"') || nil101.includes('to="/"'), 'nil 101 has an in-app call to action')
+ok(!nilGuide.includes('21583913') && !nilGuide.includes('21.58'), 'nil 101 guide does not hardcode the year-2 cap')
+ok(!/for dummies/i.test(nil101) && !/for dummies/i.test(nilGuide), 'nil 101 page avoids the trademark phrase')
+ok(nilGuide.includes("href: '/'"), 'nil 101 has an in-app call to action')
 for (const path of ['/methods', '/reported-nil', '/school/texas', '/school/ohio-state', '/compare', '/checkbook-bowl']) {
-  ok(nil101.includes(`to="${path}"`), `nil 101 links ${path}`)
+  ok(nilGuide.includes(`href: '${path}'`), `nil 101 links ${path}`)
 }
 ok(nil101.includes('alt='), 'nil 101 mascots have alt text')
-ok(home.includes('New to NIL? Start with NIL 101'), 'homepage links NIL 101')
+ok(indexHtml.includes(`<a href="/nil-101">${NIL101_HOME_LINK_TEXT}</a>`), 'homepage body links NIL 101 with a descriptive anchor')
+ok((indexHtml.match(/NIL 101: how college athletes get paid/g) || []).length === 1, 'homepage has one descriptive NIL 101 link')
+ok(schoolPage.includes(`to="/nil-101">${NIL101_SCHOOL_LINK_TEXT}<`), 'school page links How NIL works')
+ok((schoolPage.match(/to="\/nil-101"/g) || []).length === 1, 'school page has one NIL 101 link')
 ok(read('src/pages/ReportedNil.jsx').includes('New to NIL? Start with NIL 101'), 'reported-nil links NIL 101')
 ok(!/for dummies/i.test(indexHtml), 'index.html avoids the trademark phrase')
+ok(!/noindex/i.test(indexHtml), 'index.html does not noindex')
 
 const templateBlob = [
   DEFAULT_TITLE,
@@ -257,6 +273,69 @@ ok(!/\$/.test(JSON.stringify(lsuCollege || {})), 'LSU CollegeOrUniversity invent
 const reportedLd = jsonLdFrom(reportedShell)
 ok(reportedLd?.['@type'] === 'WebPage', 'reported-nil shell stays WebPage JSON-LD')
 ok(!(reportedLd?.['@graph'] || []).some((n) => n['@type'] === 'CollegeOrUniversity'), 'reported-nil shell is not a college')
+
+ok(lsuShell.includes(`>${NIL101_SCHOOL_LINK_TEXT}<`), 'LSU shell links How NIL works in the static HTML')
+ok((lsuShell.match(/How NIL works/g) || []).length === 1, 'LSU shell has one How NIL works link')
+
+const y1 = schools.meta.houseCap.y2025_26.value
+const y2 = schools.meta.houseCap.y2026_27.value
+const nilModel = nil101Model({ year1: y1, year2: y2 })
+const nilShell = applyRouteMeta(indexHtml, routeShell('/nil-101'))
+ok((nilShell.match(/<h1\b/g) || []).length === 1, 'nil-101 shell has one h1')
+ok(nilShell.includes('<h1 class="issue-hed">NIL 101</h1>'), 'nil-101 h1 is NIL 101')
+ok(!/noindex/i.test(nilShell), 'nil-101 shell is not noindex')
+ok(nilShell.includes('https://thepubliccap.com/nil-101'), 'nil-101 shell canonical is /nil-101')
+ok(nilShell.includes(`data-nil-year2="${y2}"`), 'nil-101 shell boots the booked year-2 cap')
+for (const section of nilModel.sections) {
+  ok(nilShell.includes(`<h2>${section.question}</h2>`), `nil-101 shell heading ${section.question}`)
+}
+const nilLd = jsonLdFrom(nilShell)
+const nilFaq = (nilLd?.['@graph'] || []).find((n) => n['@type'] === 'FAQPage')
+const nilArticle = (nilLd?.['@graph'] || []).find((n) => n['@type'] === 'Article')
+ok(nilFaq, 'nil-101 shell has FAQPage JSON-LD')
+ok(nilArticle, 'nil-101 shell has Article JSON-LD')
+ok(nilArticle?.headline === PAGE_TITLES.nil101, 'article headline is the nil-101 title')
+ok(nilArticle?.description === PAGE_DESCRIPTIONS.nil101, 'article description is the nil-101 description')
+ok(nilArticle?.author?.name === 'The Public Cap', 'article author is The Public Cap')
+ok(nilArticle?.publisher?.name === 'The Public Cap', 'article publisher is The Public Cap')
+ok(nilArticle?.datePublished === '2026-09-25', 'article datePublished is the guide publish date')
+ok(nilArticle?.dateModified === '2026-09-27', 'article dateModified is the static-guide update')
+ok(nilArticle?.url === 'https://thepubliccap.com/nil-101', 'article url is the canonical')
+ok(nilArticle?.image === 'https://thepubliccap.com/og-default.png', 'article image is the default share image')
+const extracted = articleAnswersFromHtml(nilShell)
+ok(extracted.length === nilModel.sections.length, 'nil-101 shell has one article per question')
+const faqSections = nilModel.sections.filter((section) => !NIL101_FAQ_SKIP.has(section.question))
+ok(nilFaq.mainEntity.length === faqSections.length, 'FAQPage skips the flattened comparison table')
+ok(faqSections.length === 7, 'FAQPage keeps the other 7 questions')
+ok(!nilFaq.mainEntity.some((q) => q.name === 'NIL money vs. school money'), 'FAQPage omits NIL money vs. school money')
+ok(nilShell.includes('<h2>NIL money vs. school money</h2>'), 'the comparison table stays on the page')
+for (let i = 0; i < nilModel.sections.length; i++) {
+  const section = nilModel.sections[i]
+  const expected = sectionAnswer(section)
+  ok(extracted[i].question === section.question, `visible heading ${section.question}`)
+  ok(extracted[i].answer === expected, `visible answer matches the guide for ${section.question}`)
+  ok(!/Cartoon piggy/.test(expected), `answer omits image alt for ${section.question}`)
+}
+for (let i = 0; i < faqSections.length; i++) {
+  const section = faqSections[i]
+  ok(nilFaq.mainEntity[i].name === section.question, `FAQ question ${section.question}`)
+  ok(nilFaq.mainEntity[i].acceptedAnswer.text === sectionAnswer(section), `FAQ answer matches visible text for ${section.question}`)
+}
+const employees = nilFaq.mainEntity.find((q) => q.name === 'Are players employees?')
+ok(
+  employees?.acceptedAnswer.text === 'Not right now. Courts and Congress are still arguing about it.',
+  'employees answer is the guide wording',
+)
+const what = nilFaq.mainEntity.find((q) => q.name === 'What is NIL?')
+ok(
+  what?.acceptedAnswer.text === 'NIL means name, image, and likeness. That is a player\'s name, face, and fame. Since July 2021, college athletes can get paid for those things. Businesses and fans pay for ads, social posts, appearances, and autographs.',
+  'What is NIL answer is the guide wording',
+)
+const changed = nilFaq.mainEntity.find((q) => q.name === 'What changed in 2025?')
+ok(changed.acceptedAnswer.text.includes(capPhrase(y1)), 'year-1 cap phrase is the booked cap')
+ok(changed.acceptedAnswer.text.includes(capPhrase(y2)), 'year-2 cap phrase is the booked cap')
+ok(changed.acceptedAnswer.text.includes('Schools can pay players now.'), '2025 answer keeps the caption')
+ok(nilShell.includes('href="/methods"') && nilShell.includes('href="/school/texas"'), 'nil-101 shell keeps the methods and Texas links')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} checks passed`)

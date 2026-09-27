@@ -13,6 +13,15 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
+  NIL101_DATE_MODIFIED,
+  NIL101_DATE_PUBLISHED,
+  NIL101_SCHOOL_LINK_TEXT,
+  embedNil101JsonLd,
+  nil101CueHtml,
+  nil101StructuredData,
+  renderNil101Page,
+} from '../src/lib/nil101Guide.js'
+import {
   SITE,
   descriptionFromPath,
   ogImageFromPath,
@@ -123,6 +132,32 @@ export function applyRouteMeta(html, route) {
   out = replaceAttr(out, 'name', 'twitter:image', image)
   out = out.replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${url}" />`)
 
+  if (path === '/nil-101') {
+    const caps = route.nilCaps || loadNilCaps()
+    const year2Attr = String(caps.year2)
+    if (!/^\d+$/.test(year2Attr)) throw new Error('nil-101 year2 cap is not a whole number')
+    const pageHtml = renderNil101Page(caps)
+    const data = nil101StructuredData({
+      pageHtml,
+      title,
+      description,
+      url,
+      image,
+      datePublished: NIL101_DATE_PUBLISHED,
+      dateModified: NIL101_DATE_MODIFIED,
+    })
+    out = out.replace(
+      /<script type="application\/ld\+json" id="public-cap-jsonld">[\s\S]*?<\/script>/,
+      embedNil101JsonLd(data),
+    )
+    // The guide in #root is the only h1. home-dek stays hidden on inner routes.
+    out = replaceElementInner(out, '<div id="home-dek" class="page-wrap home-dek">', '')
+    const rootOpen = `<div id="root" data-nil-year2="${year2Attr}">`
+    out = out.replace('<div id="root">', rootOpen)
+    out = replaceElementInner(out, rootOpen, `\n        ${pageHtml}\n      `)
+    return out
+  }
+
   const jsonLd = JSON.stringify(routeJsonLd(route))
   out = out.replace(
     /<script type="application\/ld\+json" id="public-cap-jsonld">[\s\S]*?<\/script>/,
@@ -140,7 +175,53 @@ export function applyRouteMeta(html, route) {
       </div>
       <div id="root">`,
   )
+  if (path.startsWith('/school/')) {
+    out = out.replace(
+      '<div id="root">',
+      `<div id="root">\n        ${nil101CueHtml(NIL101_SCHOOL_LINK_TEXT)}`,
+    )
+  }
   return out
+}
+
+function loadNilCaps() {
+  const data = JSON.parse(readFileSync(join(root, 'public/data/schools.json'), 'utf8'))
+  const year1 = data.meta?.houseCap?.y2025_26?.value
+  const year2 = data.meta?.houseCap?.y2026_27?.value
+  if (typeof year1 !== 'number' || typeof year2 !== 'number') {
+    throw new Error('nil-101: booked house caps missing from schools.json')
+  }
+  return { year1, year2 }
+}
+
+/** Replace the inner HTML of the first element whose opening tag is `openTag`. */
+export function replaceElementInner(html, openTag, inner) {
+  const start = html.indexOf(openTag)
+  if (start < 0) throw new Error(`missing ${openTag}`)
+  const contentStart = start + openTag.length
+  const tagName = /^<([a-zA-Z0-9]+)/.exec(openTag)?.[1]
+  if (!tagName) throw new Error(`bad open tag ${openTag}`)
+  let depth = 1
+  let i = contentStart
+  while (i < html.length) {
+    const nextOpen = html.indexOf(`<${tagName}`, i)
+    const nextClose = html.indexOf(`</${tagName}>`, i)
+    if (nextClose < 0) throw new Error(`unclosed <${tagName}>`)
+    if (nextOpen !== -1 && nextOpen < nextClose) {
+      const boundary = html[nextOpen + tagName.length + 1]
+      if (boundary === '>' || boundary === ' ' || boundary === '/' || boundary === '\n' || boundary === '\t') {
+        depth += 1
+        i = nextOpen + tagName.length + 2
+        continue
+      }
+      i = nextOpen + tagName.length + 1
+      continue
+    }
+    depth -= 1
+    if (depth === 0) return html.slice(0, contentStart) + inner + html.slice(nextClose)
+    i = nextClose + tagName.length + 3
+  }
+  throw new Error(`unclosed <${tagName}>`)
 }
 
 function fileForPath(path) {

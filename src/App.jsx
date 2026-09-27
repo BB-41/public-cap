@@ -273,6 +273,15 @@ export default function App() {
       })
       return
     }
+    if (kind === 'nil101') {
+      applyDocumentMeta({
+        title: titleFromPath(path),
+        description: descriptionFromPath(path),
+        path,
+        jsonLd: 'preserve',
+      })
+      return
+    }
     if (kind === 'coachFa') {
       const coachId = path.split('/')[2]
       const names = {

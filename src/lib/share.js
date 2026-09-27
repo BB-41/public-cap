@@ -234,6 +234,8 @@ function siteJsonLd() {
 
 function upsertRouteJsonLd(kind, { title, description, href, schoolName }) {
   if (typeof document === 'undefined') return
+  // NIL 101 writes FAQPage + Article from the shared guide after the caps load.
+  if (kind === 'preserve') return
   let el = document.getElementById(HOME_JSON_LD_ID)
   if (!kind) {
     el?.remove()
