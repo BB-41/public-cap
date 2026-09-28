@@ -1,7 +1,8 @@
 /**
  * Checkbook bowl: the bigger FY2025 football spender vs the score.
  * Season record through week 3 is 15-10 (60%) in 25 final games.
- * Week 4 is final: bigger spender 7-7, season 22-17 in 39 games.
+ * Week 4 is final: bigger spender 7-7, season 22-17 in 39 final games.
+ * Week 5 (Oct 3–4) is upcoming: 14 big games, no scores.
  * Dollars are the EADA integers on the book — nothing estimated.
  *
  * Run: node scripts/verify-checkbook-bowl.mjs
@@ -53,7 +54,7 @@ for (const id of schoolIds) {
   ok(Number.isInteger(book.spendFy2025[id]) && book.spendFy2025[id] > 0, `${id} has a positive EADA football expense`)
 }
 
-ok(book.games.length === 39, 'book has 39 big games, all final through week 4')
+ok(book.games.length === 53, 'book has 39 finals through week 4 plus 14 week-5 upcoming games')
 
 for (const game of book.games) {
   const label = `${game.away.id} at ${game.home.id} wk${game.week}`
@@ -82,7 +83,9 @@ const through = seasonRecord(book.games, 3)
 ok(through.games === 25 && through.wins === 15 && through.losses === 10, 'through week 3 the bigger spender is 15-10')
 ok(Math.round(through.rate * 100) === 60, 'through week 3 win rate is 60%')
 ok(book.games.filter((g) => g.week <= 4).every(isFinal), 'weeks 1–4 are final')
-ok(book.games.filter((g) => !isFinal(g)).length === 0, 'no upcoming games remain on the book')
+ok(book.games.filter((g) => !isFinal(g)).length === 14, 'week 5 upcoming games are on the book')
+ok(book.games.filter((g) => g.week === 5 && !isFinal(g)).length === 14, 'all 14 week-5 games are upcoming')
+ok(book.games.filter((g) => g.week === 5 && isFinal(g)).length === 0, 'week 5 has no final score')
 
 const weeks = weekRecords(book.games)
 ok(weeks.find((w) => w.week === 1).wins === 3 && weeks.find((w) => w.week === 1).losses === 2, 'week 1 is 3-2')
@@ -174,6 +177,32 @@ const week4Upsets = upsetGames(book.games.filter((g) => g.week === 4))
 ok(week4Upsets[0]?.winner === 'wisconsin' && week4Upsets[0]?.away.id === 'wisconsin' && week4Upsets[0]?.home.id === 'penn-state', 'biggest week-4 upset is Wisconsin over Penn State')
 
 ok(compareHref(upsets[0]) === '/compare?a=florida-state&b=smu', 'upset row links compare with the checkbook favorite first')
+
+const week5 = [
+  ['alabama', 'mississippi-state', 7, 16, '2026-10-03T16:00:00.000Z'],
+  ['boston-college', 'smu', null, 21, '2026-10-03T16:00:00.000Z'],
+  ['notre-dame', 'north-carolina', 3, null, '2026-10-03T16:00:00.000Z'],
+  ['ucf', 'houston', null, 20, '2026-10-03T16:00:00.000Z'],
+  ['vanderbilt', 'georgia', null, 2, '2026-10-03T16:45:00.000Z'],
+  ['auburn', 'tennessee', null, 17, '2026-10-03T19:30:00.000Z'],
+  ['florida', 'missouri', 8, 25, '2026-10-03T19:30:00.000Z'],
+  ['ohio-state', 'iowa', 5, 14, '2026-10-03T19:30:00.000Z'],
+  ['kentucky', 'south-carolina', 24, null, '2026-10-03T20:15:00.000Z'],
+  ['byu', 'tcu', 10, null, '2026-10-03T23:00:00.000Z'],
+  ['miami', 'clemson', 4, null, '2026-10-03T23:30:00.000Z'],
+  ['texas-tech', 'colorado', 12, null, '2026-10-03T23:30:00.000Z'],
+  ['washington', 'usc', null, 18, '2026-10-03T23:30:00.000Z'],
+  ['indiana', 'rutgers', 6, null, '2026-10-04T00:00:00.000Z'],
+]
+ok(/Sep 27, 2026/.test(book.source) && /cfbtrack.com\/schedule\/2026\/week-5/.test(book.source), 'week 5 source cites the Sep 27 AP poll and CFBTrack')
+for (const [away, home, awayRank, homeRank, date] of week5) {
+  const game = find(away, home)
+  ok(game && game.week === 5 && !isFinal(game), `${away} at ${home} is a week-5 upcoming game`)
+  ok(game?.date === date, `${away} at ${home} kickoff`)
+  ok((game?.away.rank ?? null) === awayRank && (game?.home.rank ?? null) === homeRank, `${away} at ${home} Sep 27 AP ranks`)
+  ok(game?.away.spend === book.spendFy2025[away] && game?.home.spend === book.spendFy2025[home], `${away} at ${home} uses spendFy2025`)
+  ok(game?.winner == null && game?.biggerSpenderWon == null, `${away} at ${home} has no result`)
+}
 
 let threw = false
 try {

@@ -267,7 +267,7 @@ function SchoolDrill({ school, metric, house, houseField, season, view, includeA
         </>
       ) : metric.key === 'nil' ? (
         <>
-          <p className="drill-kicker">Booked{leadBookedNil(school).carry && leadBookedNil(school).label ? ` · ${leadBookedNil(school).label}` : ''}</p>
+          <p className="drill-kicker">Booked{leadBookedNil(school).label ? ` · ${leadBookedNil(school).label}` : ''}</p>
           {isItem44Field(leadBookedNil(school).field) && <p className="drill-notes">{ITEM44_COMPANION_LEDE}</p>}
           <DrillNote field={leadBookedNil(school).field || school.nil?.booked} exact={leadBookedNil(school).value == null ? null : moneyCited(leadBookedNil(school).value, { approximate: leadBookedNil(school).field?.approximate })} empty={(leadBookedNil(school).field || school.nil?.booked)?.notes || 'No booked FOIA / MFRS / counsel figure. Collective 990 is a separate lane.'} />
           {hasVal(school.nil?.preCap) && (

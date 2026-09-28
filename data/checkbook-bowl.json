@@ -2,7 +2,7 @@
   "season": 2026,
   "asOf": "2026-09-28",
   "method": "A big game is both teams among the 68 schools on this desk (Power 4 plus Notre Dame) and at least one team in the AP top 25. The bigger spender is the school with the higher FY2025 EADA football expense. The checkbook wins when that school wins the game. A game moves the record only after it is final. An unplayed or in-progress game stays upcoming and does not get a winner, a score, or a biggerSpenderWon flag. Gap is the difference between the two filed expense totals. Equal spend is not in this book.",
-  "source": "Football spending is each school's FY2025 federal EADA filing, TOTAL_EXPENSE_ALL_Football, keyed by site school id. spendFy2025 is that filing for all 68 desk schools. Scores, the winner, and AP ranks are the logged results for 2026 weeks 1–4, taken from ESPN or the schools' athletics sites. Weeks 1–4 are final. No dollar in this file is estimated.",
+  "source": "Football spending is each school's FY2025 federal EADA filing, TOTAL_EXPENSE_ALL_Football, keyed by site school id. spendFy2025 is that filing for all 68 desk schools. Scores, the winner, and AP ranks for 2026 weeks 1–4 are the logged results, taken from ESPN or the schools' athletics sites. Weeks 1–4 are final. Week 5 (Oct 3–4, 2026) is upcoming: AP ranks are the Sep 27, 2026 poll (https://www.ncaa.com/news/football/article/2026-09-27/florida-flies-top-10-latest-ap-top-25-college-football-rankings) and kickoffs are the CFBTrack week-5 board (https://cfbtrack.com/schedule/2026/week-5). A game stays upcoming until it is final — no score, no winner. No dollar in this file is estimated.",
   "spendFy2025": {
     "alabama": 81502191,
     "arizona": 37795880,
@@ -789,6 +789,205 @@
       "winner": "mississippi-state",
       "biggerSpenderWon": false,
       "gap": 11740564
+    },
+    {
+      "date": "2026-10-03T16:00:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "mississippi-state",
+        "spend": 37575575,
+        "rank": 16
+      },
+      "away": {
+        "id": "alabama",
+        "spend": 81502191,
+        "rank": 7
+      },
+      "gap": 43926616
+    },
+    {
+      "date": "2026-10-03T16:00:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "smu",
+        "spend": 45315587,
+        "rank": 21
+      },
+      "away": {
+        "id": "boston-college",
+        "spend": 41224780
+      },
+      "gap": 4090807
+    },
+    {
+      "date": "2026-10-03T16:00:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "north-carolina",
+        "spend": 49145749
+      },
+      "away": {
+        "id": "notre-dame",
+        "spend": 93255797,
+        "rank": 3
+      },
+      "gap": 44110048
+    },
+    {
+      "date": "2026-10-03T16:00:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "houston",
+        "spend": 23271364,
+        "rank": 20
+      },
+      "away": {
+        "id": "ucf",
+        "spend": 38695138
+      },
+      "gap": 15423774
+    },
+    {
+      "date": "2026-10-03T16:45:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "georgia",
+        "spend": 71107704,
+        "rank": 2
+      },
+      "away": {
+        "id": "vanderbilt",
+        "spend": 44124525
+      },
+      "gap": 26983179
+    },
+    {
+      "date": "2026-10-03T19:30:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "tennessee",
+        "spend": 61240437,
+        "rank": 17
+      },
+      "away": {
+        "id": "auburn",
+        "spend": 58724402
+      },
+      "gap": 2516035
+    },
+    {
+      "date": "2026-10-03T19:30:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "missouri",
+        "spend": 49316139,
+        "rank": 25
+      },
+      "away": {
+        "id": "florida",
+        "spend": 51766013,
+        "rank": 8
+      },
+      "gap": 2449874
+    },
+    {
+      "date": "2026-10-03T19:30:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "iowa",
+        "spend": 50894414,
+        "rank": 14
+      },
+      "away": {
+        "id": "ohio-state",
+        "spend": 92359309,
+        "rank": 5
+      },
+      "gap": 41464895
+    },
+    {
+      "date": "2026-10-03T20:15:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "south-carolina",
+        "spend": 55859501
+      },
+      "away": {
+        "id": "kentucky",
+        "spend": 43281917,
+        "rank": 24
+      },
+      "gap": 12577584
+    },
+    {
+      "date": "2026-10-03T23:00:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "tcu",
+        "spend": 59568339
+      },
+      "away": {
+        "id": "byu",
+        "spend": 44561032,
+        "rank": 10
+      },
+      "gap": 15007307
+    },
+    {
+      "date": "2026-10-03T23:30:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "clemson",
+        "spend": 81136726
+      },
+      "away": {
+        "id": "miami",
+        "spend": 88117956,
+        "rank": 4
+      },
+      "gap": 6981230
+    },
+    {
+      "date": "2026-10-03T23:30:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "colorado",
+        "spend": 42805019
+      },
+      "away": {
+        "id": "texas-tech",
+        "spend": 39745662,
+        "rank": 12
+      },
+      "gap": 3059357
+    },
+    {
+      "date": "2026-10-03T23:30:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "usc",
+        "spend": 74014972,
+        "rank": 18
+      },
+      "away": {
+        "id": "washington",
+        "spend": 68921774
+      },
+      "gap": 5093198
+    },
+    {
+      "date": "2026-10-04T00:00:00.000Z",
+      "week": 5,
+      "home": {
+        "id": "rutgers",
+        "spend": 75922954
+      },
+      "away": {
+        "id": "indiana",
+        "spend": 50207544,
+        "rank": 6
+      },
+      "gap": 25715410
     }
   ]
 }
