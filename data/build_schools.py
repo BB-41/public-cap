@@ -646,11 +646,11 @@ add({
     },
     "nil": {
         "booked": n(32_900_000, "reported",
-            "Courier-Journal FOIA — UofL invoices/ledgers: $32.9M revenue-share spend Mar 2025–Jul 1, 2026",
+            "Courier-Journal FOIA (Aug. 5, 2026) — full invoice window Mar 2025–Jul 1, 2026 is $32.9M: $12.7M pre-cap Kentucky NIL plus $20.2M House Year 1 (Jul 1, 2025–Jul 1, 2026). Not a House Year 1 total.",
             SRC["cj_nil_foia"], "2026-08-05",
             window="2025-03 to 2026-07-01",
             notes="FOIA invoices and ledger entries (Payton Titus). Companion table lists $32.93M. Window starts March 2025 because KY law allowed pre-House payments that do not count against the cap, so $32.9M > $20.5M is coherent. Includes the $12.7M pre-cap FY2025 line shown below (do not add).",
-            had={"value": 20_270_000, "window": "2025-07-01 to 2026-07-01", "notes": "Prior booked cell: House Year 1 window only.", "source": "Courier-Journal FOIA — Louisville institutional NIL / revenue-share spend Jul 1, 2025–Jul 1, 2026", "url": SRC["cj_nil"]}),
+            had={"value": 20_270_000, "window": "2025-07-01 to 2026-07-01", "notes": "Prior desk cell for Jul 1, 2025–Jul 1, 2026. Replaced by the $20.2M House Year 1 split ($32.9M minus $12.7M pre-cap).", "source": "Courier-Journal FOIA — prior Louisville cell for Jul 1, 2025–Jul 1, 2026", "url": SRC["cj_nil"]}),
         "preCap": n(12_700_000, "reported",
             "Courier-Journal — UofL NCAA financial report FY2025 Institutional NIL Revenue Share (pre-July 1, 2025)",
             "https://www.courier-journal.com/story/sports/college/louisville/2026/01/27/university-of-louisville-cardinals-nil-budget-uofl-basketball-college-football-payrolls-ncaa-revenue/88300679007/",

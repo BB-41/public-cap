@@ -431,7 +431,7 @@ ok(nilArticle?.description === PAGE_DESCRIPTIONS.nil101, 'article description is
 ok(nilArticle?.author?.name === 'The Public Cap', 'article author is The Public Cap')
 ok(nilArticle?.publisher?.name === 'The Public Cap', 'article publisher is The Public Cap')
 ok(nilArticle?.datePublished === '2026-09-25', 'article datePublished is the guide publish date')
-ok(nilArticle?.dateModified === '2026-09-27', 'article dateModified is the static-guide update')
+ok(nilArticle?.dateModified === '2026-09-28', 'article dateModified is the static-guide update')
 ok(nilArticle?.url === 'https://thepubliccap.com/nil-101', 'article url is the canonical')
 ok(nilArticle?.image === 'https://thepubliccap.com/og-default.png', 'article image is the default share image')
 const extracted = articleAnswersFromHtml(nilShell)

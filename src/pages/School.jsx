@@ -1032,7 +1032,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         )}
         {!hasVal(s.nil.booked) && hasVal(s.nil.year1Lead?.booked) && (
           <div className="subfield">
-            <div className="eyebrow">{s.nil.year1Lead.label}</div>
+            <div className="eyebrow">{s.nil.year1Lead.booked?.leadLabel || s.nil.year1Lead.label}</div>
             <Field field={s.nil.year1Lead.booked} />
           </div>
         )}

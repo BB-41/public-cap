@@ -150,8 +150,16 @@ ok(stepInForce(remainingOnly, '2026-09-01').amount === 70_500_000, 'remaining-on
 // --- 3) House remaining ---
 const HOUSE = 20_500_000
 ok(byId.louisville.nil.booked.value === 32_900_000, 'Louisville booked untouched')
+ok(!/revenue-share spend/i.test(byId.louisville.nil.booked.source || ''), 'Louisville $32.9M source is not revenue-share spend')
+ok(byId.louisville.nil.booked.leadLabel === 'Full FOIA window · Mar 2025–Jul 1 2026', 'Louisville $32.9M is labeled the full FOIA window')
+ok(byId.louisville.nil.houseRemaining.window === '2025-07-01 to 2026-07-01', 'Louisville House spent window is Jul 1 2025–Jul 1 2026')
 ok(byId.louisville.nil.preCap.value === 12_700_000, 'Louisville preCap untouched')
 ok(byId.louisville.nil.houseRemaining.spent === 20_200_000, 'Louisville House spent is the split')
+ok(byId.maryland.coaches.football.pay.value === 6_400_000, 'Maryland 2026 pay is the Washington Times $6.4M')
+ok(byId.maryland.coaches.football.buyout.value === 9_950_000, 'Maryland buyout is the Washington Times $9.95M')
+ok(byId.maryland.coaches.football.term.through === '2028', 'Maryland term runs through 2028')
+ok(byId.maryland.coachesByYear['2025'].football.pay.value === 6_100_000, 'Maryland 2025 USA TODAY pay stays $6.1M')
+ok(data.meta.houseCap.y2026_27.value === 21_583_913, 'House Year 2 ceiling stays $21,583,913')
 ok(byId.louisville.nil.houseRemaining.value === HOUSE - 20_200_000, 'Louisville remaining')
 ok(byId.kentucky.nil.booked.value === 18_000_000, 'Kentucky booked untouched')
 ok(byId.kentucky.nil.houseRemaining.value === HOUSE - 18_000_000, 'Kentucky remaining')

@@ -34,7 +34,8 @@
       "Yahoo Sports / California Post (Jan. 29, 2026) \u2014 Chesney EA (pay/buyout rule; no PDF URL on desk)",
       "Topeka Capital-Journal (Dec. 10, 2025) \u2014 Klein EA released by K-State (pay/buyout rule; no PDF URL on desk)",
       "The Oklahoman (Dec. 12, 2025) \u2014 Morris EA (pay/buyout rule; no PDF URL on desk)",
-      "Deseret News (March 20, 2026) \u2014 Scalley EA via public records (pay/buyout rule; no PDF URL on desk)"
+      "Deseret News (March 20, 2026) \u2014 Scalley EA via public records (pay/buyout rule; no PDF URL on desk)",
+      "Washington Times (Sep. 24, 2026) \u2014 Locksley contract via Maryland Public Information Act (2026 pay $6.4M; through end of 2028; about $9.95M if terminated during the 2026 season)"
     ]
   },
   "coaches": {
@@ -1372,21 +1373,24 @@
       "sport": "fb",
       "name": "Mike Locksley",
       "tape": "overhang",
-      "termThrough": null,
+      "termThrough": "2028-12-31",
       "steps": [],
       "overhang": {
-        "amount": 13395417,
-        "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
+        "amount": 9950000,
+        "asOf": "2026-09-24",
+        "rule": "Washington Times (Sep. 24, 2026), reviewing the contract via a Maryland Public Information Act request: if terminated during the 2026 season, Maryland owes about 65% of remaining compensation, approximately $9.95 million. Half within 60 days; the rest in equal installments through the end of 2028. No public calendar step schedule beyond that sentence is on this desk. Game-by-game tape pending — we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
-          "label": "USA TODAY Sports coach salary database",
-          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+          "label": "Washington Times (Sep. 24, 2026) — Locksley contract via Maryland Public Information Act",
+          "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/"
         }
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "notes": "Approximately $9.95 million if terminated during the 2026 season (65% of remaining compensation). Deal through the end of 2028. Liability/overhang, not annual spend. Sporting News notes a USA TODAY midseason buyout near $9.2 million; this desk books the Washington Times figure. https://www.sportingnews.com/us/ncaa-football/news/mike-locksley-buyout-contract-details-maryland-coach/e0f3feba2ae583d596099be0",
       "mitigation": null,
-      "contract": null
+      "contract": {
+        "label": "Washington Times — Locksley contract via Maryland Public Information Act (Sep. 24, 2026)",
+        "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/"
+      }
     },
     "michigan": {
       "sport": "fb",
