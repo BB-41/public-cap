@@ -6,6 +6,7 @@
 import { CURRENT_SEASON } from './seasons.js'
 import { money, moneyExact, moneyRange, winsPerM } from './format.js'
 import { isPlayerHash, isPosHash } from './nilHistory.js'
+import { schoolSerpDescription } from './schoolSeo.js'
 
 export const DEFAULT_TITLE = 'Public Cap — Capacity vs House cap vs booked NIL'
 export const SITE = 'thepubliccap.com'
@@ -232,7 +233,7 @@ function siteJsonLd() {
   }
 }
 
-function upsertRouteJsonLd(kind, { title, description, href, schoolName }) {
+function upsertRouteJsonLd(kind, { title, description, href, schoolName, faq }) {
   if (typeof document === 'undefined') return
   // NIL 101 writes FAQPage + Article from the shared guide after the caps load.
   if (kind === 'preserve') return
@@ -269,16 +270,31 @@ function upsertRouteJsonLd(kind, { title, description, href, schoolName }) {
     isPartOf: siteJsonLd(),
   }
   if (kind === 'school' && schoolName) {
+    const graph = [
+      webpage,
+      {
+        '@type': 'CollegeOrUniversity',
+        name: schoolName,
+        url: href,
+      },
+    ]
+    if (faq?.length) {
+      graph.push({
+        '@type': 'FAQPage',
+        url: href,
+        mainEntity: faq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      })
+    }
     el.textContent = JSON.stringify({
       '@context': 'https://schema.org',
-      '@graph': [
-        webpage,
-        {
-          '@type': 'CollegeOrUniversity',
-          name: schoolName,
-          url: href,
-        },
-      ],
+      '@graph': graph,
     })
     return
   }
@@ -289,7 +305,7 @@ function upsertRouteJsonLd(kind, { title, description, href, schoolName }) {
 }
 
 /** Set document title, description, matching OG/Twitter tags, and a canonical URL. */
-export function applyDocumentMeta({ title, path, description, jsonLd = false, image, schoolName }) {
+export function applyDocumentMeta({ title, path, description, jsonLd = false, image, schoolName, faq }) {
   const href = canonicalUrl(path)
   const img = image || ogImageFromPath(path)
   if (typeof document === 'undefined') return href
@@ -307,7 +323,7 @@ export function applyDocumentMeta({ title, path, description, jsonLd = false, im
     upsertMeta('name', 'twitter:description', description)
   }
   upsertCanonical(href)
-  upsertRouteJsonLd(jsonLd, { title, description, href, schoolName })
+  upsertRouteJsonLd(jsonLd, { title, description, href, schoolName, faq })
   return href
 }
 
@@ -319,9 +335,26 @@ export function displayNameFromSlug(slug) {
     .join(' ')
 }
 
+export const SCHOOL_TITLE_LIMIT = 65
+const SCHOOL_TITLE_BRAND = ' | The Public Cap'
+
+/** First pattern that fits the SERP limit. index.html repeats this ladder for the no-JS fallback. */
+export function schoolSerpTitle(name) {
+  const options = [
+    `${name} NIL Budget, Collective Payout & Football Revenue${SCHOOL_TITLE_BRAND}`,
+    `${name} NIL Budget, Collective Payout & Revenue${SCHOOL_TITLE_BRAND}`,
+    `${name} NIL, Collective & Football Revenue${SCHOOL_TITLE_BRAND}`,
+    `${name} NIL Budget & Collective Payout${SCHOOL_TITLE_BRAND}`,
+  ]
+  return options.find((title) => title.length <= SCHOOL_TITLE_LIMIT) || options[options.length - 1]
+}
+
 export function schoolTitle(name, season) {
-  const yr = season && season !== CURRENT_SEASON ? ` · ${season}` : ''
-  return `${name}${yr} — ${SCHOOL_TITLE_FRAME} — reported football NIL — Public Cap`
+  const base = schoolSerpTitle(name)
+  if (season && season !== CURRENT_SEASON) {
+    return base.replace(SCHOOL_TITLE_BRAND, ` · ${season}${SCHOOL_TITLE_BRAND}`)
+  }
+  return base
 }
 
 export function compareTitle(nameA, nameB, season) {
@@ -334,14 +367,8 @@ export function coachFaTitle(coachName) {
   return `${coachName} — Coach buyout offsets — Public Cap`
 }
 
-export function schoolDescription(schoolOrName) {
-  const name = typeof schoolOrName === 'string' ? schoolOrName : schoolOrName?.name
-  if (!name) return PAGE_DESCRIPTIONS.school
-  const gap = typeof schoolOrName === 'object' && !!(schoolOrName.revenueGap || schoolOrName.private)
-  if (gap) {
-    return `${name} football revenue on Public Cap is booked capacity from public filings, not a full athletic-revenue total. The private checkbook is two lanes — conference media and federal EADA athletics revenue — not unpacked into tickets, sponsorships, or contributions, and not summed into one MFRS-equivalent stack. House cap and booked NIL sit beside it. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane. Empty stays empty.`
-  }
-  return `${name} — annual capacity from public filings versus the House benefits cap versus booked NIL. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane, not House. Pending stays empty.`
+export function schoolDescription(schoolOrName, ctx) {
+  return schoolSerpDescription(schoolOrName, ctx) || PAGE_DESCRIPTIONS.school
 }
 
 export function pageDescription(kind) {
@@ -371,11 +398,11 @@ export function titleFromPath(pathname, { season, schoolName, compareNames, coac
   return DEFAULT_TITLE
 }
 
-export function descriptionFromPath(pathname, { school, schoolName, coachName } = {}) {
+export function descriptionFromPath(pathname, { school, schoolName, coachName, year1, year2, spend } = {}) {
   const p = pathname || '/'
   if (p === '/') return PAGE_DESCRIPTIONS.home
   if (p.startsWith('/school/')) {
-    return schoolDescription(school || schoolName || displayNameFromSlug(p.split('/')[2]))
+    return schoolDescription(school || schoolName || displayNameFromSlug(p.split('/')[2]), { year1, year2, spend })
   }
   if (p === '/compare') return PAGE_DESCRIPTIONS.compare
   if (p === '/reported-nil') return PAGE_DESCRIPTIONS.reportedNil

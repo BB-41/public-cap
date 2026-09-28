@@ -40,6 +40,9 @@
       .issue-hed { font-weight: 650; font-size: clamp(28px, 4vw, 42px); letter-spacing: -0.02em; margin: 0 0 12px; }
       .lede { color: #cfc3a8; max-width: 720px; }
       .fine { font-size: 11px; color: #9a8d74; margin-top: 16px; }
+      .school-faq h2 { font-size: 22px; margin: 18px 0 8px; }
+      .school-faq h3 { font-size: 17px; margin: 14px 0 4px; }
+      .school-faq p { margin: 0 0 8px; color: #cfc3a8; }
       .table-scroll { overflow: auto; max-height: calc(100vh - 140px); border-top: 2px solid #efe4cc; }
       .table-pending { min-height: calc(100vh - 140px); }
       .board-pending-dek { min-height: 11rem; }
@@ -74,13 +77,31 @@
           }
           el.setAttribute('content', content)
         }
-        var title = 'Public Cap — Capacity vs House cap vs booked NIL'
-        var desc = 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.'
+        var stamped = document.documentElement.getAttribute('data-seo') === 'stamped'
+        var title = document.title
+        var descEl = document.head.querySelector('meta[name="description"]')
+        var desc = descEl ? descEl.getAttribute('content') : ''
+        function schoolSerpTitle(name) {
+          var brand = ' | The Public Cap'
+          var options = [
+            name + ' NIL Budget, Collective Payout & Football Revenue' + brand,
+            name + ' NIL Budget, Collective Payout & Revenue' + brand,
+            name + ' NIL, Collective & Football Revenue' + brand,
+            name + ' NIL Budget & Collective Payout' + brand,
+          ]
+          for (var i = 0; i < options.length; i++) {
+            if (options[i].length <= 65) return options[i]
+          }
+          return options[options.length - 1]
+        }
+        if (!stamped) {
+        title = 'Public Cap — Capacity vs House cap vs booked NIL'
+        desc = 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.'
         if (p.indexOf('/school/') === 0) {
           var schoolName = titleCaseSlug(p.split('/')[2])
           if (schoolName) {
-            title = schoolName + ' — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap'
-            desc = schoolName + ' — annual capacity from public filings versus the House benefits cap versus booked NIL. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane, not House. Pending stays empty.'
+            title = schoolSerpTitle(schoolName)
+            desc = schoolName + ' NIL budget, collective payout, football revenue, and head coach salary. House revenue-share cap and FY2025 football figures appear when a filing is booked. Pending stays empty.'
           }
         } else if (p === '/coach-fa' || p.indexOf('/coach-fa/') === 0) {
           title = 'Coach buyout offsets / free agents — Public Cap'
@@ -116,6 +137,7 @@
         setMeta('property', 'og:description', desc)
         setMeta('name', 'twitter:description', desc)
         setMeta('name', 'twitter:card', 'summary_large_image')
+        }
         var canon = 'https://thepubliccap.com' + (p === '/' ? '/' : p)
         var img = p === '/reported-nil'
           ? 'https://thepubliccap.com/og-reported-nil.png'

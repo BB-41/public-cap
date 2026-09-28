@@ -55,6 +55,7 @@ import { buildSchoolNilHistory, fetchRosterBooks } from '../lib/nilHistory.js'
 import AlumniToggle from '../components/AlumniToggle.jsx'
 import { ContractFiles } from '../components/ContractFiles.jsx'
 import { BuyoutRuleLine, BuyoutStepTape, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
+import SchoolFaq from '../components/SchoolFaq.jsx'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -952,6 +953,13 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           )}
         </div>
       </header>
+
+      <SchoolFaq
+        school={s}
+        year1={meta?.houseCap?.y2025_26?.value}
+        year2={meta?.houseCap?.y2026_27?.value}
+        spend={bowlBook.spendFy2025?.[s.id]}
+      />
 
       <PrivateCheckbook school={s} />
       <FootballSpend school={s} />

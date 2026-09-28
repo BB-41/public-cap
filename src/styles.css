@@ -1600,6 +1600,12 @@ table.rank th.rk { cursor: default; }
   }
 }
 
+.school-faq { margin: 8px 0 28px; max-width: 44rem; }
+.school-faq h2 { font-size: 22px; letter-spacing: -0.02em; margin: 0 0 8px; }
+.school-faq h3 { font-size: 17px; margin: 16px 0 4px; }
+.school-faq article p { margin: 0; color: var(--paper-dim); }
+.school-static { padding-bottom: 24px; }
+
 .nil101-page { max-width: 820px; }
 .nil101-page .lede { margin-bottom: 18px; }
 .nil101-cue { margin: 0 0 10px; }
