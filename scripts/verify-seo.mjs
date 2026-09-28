@@ -128,14 +128,17 @@ const nd = schools.schools.find((s) => s.id === 'notre-dame')
 const ndDesc = schoolDescription(nd, seoFor(nd))
 ok(/NIL budget/i.test(louDesc) && /collective payout/i.test(louDesc), 'name-only Louisville description names NIL budget and collective payout')
 ok(/football revenue/i.test(louDesc) && /salary/i.test(louDesc), 'name-only Louisville description names revenue and salary')
-ok(/Pending stays empty/i.test(louDesc), 'Louisville description keeps pending empty')
+ok(!/Pending stays empty/i.test(louDesc), 'name-only Louisville description drops the desk slogan')
 ok(!/\$/.test(louDesc), 'name-only Louisville description invents no dollars')
 ok(louBooked.includes('$30,745,125'), 'Louisville description uses FY2025 football spending')
-ok(louBooked.includes('$20,200,000'), 'Louisville description uses booked House spend')
+ok(louBooked.includes('$20,200,000'), 'Louisville description uses the booked House payout')
+ok(!/Pending stays empty/i.test(louBooked), 'Louisville description drops the desk slogan')
+ok(louBooked.length <= 155, `Louisville description is ${louBooked.length} characters`)
 ok(/football revenue/i.test(ndDesc), 'Notre Dame description answers football-revenue queries')
-ok(/not total athletics revenue/i.test(ndDesc), 'Notre Dame description refuses a full athletics-revenue number')
-ok(ndDesc.includes('$195,723,436'), 'Notre Dame description uses EADA football revenue')
-ok(ndDesc.includes('$93,255,797'), 'Notre Dame description uses EADA football spending')
+ok(ndDesc.includes('$195,723,436'), 'Notre Dame description uses football revenue')
+ok(ndDesc.includes('$93,255,797'), 'Notre Dame description uses football spending')
+ok(!/Pending stays empty/i.test(ndDesc), 'Notre Dame description drops the desk slogan')
+ok(ndDesc.length <= 155, `Notre Dame description is ${ndDesc.length} characters`)
 ok(!/tuition/i.test(ndDesc) && !/tuition/i.test(louBooked), 'school descriptions skip tuition')
 ok(descriptionFromPath('/school/indiana').includes('Indiana'), 'Indiana path description uses the name')
 ok(
@@ -371,6 +374,11 @@ for (const route of shells) {
   const allowed = allowedDollars(school, ctx)
   const blob = [route.description, ...visible.map((item) => `${item.question} ${item.answer}`)].join('\n')
   ok(!/tuition/i.test(blob), `${school.id} shell copy skips tuition`)
+  ok(!/Pending stays empty/.test(route.description), `${school.id} description drops the desk slogan`)
+  ok(!/Pending stays empty/.test(schoolFaqIntro(school.name)), `${school.id} intro drops the desk slogan`)
+  ok(!/cited pay lines/.test(schoolFaqIntro(school.name)), `${school.id} intro drops the salary caveat`)
+  ok(route.description.length <= 155, `${school.id} description is ${route.description.length} characters`)
+  ok(!/not booked on this page|not public on this desk/i.test(blob), `${school.id} FAQ uses plain missing-data language`)
   for (const token of dollarTokens(blob)) {
     ok(allowed.has(token), `${school.id} dollar ${token} is already on the desk`)
   }
@@ -390,6 +398,14 @@ for (const route of shells) {
   if (school.id === 'oklahoma-state') {
     ok(!expected.some((item) => item.question.includes('collective paid')), 'Oklahoma State skips collective payout with no 990 dollar')
     ok(route.title === schoolTitle('Oklahoma State'), 'Oklahoma State shell title is the SERP title')
+    const spendA = expected.find((item) => item.question.includes('make and spend'))
+    const payA = expected.find((item) => item.question.includes('pay players'))
+    ok(spendA.answer.includes("We don't have a reported football revenue figure for Oklahoma State yet."), 'Oklahoma State says football revenue is not reported yet')
+    ok(payA.answer.includes("Oklahoma State hasn't released how much of that it has actually paid out."), 'Oklahoma State says House payout is unreleased')
+  }
+  if (school.id === 'louisville') {
+    const coachA = expected.find((item) => item.question.includes('buyout'))
+    ok(coachA.answer.includes("We haven't confirmed the buyout figure yet."), 'Louisville says the buyout is not confirmed yet')
   }
 }
 

@@ -53,12 +53,12 @@ function payPlayersAnswer(school, ctx) {
 
   if (spent) {
     const window = spent.field?.window ? ` (${spent.field.window})` : ''
-    sentences.push(`Booked House spend for ${name} is ${moneyExact(spent.value)}${window}.`)
+    sentences.push(`${name} has paid out ${moneyExact(spent.value)} of that so far${window}.`)
     if (spent.field?.partialYear) {
-      sentences.push('That House spend is a partial window, not a full-year total.')
+      sentences.push('That amount covers only part of the year, not a full season.')
     }
     if (booked != null && booked === spent.value) {
-      sentences.push('That booked line is also the NIL budget stand-in on this page.')
+      sentences.push('That is also the NIL budget figure on this page.')
     }
     const extras = datedSpentSteps(bookedField).filter((step) => Number(step.value) !== spent.value)
     if (extras.length) {
@@ -66,23 +66,20 @@ function payPlayersAnswer(school, ctx) {
         const when = step.window ? ` (${step.window})` : ''
         return `${moneyExact(step.value)}${when}`
       })
-      sentences.push(
-        `Separate dated window${extras.length > 1 ? 's' : ''} on this page: ${joinAnd(bits)}. Not added to House spend.`,
-      )
+      const label = extras.length > 1 ? 'Separate payment windows' : 'A separate payment window'
+      sentences.push(`${label}: ${joinAnd(bits)}. Not included in the payout above.`)
     }
   } else {
-    sentences.push(`${name}'s own House spend is not public on this desk yet.`)
+    sentences.push(`${name} hasn't released how much of that it has actually paid out.`)
   }
 
   if (booked != null && booked !== spent?.value) {
     const window = bookedField.window ? ` (${bookedField.window})` : ''
-    sentences.push(
-      `Booked NIL on this page, the public stand-in for an NIL budget, is ${moneyExact(booked)}${window}.`,
-    )
+    sentences.push(`The NIL budget figure reported here is ${moneyExact(booked)}${window}.`)
     if (bookedField.partialYear) {
-      sentences.push('That NIL figure is a partial window, not a full-year total.')
+      sentences.push('That amount covers only part of the year, not a full season.')
     }
-    if (spent) sentences.push('House spend and booked NIL are separate lines on this page.')
+    if (spent) sentences.push('The House payout and the NIL budget figure are listed separately.')
   }
   return sentences.join(' ')
 }
@@ -95,17 +92,17 @@ function footballAnswer(school, ctx) {
   if (rev == null && spend == null) return null
   const sentences = []
   if (rev != null) {
-    sentences.push(`FY2025 EADA football revenue for ${name} is ${moneyExact(rev)}.`)
+    sentences.push(`FY2025 football revenue for ${name} is ${moneyExact(rev)}.`)
   }
   if (spend != null) {
-    sentences.push(`FY2025 EADA football spending for ${name} is ${moneyExact(spend)}.`)
+    sentences.push(`FY2025 football spending for ${name} is ${moneyExact(spend)}.`)
   }
   if (rev != null && spend != null) {
-    sentences.push('Revenue and spending are separate EADA lines, not a combined total.')
+    sentences.push('Revenue is what the program brought in. Spending is what it paid out. They are not added together.')
   } else if (spend != null) {
-    sentences.push('That figure is spending, not football revenue. Football revenue is not booked on this page.')
+    sentences.push(`That figure is spending, not football revenue. We don't have a reported football revenue figure for ${name} yet.`)
   } else {
-    sentences.push('Football spending is not booked on this page.')
+    sentences.push(`We don't have a reported football spending figure for ${name} yet.`)
   }
   return sentences.join(' ')
 }
@@ -121,16 +118,16 @@ function coachAnswer(school) {
   const who = coach.name ? `${coach.name}'s pay` : 'Head coach pay'
   const sentences = []
   if (payVal != null) {
-    const mark = pay.confidence === 'estimated' ? ' (estimated)' : ''
-    sentences.push(`${who} at ${school.name} is ${moneyExact(payVal)}${asOfBit(pay.asOf)}${mark}.`)
+    const mark = pay.confidence === 'estimated' ? 'an estimated ' : ''
+    sentences.push(`${who} at ${school.name} is ${mark}${moneyExact(payVal)}${asOfBit(pay.asOf)}.`)
   } else {
-    sentences.push(`${school.name}'s head coach pay is not public on this desk yet.`)
+    sentences.push(`We haven't confirmed what ${school.name} pays its head coach yet.`)
   }
   if (buyVal != null) {
-    const mark = buy.confidence === 'estimated' ? ' (estimated)' : ''
-    sentences.push(`The buyout is ${moneyExact(buyVal)}${asOfBit(buy.asOf)}${mark}.`)
+    const mark = buy.confidence === 'estimated' ? 'an estimated ' : ''
+    sentences.push(`The buyout is ${mark}${moneyExact(buyVal)}${asOfBit(buy.asOf)}.`)
   } else {
-    sentences.push('The buyout is not public on this desk yet.')
+    sentences.push("We haven't confirmed the buyout figure yet.")
   }
   return sentences.join(' ')
 }
@@ -155,12 +152,14 @@ function collectiveAnswer(school) {
     })
     return `${group.org ? `${group.org} paid` : 'paid'} ${joinAnd(pays)}`
   })
-  const noun = rows.length === 1 ? 'That payout is a lagged third-party filing' : 'Those payouts are lagged third-party filings'
-  return `${school.name}'s collective ${joinAnd(bits)} (Form 990). ${noun}, not House spend and not football revenue.`
+  const noun = rows.length === 1
+    ? "That comes from the collective's tax return, not the school's House payments or football revenue."
+    : "Those come from the collective's tax return, not the school's House payments or football revenue."
+  return `${school.name}'s collective ${joinAnd(bits)} (Form 990). ${noun}`
 }
 
 export function schoolFaqIntro(name) {
-  return `${name} NIL budget, collective payout, football revenue, and head coach salary. Salaries on this page are the cited pay lines only. Pending stays empty.`
+  return `${name}: NIL budget, collective payout, football revenue, and head coach salary.`
 }
 
 /** Questions with an answer from this school's booked data. */
@@ -176,14 +175,16 @@ export function schoolFaqItems(school, ctx = {}) {
   return specs.filter(([, answer]) => answer).map(([question, answer]) => ({ question, answer }))
 }
 
+export const SCHOOL_DESC_LIMIT = 155
+
 function descriptionFigures(school, ctx) {
   const parts = []
   const rev = hasVal(school.capacity?.eadaFootball) ? school.capacity.eadaFootball.value : null
   const spend = ctx.spend != null && Number.isFinite(Number(ctx.spend)) ? Number(ctx.spend) : null
-  if (rev != null) parts.push(`FY2025 EADA football revenue ${moneyExact(rev)}`)
-  if (spend != null) parts.push(`FY2025 EADA football spending ${moneyExact(spend)}`)
+  if (rev != null) parts.push(`FY2025 football revenue ${moneyExact(rev)}`)
+  if (spend != null) parts.push(rev != null ? `spending ${moneyExact(spend)}` : `FY2025 football spending ${moneyExact(spend)}`)
   const spent = bookedHouseSpend(school)
-  if (parts.length < 2 && spent) parts.push(`booked House spend ${moneyExact(spent.value)}`)
+  if (parts.length < 2 && spent) parts.push(`House payout ${moneyExact(spent.value)}`)
   const pay = school.coaches?.football?.pay
   if (parts.length < 2 && pay?.value != null && Number.isFinite(Number(pay.value))) {
     parts.push(`head coach pay ${moneyExact(pay.value)}`)
@@ -193,23 +194,30 @@ function descriptionFigures(school, ctx) {
   return parts.slice(0, 2)
 }
 
+function coverageTail(figures) {
+  const hasRevenue = figures.some((figure) => figure.includes('football revenue'))
+  const hasPay = figures.some((figure) => figure.includes('coach pay'))
+  const bits = ['NIL budget', 'collective payout']
+  if (!hasRevenue) bits.push('football revenue')
+  if (!hasPay) bits.push('coach salary')
+  if (bits.length === 2) return 'NIL budget and collective payout.'
+  return `${bits.slice(0, -1).join(', ')}, and ${bits[bits.length - 1]}.`
+}
+
 export function schoolSerpDescription(schoolOrName, ctx = {}) {
   const name = typeof schoolOrName === 'string' ? schoolOrName : schoolOrName?.name
   if (!name) return null
+  const topic = `${name}: NIL budget, collective payout, football revenue, and head coach salary.`
   const school = schoolOrName && typeof schoolOrName === 'object' ? schoolOrName : null
-  const tail = 'Covers the NIL budget, collective payout, football revenue, and head coach salary. Pending stays empty.'
-  if (!school?.id) {
-    return `${name} NIL budget, collective payout, football revenue, and head coach salary. House revenue-share cap and FY2025 football figures appear when a filing is booked. Pending stays empty.`
-  }
+  if (!school?.id) return topic
   const figures = descriptionFigures(school, ctx)
-  if (!figures.length) return `${name}. ${tail}`
-  const labeled = figures.map((figure, i) => {
-    if (i === 0 && figure.startsWith('FY2025 EADA football revenue')) {
-      return `${figure} (not total athletics revenue)`
-    }
-    return figure
-  })
-  return `${name}: ${joinAnd(labeled)}. ${tail}`
+  if (!figures.length) return topic
+  const figureText = `${name}: ${joinAnd(figures)}.`
+  const full = `${figureText} ${coverageTail(figures)}`
+  if (full.length <= SCHOOL_DESC_LIMIT) return full
+  const short = `${figureText} NIL budget and collective payout.`
+  if (short.length <= SCHOOL_DESC_LIMIT) return short
+  return figureText
 }
 
 function escHtml(value) {
