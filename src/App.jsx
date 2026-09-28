@@ -22,6 +22,8 @@ import {
   descriptionFromPath,
   titleFromPath,
 } from './lib/share.js'
+import { schoolFaqItems } from './lib/schoolSeo.js'
+import bowlBook from '../data/checkbook-bowl.json'
 import Shell, { SettingType } from './components/Shell.jsx'
 import NotFound from './pages/NotFound.jsx'
 
@@ -244,12 +246,17 @@ export default function App() {
     const path = location.pathname
     if (kind === 'school') {
       const school = enriched?.find((s) => s.id === schoolId)
+      const year1 = meta?.houseCap?.y2025_26?.value
+      const year2 = meta?.houseCap?.y2026_27?.value
+      const spend = bowlBook.spendFy2025?.[schoolId]
+      const seo = { year1, year2, spend }
       applyDocumentMeta({
         title: titleFromPath(path, { season, schoolName: school?.name }),
-        description: descriptionFromPath(path, { school, schoolName: school?.name }),
+        description: descriptionFromPath(path, { school, schoolName: school?.name, ...seo }),
         path: schoolId ? `/school/${schoolId}` : path,
         jsonLd: 'school',
         schoolName: school?.name,
+        faq: school ? schoolFaqItems(school, seo) : [],
       })
       return
     }
@@ -310,7 +317,7 @@ export default function App() {
       path: routePath,
       jsonLd: kind === 'home' ? 'home' : 'webpage',
     })
-  }, [kind, schoolId, season, enriched, params, location.pathname])
+  }, [kind, schoolId, season, enriched, params, location.pathname, meta])
 
   const ready =
     (!needsDesk || (data && (kind === 'reportedNil' || enriched))) &&

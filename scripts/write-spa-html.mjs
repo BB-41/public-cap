@@ -22,6 +22,11 @@ import {
   renderNil101Page,
 } from '../src/lib/nil101Guide.js'
 import {
+  renderSchoolStaticBody,
+  schoolFaqItems,
+  schoolFaqPageNode,
+} from '../src/lib/schoolSeo.js'
+import {
   SITE,
   descriptionFromPath,
   ogImageFromPath,
@@ -51,6 +56,10 @@ function escAttr(value) {
     .replace(/"/g, '&quot;')
 }
 
+function escText(value) {
+  return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+}
+
 function replaceAttr(html, attr, key, content) {
   const re = new RegExp(`<meta ${attr}="${key}" content="[^"]*"`)
   const tag = `<meta ${attr}="${key}" content="${escAttr(content)}"`
@@ -63,29 +72,57 @@ export function routeShell(path, extras = {}) {
   const description = extras.description || descriptionFromPath(path, extras)
   const url = `https://${SITE}${path}`
   const image = ogImageFromPath(path)
-  const hed = extras.hed || (path === '/reported-nil' ? 'Reported NIL by school' : path === '/nil-101' ? 'NIL 101' : title.split(' — ')[0])
-  return { path, title, description, url, image, hed, schoolName: extras.schoolName || null }
+  const hed = extras.hed || (path === '/reported-nil' ? 'Reported NIL by school' : path === '/nil-101' ? 'NIL 101' : title.split(' | ')[0])
+  return {
+    path,
+    title,
+    description,
+    url,
+    image,
+    hed,
+    schoolName: extras.schoolName || null,
+    school: extras.school || null,
+    seo: extras.seo || null,
+    faq: extras.faq || null,
+  }
 }
 
-export function schoolShells(schools) {
-  return (schools || []).map((school) =>
-    routeShell(`/school/${school.id}`, {
+export function schoolShells(schools, extras = {}) {
+  const { year1, year2, spendMap } = extras
+  return (schools || []).map((school) => {
+    const seo = { year1, year2, spend: spendMap?.[school.id] ?? null }
+    const faq = schoolFaqItems(school, seo)
+    return routeShell(`/school/${school.id}`, {
       title: schoolTitle(school.name),
-      description: schoolDescription(school),
+      description: schoolDescription(school, seo),
       schoolName: school.name,
       school,
+      seo,
+      faq,
       hed: school.name,
-    }),
-  )
+    })
+  })
+}
+
+export function loadSchoolSeoExtras() {
+  const data = JSON.parse(readFileSync(join(root, 'public/data/schools.json'), 'utf8'))
+  const bowl = JSON.parse(readFileSync(join(root, 'data/checkbook-bowl.json'), 'utf8'))
+  const year1 = data.meta?.houseCap?.y2025_26?.value
+  const year2 = data.meta?.houseCap?.y2026_27?.value
+  if (typeof year1 !== 'number' || typeof year2 !== 'number') {
+    throw new Error('school seo: booked house caps missing from schools.json')
+  }
+  if (!bowl?.spendFy2025) throw new Error('school seo: spendFy2025 map missing')
+  return { data, year1, year2, spendMap: bowl.spendFy2025 }
 }
 
 export function loadSchoolShells() {
-  const data = JSON.parse(readFileSync(join(root, 'public/data/schools.json'), 'utf8'))
-  return schoolShells(data.schools)
+  const { data, year1, year2, spendMap } = loadSchoolSeoExtras()
+  return schoolShells(data.schools, { year1, year2, spendMap })
 }
 
 function routeJsonLd(route) {
-  const { title, description, url, image, path, schoolName } = route
+  const { title, description, url, image, path, schoolName, faq } = route
   const webpage = {
     '@type': 'WebPage',
     name: title,
@@ -101,16 +138,19 @@ function routeJsonLd(route) {
   // School shells: CollegeOrUniversity with facts already on the page (name, url).
   // No capacity / House / NIL figures — those are not in this graph.
   if (path.startsWith('/school/') && schoolName) {
+    const graph = [
+      webpage,
+      {
+        '@type': 'CollegeOrUniversity',
+        name: schoolName,
+        url,
+      },
+    ]
+    const faqNode = schoolFaqPageNode(faq, url)
+    if (faqNode) graph.push(faqNode)
     return {
       '@context': 'https://schema.org',
-      '@graph': [
-        webpage,
-        {
-          '@type': 'CollegeOrUniversity',
-          name: schoolName,
-          url,
-        },
-      ],
+      '@graph': graph,
     }
   }
   return { '@context': 'https://schema.org', ...webpage }
@@ -119,8 +159,9 @@ function routeJsonLd(route) {
 export function applyRouteMeta(html, route) {
   const { title, description, url, image, path, hed } = route
   let out = html
-  out = out.replace(/<html\s+lang="en">/, '<html lang="en" data-route="inner">')
-  out = out.replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
+  const seoAttr = path.startsWith('/school/') ? ' data-seo="stamped"' : ''
+  out = out.replace(/<html\s+lang="en">/, `<html lang="en" data-route="inner"${seoAttr}>`)
+  out = out.replace(/<title>[^<]*<\/title>/, `<title>${escText(title)}</title>`)
   out = replaceAttr(out, 'name', 'description', description)
   out = replaceAttr(out, 'property', 'og:title', title)
   out = replaceAttr(out, 'property', 'og:description', description)
@@ -158,11 +199,21 @@ export function applyRouteMeta(html, route) {
     return out
   }
 
-  const jsonLd = JSON.stringify(routeJsonLd(route))
+  const jsonLd = JSON.stringify(routeJsonLd(route)).replace(/</g, '\\u003c')
   out = out.replace(
     /<script type="application\/ld\+json" id="public-cap-jsonld">[\s\S]*?<\/script>/,
     `<script type="application/ld+json" id="public-cap-jsonld">\n      ${jsonLd}\n    </script>`,
   )
+
+  if (path.startsWith('/school/') && route.school) {
+    out = replaceElementInner(out, '<div id="home-dek" class="page-wrap home-dek">', '')
+    out = replaceElementInner(
+      out,
+      '<div id="root">',
+      `\n        ${renderSchoolStaticBody(route.school, route.seo)}\n      `,
+    )
+    return out
+  }
 
   const heading = hed || (path === '/reported-nil' ? 'Reported NIL by school' : title.split(' — ')[0])
   out = out.replace(

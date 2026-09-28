@@ -117,7 +117,7 @@ if (process.env.PUBLIC_DIR) {
   ok(reported.includes('https://thepubliccap.com/reported-nil'), 'dist reported-nil.html points canonical at the board')
   ok(!reported.includes('<title>Public Cap — Capacity vs House cap vs booked NIL</title>'), 'dist reported-nil.html is not the homepage title')
   const lsuHtml = readFileSync(join(publicDir, 'school/lsu.html'), 'utf8')
-  ok(/<title>LSU — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap<\/title>/.test(lsuHtml), 'dist school/lsu.html has the LSU title')
+  ok(/<title>LSU NIL Budget, Collective Payout &amp; Revenue \| The Public Cap<\/title>/.test(lsuHtml), 'dist school/lsu.html has the LSU title')
   ok(lsuHtml.includes('https://thepubliccap.com/school/lsu'), 'dist school/lsu.html points canonical at LSU')
   ok(lsuHtml.includes('"@type":"CollegeOrUniversity"'), 'dist school/lsu.html has CollegeOrUniversity JSON-LD')
   ok(lsuHtml.includes('>How NIL works</a>'), 'dist school/lsu.html links How NIL works')

@@ -13,15 +13,25 @@ import {
   PAGE_DESCRIPTIONS,
   PAGE_TITLES,
   SCHOOL_TITLE_FRAME,
+  SCHOOL_TITLE_LIMIT,
   coachFaTitle,
   compareTitle,
   descriptionFromPath,
   displayNameFromSlug,
   ogImageFromPath,
   schoolDescription,
+  schoolSerpTitle,
   schoolTitle,
   titleFromPath,
 } from '../src/lib/share.js'
+import { moneyExact } from '../src/lib/format.js'
+import { datedSpentSteps, hasVal } from '../src/lib/compute.js'
+import {
+  bookedHouseSpend,
+  schoolFaqFromHtml,
+  schoolFaqIntro,
+  schoolFaqItems,
+} from '../src/lib/schoolSeo.js'
 import {
   NIL101_FAQ_SKIP,
   NIL101_HOME_LINK_TEXT,
@@ -31,7 +41,7 @@ import {
   nil101Model,
   sectionAnswer,
 } from '../src/lib/nil101Guide.js'
-import { applyRouteMeta, loadSchoolShells, routeShell } from './write-spa-html.mjs'
+import { applyRouteMeta, loadSchoolSeoExtras, loadSchoolShells, routeShell } from './write-spa-html.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const read = (rel) => readFileSync(join(root, rel), 'utf8')
@@ -54,19 +64,22 @@ ok(PAGE_TITLES.home === DEFAULT_TITLE, 'PAGE_TITLES.home matches DEFAULT_TITLE')
 ok(PAGE_TITLES.coachFa === 'Coach buyout offsets / free agents — Public Cap', 'coach-fa index title is discoverable')
 ok(PAGE_TITLES.guaranteeGames === 'Guarantee games — Public Cap', 'guarantee-games index title is discoverable')
 ok(PAGE_TITLES.checkbookBowl === 'Does the bigger spender win? — Public Cap', 'checkbook-bowl index title is discoverable')
-ok(SCHOOL_TITLE_FRAME === 'Capacity vs House cap vs booked NIL', 'school title frame is the three-lane sentence')
+ok(SCHOOL_TITLE_FRAME === 'Capacity vs House cap vs booked NIL', 'legacy school frame constant stays available for share cards')
+ok(SCHOOL_TITLE_LIMIT === 65, 'school SERP titles aim at 65 characters')
 
 ok(
-  schoolTitle('Louisville') === 'Louisville — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap',
-  'Louisville title keeps the #36 frame and names reported football NIL',
+  schoolTitle('Louisville') === 'Louisville NIL, Collective & Football Revenue | The Public Cap',
+  'Louisville title matches collective and football-revenue queries',
 )
-ok(schoolTitle('Oklahoma State').includes('Capacity vs House cap vs booked NIL'), 'Oklahoma State title keeps the #36 frame')
-ok(schoolTitle('Oklahoma State').includes('reported football NIL'), 'Oklahoma State title names reported football NIL')
-ok(schoolTitle('Notre Dame') === 'Notre Dame — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap', 'Notre Dame title')
-ok(schoolTitle('Indiana') === 'Indiana — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap', 'Indiana title')
-ok(schoolTitle('Cincinnati') === 'Cincinnati — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap', 'Cincinnati title')
+ok(schoolTitle('Oklahoma State') === 'Oklahoma State NIL Budget & Collective Payout | The Public Cap', 'Oklahoma State title names NIL budget and collective payout')
+ok(schoolTitle('Notre Dame') === 'Notre Dame NIL, Collective & Football Revenue | The Public Cap', 'Notre Dame title names collective and football revenue')
+ok(schoolTitle('Indiana') === 'Indiana NIL Budget, Collective Payout & Revenue | The Public Cap', 'Indiana title names NIL budget and collective payout')
+ok(schoolTitle('Cincinnati') === 'Cincinnati NIL, Collective & Football Revenue | The Public Cap', 'Cincinnati title')
+ok(schoolSerpTitle('Iowa') === 'Iowa NIL Budget, Collective Payout & Revenue | The Public Cap', 'short names keep NIL budget, collective payout, and revenue')
 ok(schoolTitle('Louisville', 2024).includes('· 2024'), 'non-current season still tags the year')
 ok(!schoolTitle('Louisville').includes('$'), 'school title invents no dollars')
+ok(schoolTitle('Louisville').length <= SCHOOL_TITLE_LIMIT, 'Louisville title stays within the SERP limit')
+ok(schoolTitle('Mississippi State').length <= SCHOOL_TITLE_LIMIT, 'longest school name stays within the SERP limit')
 
 ok(titleFromPath('/') === DEFAULT_TITLE, 'titleFromPath home')
 ok(titleFromPath('/school/louisville') === schoolTitle('Louisville'), 'slug title matches named title')
@@ -100,21 +113,33 @@ ok(
   'compare title keeps the three lanes',
 )
 
+const seoExtras = loadSchoolSeoExtras()
+function seoFor(school) {
+  return {
+    year1: seoExtras.year1,
+    year2: seoExtras.year2,
+    spend: seoExtras.spendMap[school.id],
+  }
+}
+const lou = schools.schools.find((s) => s.id === 'louisville')
 const louDesc = schoolDescription('Louisville')
+const louBooked = schoolDescription(lou, seoFor(lou))
 const nd = schools.schools.find((s) => s.id === 'notre-dame')
-const ndDesc = schoolDescription(nd)
-ok(/capacity/i.test(louDesc) && /House/i.test(louDesc) && /booked NIL/i.test(louDesc), 'Louisville description names the three lanes')
-ok(/reported football NIL/i.test(louDesc), 'Louisville description names reported football NIL')
-ok(/not a midpoint/i.test(louDesc), 'Louisville description refuses a fake midpoint')
-ok(/Collective 990 payout/i.test(louDesc), 'Louisville description names collective payout')
-ok(/Pending stays empty/i.test(louDesc), 'Louisville description keeps pending empty')
-ok(!/\$/.test(louDesc), 'Louisville description invents no dollars')
+const ndDesc = schoolDescription(nd, seoFor(nd))
+ok(/NIL budget/i.test(louDesc) && /collective payout/i.test(louDesc), 'name-only Louisville description names NIL budget and collective payout')
+ok(/football revenue/i.test(louDesc) && /salary/i.test(louDesc), 'name-only Louisville description names revenue and salary')
+ok(!/Pending stays empty/i.test(louDesc), 'name-only Louisville description drops the desk slogan')
+ok(!/\$/.test(louDesc), 'name-only Louisville description invents no dollars')
+ok(louBooked.includes('$30,745,125'), 'Louisville description uses FY2025 football spending')
+ok(louBooked.includes('$20,200,000'), 'Louisville description uses the booked House payout')
+ok(!/Pending stays empty/i.test(louBooked), 'Louisville description drops the desk slogan')
+ok(louBooked.length <= 155, `Louisville description is ${louBooked.length} characters`)
 ok(/football revenue/i.test(ndDesc), 'Notre Dame description answers football-revenue queries')
-ok(/not a full athletic-revenue total/i.test(ndDesc), 'Notre Dame description refuses a full revenue number')
-ok(/EADA/i.test(ndDesc) && /conference media/i.test(ndDesc), 'Notre Dame description names the two private lanes')
-ok(/not unpacked|not summed/i.test(ndDesc), 'Notre Dame description refuses an EADA unpack / fake sum')
-ok(/reported football NIL/i.test(ndDesc), 'Notre Dame description names reported football NIL as its own lane')
-ok(!/\$/.test(ndDesc), 'Notre Dame description invents no dollars')
+ok(ndDesc.includes('$195,723,436'), 'Notre Dame description uses football revenue')
+ok(ndDesc.includes('$93,255,797'), 'Notre Dame description uses football spending')
+ok(!/Pending stays empty/i.test(ndDesc), 'Notre Dame description drops the desk slogan')
+ok(ndDesc.length <= 155, `Notre Dame description is ${ndDesc.length} characters`)
+ok(!/tuition/i.test(ndDesc) && !/tuition/i.test(louBooked), 'school descriptions skip tuition')
 ok(descriptionFromPath('/school/indiana').includes('Indiana'), 'Indiana path description uses the name')
 ok(
   PAGE_DESCRIPTIONS.home === 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.',
@@ -123,7 +148,7 @@ ok(
 ok(descriptionFromPath('/') === PAGE_DESCRIPTIONS.home, 'descriptionFromPath home uses the locked slogan')
 ok(indexHtml.includes(`content="${PAGE_DESCRIPTIONS.home}"`), 'index.html home meta/og/twitter description matches')
 ok(indexHtml.includes(`"description":"${PAGE_DESCRIPTIONS.home}"`), 'index.html JSON-LD home description matches')
-ok(indexHtml.includes(`var desc = '${PAGE_DESCRIPTIONS.home}'`), 'index.html head script home desc matches')
+ok(indexHtml.includes(`desc = '${PAGE_DESCRIPTIONS.home}'`), 'index.html head script home desc matches')
 ok(indexHtml.includes('<p class="slogan">What can your team actually afford?</p>'), 'homepage mast slogan is the locked line')
 ok(
   indexHtml.includes('Power 4 only · House share · capacity · booked NIL. Pending stays empty.'),
@@ -168,7 +193,6 @@ const templateBlob = [
   ...Object.values(PAGE_DESCRIPTIONS),
   schoolTitle('Louisville'),
   schoolDescription('Louisville'),
-  schoolDescription(nd),
   coachFaTitle('Jimbo Fisher'),
 ].join('\n')
 ok(!/On3/i.test(templateBlob), 'title/description templates never name On3')
@@ -205,7 +229,10 @@ ok(!schoolPage.includes('NIL booked band'), 'old NIL booked band hed is gone')
 ok(!/On3/i.test(schoolPage), 'school page has no On3')
 
 ok(indexHtml.includes(DEFAULT_TITLE), 'index.html first title matches the home template')
-ok(indexHtml.includes('Capacity vs House cap vs booked NIL — reported football NIL — Public Cap'), 'index.html first-paints school titles')
+ok(indexHtml.includes('NIL Budget, Collective Payout & Football Revenue'), 'index.html first-paints the full school title pattern')
+ok(indexHtml.includes('NIL Budget & Collective Payout'), 'index.html first-paints the shortened school title')
+ok(indexHtml.includes("var brand = ' | The Public Cap'"), 'index.html school titles use The Public Cap brand')
+ok(indexHtml.includes("getAttribute('data-seo') === 'stamped'"), 'index.html does not overwrite a stamped school title')
 ok(indexHtml.includes('Coach buyout offsets / free agents — Public Cap'), 'index.html first-paints /coach-fa')
 ok(indexHtml.includes('Guarantee games — Public Cap'), 'index.html first-paints /guarantee-games')
 ok(indexHtml.includes('href="/guarantee-games"'), 'index.html nav links the guarantee board')
@@ -234,24 +261,26 @@ ok(schools.schools.length === 68, 'desk still has 68 schools')
 ok(!JSON.stringify(schools).includes('On3'), 'schools.json was not edited to name On3')
 for (const s of schools.schools) {
   const title = schoolTitle(s.name)
-  ok(title.startsWith(`${s.name} — `), `${s.id} title starts with the school name`)
-  ok(title.includes(SCHOOL_TITLE_FRAME), `${s.id} title uses the shared frame`)
-  ok(title.includes('reported football NIL'), `${s.id} title names reported football NIL`)
+  ok(title.startsWith(`${s.name} `), `${s.id} title starts with the school name`)
+  ok(title.endsWith('| The Public Cap'), `${s.id} title ends with the brand`)
+  ok(title.length <= SCHOOL_TITLE_LIMIT, `${s.id} title is ${title.length} characters`)
+  ok(/NIL/i.test(title) && /collective/i.test(title), `${s.id} title names NIL and collective`)
   ok(!title.includes('$'), `${s.id} title invents no dollars`)
+  ok(!/tuition/i.test(title), `${s.id} title skips tuition`)
 }
 
+const shells = loadSchoolShells()
+ok(shells.length === 68, 'writer emits 68 school shells')
 const lsu = schools.schools.find((s) => s.id === 'lsu')
-const lsuShell = applyRouteMeta(indexHtml, routeShell(`/school/${lsu.id}`, {
-  title: schoolTitle(lsu.name),
-  description: schoolDescription(lsu),
-  schoolName: lsu.name,
-  school: lsu,
-  hed: lsu.name,
-}))
-ok(lsuShell.includes('<title>LSU — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap</title>'), 'LSU shell uses the booked name, not Lsu')
+const lsuRoute = shells.find((route) => route.path === '/school/lsu')
+const lsuShell = applyRouteMeta(indexHtml, lsuRoute)
+ok(
+  lsuShell.includes(`<title>${schoolTitle(lsu.name).replace(/&/g, '&amp;')}</title>`),
+  'LSU shell uses the booked name, not Lsu',
+)
 ok(lsuShell.includes('content="https://thepubliccap.com/school/lsu"'), 'LSU shell canonical/og:url')
 ok(!lsuShell.includes('<title>Public Cap — Capacity vs House cap vs booked NIL</title>'), 'LSU shell dropped the homepage title')
-ok(loadSchoolShells().length === 68, 'writer emits 68 school shells')
+ok(lsuShell.includes('data-seo="stamped"'), 'LSU shell is stamped so the head script keeps the title')
 
 function jsonLdFrom(html) {
   const m = html.match(/<script type="application\/ld\+json" id="public-cap-jsonld">\s*([\s\S]*?)\s*<\/script>/)
@@ -276,6 +305,109 @@ ok(!(reportedLd?.['@graph'] || []).some((n) => n['@type'] === 'CollegeOrUniversi
 
 ok(lsuShell.includes(`>${NIL101_SCHOOL_LINK_TEXT}<`), 'LSU shell links How NIL works in the static HTML')
 ok((lsuShell.match(/How NIL works/g) || []).length === 1, 'LSU shell has one How NIL works link')
+ok((lsuShell.match(/<h1\b/g) || []).length === 1, 'LSU shell has one h1')
+ok(lsuShell.includes('<h1 class="issue-hed">LSU</h1>'), 'LSU shell h1 is the school name')
+ok(lsuShell.includes('<h2>Common questions</h2>'), 'LSU shell has a Common questions heading')
+
+const schoolSeo = read('src/lib/schoolSeo.js')
+ok(!schoolSeo.includes('21583913') && !schoolSeo.includes('20.5'), 'school FAQ does not hardcode the house caps')
+ok(!/tuition/i.test(schoolSeo), 'school FAQ copy does not mention tuition')
+ok(read('src/components/SchoolFaq.jsx').includes('Common questions'), 'React school page has the Common questions block')
+ok(schoolPage.includes('<SchoolFaq'), 'school page renders SchoolFaq')
+
+function dollarTokens(text) {
+  return String(text).match(/\$\d{1,3}(?:,\d{3})+(?:\.\d{1,2})?|\$\d+\.\d+[MB]/g) || []
+}
+
+function allowedDollars(school, ctx) {
+  const nums = [ctx.year1, ctx.year2, ctx.spend]
+  const pushField = (field) => {
+    if (hasVal(field)) nums.push(field.value)
+  }
+  pushField(school.capacity?.eadaFootball)
+  pushField(school.coaches?.football?.pay)
+  pushField(school.coaches?.football?.buyout)
+  pushField(school.nil?.booked)
+  const spent = bookedHouseSpend(school)
+  if (spent) nums.push(spent.value)
+  for (const step of datedSpentSteps(school.nil?.booked)) nums.push(step.value)
+  for (const row of school.nil?.collective990 || []) {
+    if (row?.value != null) nums.push(row.value)
+  }
+  const allowed = new Set()
+  for (const n of nums) {
+    if (n == null || !Number.isFinite(Number(n))) continue
+    allowed.add(moneyExact(n))
+  }
+  allowed.add(capPhrase(ctx.year1).match(/\$[\d,.]+M/)[0])
+  for (const token of capPhrase(ctx.year2).match(/\$[\d,.]+(?:M)?/g) || []) allowed.add(token)
+  return allowed
+}
+
+function assertFaqPage(node, label) {
+  ok(node?.['@type'] === 'FAQPage', `${label} JSON-LD has FAQPage`)
+  ok(Array.isArray(node?.mainEntity) && node.mainEntity.length > 0, `${label} FAQPage has questions`)
+  for (const q of node?.mainEntity || []) {
+    ok(q['@type'] === 'Question', `${label} entity is a Question`)
+    ok(typeof q.name === 'string' && q.name.length > 0, `${label} question has a name`)
+    ok(q.acceptedAnswer?.['@type'] === 'Answer', `${label} answer is an Answer`)
+    ok(typeof q.acceptedAnswer?.text === 'string' && q.acceptedAnswer.text.length > 0, `${label} answer has text`)
+    ok(!/tuition/i.test(q.name) && !/tuition/i.test(q.acceptedAnswer?.text || ''), `${label} FAQ skips tuition`)
+  }
+}
+
+for (const route of shells) {
+  const shell = applyRouteMeta(indexHtml, route)
+  const school = route.school
+  const ctx = route.seo
+  const visible = schoolFaqFromHtml(shell)
+  const expected = schoolFaqItems(school, ctx)
+  ok(visible.length === expected.length, `${school.id} static FAQ count matches the model`)
+  ok(shell.includes(schoolFaqIntro(school.name).replace(/&/g, '&amp;')), `${school.id} static intro is visible`)
+  ok(shell.includes('NIL budget') && shell.includes('collective') && shell.includes('revenue'), `${school.id} static HTML has NIL budget, collective, and revenue`)
+  ok(/salar(?:y|ies)/.test(shell), `${school.id} static HTML has salary or salaries`)
+  ok(shell.includes(`<h1 class="issue-hed">${school.name.replace(/&/g, '&amp;')}</h1>`), `${school.id} static h1 is the school name`)
+  const ld = jsonLdFrom(shell)
+  const faqLd = (ld?.['@graph'] || []).find((n) => n['@type'] === 'FAQPage')
+  assertFaqPage(faqLd, school.id)
+  ok(faqLd.mainEntity.length === expected.length, `${school.id} FAQPage question count`)
+  const allowed = allowedDollars(school, ctx)
+  const blob = [route.description, ...visible.map((item) => `${item.question} ${item.answer}`)].join('\n')
+  ok(!/tuition/i.test(blob), `${school.id} shell copy skips tuition`)
+  ok(!/Pending stays empty/.test(route.description), `${school.id} description drops the desk slogan`)
+  ok(!/Pending stays empty/.test(schoolFaqIntro(school.name)), `${school.id} intro drops the desk slogan`)
+  ok(!/cited pay lines/.test(schoolFaqIntro(school.name)), `${school.id} intro drops the salary caveat`)
+  ok(route.description.length <= 155, `${school.id} description is ${route.description.length} characters`)
+  ok(!/not booked on this page|not public on this desk/i.test(blob), `${school.id} FAQ uses plain missing-data language`)
+  for (const token of dollarTokens(blob)) {
+    ok(allowed.has(token), `${school.id} dollar ${token} is already on the desk`)
+  }
+  for (let i = 0; i < expected.length; i++) {
+    ok(visible[i].question === expected[i].question, `${school.id} visible question ${i}`)
+    ok(visible[i].answer === expected[i].answer, `${school.id} visible answer matches JSON source ${i}`)
+    ok(faqLd.mainEntity[i].name === expected[i].question, `${school.id} FAQPage name ${i}`)
+    ok(faqLd.mainEntity[i].acceptedAnswer.text === expected[i].answer, `${school.id} FAQPage text matches visible answer ${i}`)
+  }
+  if (school.id === 'syracuse') {
+    ok(!expected.some((item) => item.question.includes('buyout')), 'Syracuse skips the coach question without a public pay or buyout')
+  }
+  if (school.id === 'notre-dame') {
+    ok(expected.some((item) => item.question === "What has Notre Dame's collective paid?"), 'Notre Dame answers collective payout')
+    ok(route.description.includes('$195,723,436') && route.description.includes('$93,255,797'), 'Notre Dame shell description has both EADA lines')
+  }
+  if (school.id === 'oklahoma-state') {
+    ok(!expected.some((item) => item.question.includes('collective paid')), 'Oklahoma State skips collective payout with no 990 dollar')
+    ok(route.title === schoolTitle('Oklahoma State'), 'Oklahoma State shell title is the SERP title')
+    const spendA = expected.find((item) => item.question.includes('make and spend'))
+    const payA = expected.find((item) => item.question.includes('pay players'))
+    ok(spendA.answer.includes("We don't have a reported football revenue figure for Oklahoma State yet."), 'Oklahoma State says football revenue is not reported yet')
+    ok(payA.answer.includes("Oklahoma State hasn't released how much of that it has actually paid out."), 'Oklahoma State says House payout is unreleased')
+  }
+  if (school.id === 'louisville') {
+    const coachA = expected.find((item) => item.question.includes('buyout'))
+    ok(coachA.answer.includes("We haven't confirmed the buyout figure yet."), 'Louisville says the buyout is not confirmed yet')
+  }
+}
 
 const y1 = schools.meta.houseCap.y2025_26.value
 const y2 = schools.meta.houseCap.y2026_27.value
