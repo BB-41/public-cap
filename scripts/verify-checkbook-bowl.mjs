@@ -1,6 +1,7 @@
 /**
  * Checkbook bowl: the bigger FY2025 football spender vs the score.
- * Season record through ESPN week 3 is 15-10 (60%) in 25 final games.
+ * Season record through week 3 is 15-10 (60%) in 25 final games.
+ * Week 4 is final: bigger spender 7-7, season 22-17 in 39 games.
  * Dollars are the EADA integers on the book — nothing estimated.
  *
  * Run: node scripts/verify-checkbook-bowl.mjs
@@ -39,10 +40,11 @@ const schoolIds = new Set(schools.schools.map((s) => s.id))
 ok(JSON.stringify(book) === JSON.stringify(pub), 'data/checkbook-bowl.json synced to public/data')
 ok(JSON.stringify(buildBook(book)) === JSON.stringify(book), 'book matches what --write would emit')
 ok(book.season === 2026, 'season is 2026')
-ok(book.asOf === '2026-09-26', 'book as-of is the week-4 board date')
+ok(book.asOf === '2026-09-28', 'book as-of is the day Week 4 finals were logged')
 ok(/EADA/.test(book.method) && /AP top 25/.test(book.method), 'method names the big-game rule')
 ok(/TOTAL_EXPENSE_ALL_Football/.test(book.source) && /FY2025/.test(book.source), 'source names the EADA filing')
-ok(/not final|upcoming/i.test(book.source), 'source says week 4 was not final')
+ok(/Weeks 1–4 are final/.test(book.source), 'source says weeks 1–4 are final')
+ok(!/Week 4 was not final/.test(book.source), 'source no longer says week 4 was not final')
 ok(!/estimat/i.test(book.method), 'method does not estimate')
 
 ok(schoolIds.size === 68, 'desk still has 68 schools')
@@ -51,7 +53,7 @@ for (const id of schoolIds) {
   ok(Number.isInteger(book.spendFy2025[id]) && book.spendFy2025[id] > 0, `${id} has a positive EADA football expense`)
 }
 
-ok(book.games.length === 39, 'book has 39 big games (25 final + 14 upcoming)')
+ok(book.games.length === 39, 'book has 39 big games, all final through week 4')
 
 for (const game of book.games) {
   const label = `${game.away.id} at ${game.home.id} wk${game.week}`
@@ -79,20 +81,23 @@ for (const game of book.games) {
 const through = seasonRecord(book.games, 3)
 ok(through.games === 25 && through.wins === 15 && through.losses === 10, 'through week 3 the bigger spender is 15-10')
 ok(Math.round(through.rate * 100) === 60, 'through week 3 win rate is 60%')
-ok(book.games.filter((g) => g.week <= 3).every(isFinal), 'weeks 1–3 are final')
-ok(book.games.filter((g) => g.week === 4).every((g) => !isFinal(g)), 'week 4 is upcoming')
+ok(book.games.filter((g) => g.week <= 4).every(isFinal), 'weeks 1–4 are final')
+ok(book.games.filter((g) => !isFinal(g)).length === 0, 'no upcoming games remain on the book')
 
 const weeks = weekRecords(book.games)
 ok(weeks.find((w) => w.week === 1).wins === 3 && weeks.find((w) => w.week === 1).losses === 2, 'week 1 is 3-2')
 ok(weeks.find((w) => w.week === 2).wins === 6 && weeks.find((w) => w.week === 2).losses === 4, 'week 2 is 6-4')
 ok(weeks.find((w) => w.week === 3).wins === 6 && weeks.find((w) => w.week === 3).losses === 4, 'week 3 is 6-4')
-ok(weeks.find((w) => w.week === 4).upcoming === 14 && weeks.find((w) => w.week === 4).games === 0, 'week 4 has 14 upcoming')
+ok(weeks.find((w) => w.week === 4).wins === 7 && weeks.find((w) => w.week === 4).losses === 7, 'week 4 is 7-7')
+ok(weeks.find((w) => w.week === 4).upcoming === 0 && weeks.find((w) => w.week === 4).games === 14, 'week 4 has 14 finals')
+const season = seasonRecord(book.games)
+ok(season.games === 39 && season.wins === 22 && season.losses === 17, 'season record is 22-17')
 
 const upsets = upsetGames(book.games)
-ok(upsets.length === 10, 'ten upsets')
+ok(upsets.length === 17, 'seventeen upsets')
 ok(
   upsets.map((g) => g.gap).join(',') ===
-    [37952337, 30398139, 28016855, 21953681, 16948229, 15960317, 14570462, 9521640, 1907982, 1765733].join(','),
+    [37952337, 36482649, 30398139, 28016855, 21953681, 16948229, 15960317, 14570462, 13167500, 11740564, 10768772, 10080023, 9521640, 9491559, 1907982, 1765733, 77122].join(','),
   'upsets sort by the logged gaps, largest first',
 )
 ok(upsets[0].winner === 'smu' && upsets[0].away.id === 'smu' && upsets[0].home.id === 'florida-state', 'biggest upset is SMU over Florida State')
@@ -129,17 +134,44 @@ const saturday = [
   ['oregon', 'usc', 60847472, 74014972, 13167500, 20, 12],
   ['missouri', 'mississippi-state', 49316139, 37575575, 11740564, 19, 24],
 ]
+const saturdayScores = {
+  'texas|tennessee': [20, 17, true],
+  'illinois|ohio-state': [19, 42, true],
+  'wake-forest|louisville': [30, 27, true],
+  'notre-dame|purdue': [49, 10, true],
+  'oklahoma|georgia': [13, 41, false],
+  'ole-miss|florida': [28, 52, false],
+  'utah|iowa-state': [31, 17, true],
+  'iowa|michigan': [20, 19, false],
+  'wisconsin|penn-state': [24, 20, false],
+  'south-carolina|alabama': [18, 49, true],
+  'texas-am|lsu': [6, 35, false],
+  'oregon|usc': [41, 27, false],
+  'missouri|mississippi-state': [24, 31, false],
+}
 for (const [away, home, awaySpend, homeSpend, gap, awayRank, homeRank] of saturday) {
   const game = find(away, home)
-  ok(game && !isFinal(game), `${away} at ${home} is upcoming`)
+  const scored = saturdayScores[`${away}|${home}`]
+  ok(game && isFinal(game), `${away} at ${home} is final`)
+  ok(game?.away.score === scored?.[0] && game?.home.score === scored?.[1], `${away} at ${home} final score`)
+  ok(game?.biggerSpenderWon === scored?.[2], `${away} at ${home} biggerSpenderWon`)
   ok(game?.away.spend === awaySpend && game?.home.spend === homeSpend && game?.gap === gap, `${away} at ${home} spend and gap`)
   ok((game?.away.rank ?? null) === awayRank && (game?.home.rank ?? null) === homeRank, `${away} at ${home} AP ranks`)
   ok(compareHref(game) === `/compare?a=${awaySpend > homeSpend ? away : home}&b=${awaySpend > homeSpend ? home : away}`, `${away} at ${home} compare link leads with the checkbook favorite`)
 }
 
 const friday = find('northwestern', 'indiana')
-ok(friday && !isFinal(friday) && friday.home.score == null && friday.away.score == null, 'Northwestern at Indiana stays upcoming with no partial score')
+ok(friday && isFinal(friday) && friday.away.score === 23 && friday.home.score === 29, 'Northwestern 23, Indiana 29')
+ok(friday.winner === 'indiana' && friday.biggerSpenderWon === true, 'Indiana checkbook win over Northwestern')
 ok(friday.gap === 50207544 - 37901761, 'Indiana gap is the difference of the two filings')
+
+const wisconsin = find('wisconsin', 'penn-state')
+ok(
+  wisconsin.biggerSpenderWon === false && wisconsin.winner === 'wisconsin' && wisconsin.gap === 36482649,
+  'Wisconsin over Penn State is the week-4 spending upset',
+)
+const week4Upsets = upsetGames(book.games.filter((g) => g.week === 4))
+ok(week4Upsets[0]?.winner === 'wisconsin' && week4Upsets[0]?.away.id === 'wisconsin' && week4Upsets[0]?.home.id === 'penn-state', 'biggest week-4 upset is Wisconsin over Penn State')
 
 ok(compareHref(upsets[0]) === '/compare?a=florida-state&b=smu', 'upset row links compare with the checkbook favorite first')
 
