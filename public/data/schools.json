@@ -18608,12 +18608,13 @@
             "notes": "Total pay. Annual flow, not a wealth stock."
           },
           "buyout": {
-            "value": 27903958,
+            "value": 22550000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "USA TODAY (Sept. 26, 2026), quoting the Beamer contract — amount if fired without cause on Dec. 1, 2026",
+            "url": "https://www.usatoday.com/story/sports/ncaaf/sec/2026/09/26/shane-beamer-buyout-contract-south-carolina-football/91966993007/",
+            "asOf": "2026-12-01",
+            "notes": "Approximately $22.55 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $22,550,000 because the article did not print an unrounded dollar. 65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030. Prior USA TODAY Sports database cell was $27,903,958 as of Oct. 8, 2025 (buyout owed if fired Dec. 1, 2025). A Sept. 19, 2026 USA TODAY story still described the in-season buyout as $27.9 million, dropping to $22.1 million on Dec. 31. Liability/overhang, not annual spend.",
+            "rule": "65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030 (USA TODAY quoting the contract)."
           },
           "term": {
             "confidence": "reported",
@@ -19109,12 +19110,13 @@
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 scheduled dollar from the 2025 term sheet / board file: $8,250,000 (Jan. 1–Dec. 31, 2026). ESPN: $8.15 million in 2025 with $100,000 raises annually. 247 prints $8,250,000. Not the USA TODAY 2025 $8.15M cell and not The State’s $8.2M round. Incentives not included. Current-deal coaches.football.pay stays the USA TODAY 2025 snapshot."
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 22550000,
+              "confidence": "reported",
+              "source": "USA TODAY (Sept. 26, 2026), quoting the Beamer contract — amount if fired without cause on Dec. 1, 2026",
+              "url": "https://www.usatoday.com/story/sports/ncaaf/sec/2026/09/26/shane-beamer-buyout-contract-south-carolina-football/91966993007/",
+              "asOf": "2026-12-01",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Approximately $22.55 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $22,550,000 because the article did not print an unrounded dollar. 65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030. Prior USA TODAY Sports database cell was $27,903,958 as of Oct. 8, 2025 (Dec. 1, 2025 hypothetical). Same figure as coaches.football.buyout so the 2026 season card is not left pending.",
+              "rule": "65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030 (USA TODAY quoting the contract)."
             },
             "term": {
               "confidence": "reported",
@@ -48274,12 +48276,43 @@
           "football": {
             "name": "Greg Schiano",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 6750000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "NJ.com (Aug. 19, 2025; updated Mar. 21, 2026), year table from the Dec. 11, 2023 contract obtained by open public records",
+              "url": "https://www.nj.com/rutgers/2025/08/where-each-rutgers-head-coach-and-their-contract-stands-entering-ad-keli-zinns-1st-season.html",
+              "asOf": "2026-03-21",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 line on the OPRA year table: $6,750,000. The school-side buyout clause calls that table annual base salary. USA TODAY 2025 total pay equals the 2025 line ($6,500,000), so this is the scheduled guaranteed annual salary, not incentives and not a partial base with an unknown supplemental. The same table prints 2027 at $7,250,000 (a $500,000 step, as printed — not a desk interpolation); 76.875% of the 2026–2029 lines equals the article’s $22,485,938 figure if Rutgers terminates following the 2025-26 season. Current-deal coaches.football.pay stays the USA TODAY 2025 snapshot.",
+              "breakdown": [
+                {
+                  "label": "Annual base salary (2026)",
+                  "value": 6750000
+                }
+              ],
+              "schedule": [
+                {
+                  "period": "2025",
+                  "value": 6500000
+                },
+                {
+                  "period": "2026",
+                  "value": 6750000
+                },
+                {
+                  "period": "2027",
+                  "value": 7250000,
+                  "notes": "Printed $500,000 step from 2026. Not interpolated."
+                },
+                {
+                  "period": "2028",
+                  "value": 7500000
+                },
+                {
+                  "period": "2029",
+                  "value": 7750000
+                }
+              ],
+              "baseOnly": null
             },
             "buyout": {
               "value": null,
@@ -54008,12 +54041,13 @@
             "notes": "Total pay. Annual flow, not a wealth stock."
           },
           "buyout": {
-            "value": 27493333,
+            "value": 21280000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "USA TODAY (Sept. 7, 2026), quoting Fickell’s initial contract and additional compensation agreement — amount if fired without cause on Dec. 1, 2026",
+            "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
+            "asOf": "2026-12-01",
+            "notes": "$21.28 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $21,280,000 because the article printed $21.28 million and did not print an unrounded dollar. The school owes either $6.48 million or 80% of remaining total compensation under the initial contract and additional compensation agreement, whichever is higher. On Dec. 1, 2026 the 80% amount is the higher one. That original contract runs through March 31, 2030. The 2030 and 2031 seasons do not count toward the buyout. The article says the figure would be higher if he is fired before Dec. 1, 2026, and does not print that earlier dollar. Prior USA TODAY Sports database cell was $27,493,333 as of Oct. 8, 2025. Liability/overhang, not annual spend.",
+            "rule": "Whichever is higher: $6.48 million, or 80% of remaining total compensation under the initial contract and additional compensation agreement. Original contract through March 31, 2030. The 2030 and 2031 seasons do not count (USA TODAY, Sept. 7, 2026, quoting the contract)."
           },
           "term": {
             "confidence": "pending",
@@ -54535,20 +54569,59 @@
           "football": {
             "name": "Luke Fickell",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 7800000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "usatoday.com, Sept. 7, 2026, quoting Fickell’s initial contract and Wisconsin Foundation additional compensation agreement",
+              "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
+              "asOf": "2026-09-07",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). USA TODAY (Sept. 7, 2026, updated Sept. 8) quoting the contract: 2026 annual salary $7,800,000 = University of Wisconsin pay $3,000,000 + Wisconsin Foundation additional compensation $4,800,000. The foundation piece increases $100,000 every year. Total guaranteed annual salary, not base only. Incentives not included. Not the USA TODAY database 2025-10-08 total-pay cell of $7,825,000. Current-deal coaches.football.pay stays that snapshot.",
+              "breakdown": [
+                {
+                  "label": "University of Wisconsin annual pay",
+                  "value": 3000000
+                },
+                {
+                  "label": "Wisconsin Foundation additional compensation (2026)",
+                  "value": 4800000
+                }
+              ],
+              "schedule": [
+                {
+                  "period": "2026",
+                  "value": 7800000
+                },
+                {
+                  "period": "2027",
+                  "value": 7900000
+                },
+                {
+                  "period": "2028",
+                  "value": 8000000
+                },
+                {
+                  "period": "2029",
+                  "value": 8100000
+                },
+                {
+                  "period": "2030",
+                  "value": 8200000
+                },
+                {
+                  "period": "2031",
+                  "value": 8300000
+                }
+              ],
+              "baseOnly": null
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 21280000,
+              "confidence": "reported",
+              "source": "USA TODAY (Sept. 7, 2026), quoting Fickell’s initial contract and additional compensation agreement — amount if fired without cause on Dec. 1, 2026",
+              "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
+              "asOf": "2026-12-01",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). $21.28 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $21,280,000 because the article printed $21.28 million and did not print an unrounded dollar. The school owes either $6.48 million or 80% of remaining total compensation under the initial contract and additional compensation agreement, whichever is higher. On Dec. 1, 2026 the 80% amount is the higher one. That original contract runs through March 31, 2030. The 2030 and 2031 seasons do not count toward the buyout. The article says the figure would be higher if he is fired before Dec. 1, 2026, and does not print that earlier dollar. Prior USA TODAY Sports database cell was $27,493,333 as of Oct. 8, 2025. Same figure as coaches.football.buyout so the 2026 season card is not left pending.",
+              "rule": "Whichever is higher: $6.48 million, or 80% of remaining total compensation under the initial contract and additional compensation agreement. Original contract through March 31, 2030. The 2030 and 2031 seasons do not count (USA TODAY, Sept. 7, 2026, quoting the contract)."
             },
             "term": {
               "confidence": "pending",

@@ -1077,16 +1077,16 @@
       "termThrough": "2030-12-31",
       "steps": [],
       "overhang": {
-        "amount": 27903958,
-        "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
+        "amount": 22550000,
+        "asOf": "2026-12-01",
+        "rule": "65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030 (USA TODAY, Sept. 26, 2026, quoting the contract). Approximately $22.55 million if fired without cause on Dec. 1, 2026 — stored as $22,550,000 because the article did not print an unrounded dollar. No dated dollar staircase beyond that one date. Game-by-game tape pending — we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
-          "label": "USA TODAY Sports coach salary database",
-          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+          "label": "USA TODAY (Sept. 26, 2026), quoting the Beamer contract",
+          "url": "https://www.usatoday.com/story/sports/ncaaf/sec/2026/09/26/shane-beamer-buyout-contract-south-carolina-football/91966993007/"
         }
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "notes": "School buyout if fired without cause on Dec. 1, 2026. Liability/overhang, not annual spend. Prior USA TODAY Sports database figure was $27,903,958 as of Oct. 8, 2025 (Dec. 1, 2025 hypothetical). A Sept. 19, 2026 USA TODAY story still described the in-season buyout as $27.9 million, dropping to $22.1 million on Dec. 31.",
       "mitigation": null,
       "contract": {
         "label": "University of South Carolina Athletics",
@@ -2372,19 +2372,19 @@
       "sport": "fb",
       "name": "Luke Fickell",
       "tape": "overhang",
-      "termThrough": null,
+      "termThrough": "2030-03-31",
       "steps": [],
       "overhang": {
-        "amount": 27493333,
-        "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
+        "amount": 21280000,
+        "asOf": "2026-12-01",
+        "rule": "Whichever is higher: $6.48 million, or 80% of remaining total compensation under the initial contract and additional compensation agreement (USA TODAY, Sept. 7, 2026, quoting the contract). On Dec. 1, 2026 the 80% amount is higher and totals $21.28 million — stored as $21,280,000 because the article did not print an unrounded dollar. Original contract through March 31, 2030. The 2030 and 2031 seasons do not count. The article says the figure would be higher if he is fired before that date and does not print that earlier dollar. No dated dollar staircase. Game-by-game tape pending — we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
-          "label": "USA TODAY Sports coach salary database",
-          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+          "label": "USA TODAY (Sept. 7, 2026), quoting the Fickell contract",
+          "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/"
         }
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "notes": "School buyout if fired without cause on Dec. 1, 2026. Liability/overhang, not annual spend. Prior USA TODAY Sports database figure was $27,493,333 as of Oct. 8, 2025.",
       "mitigation": null,
       "contract": null
     },
