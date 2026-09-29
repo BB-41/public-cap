@@ -14,9 +14,11 @@ function readBootYear2() {
 }
 
 function Parts({ parts }) {
-  return parts.map((part, i) =>
-    typeof part === 'string' ? <Fragment key={i}>{part}</Fragment> : <Link key={i} to={part.href}>{part.text}</Link>,
-  )
+  return parts.map((part, i) => {
+    if (typeof part === 'string') return <Fragment key={i}>{part}</Fragment>
+    if (/^https?:\/\//i.test(part.href)) return <a key={i} href={part.href}>{part.text}</a>
+    return <Link key={i} to={part.href}>{part.text}</Link>
+  })
 }
 
 function Paragraphs({ paragraphs }) {

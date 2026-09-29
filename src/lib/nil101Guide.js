@@ -16,7 +16,7 @@ export const NIL101_SCHOOL_LINK_TEXT = 'How NIL works'
 /** First commit of the guide. */
 export const NIL101_DATE_PUBLISHED = '2026-09-25'
 /** Static full-text shell published for crawlers. */
-export const NIL101_DATE_MODIFIED = '2026-09-27'
+export const NIL101_DATE_MODIFIED = '2026-09-29'
 
 const FAN = {
   src: '/nil101/fan.webp',
@@ -117,6 +117,29 @@ export function nil101Model({ year1, year2 }) {
           ['That pay is called revenue sharing. The school shares some of its sports money with players.'],
           ['A cap is the most each school can pay. Every school that takes part gets the same cap.'],
           [yearParagraph(year1, year2)],
+        ],
+      },
+      {
+        question: 'Protect College Sports Act',
+        paragraphs: [
+          ['Passed the Senate Sep 28, 2026 (77-22) — not yet law.'],
+          [
+            'The Senate bill is S. 4668. Senators Ted Cruz and Maria Cantwell wrote it. The House has not passed it. The President has not signed it (',
+            { href: 'https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00250.htm', text: 'Senate roll call' },
+            ').',
+          ],
+          [
+            'On top of the House cap, a school could add not more than $22.5 million a year to keep athletes who already played a full season there. It could add up to $5 million more, tied to what that school already pays athletes in women\'s, Olympic, and other non-revenue sports. Those two add-ons together are as much as $27.5 million. They are a ceiling in the bill, not money this desk has booked for any school (',
+            { href: 'https://www.commerce.senate.gov/wp-content/uploads/2026/09/PCSA-Text-091726.pdf', text: 'bill text, section 114' },
+            ').',
+          ],
+          [`The House cap on this page stays the same. ${yearParagraph(year1, year2)}`],
+          ['One transfer does not cost a season. A second transfer means sitting out the next year, unless a sport is dropped, the head coach leaves, the athlete was sexually assaulted or harassed at the school, or the athlete is going to graduate school.'],
+          ['The eligibility clock is five calendar years, with time out for things like pregnancy, military service, a religious mission, or a serious injury.'],
+          ['Schools and the NCAA would get a limited shield from antitrust lawsuits when they enforce the eligibility, transfer, and pay rules in the bill.'],
+          ['An FBS football head coach or coordinator cannot do another school\'s head-coach job during the same season.'],
+          ['It would set one national set of NIL rules. Boosters and groups tied to a school are covered.'],
+          ['The bill does not decide whether athletes are employees. It leaves that question alone.'],
         ],
       },
       {
