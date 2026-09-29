@@ -36,7 +36,8 @@
       "Wisconsin → Eastern Michigan $1,400,000 is booked from FBSchedules (Kevin Kelley; article Dec. 5, 2025, UPDATE Dec. 10, 2025), which obtained the contract from Eastern Michigan University via a public records request. Camp Randall on Sept. 19, 2026, replacing the mutually cancelled Wisconsin–Pitt date. The 2027 Dublin game is not a 2026 row. No separate band fee is named.",
       "Kentucky → South Alabama $1,600,000 is booked from the Lexington Herald-Leader (Mark Story, Ask Mark Anything, June 22, 2026). Newsroom figure for Sept. 26 at Kroger Field. The same column restates Kentucky → Youngstown State $575,000, already booked from the March 21, 2019 open-records row — not a second source of dollars. No separate band fee is named.",
       "Indiana → North Texas $1,200,000 is booked from FBSchedules (Kevin Kelley, Sept. 24, 2025), which obtained the contract via a state public records request. Memorial Stadium on Sept. 5, 2026, replacing a cancelled Colorado State opener. Colorado State paid Indiana a $100,000 cancellation fee — that fee is not a 2026 guarantee row. No separate band fee is named.",
-      "Miami → Central Michigan $1,300,000 is booked from the Detroit News (Jan. 20, 2022). The headline and lede name CMU's $1.3 million payday for the 2026 trip to Miami (Fla.); a university spokesperson confirmed the figure. Newsroom figure, not a hosted contract. CMU athletics the same day confirms Saturday, Sept. 26, 2026 at Hard Rock Stadium and does not name the dollar. No separate band fee is named. Distinct from Miami → Florida A&M $720,000."
+      "Miami → Central Michigan $1,300,000 is booked from the Detroit News (Jan. 20, 2022). The headline and lede name CMU's $1.3 million payday for the 2026 trip to Miami (Fla.); a university spokesperson confirmed the figure. Newsroom figure, not a hosted contract. CMU athletics the same day confirms Saturday, Sept. 26, 2026 at Hard Rock Stadium and does not name the dollar. No separate band fee is named. Distinct from Miami → Florida A&M $720,000.",
+      "Arkansas → Tulsa $0 (Sept. 26, 2026, Fayetteville) is booked from the Arkansas Democrat-Gazette / Whole Hog (Matt Jones, Sept. 22, 2026). Two-for-one: no guarantees on the first two games (2026 in Fayetteville and 2027 in Tulsa); travel expenses only, and the story does not name a travel dollar. AD Hunter Yurachek said Tulsa is paid $1,500,000 only for the 2029 return to Fayetteville. That 2029 check is not a 2026 row."
     ],
     "sources": [
       "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
@@ -83,7 +84,8 @@
       "FBSchedules (Sept. 24, 2025) — Indiana–North Texas contract via state public records",
       "Detroit News (Jan. 20, 2022) — Central Michigan nets a $1.3 million payday at Miami (Fla.) in 2026",
       "CMU Athletics (Jan. 20, 2022) — Central Michigan at Miami (Fla.) on Sept. 26, 2026, Hard Rock Stadium; no dollar",
-      "Miami Athletics (Sept. 26, 2026) — Central Michigan played at Hard Rock Stadium, Miami 52, Central Michigan 3"
+      "Miami Athletics (Sept. 26, 2026) — Central Michigan played at Hard Rock Stadium, Miami 52, Central Michigan 3",
+      "Arkansas Democrat-Gazette / Whole Hog (Sept. 22, 2026) — Arkansas–Tulsa two-for-one; no guarantee on the first two games"
     ]
   },
   "cites": {
@@ -407,6 +409,13 @@
       "label": "Miami Athletics (Sept. 26, 2026) — Central Michigan played at Hard Rock Stadium, final Miami 52, Central Michigan 3",
       "url": "https://miamihurricanes.com/news/2026/09/27/no-6-miami-storms-past-central-michigan",
       "asOf": "2026-09-26",
+      "confidence": "reported"
+    },
+    "democrat-gazette-arkansas-tulsa-2026": {
+      "id": "democrat-gazette-arkansas-tulsa-2026",
+      "label": "Arkansas Democrat-Gazette / Whole Hog (Matt Jones, Sept. 22, 2026) — Arkansas–Tulsa two-for-one; no guarantee on the first two games",
+      "url": "https://www.arkansasonline.com/news/2026/sep/22/why-arkansas-football-series-with-tulsa-includes-a-return-game-for-the-first-time-in-75-years/",
+      "asOf": "2026-09-22",
       "confidence": "reported"
     }
   },
@@ -1084,6 +1093,20 @@
       "confidence": "reported",
       "citeIds": ["detroit-news-miami-central-michigan-2026", "cmu-athletics-miami-2026", "miami-athletics-central-michigan-2026"],
       "notes": "Hard Rock Stadium, Sat, Sept. 26, 2026. Detroit News (Jan. 20, 2022): the game will net Central Michigan a $1.3 million payday; a university spokesperson confirmed the figure. This cell is that newsroom figure, not a hosted contract PDF. CMU athletics (Jan. 20, 2022) announces Central Michigan at Miami (Fla.) on Saturday, Sept. 26, 2026 at Hard Rock Stadium and does not name the dollar. Desk schedule lists Sat, Sept. 26, 2026. Miami athletics (Sept. 26, 2026) reports the final, Miami 52, Central Michigan 3. No separate band fee is named. Distinct from the Florida A&M $720,000 football guarantee."
+    },
+    {
+      "id": "2026-arkansas-tulsa",
+      "season": 2026,
+      "date": "2026-09-26",
+      "payerSchoolId": "arkansas",
+      "payeeLabel": "Tulsa",
+      "payeeSlug": "tulsa",
+      "amount": 0,
+      "homeSchoolId": "arkansas",
+      "kind": "two-for-one",
+      "confidence": "reported",
+      "citeIds": ["democrat-gazette-arkansas-tulsa-2026"],
+      "notes": "Donald W. Reynolds Razorback Stadium, Fayetteville, Sat, Sept. 26, 2026. Arkansas Democrat-Gazette / Whole Hog (Matt Jones, Sept. 22, 2026): first game of a two-for-one. Neither Arkansas nor Tulsa is paid a guarantee on the first two games (2026 in Fayetteville and 2027 at Chapman Stadium in Tulsa). Visiting teams get standard travel expenses only, and the story does not name a travel dollar, so travel is not a second cell. $0 is the cited football guarantee, not pending. This cell is that newsroom figure, not a hosted contract PDF. AD Hunter Yurachek (Hawgs Illustrated Sports Club, Sept. 10, 2026, quoted in the same story): Tulsa is paid $1,500,000 only for the 2029 return to Fayetteville. That 2029 check is not a 2026 row. The 2027 Tulsa home date is also not a 2026 row. No separate band fee is named. Desk schedule lists Sat, Sept. 26, 2026, Arkansas home."
     }
   ]
 }

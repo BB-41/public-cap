@@ -920,24 +920,15 @@
     "oklahoma": {
       "sport": "fb",
       "name": "Brent Venables",
-      "tape": "overhang",
-      "termThrough": "2031-12-31",
+      "tape": "pending",
+      "termThrough": "2032-01-31",
       "steps": [],
-      "overhang": {
-        "amount": 36158333,
-        "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
-        "confidence": "reported",
-        "source": {
-          "label": "USA TODAY Sports coach salary database",
-          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
-        }
-      },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
+      "rule": "No current-deal if-fired dollar on this desk. Roger Denny did not disclose the buyout after the Sept. 15, 2026 board approval (OU Daily, Joshua McDaniel). The Oklahoman (Colton Sulley, Sept. 15, 2026) says the figure will eventually become public record. Honest pending — not a guessed staircase.",
+      "notes": "The USA TODAY Sports database overhang of $36,158,333 as of Oct. 8, 2025 is prior-deal overhang under a superseded contract. Cleared. Not the current buyout. We do not invent a replacement dollar. OU Daily: https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html The Oklahoman: https://www.oklahoman.com/story/sports/college/sooners/2026/09/15/ou-football-coach-brent-venables-contract-extension-approved-board-of-regents-oklahoma-sooners/91781793007/",
       "mitigation": null,
       "contract": {
-        "label": "University of Oklahoma Athletics",
-        "url": "https://soonersports.com/news/2026/8/20/football-venables-agrees-to-2-year-contract-extension"
+        "label": "OU Daily (Sept. 15, 2026) — board approval; buyout not disclosed",
+        "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html"
       }
     },
     "ole-miss": {
