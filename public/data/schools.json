@@ -19110,12 +19110,13 @@
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 scheduled dollar from the 2025 term sheet / board file: $8,250,000 (Jan. 1–Dec. 31, 2026). ESPN: $8.15 million in 2025 with $100,000 raises annually. 247 prints $8,250,000. Not the USA TODAY 2025 $8.15M cell and not The State’s $8.2M round. Incentives not included. Current-deal coaches.football.pay stays the USA TODAY 2025 snapshot."
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 22550000,
+              "confidence": "reported",
+              "source": "USA TODAY (Sept. 26, 2026), quoting the Beamer contract — amount if fired without cause on Dec. 1, 2026",
+              "url": "https://www.usatoday.com/story/sports/ncaaf/sec/2026/09/26/shane-beamer-buyout-contract-south-carolina-football/91966993007/",
+              "asOf": "2026-12-01",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Approximately $22.55 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $22,550,000 because the article did not print an unrounded dollar. 65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030. Prior USA TODAY Sports database cell was $27,903,958 as of Oct. 8, 2025 (Dec. 1, 2025 hypothetical). Same figure as coaches.football.buyout so the 2026 season card is not left pending.",
+              "rule": "65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030 (USA TODAY quoting the contract)."
             },
             "term": {
               "confidence": "reported",
@@ -54570,10 +54571,10 @@
               "value": 7800000,
               "year": 2026,
               "confidence": "reported",
-              "source": "USA TODAY (Sept. 7, 2026), quoting Fickell’s initial contract and Wisconsin Foundation additional compensation agreement",
+              "source": "usatoday.com, Sept. 7, 2026, quoting Fickell’s initial contract and Wisconsin Foundation additional compensation agreement",
               "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
               "asOf": "2026-09-07",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 annual salary $7,800,000 = University of Wisconsin pay $3,000,000 + Wisconsin Foundation additional compensation $4,800,000. The foundation piece increases $100,000 every year. Total guaranteed annual salary, not base only. Incentives not included. Not the USA TODAY database 2025-10-08 total-pay cell of $7,825,000. Current-deal coaches.football.pay stays that snapshot.",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). USA TODAY (Sept. 7, 2026, updated Sept. 8) quoting the contract: 2026 annual salary $7,800,000 = University of Wisconsin pay $3,000,000 + Wisconsin Foundation additional compensation $4,800,000. The foundation piece increases $100,000 every year. Total guaranteed annual salary, not base only. Incentives not included. Not the USA TODAY database 2025-10-08 total-pay cell of $7,825,000. Current-deal coaches.football.pay stays that snapshot.",
               "breakdown": [
                 {
                   "label": "University of Wisconsin annual pay",
