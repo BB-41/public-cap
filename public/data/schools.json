@@ -54041,12 +54041,13 @@
             "notes": "Total pay. Annual flow, not a wealth stock."
           },
           "buyout": {
-            "value": 27493333,
+            "value": 21280000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "USA TODAY (Sept. 7, 2026), quoting Fickell’s initial contract and additional compensation agreement — amount if fired without cause on Dec. 1, 2026",
+            "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
+            "asOf": "2026-12-01",
+            "notes": "$21.28 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $21,280,000 because the article printed $21.28 million and did not print an unrounded dollar. The school owes either $6.48 million or 80% of remaining total compensation under the initial contract and additional compensation agreement, whichever is higher. On Dec. 1, 2026 the 80% amount is the higher one. That original contract runs through March 31, 2030. The 2030 and 2031 seasons do not count toward the buyout. The article says the figure would be higher if he is fired before Dec. 1, 2026, and does not print that earlier dollar. Prior USA TODAY Sports database cell was $27,493,333 as of Oct. 8, 2025. Liability/overhang, not annual spend.",
+            "rule": "Whichever is higher: $6.48 million, or 80% of remaining total compensation under the initial contract and additional compensation agreement. Original contract through March 31, 2030. The 2030 and 2031 seasons do not count (USA TODAY, Sept. 7, 2026, quoting the contract)."
           },
           "term": {
             "confidence": "pending",
@@ -54614,12 +54615,13 @@
               "baseOnly": null
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 21280000,
+              "confidence": "reported",
+              "source": "USA TODAY (Sept. 7, 2026), quoting Fickell’s initial contract and additional compensation agreement — amount if fired without cause on Dec. 1, 2026",
+              "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
+              "asOf": "2026-12-01",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). $21.28 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $21,280,000 because the article printed $21.28 million and did not print an unrounded dollar. The school owes either $6.48 million or 80% of remaining total compensation under the initial contract and additional compensation agreement, whichever is higher. On Dec. 1, 2026 the 80% amount is the higher one. That original contract runs through March 31, 2030. The 2030 and 2031 seasons do not count toward the buyout. The article says the figure would be higher if he is fired before Dec. 1, 2026, and does not print that earlier dollar. Prior USA TODAY Sports database cell was $27,493,333 as of Oct. 8, 2025. Same figure as coaches.football.buyout so the 2026 season card is not left pending.",
+              "rule": "Whichever is higher: $6.48 million, or 80% of remaining total compensation under the initial contract and additional compensation agreement. Original contract through March 31, 2030. The 2030 and 2031 seasons do not count (USA TODAY, Sept. 7, 2026, quoting the contract)."
             },
             "term": {
               "confidence": "pending",
