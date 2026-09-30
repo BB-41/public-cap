@@ -1,8 +1,8 @@
 {
   "meta": {
     "product": "Public Cap desk tape",
-    "asOf": "2026-09-27",
-    "itemCount": 436,
+    "asOf": "2026-09-30",
+    "itemCount": 438,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6525,6 +6525,36 @@
       "source": {
         "label": "Arkansas Democrat-Gazette / Whole Hog (Matt Jones, Sept. 22, 2026) — Arkansas–Tulsa two-for-one; no guarantee on the first two games",
         "url": "https://www.arkansasonline.com/news/2026/sep/22/why-arkansas-football-series-with-tulsa-includes-a-return-game-for-the-first-time-in-75-years/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "northwestern-guarantee-2026-northwestern-ball-state",
+      "date": "2024-07-31",
+      "school": "northwestern",
+      "schoolName": "Northwestern",
+      "kind": "guarantee-game",
+      "headline": "Northwestern pays Ball State a $875,000 football guarantee.",
+      "figure": 875000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, July 31, 2024) — Northwestern–Ball State contract via Ball State public records",
+        "url": "https://fbschedules.com/ball-state-to-play-at-northwestern-instead-of-indiana-in-2026/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "ucla-guarantee-2026-ucla-nevada",
+      "date": "2026-08-20",
+      "school": "ucla",
+      "schoolName": "UCLA",
+      "kind": "guarantee-game",
+      "headline": "UCLA pays Nevada a $1,300,000 football guarantee.",
+      "figure": 1300000,
+      "confidence": "reported",
+      "source": {
+        "label": "Nevada Sports Net (Chris Murray, Aug. 19, 2026, updated Aug. 20, 2026) — UCLA pays Nevada $1,300,000 via public records",
+        "url": "https://nevadasportsnet.com/sports/wolf-pack-football/how-nevada-football-will-make-almost-1-million-from-its-non-conference-schedule-this-year"
       },
       "field": "guaranteeGames"
     },

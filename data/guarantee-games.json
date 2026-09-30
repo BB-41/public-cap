@@ -1,7 +1,7 @@
 {
   "meta": {
     "product": "Public Cap guarantee / buy-game desk",
-    "asOf": "2026-09-27",
+    "asOf": "2026-09-30",
     "season": 2026,
     "scope": "2026 football game guarantees: how much larger (usually Power 4) schools pay smaller opponents to play them. Football guarantee dollars stay distinct from band / other fees. Empty without a hosted contract or named newsroom FOIA. Not House spent, not booked NIL, not coach buyouts.",
     "notes": "A buy game (guarantee game) is a one-off or lopsided nonconference date: the home school writes a check so the visitor comes without a return trip, or for less than a true home-and-home. $0 is a real cell only when the contract says $0 (home-and-home / no guarantee). We do not invent dollars. We do not book On3. We do not book social figures that disagree with the FOIA (Miami–FAMU social $740k is not the primary). Band money is a side cell, not the football guarantee. Ticket allotments appear in notes only when the cite names them.",
@@ -37,7 +37,9 @@
       "Kentucky → South Alabama $1,600,000 is booked from the Lexington Herald-Leader (Mark Story, Ask Mark Anything, June 22, 2026). Newsroom figure for Sept. 26 at Kroger Field. The same column restates Kentucky → Youngstown State $575,000, already booked from the March 21, 2019 open-records row — not a second source of dollars. No separate band fee is named.",
       "Indiana → North Texas $1,200,000 is booked from FBSchedules (Kevin Kelley, Sept. 24, 2025), which obtained the contract via a state public records request. Memorial Stadium on Sept. 5, 2026, replacing a cancelled Colorado State opener. Colorado State paid Indiana a $100,000 cancellation fee — that fee is not a 2026 guarantee row. No separate band fee is named.",
       "Miami → Central Michigan $1,300,000 is booked from the Detroit News (Jan. 20, 2022). The headline and lede name CMU's $1.3 million payday for the 2026 trip to Miami (Fla.); a university spokesperson confirmed the figure. Newsroom figure, not a hosted contract. CMU athletics the same day confirms Saturday, Sept. 26, 2026 at Hard Rock Stadium and does not name the dollar. No separate band fee is named. Distinct from Miami → Florida A&M $720,000.",
-      "Arkansas → Tulsa $0 (Sept. 26, 2026, Fayetteville) is booked from the Arkansas Democrat-Gazette / Whole Hog (Matt Jones, Sept. 22, 2026). Two-for-one: no guarantees on the first two games (2026 in Fayetteville and 2027 in Tulsa); travel expenses only, and the story does not name a travel dollar. AD Hunter Yurachek said Tulsa is paid $1,500,000 only for the 2029 return to Fayetteville. That 2029 check is not a 2026 row."
+      "Arkansas → Tulsa $0 (Sept. 26, 2026, Fayetteville) is booked from the Arkansas Democrat-Gazette / Whole Hog (Matt Jones, Sept. 22, 2026). Two-for-one: no guarantees on the first two games (2026 in Fayetteville and 2027 in Tulsa); travel expenses only, and the story does not name a travel dollar. AD Hunter Yurachek said Tulsa is paid $1,500,000 only for the 2029 return to Fayetteville. That 2029 check is not a 2026 row.",
+      "Northwestern → Ball State $875,000 is booked from FBSchedules (Kevin Kelley, July 31, 2024), which obtained the contract from Ball State via a state public records request. Ryan Field on Oct. 10, 2026. The same contract copy says Indiana canceled its 2026 Ball State date and will pay Ball State $375,000 by Dec. 31, 2026 — that cancellation fee is not a 2026 guarantee row. The Sept. 1, 2029 Bloomington game at $1.3 million in that story is not a 2026 row. No separate band fee is named.",
+      "UCLA → Nevada $1,300,000 is booked from Nevada Sports Net (Chris Murray, Aug. 19, 2026, updated Aug. 20, 2026). NSN's public-records request: the fee was not increased after the game moved from Sept. 19 to Oct. 31. The contract was signed in 2020. Rose Bowl on Oct. 31, 2026. Nevada's other 2026 nonconference checks and later trips in that story are not UCLA rows. No separate band fee is named."
     ],
     "sources": [
       "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
@@ -85,7 +87,9 @@
       "Detroit News (Jan. 20, 2022) — Central Michigan nets a $1.3 million payday at Miami (Fla.) in 2026",
       "CMU Athletics (Jan. 20, 2022) — Central Michigan at Miami (Fla.) on Sept. 26, 2026, Hard Rock Stadium; no dollar",
       "Miami Athletics (Sept. 26, 2026) — Central Michigan played at Hard Rock Stadium, Miami 52, Central Michigan 3",
-      "Arkansas Democrat-Gazette / Whole Hog (Sept. 22, 2026) — Arkansas–Tulsa two-for-one; no guarantee on the first two games"
+      "Arkansas Democrat-Gazette / Whole Hog (Sept. 22, 2026) — Arkansas–Tulsa two-for-one; no guarantee on the first two games",
+      "FBSchedules (July 31, 2024) — Northwestern–Ball State contract via Ball State public records",
+      "Nevada Sports Net (Aug. 19, 2026; update Aug. 20, 2026) — UCLA pays Nevada $1,300,000 via public records"
     ]
   },
   "cites": {
@@ -416,6 +420,20 @@
       "label": "Arkansas Democrat-Gazette / Whole Hog (Matt Jones, Sept. 22, 2026) — Arkansas–Tulsa two-for-one; no guarantee on the first two games",
       "url": "https://www.arkansasonline.com/news/2026/sep/22/why-arkansas-football-series-with-tulsa-includes-a-return-game-for-the-first-time-in-75-years/",
       "asOf": "2026-09-22",
+      "confidence": "reported"
+    },
+    "fbschedules-northwestern-ball-state-2026": {
+      "id": "fbschedules-northwestern-ball-state-2026",
+      "label": "FBSchedules (Kevin Kelley, July 31, 2024) — Northwestern–Ball State contract via Ball State public records",
+      "url": "https://fbschedules.com/ball-state-to-play-at-northwestern-instead-of-indiana-in-2026/",
+      "asOf": "2024-07-31",
+      "confidence": "reported"
+    },
+    "nevada-sports-net-ucla-nevada-2026": {
+      "id": "nevada-sports-net-ucla-nevada-2026",
+      "label": "Nevada Sports Net (Chris Murray, Aug. 19, 2026, updated Aug. 20, 2026) — UCLA pays Nevada $1,300,000 via public records",
+      "url": "https://nevadasportsnet.com/sports/wolf-pack-football/how-nevada-football-will-make-almost-1-million-from-its-non-conference-schedule-this-year",
+      "asOf": "2026-08-20",
       "confidence": "reported"
     }
   },
@@ -1107,6 +1125,35 @@
       "confidence": "reported",
       "citeIds": ["democrat-gazette-arkansas-tulsa-2026"],
       "notes": "Donald W. Reynolds Razorback Stadium, Fayetteville, Sat, Sept. 26, 2026. Arkansas Democrat-Gazette / Whole Hog (Matt Jones, Sept. 22, 2026): first game of a two-for-one. Neither Arkansas nor Tulsa is paid a guarantee on the first two games (2026 in Fayetteville and 2027 at Chapman Stadium in Tulsa). Visiting teams get standard travel expenses only, and the story does not name a travel dollar, so travel is not a second cell. $0 is the cited football guarantee, not pending. This cell is that newsroom figure, not a hosted contract PDF. AD Hunter Yurachek (Hawgs Illustrated Sports Club, Sept. 10, 2026, quoted in the same story): Tulsa is paid $1,500,000 only for the 2029 return to Fayetteville. That 2029 check is not a 2026 row. The 2027 Tulsa home date is also not a 2026 row. No separate band fee is named. Desk schedule lists Sat, Sept. 26, 2026, Arkansas home."
+    },
+    {
+      "id": "2026-northwestern-ball-state",
+      "season": 2026,
+      "date": "2026-10-10",
+      "payerSchoolId": "northwestern",
+      "payeeLabel": "Ball State",
+      "payeeSlug": "ball-state",
+      "amount": 875000,
+      "homeSchoolId": "northwestern",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-northwestern-ball-state-2026"],
+      "notes": "Ryan Field, Evanston, Oct. 10, 2026. FBSchedules (Kevin Kelley, July 31, 2024) obtained the contract from Ball State University via a state public records request: Northwestern pays Ball State $875,000. The same contract copy says Indiana canceled its 2026 Ball State date and will pay Ball State a $375,000 cancellation fee by Dec. 31, 2026. That cancellation fee is not a 2026 guarantee row. The same story names a Sept. 1, 2029 game in Bloomington for a $1.3 million guarantee — not a 2026 row. The contract story does not name a separate band fee. Desk schedule lists Oct. 10, 2026, Northwestern home."
+    },
+    {
+      "id": "2026-ucla-nevada",
+      "season": 2026,
+      "date": "2026-10-31",
+      "dateNote": "Moved from the original date of Sept. 19, 2026. The $1,300,000 was not increased after the move.",
+      "payerSchoolId": "ucla",
+      "payeeLabel": "Nevada",
+      "payeeSlug": "nevada",
+      "amount": 1300000,
+      "homeSchoolId": "ucla",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["nevada-sports-net-ucla-nevada-2026"],
+      "notes": "Rose Bowl, Oct. 31, 2026. Nevada Sports Net (Chris Murray, Aug. 19, 2026, updated Aug. 20, 2026): Nevada earns $1,300,000 to play at UCLA. NSN's public-records request: the fee was not increased after the game moved from Sept. 19 to Oct. 31. The contract was signed in 2020. The dollar on this row is that unchanged contract amount. This cell is that newsroom public-records figure, not a hosted contract PDF. The story does not name a separate band fee. The same story names Nevada's other 2026 nonconference checks — $300,000 at Middle Tennessee, $300,000 paid to Western Kentucky, and $400,000 paid to Montana State — and future trips at USC in 2027 ($1.35 million), Nebraska in 2029 ($1.6 million), and Ohio State in 2030 ($1.85 million). Those are not UCLA rows and are not booked here. Desk schedule lists Oct. 31, 2026, UCLA home."
     }
   ]
 }
