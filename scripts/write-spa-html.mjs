@@ -41,6 +41,7 @@ export const SPA_SHELL_PATHS = [
   '/reported-nil',
   '/compare',
   '/methods',
+  '/about',
   '/tape',
   '/tv',
   '/buyout',
@@ -72,7 +73,7 @@ export function routeShell(path, extras = {}) {
   const description = extras.description || descriptionFromPath(path, extras)
   const url = `https://${SITE}${path}`
   const image = ogImageFromPath(path)
-  const hed = extras.hed || (path === '/reported-nil' ? 'Reported NIL by school' : path === '/nil-101' ? 'NIL 101' : title.split(' | ')[0])
+  const hed = extras.hed || (path === '/reported-nil' ? 'Reported NIL by school' : path === '/nil-101' ? 'NIL 101' : path === '/about' ? 'About Public Cap.' : title.split(' | ')[0])
   return {
     path,
     title,
