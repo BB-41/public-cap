@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-30",
-    "itemCount": 438,
+    "itemCount": 441,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6093,19 +6093,19 @@
     },
     {
       "id": "kansas-guarantee-2026-kansas-middle-tennessee",
-      "date": "2025-08-11",
+      "date": "2026-09-30",
       "school": "kansas",
       "schoolName": "Kansas",
       "kind": "guarantee-game",
-      "headline": "Kansas pays Middle Tennessee a $925,000 football guarantee. Game date later moved to Oct. 3, 2026; the dollar is the original contract amount.",
-      "figure": 925000,
+      "headline": "Kansas pays Middle Tennessee a $1,065,000 football guarantee. Original contract was $925,000; Kansas added $140,000 to move the game to Oct. 3, 2026.",
+      "figure": 1065000,
       "confidence": "reported",
       "source": {
-        "label": "FBSchedules (Aug. 11, 2025) — Kansas–Middle Tennessee contract via MTSU records",
-        "url": "https://fbschedules.com/middle-tennessee-to-get-big-payout-for-2027-auburn-football-game/"
+        "label": "MTSU Sidelines (Brett Walker, Sept. 30, 2026) — Kansas pays Middle Tennessee $1,065,000 after a $140,000 date-move bump",
+        "url": "https://mtsusidelines.com/2026/09/30/how-much-is-kansas-paying-mtsu-for-saturdays-football-game/"
       },
       "field": "guaranteeGames",
-      "notes": "Contract date was Sat, Sept. 19, 2026. Kansas Athletics lists Oct. 3, 2026."
+      "notes": "Original FBSchedules (Aug. 11, 2025) contract was $925,000 for Sat, Sept. 19, 2026. The men's basketball date in the Sidelines story is not a football guarantee cell."
     },
     {
       "id": "georgia-guarantee-2026-georgia-western-kentucky",
@@ -6555,6 +6555,53 @@
       "source": {
         "label": "Nevada Sports Net (Chris Murray, Aug. 19, 2026, updated Aug. 20, 2026) — UCLA pays Nevada $1,300,000 via public records",
         "url": "https://nevadasportsnet.com/sports/wolf-pack-football/how-nevada-football-will-make-almost-1-million-from-its-non-conference-schedule-this-year"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "lsu-guarantee-2026-lsu-louisiana-tech",
+      "date": "2025-12-12",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "guarantee-game",
+      "headline": "LSU pays Louisiana Tech a $1,600,000 football guarantee.",
+      "figure": 1600000,
+      "confidence": "reported",
+      "source": {
+        "label": "Louisiana Tech athletics — LSU vs. Louisiana Tech football game contract (signed Dec. 11, 2025)",
+        "url": "https://latechsports.com/documents/download/2025/12/12/LSU_vs._LA_Tech_9.12.26.pdf"
+      },
+      "field": "guaranteeGames",
+      "notes": "Fixed sum of $1,600,000 on or before Jan. 31, 2027. 400 complimentary tickets. Tiger Stadium, Sat, Sept. 12, 2026."
+    },
+    {
+      "id": "lsu-guarantee-2026-lsu-clemson",
+      "date": "2025-08-26",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "guarantee-game",
+      "headline": "LSU pays Clemson a $500,000 football guarantee.",
+      "figure": 500000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Daily Advertiser (Cory Diaz, Aug. 26, 2025) — LSU pays Clemson $500,000 for the 2026 opener",
+        "url": "https://www.theadvertiser.com/story/sports/college/lsu/2025/08/26/lsu-football-clemson-payout-money-brian-kelly-dabo-swinney-2025/85824849007/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Home-and-home travel payment at Tiger Stadium, Sat, Sept. 5, 2026. Clemson paid LSU $500,000 in 2025; that return is not a 2026 row."
+    },
+    {
+      "id": "clemson-guarantee-received-2026-lsu-clemson",
+      "date": "2025-08-26",
+      "school": "clemson",
+      "schoolName": "Clemson",
+      "kind": "guarantee-game",
+      "headline": "Clemson receives a $500,000 football guarantee from LSU.",
+      "figure": 500000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Daily Advertiser (Cory Diaz, Aug. 26, 2025) — LSU pays Clemson $500,000 for the 2026 opener",
+        "url": "https://www.theadvertiser.com/story/sports/college/lsu/2025/08/26/lsu-football-clemson-payout-money-brian-kelly-dabo-swinney-2025/85824849007/"
       },
       "field": "guaranteeGames"
     },
