@@ -170,6 +170,7 @@ export const PAGE_TITLES = {
   home: DEFAULT_TITLE,
   tape: 'Tape — Public Cap',
   methods: 'Methods — Public Cap',
+  about: 'About — Public Cap',
   buyout: 'Buyout — Public Cap',
   coachFa: 'Coach buyout offsets / free agents — Public Cap',
   guaranteeGames: 'Guarantee games — Public Cap',
@@ -184,6 +185,8 @@ export const PAGE_DESCRIPTIONS = {
   home: 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.',
   tape: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990 payouts, contracts, and House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
   methods: 'How Public Cap books Power 4 capacity, the House benefits cap, booked NIL, and collective 990 payouts. Pending stays empty. We do not invent House or NIL dollars.',
+  about:
+    'What can your team actually afford? A college football money desk for 68 schools — House share, capacity, coach pay, booked NIL, and the Checkbook Bowl. Pending stays empty.',
   buyout: 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.',
   coachFa: 'Residual School A buyout after a firing, plus a labeled modeled School B salary. Offset rules stay booked or cite-only. Empty without a cite — we do not invent remaining principal.',
   guaranteeGames: 'How much larger (usually Power 4) schools pay smaller opponents to play them on the 2026 football schedule. Football guarantee stays distinct from band fees. Not House spent, not booked NIL, not coach buyouts. Empty without a FOIA or named newsroom cite.',
@@ -393,6 +396,7 @@ export function titleFromPath(pathname, { season, schoolName, compareNames, coac
   if (p === '/nil-101') return PAGE_TITLES.nil101
   if (p === '/tape') return PAGE_TITLES.tape
   if (p === '/methods') return PAGE_TITLES.methods
+  if (p === '/about') return PAGE_TITLES.about
   if (p === '/buyout') return PAGE_TITLES.buyout
   if (p === '/tv') return PAGE_TITLES.tv
   return DEFAULT_TITLE
@@ -417,6 +421,7 @@ export function descriptionFromPath(pathname, { school, schoolName, coachName, y
   if (p === '/nil-101') return PAGE_DESCRIPTIONS.nil101
   if (p === '/tape') return PAGE_DESCRIPTIONS.tape
   if (p === '/methods') return PAGE_DESCRIPTIONS.methods
+  if (p === '/about') return PAGE_DESCRIPTIONS.about
   if (p === '/buyout') return PAGE_DESCRIPTIONS.buyout
   if (p === '/tv') return PAGE_DESCRIPTIONS.tv
   return PAGE_DESCRIPTIONS.home

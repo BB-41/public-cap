@@ -53,6 +53,7 @@ export function routeKind(pathname) {
   if (pathname === '/checkbook-bowl') return 'checkbookBowl'
   if (pathname === '/nil-101') return 'nil101'
   if (pathname === '/methods') return 'methods'
+  if (pathname === '/about') return 'about'
   if (pathname.startsWith('/school/')) return 'school'
   if (pathname === '/compare') return 'compare'
   if (pathname === '/reported-nil') return 'reportedNil'

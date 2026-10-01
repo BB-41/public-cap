@@ -547,7 +547,7 @@ input[type="number"] {
 .bar.a { background: var(--gold); }
 .bar.b { background: var(--blood); }
 
-.methods p, .methods li { color: var(--paper-dim); max-width: 740px; }
+.methods p, .methods li, .about p { color: var(--paper-dim); max-width: 740px; }
 .methods blockquote,
 .exit-quote {
   border-left: 3px solid var(--gold);
