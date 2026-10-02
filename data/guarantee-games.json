@@ -41,7 +41,12 @@
       "Northwestern → Ball State $875,000 is booked from FBSchedules (Kevin Kelley, July 31, 2024), which obtained the contract from Ball State via a state public records request. Ryan Field on Oct. 10, 2026. The same contract copy says Indiana canceled its 2026 Ball State date and will pay Ball State $375,000 by Dec. 31, 2026 — that cancellation fee is not a 2026 guarantee row. The Sept. 1, 2029 Bloomington game at $1.3 million in that story is not a 2026 row. No separate band fee is named.",
       "UCLA → Nevada $1,300,000 is booked from Nevada Sports Net (Chris Murray, Aug. 19, 2026, updated Aug. 20, 2026). NSN's public-records request: the fee was not increased after the game moved from Sept. 19 to Oct. 31. The contract was signed in 2020. Rose Bowl on Oct. 31, 2026. Nevada's other 2026 nonconference checks and later trips in that story are not UCLA rows. No separate band fee is named.",
       "LSU → Louisiana Tech $1,600,000 is booked from the hosted Louisiana Tech football game contract (signed Dec. 11, 2025) and FBSchedules (Kevin Kelley, Dec. 11, 2025), which obtained the contract from LSU. Fixed sum due on or before Jan. 31, 2027. Tiger Stadium, Sept. 12, 2026. 400 complimentary tickets are named. The less-than-12-months termination fee is the same $1,600,000 and is not a second cell.",
-      "LSU → Clemson $500,000 is a home-and-home travel payment, not a buy game, booked from The Daily Advertiser (Cory Diaz, Aug. 26, 2025) and FBSchedules (Kevin Kelley, Aug. 15, 2018). The schools exchange $500,000 each game. Clemson paid LSU $500,000 in 2025; that return is not a 2026 row. Same pattern as Texas–Ohio State. Cancellation fees stay in notes."
+      "LSU → Clemson $500,000 is a home-and-home travel payment, not a buy game, booked from The Daily Advertiser (Cory Diaz, Aug. 26, 2025) and FBSchedules (Kevin Kelley, Aug. 15, 2018). The schools exchange $500,000 each game. Clemson paid LSU $500,000 in 2025; that return is not a 2026 row. Same pattern as Texas–Ohio State. Cancellation fees stay in notes.",
+      "Houston → Oregon State $250,000 and Houston → Southern $450,000 are booked from the Houston Chronicle (Joseph Duarte, Aug. 13, 2026), which obtained the contracts through public records requests. TDECU Stadium on Sept. 5 and Sept. 12. The story's $700,000 is those two checks, not a third cell. The 2025 Corvallis return, 2027 LSU, 2027 Prairie View A&M, 2028 Sam Houston, and 2028 Oklahoma figures in that story are not 2026 rows. Pizzas and ticket allotments are not dollar cells. The Georgia Southern home-and-home does not name a football-guarantee dollar.",
+      "Illinois → UAB $1,125,000 is booked from the News-Gazette (Jeff D'Alessio, Sept. 3, 2026), which obtained the Nov. 5, 2025 contract via an open-records request. Payment is within 60 days of the Sept. 3 opener at Gies Memorial Stadium. The same article's Week 1 roundup names Western Michigan at Michigan $1,500,000 and Toledo at Michigan State $1,300,000. Those two are not booked from the roundup. Ohio State → Ball State $1,900,000 in that roundup is the already-booked Ball State public-records row.",
+      "UCF → Georgia State $1,250,000 is booked from FBSchedules (Kevin Kelley, Oct. 21, 2025), which obtained the contract from Georgia State via an open records request. Acrisure Bounce House on Sept. 19, 2026. The replaced UMass date moves to 2029 and is not a 2026 row.",
+      "Washington → Utah State $1,500,000 is booked from FBSchedules (Kevin Kelley, Oct. 2, 2025), which obtained the agreement from Washington via a state public records request. Husky Stadium on Sept. 12, 2026.",
+      "Washington → Eastern Washington $575,000 is booked from FBSchedules (Kevin Kelley, Feb. 23, 2021), which obtained the contract from Washington via a state public records request. The contract listed Sept. 5, Sept. 12, or Sept. 19 for 2026; the desk schedule is Sept. 19. The 2028 $600,000 is not a 2026 row."
     ],
     "sources": [
       "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
@@ -97,7 +102,12 @@
       "FBSchedules (Dec. 11, 2025) — LSU–Louisiana Tech contract via LSU public records",
       "The Daily Advertiser (Aug. 26, 2025) — LSU pays Clemson $500,000 for the 2026 opener",
       "FBSchedules (Aug. 15, 2018) — Clemson–LSU home-and-home, exchange $500,000 each game",
-      "Houma Today / The Daily Advertiser (Sept. 30, 2026) — LSU pays McNeese $750,000"
+      "Houma Today / The Daily Advertiser (Sept. 30, 2026) — LSU pays McNeese $750,000",
+      "Houston Chronicle (Aug. 13, 2026) — UH nonconference contracts via public records",
+      "News-Gazette (Sept. 3, 2026) — Illinois–UAB contract via open records",
+      "FBSchedules (Oct. 21, 2025) — UCF–Georgia State contract via Georgia State open records",
+      "FBSchedules (Oct. 2, 2025) — Washington–Utah State contract via Washington public records",
+      "FBSchedules (Feb. 23, 2021) — Washington–Eastern Washington contracts via Washington public records"
     ]
   },
   "cites": {
@@ -484,6 +494,41 @@
       "label": "Houma Today / The Daily Advertiser (Cory Diaz, Sept. 30, 2026) — LSU pays McNeese $750,000",
       "url": "https://www.houmatoday.com/story/sports/college/lsu/2026/09/30/lsu-football-mcneese-game-contract-payout-lane-kiffin/91926107007/",
       "asOf": "2026-09-30",
+      "confidence": "reported"
+    },
+    "houstonchronicle-uh-noncon-2026": {
+      "id": "houstonchronicle-uh-noncon-2026",
+      "label": "Houston Chronicle (Joseph Duarte, Aug. 13, 2026) — UH nonconference contracts via public records",
+      "url": "https://www.houstonchronicle.com/sports/college/cougars/article/uh-football-nonconference-payouts-22385870.php",
+      "asOf": "2026-08-13",
+      "confidence": "reported"
+    },
+    "newsgazette-illinois-uab-2026": {
+      "id": "newsgazette-illinois-uab-2026",
+      "label": "News-Gazette (Jeff D'Alessio, Sept. 3, 2026) — Illinois–UAB contract via open records",
+      "url": "https://www.news-gazette.com/news/going-rate-for-luring-a-heavy-underdog-to-a-big-ten-stadium-1-million-plus/article_6518537c-0e93-4f58-9652-9ee8f6e454b2.html",
+      "asOf": "2026-09-03",
+      "confidence": "reported"
+    },
+    "fbschedules-ucf-georgia-state-2026": {
+      "id": "fbschedules-ucf-georgia-state-2026",
+      "label": "FBSchedules (Kevin Kelley, Oct. 21, 2025) — UCF–Georgia State contract via Georgia State open records",
+      "url": "https://fbschedules.com/ucf-to-host-georgia-state-in-2026-reschedules-umass-contest/",
+      "asOf": "2025-10-21",
+      "confidence": "reported"
+    },
+    "fbschedules-washington-utah-state-2026": {
+      "id": "fbschedules-washington-utah-state-2026",
+      "label": "FBSchedules (Kevin Kelley, Oct. 2, 2025) — Washington–Utah State contract via Washington public records",
+      "url": "https://fbschedules.com/washington-adds-utah-state-to-2026-football-schedule/",
+      "asOf": "2025-10-02",
+      "confidence": "reported"
+    },
+    "fbschedules-washington-eastern-washington-2026": {
+      "id": "fbschedules-washington-eastern-washington-2026",
+      "label": "FBSchedules (Kevin Kelley, Feb. 23, 2021) — Washington–Eastern Washington contracts via Washington public records",
+      "url": "https://fbschedules.com/washington-to-host-eastern-washington-in-2026-and-2028/",
+      "asOf": "2021-02-23",
       "confidence": "reported"
     }
   },
@@ -1231,6 +1276,91 @@
       "confidence": "reported",
       "citeIds": ["advertiser-lsu-clemson-2026", "fbschedules-clemson-lsu-2018"],
       "notes": "Home-and-home at Tiger Stadium, Sat, Sept. 5, 2026. The Daily Advertiser (Cory Diaz, Aug. 26, 2025), from records obtained by the paper: LSU matches the $500,000 payout to Clemson for the 2026 opener in Baton Rouge. Clemson paid LSU $500,000 for the 2025 game in Clemson. That 2025 payment is not a 2026 row. The Advertiser says the 2025 payout was due to LSU no later than Feb. 15. FBSchedules (Kevin Kelley, Aug. 15, 2018) obtained the contract: the schools exchange $500,000 guarantees for each game. The visiting team is allotted up to 6,000 tickets. Cancellation fees in that contract copy, in notes only: $1,000,000 if notified 24 months prior, $1,250,000 for notice given between 12 and 24 months prior, and $1,500,000 for notice given less than 12 months prior. The Advertiser states that pulling out of the Sept. 5, 2026 game costs $1,500,000. Those cancellation fees are not guarantee cells. Not a one-off buy game — the same pattern as Texas–Ohio State. No separate band fee is named. Desk schedule lists Sat, Sept. 5, 2026, LSU home."
+    },
+    {
+      "id": "2026-houston-oregon-state",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "houston",
+      "payeeLabel": "Oregon State",
+      "payeeSlug": "oregon-state",
+      "amount": 250000,
+      "homeSchoolId": "houston",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["houstonchronicle-uh-noncon-2026"],
+      "notes": "TDECU Stadium, Sat, Sept. 5, 2026. Houston Chronicle (Joseph Duarte, Aug. 13, 2026) obtained the contracts through public records requests: Houston pays Oregon State $250,000. Oregon State receives 300 complimentary tickets. Houston was paid the same $250,000 for the 2025 game in Corvallis; that return is not a 2026 row. The story's $700,000 for two 2026 nonconference opponents is this check plus Southern $450,000, which is a separate row, not a third cell. Later contracts in the same story are not 2026 rows: 2027 LSU at Reliant Stadium up to $3,000,000 (at least $2,500,000), Prairie View A&M $425,000 on Sept. 11, 2027, Sam Houston $325,000 in 2028, and Oklahoma $400,000 on Sept. 16, 2028. The Oklahoma series $1,000,000 breach penalty is not a guarantee cell. The Georgia Southern home-and-home (2026 in Statesboro, 2027 in Houston) says the home team retains all revenue and does not name a football-guarantee dollar, so it is not a row. No separate band fee is named. Desk schedule lists Sat, Sept. 5, 2026, Houston home."
+    },
+    {
+      "id": "2026-houston-southern",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "houston",
+      "payeeLabel": "Southern",
+      "payeeSlug": "southern",
+      "amount": 450000,
+      "homeSchoolId": "houston",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["houstonchronicle-uh-noncon-2026"],
+      "notes": "TDECU Stadium, Sat, Sept. 12, 2026. Houston Chronicle (Joseph Duarte, Aug. 13, 2026) obtained the contracts through public records requests: Houston pays Southern $450,000. Southern, a Southwestern Athletic Conference school, receives 125 pizzas for the postgame meal and 400 complimentary tickets, and may purchase up to 1,000 additional tickets. The pizzas and the ticket allotment are not dollar cells. Oregon State $250,000 on Sept. 5 is a separate row. Later contracts in the same story — 2027 LSU, 2027 Prairie View A&M $425,000, 2028 Sam Houston $325,000, and 2028 Oklahoma $400,000 — are not 2026 rows. No separate band fee is named. Desk schedule lists Sat, Sept. 12, 2026, Houston home."
+    },
+    {
+      "id": "2026-illinois-uab",
+      "season": 2026,
+      "date": "2026-09-03",
+      "payerSchoolId": "illinois",
+      "payeeLabel": "UAB",
+      "payeeSlug": "uab",
+      "amount": 1125000,
+      "homeSchoolId": "illinois",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["newsgazette-illinois-uab-2026"],
+      "notes": "Gies Memorial Stadium, Thu, Sept. 3, 2026. The News-Gazette (Jeff D'Alessio, Sept. 3, 2026) obtained the contract via an open-records request. The comptrollers of both universities signed it on Nov. 5, 2025. Within 60 days of the opener, Illinois pays UAB $1,125,000. UAB receives 400 complimentary tickets, plus the right to buy and sell 1,000 more, 125 game programs, and one radio outlet. Those allotments are not dollar cells. Provided they are in uniform, the mascot, cheerleaders, and marching band are admitted free — not a separate band fee. The same article's Week 1 roundup names Ohio State → Ball State $1,900,000, already booked from the Ball State public-records row, and says Western Michigan will receive $1,500,000 at Michigan and Toledo $1,300,000 from Michigan State. Those Michigan and Michigan State figures are not booked from this roundup. Desk schedule lists Thu, Sept. 3, 2026, Illinois home."
+    },
+    {
+      "id": "2026-ucf-georgia-state",
+      "season": 2026,
+      "date": "2026-09-19",
+      "payerSchoolId": "ucf",
+      "payeeLabel": "Georgia State",
+      "payeeSlug": "georgia-state",
+      "amount": 1250000,
+      "homeSchoolId": "ucf",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-ucf-georgia-state-2026"],
+      "notes": "Acrisure Bounce House, Orlando, Sat, Sept. 19, 2026. FBSchedules (Kevin Kelley, Oct. 21, 2025; update the same day) obtained the contract from Georgia State University via an open records request: UCF pays Georgia State $1,250,000. The game replaced a UMass home date that moved to 2029. That UMass contest is not a 2026 row. The story does not name a separate band fee. Desk schedule lists Sat, Sept. 19, 2026, UCF home."
+    },
+    {
+      "id": "2026-washington-utah-state",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "washington",
+      "payeeLabel": "Utah State",
+      "payeeSlug": "utah-state",
+      "amount": 1500000,
+      "homeSchoolId": "washington",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-washington-utah-state-2026"],
+      "notes": "Alaska Airlines Field at Husky Stadium, Sat, Sept. 12, 2026. FBSchedules (Kevin Kelley, Oct. 2, 2025) obtained the football game agreement from the University of Washington via a state public records request: Washington pays Utah State $1,500,000. The story does not name a separate band fee. Desk schedule lists Sat, Sept. 12, 2026, Washington home. Distinct from Utah → Utah State $600,000."
+    },
+    {
+      "id": "2026-washington-eastern-washington",
+      "season": 2026,
+      "date": "2026-09-19",
+      "dateNote": "The 2021 contract listed Sept. 5, Sept. 12, or Sept. 19 for 2026. Desk schedule is Sat, Sept. 19, 2026. The $575,000 is the 2026 contract amount.",
+      "payerSchoolId": "washington",
+      "payeeLabel": "Eastern Washington",
+      "payeeSlug": "eastern-washington",
+      "amount": 575000,
+      "homeSchoolId": "washington",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-washington-eastern-washington-2026"],
+      "notes": "Husky Stadium, Sat, Sept. 19, 2026. FBSchedules (Kevin Kelley, Feb. 23, 2021) obtained the contract from the University of Washington via a state public records request: Washington pays Eastern Washington $575,000 for 2026. The contract listed Sept. 5, Sept. 12, or Sept. 19 for the 2026 season. The desk schedule lists Sat, Sept. 19, 2026. The 2028 game in that contract is $600,000 and is not a 2026 row. The story does not name a separate band fee."
     }
   ]
 }

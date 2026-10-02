@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-30",
-    "itemCount": 441,
+    "itemCount": 447,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6604,6 +6604,102 @@
         "url": "https://www.theadvertiser.com/story/sports/college/lsu/2025/08/26/lsu-football-clemson-payout-money-brian-kelly-dabo-swinney-2025/85824849007/"
       },
       "field": "guaranteeGames"
+    },
+    {
+      "id": "houston-guarantee-2026-houston-oregon-state",
+      "date": "2026-08-13",
+      "school": "houston",
+      "schoolName": "Houston",
+      "kind": "guarantee-game",
+      "headline": "Houston pays Oregon State a $250,000 football guarantee.",
+      "figure": 250000,
+      "confidence": "reported",
+      "source": {
+        "label": "Houston Chronicle (Joseph Duarte, Aug. 13, 2026) — UH nonconference contracts via public records",
+        "url": "https://www.houstonchronicle.com/sports/college/cougars/article/uh-football-nonconference-payouts-22385870.php"
+      },
+      "field": "guaranteeGames",
+      "notes": "TDECU Stadium, Sat, Sept. 5, 2026. 300 complimentary tickets. The 2025 Corvallis return is not a 2026 row."
+    },
+    {
+      "id": "houston-guarantee-2026-houston-southern",
+      "date": "2026-08-13",
+      "school": "houston",
+      "schoolName": "Houston",
+      "kind": "guarantee-game",
+      "headline": "Houston pays Southern a $450,000 football guarantee.",
+      "figure": 450000,
+      "confidence": "reported",
+      "source": {
+        "label": "Houston Chronicle (Joseph Duarte, Aug. 13, 2026) — UH nonconference contracts via public records",
+        "url": "https://www.houstonchronicle.com/sports/college/cougars/article/uh-football-nonconference-payouts-22385870.php"
+      },
+      "field": "guaranteeGames",
+      "notes": "TDECU Stadium, Sat, Sept. 12, 2026. 125 pizzas and 400 complimentary tickets are not dollar cells."
+    },
+    {
+      "id": "illinois-guarantee-2026-illinois-uab",
+      "date": "2026-09-03",
+      "school": "illinois",
+      "schoolName": "Illinois",
+      "kind": "guarantee-game",
+      "headline": "Illinois pays UAB a $1,125,000 football guarantee.",
+      "figure": 1125000,
+      "confidence": "reported",
+      "source": {
+        "label": "News-Gazette (Jeff D'Alessio, Sept. 3, 2026) — Illinois–UAB contract via open records",
+        "url": "https://www.news-gazette.com/news/going-rate-for-luring-a-heavy-underdog-to-a-big-ten-stadium-1-million-plus/article_6518537c-0e93-4f58-9652-9ee8f6e454b2.html"
+      },
+      "field": "guaranteeGames",
+      "notes": "Within 60 days of the Sept. 3, 2026 opener. 400 complimentary tickets. Contract signed Nov. 5, 2025."
+    },
+    {
+      "id": "ucf-guarantee-2026-ucf-georgia-state",
+      "date": "2025-10-21",
+      "school": "ucf",
+      "schoolName": "UCF",
+      "kind": "guarantee-game",
+      "headline": "UCF pays Georgia State a $1,250,000 football guarantee.",
+      "figure": 1250000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Oct. 21, 2025) — UCF–Georgia State contract via Georgia State open records",
+        "url": "https://fbschedules.com/ucf-to-host-georgia-state-in-2026-reschedules-umass-contest/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Acrisure Bounce House, Sat, Sept. 19, 2026. The replaced UMass date moves to 2029 and is not a 2026 row."
+    },
+    {
+      "id": "washington-guarantee-2026-washington-utah-state",
+      "date": "2025-10-02",
+      "school": "washington",
+      "schoolName": "Washington",
+      "kind": "guarantee-game",
+      "headline": "Washington pays Utah State a $1,500,000 football guarantee.",
+      "figure": 1500000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Oct. 2, 2025) — Washington–Utah State contract via Washington public records",
+        "url": "https://fbschedules.com/washington-adds-utah-state-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Husky Stadium, Sat, Sept. 12, 2026."
+    },
+    {
+      "id": "washington-guarantee-2026-washington-eastern-washington",
+      "date": "2021-02-23",
+      "school": "washington",
+      "schoolName": "Washington",
+      "kind": "guarantee-game",
+      "headline": "Washington pays Eastern Washington a $575,000 football guarantee.",
+      "figure": 575000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Feb. 23, 2021) — Washington–Eastern Washington contracts via Washington public records",
+        "url": "https://fbschedules.com/washington-to-host-eastern-washington-in-2026-and-2028/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Desk schedule is Sat, Sept. 19, 2026. The 2028 $600,000 is not a 2026 row."
     },
     {
       "id": "oklahoma-pay-venables-2026-board",
