@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-30",
-    "itemCount": 447,
+    "itemCount": 451,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6700,6 +6700,70 @@
       },
       "field": "guaranteeGames",
       "notes": "Desk schedule is Sat, Sept. 19, 2026. The 2028 $600,000 is not a 2026 row."
+    },
+    {
+      "id": "oklahoma-guarantee-2026-oklahoma-utep",
+      "date": "2019-09-17",
+      "school": "oklahoma",
+      "schoolName": "Oklahoma",
+      "kind": "guarantee-game",
+      "headline": "Oklahoma pays UTEP a $1,300,000 football guarantee.",
+      "figure": 1300000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Sept. 17, 2019) — Oklahoma–UTEP contract via Texas Public Information Act",
+        "url": "https://fbschedules.com/utep-to-play-at-colorado-state-in-2024-at-oklahoma-in-2026/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Contract date was Sat, Sept. 5, 2026. Desk schedule is Fri, Sept. 4, 2026. The 2022 $1,000,000 is not a 2026 row."
+    },
+    {
+      "id": "michigan-guarantee-2026-michigan-western-michigan",
+      "date": "2023-05-18",
+      "school": "michigan",
+      "schoolName": "Michigan",
+      "kind": "guarantee-game",
+      "headline": "Michigan pays Western Michigan a $1,500,000 football guarantee.",
+      "figure": 1500000,
+      "confidence": "reported",
+      "source": {
+        "label": "MLive (Aaron McMann, May 18, 2023) — Michigan–WMU and Michigan–UTEP contracts via public records",
+        "url": "https://www.mlive.com/wolverines/2023/05/payouts-revealed-for-michigan-footballs-new-games-vs-wmu-utep.html"
+      },
+      "field": "guaranteeGames",
+      "notes": "Michigan Stadium, Sat, Sept. 5, 2026. The 2029 $1,600,000 and the $1,500,000 cancellation fee are not 2026 guarantee cells."
+    },
+    {
+      "id": "michigan-guarantee-2026-michigan-utep",
+      "date": "2023-05-18",
+      "school": "michigan",
+      "schoolName": "Michigan",
+      "kind": "guarantee-game",
+      "headline": "Michigan pays UTEP a $1,900,000 football guarantee.",
+      "figure": 1900000,
+      "confidence": "reported",
+      "source": {
+        "label": "MLive (Aaron McMann, May 18, 2023) — Michigan–WMU and Michigan–UTEP contracts via public records",
+        "url": "https://www.mlive.com/wolverines/2023/05/payouts-revealed-for-michigan-footballs-new-games-vs-wmu-utep.html"
+      },
+      "field": "guaranteeGames",
+      "notes": "Due on or before Feb. 1, 2027. Amended date is Sat, Sept. 19, 2026. Distinct from Oklahoma → UTEP."
+    },
+    {
+      "id": "michigan-state-guarantee-2026-michigan-state-toledo",
+      "date": "2026-09-03",
+      "school": "michigan-state",
+      "schoolName": "Michigan State",
+      "kind": "guarantee-game",
+      "headline": "Michigan State pays Toledo a $1,300,000 football guarantee.",
+      "figure": 1300000,
+      "confidence": "reported",
+      "source": {
+        "label": "News-Gazette (Jeff D'Alessio, Sept. 3, 2026) — Week 1 Big Ten buy-game contracts via open records",
+        "url": "https://www.news-gazette.com/news/going-rate-for-luring-a-heavy-underdog-to-a-big-ten-stadium-1-million-plus/article_6518537c-0e93-4f58-9652-9ee8f6e454b2.html"
+      },
+      "field": "guaranteeGames",
+      "notes": "Open-records figure is $1,300,000. Original FBSchedules terms were $1,200,000. Desk schedule is Fri, Sept. 4, 2026."
     },
     {
       "id": "oklahoma-pay-venables-2026-board",
