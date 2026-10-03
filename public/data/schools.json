@@ -15242,29 +15242,29 @@
         "football": {
           "name": "Brent Venables",
           "pay": {
-            "value": 7552750,
+            "value": 10000000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock. USA TODAY as of Oct. 8, 2025, before the extension. Sports Illustrated (Sept. 16, 2026) reports the regents-approved deal pays an average of $10.5 million per season, not a 2026 schedule line. The $7,552,750 cell is not replaced."
+            "source": "OU Daily (Sept. 15, 2026) — board-approved deal; $10 million in 2026, the first year",
+            "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+            "asOf": "2026-09-15",
+            "notes": "Stamped from the 2026 year key. 2026 contract-year pay is $10,000,000, the first year of the board-approved deal (OU Daily, Joshua McDaniel, Sept. 15, 2026). Package is $63 million over six years; the $10.5 million average is not this cell. The USA TODAY Oct. 8, 2025 total pay of $7,552,750 stays on the 2025 year key only."
           },
           "buyout": {
-            "value": 36158333,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "value": null,
+            "confidence": "pending",
+            "source": "OU Daily (Sept. 15, 2026) — Roger Denny did not disclose the buyout",
+            "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+            "asOf": "2026-09-15",
+            "notes": "Pending. Roger Denny did not disclose the buyout when asked after the Sept. 15, 2026 board approval (OU Daily, Joshua McDaniel). The Oklahoman (Colton Sulley, Sept. 15, 2026) says Denny did not provide buyout details and the figure will eventually become public record. The USA TODAY Oct. 8, 2025 cell of $36,158,333 is prior-deal overhang under a superseded contract and is cleared. Not booked as current. https://www.oklahoman.com/story/sports/college/sooners/2026/09/15/ou-football-coach-brent-venables-contract-extension-approved-board-of-regents-oklahoma-sooners/91781793007/"
           },
           "term": {
             "confidence": "reported",
-            "source": "University of Oklahoma Athletics",
-            "url": "https://soonersports.com/news/2026/8/20/football-venables-agrees-to-2-year-contract-extension",
-            "asOf": "2026-08",
-            "through": "2031",
-            "yearsRemaining": 5,
-            "notes": "Two-year add-on; six-year deal through the 2031 season. OU Athletics (Aug. 20, 2026): the add-on runs through Jan. 31, 2032. Sports Illustrated (Sept. 16, 2026) reports an average of $10.5 million per season; that average is not booked as the 2026 annual cell."
+            "source": "OU Daily (Sept. 15, 2026) — OU Board of Regents approved the Venables deal",
+            "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+            "asOf": "2026-09-15",
+            "through": "Jan. 31, 2032",
+            "notes": "Term of employment through Jan. 31, 2032. Six-year package of $63 million. The $10.5 million average is not the 2026 pay cell. OU Daily (Joshua McDaniel, Sept. 15, 2026), reporting board approval. School release (Aug. 20, 2026) names the extension and does not print dollars: https://soonersports.com/news/2026/8/20/football-venables-agrees-to-2-year-contract-extension"
           }
         },
         "mbb": {
@@ -15793,27 +15793,29 @@
           "football": {
             "name": "Brent Venables",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 10000000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "OU Daily (Sept. 15, 2026) — board-approved deal; $10 million in 2026, the first year",
+              "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+              "asOf": "2026-09-15",
+              "notes": "2026 contract-year pay is $10,000,000, the first year of the board-approved deal (OU Daily, Joshua McDaniel, Sept. 15, 2026). Package is $63 million over six years; the $10.5 million average is not this cell. Term of employment through Jan. 31, 2032. AL.com (Creg Stephenson, Aug. 20, 2026), citing Brandon Marcello of CBS Sports, reports $200,000 raises each remaining year, ending at $11 million in 2031 (that schedule sums to $63 million). Those later years are not booked — the step is a newsroom schedule, not a hosted year table. https://www.al.com/sports/2026/08/another-sec-football-coach-agrees-to-contract-extension-joins-10-million-club.html School release (Aug. 20, 2026) names the extension and does not print dollars: https://soonersports.com/news/2026/8/20/football-venables-agrees-to-2-year-contract-extension The Oklahoman (Colton Sulley, Sept. 15, 2026) confirms board approval of the six-year, $63 million contract: https://www.oklahoman.com/story/sports/college/sooners/2026/09/15/ou-football-coach-brent-venables-contract-extension-approved-board-of-regents-oklahoma-sooners/91781793007/ Not the USA TODAY Oct. 8, 2025 total pay of $7,552,750. Chair of record who started football 2026."
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "source": "OU Daily (Sept. 15, 2026) — Roger Denny did not disclose the buyout",
+              "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+              "asOf": "2026-09-15",
+              "notes": "Pending. Roger Denny did not disclose the buyout when asked after the Sept. 15, 2026 board approval (OU Daily, Joshua McDaniel). The Oklahoman (Colton Sulley, Sept. 15, 2026) says Denny did not provide buyout details and the figure will eventually become public record. The USA TODAY Oct. 8, 2025 cell of $36,158,333 is prior-deal overhang under a superseded contract and is cleared. Not booked as current. https://www.oklahoman.com/story/sports/college/sooners/2026/09/15/ou-football-coach-brent-venables-contract-extension-approved-board-of-regents-oklahoma-sooners/91781793007/"
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
-              "url": "https://en.wikipedia.org/wiki/2026_Oklahoma_Sooners_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "confidence": "reported",
+              "source": "OU Daily (Sept. 15, 2026) — OU Board of Regents approved the Venables deal",
+              "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+              "asOf": "2026-09-15",
+              "through": "Jan. 31, 2032",
+              "notes": "Term of employment through Jan. 31, 2032. Six-year package of $63 million. The $10.5 million average is not the 2026 pay cell. OU Daily (Joshua McDaniel, Sept. 15, 2026), reporting board approval. Chair of record who started football 2026. School release (Aug. 20, 2026) names the extension and does not print dollars: https://soonersports.com/news/2026/8/20/football-venables-agrees-to-2-year-contract-extension"
             }
           },
           "mbb": {

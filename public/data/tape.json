@@ -1,8 +1,8 @@
 {
   "meta": {
     "product": "Public Cap desk tape",
-    "asOf": "2026-09-27",
-    "itemCount": 433,
+    "asOf": "2026-09-30",
+    "itemCount": 451,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6093,19 +6093,19 @@
     },
     {
       "id": "kansas-guarantee-2026-kansas-middle-tennessee",
-      "date": "2025-08-11",
+      "date": "2026-09-30",
       "school": "kansas",
       "schoolName": "Kansas",
       "kind": "guarantee-game",
-      "headline": "Kansas pays Middle Tennessee a $925,000 football guarantee. Game date later moved to Oct. 3, 2026; the dollar is the original contract amount.",
-      "figure": 925000,
+      "headline": "Kansas pays Middle Tennessee a $1,065,000 football guarantee. Original contract was $925,000; Kansas added $140,000 to move the game to Oct. 3, 2026.",
+      "figure": 1065000,
       "confidence": "reported",
       "source": {
-        "label": "FBSchedules (Aug. 11, 2025) — Kansas–Middle Tennessee contract via MTSU records",
-        "url": "https://fbschedules.com/middle-tennessee-to-get-big-payout-for-2027-auburn-football-game/"
+        "label": "MTSU Sidelines (Brett Walker, Sept. 30, 2026) — Kansas pays Middle Tennessee $1,065,000 after a $140,000 date-move bump",
+        "url": "https://mtsusidelines.com/2026/09/30/how-much-is-kansas-paying-mtsu-for-saturdays-football-game/"
       },
       "field": "guaranteeGames",
-      "notes": "Contract date was Sat, Sept. 19, 2026. Kansas Athletics lists Oct. 3, 2026."
+      "notes": "Original FBSchedules (Aug. 11, 2025) contract was $925,000 for Sat, Sept. 19, 2026. The men's basketball date in the Sidelines story is not a football guarantee cell."
     },
     {
       "id": "georgia-guarantee-2026-georgia-western-kentucky",
@@ -6512,6 +6512,288 @@
         "url": "https://www.detroitnews.com/story/sports/college/2022/01/20/cmu-football-adds-miami-fla-2026-net-1-3-m-payday/6592207001/"
       },
       "field": "guaranteeGames"
+    },
+    {
+      "id": "arkansas-guarantee-2026-arkansas-tulsa",
+      "date": "2026-09-22",
+      "school": "arkansas",
+      "schoolName": "Arkansas",
+      "kind": "guarantee-game",
+      "headline": "Arkansas pays Tulsa a $0 football guarantee for the 2026 Fayetteville game. Two-for-one: no guarantee on the first two games. Tulsa is paid $1,500,000 only for the 2029 Fayetteville return, which is not a 2026 row.",
+      "figure": 0,
+      "confidence": "reported",
+      "source": {
+        "label": "Arkansas Democrat-Gazette / Whole Hog (Matt Jones, Sept. 22, 2026) — Arkansas–Tulsa two-for-one; no guarantee on the first two games",
+        "url": "https://www.arkansasonline.com/news/2026/sep/22/why-arkansas-football-series-with-tulsa-includes-a-return-game-for-the-first-time-in-75-years/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "northwestern-guarantee-2026-northwestern-ball-state",
+      "date": "2024-07-31",
+      "school": "northwestern",
+      "schoolName": "Northwestern",
+      "kind": "guarantee-game",
+      "headline": "Northwestern pays Ball State a $875,000 football guarantee.",
+      "figure": 875000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, July 31, 2024) — Northwestern–Ball State contract via Ball State public records",
+        "url": "https://fbschedules.com/ball-state-to-play-at-northwestern-instead-of-indiana-in-2026/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "ucla-guarantee-2026-ucla-nevada",
+      "date": "2026-08-20",
+      "school": "ucla",
+      "schoolName": "UCLA",
+      "kind": "guarantee-game",
+      "headline": "UCLA pays Nevada a $1,300,000 football guarantee.",
+      "figure": 1300000,
+      "confidence": "reported",
+      "source": {
+        "label": "Nevada Sports Net (Chris Murray, Aug. 19, 2026, updated Aug. 20, 2026) — UCLA pays Nevada $1,300,000 via public records",
+        "url": "https://nevadasportsnet.com/sports/wolf-pack-football/how-nevada-football-will-make-almost-1-million-from-its-non-conference-schedule-this-year"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "lsu-guarantee-2026-lsu-louisiana-tech",
+      "date": "2025-12-12",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "guarantee-game",
+      "headline": "LSU pays Louisiana Tech a $1,600,000 football guarantee.",
+      "figure": 1600000,
+      "confidence": "reported",
+      "source": {
+        "label": "Louisiana Tech athletics — LSU vs. Louisiana Tech football game contract (signed Dec. 11, 2025)",
+        "url": "https://latechsports.com/documents/download/2025/12/12/LSU_vs._LA_Tech_9.12.26.pdf"
+      },
+      "field": "guaranteeGames",
+      "notes": "Fixed sum of $1,600,000 on or before Jan. 31, 2027. 400 complimentary tickets. Tiger Stadium, Sat, Sept. 12, 2026."
+    },
+    {
+      "id": "lsu-guarantee-2026-lsu-clemson",
+      "date": "2025-08-26",
+      "school": "lsu",
+      "schoolName": "LSU",
+      "kind": "guarantee-game",
+      "headline": "LSU pays Clemson a $500,000 football guarantee.",
+      "figure": 500000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Daily Advertiser (Cory Diaz, Aug. 26, 2025) — LSU pays Clemson $500,000 for the 2026 opener",
+        "url": "https://www.theadvertiser.com/story/sports/college/lsu/2025/08/26/lsu-football-clemson-payout-money-brian-kelly-dabo-swinney-2025/85824849007/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Home-and-home travel payment at Tiger Stadium, Sat, Sept. 5, 2026. Clemson paid LSU $500,000 in 2025; that return is not a 2026 row."
+    },
+    {
+      "id": "clemson-guarantee-received-2026-lsu-clemson",
+      "date": "2025-08-26",
+      "school": "clemson",
+      "schoolName": "Clemson",
+      "kind": "guarantee-game",
+      "headline": "Clemson receives a $500,000 football guarantee from LSU.",
+      "figure": 500000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Daily Advertiser (Cory Diaz, Aug. 26, 2025) — LSU pays Clemson $500,000 for the 2026 opener",
+        "url": "https://www.theadvertiser.com/story/sports/college/lsu/2025/08/26/lsu-football-clemson-payout-money-brian-kelly-dabo-swinney-2025/85824849007/"
+      },
+      "field": "guaranteeGames"
+    },
+    {
+      "id": "houston-guarantee-2026-houston-oregon-state",
+      "date": "2026-08-13",
+      "school": "houston",
+      "schoolName": "Houston",
+      "kind": "guarantee-game",
+      "headline": "Houston pays Oregon State a $250,000 football guarantee.",
+      "figure": 250000,
+      "confidence": "reported",
+      "source": {
+        "label": "Houston Chronicle (Joseph Duarte, Aug. 13, 2026) — UH nonconference contracts via public records",
+        "url": "https://www.houstonchronicle.com/sports/college/cougars/article/uh-football-nonconference-payouts-22385870.php"
+      },
+      "field": "guaranteeGames",
+      "notes": "TDECU Stadium, Sat, Sept. 5, 2026. 300 complimentary tickets. The 2025 Corvallis return is not a 2026 row."
+    },
+    {
+      "id": "houston-guarantee-2026-houston-southern",
+      "date": "2026-08-13",
+      "school": "houston",
+      "schoolName": "Houston",
+      "kind": "guarantee-game",
+      "headline": "Houston pays Southern a $450,000 football guarantee.",
+      "figure": 450000,
+      "confidence": "reported",
+      "source": {
+        "label": "Houston Chronicle (Joseph Duarte, Aug. 13, 2026) — UH nonconference contracts via public records",
+        "url": "https://www.houstonchronicle.com/sports/college/cougars/article/uh-football-nonconference-payouts-22385870.php"
+      },
+      "field": "guaranteeGames",
+      "notes": "TDECU Stadium, Sat, Sept. 12, 2026. 125 pizzas and 400 complimentary tickets are not dollar cells."
+    },
+    {
+      "id": "illinois-guarantee-2026-illinois-uab",
+      "date": "2026-09-03",
+      "school": "illinois",
+      "schoolName": "Illinois",
+      "kind": "guarantee-game",
+      "headline": "Illinois pays UAB a $1,125,000 football guarantee.",
+      "figure": 1125000,
+      "confidence": "reported",
+      "source": {
+        "label": "News-Gazette (Jeff D'Alessio, Sept. 3, 2026) — Illinois–UAB contract via open records",
+        "url": "https://www.news-gazette.com/news/going-rate-for-luring-a-heavy-underdog-to-a-big-ten-stadium-1-million-plus/article_6518537c-0e93-4f58-9652-9ee8f6e454b2.html"
+      },
+      "field": "guaranteeGames",
+      "notes": "Within 60 days of the Sept. 3, 2026 opener. 400 complimentary tickets. Contract signed Nov. 5, 2025."
+    },
+    {
+      "id": "ucf-guarantee-2026-ucf-georgia-state",
+      "date": "2025-10-21",
+      "school": "ucf",
+      "schoolName": "UCF",
+      "kind": "guarantee-game",
+      "headline": "UCF pays Georgia State a $1,250,000 football guarantee.",
+      "figure": 1250000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Oct. 21, 2025) — UCF–Georgia State contract via Georgia State open records",
+        "url": "https://fbschedules.com/ucf-to-host-georgia-state-in-2026-reschedules-umass-contest/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Acrisure Bounce House, Sat, Sept. 19, 2026. The replaced UMass date moves to 2029 and is not a 2026 row."
+    },
+    {
+      "id": "washington-guarantee-2026-washington-utah-state",
+      "date": "2025-10-02",
+      "school": "washington",
+      "schoolName": "Washington",
+      "kind": "guarantee-game",
+      "headline": "Washington pays Utah State a $1,500,000 football guarantee.",
+      "figure": 1500000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Oct. 2, 2025) — Washington–Utah State contract via Washington public records",
+        "url": "https://fbschedules.com/washington-adds-utah-state-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Husky Stadium, Sat, Sept. 12, 2026."
+    },
+    {
+      "id": "washington-guarantee-2026-washington-eastern-washington",
+      "date": "2021-02-23",
+      "school": "washington",
+      "schoolName": "Washington",
+      "kind": "guarantee-game",
+      "headline": "Washington pays Eastern Washington a $575,000 football guarantee.",
+      "figure": 575000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Feb. 23, 2021) — Washington–Eastern Washington contracts via Washington public records",
+        "url": "https://fbschedules.com/washington-to-host-eastern-washington-in-2026-and-2028/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Desk schedule is Sat, Sept. 19, 2026. The 2028 $600,000 is not a 2026 row."
+    },
+    {
+      "id": "oklahoma-guarantee-2026-oklahoma-utep",
+      "date": "2019-09-17",
+      "school": "oklahoma",
+      "schoolName": "Oklahoma",
+      "kind": "guarantee-game",
+      "headline": "Oklahoma pays UTEP a $1,300,000 football guarantee.",
+      "figure": 1300000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Sept. 17, 2019) — Oklahoma–UTEP contract via Texas Public Information Act",
+        "url": "https://fbschedules.com/utep-to-play-at-colorado-state-in-2024-at-oklahoma-in-2026/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Contract date was Sat, Sept. 5, 2026. Desk schedule is Fri, Sept. 4, 2026. The 2022 $1,000,000 is not a 2026 row."
+    },
+    {
+      "id": "michigan-guarantee-2026-michigan-western-michigan",
+      "date": "2023-05-18",
+      "school": "michigan",
+      "schoolName": "Michigan",
+      "kind": "guarantee-game",
+      "headline": "Michigan pays Western Michigan a $1,500,000 football guarantee.",
+      "figure": 1500000,
+      "confidence": "reported",
+      "source": {
+        "label": "MLive (Aaron McMann, May 18, 2023) — Michigan–WMU and Michigan–UTEP contracts via public records",
+        "url": "https://www.mlive.com/wolverines/2023/05/payouts-revealed-for-michigan-footballs-new-games-vs-wmu-utep.html"
+      },
+      "field": "guaranteeGames",
+      "notes": "Michigan Stadium, Sat, Sept. 5, 2026. The 2029 $1,600,000 and the $1,500,000 cancellation fee are not 2026 guarantee cells."
+    },
+    {
+      "id": "michigan-guarantee-2026-michigan-utep",
+      "date": "2023-05-18",
+      "school": "michigan",
+      "schoolName": "Michigan",
+      "kind": "guarantee-game",
+      "headline": "Michigan pays UTEP a $1,900,000 football guarantee.",
+      "figure": 1900000,
+      "confidence": "reported",
+      "source": {
+        "label": "MLive (Aaron McMann, May 18, 2023) — Michigan–WMU and Michigan–UTEP contracts via public records",
+        "url": "https://www.mlive.com/wolverines/2023/05/payouts-revealed-for-michigan-footballs-new-games-vs-wmu-utep.html"
+      },
+      "field": "guaranteeGames",
+      "notes": "Due on or before Feb. 1, 2027. Amended date is Sat, Sept. 19, 2026. Distinct from Oklahoma → UTEP."
+    },
+    {
+      "id": "michigan-state-guarantee-2026-michigan-state-toledo",
+      "date": "2026-09-03",
+      "school": "michigan-state",
+      "schoolName": "Michigan State",
+      "kind": "guarantee-game",
+      "headline": "Michigan State pays Toledo a $1,300,000 football guarantee.",
+      "figure": 1300000,
+      "confidence": "reported",
+      "source": {
+        "label": "News-Gazette (Jeff D'Alessio, Sept. 3, 2026) — Week 1 Big Ten buy-game contracts via open records",
+        "url": "https://www.news-gazette.com/news/going-rate-for-luring-a-heavy-underdog-to-a-big-ten-stadium-1-million-plus/article_6518537c-0e93-4f58-9652-9ee8f6e454b2.html"
+      },
+      "field": "guaranteeGames",
+      "notes": "Open-records figure is $1,300,000. Original FBSchedules terms were $1,200,000. Desk schedule is Fri, Sept. 4, 2026."
+    },
+    {
+      "id": "oklahoma-pay-venables-2026-board",
+      "date": "2026-09-15",
+      "school": "oklahoma",
+      "schoolName": "Oklahoma",
+      "kind": "contract",
+      "headline": "OU Board of Regents approved Brent Venables’ deal: $10,000,000 in 2026, the first year. Six-year package $63 million through Jan. 31, 2032. Not the USA TODAY Oct. 8, 2025 cell of $7,552,750. Later-year $200,000 steps are noted, not booked.",
+      "figure": 10000000,
+      "confidence": "reported",
+      "source": {
+        "label": "OU Daily (Joshua McDaniel, Sept. 15, 2026) — board approval; $10 million in 2026",
+        "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html"
+      },
+      "field": "coachesByYear.2026.football.pay"
+    },
+    {
+      "id": "oklahoma-buyout-venables-2026-pending",
+      "date": "2026-09-15",
+      "school": "oklahoma",
+      "schoolName": "Oklahoma",
+      "kind": "contract",
+      "headline": "Buyout pending. Roger Denny did not disclose it after the Sept. 15, 2026 board approval. The USA TODAY Oct. 8, 2025 overhang of $36,158,333 is prior-deal overhang under a superseded contract and is cleared. The Oklahoman says the figure will eventually become public record.",
+      "confidence": "pending",
+      "source": {
+        "label": "OU Daily (Joshua McDaniel, Sept. 15, 2026) — Denny did not disclose the buyout",
+        "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html"
+      },
+      "field": "coaches.football.buyout",
+      "notes": "The Oklahoman (Colton Sulley, Sept. 15, 2026): https://www.oklahoman.com/story/sports/college/sooners/2026/09/15/ou-football-coach-brent-venables-contract-extension-approved-board-of-regents-oklahoma-sooners/91781793007/"
     }
   ]
 }
