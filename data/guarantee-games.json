@@ -50,7 +50,8 @@
       "Oklahoma → UTEP $1,300,000 is booked from FBSchedules (Kevin Kelley, Sept. 17, 2019), which obtained the contract from UTEP via a Texas Public Information Act request. The contract date was Saturday, Sept. 5, 2026. UTEP Athletics (June 29, 2026) moved the opener to Friday, Sept. 4, 7 p.m. CT, SEC Network+. The dollar is the original contract amount. The 2022 Oklahoma–UTEP $1,000,000 in that story is not a 2026 row. Distinct from Michigan → UTEP.",
       "Michigan → Western Michigan $1,500,000 is booked from MLive (Aaron McMann, May 18, 2023), which obtained the contract via a public-records request. The contract was signed in April. Michigan pays a fixed $1,500,000 for Sept. 5, 2026 and $1,600,000 for Sept. 1, 2029. The 2029 figure is not a 2026 row. The $1,500,000 cancellation fee is not a second cell. The News-Gazette (Jeff D'Alessio, Sept. 3, 2026) open-records Week 1 roundup names the same $1,500,000.",
       "Michigan → UTEP $1,900,000 is booked from that same MLive public-records story. The payout is $1,900,000 on or before Feb. 1, 2027. The original contract listed Wednesday, Sept. 16, 2026; the amended date is Saturday, Sept. 19, 2026. The Hawaii 2022 comparison in that story is not a 2026 row. Distinct from Oklahoma → UTEP.",
-      "Michigan State → Toledo $1,300,000 is booked from the News-Gazette (Jeff D'Alessio, Sept. 3, 2026) open-records-generated Week 1 contracts. FBSchedules (Kevin Kelley, March 30, 2021) is the original $1,200,000 COVID make-up, then dated Saturday, Sept. 5, 2026. The desk schedule is Friday, Sept. 4, 2026. The cell is $1,300,000. The $100,000 difference from the original terms is in the notes only."
+      "Michigan State → Toledo $1,300,000 is booked from the News-Gazette (Jeff D'Alessio, Sept. 3, 2026) open-records-generated Week 1 contracts. FBSchedules (Kevin Kelley, March 30, 2021) is the original $1,200,000 COVID make-up, then dated Saturday, Sept. 5, 2026. The desk schedule is Friday, Sept. 4, 2026. The cell is $1,300,000. The $100,000 difference from the original terms is in the notes only.",
+      "Michigan State → Eastern Michigan $1,500,000 is booked from The Ypsilanti Eleven (Alex Alvarado, April 14, 2026), which obtained EMU's future non-MAC contracts through an open-records request. In February 2021 the schools agreed to a single game in East Lansing for $1,500,000. Sports Illustrated (Jacob Cotsonika, May 17, 2026), after a public-records request to Michigan State, names the same $1,500,000 for this season and restates Toledo $1,300,000, already booked. Wisconsin → Eastern Michigan $1,400,000 in the Ypsilanti Eleven story is the already-booked Wisconsin row. The played date is Sat, Sept. 12, 2026 at Spartan Stadium."
     ],
     "sources": [
       "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
@@ -116,7 +117,10 @@
       "UTEP Athletics (June 29, 2026) — Oklahoma opener moved to Friday, Sept. 4; no dollar",
       "MLive (May 18, 2023) — Michigan–Western Michigan and Michigan–UTEP contracts via public records",
       "News-Gazette (Sept. 3, 2026) — Week 1 Big Ten open-records contracts, Western Michigan $1,500,000 and Toledo $1,300,000",
-      "FBSchedules (March 30, 2021) — Toledo–Michigan State COVID make-up, original $1.2 million"
+      "FBSchedules (March 30, 2021) — Toledo–Michigan State COVID make-up, original $1.2 million",
+      "The Ypsilanti Eleven (April 14, 2026) — EMU future non-MAC contracts via open records; Michigan State pays $1,500,000",
+      "Sports Illustrated (Jacob Cotsonika, May 17, 2026) — Michigan State public records; Eastern Michigan $1,500,000 and Toledo $1,300,000 this season",
+      "Michigan State Athletics (Sept. 12, 2026) — Eastern Michigan played at Spartan Stadium; no dollar"
     ]
   },
   "cites": {
@@ -573,6 +577,27 @@
       "label": "FBSchedules (Kevin Kelley, March 30, 2021) — Toledo–Michigan State COVID make-up, original $1.2 million",
       "url": "https://fbschedules.com/2020-toledo-michigan-state-football-game-rescheduled-for-2026/",
       "asOf": "2021-03-30",
+      "confidence": "reported"
+    },
+    "ypsilanti11-michigan-state-eastern-michigan-2026": {
+      "id": "ypsilanti11-michigan-state-eastern-michigan-2026",
+      "label": "The Ypsilanti Eleven (Alex Alvarado, April 14, 2026) — EMU non-MAC contracts via open records",
+      "url": "https://www.ypsilanti11.com/p/eastern-michigan-schedule-non-league-2026",
+      "asOf": "2026-04-14",
+      "confidence": "reported"
+    },
+    "si-michigan-state-eastern-michigan-2026": {
+      "id": "si-michigan-state-eastern-michigan-2026",
+      "label": "Sports Illustrated (Jacob Cotsonika, May 17, 2026) — Michigan State contracts via public records",
+      "url": "https://www.si.com/college/michiganstate/spartans-football-recent-scheduling-wave-reveals-more-than-you-think",
+      "asOf": "2026-05-17",
+      "confidence": "reported"
+    },
+    "msu-athletics-eastern-michigan-2026": {
+      "id": "msu-athletics-eastern-michigan-2026",
+      "label": "Michigan State Athletics (Sept. 12, 2026) — Eastern Michigan played at Spartan Stadium; no dollar",
+      "url": "https://msuspartans.com/sports/football/stats/2026/eastern-michigan/boxscore/20503",
+      "asOf": "2026-09-12",
       "confidence": "reported"
     }
   },
@@ -1207,7 +1232,7 @@
       "kind": "buy-game",
       "confidence": "reported",
       "citeIds": ["fbschedules-wisconsin-eastern-michigan-2026"],
-      "notes": "Camp Randall Stadium, Sat, Sept. 19, 2026. FBSchedules (Kevin Kelley; article Dec. 5, 2025, UPDATE Dec. 10, 2025) obtained the contract from Eastern Michigan University via a public records request: Wisconsin pays Eastern Michigan $1,400,000. Replacement for the mutually cancelled Wisconsin–Pitt date at Camp Randall. The 2027 Aer Lingus College Football Classic in Dublin is not a 2026 row. The contract story does not name a separate band fee. Desk schedule lists Sat, Sept. 19, 2026."
+      "notes": "Camp Randall Stadium, Sat, Sept. 19, 2026. FBSchedules (Kevin Kelley; article Dec. 5, 2025, UPDATE Dec. 10, 2025) obtained the contract from Eastern Michigan University via a public records request: Wisconsin pays Eastern Michigan $1,400,000. Replacement for the mutually cancelled Wisconsin–Pitt date at Camp Randall. The 2027 Aer Lingus College Football Classic in Dublin is not a 2026 row. The contract story does not name a separate band fee. Desk schedule lists Sat, Sept. 19, 2026. Distinct from Michigan State → Eastern Michigan $1,500,000."
     },
     {
       "id": "2026-kentucky-south-alabama",
@@ -1463,7 +1488,21 @@
       "kind": "buy-game",
       "confidence": "reported",
       "citeIds": ["newsgazette-bigten-week1-2026", "fbschedules-michigan-state-toledo-2026"],
-      "notes": "Spartan Stadium, Fri, Sept. 4, 2026. The News-Gazette (Jeff D'Alessio, Sept. 3, 2026), from open-records-generated Week 1 Big Ten contracts: Toledo is due $1,300,000 from Michigan State. FBSchedules (Kevin Kelley, March 30, 2021), citing Toledo athletic director Mike O'Brien: the Saturday, Sept. 19, 2020 game was canceled for COVID and rescheduled to Saturday, Sept. 5, 2026, at the original contract terms of $1,200,000. The $100,000 difference between that original $1,200,000 and the open-records $1,300,000 stays in the notes only. This cell is $1,300,000, not $1,200,000. The News-Gazette story does not state the reason for the bump. The desk schedule lists Friday, Sept. 4, 2026. The Notre Dame date in the FBSchedules story has no dollar and is not a row. The contract story does not name a separate band fee."
+      "notes": "Spartan Stadium, Fri, Sept. 4, 2026. The News-Gazette (Jeff D'Alessio, Sept. 3, 2026), from open-records-generated Week 1 Big Ten contracts: Toledo is due $1,300,000 from Michigan State. FBSchedules (Kevin Kelley, March 30, 2021), citing Toledo athletic director Mike O'Brien: the Saturday, Sept. 19, 2020 game was canceled for COVID and rescheduled to Saturday, Sept. 5, 2026, at the original contract terms of $1,200,000. The $100,000 difference between that original $1,200,000 and the open-records $1,300,000 stays in the notes only. This cell is $1,300,000, not $1,200,000. The News-Gazette story does not state the reason for the bump. The desk schedule lists Friday, Sept. 4, 2026. The Notre Dame date in the FBSchedules story has no dollar and is not a row. The contract story does not name a separate band fee. Sports Illustrated (Jacob Cotsonika, May 17, 2026) names this same $1,300,000 for the 2026 season. That is not a second dollar. Eastern Michigan $1,500,000 in that story is a separate row."
+    },
+    {
+      "id": "2026-michigan-state-eastern-michigan",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "michigan-state",
+      "payeeLabel": "Eastern Michigan",
+      "payeeSlug": "eastern-michigan",
+      "amount": 1500000,
+      "homeSchoolId": "michigan-state",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["ypsilanti11-michigan-state-eastern-michigan-2026", "si-michigan-state-eastern-michigan-2026", "msu-athletics-eastern-michigan-2026"],
+      "notes": "Spartan Stadium, Sat, Sept. 12, 2026. The Ypsilanti Eleven (Alex Alvarado, published April 14, 2026) obtained copies of EMU's future non-MAC contracts through an open-records request: in February 2021, EMU and Michigan State agreed to a single-game road trip to East Lansing for $1,500,000. Sports Illustrated (Jacob Cotsonika, May 17, 2026), after a public-records request to Michigan State, names the same figure: Michigan State pays Eastern Michigan $1,500,000 for this season's game. Michigan State Athletics' box score and the Eastern Michigan static page list the game as played Sat, Sept. 12, 2026 at Spartan Stadium. Neither page names the dollar. Toledo $1,300,000 in the Sports Illustrated story is already booked on the Michigan State → Toledo row and is not a second dollar. Wisconsin → Eastern Michigan $1,400,000 in the Ypsilanti Eleven story is the already-booked Wisconsin row, not a second Eastern Michigan cell. Other guarantees in that open-records story are not Michigan State rows. The Sports Illustrated story's Duquesne $500,000 is Sept. 4, 2027. Central Michigan $1,500,000 is the week after that 2027 date, not a 2026 row. Cincinnati's $400,000 each way is the 2030 and 2031 home-and-home. The $1,500,000 cancellation fee on the Oklahoma State and Cincinnati deals is not a guarantee cell. The contract story does not name a separate band fee."
     }
   ]
 }

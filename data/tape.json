@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-30",
-    "itemCount": 451,
+    "itemCount": 452,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6764,6 +6764,22 @@
       },
       "field": "guaranteeGames",
       "notes": "Open-records figure is $1,300,000. Original FBSchedules terms were $1,200,000. Desk schedule is Fri, Sept. 4, 2026."
+    },
+    {
+      "id": "michigan-state-guarantee-2026-michigan-state-eastern-michigan",
+      "date": "2026-04-14",
+      "school": "michigan-state",
+      "schoolName": "Michigan State",
+      "kind": "guarantee-game",
+      "headline": "Michigan State pays Eastern Michigan a $1,500,000 football guarantee.",
+      "figure": 1500000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Ypsilanti Eleven (Alex Alvarado, April 14, 2026) — EMU non-MAC contracts via open records",
+        "url": "https://www.ypsilanti11.com/p/eastern-michigan-schedule-non-league-2026"
+      },
+      "field": "guaranteeGames",
+      "notes": "Spartan Stadium, Sat, Sept. 12, 2026. Toledo $1,300,000 is already booked. Wisconsin → Eastern Michigan $1,400,000 is already booked."
     },
     {
       "id": "oklahoma-pay-venables-2026-board",
