@@ -34,7 +34,8 @@
       "Yahoo Sports / California Post (Jan. 29, 2026) \u2014 Chesney EA (pay/buyout rule; no PDF URL on desk)",
       "Topeka Capital-Journal (Dec. 10, 2025) \u2014 Klein EA released by K-State (pay/buyout rule; no PDF URL on desk)",
       "The Oklahoman (Dec. 12, 2025) \u2014 Morris EA (pay/buyout rule; no PDF URL on desk)",
-      "Deseret News (March 20, 2026) \u2014 Scalley EA via public records (pay/buyout rule; no PDF URL on desk)"
+      "Deseret News (March 20, 2026) \u2014 Scalley EA via public records (pay/buyout rule; no PDF URL on desk)",
+      "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) — Schiano mid-season buyout roughly $18 million; 76.875% post-2026 step $17,296,875 via CBS Sports"
     ]
   },
   "coaches": {
@@ -2165,22 +2166,95 @@
     "rutgers": {
       "sport": "fb",
       "name": "Greg Schiano",
-      "tape": "overhang",
+      "tape": "steps",
       "termThrough": null,
-      "steps": [],
-      "overhang": {
-        "amount": 23735156,
-        "asOf": "2025-10-08",
-        "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
-        "confidence": "reported",
-        "source": {
-          "label": "USA TODAY Sports coach salary database",
-          "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach"
+      "steps": [
+        {
+          "through": "2026-12-31",
+          "amount": 18000000,
+          "rule": "76.875% of remaining base salary through the 2029 season (CBS Sports, Sept. 11, 2026). NJ.com (Oct. 4, 2026) describes the same share as just under 77%. Year-boundary steps only — not a Saturday staircase and not a daily proration.",
+          "confidence": "estimated",
+          "source": {
+            "label": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026); CBS Sports (Sept. 11, 2026); FOX Sports",
+            "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html"
+          },
+          "asOf": "2026-10-04",
+          "remaining": 18000000,
+          "contractYear": "2026 mid-season",
+          "notes": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) states the payout if fired this season is roughly $18 million, just under 77% of remaining base salary through the 2029 season. Stored as $18,000,000 because the article did not print an unrounded dollar. Labeled derived — not a published remaining-dollar line and not a daily proration. We do not mint cents from 76.875% times an unknown partial-year remainder. FOX Sports (citing USA TODAY) and a separate contract summary say roughly $18.5 million at the end of November or after the 2026 season; that rounded headline is not this cell."
+        },
+        {
+          "through": "2027-12-31",
+          "amount": 17296875,
+          "rule": "76.875% of remaining base salary through the 2029 season (CBS Sports, Sept. 11, 2026). NJ.com (Oct. 4, 2026) describes the same share as just under 77%. Year-boundary steps only — not a Saturday staircase and not a daily proration.",
+          "confidence": "reported",
+          "source": {
+            "label": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026); CBS Sports (Sept. 11, 2026); FOX Sports",
+            "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html"
+          },
+          "asOf": "2027-01-01",
+          "remaining": 17296875,
+          "contractYear": "after 2026 season",
+          "notes": "Derived from the already-on-desk base table (2027 $7,250,000 + 2028 $7,500,000 + 2029 $7,750,000 = $22,500,000) × 76.875% = $17,296,875 if fired after the 2026 season. CBS Sports (Robby Kalland, Sept. 11, 2026) prints this unrounded dollar. Labeled derived — full remaining years, not a mid-season proration. A separate contract summary’s roughly $18.5 million after the 2026 season does not match this product and is not booked as this step."
+        },
+        {
+          "through": "2028-12-31",
+          "amount": 11700000,
+          "rule": "76.875% of remaining base salary through the 2029 season (CBS Sports, Sept. 11, 2026). NJ.com (Oct. 4, 2026) describes the same share as just under 77%. Year-boundary steps only — not a Saturday staircase and not a daily proration.",
+          "confidence": "reported",
+          "source": {
+            "label": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026); CBS Sports (Sept. 11, 2026); FOX Sports",
+            "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html"
+          },
+          "asOf": "2028-01-01",
+          "remaining": 11700000,
+          "contractYear": "after 2027 season",
+          "notes": "Derived from the already-on-desk base table (2028 $7,500,000 + 2029 $7,750,000 = $15,250,000) × 76.875% = $11,723,437.50. A contract summary prints the drop as $11.7 million after the 2027 season. Stored as that published round $11,700,000 — not a desk-minted cent. Labeled derived."
+        },
+        {
+          "through": "2029-12-31",
+          "amount": 5900000,
+          "rule": "76.875% of remaining base salary through the 2029 season (CBS Sports, Sept. 11, 2026). NJ.com (Oct. 4, 2026) describes the same share as just under 77%. Year-boundary steps only — not a Saturday staircase and not a daily proration.",
+          "confidence": "reported",
+          "source": {
+            "label": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026); CBS Sports (Sept. 11, 2026); FOX Sports",
+            "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html"
+          },
+          "asOf": "2029-01-01",
+          "remaining": 5900000,
+          "contractYear": "after 2028 season",
+          "notes": "Derived from the already-on-desk base table (2029 $7,750,000) × 76.875% = $5,957,812.50. A contract summary prints the drop as $5.9 million after the 2028 season. Stored as that published round $5,900,000 — not a desk-minted cent. Labeled derived."
+        },
+        {
+          "through": "2030-01-01",
+          "amount": 0,
+          "rule": "76.875% of remaining base salary through the 2029 season (CBS Sports, Sept. 11, 2026). NJ.com (Oct. 4, 2026) describes the same share as just under 77%. Year-boundary steps only — not a Saturday staircase and not a daily proration.",
+          "confidence": "reported",
+          "source": {
+            "label": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026); CBS Sports (Sept. 11, 2026); FOX Sports",
+            "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html"
+          },
+          "asOf": "2030-01-01",
+          "remaining": 0,
+          "contractYear": "after 2029 season",
+          "notes": "Derived from the term end. A contract summary states the buyout drops to $0 after the 2029 season. Labeled derived. CBS Sports’ “through the 2030 season” conflicts with the three-year $22.5 million remainder and is not booked."
         }
+      ],
+      "notes": "If fired this season, NJ.com (Oct. 4, 2026) says roughly $18 million. Stored as $18,000,000 because no unrounded mid-season dollar was printed. Confidence estimated. The next step, $17,296,875 as of Jan. 1, 2027, is 76.875% of the remaining 2027–2029 base ($22.5 million) and is the unrounded post-season figure printed by CBS Sports (Sept. 11, 2026). Prior USA TODAY database cell $23,735,156 as of Oct. 8, 2025 is retired. Staff buyout is not booked: the same article estimates at least $8,580,000 over two years for about 80 people (imprecise; missing latest assistant contracts and reasonable-effort offsets) and a combined head-coach-plus-staff total of roughly $28 million, later restated as staff roughly $9 million. Chris Ash’s $8.47 million is the prior paid buyout named in that article, not this overhang. Liability/overhang, not annual spend.",
+      "mitigation": "Offset only against another football coaching job. Schiano is not required to seek employment. A television job does not reduce the buyout (NJ.com, Oct. 4, 2026; CBS Sports, Sept. 11, 2026). Paid biweekly through the remaining term (FOX Sports, citing the contract summary).",
+      "contract": {
+        "label": "NJ.com (Oct. 4, 2026) analysis; Dec. 11, 2023 contract year table via NJ.com OPRA (Mar. 21, 2026)",
+        "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html"
       },
-      "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
-      "mitigation": null,
-      "contract": null
+      "rule": "76.875% of remaining base salary through the 2029 season (CBS Sports, Sept. 11, 2026). NJ.com (Oct. 4, 2026) describes the same share as just under 77%. Year-boundary steps only — not a Saturday staircase and not a daily proration.",
+      "pay": {
+        "value": 6750000,
+        "confidence": "reported",
+        "source": "NJ.com (Aug. 19, 2025; updated Mar. 21, 2026), year table from the Dec. 11, 2023 contract obtained by open public records; restated by NJ.com (Fonseca & Sargeant, Oct. 4, 2026)",
+        "url": "https://www.nj.com/rutgers/2025/08/where-each-rutgers-head-coach-and-their-contract-stands-entering-ad-keli-zinns-1st-season.html",
+        "asOf": "2026-10-04",
+        "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 line on the OPRA year table from the Dec. 11, 2023 contract: $6,750,000. NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) restates the same 2026 dollar, with 2027 $7,250,000, 2028 $7,500,000, and 2029 $7,750,000. The school-side buyout clause calls that table annual base salary. USA TODAY 2025 total pay equals the 2025 line ($6,500,000) and is not the 2026 chair. The 2027 step is printed ($500,000), not interpolated. Incentives are not in this cell."
+      }
     },
     "ucla": {
       "sport": "fb",
