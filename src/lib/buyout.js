@@ -1,7 +1,18 @@
 /** Map a cited contract step schedule onto remaining games. */
 
+import { moneyExact } from './format.js'
+
 export const DESK_TODAY = '2026-09-16'
 export const DEFAULT_SCHOOL = 'florida-state'
+
+/**
+ * As-of dates before the 2026 season — the Oct 8, 2025 USA TODAY database
+ * and the other 2025 cites — are not a current buyout. Show the date.
+ * Do not present the dollar as today's figure.
+ */
+export const STALE_ASOF_BEFORE = '2026-01-01'
+
+export const BUYOUT_TITLE_BRAND = ' | The Public Cap'
 
 const MONTHS = [
   'January', 'February', 'March', 'April', 'May', 'June',
@@ -207,9 +218,116 @@ export function coachOptions(book, schools) {
   return list
 }
 
+export function buyoutPath(schoolId) {
+  return `/buyout/${schoolId || DEFAULT_SCHOOL}`
+}
+
+export function schoolIdFromBuyoutPath(pathname) {
+  if (!pathname?.startsWith('/buyout/')) return null
+  const id = pathname.split('/')[2] || ''
+  if (!id) return null
+  return id
+}
+
+/** Clean share URL. Query-string links 301 here. */
 export function sharePath(schoolId, sport = 'fb') {
-  const q = new URLSearchParams()
-  q.set('school', schoolId || DEFAULT_SCHOOL)
-  if (sport && sport !== 'fb') q.set('sport', sport)
-  return `/buyout?${q}`
+  const path = buyoutPath(schoolId)
+  if (sport && sport !== 'fb') return `${path}?sport=${encodeURIComponent(sport)}`
+  return path
+}
+
+/**
+ * Headline cite from a buyouts.json coach. Dollars and dates are the stored
+ * step or overhang — never estimated.
+ */
+export function buyoutCite(coach, today = DESK_TODAY) {
+  if (!coach?.name) return null
+  const step = currentStep(coach, today)
+  const amount = step?.amount ?? null
+  if (amount == null) {
+    return {
+      name: coach.name,
+      amount: null,
+      asOf: null,
+      source: null,
+      confidence: null,
+      freshness: 'pending',
+    }
+  }
+  const asOf = step?.asOf || null
+  let freshness = 'desk'
+  if (!asOf) freshness = 'undated'
+  else if (asOf < STALE_ASOF_BEFORE) freshness = 'stale'
+  else if (asOf > today) freshness = 'later'
+  return {
+    name: coach.name,
+    amount,
+    asOf,
+    source: step?.source || null,
+    confidence: step?.confidence || null,
+    freshness,
+  }
+}
+
+export function buyoutHeading(coach) {
+  const cite = buyoutCite(coach)
+  return cite?.name ? `${cite.name} buyout` : 'Buyout'
+}
+
+export function buyoutTitle(coach, today = DESK_TODAY) {
+  const cite = buyoutCite(coach, today)
+  if (!cite?.name) return `Buyout${BUYOUT_TITLE_BRAND}`
+  if (cite.amount == null) return `${cite.name} buyout${BUYOUT_TITLE_BRAND}`
+  const dollars = moneyExact(cite.amount)
+  if (cite.asOf) return `${cite.name} buyout: ${dollars} as of ${formatLongDate(cite.asOf)}${BUYOUT_TITLE_BRAND}`
+  return `${cite.name} buyout: ${dollars}${BUYOUT_TITLE_BRAND}`
+}
+
+export function buyoutDescription(coach, today = DESK_TODAY) {
+  const cite = buyoutCite(coach, today)
+  if (!cite?.name) {
+    return 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.'
+  }
+  if (cite.freshness === 'pending') {
+    return `${cite.name} buyout: no cited dollar on this desk. We do not invent a figure. A liability if fired without cause, not yearly spend.`
+  }
+  const dated = cite.asOf ? ` as of ${formatLongDate(cite.asOf)}` : ''
+  let text = `${cite.name} buyout: ${moneyExact(cite.amount)}${dated}.`
+  if (cite.freshness === 'stale') text += ' That as-of date is not current.'
+  else if (cite.freshness === 'later') {
+    text += ` That date is later than ${formatLongDate(today)}, so this is not the buyout if fired on the desk date.`
+  } else if (cite.freshness === 'undated') {
+    text += ' No as-of date is stored on this step, so it is not presented as current.'
+  }
+  if (cite.source?.label) text += ` Source: ${cite.source.label}.`
+  text += ' If-fired overhang, not yearly spend.'
+  return text
+}
+
+function escHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+/** Crawler body for /buyout/<school-id>. Same sentences as the meta description. */
+export function renderBuyoutStaticBody(coach, school) {
+  const cite = buyoutCite(coach)
+  const heading = buyoutHeading(coach)
+  const lede = buyoutDescription(coach)
+  const source = cite?.source?.url
+    ? `<a href="${escHtml(cite.source.url)}">${escHtml(cite.source.label || 'source')}</a>`
+    : cite?.source?.label
+      ? escHtml(cite.source.label)
+      : ''
+  const sourceP = source ? `\n        <p class="field-meta">Source: ${source}</p>` : ''
+  const schoolLink = school?.id
+    ? `\n        <p class="fine"><a href="/school/${escHtml(school.id)}">${escHtml(school.name || school.id)} school page</a></p>`
+    : ''
+  return `<div class="page-wrap buyout-static">
+        <h1 class="issue-hed">${escHtml(heading)}</h1>
+        <p class="lede">${escHtml(lede)}</p>${sourceP}${schoolLink}
+      </div>`
 }

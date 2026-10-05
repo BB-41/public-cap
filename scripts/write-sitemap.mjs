@@ -16,7 +16,7 @@ export const SITE_ORIGIN = 'https://thepubliccap.com'
 export const STATIC_PATHS = ['/', '/tape', '/methods', '/about', '/nil-101', '/buyout', '/coach-fa', '/guarantee-games', '/checkbook-bowl', '/compare', '/reported-nil', '/tv']
 
 /** Bump when generated HTML routes change. Never older than schools.json meta.asOf. */
-export const PAGE_LASTMOD = '2026-09-26'
+export const PAGE_LASTMOD = '2026-10-05'
 
 export function isIsoDate(value) {
   return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
@@ -30,7 +30,11 @@ export function sitemapPaths(schools) {
   if (ids.length !== 68 || new Set(ids).size !== 68) {
     throw new Error('schools.json must have 68 unique school ids')
   }
-  return [...STATIC_PATHS, ...ids.map((id) => `/school/${id}`)]
+  return [
+    ...STATIC_PATHS,
+    ...ids.map((id) => `/school/${id}`),
+    ...ids.map((id) => `/buyout/${id}`),
+  ]
 }
 
 export function renderSitemapXml({ paths, lastmod }) {

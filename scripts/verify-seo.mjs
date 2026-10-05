@@ -41,7 +41,8 @@ import {
   nil101Model,
   sectionAnswer,
 } from '../src/lib/nil101Guide.js'
-import { applyRouteMeta, loadSchoolSeoExtras, loadSchoolShells, routeShell } from './write-spa-html.mjs'
+import { buyoutCite, buyoutDescription, buyoutTitle } from '../src/lib/buyout.js'
+import { applyRouteMeta, loadBuyoutShells, loadSchoolSeoExtras, loadSchoolShells, routeShell } from './write-spa-html.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const read = (rel) => readFileSync(join(root, rel), 'utf8')
@@ -377,6 +378,7 @@ for (const route of shells) {
   ok(shell.includes('NIL budget') && shell.includes('collective') && shell.includes('revenue'), `${school.id} static HTML has NIL budget, collective, and revenue`)
   ok(/salar(?:y|ies)/.test(shell), `${school.id} static HTML has salary or salaries`)
   ok(shell.includes(`<h1 class="issue-hed">${school.name.replace(/&/g, '&amp;')}</h1>`), `${school.id} static h1 is the school name`)
+  ok(shell.includes(`href="/buyout/${school.id}"`), `${school.id} shell links its buyout page`)
   const ld = jsonLdFrom(shell)
   const faqLd = (ld?.['@graph'] || []).find((n) => n['@type'] === 'FAQPage')
   assertFaqPage(faqLd, school.id)
@@ -478,6 +480,62 @@ ok(changed.acceptedAnswer.text.includes(capPhrase(y1)), 'year-1 cap phrase is th
 ok(changed.acceptedAnswer.text.includes(capPhrase(y2)), 'year-2 cap phrase is the booked cap')
 ok(changed.acceptedAnswer.text.includes('Schools can pay players now.'), '2025 answer keeps the caption')
 ok(nilShell.includes('href="/methods"') && nilShell.includes('href="/school/texas"'), 'nil-101 shell keeps the methods and Texas links')
+
+ok(schoolPage.includes('to={`/buyout/${s.id}`}'), 'school page links the school buyout view')
+ok(indexHtml.includes("p === '/buyout' || p.indexOf('/buyout/') === 0"), 'index.html first-paints /buyout/<id> without the homepage title')
+
+const buyouts = JSON.parse(read('data/buyouts.json'))
+const buyoutShells = loadBuyoutShells()
+ok(buyoutShells.length === 68, 'writer emits 68 buyout shells')
+const staleIds = ['georgia', 'ohio-state', 'alabama', 'texas', 'indiana', 'purdue']
+for (const id of staleIds) {
+  const coach = buyouts.coaches[id]
+  const cite = buyoutCite(coach)
+  ok(cite.asOf === '2025-10-08', `${id} cite stays the stored 2025-10-08 as-of`)
+  ok(cite.freshness === 'stale', `${id} as-of is not treated as current`)
+  ok(buyoutTitle(coach) === `${coach.name} buyout: ${moneyExact(cite.amount)} as of October 8, 2025 | The Public Cap`, `${id} title uses the stored dollar and date`)
+  ok(buyoutDescription(coach).includes('That as-of date is not current.'), `${id} description says the date is not current`)
+  ok(!/in force today/i.test(buyoutDescription(coach)), `${id} description does not say in force today`)
+}
+const samples = {
+  'south-carolina': {
+    amount: 22550000,
+    asOf: 'December 1, 2026',
+    title: 'Shane Beamer buyout: $22,550,000 as of December 1, 2026 | The Public Cap',
+  },
+  'florida-state': {
+    amount: 49353349,
+    asOf: 'September 16, 2026',
+    title: 'Mike Norvell buyout: $49,353,349 as of September 16, 2026 | The Public Cap',
+  },
+  rutgers: {
+    amount: 18000000,
+    asOf: 'October 4, 2026',
+    title: 'Greg Schiano buyout: $18,000,000 as of October 4, 2026 | The Public Cap',
+  },
+}
+for (const [id, sample] of Object.entries(samples)) {
+  const coach = buyouts.coaches[id]
+  const cite = buyoutCite(coach)
+  ok(cite.amount === sample.amount, `${id} headline dollar is the stored buyouts.json amount`)
+  ok(buyoutTitle(coach) === sample.title, `${id} title`)
+  ok(buyoutDescription(coach).includes(moneyExact(sample.amount)), `${id} description includes the stored dollar`)
+  ok(buyoutDescription(coach).includes(sample.asOf), `${id} description includes the as-of date`)
+  const route = buyoutShells.find((item) => item.path === `/buyout/${id}`)
+  const shell = applyRouteMeta(indexHtml, route)
+  ok(shell.includes(`<title>${sample.title}</title>`), `${id} shell title`)
+  ok(shell.includes(`https://thepubliccap.com/buyout/${id}`), `${id} shell canonical`)
+  ok(shell.includes('data-seo="stamped"'), `${id} shell is stamped`)
+  ok((shell.match(/<h1\b/g) || []).length === 1, `${id} shell has one h1`)
+  ok(shell.includes(`<h1 class="issue-hed">${coach.name} buyout</h1>`), `${id} shell h1 is the coach buyout`)
+  ok(shell.includes(moneyExact(sample.amount)), `${id} shell body prints the stored dollar`)
+  ok(!/noindex/i.test(shell), `${id} shell is indexable`)
+}
+ok(buyoutTitle(buyouts.coaches.vanderbilt) === 'Clark Lea buyout | The Public Cap', 'pending buyout title invents no dollar')
+ok(!/\$/.test(buyoutDescription(buyouts.coaches.vanderbilt)), 'pending buyout description invents no dollar')
+ok(buyoutDescription(buyouts.coaches['south-carolina']).includes('not the buyout if fired on the desk date'), 'Beamer December 1 figure is not presented as today')
+ok(buyoutDescription(buyouts.coaches.rutgers).includes('not the buyout if fired on the desk date'), 'Schiano October 4 figure is not presented as the desk date')
+ok(buyoutCite(buyouts.coaches.rutgers).freshness === 'later', 'Schiano October 4 as-of is later than the desk date')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} checks passed`)

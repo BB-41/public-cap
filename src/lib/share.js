@@ -6,6 +6,7 @@
 import { CURRENT_SEASON } from './seasons.js'
 import { money, moneyExact, moneyRange, winsPerM } from './format.js'
 import { isPlayerHash, isPosHash } from './nilHistory.js'
+import { buyoutDescription, buyoutTitle } from './buyout.js'
 import { schoolSerpDescription } from './schoolSeo.js'
 
 export const DEFAULT_TITLE = 'Public Cap — Capacity vs House cap vs booked NIL'
@@ -378,7 +379,7 @@ export function pageDescription(kind) {
   return PAGE_DESCRIPTIONS[kind] || PAGE_DESCRIPTIONS.home
 }
 
-export function titleFromPath(pathname, { season, schoolName, compareNames, coachName } = {}) {
+export function titleFromPath(pathname, { season, schoolName, compareNames, coachName, buyoutCoach } = {}) {
   const p = pathname || '/'
   if (p === '/') return PAGE_TITLES.home
   if (p.startsWith('/school/')) {
@@ -397,12 +398,15 @@ export function titleFromPath(pathname, { season, schoolName, compareNames, coac
   if (p === '/tape') return PAGE_TITLES.tape
   if (p === '/methods') return PAGE_TITLES.methods
   if (p === '/about') return PAGE_TITLES.about
-  if (p === '/buyout') return PAGE_TITLES.buyout
+  if (p === '/buyout' || p.startsWith('/buyout/')) {
+    if (p.startsWith('/buyout/') && buyoutCoach) return buyoutTitle(buyoutCoach)
+    return PAGE_TITLES.buyout
+  }
   if (p === '/tv') return PAGE_TITLES.tv
   return DEFAULT_TITLE
 }
 
-export function descriptionFromPath(pathname, { school, schoolName, coachName, year1, year2, spend } = {}) {
+export function descriptionFromPath(pathname, { school, schoolName, coachName, year1, year2, spend, buyoutCoach } = {}) {
   const p = pathname || '/'
   if (p === '/') return PAGE_DESCRIPTIONS.home
   if (p.startsWith('/school/')) {
@@ -422,7 +426,10 @@ export function descriptionFromPath(pathname, { school, schoolName, coachName, y
   if (p === '/tape') return PAGE_DESCRIPTIONS.tape
   if (p === '/methods') return PAGE_DESCRIPTIONS.methods
   if (p === '/about') return PAGE_DESCRIPTIONS.about
-  if (p === '/buyout') return PAGE_DESCRIPTIONS.buyout
+  if (p === '/buyout' || p.startsWith('/buyout/')) {
+    if (p.startsWith('/buyout/') && buyoutCoach) return buyoutDescription(buyoutCoach)
+    return PAGE_DESCRIPTIONS.buyout
+  }
   if (p === '/tv') return PAGE_DESCRIPTIONS.tv
   return PAGE_DESCRIPTIONS.home
 }
