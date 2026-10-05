@@ -30,6 +30,7 @@ import NotFound from './pages/NotFound.jsx'
 const Compare = lazy(() => import('./pages/Compare.jsx'))
 const School = lazy(() => import('./pages/School.jsx'))
 const Methods = lazy(() => import('./pages/Methods.jsx'))
+const About = lazy(() => import('./pages/About.jsx'))
 const Tape = lazy(() => import('./pages/Tape.jsx'))
 const Tv = lazy(() => import('./pages/Tv.jsx'))
 const Buyout = lazy(() => import('./pages/Buyout.jsx'))
@@ -387,6 +388,7 @@ export default function App() {
             <Route path="/checkbook-bowl" element={<CheckbookBowl />} />
             <Route path="/nil-101" element={<Nil101 />} />
             <Route path="/methods" element={<Methods meta={metaOnly} />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

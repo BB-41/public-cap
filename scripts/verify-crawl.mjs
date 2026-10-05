@@ -67,7 +67,7 @@ ok(JSON.stringify(locs) === JSON.stringify(expected), 'sitemap locs match the sc
 
 const schoolLocs = locs.filter((u) => u.includes('/school/'))
 ok(schoolLocs.length === 68, 'sitemap lists 68 school URLs')
-ok(!locs.includes(`${SITE_ORIGIN}/about`), 'sitemap does not invent /about')
+ok(locs.includes(`${SITE_ORIGIN}/about`), 'sitemap lists /about')
 ok(locs.includes(`${SITE_ORIGIN}/tv`), 'sitemap lists /tv')
 ok(!locs.includes(`${SITE_ORIGIN}/llms.txt`), 'sitemap does not list llms.txt')
 ok(!locs.some((u) => u.includes('/data/')), 'sitemap does not list /data/ JSON')
@@ -101,7 +101,7 @@ ok(!existsSync(join(root, 'functions/_middleware.js')), 'no functions/_middlewar
 ok(!/\/school\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /school/* to /index.html (crawlers would get homepage title)')
 ok(/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects keeps /coach-fa/* splat')
 ok(!/Disallow:\s*\/reported-nil/i.test(robots), 'robots.txt does not Disallow /reported-nil')
-for (const path of ['/reported-nil', '/compare', '/methods', '/nil-101', '/tape', '/tv', '/buyout', '/coach-fa', '/guarantee-games', '/checkbook-bowl']) {
+for (const path of ['/reported-nil', '/compare', '/methods', '/about', '/nil-101', '/tape', '/tv', '/buyout', '/coach-fa', '/guarantee-games', '/checkbook-bowl']) {
   ok(
     !new RegExp(`${path}\\s+/index\\.html`).test(redirects),
     `_redirects does not rewrite ${path} to /index.html (that 308s home)`,
