@@ -155,8 +155,11 @@ if (process.env.PUBLIC_DIR) {
   ok(norvellHtml.includes('$49,353,349'), 'dist Norvell page prints the cited dollar')
   ok(norvellHtml.includes('September 16, 2026'), 'dist Norvell page prints the as-of date')
   const schianoHtml = readFileSync(join(publicDir, 'buyout/rutgers.html'), 'utf8')
-  ok(/<title>Greg Schiano buyout: \$23,735,156 as of October 8, 2025 \| The Public Cap<\/title>/.test(schianoHtml), 'dist buyout/rutgers.html titles Schiano')
-  ok(schianoHtml.includes('That as-of date is not current.'), 'dist Schiano page does not present the 2025 cite as current')
+  ok(/<title>Greg Schiano buyout: \$18,000,000 as of October 4, 2026 \| The Public Cap<\/title>/.test(schianoHtml), 'dist buyout/rutgers.html titles Schiano')
+  ok(schianoHtml.includes('$18,000,000'), 'dist Schiano page prints the cited dollar')
+  ok(schianoHtml.includes('October 4, 2026'), 'dist Schiano page prints the as-of date')
+  ok(schianoHtml.includes('not the buyout if fired on the desk date'), 'dist Schiano page does not present the October 4 cite as the desk date')
+  ok(!schianoHtml.includes('$23,735,156'), 'dist Schiano page does not keep the retired USA TODAY overhang')
   ok(schianoHtml.includes('data-seo="stamped"'), 'dist buyout pages are stamped')
 }
 

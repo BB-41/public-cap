@@ -487,7 +487,7 @@ ok(indexHtml.includes("p === '/buyout' || p.indexOf('/buyout/') === 0"), 'index.
 const buyouts = JSON.parse(read('data/buyouts.json'))
 const buyoutShells = loadBuyoutShells()
 ok(buyoutShells.length === 68, 'writer emits 68 buyout shells')
-const staleIds = ['georgia', 'ohio-state', 'alabama', 'texas', 'indiana', 'rutgers', 'purdue']
+const staleIds = ['georgia', 'ohio-state', 'alabama', 'texas', 'indiana', 'purdue']
 for (const id of staleIds) {
   const coach = buyouts.coaches[id]
   const cite = buyoutCite(coach)
@@ -509,9 +509,9 @@ const samples = {
     title: 'Mike Norvell buyout: $49,353,349 as of September 16, 2026 | The Public Cap',
   },
   rutgers: {
-    amount: 23735156,
-    asOf: 'October 8, 2025',
-    title: 'Greg Schiano buyout: $23,735,156 as of October 8, 2025 | The Public Cap',
+    amount: 18000000,
+    asOf: 'October 4, 2026',
+    title: 'Greg Schiano buyout: $18,000,000 as of October 4, 2026 | The Public Cap',
   },
 }
 for (const [id, sample] of Object.entries(samples)) {
@@ -534,6 +534,8 @@ for (const [id, sample] of Object.entries(samples)) {
 ok(buyoutTitle(buyouts.coaches.vanderbilt) === 'Clark Lea buyout | The Public Cap', 'pending buyout title invents no dollar')
 ok(!/\$/.test(buyoutDescription(buyouts.coaches.vanderbilt)), 'pending buyout description invents no dollar')
 ok(buyoutDescription(buyouts.coaches['south-carolina']).includes('not the buyout if fired on the desk date'), 'Beamer December 1 figure is not presented as today')
+ok(buyoutDescription(buyouts.coaches.rutgers).includes('not the buyout if fired on the desk date'), 'Schiano October 4 figure is not presented as the desk date')
+ok(buyoutCite(buyouts.coaches.rutgers).freshness === 'later', 'Schiano October 4 as-of is later than the desk date')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} checks passed`)
