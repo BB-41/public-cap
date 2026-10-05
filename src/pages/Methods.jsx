@@ -327,9 +327,11 @@ export default function Methods({ meta: metaProp }) {
         Revenue Share,” or counsel spent totals. Collective Form 990s are a separate
         cited lane (<code>nil.collective990</code>) and never overwrite booked House /
         Item 44. If we do not have a booked institutional filing, that cell is pending. A public news article may be cited once when it is itself a FOIA,
-        ledger, or counsel-statement story (Courier-Journal, August 2026: Louisville
-        $32.9M FOIA Mar 2025–Jul 1 2026, including ~$12.7M pre-cap KY NIL; prior desk
-        cell was $20.27M for the House Year 1 window. Kentucky $18M from March 2025–July
+        ledger, or counsel-statement story (Courier-Journal, August 5, 2026: Louisville
+        House Year 1 spent is $20.2M for Jul 1, 2025–Jul 1, 2026. The $32.9M figure is the
+        full FOIA window Mar 2025–Jul 1, 2026 — $12.7M pre-cap Kentucky NIL plus that
+        $20.2M — and is not a House Year 1 total. Prior desk
+        cell was $20.27M. Kentucky $18M from March 2025–July
         2026 as reported by counsel. CalMatters, August 2026: UCLA and California each
         about $20.5M in 2025-26; names/sport splits not released. UT Austin coordinator
         letter, Sep. 17, 2026, Records Center request R013976-090126: Texas
