@@ -1109,6 +1109,16 @@ table.staff-table { max-width: 760px; margin: 8px 0 18px; }
 
 
 .buyout-page .table-scroll { max-height: none; }
+.buyout-cite {
+  max-width: 720px;
+  margin: 0 0 16px;
+  padding: 2px 0 2px 12px;
+  border-left: 2px solid var(--gold);
+}
+.buyout-cite.stale,
+.buyout-cite.later,
+.buyout-cite.undated { border-left-color: var(--blood); }
+.buyout-cite .lede { margin: 0 0 6px; }
 .buyout-hed { align-items: flex-start; }
 .buyout-names { display: flex; align-items: center; gap: 16px; margin: 8px 0 10px; }
 .buyout-school {

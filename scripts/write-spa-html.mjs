@@ -26,6 +26,7 @@ import {
   schoolFaqItems,
   schoolFaqPageNode,
 } from '../src/lib/schoolSeo.js'
+import { buyoutDescription, buyoutHeading, buyoutTitle, renderBuyoutStaticBody } from '../src/lib/buyout.js'
 import {
   SITE,
   descriptionFromPath,
@@ -85,6 +86,8 @@ export function routeShell(path, extras = {}) {
     school: extras.school || null,
     seo: extras.seo || null,
     faq: extras.faq || null,
+    buyoutCoach: extras.buyoutCoach || null,
+    buyoutSchool: extras.buyoutSchool || null,
   }
 }
 
@@ -120,6 +123,26 @@ export function loadSchoolSeoExtras() {
 export function loadSchoolShells() {
   const { data, year1, year2, spendMap } = loadSchoolSeoExtras()
   return schoolShells(data.schools, { year1, year2, spendMap })
+}
+
+export function loadBuyoutShells() {
+  const book = JSON.parse(readFileSync(join(root, 'data/buyouts.json'), 'utf8'))
+  const schools = JSON.parse(readFileSync(join(root, 'public/data/schools.json'), 'utf8')).schools
+  if (!Array.isArray(schools) || schools.length !== 68) {
+    throw new Error('buyout shells: schools.json must have 68 schools')
+  }
+  return schools.map((school) => {
+    const coach = book.coaches?.[school.id]
+    if (!coach?.name) throw new Error(`buyout shells: no coach for ${school.id}`)
+    return routeShell(`/buyout/${school.id}`, {
+      title: buyoutTitle(coach),
+      description: buyoutDescription(coach),
+      hed: buyoutHeading(coach),
+      schoolName: school.name,
+      buyoutCoach: coach,
+      buyoutSchool: { id: school.id, name: school.name },
+    })
+  })
 }
 
 function routeJsonLd(route) {
@@ -160,7 +183,7 @@ function routeJsonLd(route) {
 export function applyRouteMeta(html, route) {
   const { title, description, url, image, path, hed } = route
   let out = html
-  const seoAttr = path.startsWith('/school/') ? ' data-seo="stamped"' : ''
+  const seoAttr = path.startsWith('/school/') || path.startsWith('/buyout/') ? ' data-seo="stamped"' : ''
   out = out.replace(/<html\s+lang="en">/, `<html lang="en" data-route="inner"${seoAttr}>`)
   out = out.replace(/<title>[^<]*<\/title>/, `<title>${escText(title)}</title>`)
   out = replaceAttr(out, 'name', 'description', description)
@@ -212,6 +235,16 @@ export function applyRouteMeta(html, route) {
       out,
       '<div id="root">',
       `\n        ${renderSchoolStaticBody(route.school, route.seo)}\n      `,
+    )
+    return out
+  }
+
+  if (path.startsWith('/buyout/') && route.buyoutCoach) {
+    out = replaceElementInner(out, '<div id="home-dek" class="page-wrap home-dek">', '')
+    out = replaceElementInner(
+      out,
+      '<div id="root">',
+      `\n        ${renderBuyoutStaticBody(route.buyoutCoach, route.buyoutSchool)}\n      `,
     )
     return out
   }
@@ -278,13 +311,19 @@ export function replaceElementInner(html, openTag, inner) {
 
 function fileForPath(path) {
   if (path.startsWith('/school/')) return `school/${path.split('/')[2]}.html`
+  if (path.startsWith('/buyout/')) return `buyout/${path.split('/')[2]}.html`
   return `${path.slice(1)}.html`
 }
 
 export function writeSpaHtml({ distDir = join(root, 'dist'), indexHtml, schools } = {}) {
   const source = indexHtml ?? readFileSync(join(distDir, 'index.html'), 'utf8')
-  const routes = [...SPA_SHELL_PATHS.map((path) => routeShell(path)), ...(schools || loadSchoolShells())]
+  const routes = [
+    ...SPA_SHELL_PATHS.map((path) => routeShell(path)),
+    ...(schools || loadSchoolShells()),
+    ...loadBuyoutShells(),
+  ]
   mkdirSync(join(distDir, 'school'), { recursive: true })
+  mkdirSync(join(distDir, 'buyout'), { recursive: true })
   const written = []
   for (const route of routes) {
     const file = fileForPath(route.path)

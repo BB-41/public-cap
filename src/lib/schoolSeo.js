@@ -244,6 +244,7 @@ export function renderSchoolStaticBody(school, ctx = {}) {
           <p class="lede">${escHtml(schoolFaqIntro(school.name))}</p>
 ${articles}
         </section>
+        <p class="fine"><a href="/buyout/${escHtml(school.id)}">${escHtml(school.coaches?.football?.name ? `${school.coaches.football.name} buyout` : 'Buyout')}</a></p>
         <p class="fine nil-101-cue"><a href="/nil-101">How NIL works</a></p>
       </div>`
 }

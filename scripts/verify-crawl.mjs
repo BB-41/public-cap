@@ -26,7 +26,10 @@ ok(schools.schools.length === 68, '68 schools in the book')
 
 const generated = writeSitemap()
 ok(generated.schoolCount === 68, 'sitemap writer saw 68 schools')
-ok(generated.urlCount === STATIC_PATHS.length + 68, `sitemap has ${STATIC_PATHS.length + 68} URLs (static + schools)`)
+ok(
+  generated.urlCount === STATIC_PATHS.length + 68 * 2,
+  `sitemap has ${STATIC_PATHS.length + 136} URLs (static + schools + buyout pages)`,
+)
 ok(STATIC_PATHS.includes('/tv'), 'STATIC_PATHS lists /tv')
 ok(!STATIC_PATHS.includes('/llms.txt'), 'sitemap does not treat llms.txt as an HTML route')
 
@@ -69,6 +72,12 @@ const schoolLocs = locs.filter((u) => u.includes('/school/'))
 ok(schoolLocs.length === 68, 'sitemap lists 68 school URLs')
 ok(locs.includes(`${SITE_ORIGIN}/about`), 'sitemap lists /about')
 ok(locs.includes(`${SITE_ORIGIN}/tv`), 'sitemap lists /tv')
+ok(locs.includes(`${SITE_ORIGIN}/buyout`), 'sitemap lists /buyout')
+ok(locs.filter((u) => u.includes('/buyout/')).length === 68, 'sitemap lists 68 school buyout URLs')
+for (const id of ['south-carolina', 'florida-state', 'rutgers']) {
+  ok(locs.includes(`${SITE_ORIGIN}/buyout/${id}`), `sitemap lists /buyout/${id}`)
+}
+ok(!locs.some((u) => u.includes('?school=')), 'sitemap does not list buyout query URLs')
 ok(!locs.includes(`${SITE_ORIGIN}/llms.txt`), 'sitemap does not list llms.txt')
 ok(!locs.some((u) => u.includes('/data/')), 'sitemap does not list /data/ JSON')
 
@@ -100,6 +109,8 @@ ok(
 ok(!existsSync(join(root, 'functions/_middleware.js')), 'no functions/_middleware.js (would disable _redirects)')
 ok(!/\/school\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /school/* to /index.html (crawlers would get homepage title)')
 ok(/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects keeps /coach-fa/* splat')
+ok(/\/buyout\?school=:school\s+\/buyout\/:school\s+301/.test(redirects), '_redirects 301s /buyout?school=:school to /buyout/:school')
+ok(!/\/buyout\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /buyout/* to /index.html')
 ok(!/Disallow:\s*\/reported-nil/i.test(robots), 'robots.txt does not Disallow /reported-nil')
 for (const path of ['/reported-nil', '/compare', '/methods', '/about', '/nil-101', '/tape', '/tv', '/buyout', '/coach-fa', '/guarantee-games', '/checkbook-bowl']) {
   ok(
@@ -133,6 +144,20 @@ if (process.env.PUBLIC_DIR) {
   JSON.parse(nilHtml.match(/<script type="application\/ld\+json" id="public-cap-jsonld">\s*([\s\S]*?)\s*<\/script>/)[1])
   const distLlms = readFileSync(join(publicDir, 'llms.txt'), 'utf8')
   ok(/^# Public Cap/m.test(distLlms) && !/<html[\s>]/i.test(distLlms), 'dist llms.txt is plain text, not SPA HTML')
+  const beamerHtml = readFileSync(join(publicDir, 'buyout/south-carolina.html'), 'utf8')
+  ok(/<title>Shane Beamer buyout: \$22,550,000 as of December 1, 2026 \| The Public Cap<\/title>/.test(beamerHtml), 'dist buyout/south-carolina.html titles Beamer')
+  ok(beamerHtml.includes('https://thepubliccap.com/buyout/south-carolina'), 'dist Beamer canonical is the clean URL')
+  ok(beamerHtml.includes('$22,550,000'), 'dist Beamer page prints the cited dollar')
+  ok(beamerHtml.includes('December 1, 2026'), 'dist Beamer page prints the as-of date')
+  ok(!/noindex/i.test(beamerHtml), 'dist Beamer page is not noindex')
+  const norvellHtml = readFileSync(join(publicDir, 'buyout/florida-state.html'), 'utf8')
+  ok(/<title>Mike Norvell buyout: \$49,353,349 as of September 16, 2026 \| The Public Cap<\/title>/.test(norvellHtml), 'dist buyout/florida-state.html titles Norvell')
+  ok(norvellHtml.includes('$49,353,349'), 'dist Norvell page prints the cited dollar')
+  ok(norvellHtml.includes('September 16, 2026'), 'dist Norvell page prints the as-of date')
+  const schianoHtml = readFileSync(join(publicDir, 'buyout/rutgers.html'), 'utf8')
+  ok(/<title>Greg Schiano buyout: \$23,735,156 as of October 8, 2025 \| The Public Cap<\/title>/.test(schianoHtml), 'dist buyout/rutgers.html titles Schiano')
+  ok(schianoHtml.includes('That as-of date is not current.'), 'dist Schiano page does not present the 2025 cite as current')
+  ok(schianoHtml.includes('data-seo="stamped"'), 'dist buyout pages are stamped')
 }
 
 const failed = checks.filter((c) => !c.ok)

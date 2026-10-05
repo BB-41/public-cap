@@ -1545,7 +1545,10 @@ function rosterAnswer(school, rosters, season) {
 }
 
 function coachAnswer(school, coach, season) {
-  const links = [{ to: schoolHref(school.id, season), label: `${school.name} page` }, { to: '/buyout', label: 'Buyout calculator' }]
+  const links = [
+    { to: schoolHref(school.id, season), label: `${school.name} page` },
+    { to: `/buyout/${school.id}`, label: coach?.name ? `${coach.name} buyout` : 'Buyout' },
+  ]
   if (!coach?.name) {
     return { text: `${school.name} has no football chair on this season overlay.`, links }
   }
@@ -1570,7 +1573,7 @@ function coachAnswer(school, coach, season) {
   if (hasVal(coach.buyout)) {
     lines.push(`If-fired buyout overhang ${money(coach.buyout.value)} (${mark(coach.buyout)}). A liability, not yearly spend.`)
     facts.push(factLine('Buyout overhang', coach.buyout.value, { mark: mark(coach.buyout) }))
-    links.push({ to: '/buyout', label: 'Buyout' })
+    links.push({ to: `/buyout/${school.id}`, label: 'Buyout' })
   } else {
     lines.push('Current-chair buyout is pending.')
   }
