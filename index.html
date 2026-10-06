@@ -128,8 +128,9 @@
         } else if (p === '/about') {
           title = 'About — Public Cap'
           desc = 'What can your team actually afford? A college football money desk for 68 schools — House share, capacity, coach pay, booked NIL, and the Checkbook Bowl. Pending stays empty.'
-        } else if (p === '/buyout') {
+        } else if (p === '/buyout' || p.indexOf('/buyout/') === 0) {
           title = 'Buyout — Public Cap'
+          desc = 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.'
         } else if (p === '/tv') {
           title = 'TV — Public Cap'
         }
@@ -154,7 +155,7 @@
         if (p === '/' || p === '/compare' || p === '/reported-nil' || p.indexOf('/school/') === 0) href = '/data/desk.json'
         else if (p === '/methods') href = '/data/meta.json'
         else if (p === '/tape') href = '/data/tape.json'
-        else if (p === '/buyout') href = '/data/desk.json'
+        else if (p === '/buyout' || p.indexOf('/buyout/') === 0) href = '/data/buyouts.json'
         else if (p === '/coach-fa' || p.indexOf('/coach-fa/') === 0) href = '/data/coach-fa.json'
         else if (p === '/guarantee-games') href = '/data/guarantee-games.json'
         else if (p === '/checkbook-bowl') href = '/data/checkbook-bowl.json'

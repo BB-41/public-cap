@@ -290,6 +290,17 @@ export default function App() {
       })
       return
     }
+    if (kind === 'buyout') {
+      if (location.pathname === '/buyout') {
+        applyDocumentMeta({
+          title: titleFromPath('/buyout'),
+          description: descriptionFromPath('/buyout'),
+          path: '/buyout',
+          jsonLd: 'webpage',
+        })
+      }
+      return
+    }
     if (kind === 'coachFa') {
       const coachId = path.split('/')[2]
       const names = {
@@ -382,6 +393,7 @@ export default function App() {
             <Route path="/tape" element={<Tape items={tape?.items || []} season={season} />} />
             <Route path="/tv" element={<Tv />} />
             <Route path="/buyout" element={<Buyout />} />
+            <Route path="/buyout/:schoolId" element={<Buyout />} />
             <Route path="/coach-fa" element={<CoachFa />} />
             <Route path="/coach-fa/:coachId" element={<CoachFa />} />
             <Route path="/guarantee-games" element={<GuaranteeGames />} />

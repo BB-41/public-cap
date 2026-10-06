@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import Logo from '../components/Logo.jsx'
 import { ContractFiles } from '../components/ContractFiles.jsx'
 import { BuyoutRuleLine, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
@@ -8,17 +8,20 @@ import {
   DEFAULT_SCHOOL,
   DESK_TODAY,
   afterLabel,
+  buyoutCite,
+  buyoutDescription,
+  buyoutPath,
+  buyoutTitle,
   classifyTape,
   coachOptions,
-  currentStep,
   formatLongDate,
-  formatThrough,
   gameLabel,
   mapGames,
   mergeSchoolSteps,
   sharePath,
   stepDateLabel,
 } from '../lib/buyout.js'
+import { applyDocumentMeta } from '../lib/share.js'
 
 function SourceLink({ source, className = 'ext' }) {
   if (!source?.url) return source?.label ? <span>{source.label}</span> : null
@@ -44,14 +47,37 @@ function StepAmount({ amount, confidence }) {
   )
 }
 
+function citeEyebrow(cite) {
+  if (!cite || cite.amount == null) return `Desk date · ${formatLongDate(DESK_TODAY)}`
+  if (cite.freshness === 'stale') return `As of ${formatLongDate(cite.asOf)} — not a current figure`
+  if (cite.freshness === 'later') return `As of ${formatLongDate(cite.asOf)} — not the buyout if fired today`
+  if (cite.freshness === 'undated') return 'Cited step — no as-of date on the desk'
+  if (cite.asOf && cite.asOf !== DESK_TODAY) {
+    return `Step in force ${formatLongDate(DESK_TODAY)} · figure as of ${formatLongDate(cite.asOf)}`
+  }
+  return `As of ${formatLongDate(cite.asOf || DESK_TODAY)}`
+}
+
 export default function Buyout() {
-  const [params, setParams] = useSearchParams()
-  const schoolId = params.get('school') || DEFAULT_SCHOOL
+  const { schoolId: pathSchoolId } = useParams()
+  const [params] = useSearchParams()
+  const navigate = useNavigate()
+  const querySchool = params.get('school')
+  const schoolId = pathSchoolId || querySchool || DEFAULT_SCHOOL
   const [book, setBook] = useState(null)
   const [sched, setSched] = useState(null)
   const [schools, setSchools] = useState(null)
   const [err, setErr] = useState(null)
   const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    if (pathSchoolId || !querySchool) return
+    const next = new URLSearchParams(params)
+    next.delete('school')
+    next.delete('sport')
+    const search = next.toString()
+    navigate({ pathname: buyoutPath(querySchool), search: search ? `?${search}` : '' }, { replace: true })
+  }, [pathSchoolId, querySchool, navigate, params])
 
   useEffect(() => {
     Promise.all([
@@ -76,23 +102,33 @@ export default function Buyout() {
     [schools, schoolId],
   )
   const bookCoach = book?.coaches?.[schoolId] || null
+  const cite = useMemo(() => (bookCoach ? buyoutCite(bookCoach) : null), [bookCoach])
   const coach = useMemo(
     () => mergeSchoolSteps(bookCoach, school?.coaches?.football?.buyout),
     [bookCoach, school],
   )
   const slate = sched?.schools?.[schoolId] || null
   const tape = classifyTape(coach)
-  const todayStep = currentStep(coach, DESK_TODAY)
   const rows = useMemo(
     () => mapGames(slate?.games || [], coach, DESK_TODAY),
     [slate, coach],
   )
 
+  useEffect(() => {
+    if (!pathSchoolId || !book) return
+    const coachOnBook = book.coaches?.[pathSchoolId]
+    applyDocumentMeta({
+      title: coachOnBook ? buyoutTitle(coachOnBook) : 'Buyout — Public Cap',
+      description: coachOnBook
+        ? buyoutDescription(coachOnBook)
+        : 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.',
+      path: buyoutPath(pathSchoolId),
+      jsonLd: 'webpage',
+    })
+  }, [book, pathSchoolId])
+
   function pickSchool(id) {
-    const next = new URLSearchParams(params)
-    next.set('school', id)
-    next.delete('sport')
-    setParams(next, { replace: true })
+    navigate(buyoutPath(id), { replace: true })
   }
 
   function copyShare() {
@@ -104,7 +140,9 @@ export default function Buyout() {
   }
 
   if (err) return <div className="page-wrap"><p className="lede">Failed to load buyout desk. {err}</p></div>
-  if (!book || !schools) return <div className="page-wrap"><p className="lede">Setting type…</p></div>
+  if ((!pathSchoolId && querySchool) || !book || !schools) {
+    return <div className="page-wrap"><p className="lede">Setting type…</p></div>
+  }
 
   const share = sharePath(schoolId)
 
@@ -116,7 +154,20 @@ export default function Buyout() {
         Buyout
         {school ? ` · ${school.name}` : ''}
       </p>
-      <h1 className="issue-hed">If they fire him after this kickoff.</h1>
+      <h1 className="issue-hed">
+        {pathSchoolId && coach ? `${coach.name} buyout` : 'If they fire him after this kickoff.'}
+      </h1>
+      {pathSchoolId && bookCoach && (
+        <aside className={`buyout-cite ${cite?.freshness || 'pending'}`} id="buyout-cite">
+          <p className="lede tight">{buyoutDescription(bookCoach)}</p>
+          {cite?.source?.label && (
+            <p className="field-meta">
+              Source: <SourceLink source={cite.source} />
+              {cite.asOf ? ` · as of ${formatLongDate(cite.asOf)}` : ''}
+            </p>
+          )}
+        </aside>
+      )}
       <p className="lede">
         Most football head-coach contracts step the termination fee on a calendar date
         — Dec. 1, Jan. 1, the end of the season, Feb. 1 / signing day — or on remaining
@@ -192,19 +243,24 @@ export default function Buyout() {
               )}
             </div>
             <div className="hero-num">
-              <div className="eyebrow">In force today · {formatLongDate(DESK_TODAY)}</div>
-              {todayStep?.amount != null ? (
+              <div className="eyebrow">{citeEyebrow(cite)}</div>
+              {cite?.amount != null ? (
                 <>
-                  <div className="display">{money(todayStep.amount)}</div>
+                  <div className="display">{money(cite.amount)}</div>
                   <div className="field-meta">
-                    {todayStep.asOf
-                      ? `as of ${formatLongDate(todayStep.asOf)}`
-                      : todayStep.through
-                        ? formatThrough(todayStep.through)
-                        : 'current if-fired overhang'}
+                    {moneyExact(cite.amount)}
+                    {cite.asOf ? ` as of ${formatLongDate(cite.asOf)}` : ''}
+                    {cite.freshness === 'stale' ? ' · not a current figure' : ''}
+                    {cite.freshness === 'later' ? ' · not the buyout if fired today' : ''}
+                    {cite.freshness === 'undated' ? ' · no as-of date stored' : ''}
                     {' · overhang, not yearly spend · '}
-                    <span className="conf-label">{todayStep.confidence}</span>
+                    <span className="conf-label">{cite.confidence}</span>
                   </div>
+                  {cite.source?.label && (
+                    <div className="field-meta">
+                      Source: <SourceLink source={cite.source} />
+                    </div>
+                  )}
                 </>
               ) : (
                 <>
@@ -241,6 +297,12 @@ export default function Buyout() {
               <p className="lede tight">
                 One cited if-fired overhang — not a weekly staircase. Every remaining
                 kickoff maps to the same number until a calendar step is on the desk.
+                {cite?.freshness === 'stale' && cite.asOf
+                  ? ` The dollar is the cited overhang as of ${formatLongDate(cite.asOf)}. It is not a current figure.`
+                  : ''}
+                {cite?.freshness === 'later' && cite.asOf
+                  ? ` The dollar is the cited overhang as of ${formatLongDate(cite.asOf)}, which is later than the desk date. It is not the buyout if fired today.`
+                  : ''}
               </p>
             )}
             {tape === 'steps' && (

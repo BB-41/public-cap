@@ -98,7 +98,7 @@ const PDF_STEP_IDS = ['florida-state', 'penn-state', 'clemson', 'virginia-tech',
 const DERIVED_STEP_IDS = [
   'kentucky', 'arkansas', 'auburn', 'michigan', 'michigan-state', 'ucla',
   'ole-miss', 'kansas-state', 'utah', 'oregon', 'florida', 'oklahoma-state',
-  'missouri',
+  'missouri', 'rutgers',
 ]
 const COPIED_STEP_IDS = ['tennessee', 'lsu']
 for (const s of data.schools) {
@@ -548,11 +548,26 @@ ok(byId['arizona-state'].coachesByYear['2026'].football.pay.value === 6_400_000,
 ok(byId.houston.coachesByYear['2026'].football.pay.value === 4_500_000, 'Fritz 2026 term sheet $4.5M')
 ok(byId['south-carolina'].coachesByYear['2026'].football.pay.value === 8_250_000, 'Beamer 2026 is the term-sheet $8,250,000')
 ok(!isUsaToday(byId['south-carolina'].coachesByYear['2026'].football.pay), 'Beamer 2026 is not USA TODAY 2025 $8.15M')
-ok(byId['south-carolina'].coaches.football.pay.value === 8_150_000, 'Beamer current-deal line stays the USA TODAY 2025 snapshot')
-ok(isUsaToday(byId['south-carolina'].coaches.football.pay), 'Beamer current-deal line is still USA TODAY')
+ok(byId['south-carolina'].coaches.football.pay.value === 8_250_000, 'Beamer current is stamped from the 2026 term-sheet $8.25M')
+ok(!isUsaToday(byId['south-carolina'].coaches.football.pay), 'Beamer current is no longer the USA TODAY 2025 snapshot')
 ok(byId.virginia.coachesByYear['2026'].football.pay.value === 5_400_000, 'Elliott 2026 MOU $5.4M')
 ok(!isUsaToday(byId.virginia.coachesByYear['2026'].football.pay), 'Elliott 2026 is not USA TODAY')
 ok(byId.virginia.coaches.football.pay.value === 5_400_000, 'Elliott current is stamped from the 2026 MOU')
+ok(byId.rutgers.coaches.football.pay.value === 6_750_000, 'Schiano current pay is the 2026 contract line $6.75M')
+ok(byId.rutgers.coachesByYear['2026'].football.pay.value === 6_750_000, 'Schiano 2026 pay stays $6.75M')
+ok(!isUsaToday(byId.rutgers.coaches.football.pay), 'Schiano current pay is not the USA TODAY 2025 snapshot')
+ok(byId.rutgers.coaches.football.buyout.value === 18_000_000, 'Schiano mid-season buyout is the reported round $18M')
+ok(byId.rutgers.coaches.football.buyout.asOf === '2026-10-04', 'Schiano buyout asOf is 2026-10-04')
+ok(byId.rutgers.coaches.football.buyout.confidence === 'estimated', 'Schiano mid-season buyout is estimated')
+ok(byId.rutgers.coaches.football.buyout.steps[1].remaining === 17_296_875, 'Schiano post-2026 step is $17,296,875')
+ok(byId.rutgers.coachesByYear['2026'].football.buyout.value === 18_000_000, 'Schiano 2026 year key matches the current buyout')
+ok(buyouts.coaches.rutgers.tape === 'steps', 'Schiano buyout tape is steps')
+ok(buyouts.coaches.rutgers.overhang == null, 'Schiano Oct 8 2025 overhang is cleared')
+ok(buyouts.coaches.rutgers.steps[0].amount === 18_000_000, 'buyouts.json Schiano in-force step is $18M')
+ok(buyouts.coaches.rutgers.steps[1].amount === 17_296_875, 'buyouts.json Schiano post-2026 step matches')
+ok(byId.wisconsin.coaches.football.pay.value === 7_800_000, 'Fickell current is stamped from the Sept 2026 contract $7.8M')
+ok(!isUsaToday(byId.wisconsin.coaches.football.pay), 'Fickell current is no longer the USA TODAY 2025 snapshot')
+ok(byId.cincinnati.coaches.football.pay.value === 3_800_000, 'Satterfield current is stamped from the 2026 MOU $3.8M')
 ok(byId.missouri.coaches.football.buyout.steps[0].remaining === 51_600_000, 'Drinkwitz start-of-2026 remaining is $51.6M')
 ok(byId.missouri.coaches.football.buyout.steps.length === 6, 'Drinkwitz derived steps cover 2026–31 only')
 ok(byId.missouri.coaches.football.buyout.value === 51_600_000, 'Drinkwitz USAT overhang replaced by file-derived $51.6M')
@@ -563,7 +578,8 @@ ok(byId.oklahoma.coachesByYear['2026'].football.pay.value === 10_000_000, 'Venab
 ok(byId.oklahoma.coachesByYear['2026'].football.term?.through === 'Jan. 31, 2032', 'Venables 2026 term is through Jan. 31, 2032')
 ok(byId['nc-state'].coachesByYear['2026'].football.pay.value === 5_750_000, 'Doeren 2026 FOIA $5.75M')
 ok(!isUsaToday(byId['nc-state'].coachesByYear['2026'].football.pay), 'Doeren 2026 is not USA TODAY')
-ok(byId['nc-state'].coaches.football.pay.value === 6_215_377, 'Doeren current-deal line stays the USA TODAY 2025 snapshot')
+ok(byId['nc-state'].coaches.football.pay.value === 5_750_000, 'Doeren current is stamped from the 2026 FOIA $5.75M')
+ok(!isUsaToday(byId['nc-state'].coaches.football.pay), 'Doeren current is no longer the USA TODAY 2025 snapshot')
 ok(byId['west-virginia'].coachesByYear['2026'].football.pay.value === 3_600_000, 'Rodriguez 2026 MOU step $3.6M')
 ok(!isUsaToday(byId['west-virginia'].coachesByYear['2026'].football.pay), 'Rodriguez 2026 is not USA TODAY')
 ok(byId['west-virginia'].coaches.football.pay.value === 3_600_000, 'Rodriguez current-deal line stays the USA TODAY 2025 snapshot')

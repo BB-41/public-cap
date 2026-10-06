@@ -47,7 +47,7 @@ export function loadSchoolFull(id) {
 export function routeKind(pathname) {
   if (pathname === '/tape') return 'tape'
   if (pathname === '/tv') return 'tv'
-  if (pathname === '/buyout') return 'buyout'
+  if (pathname === '/buyout' || pathname.startsWith('/buyout/')) return 'buyout'
   if (pathname === '/coach-fa' || pathname.startsWith('/coach-fa/')) return 'coachFa'
   if (pathname === '/guarantee-games') return 'guaranteeGames'
   if (pathname === '/checkbook-bowl') return 'checkbookBowl'

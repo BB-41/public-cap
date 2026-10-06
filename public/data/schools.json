@@ -18602,12 +18602,13 @@
         "football": {
           "name": "Shane Beamer",
           "pay": {
-            "value": 8150000,
+            "value": 8250000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "The State (Jan. 24, 2025) year table from the board-approved extension; ESPN obtained the term sheet ($8.15M in 2025 + $100,000 annually)",
+            "url": "https://www.thestate.com/sports/college/university-of-south-carolina/usc-football/article298644148.html",
+            "asOf": "2025-01-24",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 scheduled dollar from the 2025 term sheet / board file: $8,250,000 (Jan. 1–Dec. 31, 2026). ESPN: $8.15 million in 2025 with $100,000 raises annually. 247 prints $8,250,000. Not the USA TODAY 2025 $8.15M cell and not The State’s $8.2M round. Incentives not included. Current-deal coaches.football.pay stays the USA TODAY 2025 snapshot."
           },
           "buyout": {
             "value": 22550000,
@@ -47757,25 +47758,98 @@
         "football": {
           "name": "Greg Schiano",
           "pay": {
-            "value": 6500000,
+            "value": 6750000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "NJ.com (Aug. 19, 2025; updated Mar. 21, 2026), year table from the Dec. 11, 2023 contract obtained by open public records; restated by NJ.com (Fonseca & Sargeant, Oct. 4, 2026)",
+            "url": "https://www.nj.com/rutgers/2025/08/where-each-rutgers-head-coach-and-their-contract-stands-entering-ad-keli-zinns-1st-season.html",
+            "asOf": "2026-10-04",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 line on the OPRA year table from the Dec. 11, 2023 contract: $6,750,000. NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) restates the same 2026 dollar, with 2027 $7,250,000, 2028 $7,500,000, and 2029 $7,750,000. The school-side buyout clause calls that table annual base salary. USA TODAY 2025 total pay equals the 2025 line ($6,500,000) and is not the 2026 chair. The 2027 step is printed ($500,000), not interpolated. Incentives are not in this cell.",
+            "year": 2026,
+            "breakdown": [
+              {
+                "label": "Annual base salary (2026)",
+                "value": 6750000
+              }
+            ],
+            "schedule": [
+              {
+                "period": "2025",
+                "value": 6500000
+              },
+              {
+                "period": "2026",
+                "value": 6750000
+              },
+              {
+                "period": "2027",
+                "value": 7250000,
+                "notes": "Printed $500,000 step from 2026. Not interpolated."
+              },
+              {
+                "period": "2028",
+                "value": 7500000
+              },
+              {
+                "period": "2029",
+                "value": 7750000
+              }
+            ]
           },
           "buyout": {
-            "value": 23735156,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "value": 18000000,
+            "confidence": "estimated",
+            "source": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) — if fired this season, roughly $18 million",
+            "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html",
+            "asOf": "2026-10-04",
+            "notes": "If fired this season, NJ.com (Oct. 4, 2026) says roughly $18 million. Stored as $18,000,000 because no unrounded mid-season dollar was printed. Confidence estimated. The next step, $17,296,875 as of Jan. 1, 2027, is 76.875% of the remaining 2027–2029 base ($22.5 million) and is the unrounded post-season figure printed by CBS Sports (Sept. 11, 2026). Prior USA TODAY database cell $23,735,156 as of Oct. 8, 2025 is retired. Staff buyout is not booked: the same article estimates at least $8,580,000 over two years for about 80 people (imprecise; missing latest assistant contracts and reasonable-effort offsets) and a combined head-coach-plus-staff total of roughly $28 million, later restated as staff roughly $9 million. Chris Ash’s $8.47 million is the prior paid buyout named in that article, not this overhang. Liability/overhang, not annual spend.",
+            "rule": "76.875% of remaining base salary through the 2029 season (CBS Sports, Sept. 11, 2026). NJ.com (Oct. 4, 2026) describes the same share as just under 77%. Year-boundary steps only — not a Saturday staircase and not a daily proration.",
+            "coachSide": "Offset only against another football coaching job. Schiano is not required to seek employment. A television job does not reduce the buyout (NJ.com, Oct. 4, 2026; CBS Sports, Sept. 11, 2026). Paid biweekly through the remaining term (FOX Sports, citing the contract summary).",
+            "steps": [
+              {
+                "asOf": "2026-10-04",
+                "remaining": 18000000,
+                "contractYear": "2026 mid-season",
+                "through": "2026-12-31",
+                "notes": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) states the payout if fired this season is roughly $18 million, just under 77% of remaining base salary through the 2029 season. Stored as $18,000,000 because the article did not print an unrounded dollar. Labeled derived — not a published remaining-dollar line and not a daily proration. We do not mint cents from 76.875% times an unknown partial-year remainder. FOX Sports (citing USA TODAY) and a separate contract summary say roughly $18.5 million at the end of November or after the 2026 season; that rounded headline is not this cell."
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 17296875,
+                "contractYear": "after 2026 season",
+                "through": "2027-12-31",
+                "notes": "Derived from the already-on-desk base table (2027 $7,250,000 + 2028 $7,500,000 + 2029 $7,750,000 = $22,500,000) × 76.875% = $17,296,875 if fired after the 2026 season. CBS Sports (Robby Kalland, Sept. 11, 2026) prints this unrounded dollar. Labeled derived — full remaining years, not a mid-season proration. A separate contract summary’s roughly $18.5 million after the 2026 season does not match this product and is not booked as this step."
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 11700000,
+                "contractYear": "after 2027 season",
+                "through": "2028-12-31",
+                "notes": "Derived from the already-on-desk base table (2028 $7,500,000 + 2029 $7,750,000 = $15,250,000) × 76.875% = $11,723,437.50. A contract summary prints the drop as $11.7 million after the 2027 season. Stored as that published round $11,700,000 — not a desk-minted cent. Labeled derived."
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 5900000,
+                "contractYear": "after 2028 season",
+                "through": "2029-12-31",
+                "notes": "Derived from the already-on-desk base table (2029 $7,750,000) × 76.875% = $5,957,812.50. A contract summary prints the drop as $5.9 million after the 2028 season. Stored as that published round $5,900,000 — not a desk-minted cent. Labeled derived."
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 0,
+                "contractYear": "after 2029 season",
+                "through": "2030-01-01",
+                "notes": "Derived from the term end. A contract summary states the buyout drops to $0 after the 2029 season. Labeled derived. CBS Sports’ “through the 2030 season” conflicts with the three-year $22.5 million remainder and is not booked."
+              }
+            ]
           },
           "term": {
-            "confidence": "pending",
-            "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "confidence": "reported",
+            "asOf": "2026-10-04",
+            "source": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026); FOX Sports, quoting the contract summary",
+            "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html",
+            "through": "2029",
+            "yearsRemaining": 4,
+            "notes": "Through the 2029 season. FOX Sports, quoting the contract, and NJ.com (Oct. 4, 2026) agree. CBS Sports (Sept. 11, 2026) says through the 2030 season, but that piece’s own three-year $22.5 million remainder is 2027–2029 and the salary table in that contract summary ends in 2029. Booked through 2029."
           }
         },
         "mbb": {
@@ -48321,10 +48395,10 @@
               "value": 6750000,
               "year": 2026,
               "confidence": "reported",
-              "source": "NJ.com (Aug. 19, 2025; updated Mar. 21, 2026), year table from the Dec. 11, 2023 contract obtained by open public records",
+              "source": "NJ.com (Aug. 19, 2025; updated Mar. 21, 2026), year table from the Dec. 11, 2023 contract obtained by open public records; restated by NJ.com (Fonseca & Sargeant, Oct. 4, 2026)",
               "url": "https://www.nj.com/rutgers/2025/08/where-each-rutgers-head-coach-and-their-contract-stands-entering-ad-keli-zinns-1st-season.html",
-              "asOf": "2026-03-21",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 line on the OPRA year table: $6,750,000. The school-side buyout clause calls that table annual base salary. USA TODAY 2025 total pay equals the 2025 line ($6,500,000), so this is the scheduled guaranteed annual salary, not incentives and not a partial base with an unknown supplemental. The same table prints 2027 at $7,250,000 (a $500,000 step, as printed — not a desk interpolation); 76.875% of the 2026–2029 lines equals the article’s $22,485,938 figure if Rutgers terminates following the 2025-26 season. Current-deal coaches.football.pay stays the USA TODAY 2025 snapshot.",
+              "asOf": "2026-10-04",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 line on the OPRA year table from the Dec. 11, 2023 contract: $6,750,000. NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) restates the same 2026 dollar, with 2027 $7,250,000, 2028 $7,500,000, and 2029 $7,750,000. The school-side buyout clause calls that table annual base salary. USA TODAY 2025 total pay equals the 2025 line ($6,500,000) and is not the 2026 chair. The 2027 step is printed ($500,000), not interpolated. Incentives are not in this cell.",
               "breakdown": [
                 {
                   "label": "Annual base salary (2026)",
@@ -48357,19 +48431,60 @@
               "baseOnly": null
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 18000000,
+              "confidence": "estimated",
+              "source": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) — if fired this season, roughly $18 million",
+              "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html",
+              "asOf": "2026-10-04",
+              "notes": "If fired this season, NJ.com (Oct. 4, 2026) says roughly $18 million. Stored as $18,000,000 because no unrounded mid-season dollar was printed. Confidence estimated. The next step, $17,296,875 as of Jan. 1, 2027, is 76.875% of the remaining 2027–2029 base ($22.5 million) and is the unrounded post-season figure printed by CBS Sports (Sept. 11, 2026). Prior USA TODAY database cell $23,735,156 as of Oct. 8, 2025 is retired. Staff buyout is not booked: the same article estimates at least $8,580,000 over two years for about 80 people (imprecise; missing latest assistant contracts and reasonable-effort offsets) and a combined head-coach-plus-staff total of roughly $28 million, later restated as staff roughly $9 million. Chris Ash’s $8.47 million is the prior paid buyout named in that article, not this overhang. Liability/overhang, not annual spend.",
+              "rule": "76.875% of remaining base salary through the 2029 season (CBS Sports, Sept. 11, 2026). NJ.com (Oct. 4, 2026) describes the same share as just under 77%. Year-boundary steps only — not a Saturday staircase and not a daily proration.",
+              "coachSide": "Offset only against another football coaching job. Schiano is not required to seek employment. A television job does not reduce the buyout (NJ.com, Oct. 4, 2026; CBS Sports, Sept. 11, 2026). Paid biweekly through the remaining term (FOX Sports, citing the contract summary).",
+              "steps": [
+                {
+                  "asOf": "2026-10-04",
+                  "remaining": 18000000,
+                  "contractYear": "2026 mid-season",
+                  "through": "2026-12-31",
+                  "notes": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) states the payout if fired this season is roughly $18 million, just under 77% of remaining base salary through the 2029 season. Stored as $18,000,000 because the article did not print an unrounded dollar. Labeled derived — not a published remaining-dollar line and not a daily proration. We do not mint cents from 76.875% times an unknown partial-year remainder. FOX Sports (citing USA TODAY) and a separate contract summary say roughly $18.5 million at the end of November or after the 2026 season; that rounded headline is not this cell."
+                },
+                {
+                  "asOf": "2027-01-01",
+                  "remaining": 17296875,
+                  "contractYear": "after 2026 season",
+                  "through": "2027-12-31",
+                  "notes": "Derived from the already-on-desk base table (2027 $7,250,000 + 2028 $7,500,000 + 2029 $7,750,000 = $22,500,000) × 76.875% = $17,296,875 if fired after the 2026 season. CBS Sports (Robby Kalland, Sept. 11, 2026) prints this unrounded dollar. Labeled derived — full remaining years, not a mid-season proration. A separate contract summary’s roughly $18.5 million after the 2026 season does not match this product and is not booked as this step."
+                },
+                {
+                  "asOf": "2028-01-01",
+                  "remaining": 11700000,
+                  "contractYear": "after 2027 season",
+                  "through": "2028-12-31",
+                  "notes": "Derived from the already-on-desk base table (2028 $7,500,000 + 2029 $7,750,000 = $15,250,000) × 76.875% = $11,723,437.50. A contract summary prints the drop as $11.7 million after the 2027 season. Stored as that published round $11,700,000 — not a desk-minted cent. Labeled derived."
+                },
+                {
+                  "asOf": "2029-01-01",
+                  "remaining": 5900000,
+                  "contractYear": "after 2028 season",
+                  "through": "2029-12-31",
+                  "notes": "Derived from the already-on-desk base table (2029 $7,750,000) × 76.875% = $5,957,812.50. A contract summary prints the drop as $5.9 million after the 2028 season. Stored as that published round $5,900,000 — not a desk-minted cent. Labeled derived."
+                },
+                {
+                  "asOf": "2030-01-01",
+                  "remaining": 0,
+                  "contractYear": "after 2029 season",
+                  "through": "2030-01-01",
+                  "notes": "Derived from the term end. A contract summary states the buyout drops to $0 after the 2029 season. Labeled derived. CBS Sports’ “through the 2030 season” conflicts with the three-year $22.5 million remainder and is not booked."
+                }
+              ]
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
-              "url": "https://en.wikipedia.org/wiki/2026_Rutgers_Scarlet_Knights_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "confidence": "reported",
+              "asOf": "2026-10-04",
+              "source": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026); FOX Sports, quoting the contract summary",
+              "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html",
+              "through": "2029",
+              "yearsRemaining": 4,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Through the 2029 season. FOX Sports, quoting the contract, and NJ.com (Oct. 4, 2026) agree. CBS Sports (Sept. 11, 2026) says through the 2030 season, but that piece’s own three-year $22.5 million remainder is 2027–2029 and the salary table in that contract summary ends in 2029. Booked through 2029."
             }
           },
           "mbb": {
@@ -54075,12 +54190,50 @@
         "football": {
           "name": "Luke Fickell",
           "pay": {
-            "value": 7825000,
+            "value": 7800000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "usatoday.com, Sept. 7, 2026, quoting Fickell’s initial contract and Wisconsin Foundation additional compensation agreement",
+            "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
+            "asOf": "2026-09-07",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). USA TODAY (Sept. 7, 2026, updated Sept. 8) quoting the contract: 2026 annual salary $7,800,000 = University of Wisconsin pay $3,000,000 + Wisconsin Foundation additional compensation $4,800,000. The foundation piece increases $100,000 every year. Total guaranteed annual salary, not base only. Incentives not included. Not the USA TODAY database 2025-10-08 total-pay cell of $7,825,000. Current-deal coaches.football.pay stays that snapshot.",
+            "breakdown": [
+              {
+                "label": "University of Wisconsin annual pay",
+                "value": 3000000
+              },
+              {
+                "label": "Wisconsin Foundation additional compensation (2026)",
+                "value": 4800000
+              }
+            ],
+            "schedule": [
+              {
+                "period": "2026",
+                "value": 7800000
+              },
+              {
+                "period": "2027",
+                "value": 7900000
+              },
+              {
+                "period": "2028",
+                "value": 8000000
+              },
+              {
+                "period": "2029",
+                "value": 8100000
+              },
+              {
+                "period": "2030",
+                "value": 8200000
+              },
+              {
+                "period": "2031",
+                "value": 8300000
+              }
+            ],
+            "baseOnly": null
           },
           "buyout": {
             "value": 21280000,
@@ -65650,7 +65803,7 @@
             "organization": "502Circle NIL Collective Foundation",
             "ein": "92-0905366",
             "line": "Part IX line 11g — Athlete fees",
-            "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Does not replace Louisville’s $32.9M full FOIA window or the $20.2M House Year 1 spent cell."
+            "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Does not replace Louisville’s $32.9M FOIA booked window. That window is not the $20.2M House Year 1 spent cell."
           }
         ],
         "houseRemaining": {
@@ -68796,12 +68949,13 @@
         "football": {
           "name": "Dave Doeren",
           "pay": {
-            "value": 6215377,
+            "value": 5750000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "PackInsider (June 29, 2026), quoting Doeren FOIA documents",
+            "url": "https://packinsider.com/2026/06/29/nc-state-football-coaching-salaries-2026/",
+            "asOf": "2026-06-29",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). FOIA: $5.75 million in 2026 after the published $125,000 annual raise, through the 2029 season. Not the USA TODAY 2025-10-08 $6,215,377 cell. Incentives not added. Current-deal line stays the USA TODAY 2025 snapshot.",
+            "year": 2026
           },
           "buyout": {
             "value": 13129456,
@@ -88897,12 +89051,13 @@
         "football": {
           "name": "Scott Satterfield",
           "pay": {
-            "value": 3700000,
+            "value": 3800000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "The Athletic (Dec. 6, 2022), quoting Satterfield Dec. 4 MOU obtained by public records; Boardroom year table; 700WLW Jan. 4, 2026 restates the 2026 step",
+            "url": "https://www.nytimes.com/athletic/3975896/2022/12/06/scott-satterfield-cincinnati-contract-salary-buyout/",
+            "asOf": "2022-12-06",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). FOIA MOU: $3.5 million in 2023 (first full season) + $100,000 each subsequent season, culminating at $4.0 million in 2028. 2026 step is $3,800,000. USA TODAY 2024 $3.6M / 2025 $3.7M match the published steps. Incentives not added. Current-deal line stays the USA TODAY 2025 snapshot. No later file that changes the year table is on the desk.",
+            "year": 2026
           },
           "buyout": {
             "value": 12008333,

@@ -1229,6 +1229,9 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           <div className="eyebrow" title={defTitle('buyout')}>Buyout overhang (not yearly spend)</div>
           <Field field={s.coaches.football.buyout} />
           <BuyoutStepTape steps={s.coaches.football.buyout?.steps} compact />
+          <p className="fine">
+            <Link to={`/buyout/${s.id}`}>{s.coaches.football.name} buyout</Link>
+          </p>
           <IncentiveList items={s.coaches.football.pay?.incentives} />
           <ContractFiles files={s.coaches.football.contract?.files} />
         </section>
