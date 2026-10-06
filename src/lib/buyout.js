@@ -16,6 +16,24 @@ export const STALE_ASOF_BEFORE = '2026-01-01'
 export const USAT_FOOTBALL_COACH_URL = 'https://sportsdata.usatoday.com/ncaa/salaries/football/coach'
 export const USAT_BUYOUT_ASOF = '2025-12-01'
 
+/** A cited as-of older than this many months before the desk date is stale. */
+export const STALE_AFTER_MONTHS = 9
+
+export const HOT_SEAT_PATH = '/buyout/hot-seat'
+export const HOT_SEAT_IDS = [
+  'rutgers',
+  'south-carolina',
+  'florida-state',
+  'clemson',
+  'colorado',
+  'purdue',
+  'maryland',
+  'texas',
+]
+export const HOT_SEAT_TITLE = 'Hot-seat coach buyouts | The Public Cap'
+export const HOT_SEAT_DESCRIPTION =
+  'Cited buyouts for eight football coaches on the hot seat, each with its source and as-of date. Pending stays pending. A firing liability, not yearly spend.'
+
 export const BUYOUT_TITLE_BRAND = ' | The Public Cap'
 
 const MONTHS = [
@@ -28,6 +46,18 @@ export function parseIso(iso) {
   const m = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})/)
   if (!m) return null
   return { y: Number(m[1]), mo: Number(m[2]), d: Number(m[3]) }
+}
+
+/** Calendar months, clamped to the last day of the target month. */
+export function addMonths(iso, months) {
+  const p = parseIso(iso)
+  if (!p || !Number.isFinite(months)) return null
+  const total = p.mo - 1 + months
+  const y = p.y + Math.floor(total / 12)
+  const mo = ((total % 12) + 12) % 12
+  const lastDay = new Date(Date.UTC(y, mo + 1, 0)).getUTCDate()
+  const d = Math.min(p.d, lastDay)
+  return `${y}-${String(mo + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`
 }
 
 export function addDays(iso, n) {
@@ -123,6 +153,7 @@ export function stepInForce(steps, isoDate) {
 /** Label a remaining-as-of or through-date step. */
 export function stepDateLabel(step) {
   if (!step) return 'step'
+  if (step.firedLabel) return step.firedLabel
   if (step.asOf) return `as of ${formatLongDate(step.asOf)}`
   if (step.through) return formatThrough(step.through)
   return 'Current overhang'
@@ -147,6 +178,7 @@ export function overhangAsStep(coach) {
     confidence: oh.confidence || 'reported',
     source: oh.source,
     asOf: oh.asOf,
+    firedLabel: oh.firedLabel || null,
     overhang: true,
   }
 }
@@ -229,7 +261,7 @@ export function buyoutPath(schoolId) {
 export function schoolIdFromBuyoutPath(pathname) {
   if (!pathname?.startsWith('/buyout/')) return null
   const id = pathname.split('/')[2] || ''
-  if (!id) return null
+  if (!id || id === 'hot-seat') return null
   return id
 }
 
@@ -271,6 +303,7 @@ export function buyoutCite(coach, today = DESK_TODAY) {
     confidence: step?.confidence || null,
     freshness,
     priorContract: Boolean(coach.priorContract),
+    firedLabel: step?.firedLabel || null,
   }
 }
 
@@ -293,6 +326,106 @@ export function priorContractFootnote(coach) {
   return `${coach.name} signed a newer contract${when}. The updated buyout figure is pending; the figure above reflects the prior contract.`
 }
 
+/**
+ * Visible staleness. A replaced contract uses the same pending phrase as the
+ * footnote. Otherwise a figure whose as-of is more than about 9 months before
+ * the desk date is marked old. Pending (no dollar) is not a stale dollar.
+ */
+export function buyoutStaleness(coach, today = DESK_TODAY) {
+  const cite = buyoutCite(coach, today)
+  if (!cite || cite.amount == null) return null
+  if (cite.priorContract) {
+    return {
+      kind: 'prior-contract',
+      label: 'Prior-contract figure, new deal pending',
+    }
+  }
+  if (cite.asOf) {
+    const aged = addMonths(cite.asOf, STALE_AFTER_MONTHS)
+    if (aged && aged < today) {
+      return {
+        kind: 'older-than-9-months',
+        label: 'Figure older than 9 months',
+      }
+    }
+  }
+  return null
+}
+
+/** Firing condition when the cite stored one; otherwise the as-of date. */
+export function citeTimingPhrase(cite) {
+  if (!cite) return ''
+  if (cite.firedLabel) return cite.firedLabel
+  if (cite.asOf) return `as of ${formatLongDate(cite.asOf)}`
+  return ''
+}
+
+export function buyoutSourceLabel(cite) {
+  if (!cite || cite.amount == null) return null
+  if (isUsatFootballBuyout(cite)) return usatBuyoutSourceText()
+  return cite.source?.label || null
+}
+
+/** Same-conference buyout pages, hot-seat peers first. Hub is added by the caller. */
+export function relatedBuyoutSchools(schoolId, schools, { peerLimit = 5 } = {}) {
+  const list = schools || []
+  const byId = new Map(list.map((s) => [s.id, s]))
+  const self = byId.get(schoolId)
+  const conf = self?.conference || ''
+  const hot = new Set(HOT_SEAT_IDS)
+  const peers = list
+    .filter((s) => s.id && s.id !== schoolId && conf && s.conference === conf)
+    .sort((a, b) => {
+      const ah = hot.has(a.id) ? 0 : 1
+      const bh = hot.has(b.id) ? 0 : 1
+      if (ah !== bh) return ah - bh
+      return String(a.shortName || a.name).localeCompare(String(b.shortName || b.name))
+    })
+  const picked = []
+  const push = (s) => {
+    if (!s?.id || s.id === schoolId || picked.some((p) => p.id === s.id)) return
+    picked.push(s)
+  }
+  for (const s of peers) {
+    if (picked.length >= peerLimit) break
+    push(s)
+  }
+  if (picked.length < 4) {
+    for (const id of HOT_SEAT_IDS) {
+      if (picked.length >= peerLimit) break
+      push(byId.get(id))
+    }
+  }
+  if (picked.length < 4) {
+    const rest = list
+      .filter((s) => s.id && s.id !== schoolId)
+      .sort((a, b) => String(a.name).localeCompare(String(b.name)))
+    for (const s of rest) {
+      if (picked.length >= peerLimit) break
+      push(s)
+    }
+  }
+  return picked.slice(0, peerLimit)
+}
+
+export function hotSeatEntries(book, schools) {
+  const byId = new Map((schools || []).map((s) => [s.id, s]))
+  return HOT_SEAT_IDS.map((id) => {
+    const coach = book?.coaches?.[id] || null
+    const school = byId.get(id) || null
+    const cite = coach ? buyoutCite(coach) : null
+    return {
+      id,
+      coach,
+      school,
+      cite,
+      staleness: coach ? buyoutStaleness(coach) : null,
+      schoolName: school?.name || id,
+      coachName: coach?.name || '',
+    }
+  })
+}
+
 export function buyoutHeading(coach) {
   const cite = buyoutCite(coach)
   return cite?.name ? `${cite.name} buyout` : 'Buyout'
@@ -305,8 +438,12 @@ export function buyoutLead(coach, today = DESK_TODAY) {
   if (cite.freshness === 'pending') {
     return `${cite.name} buyout: no cited dollar on this desk. We do not invent a figure. A liability if fired without cause, not yearly spend.`
   }
-  const dated = cite.asOf ? ` as of ${formatLongDate(cite.asOf)}` : ''
-  let text = `${cite.name} buyout: ${moneyExact(cite.amount)}${dated}.`
+  const when = citeTimingPhrase(cite)
+  let text = `${cite.name} buyout: ${moneyExact(cite.amount)}${when ? ` ${when}` : ''}.`
+  const next = cite.firedLabel ? laterFiredStep(coach, today) : null
+  if (next?.amount != null && next.firedLabel) {
+    text += ` Then ${moneyExact(next.amount)} ${next.firedLabel}.`
+  }
   if (cite.priorContract) text += ' Prior-contract figure, new deal pending.'
   else if (cite.freshness === 'stale') text += ' That as-of date is not current.'
   else if (cite.freshness === 'later') {
@@ -315,6 +452,14 @@ export function buyoutLead(coach, today = DESK_TODAY) {
     text += ' No as-of date is stored on this step, so it is not presented as current.'
   }
   return text
+}
+
+/** Next dated step after the desk date, used when the headline is a firing condition. */
+function laterFiredStep(coach, today) {
+  const steps = normalizeSteps(coach?.steps)
+    .filter((s) => s.amount != null && s.asOf && s.asOf > today && s.firedLabel)
+    .sort((a, b) => cmpIso(a.asOf, b.asOf))
+  return steps[0] || null
 }
 
 export function buyoutSourceSentence(coach, today = DESK_TODAY) {
@@ -330,6 +475,9 @@ export function buyoutTitle(coach, today = DESK_TODAY) {
   if (!cite?.name) return `Buyout${BUYOUT_TITLE_BRAND}`
   if (cite.amount == null) return `${cite.name} buyout${BUYOUT_TITLE_BRAND}`
   const dollars = moneyExact(cite.amount)
+  if (cite.firedLabel) {
+    return `${cite.name} buyout: ${dollars} ${cite.firedLabel}${BUYOUT_TITLE_BRAND}`
+  }
   if (cite.asOf && cite.priorContract) {
     return `${cite.name} buyout: ${dollars} as of ${formatLongDate(cite.asOf)} — prior-contract figure, new deal pending${BUYOUT_TITLE_BRAND}`
   }
@@ -361,27 +509,108 @@ function escHtml(value) {
     .replace(/"/g, '&quot;')
 }
 
+function stalenessHtml(staleness) {
+  if (!staleness) return ''
+  return `\n        <p class="buyout-staleness" data-buyout-staleness="${escHtml(staleness.kind)}">${escHtml(staleness.label)}</p>`
+}
+
+function relatedBuyoutsHtml(school, schools) {
+  if (!school?.id) return ''
+  const peers = relatedBuyoutSchools(school.id, schools)
+  const items = [
+    `<li><a href="/school/${escHtml(school.id)}">${escHtml(school.name || school.id)} school page</a></li>`,
+    `<li><a href="${HOT_SEAT_PATH}">Hot-seat buyouts</a></li>`,
+    ...peers.map(
+      (s) => `<li><a href="/buyout/${escHtml(s.id)}">${escHtml(s.shortName || s.name)} buyout</a></li>`,
+    ),
+  ]
+  return `\n        <nav class="buyout-related" aria-label="Related buyouts">
+          <h2>Related buyouts</h2>
+          <ul>
+            ${items.join('\n            ')}
+          </ul>
+        </nav>`
+}
+
+function contractHtml(coach) {
+  const bits = []
+  if (coach?.contract?.url) {
+    bits.push(`<a href="${escHtml(coach.contract.url)}">${escHtml(coach.contract.label || 'Contract')}</a>`)
+  }
+  for (const file of coach?.contract?.files || []) {
+    if (!file?.url || file.url === coach?.contract?.url) continue
+    bits.push(`<a href="${escHtml(file.url)}">${escHtml(file.label || 'Contract file')}</a>`)
+  }
+  if (!bits.length) return ''
+  return `\n        <p class="fine">Contract: ${bits.join(' · ')}</p>`
+}
+
 /** Crawler body for /buyout/<school-id>. Same sentences as the meta description. */
-export function renderBuyoutStaticBody(coach, school) {
+export function renderBuyoutStaticBody(coach, school, schools) {
   const cite = buyoutCite(coach)
   const heading = buyoutHeading(coach)
   const lede = buyoutLead(coach) || buyoutDescription(coach)
   const footnote = priorContractFootnote(coach)
+  const staleness = buyoutStaleness(coach)
   let sourceP = ''
   if (isUsatFootballBuyout(cite)) {
     sourceP = `\n        <p class="field-meta">Source: <a href="${escHtml(cite.source.url)}">USA TODAY coaches salary database</a>, buyout as of Dec. 1, 2025</p>`
   } else if (cite?.source?.url) {
-    sourceP = `\n        <p class="field-meta">Source: <a href="${escHtml(cite.source.url)}">${escHtml(cite.source.label || 'source')}</a></p>`
+    const when = cite.firedLabel ? '' : cite.asOf ? ` · as of ${escHtml(formatLongDate(cite.asOf))}` : ''
+    sourceP = `\n        <p class="field-meta">Source: <a href="${escHtml(cite.source.url)}">${escHtml(cite.source.label || 'source')}</a>${when}</p>`
   } else if (cite?.source?.label) {
     sourceP = `\n        <p class="field-meta">Source: ${escHtml(cite.source.label)}</p>`
   }
   const footnoteP = footnote ? `\n        <p class="buyout-footnote">${escHtml(footnote)}</p>` : ''
   const closer = cite?.amount != null ? ' If-fired overhang, not yearly spend.' : ''
-  const schoolLink = school?.id
-    ? `\n        <p class="fine"><a href="/school/${escHtml(school.id)}">${escHtml(school.name || school.id)} school page</a></p>`
-    : ''
-  return `<div class="page-wrap buyout-static">
+  const rootAttr = staleness ? ` data-buyout-staleness="${escHtml(staleness.kind)}"` : ''
+  return `<div class="page-wrap buyout-static"${rootAttr}>
         <h1 class="issue-hed">${escHtml(heading)}</h1>
-        <p class="lede">${escHtml(lede)}${closer}</p>${sourceP}${footnoteP}${schoolLink}
+        <p class="lede">${escHtml(lede)}${closer}</p>${sourceP}${stalenessHtml(staleness)}${footnoteP}${contractHtml(coach)}${relatedBuyoutsHtml(school, schools)}
+      </div>`
+}
+
+/** Crawler body for /buyout/hot-seat. Dollars are the buyout book, never estimated. */
+export function renderHotSeatStaticBody(book, schools) {
+  const rows = hotSeatEntries(book, schools)
+    .map((row) => {
+      const hrefBuy = `/buyout/${escHtml(row.id)}`
+      const hrefSchool = `/school/${escHtml(row.id)}`
+      const when = row.cite?.amount == null ? 'Pending' : citeTimingPhrase(row.cite) || 'Pending'
+      const dollars = row.cite?.amount == null ? 'Pending' : moneyExact(row.cite.amount)
+      const source = buyoutSourceLabel(row.cite)
+      const sourceBit = row.cite?.source?.url && source
+        ? `<a href="${escHtml(row.cite.source.url)}">${escHtml(source)}</a>`
+        : escHtml(source || 'Pending')
+      const badge = row.staleness
+        ? ` <span class="buyout-staleness" data-buyout-staleness="${escHtml(row.staleness.kind)}">${escHtml(row.staleness.label)}</span>`
+        : ''
+      return `          <tr data-school="${escHtml(row.id)}"${row.staleness ? ` data-buyout-staleness="${escHtml(row.staleness.kind)}"` : ''}>
+            <td><a href="${hrefBuy}">${escHtml(row.coachName || 'Coach')}</a></td>
+            <td><a href="${hrefSchool}">${escHtml(row.schoolName)}</a></td>
+            <td>${escHtml(dollars)}</td>
+            <td>${escHtml(when)}${badge}</td>
+            <td>${sourceBit}</td>
+          </tr>`
+    })
+    .join('\n')
+  return `<div class="page-wrap buyout-static hot-seat">
+        <h1 class="issue-hed">Hot-seat coach buyouts</h1>
+        <p class="lede">${escHtml(HOT_SEAT_DESCRIPTION)}</p>
+        <p class="fine"><a href="/buyout">Buyout calculator</a></p>
+        <table class="rank hot-seat-table">
+          <thead>
+            <tr>
+              <th>Coach</th>
+              <th>School</th>
+              <th>Buyout</th>
+              <th>As of</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+${rows}
+          </tbody>
+        </table>
       </div>`
 }

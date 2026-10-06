@@ -7,14 +7,18 @@ import { coachTermLabel, contractLinkLabel, money, moneyExact } from '../lib/for
 import {
   DEFAULT_SCHOOL,
   DESK_TODAY,
+  HOT_SEAT_PATH,
   afterLabel,
   buyoutCite,
   buyoutDescription,
   buyoutLead,
   buyoutPath,
+  buyoutStaleness,
   buyoutTitle,
+  citeTimingPhrase,
   isUsatFootballBuyout,
   priorContractFootnote,
+  relatedBuyoutSchools,
   classifyTape,
   coachOptions,
   formatLongDate,
@@ -52,6 +56,10 @@ function StepAmount({ amount, confidence }) {
 
 function citeEyebrow(cite) {
   if (!cite || cite.amount == null) return `Desk date · ${formatLongDate(DESK_TODAY)}`
+  if (cite.firedLabel && cite.freshness === 'later') {
+    return `${cite.firedLabel} — not the buyout if fired today`
+  }
+  if (cite.firedLabel) return cite.firedLabel
   if (cite.priorContract && cite.asOf) {
     return `As of ${formatLongDate(cite.asOf)} — prior-contract figure, new deal pending`
   }
@@ -109,6 +117,11 @@ export default function Buyout() {
   )
   const bookCoach = book?.coaches?.[schoolId] || null
   const cite = useMemo(() => (bookCoach ? buyoutCite(bookCoach) : null), [bookCoach])
+  const staleness = useMemo(() => (bookCoach ? buyoutStaleness(bookCoach) : null), [bookCoach])
+  const related = useMemo(
+    () => (schoolId ? relatedBuyoutSchools(schoolId, schools?.schools) : []),
+    [schoolId, schools],
+  )
   const coach = useMemo(
     () => mergeSchoolSteps(bookCoach, school?.coaches?.football?.buyout),
     [bookCoach, school],
@@ -130,6 +143,7 @@ export default function Buyout() {
         : 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.',
       path: buyoutPath(pathSchoolId),
       jsonLd: 'webpage',
+      staleness: coachOnBook ? buyoutStaleness(coachOnBook)?.kind || null : null,
     })
   }, [book, pathSchoolId])
 
@@ -157,7 +171,9 @@ export default function Buyout() {
       <p className="crumb">
         <Link to="/">Rank list</Link>
         {' · '}
-        Buyout
+        <Link to="/buyout">Buyout</Link>
+        {' · '}
+        <Link to={HOT_SEAT_PATH}>Hot seat</Link>
         {school ? ` · ${school.name}` : ''}
       </p>
       <h1 className="issue-hed">
@@ -170,12 +186,17 @@ export default function Buyout() {
             <p className="field-meta">
               Source: <SourceLink source={{ ...cite.source, label: 'USA TODAY coaches salary database' }} />, buyout as of Dec. 1, 2025
             </p>
-          ) : cite?.source?.label ? (
+              ) : cite?.source?.label ? (
             <p className="field-meta">
               Source: <SourceLink source={cite.source} />
-              {cite.asOf ? ` · as of ${formatLongDate(cite.asOf)}` : ''}
+              {!cite.firedLabel && cite.asOf ? ` · as of ${formatLongDate(cite.asOf)}` : ''}
             </p>
           ) : null}
+          {staleness && (
+            <p className="buyout-staleness" data-buyout-staleness={staleness.kind}>
+              {staleness.label}
+            </p>
+          )}
           {priorContractFootnote(bookCoach) && (
             <p className="buyout-footnote">{priorContractFootnote(bookCoach)}</p>
           )}
@@ -262,7 +283,7 @@ export default function Buyout() {
                   <div className="display">{money(cite.amount)}</div>
                   <div className="field-meta">
                     {moneyExact(cite.amount)}
-                    {cite.asOf ? ` as of ${formatLongDate(cite.asOf)}` : ''}
+                    {citeTimingPhrase(cite) ? ` ${citeTimingPhrase(cite)}` : ''}
                     {cite.priorContract ? ' · prior-contract figure, new deal pending' : ''}
                     {!cite.priorContract && cite.freshness === 'stale' ? ' · not a current figure' : ''}
                     {cite.freshness === 'later' ? ' · not the buyout if fired today' : ''}
@@ -453,6 +474,25 @@ export default function Buyout() {
               here.
             </p>
           </section>
+
+          <nav className="buyout-related" aria-label="Related buyouts">
+            <h2>Related buyouts</h2>
+            <ul>
+              {school && (
+                <li>
+                  <Link to={`/school/${school.id}`}>{school.name} school page</Link>
+                </li>
+              )}
+              <li>
+                <Link to={HOT_SEAT_PATH}>Hot-seat buyouts</Link>
+              </li>
+              {related.map((peer) => (
+                <li key={peer.id}>
+                  <Link to={buyoutPath(peer.id)}>{peer.shortName || peer.name} buyout</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </>
       )}
     </div>

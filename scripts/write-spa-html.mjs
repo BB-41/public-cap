@@ -26,7 +26,17 @@ import {
   schoolFaqItems,
   schoolFaqPageNode,
 } from '../src/lib/schoolSeo.js'
-import { buyoutDescription, buyoutHeading, buyoutTitle, renderBuyoutStaticBody } from '../src/lib/buyout.js'
+import {
+  HOT_SEAT_DESCRIPTION,
+  HOT_SEAT_PATH,
+  HOT_SEAT_TITLE,
+  buyoutDescription,
+  buyoutHeading,
+  buyoutStaleness,
+  buyoutTitle,
+  renderBuyoutStaticBody,
+  renderHotSeatStaticBody,
+} from '../src/lib/buyout.js'
 import {
   SITE,
   descriptionFromPath,
@@ -88,6 +98,9 @@ export function routeShell(path, extras = {}) {
     faq: extras.faq || null,
     buyoutCoach: extras.buyoutCoach || null,
     buyoutSchool: extras.buyoutSchool || null,
+    buyoutSchools: extras.buyoutSchools || null,
+    buyoutStaleness: extras.buyoutStaleness || null,
+    hotSeatHtml: extras.hotSeatHtml || null,
   }
 }
 
@@ -125,12 +138,27 @@ export function loadSchoolShells() {
   return schoolShells(data.schools, { year1, year2, spendMap })
 }
 
-export function loadBuyoutShells() {
+function slimBuyoutSchool(school) {
+  return {
+    id: school.id,
+    name: school.name,
+    shortName: school.shortName || school.name,
+    conference: school.conference || '',
+  }
+}
+
+export function loadBuyoutBook() {
   const book = JSON.parse(readFileSync(join(root, 'data/buyouts.json'), 'utf8'))
   const schools = JSON.parse(readFileSync(join(root, 'public/data/schools.json'), 'utf8')).schools
   if (!Array.isArray(schools) || schools.length !== 68) {
     throw new Error('buyout shells: schools.json must have 68 schools')
   }
+  return { book, schools }
+}
+
+export function loadBuyoutShells() {
+  const { book, schools } = loadBuyoutBook()
+  const slim = schools.map(slimBuyoutSchool)
   return schools.map((school) => {
     const coach = book.coaches?.[school.id]
     if (!coach?.name) throw new Error(`buyout shells: no coach for ${school.id}`)
@@ -140,13 +168,25 @@ export function loadBuyoutShells() {
       hed: buyoutHeading(coach),
       schoolName: school.name,
       buyoutCoach: coach,
-      buyoutSchool: { id: school.id, name: school.name },
+      buyoutSchool: slimBuyoutSchool(school),
+      buyoutSchools: slim,
+      buyoutStaleness: buyoutStaleness(coach)?.kind || null,
     })
   })
 }
 
+export function loadHotSeatShell() {
+  const { book, schools } = loadBuyoutBook()
+  return routeShell(HOT_SEAT_PATH, {
+    title: HOT_SEAT_TITLE,
+    description: HOT_SEAT_DESCRIPTION,
+    hed: 'Hot-seat coach buyouts',
+    hotSeatHtml: renderHotSeatStaticBody(book, schools),
+  })
+}
+
 function routeJsonLd(route) {
-  const { title, description, url, image, path, schoolName, faq } = route
+  const { title, description, url, image, path, schoolName, faq, buyoutStaleness: staleness } = route
   const webpage = {
     '@type': 'WebPage',
     name: title,
@@ -158,6 +198,13 @@ function routeJsonLd(route) {
       name: 'Public Cap',
       url: `https://${SITE}/`,
     },
+  }
+  if (staleness) {
+    webpage.additionalProperty = {
+      '@type': 'PropertyValue',
+      name: 'buyoutStaleness',
+      value: staleness,
+    }
   }
   // School shells: CollegeOrUniversity with facts already on the page (name, url).
   // No capacity / House / NIL figures — those are not in this graph.
@@ -184,6 +231,9 @@ export function applyRouteMeta(html, route) {
   const { title, description, url, image, path, hed } = route
   let out = html
   const seoAttr = path.startsWith('/school/') || path.startsWith('/buyout/') ? ' data-seo="stamped"' : ''
+  if (route.buyoutStaleness) {
+    out = replaceAttr(out, 'name', 'buyout-staleness', route.buyoutStaleness)
+  }
   out = out.replace(/<html\s+lang="en">/, `<html lang="en" data-route="inner"${seoAttr}>`)
   out = out.replace(/<title>[^<]*<\/title>/, `<title>${escText(title)}</title>`)
   out = replaceAttr(out, 'name', 'description', description)
@@ -239,12 +289,18 @@ export function applyRouteMeta(html, route) {
     return out
   }
 
+  if (path === HOT_SEAT_PATH && route.hotSeatHtml) {
+    out = replaceElementInner(out, '<div id="home-dek" class="page-wrap home-dek">', '')
+    out = replaceElementInner(out, '<div id="root">', `\n        ${route.hotSeatHtml}\n      `)
+    return out
+  }
+
   if (path.startsWith('/buyout/') && route.buyoutCoach) {
     out = replaceElementInner(out, '<div id="home-dek" class="page-wrap home-dek">', '')
     out = replaceElementInner(
       out,
       '<div id="root">',
-      `\n        ${renderBuyoutStaticBody(route.buyoutCoach, route.buyoutSchool)}\n      `,
+      `\n        ${renderBuyoutStaticBody(route.buyoutCoach, route.buyoutSchool, route.buyoutSchools)}\n      `,
     )
     return out
   }
@@ -321,6 +377,7 @@ export function writeSpaHtml({ distDir = join(root, 'dist'), indexHtml, schools 
     ...SPA_SHELL_PATHS.map((path) => routeShell(path)),
     ...(schools || loadSchoolShells()),
     ...loadBuyoutShells(),
+    loadHotSeatShell(),
   ]
   mkdirSync(join(distDir, 'school'), { recursive: true })
   mkdirSync(join(distDir, 'buyout'), { recursive: true })

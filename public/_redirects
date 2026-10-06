@@ -4,6 +4,7 @@
 /robots.txt /robots.txt 200
 /sitemap.xml /sitemap.xml 200
 /llms.txt /llms.txt 200
+/34af1a9e03fae2647e2d32b44b8a08a5.txt /34af1a9e03fae2647e2d32b44b8a08a5.txt 200
 
 # www → apex cannot be done here. Cloudflare Pages _redirects does not
 # support domain-level / host redirects (source must be a path). Do not
