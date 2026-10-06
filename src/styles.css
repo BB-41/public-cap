@@ -1117,8 +1117,20 @@ table.staff-table { max-width: 760px; margin: 8px 0 18px; }
 }
 .buyout-cite.stale,
 .buyout-cite.later,
-.buyout-cite.undated { border-left-color: var(--blood); }
+.buyout-cite.undated,
+.buyout-cite.prior { border-left-color: var(--blood); }
 .buyout-cite .lede { margin: 0 0 6px; }
+.buyout-footnote {
+  max-width: 720px;
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  background: var(--ink-2);
+  color: var(--paper);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.buyout-static .buyout-footnote { margin-top: 12px; }
 .buyout-hed { align-items: flex-start; }
 .buyout-names { display: flex; align-items: center; gap: 16px; margin: 8px 0 10px; }
 .buyout-school {

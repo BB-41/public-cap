@@ -109,8 +109,20 @@ ok(
 ok(!existsSync(join(root, 'functions/_middleware.js')), 'no functions/_middleware.js (would disable _redirects)')
 ok(!/\/school\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /school/* to /index.html (crawlers would get homepage title)')
 ok(/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects keeps /coach-fa/* splat')
-ok(/\/buyout\?school=:school\s+\/buyout\/:school\s+301/.test(redirects), '_redirects 301s /buyout?school=:school to /buyout/:school')
+const redirectRules = redirects.split('\n').filter((line) => line.trim() && !line.trim().startsWith('#'))
+ok(
+  !redirectRules.some((line) => /\/buyout\/:school/.test(line)),
+  '_redirects has no rule that writes the literal path /buyout/:school',
+)
+ok(
+  !redirectRules.some((line) => /^\s*\/buyout(\?|\s|$)/.test(line)),
+  '_redirects does not match /buyout (query-string placeholders would 301 the calculator)',
+)
 ok(!/\/buyout\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /buyout/* to /index.html')
+const buyoutPage = readFileSync(join(root, 'src/pages/Buyout.jsx'), 'utf8')
+ok(buyoutPage.includes('buyoutPath(querySchool)'), 'buyout page replace-navigates ?school= to /buyout/<id>')
+ok(!buyoutPage.includes('/buyout/:school'), 'buyout page never navigates to /buyout/:school')
+ok(!buyoutPage.includes("'/buyout/' + ':school'") && !buyoutPage.includes('`/buyout/:school`'), 'buyout page has no literal :school path')
 ok(!/Disallow:\s*\/reported-nil/i.test(robots), 'robots.txt does not Disallow /reported-nil')
 for (const path of ['/reported-nil', '/compare', '/methods', '/about', '/nil-101', '/tape', '/tv', '/buyout', '/coach-fa', '/guarantee-games', '/checkbook-bowl']) {
   ok(

@@ -10,8 +10,11 @@ import {
   afterLabel,
   buyoutCite,
   buyoutDescription,
+  buyoutLead,
   buyoutPath,
   buyoutTitle,
+  isUsatFootballBuyout,
+  priorContractFootnote,
   classifyTape,
   coachOptions,
   formatLongDate,
@@ -49,6 +52,9 @@ function StepAmount({ amount, confidence }) {
 
 function citeEyebrow(cite) {
   if (!cite || cite.amount == null) return `Desk date · ${formatLongDate(DESK_TODAY)}`
+  if (cite.priorContract && cite.asOf) {
+    return `As of ${formatLongDate(cite.asOf)} — prior-contract figure, new deal pending`
+  }
   if (cite.freshness === 'stale') return `As of ${formatLongDate(cite.asOf)} — not a current figure`
   if (cite.freshness === 'later') return `As of ${formatLongDate(cite.asOf)} — not the buyout if fired today`
   if (cite.freshness === 'undated') return 'Cited step — no as-of date on the desk'
@@ -158,13 +164,20 @@ export default function Buyout() {
         {pathSchoolId && coach ? `${coach.name} buyout` : 'If they fire him after this kickoff.'}
       </h1>
       {pathSchoolId && bookCoach && (
-        <aside className={`buyout-cite ${cite?.freshness || 'pending'}`} id="buyout-cite">
-          <p className="lede tight">{buyoutDescription(bookCoach)}</p>
-          {cite?.source?.label && (
+        <aside className={`buyout-cite ${cite?.priorContract ? 'prior' : cite?.freshness || 'pending'}`} id="buyout-cite">
+          <p className="lede tight">{buyoutLead(bookCoach)}</p>
+          {isUsatFootballBuyout(cite) ? (
+            <p className="field-meta">
+              Source: <SourceLink source={{ ...cite.source, label: 'USA TODAY coaches salary database' }} />, buyout as of Dec. 1, 2025
+            </p>
+          ) : cite?.source?.label ? (
             <p className="field-meta">
               Source: <SourceLink source={cite.source} />
               {cite.asOf ? ` · as of ${formatLongDate(cite.asOf)}` : ''}
             </p>
+          ) : null}
+          {priorContractFootnote(bookCoach) && (
+            <p className="buyout-footnote">{priorContractFootnote(bookCoach)}</p>
           )}
         </aside>
       )}
@@ -250,17 +263,22 @@ export default function Buyout() {
                   <div className="field-meta">
                     {moneyExact(cite.amount)}
                     {cite.asOf ? ` as of ${formatLongDate(cite.asOf)}` : ''}
-                    {cite.freshness === 'stale' ? ' · not a current figure' : ''}
+                    {cite.priorContract ? ' · prior-contract figure, new deal pending' : ''}
+                    {!cite.priorContract && cite.freshness === 'stale' ? ' · not a current figure' : ''}
                     {cite.freshness === 'later' ? ' · not the buyout if fired today' : ''}
                     {cite.freshness === 'undated' ? ' · no as-of date stored' : ''}
                     {' · overhang, not yearly spend · '}
                     <span className="conf-label">{cite.confidence}</span>
                   </div>
-                  {cite.source?.label && (
+                  {isUsatFootballBuyout(cite) ? (
+                    <div className="field-meta">
+                      Source: <SourceLink source={{ ...cite.source, label: 'USA TODAY coaches salary database' }} />, buyout as of Dec. 1, 2025
+                    </div>
+                  ) : cite.source?.label ? (
                     <div className="field-meta">
                       Source: <SourceLink source={cite.source} />
                     </div>
-                  )}
+                  ) : null}
                 </>
               ) : (
                 <>
@@ -297,7 +315,9 @@ export default function Buyout() {
               <p className="lede tight">
                 One cited if-fired overhang — not a weekly staircase. Every remaining
                 kickoff maps to the same number until a calendar step is on the desk.
-                {cite?.freshness === 'stale' && cite.asOf
+                {cite?.priorContract && cite.asOf
+                  ? ` The dollar is the USA TODAY buyout as of ${formatLongDate(cite.asOf)}. Prior-contract figure, new deal pending.`
+                  : cite?.freshness === 'stale' && cite.asOf
                   ? ` The dollar is the cited overhang as of ${formatLongDate(cite.asOf)}. It is not a current figure.`
                   : ''}
                 {cite?.freshness === 'later' && cite.asOf

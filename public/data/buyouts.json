@@ -22,7 +22,7 @@
       "University of Oregon BOT Mar. 7, 2025 packet Exhibit A Amendment #3 (Lanning)",
       "CU Board of Regents Sanders amended employment agreement PDF (Mar. 28, 2025)",
       "Iowa State Rogers employment agreement PDF (WHO-TV / HTV host)",
-      "USA TODAY Sports football coach salary database (Oct. 8, 2025) for single overhangs when the file has no dollar calendar",
+      "USA TODAY Sports football coach salary database (updated Oct. 8, 2025; School Buyout column as of Dec. 1, 2025) for single overhangs when the file has no dollar calendar",
       "UF Sumrall payment details (Dec. 1, 2025, Gainesville Sun)",
       "Wikipedia 2026 FBS team pages for current HCs and schedules",
       "Montgomery Advertiser (Aug. 24, 2026) \u2014 Golesh employment agreement via records request (pay/buyout rule; no PDF URL on desk)",
@@ -47,7 +47,7 @@
       "steps": [],
       "overhang": {
         "amount": 60843750,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -483,13 +483,14 @@
     },
     "georgia": {
       "sport": "fb",
+      "priorContract": { "signedLabel": null },
       "name": "Kirby Smart",
       "tape": "overhang",
       "termThrough": "2033-12-31",
       "steps": [],
       "overhang": {
         "amount": 105107583,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -735,13 +736,14 @@
     },
     "mississippi-state": {
       "sport": "fb",
+      "priorContract": { "signedLabel": "December 2025" },
       "name": "Jeff Lebby",
       "tape": "overhang",
       "termThrough": null,
       "steps": [],
       "overhang": {
         "amount": 11006250,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -1094,10 +1096,10 @@
         {
           "through": "2027-12-15",
           "amount": 37500000,
-          "rule": "If UT terminates without cause on or after Dec. 15, 2025 and before Dec. 15, 2027: 75% of remaining compensation, paid monthly through Jan. 31, 2030. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025 \u2014 the last cited figure on that 75% step.",
+          "rule": "If UT terminates without cause on or after Dec. 15, 2025 and before Dec. 15, 2027: 75% of remaining compensation, paid monthly through Jan. 31, 2030. Dollar is the USA TODAY if-fired overhang as of Dec. 1, 2025 \u2014 the last cited figure on that 75% step.",
           "confidence": "reported",
           "source": {
-            "label": "USA TODAY Sports coach salary database (Oct. 8, 2025) + UT Amendment 3 PDF",
+            "label": "USA TODAY Sports coach salary database (updated Oct. 8, 2025; buyout as of Dec. 1, 2025) + UT Amendment 3 PDF",
             "url": "https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
           }
         },
@@ -1166,13 +1168,14 @@
     },
     "texas": {
       "sport": "fb",
+      "priorContract": { "signedLabel": null },
       "name": "Steve Sarkisian",
       "tape": "overhang",
       "termThrough": "2031-12-31",
       "steps": [],
       "overhang": {
         "amount": 60307500,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -1189,13 +1192,14 @@
     },
     "texas-am": {
       "sport": "fb",
+      "priorContract": { "signedLabel": "February 2026" },
       "name": "Mike Elko",
       "tape": "overhang",
       "termThrough": "2031-12-31",
       "steps": [],
       "overhang": {
         "amount": 21875000,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -1229,8 +1233,8 @@
       "steps": [],
       "overhang": {
         "amount": 49491667,
-        "asOf": "2025-10-08",
-        "rule": "BOT packet says liquidated damages exist, with mitigation/offset. It does not publish a percent or a dollar staircase. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025. We will not invent a buyout dollar from the minutes.",
+        "asOf": "2025-12-01",
+        "rule": "BOT packet says liquidated damages exist, with mitigation/offset. It does not publish a percent or a dollar staircase. Dollar is the USA TODAY if-fired overhang as of Dec. 1, 2025. We will not invent a buyout dollar from the minutes.",
         "confidence": "reported",
         "source": {
           "label": "USA TODAY Sports coach salary database",
@@ -1325,7 +1329,7 @@
       "steps": [],
       "overhang": {
         "amount": 56700000,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -1348,7 +1352,7 @@
       "steps": [],
       "overhang": {
         "amount": 25729167,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -1368,7 +1372,7 @@
       "steps": [],
       "overhang": {
         "amount": 13395417,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -1664,14 +1668,15 @@
     },
     "minnesota": {
       "sport": "fb",
+      "priorContract": { "signedLabel": "February 2026" },
       "name": "P. J. Fleck",
       "tape": "overhang",
       "termThrough": "2030-12-31",
       "steps": [],
       "overhang": {
         "amount": 26600000,
-        "asOf": "2025-10-08",
-        "rule": "If Minnesota terminates without cause: 70% of remaining base + supplemental + retention, quoted from the July 9, 2025 Regents docket. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025. The dockets do not publish a remaining-pay calendar, so we will not invent 70% \u00d7 remaining years as a Saturday staircase.",
+        "asOf": "2025-12-01",
+        "rule": "If Minnesota terminates without cause: 70% of remaining base + supplemental + retention, quoted from the July 9, 2025 Regents docket. Dollar is the USA TODAY if-fired overhang as of Dec. 1, 2025. The dockets do not publish a remaining-pay calendar, so we will not invent 70% \u00d7 remaining years as a Saturday staircase.",
         "confidence": "reported",
         "source": {
           "label": "USA TODAY Sports coach salary database",
@@ -1735,13 +1740,14 @@
     },
     "nebraska": {
       "sport": "fb",
+      "priorContract": { "signedLabel": "October 30, 2025" },
       "name": "Matt Rhule",
       "tape": "overhang",
       "termThrough": "2032-12-31",
       "steps": [],
       "overhang": {
         "amount": 49612500,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -1775,7 +1781,7 @@
       "steps": [],
       "overhang": {
         "amount": 70916667,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -2151,7 +2157,7 @@
       "steps": [],
       "overhang": {
         "amount": 25125000,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -2418,7 +2424,7 @@
       "steps": [],
       "overhang": {
         "amount": 33686666,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -2947,13 +2953,14 @@
     },
     "georgia-tech": {
       "sport": "fb",
+      "priorContract": { "signedLabel": "December 2025" },
       "name": "Brent Key",
       "tape": "overhang",
       "termThrough": null,
       "steps": [],
       "overhang": {
         "amount": 11123333,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -2967,13 +2974,14 @@
     },
     "louisville": {
       "sport": "fb",
+      "priorContract": { "signedLabel": "August 10, 2026" },
       "name": "Jeff Brohm",
       "tape": "overhang",
       "termThrough": "2033-12-31",
       "steps": [],
       "overhang": {
         "amount": 33633333,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -3007,7 +3015,7 @@
       "steps": [],
       "overhang": {
         "amount": 13129456,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -3264,7 +3272,7 @@
       "steps": [],
       "overhang": {
         "amount": 11175000,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date \u2014 last cited school-side dollar before the Apr. 8, 2026 extension. The 2026 long-form EA is not on this desk, so we do not mint a new staircase from the announcement. Game-by-game tape pending.",
         "confidence": "reported",
         "source": {
@@ -3459,13 +3467,14 @@
     },
     "arizona": {
       "sport": "fb",
+      "priorContract": { "signedLabel": "February 2026" },
       "name": "Brent Brennan",
       "tape": "overhang",
       "termThrough": null,
       "steps": [],
       "overhang": {
         "amount": 10650000,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -3490,13 +3499,14 @@
     },
     "arizona-state": {
       "sport": "fb",
+      "priorContract": { "signedLabel": "February 2026" },
       "name": "Kenny Dillingham",
       "tape": "overhang",
       "termThrough": "2030-12-31",
       "steps": [],
       "overhang": {
         "amount": 24683333,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -3541,7 +3551,7 @@
       "steps": [],
       "overhang": {
         "amount": 12008333,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -3561,8 +3571,8 @@
       "steps": [],
       "overhang": {
         "amount": 33625000,
-        "asOf": "2025-10-08",
-        "rule": "If Colorado terminates without cause: 75% of remaining Base Salary and Supplemental Salary, paid monthly through Dec. 31, 2029 (amended EA \u00b613). Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025. No published dollar calendar \u2014 we will not invent 75% \u00d7 remaining years as a Saturday staircase.",
+        "asOf": "2025-12-01",
+        "rule": "If Colorado terminates without cause: 75% of remaining Base Salary and Supplemental Salary, paid monthly through Dec. 31, 2029 (amended EA \u00b613). Dollar is the USA TODAY if-fired overhang as of Dec. 1, 2025. No published dollar calendar \u2014 we will not invent 75% \u00d7 remaining years as a Saturday staircase.",
         "confidence": "reported",
         "source": {
           "label": "USA TODAY Sports coach salary database",
@@ -3781,13 +3791,14 @@
     },
     "kansas": {
       "sport": "fb",
+      "priorContract": { "signedLabel": null },
       "name": "Lance Leipold",
       "tape": "overhang",
       "termThrough": null,
       "steps": [],
       "overhang": {
         "amount": 22930000,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -4052,13 +4063,14 @@
     },
     "texas-tech": {
       "sport": "fb",
+      "priorContract": { "signedLabel": "December 2025" },
       "name": "Joey McGuire",
       "tape": "overhang",
       "termThrough": null,
       "steps": [],
       "overhang": {
         "amount": 9940761,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -4072,13 +4084,14 @@
     },
     "ucf": {
       "sport": "fb",
+      "priorContract": { "signedLabel": null },
       "name": "Scott Frost",
       "tape": "overhang",
       "termThrough": null,
       "steps": [],
       "overhang": {
         "amount": 13793750,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {
@@ -4236,7 +4249,7 @@
       "steps": [],
       "overhang": {
         "amount": 7645833,
-        "asOf": "2025-10-08",
+        "asOf": "2025-12-01",
         "rule": "USA TODAY / school if-fired overhang on the as-of date. No public calendar step schedule is on this desk. Game-by-game tape pending \u2014 we will not invent a Saturday staircase.",
         "confidence": "reported",
         "source": {

@@ -41,7 +41,7 @@ import {
   nil101Model,
   sectionAnswer,
 } from '../src/lib/nil101Guide.js'
-import { buyoutCite, buyoutDescription, buyoutTitle } from '../src/lib/buyout.js'
+import { buyoutCite, buyoutDescription, buyoutLead, buyoutTitle, priorContractFootnote, usatBuyoutSourceText } from '../src/lib/buyout.js'
 import { applyRouteMeta, loadBuyoutShells, loadSchoolSeoExtras, loadSchoolShells, routeShell } from './write-spa-html.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
@@ -487,16 +487,78 @@ ok(indexHtml.includes("p === '/buyout' || p.indexOf('/buyout/') === 0"), 'index.
 const buyouts = JSON.parse(read('data/buyouts.json'))
 const buyoutShells = loadBuyoutShells()
 ok(buyoutShells.length === 68, 'writer emits 68 buyout shells')
-const staleIds = ['georgia', 'ohio-state', 'alabama', 'texas', 'indiana', 'purdue']
-for (const id of staleIds) {
+const usatBuyouts = {
+  alabama: 60843750,
+  georgia: 105107583,
+  'mississippi-state': 11006250,
+  texas: 60307500,
+  'texas-am': 21875000,
+  illinois: 49491667,
+  indiana: 56700000,
+  iowa: 25729167,
+  maryland: 13395417,
+  minnesota: 26600000,
+  nebraska: 49612500,
+  'ohio-state': 70916667,
+  purdue: 25125000,
+  washington: 33686666,
+  'georgia-tech': 11123333,
+  louisville: 33633333,
+  'nc-state': 13129456,
+  virginia: 11175000,
+  arizona: 10650000,
+  'arizona-state': 24683333,
+  cincinnati: 12008333,
+  colorado: 33625000,
+  kansas: 22930000,
+  'texas-tech': 9940761,
+  ucf: 13793750,
+  'west-virginia': 7645833,
+}
+const priorLabels = {
+  nebraska: 'October 30, 2025',
+  'georgia-tech': 'December 2025',
+  'texas-am': 'February 2026',
+  'arizona-state': 'February 2026',
+  minnesota: 'February 2026',
+  louisville: 'August 10, 2026',
+  arizona: 'February 2026',
+  'texas-tech': 'December 2025',
+  'mississippi-state': 'December 2025',
+  georgia: null,
+  texas: null,
+  kansas: null,
+  ucf: null,
+}
+ok(Object.keys(usatBuyouts).length === 26, '26 USA TODAY football buyout overhangs')
+for (const [id, amount] of Object.entries(usatBuyouts)) {
   const coach = buyouts.coaches[id]
   const cite = buyoutCite(coach)
-  ok(cite.asOf === '2025-10-08', `${id} cite stays the stored 2025-10-08 as-of`)
-  ok(cite.freshness === 'stale', `${id} as-of is not treated as current`)
-  ok(buyoutTitle(coach) === `${coach.name} buyout: ${moneyExact(cite.amount)} as of October 8, 2025 | The Public Cap`, `${id} title uses the stored dollar and date`)
-  ok(buyoutDescription(coach).includes('That as-of date is not current.'), `${id} description says the date is not current`)
+  ok(cite.amount === amount, `${id} USA TODAY dollar stays ${amount}`)
+  ok(cite.asOf === '2025-12-01', `${id} buyout as-of is Dec. 1, 2025`)
+  ok(cite.freshness === 'stale', `${id} Dec. 1, 2025 as-of is not treated as current`)
+  ok(buyoutDescription(coach).includes(usatBuyoutSourceText()), `${id} description cites the USA TODAY buyout column`)
+  ok(!/October 8, 2025/.test(buyoutTitle(coach)), `${id} title does not keep the database update date`)
   ok(!/in force today/i.test(buyoutDescription(coach)), `${id} description does not say in force today`)
+  if (id in priorLabels) {
+    const when = priorLabels[id]
+    const footnote = priorContractFootnote(coach)
+    ok(cite.priorContract, `${id} is marked prior-contract`)
+    ok(footnote === `${coach.name} signed a newer contract${when ? ` (${when})` : ''}. The updated buyout figure is pending; the figure above reflects the prior contract.`, `${id} footnote`)
+    ok(buyoutDescription(coach).includes(footnote), `${id} description includes the footnote`)
+    ok(buyoutDescription(coach).includes('Prior-contract figure, new deal pending.'), `${id} description uses the pending note`)
+    ok(!buyoutDescription(coach).includes('That as-of date is not current.'), `${id} description drops the old stale sentence`)
+    ok(buyoutTitle(coach) === `${coach.name} buyout: ${moneyExact(amount)} as of December 1, 2025 — prior-contract figure, new deal pending | The Public Cap`, `${id} title`)
+    ok(buyoutLead(coach).includes('Prior-contract figure, new deal pending.'), `${id} lead uses the pending note`)
+  } else {
+    ok(!coach.priorContract, `${id} is not given a newer-contract footnote`)
+    ok(buyoutDescription(coach).includes('That as-of date is not current.'), `${id} description still says the date is not current`)
+    ok(buyoutTitle(coach) === `${coach.name} buyout: ${moneyExact(amount)} as of December 1, 2025 | The Public Cap`, `${id} title uses Dec. 1, 2025`)
+  }
 }
+ok(!buyouts.coaches.purdue.priorContract, 'Purdue is Barry Odom and is not footnoted as a Brohm contract')
+ok(buyouts.coaches.purdue.name === 'Barry Odom', 'Purdue row remains Barry Odom')
+ok(buyouts.coaches.purdue.overhang.amount === 25125000, 'Purdue dollar stays $25,125,000')
 const samples = {
   'south-carolina': {
     amount: 22550000,
@@ -531,6 +593,18 @@ for (const [id, sample] of Object.entries(samples)) {
   ok(shell.includes(moneyExact(sample.amount)), `${id} shell body prints the stored dollar`)
   ok(!/noindex/i.test(shell), `${id} shell is indexable`)
 }
+const rhule = buyouts.coaches.nebraska
+const rhuleRoute = buyoutShells.find((item) => item.path === '/buyout/nebraska')
+const rhuleShell = applyRouteMeta(indexHtml, rhuleRoute)
+const rhuleFootnote = priorContractFootnote(rhule)
+ok(rhuleShell.includes(`<title>${buyoutTitle(rhule)}</title>`), 'Nebraska shell title carries the pending note')
+ok(rhuleShell.includes(rhuleFootnote), 'Nebraska shell body shows the footnote')
+ok(rhuleShell.includes('USA TODAY coaches salary database'), 'Nebraska shell names the USA TODAY database')
+ok(rhuleShell.includes('buyout as of Dec. 1, 2025'), 'Nebraska shell states the buyout as-of')
+ok(rhuleShell.includes('$49,612,500'), 'Nebraska shell keeps the stored dollar')
+ok(rhuleShell.includes('prior-contract figure, new deal pending'), 'Nebraska JSON-LD description carries the pending note')
+ok(!rhuleShell.includes('October 8, 2025'), 'Nebraska shell drops October 8, 2025')
+ok(!rhuleShell.includes('That as-of date is not current'), 'Nebraska shell drops the old stale sentence')
 ok(buyoutTitle(buyouts.coaches.vanderbilt) === 'Clark Lea buyout | The Public Cap', 'pending buyout title invents no dollar')
 ok(!/\$/.test(buyoutDescription(buyouts.coaches.vanderbilt)), 'pending buyout description invents no dollar')
 ok(buyoutDescription(buyouts.coaches['south-carolina']).includes('not the buyout if fired on the desk date'), 'Beamer December 1 figure is not presented as today')

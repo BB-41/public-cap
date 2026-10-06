@@ -12,6 +12,10 @@ export const DEFAULT_SCHOOL = 'florida-state'
  */
 export const STALE_ASOF_BEFORE = '2026-01-01'
 
+/** USA TODAY football database. Page updated Oct. 8, 2025; buyout column is Dec. 1, 2025. */
+export const USAT_FOOTBALL_COACH_URL = 'https://sportsdata.usatoday.com/ncaa/salaries/football/coach'
+export const USAT_BUYOUT_ASOF = '2025-12-01'
+
 export const BUYOUT_TITLE_BRAND = ' | The Public Cap'
 
 const MONTHS = [
@@ -266,7 +270,27 @@ export function buyoutCite(coach, today = DESK_TODAY) {
     source: step?.source || null,
     confidence: step?.confidence || null,
     freshness,
+    priorContract: Boolean(coach.priorContract),
   }
+}
+
+export function isUsatFootballBuyout(cite) {
+  return cite?.source?.url === USAT_FOOTBALL_COACH_URL && cite?.asOf === USAT_BUYOUT_ASOF
+}
+
+/** Visible source line for a USA TODAY buyout column figure. */
+export function usatBuyoutSourceText() {
+  return 'USA TODAY coaches salary database, buyout as of Dec. 1, 2025'
+}
+
+/**
+ * Newer contract exists; the printed dollar is the prior USA TODAY figure.
+ * signedLabel is omitted when the repo does not record a date.
+ */
+export function priorContractFootnote(coach) {
+  if (!coach?.priorContract || !coach?.name) return null
+  const when = coach.priorContract.signedLabel ? ` (${coach.priorContract.signedLabel})` : ''
+  return `${coach.name} signed a newer contract${when}. The updated buyout figure is pending; the figure above reflects the prior contract.`
 }
 
 export function buyoutHeading(coach) {
@@ -274,11 +298,41 @@ export function buyoutHeading(coach) {
   return cite?.name ? `${cite.name} buyout` : 'Buyout'
 }
 
+/** Sentences before the source line. Dollars stay the stored cite. */
+export function buyoutLead(coach, today = DESK_TODAY) {
+  const cite = buyoutCite(coach, today)
+  if (!cite?.name) return null
+  if (cite.freshness === 'pending') {
+    return `${cite.name} buyout: no cited dollar on this desk. We do not invent a figure. A liability if fired without cause, not yearly spend.`
+  }
+  const dated = cite.asOf ? ` as of ${formatLongDate(cite.asOf)}` : ''
+  let text = `${cite.name} buyout: ${moneyExact(cite.amount)}${dated}.`
+  if (cite.priorContract) text += ' Prior-contract figure, new deal pending.'
+  else if (cite.freshness === 'stale') text += ' That as-of date is not current.'
+  else if (cite.freshness === 'later') {
+    text += ` That date is later than ${formatLongDate(today)}, so this is not the buyout if fired on the desk date.`
+  } else if (cite.freshness === 'undated') {
+    text += ' No as-of date is stored on this step, so it is not presented as current.'
+  }
+  return text
+}
+
+export function buyoutSourceSentence(coach, today = DESK_TODAY) {
+  const cite = buyoutCite(coach, today)
+  if (!cite || cite.amount == null) return null
+  if (isUsatFootballBuyout(cite)) return `Source: ${usatBuyoutSourceText()}.`
+  if (cite.source?.label) return `Source: ${cite.source.label}.`
+  return null
+}
+
 export function buyoutTitle(coach, today = DESK_TODAY) {
   const cite = buyoutCite(coach, today)
   if (!cite?.name) return `Buyout${BUYOUT_TITLE_BRAND}`
   if (cite.amount == null) return `${cite.name} buyout${BUYOUT_TITLE_BRAND}`
   const dollars = moneyExact(cite.amount)
+  if (cite.asOf && cite.priorContract) {
+    return `${cite.name} buyout: ${dollars} as of ${formatLongDate(cite.asOf)} — prior-contract figure, new deal pending${BUYOUT_TITLE_BRAND}`
+  }
   if (cite.asOf) return `${cite.name} buyout: ${dollars} as of ${formatLongDate(cite.asOf)}${BUYOUT_TITLE_BRAND}`
   return `${cite.name} buyout: ${dollars}${BUYOUT_TITLE_BRAND}`
 }
@@ -288,18 +342,13 @@ export function buyoutDescription(coach, today = DESK_TODAY) {
   if (!cite?.name) {
     return 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.'
   }
-  if (cite.freshness === 'pending') {
-    return `${cite.name} buyout: no cited dollar on this desk. We do not invent a figure. A liability if fired without cause, not yearly spend.`
-  }
-  const dated = cite.asOf ? ` as of ${formatLongDate(cite.asOf)}` : ''
-  let text = `${cite.name} buyout: ${moneyExact(cite.amount)}${dated}.`
-  if (cite.freshness === 'stale') text += ' That as-of date is not current.'
-  else if (cite.freshness === 'later') {
-    text += ` That date is later than ${formatLongDate(today)}, so this is not the buyout if fired on the desk date.`
-  } else if (cite.freshness === 'undated') {
-    text += ' No as-of date is stored on this step, so it is not presented as current.'
-  }
-  if (cite.source?.label) text += ` Source: ${cite.source.label}.`
+  const lead = buyoutLead(coach, today)
+  if (cite.freshness === 'pending') return lead
+  const footnote = priorContractFootnote(coach)
+  const source = buyoutSourceSentence(coach, today)
+  let text = lead
+  if (footnote) text += ` ${footnote}`
+  if (source) text += ` ${source}`
   text += ' If-fired overhang, not yearly spend.'
   return text
 }
@@ -316,18 +365,23 @@ function escHtml(value) {
 export function renderBuyoutStaticBody(coach, school) {
   const cite = buyoutCite(coach)
   const heading = buyoutHeading(coach)
-  const lede = buyoutDescription(coach)
-  const source = cite?.source?.url
-    ? `<a href="${escHtml(cite.source.url)}">${escHtml(cite.source.label || 'source')}</a>`
-    : cite?.source?.label
-      ? escHtml(cite.source.label)
-      : ''
-  const sourceP = source ? `\n        <p class="field-meta">Source: ${source}</p>` : ''
+  const lede = buyoutLead(coach) || buyoutDescription(coach)
+  const footnote = priorContractFootnote(coach)
+  let sourceP = ''
+  if (isUsatFootballBuyout(cite)) {
+    sourceP = `\n        <p class="field-meta">Source: <a href="${escHtml(cite.source.url)}">USA TODAY coaches salary database</a>, buyout as of Dec. 1, 2025</p>`
+  } else if (cite?.source?.url) {
+    sourceP = `\n        <p class="field-meta">Source: <a href="${escHtml(cite.source.url)}">${escHtml(cite.source.label || 'source')}</a></p>`
+  } else if (cite?.source?.label) {
+    sourceP = `\n        <p class="field-meta">Source: ${escHtml(cite.source.label)}</p>`
+  }
+  const footnoteP = footnote ? `\n        <p class="buyout-footnote">${escHtml(footnote)}</p>` : ''
+  const closer = cite?.amount != null ? ' If-fired overhang, not yearly spend.' : ''
   const schoolLink = school?.id
     ? `\n        <p class="fine"><a href="/school/${escHtml(school.id)}">${escHtml(school.name || school.id)} school page</a></p>`
     : ''
   return `<div class="page-wrap buyout-static">
         <h1 class="issue-hed">${escHtml(heading)}</h1>
-        <p class="lede">${escHtml(lede)}</p>${sourceP}${schoolLink}
+        <p class="lede">${escHtml(lede)}${closer}</p>${sourceP}${footnoteP}${schoolLink}
       </div>`
 }

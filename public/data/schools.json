@@ -368,7 +368,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -20171,7 +20171,7 @@
                 "remaining": 37500000,
                 "contractYear": "through Dec. 15, 2027",
                 "through": "2027-12-15",
-                "notes": "If UT terminates without cause on or after Dec. 15, 2025 and before Dec. 15, 2027: 75% of remaining compensation, paid monthly through Jan. 31, 2030. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025 — the last cited figure on that 75% step. Copied from buyouts.json. PDF: https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+                "notes": "If UT terminates without cause on or after Dec. 15, 2025 and before Dec. 15, 2027: 75% of remaining compensation, paid monthly through Jan. 31, 2030. Dollar is the USA TODAY if-fired overhang as of Dec. 1, 2025 — the last cited figure on that 75% step. Copied from buyouts.json. PDF: https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
               },
               {
                 "asOf": "2027-12-15",
@@ -26684,8 +26684,8 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025. BOT minutes do not publish a % or dollar calendar. Liability/overhang, not annual spend.",
+            "asOf": "2025-12-01",
+            "notes": "USA TODAY if-fired overhang as of Dec. 1, 2025. BOT minutes do not publish a % or dollar calendar. Liability/overhang, not annual spend.",
             "rule": "Packet says liquidated damages exist with mitigation/offset; no percent and no dollar staircase."
           },
           "term": {
@@ -28432,7 +28432,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -29956,7 +29956,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -31372,7 +31372,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -41166,7 +41166,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -52650,7 +52650,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -68921,7 +68921,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -78183,8 +78183,8 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025 — last cited school-side dollar before the Apr. 8, 2026 extension. 2022 EA is not treated as the current deal."
+            "asOf": "2025-12-01",
+            "notes": "USA TODAY if-fired overhang as of Dec. 1, 2025 — last cited school-side dollar before the Apr. 8, 2026 extension. 2022 EA is not treated as the current deal."
           },
           "term": {
             "confidence": "reported",
@@ -89023,7 +89023,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -90614,7 +90614,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
             "rule": "75% of remaining Base + Supplemental."
           },
@@ -106317,7 +106317,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
