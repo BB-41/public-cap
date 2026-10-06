@@ -222,7 +222,7 @@ def main():
         if line.startswith("Most NIL bands are pending"):
             blockers[i] = (
                 "Most NIL bands are pending — booked House-window cells are Louisville "
-                "(FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), "
+                "(House Year 1 spent $20.2M for Jul 1 2025–Jul 1 2026; $32.9M is the full FOIA window Mar 2025–Jul 1 2026, including $12.7M pre-cap Kentucky NIL, and is not a House Year 1 total), "
                 "Kentucky (counsel $18M, same window), UCLA and California "
                 "(CalMatters: each about $20.5M in 2025-26), Texas "
                 "(TPR: $13.5M House Year 1 YTD Jul 2025–Mar 2026). "

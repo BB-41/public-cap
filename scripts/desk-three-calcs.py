@@ -506,13 +506,17 @@ def remaining_field(school, cap, spent, *, partial_year=False, footnote=None):
         "source": "House Year 1 remaining = published $20.5M NCAA House cap minus this school’s booked House spent cell",
         "url": "https://on.ncaa.com/QA61325",
         "asOf": booked.get("asOf"),
-        "window": booked.get("window") or "2025-26",
+        "window": "2025-07-01 to 2026-07-01" if school["id"] == "louisville" else (booked.get("window") or "2025-26"),
         "spent": spent,
         "cap": cap,
         "partialYear": partial_year,
         "overhang": overhang,
         "notes": (
-            (
+            "House Year 1 spent is $20,200,000 for Jul 1, 2025–Jul 1, 2026 (Courier-Journal FOIA, Aug. 5, 2026): "
+            "the $32,900,000 full FOIA window minus the $12,700,000 pre-cap line. "
+            "Remaining is the published $20.5M cap minus that House spent cell. Residual, not a filing. Not the full $32.9M."
+            if school["id"] == "louisville"
+            else (
                 "Overhang: booked House spent is above the $20.5 million Year 1 cap. Shown, not hidden."
                 if overhang
                 else "Published House Year 1 cap minus booked House spent. Residual, not a filing."
@@ -527,8 +531,9 @@ def attach_house_remaining(schools, cap):
     by_id = {s["id"]: s for s in schools}
     footnotes = {
         "louisville": (
-            "House Year 1 remaining = $20.5M cap − $20.2M House spent "
-            "($32.9M FOIA window minus the $12.7M pre-cap line). Not the full $32.9M, not a 990."
+            "House Year 1 remaining = $20,500,000 cap − $20,200,000 House Year 1 spent "
+            "(Jul 1, 2025–Jul 1, 2026) = $300,000. House spent = $32,900,000 full FOIA window "
+            "− $12,700,000 pre-cap. Not the prior $20,270,000 desk cell. Not the full $32,900,000. Not a 990."
         ),
         "kentucky": (
             "House Year 1 remaining = $20.5M cap − $18M counsel spent. "
