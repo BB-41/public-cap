@@ -4,6 +4,7 @@
 /robots.txt /robots.txt 200
 /sitemap.xml /sitemap.xml 200
 /llms.txt /llms.txt 200
+/34af1a9e03fae2647e2d32b44b8a08a5.txt /34af1a9e03fae2647e2d32b44b8a08a5.txt 200
 
 # www → apex cannot be done here. Cloudflare Pages _redirects does not
 # support domain-level / host redirects (source must be a path). Do not
@@ -23,7 +24,12 @@
 # and school/{id}.html come from scripts/write-spa-html.mjs.
 # Old buyout share links. Static /buyout/<id>.html shells are the canonical
 # pages — do not 200-rewrite /buyout/* to /index.html (that would hide them).
-/buyout?school=:school /buyout/:school 301
+# Do not add `/buyout?school=:school /buyout/:school 301`. Cloudflare Pages
+# ignores query strings when matching a redirect source, so that rule matches
+# bare `/buyout` and 301s it to the literal path `/buyout/:school` (the
+# placeholder is never filled). `/buyout` is buyout.html, the calculator.
+# `/buyout?school=<id>` stays on that shell; Buyout.jsx replace-navigates to
+# `/buyout/<id>`. No rule may emit `/buyout/:school`.
 
 # Keep /coach-fa/* for detail URLs that are not prerendered files.
 /coach-fa/* /index.html 200

@@ -16,6 +16,7 @@ import {
   schoolIdFromPath,
 } from './lib/loadDesk.js'
 import { CURRENT_SEASON, houseFieldForSeason, houseValueForSeason, parseSeasonParam } from './lib/seasons.js'
+import { HOT_SEAT_DESCRIPTION, HOT_SEAT_PATH, HOT_SEAT_TITLE } from './lib/buyout.js'
 import {
   applyDocumentMeta,
   coachFaTitle,
@@ -34,6 +35,7 @@ const About = lazy(() => import('./pages/About.jsx'))
 const Tape = lazy(() => import('./pages/Tape.jsx'))
 const Tv = lazy(() => import('./pages/Tv.jsx'))
 const Buyout = lazy(() => import('./pages/Buyout.jsx'))
+const HotSeat = lazy(() => import('./pages/HotSeat.jsx'))
 const CoachFa = lazy(() => import('./pages/CoachFa.jsx'))
 const GuaranteeGames = lazy(() => import('./pages/GuaranteeGames.jsx'))
 const CheckbookBowl = lazy(() => import('./pages/CheckbookBowl.jsx'))
@@ -291,7 +293,14 @@ export default function App() {
       return
     }
     if (kind === 'buyout') {
-      if (location.pathname === '/buyout') {
+      if (location.pathname === HOT_SEAT_PATH) {
+        applyDocumentMeta({
+          title: HOT_SEAT_TITLE,
+          description: HOT_SEAT_DESCRIPTION,
+          path: HOT_SEAT_PATH,
+          jsonLd: 'webpage',
+        })
+      } else if (location.pathname === '/buyout') {
         applyDocumentMeta({
           title: titleFromPath('/buyout'),
           description: descriptionFromPath('/buyout'),
@@ -392,6 +401,7 @@ export default function App() {
             <Route path="/reported-nil" element={<ReportedNil schools={data?.schools} />} />
             <Route path="/tape" element={<Tape items={tape?.items || []} season={season} />} />
             <Route path="/tv" element={<Tv />} />
+            <Route path="/buyout/hot-seat" element={<HotSeat />} />
             <Route path="/buyout" element={<Buyout />} />
             <Route path="/buyout/:schoolId" element={<Buyout />} />
             <Route path="/coach-fa" element={<CoachFa />} />

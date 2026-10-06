@@ -798,7 +798,10 @@ function Field({ field, fallback = '—' }) {
         </>
       ) : (
         <div className="field-val">
-          {moneyCited(field.value, { approximate: field.approximate })} <i className={`dot ${field.confidence}`} />
+          {moneyCited(field.value, { approximate: field.approximate })}
+          {field.firedLabel ? <span className="pay-year"> · {field.firedLabel}</span> : null}
+          {' '}
+          <i className={`dot ${field.confidence}`} />
         </div>
       )}
       <FieldMeta field={field} />

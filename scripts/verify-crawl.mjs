@@ -8,6 +8,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { indexNowPayload } from './indexnow.mjs'
 import { SITE_ORIGIN, STATIC_PATHS, sitemapPaths, writeSitemap } from './write-sitemap.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
@@ -73,7 +74,10 @@ ok(schoolLocs.length === 68, 'sitemap lists 68 school URLs')
 ok(locs.includes(`${SITE_ORIGIN}/about`), 'sitemap lists /about')
 ok(locs.includes(`${SITE_ORIGIN}/tv`), 'sitemap lists /tv')
 ok(locs.includes(`${SITE_ORIGIN}/buyout`), 'sitemap lists /buyout')
-ok(locs.filter((u) => u.includes('/buyout/')).length === 68, 'sitemap lists 68 school buyout URLs')
+ok(locs.includes(`${SITE_ORIGIN}/buyout/hot-seat`), 'sitemap lists /buyout/hot-seat')
+const buyoutLocs = locs.filter((u) => u.includes('/buyout/'))
+ok(buyoutLocs.length === 69, 'sitemap lists 68 school buyout URLs plus the hot-seat hub')
+ok(buyoutLocs.filter((u) => !u.endsWith('/buyout/hot-seat')).length === 68, 'sitemap lists 68 school buyout URLs')
 for (const id of ['south-carolina', 'florida-state', 'rutgers']) {
   ok(locs.includes(`${SITE_ORIGIN}/buyout/${id}`), `sitemap lists /buyout/${id}`)
 }
@@ -109,8 +113,34 @@ ok(
 ok(!existsSync(join(root, 'functions/_middleware.js')), 'no functions/_middleware.js (would disable _redirects)')
 ok(!/\/school\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /school/* to /index.html (crawlers would get homepage title)')
 ok(/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects keeps /coach-fa/* splat')
-ok(/\/buyout\?school=:school\s+\/buyout\/:school\s+301/.test(redirects), '_redirects 301s /buyout?school=:school to /buyout/:school')
+const redirectRules = redirects.split('\n').filter((line) => line.trim() && !line.trim().startsWith('#'))
+ok(
+  !redirectRules.some((line) => /\/buyout\/:school/.test(line)),
+  '_redirects has no rule that writes the literal path /buyout/:school',
+)
+ok(
+  !redirectRules.some((line) => /^\s*\/buyout(\?|\s|$)/.test(line)),
+  '_redirects does not match /buyout (query-string placeholders would 301 the calculator)',
+)
 ok(!/\/buyout\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /buyout/* to /index.html')
+const indexNowKey = '34af1a9e03fae2647e2d32b44b8a08a5'
+ok(existsSync(join(root, 'public', `${indexNowKey}.txt`)), 'IndexNow key file is in public/')
+ok(readFileSync(join(root, 'public', `${indexNowKey}.txt`), 'utf8').trim() === indexNowKey, 'IndexNow key file body is the key')
+ok(new RegExp(`/${indexNowKey}\\.txt\\s+/${indexNowKey}\\.txt\\s+200`).test(redirects), '_redirects identity-proxies the IndexNow key file')
+ok(new RegExp(`/${indexNowKey}\\.txt[\\s\\S]*Content-Type:\\s*text\\/plain`, 'i').test(headers), '_headers sets the IndexNow key file to text/plain')
+ok(!locs.some((u) => u.includes(indexNowKey)), 'sitemap does not list the IndexNow key file')
+const indexNow = indexNowPayload(xml)
+ok(indexNow.urlList.includes(`${SITE_ORIGIN}/buyout/hot-seat`), 'IndexNow list includes the hot-seat hub')
+ok(indexNow.urlList.filter((u) => u.includes('/school/')).length === 68, 'IndexNow list includes 68 school pages')
+ok(
+  indexNow.urlList.filter((u) => /\/buyout\/[^/]+$/.test(u) && !u.endsWith('/buyout/hot-seat')).length === 68,
+  'IndexNow list includes 68 school buyout pages',
+)
+ok(indexNow.keyLocation === `${SITE_ORIGIN}/${indexNowKey}.txt`, 'IndexNow keyLocation is the public key file')
+const buyoutPage = readFileSync(join(root, 'src/pages/Buyout.jsx'), 'utf8')
+ok(buyoutPage.includes('buyoutPath(querySchool)'), 'buyout page replace-navigates ?school= to /buyout/<id>')
+ok(!buyoutPage.includes('/buyout/:school'), 'buyout page never navigates to /buyout/:school')
+ok(!buyoutPage.includes("'/buyout/' + ':school'") && !buyoutPage.includes('`/buyout/:school`'), 'buyout page has no literal :school path')
 ok(!/Disallow:\s*\/reported-nil/i.test(robots), 'robots.txt does not Disallow /reported-nil')
 for (const path of ['/reported-nil', '/compare', '/methods', '/about', '/nil-101', '/tape', '/tv', '/buyout', '/coach-fa', '/guarantee-games', '/checkbook-bowl']) {
   ok(
@@ -161,6 +191,12 @@ if (process.env.PUBLIC_DIR) {
   ok(schianoHtml.includes('not the buyout if fired on the desk date'), 'dist Schiano page does not present the October 4 cite as the desk date')
   ok(!schianoHtml.includes('$23,735,156'), 'dist Schiano page does not keep the retired USA TODAY overhang')
   ok(schianoHtml.includes('data-seo="stamped"'), 'dist buyout pages are stamped')
+  const hotSeatHtml = readFileSync(join(publicDir, 'buyout/hot-seat.html'), 'utf8')
+  ok(/<title>Hot-seat coach buyouts \| The Public Cap<\/title>/.test(hotSeatHtml), 'dist buyout/hot-seat.html has the hub title')
+  ok(hotSeatHtml.includes('https://thepubliccap.com/buyout/hot-seat'), 'dist hot-seat canonical is the hub')
+  ok(hotSeatHtml.includes('href="/buyout/purdue"'), 'dist hot-seat links Purdue')
+  ok(hotSeatHtml.includes('href="/school/colorado"'), 'dist hot-seat links Colorado')
+  ok(!/noindex/i.test(hotSeatHtml), 'dist hot-seat page is not noindex')
 }
 
 const failed = checks.filter((c) => !c.ok)

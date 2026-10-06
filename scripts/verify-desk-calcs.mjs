@@ -101,6 +101,7 @@ const DERIVED_STEP_IDS = [
   'missouri', 'rutgers',
 ]
 const COPIED_STEP_IDS = ['tennessee', 'lsu']
+const ARTICLE_STEP_IDS = ['colorado']
 for (const s of data.schools) {
   const steps = s.coaches.football.buyout?.steps || []
   if (PDF_STEP_IDS.includes(s.id)) {
@@ -112,10 +113,18 @@ for (const s of data.schools) {
     ok(steps.every((st) => /Derived from|Labeled derived/i.test(st.notes)), `${s.id} steps labeled derived`)
   } else if (COPIED_STEP_IDS.includes(s.id)) {
     ok(steps.length > 0, `${s.id} copied existing buyouts.json steps`)
+  } else if (ARTICLE_STEP_IDS.includes(s.id)) {
+    ok(steps.length > 0, `${s.id} cited article step tape present`)
+    ok(steps.every((st) => st.asOf && st.firedLabel && st.remaining != null), `${s.id} article steps carry a firing condition and a remaining dollar`)
   } else {
     ok(steps.length === 0, `${s.id} has no invented staircase`)
   }
 }
+ok(byId.colorado.coaches.football.buyout.value === 33_000_000, 'Sanders headline is $33,000,000 if fired in 2026')
+ok(byId.colorado.coaches.football.buyout.steps[0].remaining === 33_000_000, 'Sanders 2026 step is $33,000,000')
+ok(byId.colorado.coaches.football.buyout.steps[1].remaining === 25_500_000, 'Sanders 2027 step is $25,500,000')
+ok(byId.purdue.coaches.football.buyout.value === 20_625_000, 'Odom headline is $20,625,000 if fired Dec. 1, 2026')
+ok((byId.purdue.coaches.football.buyout.steps || []).length === 0, 'Purdue keeps a single firing-date overhang, not a Saturday staircase')
 ok(byId['florida-state'].coaches.football.buyout.steps[0].remaining === 58_192_500, 'Norvell CY7 remaining')
 ok(byId['florida-state'].coaches.football.buyout.value === 49_353_349, 'Norvell headline is Sep 16 remaining')
 ok(byId['florida-state'].coaches.football.buyout.asOf === '2026-09-16', 'Norvell headline asOf is 2026-09-16')

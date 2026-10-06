@@ -41,8 +41,21 @@ import {
   nil101Model,
   sectionAnswer,
 } from '../src/lib/nil101Guide.js'
-import { buyoutCite, buyoutDescription, buyoutTitle } from '../src/lib/buyout.js'
-import { applyRouteMeta, loadBuyoutShells, loadSchoolSeoExtras, loadSchoolShells, routeShell } from './write-spa-html.mjs'
+import {
+  HOT_SEAT_DESCRIPTION,
+  HOT_SEAT_IDS,
+  HOT_SEAT_TITLE,
+  buyoutCite,
+  buyoutDescription,
+  buyoutLead,
+  buyoutStaleness,
+  buyoutTitle,
+  priorContractFootnote,
+  relatedBuyoutSchools,
+  renderHotSeatStaticBody,
+  usatBuyoutSourceText,
+} from '../src/lib/buyout.js'
+import { applyRouteMeta, loadBuyoutShells, loadHotSeatShell, loadSchoolSeoExtras, loadSchoolShells, routeShell } from './write-spa-html.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const read = (rel) => readFileSync(join(root, rel), 'utf8')
@@ -489,16 +502,95 @@ ok(indexHtml.includes("p === '/buyout' || p.indexOf('/buyout/') === 0"), 'index.
 const buyouts = JSON.parse(read('data/buyouts.json'))
 const buyoutShells = loadBuyoutShells()
 ok(buyoutShells.length === 68, 'writer emits 68 buyout shells')
-const staleIds = ['georgia', 'ohio-state', 'alabama', 'texas', 'indiana', 'purdue']
-for (const id of staleIds) {
+const usatBuyouts = {
+  alabama: 60843750,
+  georgia: 105107583,
+  'mississippi-state': 11006250,
+  texas: 60307500,
+  'texas-am': 21875000,
+  illinois: 49491667,
+  indiana: 56700000,
+  iowa: 25729167,
+  minnesota: 26600000,
+  nebraska: 49612500,
+  'ohio-state': 70916667,
+  washington: 33686666,
+  'georgia-tech': 11123333,
+  louisville: 33633333,
+  'nc-state': 13129456,
+  virginia: 11175000,
+  arizona: 10650000,
+  'arizona-state': 24683333,
+  cincinnati: 12008333,
+  kansas: 22930000,
+  'texas-tech': 9940761,
+  ucf: 13793750,
+  'west-virginia': 7645833,
+}
+const priorLabels = {
+  nebraska: 'October 30, 2025',
+  'georgia-tech': 'December 2025',
+  'texas-am': 'February 2026',
+  'arizona-state': 'February 2026',
+  minnesota: 'February 2026',
+  louisville: 'August 10, 2026',
+  arizona: 'February 2026',
+  'texas-tech': 'December 2025',
+  'mississippi-state': 'December 2025',
+  georgia: null,
+  texas: null,
+  kansas: null,
+  ucf: null,
+}
+ok(Object.keys(usatBuyouts).length === 23, '23 USA TODAY football buyout overhangs remain after Purdue, Colorado, and Maryland were rebooked')
+for (const [id, amount] of Object.entries(usatBuyouts)) {
   const coach = buyouts.coaches[id]
   const cite = buyoutCite(coach)
-  ok(cite.asOf === '2025-10-08', `${id} cite stays the stored 2025-10-08 as-of`)
-  ok(cite.freshness === 'stale', `${id} as-of is not treated as current`)
-  ok(buyoutTitle(coach) === `${coach.name} buyout: ${moneyExact(cite.amount)} as of October 8, 2025 | The Public Cap`, `${id} title uses the stored dollar and date`)
-  ok(buyoutDescription(coach).includes('That as-of date is not current.'), `${id} description says the date is not current`)
+  ok(cite.amount === amount, `${id} USA TODAY dollar stays ${amount}`)
+  ok(cite.asOf === '2025-12-01', `${id} buyout as-of is Dec. 1, 2025`)
+  ok(cite.freshness === 'stale', `${id} Dec. 1, 2025 as-of is not treated as current`)
+  ok(buyoutDescription(coach).includes(usatBuyoutSourceText()), `${id} description cites the USA TODAY buyout column`)
+  ok(!/October 8, 2025/.test(buyoutTitle(coach)), `${id} title does not keep the database update date`)
   ok(!/in force today/i.test(buyoutDescription(coach)), `${id} description does not say in force today`)
+  if (id in priorLabels) {
+    const when = priorLabels[id]
+    const footnote = priorContractFootnote(coach)
+    ok(cite.priorContract, `${id} is marked prior-contract`)
+    ok(footnote === `${coach.name} signed a newer contract${when ? ` (${when})` : ''}. The updated buyout figure is pending; the figure above reflects the prior contract.`, `${id} footnote`)
+    ok(buyoutDescription(coach).includes(footnote), `${id} description includes the footnote`)
+    ok(buyoutDescription(coach).includes('Prior-contract figure, new deal pending.'), `${id} description uses the pending note`)
+    ok(!buyoutDescription(coach).includes('That as-of date is not current.'), `${id} description drops the old stale sentence`)
+    ok(buyoutTitle(coach) === `${coach.name} buyout: ${moneyExact(amount)} as of December 1, 2025 — prior-contract figure, new deal pending | The Public Cap`, `${id} title`)
+    ok(buyoutLead(coach).includes('Prior-contract figure, new deal pending.'), `${id} lead uses the pending note`)
+  } else {
+    ok(!coach.priorContract, `${id} is not given a newer-contract footnote`)
+    ok(buyoutDescription(coach).includes('That as-of date is not current.'), `${id} description still says the date is not current`)
+    ok(buyoutTitle(coach) === `${coach.name} buyout: ${moneyExact(amount)} as of December 1, 2025 | The Public Cap`, `${id} title uses Dec. 1, 2025`)
+  }
 }
+ok(!buyouts.coaches.purdue.priorContract, 'Purdue is Barry Odom and is not footnoted as a Brohm contract')
+ok(buyouts.coaches.purdue.name === 'Barry Odom', 'Purdue row remains Barry Odom')
+ok(buyouts.coaches.purdue.overhang.amount === 20625000, 'Purdue headline is $20,625,000')
+ok(buyouts.coaches.purdue.overhang.firedLabel === 'if fired Dec. 1, 2026', 'Purdue figure is if fired Dec. 1, 2026')
+ok(buyouts.coaches.purdue.overhang.asOf === '2026-12-01', 'Purdue firing date is Dec. 1, 2026')
+ok(buyouts.coaches.purdue.overhang.source.url === 'https://sports.yahoo.com/much-purdue-paying-football-coach-132324182.html', 'Purdue source is the Yahoo syndication of the IndyStar')
+ok(buyoutCite(buyouts.coaches.purdue).freshness === 'later', 'Purdue Dec. 1, 2026 figure is later than the desk date')
+ok(buyoutTitle(buyouts.coaches.purdue) === 'Barry Odom buyout: $20,625,000 if fired Dec. 1, 2026 | The Public Cap', 'Purdue title uses the firing condition')
+ok(buyoutDescription(buyouts.coaches.purdue).includes('Indianapolis Star (Nathan Baird, Dec. 10, 2024)'), 'Purdue description names the IndyStar date')
+ok(buyoutStaleness(buyouts.coaches.purdue) == null, 'Purdue Dec. 1, 2026 figure is not an age badge')
+ok(buyouts.coaches.colorado.tape === 'steps', 'Colorado tape is the Denver Post year steps')
+ok(buyouts.coaches.colorado.steps[0].amount === 33000000, 'Colorado 2026 step is $33,000,000')
+ok(buyouts.coaches.colorado.steps[0].firedLabel === 'if fired in 2026', 'Colorado 2026 step is if fired in 2026')
+ok(buyouts.coaches.colorado.steps[1].amount === 25500000, 'Colorado 2027 step is $25,500,000')
+ok(buyouts.coaches.colorado.steps[1].firedLabel === 'if fired in 2027', 'Colorado 2027 step is if fired in 2027')
+ok(buyoutCite(buyouts.coaches.colorado).amount === 33000000, 'Colorado headline is the 2026 Denver Post figure')
+ok(buyouts.coaches.colorado.steps[0].source.url === 'https://www.denverpost.com/2026/02/28/deion-sanders-cu-buffs-football-contract-buyout-coach-prime/', 'Colorado source is the Denver Post')
+ok(buyoutTitle(buyouts.coaches.colorado) === 'Deion Sanders buyout: $33,000,000 if fired in 2026 | The Public Cap', 'Colorado title uses if fired in 2026')
+ok(buyoutDescription(buyouts.coaches.colorado).includes('$25,500,000 if fired in 2027'), 'Colorado description includes the 2027 step')
+ok(!buyoutDescription(buyouts.coaches.colorado).includes('33,625,000'), 'Colorado description drops the USA TODAY dollar')
+ok(buyoutStaleness(buyouts.coaches.colorado) == null, 'Colorado Feb. 28, 2026 cite is inside 9 months')
+ok(buyouts.coaches.nebraska.overhang.amount === 49612500, 'Nebraska dollar stays $49,612,500')
+ok(buyouts.coaches.nebraska.contract.url.includes('docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule'), 'Nebraska contract link is the university PDF')
 const samples = {
   'south-carolina': {
     amount: 22550000,
@@ -533,11 +625,86 @@ for (const [id, sample] of Object.entries(samples)) {
   ok(shell.includes(moneyExact(sample.amount)), `${id} shell body prints the stored dollar`)
   ok(!/noindex/i.test(shell), `${id} shell is indexable`)
 }
+const rhule = buyouts.coaches.nebraska
+const rhuleRoute = buyoutShells.find((item) => item.path === '/buyout/nebraska')
+const rhuleShell = applyRouteMeta(indexHtml, rhuleRoute)
+const rhuleFootnote = priorContractFootnote(rhule)
+ok(rhuleShell.includes(`<title>${buyoutTitle(rhule)}</title>`), 'Nebraska shell title carries the pending note')
+ok(rhuleShell.includes(rhuleFootnote), 'Nebraska shell body shows the footnote')
+ok(rhuleShell.includes('USA TODAY coaches salary database'), 'Nebraska shell names the USA TODAY database')
+ok(rhuleShell.includes('buyout as of Dec. 1, 2025'), 'Nebraska shell states the buyout as-of')
+ok(rhuleShell.includes('$49,612,500'), 'Nebraska shell keeps the stored dollar')
+ok(rhuleShell.includes('prior-contract figure, new deal pending'), 'Nebraska JSON-LD description carries the pending note')
+ok(!rhuleShell.includes('October 8, 2025'), 'Nebraska shell drops October 8, 2025')
+ok(!rhuleShell.includes('That as-of date is not current'), 'Nebraska shell drops the old stale sentence')
 ok(buyoutTitle(buyouts.coaches.vanderbilt) === 'Clark Lea buyout | The Public Cap', 'pending buyout title invents no dollar')
 ok(!/\$/.test(buyoutDescription(buyouts.coaches.vanderbilt)), 'pending buyout description invents no dollar')
 ok(buyoutDescription(buyouts.coaches['south-carolina']).includes('not the buyout if fired on the desk date'), 'Beamer December 1 figure is not presented as today')
 ok(buyoutDescription(buyouts.coaches.rutgers).includes('not the buyout if fired on the desk date'), 'Schiano October 4 figure is not presented as the desk date')
 ok(buyoutCite(buyouts.coaches.rutgers).freshness === 'later', 'Schiano October 4 as-of is later than the desk date')
+ok(buyoutStaleness(buyouts.coaches.nebraska)?.kind === 'prior-contract', 'Nebraska staleness is the prior-contract badge')
+ok(buyoutStaleness(buyouts.coaches.nebraska)?.label === 'Prior-contract figure, new deal pending', 'Nebraska badge matches the pending footnote')
+ok(buyoutStaleness(buyouts.coaches.maryland) == null, 'Maryland Washington Times figure has no 9-month badge')
+ok(buyouts.coaches.maryland.overhang.amount === 9950000, 'Maryland buyout is the Washington Times $9,950,000')
+ok(buyouts.coaches.maryland.overhang.asOf === '2026-09-24', 'Maryland buyout as-of is September 24, 2026')
+ok(buyouts.coaches.maryland.overhang.source.url === 'https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/', 'Maryland buyout source is the Washington Times')
+ok(!buyouts.coaches.maryland.priorContract, 'Maryland is not a prior-contract USA TODAY footnote')
+ok(buyoutCite(buyouts.coaches.maryland).freshness === 'later', 'Maryland September 24 as-of is later than the desk date')
+ok(buyoutStaleness(buyouts.coaches['florida-state']) == null, 'Norvell desk-date figure has no staleness badge')
+ok(rhuleShell.includes('data-buyout-staleness="prior-contract"'), 'Nebraska shell exposes prior-contract staleness')
+ok(rhuleShell.includes('Prior-contract figure, new deal pending'), 'Nebraska shell shows the staleness badge')
+ok(rhuleShell.includes('docs.nebraska.edu'), 'Nebraska shell links the university employment agreement')
+ok(rhuleShell.includes('href="/buyout/hot-seat"'), 'Nebraska shell links the hot-seat hub')
+ok(rhuleShell.includes('href="/school/nebraska"'), 'Nebraska shell links the school page')
+const schoolsForLinks = JSON.parse(read('public/data/schools.json')).schools
+for (const coach of buyoutShells) {
+  const id = coach.path.split('/')[2]
+  const shell = applyRouteMeta(indexHtml, coach)
+  ok(shell.includes('href="/buyout/hot-seat"'), `${id} shell links the hot-seat hub`)
+  ok(shell.includes(`href="/school/${id}"`), `${id} shell links its school page`)
+  const peers = relatedBuyoutSchools(id, schoolsForLinks)
+  ok(peers.length >= 4 && peers.length <= 5, `${id} has 4–5 related buyout peers`)
+  ok(shell.includes(`href="/buyout/${peers[0].id}"`), `${id} shell links a related buyout`)
+}
+const hub = loadHotSeatShell()
+const hubShell = applyRouteMeta(indexHtml, hub)
+ok(hub.title === HOT_SEAT_TITLE, 'hot-seat title')
+ok(hub.description === HOT_SEAT_DESCRIPTION, 'hot-seat description')
+ok(hubShell.includes(`<title>${HOT_SEAT_TITLE}</title>`), 'hot-seat shell title')
+ok(hubShell.includes(HOT_SEAT_DESCRIPTION), 'hot-seat shell description')
+ok(hubShell.includes('https://thepubliccap.com/buyout/hot-seat'), 'hot-seat shell canonical')
+ok((hubShell.match(/<h1\b/g) || []).length === 1, 'hot-seat shell has one h1')
+ok(!/noindex/i.test(hubShell), 'hot-seat shell is indexable')
+ok(hubShell.includes('data-seo="stamped"'), 'hot-seat shell is stamped')
+for (const id of HOT_SEAT_IDS) {
+  ok(hubShell.includes(`href="/buyout/${id}"`), `hot-seat shell links /buyout/${id}`)
+  ok(hubShell.includes(`href="/school/${id}"`), `hot-seat shell links /school/${id}`)
+}
+ok(hubShell.includes('$20,625,000'), 'hot-seat shell prints the Purdue dollar')
+ok(hubShell.includes('if fired Dec. 1, 2026'), 'hot-seat shell prints the Purdue firing condition')
+ok(hubShell.includes('$33,000,000'), 'hot-seat shell prints the Colorado 2026 dollar')
+ok(hubShell.includes('$25,500,000') === false, 'hot-seat hub headline row is the in-force Colorado step')
+ok(hubShell.includes('if fired in 2026'), 'hot-seat shell prints if fired in 2026')
+ok(hubShell.includes('$60,307,500'), 'hot-seat shell keeps the stored Sarkisian dollar')
+ok(!hubShell.includes('$36,500,000') && !hubShell.includes('$36.5'), 'hot-seat shell does not book a fan-site Sarkisian dollar')
+ok(hubShell.includes('data-buyout-staleness="prior-contract"'), 'hot-seat shell marks the prior-contract row')
+ok(!hubShell.includes('data-buyout-staleness="older-than-9-months"'), 'hot-seat shell drops the Maryland 9-month badge')
+ok(hubShell.includes('$9,950,000'), 'hot-seat shell prints the Washington Times Maryland dollar')
+const mdRow = (hubShell.split('data-school="maryland"')[1] || '').split('</tr>')[0]
+ok(mdRow.includes('$9,950,000'), 'Maryland hot-seat row prints $9,950,000')
+ok(mdRow.includes('September 24, 2026'), 'Maryland hot-seat row uses the Washington Times date')
+ok(mdRow.includes('washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/'), 'Maryland hot-seat row links the Washington Times')
+ok(!mdRow.includes('older-than-9-months'), 'Maryland hot-seat row has no 9-month badge')
+ok(!mdRow.includes('December 1, 2025') && !mdRow.includes('Dec. 1, 2025'), 'Maryland hot-seat row drops the Dec. 1, 2025 stamp')
+ok(!mdRow.includes('13,395,417'), 'Maryland hot-seat row drops the USA TODAY dollar')
+ok(renderHotSeatStaticBody({ coaches: {} }, []).includes('>Pending<'), 'hot-seat says pending when a coach has no cited dollar')
+const purdueSchool = schoolsForLinks.find((s) => s.id === 'purdue')
+const coloSchool = schoolsForLinks.find((s) => s.id === 'colorado')
+ok(purdueSchool.coaches.football.buyout.value === 20625000, 'Purdue school card books $20,625,000')
+ok(purdueSchool.coachesByYear['2026'].football.buyout.value === 20625000, 'Purdue 2026 card books $20,625,000')
+ok(coloSchool.coaches.football.buyout.value === 33000000, 'Colorado school card books $33,000,000')
+ok(coloSchool.coachesByYear['2026'].football.buyout.value === 33000000, 'Colorado 2026 card books $33,000,000')
+ok(coloSchool.coaches.football.buyout.steps[1].remaining === 25500000, 'Colorado school tape keeps the 2027 step')
 
 const failed = checks.filter((c) => !c.ok)
 console.log(`${checks.length - failed.length}/${checks.length} checks passed`)

@@ -6,7 +6,7 @@
 import { CURRENT_SEASON } from './seasons.js'
 import { money, moneyExact, moneyRange, winsPerM } from './format.js'
 import { isPlayerHash, isPosHash } from './nilHistory.js'
-import { buyoutDescription, buyoutTitle } from './buyout.js'
+import { HOT_SEAT_DESCRIPTION, HOT_SEAT_PATH, HOT_SEAT_TITLE, buyoutDescription, buyoutTitle } from './buyout.js'
 import { schoolSerpDescription } from './schoolSeo.js'
 
 export const DEFAULT_TITLE = 'Public Cap — Capacity vs House cap vs booked NIL'
@@ -216,6 +216,11 @@ function upsertMeta(attr, key, content) {
   el.setAttribute('content', content)
 }
 
+function removeMeta(attr, key) {
+  if (typeof document === 'undefined') return
+  document.head.querySelector(`meta[${attr}="${key}"]`)?.remove()
+}
+
 function upsertCanonical(href) {
   if (typeof document === 'undefined') return
   let el = document.head.querySelector('link[rel="canonical"]')
@@ -237,7 +242,7 @@ function siteJsonLd() {
   }
 }
 
-function upsertRouteJsonLd(kind, { title, description, href, schoolName, faq }) {
+function upsertRouteJsonLd(kind, { title, description, href, schoolName, faq, staleness }) {
   if (typeof document === 'undefined') return
   // NIL 101 writes FAQPage + Article from the shared guide after the caps load.
   if (kind === 'preserve') return
@@ -272,6 +277,13 @@ function upsertRouteJsonLd(kind, { title, description, href, schoolName, faq }) 
     description: description || PAGE_DESCRIPTIONS.school,
     url: href,
     isPartOf: siteJsonLd(),
+  }
+  if (staleness) {
+    webpage.additionalProperty = {
+      '@type': 'PropertyValue',
+      name: 'buyoutStaleness',
+      value: staleness,
+    }
   }
   if (kind === 'school' && schoolName) {
     const graph = [
@@ -309,7 +321,7 @@ function upsertRouteJsonLd(kind, { title, description, href, schoolName, faq }) 
 }
 
 /** Set document title, description, matching OG/Twitter tags, and a canonical URL. */
-export function applyDocumentMeta({ title, path, description, jsonLd = false, image, schoolName, faq }) {
+export function applyDocumentMeta({ title, path, description, jsonLd = false, image, schoolName, faq, staleness = null }) {
   const href = canonicalUrl(path)
   const img = image || ogImageFromPath(path)
   if (typeof document === 'undefined') return href
@@ -327,7 +339,9 @@ export function applyDocumentMeta({ title, path, description, jsonLd = false, im
     upsertMeta('name', 'twitter:description', description)
   }
   upsertCanonical(href)
-  upsertRouteJsonLd(jsonLd, { title, description, href, schoolName, faq })
+  if (staleness) upsertMeta('name', 'buyout-staleness', staleness)
+  else removeMeta('name', 'buyout-staleness')
+  upsertRouteJsonLd(jsonLd, { title, description, href, schoolName, faq, staleness })
   return href
 }
 
@@ -398,6 +412,7 @@ export function titleFromPath(pathname, { season, schoolName, compareNames, coac
   if (p === '/tape') return PAGE_TITLES.tape
   if (p === '/methods') return PAGE_TITLES.methods
   if (p === '/about') return PAGE_TITLES.about
+  if (p === HOT_SEAT_PATH) return HOT_SEAT_TITLE
   if (p === '/buyout' || p.startsWith('/buyout/')) {
     if (p.startsWith('/buyout/') && buyoutCoach) return buyoutTitle(buyoutCoach)
     return PAGE_TITLES.buyout
@@ -426,6 +441,7 @@ export function descriptionFromPath(pathname, { school, schoolName, coachName, y
   if (p === '/tape') return PAGE_DESCRIPTIONS.tape
   if (p === '/methods') return PAGE_DESCRIPTIONS.methods
   if (p === '/about') return PAGE_DESCRIPTIONS.about
+  if (p === HOT_SEAT_PATH) return HOT_SEAT_DESCRIPTION
   if (p === '/buyout' || p.startsWith('/buyout/')) {
     if (p.startsWith('/buyout/') && buyoutCoach) return buyoutDescription(buyoutCoach)
     return PAGE_DESCRIPTIONS.buyout

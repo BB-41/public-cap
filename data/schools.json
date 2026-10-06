@@ -368,7 +368,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -20171,7 +20171,7 @@
                 "remaining": 37500000,
                 "contractYear": "through Dec. 15, 2027",
                 "through": "2027-12-15",
-                "notes": "If UT terminates without cause on or after Dec. 15, 2025 and before Dec. 15, 2027: 75% of remaining compensation, paid monthly through Jan. 31, 2030. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025 — the last cited figure on that 75% step. Copied from buyouts.json. PDF: https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+                "notes": "If UT terminates without cause on or after Dec. 15, 2025 and before Dec. 15, 2027: 75% of remaining compensation, paid monthly through Jan. 31, 2030. Dollar is the USA TODAY if-fired overhang as of Dec. 1, 2025 — the last cited figure on that 75% step. Copied from buyouts.json. PDF: https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
               },
               {
                 "asOf": "2027-12-15",
@@ -26684,8 +26684,8 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025. BOT minutes do not publish a % or dollar calendar. Liability/overhang, not annual spend.",
+            "asOf": "2025-12-01",
+            "notes": "USA TODAY if-fired overhang as of Dec. 1, 2025. BOT minutes do not publish a % or dollar calendar. Liability/overhang, not annual spend.",
             "rule": "Packet says liquidated damages exist with mitigation/offset; no percent and no dollar staircase."
           },
           "term": {
@@ -28432,7 +28432,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -29956,7 +29956,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -37948,10 +37948,24 @@
             "yearsRemaining": 7,
             "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Eight-year deal through Jan. 31, 2033. CFP appearance adds $1 million to each remaining contract year."
           },
-          "contractUrl": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045",
+          "contractUrl": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf",
           "contract": {
-            "label": "KETV — Rhule contract extension (Oct. 30, 2025)",
-            "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+            "label": "University of Nebraska \u2014 Coach Matt Rhule Employment Agreement",
+            "url": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf",
+            "files": [
+              {
+                "kind": "employment-agreement",
+                "date": "2025-10-30",
+                "label": "Coach Matt Rhule Employment Agreement (university PDF)",
+                "url": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf"
+              },
+              {
+                "kind": "news",
+                "date": "2025-10-30",
+                "label": "KETV \u2014 Rhule contract extension (Oct. 30, 2025)",
+                "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+              }
+            ]
           }
         },
         "mbb": {
@@ -38577,10 +38591,24 @@
               "yearsRemaining": 7,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Eight-year deal through Jan. 31, 2033. CFP appearance adds $1 million to each remaining contract year."
             },
-            "contractUrl": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045",
+            "contractUrl": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf",
             "contract": {
-              "label": "KETV — Rhule contract extension (Oct. 30, 2025)",
-              "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+              "label": "University of Nebraska \u2014 Coach Matt Rhule Employment Agreement",
+              "url": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf",
+              "files": [
+                {
+                  "kind": "employment-agreement",
+                  "date": "2025-10-30",
+                  "label": "Coach Matt Rhule Employment Agreement (university PDF)",
+                  "url": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf"
+                },
+                {
+                  "kind": "news",
+                  "date": "2025-10-30",
+                  "label": "KETV \u2014 Rhule contract extension (Oct. 30, 2025)",
+                  "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+                }
+              ]
             }
           },
           "mbb": {
@@ -41206,7 +41234,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -46277,14 +46305,15 @@
             ]
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
-            "source": "Indianapolis Star quoting Purdue Athletics contract-elements summary",
-            "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
-            "asOf": null,
-            "notes": "School-side without-cause is 75% of remaining base. We do not invent the remainder.",
-            "rule": "75% of remaining base salary (school summary quoted by IndyStar).",
-            "coachSide": "Coach-side: $5,000,000 if Odom leaves Jan. 1–Dec. 31, 2026."
+            "value": 20625000,
+            "confidence": "reported",
+            "source": "Indianapolis Star (Nathan Baird, Dec. 10, 2024), syndicated by Yahoo Sports \u2014 if fired Dec. 1, 2026",
+            "url": "https://sports.yahoo.com/much-purdue-paying-football-coach-132324182.html",
+            "asOf": "2026-12-01",
+            "firedLabel": "if fired Dec. 1, 2026",
+            "notes": "If fired on Dec. 1 after his second season (Dec. 1, 2026): $20,625,000. The Indianapolis Star (Dec. 10, 2024), syndicated by Yahoo Sports, prints $20.625 million for that date. Supporting contract summary: Purdue Board of Trustees December 2024 head football coach MOU. Prior USA TODAY School Buyout cell of $25,125,000 as of Dec. 1, 2025 is a different firing date and is not this headline. Later Dec. 1 amounts in the same article are not booked here.",
+            "rule": "75% of remaining base salary if fired without cause (school summary quoted by the Indianapolis Star).",
+            "coachSide": "Coach-side: $5,000,000 if Odom leaves Jan. 1\u2013Dec. 31, 2026."
           },
           "term": {
             "confidence": "reported",
@@ -46297,8 +46326,22 @@
           },
           "contractUrl": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
           "contract": {
-            "label": "Indianapolis Star — Purdue Odom contract-elements summary (Dec. 10, 2024)",
-            "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/"
+            "label": "Indianapolis Star \u2014 Purdue Odom contract-elements summary (Dec. 10, 2024)",
+            "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
+            "files": [
+              {
+                "kind": "article",
+                "date": "2024-12-10",
+                "label": "Indianapolis Star (Dec. 10, 2024), syndicated by Yahoo Sports",
+                "url": "https://sports.yahoo.com/much-purdue-paying-football-coach-132324182.html"
+              },
+              {
+                "kind": "mou",
+                "date": "2024-12",
+                "label": "Purdue Board of Trustees \u2014 Head Football Coach MOU (Dec. 2024)",
+                "url": "https://www.purdue.edu/bot/meetings/past-meetings/2024/09.%20dec/comp/MOU%20Head%20Football%20Coach.pdf"
+              }
+            ]
           }
         },
         "mbb": {
@@ -46778,14 +46821,15 @@
               ]
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": "Indianapolis Star quoting Purdue Athletics contract-elements summary",
-              "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
-              "asOf": null,
-              "notes": "School-side without-cause is 75% of remaining base. We do not invent the remainder.",
-              "rule": "75% of remaining base salary (school summary quoted by IndyStar).",
-              "coachSide": "Coach-side: $5,000,000 if Odom leaves Jan. 1–Dec. 31, 2026."
+              "value": 20625000,
+              "confidence": "reported",
+              "source": "Indianapolis Star (Nathan Baird, Dec. 10, 2024), syndicated by Yahoo Sports \u2014 if fired Dec. 1, 2026",
+              "url": "https://sports.yahoo.com/much-purdue-paying-football-coach-132324182.html",
+              "asOf": "2026-12-01",
+              "firedLabel": "if fired Dec. 1, 2026",
+              "notes": "If fired on Dec. 1 after his second season (Dec. 1, 2026): $20,625,000. The Indianapolis Star (Dec. 10, 2024), syndicated by Yahoo Sports, prints $20.625 million for that date. Supporting contract summary: Purdue Board of Trustees December 2024 head football coach MOU. Prior USA TODAY School Buyout cell of $25,125,000 as of Dec. 1, 2025 is a different firing date and is not this headline. Later Dec. 1 amounts in the same article are not booked here.",
+              "rule": "75% of remaining base salary if fired without cause (school summary quoted by the Indianapolis Star).",
+              "coachSide": "Coach-side: $5,000,000 if Odom leaves Jan. 1\u2013Dec. 31, 2026."
             },
             "term": {
               "confidence": "reported",
@@ -46798,8 +46842,22 @@
             },
             "contractUrl": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
             "contract": {
-              "label": "Indianapolis Star — Purdue Odom contract-elements summary (Dec. 10, 2024)",
-              "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/"
+              "label": "Indianapolis Star \u2014 Purdue Odom contract-elements summary (Dec. 10, 2024)",
+              "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
+              "files": [
+                {
+                  "kind": "article",
+                  "date": "2024-12-10",
+                  "label": "Indianapolis Star (Dec. 10, 2024), syndicated by Yahoo Sports",
+                  "url": "https://sports.yahoo.com/much-purdue-paying-football-coach-132324182.html"
+                },
+                {
+                  "kind": "mou",
+                  "date": "2024-12",
+                  "label": "Purdue Board of Trustees \u2014 Head Football Coach MOU (Dec. 2024)",
+                  "url": "https://www.purdue.edu/bot/meetings/past-meetings/2024/09.%20dec/comp/MOU%20Head%20Football%20Coach.pdf"
+                }
+              ]
             }
           },
           "mbb": {
@@ -52690,7 +52748,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -68962,7 +69020,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -78224,8 +78282,8 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025 — last cited school-side dollar before the Apr. 8, 2026 extension. 2022 EA is not treated as the current deal."
+            "asOf": "2025-12-01",
+            "notes": "USA TODAY if-fired overhang as of Dec. 1, 2025 — last cited school-side dollar before the Apr. 8, 2026 extension. 2022 EA is not treated as the current deal."
           },
           "term": {
             "confidence": "reported",
@@ -89064,7 +89122,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -90651,13 +90709,32 @@
             ]
           },
           "buyout": {
-            "value": 33625000,
+            "value": 33000000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
-            "rule": "75% of remaining Base + Supplemental."
+            "source": "Denver Post (Sean Keeler, Feb. 28, 2026) \u2014 $33 million if fired in 2026",
+            "url": "https://www.denverpost.com/2026/02/28/deion-sanders-cu-buffs-football-contract-buyout-coach-prime/",
+            "asOf": "2026-02-28",
+            "firedLabel": "if fired in 2026",
+            "notes": "If fired in 2026: $33,000,000. If fired in 2027: $25,500,000. The Denver Post (Feb. 28, 2026) prints those as \"$33 million\" this year and \"$25.5 million\" in 2027, not unrounded contract dollars. Replaces the USA TODAY School Buyout cell of $33,625,000 as of Dec. 1, 2025. Later years in the same sentence are not booked as headline steps.",
+            "rule": "If terminated without cause: 75% of remaining base supplemental salary through 2029 (Denver Post, Feb. 28, 2026).",
+            "steps": [
+              {
+                "asOf": "2026-02-28",
+                "remaining": 33000000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "firedLabel": "if fired in 2026",
+                "notes": "Denver Post (Feb. 28, 2026) prints \"$33 million\" if terminated without cause this year. Stored as $33,000,000. Not an unrounded contract dollar."
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 25500000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "firedLabel": "if fired in 2027",
+                "notes": "Denver Post (Feb. 28, 2026) prints \"$25.5 million\" in 2027. Stored as $25,500,000. Jan. 1 orders the year; the article did not print a calendar day."
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -91218,12 +91295,32 @@
               ]
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "USA TODAY buyout cell not reused on a year without a tape pay cell."
+              "value": 33000000,
+              "confidence": "reported",
+              "source": "Denver Post (Sean Keeler, Feb. 28, 2026) \u2014 $33 million if fired in 2026",
+              "url": "https://www.denverpost.com/2026/02/28/deion-sanders-cu-buffs-football-contract-buyout-coach-prime/",
+              "asOf": "2026-02-28",
+              "firedLabel": "if fired in 2026",
+              "notes": "If fired in 2026: $33,000,000. If fired in 2027: $25,500,000. The Denver Post (Feb. 28, 2026) prints those as \"$33 million\" this year and \"$25.5 million\" in 2027, not unrounded contract dollars. Replaces the USA TODAY School Buyout cell of $33,625,000 as of Dec. 1, 2025. Later years in the same sentence are not booked as headline steps.",
+              "rule": "If terminated without cause: 75% of remaining base supplemental salary through 2029 (Denver Post, Feb. 28, 2026).",
+              "steps": [
+                {
+                  "asOf": "2026-02-28",
+                  "remaining": 33000000,
+                  "contractYear": "2026",
+                  "through": "2026-12-31",
+                  "firedLabel": "if fired in 2026",
+                  "notes": "Denver Post (Feb. 28, 2026) prints \"$33 million\" if terminated without cause this year. Stored as $33,000,000. Not an unrounded contract dollar."
+                },
+                {
+                  "asOf": "2027-01-01",
+                  "remaining": 25500000,
+                  "contractYear": "2027",
+                  "through": "2027-12-31",
+                  "firedLabel": "if fired in 2027",
+                  "notes": "Denver Post (Feb. 28, 2026) prints \"$25.5 million\" in 2027. Stored as $25,500,000. Jan. 1 orders the year; the article did not print a calendar day."
+                }
+              ]
             },
             "term": {
               "confidence": "reported",
@@ -106358,7 +106455,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {

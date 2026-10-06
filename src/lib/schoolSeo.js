@@ -125,7 +125,8 @@ function coachAnswer(school) {
   }
   if (buyVal != null) {
     const mark = buy.confidence === 'estimated' ? 'an estimated ' : ''
-    sentences.push(`The buyout is ${mark}${moneyExact(buyVal)}${asOfBit(buy.asOf)}.`)
+    const when = buy.firedLabel ? ` ${buy.firedLabel}` : asOfBit(buy.asOf)
+    sentences.push(`The buyout is ${mark}${moneyExact(buyVal)}${when}.`)
   } else {
     sentences.push("We haven't confirmed the buyout figure yet.")
   }
