@@ -193,6 +193,8 @@ ok(nil101.includes('nil101Model'), 'nil 101 renders the shared guide')
 ok(!nil101.includes('21583913') && !nil101.includes('21.58'), 'nil 101 does not hardcode the year-2 cap')
 ok(!nilGuide.includes('21583913') && !nilGuide.includes('21.58'), 'nil 101 guide does not hardcode the year-2 cap')
 ok(!/for dummies/i.test(nil101) && !/for dummies/i.test(nilGuide), 'nil 101 page avoids the trademark phrase')
+ok(!/NIL Go/i.test(nilGuide) && !/NIL Go/i.test(nil101), 'nil 101 does not name NIL Go')
+ok(!/On3|Opendorse/i.test(nilGuide), 'nil 101 guide does not name On3 or Opendorse')
 ok(nilGuide.includes("href: '/'"), 'nil 101 has an in-app call to action')
 for (const path of ['/methods', '/reported-nil', '/school/texas', '/school/ohio-state', '/compare', '/checkbook-bowl']) {
   ok(nilGuide.includes(`href: '${path}'`), `nil 101 links ${path}`)
@@ -456,7 +458,7 @@ ok(nilArticle?.description === PAGE_DESCRIPTIONS.nil101, 'article description is
 ok(nilArticle?.author?.name === 'The Public Cap', 'article author is The Public Cap')
 ok(nilArticle?.publisher?.name === 'The Public Cap', 'article publisher is The Public Cap')
 ok(nilArticle?.datePublished === '2026-09-25', 'article datePublished is the guide publish date')
-ok(nilArticle?.dateModified === '2026-09-29', 'article dateModified is the static-guide update')
+ok(nilArticle?.dateModified === '2026-10-05', 'article dateModified is the static-guide update')
 ok(nilArticle?.url === 'https://thepubliccap.com/nil-101', 'article url is the canonical')
 ok(nilArticle?.image === 'https://thepubliccap.com/og-default.png', 'article image is the default share image')
 const extracted = articleAnswersFromHtml(nilShell)
@@ -509,7 +511,6 @@ const usatBuyouts = {
   illinois: 49491667,
   indiana: 56700000,
   iowa: 25729167,
-  maryland: 13395417,
   minnesota: 26600000,
   nebraska: 49612500,
   'ohio-state': 70916667,
@@ -541,7 +542,7 @@ const priorLabels = {
   kansas: null,
   ucf: null,
 }
-ok(Object.keys(usatBuyouts).length === 24, '24 USA TODAY football buyout overhangs remain after Purdue and Colorado were rebooked')
+ok(Object.keys(usatBuyouts).length === 23, '23 USA TODAY football buyout overhangs remain after Purdue, Colorado, and Maryland were rebooked')
 for (const [id, amount] of Object.entries(usatBuyouts)) {
   const coach = buyouts.coaches[id]
   const cite = buyoutCite(coach)
@@ -643,7 +644,12 @@ ok(buyoutDescription(buyouts.coaches.rutgers).includes('not the buyout if fired 
 ok(buyoutCite(buyouts.coaches.rutgers).freshness === 'later', 'Schiano October 4 as-of is later than the desk date')
 ok(buyoutStaleness(buyouts.coaches.nebraska)?.kind === 'prior-contract', 'Nebraska staleness is the prior-contract badge')
 ok(buyoutStaleness(buyouts.coaches.nebraska)?.label === 'Prior-contract figure, new deal pending', 'Nebraska badge matches the pending footnote')
-ok(buyoutStaleness(buyouts.coaches.maryland)?.kind === 'older-than-9-months', 'Maryland Dec. 1, 2025 figure is older than 9 months')
+ok(buyoutStaleness(buyouts.coaches.maryland) == null, 'Maryland Washington Times figure has no 9-month badge')
+ok(buyouts.coaches.maryland.overhang.amount === 9950000, 'Maryland buyout is the Washington Times $9,950,000')
+ok(buyouts.coaches.maryland.overhang.asOf === '2026-09-24', 'Maryland buyout as-of is September 24, 2026')
+ok(buyouts.coaches.maryland.overhang.source.url === 'https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/', 'Maryland buyout source is the Washington Times')
+ok(!buyouts.coaches.maryland.priorContract, 'Maryland is not a prior-contract USA TODAY footnote')
+ok(buyoutCite(buyouts.coaches.maryland).freshness === 'later', 'Maryland September 24 as-of is later than the desk date')
 ok(buyoutStaleness(buyouts.coaches['florida-state']) == null, 'Norvell desk-date figure has no staleness badge')
 ok(rhuleShell.includes('data-buyout-staleness="prior-contract"'), 'Nebraska shell exposes prior-contract staleness')
 ok(rhuleShell.includes('Prior-contract figure, new deal pending'), 'Nebraska shell shows the staleness badge')
@@ -682,7 +688,15 @@ ok(hubShell.includes('if fired in 2026'), 'hot-seat shell prints if fired in 202
 ok(hubShell.includes('$60,307,500'), 'hot-seat shell keeps the stored Sarkisian dollar')
 ok(!hubShell.includes('$36,500,000') && !hubShell.includes('$36.5'), 'hot-seat shell does not book a fan-site Sarkisian dollar')
 ok(hubShell.includes('data-buyout-staleness="prior-contract"'), 'hot-seat shell marks the prior-contract row')
-ok(hubShell.includes('data-buyout-staleness="older-than-9-months"'), 'hot-seat shell marks the age-stale row')
+ok(!hubShell.includes('data-buyout-staleness="older-than-9-months"'), 'hot-seat shell drops the Maryland 9-month badge')
+ok(hubShell.includes('$9,950,000'), 'hot-seat shell prints the Washington Times Maryland dollar')
+const mdRow = (hubShell.split('data-school="maryland"')[1] || '').split('</tr>')[0]
+ok(mdRow.includes('$9,950,000'), 'Maryland hot-seat row prints $9,950,000')
+ok(mdRow.includes('September 24, 2026'), 'Maryland hot-seat row uses the Washington Times date')
+ok(mdRow.includes('washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/'), 'Maryland hot-seat row links the Washington Times')
+ok(!mdRow.includes('older-than-9-months'), 'Maryland hot-seat row has no 9-month badge')
+ok(!mdRow.includes('December 1, 2025') && !mdRow.includes('Dec. 1, 2025'), 'Maryland hot-seat row drops the Dec. 1, 2025 stamp')
+ok(!mdRow.includes('13,395,417'), 'Maryland hot-seat row drops the USA TODAY dollar')
 ok(renderHotSeatStaticBody({ coaches: {} }, []).includes('>Pending<'), 'hot-seat says pending when a coach has no cited dollar')
 const purdueSchool = schoolsForLinks.find((s) => s.id === 'purdue')
 const coloSchool = schoolsForLinks.find((s) => s.id === 'colorado')

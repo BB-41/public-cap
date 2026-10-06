@@ -189,9 +189,19 @@ export const YEAR1_LEAD_LABEL = '2025–26 filing / House Year 1'
  * On 2026, when 2026–27 booked has not been extracted, falls back to the
  * House Year 1 / 2025–26 filing via year1Lead — labeled, not rebooked as 2026–27.
  */
+function bookedWindowLabel(field, fallback) {
+  if (field?.leadLabel) return field.leadLabel
+  return fallback
+}
+
 export function leadBookedNil(school) {
   if (hasVal(school?.nil?.booked)) {
-    return { value: val(school.nil.booked), field: school.nil.booked, carry: false, label: null }
+    return {
+      value: val(school.nil.booked),
+      field: school.nil.booked,
+      carry: false,
+      label: bookedWindowLabel(school.nil.booked, null),
+    }
   }
   const carry = school?.nil?.year1Lead
   if (hasVal(carry?.booked)) {
@@ -199,10 +209,23 @@ export function leadBookedNil(school) {
       value: val(carry.booked),
       field: carry.booked,
       carry: true,
-      label: carry.label || YEAR1_LEAD_LABEL,
+      label: bookedWindowLabel(carry.booked, carry.label || YEAR1_LEAD_LABEL),
     }
   }
   return { value: null, field: null, carry: false, label: null }
+}
+
+/** Wider FOIA window (Louisville $32.9M) is not the House Year 1 spent cell. */
+function leftoverYearLabel(booked, remainingField, fallbackLabel) {
+  const spent = remainingField?.spent
+  const wider =
+    spent != null &&
+    spent !== '' &&
+    booked?.value != null &&
+    Number(spent) !== Number(booked.value)
+  if (wider) return booked.carry ? YEAR1_LEAD_LABEL : null
+  if (booked.carry) return booked.label || fallbackLabel || YEAR1_LEAD_LABEL
+  return null
 }
 
 /**
@@ -220,7 +243,7 @@ export function leadHouseRemaining(school) {
       value: val(school.nil.houseRemaining),
       field: school.nil.houseRemaining,
       carry: booked.carry,
-      label: booked.carry ? booked.label : null,
+      label: leftoverYearLabel(booked, school.nil.houseRemaining, null),
     }
   }
   const carry = school?.nil?.year1Lead
@@ -229,7 +252,7 @@ export function leadHouseRemaining(school) {
       value: val(carry.houseRemaining),
       field: carry.houseRemaining,
       carry: true,
-      label: carry.label || YEAR1_LEAD_LABEL,
+      label: leftoverYearLabel(booked, carry.houseRemaining, carry.label || YEAR1_LEAD_LABEL),
     }
   }
   return { value: null, field: null, carry: false, label: null }

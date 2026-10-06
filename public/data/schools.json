@@ -66,7 +66,7 @@
       "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions.",
       "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school head-coach cells are labeled Contract not public. A public chair with no released contract is labeled Contract not yet released. We do not invent a dollar.",
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
-      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Colorado (Sportico Nov. 6, 2025: $7,672,052.88 across 262 payments, July 1–September 30, 2025 — partial window, not a full-year total), Texas (coordinator letter R013976-090126: $17,999,479.04 Jul 1 2025–Jun 30 2026 and $4,808,560.63 Jul 1–Aug 31 2026, not stacked; $13.5M HPM YTD hold replaced). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
+      "Most NIL bands are pending — booked House-window cells are Louisville (House Year 1 spent $20.2M for Jul 1 2025–Jul 1 2026; $32.9M is the full FOIA window Mar 2025–Jul 1 2026, including $12.7M pre-cap Kentucky NIL, and is not a House Year 1 total), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Colorado (Sportico Nov. 6, 2025: $7,672,052.88 across 262 payments, July 1–September 30, 2025 — partial window, not a full-year total), Texas (coordinator letter R013976-090126: $17,999,479.04 Jul 1 2025–Jun 30 2026 and $4,808,560.63 Jul 1–Aug 31 2026, not stacked; $13.5M HPM YTD hold replaced). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
       "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
       "Coach contract PDFs linked only when a school, state, board, or newsroom host posted the actual file (HTTP 200). Public-school buyouts prefer that file; articles are fallback only when no current file is loaded. Stale hire packets are not treated as the current deal. Private-school blanks stay pending. No invented URLs.",
       "Coach contract terms (through-year / years remaining) are cited only from employment agreements, board packets, or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending.",
@@ -31360,25 +31360,46 @@
         "football": {
           "name": "Mike Locksley",
           "pay": {
-            "value": 6100000,
+            "value": 6400000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+            "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+            "asOf": "2026-09-24",
+            "notes": "2026 total compensation is $6.4 million: $600,000 base plus $5.8 million supplemental annual income. Incentives and postseason bonuses are not added. Not the USA TODAY Oct. 8, 2025 $6.1 million cell.",
+            "breakdown": [
+              {
+                "label": "Base",
+                "value": 600000
+              },
+              {
+                "label": "Supplemental annual income",
+                "value": 5800000
+              }
+            ]
           },
           "buyout": {
-            "value": 13395417,
+            "value": 9950000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-12-01",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+            "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+            "asOf": "2026-09-24",
+            "notes": "If terminated during the 2026 season, Maryland owes about 65% of remaining compensation, approximately $9.95 million. Half is due within 60 days; the rest is paid in equal installments through the end of the 2028 contract. Liability/overhang, not annual spend. Sporting News notes a USA TODAY midseason buyout near $9.2 million (https://www.sportingnews.com/us/ncaa-football/news/mike-locksley-buyout-contract-details-maryland-coach/e0f3feba2ae583d596099be0); this desk books the Washington Times figure.",
+            "rule": "If terminated during the 2026 season, the school owes about 65% of remaining compensation, approximately $9.95 million. Half within 60 days; the rest in equal installments through the end of 2028."
           },
           "term": {
-            "confidence": "pending",
-            "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "confidence": "reported",
+            "asOf": "2026-09-24",
+            "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+            "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+            "through": "2028",
+            "yearsRemaining": 2,
+            "notes": "Two years remaining. Seven-win seasons in 2022 and 2023 triggered automatic one-year extensions, so the deal runs through the end of 2028."
+          },
+          "contractUrl": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+          "contract": {
+            "label": "Washington Times — Locksley contract via Maryland Public Information Act (Sep. 24, 2026)",
+            "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/"
           }
         },
         "mbb": {
@@ -31866,27 +31887,46 @@
           "football": {
             "name": "Mike Locksley",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 6400000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+              "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+              "asOf": "2026-09-24",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 total compensation is $6.4 million: $600,000 base plus $5.8 million supplemental annual income. Incentives and postseason bonuses are not added. Not the USA TODAY Oct. 8, 2025 $6.1 million cell.",
+              "breakdown": [
+                {
+                  "label": "Base",
+                  "value": 600000
+                },
+                {
+                  "label": "Supplemental annual income",
+                  "value": 5800000
+                }
+              ]
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 9950000,
+              "confidence": "reported",
+              "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+              "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+              "asOf": "2026-09-24",
+              "notes": "If terminated during the 2026 season, Maryland owes about 65% of remaining compensation, approximately $9.95 million. Half is due within 60 days; the rest is paid in equal installments through the end of the 2028 contract. Liability/overhang, not annual spend. Sporting News notes a USA TODAY midseason buyout near $9.2 million (https://www.sportingnews.com/us/ncaa-football/news/mike-locksley-buyout-contract-details-maryland-coach/e0f3feba2ae583d596099be0); this desk books the Washington Times figure.",
+              "rule": "If terminated during the 2026 season, the school owes about 65% of remaining compensation, approximately $9.95 million. Half within 60 days; the rest in equal installments through the end of 2028."
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
-              "url": "https://en.wikipedia.org/wiki/2026_Maryland_Terrapins_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "confidence": "reported",
+              "asOf": "2026-09-24",
+              "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+              "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+              "through": "2028",
+              "yearsRemaining": 2,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Two years remaining. Seven-win seasons in 2022 and 2023 triggered automatic one-year extensions, so the deal runs through the end of 2028."
+            },
+            "contractUrl": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+            "contract": {
+              "label": "Washington Times — Locksley contract via Maryland Public Information Act (Sep. 24, 2026)",
+              "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/"
             }
           },
           "mbb": {
@@ -65786,16 +65826,17 @@
         "booked": {
           "value": 32900000,
           "confidence": "reported",
-          "source": "Courier-Journal FOIA — UofL invoices/ledgers: $32.9M revenue-share spend Mar 2025–Jul 1, 2026",
-          "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/08/05/university-of-kentucky-nil-revenue-sharing-records-louisville-budget-foia-ncaa-house-settlement/90345933007/",
+          "source": "Courier-Journal FOIA (Aug. 5, 2026) — full invoice window Mar 2025–Jul 1, 2026 is $32.9M: $12.7M pre-cap Kentucky NIL plus $20.2M House Year 1 (Jul 1, 2025–Jul 1, 2026). Not a House Year 1 total.",
+          "url": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/",
           "asOf": "2026-08-05",
-          "notes": "FOIA invoices and ledger entries (Payton Titus). Companion table lists $32.93M. Window starts March 2025 because KY law allowed pre-House payments that do not count against the cap, so $32.9M > $20.5M is coherent. Includes the $12.7M pre-cap FY2025 line shown below (do not add).",
+          "notes": "Full FOIA window only. Do not label $32.9M as revenue share or House Year 1. Split already on the desk: preCap $12.7M (FY2025, before July 1, 2025) plus House Year 1 spent $20.2M (Jul 1, 2025–Jul 1, 2026). Companion table lists $32.93M (Payton Titus, same day). The pre-cap line is included in the $32.9M — not additional.",
           "window": "2025-03 to 2026-07-01",
+          "leadLabel": "Full FOIA window · Mar 2025–Jul 1 2026",
           "had": {
             "value": 20270000,
             "window": "2025-07-01 to 2026-07-01",
-            "notes": "Prior booked cell: House Year 1 window only.",
-            "source": "Courier-Journal FOIA — Louisville institutional NIL / revenue-share spend Jul 1, 2025–Jul 1, 2026",
+            "notes": "Prior desk cell for Jul 1, 2025–Jul 1, 2026. Replaced by the $20.2M House Year 1 split ($32.9M minus $12.7M pre-cap).",
+            "source": "Courier-Journal FOIA — prior Louisville cell for Jul 1, 2025–Jul 1, 2026",
             "url": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/"
           }
         },
@@ -65829,13 +65870,13 @@
           "source": "House Year 1 remaining = published $20.5M NCAA House cap minus this school’s booked House spent cell",
           "url": "https://on.ncaa.com/QA61325",
           "asOf": "2026-08-05",
-          "window": "2025-03 to 2026-07-01",
+          "window": "2025-07-01 to 2026-07-01",
           "spent": 20200000,
           "cap": 20500000,
           "partialYear": false,
           "overhang": false,
-          "notes": "Published House Year 1 cap minus booked House spent. Residual, not a filing.",
-          "footnote": "House Year 1 remaining = $20,500,000 cap − ($32,900,000 booked − $12,700,000 pre-cap) = $300,000. Not the prior $20,270,000 House-year cell. Not the full $32,900,000. Not a 990."
+          "notes": "House Year 1 spent is $20,200,000 for Jul 1, 2025–Jul 1, 2026 (Courier-Journal FOIA, Aug. 5, 2026): the $32,900,000 full FOIA window minus the $12,700,000 pre-cap line. Remaining is the published $20.5M cap minus that House spent cell. Residual, not a filing. Not the full $32.9M.",
+          "footnote": "House Year 1 remaining = $20,500,000 cap − $20,200,000 House Year 1 spent (Jul 1, 2025–Jul 1, 2026) = $300,000. House spent = $32,900,000 full FOIA window − $12,700,000 pre-cap. Not the prior $20,270,000 desk cell. Not the full $32,900,000. Not a 990."
         }
       },
       "coaches": {

@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-30",
-    "itemCount": 452,
+    "itemCount": 453,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -11,6 +11,22 @@
     ]
   },
   "items": [
+    {
+      "id": "maryland-locksley-contract-2026-09-24",
+      "date": "2026-09-24",
+      "school": "maryland",
+      "schoolName": "Maryland",
+      "kind": "contract",
+      "headline": "Washington Times review of Mike Locksley\u2019s contract (Maryland Public Information Act): 2026 total compensation is $6.4 million ($600,000 base + $5.8 million supplemental), the deal runs through the end of 2028, and termination during the 2026 season owes about 65% of remaining compensation, approximately $9.95 million (half within 60 days). Replaces the USA TODAY Oct. 8, 2025 pay and buyout cells.",
+      "figure": 9950000,
+      "confidence": "reported",
+      "source": {
+        "label": "Washington Times (Sep. 24, 2026)",
+        "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/"
+      },
+      "field": "coaches.football.buyout",
+      "notes": "Pay cell is $6,400,000 for 2026. Buyout is the article\u2019s approximate $9.95 million, not a Saturday staircase. Sporting News notes a USA TODAY midseason figure near $9.2 million; the desk books the Washington Times number."
+    },
     {
       "id": "texas-booked-nil-windows-2026-09-17",
       "date": "2026-09-17",
@@ -2344,7 +2360,7 @@
       "school": "louisville",
       "schoolName": "Louisville",
       "kind": "collective-990",
-      "headline": "502Circle NIL Collective Foundation Form 990 (EIN 92-0905366), calendar 2023: Schedule O / Part IX line 11g books Athlete fees at $545,833. Collective 990 \u2014 does not replace the $32.9M FOIA booked cell.",
+      "headline": "502Circle NIL Collective Foundation Form 990 (EIN 92-0905366), calendar 2023: Schedule O / Part IX line 11g books Athlete fees at $545,833. Collective 990 \u2014 does not replace the $32.9M full FOIA window or the $20.2M House Year 1 spent cell.",
       "figure": 545833,
       "confidence": "reported",
       "source": {
@@ -3036,12 +3052,12 @@
       "school": "louisville",
       "schoolName": "Louisville",
       "kind": "booked-nil",
-      "headline": "Courier-Journal FOIA invoices/ledgers book Louisville revenue-share spend at $32.9 million for March 2025\u2013July 1, 2026. The extra above the $20.5M House cap is pre-cap KY NIL (about $12.7M before July 1, 2025). Prior desk cell was $20.27M for the House Year 1 window only.",
+      "headline": "Courier-Journal FOIA invoices/ledgers book Louisville\u2019s full window at $32.9 million for March 2025\u2013July 1, 2026. That window is $12.7 million pre-cap Kentucky NIL plus $20.2 million House Year 1 (July 1, 2025\u2013July 1, 2026). It is not a House Year 1 total. Prior desk cell was $20.27 million.",
       "figure": 32900000,
       "confidence": "reported",
       "source": {
-        "label": "Courier-Journal FOIA \u2014 Payton Titus",
-        "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/08/05/university-of-kentucky-nil-revenue-sharing-records-louisville-budget-foia-ncaa-house-settlement/90345933007/"
+        "label": "Courier-Journal FOIA (Aug. 5, 2026)",
+        "url": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/"
       },
       "field": "nil.booked"
     },

@@ -33,7 +33,7 @@ npm run dev
 Example questions that return real booked figures:
 
 - What's Louisville's leftover / House spent / booked NIL?
-  → leftover $300k · House spent $20.2M · booked NIL $32.9M (House Year 1)
+  → leftover $300k · House spent $20.2M (House Year 1) · booked NIL $32.9M (full FOIA window, not House Year 1)
 - Which schools have booked House spent?
   → Louisville, Kentucky, Texas (two dated windows), UCLA, California
 - What's SMU's conference media line — is it full TV?

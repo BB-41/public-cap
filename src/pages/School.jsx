@@ -1035,9 +1035,12 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         )}
         {!hasVal(s.nil.booked) && hasVal(s.nil.year1Lead?.booked) && (
           <div className="subfield">
-            <div className="eyebrow">{s.nil.year1Lead.label}</div>
+            <div className="eyebrow">{s.nil.year1Lead.booked?.leadLabel || s.nil.year1Lead.label}</div>
             <Field field={s.nil.year1Lead.booked} />
           </div>
+        )}
+        {hasVal(s.nil.booked) && s.nil.booked.leadLabel && (
+          <div className="eyebrow">{s.nil.booked.leadLabel}</div>
         )}
         <Field field={s.nil.booked} fallback="Empty / pending. FOIA, MFRS institutional NIL, or counsel spent totals only. Official House / Item 44 number when it exists. Collective 990 is a separate lane below." />
         {hasVal(s.nil.preCap) && (

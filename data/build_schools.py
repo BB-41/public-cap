@@ -48,7 +48,7 @@ SRC = {
     "big12_990": "https://data.useplinth.com/foundation/the-big-12-conference-inc-752604555",
 }
 
-def n(value, confidence, source, url, as_of, fy=None, notes=None, window=None, had=None):
+def n(value, confidence, source, url, as_of, fy=None, notes=None, window=None, had=None, lead_label=None):
     d = {
         "value": value,
         "confidence": confidence,
@@ -62,6 +62,8 @@ def n(value, confidence, source, url, as_of, fy=None, notes=None, window=None, h
         d["notes"] = notes
     if window:
         d["window"] = window
+    if lead_label:
+        d["leadLabel"] = lead_label
     if had:
         d["had"] = had
     return d
@@ -646,11 +648,12 @@ add({
     },
     "nil": {
         "booked": n(32_900_000, "reported",
-            "Courier-Journal FOIA — UofL invoices/ledgers: $32.9M revenue-share spend Mar 2025–Jul 1, 2026",
-            SRC["cj_nil_foia"], "2026-08-05",
+            "Courier-Journal FOIA (Aug. 5, 2026) — full invoice window Mar 2025–Jul 1, 2026 is $32.9M: $12.7M pre-cap Kentucky NIL plus $20.2M House Year 1 (Jul 1, 2025–Jul 1, 2026). Not a House Year 1 total.",
+            SRC["cj_nil"], "2026-08-05",
             window="2025-03 to 2026-07-01",
-            notes="FOIA invoices and ledger entries (Payton Titus). Companion table lists $32.93M. Window starts March 2025 because KY law allowed pre-House payments that do not count against the cap, so $32.9M > $20.5M is coherent. Includes the $12.7M pre-cap FY2025 line shown below (do not add).",
-            had={"value": 20_270_000, "window": "2025-07-01 to 2026-07-01", "notes": "Prior booked cell: House Year 1 window only.", "source": "Courier-Journal FOIA — Louisville institutional NIL / revenue-share spend Jul 1, 2025–Jul 1, 2026", "url": SRC["cj_nil"]}),
+            lead_label="Full FOIA window · Mar 2025–Jul 1 2026",
+            notes="Full FOIA window only. Do not label $32.9M as revenue share or House Year 1. Split already on the desk: preCap $12.7M (FY2025, before July 1, 2025) plus House Year 1 spent $20.2M (Jul 1, 2025–Jul 1, 2026). Companion table lists $32.93M (Payton Titus, same day). The pre-cap line is included in the $32.9M — not additional.",
+            had={"value": 20_270_000, "window": "2025-07-01 to 2026-07-01", "notes": "Prior desk cell for Jul 1, 2025–Jul 1, 2026. Replaced by the $20.2M House Year 1 split ($32.9M minus $12.7M pre-cap).", "source": "Courier-Journal FOIA — prior Louisville cell for Jul 1, 2025–Jul 1, 2026", "url": SRC["cj_nil"]}),
         "preCap": n(12_700_000, "reported",
             "Courier-Journal — UofL NCAA financial report FY2025 Institutional NIL Revenue Share (pre-July 1, 2025)",
             "https://www.courier-journal.com/story/sports/college/louisville/2026/01/27/university-of-louisville-cardinals-nil-budget-uofl-basketball-college-football-payrolls-ncaa-revenue/88300679007/",

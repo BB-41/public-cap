@@ -16,7 +16,7 @@ export const NIL101_SCHOOL_LINK_TEXT = 'How NIL works'
 /** First commit of the guide. */
 export const NIL101_DATE_PUBLISHED = '2026-09-25'
 /** Static full-text shell published for crawlers. */
-export const NIL101_DATE_MODIFIED = '2026-09-29'
+export const NIL101_DATE_MODIFIED = '2026-10-05'
 
 const FAN = {
   src: '/nil101/fan.webp',
@@ -152,7 +152,7 @@ export function nil101Model({ year1, year2 }) {
             ['Who pays', 'Brands, local businesses, and collectives', 'The school'],
             ['Is there a limit?', 'Not the school cap. Deals over $600 get a review.', 'Yes. The yearly cap above.'],
             ['Count toward the school cap?', 'No. These deals sit beside the cap.', 'Yes. This is the money under the cap.'],
-            ['Who checks it?', 'NIL Go, for deals over $600.', 'The school, against the cap.'],
+            ['Who checks it?', 'A clearinghouse, for deals over $600.', 'The school, against the cap.'],
           ],
         },
       },
@@ -161,8 +161,8 @@ export function nil101Model({ year1, year2 }) {
         mascot: REFEREE,
         paragraphs: [
           ['Outside NIL deals over $600 are reviewed.'],
-          ['The review desk is NIL Go. It is a clearinghouse, which just means a place that checks deals before they count.'],
-          ['The College Sports Commission runs NIL Go, with help from Deloitte. That commission is the group set up to look at these deals.'],
+          ['The review desk is a clearinghouse. That just means a place that checks deals before they count.'],
+          ['The College Sports Commission runs that deal review, with help from Deloitte. That commission is the group set up to look at these deals.'],
           ['The check is meant to see that the deal is a real job at a fair price. It is a review, not a promise that every deal is perfect.'],
         ],
       },
