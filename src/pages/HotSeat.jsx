@@ -89,7 +89,14 @@ export default function HotSeat() {
                   <td>
                     <Link to={`/school/${row.id}`}>{row.schoolName}</Link>
                   </td>
-                  <td className="num">{pending ? <span className="pending-cell">Pending</span> : moneyExact(row.cite.amount)}</td>
+                  <td className="num">
+                    {pending ? <span className="pending-cell">Pending</span> : (
+                      <>
+                        {row.cite.confidence === 'estimated' ? 'estimated ' : ''}
+                        {moneyExact(row.cite.amount)}
+                      </>
+                    )}
+                  </td>
                   <td>
                     {pending ? 'Pending' : citeTimingPhrase(row.cite)}
                     {row.staleness && (

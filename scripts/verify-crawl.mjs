@@ -8,8 +8,10 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { buyoutCite, buyoutDescription, buyoutTitle, formatLongDate } from '../src/lib/buyout.js'
+import { moneyExact } from '../src/lib/format.js'
 import { indexNowPayload } from './indexnow.mjs'
-import { SITE_ORIGIN, STATIC_PATHS, sitemapPaths, writeSitemap } from './write-sitemap.mjs'
+import { SITE_ORIGIN, STATIC_PATHS, coachFaIds, sitemapPaths, writeSitemap } from './write-sitemap.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const publicDir = process.env.PUBLIC_DIR
@@ -25,11 +27,12 @@ function ok(cond, msg) {
 const schools = JSON.parse(readFileSync(join(root, 'public/data/schools.json'), 'utf8'))
 ok(schools.schools.length === 68, '68 schools in the book')
 
+const coachIds = coachFaIds(JSON.parse(readFileSync(join(root, 'data/coach-fa.json'), 'utf8')))
 const generated = writeSitemap()
 ok(generated.schoolCount === 68, 'sitemap writer saw 68 schools')
 ok(
-  generated.urlCount === STATIC_PATHS.length + 68 * 2,
-  `sitemap has ${STATIC_PATHS.length + 136} URLs (static + schools + buyout pages)`,
+  generated.urlCount === STATIC_PATHS.length + 68 * 2 + coachIds.length,
+  `sitemap has static + school + buyout + coach-fa URLs (got ${generated.urlCount})`,
 )
 ok(STATIC_PATHS.includes('/tv'), 'STATIC_PATHS lists /tv')
 ok(!STATIC_PATHS.includes('/llms.txt'), 'sitemap does not treat llms.txt as an HTML route')
@@ -65,7 +68,7 @@ ok(!/<html[\s>]/i.test(xml), 'sitemap.xml has no <html>')
 ok(xml.includes('http://www.sitemaps.org/schemas/sitemap/0.9'), 'sitemap.xml uses the sitemap schema')
 
 const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
-const expected = sitemapPaths(schools.schools).map((p) => (p === '/' ? `${SITE_ORIGIN}/` : `${SITE_ORIGIN}${p}`))
+const expected = sitemapPaths(schools.schools, coachIds).map((p) => (p === '/' ? `${SITE_ORIGIN}/` : `${SITE_ORIGIN}${p}`))
 ok(locs.length === expected.length, `sitemap has ${expected.length} loc entries (got ${locs.length})`)
 ok(JSON.stringify(locs) === JSON.stringify(expected), 'sitemap locs match the school list + public HTML routes')
 
@@ -112,7 +115,10 @@ ok(
 )
 ok(!existsSync(join(root, 'functions/_middleware.js')), 'no functions/_middleware.js (would disable _redirects)')
 ok(!/\/school\/\*\s+\/index\.html/.test(redirects), '_redirects does not rewrite /school/* to /index.html (crawlers would get homepage title)')
-ok(/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects keeps /coach-fa/* splat')
+ok(!/\/coach-fa\/\*\s+\/index\.html\s+200/.test(redirects), '_redirects does not rewrite /coach-fa/* to /index.html')
+for (const id of coachIds) {
+  ok(locs.includes(`${SITE_ORIGIN}/coach-fa/${id}`), `sitemap lists /coach-fa/${id}`)
+}
 const redirectRules = redirects.split('\n').filter((line) => line.trim() && !line.trim().startsWith('#'))
 ok(
   !redirectRules.some((line) => /\/buyout\/:school/.test(line)),
@@ -180,15 +186,27 @@ if (process.env.PUBLIC_DIR) {
   ok(beamerHtml.includes('$22,550,000'), 'dist Beamer page prints the cited dollar')
   ok(beamerHtml.includes('December 1, 2026'), 'dist Beamer page prints the as-of date')
   ok(!/noindex/i.test(beamerHtml), 'dist Beamer page is not noindex')
+  const buyoutBook = JSON.parse(readFileSync(join(root, 'data/buyouts.json'), 'utf8'))
+  const norvell = buyoutBook.coaches['florida-state']
+  const norvellCite = buyoutCite(norvell)
   const norvellHtml = readFileSync(join(publicDir, 'buyout/florida-state.html'), 'utf8')
-  ok(/<title>Mike Norvell buyout: \$49,353,349 as of September 16, 2026 \| The Public Cap<\/title>/.test(norvellHtml), 'dist buyout/florida-state.html titles Norvell')
-  ok(norvellHtml.includes('$49,353,349'), 'dist Norvell page prints the cited dollar')
-  ok(norvellHtml.includes('September 16, 2026'), 'dist Norvell page prints the as-of date')
+  ok(norvellHtml.includes(`<title>${buyoutTitle(norvell)}</title>`), 'dist buyout/florida-state.html titles Norvell from the step in force')
+  ok(norvellHtml.includes(moneyExact(norvellCite.amount)), 'dist Norvell page prints the cited dollar')
+  ok(norvellHtml.includes(formatLongDate(norvellCite.asOf)), 'dist Norvell page prints the as-of date')
+  const schiano = buyoutBook.coaches.rutgers
+  const schianoCite = buyoutCite(schiano)
   const schianoHtml = readFileSync(join(publicDir, 'buyout/rutgers.html'), 'utf8')
-  ok(/<title>Greg Schiano buyout: \$18,000,000 as of October 4, 2026 \| The Public Cap<\/title>/.test(schianoHtml), 'dist buyout/rutgers.html titles Schiano')
-  ok(schianoHtml.includes('$18,000,000'), 'dist Schiano page prints the cited dollar')
-  ok(schianoHtml.includes('October 4, 2026'), 'dist Schiano page prints the as-of date')
-  ok(schianoHtml.includes('not the buyout if fired on the desk date'), 'dist Schiano page does not present the October 4 cite as the desk date')
+  ok(schianoHtml.includes(`<title>${buyoutTitle(schiano)}</title>`), 'dist buyout/rutgers.html titles Schiano')
+  ok(schianoHtml.includes(moneyExact(schianoCite.amount)), 'dist Schiano page prints the cited dollar')
+  ok(schianoHtml.includes(formatLongDate(schianoCite.asOf)), 'dist Schiano page prints the as-of date')
+  ok(schianoHtml.includes('an estimated'), 'dist Schiano page labels the figure estimated')
+  if (schianoCite.freshness === 'later') {
+    ok(schianoHtml.includes('not the buyout if fired on the desk date'), 'dist Schiano page does not present a future as-of as the desk date')
+  } else {
+    ok(!schianoHtml.includes('not the buyout if fired on the desk date'), 'dist Schiano page does not call an in-force as-of later than the desk date')
+  }
+  ok(existsSync(join(publicDir, 'coach-fa/brian-kelly.html')), 'dist coach-fa/brian-kelly.html exists')
+  ok(readFileSync(join(publicDir, 'coach-fa/brian-kelly.html'), 'utf8').includes('Brian Kelly'), 'dist Brian Kelly page names the coach')
   ok(!schianoHtml.includes('$23,735,156'), 'dist Schiano page does not keep the retired USA TODAY overhang')
   ok(schianoHtml.includes('data-seo="stamped"'), 'dist buyout pages are stamped')
   const hotSeatHtml = readFileSync(join(publicDir, 'buyout/hot-seat.html'), 'utf8')

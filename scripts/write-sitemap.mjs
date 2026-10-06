@@ -22,7 +22,13 @@ export function isIsoDate(value) {
   return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
 }
 
-export function sitemapPaths(schools) {
+export function coachFaIds(book) {
+  const ids = Object.keys(book?.coaches || {}).filter((id) => book.coaches[id]?.name)
+  if (!ids.length) throw new Error('coach-fa.json has no chairs')
+  return ids
+}
+
+export function sitemapPaths(schools, coachIds = []) {
   if (!Array.isArray(schools) || schools.length !== 68) {
     throw new Error('schools.json must have 68 schools')
   }
@@ -34,6 +40,7 @@ export function sitemapPaths(schools) {
     ...STATIC_PATHS,
     ...ids.map((id) => `/school/${id}`),
     ...ids.map((id) => `/buyout/${id}`),
+    ...coachIds.map((id) => `/coach-fa/${id}`),
   ]
 }
 
@@ -56,10 +63,12 @@ ${urls}
 
 export function writeSitemap({
   schoolsPath = join(root, 'public/data/schools.json'),
+  coachFaPath = join(root, 'data/coach-fa.json'),
   outPath = join(root, 'public/sitemap.xml'),
 } = {}) {
   const data = JSON.parse(readFileSync(schoolsPath, 'utf8'))
-  const paths = sitemapPaths(data.schools)
+  const coachFa = JSON.parse(readFileSync(coachFaPath, 'utf8'))
+  const paths = sitemapPaths(data.schools, coachFaIds(coachFa))
   const lastmod = [data.meta?.asOf, PAGE_LASTMOD].filter(isIsoDate).sort().at(-1) || null
   writeFileSync(outPath, renderSitemapXml({ paths, lastmod }))
   return { path: outPath, urlCount: paths.length, schoolCount: data.schools.length, lastmod }

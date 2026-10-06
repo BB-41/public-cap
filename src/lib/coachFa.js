@@ -1,6 +1,7 @@
 /** Coach free-agent / buyout-offset lane. Booked A-side; modeled B salary. */
 
 import { moneyExact } from './format.js'
+import { formatLongDate } from './buyout.js'
 
 export const DESK_AS_OF = '2026-09-04'
 export const DEFAULT_COACH = 'jimbo-fisher'
@@ -331,4 +332,38 @@ export function vsBand(annual, band) {
   if (annual < range.low) return 'below'
   if (annual > range.high) return 'above'
   return 'inside'
+}
+
+function escHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+export function coachFaShellDescription(coach) {
+  if (!coach?.name) return 'Residual School A buyout after a firing. Offset rules stay booked or cite-only. Empty without a cite — we do not invent remaining principal.'
+  const dollars = hasDollar(coach?.buyout?.grossRemaining) ? moneyExact(coach.buyout.grossRemaining) : 'Pending'
+  return `${coach.name}: ${dollars} residual at the prior school. Offset rules stay cited. We do not invent remaining principal.`
+}
+
+/** Crawler body for /coach-fa/<id>. Dollars are the booked residual, never estimated here. */
+export function renderCoachFaStaticBody(coach, schools) {
+  if (!coach?.name) return ''
+  const prior = schoolById(schools, coach.priorSchoolId)
+  const current = schoolById(schools, coach.currentEmployerSchoolId)
+  const buyout = coach.buyout || {}
+  const dollars = hasDollar(buyout.grossRemaining) ? moneyExact(buyout.grossRemaining) : 'Pending'
+  const when = buyout.asOf ? ` as of ${formatLongDate(buyout.asOf)}` : ''
+  const fired = buyout.firedOn ? ` Fired ${formatLongDate(buyout.firedOn)}.` : ''
+  const priorName = prior?.name || coach.priorSchoolId || 'the prior school'
+  const now = current?.name ? ` Now: ${current.name}.` : ''
+  const payer = residualPayerLabel(coach, prior)
+  const status = [statusLabel(coach.status), payer].filter(Boolean).join(' · ')
+  return `<div class="page-wrap coach-fa-page">
+        <h1 class="issue-hed">${escHtml(coach.name)}</h1>
+        <p class="lede">${escHtml(status)}. ${escHtml(priorName)} residual ${escHtml(dollars)}${escHtml(when)}. Offset: ${escHtml(offsetLabel(coach.offset))}.${escHtml(fired)}${escHtml(now)} Cited residual, not a 2026 ledger balance.</p>
+        <p class="fine"><a href="/coach-fa">Offsets / free agents</a></p>
+      </div>`
 }

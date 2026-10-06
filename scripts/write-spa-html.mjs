@@ -30,6 +30,7 @@ import {
   HOT_SEAT_DESCRIPTION,
   HOT_SEAT_PATH,
   HOT_SEAT_TITLE,
+  applyBookBuyout,
   buyoutDescription,
   buyoutHeading,
   buyoutStaleness,
@@ -37,6 +38,7 @@ import {
   renderBuyoutStaticBody,
   renderHotSeatStaticBody,
 } from '../src/lib/buyout.js'
+import { coachFaShellDescription, coachPageTitle, renderCoachFaStaticBody } from '../src/lib/coachFa.js'
 import {
   SITE,
   descriptionFromPath,
@@ -101,19 +103,22 @@ export function routeShell(path, extras = {}) {
     buyoutSchools: extras.buyoutSchools || null,
     buyoutStaleness: extras.buyoutStaleness || null,
     hotSeatHtml: extras.hotSeatHtml || null,
+    coachFaHtml: extras.coachFaHtml || null,
   }
 }
 
 export function schoolShells(schools, extras = {}) {
-  const { year1, year2, spendMap } = extras
+  const { year1, year2, spendMap, buyouts } = extras
   return (schools || []).map((school) => {
+    const coach = buyouts?.coaches?.[school.id]
+    const pageSchool = coach ? applyBookBuyout(school, coach) : school
     const seo = { year1, year2, spend: spendMap?.[school.id] ?? null }
-    const faq = schoolFaqItems(school, seo)
+    const faq = schoolFaqItems(pageSchool, seo)
     return routeShell(`/school/${school.id}`, {
       title: schoolTitle(school.name),
-      description: schoolDescription(school, seo),
+      description: schoolDescription(pageSchool, seo),
       schoolName: school.name,
-      school,
+      school: pageSchool,
       seo,
       faq,
       hed: school.name,
@@ -135,7 +140,8 @@ export function loadSchoolSeoExtras() {
 
 export function loadSchoolShells() {
   const { data, year1, year2, spendMap } = loadSchoolSeoExtras()
-  return schoolShells(data.schools, { year1, year2, spendMap })
+  const buyouts = JSON.parse(readFileSync(join(root, 'data/buyouts.json'), 'utf8'))
+  return schoolShells(data.schools, { year1, year2, spendMap, buyouts })
 }
 
 function slimBuyoutSchool(school) {
@@ -295,6 +301,12 @@ export function applyRouteMeta(html, route) {
     return out
   }
 
+  if (path.startsWith('/coach-fa/') && route.coachFaHtml) {
+    out = replaceElementInner(out, '<div id="home-dek" class="page-wrap home-dek">', '')
+    out = replaceElementInner(out, '<div id="root">', `\n        ${route.coachFaHtml}\n      `)
+    return out
+  }
+
   if (path.startsWith('/buyout/') && route.buyoutCoach) {
     out = replaceElementInner(out, '<div id="home-dek" class="page-wrap home-dek">', '')
     out = replaceElementInner(
@@ -368,7 +380,22 @@ export function replaceElementInner(html, openTag, inner) {
 function fileForPath(path) {
   if (path.startsWith('/school/')) return `school/${path.split('/')[2]}.html`
   if (path.startsWith('/buyout/')) return `buyout/${path.split('/')[2]}.html`
+  if (path.startsWith('/coach-fa/')) return `coach-fa/${path.split('/')[2]}.html`
   return `${path.slice(1)}.html`
+}
+
+export function loadCoachFaShells() {
+  const book = JSON.parse(readFileSync(join(root, 'data/coach-fa.json'), 'utf8'))
+  const schools = JSON.parse(readFileSync(join(root, 'public/data/schools.json'), 'utf8')).schools
+  return Object.values(book.coaches || {}).filter((coach) => coach?.id && coach?.name).map((coach) => {
+    const html = renderCoachFaStaticBody(coach, schools)
+    return routeShell(`/coach-fa/${coach.id}`, {
+      title: coachPageTitle(coach),
+      description: coachFaShellDescription(coach),
+      hed: coach.name,
+      coachFaHtml: html,
+    })
+  })
 }
 
 export function writeSpaHtml({ distDir = join(root, 'dist'), indexHtml, schools } = {}) {
@@ -378,9 +405,11 @@ export function writeSpaHtml({ distDir = join(root, 'dist'), indexHtml, schools 
     ...(schools || loadSchoolShells()),
     ...loadBuyoutShells(),
     loadHotSeatShell(),
+    ...loadCoachFaShells(),
   ]
   mkdirSync(join(distDir, 'school'), { recursive: true })
   mkdirSync(join(distDir, 'buyout'), { recursive: true })
+  mkdirSync(join(distDir, 'coach-fa'), { recursive: true })
   const written = []
   for (const route of routes) {
     const file = fileForPath(route.path)

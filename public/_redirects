@@ -31,5 +31,6 @@
 # `/buyout?school=<id>` stays on that shell; Buyout.jsx replace-navigates to
 # `/buyout/<id>`. No rule may emit `/buyout/:school`.
 
-# Keep /coach-fa/* for detail URLs that are not prerendered files.
-/coach-fa/* /index.html 200
+# Coach-fa detail pages are prerendered as coach-fa/<id>.html.
+# Do not 200-rewrite /coach-fa/* to /index.html: pretty URLs then 308
+# that rewrite to /, and a missing file 404s the eight chair links.
