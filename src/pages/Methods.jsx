@@ -146,7 +146,7 @@ export default function Methods({ meta: metaProp }) {
           school filing, not booked NIL, and not House spent.
           House cap remains ~$20.5M all sports. Never added to the capacity waterfall or capacity total.
           Never subtracted from leftover. Leftover still only exists when a booked House spent cell exists.
-          Not On3. Not a named player deal.
+          Not a named player deal.
         </dd>
         <dt>NIL reported bar</dt>
         <dd>
@@ -164,7 +164,6 @@ export default function Methods({ meta: metaProp }) {
           Position starter ranges under the bar are a modeled/range breakdown of
           the same stack (QB / RB / WR / OT·OL / EDGE). The bar does not sit in
           the capacity waterfall and does not change leftover math.
-          Not On3.
         </dd>
         <dt>Industry estimate by position</dt>
         <dd>
@@ -182,7 +181,6 @@ export default function Methods({ meta: metaProp }) {
           The existing roster rate card table (conference-heuristic NIL) stays on the page
           and is not replaced.
           Never added to booked NIL, House spent, leftover, or the capacity waterfall.
-          Not On3.
         </dd>
         <dt>Coach pay vs buyout overhang</dt>
         <dd>Pay is an annual flow for the chair of record in the selected football season. A current-year file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. The year picker does not copy a new hire backward onto 2024. A buyout is overhang — a liability if the school fires without cause on the as-of date — not yearly spend. When the file prorates partial years daily, the headline is that dated remaining. Private-school blanks stay blank.</dd>
@@ -476,7 +474,7 @@ export default function Methods({ meta: metaProp }) {
         row the House-era model uses — <code>conferenceNilBand(school.conference).thirdParty</code>,
         including Notre Dame’s ACC × 1.08 premium. That median is then scaled by a
         published national NIL market-size series versus the 2024–25 baseline of $1.67B
-        (Opendorse “NIL at 3,” recapped by Athletic Business). The year scalar is a
+        (an industry NIL market report, recapped by Athletic Business). The year scalar is a
         market total, not a player file.
       </p>
       <table className="roster methods-table">
@@ -510,7 +508,7 @@ export default function Methods({ meta: metaProp }) {
       </table>
       <p className="fine">
         yearFactor = market[season] / {money(NIL_MARKET_BASELINE)}. Sources:{' '}
-        <a href={NIL_MARKET_SOURCE.pdf} target="_blank" rel="noreferrer">Opendorse “NIL at 3” PDF ↗</a>
+        <a href={NIL_MARKET_SOURCE.pdf} target="_blank" rel="noreferrer">industry NIL market report (PDF) ↗</a>
         {' · '}
         <a href={NIL_MARKET_SOURCE.recap} target="_blank" rel="noreferrer">Athletic Business recap ↗</a>
       </p>
@@ -533,7 +531,7 @@ export default function Methods({ meta: metaProp }) {
         does not invent a Pac-12 House rev-share. For 2021–23 Pac-12 the third-party
         median is a documented proxy: the average of the published Big 12
         ($6.01M) and ACC ($5.64M) third-party medians ($5.825M), then the same
-        Opendorse year factor as every other school. AAC still has no published
+        published year factor as every other school. AAC still has no published
         third-party row and inherits the ACC median; plain Independent is treated
         like Notre Dame’s ACC × 1.08 lane. Estimates, not filings.
       </p>
@@ -629,7 +627,7 @@ export default function Methods({ meta: metaProp }) {
       </p>
       <p>
         Once a school modeled midpoint exists — House-era in 2025–26 / 2026–27, or the
-        collective-era third-party × Opendorse year-factor range in 2021–24 — each named
+        collective-era third-party × published year-factor range in 2021–24 — each named
         player gets a modeled low/high that is a <em>share</em> of that school’s football
         slice of the 93% pot (the existing rate card). We do not call the names-only
         path once that midpoint exists. We do not invent a reported deal dollar.
@@ -656,7 +654,7 @@ export default function Methods({ meta: metaProp }) {
         with that school’s modeled midpoint versus the conference median. House-era years
         use the nil-ncaa.com total-roster table (SEC $30.16M, Big Ten $24.41M, Big 12 $21.61M,
         ACC $21.24M; Notre Dame is ACC × 1.08). Collective-era years use that conference’s
-        third-party median × the Opendorse year factor — Pac-12 via the Big 12 + ACC
+        third-party median × the published year factor — Pac-12 via the Big 12 + ACC
         third-party average proxy above. A richer public-cap stack therefore shows a wider
         named-player band at the same roster spot — not a marketplace listing.
       </p>
@@ -1102,7 +1100,7 @@ export default function Methods({ meta: metaProp }) {
         buyout. Rows need a hosted contract or a named newsroom FOIA. Power 4
         payer/payee schools on the 68-school desk get a small paid-out / received
         card when a row exists.         FCS and Group of 5 visitors stay an external label.
-        We do not invent dollars, and we do not use On3.
+        We do not invent dollars.
       </p>
 
       <h2>Checkbook bowl</h2>
@@ -1177,13 +1175,13 @@ export default function Methods({ meta: metaProp }) {
 
       <h2>What we did not do</h2>
       <ul>
-        <li>No Instagram / X / TikTok scrapers. The 2021–24 year scalar is a published national market total from the Opendorse “NIL at 3” report / Athletic Business recap — not a player file.</li>
+        <li>No Instagram / X / TikTok scrapers. The 2021–24 year scalar is a published national market total from an industry NIL market report / Athletic Business recap — not a player file.</li>
         <li>No Glassdoor or LinkedIn ingest — those sites are not a source for the earnings corroboration block.</li>
         <li>No invented source labels.</li>
         <li>No invented player names, and no invented <em>reported</em> deal dollar on a named player (modeled shares of the school pot are labeled modeled). Industry football roster estimates do not book named portal dollars.</li>
-        <li>Industry football roster estimates are a labeled modeled / survey lane from named CBS/SI (and TigerRag for LSU) articles. They are not booked NIL, not House spent, and are never subtracted from capacity or leftover. We do not invent a leftover from a survey range. We do not name On3.</li>
+        <li>Industry football roster estimates are a labeled modeled / survey lane from named CBS/SI (and TigerRag for LSU) articles. They are not booked NIL, not House spent, and are never subtracted from capacity or leftover. We do not invent a leftover from a survey range.</li>
         <li>The NIL reported bar plots that same football-stack range on one $0–$50M scale so schools can be compared — on each school page and on <code>/reported-nil</code>. Survey tiers keep the published words; sort uses the allocation envelope. Booked NIL and House spent stay separate marks. The bar is not leftover, not House spent, and not a waterfall step.</li>
-        <li>Industry estimates by position prefer a CBS / SI band or reported-estimate when one exists. Every other seat is a modeled range from the football stack ÷ existing seat weights. Named “sources say $X” player deals stay out unless the article is the cite and the cell is labeled reported-estimate. We do not invent school-by-school points. Not On3.</li>
+        <li>Industry estimates by position prefer a CBS / SI band or reported-estimate when one exists. Every other seat is a modeled range from the football stack ÷ existing seat weights. Named “sources say $X” player deals stay out unless the article is the cite and the cell is labeled reported-estimate. We do not invent school-by-school points.</li>
         <li>No women’s sports or Olympic-sport roster math in v1 (the 7% unallocated slice is the placeholder).</li>
         <li>Knight-Newhouse bulk download is CAPTCHA-gated. Hosted FY2025 MFRS PDFs are the first student-fee / subsidy source; remaining publics use public KN school-profile charts that cite the same MFRS lines. EADA 2024–25 has no fee/support split — we book the private grand total as its own lane and do not unpack it. Rutgers Extra Points, Ohio State newsroom, and the Louisville $200/semester fee rate stay as already-cited filings.</li>
         <li>Athletics debt is a separate layer, not a capacity add-on. Category 53 university-wide institutional debt is refused unless the filing splits an athletics-related amount. We do not invent an amortization schedule from a project cost. Empty stays empty.</li>

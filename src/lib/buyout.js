@@ -2,7 +2,25 @@
 
 import { moneyExact } from './format.js'
 
-export const DESK_TODAY = '2026-09-16'
+/**
+ * Desk date is the America/Chicago calendar day the site is built or opened.
+ * Upcoming kickoffs are on or after this date. It is not a frozen September 16.
+ */
+export function chicagoToday(now = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Chicago',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(now)
+  const y = parts.find((p) => p.type === 'year')?.value
+  const mo = parts.find((p) => p.type === 'month')?.value
+  const d = parts.find((p) => p.type === 'day')?.value
+  if (!y || !mo || !d) return null
+  return `${y}-${mo}-${d}`
+}
+
+export const DESK_TODAY = chicagoToday()
 export const DEFAULT_SCHOOL = 'florida-state'
 
 /**
@@ -439,7 +457,8 @@ export function buyoutLead(coach, today = DESK_TODAY) {
     return `${cite.name} buyout: no cited dollar on this desk. We do not invent a figure. A liability if fired without cause, not yearly spend.`
   }
   const when = citeTimingPhrase(cite)
-  let text = `${cite.name} buyout: ${moneyExact(cite.amount)}${when ? ` ${when}` : ''}.`
+  const mark = cite.confidence === 'estimated' ? 'an estimated ' : ''
+  let text = `${cite.name} buyout: ${mark}${moneyExact(cite.amount)}${when ? ` ${when}` : ''}.`
   const next = cite.firedLabel ? laterFiredStep(coach, today) : null
   if (next?.amount != null && next.firedLabel) {
     text += ` Then ${moneyExact(next.amount)} ${next.firedLabel}.`
@@ -460,6 +479,69 @@ function laterFiredStep(coach, today) {
     .filter((s) => s.amount != null && s.asOf && s.asOf > today && s.firedLabel)
     .sort((a, b) => cmpIso(a.asOf, b.asOf))
   return steps[0] || null
+}
+
+function foldCoachName(name) {
+  return String(name || '')
+    .toLowerCase()
+    .replace(/[.'’]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function sameCoachName(a, b) {
+  const fa = foldCoachName(a)
+  const fb = foldCoachName(b)
+  return Boolean(fa) && fa !== '—' && fa === fb
+}
+
+/**
+ * School-card shape for the same cite the buyout page prints.
+ * Dollars, as-of, source, estimated, and prior-contract come from buyouts.json.
+ */
+export function buyoutAsSchoolField(coach, today = DESK_TODAY) {
+  const cite = buyoutCite(coach, today)
+  if (!cite || cite.amount == null) return null
+  const step = currentStep(coach, today)
+  const bookSteps = normalizeSteps(coach?.steps).filter((s) => s.amount != null)
+  const notes = [coach?.notes, cite.priorContract ? 'Prior-contract figure, new deal pending.' : null]
+    .filter(Boolean)
+    .join(' ')
+  return {
+    value: cite.amount,
+    asOf: cite.asOf || null,
+    confidence: cite.confidence || 'reported',
+    source: buyoutSourceLabel(cite),
+    url: cite.source?.url || null,
+    firedLabel: cite.firedLabel || null,
+    priorContract: Boolean(cite.priorContract),
+    notes: notes || null,
+    rule: step?.rule || coach?.rule || coach?.buyoutRule || null,
+    steps: bookSteps,
+  }
+}
+
+/** Football buyout cell from the buyout book when this season’s chair is that coach. */
+export function applyBookBuyout(school, bookCoach, today = DESK_TODAY) {
+  const chair = school?.coaches?.football
+  if (!chair || !bookCoach?.name || !sameCoachName(chair.name, bookCoach.name)) return school
+  const field = buyoutAsSchoolField(bookCoach, today)
+  if (!field) return school
+  const prev = chair.buyout || {}
+  return {
+    ...school,
+    coaches: {
+      ...school.coaches,
+      football: {
+        ...chair,
+        buyout: {
+          ...prev,
+          ...field,
+          steps: field.steps.length ? field.steps : prev.steps,
+        },
+      },
+    },
+  }
 }
 
 export function buyoutSourceSentence(coach, today = DESK_TODAY) {
@@ -577,7 +659,8 @@ export function renderHotSeatStaticBody(book, schools) {
       const hrefBuy = `/buyout/${escHtml(row.id)}`
       const hrefSchool = `/school/${escHtml(row.id)}`
       const when = row.cite?.amount == null ? 'Pending' : citeTimingPhrase(row.cite) || 'Pending'
-      const dollars = row.cite?.amount == null ? 'Pending' : moneyExact(row.cite.amount)
+      const estimated = row.cite?.confidence === 'estimated' ? 'estimated ' : ''
+      const dollars = row.cite?.amount == null ? 'Pending' : `${estimated}${moneyExact(row.cite.amount)}`
       const source = buyoutSourceLabel(row.cite)
       const sourceBit = row.cite?.source?.url && source
         ? `<a href="${escHtml(row.cite.source.url)}">${escHtml(source)}</a>`

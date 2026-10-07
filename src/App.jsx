@@ -77,6 +77,7 @@ export default function App() {
   const [rosters, setRosters] = useState(null)
   const [layers, setLayers] = useState(null)
   const [tape, setTape] = useState(null)
+  const [buyoutBook, setBuyoutBook] = useState(null)
   const [metaOnly, setMetaOnly] = useState(null)
   const [rosterYear, setRosterYear] = useState(null)
   const [err, setErr] = useState(null)
@@ -98,6 +99,7 @@ export default function App() {
   }
 
   const needsDesk = kind === 'home' || kind === 'compare' || kind === 'school' || kind === 'reportedNil'
+  const needsBuyouts = kind === 'school' || kind === 'compare'
   const needsLayersFull = kind === 'school'
   const needsLayersLite = kind === 'home' || kind === 'compare'
   const needsTape = kind === 'tape' || kind === 'school'
@@ -119,6 +121,25 @@ export default function App() {
       cancelled = true
     }
   }, [needsDesk])
+
+  useEffect(() => {
+    if (!needsBuyouts) return
+    let cancelled = false
+    fetch('/data/buyouts.json')
+      .then((r) => {
+        if (!r.ok) throw new Error(r.statusText)
+        return r.json()
+      })
+      .then((book) => {
+        if (!cancelled) setBuyoutBook(book)
+      })
+      .catch((e) => {
+        if (!cancelled) setErr(String(e))
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [needsBuyouts])
 
   useEffect(() => {
     if (!needsLayersLite) return
@@ -238,8 +259,9 @@ export default function App() {
       layers,
       rosters,
       rosterYear,
+      buyouts: buyoutBook,
     })
-  }, [data, rosters, rosterYear, season, layers, includeAlumni])
+  }, [data, rosters, rosterYear, season, layers, includeAlumni, buyoutBook])
 
   const meta = data?.meta || metaOnly
   const house = meta ? houseValueForSeason(meta, season) : null
@@ -342,7 +364,7 @@ export default function App() {
 
   const ready =
     (!needsDesk || (data && (kind === 'reportedNil' || enriched))) &&
-    (kind !== 'school' || fullStatus === 'done') &&
+    (kind !== 'school' || (fullStatus === 'done' && buyoutBook)) &&
     (kind !== 'tape' || tape != null) &&
     (kind !== 'methods' || metaOnly != null)
 

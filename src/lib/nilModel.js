@@ -79,7 +79,7 @@ export const NIL_MARKET_BY_SEASON = {
 export const NIL_MARKET_BASELINE = 1_670_000_000
 
 export const NIL_MARKET_SOURCE = {
-  source: 'Opendorse “NIL at 3” national market size (Athletic Business recap)',
+  source: 'Industry NIL market report, national market size (Athletic Business recap)',
   pdf: 'https://biz.opendorse.com/wp-content/uploads/2024/07/NIL-AT-3-The-Annual-Opendorse-Report-1.pdf',
   recap:
     'https://www.athleticbusiness.com/operations/marketing/article/15710488/report-total-nil-market-for-202425-expected-to-hit-167b',
@@ -246,7 +246,7 @@ export function computeCollectiveEraNil(school, capacityTotal, allCapacityTotals
     capacityQuartile: q,
     yearFactor: factor,
     method:
-      'Collective-era third-party model: conference third-party median × Opendorse NIL-at-3 national market vs 2024–25. Low = 70% of the year median; high = 1.25× year median scaled by capacity quartile. No House rev-share. Estimates, not filings.',
+      'Collective-era third-party model: conference third-party median × the published national NIL market vs 2024–25. Low = 70% of the year median; high = 1.25× year median scaled by capacity quartile. No House rev-share. Estimates, not filings.',
   }
 }
 

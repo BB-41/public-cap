@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-30",
-    "itemCount": 453,
+    "itemCount": 454,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -6826,6 +6826,22 @@
       },
       "field": "coaches.football.buyout",
       "notes": "The Oklahoman (Colton Sulley, Sept. 15, 2026): https://www.oklahoman.com/story/sports/college/sooners/2026/09/15/ou-football-coach-brent-venables-contract-extension-approved-board-of-regents-oklahoma-sooners/91781793007/"
+    },
+    {
+      "id": "arizona-state-guarantee-2026-arizona-state-morgan-state",
+      "date": "2025-09-30",
+      "school": "arizona-state",
+      "schoolName": "Arizona State",
+      "kind": "guarantee-game",
+      "headline": "Arizona State pays Morgan State a $600,000 football guarantee.",
+      "figure": 600000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Sept. 30, 2025) — Arizona State–Morgan State contract via public records",
+        "url": "https://fbschedules.com/arizona-state-adds-morgan-state-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Mountain America Stadium, Tempe, Sept. 5, 2026. “The Sun Devils will pay the Bears a $600,000 guarantee.” azcentral (Aug. 31, 2026) names the same $600,000: https://www.azcentral.com/story/sports/college/asu/2026/08/31/asu-football-morgan-state-payment/91392976007/ . No separate band fee. Distinct from Texas A&M ↔ Arizona State $0."
     }
   ]
 }
