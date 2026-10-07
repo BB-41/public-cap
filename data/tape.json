@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-30",
-    "itemCount": 454,
+    "itemCount": 456,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -11,6 +11,22 @@
     ]
   },
   "items": [
+    {
+      "id": "virginia-guarantee-2026-virginia-delaware",
+      "date": "2026-10-06",
+      "school": "virginia",
+      "schoolName": "Virginia",
+      "kind": "guarantee-game",
+      "headline": "Virginia pays Delaware a $700,000 football guarantee.",
+      "figure": 700000,
+      "confidence": "reported",
+      "source": {
+        "label": "Augusta Free Press (Chris Graham, Oct. 6, 2026) — Virginia–Delaware contract, $700,000",
+        "url": "https://augustafreepress.com/news/uva-football-how-much-did-we-pay-for-those-two-guarantee-games/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Scott Stadium, Sat, Sept. 26, 2026. Contract dated Jan. 3, 2024. The column’s inflation-adjusted $747,511.07 is not booked. Norfolk State $420,000 in the same column is the existing row."
+    },
     {
       "id": "kansas-state-paid-buyout-tang-2026-10-05",
       "date": "2026-10-05",
