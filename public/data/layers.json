@@ -8552,7 +8552,21 @@
         },
         "notes": "KN FY2025 MFRS allocated-revenue lines are $0 \u2014 cited self-supporting on student fees and institutional/government support, not an invented blank. EADA 2024\u201325 has no split to contradict this."
       },
-      "buyoutsPaid": [],
+      "buyoutsPaid": [
+        {
+          "coach": "Jerome Tang",
+          "sport": "MBB",
+          "year": 2026,
+          "amount": 12000000,
+          "whoPaid": "Kansas State",
+          "status": "settled",
+          "confidence": "reported",
+          "source": "K-State athletics announcement (Oct. 5, 2026), reprinted by Hays Post; The Mercury (Oct. 1 and Oct. 5, 2026)",
+          "url": "https://themercury.com/k_state_sports/k-state-to-borrow-money-for-tang-buyout/article_de0a2380-b533-4465-8492-3fae07c8693b.html",
+          "asOf": "2026-10-05",
+          "notes": "Settlement lump of $12,000,000, not the USA TODAY without-cause contractual buyout of $18,675,000 as of Apr. 8, 2026. The Mercury (Oct. 1) describes that disputed contractual figure as $18.7 million and reports the sides settled it for $12 million. K-State athletics announced the $12 million payment on Oct. 5; The Mercury reports the athletics board approved it that day. Fired Feb. 15, 2026 (K-State athletics). Financing, not an amortization of the settlement: The Mercury (Oct. 5, Gene Taylor) says a traditional bank loan at prime plus 0.5 percent, 7.25 percent at that moment, repaid over 10 years, with no set principal-paydown schedule. Year 1 interest is $547,031. Year 2 interest is $870,000 only if none of the $12 million principal is paid down. Those interest lines are not booked as settlement dollars. Taylor\u2019s $7 million figure is his description of existing annual debt service, not an MFRS Category 34 cell, and is not booked on the debt lane. Firing release: https://www.kstatesports.com/news/2026/2/15/mens-basketball-k-state-announces-leadership-change-in-mens-basketball-program. Athletics announcement reprinted by Hays Post: https://hayspost.com/posts/62566c77-2b90-499d-af95-6fbb5a9f7a0f. Oct. 1 settlement story: https://themercury.com/k_state_sports/k-state-jerome-tang-settle-buyout-dispute-for-12-million/article_bb5dc5fd-36cb-44b9-a778-75cf9b106f0c.html."
+        }
+      ],
       "debt": {
         "outstanding": {
           "value": null,

@@ -97191,27 +97191,66 @@
           }
         },
         "mbb": {
-          "name": "Jerome Tang",
+          "name": "Casey Alexander",
           "pay": {
-            "value": 3800000,
+            "value": 3300000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
-            "asOf": "2026-04-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+            "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+            "asOf": "2026-03-16",
+            "notes": "Announced pay for 2026–27 is $3,300,000, then $3,350,000 (2027–28), $3,400,000 (2028–29), $3,450,000 (2029–30), and $3,500,000 (2030–31). The release calls each step a $50,000 base-salary increase. Not a USA TODAY total-pay cell. Jerome Tang’s $3,800,000 USA TODAY cell is not reused. No buyout dollar in the introduction.",
+            "breakdown": [
+              {
+                "label": "2026–27 pay",
+                "value": 3300000
+              }
+            ],
+            "schedule": [
+              {
+                "period": "2026-27",
+                "value": 3300000
+              },
+              {
+                "period": "2027-28",
+                "value": 3350000
+              },
+              {
+                "period": "2028-29",
+                "value": 3400000
+              },
+              {
+                "period": "2029-30",
+                "value": 3450000
+              },
+              {
+                "period": "2030-31",
+                "value": 3500000
+              }
+            ],
+            "baseOnly": true
           },
           "buyout": {
-            "value": 18675000,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
-            "asOf": "2026-04-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "value": null,
+            "confidence": "pending",
+            "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+            "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+            "asOf": "2026-03-16",
+            "notes": "No if-fired dollar in the introduction. Not Jerome Tang’s USA TODAY without-cause cell of $18,675,000 (as of Apr. 8, 2026) and not the $12,000,000 settlement booked under buyouts actually paid."
           },
           "term": {
-            "confidence": "pending",
-            "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "confidence": "reported",
+            "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+            "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+            "asOf": "2026-03-16",
+            "through": "2030-31",
+            "yearsRemaining": 5,
+            "notes": "Five-year contract approved by the K-State Athletics, Inc. board and President Richard Linton. Hired Mar. 13, 2026; introduced Mar. 16, 2026. Pay years 2026–27 through 2030–31. Jerome Tang was fired Feb. 15, 2026 and is not the current chair."
+          },
+          "contractUrl": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+          "contract": {
+            "label": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+            "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach"
           }
         }
       },
@@ -97651,13 +97690,15 @@
           },
           "mbb": {
             "name": "Jerome Tang",
+            "status": "fired",
+            "firedOn": "2026-02-15",
             "pay": {
               "value": 3800000,
               "confidence": "reported",
               "source": "USA TODAY Sports coach salary database",
               "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
               "asOf": "2026-04-08",
-              "notes": "Total pay. Annual flow, not a wealth stock."
+              "notes": "USA TODAY total-pay cell as of Apr. 8, 2026, after Tang was fired Feb. 15, 2026. Former chair for the 2025 football-season year. Not Casey Alexander’s pay and not a current-chair figure. Annual flow, not a wealth stock."
             },
             "buyout": {
               "value": 18675000,
@@ -97665,12 +97706,15 @@
               "source": "USA TODAY Sports coach salary database",
               "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
               "asOf": "2026-04-08",
-              "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+              "firedLabel": "USA TODAY without-cause cell — superseded by $12M settlement",
+              "notes": "Contractual without-cause buyout on the USA TODAY database as of Apr. 8, 2026: $18,675,000. The Mercury describes that disputed contractual figure as $18.7 million. It is not what K-State owes. The settlement is $12,000,000 (K-State athletics announcement Oct. 5, 2026; The Mercury Oct. 1 and Oct. 5, 2026), booked under buyouts actually paid. A settlement, not this remaining-contract buyout."
             },
             "term": {
               "confidence": "pending",
-              "asOf": "2026-08",
-              "notes": "No public through-year on the desk yet. Not a guess."
+              "asOf": "2026-02-15",
+              "source": "K-State athletics — leadership change (Feb. 15, 2026)",
+              "url": "https://www.kstatesports.com/news/2026/2/15/mens-basketball-k-state-announces-leadership-change-in-mens-basketball-program",
+              "notes": "Former coach. Fired Feb. 15, 2026, effective immediately. Associate head coach Matthew Driscoll was named interim the same day and a national search began immediately. Casey Alexander was hired Mar. 13, 2026. This 2025 key is the chair during the 2025 football season, not the current chair. No public through-year was on the desk before the firing."
             }
           }
         },
@@ -97747,27 +97791,66 @@
             }
           },
           "mbb": {
-            "name": "Jerome Tang",
+            "name": "Casey Alexander",
             "pay": {
-              "value": 3800000,
+              "value": 3300000,
+              "year": 2026,
               "confidence": "reported",
-              "source": "USA TODAY Sports coach salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
-              "asOf": "2026-04-08",
-              "notes": "Total pay. Annual flow, not a wealth stock."
+              "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+              "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+              "asOf": "2026-03-16",
+              "notes": "Chair hired Mar. 13, 2026 and introduced Mar. 16, 2026. Announced pay for 2026–27 is $3,300,000, then $3,350,000 (2027–28), $3,400,000 (2028–29), $3,450,000 (2029–30), and $3,500,000 (2030–31). The release calls each step a $50,000 base-salary increase. Not a USA TODAY total-pay cell. Jerome Tang’s $3,800,000 USA TODAY cell is not reused. No buyout dollar in the introduction.",
+              "breakdown": [
+                {
+                  "label": "2026–27 pay",
+                  "value": 3300000
+                }
+              ],
+              "schedule": [
+                {
+                  "period": "2026-27",
+                  "value": 3300000
+                },
+                {
+                  "period": "2027-28",
+                  "value": 3350000
+                },
+                {
+                  "period": "2028-29",
+                  "value": 3400000
+                },
+                {
+                  "period": "2029-30",
+                  "value": 3450000
+                },
+                {
+                  "period": "2030-31",
+                  "value": 3500000
+                }
+              ],
+              "baseOnly": true
             },
             "buyout": {
-              "value": 18675000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports coach salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
-              "asOf": "2026-04-08",
-              "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+              "value": null,
+              "confidence": "pending",
+              "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+              "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+              "asOf": "2026-03-16",
+              "notes": "No if-fired dollar in the introduction. Not Jerome Tang’s USA TODAY without-cause cell of $18,675,000 (as of Apr. 8, 2026) and not the $12,000,000 settlement booked under buyouts actually paid."
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "notes": "No public through-year on the desk yet. Not a guess."
+              "confidence": "reported",
+              "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+              "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+              "asOf": "2026-03-16",
+              "through": "2030-31",
+              "yearsRemaining": 5,
+              "notes": "Five-year contract approved by the K-State Athletics, Inc. board and President Richard Linton. Hired Mar. 13, 2026; introduced Mar. 16, 2026. Pay years 2026–27 through 2030–31. Jerome Tang was fired Feb. 15, 2026 and is not this chair."
+            },
+            "contractUrl": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+            "contract": {
+              "label": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+              "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach"
             }
           }
         }
