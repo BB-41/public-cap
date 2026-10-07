@@ -28,6 +28,7 @@
       "Tennessee → Furman $500,000 is booked from FBSchedules (May 24, 2022). The dollar is the 2020 contract (canceled for COVID); Furman athletics called 2026 the make-up of that year. The story did not name a 2026 date. Tennessee Athletics lists Sat, Sept. 5, 2026 (Tennessee 56, Furman 9).",
       "Alabama → Chattanooga $500,000 is booked from FBSchedules (updated Dec. 5, 2025) via Chattanooga public records, for Nov. 21, 2026 at Bryant-Denny. The 2027 Marshall $1.35 million in that story is not a 2026 row. The USF cancellation fees are not a guarantee cell.",
       "Virginia → Norfolk State $420,000 is booked from FBSchedules (March 12, 2020) via Virginia FOIA. The contract date was Saturday, Nov. 21, 2026; Virginia Athletics lists Friday, Sept. 11, 2026. The dollar is the original contract amount. The 2028 Richmond $505,000 is not a 2026 row.",
+      "Virginia → Delaware $700,000 is booked from Augusta Free Press (Chris Graham, Oct. 6, 2026), which obtained the Norfolk State and Delaware contracts. The Delaware contract is dated Jan. 3, 2024. Virginia Athletics (Feb. 5, 2024) sets the game for Saturday, Sept. 26, 2026 at Scott Stadium. The column’s inflation-adjusted $747,511.07 is not the contract dollar. The same column’s Norfolk State $420,000 matches the existing row and is not a second check.",
       "Oklahoma → New Mexico $1,600,000 is booked from the Albuquerque Journal (Sean Reider, published Sept. 17, 2026, updated Sept. 18). The Journal reviewed the November 2019 contract for the Sept. 19 game at Gaylord Family–Oklahoma Memorial Stadium. A $250,000 partial was due before April 21, 2021 and is part of that $1.6 million, not a second check. 400 complimentary tickets are named. No separate band fee is named.",
       "Auburn → Southern Miss $1,850,000 is booked from AL.com (Peter Rauterkus, Sept. 10, 2026), which obtained the contract for the Sept. 12 home opener at Jordan-Hare. Band admission up to 500 seats is complimentary inside the ticket allotment, not a separate band fee. The series was first set for Sept. 26, 2020 and moved after the shortened 2020 season; the dollar on this row is the 2026 contract copy.",
       "South Carolina → Kent State $1,300,000 is booked from The State (Jordan Kaye, Sept. 1, 2026). The contract total is $1.3 million: $300,000 on or before Jan. 31, 2026 and $1 million on or before Jan. 31, 2027. The cell is the total, not either installment. Signed December 2025. No separate band fee is named.",
@@ -405,6 +406,20 @@
       "label": "FBSchedules (March 12, 2020) — Virginia–Norfolk State contract via Virginia FOIA",
       "url": "https://fbschedules.com/virginia-to-host-norfolk-state-in-2026-richmond-in-2028/",
       "asOf": "2020-03-12",
+      "confidence": "reported"
+    },
+    "augustafreepress-virginia-delaware-2026": {
+      "id": "augustafreepress-virginia-delaware-2026",
+      "label": "Augusta Free Press (Chris Graham, Oct. 6, 2026) — Virginia–Delaware contract, $700,000",
+      "url": "https://augustafreepress.com/news/uva-football-how-much-did-we-pay-for-those-two-guarantee-games/",
+      "asOf": "2026-10-06",
+      "confidence": "reported"
+    },
+    "virginiasports-delaware-2026": {
+      "id": "virginiasports-delaware-2026",
+      "label": "Virginia Athletics (Feb. 5, 2024) — Virginia hosts Delaware on Sept. 26, 2026 at Scott Stadium",
+      "url": "https://virginiasports.com/news/2024/02/05/virginia-to-host-delaware-in-2026",
+      "asOf": "2024-02-05",
       "confidence": "reported"
     },
     "fbschedules-wisconsin-eastern-michigan-2026": {
@@ -1236,6 +1251,20 @@
       "confidence": "reported",
       "citeIds": ["fbschedules-virginia-norfolk-state-2026"],
       "notes": "Scott Stadium. FBSchedules (Kevin Kelley, March 12, 2020) obtained the contract from Virginia via FOIA: Virginia pays Norfolk State $420,000, then dated Saturday, Nov. 21, 2026. Virginia Athletics (May 26, 2026) lists the home opener as Friday, Sept. 11, 2026. Norfolk State Athletics (April 2026) said the game had moved to that Friday from Saturday, Sept. 12. The desk schedule lists Sept. 11, 2026. The dollar on this row is the original contract amount. The contract story does not name a separate band fee. The 2028 Richmond $505,000 in that story is not a 2026 row."
+    },
+    {
+      "id": "2026-virginia-delaware",
+      "season": 2026,
+      "date": "2026-09-26",
+      "payerSchoolId": "virginia",
+      "payeeLabel": "Delaware",
+      "payeeSlug": "delaware",
+      "amount": 700000,
+      "homeSchoolId": "virginia",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["augustafreepress-virginia-delaware-2026", "virginiasports-delaware-2026"],
+      "notes": "Scott Stadium, Sat, Sept. 26, 2026. Augusta Free Press (Chris Graham, Oct. 6, 2026) obtained the contracts for Virginia’s two September guarantee games. The Delaware contract, dated Jan. 3, 2024, is $700,000. This cell is that newsroom contract figure, not a hosted contract PDF. The column’s inflation-adjusted $747,511.07 is not the contract dollar and is not booked. The same column restates Norfolk State at $420,000, already booked on the March 12, 2020 FOIA row — not a second check. Virginia Athletics (Feb. 5, 2024) announces the first meeting, Saturday, Sept. 26, 2026, at Scott Stadium, and does not name the dollar. No separate band fee is named. Desk schedule lists Sat, Sept. 26, 2026, Virginia home."
     },
     {
       "id": "2026-wisconsin-eastern-michigan",
