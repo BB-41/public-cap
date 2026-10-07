@@ -37,7 +37,11 @@ export default function NamedRoster({ school, season, open, onToggle, includeAlu
     return (
       <section>
         <h2>Roster</h2>
-        <p className="lede tight">No verified public football roster names on the desk for this school.</p>
+        <p className="lede tight">
+          {school._rosterMissing
+            ? `The ${season} roster file is not on the desk, so public football names for this season are not loaded.`
+            : 'No verified public football roster names on the desk for this school.'}
+        </p>
       </section>
     )
   }

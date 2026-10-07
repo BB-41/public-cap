@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
-import { money, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel } from '../lib/format.js'
+import NotFound from './NotFound.jsx'
+import { money, moneyCited, moneyExact, moneyRange, earn, pct, coachTermLabel, contractLinkLabel, coachPayBlankLabel } from '../lib/format.js'
 import { formatLongDate } from '../lib/buyout.js'
 import {
   collectSources,
@@ -47,11 +48,14 @@ import TapeItems from '../components/TapeItems.jsx'
 import TvContracts from '../components/TvContracts.jsx'
 import { GuaranteeSchoolSection } from './GuaranteeGames.jsx'
 import { hashKey, homePath, isSchoolDrill } from '../lib/share.js'
+import { FOOTBALL_REVENUE_LABEL, FOOTBALL_SPEND_LABEL, footballSpendField } from '../lib/checkbookBowl.js'
+import bowlBook from '../../data/checkbook-bowl.json'
 import NamedRoster from '../components/NamedRoster.jsx'
 import { buildSchoolNilHistory, fetchRosterBooks } from '../lib/nilHistory.js'
 import AlumniToggle from '../components/AlumniToggle.jsx'
 import { ContractFiles } from '../components/ContractFiles.jsx'
 import { BuyoutRuleLine, BuyoutStepTape, CoachPayField, IncentiveList } from '../components/CoachPay.jsx'
+import SchoolFaq from '../components/SchoolFaq.jsx'
 
 function TermBlock({ term }) {
   const label = coachTermLabel(term)
@@ -87,6 +91,8 @@ function TermBlock({ term }) {
 }
 
 function StaffPayCell({ field }) {
+  const blank = coachPayBlankLabel(field)
+  if (blank) return <span>{blank}</span>
   if (!field || field.value == null) return <span className="pending-cell">pending</span>
   return (
     <>
@@ -269,7 +275,7 @@ function StaffSection({ school, season }) {
   )
 }
 
-function ContractLink({ url, label }) {
+function ContractLink({ url, label, pay, isPrivate }) {
   if (url) {
     return (
       <a className="ext contract-link" href={url} title={label || undefined} target="_blank" rel="noreferrer">
@@ -277,7 +283,12 @@ function ContractLink({ url, label }) {
       </a>
     )
   }
-  return <span className="no-contract">no public contract</span>
+  // A cited dollar is not a claim that the contract is unpublished.
+  if (pay?.value != null) return null
+  const text = pay?.unavailable === 'private' || isPrivate
+    ? 'Contract not public'
+    : 'Contract not yet released'
+  return <span className="no-contract">{text}</span>
 }
 
 function BacksThis({ school }) {
@@ -691,11 +702,24 @@ function PrivateCheckbook({ school }) {
           <Field field={eada.total} fallback="No EADA grand total on the desk." />
           {eada.football ? (
             <div className="subfield" id="slice-eada-football">
-              <div className="eyebrow">EADA football (sport-attributed)</div>
+              <div className="eyebrow">{FOOTBALL_REVENUE_LABEL}</div>
               <Field field={eada.football} />
             </div>
           ) : null}
         </div>
+      </div>
+    </section>
+  )
+}
+
+function FootballSpend({ school }) {
+  const field = footballSpendField(school, bowlBook.spendFy2025)
+  if (!field || field.value == null) return null
+  return (
+    <section className="football-spend" id="slice-football-spend">
+      <div className="checkbook-lane">
+        <div className="eyebrow">{FOOTBALL_SPEND_LABEL}</div>
+        <Field field={field} />
       </div>
     </section>
   )
@@ -742,7 +766,16 @@ function FieldSteps({ steps }) {
 
 function Field({ field, fallback = '—' }) {
   const windowSteps = datedSpentSteps(field)
+  const blank = coachPayBlankLabel(field)
   if (!field || (field.value == null && !windowSteps.length)) {
+    if (blank) {
+      return (
+        <div className="field disclosure-box">
+          <div className="field-val">{blank}</div>
+          <div className="field-meta">{field?.notes || fallback}</div>
+        </div>
+      )
+    }
     return (
       <div className="field pending-box">
         <div className="field-val">Pending</div>
@@ -750,17 +783,25 @@ function Field({ field, fallback = '—' }) {
       </div>
     )
   }
-  const multiWindow = windowSteps.length > 1
+  const partialWindow = Boolean(field.partialYear && windowSteps.length)
+  const multiWindow = windowSteps.length > 1 || partialWindow
   return (
     <div className="field">
       {multiWindow ? (
         <>
-          <p className="fine field-steps-lede">Dated windows — not a stacked total.</p>
+          <p className="fine field-steps-lede">
+            {partialWindow && windowSteps.length === 1
+              ? 'Dated partial window — not a full-year total.'
+              : 'Dated windows — not a stacked total.'}
+          </p>
           <FieldSteps steps={windowSteps} />
         </>
       ) : (
         <div className="field-val">
-          {moneyExact(field.value)} <i className={`dot ${field.confidence}`} />
+          {moneyCited(field.value, { approximate: field.approximate })}
+          {field.firedLabel ? <span className="pay-year"> · {field.firedLabel}</span> : null}
+          {' '}
+          <i className={`dot ${field.confidence}`} />
         </div>
       )}
       <FieldMeta field={field} />
@@ -825,7 +866,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
     writeHidePending(on)
   }
 
-  if (!s) return <div className="page-wrap"><p>School not on the desk.</p></div>
+  if (!s) return <NotFound />
   const cap = s._cap
   const house = houseValueForSeason(meta, season)
   const houseField = s._houseField
@@ -862,6 +903,9 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             {' '}Student fees on this desk are not tuition.
             {' '}Pending stays empty.
           </p>
+          <p className="fine nil-101-cue">
+            <Link to="/nil-101">How NIL works</Link>
+          </p>
           <p className="lane-status">
             <span>Capacity <b>{isPrivateGap(s) ? 'conference media' : 'booked stack'}</b></span>
             {eadaLane(s).total ? <span>EADA <b>cited</b></span> : null}
@@ -883,8 +927,11 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
               <div className="eyebrow" title={defTitle('houseRemaining')}>
                 Leftover{leftoverLead.label ? ` · ${leftoverLead.label}` : leftoverLead.field?.partialYear ? ' · YTD' : ''}
               </div>
-              <div className="display">{money(leftoverLead.value)}</div>
+              <div className="display">
+                {Math.abs(leftoverLead.value) < 1_000_000 ? moneyExact(leftoverLead.value) : money(leftoverLead.value)}
+              </div>
               <div className="eyebrow">House remaining · booked</div>
+              {leftoverLead.field?.footnote ? <p className="fine">{leftoverLead.field.footnote}</p> : null}
             </>
           ) : (
             <>
@@ -910,7 +957,15 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         </div>
       </header>
 
+      <SchoolFaq
+        school={s}
+        year1={meta?.houseCap?.y2025_26?.value}
+        year2={meta?.houseCap?.y2026_27?.value}
+        spend={bowlBook.spendFy2025?.[s.id]}
+      />
+
       <PrivateCheckbook school={s} />
+      <FootballSpend school={s} />
 
       <CapacityWaterfall
         school={s}
@@ -978,11 +1033,14 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
             <p className="lede tight">{ITEM44_COMPANION_LEDE}</p>
           </>
         )}
-        {!hasVal(s.nil.booked) && datedSpentSteps(s.nil.year1Lead?.booked).length > 1 && (
+        {!hasVal(s.nil.booked) && hasVal(s.nil.year1Lead?.booked) && (
           <div className="subfield">
-            <div className="eyebrow">{s.nil.year1Lead.label}</div>
+            <div className="eyebrow">{s.nil.year1Lead.booked?.leadLabel || s.nil.year1Lead.label}</div>
             <Field field={s.nil.year1Lead.booked} />
           </div>
+        )}
+        {hasVal(s.nil.booked) && s.nil.booked.leadLabel && (
+          <div className="eyebrow">{s.nil.booked.leadLabel}</div>
         )}
         <Field field={s.nil.booked} fallback="Empty / pending. FOIA, MFRS institutional NIL, or counsel spent totals only. Official House / Item 44 number when it exists. Collective 990 is a separate lane below." />
         {hasVal(s.nil.preCap) && (
@@ -1160,7 +1218,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
         <section>
           <h2>Football coach</h2>
           <div className="coach-name">{s.coaches.football.name}</div>
-          <ContractLink url={s.coaches.football.contractUrl} label={s.coaches.football.term?.source} />
+          <ContractLink url={s.coaches.football.contractUrl} label={s.coaches.football.term?.source} pay={s.coaches.football.pay} isPrivate={s.private} />
           <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>
           <CoachPayField pay={s.coaches.football.pay} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
@@ -1174,13 +1232,16 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           <div className="eyebrow" title={defTitle('buyout')}>Buyout overhang (not yearly spend)</div>
           <Field field={s.coaches.football.buyout} />
           <BuyoutStepTape steps={s.coaches.football.buyout?.steps} compact />
+          <p className="fine">
+            <Link to={`/buyout/${s.id}`}>{s.coaches.football.name} buyout</Link>
+          </p>
           <IncentiveList items={s.coaches.football.pay?.incentives} />
           <ContractFiles files={s.coaches.football.contract?.files} />
         </section>
         <section>
           <h2>Men’s basketball coach</h2>
           <div className="coach-name">{s.coaches.mbb.name}</div>
-          <ContractLink url={s.coaches.mbb.contractUrl} label={s.coaches.mbb.term?.source} />
+          <ContractLink url={s.coaches.mbb.contractUrl} label={s.coaches.mbb.term?.source} pay={s.coaches.mbb.pay} isPrivate={s.private} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
           <TermBlock term={s.coaches.mbb.term} />
           <div className="eyebrow" title={defTitle('coachPay')}>Annual pay</div>

@@ -33,7 +33,7 @@ npm run dev
 Example questions that return real booked figures:
 
 - What's Louisville's leftover / House spent / booked NIL?
-  → leftover $300k · House spent $20.2M · booked NIL $32.9M (House Year 1)
+  → leftover $300k · House spent $20.2M (House Year 1) · booked NIL $32.9M (full FOIA window, not House Year 1)
 - Which schools have booked House spent?
   → Louisville, Kentucky, Texas (two dated windows), UCLA, California
 - What's SMU's conference media line — is it full TV?
@@ -90,6 +90,9 @@ Football head-coach pay is year-keyed (`coachesByYear.YYYY.football.pay`).
 USA TODAY team pages (`/coach/team/{id}` `__NEXT_DATA__`) fill 2021–2025
 Total Pay when the published name matches that year’s chair. File/PDF
 dollars win. A 2024 cell is never copied onto 2025 or 2026.
+A private-school blank is labeled “Contract not public.”
+A public chair whose contract is not yet released is labeled “Contract not yet released.”
+We do not invent a dollar.
 Refresh with `python3 scripts/fetch-usat-coaches.py` then
 `python3 scripts/ingest-usat-coach-pay.py`.
 

@@ -63,10 +63,10 @@
     },
     "blockers": [
       "College Scorecard API key not used; official earnings and UGDS from the June 2026 Most Recent Institution file (collegescorecard.ed.gov/data) for the 52 added schools. The original 16 keep their College Transitions Dec 2025 Scorecard compilation figures (same Scorecard median, earlier compile).",
-      "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA. Where a FY2025 NCAA membership report, NCAA agreed-upon procedures statement, or athletic-association audit was opened, ticket sales, contributions, and royalties/sponsorships replace the peer-scaled estimates and are tagged reported with the filing URL and date. Category 9 in-kind is not folded into contributions. Conference media lines are unchanged. Public schools whose FY2025 filing was not verified keep the labeled desk estimate. Private schools stay a revenue gap.",
-      "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school cells stay pending.",
+      "Knight-Newhouse custom reports / bulk download require a form + CAPTCHA; new public schools use conference 990 floors or cited school 990 lines plus desk-estimated tickets/sponsorships/contributions. Where a FY2025 NCAA membership report, NCAA agreed-upon procedures statement, or athletic-association audit was opened, ticket sales, contributions, and royalties/sponsorships replace the peer-scaled estimates and are tagged reported with the filing URL and date. Category 9 in-kind is not folded into contributions. Conference media lines are unchanged. Public schools whose FY2025 filing was not verified keep the labeled desk estimate. Private schools stay a revenue gap.",
+      "Coach pay prefers a current-chair employment agreement, term sheet, LOI, or board packet when that file publishes a dollar. USA TODAY Sports football (Oct 8, 2025) and men’s basketball (Apr 8, 2026) salary tables are fallback only when we do not have a current-chair file with a dollar. Outgoing-coach cells are never reused (LSU Kelly, Kentucky Stoops, Florida Napier, Ole Miss Kiffin). Blank private-school head-coach cells are labeled Contract not public. A public chair with no released contract is labeled Contract not yet released. We do not invent a dollar.",
       "Private schools have structural revenue gaps (tickets/sponsorships/contributions pending).",
-      "Most NIL bands are pending — booked House-window cells are Louisville (FOIA $32.9M Mar 2025–Jul 1 2026, including $12.7M pre-cap KY NIL), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Texas (coordinator letter R013976-090126: $17,999,479.04 Jul 1 2025–Jun 30 2026 and $4,808,560.63 Jul 1–Aug 31 2026, not stacked; $13.5M HPM YTD hold replaced). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
+      "Most NIL bands are pending — booked House-window cells are Louisville (House Year 1 spent $20.2M for Jul 1 2025–Jul 1 2026; $32.9M is the full FOIA window Mar 2025–Jul 1 2026, including $12.7M pre-cap Kentucky NIL, and is not a House Year 1 total), Kentucky (counsel $18M, same window), UCLA and California (CalMatters: each about $20.5M in 2025-26), Colorado (Sportico Nov. 6, 2025: $7,672,052.88 across 262 payments, July 1–September 30, 2025 — partial window, not a full-year total), Texas (coordinator letter R013976-090126: $17,999,479.04 Jul 1 2025–Jun 30 2026 and $4,808,560.63 Jul 1–Aug 31 2026, not stacked; $13.5M HPM YTD hold replaced). FY2025 MFRS / preCap cells: Penn State Item 44 $18,368,391 (published sport lines); Oklahoma State \"just over $16 million\" (estimated; not $16,000,001); Texas school-FY $3.2M (only two months of House); Georgia / Tennessee / Alabama / Oregon / Utah / UNC / Ohio State / Illinois / Minnesota / Washington / Wisconsin / Iowa State / Virginia / Colorado Item 44 $0. Kentucky FY2025 $0 not booked — no public MFRS PDF on the desk; do not overwrite the $18M counsel cell. Do not book a USC plan-to-distribute quote or the Texas $18M cap plan / on-track projection.",
       "CollegeFootballData /teams requires an API key we do not have; logos pulled from Wikimedia Commons then ESPN public NCAA marks, saved locally.",
       "Coach contract PDFs linked only when a school, state, board, or newsroom host posted the actual file (HTTP 200). Public-school buyouts prefer that file; articles are fallback only when no current file is loaded. Stale hire packets are not treated as the current deal. Private-school blanks stay pending. No invented URLs.",
       "Coach contract terms (through-year / years remaining) are cited only from employment agreements, board packets, or newsroom/school releases that quote one. USA TODAY salary tables do not publish years remaining; unknown chairs stay pending.",
@@ -368,7 +368,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -15143,7 +15143,7 @@
       "color": "#841617",
       "capacity": {
         "fiscalYearPrimary": "FY2025",
-        "fiscalYearNote": "FY2025 SEC distribution is a phase-in ($2.6M cited) and stays on the media line. Tickets, contributions, and sponsorships are the FY2025 NCAA report lines from the Sooners on SI open-records table (Feb 12, 2026).",
+        "fiscalYearNote": "FY2025 SEC distribution is a phase-in ($2.6M cited) and stays on the media line. Tickets, contributions, and sponsorships are the FY2025 NCAA report lines from the Sooners on SI open-records table (Feb 12, 2026). A school-hosted NCAA membership report or agreed-upon procedures PDF was not found on a 2026-10-07 re-check.",
         "mediaConference": {
           "value": 2600000,
           "confidence": "reported",
@@ -15160,7 +15160,7 @@
           "url": "https://www.si.com/college/oklahoma/football/oklahoma-takes-financial-hit-with-early-move-to-sec-but-set-up-for-brighter-days-ahead-01kh9cm770jy",
           "asOf": "2026-02-12",
           "fiscalYear": "FY2025",
-          "notes": "Sooners on SI (Feb 12, 2026) table of Oklahoma's FY2025 NCAA financial report, obtained by open-records request; the school filed the report Jan 14, 2026. The hosted NCAA PDF was not posted. Category dollars below are the article's table, not a rounded retelling."
+          "notes": "Sooners on SI (Feb 12, 2026) table of Oklahoma's FY2025 NCAA financial report, obtained by open-records request; the school filed the report Jan 14, 2026. A school-hosted NCAA membership report or agreed-upon procedures PDF was not found on a 2026-10-07 re-check (soonersports.com posts the FY2025 EADA survey, which is not this MFRS). Category dollars are the article's table, not a rounded retelling."
         },
         "tickets": {
           "value": 54512302,
@@ -15169,7 +15169,7 @@
           "url": "https://www.si.com/college/oklahoma/football/oklahoma-takes-financial-hit-with-early-move-to-sec-but-set-up-for-brighter-days-ahead-01kh9cm770jy",
           "asOf": "2026-02-12",
           "fiscalYear": "FY2025",
-          "notes": "Sooners on SI (Feb 12, 2026) table of Oklahoma's FY2025 NCAA financial report, obtained by open-records request; the school filed the report Jan 14, 2026. The hosted NCAA PDF was not posted. Category dollars below are the article's table, not a rounded retelling."
+          "notes": "Sooners on SI (Feb 12, 2026) table of Oklahoma's FY2025 NCAA financial report, obtained by open-records request; the school filed the report Jan 14, 2026. A school-hosted NCAA membership report or agreed-upon procedures PDF was not found on a 2026-10-07 re-check (soonersports.com posts the FY2025 EADA survey, which is not this MFRS). Category dollars are the article's table, not a rounded retelling."
         },
         "contributions": {
           "value": 92923040,
@@ -15178,7 +15178,7 @@
           "url": "https://www.si.com/college/oklahoma/football/oklahoma-takes-financial-hit-with-early-move-to-sec-but-set-up-for-brighter-days-ahead-01kh9cm770jy",
           "asOf": "2026-02-12",
           "fiscalYear": "FY2025",
-          "notes": "Sooners on SI (Feb 12, 2026) table of Oklahoma's FY2025 NCAA financial report, obtained by open-records request; the school filed the report Jan 14, 2026. The hosted NCAA PDF was not posted. Category dollars below are the article's table, not a rounded retelling. Category 9 in-kind is not in this contributions line."
+          "notes": "Sooners on SI (Feb 12, 2026) table of Oklahoma's FY2025 NCAA financial report, obtained by open-records request; the school filed the report Jan 14, 2026. A school-hosted NCAA membership report or agreed-upon procedures PDF was not found on a 2026-10-07 re-check (soonersports.com posts the FY2025 EADA survey, which is not this MFRS). Category dollars are the article's table, not a rounded retelling. Category 9 in-kind is not in this contributions line."
         },
         "studentFees": {
           "value": 0,
@@ -15242,29 +15242,29 @@
         "football": {
           "name": "Brent Venables",
           "pay": {
-            "value": 7552750,
+            "value": 10000000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "OU Daily (Sept. 15, 2026) — board-approved deal; $10 million in 2026, the first year",
+            "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+            "asOf": "2026-09-15",
+            "notes": "Stamped from the 2026 year key. 2026 contract-year pay is $10,000,000, the first year of the board-approved deal (OU Daily, Joshua McDaniel, Sept. 15, 2026). Package is $63 million over six years; the $10.5 million average is not this cell. The USA TODAY Oct. 8, 2025 total pay of $7,552,750 stays on the 2025 year key only."
           },
           "buyout": {
-            "value": 36158333,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "value": null,
+            "confidence": "pending",
+            "source": "OU Daily (Sept. 15, 2026) — Roger Denny did not disclose the buyout",
+            "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+            "asOf": "2026-09-15",
+            "notes": "Pending. Roger Denny did not disclose the buyout when asked after the Sept. 15, 2026 board approval (OU Daily, Joshua McDaniel). The Oklahoman (Colton Sulley, Sept. 15, 2026) says Denny did not provide buyout details and the figure will eventually become public record. The USA TODAY Oct. 8, 2025 cell of $36,158,333 is prior-deal overhang under a superseded contract and is cleared. Not booked as current. https://www.oklahoman.com/story/sports/college/sooners/2026/09/15/ou-football-coach-brent-venables-contract-extension-approved-board-of-regents-oklahoma-sooners/91781793007/"
           },
           "term": {
             "confidence": "reported",
-            "source": "University of Oklahoma Athletics",
-            "url": "https://soonersports.com/news/2026/8/20/football-venables-agrees-to-2-year-contract-extension",
-            "asOf": "2026-08",
-            "through": "2031",
-            "yearsRemaining": 5,
-            "notes": "Two-year add-on; six-year deal through the 2031 season."
+            "source": "OU Daily (Sept. 15, 2026) — OU Board of Regents approved the Venables deal",
+            "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+            "asOf": "2026-09-15",
+            "through": "Jan. 31, 2032",
+            "notes": "Term of employment through Jan. 31, 2032. Six-year package of $63 million. The $10.5 million average is not the 2026 pay cell. OU Daily (Joshua McDaniel, Sept. 15, 2026), reporting board approval. School release (Aug. 20, 2026) names the extension and does not print dollars: https://soonersports.com/news/2026/8/20/football-venables-agrees-to-2-year-contract-extension"
           }
         },
         "mbb": {
@@ -15793,27 +15793,29 @@
           "football": {
             "name": "Brent Venables",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 10000000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "OU Daily (Sept. 15, 2026) — board-approved deal; $10 million in 2026, the first year",
+              "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+              "asOf": "2026-09-15",
+              "notes": "2026 contract-year pay is $10,000,000, the first year of the board-approved deal (OU Daily, Joshua McDaniel, Sept. 15, 2026). Package is $63 million over six years; the $10.5 million average is not this cell. Term of employment through Jan. 31, 2032. AL.com (Creg Stephenson, Aug. 20, 2026), citing Brandon Marcello of CBS Sports, reports $200,000 raises each remaining year, ending at $11 million in 2031 (that schedule sums to $63 million). Those later years are not booked — the step is a newsroom schedule, not a hosted year table. https://www.al.com/sports/2026/08/another-sec-football-coach-agrees-to-contract-extension-joins-10-million-club.html School release (Aug. 20, 2026) names the extension and does not print dollars: https://soonersports.com/news/2026/8/20/football-venables-agrees-to-2-year-contract-extension The Oklahoman (Colton Sulley, Sept. 15, 2026) confirms board approval of the six-year, $63 million contract: https://www.oklahoman.com/story/sports/college/sooners/2026/09/15/ou-football-coach-brent-venables-contract-extension-approved-board-of-regents-oklahoma-sooners/91781793007/ Not the USA TODAY Oct. 8, 2025 total pay of $7,552,750. Chair of record who started football 2026."
             },
             "buyout": {
               "value": null,
               "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "source": "OU Daily (Sept. 15, 2026) — Roger Denny did not disclose the buyout",
+              "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+              "asOf": "2026-09-15",
+              "notes": "Pending. Roger Denny did not disclose the buyout when asked after the Sept. 15, 2026 board approval (OU Daily, Joshua McDaniel). The Oklahoman (Colton Sulley, Sept. 15, 2026) says Denny did not provide buyout details and the figure will eventually become public record. The USA TODAY Oct. 8, 2025 cell of $36,158,333 is prior-deal overhang under a superseded contract and is cleared. Not booked as current. https://www.oklahoman.com/story/sports/college/sooners/2026/09/15/ou-football-coach-brent-venables-contract-extension-approved-board-of-regents-oklahoma-sooners/91781793007/"
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
-              "url": "https://en.wikipedia.org/wiki/2026_Oklahoma_Sooners_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "confidence": "reported",
+              "source": "OU Daily (Sept. 15, 2026) — OU Board of Regents approved the Venables deal",
+              "url": "https://www.oudaily.com/sports/nobody-i-d-rather-have-at-the-helm-harroz-denny-affirm-venables-new-deal/article_9cb15336-e684-496b-babe-dba16f7b74da.html",
+              "asOf": "2026-09-15",
+              "through": "Jan. 31, 2032",
+              "notes": "Term of employment through Jan. 31, 2032. Six-year package of $63 million. The $10.5 million average is not the 2026 pay cell. OU Daily (Joshua McDaniel, Sept. 15, 2026), reporting board approval. Chair of record who started football 2026. School release (Aug. 20, 2026) names the extension and does not print dollars: https://soonersports.com/news/2026/8/20/football-venables-agrees-to-2-year-contract-extension"
             }
           },
           "mbb": {
@@ -18600,20 +18602,22 @@
         "football": {
           "name": "Shane Beamer",
           "pay": {
-            "value": 8150000,
+            "value": 8250000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "The State (Jan. 24, 2025) year table from the board-approved extension; ESPN obtained the term sheet ($8.15M in 2025 + $100,000 annually)",
+            "url": "https://www.thestate.com/sports/college/university-of-south-carolina/usc-football/article298644148.html",
+            "asOf": "2025-01-24",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 scheduled dollar from the 2025 term sheet / board file: $8,250,000 (Jan. 1–Dec. 31, 2026). ESPN: $8.15 million in 2025 with $100,000 raises annually. 247 prints $8,250,000. Not the USA TODAY 2025 $8.15M cell and not The State’s $8.2M round. Incentives not included. Current-deal coaches.football.pay stays the USA TODAY 2025 snapshot."
           },
           "buyout": {
-            "value": 27903958,
+            "value": 22550000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "USA TODAY (Sept. 26, 2026), quoting the Beamer contract — amount if fired without cause on Dec. 1, 2026",
+            "url": "https://www.usatoday.com/story/sports/ncaaf/sec/2026/09/26/shane-beamer-buyout-contract-south-carolina-football/91966993007/",
+            "asOf": "2026-12-01",
+            "notes": "Approximately $22.55 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $22,550,000 because the article did not print an unrounded dollar. 65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030. Prior USA TODAY Sports database cell was $27,903,958 as of Oct. 8, 2025 (buyout owed if fired Dec. 1, 2025). A Sept. 19, 2026 USA TODAY story still described the in-season buyout as $27.9 million, dropping to $22.1 million on Dec. 31. Liability/overhang, not annual spend.",
+            "rule": "65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030 (USA TODAY quoting the contract)."
           },
           "term": {
             "confidence": "reported",
@@ -19109,12 +19113,13 @@
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 scheduled dollar from the 2025 term sheet / board file: $8,250,000 (Jan. 1–Dec. 31, 2026). ESPN: $8.15 million in 2025 with $100,000 raises annually. 247 prints $8,250,000. Not the USA TODAY 2025 $8.15M cell and not The State’s $8.2M round. Incentives not included. Current-deal coaches.football.pay stays the USA TODAY 2025 snapshot."
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 22550000,
+              "confidence": "reported",
+              "source": "USA TODAY (Sept. 26, 2026), quoting the Beamer contract — amount if fired without cause on Dec. 1, 2026",
+              "url": "https://www.usatoday.com/story/sports/ncaaf/sec/2026/09/26/shane-beamer-buyout-contract-south-carolina-football/91966993007/",
+              "asOf": "2026-12-01",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Approximately $22.55 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $22,550,000 because the article did not print an unrounded dollar. 65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030. Prior USA TODAY Sports database cell was $27,903,958 as of Oct. 8, 2025 (Dec. 1, 2025 hypothetical). Same figure as coaches.football.buyout so the 2026 season card is not left pending.",
+              "rule": "65% of remaining base salary and additional compensation, paid monthly through Dec. 31, 2030 (USA TODAY quoting the contract)."
             },
             "term": {
               "confidence": "reported",
@@ -20166,7 +20171,7 @@
                 "remaining": 37500000,
                 "contractYear": "through Dec. 15, 2027",
                 "through": "2027-12-15",
-                "notes": "If UT terminates without cause on or after Dec. 15, 2025 and before Dec. 15, 2027: 75% of remaining compensation, paid monthly through Jan. 31, 2030. Dollar is the USA TODAY if-fired overhang as of Oct. 8, 2025 — the last cited figure on that 75% step. Copied from buyouts.json. PDF: https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
+                "notes": "If UT terminates without cause on or after Dec. 15, 2025 and before Dec. 15, 2027: 75% of remaining compensation, paid monthly through Jan. 31, 2030. Dollar is the USA TODAY if-fired overhang as of Dec. 1, 2025 — the last cited figure on that 75% step. Copied from buyouts.json. PDF: https://tennessee.edu/wp-content/uploads/2025/08/Josh-Heupel-Amendment-3-2025-30-v2.docx.pdf"
               },
               {
                 "asOf": "2027-12-15",
@@ -21797,7 +21802,7 @@
         "booked": {
           "value": 17999479.04,
           "confidence": "reported",
-          "source": "Bob Bonner-Davis, Chief Public Information Coordinator, UT Austin Office of the Vice President for Legal Affairs — Records Center request R013976-090126 (email Sep. 17, 2026, to brett@bryantalliance.com). School-wide aggregate House / revenue-share payments, all sports combined. Two dated expended windows released in the letter: $17,999,479.04 (July 1, 2025–June 30, 2026) and $4,808,560.63 (July 1, 2026–August 31, 2026). Stored as steps — not stacked. Other responsive records remain pending an AG ruling under Tex. Gov't Code 552.104.",
+          "source": "Bob Bonner-Davis, Chief Public Information Coordinator, UT Austin Office of the Vice President for Legal Affairs — Records Center request R013976-090126 (letter dated Sep. 17, 2026). School-wide aggregate House / revenue-share payments, all sports combined. Two dated expended windows released in the letter: $17,999,479.04 (July 1, 2025–June 30, 2026) and $4,808,560.63 (July 1, 2026–August 31, 2026). Stored as steps — not stacked. Other responsive records remain pending an AG ruling under Tex. Gov't Code 552.104.",
           "url": null,
           "asOf": "2026-09-17",
           "window": "2025-07-01 to 2026-06-30",
@@ -25111,7 +25116,8 @@
             "confidence": "reported",
             "source": "USA TODAY Sports football coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08"
+            "asOf": "2025-10-08",
+            "notes": "Pre-extension. USA TODAY as of Oct. 8, 2025. Vanderbilt announced a contract extension on Nov. 28, 2025; the release does not state a dollar or a through-year."
           },
           "buyout": {
             "value": null,
@@ -25131,6 +25137,7 @@
           "name": "Mark Byington",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -25608,6 +25615,7 @@
             "name": "Mark Byington",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -25660,6 +25668,7 @@
             "name": "Mark Byington",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -26675,8 +26684,8 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025. BOT minutes do not publish a % or dollar calendar. Liability/overhang, not annual spend.",
+            "asOf": "2025-12-01",
+            "notes": "USA TODAY if-fired overhang as of Dec. 1, 2025. BOT minutes do not publish a % or dollar calendar. Liability/overhang, not annual spend.",
             "rule": "Packet says liquidated damages exist with mitigation/offset; no percent and no dollar staircase."
           },
           "term": {
@@ -28423,7 +28432,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -29947,7 +29956,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -31351,25 +31360,46 @@
         "football": {
           "name": "Mike Locksley",
           "pay": {
-            "value": 6100000,
+            "value": 6400000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+            "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+            "asOf": "2026-09-24",
+            "notes": "2026 total compensation is $6.4 million: $600,000 base plus $5.8 million supplemental annual income. Incentives and postseason bonuses are not added. Not the USA TODAY Oct. 8, 2025 $6.1 million cell.",
+            "breakdown": [
+              {
+                "label": "Base",
+                "value": 600000
+              },
+              {
+                "label": "Supplemental annual income",
+                "value": 5800000
+              }
+            ]
           },
           "buyout": {
-            "value": 13395417,
+            "value": 9950000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+            "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+            "asOf": "2026-09-24",
+            "notes": "If terminated during the 2026 season, Maryland owes about 65% of remaining compensation, approximately $9.95 million. Half is due within 60 days; the rest is paid in equal installments through the end of the 2028 contract. Liability/overhang, not annual spend. Sporting News notes a USA TODAY midseason buyout near $9.2 million (https://www.sportingnews.com/us/ncaa-football/news/mike-locksley-buyout-contract-details-maryland-coach/e0f3feba2ae583d596099be0); this desk books the Washington Times figure.",
+            "rule": "If terminated during the 2026 season, the school owes about 65% of remaining compensation, approximately $9.95 million. Half within 60 days; the rest in equal installments through the end of 2028."
           },
           "term": {
-            "confidence": "pending",
-            "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "confidence": "reported",
+            "asOf": "2026-09-24",
+            "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+            "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+            "through": "2028",
+            "yearsRemaining": 2,
+            "notes": "Two years remaining. Seven-win seasons in 2022 and 2023 triggered automatic one-year extensions, so the deal runs through the end of 2028."
+          },
+          "contractUrl": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+          "contract": {
+            "label": "Washington Times — Locksley contract via Maryland Public Information Act (Sep. 24, 2026)",
+            "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/"
           }
         },
         "mbb": {
@@ -31857,27 +31887,46 @@
           "football": {
             "name": "Mike Locksley",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 6400000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+              "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+              "asOf": "2026-09-24",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 total compensation is $6.4 million: $600,000 base plus $5.8 million supplemental annual income. Incentives and postseason bonuses are not added. Not the USA TODAY Oct. 8, 2025 $6.1 million cell.",
+              "breakdown": [
+                {
+                  "label": "Base",
+                  "value": 600000
+                },
+                {
+                  "label": "Supplemental annual income",
+                  "value": 5800000
+                }
+              ]
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 9950000,
+              "confidence": "reported",
+              "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+              "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+              "asOf": "2026-09-24",
+              "notes": "If terminated during the 2026 season, Maryland owes about 65% of remaining compensation, approximately $9.95 million. Half is due within 60 days; the rest is paid in equal installments through the end of the 2028 contract. Liability/overhang, not annual spend. Sporting News notes a USA TODAY midseason buyout near $9.2 million (https://www.sportingnews.com/us/ncaa-football/news/mike-locksley-buyout-contract-details-maryland-coach/e0f3feba2ae583d596099be0); this desk books the Washington Times figure.",
+              "rule": "If terminated during the 2026 season, the school owes about 65% of remaining compensation, approximately $9.95 million. Half within 60 days; the rest in equal installments through the end of 2028."
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
-              "url": "https://en.wikipedia.org/wiki/2026_Maryland_Terrapins_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "confidence": "reported",
+              "asOf": "2026-09-24",
+              "source": "Washington Times (Sep. 24, 2026), reviewing the Locksley contract via a Maryland Public Information Act request",
+              "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+              "through": "2028",
+              "yearsRemaining": 2,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Two years remaining. Seven-win seasons in 2022 and 2023 triggered automatic one-year extensions, so the deal runs through the end of 2028."
+            },
+            "contractUrl": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/",
+            "contract": {
+              "label": "Washington Times — Locksley contract via Maryland Public Information Act (Sep. 24, 2026)",
+              "url": "https://www.washingtontimes.com/news/2026/sep/24/would-cost-maryland-move-mike-locksley/"
             }
           },
           "mbb": {
@@ -37899,10 +37948,24 @@
             "yearsRemaining": 7,
             "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Eight-year deal through Jan. 31, 2033. CFP appearance adds $1 million to each remaining contract year."
           },
-          "contractUrl": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045",
+          "contractUrl": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf",
           "contract": {
-            "label": "KETV — Rhule contract extension (Oct. 30, 2025)",
-            "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+            "label": "University of Nebraska \u2014 Coach Matt Rhule Employment Agreement",
+            "url": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf",
+            "files": [
+              {
+                "kind": "employment-agreement",
+                "date": "2025-10-30",
+                "label": "Coach Matt Rhule Employment Agreement (university PDF)",
+                "url": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf"
+              },
+              {
+                "kind": "news",
+                "date": "2025-10-30",
+                "label": "KETV \u2014 Rhule contract extension (Oct. 30, 2025)",
+                "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+              }
+            ]
           }
         },
         "mbb": {
@@ -38528,10 +38591,24 @@
               "yearsRemaining": 7,
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Eight-year deal through Jan. 31, 2033. CFP appearance adds $1 million to each remaining contract year."
             },
-            "contractUrl": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045",
+            "contractUrl": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf",
             "contract": {
-              "label": "KETV — Rhule contract extension (Oct. 30, 2025)",
-              "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+              "label": "University of Nebraska \u2014 Coach Matt Rhule Employment Agreement",
+              "url": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf",
+              "files": [
+                {
+                  "kind": "employment-agreement",
+                  "date": "2025-10-30",
+                  "label": "Coach Matt Rhule Employment Agreement (university PDF)",
+                  "url": "https://docs.nebraska.edu/unop/docs/transparency/Coach%20Matt%20Rhule%20Employment%20Agreement.pdf"
+                },
+                {
+                  "kind": "news",
+                  "date": "2025-10-30",
+                  "label": "KETV \u2014 Rhule contract extension (Oct. 30, 2025)",
+                  "url": "https://www.ketv.com/article/nebraska-football-matt-rhule-contract-extension-salary/69207045"
+                }
+              ]
             }
           },
           "mbb": {
@@ -39590,11 +39667,12 @@
           "name": "David Braun",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
             "asOf": null,
-            "notes": "USA TODAY left pay blank (private-school / unreleased contract)."
+            "notes": "USA TODAY left pay blank (private-school / unreleased contract). Contract not public. Northwestern announced an extension through the 2031 season on Sept. 17, 2026; terms not disclosed."
           },
           "buyout": {
             "value": null,
@@ -39605,9 +39683,12 @@
             "notes": "USA TODAY left the buyout cell blank (private-school or unreleased)."
           },
           "term": {
-            "confidence": "pending",
-            "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "confidence": "reported",
+            "asOf": "2026-09-17",
+            "source": "Northwestern University Athletics",
+            "url": "https://nusports.com/news/2026/09/17/northwestern-university-and-football-coach-david-braun-agree-to-extend-contract-through-2031",
+            "through": "2031",
+            "notes": "Northwestern announced Sept. 17, 2026 that David Braun's contract is extended through the 2031 season. Terms not disclosed. ESPN (Adam Rittenberg, Sept. 17, 2026) reports a three-year extension. No pay figure."
           }
         },
         "mbb": {
@@ -39931,6 +40012,7 @@
             "name": "David Braun",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -39983,6 +40065,7 @@
             "name": "David Braun",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -40035,6 +40118,7 @@
             "name": "David Braun",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -40087,6 +40171,7 @@
             "name": "David Braun",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -40102,11 +40187,12 @@
               "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
-              "url": "https://en.wikipedia.org/wiki/2026_Northwestern_Wildcats_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "confidence": "reported",
+              "asOf": "2026-09-17",
+              "source": "Northwestern University Athletics",
+              "url": "https://nusports.com/news/2026/09/17/northwestern-university-and-football-coach-david-braun-agree-to-extend-contract-through-2031",
+              "through": "2031",
+              "notes": "Northwestern announced Sept. 17, 2026 that David Braun's contract is extended through the 2031 season. Terms not disclosed. ESPN (Adam Rittenberg, Sept. 17, 2026) reports a three-year extension. No pay figure. Chair of record who started football 2026."
             }
           },
           "mbb": {
@@ -41148,7 +41234,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -46219,14 +46305,15 @@
             ]
           },
           "buyout": {
-            "value": null,
-            "confidence": "pending",
-            "source": "Indianapolis Star quoting Purdue Athletics contract-elements summary",
-            "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
-            "asOf": null,
-            "notes": "School-side without-cause is 75% of remaining base. We do not invent the remainder.",
-            "rule": "75% of remaining base salary (school summary quoted by IndyStar).",
-            "coachSide": "Coach-side: $5,000,000 if Odom leaves Jan. 1–Dec. 31, 2026."
+            "value": 20625000,
+            "confidence": "reported",
+            "source": "Indianapolis Star (Nathan Baird, Dec. 10, 2024), syndicated by Yahoo Sports \u2014 if fired Dec. 1, 2026",
+            "url": "https://sports.yahoo.com/much-purdue-paying-football-coach-132324182.html",
+            "asOf": "2026-12-01",
+            "firedLabel": "if fired Dec. 1, 2026",
+            "notes": "If fired on Dec. 1 after his second season (Dec. 1, 2026): $20,625,000. The Indianapolis Star (Dec. 10, 2024), syndicated by Yahoo Sports, prints $20.625 million for that date. Supporting contract summary: Purdue Board of Trustees December 2024 head football coach MOU. Prior USA TODAY School Buyout cell of $25,125,000 as of Dec. 1, 2025 is a different firing date and is not this headline. Later Dec. 1 amounts in the same article are not booked here.",
+            "rule": "75% of remaining base salary if fired without cause (school summary quoted by the Indianapolis Star).",
+            "coachSide": "Coach-side: $5,000,000 if Odom leaves Jan. 1\u2013Dec. 31, 2026."
           },
           "term": {
             "confidence": "reported",
@@ -46239,8 +46326,22 @@
           },
           "contractUrl": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
           "contract": {
-            "label": "Indianapolis Star — Purdue Odom contract-elements summary (Dec. 10, 2024)",
-            "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/"
+            "label": "Indianapolis Star \u2014 Purdue Odom contract-elements summary (Dec. 10, 2024)",
+            "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
+            "files": [
+              {
+                "kind": "article",
+                "date": "2024-12-10",
+                "label": "Indianapolis Star (Dec. 10, 2024), syndicated by Yahoo Sports",
+                "url": "https://sports.yahoo.com/much-purdue-paying-football-coach-132324182.html"
+              },
+              {
+                "kind": "mou",
+                "date": "2024-12",
+                "label": "Purdue Board of Trustees \u2014 Head Football Coach MOU (Dec. 2024)",
+                "url": "https://www.purdue.edu/bot/meetings/past-meetings/2024/09.%20dec/comp/MOU%20Head%20Football%20Coach.pdf"
+              }
+            ]
           }
         },
         "mbb": {
@@ -46720,14 +46821,15 @@
               ]
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": "Indianapolis Star quoting Purdue Athletics contract-elements summary",
-              "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
-              "asOf": null,
-              "notes": "School-side without-cause is 75% of remaining base. We do not invent the remainder.",
-              "rule": "75% of remaining base salary (school summary quoted by IndyStar).",
-              "coachSide": "Coach-side: $5,000,000 if Odom leaves Jan. 1–Dec. 31, 2026."
+              "value": 20625000,
+              "confidence": "reported",
+              "source": "Indianapolis Star (Nathan Baird, Dec. 10, 2024), syndicated by Yahoo Sports \u2014 if fired Dec. 1, 2026",
+              "url": "https://sports.yahoo.com/much-purdue-paying-football-coach-132324182.html",
+              "asOf": "2026-12-01",
+              "firedLabel": "if fired Dec. 1, 2026",
+              "notes": "If fired on Dec. 1 after his second season (Dec. 1, 2026): $20,625,000. The Indianapolis Star (Dec. 10, 2024), syndicated by Yahoo Sports, prints $20.625 million for that date. Supporting contract summary: Purdue Board of Trustees December 2024 head football coach MOU. Prior USA TODAY School Buyout cell of $25,125,000 as of Dec. 1, 2025 is a different firing date and is not this headline. Later Dec. 1 amounts in the same article are not booked here.",
+              "rule": "75% of remaining base salary if fired without cause (school summary quoted by the Indianapolis Star).",
+              "coachSide": "Coach-side: $5,000,000 if Odom leaves Jan. 1\u2013Dec. 31, 2026."
             },
             "term": {
               "confidence": "reported",
@@ -46740,8 +46842,22 @@
             },
             "contractUrl": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
             "contract": {
-              "label": "Indianapolis Star — Purdue Odom contract-elements summary (Dec. 10, 2024)",
-              "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/"
+              "label": "Indianapolis Star \u2014 Purdue Odom contract-elements summary (Dec. 10, 2024)",
+              "url": "https://www.indystar.com/story/sports/college/purdue/2024/12/10/barry-odom-purdue-paying-new-football-coach-contract-details-buyout/76850408007/",
+              "files": [
+                {
+                  "kind": "article",
+                  "date": "2024-12-10",
+                  "label": "Indianapolis Star (Dec. 10, 2024), syndicated by Yahoo Sports",
+                  "url": "https://sports.yahoo.com/much-purdue-paying-football-coach-132324182.html"
+                },
+                {
+                  "kind": "mou",
+                  "date": "2024-12",
+                  "label": "Purdue Board of Trustees \u2014 Head Football Coach MOU (Dec. 2024)",
+                  "url": "https://www.purdue.edu/bot/meetings/past-meetings/2024/09.%20dec/comp/MOU%20Head%20Football%20Coach.pdf"
+                }
+              ]
             }
           },
           "mbb": {
@@ -47700,25 +47816,98 @@
         "football": {
           "name": "Greg Schiano",
           "pay": {
-            "value": 6500000,
+            "value": 6750000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "NJ.com (Aug. 19, 2025; updated Mar. 21, 2026), year table from the Dec. 11, 2023 contract obtained by open public records; restated by NJ.com (Fonseca & Sargeant, Oct. 4, 2026)",
+            "url": "https://www.nj.com/rutgers/2025/08/where-each-rutgers-head-coach-and-their-contract-stands-entering-ad-keli-zinns-1st-season.html",
+            "asOf": "2026-10-04",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 line on the OPRA year table from the Dec. 11, 2023 contract: $6,750,000. NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) restates the same 2026 dollar, with 2027 $7,250,000, 2028 $7,500,000, and 2029 $7,750,000. The school-side buyout clause calls that table annual base salary. USA TODAY 2025 total pay equals the 2025 line ($6,500,000) and is not the 2026 chair. The 2027 step is printed ($500,000), not interpolated. Incentives are not in this cell.",
+            "year": 2026,
+            "breakdown": [
+              {
+                "label": "Annual base salary (2026)",
+                "value": 6750000
+              }
+            ],
+            "schedule": [
+              {
+                "period": "2025",
+                "value": 6500000
+              },
+              {
+                "period": "2026",
+                "value": 6750000
+              },
+              {
+                "period": "2027",
+                "value": 7250000,
+                "notes": "Printed $500,000 step from 2026. Not interpolated."
+              },
+              {
+                "period": "2028",
+                "value": 7500000
+              },
+              {
+                "period": "2029",
+                "value": 7750000
+              }
+            ]
           },
           "buyout": {
-            "value": 23735156,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "value": 18000000,
+            "confidence": "estimated",
+            "source": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) — if fired this season, roughly $18 million",
+            "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html",
+            "asOf": "2026-10-04",
+            "notes": "If fired this season, NJ.com (Oct. 4, 2026) says roughly $18 million. Stored as $18,000,000 because no unrounded mid-season dollar was printed. Confidence estimated. The next step, $17,296,875 as of Jan. 1, 2027, is 76.875% of the remaining 2027–2029 base ($22.5 million) and is the unrounded post-season figure printed by CBS Sports (Sept. 11, 2026). Prior USA TODAY database cell $23,735,156 as of Oct. 8, 2025 is retired. Staff buyout is not booked: the same article estimates at least $8,580,000 over two years for about 80 people (imprecise; missing latest assistant contracts and reasonable-effort offsets) and a combined head-coach-plus-staff total of roughly $28 million, later restated as staff roughly $9 million. Chris Ash’s $8.47 million is the prior paid buyout named in that article, not this overhang. Liability/overhang, not annual spend.",
+            "rule": "76.875% of remaining base salary through the 2029 season (CBS Sports, Sept. 11, 2026). NJ.com (Oct. 4, 2026) describes the same share as just under 77%. Year-boundary steps only — not a Saturday staircase and not a daily proration.",
+            "coachSide": "Offset only against another football coaching job. Schiano is not required to seek employment. A television job does not reduce the buyout (NJ.com, Oct. 4, 2026; CBS Sports, Sept. 11, 2026). Paid biweekly through the remaining term (FOX Sports, citing the contract summary).",
+            "steps": [
+              {
+                "asOf": "2026-10-04",
+                "remaining": 18000000,
+                "contractYear": "2026 mid-season",
+                "through": "2026-12-31",
+                "notes": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) states the payout if fired this season is roughly $18 million, just under 77% of remaining base salary through the 2029 season. Stored as $18,000,000 because the article did not print an unrounded dollar. Labeled derived — not a published remaining-dollar line and not a daily proration. We do not mint cents from 76.875% times an unknown partial-year remainder. FOX Sports (citing USA TODAY) and a separate contract summary say roughly $18.5 million at the end of November or after the 2026 season; that rounded headline is not this cell."
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 17296875,
+                "contractYear": "after 2026 season",
+                "through": "2027-12-31",
+                "notes": "Derived from the already-on-desk base table (2027 $7,250,000 + 2028 $7,500,000 + 2029 $7,750,000 = $22,500,000) × 76.875% = $17,296,875 if fired after the 2026 season. CBS Sports (Robby Kalland, Sept. 11, 2026) prints this unrounded dollar. Labeled derived — full remaining years, not a mid-season proration. A separate contract summary’s roughly $18.5 million after the 2026 season does not match this product and is not booked as this step."
+              },
+              {
+                "asOf": "2028-01-01",
+                "remaining": 11700000,
+                "contractYear": "after 2027 season",
+                "through": "2028-12-31",
+                "notes": "Derived from the already-on-desk base table (2028 $7,500,000 + 2029 $7,750,000 = $15,250,000) × 76.875% = $11,723,437.50. A contract summary prints the drop as $11.7 million after the 2027 season. Stored as that published round $11,700,000 — not a desk-minted cent. Labeled derived."
+              },
+              {
+                "asOf": "2029-01-01",
+                "remaining": 5900000,
+                "contractYear": "after 2028 season",
+                "through": "2029-12-31",
+                "notes": "Derived from the already-on-desk base table (2029 $7,750,000) × 76.875% = $5,957,812.50. A contract summary prints the drop as $5.9 million after the 2028 season. Stored as that published round $5,900,000 — not a desk-minted cent. Labeled derived."
+              },
+              {
+                "asOf": "2030-01-01",
+                "remaining": 0,
+                "contractYear": "after 2029 season",
+                "through": "2030-01-01",
+                "notes": "Derived from the term end. A contract summary states the buyout drops to $0 after the 2029 season. Labeled derived. CBS Sports’ “through the 2030 season” conflicts with the three-year $22.5 million remainder and is not booked."
+              }
+            ]
           },
           "term": {
-            "confidence": "pending",
-            "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "confidence": "reported",
+            "asOf": "2026-10-04",
+            "source": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026); FOX Sports, quoting the contract summary",
+            "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html",
+            "through": "2029",
+            "yearsRemaining": 4,
+            "notes": "Through the 2029 season. FOX Sports, quoting the contract, and NJ.com (Oct. 4, 2026) agree. CBS Sports (Sept. 11, 2026) says through the 2030 season, but that piece’s own three-year $22.5 million remainder is 2027–2029 and the salary table in that contract summary ends in 2029. Booked through 2029."
           }
         },
         "mbb": {
@@ -48261,27 +48450,99 @@
           "football": {
             "name": "Greg Schiano",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 6750000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "NJ.com (Aug. 19, 2025; updated Mar. 21, 2026), year table from the Dec. 11, 2023 contract obtained by open public records; restated by NJ.com (Fonseca & Sargeant, Oct. 4, 2026)",
+              "url": "https://www.nj.com/rutgers/2025/08/where-each-rutgers-head-coach-and-their-contract-stands-entering-ad-keli-zinns-1st-season.html",
+              "asOf": "2026-10-04",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). 2026 line on the OPRA year table from the Dec. 11, 2023 contract: $6,750,000. NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) restates the same 2026 dollar, with 2027 $7,250,000, 2028 $7,500,000, and 2029 $7,750,000. The school-side buyout clause calls that table annual base salary. USA TODAY 2025 total pay equals the 2025 line ($6,500,000) and is not the 2026 chair. The 2027 step is printed ($500,000), not interpolated. Incentives are not in this cell.",
+              "breakdown": [
+                {
+                  "label": "Annual base salary (2026)",
+                  "value": 6750000
+                }
+              ],
+              "schedule": [
+                {
+                  "period": "2025",
+                  "value": 6500000
+                },
+                {
+                  "period": "2026",
+                  "value": 6750000
+                },
+                {
+                  "period": "2027",
+                  "value": 7250000,
+                  "notes": "Printed $500,000 step from 2026. Not interpolated."
+                },
+                {
+                  "period": "2028",
+                  "value": 7500000
+                },
+                {
+                  "period": "2029",
+                  "value": 7750000
+                }
+              ],
+              "baseOnly": null
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 18000000,
+              "confidence": "estimated",
+              "source": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) — if fired this season, roughly $18 million",
+              "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html",
+              "asOf": "2026-10-04",
+              "notes": "If fired this season, NJ.com (Oct. 4, 2026) says roughly $18 million. Stored as $18,000,000 because no unrounded mid-season dollar was printed. Confidence estimated. The next step, $17,296,875 as of Jan. 1, 2027, is 76.875% of the remaining 2027–2029 base ($22.5 million) and is the unrounded post-season figure printed by CBS Sports (Sept. 11, 2026). Prior USA TODAY database cell $23,735,156 as of Oct. 8, 2025 is retired. Staff buyout is not booked: the same article estimates at least $8,580,000 over two years for about 80 people (imprecise; missing latest assistant contracts and reasonable-effort offsets) and a combined head-coach-plus-staff total of roughly $28 million, later restated as staff roughly $9 million. Chris Ash’s $8.47 million is the prior paid buyout named in that article, not this overhang. Liability/overhang, not annual spend.",
+              "rule": "76.875% of remaining base salary through the 2029 season (CBS Sports, Sept. 11, 2026). NJ.com (Oct. 4, 2026) describes the same share as just under 77%. Year-boundary steps only — not a Saturday staircase and not a daily proration.",
+              "coachSide": "Offset only against another football coaching job. Schiano is not required to seek employment. A television job does not reduce the buyout (NJ.com, Oct. 4, 2026; CBS Sports, Sept. 11, 2026). Paid biweekly through the remaining term (FOX Sports, citing the contract summary).",
+              "steps": [
+                {
+                  "asOf": "2026-10-04",
+                  "remaining": 18000000,
+                  "contractYear": "2026 mid-season",
+                  "through": "2026-12-31",
+                  "notes": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026) states the payout if fired this season is roughly $18 million, just under 77% of remaining base salary through the 2029 season. Stored as $18,000,000 because the article did not print an unrounded dollar. Labeled derived — not a published remaining-dollar line and not a daily proration. We do not mint cents from 76.875% times an unknown partial-year remainder. FOX Sports (citing USA TODAY) and a separate contract summary say roughly $18.5 million at the end of November or after the 2026 season; that rounded headline is not this cell."
+                },
+                {
+                  "asOf": "2027-01-01",
+                  "remaining": 17296875,
+                  "contractYear": "after 2026 season",
+                  "through": "2027-12-31",
+                  "notes": "Derived from the already-on-desk base table (2027 $7,250,000 + 2028 $7,500,000 + 2029 $7,750,000 = $22,500,000) × 76.875% = $17,296,875 if fired after the 2026 season. CBS Sports (Robby Kalland, Sept. 11, 2026) prints this unrounded dollar. Labeled derived — full remaining years, not a mid-season proration. A separate contract summary’s roughly $18.5 million after the 2026 season does not match this product and is not booked as this step."
+                },
+                {
+                  "asOf": "2028-01-01",
+                  "remaining": 11700000,
+                  "contractYear": "after 2027 season",
+                  "through": "2028-12-31",
+                  "notes": "Derived from the already-on-desk base table (2028 $7,500,000 + 2029 $7,750,000 = $15,250,000) × 76.875% = $11,723,437.50. A contract summary prints the drop as $11.7 million after the 2027 season. Stored as that published round $11,700,000 — not a desk-minted cent. Labeled derived."
+                },
+                {
+                  "asOf": "2029-01-01",
+                  "remaining": 5900000,
+                  "contractYear": "after 2028 season",
+                  "through": "2029-12-31",
+                  "notes": "Derived from the already-on-desk base table (2029 $7,750,000) × 76.875% = $5,957,812.50. A contract summary prints the drop as $5.9 million after the 2028 season. Stored as that published round $5,900,000 — not a desk-minted cent. Labeled derived."
+                },
+                {
+                  "asOf": "2030-01-01",
+                  "remaining": 0,
+                  "contractYear": "after 2029 season",
+                  "through": "2030-01-01",
+                  "notes": "Derived from the term end. A contract summary states the buyout drops to $0 after the 2029 season. Labeled derived. CBS Sports’ “through the 2030 season” conflicts with the three-year $22.5 million remainder and is not booked."
+                }
+              ]
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "source": "Wikipedia season-page infobox",
-              "url": "https://en.wikipedia.org/wiki/2026_Rutgers_Scarlet_Knights_football_team",
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "confidence": "reported",
+              "asOf": "2026-10-04",
+              "source": "NJ.com (Brian Fonseca & Keith Sargeant, Oct. 4, 2026); FOX Sports, quoting the contract summary",
+              "url": "https://www.nj.com/rutgersfootball/2026/10/what-rutgers-would-have-to-pay-to-fire-greg-schiano-and-his-staff.html",
+              "through": "2029",
+              "yearsRemaining": 4,
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). Through the 2029 season. FOX Sports, quoting the contract, and NJ.com (Oct. 4, 2026) agree. CBS Sports (Sept. 11, 2026) says through the 2030 season, but that piece’s own three-year $22.5 million remainder is 2027–2029 and the salary table in that contract summary ends in 2029. Booked through 2029."
             }
           },
           "mbb": {
@@ -49288,6 +49549,7 @@
       "nil": {
         "booked": {
           "value": 20500000,
+          "approximate": true,
           "confidence": "reported",
           "source": "CalMatters — UCLA said it spent about $20.5 million paying 229 athletes in 2025-26 (House Year 1 maximum). Names and sport splits not released.",
           "url": "https://calmatters.org/education/higher-education/2026/08/student-athlete-payments-california/",
@@ -50982,6 +51244,7 @@
           "name": "Eric Musselman",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -51459,6 +51722,7 @@
             "name": "Eric Musselman",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -51511,6 +51775,7 @@
             "name": "Eric Musselman",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -52486,7 +52751,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -53986,20 +54251,59 @@
         "football": {
           "name": "Luke Fickell",
           "pay": {
-            "value": 7825000,
+            "value": 7800000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "usatoday.com, Sept. 7, 2026, quoting Fickell’s initial contract and Wisconsin Foundation additional compensation agreement",
+            "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
+            "asOf": "2026-09-07",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). USA TODAY (Sept. 7, 2026, updated Sept. 8) quoting the contract: 2026 annual salary $7,800,000 = University of Wisconsin pay $3,000,000 + Wisconsin Foundation additional compensation $4,800,000. The foundation piece increases $100,000 every year. Total guaranteed annual salary, not base only. Incentives not included. Not the USA TODAY database 2025-10-08 total-pay cell of $7,825,000. Current-deal coaches.football.pay stays that snapshot.",
+            "breakdown": [
+              {
+                "label": "University of Wisconsin annual pay",
+                "value": 3000000
+              },
+              {
+                "label": "Wisconsin Foundation additional compensation (2026)",
+                "value": 4800000
+              }
+            ],
+            "schedule": [
+              {
+                "period": "2026",
+                "value": 7800000
+              },
+              {
+                "period": "2027",
+                "value": 7900000
+              },
+              {
+                "period": "2028",
+                "value": 8000000
+              },
+              {
+                "period": "2029",
+                "value": 8100000
+              },
+              {
+                "period": "2030",
+                "value": 8200000
+              },
+              {
+                "period": "2031",
+                "value": 8300000
+              }
+            ],
+            "baseOnly": null
           },
           "buyout": {
-            "value": 27493333,
+            "value": 21280000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "source": "USA TODAY (Sept. 7, 2026), quoting Fickell’s initial contract and additional compensation agreement — amount if fired without cause on Dec. 1, 2026",
+            "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
+            "asOf": "2026-12-01",
+            "notes": "$21.28 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $21,280,000 because the article printed $21.28 million and did not print an unrounded dollar. The school owes either $6.48 million or 80% of remaining total compensation under the initial contract and additional compensation agreement, whichever is higher. On Dec. 1, 2026 the 80% amount is the higher one. That original contract runs through March 31, 2030. The 2030 and 2031 seasons do not count toward the buyout. The article says the figure would be higher if he is fired before Dec. 1, 2026, and does not print that earlier dollar. Prior USA TODAY Sports database cell was $27,493,333 as of Oct. 8, 2025. Liability/overhang, not annual spend.",
+            "rule": "Whichever is higher: $6.48 million, or 80% of remaining total compensation under the initial contract and additional compensation agreement. Original contract through March 31, 2030. The 2030 and 2031 seasons do not count (USA TODAY, Sept. 7, 2026, quoting the contract)."
           },
           "term": {
             "confidence": "pending",
@@ -54521,20 +54825,59 @@
           "football": {
             "name": "Luke Fickell",
             "pay": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 7800000,
+              "year": 2026,
+              "confidence": "reported",
+              "source": "usatoday.com, Sept. 7, 2026, quoting Fickell’s initial contract and Wisconsin Foundation additional compensation agreement",
+              "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
+              "asOf": "2026-09-07",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). USA TODAY (Sept. 7, 2026, updated Sept. 8) quoting the contract: 2026 annual salary $7,800,000 = University of Wisconsin pay $3,000,000 + Wisconsin Foundation additional compensation $4,800,000. The foundation piece increases $100,000 every year. Total guaranteed annual salary, not base only. Incentives not included. Not the USA TODAY database 2025-10-08 total-pay cell of $7,825,000. Current-deal coaches.football.pay stays that snapshot.",
+              "breakdown": [
+                {
+                  "label": "University of Wisconsin annual pay",
+                  "value": 3000000
+                },
+                {
+                  "label": "Wisconsin Foundation additional compensation (2026)",
+                  "value": 4800000
+                }
+              ],
+              "schedule": [
+                {
+                  "period": "2026",
+                  "value": 7800000
+                },
+                {
+                  "period": "2027",
+                  "value": 7900000
+                },
+                {
+                  "period": "2028",
+                  "value": 8000000
+                },
+                {
+                  "period": "2029",
+                  "value": 8100000
+                },
+                {
+                  "period": "2030",
+                  "value": 8200000
+                },
+                {
+                  "period": "2031",
+                  "value": 8300000
+                }
+              ],
+              "baseOnly": null
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox)."
+              "value": 21280000,
+              "confidence": "reported",
+              "source": "USA TODAY (Sept. 7, 2026), quoting Fickell’s initial contract and additional compensation agreement — amount if fired without cause on Dec. 1, 2026",
+              "url": "https://www.usatoday.com/story/sports/ncaaf/bigten/2026/09/07/fire-luke-fickell-buyout-contract-record-wisconsin-football/91646809007/",
+              "asOf": "2026-12-01",
+              "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). $21.28 million if fired without cause on Dec. 1, 2026, per a contract obtained by USA TODAY. Stored as $21,280,000 because the article printed $21.28 million and did not print an unrounded dollar. The school owes either $6.48 million or 80% of remaining total compensation under the initial contract and additional compensation agreement, whichever is higher. On Dec. 1, 2026 the 80% amount is the higher one. That original contract runs through March 31, 2030. The 2030 and 2031 seasons do not count toward the buyout. The article says the figure would be higher if he is fired before Dec. 1, 2026, and does not print that earlier dollar. Prior USA TODAY Sports database cell was $27,493,333 as of Oct. 8, 2025. Same figure as coaches.football.buyout so the 2026 season card is not left pending.",
+              "rule": "Whichever is higher: $6.48 million, or 80% of remaining total compensation under the initial contract and additional compensation agreement. Original contract through March 31, 2030. The 2030 and 2031 seasons do not count (USA TODAY, Sept. 7, 2026, quoting the contract)."
             },
             "term": {
               "confidence": "pending",
@@ -55579,6 +55922,7 @@
           "name": "Bill O'Brien",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -55917,6 +56261,7 @@
             "name": "Bill O'Brien",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -55969,6 +56314,7 @@
             "name": "Bill O'Brien",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -56021,6 +56367,7 @@
             "name": "Bill O'Brien",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -56954,6 +57301,7 @@
       "nil": {
         "booked": {
           "value": 20500000,
+          "approximate": true,
           "confidence": "reported",
           "source": "CalMatters — UC Berkeley said it spent about $20.5 million paying 147 athletes in 2025-26 (House Year 1 maximum). Names and sport splits not released.",
           "url": "https://calmatters.org/education/higher-education/2026/08/student-athlete-payments-california/",
@@ -56981,6 +57329,7 @@
           "name": "Tosh Lupoi",
           "pay": {
             "value": null,
+            "unavailable": "undisclosed",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -57522,6 +57871,7 @@
             "name": "Tosh Lupoi",
             "pay": {
               "value": null,
+              "unavailable": "undisclosed",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -60474,6 +60824,7 @@
           "name": "Manny Diaz",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -60837,6 +61188,7 @@
             "name": "Manny Diaz",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -60889,6 +61241,7 @@
             "name": "Manny Diaz",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -60941,6 +61294,7 @@
             "name": "Manny Diaz",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -65475,16 +65829,17 @@
         "booked": {
           "value": 32900000,
           "confidence": "reported",
-          "source": "Courier-Journal FOIA — UofL invoices/ledgers: $32.9M revenue-share spend Mar 2025–Jul 1, 2026",
-          "url": "https://www.courier-journal.com/story/sports/college/kentucky/2026/08/05/university-of-kentucky-nil-revenue-sharing-records-louisville-budget-foia-ncaa-house-settlement/90345933007/",
+          "source": "Courier-Journal FOIA (Aug. 5, 2026) — full invoice window Mar 2025–Jul 1, 2026 is $32.9M: $12.7M pre-cap Kentucky NIL plus $20.2M House Year 1 (Jul 1, 2025–Jul 1, 2026). Not a House Year 1 total.",
+          "url": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/",
           "asOf": "2026-08-05",
-          "notes": "FOIA invoices and ledger entries (Payton Titus). Companion table lists $32.93M. Window starts March 2025 because KY law allowed pre-House payments that do not count against the cap, so $32.9M > $20.5M is coherent. Includes the $12.7M pre-cap FY2025 line shown below (do not add).",
+          "notes": "Full FOIA window only. Do not label $32.9M as revenue share or House Year 1. Split already on the desk: preCap $12.7M (FY2025, before July 1, 2025) plus House Year 1 spent $20.2M (Jul 1, 2025–Jul 1, 2026). Companion table lists $32.93M (Payton Titus, same day). The pre-cap line is included in the $32.9M — not additional.",
           "window": "2025-03 to 2026-07-01",
+          "leadLabel": "Full FOIA window · Mar 2025–Jul 1 2026",
           "had": {
             "value": 20270000,
             "window": "2025-07-01 to 2026-07-01",
-            "notes": "Prior booked cell: House Year 1 window only.",
-            "source": "Courier-Journal FOIA — Louisville institutional NIL / revenue-share spend Jul 1, 2025–Jul 1, 2026",
+            "notes": "Prior desk cell for Jul 1, 2025–Jul 1, 2026. Replaced by the $20.2M House Year 1 split ($32.9M minus $12.7M pre-cap).",
+            "source": "Courier-Journal FOIA — prior Louisville cell for Jul 1, 2025–Jul 1, 2026",
             "url": "https://www.courier-journal.com/story/sports/college/2026/08/05/kentucky-louisville-nil-revenue-share-ncaa-house-settlement-eku-wku-nku-morehead-state-budget/90452001007/"
           }
         },
@@ -65509,7 +65864,7 @@
             "organization": "502Circle NIL Collective Foundation",
             "ein": "92-0905366",
             "line": "Part IX line 11g — Athlete fees",
-            "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Does not replace Louisville’s $32.9M FOIA booked House cell."
+            "notes": "Collective 990 — third-party exempt filing, lagged. Not a House spent total, not Item 44, not a player contract. Not added to booked NIL, pre-cap, capacity, or the booked-only rank. 501(c)(3). Does not replace Louisville’s $32.9M FOIA booked window. That window is not the $20.2M House Year 1 spent cell."
           }
         ],
         "houseRemaining": {
@@ -65518,13 +65873,13 @@
           "source": "House Year 1 remaining = published $20.5M NCAA House cap minus this school’s booked House spent cell",
           "url": "https://on.ncaa.com/QA61325",
           "asOf": "2026-08-05",
-          "window": "2025-03 to 2026-07-01",
+          "window": "2025-07-01 to 2026-07-01",
           "spent": 20200000,
           "cap": 20500000,
           "partialYear": false,
           "overhang": false,
-          "notes": "Published House Year 1 cap minus booked House spent. Residual, not a filing.",
-          "footnote": "House Year 1 remaining = $20.5M cap − $20.2M House spent ($32.9M FOIA window minus the $12.7M pre-cap line). Not the full $32.9M, not a 990."
+          "notes": "House Year 1 spent is $20,200,000 for Jul 1, 2025–Jul 1, 2026 (Courier-Journal FOIA, Aug. 5, 2026): the $32,900,000 full FOIA window minus the $12,700,000 pre-cap line. Remaining is the published $20.5M cap minus that House spent cell. Residual, not a filing. Not the full $32.9M.",
+          "footnote": "House Year 1 remaining = $20,500,000 cap − $20,200,000 House Year 1 spent (Jul 1, 2025–Jul 1, 2026) = $300,000. House spent = $32,900,000 full FOIA window − $12,700,000 pre-cap. Not the prior $20,270,000 desk cell. Not the full $32,900,000. Not a 990."
         }
       },
       "coaches": {
@@ -67235,6 +67590,7 @@
           "name": "Jai Lucas",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -67656,6 +68012,7 @@
             "name": "Jai Lucas",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -67708,6 +68065,7 @@
             "name": "Jai Lucas",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -68652,19 +69010,20 @@
         "football": {
           "name": "Dave Doeren",
           "pay": {
-            "value": 6215377,
+            "value": 5750000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "PackInsider (June 29, 2026), quoting Doeren FOIA documents",
+            "url": "https://packinsider.com/2026/06/29/nc-state-football-coaching-salaries-2026/",
+            "asOf": "2026-06-29",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). FOIA: $5.75 million in 2026 after the published $125,000 annual raise, through the 2029 season. Not the USA TODAY 2025-10-08 $6,215,377 cell. Incentives not added. Current-deal line stays the USA TODAY 2025 snapshot.",
+            "year": 2026
           },
           "buyout": {
             "value": 13129456,
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -73473,6 +73832,7 @@
           "name": "Andy Enfield",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -73918,6 +74278,7 @@
             "name": "Andy Enfield",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -73970,6 +74331,7 @@
             "name": "Andy Enfield",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -74930,6 +75292,7 @@
           "name": "Tavita Pritchard",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -74956,6 +75319,7 @@
           "name": "Kyle Smith",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -75387,6 +75751,7 @@
             "name": "Kyle Smith",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -75413,6 +75778,7 @@
             "name": "Tavita Pritchard",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -75439,6 +75805,7 @@
             "name": "Kyle Smith",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -76394,6 +76761,7 @@
           "name": "Fran Brown",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -76772,6 +77140,7 @@
             "name": "Fran Brown",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -76824,6 +77193,7 @@
             "name": "Fran Brown",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -76876,6 +77246,7 @@
             "name": "Fran Brown",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -77914,8 +78285,8 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "USA TODAY if-fired overhang as of Oct. 8, 2025 — last cited school-side dollar before the Apr. 8, 2026 extension. 2022 EA is not treated as the current deal."
+            "asOf": "2025-12-01",
+            "notes": "USA TODAY if-fired overhang as of Dec. 1, 2025 — last cited school-side dollar before the Apr. 8, 2026 extension. 2022 EA is not treated as the current deal."
           },
           "term": {
             "confidence": "reported",
@@ -81255,6 +81626,7 @@
           "name": "Jake Dickert",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -81725,6 +82097,7 @@
             "name": "Jake Dickert",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -81777,6 +82150,7 @@
             "name": "Jake Dickert",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -85912,6 +86286,7 @@
           "name": "Kalani Sitake",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -85936,6 +86311,7 @@
           "name": "Kevin Young",
           "pay": {
             "value": null,
+            "unavailable": "private",
             "confidence": "pending",
             "source": null,
             "url": null,
@@ -86121,6 +86497,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86173,6 +86550,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86225,6 +86603,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86277,6 +86656,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86329,6 +86709,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86355,6 +86736,7 @@
             "name": "Kevin Young",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86381,6 +86763,7 @@
             "name": "Kalani Sitake",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -86407,6 +86790,7 @@
             "name": "Kevin Young",
             "pay": {
               "value": null,
+              "unavailable": "private",
               "confidence": "pending",
               "source": null,
               "url": null,
@@ -88728,19 +89112,20 @@
         "football": {
           "name": "Scott Satterfield",
           "pay": {
-            "value": 3700000,
+            "value": 3800000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "The Athletic (Dec. 6, 2022), quoting Satterfield Dec. 4 MOU obtained by public records; Boardroom year table; 700WLW Jan. 4, 2026 restates the 2026 step",
+            "url": "https://www.nytimes.com/athletic/3975896/2022/12/06/scott-satterfield-cincinnati-contract-salary-buyout/",
+            "asOf": "2022-12-06",
+            "notes": "Chair of record who started football 2026 (Wikipedia season-page infobox). FOIA MOU: $3.5 million in 2023 (first full season) + $100,000 each subsequent season, culminating at $4.0 million in 2028. 2026 step is $3,800,000. USA TODAY 2024 $3.6M / 2025 $3.7M match the published steps. Incentives not added. Current-deal line stays the USA TODAY 2025 snapshot. No later file that changes the year table is on the desk.",
+            "year": 2026
           },
           "buyout": {
             "value": 12008333,
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {
@@ -90261,12 +90646,24 @@
       },
       "nil": {
         "booked": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No House Year 1 (2025-26) FOIA / counsel spent total on the desk — that cell stays pending. FY2025 MFRS Item 44 Institutional NIL Revenue Share ($0, pre-House) is a separate companion cell on nil.preCap. Item 44 $0 is not House spent and not total/collective NIL."
+          "value": 7672052.88,
+          "confidence": "reported",
+          "source": "Sportico (Daniel Libit, Nov. 6, 2025) — Colorado made 262 payments totaling $7,672,052.88 in the first three months of the House revenue-share era",
+          "url": "https://www.sportico.com/leagues/college-sports/2025/college-athlete-pay-public-records-hide-1234875974/",
+          "asOf": "2025-11-06",
+          "window": "2025-07-01 to 2025-09-30",
+          "partialYear": true,
+          "notes": "Partial window only: the first three months of the House revenue-share era (July 1-September 30, 2025), 262 payments. Not a full House Year 1 total and not a leftover. Extra Points (Nov. 10, 2025) reprints the same Sportico sentence. FY2025 MFRS Item 44 $0 stays on nil.preCap and is not this cell. Do not book the same sentence's Kentucky $1,486,099.20 over Kentucky's counsel cell.",
+          "steps": [
+            {
+              "value": 7672052.88,
+              "window": "2025-07-01 to 2025-09-30",
+              "label": "House / revenue-share expended (first three months)",
+              "confidence": "reported",
+              "asOf": "2025-11-06",
+              "notes": "Sportico, Nov. 6, 2025: 262 payments totaling $7,672,052.88. House on this desk starts July 1, 2025, so the first three months are July 1-September 30, 2025. Not stacked into a full-year total."
+            }
+          ]
         },
         "preCap": {
           "value": 0,
@@ -90275,7 +90672,7 @@
           "url": "/colorado-fy2025-ncaa-mfrs.pdf",
           "asOf": "2026-09-10",
           "fiscalYear": "FY2025",
-          "notes": "FY2025 MFRS Item 44 is institutional NIL revenue-share only (pre-House, year ended Jun 30 2025). CU reported no institutional NIL revenue-share payments in that fiscal year — booked $0 because pages 16 / 74 / 93 of the hosted PDF print $0, not an invented blank. This is not collective/third-party NIL, not House Year 1 (2025-26) spent (that cell stays pending), not an unpaid roster, and not current NIL capacity. Does not count against the 2025-26 House cap. USA TODAY’s Brent Schrotenboer confirmed Item 44 is $0 (email, Sept. 10, 2026) and authorized credit plus hosting the FY2025 MFRS PDF he provided (CU NCAA financial report FY 2025.pdf)."
+          "notes": "FY2025 MFRS Item 44 is institutional NIL revenue-share only (pre-House, year ended Jun 30 2025). CU reported no institutional NIL revenue-share payments in that fiscal year — booked $0 because pages 16 / 74 / 93 of the hosted PDF print $0, not an invented blank. This is not collective/third-party NIL, not House Year 1 (2025-26) spent (House spent is the separate partial-window cell, not this Item 44 line), not an unpaid roster, and not current NIL capacity. Does not count against the 2025-26 House cap. USA TODAY’s Brent Schrotenboer confirmed Item 44 is $0 (email, Sept. 10, 2026) and authorized credit plus hosting the FY2025 MFRS PDF he provided (CU NCAA financial report FY 2025.pdf)."
         }
       },
       "coaches": {
@@ -90315,13 +90712,32 @@
             ]
           },
           "buyout": {
-            "value": 33625000,
+            "value": 33000000,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend.",
-            "rule": "75% of remaining Base + Supplemental."
+            "source": "Denver Post (Sean Keeler, Feb. 28, 2026) \u2014 $33 million if fired in 2026",
+            "url": "https://www.denverpost.com/2026/02/28/deion-sanders-cu-buffs-football-contract-buyout-coach-prime/",
+            "asOf": "2026-02-28",
+            "firedLabel": "if fired in 2026",
+            "notes": "If fired in 2026: $33,000,000. If fired in 2027: $25,500,000. The Denver Post (Feb. 28, 2026) prints those as \"$33 million\" this year and \"$25.5 million\" in 2027, not unrounded contract dollars. Replaces the USA TODAY School Buyout cell of $33,625,000 as of Dec. 1, 2025. Later years in the same sentence are not booked as headline steps.",
+            "rule": "If terminated without cause: 75% of remaining base supplemental salary through 2029 (Denver Post, Feb. 28, 2026).",
+            "steps": [
+              {
+                "asOf": "2026-02-28",
+                "remaining": 33000000,
+                "contractYear": "2026",
+                "through": "2026-12-31",
+                "firedLabel": "if fired in 2026",
+                "notes": "Denver Post (Feb. 28, 2026) prints \"$33 million\" if terminated without cause this year. Stored as $33,000,000. Not an unrounded contract dollar."
+              },
+              {
+                "asOf": "2027-01-01",
+                "remaining": 25500000,
+                "contractYear": "2027",
+                "through": "2027-12-31",
+                "firedLabel": "if fired in 2027",
+                "notes": "Denver Post (Feb. 28, 2026) prints \"$25.5 million\" in 2027. Stored as $25,500,000. Jan. 1 orders the year; the article did not print a calendar day."
+              }
+            ]
           },
           "term": {
             "confidence": "reported",
@@ -90882,12 +91298,32 @@
               ]
             },
             "buyout": {
-              "value": null,
-              "confidence": "pending",
-              "source": null,
-              "url": null,
-              "asOf": null,
-              "notes": "USA TODAY buyout cell not reused on a year without a tape pay cell."
+              "value": 33000000,
+              "confidence": "reported",
+              "source": "Denver Post (Sean Keeler, Feb. 28, 2026) \u2014 $33 million if fired in 2026",
+              "url": "https://www.denverpost.com/2026/02/28/deion-sanders-cu-buffs-football-contract-buyout-coach-prime/",
+              "asOf": "2026-02-28",
+              "firedLabel": "if fired in 2026",
+              "notes": "If fired in 2026: $33,000,000. If fired in 2027: $25,500,000. The Denver Post (Feb. 28, 2026) prints those as \"$33 million\" this year and \"$25.5 million\" in 2027, not unrounded contract dollars. Replaces the USA TODAY School Buyout cell of $33,625,000 as of Dec. 1, 2025. Later years in the same sentence are not booked as headline steps.",
+              "rule": "If terminated without cause: 75% of remaining base supplemental salary through 2029 (Denver Post, Feb. 28, 2026).",
+              "steps": [
+                {
+                  "asOf": "2026-02-28",
+                  "remaining": 33000000,
+                  "contractYear": "2026",
+                  "through": "2026-12-31",
+                  "firedLabel": "if fired in 2026",
+                  "notes": "Denver Post (Feb. 28, 2026) prints \"$33 million\" if terminated without cause this year. Stored as $33,000,000. Not an unrounded contract dollar."
+                },
+                {
+                  "asOf": "2027-01-01",
+                  "remaining": 25500000,
+                  "contractYear": "2027",
+                  "through": "2027-12-31",
+                  "firedLabel": "if fired in 2027",
+                  "notes": "Denver Post (Feb. 28, 2026) prints \"$25.5 million\" in 2027. Stored as $25,500,000. Jan. 1 orders the year; the article did not print a calendar day."
+                }
+              ]
             },
             "term": {
               "confidence": "reported",
@@ -93452,7 +93888,7 @@
             "confidence": "reported",
             "source": "Iowa State Rogers EA — 6 remaining years × $3,000,000 Base through Jan. 31, 2032",
             "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf",
-            "asOf": "2026-01-01",
+            "asOf": "2026-02-01",
             "notes": "Remaining years × base from the termination clause. Full years, not mid-year prorated. Bonuses not in that clause are not added.",
             "rule": "100% of remaining Base ($3,000,000/year) through Jan. 31, 2032. Offset if hired at another D-I school; no duty to seek work.",
             "steps": [
@@ -94029,7 +94465,7 @@
               "confidence": "reported",
               "source": "Iowa State Rogers EA — 6 remaining years × $3,000,000 Base through Jan. 31, 2032",
               "url": "https://htv-prod-media.s3.amazonaws.com/files/iowa-state-contract-with-football-coach-jimmy-rogers-69aa0e837691f.pdf",
-              "asOf": "2026-01-01",
+              "asOf": "2026-02-01",
               "notes": "Remaining years × base from the termination clause. Full years, not mid-year prorated. Bonuses not in that clause are not added.",
               "rule": "100% of remaining Base ($3,000,000/year) through Jan. 31, 2032. Offset if hired at another D-I school; no duty to seek work.",
               "steps": [
@@ -96761,27 +97197,66 @@
           }
         },
         "mbb": {
-          "name": "Jerome Tang",
+          "name": "Casey Alexander",
           "pay": {
-            "value": 3800000,
+            "value": 3300000,
+            "year": 2026,
             "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
-            "asOf": "2026-04-08",
-            "notes": "Total pay. Annual flow, not a wealth stock."
+            "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+            "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+            "asOf": "2026-03-16",
+            "notes": "Announced pay for 2026–27 is $3,300,000, then $3,350,000 (2027–28), $3,400,000 (2028–29), $3,450,000 (2029–30), and $3,500,000 (2030–31). The release calls each step a $50,000 base-salary increase. Not a USA TODAY total-pay cell. Jerome Tang’s $3,800,000 USA TODAY cell is not reused. No buyout dollar in the introduction.",
+            "breakdown": [
+              {
+                "label": "2026–27 pay",
+                "value": 3300000
+              }
+            ],
+            "schedule": [
+              {
+                "period": "2026-27",
+                "value": 3300000
+              },
+              {
+                "period": "2027-28",
+                "value": 3350000
+              },
+              {
+                "period": "2028-29",
+                "value": 3400000
+              },
+              {
+                "period": "2029-30",
+                "value": 3450000
+              },
+              {
+                "period": "2030-31",
+                "value": 3500000
+              }
+            ],
+            "baseOnly": true
           },
           "buyout": {
-            "value": 18675000,
-            "confidence": "reported",
-            "source": "USA TODAY Sports coach salary database",
-            "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
-            "asOf": "2026-04-08",
-            "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+            "value": null,
+            "confidence": "pending",
+            "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+            "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+            "asOf": "2026-03-16",
+            "notes": "No if-fired dollar in the introduction. Not Jerome Tang’s USA TODAY without-cause cell of $18,675,000 (as of Apr. 8, 2026) and not the $12,000,000 settlement booked under buyouts actually paid."
           },
           "term": {
-            "confidence": "pending",
-            "asOf": "2026-08",
-            "notes": "No public through-year on the desk yet. Not a guess."
+            "confidence": "reported",
+            "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+            "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+            "asOf": "2026-03-16",
+            "through": "2030-31",
+            "yearsRemaining": 5,
+            "notes": "Five-year contract approved by the K-State Athletics, Inc. board and President Richard Linton. Hired Mar. 13, 2026; introduced Mar. 16, 2026. Pay years 2026–27 through 2030–31. Jerome Tang was fired Feb. 15, 2026 and is not the current chair."
+          },
+          "contractUrl": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+          "contract": {
+            "label": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+            "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach"
           }
         }
       },
@@ -97221,13 +97696,15 @@
           },
           "mbb": {
             "name": "Jerome Tang",
+            "status": "fired",
+            "firedOn": "2026-02-15",
             "pay": {
               "value": 3800000,
               "confidence": "reported",
               "source": "USA TODAY Sports coach salary database",
               "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
               "asOf": "2026-04-08",
-              "notes": "Total pay. Annual flow, not a wealth stock."
+              "notes": "USA TODAY total-pay cell as of Apr. 8, 2026, after Tang was fired Feb. 15, 2026. Former chair for the 2025 football-season year. Not Casey Alexander’s pay and not a current-chair figure. Annual flow, not a wealth stock."
             },
             "buyout": {
               "value": 18675000,
@@ -97235,12 +97712,15 @@
               "source": "USA TODAY Sports coach salary database",
               "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
               "asOf": "2026-04-08",
-              "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+              "firedLabel": "USA TODAY without-cause cell — superseded by $12M settlement",
+              "notes": "Contractual without-cause buyout on the USA TODAY database as of Apr. 8, 2026: $18,675,000. The Mercury describes that disputed contractual figure as $18.7 million. It is not what K-State owes. The settlement is $12,000,000 (K-State athletics announcement Oct. 5, 2026; The Mercury Oct. 1 and Oct. 5, 2026), booked under buyouts actually paid. A settlement, not this remaining-contract buyout."
             },
             "term": {
               "confidence": "pending",
-              "asOf": "2026-08",
-              "notes": "No public through-year on the desk yet. Not a guess."
+              "asOf": "2026-02-15",
+              "source": "K-State athletics — leadership change (Feb. 15, 2026)",
+              "url": "https://www.kstatesports.com/news/2026/2/15/mens-basketball-k-state-announces-leadership-change-in-mens-basketball-program",
+              "notes": "Former coach. Fired Feb. 15, 2026, effective immediately. Associate head coach Matthew Driscoll was named interim the same day and a national search began immediately. Casey Alexander was hired Mar. 13, 2026. This 2025 key is the chair during the 2025 football season, not the current chair. No public through-year was on the desk before the firing."
             }
           }
         },
@@ -97317,27 +97797,66 @@
             }
           },
           "mbb": {
-            "name": "Jerome Tang",
+            "name": "Casey Alexander",
             "pay": {
-              "value": 3800000,
+              "value": 3300000,
+              "year": 2026,
               "confidence": "reported",
-              "source": "USA TODAY Sports coach salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
-              "asOf": "2026-04-08",
-              "notes": "Total pay. Annual flow, not a wealth stock."
+              "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+              "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+              "asOf": "2026-03-16",
+              "notes": "Chair hired Mar. 13, 2026 and introduced Mar. 16, 2026. Announced pay for 2026–27 is $3,300,000, then $3,350,000 (2027–28), $3,400,000 (2028–29), $3,450,000 (2029–30), and $3,500,000 (2030–31). The release calls each step a $50,000 base-salary increase. Not a USA TODAY total-pay cell. Jerome Tang’s $3,800,000 USA TODAY cell is not reused. No buyout dollar in the introduction.",
+              "breakdown": [
+                {
+                  "label": "2026–27 pay",
+                  "value": 3300000
+                }
+              ],
+              "schedule": [
+                {
+                  "period": "2026-27",
+                  "value": 3300000
+                },
+                {
+                  "period": "2027-28",
+                  "value": 3350000
+                },
+                {
+                  "period": "2028-29",
+                  "value": 3400000
+                },
+                {
+                  "period": "2029-30",
+                  "value": 3450000
+                },
+                {
+                  "period": "2030-31",
+                  "value": 3500000
+                }
+              ],
+              "baseOnly": true
             },
             "buyout": {
-              "value": 18675000,
-              "confidence": "reported",
-              "source": "USA TODAY Sports coach salary database",
-              "url": "https://sportsdata.usatoday.com/ncaa/salaries/mens-basketball/coach",
-              "asOf": "2026-04-08",
-              "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
+              "value": null,
+              "confidence": "pending",
+              "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+              "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+              "asOf": "2026-03-16",
+              "notes": "No if-fired dollar in the introduction. Not Jerome Tang’s USA TODAY without-cause cell of $18,675,000 (as of Apr. 8, 2026) and not the $12,000,000 settlement booked under buyouts actually paid."
             },
             "term": {
-              "confidence": "pending",
-              "asOf": "2026-08",
-              "notes": "No public through-year on the desk yet. Not a guess."
+              "confidence": "reported",
+              "source": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+              "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+              "asOf": "2026-03-16",
+              "through": "2030-31",
+              "yearsRemaining": 5,
+              "notes": "Five-year contract approved by the K-State Athletics, Inc. board and President Richard Linton. Hired Mar. 13, 2026; introduced Mar. 16, 2026. Pay years 2026–27 through 2030–31. Jerome Tang was fired Feb. 15, 2026 and is not this chair."
+            },
+            "contractUrl": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach",
+            "contract": {
+              "label": "K-State athletics — Casey Alexander introduction (Mar. 16, 2026)",
+              "url": "https://www.kstatesports.com/news/2026/3/16/mens-basketball-k-state-introduces-casey-alexander-as-mens-basketball-coach"
             }
           }
         }
@@ -106025,7 +106544,7 @@
             "confidence": "reported",
             "source": "USA TODAY Sports coach salary database",
             "url": "https://sportsdata.usatoday.com/ncaa/salaries/football/coach",
-            "asOf": "2025-10-08",
+            "asOf": "2025-12-01",
             "notes": "School buyout if fired without cause on the as-of date. Liability/overhang, not annual spend."
           },
           "term": {

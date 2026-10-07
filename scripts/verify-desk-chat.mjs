@@ -104,7 +104,9 @@ ok(!/modeled NIL is \$/.test(alaNil.text), 'pending booked NIL does not dump a m
 ok(/modeled/i.test(alaNil.text), 'pending booked NIL still names the modeled lane as separate')
 
 const cuNil = ask('What NIL do you have for Colorado?')
-ok(/pending/i.test(cuNil.text), 'Colorado House booked NIL stays pending')
+ok(/7,672,052\.88/.test(cuNil.text), 'Colorado NIL coverage names the Sportico partial window')
+ok(/partial window/i.test(cuNil.text), 'Colorado NIL coverage says the window is partial')
+ok(!/leftover is \$/.test(cuNil.text), 'Colorado NIL coverage does not invent a leftover')
 ok(/Item 44/i.test(cuNil.text), 'Colorado NIL coverage names FY2025 Item 44')
 ok(/institutional/i.test(cuNil.text) && /pre-House/i.test(cuNil.text), 'Colorado Item 44 is institutional / pre-House')
 ok(/not House Year 1 spent/i.test(cuNil.text), 'Colorado NIL coverage refuses House Year 1 spent')
@@ -113,7 +115,8 @@ ok(!/booked NIL is \$0/i.test(cuNil.text), 'Colorado coverage does not say booke
 ok(!/On3/.test(cuNil.text) || /does not/.test(cuNil.text), 'Colorado NIL coverage does not promote On3')
 
 const cuBooked = ask("What's Colorado's booked NIL?")
-ok(/pending/i.test(cuBooked.text), 'Colorado booked NIL question stays pending')
+ok(/7,672,052\.88/.test(cuBooked.text), 'Colorado booked NIL question names the partial window')
+ok(/partial window/i.test(cuBooked.text), 'Colorado booked NIL says the window is partial')
 ok(/Item 44/i.test(cuBooked.text), 'Colorado booked NIL still names the Item 44 companion')
 ok(/not House Year 1 spent/i.test(cuBooked.text), 'Colorado booked NIL refuses House spent')
 
@@ -485,7 +488,7 @@ ok(/\$300,000|\$0\.3M|\$300k/.test(room.text), `room-under-cap leftover: ${room.
 const mostNil = ask('Who has the most booked NIL?')
 ok(/Louisville/.test(mostNil.text) && /\$32\.9M/.test(mostNil.text), `most booked NIL: ${mostNil.text}`)
 ok(/Kentucky/.test(mostNil.text) && /Texas/.test(mostNil.text), 'most booked NIL lists the five booked cells')
-ok(!/Colorado/.test(mostNil.text) || /not/.test(mostNil.text), 'most booked NIL does not lead with Colorado Item 44')
+ok(/\$7\.7M|7,672,052/.test(mostNil.text), 'most booked NIL includes the Colorado partial window, not Item 44 $0')
 ok(!/booked NIL is \$0/i.test(mostNil.text), 'most booked NIL does not print a $0 Item 44 lead')
 
 const moreNil = ask('Who has more booked NIL Texas or Louisville?')

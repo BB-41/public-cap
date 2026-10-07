@@ -5,6 +5,8 @@ import { schoolNilPot } from './nilHistory.js'
 import { applySeason, houseFieldForSeason, houseValueForSeason } from './seasons.js'
 import { computeEfficiency, mergeSubsidy } from './layers.js'
 import { resolveConferenceExit } from './conferenceExit.js'
+import { applyBookBuyout } from './buyout.js'
+import { CURRENT_SEASON } from './seasons.js'
 
 /**
  * Same enrichment the desk has always run — capacity, House, booked/modeled NIL,
@@ -18,6 +20,7 @@ export function enrichSchools({
   layers = null,
   rosters = null,
   rosterYear = null,
+  buyouts = null,
 } = {}) {
   if (!data?.schools) return null
   const houseVal = houseValueForSeason(data.meta, season)
@@ -26,6 +29,7 @@ export function enrichSchools({
   const withCap = seasonal.map((s) => ({ ...s, _cap: computeCapacity(s) }))
   const capTotals = withCap.map((s) => s._cap.total)
   const book = rosterYear === season ? rosters : { schools: {} }
+  const rosterMissing = Boolean(rosterYear === season && rosters?.missing)
   return withCap.map((s) => {
     const modeled = s._season.modeledNil
       ? modeledNilForSeason(s, s._cap.total, capTotals, season, houseVal)
@@ -48,10 +52,13 @@ export function enrichSchools({
       debt: season >= 2025 ? rawLayer.debt : null,
       buyoutsPaid: season >= 2025 ? rawLayer.buyoutsPaid : [],
     }
-    const withNil = { ...s, nil, _cap: s._cap, _ratios: r }
+    const withBuyout = season === CURRENT_SEASON && buyouts?.coaches?.[s.id]
+      ? applyBookBuyout(s, buyouts.coaches[s.id])
+      : s
+    const withNil = { ...withBuyout, nil, _cap: s._cap, _ratios: r }
     const eff = computeEfficiency(withNil, layer, includeAlumni)
     return {
-      ...s,
+      ...withBuyout,
       nil,
       layers: layer,
       conferenceExit: s.conferenceExit,
@@ -60,7 +67,8 @@ export function enrichSchools({
       _ratios: r,
       _roster: roster,
       _named: named,
-      _conf: confidenceRollup(s),
+      _rosterMissing: rosterMissing,
+      _conf: confidenceRollup(withBuyout),
       _houseField: houseField,
       _eff: eff,
     }

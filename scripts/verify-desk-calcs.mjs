@@ -4,7 +4,7 @@
  */
 import { existsSync, readFileSync } from 'node:fs'
 import { applySeason } from '../src/lib/seasons.js'
-import { computeCapacity, houseRemaining, leftoverWaterfall, val } from '../src/lib/compute.js'
+import { computeCapacity, houseRemaining, leadBookedNil, leadHouseRemaining, leftoverWaterfall, val } from '../src/lib/compute.js'
 import {
   footballRosterStack,
   reportedBarBreakdown,
@@ -98,9 +98,10 @@ const PDF_STEP_IDS = ['florida-state', 'penn-state', 'clemson', 'virginia-tech',
 const DERIVED_STEP_IDS = [
   'kentucky', 'arkansas', 'auburn', 'michigan', 'michigan-state', 'ucla',
   'ole-miss', 'kansas-state', 'utah', 'oregon', 'florida', 'oklahoma-state',
-  'missouri',
+  'missouri', 'rutgers',
 ]
 const COPIED_STEP_IDS = ['tennessee', 'lsu']
+const ARTICLE_STEP_IDS = ['colorado']
 for (const s of data.schools) {
   const steps = s.coaches.football.buyout?.steps || []
   if (PDF_STEP_IDS.includes(s.id)) {
@@ -112,10 +113,18 @@ for (const s of data.schools) {
     ok(steps.every((st) => /Derived from|Labeled derived/i.test(st.notes)), `${s.id} steps labeled derived`)
   } else if (COPIED_STEP_IDS.includes(s.id)) {
     ok(steps.length > 0, `${s.id} copied existing buyouts.json steps`)
+  } else if (ARTICLE_STEP_IDS.includes(s.id)) {
+    ok(steps.length > 0, `${s.id} cited article step tape present`)
+    ok(steps.every((st) => st.asOf && st.firedLabel && st.remaining != null), `${s.id} article steps carry a firing condition and a remaining dollar`)
   } else {
     ok(steps.length === 0, `${s.id} has no invented staircase`)
   }
 }
+ok(byId.colorado.coaches.football.buyout.value === 33_000_000, 'Sanders headline is $33,000,000 if fired in 2026')
+ok(byId.colorado.coaches.football.buyout.steps[0].remaining === 33_000_000, 'Sanders 2026 step is $33,000,000')
+ok(byId.colorado.coaches.football.buyout.steps[1].remaining === 25_500_000, 'Sanders 2027 step is $25,500,000')
+ok(byId.purdue.coaches.football.buyout.value === 20_625_000, 'Odom headline is $20,625,000 if fired Dec. 1, 2026')
+ok((byId.purdue.coaches.football.buyout.steps || []).length === 0, 'Purdue keeps a single firing-date overhang, not a Saturday staircase')
 ok(byId['florida-state'].coaches.football.buyout.steps[0].remaining === 58_192_500, 'Norvell CY7 remaining')
 ok(byId['florida-state'].coaches.football.buyout.value === 49_353_349, 'Norvell headline is Sep 16 remaining')
 ok(byId['florida-state'].coaches.football.buyout.asOf === '2026-09-16', 'Norvell headline asOf is 2026-09-16')
@@ -150,15 +159,55 @@ ok(stepInForce(remainingOnly, '2026-09-01').amount === 70_500_000, 'remaining-on
 // --- 3) House remaining ---
 const HOUSE = 20_500_000
 ok(byId.louisville.nil.booked.value === 32_900_000, 'Louisville booked untouched')
+ok(!/revenue-share spend/i.test(byId.louisville.nil.booked.source || ''), 'Louisville $32.9M source is not revenue-share spend')
+ok(byId.louisville.nil.booked.leadLabel === 'Full FOIA window · Mar 2025–Jul 1 2026', 'Louisville $32.9M is labeled the full FOIA window')
+ok(byId.louisville.nil.houseRemaining.window === '2025-07-01 to 2026-07-01', 'Louisville House spent window is Jul 1 2025–Jul 1 2026')
 ok(byId.louisville.nil.preCap.value === 12_700_000, 'Louisville preCap untouched')
 ok(byId.louisville.nil.houseRemaining.spent === 20_200_000, 'Louisville House spent is the split')
+ok(byId.maryland.coaches.football.pay.value === 6_400_000, 'Maryland 2026 pay is the Washington Times $6.4M')
+ok(byId.maryland.coaches.football.buyout.value === 9_950_000, 'Maryland buyout is the Washington Times $9.95M')
+ok(byId.maryland.coaches.football.term.through === '2028', 'Maryland term runs through 2028')
+ok(byId.maryland.coachesByYear['2025'].football.pay.value === 6_100_000, 'Maryland 2025 USA TODAY pay stays $6.1M')
+ok(byId.maryland.coachesByYear['2026'].football.pay.value === 6_400_000, 'Maryland 2026 year key is the Washington Times $6.4M')
+ok(byId.maryland.coachesByYear['2026'].football.buyout.value === 9_950_000, 'Maryland 2026 year-key buyout is $9.95M')
+ok(data.meta.houseCap.y2026_27.value === 21_583_913, 'House Year 2 ceiling stays $21,583,913')
+ok(buyouts.coaches.maryland.overhang.amount === 9_950_000, 'Maryland buyout desk books the Washington Times $9.95M')
+ok(buyouts.coaches.maryland.overhang.asOf === '2026-09-24', 'Maryland buyout desk as-of is the Washington Times date')
+{
+  const lou25 = applySeason(byId.louisville, 2025)
+  const lou26lead = applySeason(byId.louisville, 2026)
+  ok(leadBookedNil(lou25).label === 'Full FOIA window · Mar 2025–Jul 1 2026', 'Louisville 2025 booked label is the full FOIA window')
+  ok(leadBookedNil(lou26lead).label === 'Full FOIA window · Mar 2025–Jul 1 2026', 'Louisville 2026 carry label is the full FOIA window')
+  ok(leadHouseRemaining(lou25).label == null, 'Louisville 2025 leftover is not labeled with the FOIA window')
+  ok(leadHouseRemaining(lou26lead).label === '2025–26 filing / House Year 1', 'Louisville 2026 leftover stays the House Year 1 label')
+  ok(leadHouseRemaining(lou26lead).field.spent === 20_200_000, 'Louisville leftover still subtracts $20.2M')
+}
 ok(byId.louisville.nil.houseRemaining.value === HOUSE - 20_200_000, 'Louisville remaining')
 ok(byId.kentucky.nil.booked.value === 18_000_000, 'Kentucky booked untouched')
 ok(byId.kentucky.nil.houseRemaining.value === HOUSE - 18_000_000, 'Kentucky remaining')
 ok(byId.ucla.nil.booked.value === 20_500_000, 'UCLA booked untouched')
 ok(byId.ucla.nil.houseRemaining.value === 0, 'UCLA $0 leftover')
 ok(byId.california.nil.booked.value === 20_500_000, 'Cal booked untouched')
+ok(byId.california.nil.booked.approximate === true, 'Cal booked is approximate (about $20.5M), not $20,500,000')
+ok(byId.ucla.nil.booked.approximate === true, 'UCLA booked is approximate from the same CalMatters sentence')
+ok(/about \$20\.5 million/i.test(byId.california.nil.booked.source || ''), 'Cal source keeps CalMatters “about $20.5 million”')
 ok(byId.california.nil.houseRemaining.value === 0, 'Cal $0 leftover')
+ok(byId.california.coaches.football.pay.value == null, 'Lupoi pay stays null')
+ok(byId.california.coaches.football.pay.unavailable === 'undisclosed', 'Lupoi is labeled Not disclosed')
+ok(byId.california.coachesByYear['2026'].football.pay.unavailable === 'undisclosed', 'Lupoi 2026 year key is Not disclosed')
+ok(byId.northwestern.coaches.football.pay.value == null, 'Braun pay stays null')
+ok(byId.northwestern.coaches.football.pay.unavailable === 'private', 'Braun is labeled private-school contract')
+ok(byId.northwestern.coachesByYear['2026'].football.pay.unavailable === 'private', 'Braun 2026 year key is private')
+ok(byId.oklahoma.coaches.football.pay.value === 10_000_000, 'Venables current is stamped from the 2026 board cite')
+ok(!isUsaToday(byId.oklahoma.coaches.football.pay), 'Venables current is no longer the 2025 USA TODAY snapshot')
+ok(byId.oklahoma.coachesByYear['2025'].football.pay.value === 7_552_750, 'Venables 2025 year key stays the USA TODAY snapshot')
+ok(byId.oklahoma.coachesByYear['2026'].football.pay.value === 10_000_000, 'Venables 2026 is the board-approved $10,000,000')
+ok(!isUsaToday(byId.oklahoma.coachesByYear['2026'].football.pay), 'Venables 2026 is not USA TODAY')
+ok(byId.oklahoma.coachesByYear['2026'].football.pay.unavailable == null, 'Venables 2026 is a booked dollar, not an undisclosed label')
+ok(byId.oklahoma.coaches.football.buyout.value == null, 'Venables current buyout is pending, not the Oct. 8, 2025 overhang')
+ok(byId.oklahoma.coachesByYear['2026'].football.buyout.value == null, 'Venables 2026 buyout stays pending')
+ok(buyouts.coaches.oklahoma.tape === 'pending', 'Venables buyout tape is pending')
+ok(buyouts.coaches.oklahoma.overhang == null, 'Venables $36,158,333 overhang is cleared')
 const TX_W1 = 17_999_479.04
 const TX_W2 = 4_808_560.63
 const TX_LEFT = 2_500_520.96
@@ -462,18 +511,24 @@ ok(byId.kansas.nil.preCap.value === 0, 'Kansas Item 44 $0')
 ok(byId.missouri.nil.preCap.value === 0, 'Missouri Item 44 $0')
 ok(byId['mississippi-state'].nil.preCap.value === 0, 'Mississippi State Item 44 $0')
 ok(byId.colorado.nil.preCap.value === 0, 'Colorado Item 44 $0')
-ok(byId.colorado.nil.booked.value == null, 'Colorado House booked stays pending')
-ok(byId.colorado.nil.houseRemaining == null, 'Colorado leftover stays empty — Item 44 is not House Year 1')
+ok(byId.colorado.nil.booked.value === 7_672_052.88, 'Colorado House booked is the Sportico partial window')
+ok(byId.colorado.nil.booked.partialYear === true, 'Colorado booked is a partial window')
+ok(byId.colorado.nil.booked.steps?.[0]?.value === 7_672_052.88, 'Colorado step is the same partial window')
+ok(byId.colorado.nil.booked.window === '2025-07-01 to 2025-09-30', 'Colorado window is Jul 1–Sep 30 2025')
+ok(/first three months/i.test(byId.colorado.nil.booked.notes), 'Colorado notes say first three months')
+ok(/not a leftover/i.test(byId.colorado.nil.booked.notes), 'Colorado notes refuse a leftover')
+ok(byId.colorado.nil.houseRemaining == null, 'Colorado leftover stays empty — a 3-month window is not a full-year residual')
 ok(/^FY2025 NCAA MFRS Item 44/i.test(byId.colorado.nil.preCap.source), 'Colorado source leads with FY2025 MFRS Item 44')
 ok(/USA TODAY/i.test(byId.colorado.nil.preCap.source), 'Colorado Item 44 credits USA TODAY')
 ok(/Schrotenboer/i.test(byId.colorado.nil.preCap.source), 'Colorado Item 44 credits Schrotenboer')
 ok(/not House Year 1 spent/i.test(byId.colorado.nil.preCap.source), 'Colorado source says not House Year 1 spent')
 ok(/not collective\/total NIL/i.test(byId.colorado.nil.preCap.source), 'Colorado source says not collective/total NIL')
 ok(/institutional NIL revenue-share only/i.test(byId.colorado.nil.preCap.notes), 'Colorado notes lead with institutional-only')
-ok(/that cell stays pending/i.test(byId.colorado.nil.preCap.notes), 'Colorado notes keep House Year 1 pending')
+ok(/partial-window cell/i.test(byId.colorado.nil.preCap.notes), 'Colorado Item 44 notes point at the separate partial window')
 ok(/not collective\/third-party NIL/i.test(byId.colorado.nil.preCap.notes), 'Colorado notes refuse collective NIL')
 ok(/not current NIL capacity/i.test(byId.colorado.nil.preCap.notes), 'Colorado notes refuse current capacity = 0')
-ok(/stays pending/i.test(byId.colorado.nil.booked.notes), 'Colorado booked notes keep House spent pending')
+ok(!/stays pending/i.test(byId.colorado.nil.booked.notes), 'Colorado booked notes no longer say House spent is pending')
+ok(!JSON.stringify(data).includes('brett@bryantalliance.com'), 'personal email is not in schools.json')
 ok(byId.colorado.nil.preCap.url === '/colorado-fy2025-ncaa-mfrs.pdf', 'Colorado Item 44 cites the hosted MFRS PDF')
 const schoolPage = readFileSync(new URL('../src/pages/School.jsx', import.meta.url), 'utf8')
 ok(schoolPage.includes('ITEM44_COMPANION_EYEBROW'), 'school page uses the Item 44 companion eyebrow')
@@ -502,21 +557,38 @@ ok(byId['arizona-state'].coachesByYear['2026'].football.pay.value === 6_400_000,
 ok(byId.houston.coachesByYear['2026'].football.pay.value === 4_500_000, 'Fritz 2026 term sheet $4.5M')
 ok(byId['south-carolina'].coachesByYear['2026'].football.pay.value === 8_250_000, 'Beamer 2026 is the term-sheet $8,250,000')
 ok(!isUsaToday(byId['south-carolina'].coachesByYear['2026'].football.pay), 'Beamer 2026 is not USA TODAY 2025 $8.15M')
-ok(byId['south-carolina'].coaches.football.pay.value === 8_150_000, 'Beamer current-deal line stays the USA TODAY 2025 snapshot')
-ok(isUsaToday(byId['south-carolina'].coaches.football.pay), 'Beamer current-deal line is still USA TODAY')
+ok(byId['south-carolina'].coaches.football.pay.value === 8_250_000, 'Beamer current is stamped from the 2026 term-sheet $8.25M')
+ok(!isUsaToday(byId['south-carolina'].coaches.football.pay), 'Beamer current is no longer the USA TODAY 2025 snapshot')
 ok(byId.virginia.coachesByYear['2026'].football.pay.value === 5_400_000, 'Elliott 2026 MOU $5.4M')
 ok(!isUsaToday(byId.virginia.coachesByYear['2026'].football.pay), 'Elliott 2026 is not USA TODAY')
 ok(byId.virginia.coaches.football.pay.value === 5_400_000, 'Elliott current is stamped from the 2026 MOU')
+ok(byId.rutgers.coaches.football.pay.value === 6_750_000, 'Schiano current pay is the 2026 contract line $6.75M')
+ok(byId.rutgers.coachesByYear['2026'].football.pay.value === 6_750_000, 'Schiano 2026 pay stays $6.75M')
+ok(!isUsaToday(byId.rutgers.coaches.football.pay), 'Schiano current pay is not the USA TODAY 2025 snapshot')
+ok(byId.rutgers.coaches.football.buyout.value === 18_000_000, 'Schiano mid-season buyout is the reported round $18M')
+ok(byId.rutgers.coaches.football.buyout.asOf === '2026-10-04', 'Schiano buyout asOf is 2026-10-04')
+ok(byId.rutgers.coaches.football.buyout.confidence === 'estimated', 'Schiano mid-season buyout is estimated')
+ok(byId.rutgers.coaches.football.buyout.steps[1].remaining === 17_296_875, 'Schiano post-2026 step is $17,296,875')
+ok(byId.rutgers.coachesByYear['2026'].football.buyout.value === 18_000_000, 'Schiano 2026 year key matches the current buyout')
+ok(buyouts.coaches.rutgers.tape === 'steps', 'Schiano buyout tape is steps')
+ok(buyouts.coaches.rutgers.overhang == null, 'Schiano Oct 8 2025 overhang is cleared')
+ok(buyouts.coaches.rutgers.steps[0].amount === 18_000_000, 'buyouts.json Schiano in-force step is $18M')
+ok(buyouts.coaches.rutgers.steps[1].amount === 17_296_875, 'buyouts.json Schiano post-2026 step matches')
+ok(byId.wisconsin.coaches.football.pay.value === 7_800_000, 'Fickell current is stamped from the Sept 2026 contract $7.8M')
+ok(!isUsaToday(byId.wisconsin.coaches.football.pay), 'Fickell current is no longer the USA TODAY 2025 snapshot')
+ok(byId.cincinnati.coaches.football.pay.value === 3_800_000, 'Satterfield current is stamped from the 2026 MOU $3.8M')
 ok(byId.missouri.coaches.football.buyout.steps[0].remaining === 51_600_000, 'Drinkwitz start-of-2026 remaining is $51.6M')
 ok(byId.missouri.coaches.football.buyout.steps.length === 6, 'Drinkwitz derived steps cover 2026–31 only')
 ok(byId.missouri.coaches.football.buyout.value === 51_600_000, 'Drinkwitz USAT overhang replaced by file-derived $51.6M')
 ok(layers.schools.auburn.buyoutsPaid.some((b) => b.coach === 'Hugh Freeze' && b.amount === 15_800_000 && b.through === '2029-01-31'), 'Freeze $15.8M lump through Jan 2029 kept')
 const freezeYears = layers.schools.auburn.buyoutsPaid.filter((b) => b.coach === 'Hugh Freeze' && b.year >= 2026)
 ok(freezeYears.length === 3 && freezeYears.every((b) => b.amount === 4_907_688 && b.year <= 2028), 'Freeze year-cash rows 2026–28 only')
-ok(byId.oklahoma.coachesByYear['2026'].football.pay.value == null, 'Venables 2026 not booked from AAV')
+ok(byId.oklahoma.coachesByYear['2026'].football.pay.value === 10_000_000, 'Venables 2026 is $10,000,000, not the $10.5M average')
+ok(byId.oklahoma.coachesByYear['2026'].football.term?.through === 'Jan. 31, 2032', 'Venables 2026 term is through Jan. 31, 2032')
 ok(byId['nc-state'].coachesByYear['2026'].football.pay.value === 5_750_000, 'Doeren 2026 FOIA $5.75M')
 ok(!isUsaToday(byId['nc-state'].coachesByYear['2026'].football.pay), 'Doeren 2026 is not USA TODAY')
-ok(byId['nc-state'].coaches.football.pay.value === 6_215_377, 'Doeren current-deal line stays the USA TODAY 2025 snapshot')
+ok(byId['nc-state'].coaches.football.pay.value === 5_750_000, 'Doeren current is stamped from the 2026 FOIA $5.75M')
+ok(!isUsaToday(byId['nc-state'].coaches.football.pay), 'Doeren current is no longer the USA TODAY 2025 snapshot')
 ok(byId['west-virginia'].coachesByYear['2026'].football.pay.value === 3_600_000, 'Rodriguez 2026 MOU step $3.6M')
 ok(!isUsaToday(byId['west-virginia'].coachesByYear['2026'].football.pay), 'Rodriguez 2026 is not USA TODAY')
 ok(byId['west-virginia'].coaches.football.pay.value === 3_600_000, 'Rodriguez current-deal line stays the USA TODAY 2025 snapshot')

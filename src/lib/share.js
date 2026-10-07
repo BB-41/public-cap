@@ -6,6 +6,8 @@
 import { CURRENT_SEASON } from './seasons.js'
 import { money, moneyExact, moneyRange, winsPerM } from './format.js'
 import { isPlayerHash, isPosHash } from './nilHistory.js'
+import { HOT_SEAT_DESCRIPTION, HOT_SEAT_PATH, HOT_SEAT_TITLE, buyoutDescription, buyoutTitle } from './buyout.js'
+import { schoolSerpDescription } from './schoolSeo.js'
 
 export const DEFAULT_TITLE = 'Public Cap — Capacity vs House cap vs booked NIL'
 export const SITE = 'thepubliccap.com'
@@ -169,9 +171,12 @@ export const PAGE_TITLES = {
   home: DEFAULT_TITLE,
   tape: 'Tape — Public Cap',
   methods: 'Methods — Public Cap',
+  about: 'About — Public Cap',
   buyout: 'Buyout — Public Cap',
   coachFa: 'Coach buyout offsets / free agents — Public Cap',
   guaranteeGames: 'Guarantee games — Public Cap',
+  checkbookBowl: 'Does the bigger spender win? — Public Cap',
+  nil101: 'NIL 101: College Athlete Pay Explained in Plain English | The Public Cap',
   compare: 'Compare capacity vs House vs NIL — Public Cap',
   reportedNil: 'Reported NIL by school — Power 4 football roster stack — Public Cap',
   tv: 'TV — Public Cap',
@@ -181,9 +186,15 @@ export const PAGE_DESCRIPTIONS = {
   home: 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.',
   tape: 'A dated log of filings that moved a Public Cap figure — booked NIL, collective 990 payouts, contracts, and House-cap Q&As. Not a news feed. Empty means no public filing on the desk yet.',
   methods: 'How Public Cap books Power 4 capacity, the House benefits cap, booked NIL, and collective 990 payouts. Pending stays empty. We do not invent House or NIL dollars.',
+  about:
+    'What can your team actually afford? A college football money desk for 68 schools — House share, capacity, coach pay, booked NIL, and the Checkbook Bowl. Pending stays empty.',
   buyout: 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.',
   coachFa: 'Residual School A buyout after a firing, plus a labeled modeled School B salary. Offset rules stay booked or cite-only. Empty without a cite — we do not invent remaining principal.',
   guaranteeGames: 'How much larger (usually Power 4) schools pay smaller opponents to play them on the 2026 football schedule. Football guarantee stays distinct from band fees. Not House spent, not booked NIL, not coach buyouts. Empty without a FOIA or named newsroom cite.',
+  checkbookBowl:
+    'Does the bigger spender win? In every big college football game — both teams on the 68-school Power 4 plus Notre Dame desk, and at least one AP-ranked — the checkbook favorite is the school with the higher FY2025 EADA football expense. Final games move the record. Unplayed games stay upcoming. We do not invent dollars.',
+  nil101:
+    'A plain-English guide to how college athletes get paid. Name, image, and likeness deals sit beside school revenue sharing. What can your team actually afford?',
   compare: 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.',
   reportedNil:
     'Reported NIL by school: named survey ranges versus labeled modeled conference bands for the Power 4 football roster stack — all 68 Power 4 + Notre Dame schools on one $0–$50M scale. Booked NIL and House spent stay separate. Not leftover.',
@@ -203,6 +214,11 @@ function upsertMeta(attr, key, content) {
     document.head.appendChild(el)
   }
   el.setAttribute('content', content)
+}
+
+function removeMeta(attr, key) {
+  if (typeof document === 'undefined') return
+  document.head.querySelector(`meta[${attr}="${key}"]`)?.remove()
 }
 
 function upsertCanonical(href) {
@@ -226,8 +242,10 @@ function siteJsonLd() {
   }
 }
 
-function upsertRouteJsonLd(kind, { title, description, href, schoolName }) {
+function upsertRouteJsonLd(kind, { title, description, href, schoolName, faq, staleness }) {
   if (typeof document === 'undefined') return
+  // NIL 101 writes FAQPage + Article from the shared guide after the caps load.
+  if (kind === 'preserve') return
   let el = document.getElementById(HOME_JSON_LD_ID)
   if (!kind) {
     el?.remove()
@@ -260,17 +278,39 @@ function upsertRouteJsonLd(kind, { title, description, href, schoolName }) {
     url: href,
     isPartOf: siteJsonLd(),
   }
+  if (staleness) {
+    webpage.additionalProperty = {
+      '@type': 'PropertyValue',
+      name: 'buyoutStaleness',
+      value: staleness,
+    }
+  }
   if (kind === 'school' && schoolName) {
+    const graph = [
+      webpage,
+      {
+        '@type': 'CollegeOrUniversity',
+        name: schoolName,
+        url: href,
+      },
+    ]
+    if (faq?.length) {
+      graph.push({
+        '@type': 'FAQPage',
+        url: href,
+        mainEntity: faq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      })
+    }
     el.textContent = JSON.stringify({
       '@context': 'https://schema.org',
-      '@graph': [
-        webpage,
-        {
-          '@type': 'CollegeOrUniversity',
-          name: schoolName,
-          url: href,
-        },
-      ],
+      '@graph': graph,
     })
     return
   }
@@ -281,7 +321,7 @@ function upsertRouteJsonLd(kind, { title, description, href, schoolName }) {
 }
 
 /** Set document title, description, matching OG/Twitter tags, and a canonical URL. */
-export function applyDocumentMeta({ title, path, description, jsonLd = false, image, schoolName }) {
+export function applyDocumentMeta({ title, path, description, jsonLd = false, image, schoolName, faq, staleness = null }) {
   const href = canonicalUrl(path)
   const img = image || ogImageFromPath(path)
   if (typeof document === 'undefined') return href
@@ -299,7 +339,9 @@ export function applyDocumentMeta({ title, path, description, jsonLd = false, im
     upsertMeta('name', 'twitter:description', description)
   }
   upsertCanonical(href)
-  upsertRouteJsonLd(jsonLd, { title, description, href, schoolName })
+  if (staleness) upsertMeta('name', 'buyout-staleness', staleness)
+  else removeMeta('name', 'buyout-staleness')
+  upsertRouteJsonLd(jsonLd, { title, description, href, schoolName, faq, staleness })
   return href
 }
 
@@ -311,9 +353,26 @@ export function displayNameFromSlug(slug) {
     .join(' ')
 }
 
+export const SCHOOL_TITLE_LIMIT = 65
+const SCHOOL_TITLE_BRAND = ' | The Public Cap'
+
+/** First pattern that fits the SERP limit. index.html repeats this ladder for the no-JS fallback. */
+export function schoolSerpTitle(name) {
+  const options = [
+    `${name} NIL Budget, Collective Payout & Football Revenue${SCHOOL_TITLE_BRAND}`,
+    `${name} NIL Budget, Collective Payout & Revenue${SCHOOL_TITLE_BRAND}`,
+    `${name} NIL, Collective & Football Revenue${SCHOOL_TITLE_BRAND}`,
+    `${name} NIL Budget & Collective Payout${SCHOOL_TITLE_BRAND}`,
+  ]
+  return options.find((title) => title.length <= SCHOOL_TITLE_LIMIT) || options[options.length - 1]
+}
+
 export function schoolTitle(name, season) {
-  const yr = season && season !== CURRENT_SEASON ? ` · ${season}` : ''
-  return `${name}${yr} — ${SCHOOL_TITLE_FRAME} — reported football NIL — Public Cap`
+  const base = schoolSerpTitle(name)
+  if (season && season !== CURRENT_SEASON) {
+    return base.replace(SCHOOL_TITLE_BRAND, ` · ${season}${SCHOOL_TITLE_BRAND}`)
+  }
+  return base
 }
 
 export function compareTitle(nameA, nameB, season) {
@@ -326,21 +385,15 @@ export function coachFaTitle(coachName) {
   return `${coachName} — Coach buyout offsets — Public Cap`
 }
 
-export function schoolDescription(schoolOrName) {
-  const name = typeof schoolOrName === 'string' ? schoolOrName : schoolOrName?.name
-  if (!name) return PAGE_DESCRIPTIONS.school
-  const gap = typeof schoolOrName === 'object' && !!(schoolOrName.revenueGap || schoolOrName.private)
-  if (gap) {
-    return `${name} football revenue on Public Cap is booked capacity from public filings, not a full athletic-revenue total. The private checkbook is two lanes — conference media and federal EADA athletics revenue — not unpacked into tickets, sponsorships, or contributions, and not summed into one MFRS-equivalent stack. House cap and booked NIL sit beside it. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane. Empty stays empty.`
-  }
-  return `${name} — annual capacity from public filings versus the House benefits cap versus booked NIL. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane, not House. Pending stays empty.`
+export function schoolDescription(schoolOrName, ctx) {
+  return schoolSerpDescription(schoolOrName, ctx) || PAGE_DESCRIPTIONS.school
 }
 
 export function pageDescription(kind) {
   return PAGE_DESCRIPTIONS[kind] || PAGE_DESCRIPTIONS.home
 }
 
-export function titleFromPath(pathname, { season, schoolName, compareNames, coachName } = {}) {
+export function titleFromPath(pathname, { season, schoolName, compareNames, coachName, buyoutCoach } = {}) {
   const p = pathname || '/'
   if (p === '/') return PAGE_TITLES.home
   if (p.startsWith('/school/')) {
@@ -354,18 +407,25 @@ export function titleFromPath(pathname, { season, schoolName, compareNames, coac
   if (p === '/reported-nil') return PAGE_TITLES.reportedNil
   if (p === '/coach-fa' || p.startsWith('/coach-fa/')) return coachFaTitle(coachName)
   if (p === '/guarantee-games') return PAGE_TITLES.guaranteeGames
+  if (p === '/checkbook-bowl') return PAGE_TITLES.checkbookBowl
+  if (p === '/nil-101') return PAGE_TITLES.nil101
   if (p === '/tape') return PAGE_TITLES.tape
   if (p === '/methods') return PAGE_TITLES.methods
-  if (p === '/buyout') return PAGE_TITLES.buyout
+  if (p === '/about') return PAGE_TITLES.about
+  if (p === HOT_SEAT_PATH) return HOT_SEAT_TITLE
+  if (p === '/buyout' || p.startsWith('/buyout/')) {
+    if (p.startsWith('/buyout/') && buyoutCoach) return buyoutTitle(buyoutCoach)
+    return PAGE_TITLES.buyout
+  }
   if (p === '/tv') return PAGE_TITLES.tv
   return DEFAULT_TITLE
 }
 
-export function descriptionFromPath(pathname, { school, schoolName, coachName } = {}) {
+export function descriptionFromPath(pathname, { school, schoolName, coachName, year1, year2, spend, buyoutCoach } = {}) {
   const p = pathname || '/'
   if (p === '/') return PAGE_DESCRIPTIONS.home
   if (p.startsWith('/school/')) {
-    return schoolDescription(school || schoolName || displayNameFromSlug(p.split('/')[2]))
+    return schoolDescription(school || schoolName || displayNameFromSlug(p.split('/')[2]), { year1, year2, spend })
   }
   if (p === '/compare') return PAGE_DESCRIPTIONS.compare
   if (p === '/reported-nil') return PAGE_DESCRIPTIONS.reportedNil
@@ -376,9 +436,16 @@ export function descriptionFromPath(pathname, { school, schoolName, coachName } 
     return PAGE_DESCRIPTIONS.coachFa
   }
   if (p === '/guarantee-games') return PAGE_DESCRIPTIONS.guaranteeGames
+  if (p === '/checkbook-bowl') return PAGE_DESCRIPTIONS.checkbookBowl
+  if (p === '/nil-101') return PAGE_DESCRIPTIONS.nil101
   if (p === '/tape') return PAGE_DESCRIPTIONS.tape
   if (p === '/methods') return PAGE_DESCRIPTIONS.methods
-  if (p === '/buyout') return PAGE_DESCRIPTIONS.buyout
+  if (p === '/about') return PAGE_DESCRIPTIONS.about
+  if (p === HOT_SEAT_PATH) return HOT_SEAT_DESCRIPTION
+  if (p === '/buyout' || p.startsWith('/buyout/')) {
+    if (p.startsWith('/buyout/') && buyoutCoach) return buyoutDescription(buyoutCoach)
+    return PAGE_DESCRIPTIONS.buyout
+  }
   if (p === '/tv') return PAGE_DESCRIPTIONS.tv
   return PAGE_DESCRIPTIONS.home
 }

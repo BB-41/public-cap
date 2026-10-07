@@ -327,13 +327,63 @@ function yearKey(book, year) {
   return book[year] || book[String(year)] || null
 }
 
-/** Chair of record for a football season. A year key wins; we do not fall back to the current hire. */
+function foldChair(name) {
+  return String(name || '')
+    .toLowerCase()
+    .replace(/[.'’]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function sameChairName(a, b) {
+  const fa = foldChair(a?.name)
+  const fb = foldChair(b?.name)
+  return Boolean(fa) && fa !== '—' && fa === fb
+}
+
+function citedPayYear(pay) {
+  if (pay?.year != null && /^\d{4}$/.test(String(pay.year))) return String(pay.year)
+  if (typeof pay?.asOf === 'string' && /^\d{4}/.test(pay.asOf)) return pay.asOf.slice(0, 4)
+  return null
+}
+
+const PRIOR_CHAIR_PAY_NOTE =
+  'Shown from the cited prior-year cell for this chair. Not a 2026 contract-year schedule.'
+
+/**
+ * 2026 year keys are often name-only stubs. When the stub is the same person
+ * as the current chair, show that chair’s cited dollar labeled with its year.
+ * Do not copy a different chair, do not overwrite a 2026 dollar, and do not
+ * treat a 2024/2025 USA TODAY cell as a 2026 schedule.
+ */
+function fillSameChair(yearChair, current, year) {
+  const out = clone(yearChair) || emptyCoach()
+  if (Number(year) < 2026 || !current || !sameChairName(out, current)) return out
+  if (!out.contractUrl && current.contractUrl) out.contractUrl = current.contractUrl
+  if (!out.contract && current.contract) out.contract = clone(current.contract)
+  if (!out.term?.through && current.term?.through) out.term = clone(current.term)
+  const yp = out.pay || {}
+  const cp = current.pay
+  if (yp.value == null && !yp.unavailable && cp?.value != null) {
+    const labeled = clone(cp)
+    const yl = citedPayYear(labeled)
+    if (yl && Number(yl) < Number(year)) {
+      labeled.yearLabel = yl
+      labeled.notes = labeled.notes ? `${labeled.notes} ${PRIOR_CHAIR_PAY_NOTE}` : PRIOR_CHAIR_PAY_NOTE
+    }
+    out.pay = labeled
+  }
+  return out
+}
+
+/** Chair of record for a football season. A year key wins; we do not fall back to a different hire. */
 export function coachesForSeason(school, year) {
   const row = yearKey(school.coachesByYear, year)
+  const current = school.coaches || {}
   if (row) {
     return {
-      football: clone(row.football) || emptyCoach(),
-      mbb: clone(row.mbb) || emptyCoach(),
+      football: fillSameChair(row.football, current.football, year),
+      mbb: fillSameChair(row.mbb, current.mbb, year),
     }
   }
   return {

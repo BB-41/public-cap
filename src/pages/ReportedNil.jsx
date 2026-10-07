@@ -70,7 +70,10 @@ export default function ReportedNil({ schools }) {
         Gold is the industry survey range or the SI conference-median band — rev-share
         plus third-party NIL. Survey tiers keep the published words, not a midpoint.
         Booked NIL and House spent stay separate marks. Not leftover. Not the capacity
-        waterfall. Not On3.
+        waterfall.
+      </p>
+      <p className="fine nil-101-cue">
+        <Link to="/nil-101">New to NIL? Start with NIL 101</Link>
       </p>
       <div className="legend">
         <span title={defTitle('industryRosterEstimate')}>

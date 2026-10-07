@@ -27,15 +27,15 @@ export const DEFS = {
   },
   industryRosterEstimate: {
     label: 'Industry football roster estimate',
-    text: 'A labeled modeled / survey lane. Prefer an explicit CBS Sports (Hummer/Talty, Aug 17, 2026) or SI (Fischer, Aug 27, 2026) range or tier (LSU $40–50M; Indiana $30–35M; above-$40M and other named tiers). Those stay survey — a published tier is not turned into a midpoint. Where those pieces are silent, the cell is modeled from SI’s published conference-median band (ACC $17–24M, Big 12 $18–25M, Big Ten $22–28M, SEC $25–33M) — the same band for every silent school in that league, not a school-by-school guess. The public CBS article does not publish a Power 4 average. Combines football rev-share plus third-party NIL — not a filing, not booked NIL, not House spent. Never subtracted from capacity or leftover. Not On3.',
+    text: 'A labeled modeled / survey lane. Prefer an explicit CBS Sports (Hummer/Talty, Aug 17, 2026) or SI (Fischer, Aug 27, 2026) range or tier (LSU $40–50M; Indiana $30–35M; above-$40M and other named tiers). Those stay survey — a published tier is not turned into a midpoint. Where those pieces are silent, the cell is modeled from SI’s published conference-median band (ACC $17–24M, Big 12 $18–25M, Big Ten $22–28M, SEC $25–33M) — the same band for every silent school in that league, not a school-by-school guess. The public CBS article does not publish a Power 4 average. Combines football rev-share plus third-party NIL — not a filing, not booked NIL, not House spent. Never subtracted from capacity or leftover.',
   },
   industryPositionEstimate: {
     label: 'Industry estimate by position',
-    text: 'Approximate player salaries by position. Prefer a CBS / SI position band or reported-estimate when one exists. Every other seat is a modeled range: that school’s football stack (survey range, or a documented allocation envelope for a survey tier, or the SI conference median) split by the existing rate-card seat weights (QB1 = 100). Starter and backup are ranges, not point estimates. Industry estimate, not a contract. Not booked NIL. Not On3.',
+    text: 'Approximate player salaries by position. Prefer a CBS / SI position band or reported-estimate when one exists. Every other seat is a modeled range: that school’s football stack (survey range, or a documented allocation envelope for a survey tier, or the SI conference median) split by the existing rate-card seat weights (QB1 = 100). Starter and backup are ranges, not point estimates. Industry estimate, not a contract. Not booked NIL.',
   },
   nilReportedBar: {
     label: 'NIL reported bar',
-    text: 'A comparable gold band on every Power 4 + Notre Dame school page, and on the /reported-nil board. The band is that school’s industry/survey or modeled football-stack range (rev-share + third-party NIL) — not booked NIL and not House spent. Every school uses the same $0–$50M scale; $50M is the highest published or modeled top in the set (LSU survey high and the above-$40M allocation envelope). Survey tiers keep the published words on the board; rank uses the allocation envelope, not a midpoint. Booked NIL and House spent, when cited, are separate marks or a second thin track — never mixed into the reported band. Position starter ranges under the bar are a modeled/range breakdown of the same stack. The bar never enters leftover or the capacity waterfall. Not On3.',
+    text: 'A comparable gold band on every Power 4 + Notre Dame school page, and on the /reported-nil board. The band is that school’s industry/survey or modeled football-stack range (rev-share + third-party NIL) — not booked NIL and not House spent. Every school uses the same $0–$50M scale; $50M is the highest published or modeled top in the set (LSU survey high and the above-$40M allocation envelope). Survey tiers keep the published words on the board; rank uses the allocation envelope, not a midpoint. Booked NIL and House spent, when cited, are separate marks or a second thin track — never mixed into the reported band. Position starter ranges under the bar are a modeled/range breakdown of the same stack. The bar never enters leftover or the capacity waterfall.',
   },
   nilCap: {
     label: 'NIL / capacity',
@@ -51,7 +51,7 @@ export const DEFS = {
   },
   coachPay: {
     label: 'Coach pay',
-    text: 'Annual pay for the chair of record in the selected football season. A current-chair file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. A new hire’s number is not copied onto a prior chair. This year’s check, not lifetime wealth. Incentives stay out of the annual cell.',
+    text: 'Annual pay for the chair of record in the selected football season. A current-chair file wins when it publishes a dollar; USA TODAY is fallback only when that year’s file has no dollar. A new hire’s number is not copied onto a prior chair. This year’s check, not lifetime wealth. Incentives stay out of the annual cell. A private-school blank is labeled “Contract not public.” A public chair whose contract is not yet released is labeled “Contract not yet released.” A same-chair prior-year dollar on the 2026 card is labeled with that year and is not a 2026 schedule. Pending means we looked and do not have a number. We do not invent a dollar.',
   },
   buyout: {
     label: 'Buyout overhang',
@@ -148,6 +148,10 @@ export const DEFS = {
   guaranteeGames: {
     label: 'Guarantee games',
     text: 'How much a larger school (usually Power 4) pays a smaller opponent to play them on the football schedule — a buy-game check. Football guarantee dollars stay distinct from band or other fees. $0 only when the contract says $0 (home-and-home / no guarantee). Not House spent, not booked NIL, not a coach buyout. Empty without a hosted contract or named newsroom FOIA. We do not invent dollars.',
+  },
+  checkbookBowl: {
+    label: 'Checkbook bowl',
+    text: 'Whether the school that spent more on football won the big game. A big game is both teams on the 68-school desk (Power 4 plus Notre Dame) and at least one AP-ranked team. The dollar is FY2025 EADA TOTAL_EXPENSE_ALL_Football, not House spent, not booked NIL, and not a coach buyout. Unplayed games stay upcoming. We do not invent the score or the dollar.',
   },
   tape: {
     label: 'Desk tape',

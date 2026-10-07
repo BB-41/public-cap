@@ -40,6 +40,9 @@
       .issue-hed { font-weight: 650; font-size: clamp(28px, 4vw, 42px); letter-spacing: -0.02em; margin: 0 0 12px; }
       .lede { color: #cfc3a8; max-width: 720px; }
       .fine { font-size: 11px; color: #9a8d74; margin-top: 16px; }
+      .school-faq h2 { font-size: 22px; margin: 18px 0 8px; }
+      .school-faq h3 { font-size: 17px; margin: 14px 0 4px; }
+      .school-faq p { margin: 0 0 8px; color: #cfc3a8; }
       .table-scroll { overflow: auto; max-height: calc(100vh - 140px); border-top: 2px solid #efe4cc; }
       .table-pending { min-height: calc(100vh - 140px); }
       .board-pending-dek { min-height: 11rem; }
@@ -74,13 +77,31 @@
           }
           el.setAttribute('content', content)
         }
-        var title = 'Public Cap — Capacity vs House cap vs booked NIL'
-        var desc = 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.'
+        var stamped = document.documentElement.getAttribute('data-seo') === 'stamped'
+        var title = document.title
+        var descEl = document.head.querySelector('meta[name="description"]')
+        var desc = descEl ? descEl.getAttribute('content') : ''
+        function schoolSerpTitle(name) {
+          var brand = ' | The Public Cap'
+          var options = [
+            name + ' NIL Budget, Collective Payout & Football Revenue' + brand,
+            name + ' NIL Budget, Collective Payout & Revenue' + brand,
+            name + ' NIL, Collective & Football Revenue' + brand,
+            name + ' NIL Budget & Collective Payout' + brand,
+          ]
+          for (var i = 0; i < options.length; i++) {
+            if (options[i].length <= 65) return options[i]
+          }
+          return options[options.length - 1]
+        }
+        if (!stamped) {
+        title = 'Public Cap — Capacity vs House cap vs booked NIL'
+        desc = 'What can your team actually afford? Power 4 money desk: House share, capacity, and booked NIL. Pending stays empty.'
         if (p.indexOf('/school/') === 0) {
           var schoolName = titleCaseSlug(p.split('/')[2])
           if (schoolName) {
-            title = schoolName + ' — Capacity vs House cap vs booked NIL — reported football NIL — Public Cap'
-            desc = schoolName + ' — annual capacity from public filings versus the House benefits cap versus booked NIL. Reported football NIL is a separate survey range or labeled modeled conference band — not booked NIL and not a midpoint. Collective 990 payout is a separate cited lane, not House. Pending stays empty.'
+            title = schoolSerpTitle(schoolName)
+            desc = schoolName + ': NIL budget, collective payout, football revenue, and head coach salary.'
           }
         } else if (p === '/coach-fa' || p.indexOf('/coach-fa/') === 0) {
           title = 'Coach buyout offsets / free agents — Public Cap'
@@ -88,6 +109,12 @@
         } else if (p === '/guarantee-games') {
           title = 'Guarantee games — Public Cap'
           desc = 'How much larger (usually Power 4) schools pay smaller opponents to play them on the 2026 football schedule. Football guarantee stays distinct from band fees. Not House spent, not booked NIL, not coach buyouts. Empty without a FOIA or named newsroom cite.'
+        } else if (p === '/checkbook-bowl') {
+          title = 'Does the bigger spender win? — Public Cap'
+          desc = 'Does the bigger spender win? In every big college football game — both teams on the 68-school Power 4 plus Notre Dame desk, and at least one AP-ranked — the checkbook favorite is the school with the higher FY2025 EADA football expense. Final games move the record. Unplayed games stay upcoming. We do not invent dollars.'
+        } else if (p === '/nil-101') {
+          title = 'NIL 101: College Athlete Pay Explained in Plain English | The Public Cap'
+          desc = 'A plain-English guide to how college athletes get paid. Name, image, and likeness deals sit beside school revenue sharing. What can your team actually afford?'
         } else if (p === '/compare') {
           title = 'Compare capacity vs House vs NIL — Public Cap'
           desc = 'Compare two Power 4 programs: annual capacity versus the House benefits cap versus booked NIL. Collective 990 payout stays in its own cited lane. Pending stays empty.'
@@ -98,8 +125,15 @@
           title = 'Tape — Public Cap'
         } else if (p === '/methods') {
           title = 'Methods — Public Cap'
-        } else if (p === '/buyout') {
+        } else if (p === '/about') {
+          title = 'About — Public Cap'
+          desc = 'What can your team actually afford? A college football money desk for 68 schools — House share, capacity, coach pay, booked NIL, and the Checkbook Bowl. Pending stays empty.'
+        } else if (p === '/buyout/hot-seat') {
+          title = 'Hot-seat coach buyouts | The Public Cap'
+          desc = 'Cited buyouts for eight football coaches on the hot seat, each with its source and as-of date. Pending stays pending. A firing liability, not yearly spend.'
+        } else if (p === '/buyout' || p.indexOf('/buyout/') === 0) {
           title = 'Buyout — Public Cap'
+          desc = 'What a school would owe if it fired the current football coach without cause. A liability, not yearly spend. Empty without a cite.'
         } else if (p === '/tv') {
           title = 'TV — Public Cap'
         }
@@ -110,6 +144,7 @@
         setMeta('property', 'og:description', desc)
         setMeta('name', 'twitter:description', desc)
         setMeta('name', 'twitter:card', 'summary_large_image')
+        }
         var canon = 'https://thepubliccap.com' + (p === '/' ? '/' : p)
         var img = p === '/reported-nil'
           ? 'https://thepubliccap.com/og-reported-nil.png'
@@ -123,9 +158,10 @@
         if (p === '/' || p === '/compare' || p === '/reported-nil' || p.indexOf('/school/') === 0) href = '/data/desk.json'
         else if (p === '/methods') href = '/data/meta.json'
         else if (p === '/tape') href = '/data/tape.json'
-        else if (p === '/buyout') href = '/data/desk.json'
+        else if (p === '/buyout' || p.indexOf('/buyout/') === 0) href = '/data/buyouts.json'
         else if (p === '/coach-fa' || p.indexOf('/coach-fa/') === 0) href = '/data/coach-fa.json'
         else if (p === '/guarantee-games') href = '/data/guarantee-games.json'
+        else if (p === '/checkbook-bowl') href = '/data/checkbook-bowl.json'
         if (!href) return
         var l = document.createElement('link')
         l.rel = 'preload'
@@ -146,7 +182,7 @@
             <img src="/logo-pc.png" alt="" width="92" height="92" decoding="async" fetchpriority="high" />
           </a>
           <div>
-            <div class="kicker">A college athletics capacity desk · v1.2 · Aug 30, 2026</div>
+            <div class="kicker">A college athletics capacity desk · v1.2 · Sep 25, 2026</div>
             <a href="/" class="wordmark">Public Cap</a>
             <p class="slogan">What can your team actually afford?</p>
             <p class="tagline">Power 4 only · House share · capacity · booked NIL. Pending stays empty.</p>
@@ -161,7 +197,10 @@
           <a href="/buyout">Buyout</a>
           <a href="/coach-fa">Offsets</a>
           <a href="/guarantee-games">Guarantees</a>
+          <a href="/checkbook-bowl">Checkbook</a>
+          <a href="/nil-101">NIL 101</a>
           <a href="/methods">Methods</a>
+          <a href="/about">About</a>
         </nav>
       </header>
       <div id="home-dek" class="page-wrap home-dek">
@@ -173,6 +212,7 @@
             Collective 990 payout is a separate cited lane, not House.
             Modeled stays labeled. Pending stays empty. Seasons run 2021–2026 (NIL era).
           </p>
+          <p class="fine nil-101-cue"><a href="/nil-101">NIL 101: how college athletes get paid</a></p>
         </section>
       </div>
       <div id="root">
@@ -185,11 +225,14 @@
       <footer class="site-foot">
         Capacity is annual, not lifetime. Current-coach buyouts are overhang; paid buyouts are a separate tape.
         Football guarantees (buy games) are a separate cited lane — not House spent, not booked NIL.
+        The checkbook bowl asks whether the bigger football spender won the big game — FY2025 EADA football expense, both teams on the 68-school desk, at least one AP-ranked. Unplayed stays upcoming.
+        <a href="/nil-101">New to NIL? Start with NIL 101</a>.
         Booked NIL stays official. Collective 990 is a separate cited lane, not House.
         Modeled NIL is a conference heuristic: House-era
         (rev-share + third-party) for 2025–26 and 2026–27, and a labeled collective-era
         third-party-only backcast for 2021–24.
         Every figure carries a source, a date, and a confidence mark.
+        <a href="/about">About the desk</a>.
       </footer>
     </div>
     <script type="module" src="/src/main.jsx"></script>

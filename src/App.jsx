@@ -16,22 +16,30 @@ import {
   schoolIdFromPath,
 } from './lib/loadDesk.js'
 import { CURRENT_SEASON, houseFieldForSeason, houseValueForSeason, parseSeasonParam } from './lib/seasons.js'
+import { HOT_SEAT_DESCRIPTION, HOT_SEAT_PATH, HOT_SEAT_TITLE } from './lib/buyout.js'
 import {
   applyDocumentMeta,
   coachFaTitle,
   descriptionFromPath,
   titleFromPath,
 } from './lib/share.js'
+import { schoolFaqItems } from './lib/schoolSeo.js'
+import bowlBook from '../data/checkbook-bowl.json'
 import Shell, { SettingType } from './components/Shell.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 const Compare = lazy(() => import('./pages/Compare.jsx'))
 const School = lazy(() => import('./pages/School.jsx'))
 const Methods = lazy(() => import('./pages/Methods.jsx'))
+const About = lazy(() => import('./pages/About.jsx'))
 const Tape = lazy(() => import('./pages/Tape.jsx'))
 const Tv = lazy(() => import('./pages/Tv.jsx'))
 const Buyout = lazy(() => import('./pages/Buyout.jsx'))
+const HotSeat = lazy(() => import('./pages/HotSeat.jsx'))
 const CoachFa = lazy(() => import('./pages/CoachFa.jsx'))
 const GuaranteeGames = lazy(() => import('./pages/GuaranteeGames.jsx'))
+const CheckbookBowl = lazy(() => import('./pages/CheckbookBowl.jsx'))
+const Nil101 = lazy(() => import('./pages/Nil101.jsx'))
 const DeskChat = lazy(() => import('./components/DeskChat.jsx'))
 const ReportedNil = lazy(() => import('./pages/ReportedNil.jsx'))
 
@@ -69,6 +77,7 @@ export default function App() {
   const [rosters, setRosters] = useState(null)
   const [layers, setLayers] = useState(null)
   const [tape, setTape] = useState(null)
+  const [buyoutBook, setBuyoutBook] = useState(null)
   const [metaOnly, setMetaOnly] = useState(null)
   const [rosterYear, setRosterYear] = useState(null)
   const [err, setErr] = useState(null)
@@ -90,6 +99,7 @@ export default function App() {
   }
 
   const needsDesk = kind === 'home' || kind === 'compare' || kind === 'school' || kind === 'reportedNil'
+  const needsBuyouts = kind === 'school' || kind === 'compare'
   const needsLayersFull = kind === 'school'
   const needsLayersLite = kind === 'home' || kind === 'compare'
   const needsTape = kind === 'tape' || kind === 'school'
@@ -111,6 +121,25 @@ export default function App() {
       cancelled = true
     }
   }, [needsDesk])
+
+  useEffect(() => {
+    if (!needsBuyouts) return
+    let cancelled = false
+    fetch('/data/buyouts.json')
+      .then((r) => {
+        if (!r.ok) throw new Error(r.statusText)
+        return r.json()
+      })
+      .then((book) => {
+        if (!cancelled) setBuyoutBook(book)
+      })
+      .catch((e) => {
+        if (!cancelled) setErr(String(e))
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [needsBuyouts])
 
   useEffect(() => {
     if (!needsLayersLite) return
@@ -169,7 +198,7 @@ export default function App() {
       })
       .catch(() => {
         if (!cancelled) {
-          setRosters({ schools: {} })
+          setRosters({ schools: {}, missing: true })
           setRosterYear(season)
         }
       })
@@ -230,8 +259,9 @@ export default function App() {
       layers,
       rosters,
       rosterYear,
+      buyouts: buyoutBook,
     })
-  }, [data, rosters, rosterYear, season, layers, includeAlumni])
+  }, [data, rosters, rosterYear, season, layers, includeAlumni, buyoutBook])
 
   const meta = data?.meta || metaOnly
   const house = meta ? houseValueForSeason(meta, season) : null
@@ -241,12 +271,17 @@ export default function App() {
     const path = location.pathname
     if (kind === 'school') {
       const school = enriched?.find((s) => s.id === schoolId)
+      const year1 = meta?.houseCap?.y2025_26?.value
+      const year2 = meta?.houseCap?.y2026_27?.value
+      const spend = bowlBook.spendFy2025?.[schoolId]
+      const seo = { year1, year2, spend }
       applyDocumentMeta({
         title: titleFromPath(path, { season, schoolName: school?.name }),
-        description: descriptionFromPath(path, { school, schoolName: school?.name }),
+        description: descriptionFromPath(path, { school, schoolName: school?.name, ...seo }),
         path: schoolId ? `/school/${schoolId}` : path,
         jsonLd: 'school',
         schoolName: school?.name,
+        faq: school ? schoolFaqItems(school, seo) : [],
       })
       return
     }
@@ -268,6 +303,33 @@ export default function App() {
         path: '/reported-nil',
         jsonLd: 'webpage',
       })
+      return
+    }
+    if (kind === 'nil101') {
+      applyDocumentMeta({
+        title: titleFromPath(path),
+        description: descriptionFromPath(path),
+        path,
+        jsonLd: 'preserve',
+      })
+      return
+    }
+    if (kind === 'buyout') {
+      if (location.pathname === HOT_SEAT_PATH) {
+        applyDocumentMeta({
+          title: HOT_SEAT_TITLE,
+          description: HOT_SEAT_DESCRIPTION,
+          path: HOT_SEAT_PATH,
+          jsonLd: 'webpage',
+        })
+      } else if (location.pathname === '/buyout') {
+        applyDocumentMeta({
+          title: titleFromPath('/buyout'),
+          description: descriptionFromPath('/buyout'),
+          path: '/buyout',
+          jsonLd: 'webpage',
+        })
+      }
       return
     }
     if (kind === 'coachFa') {
@@ -298,11 +360,11 @@ export default function App() {
       path: routePath,
       jsonLd: kind === 'home' ? 'home' : 'webpage',
     })
-  }, [kind, schoolId, season, enriched, params, location.pathname])
+  }, [kind, schoolId, season, enriched, params, location.pathname, meta])
 
   const ready =
     (!needsDesk || (data && (kind === 'reportedNil' || enriched))) &&
-    (kind !== 'school' || fullStatus === 'done') &&
+    (kind !== 'school' || (fullStatus === 'done' && buyoutBook)) &&
     (kind !== 'tape' || tape != null) &&
     (kind !== 'methods' || metaOnly != null)
 
@@ -361,11 +423,17 @@ export default function App() {
             <Route path="/reported-nil" element={<ReportedNil schools={data?.schools} />} />
             <Route path="/tape" element={<Tape items={tape?.items || []} season={season} />} />
             <Route path="/tv" element={<Tv />} />
+            <Route path="/buyout/hot-seat" element={<HotSeat />} />
             <Route path="/buyout" element={<Buyout />} />
+            <Route path="/buyout/:schoolId" element={<Buyout />} />
             <Route path="/coach-fa" element={<CoachFa />} />
             <Route path="/coach-fa/:coachId" element={<CoachFa />} />
             <Route path="/guarantee-games" element={<GuaranteeGames />} />
+            <Route path="/checkbook-bowl" element={<CheckbookBowl />} />
+            <Route path="/nil-101" element={<Nil101 />} />
             <Route path="/methods" element={<Methods meta={metaOnly} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       )}

@@ -12,17 +12,23 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 
 export const SITE_ORIGIN = 'https://thepubliccap.com'
 
-/** Public HTML routes listed for the sitemap. /about does not exist. */
-export const STATIC_PATHS = ['/', '/tape', '/methods', '/buyout', '/coach-fa', '/guarantee-games', '/compare', '/reported-nil', '/tv']
+/** Public HTML routes listed for the sitemap. */
+export const STATIC_PATHS = ['/', '/tape', '/methods', '/about', '/nil-101', '/buyout', '/buyout/hot-seat', '/coach-fa', '/guarantee-games', '/checkbook-bowl', '/compare', '/reported-nil', '/tv']
 
 /** Bump when generated HTML routes change. Never older than schools.json meta.asOf. */
-export const PAGE_LASTMOD = '2026-09-14'
+export const PAGE_LASTMOD = '2026-10-06'
 
 export function isIsoDate(value) {
   return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
 }
 
-export function sitemapPaths(schools) {
+export function coachFaIds(book) {
+  const ids = Object.keys(book?.coaches || {}).filter((id) => book.coaches[id]?.name)
+  if (!ids.length) throw new Error('coach-fa.json has no chairs')
+  return ids
+}
+
+export function sitemapPaths(schools, coachIds = []) {
   if (!Array.isArray(schools) || schools.length !== 68) {
     throw new Error('schools.json must have 68 schools')
   }
@@ -30,7 +36,12 @@ export function sitemapPaths(schools) {
   if (ids.length !== 68 || new Set(ids).size !== 68) {
     throw new Error('schools.json must have 68 unique school ids')
   }
-  return [...STATIC_PATHS, ...ids.map((id) => `/school/${id}`)]
+  return [
+    ...STATIC_PATHS,
+    ...ids.map((id) => `/school/${id}`),
+    ...ids.map((id) => `/buyout/${id}`),
+    ...coachIds.map((id) => `/coach-fa/${id}`),
+  ]
 }
 
 export function renderSitemapXml({ paths, lastmod }) {
@@ -52,10 +63,12 @@ ${urls}
 
 export function writeSitemap({
   schoolsPath = join(root, 'public/data/schools.json'),
+  coachFaPath = join(root, 'data/coach-fa.json'),
   outPath = join(root, 'public/sitemap.xml'),
 } = {}) {
   const data = JSON.parse(readFileSync(schoolsPath, 'utf8'))
-  const paths = sitemapPaths(data.schools)
+  const coachFa = JSON.parse(readFileSync(coachFaPath, 'utf8'))
+  const paths = sitemapPaths(data.schools, coachFaIds(coachFa))
   const lastmod = [data.meta?.asOf, PAGE_LASTMOD].filter(isIsoDate).sort().at(-1) || null
   writeFileSync(outPath, renderSitemapXml({ paths, lastmod }))
   return { path: outPath, urlCount: paths.length, schoolCount: data.schools.length, lastmod }

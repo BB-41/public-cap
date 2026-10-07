@@ -1,9 +1,18 @@
-import { moneyExact } from '../lib/format.js'
+import { coachPayBlankLabel, moneyCited, moneyExact } from '../lib/format.js'
 import { stepDateLabel } from '../lib/buyout.js'
 
 /** Annual pay from a current-chair file (or USA TODAY fallback), plus any schedule/incentives. */
 export function CoachPayField({ pay, fallback = '—' }) {
+  const blank = coachPayBlankLabel(pay)
   if (!pay || pay.value == null) {
+    if (blank) {
+      return (
+        <div className="field disclosure-box">
+          <div className="field-val">{blank}</div>
+          <div className="field-meta">{pay?.notes || fallback}</div>
+        </div>
+      )
+    }
     return (
       <div className="field pending-box">
         <div className="field-val">Pending</div>
@@ -15,7 +24,7 @@ export function CoachPayField({ pay, fallback = '—' }) {
   return (
     <div className="field">
       <div className="field-val">
-        {moneyExact(pay.value)}
+        {moneyCited(pay.value, { approximate: pay.approximate })}
         {yearBit ? <span className="pay-year"> · {yearBit}</span> : null}
         {' '}
         <i className={`dot ${pay.confidence}`} />

@@ -135,7 +135,10 @@ function GuaranteeTable({ rows, book, schools, season, sort, onSort, compact }) 
                 <td>
                   <PartyCell game={g} side="payee" schools={schools} season={season} />
                 </td>
-                <td>{formatGameDate(g.date)}</td>
+                <td>
+                  {formatGameDate(g.date)}
+                  {g.dateNote ? <div className="term-compact">{g.dateNote}</div> : null}
+                </td>
                 <td>
                   <PartyCell game={g} side="home" schools={schools} season={season} />
                 </td>
