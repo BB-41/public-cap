@@ -12,6 +12,22 @@
   },
   "items": [
     {
+      "id": "kansas-state-paid-buyout-tang-2026-10-05",
+      "date": "2026-10-05",
+      "school": "kansas-state",
+      "schoolName": "Kansas State",
+      "kind": "paid-buyout",
+      "headline": "K-State and former men’s basketball coach Jerome Tang settle the Feb. 15, 2026 firing for a $12,000,000 payment. Settlement, not the USA TODAY without-cause contractual buyout of $18,675,000 (as of Apr. 8, 2026). The Mercury describes that disputed figure as $18.7 million. Board approved the settlement Oct. 5. A 10-year bank loan finances it; no principal schedule is booked.",
+      "figure": 12000000,
+      "confidence": "reported",
+      "source": {
+        "label": "The Mercury (Oct. 5, 2026) — Tang settlement loan; K-State athletics announcement reprinted by Hays Post",
+        "url": "https://themercury.com/k_state_sports/k-state-to-borrow-money-for-tang-buyout/article_de0a2380-b533-4465-8492-3fae07c8693b.html"
+      },
+      "field": "layers.buyoutsPaid",
+      "notes": "Fired Feb. 15, 2026 (K-State athletics). Settlement agreed in reporting Oct. 1 (The Mercury) and announced/board-approved Oct. 5. Casey Alexander, hired Mar. 13, 2026, is the current chair. Loan: prime plus 0.5 percent (7.25 percent at that moment), 10 years, no set principal-paydown schedule. Year 1 interest $547,031 and conditional Year 2 interest $870,000 are not booked as settlement dollars."
+    },
+    {
       "id": "maryland-locksley-contract-2026-09-24",
       "date": "2026-09-24",
       "school": "maryland",
