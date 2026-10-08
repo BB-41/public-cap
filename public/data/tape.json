@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-30",
-    "itemCount": 456,
+    "itemCount": 462,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -11,6 +11,102 @@
     ]
   },
   "items": [
+    {
+      "id": "florida-guarantee-2026-florida-florida-atlantic",
+      "date": "2025-05-07",
+      "school": "florida",
+      "schoolName": "Florida",
+      "kind": "guarantee-game",
+      "headline": "Florida pays Florida Atlantic a $1,200,000 football guarantee.",
+      "figure": 1200000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, May 7, 2025) — Florida–Florida Atlantic contract via Florida public records",
+        "url": "https://fbschedules.com/florida-adds-florida-atlantic-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Ben Hill Griffin Stadium, Sat, Sept. 5, 2026. Contract executed Oct. 3, 2024. The nine-game SEC split ($600,000 / $600,000) did not apply; the game was played on the contract date. Gainesville Sun (updated Sept. 4, 2026) names the same $1.2 million."
+    },
+    {
+      "id": "florida-guarantee-2026-florida-campbell",
+      "date": "2021-02-16",
+      "school": "florida",
+      "schoolName": "Florida",
+      "kind": "guarantee-game",
+      "headline": "Florida pays Campbell a $525,000 football guarantee.",
+      "figure": 525000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Feb. 16, 2021) — Florida–Campbell contract via Florida public records",
+        "url": "https://fbschedules.com/florida-adds-campbell-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Ben Hill Griffin Stadium, Sat, Sept. 12, 2026. The contract moved the game from Sat, Sept. 5, 2026 to Sat, Sept. 12. The dollar is that contract amount."
+    },
+    {
+      "id": "alabama-guarantee-2026-alabama-east-carolina",
+      "date": "2025-08-26",
+      "school": "alabama",
+      "schoolName": "Alabama",
+      "kind": "guarantee-game",
+      "headline": "Alabama pays East Carolina a $1,500,000 football guarantee.",
+      "figure": 1500000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Aug. 26, 2025) — Alabama–East Carolina contract via East Carolina public records",
+        "url": "https://fbschedules.com/alabama-adds-east-carolina-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Bryant-Denny Stadium, Sat, Sept. 5, 2026. Distinct from Alabama → Chattanooga $500,000. The article’s USF line is not this cell."
+    },
+    {
+      "id": "usc-guarantee-2026-usc-louisiana",
+      "date": "2025-12-11",
+      "school": "usc",
+      "schoolName": "USC",
+      "kind": "guarantee-game",
+      "headline": "USC pays Louisiana a $1,300,000 football guarantee.",
+      "figure": 1300000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Dec. 11, 2025) — USC–Louisiana contract via Louisiana public records",
+        "url": "https://fbschedules.com/usc-adds-louisiana-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Los Angeles Memorial Coliseum, Sat, Sept. 12, 2026. The same story names no Fresno State dollar."
+    },
+    {
+      "id": "ole-miss-guarantee-2026-ole-miss-wofford",
+      "date": "2025-03-25",
+      "school": "ole-miss",
+      "schoolName": "Ole Miss",
+      "kind": "guarantee-game",
+      "headline": "Ole Miss pays Wofford a $485,000 football guarantee.",
+      "figure": 485000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, March 25, 2025) — Ole Miss–Wofford contract via Ole Miss open records",
+        "url": "https://fbschedules.com/ole-miss-adds-wofford-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Vaught-Hemingway Stadium, Sat, Nov. 21, 2026. The replaced EKU $485,000 is not a 2026 row."
+    },
+    {
+      "id": "missouri-guarantee-2026-missouri-arkansas-pine-bluff",
+      "date": "2019-11-11",
+      "school": "missouri",
+      "schoolName": "Missouri",
+      "kind": "guarantee-game",
+      "headline": "Missouri pays Arkansas-Pine Bluff a $550,000 football guarantee.",
+      "figure": 550000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Nov. 11, 2019) — Missouri–Arkansas-Pine Bluff contract via Missouri public records",
+        "url": "https://fbschedules.com/missouri-adds-two-fcs-opponents-to-future-football-schedules/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Played Thu, Sept. 3, 2026 at Faurot Field. Contract date was Sat, Sept. 5, 2026. The dollar is the original contract amount. The 2029 Missouri State $550,000 is not a 2026 row."
+    },
     {
       "id": "virginia-guarantee-2026-virginia-delaware",
       "date": "2026-10-06",
