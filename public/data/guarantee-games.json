@@ -53,7 +53,13 @@
       "Michigan → UTEP $1,900,000 is booked from that same MLive public-records story. The payout is $1,900,000 on or before Feb. 1, 2027. The original contract listed Wednesday, Sept. 16, 2026; the amended date is Saturday, Sept. 19, 2026. The Hawaii 2022 comparison in that story is not a 2026 row. Distinct from Oklahoma → UTEP.",
       "Michigan State → Toledo $1,300,000 is booked from the News-Gazette (Jeff D'Alessio, Sept. 3, 2026) open-records-generated Week 1 contracts. FBSchedules (Kevin Kelley, March 30, 2021) is the original $1,200,000 COVID make-up, then dated Saturday, Sept. 5, 2026. The desk schedule is Friday, Sept. 4, 2026. The cell is $1,300,000. The $100,000 difference from the original terms is in the notes only.",
       "Michigan State → Eastern Michigan $1,500,000 is booked from The Ypsilanti Eleven (Alex Alvarado, April 14, 2026), which obtained EMU's future non-MAC contracts through an open-records request. In February 2021 the schools agreed to a single game in East Lansing for $1,500,000. Sports Illustrated (Jacob Cotsonika, May 17, 2026), after a public-records request to Michigan State, names the same $1,500,000 for this season and restates Toledo $1,300,000, already booked. Wisconsin → Eastern Michigan $1,400,000 in the Ypsilanti Eleven story is the already-booked Wisconsin row. The played date is Sat, Sept. 12, 2026 at Spartan Stadium.",
-      "Arizona State → Morgan State $600,000 is booked from FBSchedules (Kevin Kelley, Sept. 30, 2025), which obtained the contract via public records: “The Sun Devils will pay the Bears a $600,000 guarantee.” Mountain America Stadium, Tempe, Sept. 5, 2026. azcentral (Aug. 31, 2026) names the same $600,000. No separate band fee is named."
+      "Arizona State → Morgan State $600,000 is booked from FBSchedules (Kevin Kelley, Sept. 30, 2025), which obtained the contract via public records: “The Sun Devils will pay the Bears a $600,000 guarantee.” Mountain America Stadium, Tempe, Sept. 5, 2026. azcentral (Aug. 31, 2026) names the same $600,000. No separate band fee is named.",
+      "Florida → Florida Atlantic $1,200,000 is booked from FBSchedules (Kevin Kelley, May 7, 2025), which obtained the Oct. 3, 2024 contract from Florida via a state public records request. Ben Hill Griffin Stadium, Sat, Sept. 5, 2026. The Gainesville Sun (Kevin Brockway, updated Sept. 4, 2026) names the same $1.2 million per the game contract. The contract’s nine-game SEC clause ($600,000 in 2026 and $600,000 in the rescheduled year) did not apply: the game was played on the contract date. Florida Athletics reports the final, Florida 66, Florida Atlantic 21, and does not name the dollar. No separate band fee is named. Distinct from Florida → Campbell.",
+      "Florida → Campbell $525,000 is booked from FBSchedules (Kevin Kelley, Feb. 16, 2021), which obtained the contract from Florida via a state public records request. The contract first listed Sat, Sept. 5, 2026, then moved the game to Sat, Sept. 12, 2026. The dollar is that contract amount. Florida Athletics’ Sept. 12, 2026 game-day note lists Campbell at Ben Hill Griffin Stadium and does not name the dollar. The story’s other 2026 opponents (NC State, California) are not the current slate and are not rows. Distinct from Florida → Florida Atlantic.",
+      "Alabama → East Carolina $1,500,000 is booked from FBSchedules (Kevin Kelley, Aug. 26, 2025), which obtained the contract from East Carolina via a public records request. Bryant-Denny Stadium, Sat, Sept. 5, 2026. Alabama Athletics’ box score is Alabama 48, East Carolina 10, and does not name the dollar. The article’s USF-on-Sept.-12 line is not the current slate and is not this cell; USF cancellation fees stay on the Chattanooga note, not a guarantee row. No separate band fee is named. Distinct from Alabama → Chattanooga $500,000.",
+      "USC → Louisiana $1,300,000 is booked from FBSchedules (Kevin Kelley, Dec. 11, 2025), which obtained the contract from the University of Louisiana at Lafayette via a state public records request. Los Angeles Memorial Coliseum, Sat, Sept. 12, 2026. USC Athletics’ box score is USC 49, Louisiana 30, and does not name the dollar. The same story’s Fresno State opener names no dollar and is not a row. No separate band fee is named.",
+      "Ole Miss → Wofford $485,000 is booked from FBSchedules (Kevin Kelley, March 25, 2025), which obtained the contract from Ole Miss via a state open records request. Vaught-Hemingway Stadium, Sat, Nov. 21, 2026. The February 2018 EKU contract at the same $485,000 was the date Wofford replaced; that EKU check is not a 2026 row. The Charlotte home-and-home in the Wofford story names no dollar and is not a row. No separate band fee is named.",
+      "Missouri → Arkansas-Pine Bluff $550,000 is booked from FBSchedules (Kevin Kelley, Nov. 11, 2019), which obtained the contract from Missouri via a state public records request. The contract date was Saturday, Sept. 5, 2026. Missouri Athletics lists Thursday, Sept. 3, 2026 at Memorial Stadium / Faurot Field; the final was Missouri 54, Arkansas-Pine Bluff 14. The dollar is the original contract amount. The 2029 Missouri State $550,000 in that story is not a 2026 row. No separate band fee is named."
     ],
     "sources": [
       "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
@@ -124,7 +130,19 @@
       "Sports Illustrated (Jacob Cotsonika, May 17, 2026) — Michigan State public records; Eastern Michigan $1,500,000 and Toledo $1,300,000 this season",
       "Michigan State Athletics (Sept. 12, 2026) — Eastern Michigan played at Spartan Stadium; no dollar",
       "FBSchedules (Sept. 30, 2025) — Arizona State–Morgan State contract via public records",
-      "Arizona Republic (Aug. 31, 2026) — Arizona State pays Morgan State $600,000"
+      "Arizona Republic (Aug. 31, 2026) — Arizona State pays Morgan State $600,000",
+      "FBSchedules (May 7, 2025) — Florida–Florida Atlantic contract via Florida public records",
+      "Gainesville Sun (updated Sept. 4, 2026) — Florida pays Florida Atlantic $1.2 million per the game contract",
+      "Florida Athletics (Sept. 5, 2026) — Florida Atlantic played at Ben Hill Griffin Stadium, Florida 66, Florida Atlantic 21",
+      "FBSchedules (Feb. 16, 2021) — Florida–Campbell contract via Florida public records",
+      "Florida Athletics (Sept. 12, 2026) — Campbell listed at Ben Hill Griffin Stadium; no dollar",
+      "FBSchedules (Aug. 26, 2025) — Alabama–East Carolina contract via East Carolina public records",
+      "Alabama Athletics (Sept. 5, 2026) — East Carolina played at Bryant-Denny; no dollar",
+      "FBSchedules (Dec. 11, 2025) — USC–Louisiana contract via Louisiana public records",
+      "USC Athletics (Sept. 12, 2026) — Louisiana played at the Coliseum; no dollar",
+      "FBSchedules (March 25, 2025) — Ole Miss–Wofford contract via Ole Miss open records",
+      "FBSchedules (Nov. 11, 2019) — Missouri–Arkansas-Pine Bluff contract via Missouri public records",
+      "Missouri Athletics (Sept. 3, 2026) — Arkansas-Pine Bluff played at Faurot Field; no dollar"
     ]
   },
   "cites": {
@@ -630,6 +648,90 @@
       "label": "Arizona Republic (Aug. 31, 2026) — Arizona State pays Morgan State $600,000",
       "url": "https://www.azcentral.com/story/sports/college/asu/2026/08/31/asu-football-morgan-state-payment/91392976007/",
       "asOf": "2026-08-31",
+      "confidence": "reported"
+    },
+    "fbschedules-florida-fau-2026": {
+      "id": "fbschedules-florida-fau-2026",
+      "label": "FBSchedules (Kevin Kelley, May 7, 2025) — Florida–Florida Atlantic contract via Florida public records",
+      "url": "https://fbschedules.com/florida-adds-florida-atlantic-to-2026-football-schedule/",
+      "asOf": "2025-05-07",
+      "confidence": "reported"
+    },
+    "gainesville-sun-florida-fau-2026": {
+      "id": "gainesville-sun-florida-fau-2026",
+      "label": "Gainesville Sun (Kevin Brockway, updated Sept. 4, 2026) — Florida pays Florida Atlantic $1.2 million per the game contract",
+      "url": "https://www.gainesville.com/story/sports/college/football/2026/08/31/florida-football-vs-fau-time-channel-prediction-injury-updates/91505789007/",
+      "asOf": "2026-09-04",
+      "confidence": "reported"
+    },
+    "florida-athletics-fau-2026": {
+      "id": "florida-athletics-fau-2026",
+      "label": "Florida Athletics (Sept. 5, 2026) — Florida Atlantic played at Ben Hill Griffin Stadium; no dollar",
+      "url": "https://floridagators.com/game-center/27903",
+      "asOf": "2026-09-05",
+      "confidence": "reported"
+    },
+    "fbschedules-florida-campbell-2026": {
+      "id": "fbschedules-florida-campbell-2026",
+      "label": "FBSchedules (Kevin Kelley, Feb. 16, 2021) — Florida–Campbell contract via Florida public records",
+      "url": "https://fbschedules.com/florida-adds-campbell-to-2026-football-schedule/",
+      "asOf": "2021-02-16",
+      "confidence": "reported"
+    },
+    "florida-athletics-campbell-2026": {
+      "id": "florida-athletics-campbell-2026",
+      "label": "Florida Athletics (Sept. 12, 2026) — Campbell listed at Ben Hill Griffin Stadium; no dollar",
+      "url": "https://floridagators.com/news/2026/9/12/football-game-day-florida-vs-campbell-sept-12-2026",
+      "asOf": "2026-09-12",
+      "confidence": "reported"
+    },
+    "fbschedules-alabama-east-carolina-2026": {
+      "id": "fbschedules-alabama-east-carolina-2026",
+      "label": "FBSchedules (Kevin Kelley, Aug. 26, 2025) — Alabama–East Carolina contract via East Carolina public records",
+      "url": "https://fbschedules.com/alabama-adds-east-carolina-to-2026-football-schedule/",
+      "asOf": "2025-08-26",
+      "confidence": "reported"
+    },
+    "alabama-athletics-east-carolina-2026": {
+      "id": "alabama-athletics-east-carolina-2026",
+      "label": "Alabama Athletics (Sept. 5, 2026) — East Carolina played at Bryant-Denny; no dollar",
+      "url": "https://rolltide.com/sports/football/stats/2026/east-carolina/boxscore/21638",
+      "asOf": "2026-09-05",
+      "confidence": "reported"
+    },
+    "fbschedules-usc-louisiana-2026": {
+      "id": "fbschedules-usc-louisiana-2026",
+      "label": "FBSchedules (Kevin Kelley, Dec. 11, 2025) — USC–Louisiana contract via Louisiana public records",
+      "url": "https://fbschedules.com/usc-adds-louisiana-to-2026-football-schedule/",
+      "asOf": "2025-12-11",
+      "confidence": "reported"
+    },
+    "usc-athletics-louisiana-2026": {
+      "id": "usc-athletics-louisiana-2026",
+      "label": "USC Athletics (Sept. 12, 2026) — Louisiana played at the Coliseum; no dollar",
+      "url": "https://usctrojans.com/sports/football/stats/2026/louisiana/boxscore/35210",
+      "asOf": "2026-09-12",
+      "confidence": "reported"
+    },
+    "fbschedules-ole-miss-wofford-2026": {
+      "id": "fbschedules-ole-miss-wofford-2026",
+      "label": "FBSchedules (Kevin Kelley, March 25, 2025) — Ole Miss–Wofford contract via Ole Miss open records",
+      "url": "https://fbschedules.com/ole-miss-adds-wofford-to-2026-football-schedule/",
+      "asOf": "2025-03-25",
+      "confidence": "reported"
+    },
+    "fbschedules-missouri-uapb-2026": {
+      "id": "fbschedules-missouri-uapb-2026",
+      "label": "FBSchedules (Kevin Kelley, Nov. 11, 2019) — Missouri–Arkansas-Pine Bluff contract via Missouri public records",
+      "url": "https://fbschedules.com/missouri-adds-two-fcs-opponents-to-future-football-schedules/",
+      "asOf": "2019-11-11",
+      "confidence": "reported"
+    },
+    "missouri-athletics-uapb-2026": {
+      "id": "missouri-athletics-uapb-2026",
+      "label": "Missouri Athletics (Sept. 3, 2026) — Arkansas-Pine Bluff played at Faurot Field; no dollar",
+      "url": "https://mutigers.com/boxscore/4413",
+      "asOf": "2026-09-03",
       "confidence": "reported"
     }
   },
@@ -1563,6 +1665,91 @@
       "confidence": "reported",
       "citeIds": ["fbschedules-arizona-state-morgan-state-2026", "azcentral-arizona-state-morgan-state-2026"],
       "notes": "Mountain America Stadium, Tempe, Sat, Sept. 5, 2026. FBSchedules (Kevin Kelley, Sept. 30, 2025) obtained the contract via public records: “The Sun Devils will pay the Bears a $600,000 guarantee.” azcentral (Aug. 31, 2026) names the same $600,000. The contract story does not name a separate band fee. Distinct from Texas A&M ↔ Arizona State $0."
+    },
+    {
+      "id": "2026-florida-florida-atlantic",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "florida",
+      "payeeLabel": "Florida Atlantic",
+      "payeeSlug": "florida-atlantic",
+      "amount": 1200000,
+      "homeSchoolId": "florida",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-florida-fau-2026", "gainesville-sun-florida-fau-2026", "florida-athletics-fau-2026"],
+      "notes": "Ben Hill Griffin Stadium, Sat, Sept. 5, 2026. FBSchedules (Kevin Kelley, May 7, 2025) obtained the contract, executed Oct. 3, 2024, from the University of Florida via a state public records request: Florida pays Florida Atlantic $1,200,000. The Gainesville Sun (Kevin Brockway, updated Sept. 4, 2026) names the same $1.2 million per the terms of the game contract. The contract says that if the SEC requires nine or more conference games in 2026 and this game cannot be played, Florida still pays $600,000 in 2026 and the remaining $600,000 in the year the game is rescheduled. That split did not apply: the game was played on the contract date. This cell is $1,200,000, not $600,000. Florida Athletics reports the final, Florida 66, Florida Atlantic 21, and does not name the dollar. The contract story does not name a separate band fee. Desk schedule lists Sat, Sept. 5, 2026. Distinct from Florida → Campbell $525,000."
+    },
+    {
+      "id": "2026-florida-campbell",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "florida",
+      "payeeLabel": "Campbell",
+      "payeeSlug": "campbell",
+      "amount": 525000,
+      "homeSchoolId": "florida",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-florida-campbell-2026", "florida-athletics-campbell-2026"],
+      "notes": "Ben Hill Griffin Stadium, Sat, Sept. 12, 2026. FBSchedules (Kevin Kelley, Feb. 16, 2021) obtained the contract from the University of Florida via a state public records request: Florida pays Campbell $525,000. The contract first listed Saturday, Sept. 5, 2026, then moved the game to Saturday, Sept. 12, 2026. The dollar on this row is that contract amount, and the booked date is the contract’s moved date. Florida Athletics’ Sept. 12, 2026 game-day note lists Campbell at Ben Hill Griffin Stadium and does not name the dollar. The story’s other 2026 opponents (at NC State on Sept. 5, California on Sept. 19) are not the current slate and are not rows. The contract story does not name a separate band fee. Desk schedule lists Sat, Sept. 12, 2026. Distinct from Florida → Florida Atlantic $1,200,000."
+    },
+    {
+      "id": "2026-alabama-east-carolina",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "alabama",
+      "payeeLabel": "East Carolina",
+      "payeeSlug": "east-carolina",
+      "amount": 1500000,
+      "homeSchoolId": "alabama",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-alabama-east-carolina-2026", "alabama-athletics-east-carolina-2026"],
+      "notes": "Bryant-Denny Stadium, Sat, Sept. 5, 2026. FBSchedules (Kevin Kelley, Aug. 26, 2025) obtained the contract from East Carolina University via a public records request: Alabama pays East Carolina $1,500,000. Alabama Athletics’ box score lists the game as played that day, Alabama 48, East Carolina 10, and does not name the dollar. The same article’s line that Alabama would host USF on Sept. 12 is not the current slate and is not this cell. USF cancellation fees stay on the Chattanooga note and are not a football-guarantee cell. The contract story does not name a separate band fee. Desk schedule lists Sat, Sept. 5, 2026. Distinct from Alabama → Chattanooga $500,000."
+    },
+    {
+      "id": "2026-usc-louisiana",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "usc",
+      "payeeLabel": "Louisiana",
+      "payeeSlug": "louisiana",
+      "amount": 1300000,
+      "homeSchoolId": "usc",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-usc-louisiana-2026", "usc-athletics-louisiana-2026"],
+      "notes": "Los Angeles Memorial Coliseum, Sat, Sept. 12, 2026. FBSchedules (Kevin Kelley, Dec. 11, 2025) obtained the contract from the University of Louisiana at Lafayette via a state public records request: USC pays Louisiana $1,300,000. USC Athletics’ box score lists the game as played that day, USC 49, Louisiana 30, and does not name the dollar. The same story says USC opens at home against Fresno State and does not name a Fresno State dollar. That opener is not this row. The contract story does not name a separate band fee. Desk schedule lists Sat, Sept. 12, 2026."
+    },
+    {
+      "id": "2026-ole-miss-wofford",
+      "season": 2026,
+      "date": "2026-11-21",
+      "payerSchoolId": "ole-miss",
+      "payeeLabel": "Wofford",
+      "payeeSlug": "wofford",
+      "amount": 485000,
+      "homeSchoolId": "ole-miss",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-ole-miss-wofford-2026"],
+      "notes": "Vaught-Hemingway Stadium, Sat, Nov. 21, 2026. FBSchedules (Kevin Kelley, March 25, 2025) obtained the contract from the University of Mississippi via a state open records request: Ole Miss pays Wofford $485,000. Wofford replaced a previously scheduled Eastern Kentucky date. The February 27, 2018 FBSchedules story of an Ole Miss–EKU contract at the same $485,000 is that replaced date, not a 2026 row. The Charlotte home-and-home named in the Wofford story does not state a football-guarantee dollar and is not a row. The contract story does not name a separate band fee. Desk schedule lists Sat, Nov. 21, 2026."
+    },
+    {
+      "id": "2026-missouri-arkansas-pine-bluff",
+      "season": 2026,
+      "date": "2026-09-03",
+      "dateNote": "Moved from the contract date of Sat, Sept. 5, 2026. The $550,000 is the original contract amount.",
+      "payerSchoolId": "missouri",
+      "payeeLabel": "Arkansas-Pine Bluff",
+      "payeeSlug": "arkansas-pine-bluff",
+      "amount": 550000,
+      "homeSchoolId": "missouri",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-missouri-uapb-2026", "missouri-athletics-uapb-2026"],
+      "notes": "Memorial Stadium / Faurot Field, Thu, Sept. 3, 2026. FBSchedules (Kevin Kelley, Nov. 11, 2019) obtained the contract from the University of Missouri via a state public records request: Missouri pays Arkansas-Pine Bluff $550,000, then dated Saturday, Sept. 5, 2026. Missouri Athletics lists Thursday, Sept. 3, 2026; the final was Missouri 54, Arkansas-Pine Bluff 14. That page does not name the dollar. The dollar on this row is the original contract amount. The same story’s Missouri State game is Saturday, Sept. 1, 2029, at $550,000, and is not a 2026 row. The contract story does not name a separate band fee. Desk schedule lists Thu, Sept. 3, 2026."
     }
   ]
 }
