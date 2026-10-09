@@ -59,7 +59,10 @@
       "Alabama → East Carolina $1,500,000 is booked from FBSchedules (Kevin Kelley, Aug. 26, 2025), which obtained the contract from East Carolina via a public records request. Bryant-Denny Stadium, Sat, Sept. 5, 2026. Alabama Athletics’ box score is Alabama 48, East Carolina 10, and does not name the dollar. The article’s USF-on-Sept.-12 line is not the current slate and is not this cell; USF cancellation fees stay on the Chattanooga note, not a guarantee row. No separate band fee is named. Distinct from Alabama → Chattanooga $500,000.",
       "USC → Louisiana $1,300,000 is booked from FBSchedules (Kevin Kelley, Dec. 11, 2025), which obtained the contract from the University of Louisiana at Lafayette via a state public records request. Los Angeles Memorial Coliseum, Sat, Sept. 12, 2026. USC Athletics’ box score is USC 49, Louisiana 30, and does not name the dollar. The same story’s Fresno State opener names no dollar and is not a row. No separate band fee is named.",
       "Ole Miss → Wofford $485,000 is booked from FBSchedules (Kevin Kelley, March 25, 2025), which obtained the contract from Ole Miss via a state open records request. Vaught-Hemingway Stadium, Sat, Nov. 21, 2026. The February 2018 EKU contract at the same $485,000 was the date Wofford replaced; that EKU check is not a 2026 row. The Charlotte home-and-home in the Wofford story names no dollar and is not a row. No separate band fee is named.",
-      "Missouri → Arkansas-Pine Bluff $550,000 is booked from FBSchedules (Kevin Kelley, Nov. 11, 2019), which obtained the contract from Missouri via a state public records request. The contract date was Saturday, Sept. 5, 2026. Missouri Athletics lists Thursday, Sept. 3, 2026 at Memorial Stadium / Faurot Field; the final was Missouri 54, Arkansas-Pine Bluff 14. The dollar is the original contract amount. The 2029 Missouri State $550,000 in that story is not a 2026 row. No separate band fee is named."
+      "Missouri → Arkansas-Pine Bluff $550,000 is booked from FBSchedules (Kevin Kelley, Nov. 11, 2019), which obtained the contract from Missouri via a state public records request. The contract date was Saturday, Sept. 5, 2026. Missouri Athletics lists Thursday, Sept. 3, 2026 at Memorial Stadium / Faurot Field; the final was Missouri 54, Arkansas-Pine Bluff 14. The dollar is the original contract amount. The 2029 Missouri State $550,000 in that story is not a 2026 row. No separate band fee is named.",
+      "Mississippi State → Louisiana-Monroe $1,450,000 is booked from FBSchedules (Kevin Kelley, Jan. 31, 2022), which obtained the contract from Mississippi State via a state public records request, and the Clarion Ledger (Sam Sklar, Sept. 2, 2026), which obtained the 2026 nonconference contracts. Davis Wade Stadium, Sat, Sept. 5, 2026. Signed in 2021 by then-AD John Cohen. One game. Mississippi State Athletics’ box score is Mississippi State 62, ULM 13, and does not name the dollar. The FBSchedules story’s Troy date is not the current slate and is not a row. The Clarion Ledger’s $1.65 million is the net of the two checks Mississippi State pays minus the $350,000 it receives from Minnesota — not a cell. No separate band fee is named.",
+      "Mississippi State → Tennessee Tech $550,000 is booked from FBSchedules (Kevin Kelley, March 20, 2020), which obtained the contract from Mississippi State via a state public records request, and the same Clarion Ledger contracts story. Davis Wade Stadium, Sat, Nov. 21, 2026. Signed in 2019. One game. First meeting. The same FBSchedules story’s Tennessee State $525,000 is a 2021 game and is not a 2026 row. Chattanooga $550,000 is Nov. 20, 2027, and is not a 2026 row. Troy on Sept. 19 in that story is not the current slate and names no dollar. No separate band fee is named.",
+      "Minnesota → Mississippi State $350,000 is a home-and-home travel payment, not a buy game, booked from the Clarion Ledger (Sam Sklar, Sept. 2, 2026), which obtained the contracts. The 2016 agreement, signed by then-AD Scott Stricklin, says the home team pays the visiting team $350,000 after each game. Minnesota hosts on Sat, Sept. 12, 2026, so Minnesota pays Mississippi State $350,000. The Sept. 11, 2027 return in Starkville is the same $350,000 and is not a 2026 row. FBSchedules (Kevin Kelley, Nov. 2, 2016) sets the date at TCF Bank Stadium and does not name the dollar. Minnesota Athletics’ box score is Mississippi State 38, Minnesota 13, at Huntington Bank Stadium, and does not name the dollar. Same pattern as Illinois–Duke."
     ],
     "sources": [
       "Tallahassee Democrat (Sept. 9, 2026) — FAMU–Miami game contract via public records: $720,000 football + $40,000 Marching 100",
@@ -142,7 +145,13 @@
       "USC Athletics (Sept. 12, 2026) — Louisiana played at the Coliseum; no dollar",
       "FBSchedules (March 25, 2025) — Ole Miss–Wofford contract via Ole Miss open records",
       "FBSchedules (Nov. 11, 2019) — Missouri–Arkansas-Pine Bluff contract via Missouri public records",
-      "Missouri Athletics (Sept. 3, 2026) — Arkansas-Pine Bluff played at Faurot Field; no dollar"
+      "Missouri Athletics (Sept. 3, 2026) — Arkansas-Pine Bluff played at Faurot Field; no dollar",
+      "FBSchedules (Jan. 31, 2022) — Mississippi State–ULM contract via Mississippi State public records",
+      "Clarion Ledger (Sept. 2, 2026) — Mississippi State 2026 nonconference contracts",
+      "Mississippi State Athletics (Sept. 5, 2026) — ULM played at Davis Wade Stadium; no dollar",
+      "FBSchedules (March 20, 2020) — Mississippi State–Tennessee Tech contract via Mississippi State public records",
+      "FBSchedules (Nov. 2, 2016) — Mississippi State–Minnesota series dates; no dollar",
+      "Minnesota Athletics (Sept. 12, 2026) — Mississippi State played at Huntington Bank Stadium; no dollar"
     ]
   },
   "cites": {
@@ -732,6 +741,48 @@
       "label": "Missouri Athletics (Sept. 3, 2026) — Arkansas-Pine Bluff played at Faurot Field; no dollar",
       "url": "https://mutigers.com/boxscore/4413",
       "asOf": "2026-09-03",
+      "confidence": "reported"
+    },
+    "fbschedules-mississippi-state-ulm-2026": {
+      "id": "fbschedules-mississippi-state-ulm-2026",
+      "label": "FBSchedules (Kevin Kelley, Jan. 31, 2022) — Mississippi State–ULM contract via Mississippi State public records",
+      "url": "https://fbschedules.com/mississippi-state-adds-ulm-to-2026-football-schedule/",
+      "asOf": "2022-01-31",
+      "confidence": "reported"
+    },
+    "clarionledger-mississippi-state-noncon-2026": {
+      "id": "clarionledger-mississippi-state-noncon-2026",
+      "label": "Clarion Ledger (Sam Sklar, Sept. 2, 2026) — Mississippi State 2026 nonconference contracts",
+      "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2026/09/02/mississippi-state-football-schedule-2026-nonconference-payments/91330132007/",
+      "asOf": "2026-09-02",
+      "confidence": "reported"
+    },
+    "hailstate-ulm-2026": {
+      "id": "hailstate-ulm-2026",
+      "label": "Mississippi State Athletics (Sept. 5, 2026) — ULM played at Davis Wade Stadium; no dollar",
+      "url": "https://hailstate.com/sports/football/stats/2026/ulm/boxscore/27455",
+      "asOf": "2026-09-05",
+      "confidence": "reported"
+    },
+    "fbschedules-mississippi-state-tennessee-tech-2026": {
+      "id": "fbschedules-mississippi-state-tennessee-tech-2026",
+      "label": "FBSchedules (Kevin Kelley, March 20, 2020) — Mississippi State–Tennessee Tech contract via Mississippi State public records",
+      "url": "https://fbschedules.com/mississippi-state-adds-three-fcs-opponents-future-football-schedule/",
+      "asOf": "2020-03-20",
+      "confidence": "reported"
+    },
+    "fbschedules-mississippi-state-minnesota-2016": {
+      "id": "fbschedules-mississippi-state-minnesota-2016",
+      "label": "FBSchedules (Kevin Kelley, Nov. 2, 2016) — Mississippi State–Minnesota series dates; no dollar",
+      "url": "https://fbschedules.com/mississippi-state-minnesota-schedule-football-series-2026-2027/",
+      "asOf": "2016-11-02",
+      "confidence": "reported"
+    },
+    "gophersports-mississippi-state-2026": {
+      "id": "gophersports-mississippi-state-2026",
+      "label": "Minnesota Athletics (Sept. 12, 2026) — Mississippi State played at Huntington Bank Stadium; no dollar",
+      "url": "https://gophersports.com/sports/football/stats/2026/mississippi-state/boxscore/18633",
+      "asOf": "2026-09-12",
       "confidence": "reported"
     }
   },
@@ -1750,6 +1801,47 @@
       "confidence": "reported",
       "citeIds": ["fbschedules-missouri-uapb-2026", "missouri-athletics-uapb-2026"],
       "notes": "Memorial Stadium / Faurot Field, Thu, Sept. 3, 2026. FBSchedules (Kevin Kelley, Nov. 11, 2019) obtained the contract from the University of Missouri via a state public records request: Missouri pays Arkansas-Pine Bluff $550,000, then dated Saturday, Sept. 5, 2026. Missouri Athletics lists Thursday, Sept. 3, 2026; the final was Missouri 54, Arkansas-Pine Bluff 14. That page does not name the dollar. The dollar on this row is the original contract amount. The same story’s Missouri State game is Saturday, Sept. 1, 2029, at $550,000, and is not a 2026 row. The contract story does not name a separate band fee. Desk schedule lists Thu, Sept. 3, 2026."
+    },
+    {
+      "id": "2026-mississippi-state-louisiana-monroe",
+      "season": 2026,
+      "date": "2026-09-05",
+      "payerSchoolId": "mississippi-state",
+      "payeeLabel": "Louisiana-Monroe",
+      "payeeSlug": "louisiana-monroe",
+      "amount": 1450000,
+      "homeSchoolId": "mississippi-state",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-mississippi-state-ulm-2026", "clarionledger-mississippi-state-noncon-2026", "hailstate-ulm-2026"],
+      "notes": "Davis Wade Stadium at Scott Field, Starkville, Sat, Sept. 5, 2026. FBSchedules (Kevin Kelley, Jan. 31, 2022) obtained the contract from Mississippi State University via a state public records request: Mississippi State pays ULM (Louisiana-Monroe) $1,450,000. The Clarion Ledger (Sam Sklar, Sept. 2, 2026) obtained the 2026 nonconference contracts and names the same $1.45 million. The contract was signed in 2021 by then-athletic director John Cohen and is a one-game deal. Mississippi State Athletics’ box score is Mississippi State 62, ULM 13, and does not name the dollar. The same FBSchedules story’s Troy date (Sept. 19) is not the current slate and is not a row. The Clarion Ledger’s $1.65 million is the net of the two checks Mississippi State pays ($1,450,000 to Louisiana-Monroe and $550,000 to Tennessee Tech) minus the $350,000 it receives from Minnesota. That net is not a cell. The contract story does not name a separate band fee. Desk schedule lists Sat, Sept. 5, 2026, Mississippi State home. Distinct from Mississippi State → Tennessee Tech $550,000."
+    },
+    {
+      "id": "2026-mississippi-state-tennessee-tech",
+      "season": 2026,
+      "date": "2026-11-21",
+      "payerSchoolId": "mississippi-state",
+      "payeeLabel": "Tennessee Tech",
+      "payeeSlug": "tennessee-tech",
+      "amount": 550000,
+      "homeSchoolId": "mississippi-state",
+      "kind": "buy-game",
+      "confidence": "reported",
+      "citeIds": ["fbschedules-mississippi-state-tennessee-tech-2026", "clarionledger-mississippi-state-noncon-2026"],
+      "notes": "Davis Wade Stadium, Starkville, Sat, Nov. 21, 2026. FBSchedules (Kevin Kelley, March 20, 2020) obtained the contract from Mississippi State University via a state public records request: Mississippi State pays Tennessee Tech $550,000. The Clarion Ledger (Sam Sklar, Sept. 2, 2026) names the same $550,000. The contract was signed in 2019 and is a one-game deal. The story calls it the first meeting between the schools. The same FBSchedules story’s Tennessee State game is Nov. 20, 2021, at $525,000, and is not a 2026 row. Chattanooga is Nov. 20, 2027, at $550,000, and is not a 2026 row. Troy on Sept. 19 in that story is not the current slate and names no dollar. The Clarion Ledger’s $1.65 million net is not this cell. The contract story does not name a separate band fee. Desk schedule lists Sat, Nov. 21, 2026. Distinct from Mississippi State → Louisiana-Monroe $1,450,000."
+    },
+    {
+      "id": "2026-minnesota-mississippi-state",
+      "season": 2026,
+      "date": "2026-09-12",
+      "payerSchoolId": "minnesota",
+      "payeeSchoolId": "mississippi-state",
+      "amount": 350000,
+      "homeSchoolId": "minnesota",
+      "kind": "home-and-home",
+      "confidence": "reported",
+      "citeIds": ["clarionledger-mississippi-state-noncon-2026", "fbschedules-mississippi-state-minnesota-2016", "gophersports-mississippi-state-2026"],
+      "notes": "Huntington Bank Stadium, Minneapolis, Sat, Sept. 12, 2026. Home-and-home, not a buy game. The Clarion Ledger (Sam Sklar, Sept. 2, 2026) obtained Mississippi State’s 2026 nonconference contracts. The 2016 agreement, signed by then-athletic director Scott Stricklin, says the home team pays the visiting team $350,000 after each game. Minnesota hosts in 2026, so Minnesota pays Mississippi State $350,000. Mississippi State hosts the return on Sept. 11, 2027, at Davis Wade Stadium, and pays the same $350,000 then. That 2027 check is not a 2026 row. FBSchedules (Kevin Kelley, Nov. 2, 2016) sets the 2026 game for Sept. 12 at TCF Bank Stadium — the stadium name in that announcement — and does not name the dollar. Minnesota Athletics’ box score lists the game at Huntington Bank Stadium, Mississippi State 38, Minnesota 13, and does not name the dollar. The Clarion Ledger’s $1.65 million is the net of Mississippi State’s two 2026 payouts minus this receipt, not a cell. No separate band fee is named. Desk schedule lists Sat, Sept. 12, 2026, Minnesota home. Same pattern as Illinois–Duke."
     }
   ]
 }
