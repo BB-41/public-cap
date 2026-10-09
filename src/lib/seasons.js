@@ -361,6 +361,7 @@ function fillSameChair(yearChair, current, year) {
   if (Number(year) < 2026 || !current || !sameChairName(out, current)) return out
   if (!out.contractUrl && current.contractUrl) out.contractUrl = current.contractUrl
   if (!out.contract && current.contract) out.contract = clone(current.contract)
+  if (!out.contractStatus && current.contractStatus) out.contractStatus = clone(current.contractStatus)
   if (!out.term?.through && current.term?.through) out.term = clone(current.term)
   const yp = out.pay || {}
   const cp = current.pay

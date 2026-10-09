@@ -57327,6 +57327,14 @@
       "coaches": {
         "football": {
           "name": "Tosh Lupoi",
+          "contractStatus": {
+            "status": "not-finalized",
+            "note": "Contract not finalized: about 10 months after Cal hired Lupoi in December 2025, his long-form contract still had not been finalized. Cal Athletics said he signed a term sheet and the long-form contract was circulated for final signatures; the campus denied a public records request for the contract because it is “currently in a draft format.” No pay figure is booked until a final contract or cited dollar is public.",
+            "asOf": "2026-10-07",
+            "confidence": "reported",
+            "source": "The Daily Californian — Ansley Kang, “Cal football has yet to finalize contract with head coach Tosh Lupoi after 10 months” (Oct. 7, 2026)",
+            "url": "https://www.dailycal.org/news/campus/administration/cal-football-has-yet-to-finalize-contract-with-head-coach-tosh-lupoi-after-10-months/article_187144de-bcef-4721-aaec-3ea8916fbead.html"
+          },
           "pay": {
             "value": null,
             "unavailable": "undisclosed",
@@ -57869,6 +57877,14 @@
         "2026": {
           "football": {
             "name": "Tosh Lupoi",
+            "contractStatus": {
+              "status": "not-finalized",
+              "note": "Contract not finalized: about 10 months after Cal hired Lupoi in December 2025, his long-form contract still had not been finalized. Cal Athletics said he signed a term sheet and the long-form contract was circulated for final signatures; the campus denied a public records request for the contract because it is “currently in a draft format.” No pay figure is booked until a final contract or cited dollar is public.",
+              "asOf": "2026-10-07",
+              "confidence": "reported",
+              "source": "The Daily Californian — Ansley Kang, “Cal football has yet to finalize contract with head coach Tosh Lupoi after 10 months” (Oct. 7, 2026)",
+              "url": "https://www.dailycal.org/news/campus/administration/cal-football-has-yet-to-finalize-contract-with-head-coach-tosh-lupoi-after-10-months/article_187144de-bcef-4721-aaec-3ea8916fbead.html"
+            },
             "pay": {
               "value": null,
               "unavailable": "undisclosed",

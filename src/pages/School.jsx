@@ -90,6 +90,28 @@ function TermBlock({ term }) {
   )
 }
 
+function ContractStatusNote({ status }) {
+  if (!status?.note) return null
+  return (
+    <div className="field">
+      <div className="field-notes">{status.note}</div>
+      <div className="field-meta">
+        {status.asOf && <span>as of {status.asOf} · </span>}
+        {status.confidence && <span className="conf-label">{status.confidence}</span>}
+        {status.source && <span> · {status.source}</span>}
+        {status.url && (
+          <>
+            {' '}
+            <a className="ext" href={status.url} target="_blank" rel="noreferrer">
+              Source ↗
+            </a>
+          </>
+        )}
+      </div>
+    </div>
+  )
+}
+
 function StaffPayCell({ field }) {
   const blank = coachPayBlankLabel(field)
   if (blank) return <span>{blank}</span>
@@ -1223,6 +1245,7 @@ export default function School({ schools, meta, season, setSeason, includeAlumni
           <CoachPayField pay={s.coaches.football.pay} />
           <div className="eyebrow" title={defTitle('coachTerm')}>Contract term</div>
           <TermBlock term={s.coaches.football.term} />
+          <ContractStatusNote status={s.coaches.football.contractStatus} />
           {s.coaches.football.buyout?.rule && (
             <>
               <div className="eyebrow" title={defTitle('buyout')}>Buyout rule</div>
