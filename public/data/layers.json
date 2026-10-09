@@ -1,7 +1,7 @@
 {
   "meta": {
     "product": "Public Cap layers",
-    "asOf": "2026-08-28",
+    "asOf": "2026-10-09",
     "cycle": "2025-26 / 2026 football portal; 2025 football season; FY2025\u201326 money",
     "notes": [
       "Every number carries source, date, confidence (reported|estimated|modeled|pending).",
@@ -11,7 +11,8 @@
       "Wins per dollar is computed: 2025 FB wins \u00f7 booked NIL if present else modeled mid, and \u00f7 annual capacity.",
       "Buyouts here are money actually owed/paid after a firing or settlement \u2014 not the if-fired overhang on the current coach.",
       "Student fees / institutional support sit on the school (capacity.studentFees, capacity.institutionalSupport, capacity.governmentSupport when split) and on layers.subsidy. Hosted FY2025 NCAA MFRS PDFs win when we have the file (line 3 fees; line 4 direct institutional; line 2 government). EADA 2024-25 public file (ope.ed.gov) was opened \u2014 department/sport totals only, no fee/support split, so no EADA dollars were booked. Remaining publics use Knight-Newhouse school-profile FY2025 figures that cite the same MFRS lines (fees = line 3; institutional/government = KN combined 2+4+6+6A). Ohio State keeps the $0/$0 self-funded filing (PDF line 4 $112,280 is offset by transfers). Rutgers keeps the Extra Points 3-way split. Louisville keeps the published $200/semester athletic fee plus the FY2025 department total. $0 is printed only when the filing shows $0. Privates and Pittsburgh stay pending. Not added to the capacity stack. Athletic fee \u2260 tuition.",
-      "Athletics debt sits on layers.debt (outstanding stock, Category 34 annual service, named projects). Hosted FY2025 NCAA MFRS / AUP PDFs win. Category 53 university-wide institutional debt is refused. Not added to the capacity stack. $0 only when a filing says $0. Empty means pending."
+      "Athletics debt sits on layers.debt (outstanding stock, Category 34 annual service, named projects). Hosted FY2025 NCAA MFRS / AUP PDFs win. Category 53 university-wide institutional debt is refused. Not added to the capacity stack. $0 only when a filing says $0. Empty means pending.",
+      "Apparel pass 2026-10-09. Annual value is booked only from a contract, a regents or trustees packet, or a named newsroom quoting the contract. A floor (at least / more than) stays pending. Future deals that start July 1, 2027 (Miami Nike, Ole Miss Adidas) are noted and not booked."
     ],
     "sourcesIndex": {
       "wikiSeason": "https://en.wikipedia.org/wiki/2025_NCAA_Division_I_FBS_football_season",
@@ -172,10 +173,10 @@
         "annualValue": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "source": "AL.com (Aug. 27, 2025) \u2014 AD Greg Byrne: the Nike extension is not available for public inspection",
+          "url": "https://www.al.com/alabamafootball/2025/08/alabama-quietly-extended-nike-deal-details-remain-a-mystery.html",
+          "asOf": "2025-08-27",
+          "notes": "Pending. Byrne said the extension, signed a few years ago, is not available for public inspection. It runs through the Crimson Tide Foundation. The 2013 deal's about $5.25 million AAV expired June 30, 2025 and is not copied forward."
         },
         "naming": [],
         "notes": null
@@ -471,10 +472,10 @@
         "annualValue": {
           "value": null,
           "confidence": "pending",
-          "source": "Sportico: Auburn did not disclose Nike financials",
-          "url": "https://www.sportico.com/business/commerce/2024/auburn-nike-under-armour-equity-1234774545/",
-          "asOf": "2024",
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "source": "AL.com (Aug. 27, 2025) \u2014 Auburn denied public-records requests; the Nike deal runs through Tigers Unlimited",
+          "url": "https://www.al.com/alabamafootball/2025/08/alabama-quietly-extended-nike-deal-details-remain-a-mystery.html",
+          "asOf": "2025-08-27",
+          "notes": "Pending. Auburn told requesters that Tigers Unlimited, an independent nonprofit, holds the Nike paperwork and is not subject to the Alabama open-records law. The school has said the deal is 10 years from July 1, 2025, and has not released a dollar. The expired Under Armour total is not copied forward."
         },
         "naming": [],
         "notes": "Prior UA 2015\u201325 deal was $78.2M including $10M in UA stock (Sportico)."
@@ -677,10 +678,10 @@
         "annualValue": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "source": "Florida Athletics (Dec. 6, 2017) names Jordan Brand and does not print a cash-plus-product AAV",
+          "url": "https://floridagators.com/news/2017/12/6/general-jordan-brand-welcomes-university-of-florida-to-the-family",
+          "asOf": "2017-12-06",
+          "notes": "Pending. No later newsroom quote of a guaranteed cash-plus-product annual was found. A Fanatics licensed-merchandise guarantee is not the outfitter AAV."
         },
         "naming": [],
         "notes": null
@@ -1252,10 +1253,10 @@
         "annualValue": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "source": "LSU Athletics (Dec. 11, 2025) \u2014 Nike extension through 2036 names no cash-plus-product AAV",
+          "url": "https://lsusports.net/news/2025/12/11/lsu-athletics-announces-long-term-partnership-extension-with-nike-leads-nikes-launch-of-blue-ribbon-elite-nil-program",
+          "asOf": "2025-12-11",
+          "notes": "Pending. The school release and the Nike newsroom name the brand and the through-year, not a dollar. A third-party $4.75 million product plus $1 million cash figure is not in that release and is not booked. Rechecked October 2026."
         },
         "naming": [],
         "notes": null
@@ -1454,20 +1455,20 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "adidas Team sports-marketing partner list \u2014 Mississippi State is a current adidas school",
+          "url": "https://www.adidas-team.com/partners/",
+          "asOf": "2026-10-09",
+          "notes": "Brand only. The partner page does not print an annual value."
         },
         "annualValue": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "source": "No current cash-plus-product annual. A published Adidas figure near $2.5 million expired in 2021 and is not copied forward",
+          "url": "https://www.adidas-team.com/partners/",
+          "asOf": "2026-10-09",
+          "notes": "Pending. Adidas still lists Mississippi State. No successor contract dollar was found."
         },
         "naming": [],
         "notes": null
@@ -1830,23 +1831,23 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Nike",
+          "confidence": "reported",
+          "source": "Ole Miss Athletics (Oct. 7, 2026) \u2014 Adidas becomes the outfitter on July 1, 2027; Nike is the partner until that date",
+          "url": "https://olemisssports.com/news/2026/10/7/athletics-adidas-ole-miss-announce-7-year-partnership-beginning-in-2027",
+          "asOf": "2026-10-07",
+          "notes": "Current brand is Nike. The Adidas switch is not in effect."
         },
         "annualValue": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "source": "Ole Miss Athletics (Oct. 7, 2026) names the future partner and the dates, not a current Nike dollar",
+          "url": "https://olemisssports.com/news/2026/10/7/athletics-adidas-ole-miss-announce-7-year-partnership-beginning-in-2027",
+          "asOf": "2026-10-07",
+          "notes": "Pending. Ross Bjork in 2015 said the 12-year Nike extension would more than double the prior $1.9 million product allotment and drop about $775,000 a year in cash spending on product. More than double is a floor, not a point. Upcoming deal, reported, not yet in effect: Adidas, seven years, July 1, 2027 through June 2034 (Ole Miss Athletics). On3 (Pete Nakos and Brett McMurphy, October 2026) reported more than $20 million annually; 247Sports reported the same floor and said exact figures were not available. The school release does not print a dollar. That future figure is not booked."
         },
         "naming": [],
-        "notes": null
+        "notes": "Current outfitter is Nike through June 2027. Adidas, reported by On3 and confirmed by the school release, starts July 1, 2027 and is not booked."
       },
       "subsidy": {
         "studentFees": {
@@ -2092,10 +2093,10 @@
           "source": "SI: terms not disclosed",
           "url": "https://www.si.com/onsi/jerseys/news/4-major-colleges-change-apparel-brands-this-week",
           "asOf": "2026-07",
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "notes": "Terms were not disclosed. Knox News (July 1, 2026) says UT and Adidas still have not released a dollar; a Yahoo floor of at least $10 million a year in product and cash is not a contract figure and is not booked."
         },
         "naming": [],
-        "notes": "The State / Dellenger chatter about ~$100M is not used \u2014 terms were not disclosed."
+        "notes": "Terms were not disclosed. A Yahoo floor of at least $10 million a year, repeated by Knox News, is not booked. Earlier chatter about $100 million is not used."
       },
       "subsidy": {
         "studentFees": {
@@ -2849,18 +2850,18 @@
         "brand": {
           "value": "Adidas",
           "confidence": "reported",
-          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
-          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
-          "asOf": "2023",
-          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
+          "source": "Statesman Journal (July 12, 2024), quoting the new Adidas contract, and adidas.com partner list",
+          "url": "https://www.statesmanjournal.com/story/sports/college/indiana/2024/07/12/iu-athletics-new-deal-with-adidas-is-worth-54-million-dollars-over-10-years-indiana-hoosiers-apparel/74383142007/",
+          "asOf": "2024-07-12",
+          "notes": "Adidas remains the outfitter on the deal that began July 1, 2024."
         },
         "annualValue": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "source": "Statesman Journal (July 12, 2024) quotes the contract's year-1 and final-year product, not the 2026-27 step",
+          "url": "https://www.statesmanjournal.com/story/sports/college/indiana/2024/07/12/iu-athletics-new-deal-with-adidas-is-worth-54-million-dollars-over-10-years-indiana-hoosiers-apparel/74383142007/",
+          "asOf": "2024-07-12",
+          "notes": "Pending. Statesman Journal read the contract: 10-year Adidas deal from July 1, 2024. Year 1 (2024-25) is $4.745 million product plus $500,000 marketing, $5.245 million. Product peaks at $5.045 million in 2033-34. Marketing is $500,000 for the first five years and $550,000 for the last five. The 2026-27 product step is not printed, so this cell is not an interpolation. \"Surpass $54 million\" over 10 years is a floor, not a total we divide. Performance bonuses are not included."
         },
         "naming": [
           {
@@ -3106,18 +3107,17 @@
         "brand": {
           "value": "Under Armour",
           "confidence": "reported",
-          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
-          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
-          "asOf": "2023",
-          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
+          "source": "Baltimore Sun \u2014 University System of Maryland Board of Regents approved a 12-year Under Armour renewal",
+          "url": "https://www.baltimoresun.com/2024/06/14/university-of-maryland-under-armour-contract-extension/",
+          "asOf": "2024-06-14"
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 8166667,
+          "confidence": "estimated",
+          "source": "Baltimore Sun \u2014 regents document: Under Armour provides $98 million over 12 years, July 1, 2024 through June 30, 2036",
+          "url": "https://www.baltimoresun.com/2024/06/14/university-of-maryland-under-armour-contract-extension/",
+          "asOf": "2024-06-14",
+          "notes": "AAV $8,166,667 is $98,000,000 / 12, labeled estimated. Sun: almost $8.2 million a year. The school release does not print the dollar. 247Sports quotes the public regents document: \"will provide $98 million to the University over the next twelve years.\" Cash versus product is not split in that document. The prior 10-year deal is not copied forward."
         },
         "naming": [],
         "notes": null
@@ -3245,20 +3245,19 @@
       },
       "apparel": {
         "brand": {
-          "value": "Nike",
+          "value": "Jordan Brand (Nike)",
           "confidence": "reported",
-          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
-          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
-          "asOf": "2023",
-          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
+          "source": "University of Michigan fact sheet (April 26, 2016) \u2014 Jordan Brand Jumpman for football and both basketball teams; Nike supplies all 31 programs",
+          "url": "https://mgoblue.com/documents/download/2015/7/6/nike-fact-sheet-042616.pdf",
+          "asOf": "2016-04-26"
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 10920000,
+          "confidence": "estimated",
+          "source": "Detroit News (July 15, 2015) names 2026-27 base compensation at $5.32 million; MLive (July 2016) product schedule puts that year at $5.6 million",
+          "url": "https://www.detroitnews.com/story/sports/college/university-michigan/2015/07/15/michigans-nike-deal-worth-million/30185761/",
+          "asOf": "2016-07",
+          "notes": "2026-27 cash + product = $5,320,000 + $5,600,000 = $10,920,000, labeled estimated. Detroit News, from university officials on the announced deal: $4.82 million base in each of the first 10 years, then $5.32 million in 2026-27. MLive, after the contract was signed: product $5.3 million in 2016-17, $4.7 million in 2017-18, then +$100,000 a year. The 11th year (2026-27) is $5.6 million. Those 11 product years sum to $56.8 million, matching the finalized apparel total in the Detroit Free Press (April 26, 2016). Free Press: 11-year cash payments are $53.52 million, against the announcement's $53.5 million \u2014 a $20,000 gap across the term this cell does not reallocate. The $12 million signing bonus (paid in 2016) and the royalty minimum are not in this AAV. Free Press: the option through 2031 had to be decided by May 15, 2026. This desk found no cite that it was exercised. The 2026-27 line is inside the base term either way."
         },
         "naming": [],
         "notes": null
@@ -3653,18 +3652,18 @@
         "brand": {
           "value": "Adidas",
           "confidence": "reported",
-          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
-          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
-          "asOf": "2023",
-          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
+          "source": "ESPN \u2014 Board of Regents approved the 11-year Adidas extension on Aug. 11, 2017, through June 30, 2028",
+          "url": "https://www.espn.com/college-sports/story/_/id/20314816/nebraska-regents-approve-11-year-128-million-adidas-deal",
+          "asOf": "2017-08-11",
+          "notes": "Regents vote names Adidas. Huskers.com confirms the term through June 30, 2028."
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 11700000,
+          "confidence": "estimated",
+          "source": "ESPN \u2014 Board of Regents approved an 11-year Adidas deal: $64 million cash and $64.7 million apparel and equipment",
+          "url": "https://www.espn.com/college-sports/story/_/id/20314816/nebraska-regents-approve-11-year-128-million-adidas-deal",
+          "asOf": "2017-08-11",
+          "notes": "AAV $11,700,000 is ($64,000,000 + $64,700,000) / 11, labeled estimated. The schedule rises. Daily Nebraskan: 2017-18 was $3.5 million cash plus $5.05 million product; 2027-28 reaches $5.5 million cash and almost $6.8 million product. A separate $750,000 a year for student promotions is not in the $128.7 million and is not in this AAV. Through June 30, 2028."
         },
         "naming": [],
         "notes": null
@@ -3986,15 +3985,16 @@
           "confidence": "reported",
           "source": "News-Gazette FOIA apparel roundup",
           "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
-          "asOf": "2023"
+          "asOf": "2023",
+          "notes": "Nike remains the outfitter on the 2016 extension. The annual cell is the announced $252 million deal spread flat, not the $6.1 million product allotment."
         },
         "annualValue": {
-          "value": 6100000,
-          "confidence": "reported",
-          "source": "News-Gazette \u2014 Ohio State Nike $6.1M (allotment cited in the FOIA package)",
-          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
-          "asOf": "2023",
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 16800000,
+          "confidence": "estimated",
+          "source": "AP \u2014 Ohio State and Nike announced a 15-year, $252 million extension through 2033",
+          "url": "https://apnews.com/general-news-d9841eacce78437d9ea9a9e1fd365348",
+          "asOf": "2016-01-15",
+          "notes": "AAV $16,800,000 is $252,000,000 / 15 years, labeled estimated. Not a flat annual check. Wall Street Journal, which reviewed the contract: $112 million in product and at least $103 million in cash, including royalty income. AP: $22.5 million cash and $5 million in product up front; most updated provisions start in 2018. The Lantern, quoting the contract, says more than $41 million inside the $252 million is set aside for non-athlete scholarships and internships. The News-Gazette FOIA allotment of $6.1 million is the product line this cell used to book. It is not the deal. Through 2033."
         },
         "naming": [],
         "notes": null
@@ -4817,17 +4817,18 @@
         "brand": {
           "value": "Jordan Brand (Nike)",
           "confidence": "reported",
-          "source": "Wikipedia UCLA football infobox \u2014 Outfitter: Jordan Brand. Prior UA deal ended; Nike/Jordan began 2021",
-          "url": "https://en.wikipedia.org/wiki/UCLA_Bruins_football",
-          "asOf": "2026"
+          "source": "UCLA-Nike all-sport agreement \u2014 Jordan Brand outfits football and men's and women's basketball; Nike supplies the department",
+          "url": "https://ca-times.brightspotcdn.com/c0/83/9209eacc4f70ab92b042e606467e/nike-jordan-brand-agreement-with-ucla.pdf",
+          "asOf": "2021-02-12",
+          "notes": "Contract paragraph 5(c). Los Angeles Times published the agreement."
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 7500000,
+          "confidence": "reported",
+          "source": "UCLA-Nike all-sport agreement \u2014 2026-27 retail product allotment $7,000,000 plus base compensation $500,000",
+          "url": "https://ca-times.brightspotcdn.com/c0/83/9209eacc4f70ab92b042e606467e/nike-jordan-brand-agreement-with-ucla.pdf",
+          "asOf": "2026-27",
+          "notes": "Named contract-year sum, not an average: $7,000,000 retail product + $500,000 cash = $7,500,000. Product is retail value. The school may shift product into cash on a 1:3 ratio up to 25 percent; this cell uses the printed schedule, not that election. New York Post (June 23, 2026): Nike exercised the two option years, so the deal runs through June 30, 2029 ($7.125 million gear + $500,000 cash in 2027-28; $7.25 million gear + $500,000 cash in 2028-29). Royalties and performance bonuses are not in this AAV."
         },
         "naming": [],
         "notes": null
@@ -5204,7 +5205,7 @@
           "notes": "Guaranteed cash $3.8 million (paid quarterly) + product allotment $3.2 million wholesale. Initial term 7 years (2026\u20132033) with a 3-year option through 2036; total minimum gross $104.5 million. Not in this AAV: $500k royalty minimum, $75k marketing fund, $175k NIL-contract minimum, $3M one-time signing bonus (early payout of remaining current-deal rights fees), or performance bonuses. Journal Sentinel quotes the same board figures."
         },
         "naming": [],
-        "notes": "Renewal begins after the current deal expires June 30, 2026."
+        "notes": "Renewal is in effect. The prior deal expired June 30, 2026. The AAV is the regents packet's named $3.8 million cash plus $3.2 million wholesale product. The $104.5 million minimum over seven years plus a three-year option is not divided into this cell."
       },
       "subsidy": {
         "studentFees": {
@@ -6040,20 +6041,19 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "Courier-Journal \u2014 open-records copy of the Adidas agreement, and the Louisville Athletics release (Aug. 25, 2017), through 2027-28",
+          "url": "https://www.courier-journal.com/story/sports/college/louisville/2017/08/25/university-louisville-announces-adidas-apparel-contract-extension/600482001/",
+          "asOf": "2017-08-25"
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 16000000,
+          "confidence": "estimated",
+          "source": "Courier-Journal, quoting the open-records contract \u2014 $160 million over 10 years, or $16 million per year, July 1, 2018 through 2027-28",
+          "url": "https://www.courier-journal.com/story/sports/college/louisville/2017/08/25/university-louisville-announces-adidas-apparel-contract-extension/600482001/",
+          "asOf": "2017-08-25",
+          "notes": "AAV $16,000,000 is $160,000,000 / 10, labeled estimated. The same contract is not flat. Courier-Journal: base compensation $10 million from 2018-21, then $7 million a year from 2021-28; activation fees $3 million from 2018-21, then $1 million from 2021-28; Adidas products $6 million over the next two years, then $6.1 million from 2020-23, then $6.2 million from 2023-28. 2026-27 sits in that later window. AP announced the same $160 million extension. This cell is the newsroom's per-year reading of the $160 million total, not a single-year invoice."
         },
         "naming": [],
         "notes": null
@@ -6165,23 +6165,23 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "Miami Herald (Barry Jackson, Sept. 16, 2026) \u2014 Adidas since 2015; the 12-year deal expires June 30, 2027",
+          "url": "https://www.miamiherald.com/sports/college/acc/university-of-miami/article317147776.html",
+          "asOf": "2026-09-16",
+          "notes": "Current outfitter is Adidas. The Nike deal does not start until July 2027."
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 6500000,
+          "confidence": "reported",
+          "source": "Miami Herald (Barry Jackson, Sept. 16, 2026) \u2014 Adidas paid Miami $6.5 million per year in cash on the deal that expires June 30, 2027",
+          "url": "https://www.miamiherald.com/sports/college/acc/university-of-miami/article317147776.html",
+          "asOf": "2026-09-16",
+          "notes": "Cash only. The Herald says the $6.5 million did not include apparel and footwear, which it describes as worth millions and does not quantify. The 2015 switch was close to $80 million over 12 years. Upcoming deal, reported, not yet in effect: Nike, 10 years beginning July 2027, more than $200 million (slightly more than $20 million a year, about two-thirds cash and the rest apparel), per the Herald and the Associated Press. Nike's newsroom confirms a multi-year partnership beginning July 2027 and does not print a dollar. That future figure is not this cell."
         },
         "naming": [],
-        "notes": null
+        "notes": "Upcoming Nike deal is reported and not yet in effect (July 2027). The booked annual is the current Adidas cash figure."
       },
       "subsidy": {
         "studentFees": {
@@ -6278,20 +6278,20 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "adidas Team sports-marketing partner list \u2014 NC State is a current adidas school",
+          "url": "https://www.adidas-team.com/partners/",
+          "asOf": "2026-10-09",
+          "notes": "Brand only. The partner page does not print an annual value."
         },
         "annualValue": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "source": "No current cash-plus-product annual. A published Adidas figure near $6.45 million expired in 2022 and is not copied forward",
+          "url": "https://www.adidas-team.com/partners/",
+          "asOf": "2026-10-09",
+          "notes": "Pending. Adidas still lists NC State. No successor contract dollar was found."
         },
         "naming": [],
         "notes": null
@@ -6399,15 +6399,16 @@
           "confidence": "reported",
           "source": "News-Gazette FOIA \u2014 UNC Nike cash $3.25M in 2023\u201324 (Jordan football/ hoops branding is the on-field look)",
           "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
-          "asOf": "2023"
+          "asOf": "2023",
+          "notes": "Nike / Jordan remains the outfitter on the 2018 extension through June 2028. The annual cell is Forbes's cash-plus-wholesale-product average, not the $3.25 million cash line."
         },
         "annualValue": {
-          "value": 3250000,
-          "confidence": "reported",
-          "source": "News-Gazette \u2014 UNC Nike annual cash compensation $3.25M (2023\u201324)",
-          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
-          "asOf": "2023-24",
-          "notes": "Cash line only. Product allotment not separately extracted."
+          "value": 6270000,
+          "confidence": "estimated",
+          "source": "Forbes (Dec. 19, 2018) \u2014 10-year Nike extension averages $2.87 million wholesale product and $3.4 million cash",
+          "url": "https://www.forbes.com/sites/danielkleinman/2018/12/19/uncs-nike-extension-is-among-the-most-valuable-apparel-deals/",
+          "asOf": "2018-12-19",
+          "notes": "AAV $6,270,000 is $2,870,000 wholesale product + $3,400,000 cash, the average Forbes states, labeled estimated. News-Gazette FOIA: 2023-24 cash compensation was $3.25 million, so the $3.4 million is an average, not that year's check. The prior cell booked only that cash line. Forbes says its figure leaves out about $3.3 million a year in merchandise-royalty guarantees; those are not added. 247Sports: exclusive supplier through June 2028. The contract PDF is posted by UNC Athletics."
         },
         "naming": [],
         "notes": null
@@ -7510,20 +7511,20 @@
       },
       "apparel": {
         "brand": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "No cited current outfitter on the desk."
+          "value": "Adidas",
+          "confidence": "reported",
+          "source": "adidas Team sports-marketing partner list \u2014 Arizona State is a current adidas school",
+          "url": "https://www.adidas-team.com/partners/",
+          "asOf": "2026-10-09",
+          "notes": "Brand only. The partner page does not print an annual value."
         },
         "annualValue": {
           "value": null,
           "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "source": "No current cash-plus-product annual. The 2014 Adidas minimum of $33.8 million ran through 2022-23 and is not copied forward",
+          "url": "https://www.adidas-team.com/partners/",
+          "asOf": "2026-10-09",
+          "notes": "Pending. Adidas still lists Arizona State. No successor contract dollar was found in a board packet or a newsroom quoting the current agreement."
         },
         "naming": [
           {
@@ -8364,18 +8365,17 @@
         "brand": {
           "value": "Adidas",
           "confidence": "reported",
-          "source": "News-Gazette FOIA apparel-contract package \u2014 current outfitter named in the open-records report",
-          "url": "https://www.news-gazette.com/business/open-records-report-20-things-to-know-about-college-athletic-apparel-contracts/article_47f6cfe1-8c2b-5450-bdd9-877395bde72f.html",
-          "asOf": "2023",
-          "notes": "FOIA package names the current outfitter. No guaranteed cash+product AAV extracted for this school. Not an invented allotment."
+          "source": "KU Office of the Chancellor (April 24, 2019) \u2014 14-year adidas apparel agreement through 2030-31",
+          "url": "https://chancellor.ku.edu/news/article/2019/04/24/ku-announces-14-year-agreement-adidas",
+          "asOf": "2019-04-24"
         },
         "annualValue": {
-          "value": null,
-          "confidence": "pending",
-          "source": null,
-          "url": null,
-          "asOf": null,
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "value": 14000000,
+          "confidence": "reported",
+          "source": "KU Office of the Chancellor (April 24, 2019) \u2014 14-year adidas agreement worth $14 million annually through 2030-31",
+          "url": "https://chancellor.ku.edu/news/article/2019/04/24/ku-announces-14-year-agreement-adidas",
+          "asOf": "2019-04-24",
+          "notes": "School-stated annual total, not cash plus product alone. Kansas City Star, quoting the contract: about $196 million over 14 years \u2014 about $91.5 million product, $77.6 million base compensation, $14.2 million marketing, $7.5 million for a scholarship fund, about $4.5 million in minimum royalties, and $1.15 million for facility improvements. AP states the same $14 million annual. Performance bonuses are not in this cell."
         },
         "naming": [],
         "notes": null
@@ -9536,10 +9536,10 @@
         "annualValue": {
           "value": null,
           "confidence": "pending",
-          "source": "Sportico: Notre Dame previously declined to comment on terms",
-          "url": "https://www.sportico.com/business/commerce/2024/auburn-nike-under-armour-equity-1234774545/",
-          "asOf": "2024",
-          "notes": "Cited annual value when a newsroom/FOIA number exists. Pending otherwise."
+          "source": "Yahoo Sports (Aug. 4, 2023) \u2014 sources: more than $10 million annually in cash and gear. Private school did not release the contract",
+          "url": "https://sports.yahoo.com/sources-notre-dame-under-armour-agree-to-massive-college-athletics-apparel-extension-234800887.html",
+          "asOf": "2023-08-04",
+          "notes": "Pending. Yahoo Sports sources described a 10-year Under Armour extension as more than $10 million annually in cash and gear, more than $100 million total, through spring 2034. That is a floor, not a point, and Notre Dame did not release the contract. The floor is not booked."
         },
         "naming": [],
         "notes": null
