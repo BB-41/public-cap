@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-30",
-    "itemCount": 462,
+    "itemCount": 471,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -11,6 +11,141 @@
     ]
   },
   "items": [
+    {
+      "id": "ohio-state-apparel-nike-2016-01-15",
+      "date": "2016-01-15",
+      "school": "ohio-state",
+      "schoolName": "Ohio State",
+      "kind": "apparel",
+      "headline": "AP: Ohio State and Nike extended for 15 years and $252 million through 2033. AAV $16,800,000 is that total divided by 15, labeled estimated. Replaces the News-Gazette $6.1 million product allotment.",
+      "figure": 16800000,
+      "confidence": "estimated",
+      "source": {
+        "label": "AP \u2014 Ohio State Nike $252 million extension",
+        "url": "https://apnews.com/general-news-d9841eacce78437d9ea9a9e1fd365348"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "kansas-apparel-adidas-2019-04-24",
+      "date": "2019-04-24",
+      "school": "kansas",
+      "schoolName": "Kansas",
+      "kind": "apparel",
+      "headline": "KU chancellor: 14-year Adidas agreement worth $14 million annually through 2030-31. The figure is the school's stated annual total, including marketing, scholarship, royalty, and facilities pieces the Kansas City Star lists from the contract.",
+      "figure": 14000000,
+      "confidence": "reported",
+      "source": {
+        "label": "KU Office of the Chancellor \u2014 Adidas $14 million annually",
+        "url": "https://chancellor.ku.edu/news/article/2019/04/24/ku-announces-14-year-agreement-adidas"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "nebraska-apparel-adidas-2017-08-11",
+      "date": "2017-08-11",
+      "school": "nebraska",
+      "schoolName": "Nebraska",
+      "kind": "apparel",
+      "headline": "Regents approved an 11-year Adidas deal: $64 million cash and $64.7 million apparel. AAV $11,700,000 is that sum divided by 11, labeled estimated. Through June 30, 2028.",
+      "figure": 11700000,
+      "confidence": "estimated",
+      "source": {
+        "label": "ESPN \u2014 Nebraska regents Adidas approval",
+        "url": "https://www.espn.com/college-sports/story/_/id/20314816/nebraska-regents-approve-11-year-128-million-adidas-deal"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "maryland-apparel-under-armour-2024-06-14",
+      "date": "2024-06-14",
+      "school": "maryland",
+      "schoolName": "Maryland",
+      "kind": "apparel",
+      "headline": "Baltimore Sun, from the regents document: Under Armour provides $98 million over 12 years (July 1, 2024 through June 30, 2036). AAV $8,166,667 is that total divided by 12, labeled estimated.",
+      "figure": 8166667,
+      "confidence": "estimated",
+      "source": {
+        "label": "Baltimore Sun \u2014 Maryland Under Armour regents extension",
+        "url": "https://www.baltimoresun.com/2024/06/14/university-of-maryland-under-armour-contract-extension/"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "louisville-apparel-adidas-2017-08-25",
+      "date": "2017-08-25",
+      "school": "louisville",
+      "schoolName": "Louisville",
+      "kind": "apparel",
+      "headline": "Courier-Journal open-records copy: Adidas $160 million over 10 years, or $16 million per year, July 1, 2018 through 2027-28. AAV is that average, labeled estimated. The contract schedule is not flat.",
+      "figure": 16000000,
+      "confidence": "estimated",
+      "source": {
+        "label": "Courier-Journal \u2014 Louisville Adidas contract via open records",
+        "url": "https://www.courier-journal.com/story/sports/college/louisville/2017/08/25/university-louisville-announces-adidas-apparel-contract-extension/600482001/"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "ucla-apparel-jordan-2026-27",
+      "date": "2021-02-12",
+      "school": "ucla",
+      "schoolName": "UCLA",
+      "kind": "apparel",
+      "headline": "UCLA-Nike contract: 2026-27 retail product allotment $7,000,000 plus base compensation $500,000. AAV $7,500,000 is that named year, reported. Nike exercised the option through June 30, 2029.",
+      "figure": 7500000,
+      "confidence": "reported",
+      "source": {
+        "label": "UCLA-Nike all-sport agreement (Los Angeles Times PDF)",
+        "url": "https://ca-times.brightspotcdn.com/c0/83/9209eacc4f70ab92b042e606467e/nike-jordan-brand-agreement-with-ucla.pdf"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "michigan-apparel-jordan-2026-27",
+      "date": "2016-04-26",
+      "school": "michigan",
+      "schoolName": "Michigan",
+      "kind": "apparel",
+      "headline": "2026-27 Nike/Jordan cash plus product is $5.32 million base (Detroit News) plus $5.6 million product (MLive schedule that sums to the finalized $56.8 million apparel total). AAV $10,920,000, labeled estimated.",
+      "figure": 10920000,
+      "confidence": "estimated",
+      "source": {
+        "label": "Detroit News \u2014 Michigan Nike cash schedule; MLive product schedule",
+        "url": "https://www.detroitnews.com/story/sports/college/university-michigan/2015/07/15/michigans-nike-deal-worth-million/30185761/"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "north-carolina-apparel-nike-2018-12-19",
+      "date": "2018-12-19",
+      "school": "north-carolina",
+      "schoolName": "North Carolina",
+      "kind": "apparel",
+      "headline": "Forbes: the Nike extension averages $2.87 million wholesale product and $3.4 million cash. AAV $6,270,000 is that sum, labeled estimated. Replaces the News-Gazette $3.25 million cash-only line. Royalty guarantees are not added.",
+      "figure": 6270000,
+      "confidence": "estimated",
+      "source": {
+        "label": "Forbes \u2014 UNC Nike extension cash plus wholesale product",
+        "url": "https://www.forbes.com/sites/danielkleinman/2018/12/19/uncs-nike-extension-is-among-the-most-valuable-apparel-deals/"
+      },
+      "field": "layers.apparel.annualValue"
+    },
+    {
+      "id": "miami-apparel-adidas-cash-2026-09-16",
+      "date": "2026-09-16",
+      "school": "miami",
+      "schoolName": "Miami",
+      "kind": "apparel",
+      "headline": "Miami Herald: current Adidas deal pays $6.5 million a year in cash and expires June 30, 2027. Product is not in the figure. The Nike deal (more than $200 million over 10 years) starts July 2027 and is not booked.",
+      "figure": 6500000,
+      "confidence": "reported",
+      "source": {
+        "label": "Miami Herald \u2014 current Adidas cash; future Nike deal noted",
+        "url": "https://www.miamiherald.com/sports/college/acc/university-of-miami/article317147776.html"
+      },
+      "field": "layers.apparel.annualValue"
+    },
     {
       "id": "florida-guarantee-2026-florida-florida-atlantic",
       "date": "2025-05-07",
