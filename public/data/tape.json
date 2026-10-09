@@ -2,7 +2,7 @@
   "meta": {
     "product": "Public Cap desk tape",
     "asOf": "2026-09-30",
-    "itemCount": 462,
+    "itemCount": 466,
     "notes": [
       "A dated log of filings that moved a Public Cap figure. Not a news feed.",
       "Seeded only from sources already on this desk (schools.json, layers.json, Methods). No invented dates, dollars, or headlines.",
@@ -11,6 +11,70 @@
     ]
   },
   "items": [
+    {
+      "id": "mississippi-state-guarantee-2026-mississippi-state-louisiana-monroe",
+      "date": "2022-01-31",
+      "school": "mississippi-state",
+      "schoolName": "Mississippi State",
+      "kind": "guarantee-game",
+      "headline": "Mississippi State pays Louisiana-Monroe a $1,450,000 football guarantee.",
+      "figure": 1450000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, Jan. 31, 2022) — Mississippi State–ULM contract via Mississippi State public records",
+        "url": "https://fbschedules.com/mississippi-state-adds-ulm-to-2026-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Davis Wade Stadium, Sat, Sept. 5, 2026. Clarion Ledger (Sept. 2, 2026) names the same $1.45 million. Played: Mississippi State 62, ULM 13. The $1.65 million net is not this cell."
+    },
+    {
+      "id": "mississippi-state-guarantee-2026-mississippi-state-tennessee-tech",
+      "date": "2020-03-20",
+      "school": "mississippi-state",
+      "schoolName": "Mississippi State",
+      "kind": "guarantee-game",
+      "headline": "Mississippi State pays Tennessee Tech a $550,000 football guarantee.",
+      "figure": 550000,
+      "confidence": "reported",
+      "source": {
+        "label": "FBSchedules (Kevin Kelley, March 20, 2020) — Mississippi State–Tennessee Tech contract via Mississippi State public records",
+        "url": "https://fbschedules.com/mississippi-state-adds-three-fcs-opponents-future-football-schedule/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Davis Wade Stadium, Sat, Nov. 21, 2026. Clarion Ledger (Sept. 2, 2026) names the same $550,000. The 2021 Tennessee State and 2027 Chattanooga dollars in that story are not 2026 rows."
+    },
+    {
+      "id": "minnesota-guarantee-2026-minnesota-mississippi-state",
+      "date": "2026-09-02",
+      "school": "minnesota",
+      "schoolName": "Minnesota",
+      "kind": "guarantee-game",
+      "headline": "Minnesota pays Mississippi State a $350,000 football guarantee.",
+      "figure": 350000,
+      "confidence": "reported",
+      "source": {
+        "label": "Clarion Ledger (Sam Sklar, Sept. 2, 2026) — Mississippi State 2026 nonconference contracts",
+        "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2026/09/02/mississippi-state-football-schedule-2026-nonconference-payments/91330132007/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Huntington Bank Stadium, Sat, Sept. 12, 2026. Home-and-home: the home team pays the visitor $350,000. The Sept. 11, 2027 return is not a 2026 row. Played: Mississippi State 38, Minnesota 13."
+    },
+    {
+      "id": "mississippi-state-guarantee-received-2026-minnesota-mississippi-state",
+      "date": "2026-09-02",
+      "school": "mississippi-state",
+      "schoolName": "Mississippi State",
+      "kind": "guarantee-game",
+      "headline": "Mississippi State receives a $350,000 football guarantee from Minnesota.",
+      "figure": 350000,
+      "confidence": "reported",
+      "source": {
+        "label": "Clarion Ledger (Sam Sklar, Sept. 2, 2026) — Mississippi State 2026 nonconference contracts",
+        "url": "https://www.clarionledger.com/story/sports/college/mississippi-state/2026/09/02/mississippi-state-football-schedule-2026-nonconference-payments/91330132007/"
+      },
+      "field": "guaranteeGames",
+      "notes": "Received for the Sept. 12, 2026 game in Minneapolis. The 2027 return payment Mississippi State owes is not a 2026 row."
+    },
     {
       "id": "florida-guarantee-2026-florida-florida-atlantic",
       "date": "2025-05-07",
